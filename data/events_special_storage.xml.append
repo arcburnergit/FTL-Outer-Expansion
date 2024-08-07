@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<mod:findName type="event" name="STORAGE_CHECK_BUTTON">
+  <mod-append:choice req="AEA_ACID_O2SYS" blue="true" hidden="true">
+    <text>Acidic Filtering System.</text>
+    <event load="STORAGE_CHECK_AEA_O2SYS" />
+  </mod-append:choice>
+  <mod-append:choice req="AEA_ACID_O2SYS_OFF" blue="true" hidden="true">
+    <text>Acidic Filtering System.</text>
+    <event load="STORAGE_CHECK_AEA_O2SYS_OFF" />
+  </mod-append:choice>
+</mod:findName>
+
+<mod:findName type="event" name="STORAGE_CHECK_STATUS_LOOT">
+  <mod-append:choice hidden="true" req="ach_trans_aea_acid" lvl="1" blue="false">
+		<text>(Acidic Origins)</text>
+		<event load="OPTION_INVALID" />
+  </mod-append:choice>
+</mod:findName>
+
+<event name="STORAGE_CHECK_AEA_O2SYS">
+  <text>What do you want to do?</text>
+  <checkCargo />
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+
+  <choice hidden="true">
+    <text>Set Filtering System to Extinguisher Mode (Currently Enabled)</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+
+  <choice>
+    <text>Set Filtering System to Oxygen Mode</text>
+    <event>
+      <text>Your Filtering system shifts over to begin producing oxygen.</text>
+      <remove name="AEA_ACID_O2SYS"/>
+      <choice>
+        <text>Continue...</text>
+        <event>
+          <text>The system's lifesupport subsystem slows down.</text>
+          <augment name="AEA_ACID_O2SYS_OFF"/>
+          <choice>
+            <text>Continue...</text>
+            <event load="STORAGE_CHECK" />
+          </choice>
+        </event>
+      </choice>
+    </event>
+  </choice>
+</event>
+
+
+<event name="STORAGE_CHECK_AEA_O2SYS_OFF">
+  <text>What do you want to do?</text>
+  <checkCargo />
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+
+  <choice>
+    <text>Set Filtering System to Extinguisher Mode</text>
+    <event>
+      <text>Your Filtering system shifts over to begin producing fire suppressent.</text>
+      <remove name="AEA_ACID_O2SYS_OFF"/>
+      <choice>
+        <text>Continue...</text>
+        <event>
+          <text>The system's lifesupport subsystem becomes more efficient.</text>
+          <augment name="AEA_ACID_O2SYS"/>
+          <choice>
+            <text>Continue...</text>
+            <event load="STORAGE_CHECK" />
+          </choice>
+        </event>
+      </choice>
+    </event>
+  </choice>
+
+  <choice hidden="true">
+    <text>Set Filtering System to Oxygen Mode (Currently Enabled)</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+</event>
+</FTL>

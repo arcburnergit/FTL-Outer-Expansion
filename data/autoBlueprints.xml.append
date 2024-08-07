@@ -1,0 +1,605 @@
+<FTL>
+<mod:findName type="blueprintList" name="LIST_WEAPONS_ALL">
+    <mod-append:name>AEA_LASER_ACID_1</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_2</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_3</mod-append:name>
+    <mod-append:name>AEA_BEAM_ACID_1</mod-append:name>
+    <mod-append:name>AEA_ION_ACID_1</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_WEAPONS_ALL_CRAPBUCKET">
+    <mod-append:name>AEA_LASER_ACID_1</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_2</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_3</mod-append:name>
+    <mod-append:name>AEA_BEAM_ACID_1</mod-append:name>
+    <mod-append:name>AEA_ION_ACID_1</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_HUMAN">
+</mod:findName>
+
+<blueprintList name="GIFTLIST_WEAPONS_ACIDIC">
+    <name>AEA_LASER_ACID_1</name>
+    <name>AEA_LASER_ACID_2</name>
+    <name>AEA_LASER_ACID_3</name>
+    <name>AEA_BEAM_ACID_1</name>
+    <name>AEA_ION_ACID_1</name>
+</blueprintList>
+
+<blueprintList name="LIST_LOOT_AEA_ACID">
+	<name>AEA_ION_ACID_1_LOOT</name>
+</blueprintList>
+
+<blueprintList name="LIST_WEAPONS_ACIDIC">
+    <name>AEA_LASER_ACID_1</name>
+    <name>AEA_LASER_ACID_2</name>
+    <name>AEA_LASER_ACID_3</name>
+    <name>AEA_BEAM_ACID_1</name>
+    <name>AEA_ION_ACID_1</name>
+    
+    <name>LASER_HEAVY_1</name>
+	<name>LASER_HULL_1_ENEMY</name>
+	<name>LASER_HEAVY_2</name>
+	<name>LASER_HULL_2</name>
+    
+	
+	<name>KERNEL_1_ENEMY</name>
+	<name>KERNEL_2_ENEMY</name>
+	<name>KERNEL_HEAVY_ENEMY</name>
+	<name>BOMB_1_ENEMY</name>
+    
+	<name>SHOTGUN_1_ENEMY</name>
+	<name>SHOTGUN_2</name>
+    
+	<name>LASER_PIERCE_ENEMY</name>
+	<name>LASER_PARTICLE</name>
+
+	<name>ENERGY_1</name>
+	<name>ENERGY_2</name>
+	<name>ENERGY_HULL</name>
+</blueprintList>
+<blueprintList name="LIST_WEAPONS_ACIDIC_ELITE">
+    <name>AEA_LASER_ACID_1</name>
+    <name>AEA_LASER_ACID_2</name>
+    <name>AEA_LASER_ACID_3</name>
+    <name>AEA_BEAM_ACID_1</name>
+    <name>AEA_ION_ACID_1</name>
+    <name>AEA_ION_ACID_1_LOOT</name>
+    
+    <name>LASER_HEAVY_1</name>
+	<name>LASER_HULL_1</name>
+	<name>LASER_HEAVY_2</name>
+	<name>LASER_HULL_2</name>
+	
+	<name>KERNEL_1</name>
+	<name>KERNEL_2</name>
+	<name>KERNEL_HEAVY</name>
+	<name>BOMB_1_ENEMY</name>
+    
+	<name>SHOTGUN_1</name>
+	<name>SHOTGUN_2</name>
+    
+	<name>LASER_PIERCE</name>
+	<name>LASER_PARTICLE</name>
+
+	<name>ENERGY_1</name>
+	<name>ENERGY_2</name>
+	<name>ENERGY_HULL</name>
+</blueprintList>
+
+<blueprintList name="LIST_DRONES_ACIDIC">
+	<name>GUARDIAN_1_MISSILE</name>
+	<name>GUARDIAN_1_DRONE</name>
+	<name>GUARDIAN_2_DRONE</name>
+	
+	<name>COMBAT_1_LASER</name>
+	<name>COMBAT_1_BEAM</name>
+	<name>COMBAT_2_LASER</name>
+	<name>COMBAT_2_BEAM</name>
+	<name>HELLRAISER_HULL</name>
+	<name>HELLRAISER_FIRE</name>
+	<name>ION_1_AMP2_ENEMY</name>
+	<name>ENERGY_1_AMP2_ENEMY</name>
+	<name>AMPHI_DEFENSE</name>
+	<name>AMPHI_COMBAT</name>
+</blueprintList>
+
+<blueprintList name="LIST_SHIPS_AEA_ACID_ALL">
+	<name>AEA_ACID_SCOUT</name>
+	<name>AEA_ACID_OUTRIDER</name>
+	<name>AEA_ACID_FIGHTER</name>
+	<name>AEA_ACID_INSTIGATOR</name>
+	<name>AEA_ACID_BOMBER</name>
+	<name>AEA_ACID_ASSUALT</name>
+	<name>AEA_ACID_TRANSPORT</name>
+	<name>AEA_ACID_GUARD</name>
+</blueprintList>
+<blueprintList name="LIST_SHIPS_AEA_ACID_GENERIC">
+	<name>AEA_ACID_SCOUT</name>
+	<name>AEA_ACID_OUTRIDER</name>
+	<name>AEA_ACID_FIGHTER</name>
+	<name>AEA_ACID_INSTIGATOR</name>
+	<name>AEA_ACID_BOMBER</name>
+	<name>AEA_ACID_ASSUALT</name>
+	<name>AEA_ACID_TRANSPORT</name>
+</blueprintList>
+
+<blueprintList name="LIST_SHIPS_AEA_ACID_FIGHT">
+	<name>AEA_ACID_SCOUT</name>
+	<name>AEA_ACID_OUTRIDER</name>
+	<name>AEA_ACID_FIGHTER</name>
+	<name>AEA_ACID_INSTIGATOR</name>
+	<name>AEA_ACID_BOMBER</name>
+	<name>AEA_ACID_ASSUALT</name>
+</blueprintList>
+
+<blueprintList name="LIST_SHIPS_AEA_ACID_ELITE_ALL">
+	<name>AEA_ACID_SCOUT_ELITE</name>
+	<name>AEA_ACID_OUTRIDER_ELITE</name>
+	<name>AEA_ACID_FIGHTER_ELITE</name>
+	<name>AEA_ACID_INSTIGATOR_ELITE</name>
+	<name>AEA_ACID_BOMBER_ELITE</name>
+	<!--<name>MU_ORCHID_ASSAULT</name>-->
+	<name>AEA_ACID_TRANSPORT_ELITE</name>
+	<name>AEA_ACID_GUARD_ELITE</name>
+</blueprintList>
+<blueprintList name="LIST_SHIPS_AEA_ACID_ELITE_GENERIC">
+	<name>AEA_ACID_SCOUT_ELITE</name>
+	<name>AEA_ACID_OUTRIDER_ELITE</name>
+	<name>AEA_ACID_FIGHTER_ELITE</name>
+	<name>AEA_ACID_INSTIGATOR_ELITE</name>
+	<name>AEA_ACID_BOMBER_ELITE</name>
+	<!--<name>MU_ORCHID_ASSAULT</name>-->
+	<name>AEA_ACID_TRANSPORT_ELITE</name>
+</blueprintList>
+
+<blueprintList name="LIST_SHIPS_AEA_ACID_ELITE_FIGHT">
+	<name>AEA_ACID_SCOUT_ELITE</name>
+	<name>AEA_ACID_OUTRIDER_ELITE</name>
+	<name>AEA_ACID_FIGHTER_ELITE</name>
+	<name>AEA_ACID_INSTIGATOR_ELITE</name>
+	<name>AEA_ACID_BOMBER_ELITE</name>
+	<!--<name>MU_ORCHID_ASSAULT</name>-->
+</blueprintList>
+</FTL>
+
+<FTL>
+<shipBlueprint name="AEA_ACID_BOSS" layout="aea_acid_boss" img="aea_acid_boss">
+	<class>Prototype Acidic Cruiser</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<artillery power="1" max="1" room="10" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" />
+		<artillery power="1" max="1" room="11" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" />
+		<battery power="1" max="1" room="1" start="true" />
+		<cloaking power="1" max="1" room="8" start="true" />
+		<clonebay power="2" max="2" room="6" start="true" />
+		<doors power="1" max="1" room="0" start="true" />
+		<engines power="1" max="2" room="3" start="true" />
+		<mind power="1" max="1" room="4" start="true" />
+		<oxygen power="2" max="3" room="7" start="true" />
+		<pilot power="1" max="1" room="2" start="true" />
+		<shields power="4" max="10" room="5" start="true" />
+		<weapons power="3" max="10" room="9" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="0" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
+	<droneList drones="0" count="0" />
+	<health amount="22" />
+	<maxPower amount="17" />
+	<crewCount amount="2" max="6" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+
+<shipBlueprint name="AEA_ACID_SCOUT" layout="aea_acid_scout" img="aea_acid_scout">
+	<class>Acidic Scout</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="2" start="false" />
+		<doors power="2" max="3" room="7" start="true" />
+		<engines power="1" max="3" room="1" start="true" />
+		<hacking power="1" max="1" room="5" start="false" />
+		<oxygen power="1" max="2" room="6" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="10" room="3" start="true" />
+		<weapons power="2" max="10" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC" />
+	<droneList drones="0" count="0" />
+	<health amount="8" />
+	<maxPower amount="6" />
+	<crewCount amount="1" max="3" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_OUTRIDER" layout="aea_acid_outrider" img="aea_acid_outrider">
+	<class>Acidic Outrider</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="4" start="false" />
+		<doors power="2" max="3" room="9" start="true" />
+		<drones power="2" max="8" room="8" start="false" />
+		<engines power="1" max="3" room="0" start="true" />
+		<hacking power="1" max="2" room="6" start="false" />
+		<mind power="1" max="1" room="7" start="false" />
+		<oxygen power="1" max="2" room="5" start="true" />
+		<pilot power="1" max="1" room="3" start="true" />
+		<shields power="2" max="10" room="1" start="true" />
+		<weapons power="2" max="10" room="2" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="6" count="3" load="LIST_WEAPONS_ACIDIC" />
+	<droneList drones="10" count="4" load="LIST_DRONES_ENEMY_STANDARD" />
+	<health amount="11" />
+	<maxPower amount="6" />
+	<crewCount amount="1" max="3" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_FIGHTER" layout="aea_acid_fighter" img="aea_acid_fighter">
+	<class>Acidic Fighter</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="2" room="6" start="false" />
+		<doors power="2" max="2" room="4" start="true" />
+		<engines power="1" max="3" room="5" start="true" />
+		<mind power="1" max="2" room="7" start="false" />
+		<oxygen power="1" max="2" room="3" start="true" />
+		<pilot power="1" max="2" room="2" start="true" />
+		<shields power="2" max="8" room="0" start="true" />
+		<weapons power="2" max="10" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_ACIDIC" />
+	<droneList drones="8" count="0" />
+	<health amount="11" />
+	<maxPower amount="6" />
+	<crewCount amount="1" max="3" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_INSTIGATOR" layout="aea_acid_instigator" img="aea_acid_instigator">
+	<class>Acidic Instigator</class>
+	<minSector>3</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<artillery power="1" max="2" room="2" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" />
+		<artillery power="1" max="2" room="3" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" />
+		<cloaking power="1" max="2" room="10" start="false" />
+		<doors power="2" max="3" room="9" start="true" />
+		<drones power="2" max="8" room="1" start="true" />
+		<engines power="1" max="3" room="6" start="true" />
+		<hacking power="1" max="2" room="4" start="false" />
+		<oxygen power="1" max="2" room="0" start="true" />
+		<pilot power="1" max="1" room="7" start="true" />
+		<shields power="2" max="10" room="8" start="true" />
+		<weapons power="1" max="6" room="5" start="false" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_ACIDIC" />
+	<droneList drones="9" count="4">
+		<drone name="ION_1_AMP2" />
+		<drone name="LIST_DRONES_ACIDIC" />
+		<drone name="LIST_DRONES_ACIDIC" />
+		<drone name="LIST_DRONES_ACIDIC" />
+	</droneList>
+	<health amount="14" />
+	<maxPower amount="7" />
+	<crewCount amount="1" max="4" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_BOMBER" layout="aea_acid_bomber" img="aea_acid_bomber">
+	<class>Acidic Bomber</class>
+	<minSector>2</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="5" start="false" />
+		<doors power="2" max="3" room="7" start="true" />
+		<drones power="2" max="7" room="3" start="false" />
+		<engines power="1" max="2" room="2" start="true" />
+		<hacking power="1" max="2" room="6" start="false" />
+		<oxygen power="1" max="2" room="8" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="1" start="true" />
+		<weapons power="2" max="10" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="9" count="4" load="LIST_WEAPONS_ACIDIC" />
+	<droneList drones="7" count="3" load="LIST_DRONES_ACIDIC" />
+	<health amount="15" />
+	<maxPower amount="6" />
+	<crewCount amount="1" max="4" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_ASSUALT" layout="aea_acid_assualt" img="aea_acid_assualt">
+	<class>Acidic Assualt</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<clonebay power="1" max="2" room="10" start="true" />
+		<doors power="2" max="2" room="2" start="true" />
+		<drones power="1" max="8" room="1" start="true" />
+		<engines power="1" max="2" room="11" start="true" />
+		<hacking power="1" max="1" room="6" start="true" />
+		<oxygen power="1" max="2" room="9" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="10" room="3" start="true" />
+		<teleporter power="1" max="1" room="5" start="true" />
+		<weapons power="2" max="10" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_ACIDIC" />
+	<droneList drones="8" count="4" load="LIST_DRONES_ENEMY_STANDARD" />
+	<health amount="12" />
+	<maxPower amount="10" />
+	<crewCount amount="2" max="5" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_TRANSPORT" layout="aea_acid_transport" img="aea_acid_transport">
+	<class>Acidic Transport</class>
+	<minSector>4</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="12" start="false" />
+		<clonebay power="1" max="2" room="2" start="true" />
+		<doors power="2" max="3" room="10" start="true" />
+		<engines power="1" max="2" room="7" start="true" />
+		<hacking power="1" max="1" room="11" start="false" />
+		<mind power="1" max="1" room="6" start="false" />
+		<oxygen power="1" max="2" room="9" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="4" max="10" room="3" start="true" />
+		<teleporter power="1" max="1" room="1" start="true" />
+		<weapons power="2" max="9" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC" />
+	<droneList drones="0" count="0" />
+	<health amount="19" />
+	<maxPower amount="10" />
+	<crewCount amount="2" max="5" class="orchid" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY_WEAK" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_GUARD" layout="aea_acid_guard" img="aea_acid_guard">
+	<class>Acidic Guard</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="2" room="3" start="true" />
+		<doors power="2" max="3" room="2" start="true" />
+		<engines power="1" max="3" room="7" start="true" />
+		<hacking power="1" max="2" room="1" start="true" />
+		<oxygen power="2" max="3" room="6" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="10" room="4" start="true" />
+		<weapons power="2" max="10" room="5" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="11" count="4" load="LIST_WEAPONS_ACIDIC" />
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="9" />
+	<crewCount amount="1" max="5" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+
+
+
+
+<shipBlueprint name="AEA_ACID_SCOUT_ELITE" layout="aea_acid_scout" img="aea_acid_scout_elite">
+	<class>Elite Acidic Scout</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="2" start="true" />
+		<doors power="2" max="3" room="7" start="true" />
+		<engines power="1" max="3" room="1" start="true" />
+		<hacking power="1" max="1" room="5" start="true" />
+		<oxygen power="1" max="2" room="6" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="10" room="3" start="true" />
+		<weapons power="2" max="10" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
+	<droneList drones="0" count="0" />
+	<health amount="8" />
+	<maxPower amount="6" />
+	<crewCount amount="1" max="3" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_OUTRIDER_ELITE" layout="aea_acid_outrider" img="aea_acid_outrider_elite">
+	<class>Elite Acidic Outrider</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="4" start="true" />
+		<doors power="2" max="3" room="9" start="true" />
+		<drones power="2" max="8" room="8" start="true" />
+		<engines power="1" max="3" room="0" start="true" />
+		<hacking power="1" max="2" room="6" start="true" />
+		<mind power="1" max="1" room="7" start="true" />
+		<oxygen power="1" max="2" room="5" start="true" />
+		<pilot power="1" max="1" room="3" start="true" />
+		<shields power="2" max="10" room="1" start="true" />
+		<weapons power="2" max="10" room="2" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="6" count="3" load="LIST_WEAPONS_ACIDIC_ELITE" />
+	<droneList drones="10" count="4" load="LIST_DRONES_ENEMY_STANDARD" />
+	<health amount="11" />
+	<maxPower amount="6" />
+	<crewCount amount="1" max="3" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_FIGHTER_ELITE" layout="aea_acid_fighter" img="aea_acid_fighter_elite">
+	<class>Elite Acidic Fighter</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="2" room="6" start="true" />
+		<doors power="2" max="2" room="4" start="true" />
+		<engines power="1" max="3" room="5" start="true" />
+		<mind power="1" max="2" room="7" start="true" />
+		<oxygen power="1" max="2" room="3" start="true" />
+		<pilot power="1" max="2" room="2" start="true" />
+		<shields power="2" max="8" room="0" start="true" />
+		<weapons power="2" max="10" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
+	<droneList drones="8" count="0" />
+	<health amount="11" />
+	<maxPower amount="6" />
+	<crewCount amount="1" max="3" class="orchid_caretaker" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_INSTIGATOR_ELITE" layout="aea_acid_instigator" img="aea_acid_instigator_elite">
+	<class>Elite Acidic Instigator</class>
+	<minSector>3</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<artillery power="1" max="2" room="2" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_2" />
+		<artillery power="1" max="2" room="3" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_2" />
+		<cloaking power="1" max="2" room="10" start="true" />
+		<doors power="2" max="3" room="9" start="true" />
+		<drones power="2" max="8" room="1" start="true" />
+		<engines power="1" max="3" room="6" start="true" />
+		<hacking power="1" max="2" room="4" start="true" />
+		<oxygen power="1" max="2" room="0" start="true" />
+		<pilot power="1" max="1" room="7" start="true" />
+		<shields power="2" max="10" room="8" start="true" />
+		<weapons power="1" max="6" room="5" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
+	<droneList drones="9" count="4">
+		<drone name="ION_1_AMP2" />
+		<drone name="LIST_DRONES_ACIDIC" />
+		<drone name="LIST_DRONES_ACIDIC" />
+		<drone name="LIST_DRONES_ACIDIC" />
+	</droneList>
+	<health amount="14" />
+	<maxPower amount="7" />
+	<crewCount amount="1" max="4" class="orchid_caretaker" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_BOMBER_ELITE" layout="aea_acid_bomber" img="aea_acid_bomber_elite">
+	<class>Elite Acidic Bomber</class>
+	<minSector>2</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="5" start="true" />
+		<doors power="2" max="3" room="7" start="true" />
+		<drones power="2" max="7" room="3" start="true" />
+		<engines power="1" max="2" room="2" start="true" />
+		<hacking power="1" max="2" room="6" start="true" />
+		<oxygen power="1" max="2" room="8" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="1" start="true" />
+		<weapons power="2" max="10" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="9" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
+	<droneList drones="7" count="3" load="LIST_DRONES_ACIDIC" />
+	<health amount="15" />
+	<maxPower amount="6" />
+	<crewCount amount="1" max="4" class="orchid_caretaker" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_TRANSPORT_ELITE" layout="aea_acid_transport" img="aea_acid_transport_elite">
+	<class>Elite Acidic Transport</class>
+	<minSector>4</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="12" start="true" />
+		<clonebay power="1" max="2" room="2" start="true" />
+		<doors power="2" max="3" room="10" start="true" />
+		<engines power="1" max="2" room="7" start="true" />
+		<hacking power="1" max="1" room="11" start="true" />
+		<mind power="1" max="1" room="6" start="true" />
+		<oxygen power="1" max="2" room="9" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="4" max="10" room="3" start="true" />
+		<teleporter power="1" max="1" room="1" start="true" />
+		<weapons power="2" max="9" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
+	<droneList drones="0" count="0" />
+	<health amount="19" />
+	<maxPower amount="10" />
+	<crewCount amount="2" max="5" class="orchid" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY_WEAK" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_GUARD_ELITE" layout="aea_acid_guard" img="aea_acid_guard_elite">
+	<class>Elite Acidic Guard</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="2" room="3" start="true" />
+		<doors power="2" max="3" room="2" start="true" />
+		<engines power="1" max="3" room="7" start="true" />
+		<hacking power="1" max="2" room="1" start="true" />
+		<oxygen power="2" max="3" room="6" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="10" room="4" start="true" />
+		<weapons power="2" max="10" room="5" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="11" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="9" />
+	<crewCount amount="1" max="5" class="orchid_caretaker" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+</FTL>

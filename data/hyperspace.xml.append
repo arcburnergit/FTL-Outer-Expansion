@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<mod:findLike type="scripts">
+  <mod-append:script>data/aea_scripts/aea_functions.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aeaIcon.lua</mod-append:script>
+</mod:findLike>
+
+<mod:findLike type="ships">
+	
+	<mod:findLike type="shipIcons">
+		<mod-append:shipIcon>
+            <name>icon_aea_acidic_filter</name>
+            <tooltip>ACIDIC FILTERING SYSTEM:
+The oxygen system on this ship will heal all crew onboard and extinguishes fires, however it won't provide oxygen.</tooltip>
+		</mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_acidic_filter</name>
+            <tooltip>WEAK ACIDIC FILTERING SYSTEM:
+The oxygen system will provide a slow healing effect to all crew.</tooltip>
+		</mod-append:shipIcon>
+	</mod:findLike>
+
+  	<mod:findLike type="shipOrder">
+		<mod-append:ship>PLAYER_SHIP_AEA_ACID_ARTY</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_ACID_LONG</mod-append:ship>
+		<mod-append:empty />
+		<mod-append:empty />
+			<!-- -->
+		<mod-append:empty />
+		<mod-append:empty />
+		<mod-append:empty />
+		<mod-append:empty />
+
+		<mod-append:empty />
+		<mod-append:empty />
+	</mod:findLike>
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_ACID_ARTY" b="true" c="true" >
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_ACID_ARTY</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_ACID_ARTY_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_ACID_ARTY</shipReq>
+        </unlock>
+	</mod-append:ship>
+	<mod-append:ship name="PLAYER_SHIP_AEA_ACID_LONG" b="true" c="true" >
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_ACID_LONG</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_ACID_LONG_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_ACID_LONG</shipReq>
+        </unlock>
+	</mod-append:ship>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_ARTY">
+		<hiddenAug>SHIP_KESTREL</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<orchid room="1"/>
+			<orchid room="7"/>
+		</crew>
+	</mod-append:customShip>
+		
+	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_ARTY_2">
+		<hiddenAug>SHIP_KESTREL</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<aea_acid_soldier room="15" name="Acidic Soldier" />
+			<aea_acid_soldier room="2" name="Acidic Soldier" />
+			<aea_acid_soldier room="6" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+		
+	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_ARTY_3">
+		<hiddenAug>SHIP_KESTREL</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_LONG">
+		<hiddenAug>SHIP_KESTREL</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<aea_acid_captain room="0" name="Acidic Leader" />
+			<orchid_caretaker room="1"/>
+			<orchid room="4"/>
+		</crew>
+	</mod-append:customShip>
+		
+	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_LONG_2">
+		<hiddenAug>SHIP_KESTREL</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<aea_acid_captain room="8" name="Acidic Leader" />
+			<aea_acid_soldier room="4" name="Acidic Soldier" />
+			<aea_acid_soldier room="15" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+		
+	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_LONG_3">
+		<hiddenAug>SHIP_KESTREL</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<aea_acid_captain room="0" name="Acidic Leader" />
+			<aea_acid_captain room="4" name="Acidic Leader" />
+			<aea_acid_soldier room="3" name="Acidic Soldier" />
+			<aea_acid_soldier room="2" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+
+	<mod-append:customShip name="AEA_ACID_BOSS">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+			<shipIcon>icon_threat</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_soldier room="3" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_SCOUT">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_soldier room="3" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_OUTRIDER">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_soldier room="3" name="Acidic Soldier" />
+			<aea_acid_soldier room="9" name="Acidic Soldier" />
+			<aea_acid_soldier room="2" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_FIGHTER">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_soldier room="2" name="Acidic Soldier" />
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_INSTIGATOR">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_soldier room="6" name="Acidic Soldier" />
+			<aea_acid_soldier room="7" name="Acidic Soldier" />
+			<aea_acid_soldier room="8" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_BOMBER">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_soldier room="4" name="Acidic Soldier" />
+			<aea_acid_soldier room="7" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_ASSUALT">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_soldier room="4" name="Acidic Soldier" />
+			<aea_acid_soldier room="7" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_TRANSPORT">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+            <shipIcon>icon_invasion</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_captain room="1" name="Acidic Leader" />
+			<aea_acid_soldier room="1" name="Acidic Soldier" />
+			<aea_acid_soldier room="1" name="Acidic Soldier" />
+			<aea_acid_soldier room="4" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_GUARD">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_captain room="0" name="Acidic Leader" />
+			<aea_acid_soldier room="3" name="Acidic Soldier" />
+			<aea_acid_soldier room="5" name="Acidic Soldier" />
+			<aea_acid_soldier room="2" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+
+	<mod-append:customShip name="AEA_ACID_SCOUT_ELITE">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_captain room="0" name="Acidic Leader" />
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_soldier room="3" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_OUTRIDER_ELITE">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_captain room="0" name="Acidic Leader" />
+			<aea_acid_soldier room="3" name="Acidic Soldier" />
+			<aea_acid_soldier room="9" name="Acidic Soldier" />
+			<aea_acid_soldier room="2" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_FIGHTER_ELITE">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_captain room="0" name="Acidic Leader" />
+			<aea_acid_soldier room="2" name="Acidic Soldier" />
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_INSTIGATOR_ELITE">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_captain room="0" name="Acidic Leader" />
+			<aea_acid_soldier room="6" name="Acidic Soldier" />
+			<aea_acid_soldier room="7" name="Acidic Soldier" />
+			<aea_acid_soldier room="8" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_BOMBER_ELITE">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_captain room="0" name="Acidic Leader" />
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_soldier room="4" name="Acidic Soldier" />
+			<aea_acid_soldier room="7" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_TRANSPORT_ELITE">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+            <shipIcon>icon_invasion</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_captain room="1" name="Acidic Leader" />
+			<aea_acid_soldier room="1" name="Acidic Soldier" />
+			<aea_acid_soldier room="1" name="Acidic Soldier" />
+			<aea_acid_soldier room="4" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_ACID_GUARD_ELITE">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_captain room="0" name="Acidic Leader" />
+			<aea_acid_soldier room="3" name="Acidic Soldier" />
+			<aea_acid_soldier room="5" name="Acidic Soldier" />
+			<aea_acid_soldier room="2" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+</mod:findLike>
+
+<crew>
+	<race name="aea_acid_soldier">
+		<lowHealthThreshold>2500.0</lowHealthThreshold>
+		<resistsMindControl>true</resistsMindControl>
+		<lowHealthThresholdPercentage>0.25</lowHealthThresholdPercentage>
+		<maxHealth>150</maxHealth>
+		<canBurn>true</canBurn>
+		<canSuffocate>false</canSuffocate>
+		<fireRepairMultiplier>1</fireRepairMultiplier>
+		<repairSpeed>1.25</repairSpeed>
+		<moveSpeedMultiplier>0.75</moveSpeedMultiplier>
+		<stunMultiplier>0.75</stunMultiplier>
+		<animBase>rock</animBase>
+		<skills>
+			<combat req="5" />
+		</skills>
+		<deathSounds>
+			<deathSound>rockDeath</deathSound>
+		</deathSounds>
+		<shootingSounds>
+			<shootingSound>crewLaser1</shootingSound>
+			<shootingSound>crewLaser2</shootingSound>
+			<shootingSound>crewLaser3</shootingSound>
+		</shootingSounds>
+	</race>
+	<race name="aea_acid_captain">
+		<lowHealthThreshold>2500.0</lowHealthThreshold>
+		<resistsMindControl>true</resistsMindControl>
+		<lowHealthThresholdPercentage>0.25</lowHealthThresholdPercentage>
+		<maxHealth>200</maxHealth>
+		<canBurn>true</canBurn>
+		<canSuffocate>false</canSuffocate>
+		<fireRepairMultiplier>1</fireRepairMultiplier>
+		<repairSpeed>1.5</repairSpeed>
+		<moveSpeedMultiplier>0.5</moveSpeedMultiplier>
+		<stunMultiplier>0.75</stunMultiplier>
+		<animBase>rock</animBase>
+		<skills>
+			<combat req="5" />
+		</skills>
+		<deathSounds>
+			<deathSound>rockDeath</deathSound>
+		</deathSounds>
+		<shootingSounds>
+			<shootingSound>crewLaser1</shootingSound>
+			<shootingSound>crewLaser2</shootingSound>
+			<shootingSound>crewLaser3</shootingSound>
+		</shootingSounds>
+		<passiveStatBoosts>  
+			<statBoost name="healAmount">
+				<boostType>FLAT</boostType>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>1.6</amount>
+				<priority>0</priority>
+				<maxStacks>1</maxStacks>
+				<whiteList>
+					<aea_acid_soldier />
+				</whiteList>
+			</statBoost>
+		</passiveStatBoosts>
+	</race>
+	<race name="aea_acid_bill">
+		<lowHealthThreshold>2500.0</lowHealthThreshold>
+		<resistsMindControl>true</resistsMindControl>
+		<lowHealthThresholdPercentage>0.25</lowHealthThresholdPercentage>
+		<maxHealth>250</maxHealth>
+		<canBurn>true</canBurn>
+		<canSuffocate>false</canSuffocate>
+		<fireRepairMultiplier>1</fireRepairMultiplier>
+		<repairSpeed>2</repairSpeed>
+		<moveSpeedMultiplier>0.5</moveSpeedMultiplier>
+		<stunMultiplier>0.75</stunMultiplier>
+		<animBase>rock</animBase>
+		<skills>
+			<combat req="5" />
+		</skills>
+		<deathSounds>
+			<deathSound>rockDeath</deathSound>
+		</deathSounds>
+		<shootingSounds>
+			<shootingSound>crewLaser1</shootingSound>
+			<shootingSound>crewLaser2</shootingSound>
+			<shootingSound>crewLaser3</shootingSound>
+		</shootingSounds>
+		<passiveStatBoosts>  
+			<statBoost name="healAmount">
+				<boostType>FLAT</boostType>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>1.6</amount>
+				<priority>0</priority>
+				<maxStacks>1</maxStacks>
+				<blackList>
+					<aea_acid_bill />
+				</blackList>
+			</statBoost>
+		</passiveStatBoosts>
+
+		<powerEffect>
+			<cooldown>30</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>siren_death</powerSound>
+			</powerSounds>
+			<buttonText id="button_lockdown">FINISH OFF</buttonText>
+			<tooltip id="power_ready">Ready: immediately kill all enemy crew in the room below 35 hp</tooltip>
+			<cooldownColor r="138" g="237" b="31"/>
+			<statBoosts>
+				<statBoost name="powerEffect">
+					<boostType>ADD</boostType>
+					<shipTarget>CURRENT_ROOM</shipTarget>
+					<crewTarget>ENEMIES</crewTarget>
+					<droneTarget>CREW</droneTarget>
+					<priority>1000</priority>
+					<powerEffect>
+						<powerSounds>
+							<powerSound>explosionShell</powerSound>
+						</powerSounds>
+						<req>
+							<maxHealth>35</maxHealth>
+						</req>
+						<activateWhenReady enemiesOnly="false">true</activateWhenReady>
+						<cooldown>1</cooldown>
+						<jumpCooldown>reset</jumpCooldown>
+						<buttonText>DEATH</buttonText>
+						<tooltip>DEATH</tooltip>
+						<cooldownColor r="200" g="200" b="200" />
+						<selfHealth>-9999999</selfHealth>
+						<effectAnim>explosion_shell_death</effectAnim>
+					</powerEffect>
+					<duration>2</duration>
+				</statBoost>
+			</statBoosts>
+		</powerEffect>
+	</race>
+</crew>
+
+<augments>
+    <aug name="AEA_ACID_O2SYS">
+		<statBoosts>
+			<statBoost name="healAmount">
+				<boostType>FLAT</boostType>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ALL</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>1.8</amount>
+				<priority>0</priority>
+				<systemPowerDependency>
+					<oxygen />
+				</systemPowerDependency>
+				<systemPowerScaling>
+					<noSys>0</noSys>
+					<noPwr>0</noPwr>
+					<onePwr>1</onePwr>
+					<twoPwr>1.5</twoPwr>
+					<threePwr>1.8</threePwr>
+					<fourPwr>2</fourPwr>
+				</systemPowerScaling>
+			</statBoost>
+		</statBoosts>
+    	<function name="FIRE_EXTINGUISHERS" value="2" useForReqs="true" />
+    </aug>
+    <aug name="AEA_ACID_O2SYS_OFF">
+		<statBoosts>
+			<statBoost name="healAmount">
+				<boostType>FLAT</boostType>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ALL</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>0.6</amount>
+				<priority>0</priority>
+				<systemPowerDependency>
+					<oxygen />
+				</systemPowerDependency>
+				<systemPowerScaling>
+					<noSys>0</noSys>
+					<noPwr>0</noPwr>
+					<onePwr>1</onePwr>
+					<twoPwr>1.5</twoPwr>
+					<threePwr>1.8</threePwr>
+					<fourPwr>2</fourPwr>
+				</systemPowerScaling>
+			</statBoost>
+		</statBoosts>
+    </aug>
+    <aug name="AEA_ACID_O2SYS_ENEMY">
+		<statBoosts>
+			<statBoost name="healAmount">
+				<boostType>FLAT</boostType>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ALL</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>1.2</amount>
+				<priority>0</priority>
+				<systemPowerDependency>
+					<oxygen />
+				</systemPowerDependency>
+				<systemPowerScaling>
+					<noSys>0</noSys>
+					<noPwr>0</noPwr>
+					<onePwr>1</onePwr>
+					<twoPwr>1.5</twoPwr>
+					<threePwr>1.8</threePwr>
+					<fourPwr>2</fourPwr>
+				</systemPowerScaling>
+			</statBoost>
+		</statBoosts>
+    	<function name="FIRE_EXTINGUISHERS" value="2" useForReqs="true" />
+    </aug>
+	<aug name="AEA_ACID_O2SYS_ENEMY_WEAK">
+		<statBoosts>
+			<statBoost name="healAmount">
+				<boostType>FLAT</boostType>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ALL</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>0.4</amount>
+				<priority>0</priority>
+				<systemPowerDependency>
+					<oxygen />
+				</systemPowerDependency>
+				<systemPowerScaling>
+					<noSys>0</noSys>
+					<noPwr>0</noPwr>
+					<onePwr>1</onePwr>
+					<twoPwr>1.5</twoPwr>
+					<threePwr>1.8</threePwr>
+					<fourPwr>2</fourPwr>
+				</systemPowerScaling>
+			</statBoost>
+		</statBoosts>
+    </aug>
+</augments>
+
+<mod:findLike type="events">
+  <mod:findName name="COORDS">
+    <mod-append:name>coords_aea_bill</mod-append:name>
+  </mod:findName>
+  <mod:findName name="COORDS_BOSS">
+    <mod:findLike type="req" limit="1">
+      <mod-append:name>coords_aea_bill</mod-append:name>
+    </mod:findLike>
+  </mod:findName>
+  <mod:findName name="COORDS_BOSS_TOOLATE">
+    <mod:findLike type="req" limit="1">
+      <mod-append:name>coords_aea_bill</mod-append:name>
+    </mod:findLike>
+  </mod:findName>
+</mod:findLike>
+
+<events>
+	<variable name="aea_acid_o2sys_en" op="set" val="0"/>
+	<variable name="aea_acid_friendly" op="set" val="0" />
+	<variable name="ach_trans_aea_acid" op="set" val="0" />
+	<variable name="aea_acidic_nebula" op="set" val="0" />
+	<variable name="loc_found_aea_acid_factory" op="set" val="0" />
+	<variable name="coords_aea_bill" op="set" val="0" />
+	<variable name="aea_acid_bill" op="set" val="0" />
+	<variable name="aea_acid_lab_visited" op="set" val="0" />
+	<variable name="aea_acid_con_visited" op="set" val="0" />
+	<variable name="aea_acid_eng_visited" op="set" val="0" />
+	<metaVariable name="juke_aea_acid" op="set" val="0" />
+  	<eventFile>special_aea</eventFile>
+  	<eventFile>sector_aea_acid</eventFile>
+
+	
+	
+	<fleetDef name="CUSTOM_FLEET_AEA_ACID">
+        <ship layer="0">fleetaea_acid_1_small</ship>
+        <ship layer="0">fleetaea_acid_2_small</ship>
+		<ship layer="0">fleetaea_acid_3_small</ship>
+		<ship layer="1">fleetaea_acid_1_med</ship>
+        <ship layer="1">fleetaea_acid_2_med</ship>
+		<ship layer="1">fleetaea_acid_3_med</ship>
+        <ship layer="2">fleetaea_acid_1_big</ship>
+		<ship layer="2">fleetaea_acid_2_big</ship>
+		<ship layer="2">fleetaea_acid_3_big</ship>
+        <bigShip>fleetaea_acid_2_big</bigShip>
+        <numShips layer="2">1</numShips>
+        <numShips layer="1">4</numShips>
+		<numShips layer="0">6</numShips>
+    </fleetDef>
+	
+	<bossShip yOffset="150">AEA_ACID_BOSS</bossShip>
+	<bossShip yOffset="150">AEA_ACID_ASSUALT</bossShip>
+</events>
+
+<store>
+	<customStore id="STORE_AEA_ACID_CACHE">
+        <itemPurchaseLimit>1</itemPurchaseLimit>
+		<category type="WEAPONS">
+            <item>
+				<blueprint>GIFTLIST_WEAPONS_ACIDIC</blueprint>
+				<price>0</price>
+			</item>
+            <item>
+				<price>0</price>
+			</item>
+            <item>
+				<price>0</price>
+			</item>
+        </category>
+		<category type="WEAPONS">
+            <item>
+				<price>0</price>
+			</item>
+            <item>
+				<price>0</price>
+			</item>
+            <item>
+				<price>0</price>
+			</item>
+        </category>
+    </customStore>
+</store>
+
+<mod:findLike type="achievements">
+	<mod:findLike type="page" start="2" limit="1">
+		<mod:findLike type="section" limit="1">
+			<mod-append:achievement name="ACH_TRANS_AEA_ACID">
+				<name>Acidic Transport</name>
+				<secretDescription>Obtain the loot from the Acidic loot transport.</secretDescription>
+				<description>Obtain the ??? from the Acidic loot transport.</description>
+				<icon>ach_trans_aea_acid</icon>
+				<header>Loot Acquired</header>
+			</mod-append:achievement>
+		</mod:findLike>
+	</mod:findLike>
+</mod:findLike>
+</FTL>

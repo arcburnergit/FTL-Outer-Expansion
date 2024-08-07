@@ -1,0 +1,26 @@
+<FTL>
+<gofpulsefire1 volume="4">weapons/gof_chain_shot.ogg</gofpulsefire1>
+<gofpulsefire2 volume="4">weapons/gof_chain_shot_2.ogg</gofpulsefire2>
+<gofpulsefire3 volume="4">weapons/gof_chain_shot_3.ogg</gofpulsefire3>
+<gofthermofire1 volume="2">weapons/gof_thermo_1_fire.ogg</gofthermofire1>
+<gofthermofire2 volume="2">weapons/gof_thermo_2_fire.ogg</gofthermofire2>
+<gofthermofire3 volume="2">weapons/gof_thermo_3_fire.ogg</gofthermofire3>
+<gofbeamfire1 volume="4">weapons/gof_beam_1.ogg</gofbeamfire1>
+<gofbeamfire2 volume="4">weapons/gof_beam_2.ogg</gofbeamfire2>
+<gofbeamfire3 volume="4">weapons/gof_beam_3.ogg</gofbeamfire3>
+<gofheavyfire0 volume="4">weapons/gof_heavy_0.ogg</gofheavyfire0>
+<gofheavyfire1 volume="4">weapons/gof_heavy_1.ogg</gofheavyfire1>
+<gofheavyfire2 volume="4">weapons/gof_heavy_2.ogg</gofheavyfire2>
+<gofheavyfire3 volume="4">weapons/gof_heavy_3.ogg</gofheavyfire3>
+<gofcannonfire1 volume="4">weapons/gof_cannon_1.ogg</gofcannonfire1>
+<gofcannonfire2 volume="4">weapons/gof_cannon_2.ogg</gofcannonfire2>
+<gofcannonfire3 volume="4">weapons/gof_cannon_3.ogg</gofcannonfire3>
+
+<music>
+	<track>
+		<name>Acidic</name> <!--Music by lizzard-->
+		<explore>aea_MUS_AcidicExplore.ogg</explore>
+		<combat>aea_MUS_AcidicBattle.ogg</combat>
+	</track>
+</music>
+</FTL>

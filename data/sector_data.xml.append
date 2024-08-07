@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+
+<mod:findName type="sectorType" name="SECTOR_LIST_HOSTILE">
+    <mod-append:sector>SECTOR_AEA_ACID_NEBULA</mod-append:sector>
+</mod:findName>
+
+<mod:findName type="sectorType" name="SECTOR_LIST_UNIQUE_DEADLY">
+    <mod-append:sector>SECTOR_AEA_ACID_UNIQUE</mod-append:sector>
+</mod:findName>
+
+<mod:findName type="sectorType" name="NEBULA">
+    <mod-append:sector>SECTOR_AEA_ACID_NEBULA</mod-append:sector>
+    <mod-append:sector>SECTOR_AEA_ACID_UNIQUE</mod-append:sector>
+</mod:findName>
+
+<sectorDescription name="SECTOR_AEA_ACID_NEBULA" unique="false">
+	<nameList>
+		<name>Acidic Expansion</name>
+		<name>Acidic Colonies</name>
+		<name>Acidic Space</name>
+		<name>Acidic Frontier</name>
+		<name>Acidic Territory</name>
+		<name>Acidic Rimworlds</name>
+		<name>Acidic Regions</name>
+		<name>Acidic Parts</name>
+		<name>Acidic Dominion</name>
+		<name>Acidic Turf</name>
+		<name>Acidic Realm</name>
+		<name>Acidic Quarter</name>
+		<name>Acidic Outreaches</name>
+		<name>Acidic Outreaches</name>
+	</nameList>
+	<trackList>
+		<track>Acidic</track>
+		<track>debris</track>
+		<track>wasteland</track>
+		<track>Acidic</track>
+		<track>deepspace</track>
+	</trackList>
+	<rarityList>
+		<blueprint name="human" rarity="5" />
+		<blueprint name="human_medic" rarity="0" />
+		<blueprint name="human_engineer" rarity="0" />
+		<blueprint name="engi" rarity="0" />
+		<blueprint name="engi_separatist" rarity="0" />
+		<blueprint name="zoltan" rarity="0" />
+		<blueprint name="zoltan_monk" rarity="0" />
+		<blueprint name="zoltan_devotee" rarity="0" />
+		<blueprint name="rock" rarity="4" />
+		<blueprint name="rock_outcast" rarity="0" />
+		<blueprint name="rock_commando" rarity="0" />
+		<blueprint name="mantis" rarity="4" />
+		<blueprint name="mantis_free" rarity="0" />
+		<blueprint name="orchid" rarity="1" />
+		<blueprint name="orchid_caretaker" rarity="3" />
+		<blueprint name="shell" rarity="5" />
+		<blueprint name="shell_scientist" rarity="0" />
+		<blueprint name="shell_mechanic" rarity="0" />
+		<blueprint name="shell_guardian" rarity="5" />
+		<blueprint name="crystal" rarity="0" />
+		<blueprint name="crystal_liberator" rarity="0" />
+		<blueprint name="leech" rarity="3" />
+		<blueprint name="lanius" rarity="0" />
+		<blueprint name="phantom" rarity="0" />
+		<blueprint name="phantom_goul" rarity="0" />
+		<blueprint name="phantom_mare" rarity="0" />
+		<blueprint name="phantom_wraith" rarity="0" />
+        <blueprint name="AEA_LASER_ACID_1" rarity="3" />
+        <blueprint name="AEA_LASER_ACID_2" rarity="2" />
+        <blueprint name="AEA_LASER_ACID_3" rarity="3" />
+        <blueprint name="AEA_BEAM_ACID_1" rarity="3" />
+        <blueprint name="AEA_ION_ACID_1" rarity="2" />
+	</rarityList>
+	<startEvent>ENTER_AEA_ACID</startEvent>
+	<removeFirstBeaconNebula />
+	<nebulaSector>true</nebulaSector>
+	<exitBeacon event="FINISH_BEACON_AEA_ACID" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ELITE" />
+	<rebelBeacon event="FLEET_THREAT_LOW" nebulaEvent="FLEET_THREAT_LOW_NEBULA" />
+	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
+	<event name="NEBULA_SYLVAN_CHANCE" min="0" max="1" />
+	
+	<priorityEvent name="NEBULA_DISTRESS_REROUTE_ACIDIC" min="0" max="1" priority="1" />
+	
+	<event name="NEBULA_STORELIST_AEA_ACID" min="1" max="2" />
+	<priorityEvent name="STORELIST_AEA_ACID" min="0" max="1" priority="0" />
+	
+	<event name="NEBULA_ITEMS_AEA_ACID" min="2" max="4" />
+	<event name="NEBULA_NEUTRAL_AEA_ACID" min="3" max="5" />
+	<event name="NEBULA_DISTRESS_AEA_ACID" min="1" max="2" />
+	<event name="NEBULA_QUEST_AEA_ACID" min="1" max="1" />
+	<priorityEvent name="CLEARING_AEA_ACID" min="1" max="4" priority="0" />
+	
+	<event name="NEBULA_HOSTILE_AEA_ACID" min="3" max="7" />
+	
+	<event name="PIRACY_LIST" min="1" max="2" />
+	<event name="FILLER_LIST" min="999" max="999" />
+</sectorDescription>
+
+
+<sectorDescription name="SECTOR_AEA_ACID_UNIQUE" unique="true">
+	<nameList>
+		<name>Acidic Origins [!]</name>
+	</nameList>
+	<trackList>
+		<track>Acidic</track>
+		<track>debris</track>
+		<track>wasteland</track>
+		<track>Acidic</track>
+		<track>deepspace</track>
+	</trackList>
+	<rarityList>
+		<blueprint name="human" rarity="5" />
+		<blueprint name="human_medic" rarity="0" />
+		<blueprint name="human_engineer" rarity="0" />
+		<blueprint name="engi" rarity="0" />
+		<blueprint name="engi_separatist" rarity="0" />
+		<blueprint name="zoltan" rarity="0" />
+		<blueprint name="zoltan_monk" rarity="0" />
+		<blueprint name="zoltan_devotee" rarity="0" />
+		<blueprint name="rock" rarity="4" />
+		<blueprint name="rock_outcast" rarity="0" />
+		<blueprint name="rock_commando" rarity="0" />
+		<blueprint name="mantis" rarity="4" />
+		<blueprint name="mantis_free" rarity="0" />
+		<blueprint name="orchid" rarity="1" />
+		<blueprint name="orchid_caretaker" rarity="3" />
+		<blueprint name="shell" rarity="5" />
+		<blueprint name="shell_scientist" rarity="0" />
+		<blueprint name="shell_mechanic" rarity="0" />
+		<blueprint name="shell_guardian" rarity="5" />
+		<blueprint name="crystal" rarity="0" />
+		<blueprint name="crystal_liberator" rarity="0" />
+		<blueprint name="leech" rarity="3" />
+		<blueprint name="lanius" rarity="0" />
+		<blueprint name="phantom" rarity="0" />
+		<blueprint name="phantom_goul" rarity="0" />
+		<blueprint name="phantom_mare" rarity="0" />
+		<blueprint name="phantom_wraith" rarity="0" />
+        <blueprint name="AEA_LASER_ACID_1" rarity="2" />
+        <blueprint name="AEA_LASER_ACID_2" rarity="1" />
+        <blueprint name="AEA_LASER_ACID_3" rarity="2" />
+        <blueprint name="AEA_BEAM_ACID_1" rarity="2" />
+        <blueprint name="AEA_ION_ACID_1" rarity="2" />
+	</rarityList>
+	<startEvent>ENTER_AEA_ACID_UNIQUE</startEvent>
+	<removeFirstBeaconNebula />
+	<nebulaSector>true</nebulaSector>
+	<exitBeacon event="FINISH_BEACON_AEA_ACID" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ELITE" />
+	<rebelBeacon event="FLEET_THREAT_LOW" nebulaEvent="FLEET_THREAT_LOW_NEBULA" />
+	<!--<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1"/>-->
+	<priorityEvent name="NEBULA_SYLVAN" min="1" max="1" priority="1" />
+	
+	<priorityEvent name="NEBULA_ACIDIC_AEA_ACID_BILL_MEET" min="1" max="1" priority="1" />
+	<priorityEvent name="NEBULA_ACIDIC_AEA_ACID_SHIPYARD" min="1" max="1" priority="1" />
+	
+	<priorityEvent name="NEBULA_TRANSPORT_AEA_ACID_LOOT" min="1" max="1" priority="1" />
+	<event name="NEBULA_STORELIST_AEA_ACID" min="1" max="2" />
+	<priorityEvent name="STORELIST_AEA_ACID" min="0" max="1" priority="0" />
+	
+	<event name="NEBULA_ITEMS_AEA_ACID_UNIQUE" min="2" max="4" />
+	<event name="NEBULA_NEUTRAL_AEA_ACID_UNIQUE" min="3" max="5" />
+	<event name="NEBULA_DISTRESS_AEA_ACID" min="1" max="2" />
+	<event name="NEBULA_QUEST_AEA_ACID_UNIQUE" min="0" max="1" />
+	<priorityEvent name="CLEARING_AEA_ACID_UNIQUE" min="1" max="4" priority="0" />
+	
+	<event name="NEBULA_ACIDIC_ENCOUNTER_AEA_ACID_ELITE" min="1" max="1" />
+	<event name="NEBULA_HOSTILE_AEA_ACID_UNIQUE" min="2" max="6" />
+	
+	<event name="PIRACY_LIST" min="1" max="2" />
+	<event name="FILLER_LIST" min="999" max="999" />
+</sectorDescription>
+</FTL>

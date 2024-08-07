@@ -1,0 +1,1120 @@
+<FTL>
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY" layout="aeap_acid_arty_1" img="aeap_acid_arty_1">
+	<class>Acidic Cruiser</class>
+	<name>The Alkaline</name>
+	<desc>Originating from the Acidic Growth, the vessel allowed the Growth to extend it's reach beyond the nebulas it formed in. So far only the orchids have brokered peace with the Acidic Growth. This ship has an upgraded oxygen system.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_ACID_ARTY_unlock" />
+	<systemList>
+		<battery power="1" room="13" start="false" img="room_battery_16" />
+		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
+		<clonebay power="1" room="4" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="12" start="true" img="room_doors_2">
+			<slot>
+				<direction>down</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones power="1" max="8" room="17" start="false" img="room_drones_18" />
+		<engines power="2" room="1" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="3" start="false" img="room_hacking_2" />
+		<medbay power="1" room="4" start="false" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="16" start="false" img="room_mind_3" />
+		<oxygen power="2" room="6" start="true" img="room_oxygen_13" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="15" start="true" img="room_sensors_2">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="7" start="true" img="room_shields_4">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" max="3" room="10" start="false" />
+		<weapons power="2" max="8" room="5" start="true" img="room_weapons_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="5" count="4">
+		<weapon name="AEA_LASER_ACID_2" />
+	</weaponList>
+	<droneList drones="4" count="2" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<aug name="AEA_ACID_O2SYS" />
+	<shieldImage>mup_orb2</shieldImage>
+    <mv-mapImage>map_icon_aeap_acid_arty_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY_2" layout="aeap_acid_arty_2" img="aeap_acid_arty_2">
+	<class>Acidic Cruiser</class>
+	<name>The Caustic</name>
+	<desc>This prototype design incorporates duel quick firing artillery beams to drill through enemy ships.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_ACID_ARTY_2_unlock" />
+	<systemList>
+		<artillery power="1" max="3" room="1" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" img="room_artillery_4" />
+		<artillery power="1" max="3" room="0" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" img="room_artillery_7" />
+		<battery power="1" room="14" start="false" img="room_battery_16" />
+		<cloaking power="1" room="5" start="false" img="room_cloaking_11" />
+		<clonebay power="1" room="13" start="false">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="11" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="3" start="true" img="room_drones_15" />
+		<engines power="2" room="15" start="true" img="room_engines_7">
+			<slot>
+				<direction>right</direction>
+				<number>3</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="9" start="false" img="room_hacking_12" />
+		<medbay power="1" room="13" start="false" img="room_medbay_6">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="8" start="false" img="room_mind_9" />
+		<oxygen power="1" room="17" start="true" img="room_oxygen_12" />
+		<pilot power="1" room="2" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="12" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="6" start="true" img="room_shields_6">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" max="3" room="16" start="false" />
+		<weapons power="2" max="8" room="4" start="false" img="room_weapons_8">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="4" count="2" />
+	<droneList drones="4" count="3">
+		<drone name="PEST_DEBUFF" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="8" />
+	<aug name="AEA_ACID_O2SYS" />
+	<shieldImage>mup_orb2</shieldImage>
+    <mv-mapImage>map_icon_aeap_acid_arty_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY_3" layout="aeap_acid_arty_3" img="aeap_acid_arty_3">
+	<class>Acidic Cruiser</class>
+	<name>The Acidic</name>
+	<desc>A federation modification of the Acidic Cruiser, this vessel replaces the Acidic filtering system with a more traditional fire suppression system.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_ACID_ARTY_3_unlock" />
+	<systemList>
+		<battery power="1" room="15" start="false" img="room_battery_9" />
+		<cloaking power="1" room="13" start="false" img="room_cloaking_13" />
+		<clonebay power="1" room="17" start="false">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="3" start="true" img="room_doors_9">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="1" max="8" room="6" start="false" img="room_drones" />
+		<engines power="2" room="8" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="10" start="false" img="room_hacking_12" />
+		<medbay power="1" room="17" start="true" img="room_medbay_8">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="2" start="false" img="room_mind_9" />
+		<oxygen power="2" room="12" start="true" img="room_oxygen_17" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="4" start="true" img="room_sensors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="7" start="true" img="room_shields_5">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" max="3" room="1" start="false" />
+		<weapons power="2" max="8" room="5" start="true" img="room_weapons_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="2" count="4">
+		<weapon name="AEA_LASER_ACID_1" />
+		<weapon name="LASER_CHAINGUN" />
+	</weaponList>
+	<droneList drones="7" count="2" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="human" />
+	<crewCount amount="1" class="human_soldier" />
+	<crewCount amount="1" class="human_engineer" />
+	<aug name="EX_FIRE_EXTINGUISHERS" />
+	<shieldImage>mup_orb2</shieldImage>
+    <mv-mapImage>map_icon_aeap_acid_arty_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_LONG" layout="aeap_acid_long_1" img="aeap_acid_long_1">
+	<class>Acidic Destroyer</class>
+	<name>Bleach</name>
+	<desc>A new line of Acidic Cruiser, these ships are specifically designed for high fire power, however this comes at the cost of a weaker shielding system.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_ACID_LONG_unlock" />
+	<systemList>
+		<battery power="1" room="10" start="false" img="room_battery_13" />
+		<cloaking power="1" room="8" start="false" img="room_cloaking_3" />
+		<clonebay power="1" room="11" start="false">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="6" start="true" img="room_doors_2">
+			<slot>
+				<direction>down</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones power="1" max="8" room="16" start="false" img="room_drones_15" />
+		<engines power="1" room="0" start="true" img="room_engines_10">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="14" start="false" img="room_hacking_4" />
+		<medbay power="1" room="11" start="false" img="room_medbay_9">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="7" start="false" img="room_mind_1" />
+		<oxygen power="1" room="15" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="4" start="true" img="room_pilot_2">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="5" start="true" img="room_sensors_2">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="6" room="3" start="true" img="room_shields_13">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="1" start="false" />
+		<weapons power="2" max="9" room="2" start="true" img="room_weapons_2">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="5" count="4">
+		<weapon name="AEA_LASER_ACID_1" />
+		<weapon name="AEA_LASER_ACID_1" />
+	</weaponList>
+	<droneList drones="3" count="2" />
+	<health amount="24" />
+	<maxPower amount="7" />
+	<aug name="AEA_ACID_O2SYS" />
+	<shieldImage>mup_small_long2</shieldImage>
+    <mv-mapImage>map_icon_aeap_acid_long_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_LONG_2" layout="aeap_acid_long_2" img="aeap_acid_long_2">
+	<class>Acidic Destroyer</class>
+	<name>Antacid</name>
+	<desc>This ship combines a strong weapon system with a boarding setup to create a powerful and dangerous ship.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_ACID_LONG_2_unlock" />
+	<systemList>
+		<battery power="1" room="2" start="false" img="room_battery_13" />
+		<cloaking power="1" room="3" start="false" img="room_cloaking_3" />
+		<clonebay power="1" room="9" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="14" start="true" img="room_doors_2">
+			<slot>
+				<direction>down</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones power="1" max="8" room="11" start="false" img="room_drones_2" />
+		<engines power="1" room="15" start="true" img="room_engines_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="1" start="false" img="room_hacking_10" />
+		<medbay power="1" room="9" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="10" start="false" img="room_mind_6" />
+		<oxygen power="1" room="5" start="false" img="room_oxygen_20" />
+		<pilot power="1" room="4" start="true" img="room_pilot_2">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="2" room="13" start="true" img="room_sensors_2">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="6" room="8" start="true" img="room_shields_2">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="12" start="true" />
+		<weapons power="2" max="9" room="0" start="true" img="room_weapons_12">
+			<slot>
+				<direction>right</direction>
+				<number>2</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="11" count="3">
+		<weapon name="BOMB_BREACH_1" />
+		<weapon name="ENERGY_2_PLAYER" />
+	</weaponList>
+	<droneList drones="1" count="3" />
+	<health amount="24" />
+	<maxPower amount="6" />
+	<shieldImage>mup_small_long2</shieldImage>
+    <mv-mapImage>map_icon_aeap_acid_long_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_LONG_3" layout="aeap_acid_long_3" img="aeap_acid_long_3">
+	<class>Acidic Destroyer</class>
+	<name>Hydroxide</name>
+	<desc>This vessel gets rid of the shield system entirely, focusing on using cloaking and it's more powerful weapon system capable of handling up to 5 weapons at once.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_ACID_LONG_3_unlock" />
+	<systemList>
+		<battery power="1" room="13" start="false" img="room_battery_2" />
+		<cloaking power="2" room="8" start="true" img="room_cloaking_3" />
+		<clonebay power="1" room="11" start="false">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="6" start="true" img="room_doors_2">
+			<slot>
+				<direction>down</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones power="1" max="8" room="16" start="false" img="room_drones_15" />
+		<engines power="1" room="0" start="true" img="room_engines_10">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="14" start="false" img="room_hacking_4" />
+		<medbay power="1" room="11" start="false" img="room_medbay_9">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="7" start="false" img="room_mind_1" />
+		<oxygen power="1" room="15" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="4" start="true" img="room_pilot_2">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="5" start="true" img="room_sensors_2">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="6" room="3" start="false" img="room_shields_13">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="10" start="false" />
+		<weapons power="3" max="10" room="2" start="true" img="room_weapons_2">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>5</weaponSlots>
+	<droneSlots>1</droneSlots>
+	<weaponList missiles="2" count="5">
+		<weapon name="LASER_BURST_2" />
+		<weapon name="LASER_BURST_1" />
+		<weapon name="LASER_BURST_1" />
+	</weaponList>
+	<droneList drones="6" count="1" />
+	<health amount="24" />
+	<maxPower amount="7" />
+	<aug name="AEA_ACID_O2SYS" />
+	<shieldImage>mup_small_long2</shieldImage>
+    <mv-mapImage>map_icon_aeap_acid_long_a</mv-mapImage>
+</shipBlueprint>
+
+<weaponBlueprint name="AEA_ARTILLERY_BEAM_ACID_1">
+	<type>BEAM</type>
+	<flavorType>Acid Beam</flavorType>
+	<title>'Hasta' Beam</title>
+	<short>'Hasta'</short>
+	<tip>tip_beams</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>.</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.5</speed>
+		<maxSpeed>0.75</maxSpeed>
+		<time>15.0</time>
+		<maxTime>30.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>true</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<color>
+		<r>138</r>
+		<g>237</g>
+		<b>31</b>
+	</color>
+	<cooldown>4</cooldown>
+	<power>1</power>
+	<cost>68</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_invisible_gun</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_ARTILLERY_BEAM_ACID_2">
+	<type>BEAM</type>
+	<flavorType>Acid Beam</flavorType>
+	<title>'Hasta' Beam</title>
+	<short>'Hasta'</short>
+	<tip>tip_beams</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>.</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.5</speed>
+		<maxSpeed>0.75</maxSpeed>
+		<time>15.0</time>
+		<maxTime>30.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>true</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<color>
+		<r>138</r>
+		<g>237</g>
+		<b>31</b>
+	</color>
+	<cooldown>3</cooldown>
+	<power>1</power>
+	<cost>68</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_invisible_gun</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_BOMB_INVIS_ACID_1">
+	<type>BOMB</type>
+	<flavorType>Acid Beam</flavorType>
+	<title>ACID Beam</title>
+	<short>ACID</short>
+	<tip>tip_beams</tip>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<tooltip>.</tooltip>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>0</persDamage>
+	<missiles>0</missiles>
+	<shots>1</shots>
+	<sp>0</sp>
+	<accuracyMod>200</accuracyMod>
+	<fireChance>1</fireChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.5</speed>
+		<maxSpeed>0.75</maxSpeed>
+		<time>15.0</time>
+		<maxTime>30.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>true</erodeShields>
+		<roomAnim renderLayer="3">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>13</cooldown>
+	<power>1</power>
+	<cost>45</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>aea_invisible</image>
+	<explosion>aea_invisible</explosion>
+	<weaponArt>aea_invisible_gun</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+	
+
+<augBlueprint name="AEA_ACID_O2SYS">
+	<title>Acidic Filtering System</title>
+	<desc>Oxygen System can be switched between providing oxygen and putting out fires.
+
+Can be toggled in the storage menu outside of combat.
+Extinguisher speed scales with power in the o2 system. Oxygen system heals all crew onboard slowly over time, crew heal at 3x speed while in extinguisher mode.</desc>
+	<cost>60</cost>
+	<bp>5</bp>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="AEA_ACID_O2SYS_OFF">
+	<title>Acidic Filtering System</title>
+	<desc>Oxygen System can be switched between providing oxygen and putting out fires.
+
+Can be toggled in the storage menu outside of combat.
+Extinguisher speed scales with power in the o2 system. Oxygen system heals all crew onboard slowly over time, crew heal at 3x speed while in extinguisher mode.</desc>
+	<cost>60</cost>
+	<bp>5</bp>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="AEA_ACID_O2SYS_ENEMY">
+	<title>Acidic Filtering System</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>75</cost>
+	<bp>5</bp>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="AEA_ACID_O2SYS_ENEMY_WEAK">
+	<title>Acidic Filtering System</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>75</cost>
+	<bp>5</bp>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+</FTL>
+
+<FTL>
+<weaponBlueprint name="AEA_LASER_ACID_1">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Acid Laser MK I</title>
+	<short>Acid I</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<shots>2</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>0.8</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>14</cooldown>
+	<power>1</power>
+	<cost>40</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_laser</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_ACID_2">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Acid Laser MK II</title>
+	<short>Acid II</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<shots>3</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>0.8</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>14</cooldown>
+	<power>2</power>
+	<cost>52</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_laser</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_ACID_3">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Acid Laser MK III</title>
+	<short>Acid III</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<shots>5</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>0.8</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>70</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_laser</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_3</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_ACID_SUPER">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Acid Laser Cannon</title>
+	<short>Acid L.C</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact. This weapon will fire a projectile at every system on the enemy ship.</desc>
+	<tooltip>Fires x projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>0.8</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>20</cooldown>
+	<power>4</power>
+	<cost>120</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_big</image>
+	<launchSounds>
+		<sound>ancient_laser</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_super</weaponArt>
+	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_ACID_SUPER_ENEMY">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Acid Laser Cannon</title>
+	<short>Acid L.C</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact. This weapon will fire a projectile at every system on the enemy ship.</desc>
+	<tooltip>Fires x projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>5</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>5</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>0.8</maxSpeed>
+		<time>5.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>20</cooldown>
+	<power>4</power>
+	<cost>120</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_big</image>
+	<launchSounds>
+		<sound>ancient_laser</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_super</weaponArt>
+	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_ACID_SUPER_BASE">
+	<type>BEAM</type>
+	<flavorType>Laser Part</flavorType>
+	<tip>tip_laser</tip>
+	<title>Laser Base</title>
+	<short>Base</short>
+	<desc>The Base of large Laser Cannon. Requires the Barrel.</desc>
+	<tooltip>Storage Weapon</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>45</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+    <iconReplace>aea_laser_acid_super_base</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_BEAM_ACID_1">
+	<type>BEAM</type>
+	<flavorType>Acid Beam</flavorType>
+	<title>'Trident' Beam</title>
+	<short>'Trident'</short>
+	<tip>tip_beams</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>.</tooltip>
+	<damage>1</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>0.8</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>17</cooldown>
+	<power>2</power>
+	<cost>68</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<length>50</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_beam_acid_1</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_ION_ACID_1">
+	<type>LASER</type>
+	<flavorType>Acidic Ion</flavorType>
+	<title>Acidic Barrage</title>
+	<short>Acidic B.</short>
+	<tip>tip_ion</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>Fires a single blast that does 1 ion damage and recharges very quickly. Can hit and disable shields as well as systems.</tooltip>
+	<damage>0</damage>
+	<spin>720</spin>
+	<ion>1</ion>
+	<speed>30</speed>
+	<shots>2</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.3</speed>
+		<maxSpeed>0.8</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>true</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>8</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_ion</image>
+	<explosion>explosion_small_ion</explosion>
+	<launchSounds>
+		<sound>ionShoot1</sound>
+		<sound>ionShoot2</sound>
+		<sound>ionShoot3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>ionHit1</sound>
+		<sound>ionHit2</sound>
+		<sound>ionHit3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>ionShields1</sound>
+		<sound>ionShields2</sound>
+		<sound>ionShields3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_ion_acid_1</weaponArt>
+	<iconImage>ion</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_ION_ACID_1_LOOT">
+	<type>LASER</type>
+	<flavorType>Acidic Ion</flavorType>
+	<title>Acidic Barrage</title>
+	<short>Acidic B.</short>
+	<tip>loot_aea_acid_1</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>Fires a single blast that does 1 ion damage and recharges very quickly. Can hit and disable shields as well as systems.</tooltip>
+	<damage>0</damage>
+	<spin>720</spin>
+	<ion>0</ion>
+	<speed>30</speed>
+	<shots>2</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.9</speed>
+		<maxSpeed>1.6</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>true</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>8</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_ion</image>
+	<explosion>explosion_small_ion</explosion>
+	<launchSounds>
+		<sound>ionShoot1</sound>
+		<sound>ionShoot2</sound>
+		<sound>ionShoot3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>ionHit1</sound>
+		<sound>ionHit2</sound>
+		<sound>ionHit3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>ionShields1</sound>
+		<sound>ionShields2</sound>
+		<sound>ionShields3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_ion_acid_1_loot</weaponArt>
+	<iconImage>ion</iconImage>
+</weaponBlueprint>
+</FTL>
+
+<FTL>
+<crewBlueprint name="aea_acid_soldier">
+	<desc>A dangerous mech used by the acid growth to extend it's reach beyond the acid nebula. Hosts a fragment of the acidic growth that controls the mech.</desc>
+	<title>Acidic Soldier</title>
+	<short>Acid Soldier</short>
+	<cost>60</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Max Health is increased to 150</power>
+		<power>Learns combat 25% faster</power>
+		<power>Repairs at 1.25x speed</power>
+		<power>Moves at 0.75x speed</power>
+		<power>Cannot suffocate, Immune to Mind Control</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_acid_captain">
+	<desc>A dangerous mech used by the acid growth to extend it's reach beyond the acid nebula. Hosts a fragment of the acidic growth that controls the mech.</desc>
+	<title>Acidic Leader</title>
+	<short>Acid Leader</short>
+	<cost>80</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Max Health is increased to 200</power>
+		<power>Learns combat 25% faster</power>
+		<power>Heals nearby Acidic Soldiers</power>
+		<power>Repairs at 1.5x speed</power>
+		<power>Moves at 0.5x speed</power>
+		<power>Cannot suffocate, Immune to Mind Control</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_acid_bill">
+	<desc>A dangerous mech used by the acid growth to extend it's reach beyond the acid nebula. Hosts a fragment of the acidic growth that controls the mech. The fragments of Acidic Growth in this machine have become disconnected from the rest of the Acidic Growth and now consider themselves their own entity.</desc>
+	<title>Acidic Outcast</title>
+	<short>Acid Outcast</short>
+	<cost>80</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: immediately kills all enemy crew that are below 35 hp</power>
+		<power>Max Health is increased to 250</power>
+		<power>Learns combat 25% faster</power>
+		<power>Heals nearby Allies</power>
+		<power>Repairs at 2x speed</power>
+		<power>Moves at 0.5x speed</power>
+		<power>Cannot suffocate, Immune to Mind Control</power>
+	</powerList>
+</crewBlueprint>
+</FTL>

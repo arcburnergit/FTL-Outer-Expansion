@@ -1,0 +1,13 @@
+<FTL>
+<imageList name="BACK_SECTOR_AEA_ACID">
+	<img w="1280" h="720">stars_sectors/bg_slug.png</img>
+</imageList>
+
+<imageList name="BACK_EVENT_ACIDICNEBULA">
+	<img w="1280" h="720">stars_acid/low_nebula.png</img>
+</imageList>
+
+<imageList name="PLANET_AEA_ACID_STATION">
+	<img w="289" h="121">stars_acid/station.png</img>
+</imageList>
+</FTL>

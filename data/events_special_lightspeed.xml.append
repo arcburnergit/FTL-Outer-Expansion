@@ -1,0 +1,165 @@
+<FTL>
+<mod:findName type="event" name="ATLAS_MENU">
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_ACID_NEBULA" blue="false">
+		<text>Proceed to the Acidic Sector.</text>
+		<event load="AEA_ACID_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_ACID_UNIQUE" blue="false">
+		<text>Proceed to the Acidic Origins.</text>
+		<event load="AEA_ACID_UNIQUE_WARP" />
+	</mod-append:choice>
+</mod:findName>
+<mod:findName type="event" name="ATLAS_MENU_NOEQUIPMENT">
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_ACID_NEBULA" blue="false">
+		<text>Proceed to the Acidic Sector.</text>
+		<event load="AEA_ACID_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_ACID_UNIQUE" blue="false">
+		<text>Proceed to the Acidic Origins.</text>
+		<event load="AEA_ACID_UNIQUE_WARP" />
+	</mod-append:choice>
+</mod:findName>
+
+<mod:findName type="event" name="REROUTE_MENU">
+	<mod-append:choice hidden="true" req="coords_aea_bill" blue="false">
+		<text>Jump to the Acidic Origins.</text>
+		<event load="LIGHTSPEED_SECTOR_WARP_AEA_BILL" />
+	</mod-append:choice>
+</mod:findName>
+
+<mod:findName type="event" name="REROUTE_MENU_LASTSTAND">
+	<mod-append:choice hidden="true" req="coords_aea_bill" blue="false">
+		<text>Jump to the Acidic Origins.</text>
+		<event load="LIGHTSPEED_SECTOR_WARP_AEA_BILL_BOSS" />
+	</mod-append:choice>    
+</mod:findName>
+
+<mod:findName type="event" name="REROUTE_MENU_HAT">
+	<mod-append:choice hidden="true">
+		<text>Go to the Acidic Origins.</text> 
+		<event load="LIGHTSPEED_SECTOR_WARP_AEA_BILL" />
+	</mod-append:choice>
+</mod:findName>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					ACID
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="ENTER_AEA_ACID">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event>
+<event name="AEA_ACID_WARP">
+	<text>Name: Acidic Territory
+Type: Hostile (Nebula)
+Unique: False
+Dominant Faction: The Acidic Growth
+Rebel Threat Level: Low
+
+The Acidic Growth is a rather unknown faction, believed to be a form of hivemind or fungal growth, The Acidic Growth have managed to construct their own technology to expand their borders beyond the nebulas it formed in.</text>
+	<choice hidden="true">
+		<text>Exit hyperspeed.</text>
+		<event load="START_AEA_ACID" />
+	</choice>
+	<choice hidden="true" req="COORDS" blue="false">
+		<text>Reroute.</text>
+		<event load="REROUTE_MENU" />
+	</choice>
+</event>
+
+<event name="ENTER_AEA_ACID_UNIQUE">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event>
+<event name="AEA_ACID_UNIQUE_WARP">
+	<text id="atlas_aea_acid" />
+	<choice hidden="true">
+		<text>Exit hyperspeed.</text>
+		<event load="START_AEA_ACIDHOME" />
+	</choice>
+	<choice hidden="true" req="COORDS" blue="false">
+		<text>Reroute.</text>
+		<event load="REROUTE_MENU" />
+	</choice>
+</event>
+
+<event name="LIGHTSPEED_SECTOR_WARP_AEA_BILL">
+	<text id="atlas_aea_acid" />
+	<choice hidden="true">
+		<text>Continue with the jump.</text>
+		<event>
+			<text>You prepare to jump to the new co-ordinates, and change your flight path accordingly.</text>
+			<variable name="coords_aea_bill" op="set" val="0" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="JUMP_TO_AEA_BILL" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind.</text>
+		<event>
+			<loadEvent>ATLAS_MENU_NOEQUIPMENT</loadEvent>
+		</event>
+	</choice>
+</event>
+<event name="LIGHTSPEED_SECTOR_WARP_AEA_BILL_BOSS">
+	<text id="atlas_aea_acid" />
+	<choice hidden="true">
+		<text>Continue with the jump.</text>
+		<event>
+			<text>You prepare to jump to the new co-ordinates, and change your flight path accordingly.</text>
+			<variable name="coords_aea_bill" op="set" val="0" />
+			<variable name="loc_laststand" op="add" val="1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="JUMP_TO_AEA_BILL" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind.</text>
+		<event>
+			<loadEvent>ATLAS_MENU_NOEQUIPMENT</loadEvent>
+		</event>
+	</choice>
+</event>
+<event name="JUMP_TO_AEA_BILL">
+	<secretSector>SECTOR_AEA_ACID_UNIQUE</secretSector>
+</event>
+
+<!--<event name="ENTER_AEA_ACID_OUT">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event> 
+<event name="AEA_ACID_OUT_WARP">
+	<text id="atlas_aea_acid_out" />
+	<choice hidden="true">
+		<text>Exit hyperspeed.</text>
+		<event load="START_AEA_ACID_OUT" />
+	</choice>
+	<choice hidden="true" req="COORDS" blue="false">
+		<text>Reroute.</text>
+		<event load="REROUTE_MENU" />
+	</choice>
+</event>-->
+</FTL>
