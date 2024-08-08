@@ -22,7 +22,7 @@ mods.iconsUninstalled["RAD"] = {
 	hoverText = "R&D\nMade by Arc.\nClick to see more info."
 }
 mods.iconsUninstalled["AEA"] = {
-	image = Hyperspace.Resources:CreateImagePrimitiveString("addons/aea2_on.png", 0, 0, 0, Graphics.GL_Color(0, 0, 0, 1), 1.0, false),
+	image = Hyperspace.Resources:CreateImagePrimitiveString("addons/aea2_on.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false),
 	imageHover = Hyperspace.Resources:CreateImagePrimitiveString("addons/aea2_select2.png", 0, 0, 0, Graphics.GL_Color(0, 0, 0, 1), 1.0, false),
 	event = "ADDON_AEA_2",
 	hover = false,

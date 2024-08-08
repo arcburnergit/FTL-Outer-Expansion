@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+
+<mod:findName type="event" name="START_BEACON_REAL" limit="1">
+  <mod:findLike type="eventButton">
+    <mod:selector name="ADDON_FMCORE"/>
+    <mod:removeTag/>
+  </mod:findLike>
+  <mod:findLike type="eventButton">
+    <mod:selector name="ADDON_FORGEMASTER"/>
+    <mod:removeTag/>
+  </mod:findLike>
+  <mod:findLike type="eventButton">
+    <mod:selector name="ADDON_GB"/>
+    <mod:removeTag/>
+  </mod:findLike>
+  <mod:findLike type="eventButton">
+    <mod:selector name="ADDON_CNC"/>
+    <mod:removeTag/>
+  </mod:findLike>
+  <mod:findLike type="eventButton">
+    <mod:selector name="ADDON_FR"/>
+    <mod:removeTag/>
+  </mod:findLike>
+  <mod:findLike type="eventButton">
+    <mod:selector name="ADDON_BAG"/>
+    <mod:removeTag/>
+  </mod:findLike>
+  <mod:findLike type="eventButton">
+    <mod:selector name="ADDON_AA"/>
+    <mod:removeTag/>
+  </mod:findLike>
+  <mod:findLike type="eventButton">
+    <mod:selector name="ADDON_PIP"/>
+    <mod:removeTag/>
+  </mod:findLike>
+  <mod:findLike type="eventButton">
+    <mod:selector name="ADDON_TCC"/>
+    <mod:removeTag/>
+  </mod:findLike>
+  <mod:findLike type="eventButton">
+    <mod:selector name="ADDON_RAD"/>
+    <mod:removeTag/>
+  </mod:findLike>
+</mod:findName>
+
+</FTL>
