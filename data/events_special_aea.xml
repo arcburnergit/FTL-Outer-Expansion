@@ -9,7 +9,42 @@ Adds new races, sectors, ships, and weapons, currently implemented: The Acidic G
 To enable The Outer Expansion, go to the Multiverse Forums and visit the addon section!</text>
 </event>
 
+<event name="ADDON_RAD_INFO_2">
+    <text>R&amp;D
+Developed by: Arc
+Currently Disabled.
 
+An addon designed around the use of Lua to create fun and unique gimmicks, this includes a variety of ships, weapons, crew, drones, and quests, although not entirely balanced they all try to introduce and focus on a unique gimmick you wouldn't find in MV otherwise.
+
+To enable R&amp;D, go to the Multiverse Forums and visit the addon section!</text>
+</event>
+<event name="ADDON_AEA_2">
+	<text>FTL: The Outer Expansion
+Developed by: Arc
+Currently Disabled.
+        
+Adds new races, sectors, ships, and weapons, currently implemented: The Acidic Growth.
+        
+To enable The Outer Expansion, go to the Multiverse Forums and visit the addon section!</text>
+</event>
+<event name="ADDON_FISH_2">
+	<text>FTL: FISHIER THAN LIGHT
+Developed by: Arc
+Currently Disabled.
+      
+FTL Fishing, what more do I need to say. Over 60 fish, all with unique uses and effects.
+      
+To enable Fishier Than Light, go to the Multiverse Forums and visit the addon section!</text>
+</event>
+<event name="ADDON_GOF_2">
+	<text>FTL: GALAXY ON FIRE
+Developed by: Arc
+Currently Disabled.
+        
+Adds 3 ships, 40 new weapons, 2 new crew, and 1 new event based on the galaxy on fire franchise. All weapons function in completely new ways never seen before using brand new lua functions.
+        
+To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon section!</text>
+</event>
 
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -831,7 +866,7 @@ To enable The Outer Expansion, go to the Multiverse Forums and visit the addon s
 <event name="NEBULA_ACIDIC">
     <img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
     <text>TEST</text>
     <choice hidden="true">
         <text>Continue...</text>

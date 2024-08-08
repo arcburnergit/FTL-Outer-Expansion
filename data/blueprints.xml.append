@@ -166,7 +166,7 @@
 				<number>1</number>
 			</slot>
 		</doors>
-		<drones power="1" max="8" room="6" start="false" img="room_drones" />
+		<drones power="2" max="8" room="6" start="false" img="room_drones" />
 		<engines power="2" room="8" start="true" img="room_engines_2">
 			<slot>
 				<direction>down</direction>
@@ -243,7 +243,7 @@
 				<number>0</number>
 			</slot>
 		</doors>
-		<drones power="1" max="8" room="16" start="false" img="room_drones_15" />
+		<drones power="2" max="8" room="16" start="false" img="room_drones_15" />
 		<engines power="1" room="0" start="true" img="room_engines_10">
 			<slot>
 				<direction>left</direction>
@@ -317,7 +317,7 @@
 				<number>0</number>
 			</slot>
 		</doors>
-		<drones power="1" max="8" room="11" start="false" img="room_drones_2" />
+		<drones power="2" max="8" room="11" start="false" img="room_drones_2" />
 		<engines power="1" room="15" start="true" img="room_engines_3">
 			<slot>
 				<direction>right</direction>
@@ -390,7 +390,7 @@
 				<number>0</number>
 			</slot>
 		</doors>
-		<drones power="1" max="8" room="16" start="false" img="room_drones_15" />
+		<drones power="2" max="8" room="16" start="false" img="room_drones_15" />
 		<engines power="1" room="0" start="true" img="room_engines_10">
 			<slot>
 				<direction>left</direction>
@@ -442,6 +442,79 @@
 	<health amount="24" />
 	<maxPower amount="7" />
 	<aug name="AEA_ACID_O2SYS" />
+	<shieldImage>mup_small_long2</shieldImage>
+    <mv-mapImage>map_icon_aeap_acid_long_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_CREW1" layout="aeap_acid_bill" img="aeap_acid_bill">
+	<class>Bill's Crewser</class>
+	<name>Salt Water</name>
+	<desc>Bill has made a few friends on his adventures since becoming an Acidic Outcast.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_ACID_BILL_unlock" />
+	<systemList>
+		<battery power="1" room="13" start="false" img="room_battery_2" />
+		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
+		<clonebay power="1" room="6" start="false">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="3" start="true" img="room_doors_2">
+			<slot>
+				<direction>down</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones power="2" room="4" start="false" img="room_drones_18" />
+		<engines power="1" room="12" start="true" img="room_engines_10">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="8" start="false" img="room_hacking_3" />
+		<medbay power="1" room="6" start="true" img="room_medbay_10">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="11" start="false" img="room_mind_9" />
+		<oxygen power="1" room="1" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="10" start="true" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" room="9" start="true" img="room_shields_3">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="5" start="true" />
+		<weapons power="2" room="7" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="5" count="3">
+		<weapon name="MODULAR_ION_FIRE_BIO" />
+	</weaponList>
+	<droneList drones="3" count="3" />
+	<health amount="24" />
+	<maxPower amount="7" />
+	<aug name="AEA_ACID_JUMPER" />
 	<shieldImage>mup_small_long2</shieldImage>
     <mv-mapImage>map_icon_aeap_acid_long_a</mv-mapImage>
 </shipBlueprint>
@@ -576,6 +649,15 @@
 	<iconImage>bomb</iconImage>
 </weaponBlueprint>
 	
+
+<augBlueprint name="AEA_ACID_JUMPER">
+	<title>Acidic FTL Drive</title>
+	<desc>An Advanced jump drive capable of travelling to any beacon in the sector.</desc>
+	<cost>0</cost>
+	<bp>5</bp>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
 
 <augBlueprint name="AEA_ACID_O2SYS">
 	<title>Acidic Filtering System</title>

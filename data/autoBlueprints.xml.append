@@ -58,6 +58,10 @@
 	<name>ENERGY_2</name>
 	<name>ENERGY_HULL</name>
 </blueprintList>
+
+<mod:findName type="blueprintList" name="LIST_CREW_PARAGON_UNIQUE">
+	<mod-append:name>aea_acid_bill</mod-append:name>
+</mod:findName>
 <blueprintList name="LIST_WEAPONS_ACIDIC_ELITE">
     <name>AEA_LASER_ACID_1</name>
     <name>AEA_LASER_ACID_2</name>

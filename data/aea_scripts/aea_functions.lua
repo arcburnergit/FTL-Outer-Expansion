@@ -213,20 +213,28 @@ end)
 
 local acidBombPrint = Hyperspace.Blueprints:GetWeaponBlueprint("AEA_BOMB_INVIS_ACID_1")
 --local acidBombPrint = Hyperspace.Blueprints:GetWeaponBlueprint("BOMB_1")
-script.on_game_event("AEA_ACIDIC_NEBULA_TIMER", false, function()
+function acidTrigger()
 	if Hyperspace.ships.player then
 	    local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
 	    local shipManager = Hyperspace.ships.player
+
+	    local empty_rooms = {}
+	    local has_empty_rooms = false
+	    local empty_rooms_size = 0
 	    for room in vter(shipManager.ship.vRoomList) do
 	    	local id = room.iRoomId
 	    	if shipManager:GetSystemInRoom(id) == nil then
-	    		local acidBombInvis = spaceManager:CreateBomb(
-			        acidBombPrint,
-			        math.abs(shipManager.iShipId-1),
-			        shipManager:GetRoomCenter(id),
-			        shipManager.iShipId)
-	    		break
+	    		has_empty_rooms = true
+	    		empty_rooms_size = empty_rooms_size + 1
+	    		table.insert(empty_rooms, id)
 	    	end
+	    end
+	    if has_empty_rooms then
+	    	local acidBombInvis = spaceManager:CreateBomb(
+		        acidBombPrint,
+		        math.abs(shipManager.iShipId-1),
+		        shipManager:GetRoomCenter(empty_rooms[math.random(1,empty_rooms_size)]),
+		        shipManager.iShipId)
 	    end
 	end
 	if Hyperspace.ships.enemy then
@@ -244,7 +252,7 @@ script.on_game_event("AEA_ACIDIC_NEBULA_TIMER", false, function()
 	    	end
 	    end
 	end
-end)
+end
 
 --"stars/nebula_large_c.png"
 --"stars_acid/acid_nebula_large_c.png"
@@ -298,6 +306,19 @@ for k = 1,(rows * columns),1 do
 	cloud.opacity = (math.random() * (maxOpacity - minOpacity)) + minOpacity
 	cloud.revOp = math.random(0,1)
 end
+
+local acidTimer = 1
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+	local commandGui = Hyperspace.Global.GetInstance():GetCApp().gui
+	if Hyperspace.playerVariables[playerVar] == 1 and not (commandGui.bPaused or commandGui.event_pause or commandGui.menu_pause or commandGui.bAutoPaused or commandGui.touch_pause) then
+		acidTimer = acidTimer - (Hyperspace.FPS.SpeedFactor/16)
+		if acidTimer <= 0 then
+			print("ACID")
+			acidTimer = (math.random() * 3) + 4
+			acidTrigger()
+		end
+	end
+end)
 
 script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
     --print(string.sub(event.eventName, 0, 13))

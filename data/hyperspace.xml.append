@@ -22,16 +22,16 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 
   	<mod:findLike type="shipOrder">
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_ARTY</mod-append:ship>
-		<mod-append:ship>PLAYER_SHIP_AEA_ACID_LONG</mod-append:ship>
+		<mod-append:empty />
 		<mod-append:empty />
 		<mod-append:empty />
 			<!-- -->
 		<mod-append:empty />
 		<mod-append:empty />
 		<mod-append:empty />
-		<mod-append:empty />
+		<mod-append:ship>PLAYER_SHIP_AEA_ACID_LONG</mod-append:ship>
 
-		<mod-append:empty />
+		<mod-append:ship>PLAYER_SHIP_AEA_ACID_CREW1</mod-append:ship>
 		<mod-append:empty />
 	</mod:findLike>
 
@@ -73,6 +73,12 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
             <shipReq>PLAYER_SHIP_AEA_ACID_LONG</shipReq>
         </unlock>
 	</mod-append:ship>
+	<mod-append:ship name="PLAYER_SHIP_AEA_ACID_CREW1" b="false" c="false" >
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+	</mod-append:ship>
+
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_ARTY">
 		<hiddenAug>SHIP_KESTREL</hiddenAug>
@@ -127,6 +133,17 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 			<aea_acid_captain room="4" name="Acidic Leader" />
 			<aea_acid_soldier room="3" name="Acidic Soldier" />
 			<aea_acid_soldier room="2" name="Acidic Soldier" />
+		</crew>
+	</mod-append:customShip>
+		
+	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_CREW1">
+		<hiddenAug>SHIP_KESTREL</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<aea_acid_bill room="5" name="Bill" />
+			<orchid_cultivator room="5"/>
+			<engi_defender room="0"/>
+			<slug_ranger room="5"/>
 		</crew>
 	</mod-append:customShip>
 
@@ -459,6 +476,10 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 </crew>
 
 <augments>
+	<aug name="AEA_ACID_JUMPER">
+    	<function name="FTL_JUMPER_GOOD" value="1" warning="false" />
+		<locked />
+	</aug>
     <aug name="AEA_ACID_O2SYS">
 		<statBoosts>
 			<statBoost name="healAmount">
@@ -604,8 +625,8 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 		<numShips layer="0">6</numShips>
     </fleetDef>
 	
-	<bossShip yOffset="150">AEA_ACID_BOSS</bossShip>
-	<bossShip yOffset="150">AEA_ACID_ASSUALT</bossShip>
+	<bossShip yOffset="180">AEA_ACID_BOSS</bossShip>
+	<bossShip yOffset="180">AEA_ACID_ASSUALT</bossShip>
 </events>
 
 <store>

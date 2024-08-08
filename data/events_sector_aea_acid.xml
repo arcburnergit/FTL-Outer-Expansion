@@ -1035,7 +1035,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
     <text>You've arrived at the beacon to discover an Acidic Vessel being repaired, it appears to be unarmed and out of action at the moment. The crew repairing the ship hasn't spotted you yet.</text>
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
     <ship load="SHIP_AEA_ACID_FIGHT" hostile="false"/>
     <choice hidden="true">
         <text>Salvage the vessel.</text>
@@ -1245,7 +1245,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
 	<text>Strangely an Orchid captain hails you from an Acidic vessel. "Captain, you wouldn't happen to have any Acidic Growth with you, we'd offer a reward for you to turn over any of it to be destroyed"</text>
 	<ship load="SHIP_AEA_ACID_ORCHID_ONLY" hostile="false" />
@@ -1283,7 +1283,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
 	<text>You are immediately hailed by a dangerous looking Acidic ship guarding a station. "You are not welcome here, choose your punishment and prepare to die."</text>
 	<choice req="shields" lvl="2" blue="false" max_group="0">
@@ -1626,7 +1626,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
     <ship load="SHIP_SLUG_ELITE_FIGHT" hostile="false"/>
     <text>You arrive at the scene to find a small Acidic vessel being chased down by an Elite Slug ship. "We will join crew, in exchange you destroy pursuers?"</text>
@@ -1859,7 +1859,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 </event>
 <event name="AEA_ACID_DISTRESS_QUESTION_TRUE">   
 	<text>"We have accomplished our task then. We will join you on your journey." The Acidic Soldier beams aboard and joins your crew!</text>
-	<crewMember amount="1" class="aea_acidic_soldier" >Acidic Soldier</crewMember>  
+	<crewMember amount="1" class="aea_acid_soldier" >Acidic Soldier</crewMember>  
 </event>
 <event name="AEA_ACID_DISTRESS_QUESTION_FAIL">
     <text>"We... can not remember..." The communications cut out and you're unable to reaquire it, you decide to cut your losses and salvage some of the wrecks while your jump drive changes.</text>
@@ -1887,7 +1887,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
     <text>You arrive at the beacon face to face with an Elite Acidic vessel, they don't appear to react to your arrival.</text>
     <ship load="SHIP_AEA_ACID_ELITE_FIGHT" hostile="false" />
@@ -2032,7 +2032,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</beaconType> 
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 	<text>You catch up with the two Slug ships and they're already carrying out their raid! One is in close combat with an Acidic vessel, the other seems to be heading for a small space cache the vessel was protecting.</text>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -2128,7 +2128,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
 	<text>This beacon is embed deeply within the Acidic Growth, and as such it's unsuprising when an Acidic vessel appears from the mist to Attack.</text>
 	<ship load="SHIP_AEA_ACID_FIGHT" hostile="true" />
@@ -2147,7 +2147,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
 	<text>You're surprised to find a ship stranded all the way out here inside of the Acidic Growth, and move in to provide assistance. When you see the pirate insignia on the hull you quickly reconsider.</text>
 	<ship load="SHIP_PIRATE_ALL" hostile="false" />
@@ -2269,7 +2269,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
 	<text>You find yourself deep within the Acidic Growth at this beacon. The Acidic Elite here seems to take your intrusion in their territory as an insult, and have decided to remove you from it.</text>
 	<ship load="SHIP_AEA_ACID_ELITE_FIGHT" hostile="true" />
@@ -2427,7 +2427,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
     <text>In the middle of the Acidic Growth you discover a strange ship floating through the nebula.</text>
     <choice hidden="true" req="aea_acid_bill">
@@ -2511,7 +2511,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
     <text>You've arrived at the Acidic Core, an extremely dense Acidic Nebula, the location where the Acidic Growth originally formed. It's so dense that it's hard for the Acidic Growth to guard it, they do try however.</text>
     <choice hidden="true">
@@ -2571,7 +2571,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="PLANET_AEA_ACID_STATION" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
     <text>You've arrived at the beacon, one of the few marked locations in Acidic space. This shipyard was where the first Acidic vessels were constructed and today it serves as the main diplomatic quarters between the Acidic Growth and the Orchids.</text>
     <choice hidden="true">
@@ -2767,7 +2767,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
 	<text>This beacon hosts an Acidic transport. It's safe to bet the ship is most likely carrying the special tech for the project in the lab. If you can kill the acidic growth onboard, the cargo will be yours.</text>
 	<ship load="SHIP_AEA_ACID_TRANSPORT_BARREL" hostile="false" />
