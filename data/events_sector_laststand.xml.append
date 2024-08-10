@@ -1,7 +1,7 @@
 <FTL>
 <mod:findName type="event" name="TRUE_LAST_STAND_START">
 	<mod:findLike type="choice" limit="1">
-		</mod:findLike type="event">
+		<mod:findLike type="event">
 			<mod-append:choice hidden="true" max_group="1" req="SHIP_AEA_ACIDIC" blue="false">
 				<text>Contact Federation command.</text>
 				<event>

@@ -14,7 +14,7 @@
 	<desc>Originating from the Acidic Growth, the vessel allowed the Growth to extend it's reach beyond the nebulas it formed in. So far only the orchids have brokered peace with the Acidic Growth. This ship has an upgraded oxygen system.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_ARTY_unlock" />
 	<systemList>
-		<battery power="1" room="13" start="false" img="room_battery_16" />
+		<battery power="1" room="13" max="3" start="false" img="room_battery_16" />
 		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="4" start="false">
 			<slot>
@@ -89,7 +89,7 @@
 	<systemList>
 		<artillery power="1" max="3" room="1" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" img="room_artillery_4" />
 		<artillery power="1" max="3" room="0" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" img="room_artillery_7" />
-		<battery power="1" room="14" start="false" img="room_battery_16" />
+		<battery power="1" room="14" max="3" start="false" img="room_battery_16" />
 		<cloaking power="1" room="5" start="false" img="room_cloaking_11" />
 		<clonebay power="1" room="13" start="false">
 			<slot>
@@ -162,7 +162,7 @@
 	<desc>A federation modification of the Acidic Cruiser, this vessel replaces the Acidic filtering system with a more traditional fire suppression system.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_ARTY_3_unlock" />
 	<systemList>
-		<battery power="1" room="15" start="false" img="room_battery_9" />
+		<battery power="1" room="15" max="3" start="false" img="room_battery_9" />
 		<cloaking power="1" room="13" start="false" img="room_cloaking_13" />
 		<clonebay power="1" room="17" start="false">
 			<slot>
@@ -461,7 +461,7 @@
 	<desc>Bill has made a few friends on his adventures since becoming an Acidic Outcast.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_BILL_unlock" />
 	<systemList>
-		<battery power="1" room="13" start="false" img="room_battery_2" />
+		<battery power="1" room="13" max="3" start="false" img="room_battery_2" />
 		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="6" start="false">
 			<slot>
@@ -474,7 +474,7 @@
 				<number>0</number>
 			</slot>
 		</doors>
-		<drones power="2" room="4" start="false" img="room_drones_18" />
+		<drones power="2" max="8" room="4" start="false" img="room_drones_18" />
 		<engines power="1" room="12" start="true" img="room_engines_10">
 			<slot>
 				<direction>left</direction>
@@ -501,14 +501,14 @@
 				<number>1</number>
 			</slot>
 		</sensors>
-		<shields power="2" room="9" start="true" img="room_shields_3">
+		<shields power="2" max="8" room="9" start="true" img="room_shields_3">
 			<slot>
 				<direction>left</direction>
 				<number>2</number>
 			</slot>
 		</shields>
 		<teleporter power="1" room="5" start="true" />
-		<weapons power="2" room="7" start="true" img="room_weapons">
+		<weapons power="2" max="8" room="7" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
