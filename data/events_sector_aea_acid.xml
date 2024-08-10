@@ -2582,6 +2582,10 @@ The wreck is relatively intact, however it appears to have been filled with hole
                 <text>Bribe the Orchid.</text>
                 <event>
                     <text>Surprisingly the bribe works, the orchid that confronted you even logs you in the system as visitors.</text>
+                    <choice hidden="true">
+                        <text>Continue...</text>
+                        <event load="NEBULA_AEA_ACID_SHIPYARD_HUB"/>
+                    </choice>
                 </event>
             </choice>
             <choice hidden="true" req="LIST_CREW_ORCHID">

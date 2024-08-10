@@ -1,4 +1,13 @@
 <FTL>
+<augBlueprint name="SHIP_AEA_ACIDIC">
+	<title>Acidic Cruiser</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+
 <shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY" layout="aeap_acid_arty_1" img="aeap_acid_arty_1">
 	<class>Acidic Cruiser</class>
 	<name>The Alkaline</name>
