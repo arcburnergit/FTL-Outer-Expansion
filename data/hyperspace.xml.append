@@ -337,6 +337,10 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 
 <crew>
 	<race name="aea_acid_soldier">
+		<canFight>true</canFight>
+		<canPunch>false</canPunch>
+		<canShoot>true</canShoot>
+		<canSabotage>true</canSabotage>
 		<lowHealthThreshold>2500.0</lowHealthThreshold>
 		<resistsMindControl>true</resistsMindControl>
 		<lowHealthThresholdPercentage>0.25</lowHealthThresholdPercentage>
@@ -347,7 +351,6 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 		<repairSpeed>1.25</repairSpeed>
 		<moveSpeedMultiplier>0.75</moveSpeedMultiplier>
 		<stunMultiplier>0.75</stunMultiplier>
-		<animBase>rock</animBase>
 		<skills>
 			<combat req="5" />
 		</skills>
@@ -361,6 +364,10 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 		</shootingSounds>
 	</race>
 	<race name="aea_acid_captain">
+		<canFight>true</canFight>
+		<canPunch>false</canPunch>
+		<canShoot>true</canShoot>
+		<canSabotage>true</canSabotage>
 		<lowHealthThreshold>2500.0</lowHealthThreshold>
 		<resistsMindControl>true</resistsMindControl>
 		<lowHealthThresholdPercentage>0.25</lowHealthThresholdPercentage>
@@ -371,7 +378,6 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 		<repairSpeed>1.5</repairSpeed>
 		<moveSpeedMultiplier>0.5</moveSpeedMultiplier>
 		<stunMultiplier>0.75</stunMultiplier>
-		<animBase>rock</animBase>
 		<skills>
 			<combat req="5" />
 		</skills>
@@ -399,6 +405,10 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 		</passiveStatBoosts>
 	</race>
 	<race name="aea_acid_bill">
+		<canFight>true</canFight>
+		<canPunch>false</canPunch>
+		<canShoot>true</canShoot>
+		<canSabotage>true</canSabotage>
 		<lowHealthThreshold>2500.0</lowHealthThreshold>
 		<resistsMindControl>true</resistsMindControl>
 		<lowHealthThresholdPercentage>0.25</lowHealthThresholdPercentage>
@@ -409,7 +419,6 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 		<repairSpeed>2</repairSpeed>
 		<moveSpeedMultiplier>0.5</moveSpeedMultiplier>
 		<stunMultiplier>0.75</stunMultiplier>
-		<animBase>rock</animBase>
 		<skills>
 			<combat req="5" />
 		</skills>
@@ -442,8 +451,8 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 			<powerSounds>
 				<powerSound>siren_death</powerSound>
 			</powerSounds>
-			<buttonText id="button_lockdown">FINISH OFF</buttonText>
-			<tooltip id="power_ready">Ready: immediately kill all enemy crew in the room below 35 hp</tooltip>
+			<buttonText>FINISH OFF</buttonText>
+			<tooltip>Ready: immediately kill all enemy crew in the room below 50 hp</tooltip>
 			<cooldownColor r="138" g="237" b="31"/>
 			<statBoosts>
 				<statBoost name="powerEffect">
@@ -457,10 +466,10 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 							<powerSound>explosionShell</powerSound>
 						</powerSounds>
 						<req>
-							<maxHealth>35</maxHealth>
+							<maxHealth>50</maxHealth>
 						</req>
 						<activateWhenReady enemiesOnly="false">true</activateWhenReady>
-						<cooldown>1</cooldown>
+						<cooldown>0.1</cooldown>
 						<jumpCooldown>reset</jumpCooldown>
 						<buttonText>DEATH</buttonText>
 						<tooltip>DEATH</tooltip>

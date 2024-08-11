@@ -292,7 +292,7 @@ local initialPosY = (math.random() * 131072) % 81 - 40
 
 for k = 1,(rows * columns),1 do
 	--print(k)
-	print("CLOUDS START: "..tostring(k))
+	--print("CLOUDS START: "..tostring(k))
 	nebulaClouds[k] = {x = 0, y = 0, scale = 1, timerScale = 0, opacity = 1, revOp = 0, fade = 0, exists = 1}
 	nebulaClouds[k+(rows * columns)] = {x = 0, y = 0, scale = 1, timerScale = 0, opacity = 1, revOp = 0, fade = 0, exists = 0}
 	local cloud = nebulaClouds[k]
@@ -313,7 +313,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 	if Hyperspace.playerVariables[playerVar] == 1 and not (commandGui.bPaused or commandGui.event_pause or commandGui.menu_pause or commandGui.bAutoPaused or commandGui.touch_pause) then
 		acidTimer = acidTimer - (Hyperspace.FPS.SpeedFactor/16)
 		if acidTimer <= 0 then
-			print("ACID")
+			--print("ACID")
 			acidTimer = (math.random() * 3) + 4
 			acidTrigger()
 		end

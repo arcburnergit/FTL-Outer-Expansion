@@ -37,7 +37,7 @@
 <mod:findName type="event" name="REROUTE_MENU_HAT">
 	<mod-append:choice hidden="true">
 		<text>Go to the Acidic Origins.</text> 
-		<event load="LIGHTSPEED_SECTOR_WARP_AEA_BILL" />
+		<event load="LIGHTSPEED_SECTOR_WARP_AEA_BILL_HAT" />
 	</mod-append:choice>
 </mod:findName>
 
@@ -105,6 +105,29 @@ The Acidic Growth is a rather unknown faction, believed to be a form of hivemind
 		<event>
 			<text>You prepare to jump to the new co-ordinates, and change your flight path accordingly.</text>
 			<variable name="coords_aea_bill" op="set" val="0" />
+			<variable name="loc_sector_count" op="add" val="-1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="JUMP_TO_AEA_BILL" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind.</text>
+		<event>
+			<loadEvent>ATLAS_MENU_NOEQUIPMENT</loadEvent>
+		</event>
+	</choice>
+</event>
+<event name="LIGHTSPEED_SECTOR_WARP_AEA_BILL_HAT">
+	<text id="atlas_aea_acid" />
+	<choice hidden="true">
+		<text>Continue with the jump.</text>
+		<event>
+			<text>You prepare to jump to the new co-ordinates, and change your flight path accordingly.</text>
+			<variable name="coords_aea_bill" op="set" val="0" />
+			<variable name="magical_hat_active" op="set" val="0" />
+			<variable name="loc_sector_count" op="add" val="-1" />
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="JUMP_TO_AEA_BILL" />
@@ -125,6 +148,8 @@ The Acidic Growth is a rather unknown faction, believed to be a form of hivemind
 		<event>
 			<text>You prepare to jump to the new co-ordinates, and change your flight path accordingly.</text>
 			<variable name="coords_aea_bill" op="set" val="0" />
+			<variable name="magical_hat_active" op="set" val="0" />
+			<variable name="loc_sector_count" op="add" val="-1" />
 			<variable name="loc_laststand" op="add" val="1" />
 			<choice hidden="true">
 				<text>Continue...</text>

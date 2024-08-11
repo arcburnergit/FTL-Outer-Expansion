@@ -2730,7 +2730,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
             <choice>
                 <text>Take the upgrade kit.</text>
                 <event>
-                    <augment name="AEA_ACID_O2SYS"/>
+                    <augment name="AEA_ACID_O2SYS_OFF"/>
                     <text>You grab the upgrade package.</text>
                     <choice hidden="true">
                         <text>Return back the way you came.</text>
