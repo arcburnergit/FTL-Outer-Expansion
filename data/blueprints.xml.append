@@ -7,6 +7,14 @@
 	<stackable>false</stackable>
 	<bp>0</bp>
 </augBlueprint>
+<augBlueprint name="SHIP_AEA_NECRO">
+	<title>Heretic Cruiser</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY" layout="aeap_acid_arty_1" img="aeap_acid_arty_1">
 	<class>Acidic Cruiser</class>
@@ -642,10 +650,10 @@
 		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>
 		<erodeShields>true</erodeShields>
-		<roomAnim renderLayer="3">                                                    
+		<!--roomAnim renderLayer="3">                                                    
 			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
 				<wallAnim>aea_acid_wall</wallAnim>  
-		</roomAnim>
+		</roomAnim-->
 	</erosion>
 	<cooldown>13</cooldown>
 	<power>1</power>
@@ -673,7 +681,8 @@
 	<desc>Oxygen System can be switched between providing oxygen and putting out fires.
 
 Can be toggled in the storage menu outside of combat.
-Extinguisher speed scales with power in the o2 system. Oxygen system heals all crew onboard slowly over time, crew heal at 3x speed while in extinguisher mode.</desc>
+In oxygen mode the system will provide 0.6 hp/sec which will scale up to 1.2 hp/sec at 4 power.
+In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3.6 hp/sec at 4 power.</desc>
 	<cost>60</cost>
 	<bp>5</bp>
 	<rarity>0</rarity>
@@ -685,7 +694,8 @@ Extinguisher speed scales with power in the o2 system. Oxygen system heals all c
 	<desc>Oxygen System can be switched between providing oxygen and putting out fires.
 
 Can be toggled in the storage menu outside of combat.
-Extinguisher speed scales with power in the o2 system. Oxygen system heals all crew onboard slowly over time, crew heal at 3x speed while in extinguisher mode.</desc>
+In oxygen mode the system will provide 0.6 hp/sec which will scale up to 1.2 hp/sec at 4 power.
+In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3.6 hp/sec at 4 power.</desc>
 	<cost>60</cost>
 	<bp>5</bp>
 	<rarity>0</rarity>
@@ -901,7 +911,7 @@ Extinguisher speed scales with power in the o2 system. Oxygen system heals all c
 				<wallAnim>aea_acid_wall</wallAnim>  
 		</roomAnim>
 	</erosion>
-	<cooldown>20</cooldown>
+	<cooldown>14</cooldown>
 	<power>4</power>
 	<cost>120</cost>
 	<bp>7</bp>
@@ -1158,6 +1168,881 @@ Extinguisher speed scales with power in the o2 system. Oxygen system heals all c
 </FTL>
 
 <FTL>
+<shipBlueprint name="PLAYER_SHIP_AEA_NECRO_ENGI" layout="aeap_necro_engi_1" img="aeap_necro_engi_1">
+	<class>Heresy Cruiser</class>
+	<name>The Blasphemous</name>
+	<desc>A vessel belonging</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_ENGI_unlock" />
+	<systemList>
+		<battery power="1" max="3" room="14" start="false" img="room_battery_9" />
+		<cloaking power="1" room="3" start="false" img="room_cloaking_3" />
+		<clonebay power="1" room="13" start="false">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="11" start="true" img="room_doors_5">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="12" start="false" img="room_drones_15" />
+		<engines power="1" room="4" start="true" img="room_engines_8">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="8" start="false" img="room_hacking_9" />
+		<medbay power="1" room="13" start="true" img="room_medbay_10">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="10" start="false" img="room_mind_11" />
+		<oxygen power="1" room="6" start="true" img="room_oxygen_22" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="15" start="true" img="room_sensors_9">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="7" start="true" img="room_shields_4">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="2" room="5" start="true" />
+		<weapons power="1" max="8" room="9" start="true" img="room_weapons_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="4" count="3">
+		<weapon name="AEA_LASER_NECRO_1" />
+	</weaponList>
+	<droneList drones="4" count="3" />
+	<health amount="30" />
+	<maxPower amount="7" />
+	<crewCount amount="1" class="aea_necro_engi" />
+	<crewCount amount="1" class="aea_necro_engi" />
+	<crewCount amount="1" class="aea_necro_engi" />
+	<shieldImage>mup_orb1</shieldImage>
+    <mv-mapImage>map_icon_mup_mvengi_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_NECRO_ENGI_2" layout="aeap_necro_engi_2" img="aeap_necro_engi_2">
+	<class>Heresy Cruiser</class>
+	<name>The Hegemonic</name>
+	<desc>A vessel belonging</desc>
+	<systemList>
+		<battery max="3" power="1" room="4" start="true" img="room_battery_15" />
+		<cloaking power="1" room="13" start="false" img="room_cloaking_4" />
+		<clonebay power="1" room="10" start="false">
+			<slot>
+				<number>2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="8" start="true" img="room_doors_10">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="12" start="false" img="room_drones_14" />
+		<engines power="2" room="14" start="true" img="room_engines_9">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="7" start="false" img="room_hacking_7" />
+		<medbay power="1" room="10" start="true" img="room_medbay_7">
+			<slot>
+				<number>2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="6" start="false" img="room_mind_7" />
+		<oxygen power="1" room="17" start="true" img="room_oxygen_22" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="3" start="false" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="1" start="true" img="room_shields_6">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="2" start="true" />
+		<weapons max="8" power="2" room="16" start="true" img="room_weapons_12">
+			<slot>
+				<direction>right</direction>
+				<number>2</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="4" count="4">
+		<weapon name="AEA_LASER_NECRO_1" />
+		<weapon name="ION_2" />
+	</weaponList>
+	<droneList drones="5" count="2" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="engi" />
+	<crewCount amount="1" class="slug_saboteur" />
+	<crewCount amount="1" class="shell" />
+	<aug name="AEA_NECRO_CONVERT" />
+	<shieldImage>mup_orb1</shieldImage>
+    <mv-mapImage>map_icon_mup_mvengi_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_NECRO_ENGI_3" layout="aeap_necro_engi_3" img="aeap_necro_engi_3">
+	<class>Heresy Cruiser</class>
+	<name>The Recusant</name>
+	<desc>A vessel belonging</desc>
+	<systemList>
+		<battery max="3" power="1" room="4" start="false" img="room_battery_14" />
+		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
+		<clonebay power="1" room="5" start="true">
+			<slot>
+				<number>2</number>
+			</slot>
+		</clonebay>
+		<doors power="2" room="17" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="3" room="1" start="true" img="room_drones_17" />
+		<engines power="3" room="11" start="true" img="room_engines_11">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="12" start="false" img="room_hacking_2" />
+		<medbay power="1" room="5" start="false" img="room_medbay_7">
+			<slot>
+				<number>2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="7" start="false" img="room_mind_4" />
+		<oxygen power="1" room="8" start="true" img="room_oxygen_4" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="9" start="true" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="4" room="15" start="true" img="room_shields_3">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="13" start="true" />
+		<weapons max="8" power="2" room="3" start="false" img="room_weapons_12">
+			<slot>
+				<direction>right</direction>
+				<number>2</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="2" />
+	<droneList drones="14" count="4">
+		<drone name="BATTLETOG2_BOARDER" />
+		<drone name="AEA_DEFENSE_NECRO_1_DRONE" />
+		<drone name="DOCTOR_DEFENSE" />
+		<drone name="REPAIR" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="10" />
+	<crewCount amount="1" class="aea_necro_lich" />
+	<aug name="EX_BACKUP_DNA" />
+	<shieldImage>mup_orb1</shieldImage>
+    <mv-mapImage>map_icon_mup_mvengi_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_NECRO_SEPA" layout="aeap_necro_sepa_1" img="aeap_necro_sepa_1">
+	<class>Blasphemy Cruiser</class>
+	<name>The Unholy</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<systemList>
+		<battery power="1" max="3" room="1" start="false" img="room_battery_3" />
+		<cloaking power="1" room="13" start="false" img="room_cloaking_13" />
+		<clonebay power="1" room="6" start="true">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="9" start="true" img="room_doors_10">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="11" start="true" img="room_drones_12" />
+		<engines power="1" room="8" start="true" img="room_engines_9">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="14" start="false" img="room_hacking_10" />
+		<medbay power="1" room="6" start="false" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="2" start="false" img="room_mind_9" />
+		<oxygen power="1" room="12" start="true" img="room_oxygen_12" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="4" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="3" start="true" img="room_shields_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="5" start="true" />
+		<weapons power="2" max="8" room="10" start="false" img="room_weapons_12">
+			<slot>
+				<direction>right</direction>
+				<number>2</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="2" count="2" />
+	<droneList drones="12" count="4">
+		<drone name="AEA_DEFENSE_NECRO_1_DRONE"/>
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="7" />
+	<crewCount amount="1" class="aea_necro_lich" />
+	<crewCount amount="1" class="aea_necro_lich" />
+	<crewCount amount="1" class="aea_necro_engi" />
+	<shieldImage>mup_orb1</shieldImage>
+    <mv-mapImage>map_icon_mup_separatist_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_NECRO_SEPA_2" layout="aeap_necro_sepa_2" img="aeap_necro_sepa_2">
+	<class>Blasphemy Cruiser</class>
+	<name>The Deserter</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<systemList>
+		<battery max="3" power="1" room="12" start="false" img="room_battery_2" />
+		<cloaking power="1" room="7" start="false" img="room_cloaking_6" />
+		<clonebay power="1" room="13" start="false">
+			<slot>
+				<number>2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="6" start="true" img="room_doors_5">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="4" start="false" img="room_drones_4" />
+		<engines power="2" room="5" start="true" img="room_engines_10">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="15" start="false" img="room_hacking_2" />
+		<medbay power="1" room="13" start="true" img="room_medbay_10">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="8" start="false" img="room_mind_4" />
+		<oxygen power="1" room="14" start="true" img="room_oxygen_5" />
+		<pilot power="1" room="0" start="true" img="room_pilot_7">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="2" start="false" img="room_sensors_4">
+			<slot>
+				<direction>left</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="3" start="true" img="room_shields_13">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="9" start="false" />
+		<weapons max="8" power="3" room="10" start="true" img="room_weapons_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="8" count="3">
+		<weapon name="ENERGY_1" />
+		<weapon name="MISSILES_CLOAK" />
+	</weaponList>
+	<droneList drones="3" count="3" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="orchid" />
+	<crewCount amount="1" class="rock" />
+	<crewCount amount="1" class="mantis" />
+	<aug name="AEA_NECRO_CONVERT" />
+	<shieldImage>mup_orb1</shieldImage>
+    <mv-mapImage>map_icon_mup_separatist_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_NECRO_SEPA_3" layout="aeap_necro_sepa_3" img="aeap_necro_sepa_3">
+	<class>Blasphemy Cruiser</class>
+	<name>The Assassin</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<systemList>
+		<battery max="3" power="1" room="13" start="false" img="room_battery_14" />
+		<cloaking power="1" room="6" start="true" img="room_cloaking" />
+		<clonebay power="1" room="8" start="false">
+			<slot>
+				<number>2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="4" start="true" img="room_doors_10">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="14" start="true" img="room_drones_14" />
+		<engines power="3" room="2" start="true" img="room_engines_9">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="10" start="false" img="room_hacking_3" />
+		<medbay power="1" room="8" start="true" img="room_medbay_7">
+			<slot>
+				<number>2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="9" start="false" img="room_mind_1" />
+		<oxygen power="1" room="3" start="true" img="room_oxygen_2" />
+		<pilot power="1" room="0" start="true" img="room_pilot_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="15" start="false" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="12" start="false" img="room_shields_8">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="5" start="false" />
+		<weapons max="8" power="2" room="11" start="true" img="room_weapons_12">
+			<slot>
+				<direction>right</direction>
+				<number>2</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="2" count="3">
+		<weapon name="AEA_LASER_NECRO_2" />
+	</weaponList>
+	<droneList drones="12" count="3">
+		<drone name="AEA_COMBAT_NECRO_1_BEAM" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="9" />
+	<crewCount amount="1" class="aea_necro_lich" />
+	<crewCount amount="1" class="engi_separatist" />
+	<aug name="EX_CLOAK_FIRE" />
+	<shieldImage>mup_orb1</shieldImage>
+    <mv-mapImage>map_icon_mup_separatist_a</mv-mapImage>
+</shipBlueprint>
+
+<augBlueprint name="AEA_NECRO_CONVERT">
+	<title>Heretic Converter</title>
+	<desc>Able to transform different Engi into Engi Heretics at the cost of drone parts.</desc>
+	<cost>50</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+</FTL>
+
+<FTL>
+<weaponBlueprint name="AEA_LASER_NECRO_DRONE">
+	<type>LASER</type>
+	<title>Drone Laser</title>
+	<damage>1</damage>
+	<shots>1</shots>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<speed>200</speed>
+	<rarity>0</rarity>
+	<image>laser_light</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_burst_1</weaponArt>
+</weaponBlueprint>
+
+<droneBlueprint name="AEA_DEFENSE_NECRO_1_MISSILE">
+	<type>DEFENSE</type>
+	<target>MISSILES</target>
+	<tip>tip_defense</tip>
+	<title>Heretic Defense Drone MK I [M]</title>
+	<short>Heretic I [M]</short>
+	<desc>[CURRENT MODE: Anti-Missile] Multipurpose drone used be the Engi Heretics, capable of resurrecting drones and missiles it hits, incapable of targetting lasers.
+	Reload: 1500 MS</desc>
+	<power>2</power>
+	<cooldown>1500</cooldown>
+	<dodge>0</dodge>
+	<speed>15</speed>
+	<cost>60</cost>
+	<bp>2</bp>
+	<droneImage>drone_aea_necro_def1</droneImage>
+	<weaponBlueprint>AEA_LASER_NECRO_DRONE</weaponBlueprint>
+	<iconImage>defense</iconImage>
+	<rarity>0</rarity>
+</droneBlueprint>
+
+<droneBlueprint name="AEA_DEFENSE_NECRO_1_DRONE">
+	<type>DEFENSE</type>
+	<target>DRONES</target>
+	<tip>tip_defense</tip>
+	<title>Heretic Defense Drone MK I [D]</title>
+	<short>Heretic I [D]</short>
+	<desc>[CURRENT MODE: Anti-Drone] Multipurpose drone used be the Engi Heretics, capable of resurrecting drones and missiles it hits, incapable of targetting lasers.
+	Reload: 3000 MS</desc>
+	<power>2</power>
+	<cooldown>3000</cooldown>
+	<dodge>0</dodge>
+	<speed>15</speed>
+	<cost>60</cost>
+	<bp>2</bp>
+	<droneImage>drone_aea_necro_def1</droneImage>
+	<weaponBlueprint>AEA_LASER_NECRO_DRONE</weaponBlueprint>
+	<iconImage>defense</iconImage>
+	<rarity>0</rarity>
+</droneBlueprint>
+
+<droneBlueprint name="AEA_DEFENSE_NECRO_2_MISSILE">
+	<type>DEFENSE</type>
+	<target>MISSILES</target>
+	<level>1</level>
+	<tip>tip_defense</tip>
+	<title>Heretic Defense Drone MK II [M]</title>
+	<short>Heretic II [M]</short>
+	<desc>[CURRENT MODE: Anti-Missile] Multipurpose drone used be the Engi Heretics, capable of resurrecting drones and missiles it hits, incapable of targetting lasers.
+	Reload: 750 MS</desc>
+	<power>3</power>
+	<cooldown>750</cooldown>
+	<dodge>0</dodge>
+	<speed>15</speed>
+	<cost>60</cost>
+	<bp>2</bp>
+	<droneImage>drone_aea_necro_def2</droneImage>
+	<weaponBlueprint>AEA_LASER_NECRO_DRONE</weaponBlueprint>
+	<iconImage>defense</iconImage>
+	<rarity>0</rarity>
+</droneBlueprint>
+
+<droneBlueprint name="AEA_DEFENSE_NECRO_2_DRONE">
+	<type>DEFENSE</type>
+	<target>DRONES</target>
+	<level>1</level>
+	<tip>tip_defense</tip>
+	<title>Heretic Defense Drone MK II [D]</title>
+	<short>Heretic II [D]</short>
+	<desc>[CURRENT MODE: Anti-Drone] Multipurpose drone used be the Engi Heretics, capable of resurrecting drones and missiles it hits, incapable of targetting lasers.
+	Reload: 1500 MS</desc>
+	<power>3</power>
+	<cooldown>1500</cooldown>
+	<dodge>0</dodge>
+	<speed>15</speed>
+	<cost>60</cost>
+	<bp>2</bp>
+	<droneImage>drone_aea_necro_def2</droneImage>
+	<weaponBlueprint>AEA_LASER_NECRO_DRONE</weaponBlueprint>
+	<iconImage>defense</iconImage>
+	<rarity>0</rarity>
+</droneBlueprint>
+
+
+<weaponBlueprint name="AEA_LASER_NECRO_COMBAT">
+	<type>LASER</type>
+	<title>Drone Laser</title>
+	<damage>1</damage>
+	<shots>1</shots>
+	<fireChance>1</fireChance>
+	<breachChance>0</breachChance>
+	<rarity>0</rarity>
+	<image>laser_light</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_burst_1</weaponArt>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_BEAM_NECRO_COMBAT">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>Drone Beam</title>
+	<damage>1</damage>
+	<sp>0</sp>
+	<fireChance>1</fireChance>
+	<breachChance>0</breachChance>
+	<speed>10</speed>
+	<rarity>0</rarity>
+	<image>beam_contact</image>
+	<length>45</length>
+	<launchSounds>
+		<sound>beam1</sound>
+		<sound>beam1_2</sound>
+	</launchSounds>
+	<weaponArt>beam_1</weaponArt>
+</weaponBlueprint>
+
+<blueprintList name="AEA_COMBAT_TOGGLE_1">
+	<name>AEA_COMBAT_NECRO_1_LASER</name>
+	<name>AEA_COMBAT_NECRO_1_BEAM</name>
+</blueprintList>
+<droneBlueprint name="AEA_COMBAT_NECRO_1_LASER">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Technomancy Drone Mk. I [Laser]</title>
+	<short>Techno I [L]</short>
+	<desc>[CURRENT MODE: Laser] Multipurpose combat drone use by the Engi Heretics. On death, the drone will create two smaller faster drones that shoot 3 shots before falling apart.</desc>
+	<power>2</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>15</speed>
+	<cost>60</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_necro_com_l</droneImage>
+	<weaponBlueprint>AEA_LASER_NECRO_COMBAT</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_NECRO_1_BEAM">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Technomancy Drone Mk. I [Beam]</title>
+	<short>Techno I [B]</short>
+	<desc>[CURRENT MODE: Beam] Multipurpose combat drone use by the Engi Heretics. On death, the drone will create two smaller faster drones that shoot 3 shots before falling apart.</desc>
+	<power>2</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>12</speed>
+	<cost>60</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_necro_com_b</droneImage>
+	<weaponBlueprint>AEA_BEAM_NECRO_COMBAT</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<droneBlueprint name="AEA_COMBAT_NECRO_1_LASER_TEMP">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Technomancy Drone Mk. I [Laser]</title>
+	<short>Techno I [L]</short>
+	<desc>[CURRENT MODE: Laser] Basic Combat toggle Drone that can switch between a Laser and Beam weapon.</desc>
+	<power>2</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>30</speed>
+	<cost>60</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_necro_comtemp_l</droneImage>
+	<weaponBlueprint>AEA_LASER_NECRO_COMBAT</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_NECRO_1_BEAM_TEMP">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Technomancy Drone Mk. I [Beam]</title>
+	<short>Techno I [B]</short>
+	<desc>[CURRENT MODE: Beam] Basic Combat toggle Drone that can switch between a Laser and Beam weapon.</desc>
+	<power>2</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>24</speed>
+	<cost>60</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_necro_comtemp_b</droneImage>
+	<weaponBlueprint>AEA_BEAM_NECRO_COMBAT</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<weaponBlueprint name="AEA_LASER_NECRO_FRAGMENT">
+	<type>LASER</type>
+	<title>Fragment Laser</title>
+	<damage>0</damage>
+	<persDamage>1</persDamage>
+	<shots>1</shots>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<rarity>0</rarity>
+	<image>laser_light</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_burst_1</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_NECRO_1">
+	<type>LASER</type>
+	<title>Shatter Laser MK I</title>
+	<short>Shatter I</short>
+	<tip>tip_laser</tip>
+	<desc>Shatter Lasers are heavy duty lasers which shatter on contact with shields, fragments of the laser pierce the shields inflicting a weakening effect and heavy damage to the enemy crew in the area.
+Shatters into 3 fragments.
+Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage reduction effect to enemy crew.</desc>
+	<tooltip>Heavy laser; 2 damage, 1 shot. 9 second cooldown.</tooltip>
+	<damage>2</damage>
+	<persDamage>-1</persDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<statBoosts>
+		<statBoost name="damageMultiplier" save="AEA_NECRO_DAMAGE">
+			<boostType>MULT</boostType>
+			<amount>0.8</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>10</duration>
+			<boostAnim>bio_poison</boostAnim>
+		</statBoost>
+	</statBoosts>
+	<fireChance>0</fireChance>
+	<breachChance>2</breachChance>
+	<stunChance>3</stunChance>
+	<cooldown>8</cooldown>
+	<power>1</power>
+	<cost>50</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>laser_heavy</image>
+	<launchSounds>
+		<sound>heavyLaser1</sound>
+		<sound>heavyLaser2</sound>
+		<sound>heavyLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_necro_1</weaponArt>
+	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_NECRO_2">
+	<type>LASER</type>
+	<title>Shatter Laser MK II</title>
+	<short>Shatter II</short>
+	<tip>tip_laser</tip>
+	<desc>Shatter Lasers are heavy duty lasers which shatter on contact with shields, fragments of the laser pierce the shields inflicting a weakening effect and heavy damage to the enemy crew in the area.
+Shatters into 3 fragments.
+Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage reduction effect to enemy crew.</desc>
+	<tooltip>Heavy laser; 2 damage, 1 shot. 9 second cooldown.</tooltip>
+	<damage>2</damage>
+	<persDamage>-1</persDamage>
+	<shots>2</shots>
+	<sp>0</sp>
+	<statBoosts>
+		<statBoost name="damageMultiplier" load="AEA_NECRO_DAMAGE"/>
+	</statBoosts>
+	<fireChance>0</fireChance>
+	<breachChance>2</breachChance>
+	<stunChance>3</stunChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>50</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>laser_heavy</image>
+	<launchSounds>
+		<sound>heavyLaser1</sound>
+		<sound>heavyLaser2</sound>
+		<sound>heavyLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_necro_2</weaponArt>
+	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_NECRO_3">
+	<type>LASER</type>
+	<title>Shatter Laser MK III</title>
+	<short>Shatter III</short>
+	<tip>tip_laser</tip>
+	<desc>Shatter Lasers are heavy duty lasers which shatter on contact with shields, fragments of the laser pierce the shields inflicting a weakening effect and heavy damage to the enemy crew in the area.
+Shatters into 3 fragments.
+Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage reduction effect to enemy crew.</desc>
+	<tooltip>Heavy laser; 2 damage, 1 shot. 9 second cooldown.</tooltip>
+	<damage>2</damage>
+	<persDamage>-1</persDamage>
+	<shots>3</shots>
+	<sp>0</sp>
+	<statBoosts>
+		<statBoost name="damageMultiplier" load="AEA_NECRO_DAMAGE"/>
+	</statBoosts>
+	<fireChance>0</fireChance>
+	<breachChance>2</breachChance>
+	<stunChance>3</stunChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>50</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>laser_heavy</image>
+	<launchSounds>
+		<sound>heavyLaser1</sound>
+		<sound>heavyLaser2</sound>
+		<sound>heavyLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_necro_3</weaponArt>
+	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+</FTL>
+
+<FTL>
 <crewBlueprint name="aea_acid_soldier">
 	<desc>A dangerous mech used by the acid growth to extend it's reach beyond the acid nebula. Hosts a fragment of the acidic growth that controls the mech.</desc>
 	<title>Acidic Soldier</title>
@@ -1207,5 +2092,69 @@ Extinguisher speed scales with power in the o2 system. Oxygen system heals all c
 		<power>Moves at 0.5x speed</power>
 		<power>Cannot suffocate, Immune to Mind Control</power>
 	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_necro_engi">
+	<desc>The Engi Heretics are outcasts even from the separatists, broken free from the harmony these engi prefer to use organic life as a tool to do their bidding.
+The Engi Heretics use their Nano bots to take control of the enemies they kill, hot wiring their bodies for a brief sprint of vitality.
+	</desc>
+	<cost>60</cost>
+	<bp>2</bp>
+	<title>Engi Heretic</title>
+	<short>Heretic</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Resurrect the last enemy killed by this crewmember, costs 1 Nanite Swarm</power>
+		<power>Max Health is increased to 125</power>
+		<power>Each enemy crew killed by this crew member generates 1 nanite swarm</power>
+		<power>0.75x combat damage, 1.5x repair speed</power>
+		<power>Reduced suffocation damage</power>
+	</powerList>
+	<colorList>
+		<layer> <!--eye + laser-->
+			<color r="255" g="216" b="0" a="0.5" /> <!--yellow-->
+			<color r="0" g="255" b="210" a="0.5" /> <!--cyan-->
+			<color r="109" g="255" b="90" a="0.5" /> <!--green-->
+			<color r="255" g="255" b="255" a="0" /> <!--white-->
+		</layer>
+		<layer> <!--body-->
+			<color r="255" g="255" b="255" a="0" /> <!--default-->
+			<color r="255" g="255" b="255" a="1" /> <!--2nd-->
+			<color r="255" g="255" b="255" a="0.5" /> <!--mix-->
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_necro_lich">
+	<desc>The Engi Liches are elite of the Engi Heretics, More powerful in their abilities, Engi Liches are able to inflict a kind of curse on enemy crew, causing them to be temporarily resurrected on the side of the Lich.
+The Engi Liches use their Nano bots to take control of the enemies they kill, hot wiring their bodies for a brief sprint of vitality.
+	</desc>
+	<cost>60</cost>
+	<bp>2</bp>
+	<title>Engi Lich</title>
+	<short>Lich</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Inflict all enemy crew in the room with a status effect, causes crew to be resurrected on the side of the Engi Lich and inflicts a 5% damage reduction, costs 3 Nanite Swarms</power>
+		<power>Active Ability: Resurrect the last enemy killed by this crewmember, costs 1 Nanite Swarm</power>
+		<power>Max Health is increased to 125</power>
+		<power>Each enemy crew killed by this crew member generates 1 nanite swarm</power>
+		<power>0.8x combat damage, 1.2x ranged damage, 1.75x repair speed</power>
+		<power>Nano bots reduce healing of the target crew by 10%</power>
+		<power>Reduced suffocation damage</power>
+	</powerList>
+	<colorList>
+		<layer> <!--eye + laser-->
+			<color r="255" g="216" b="0" a="0.5" /> <!--yellow-->
+			<color r="0" g="255" b="210" a="0.5" /> <!--cyan-->
+			<color r="109" g="255" b="90" a="0.5" /> <!--green-->
+			<color r="255" g="255" b="255" a="0" /> <!--white-->
+		</layer>
+		<layer> <!--body-->
+			<color r="255" g="255" b="255" a="0" /> <!--default-->
+			<color r="255" g="255" b="255" a="1" /> <!--2nd-->
+			<color r="255" g="255" b="255" a="0.5" /> <!--mix-->
+		</layer>
+	</colorList>
 </crewBlueprint>
 </FTL>

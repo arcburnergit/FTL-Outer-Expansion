@@ -9,7 +9,76 @@
     <text>Acidic Filtering System.</text>
     <event load="STORAGE_CHECK_AEA_O2SYS_OFF" />
   </mod-append:choice>
+  <mod-append:choice req="AEA_NECRO_CONVERT" blue="true" hidden="true">
+    <text>Heretic Converter.</text>
+    <event load="STORAGE_CHECK_AEA_NECRO_CONVERT" />
+  </mod-append:choice>
 </mod:findName>
+
+<event name="STORAGE_CHECK_AEA_NECRO_CONVERT">
+	<text>What do you want to do?</text>
+  	<checkCargo />
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice req="engi">
+		<text>Convert a Harmony Engi.</text>
+		<event>
+			<text>You see your Engi being swarmed by a cloud of nanites, It doesn't seem very nice for the Engi.</text>
+			<item_modify>
+				<item type="drones" min="-3" max="-3" />
+			</item_modify>
+			<transformRace class="engi">aea_necro_engi</transformRace>
+			<choice>
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="engi_separatist">
+		<text>Convert a Separatist Engi.</text>
+		<event>
+			<text>You see your Engi being swarmed by a cloud of nanites, It doesn't seem very nice for the Engi.</text>
+			<item_modify>
+				<item type="drones" min="-2" max="-2" />
+			</item_modify>
+			<transformRace class="engi_separatist">aea_necro_engi</transformRace>
+			<choice>
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="engi_separatist_nano">
+		<text>Convert a Separatist Engi.</text>
+		<event>
+			<text>You see your Engi being swarmed by a cloud of nanites, It doesn't seem very nice for the Engi.</text>
+			<item_modify>
+				<item type="drones" min="-2" max="-2" />
+			</item_modify>
+			<transformRace class="engi_separatist_nano">aea_necro_engi</transformRace>
+			<choice>
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="engi_defender">
+		<text>Convert an Engi Defender.</text>
+		<event>
+			<text>You see your Engi being swarmed by a cloud of nanites, It doesn't seem very nice for the Engi.</text>
+			<item_modify>
+				<item type="drones" min="-5" max="-5" />
+			</item_modify>
+			<transformRace class="engi_defender">aea_necro_lich</transformRace>
+			<choice>
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+		</event>
+	</choice>
+</event>
 
 <mod:findName type="event" name="STORAGE_CHECK_STATUS_LOOT">
   <mod-append:choice hidden="true" req="ach_trans_aea_acid" lvl="1" blue="false">
@@ -18,9 +87,38 @@
   </mod-append:choice>
 </mod:findName>
 
+<mod:findName type="event" name="COMBAT_CHECK_TOGGLE">
+  <mod-append:choice req="AEA_DEFENSE_NECRO_1_MISSILE" blue="false">
+		<text>(Heretic Defense Drone I) Set the state of the drone. [Current mode: Anti-Missile]</text>
+		<event load="COMBAT_CHECK_AEA_DEFENSE_NECRO_MISSILE" />
+	</mod-append:choice>
+	<mod-append:choice req="AEA_DEFENSE_NECRO_1_DRONE" blue="false">
+		<text>(Heretic Defense Drone I) Set the state of the drone. [Current mode: Anti-Drone]</text>
+		<event load="COMBAT_CHECK_AEA_DEFENSE_NECRO_DRONE" />
+	</mod-append:choice>
+
+  <mod-append:choice req="AEA_DEFENSE_NECRO_2_MISSILE" blue="false">
+		<text>(Heretic Defense Drone II) Set the state of the drone. [Current mode: Anti-Missile]</text>
+		<event load="COMBAT_CHECK_AEA_DEFENSE_NECRO2_MISSILE" />
+	</mod-append:choice>
+	<mod-append:choice req="AEA_DEFENSE_NECRO_2_DRONE" blue="false">
+		<text>(Heretic Defense Drone II) Set the state of the drone. [Current mode: Anti-Drone]</text>
+		<event load="COMBAT_CHECK_AEA_DEFENSE_NECRO2_DRONE" />
+	</mod-append:choice>
+
+	<mod-append:choice req="AEA_COMBAT_NECRO_1_LASER" blue="false">
+		  <text>(Technomancy Drone I) Set the state of the drone. [Current mode: Laser]</text>
+		  <event load="COMBAT_CHECK_AEA_COMBAT_NECRO_1_LASER" />
+	  </mod-append:choice>
+	  <mod-append:choice req="AEA_COMBAT_NECRO_1_BEAM" blue="false">
+		  <text>(Technomancy Drone I) Set the state of the drone. [Current mode: Beam]</text>
+		  <event load="COMBAT_CHECK_AEA_COMBAT_NECRO_1_BEAM" />
+	  </mod-append:choice>
+</mod:findName>
+
 <event name="STORAGE_CHECK_AEA_O2SYS">
-  <text>What do you want to do?</text>
-  <checkCargo />
+	<text>What do you want to do?</text>
+	<checkCargo />
 	<choice>
 		<text>Nevermind.</text>
 		<event load="STORAGE_CHECK" />
@@ -83,5 +181,180 @@
     <text>Set Filtering System to Oxygen Mode (Currently Enabled)</text>
     <event load="OPTION_INVALID"/>
   </choice>
+</event>
+
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					ANTI-DRONE/ANTI-MISSILE
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="COMBAT_CHECK_AEA_DEFENSE_NECRO_MISSILE">
+	<text>Are you sure you want to change the drone's settings?</text>
+	<choice hidden="true">
+		<text>Set the drone to Anti-Drone Mode.</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_DEFENSE_NECRO_1_MISSILE" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_DEFENSE_NECRO_1_DRONE" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+	</choice>
+</event>
+<event name="COMBAT_CHECK_AEA_DEFENSE_NECRO_DRONE">
+	<text>Are you sure you want to change the drone's settings?</text>
+	<choice hidden="true">
+		<text>Set the drone to Anti-Missile Mode.</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_DEFENSE_NECRO_1_DRONE" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_DEFENSE_NECRO_1_MISSILE" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+	</choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					ANTI-DRONE/ANTI-MISSILE 2
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="COMBAT_CHECK_AEA_DEFENSE_NECRO2_MISSILE">
+	<text>Are you sure you want to change the drone's settings?</text>
+	<choice hidden="true">
+		<text>Set the drone to Anti-Drone Mode.</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_DEFENSE_NECRO_2_MISSILE" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_DEFENSE_NECRO_2_DRONE" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+	</choice>
+</event>
+<event name="COMBAT_CHECK_AEA_DEFENSE_NECRO2_DRONE">
+	<text>Are you sure you want to change the drone's settings?</text>
+	<choice hidden="true">
+		<text>Set the drone to Anti-Missile Mode.</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_DEFENSE_NECRO_2_DRONE" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_DEFENSE_NECRO_2_MISSILE" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+	</choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					LASER/BEAM DRONE 2
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="COMBAT_CHECK_AEA_COMBAT_NECRO_1_LASER">
+	<text>Are you sure you want to change the drone's settings?</text>
+	<choice hidden="true">
+		<text>Set the drone to Beam Mode.</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_COMBAT_NECRO_1_LASER" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_COMBAT_NECRO_1_BEAM" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+	</choice>
+</event>
+<event name="COMBAT_CHECK_AEA_COMBAT_NECRO_1_BEAM">
+	<text>Are you sure you want to change the drone's settings?</text>
+	<choice hidden="true">
+		<text>Set the drone to Laser Mode.</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_COMBAT_NECRO_1_BEAM" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_COMBAT_NECRO_1_LASER" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+	</choice>
 </event>
 </FTL>

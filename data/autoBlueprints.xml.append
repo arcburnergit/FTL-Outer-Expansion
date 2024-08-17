@@ -606,4 +606,553 @@
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
+
+
+
+
+<blueprintList name="LIST_CREW_ORGANIC_AEA_NECRO">
+	<name>human</name>
+	<name>human_medic</name>
+	<name>human_soldier</name>
+	<name>human_angel</name>
+	<name>human_engineer</name>
+	<name>human_technician</name>
+	<name>unique_tully</name>
+	<name>unique_haynes</name>
+	<name>unique_ellie</name>
+	<name>unique_ellie_lvl1</name>
+	<name>unique_ellie_lvl2</name>
+	<name>unique_ellie_lvl3</name>
+	<name>unique_ellie_lvl4</name>
+	<name>unique_ellie_lvl5</name>
+	<name>unique_ellie_lvl6</name>
+	<name>unique_ellie_stephan</name>
+	<name>human_mfk</name>
+	<name>human_legion</name>
+	<name>human_legion_pyro</name>
+	<name>unique_jerry</name>
+	<name>unique_jerry_gun</name>
+	<name>unique_jerry_pony</name>
+	<name>unique_jerry_pony_crystal</name>
+	<name>easter_coomer</name>
+	<name>easter_tommy</name>
+	<name>easter_bubby</name>
+	<name>human_humanoid</name>
+	<!--zoltan-->
+	<name>zoltan</name>
+	<name>zoltan_osmian</name>
+	<name>zoltan_monk</name>
+	<name>zoltan_devotee</name>
+	<name>zoltan_peacekeeper</name>
+	<name>zoltan_martyr</name>
+	<name>unique_anurak</name>
+	<name>unique_devorak</name>
+	<!--rock-->
+	<name>rock</name>
+	<name>rock_outcast</name>
+	<name>rock_commando</name>
+	<name>rock_cultist</name>
+	<name>rock_crusader</name>
+	<name>rock_paladin</name>
+	<name>rock_elder</name>
+	<name>unique_ariadne</name>
+	<name>unique_vortigon</name>
+	<name>unique_tuco</name>
+	<name>unique_symbiote</name>
+	<name>easter_brick</name>
+	<!--crystal-->
+	<name>crystal</name>
+	<name>crystal_liberator</name>
+	<name>crystal_sentinel</name>
+	<name>unique_ruwen</name>
+	<name>unique_dianesh</name>
+	<!--mantis-->
+	<name>mantis</name>
+	<name>mantis_free</name>
+	<name>mantis_suzerain</name>
+	<name>mantis_bishop</name>
+	<name>mantis_warlord</name>
+	<name>unique_kaz</name>
+	<name>unique_freddy</name>
+	<name>unique_freddy_sombrero</name>
+	<name>unique_freddy_jester</name>
+	<name>unique_freddy_fedora</name>
+	<name>unique_freddy_twohats</name>
+	<!--slug-->
+	<name>slug</name>
+	<name>slug_hektar</name>
+	<name>slug_hektar_box</name>
+	<name>slug_clansman</name>
+	<name>slug_saboteur</name>
+	<name>slug_ranger</name>
+	<name>slug_knight</name>
+	<name>unique_nights</name>
+	<name>unique_slocknog</name>
+	<name>unique_irwin</name>
+	<name>unique_irwin_demon</name>
+	<name>unique_sylvan</name>
+	<name>unique_billy</name>
+	<name>unique_billy_box</name>
+	<!--ghost-->
+	<name>phantom</name>
+	<name>phantom_alpha</name>
+	<name>phantom_goul</name>
+	<name>phantom_goul_alpha</name>
+	<name>phantom_wraith</name>
+	<name>phantom_wraith_alpha</name>
+	<name>phantom_mare</name>
+	<name>phantom_mare_alpha</name>
+	<name>unique_dessius</name>
+	<name>gbeleanor</name>
+	<name>gbpsych</name>
+	<name>gbscoleri</name>
+	<name>gbslimer</name>
+	<name>gbvinz</name>
+	<name>gbzuul</name>
+	<!--orchid-->
+	<name>orchid</name>
+	<name>orchid_caretaker</name>
+	<name>orchid_praetor</name>
+	<name>orchid_vampweed</name>
+	<name>orchid_cultivator</name>
+	<name>unique_mayeb</name>
+	<name>unique_tyerel</name>
+	<name>unique_ivar</name>
+	<!--shell-->
+	<name>shell</name>
+	<name>shell_guardian</name>
+	<name>shell_scientist</name>
+	<name>shell_mechanic</name>
+	<name>shell_radiant</name>
+	<name>unique_alkali</name>
+	<!--leech-->
+	<name>leech</name>
+	<name>leech_ampere</name>
+	<name>unique_alkram</name>
+	<name>unique_tyrdeo</name>
+	<name>unique_tonysr</name>
+	<!--lizard-->
+	<name>lizard</name>
+	<name>unique_metyunt</name>
+	<name>unique_guntput</name>
+	<!--nexus-->
+	<name>nexus_sylvan_cel</name>
+	<name>nexus_obyn_cel</name>
+	<name>nexus_sylvan_gman</name>
+	<name>beans</name>
+	<name>dylan</name>
+	<name>sylvan1d</name>
+	<name>sylvanclan</name>
+	<name>sylvanrebel</name>
+	<name>sylvansans</name>
+	<name>saltpapy</name>
+	<name>sylvanleah</name>
+	<name>sylvanrick</name>
+	<name>prime</name>
+	<!--siren-->
+	<name>siren</name>
+	<name>siren_harpy</name>
+	<!--misc-->
+	<name>eldritch_cat</name>
+	<name>eldritch_thing</name>
+	<name>eldritch_thing_weak</name>
+</blueprintList>
+
+<blueprintList name="LIST_SHIPS_AEA_NECRO_ALL">
+	<name>AEA_NECRO_BOMBER</name>
+	<name>AEA_NECRO_DROPSHIP</name>
+	<name>AEA_NECRO_ENFORCER</name>
+	<name>AEA_NECRO_FIGHTER</name>
+	<name>AEA_NECRO_GUARD</name>
+	<name>AEA_NECRO_MOTHERSHIP</name>
+	<name>AEA_NECRO_OUTRIDER</name>
+	<name>AEA_NECRO_PROTECTOR</name>
+	<name>AEA_NECRO_RIGGER</name>
+	<name>AEA_NECRO_SCOUT</name>
+	<name>AEA_NECRO_STATION</name>
+	<name>AEA_NECRO_TRANSPORT</name>
+	<name>AEA_NECRO_TRAPPER</name>
+</blueprintList>
+
+<blueprintList name="LIST_SHIPS_AEA_NECRO_GENERIC">
+	<name>AEA_NECRO_BOMBER</name>
+	<name>AEA_NECRO_DROPSHIP</name>
+	<name>AEA_NECRO_ENFORCER</name>
+	<name>AEA_NECRO_FIGHTER</name>
+	<name>AEA_NECRO_MOTHERSHIP</name>
+	<name>AEA_NECRO_OUTRIDER</name>
+	<name>AEA_NECRO_PROTECTOR</name>
+	<name>AEA_NECRO_RIGGER</name>
+	<name>AEA_NECRO_SCOUT</name>
+	<name>AEA_NECRO_STATION</name>
+	<name>AEA_NECRO_TRANSPORT</name>
+	<name>AEA_NECRO_TRAPPER</name>
+</blueprintList>
+
+<blueprintList name="LIST_SHIPS_AEA_NECRO_FIGHT">
+	<name>AEA_NECRO_BOMBER</name>
+	<name>AEA_NECRO_DROPSHIP</name>
+	<name>AEA_NECRO_ENFORCER</name>
+	<name>AEA_NECRO_FIGHTER</name>
+	<name>AEA_NECRO_MOTHERSHIP</name>
+	<name>AEA_NECRO_OUTRIDER</name>
+	<name>AEA_NECRO_PROTECTOR</name>
+	<name>AEA_NECRO_RIGGER</name>
+	<name>AEA_NECRO_SCOUT</name>
+	<name>AEA_NECRO_STATION</name>
+	<name>AEA_NECRO_TRAPPER</name>
+</blueprintList>
+
+<shipBlueprint name="AEA_NECRO_BOMBER" layout="aea_necro_bomber" img="aea_necro_bomber">
+	<class>Heretic Bomber</class>
+	<minSector>3</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<clonebay power="1" max="1" room="10" start="true" />
+		<doors power="1" max="2" room="2" start="false" />
+		<drones power="2" max="8" room="5" start="true" />
+		<engines power="1" max="2" room="9" start="true" />
+		<oxygen power="1" max="3" room="3" start="true" />
+		<pilot power="1" max="3" room="1" start="true" />
+		<shields power="2" max="8" room="7" start="true" />
+		<teleporter power="1" max="1" room="4" start="true" />
+		<weapons power="2" max="6" room="11" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="4" count="2" load="LIST_DRONES_ENGI" />
+	<health amount="10" />
+	<maxPower amount="8" />
+	<crewCount amount="3" max="6" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_NECRO_DROPSHIP" layout="aea_necro_dropship" img="aea_necro_dropship">
+	<class>Heretic Dropship</class>
+	<minSector>3</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="2" room="7" start="false" />
+		<clonebay power="1" max="1" room="8" start="true" />
+		<doors power="1" max="3" room="6" start="false" />
+		<drones power="2" max="8" room="5" start="true" />
+		<engines power="1" max="2" room="4" start="true" />
+		<hacking power="1" max="3" room="10" start="false" />
+		<mind power="1" max="1" room="3" start="true" />
+		<oxygen power="1" max="2" room="2" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="10" room="11" start="true" />
+		<teleporter power="2" max="2" room="1" start="true" />
+		<weapons power="2" max="8" room="9" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="0" count="4" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="11" count="2" load="LIST_DRONES_ENGI_DROPSHIP" />
+	<health amount="12" />
+	<maxPower amount="10" />
+	<crewCount amount="2" max="7" class="engi" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_NECRO_ENFORCER" layout="aea_necro_enforcer" img="aea_necro_enforcer">
+	<class>Heretic Enforcer</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<clonebay power="1" max="1" room="6" start="true" />
+		<doors power="1" max="3" room="3" start="false" />
+		<drones power="2" max="8" room="5" start="true" />
+		<engines power="1" max="2" room="7" start="true" />
+		<mind power="1" max="1" room="4" start="true" />
+		<oxygen power="1" max="2" room="1" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="2" max="8" room="9" start="true" />
+		<teleporter power="1" max="1" room="11" start="true" />
+		<weapons power="2" max="6" room="10" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="6" count="2" load="LIST_DRONES_ENGI" />
+	<health amount="12" />
+	<maxPower amount="10" />
+	<crewCount amount="2" max="6" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_NECRO_FIGHTER" layout="aea_necro_fighter" img="aea_necro_fighter">
+	<class>Heretic Fighter</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<clonebay power="1" max="1" room="4" start="true" />
+		<drones power="2" max="8" room="2" start="true" />
+		<engines power="1" max="2" room="6" start="true" />
+		<oxygen power="1" max="2" room="5" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="2" max="8" room="3" start="true" />
+		<teleporter power="1" max="1" room="7" start="true" />
+		<weapons power="2" max="7" room="1" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="0" count="3" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="10" count="3" load="LIST_DRONES_ENGI" />
+	<health amount="14" />
+	<maxPower amount="9" />
+	<crewCount amount="2" max="6" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_NECRO_GUARD" layout="aea_necro_guard" img="aea_necro_guard">
+	<class>Heretic Guard</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<clonebay power="1" max="1" room="5" start="true" />
+		<doors power="1" max="3" room="3" start="false" />
+		<drones power="2" max="8" room="9" start="true" />
+		<engines power="1" max="1" room="1" start="true" />
+		<hacking power="1" max="3" room="6" start="false" />
+		<mind power="1" max="1" room="10" start="true" />
+		<oxygen power="1" max="3" room="8" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="8" room="7" start="true" />
+		<teleporter power="1" max="2" room="2" start="true" />
+		<weapons power="2" max="8" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="10" count="3" load="LIST_DRONES_ENGI" />
+	<health amount="13" />
+	<maxPower amount="9" />
+	<crewCount amount="3" max="7" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_NECRO_MOTHERSHIP" layout="aea_necro_mothership" img="aea_necro_mothership">
+	<class>Heretic Mothership</class>
+	<minSector>3</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<clonebay power="1" max="2" room="1" start="true" />
+		<doors power="1" max="3" room="13" start="false" />
+		<drones power="3" max="10" room="7" start="true" />
+		<engines power="1" max="2" room="6" start="true" />
+		<mind power="1" max="2" room="4" start="true" />
+		<oxygen power="1" max="2" room="3" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="8" room="5" start="true" />
+		<teleporter power="1" max="2" room="8" start="true" />
+		<weapons power="2" max="5" room="11" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="25" count="4" load="LIST_DRONES_ENGI" />
+	<health amount="13" />
+	<maxPower amount="11" />
+	<crewCount amount="4" max="7" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_NECRO_OUTRIDER" layout="aea_necro_outrider" img="aea_necro_outrider">
+	<class>Heretic Outrider</class>
+	<minSector>1</minSector>
+	<maxSector>4</maxSector>
+	<systemList>
+		<cloaking power="1" max="2" room="3" start="false" />
+		<clonebay power="1" max="1" room="7" start="true" />
+		<drones power="2" max="7" room="2" start="true" />
+		<engines power="1" max="2" room="1" start="true" />
+		<oxygen power="1" max="2" room="4" start="true" />
+		<pilot power="2" max="3" room="0" start="true" />
+		<shields power="2" max="8" room="5" start="true" />
+		<teleporter power="1" max="1" room="8" start="true" />
+		<weapons power="2" max="6" room="6" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="6" count="3" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="4" count="2" load="LIST_DRONES_ENGI" />
+	<health amount="11" />
+	<maxPower amount="8" />
+	<crewCount amount="2" max="5" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_NECRO_PROTECTOR" layout="aea_necro_protector" img="aea_necro_protector">
+	<class>Heretic Protector</class>
+	<minSector>3</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="2" room="8" start="false" />
+		<clonebay power="1" max="3" room="2" start="true" />
+		<doors power="1" max="3" room="6" start="false" />
+		<drones power="2" max="7" room="13" start="true" />
+		<engines power="1" max="2" room="7" start="true" />
+		<mind power="1" max="3" room="5" start="true" />
+		<oxygen power="1" max="3" room="3" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="10" room="4" start="true" />
+		<teleporter power="1" max="2" room="1" start="true" />
+		<weapons power="2" max="8" room="10" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="8" count="3" load="LIST_DRONES_ENGI" />
+	<health amount="16" />
+	<maxPower amount="11" />
+	<crewCount amount="3" max="8" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_NECRO_RIGGER" layout="aea_necro_rigger" img="aea_necro_rigger">
+	<class>Heretic Rigger</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<clonebay power="1" max="3" room="5" start="true" />
+		<doors power="1" max="3" room="6" start="false" />
+		<drones power="2" max="10" room="1" start="true" />
+		<engines power="1" max="2" room="3" start="true" />
+		<mind power="1" max="2" room="4" start="false" />
+		<oxygen power="1" max="2" room="2" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="8" room="8" start="true" />
+		<teleporter power="1" max="2" room="9" start="true" />
+		<weapons power="2" max="5" room="7" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="5" count="3" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="7" count="3" load="LIST_DRONES_ENGI" />
+	<health amount="14" />
+	<maxPower amount="11" />
+	<crewCount amount="2" max="5" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_NECRO_SCOUT" layout="aea_necro_scout" img="aea_necro_scout">
+	<class>Heretic Scout</class>
+	<minSector>1</minSector>
+	<maxSector>4</maxSector>
+	<systemList>
+		<clonebay power="1" max="3" room="6" start="true" />
+		<drones power="2" max="6" room="0" start="true" />
+		<engines power="1" max="2" room="7" start="true" />
+		<oxygen power="1" max="2" room="3" start="true" />
+		<pilot power="1" max="2" room="5" start="true" />
+		<shields power="2" max="8" room="1" start="true" />
+		<teleporter power="1" max="2" room="2" start="true" />
+		<weapons power="2" max="6" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="4" count="2" load="LIST_DRONES_ENGI" />
+	<health amount="12" />
+	<maxPower amount="10" />
+	<crewCount amount="2" max="5" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_NECRO_STATION" layout="aea_necro_station" img="aea_necro_station">
+	<class>Heretic Station</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<battery power="1" max="2" room="13" start="false" />
+		<cloaking power="1" max="2" room="15" start="false" />
+		<clonebay power="1" max="3" room="5" start="true" />
+		<doors power="1" max="3" room="11" start="false" />
+		<drones power="2" max="8" room="6" start="true" />
+		<mind power="1" max="3" room="3" start="false" />
+		<oxygen power="1" max="3" room="7" start="true" />
+		<shields power="2" max="10" room="4" start="true" />
+		<teleporter power="1" max="2" room="2" start="true" />
+		<weapons power="2" max="8" room="12" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="15" count="3" load="LIST_DRONES_ENGI" />
+	<health amount="16" />
+	<maxPower amount="10" />
+	<crewCount amount="3" max="7" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="UPG_TECH_RESPIRATOR" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_NECRO_TRANSPORT" layout="aea_necro_transport" img="aea_necro_transport">
+	<class>Heretic Transport</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<battery power="1" max="2" room="6" start="false" />
+		<clonebay power="1" max="3" room="10" start="true" />
+		<doors power="1" max="3" room="1" start="false" />
+		<drones power="2" max="8" room="2" start="true" />
+		<engines power="1" max="2" room="8" start="true" />
+		<mind power="1" max="3" room="4" start="true" />
+		<oxygen power="1" max="2" room="5" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="7" start="true" />
+		<teleporter power="1" max="1" room="9" start="true" />
+		<weapons power="2" max="5" room="11" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="6" count="3" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="7" count="3" load="LIST_DRONES_ENGI" />
+	<health amount="13" />
+	<maxPower amount="9" />
+	<crewCount amount="3" max="8" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_NECRO_TRAPPER" layout="aea_necro_trapper" img="aea_necro_trapper">
+	<class>Heretic Trapper</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="2" room="2" start="false" />
+		<clonebay power="1" max="3" room="5" start="true" />
+		<drones power="2" max="8" room="3" start="true" />
+		<engines power="1" max="2" room="9" start="true" />
+		<mind power="1" max="3" room="1" start="false" />
+		<oxygen power="1" max="2" room="8" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="6" start="true" />
+		<teleporter power="1" max="3" room="4" start="true" />
+		<weapons power="3" max="7" room="7" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="2" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="10" count="2" load="LIST_DRONES_ENGI" />
+	<health amount="14" />
+	<maxPower amount="10" />
+	<crewCount amount="2" max="5" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+
 </FTL>

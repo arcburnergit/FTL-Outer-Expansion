@@ -3,7 +3,14 @@
 	<mod-append:choice hidden="true" req="juke_aea_acid">
 		<text>OE: Acidic</text>
 		<event>
-			<playMusic>Acidic</playMusic>
+			<playMusic>AEA_Acidic</playMusic>
+			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="juke_aea_necro">
+		<text>OE: Heretic</text>
+		<event>
+			<playMusic>AEA_Heretic</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>

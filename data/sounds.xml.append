@@ -1,10 +1,14 @@
 <FTL>
-
 <music>
 	<track>
-		<name>Acidic</name> <!--Music by lizzard-->
+		<name>AEA_Acidic</name> <!--Music by lizzard-->
 		<explore>aea_MUS_AcidicExplore.ogg</explore>
 		<combat>aea_MUS_AcidicBattle.ogg</combat>
+	</track>
+	<track>
+		<name>AEA_Heretic</name> <!--Music by lizzard-->
+		<explore>aea_MUS_HereticExplore.ogg</explore>
+		<combat>aea_MUS_HereticBattle.ogg</combat>
 	</track>
 </music>
 </FTL>

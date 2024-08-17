@@ -1,0 +1,1179 @@
+<FTL>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					GUARD
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<textList name="TEXT_START_AEA_NECRO">
+	<text>The Acidic Growth is a relatively unknown faction, however what isn't unknown is how dangerous it is.</text>
+	<text>This nebula is home to the Acidic Growth, it's still unknown whether it's a singular almost omnipresent entity or a hive mind of sorts, eitherway you probably don't wanna be on their bad side.</text>
+	<text>You're told the Acidic Growth has expanded into this nebula, Unfortunately only the orchids are welcome in Acidic space.</text>
+	<text>Not much is known about how the acidic growth lives and spends it's time, perhaps you'll find out, eitherway you'll be lucky to survive and tell the tale.</text>
+	<text>The Acidic Growth formed within a nebula like this, although able to survive naked in the nebula, the Acidic Growth has created it's own ships and technology in order to interact with the wider universe.</text>
+</textList>
+<event name="START_AEA_NECRO">
+	<metaVariable name="juke_aea_necro" op="set" val="1" />
+	<preventQuest />
+	<beaconType id="map_icon_start" global="false">
+		<color r="120" g="99" b="84" a="1"/>
+	</beaconType>
+	<text load="TEXT_START_AEA_NECRO" />
+    <modifyPursuit amount="-1" />
+	<changeBackground>BACK_SECTOR_AEA_NECRO</changeBackground>
+	<playSound>lightspeed</playSound>
+	<ship load="SHIP_GUARD_AEA_NECRO" hostile="false" />
+	<customFleet right="false" firing="true" autoDarkening="true">CUSTOM_FLEET_AEA_NECRO</customFleet>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_NECRO" />
+	</choice>
+</event>
+
+<event name="GUARD_AEA_NECRO">
+	<text>You're hailed by a strange engi vessel. "Welcome to our domain, please turn over all organics to us."</text>
+	<choice hidden="true">
+		<text>Fight your way through!</text>
+		<event>
+			<text>You mute the ship and prepare for combat.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="LIST_CREW_ORGANIC_AEA_NECRO" blue="false">
+		<text>Undergo Inspection</text>
+		<event/>
+	</choice>
+	<choice hidden="true" req="LIST_CREW_ORGANIC_AEA_NECRO" lvl="0" max_lvl="0" blue="false">
+		<text>Undergo Inspection</text>
+		<event/>
+	</choice>
+	<choice hidden="true" req="mind">
+		<text>(Mind Control) Convince the guard to leave you alone.</text>
+		<event load="GUARD_CLOAK" />
+	</choice>
+	<choice hidden="true" req="cloaking">
+		<text>(Cloaking) Cloak and try to escape.</text>
+		<event load="GUARD_CLOAK" />
+	</choice>
+	<choice hidden="true" req="engines" lvl="5">
+		<text>(Adv. Engines) Try to escape the guard.</text>
+		<event load="GUARD_ESCAPE" />
+	</choice>
+	<choice hidden="true" req="pilot" lvl="3">
+		<text>(Adv. Piloting) Activate the auto-pilot to try and escape.</text>
+		<event load="GUARD_ESCAPE" />
+	</choice>
+</event>
+
+<ship name="SHIP_GUARD_AEA_NECRO" auto_blueprint="AEA_NECRO_GUARD">
+	<surrender min="5" max="6" load="GUARD_SIGNAL" />
+	<destroyed load="GUARD_AEA_NECRO_DESTROY" />
+	<deadCrew load="GUARD_AEA_NECRO_DEADCREW" />
+</ship>
+
+<event name="GUARD_AEA_NECRO_DESTROY">
+	<text>You have defeated the Heretic guard. Whatever might have been in its cargo has for certain been destroyed, but you can at least salvage some supplies from the ship.</text>
+	<autoReward level="MED">standard</autoReward>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_NECRO_FOLLOWUP" />
+	</choice>
+</event>
+<event name="GUARD_AEA_NECRO_DEADCREW">
+	<text>You have defeated the Heretic guard. Without any of the Engi Heretics on board to stop you, you can investigate their cargo. You find a weapon to bring back to the ship, and move on to scrap their hull.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<weapon name="GIFTLIST_WEAPONS_NECRO" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_NECRO_FOLLOWUP" />
+	</choice>
+</event>
+
+<ship name="SHIP_AEA_NECRO_REINFORCEMENTS" auto_blueprint="LIST_SHIPS_AEA_NECRO_FIGHT">
+	<destroyed load="DESTROYED_REINFORCEMENTS" />
+	<deadCrew load="DEADCREW_REINFORCEMENTS" />
+</ship>
+<event name="GUARD_AEA_NECRO_FOLLOWUP">
+	<noQuestText />
+	<removeHazards />
+	<clearCustomFleet />
+	<text>By killing the Heretic guard, you have no doubt caused them to dispatch reinforcements to track you down. Watch your step as you explore the sector.</text>
+	<quest event="REINFORCEMENTS_AEA_NECRO">
+		<nebulaBeacon>true</nebulaBeacon>
+		<nextSector>false</nextSector>
+		<nebulaEvent>NEBULA_REINFORCEMENTS_AEA_NECRO</nebulaEvent>
+		<createNebula>false</createNebula>
+		<aggressive>2</aggressive>
+	</quest>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event />
+	</choice>
+</event>
+<event name="REINFORCEMENTS_AEA_ACID">
+	<preventQuest />
+	<beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
+		<color r="200" g="55" b="82" a="1" />
+		<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<text>The Acidic Growth has not taken your less than friendly entry to the sector well and it appears it has dispatched a ship specifically to stop you.</text>
+	<ship load="SHIP_AEA_ACID_REINFORCEMENTS" hostile="true" />
+	<environment type="PDS" target="player" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+<event name="NEBULA_REINFORCEMENTS_AEA_ACID">
+	<preventQuest />
+	<beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
+		<color r="200" g="55" b="82" a="1" />
+		<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<text>The Acidic Growth has not taken your less than friendly entry to the sector well and it appears it has dispatched a ship specifically to stop you.</text>
+	<ship load="SHIP_AEA_ACID_REINFORCEMENTS" hostile="true" />
+	<img back="BACK_EVENT_LIGHTNEBULA" />
+	<status type="loss" target="player" system="sensors" amount="1" />
+	<environment type="PDS" target="player" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<event name="START_AEA_ACIDHOME">
+	<metaVariable name="juke_aea_acid" op="set" val="1" />
+	<preventQuest />
+	<beaconType id="map_icon_start" global="false">
+		<color r="138" g="237" b="31" a="1" />
+	</beaconType>
+	<text>It's risky to venture this deep into acidic territory, The acidic growth originated from this sector, and it's very defensive of it.</text>
+	<variable name="loc_unique_sectors" op="add" val="1" />
+	<changeBackground>BACK_SECTOR_AEA_ACID</changeBackground>
+	<playSound>lightspeed</playSound>
+	<ship load="SHIP_GUARD_AEA_ACID_ELITE" hostile="false" />
+	<customFleet right="false" firing="true" autoDarkening="true">CUSTOM_FLEET_AEA_ACID</customFleet>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_ACIDHOME" />
+	</choice>
+</event>
+
+<event name="GUARD_AEA_ACIDHOME">
+	<text>The Elite guard here sends you a brief, to-the-point message. "You are not welcome here, please state your intentions or leave."</text>
+	<choice hidden="true" req="aea_acid_friendly" lvl="1">
+		<text>(Friendly) Make your identity known.</text>
+		<event>
+			<text>Once the Acidic Growth realizes who you are the guard welcomes you in, The Acidic Growth is even kind enough to spare you some supplies.</text>
+			<autoReward level="HIGH">stuff</autoReward>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Try your hand at negotiating.</text>
+		<event load="GUARD_AEA_ACIDHOME_NEGOTIATE" />
+	</choice>
+	<choice>
+		<text>Convince it you only have good intentions.</text>
+		<event>
+			<text>The Acidic Growth recognises your donation and lets you pass.</text>
+            <variable name="aea_acid_friendly" op="set" val="1" />
+			<item_modify>
+				<item type="scrap" min="-80" max="-80" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Fight your way through.</text>
+		<event>
+			<text>You silence communications and prepare to attack.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="aea_acid_soldier">
+		<text>(Acidic Soldier) Enter Freely.</text>
+		<event>
+			<text>The Acidic Growth is welcoming of itself, you're free to enter</text>
+            <variable name="aea_acid_friendly" op="set" val="1" />
+		</event>
+	</choice>
+	<choice hidden="true" req="aea_acid_captain">
+		<text>(Acidic Leader) Enter Freely.</text>
+		<event>
+			<text>The Acidic Growth is welcoming of itself, you're free to enter</text>
+            <variable name="aea_acid_friendly" op="set" val="1" />
+		</event>
+	</choice>
+    <choice hidden="true" req="orchid">
+        <text>(Orchid Crew) Request passage.</text>
+        <event>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <variable name="aea_acid_friendly" op="set" val="1" />
+        </event>
+    </choice>
+    <choice hidden="true" req="orchid_caretaker">
+        <text>(Caretaker Crew) Request passage.</text>
+        <event>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <variable name="aea_acid_friendly" op="set" val="1" />
+        </event>
+    </choice>
+    <choice hidden="true" req="orchid_praetor">
+        <text>(Praetor Crew) Request passage.</text>
+        <event>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <variable name="aea_acid_friendly" op="set" val="1" />
+        </event>
+    </choice>
+    <choice hidden="true" req="unique_mayeb">
+        <text>(Mayeb) Request passage.</text>
+        <event>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <variable name="aea_acid_friendly" op="set" val="1" />
+        </event>
+    </choice>
+    <choice hidden="true" req="unique_tyerel">
+        <text>(Ty E'rel) Request passage.</text>
+        <event>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <variable name="aea_acid_friendly" op="set" val="1" />
+        </event>
+    </choice>
+	<choice hidden="true" req="mind">
+		<text>(Mind Control) It's hard to mind control something you're not even sure has a mind, atleast one small enough to control.</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="cloaking">
+		<text>(Cloaking) Cloak and try to escape.</text>
+		<event load="GUARD_CLOAK" />
+	</choice>
+	<choice hidden="true" req="engines" lvl="5">
+		<text>(Adv. Engines) Try to escape the guard.</text>
+		<event load="GUARD_ESCAPE" />
+	</choice>
+	<choice hidden="true" req="pilot" lvl="3">
+		<text>(Adv. Piloting) Activate the auto-pilot to try and escape.</text>
+		<event load="GUARD_ESCAPE" />
+	</choice>
+</event>
+
+<eventList name="GUARD_AEA_ACIDHOME_NEGOTIATE">
+	<event>
+		<text>"Your offer is unacceptable."</text>
+		<choice hidden="true" req="weapons" lvl="6">
+			<text>(Adv. Weapons) Yes it is.</text>
+			<event>
+				<text>"Our opinion has not changed." The Acidic vessel moves into an attack position.</text>
+				<ship hostile="true" />
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event load="COMBAT_CHECK" />
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Then we'll just fight our way through!</text>
+			<event>
+				<text>You silence communications and prepare to attack.</text>
+				<ship hostile="true" />
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event load="COMBAT_CHECK" />
+				</choice>
+			</event>
+		</choice>
+		<choice>
+			<text>Convince it you only have good intentions at the original price.</text>
+			<event>
+				<text>The Acidic Growth recognises your donation and lets you pass.</text>
+				<variable name="aea_acid_friendly" op="set" val="1" />
+				<item_modify>
+					<item type="scrap" min="-80" max="-80" />
+				</item_modify>
+			</event>
+		</choice>
+	</event>
+	<event load="GUARD_AEA_ACIDHOME_NEGOTIATE_GOOD" />
+</eventList>
+<event name="GUARD_AEA_ACIDHOME_NEGOTIATE_GOOD">
+	<text>"An acceptable offer. The price will be lowered."</text>
+	<choice hidden="true">
+		<text>Refuse the new deal.</text>
+		<event>
+			<text>"Unfortunate." Their weapons spring out of the hull, it looks like you've overstayed your welcome.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text>Pay the new price.</text>
+		<event>
+			<text>The Acidic Growth recognises your donation and lets you pass.</text>
+			<item_modify>
+				<item type="scrap" min="-40" max="-40" />
+			</item_modify>
+		</event>
+	</choice>
+</event>
+
+<ship name="SHIP_GUARD_AEA_ACID_ELITE" auto_blueprint="AEA_ACID_GUARD_ELITE">
+	<surrender min="999" max="999" load="GUARD_SIGNAL" />
+	<destroyed load="GUARD_AEA_ACIDHOME_DESTROY" />
+	<deadCrew load="GUARD_AEA_ACIDHOME_DEADCREW" />
+</ship>
+
+<event name="GUARD_AEA_ACIDHOME_DESTROY">
+	<text>You have defeated the Acidic guard. Whatever might have been in their cargo has for certain been destroyed, but you can at least salvage some supplies from the ship.</text>
+	<autoReward level="HIGH">standard</autoReward>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_ACIDHOME_FOLLOWUP" />
+	</choice>
+</event>
+<event name="GUARD_AEA_ACIDHOME_DEADCREW">
+	<text>You have defeated the Acidic guard. Without the Acidic Growth on board to stop you, you can investigate their cargo. You find a weapon to bring back to the ship, and move on to scrap their hull.</text>
+	<autoReward level="HIGH">standard</autoReward>
+	<weapon name="GIFTLIST_WEAPONS_ACIDIC" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_ACIDHOME_FOLLOWUP" />
+	</choice>
+</event>
+
+<ship name="SHIP_AEA_ACIDHOME_REINFORCEMENTS" auto_blueprint="LIST_SHIPS_AEA_ACID_ELITE_FIGHT">
+	<destroyed load="DESTROYED_REINFORCEMENTS" />
+	<deadCrew load="DEADCREW_REINFORCEMENTS" />
+</ship>
+<event name="GUARD_AEA_ACIDHOME_FOLLOWUP">
+	<noQuestText />
+	<removeHazards />
+	<clearCustomFleet />
+	<text>By killing the Acidic guard, you have no doubt caused them to dispatch reinforcements to track you down. Watch your step as you explore the sector.</text>
+	<quest event="REINFORCEMENTS_AEA_ACIDHOME">
+		<nebulaBeacon>true</nebulaBeacon>
+		<nextSector>false</nextSector>
+		<nebulaEvent>NEBULA_REINFORCEMENTS_AEA_ACIDHOME</nebulaEvent>
+		<createNebula>false</createNebula>
+		<aggressive>2</aggressive>
+	</quest>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event />
+	</choice>
+</event>
+<event name="REINFORCEMENTS_AEA_ACIDHOME">
+	<preventQuest />
+	<beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
+		<color r="200" g="55" b="82" a="1" />
+		<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<text>The Acidic Growth has not taken your less than friendly entry to the sector well and it appears it has dispatched a ship specifically to stop you.</text>
+	<ship load="SHIP_AEA_ACIDHOME_REINFORCEMENTS" hostile="true" />
+	<environment type="PDS" target="player" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+<event name="NEBULA_REINFORCEMENTS_AEA_ACIDHOME">
+	<preventQuest />
+	<beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
+		<color r="200" g="55" b="82" a="1" />
+		<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<text>The Acidic Growth has not taken your less than friendly entry to the sector well and it appears it has dispatched a ship specifically to stop you.</text>
+	<ship load="SHIP_AEA_ACIDHOME_REINFORCEMENTS" hostile="true" />
+	<img back="BACK_EVENT_LIGHTNEBULA" />
+	<status type="loss" target="player" system="sensors" amount="1" />
+	<environment type="PDS" target="player" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					EVENTS
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<eventList name="STORELIST_AEA_ACID">
+	<event load="STOREEVENT_OUTPOST" />
+	<event load="STOREEVENT_DAMAGED" />
+	
+	<event load="STOREEVENT_FED_MARKET" />
+	
+	<event load="STOREEVENT_ORCHID_FARM" />
+	<event load="STOREEVENT_ORCHID_KERNELS" />
+    
+	<event load="STOREEVENT_VAMPWEED_SPORES" />
+</eventList>
+
+<eventList name="NEBULA_STORELIST_AEA_ACID">
+	<event load="NEBULA_STOREEVENT_DAMAGED" />
+	<event load="NEBULA_STOREEVENT_DAMAGED" />
+	
+	<event load="NEBULA_STOREEVENT_FED_OUTPOSTDAMAGE" />
+	<event load="NEBULA_STOREEVENT_FED_OUTPOSTDAMAGE" />
+	
+	<event load="NEBULA_STOREEVENT_COALITION_MYSTERYRACE" />
+	<event load="NEBULA_STOREEVENT_COALITION_RACES" />
+	
+	<event load="NEBULA_STOREEVENT_PIRATE_ODDSHOP" />
+	<event load="NEBULA_STOREEVENT_PIRATE_AWKWARD" />
+	
+	<event load="NEBULA_STOREEVENT_LEECH_SCAVENGER" />
+</eventList>
+
+<ship name="SHIP_AEA_ACID_TRANSPORT_LOOT" auto_blueprint="AEA_ACID_TRANSPORT">
+	<escape timer="40" min="999" max="999">
+		<text>They look like they don't want to fight. They are trying to escape.</text>
+		<ship hostile="true" />
+	</escape>
+	<destroyed load="TRANSPORT_DESTROYED" />
+	<deadCrew load="TRANSPORT_CAPTURE_AEA_ACID" />
+</ship>
+
+<event name="NEBULA_TRANSPORT_AEA_ACID_LOOT" unique="true">
+	<preventQuest />
+	<beaconType id="map_icon_transport" global="true" req="LOOT_COMPASS">
+		<color r="138" g="237" b="31" a="1"/>
+		<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+    <environment type="nebula"/>
+	<text>This beacon hosts an Acidic transport. It's safe to bet the ship is most likely carrying some special tech. If you can kill the acidic growth onboard, the cargo will be yours.</text>
+	<ship load="SHIP_AEA_ACID_TRANSPORT_LOOT" hostile="false" />
+	<choice>
+		<text>Demand the surrender of the goods.</text>
+		<event>
+			<text>You prepare to secure the cargo by force.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+        <text>Avoid the ship.</text>
+        <event>
+            <text>The ship stays outside your weapons range, and eventually jumps away.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+        </event>
+    </choice>
+</event>
+<event name="TRANSPORT_CAPTURE_AEA_ACID" unique="true">
+	<text>The crew is dead, leaving you with the ship. Its cargo is yours for the taking. Aboard is the special tech you expected, which you bring back to your ship.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<weapon name="LIST_LOOT_AEA_ACID" />
+	<variable name="ach_trans_aea_acid" op="set" val="1" />
+	<achievement>ACH_TRANS_AEA_ACID</achievement>
+</event>
+
+<eventList name="DESTROYED_AEA_ACID">
+	<event load="DESTROYED_AEA_ACID_GENERIC" />
+	<event load="DESTROYED_AEA_ACID_GENERIC" />
+	<event load="DESTROYED_AEA_ACID_GENERIC" />
+	<event load="DESTROYED_AEA_ACID_GENERIC" />
+	
+	<event load="DESTROYED_AEA_ACID_ACIDGUN" />
+</eventList>
+<event name="DESTROYED_AEA_ACID_GENERIC">
+	<text load="TEXT_DESTROYED_AEA_ACID" />
+	<autoReward level="MED">standard</autoReward>
+</event>
+<textList name="TEXT_DESTROYED_AEA_ACID">
+	<text>As the wreck drifts apart you can just about make out the drifting clouds of gas formally making up the Acidic Growth.</text>
+	<text>As the wreck breaks apart you wonder if the scattered fragments of the Acidic Growth will ever make it back to their nebulas.</text>
+	<text>You wonder how long it takes a formless cloud of gas to constuct a spaceship, if the Acidic Growth could be angry, it would probably be angry with you right now.</text>
+	<text>Another Acidic vessel destroyed, and another piece of the Acidic Growth stranded.</text>
+	<text>Someday the Acidic Growth may reach out to form an alliance with the federation, you'll just have to hope it forgets about all the ships you've destroyed.</text>
+	<text>You can't help but feel sorry for those you've killed, even if they may or may not be alive.</text>
+</textList>
+<event name="DESTROYED_AEA_ACID_ACIDGUN">
+	<text>To your surprise, one of the natively built Acidic weapons survived the explosion. It's a little crisp from the explosion but with a few repairs you can salvage it.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<weapon name="GIFTLIST_WEAPONS_ACIDIC" />
+</event>
+
+<eventList name="DEAD_CREW_AEA_ACID">
+	<event load="DEAD_CREW_AEA_ACID_GENERIC" />
+	<event load="DEAD_CREW_AEA_ACID_GENERIC" />
+	<event load="DEAD_CREW_AEA_ACID_GENERIC" />
+	<event load="DEAD_CREW_AEA_ACID_GENERIC" />
+	
+	<event load="DEAD_CREW_AEA_ACID_ACIDGUN" />
+</eventList>
+<event name="DEAD_CREW_AEA_ACID_GENERIC">
+	<text load="TEXT_DEAD_CREW_AEA_ACID" />
+	<autoReward level="HIGH">standard</autoReward>
+</event>
+<textList name="TEXT_DEAD_CREW_AEA_ACID">
+	<text>You wonder if the Acidic Growth will know of the slaughter you've committed here, either way this wreck is still full of scrap.</text>
+	<text>Now the Acidic Growth's crew are but fragments diffused about the ship, get to scrapping.</text>
+	<text>You thought you would become numb to the guilt after enough murders, but you have yet to experience this.</text>
+	<text>The Acidic ship has been rid of crew. The moral part of you hopes that killing an Acidic soldier doesn't count as murder.</text>
+	<text>You reassure yourself that the crew of this ship can feel neither pain nor fear as you strip their vessel of anything useful.</text>
+</textList>
+<event name="DEAD_CREW_AEA_ACID_ACIDGUN">
+	<text>Now emptied of crew, you find one of the natively built Acidic weapons on board. You take it back with you before scrapping the ship.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<weapon name="GIFTLIST_WEAPONS_ACIDIC" />
+</event>
+
+<event name="ESCAPE_AEA_ACID">
+	<text load="TEXT_ESCAPE_AEA_ACID" />
+</event>
+<textList name="TEXT_ESCAPE_AEA_ACID">
+	<text>The Acidic ship powers up its engines and swerves away from you. It's trying to escape!</text>
+	<text>You detect high spikes in engine power on the Acidic ship. It's trying to escape.</text>
+</textList>
+
+<eventList name="GOTAWAY_AEA_ACID">
+	<event load="GOTAWAY_AEA_ACID_GENERIC" />
+	<event load="GOTAWAY_AEA_ACID_GENERIC" />
+	
+	<event load="GOTAWAY_AEA_ACID_REMAINS" />
+</eventList>
+<event name="GOTAWAY_AEA_ACID_GENERIC">
+	<text load="TEXT_GOTAWAY_AEA_ACID" />
+</event>
+<textList name="TEXT_GOTAWAY_AEA_ACID">
+	<text>The Acidic ship escapes. To be honest, you're a little glad, hopefully in the future the Acidic Growth won't try to obliterate you either.</text>
+	<text>The Acidic ship jumps away. You pickup some residue gas clouds in the area, you wonder if there are any fragments of the acidic growth out there.</text>
+	<text>The Acidic ship's engine power spikes even higher and the ship jumps away.</text>
+</textList>
+<event name="GOTAWAY_AEA_ACID_REMAINS">
+	<text>As the Acidic ship jumps away you notice a trail of scrap left behind from the broken ship. At least you'll have something to scrap.</text>
+	<autoReward level="LOW">scrap_only</autoReward>
+</event>
+
+<event name="SURRENDER_AEA_ACID">
+	<text load="TEXT_SURRENDER_AEA_ACID" />
+	<choice>
+		<text>Accept its surrender.</text>
+		<event load="SURRENDER_AEA_ACID_ACCEPT" />
+	</choice>
+	<choice req="aea_acid_soldier">
+		<text>(Acidic Soldier) Negotiate a different deal.</text>
+		<event name="SURRENDER_AEA_ACID_STONKS">
+			<ship hostile="false" />
+			<autoReward level="RANDOM">stuff</autoReward>
+		</event>
+	</choice>
+	<choice>
+		<text load="GENERIC_SURRENDER_CHOICE_NOMERCY" />
+		<event />
+	</choice>
+</event>
+<textList name="TEXT_SURRENDER_AEA_ACID">
+	<text>A monotone voice requests you to stop firing in return for some supplies.</text>
+	<text>The Acidic ship surrenders. They offer some supplies if you'll let it live.</text>
+	<text>"The offer is satisfactory. Please accept it."</text>
+	<text>"Stop firing, you will recieve reward." It appears the ship is surrendering.</text>
+</textList>
+
+<event name="SURRENDER_AEA_ACID_ACCEPT">
+	<ship hostile="false" />
+	<autoReward level="RANDOM">droneparts</autoReward>
+</event>
+
+
+
+<event name="AEA_ACID_TEST_FIGHT">
+    <text>TEST</text>
+    <ship load="SHIP_AEA_ACID_ALL" hostile="true"/>
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event load="COMBAT_CHECK"/>
+    </choice>
+</event>
+
+
+
+
+<ship name="SHIP_AEA_ACID_ALL" auto_blueprint="LIST_SHIPS_AEA_ACID_ALL">
+	<surrender chance="0.5" min="2" max="3" load="SURRENDER_AEA_ACID" />
+	<escape chance="0.5" min="3" max="4" load="ESCAPE_AEA_ACID" />
+	<gotaway load="GOTAWAY_AEA_ACID" />
+	<destroyed load="DESTROYED_AEA_ACID" />
+	<deadCrew load="DEAD_CREW_AEA_ACID" />
+</ship>
+
+<ship name="SHIP_AEA_ACID_GENERIC" auto_blueprint="LIST_SHIPS_AEA_ACID_GENERIC">
+	<surrender chance="0.5" min="2" max="3" load="SURRENDER_AEA_ACID" />
+	<escape chance="0.5" min="3" max="4" load="ESCAPE_AEA_ACID" />
+	<gotaway load="GOTAWAY_AEA_ACID" />
+	<destroyed load="DESTROYED_AEA_ACID" />
+	<deadCrew load="DEAD_CREW_AEA_ACID" />
+</ship>
+
+<ship name="SHIP_AEA_ACID_FIGHT" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
+	<surrender chance="0.5" min="2" max="3" load="SURRENDER_AEA_ACID" />
+	<escape chance="0.5" min="3" max="4" load="ESCAPE_AEA_ACID" />
+	<gotaway load="GOTAWAY_AEA_ACID" />
+	<destroyed load="DESTROYED_AEA_ACID" />
+	<deadCrew load="DEAD_CREW_AEA_ACID" />
+</ship>
+
+<ship name="SHIP_AEA_ACID_REFUGEE" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
+	<destroyed>
+		<text>The Acidic ship breaks apart and you salvage what you can.</text>
+		<autoReward level="MED">standard</autoReward>
+		<choice hidden="true">
+			<text>Contact the refugee ship.</text>
+			<event>
+				<text>The refugee ship claims they didn't realize this was territory belonging to the Acidic Growth. As a gesture of good will (and seeing how effectively you dispatched the enemy ship), they offer up what supplies they can spare.</text>
+				<autoReward level="LOW">standard</autoReward>
+			</event>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>The Acidic ship, now out of control of the Acidic Growth, provides easy salvage.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice hidden="true">
+			<text>Contact the refugee ship.</text>
+			<event>
+				<text>The refugee ship claims they didn't realize this was territory belonging to the Acidic Growth. As a gesture of good will (and seeing how effectively you dispatched the enemy ship), they offer up what supplies they can spare.</text>
+				<autoReward level="LOW">standard</autoReward>
+			</event>
+		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_ACID_TRANSPORT_NORMAL" auto_blueprint="AEA_ACID_TRANSPORT">
+	<surrender chance="0.5" min="2" max="3" load="SURRENDER_AEA_ACID" />
+	<destroyed load="DESTROYED_AEA_ACID" />
+	<deadCrew load="DEAD_CREW_AEA_ACID" />
+</ship>
+
+<ship name="SHIP_AEA_ACID_CARETAKER_FIGHT" auto_blueprint="LIST_SHIPS_CARETAKER_FIGHT">
+	<surrender chance="0.5" min="2" max="3" load="SURRENDER_ORCHID" />
+	<escape chance="0.5" min="3" max="4" load="ESCAPE_ORCHID" />
+	<gotaway load="GOTAWAY_ORCHID" />
+	<destroyed load="DESTROYED_ORCHID" />
+	<deadCrew>
+        <text>With the crew dead you begin to salvage the ship, However you arrive in a strange room, it appears to be some kind of nursery... Are those Orchid Children?</text>
+        <choice>
+            <text>Take them with you.</text>
+            <event>
+                <text>You transfer the Orchid children to your cargo hold before finishing the salvage operation.</text>
+                <autoReward level="MED">standard_no_item</autoReward>
+                <augment name="ORCHID_KIDS" />
+                <choice hidden="true">
+                    <text>Continue...</text>
+                    <event load="MORALITY_UPDATE_ORCHID_FIGHT_DOUBLE" />
+                </choice>
+            </event>
+        </choice>
+        <choice>
+            <text>Finish salvaging the ship and forget about the nursery.</text>
+            <event>
+                <text>You ignore the room and salvage the rest of the vessel, those kids will be fine, Right?</text>
+                <autoReward level="MED">standard</autoReward>
+                <choice hidden="true">
+                    <text>Continue...</text>
+                    <event load="MORALITY_UPDATE_ORCHID_FIGHT_DOUBLE" />
+                </choice>
+            </event>
+        </choice>
+        <choice>
+            <text>Set up a distress beacon and leave.</text>
+            <event>
+                <text>You setup a distress beacon on the wreck and try to remove any evidence of your presence before leaving as quickly as possible.</text>
+                <autoReward level="LOW">stuff</autoReward>
+                <choice hidden="true">
+                    <text>Continue...</text>
+                    <event/>
+                </choice>
+            </event>
+        </choice>
+    </deadCrew>
+</ship>
+
+<event name="DEFEAT_AEA_ACID_ELITE">
+	<text>You're still not sure killing Acidic Soldiers counts as murder, eitherway losing an elite vessel like that has to hurt the Acidic Growth.</text>
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>It seems the cargo of the Elite Acidic ship survived the fight. Inside is a functional weapon, which you bring back on board.</text>
+			<weapon name="GIFTLIST_WEAPONS_ACIDIC" />
+		</event>
+	</choice>
+</event>
+
+<ship name="SHIP_AEA_ACID_ELITE_ALL" auto_blueprint="LIST_SHIPS_AEA_ACID_ELITE_ALL">
+	<surrender chance="0.1" min="2" max="3" load="SURRENDER_AEA_ACID" />
+	<destroyed load="DEFEAT_AEA_ACID_ELITE" />
+	<deadCrew load="DEFEAT_AEA_ACID_ELITE" />
+</ship>
+
+<ship name="SHIP_AEA_ACID_ELITE_GENERIC" auto_blueprint="LIST_SHIPS_AEA_ACID_ELITE_GENERIC">
+	<surrender chance="0.1" min="2" max="3" load="SURRENDER_AEA_ACID" />
+	<destroyed load="DEFEAT_AEA_ACID_ELITE" />
+	<deadCrew load="DEFEAT_AEA_ACID_ELITE" />
+</ship>
+
+<ship name="SHIP_AEA_ACID_ELITE_FIGHT" auto_blueprint="LIST_SHIPS_AEA_ACID_ELITE_FIGHT">
+	<surrender chance="0.1" min="2" max="3" load="SURRENDER_AEA_ACID" />
+	<destroyed load="DEFEAT_AEA_ACID_ELITE" />
+	<deadCrew load="DEFEAT_AEA_ACID_ELITE" />
+</ship>
+
+<ship name="SHIP_AEA_ACID_ELITE_FIGHT_NOSURRENDER" auto_blueprint="LIST_SHIPS_AEA_ACID_ELITE_FIGHT">
+	<destroyed load="DEFEAT_AEA_ACID_ELITE" />
+	<deadCrew load="DEFEAT_AEA_ACID_ELITE" />
+</ship>
+
+<event name="NEBULA_ACIDIC">
+    <img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
+	<status type="limit" target="player" system="sensors" amount="0" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
+    <text>TEST</text>
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event/>
+    </choice>
+</event>
+
+<ship name="SHIP_AEA_ACID_AUGITEM" auto_blueprint="LIST_SHIPS_AEA_ACID_GENERIC">
+	<destroyed>
+		<text>You've defeated the Acidic Growth, leaving the shipyard unprotected.</text>
+		<autoReward level="LOW">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>With the shipyard now undefended you're able to loot anything useful, you find an Acidic upgrade package for your oxygen system.</text>
+				<augment name="AEA_ACID_O2SYS_OFF" />
+			</event>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>You've defeated the Acidic Growth, leaving the shipyard unprotected.</text>
+		<autoReward level="MED">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>With the shipyard now undefended you're able to loot anything useful, you find an Acidic upgrade package for your oxygen system.</text>
+				<augment name="AEA_ACID_O2SYS_OFF" />
+			</event>
+		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_ACID_DISTRESS_ACIDIC" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
+	<destroyed>
+		<text>The Acidic ship defeated, you contact the weakened Slug vessel. "You ssseee," they begin, "we are most grateful, but, that isss, we do not currently have the liquid asssets to reward you at this time."</text>
+		<autoReward level="MED">standard</autoReward>
+		<choice hidden="true">
+			<text>Leave them be.</text>
+			<event>
+				<text>These wretches aren't worth fighting. Time to spin up and jump off.</text>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Finish them off.</text>
+			<event load="AEA_ACID_DISTRESS_ACIDIC_SURRENDER" />
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>The Acidic ship defeated, you contact the weakened Slug vessel. "You sssee," they begin, "we are most grateful, but, that isss, we do not currently have the liquid asssets to reward you at thiss time."</text>
+		<autoReward level="MED">standard</autoReward>
+		<choice hidden="true">
+			<text>Leave them be.</text>
+			<event>
+				<text>These wretches aren't worth fighting. Time to spin up and jump off.</text>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Finish them off.</text>
+			<event load="AEA_ACID_DISTRESS_ACIDIC_SURRENDER" />
+		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_ACID_DISTRESS_ACIDIC_SLUG" auto_blueprint="LIST_SHIPS_AEA_ACID_GENERIC">
+	<destroyed>
+		<text>At last the Slugs' prized possessions are yours for the taking. After, that is, you split your takings with the Acidic vessel.</text>
+		<autoReward level="HIGH">standard</autoReward>
+	</destroyed>
+	<deadCrew>
+		<text>At last the Slugs' prized possessions are yours for the taking. After, that is, you split your takings with the Acidic vessel.</text>
+		<autoReward level="HIGH">standard</autoReward>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_ACID_ASTEROIDS" auto_blueprint="MU_ASTEROIDS">
+	<destroyed>
+        <status type="clear" target="player" system="engines" amount="999" />
+        <text>With the asteriods destroyed you're able to reactive your engines and carefully make your way over to the wreck to begin salvaging it.</text>
+        <autoReward level="MED">standard</autoReward>
+    </destroyed>
+	<triggeredEvent event="AEA_ACID_ASTEROID_APPROACHING_FAIL" thisFight="true" clearOnJump="true" time="30.0">
+		<triggeredEventBox load="DEFAULT_TIMER" pos="combat">
+			<warning time="10.0" flash="true" />
+			<tooltip>The asteroid is expected to strike within this amount of time. Make sure to destroy it before the timer reaches 0!</tooltip>
+		</triggeredEventBox>
+		<timerSounds load="DEFAULT_TIMER_SOUNDS" />
+	</triggeredEvent>
+</ship>
+
+<event name="AEA_ACID_ASTEROID_APPROACHING_FAIL">
+    <text>You were not able to stop the asteroids in time. They smash into your ship, sending debris in every direction.</text>
+	<damage amount="2" system="random" effect="breach" />
+	<damage amount="2" system="random" effect="breach" />
+	<damage amount="1" system="random" effect="fire" />
+	<instantEscape />
+</event>
+
+
+
+<ship name="SHIP_AEA_ACID_ORCHID_ONLY" auto_blueprint="LIST_SHIPS_AEA_ACID_GENERIC">
+	<destroyed>
+        <text>With the orchids destroyed to move in to salvage what you can of the ship.</text>
+        <autoReward level="MED">standard</autoReward>
+    </destroyed>
+	<deadCrew>
+        <text>With the orchids killed and the Acidic Growth avenged, you move in to salvage what you can off of the ship.</text>
+        <autoReward level="HIGH">standard</autoReward>
+    </deadCrew>
+    <crew>
+		<crewMember type="orchid" prop="0.80" />
+		<crewMember type="orchid_caretaker" prop="0.20" />	
+    </crew>
+</ship>
+
+
+
+<ship name="SHIP_AEA_ACID_STATUS_SHIELDS" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
+	<destroyed>
+		<text>The Acidic ship breaks apart and your shields return to normal. You collect what you can.</text>
+		<autoReward level="MED">standard</autoReward>
+		<status type="clear" target="player" system="shields" amount="100" />
+	</destroyed>
+	<deadCrew>
+		<text>With their crew dead, you quickly shut off their hacking module and your shields return to normal. You strip the ship.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<status type="clear" target="player" system="shields" amount="100" />
+	</deadCrew>
+</ship>
+<ship name="SHIP_AEA_ACID_STATUS_OXYGEN" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
+	<destroyed>
+		<text>The Acidic ship breaks apart and your oxygen return to normal. You collect what you can.</text>
+		<autoReward level="MED">standard</autoReward>
+		<status type="clear" target="player" system="oxygen" amount="100" />
+	</destroyed>
+	<deadCrew>
+		<text>With their crew dead, you quickly shut off their hacking module and your oxygen return to normal. You strip the ship.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<status type="clear" target="player" system="oxygen" amount="100" />
+	</deadCrew>
+</ship>
+<ship name="SHIP_AEA_ACID_STATUS_WEAPONS" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
+	<destroyed>
+		<text>The Acidic ship breaks apart and your weapon system returns to normal. You collect what you can.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<status type="clear" target="player" system="weapons" />
+	</destroyed>
+	<deadCrew>
+		<text>With their crew dead, you quickly shut off their hacking module and your weapon system returns to normal. You strip the ship.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<status type="clear" target="player" system="weapons" />
+	</deadCrew>
+</ship>
+<ship name="SHIP_AEA_ACID_STATUS_HACKING" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
+	<destroyed>
+		<text>The Acidic ship breaks apart and their hacking module is destroyed. You collect what you can.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<status type="clear" target="player" system="hacking" />
+	</destroyed>
+	<deadCrew>
+		<text>With their crew dead, you quickly shut off their hacking module and your system returns to normal. You strip the ship.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<status type="clear" target="player" system="hacking" />
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_ACID_PRISONER_ELITE" auto_blueprint="LIST_SHIPS_AEA_ACID_ELITE_FIGHT">
+	<destroyed>
+		<text>You've defeated the Elite Acidic Vessel. However, while you attempt to scrap it, you notice the jailer is trying to flee!</text>
+		<choice hidden="true">
+			<text>Let them go and finish scrapping the ship.</text>
+			<event>
+				<text>You let the jailer ship disappear into the clouds and continue your salvage mission.</text>
+				<autoReward level="HIGH">item</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Abandon the wreckage and chase down the Jailer.</text>
+			<event>
+				<text>You follow the Jailer through the nebula until they finally give up and surrender.</text>
+				<choice hidden="true">
+					<text>Free their prisoners.</text>
+					<event>
+						<text>It appears they have only a single prisoner on board. A Slug Saboteur, they're grateful.</text>
+						<crewMember amount="1" class="slug_saboteur" />
+					</event>
+				</choice>
+			</event>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>You've defeated the Elite Acidic Vessel. However, while you attempt to scrap it, you notice the jailer is trying to flee!</text>
+		<choice hidden="true">
+			<text>Let them go and finish scrapping the ship.</text>
+			<event>
+				<text>You let the jailer ship disappear into the clouds and continue your salvage mission.</text>
+				<autoReward level="HIGH">item</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Abandon the wreckage and chase down the Jailer.</text>
+			<event>
+				<text>You follow the Jailer through the nebula until they finally give up and surrender.</text>
+				<choice hidden="true">
+					<text>Free their prisoners.</text>
+					<event>
+						<text>It appears they have only a single prisoner on board. A Slug Saboteur, they're grateful.</text>
+						<crewMember amount="1" all_skills="1" class="slug_saboteur" />
+					</event>
+				</choice>
+			</event>
+		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_ACID_CIVILIAN" auto_blueprint="MU_UNION_DROPSHIP">
+	<escape timer="50" min="999" max="999" />
+	<gotaway>
+		<text>The rebels jump away. They'll no doubt relay your position to the rest of the rebellion.</text>
+		<modifyPursuit amount="1" />
+	</gotaway>
+	<destroyed>
+		<text>The rebels have been defeated, It's a good thing you saw through their disguise as a simple civilian vessel, or maybe you're just a monster.</text>
+		<autoReward level="LOW">standard</autoReward>
+        <choice hidden="true">
+            <text>Continue...</text>
+            <event load="NEBULA_AEA_ACID_CIV_HUNT_WIN"/>
+        </choice>
+	</destroyed>
+	<deadCrew>
+		<text>The rebels have been defeated, It's a good thing you saw through their disguise as a simple civilian vessel, or maybe you're just a monster.</text>
+		<autoReward level="LOW">standard</autoReward>
+        <choice hidden="true">
+            <text>Continue...</text>
+            <event load="NEBULA_AEA_ACID_CIV_HUNT_WIN"/>
+        </choice>
+	</deadCrew>
+	<crew>
+		<crewMember type="human_mfk" prop="0.25" />
+		<crewMember type="human_rebel" prop="0.75" />
+	</crew>
+	<weaponOverride count="4">
+		<name>LIST_WEAPONS_REBEL_SELITE</name>
+		<name>LIST_WEAPONS_REBEL_SELITE</name>
+		<name>LIST_WEAPONS_REBEL_SELITE</name>
+		<name>LIST_WEAPONS_REBEL_SELITE</name>
+	</weaponOverride>
+</ship>
+
+<ship name="SHIP_QUEST_AEA_ACID_PIRATE_TRAP1" auto_blueprint="LIST_SHIPS_AEA_ACID_ALL">
+	<surrender min="3" max="4">
+		<text>When the Acidic ship looks ready to break apart you notice the Slug ship has secured the loot and is preparing to jump away!</text>
+		<choice hidden="true">
+			<text>Continue fighting the Acidic ship.</text>
+			<event>
+				<text>It's best you finish this - but you wonder whether what the Acidic vessel is carrying will be as valuable as what the Slugs snuck off with.</text>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Let the Acidic ship escape and go after the Slug ship.</text>
+			<event>
+				<text>The Acidic vessel too badly damaged to pursue you, and you catch up to the Slugs before they jump. "Ah, of courssse, we would never leave without providing the agreed upon ssspoils." They transfer over a decent chunk of the profits and set off.</text>
+				<autoReward level="HIGH">scrap_only</autoReward>
+				<augment name="RANDOM" />
+				<ship hostile="false" />
+			</event>
+		</choice>
+	</surrender>
+	<destroyed>
+		<text>With the Acidic vessel defeated you scan the debris for anything useful. The Slug ship is long gone, spoils from the cache in hand.</text>
+		<autoReward level="MED">standard</autoReward>
+	</destroyed>
+	<deadCrew>
+		<text>With the Acidic vessel defeated you scan the debris for anything useful. The Slug ship is long gone, spoils from the cache in hand.</text>
+		<autoReward level="HIGH">standard</autoReward>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_QUEST_AEA_ACID_PIRATE_TRAP2" auto_blueprint="LIST_SHIPS_AEA_ACID_ALL">
+	<destroyed>
+		<text>With the Acidic vessel taken care of, you search again for the cache it was protecting, but it's lost in the clouds. You console yourself with the salvage from the well-armed ship.</text>
+		<autoReward level="MED">standard</autoReward>
+	</destroyed>
+	<deadCrew>
+		<text>With the Acidic vessel defeated, you search again for the cache it was protecting, but it's lost in the clouds. You console yourself with the salvage from the well-armed ship.</text>
+		<autoReward level="HIGH">standard</autoReward>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_ACID_INFECTOR" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
+	<surrender min="2" max="4">
+		<text>"This fight isn't worth it, take the antidote as a trade for peace."</text>
+		<choice>
+			<text>Accept their offer.</text>
+			<event>
+				<text>The Acidic vessel transfers over the antidote, and promptly jumps away. You're hesitant to inject it into your crew, but you have no choice. Luckily, they seem to be getting better already.</text>
+				<autoReward level="LOW">scrap_only</autoReward>
+				<clearTriggeredEvent name="TIMER_AEA_ACID_INFECTOR_POISON" />
+				<ship hostile="false" />
+			</event>
+		</choice>
+		<choice>
+			<text>It's too late to surrender.</text>
+			<event />
+		</choice>
+	</surrender>
+	<destroyed>
+		<text>You've destroyed the Acidic ship, but now there's no way to get the antidote back. Your crew is doomed, it seems.</text>
+		<autoReward level="MED">standard</autoReward>
+	</destroyed>
+	<deadCrew>
+		<text>You've neutralized the Acidic ship and emptied it of all crew.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>Luckily it appears their labs onboard were not damaged in the fight. You grab the antidote and administer it to your crew.</text>
+				<clearTriggeredEvent name="TIMER_AEA_ACID_INFECTOR_POISON" />
+			</event>
+		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_ACID_BILL_MEET" auto_blueprint="AEA_ACID_ASSUALT">
+	<destroyed>
+		<text>You've destroyed the Acidic ship, As you're looting the remains of both the Acidic vessel and the Strange ship destroyed at the start of the fight, you discover an Acidic Soldier alive in the wreck.</text>
+		<autoReward level="MED">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="NEBULA_AEA_ACID_BILL_JOIN1"/>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>You've neutralized the Acidic ship and emptied it of all crew. As you're looting the remains of both the Acidic vessel and the Strange ship destroyed at the start of the fight, you discover an Acidic Soldier alive in the wreck.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="NEBULA_AEA_ACID_BILL_JOIN1"/>
+		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_ACID_BILL_BOSS" auto_blueprint="AEA_ACID_BOSS">
+	<destroyed>
+		<text>You've destroyed the hulking Acidic vessel, as you're searching through the huge wreck created by it's defeat you find an intact databank, and on it the schematics for a ship.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<unlockCustomShip silent="false">PLAYER_SHIP_AEA_ACID_ARTY</unlockCustomShip>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>You've cleared the hulking Acidic vessel of it's crew, as you're searching through the huge carcass created by it's defeat you find an intact databank, and on it the schematics for a ship.</text>
+		<autoReward level="HIGH">standard_no_item</autoReward>
+		<weapon name="GIFTLIST_WEAPONS_ACIDIC"/>
+		<unlockCustomShip silent="false">PLAYER_SHIP_AEA_ACID_ARTY</unlockCustomShip>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</deadCrew>
+</ship>
+
+
+<ship name="SHIP_AEA_ACID_TRANSPORT_BARREL" auto_blueprint="AEA_ACID_TRANSPORT_ELITE">
+	<escape timer="50" min="999" max="999">
+		<text>They look like they don't want to fight. They are trying to escape.</text>
+		<ship hostile="true" />
+	</escape>
+	<destroyed>
+		<text>You've destroyed the transport, and with it any of the important loot it was carrying.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>The crew is dead, leaving you with the ship. Its cargo is yours for the taking. Aboard is an unusual barrel, perhaps if you had a weapon without a barrel it would be useful.</text>
+		<autoReward level="MED">standard_no_item</autoReward>
+		<choice req="AEA_LASER_ACID_SUPER_BASE" lvl="1">
+			<text>Install the barrel into the weapon from the shipyard.</text>
+			<event>
+				<remove name="AEA_LASER_ACID_SUPER_BASE"/>
+				<text>You slot the barrel in and it joins seemlessly with the rest of the weapon.</text>
+				<choice>
+					<text>Continue...</text>
+					<event>
+						<text>The weapon is now fully operational.</text>
+						<weapon name="AEA_LASER_ACID_SUPER"/>
+						<unlockCustomShip silent="false">PLAYER_SHIP_AEA_ACID_LONG</unlockCustomShip>
+						<choice hidden="true">
+							<text>Continue...</text>
+							<event/>
+						</choice>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice req="AEA_LASER_ACID_SUPER_BASE" lvl="0" max_lvl="0">
+			<text>You have no use for the barrel.</text>
+			<event/>
+		</choice>
+	</deadCrew>
+</ship>
+
+</FTL>

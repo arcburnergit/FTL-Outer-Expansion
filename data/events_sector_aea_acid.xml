@@ -234,6 +234,7 @@
             <crewMember amount="1" class="aea_acid_soldier">Acidic Soldier</crewMember>
 			<choice hidden="true">
 				<text>Continue...</text>
+				<event/>
 			</choice>
 		</event>
 	</choice>
@@ -247,6 +248,7 @@
             <crewMember amount="1" class="aea_acid_soldier">Acidic Soldier</crewMember>
 			<choice hidden="true">
 				<text>Continue...</text>
+				<event/>
 			</choice>
 		</event>
 	</choice>
