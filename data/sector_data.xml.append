@@ -32,10 +32,9 @@
 		<name>Acidic Outreaches</name>
 	</nameList>
 	<trackList>
-		<track>Acidic</track>
+		<track>AEA_Acidic</track>
 		<track>debris</track>
 		<track>wasteland</track>
-		<track>Acidic</track>
 		<track>deepspace</track>
 	</trackList>
 	<rarityList>
@@ -103,10 +102,9 @@
 		<name>Acidic Origins [!]</name>
 	</nameList>
 	<trackList>
-		<track>Acidic</track>
+		<track>AEA_Acidic</track>
 		<track>debris</track>
 		<track>wasteland</track>
-		<track>Acidic</track>
 		<track>deepspace</track>
 	</trackList>
 	<rarityList>
