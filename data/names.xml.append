@@ -1,29 +1,5 @@
 <FTL>
 
-<nameList race="aea_acid_soldier" sex="male">
-	<name>Acidic Soldier</name>
-</nameList>
-
-<nameList race="aea_acid_soldier" sex="female">
-	<name>Acidic Soldier</name>
-</nameList>
-
-<nameList race="aea_acid_captain" sex="male">
-	<name>Acidic Leader</name>
-</nameList>
-
-<nameList race="aea_acid_captain" sex="female">
-	<name>Acidic Leader</name>
-</nameList>
-
-<nameList race="aea_acid_bill" sex="male">
-	<name>Bill</name>
-</nameList>
-
-<nameList race="aea_acid_bill" sex="female">
-	<name>Bill</name>
-</nameList>
-
 
 <mod:findLike type="nameList">
     <mod:selector sex="male"/>

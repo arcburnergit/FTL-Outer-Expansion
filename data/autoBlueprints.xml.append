@@ -5,6 +5,11 @@
     <mod-append:name>AEA_LASER_ACID_3</mod-append:name>
     <mod-append:name>AEA_BEAM_ACID_1</mod-append:name>
     <mod-append:name>AEA_ION_ACID_1</mod-append:name>
+    <mod-append:name>AEA_LASER_NECRO_1</mod-append:name>
+    <mod-append:name>AEA_LASER_NECRO_2</mod-append:name>
+    <mod-append:name>AEA_LASER_NECRO_3</mod-append:name>
+    <mod-append:name>AEA_LASER_NECRO_2_LOOT</mod-append:name>
+    <mod-append:name>AEA_LASER_NECRO_CHARGE</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_WEAPONS_ALL_CRAPBUCKET">
@@ -13,9 +18,48 @@
     <mod-append:name>AEA_LASER_ACID_3</mod-append:name>
     <mod-append:name>AEA_BEAM_ACID_1</mod-append:name>
     <mod-append:name>AEA_ION_ACID_1</mod-append:name>
+    <mod-append:name>AEA_LASER_NECRO_1</mod-append:name>
+    <mod-append:name>AEA_LASER_NECRO_2</mod-append:name>
+    <mod-append:name>AEA_LASER_NECRO_3</mod-append:name>
+    <mod-append:name>AEA_LASER_NECRO_2_LOOT</mod-append:name>
+    <mod-append:name>AEA_LASER_NECRO_CHARGE</mod-append:name>
 </mod:findName>
 
-<mod:findName type="blueprintList" name="LIST_CREW_HUMAN">
+<mod:findName type="blueprintList" name="BLUELIST_WEAPONS_HEAVY">
+	<mod-append:name>AEA_LASER_NECRO_1</mod-append:name>
+	<mod-append:name>AEA_LASER_NECRO_2</mod-append:name>
+	<mod-append:name>AEA_LASER_NECRO_3</mod-append:name>
+    <mod-append:name>AEA_LASER_NECRO_2_LOOT</mod-append:name>
+    <mod-append:name>AEA_LASER_NECRO_CHARGE</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_ALL_CRAPBUCKET">
+    <mod-append:name>aea_acid_soldier</mod-append:name>
+    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_acid_bill</mod-append:name>
+    <mod-append:name>aea_necro_engi</mod-append:name>
+    <mod-append:name>aea_necro_lich</mod-append:name>
+    <mod-append:name>aea_necro_king</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_ALIENS">
+    <mod-append:name>aea_acid_soldier</mod-append:name>
+    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_acid_bill</mod-append:name>
+    <mod-append:name>aea_necro_engi</mod-append:name>
+    <mod-append:name>aea_necro_lich</mod-append:name>
+    <mod-append:name>aea_necro_king</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_ENGI">
+    <mod-append:name>aea_necro_engi</mod-append:name>
+    <mod-append:name>aea_necro_lich</mod-append:name>
+    <mod-append:name>aea_necro_king</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_PARAGON_UNIQUE">
+	<mod-append:name>aea_acid_bill</mod-append:name>
+    <mod-append:name>aea_necro_king</mod-append:name>
 </mod:findName>
 
 <blueprintList name="GIFTLIST_WEAPONS_ACIDIC">
@@ -26,8 +70,30 @@
     <name>AEA_ION_ACID_1</name>
 </blueprintList>
 
+<blueprintList name="GIFTLIST_WEAPONS_NECRO">
+    <name>AEA_LASER_NECRO_1</name>
+    <name>AEA_LASER_NECRO_2</name>
+    <name>AEA_LASER_NECRO_3</name>
+    <name>AEA_LASER_NECRO_CHARGE</name>
+</blueprintList>
+
+<blueprintList name="GIFTLIST_DRONES_NECRO">
+    <name>AEA_DEFENSE_NECRO_1_DRONE</name>
+    <name>AEA_DEFENSE_NECRO_1_MISSILE</name>
+    <name>AEA_DEFENSE_NECRO_2_DRONE</name>
+    <name>AEA_DEFENSE_NECRO_2_MISSILE</name>
+    <name>AEA_COMBAT_NECRO_1_LASER</name>
+    <name>AEA_COMBAT_NECRO_1_BEAM</name>
+    <name>AEA_COMBAT_NECRO_2_LASER</name>
+    <name>AEA_COMBAT_NECRO_2_BEAM</name>
+</blueprintList>
+
 <blueprintList name="LIST_LOOT_AEA_ACID">
 	<name>AEA_ION_ACID_1_LOOT</name>
+</blueprintList>
+
+<blueprintList name="LIST_LOOT_AEA_NECRO">
+	<name>AEA_LASER_NECRO_2_LOOT</name>
 </blueprintList>
 
 <blueprintList name="LIST_WEAPONS_ACIDIC">
@@ -58,10 +124,6 @@
 	<name>ENERGY_2</name>
 	<name>ENERGY_HULL</name>
 </blueprintList>
-
-<mod:findName type="blueprintList" name="LIST_CREW_PARAGON_UNIQUE">
-	<mod-append:name>aea_acid_bill</mod-append:name>
-</mod:findName>
 <blueprintList name="LIST_WEAPONS_ACIDIC_ELITE">
     <name>AEA_LASER_ACID_1</name>
     <name>AEA_LASER_ACID_2</name>
@@ -106,6 +168,54 @@
 	<name>ENERGY_1_AMP2_ENEMY</name>
 	<name>AMPHI_DEFENSE</name>
 	<name>AMPHI_COMBAT</name>
+</blueprintList>
+
+<blueprintList name="LIST_WEAPONS_NECRO">
+	<name>AEA_LASER_NECRO_1</name>
+	<name>AEA_LASER_NECRO_2</name>
+	<name>AEA_LASER_NECRO_3</name>
+	<name>LASER_BURST_1</name>
+	<name>LASER_BURST_2_ENEMY</name>
+	<name>LASER_BURST_3</name>
+	<name>LASER_HEAVY_1</name>
+	<name>BEAM_1</name>
+	<name>BEAM_2</name>
+	<name>BEAM_LONG</name>
+	<name>ION_1</name>
+	<name>ION_2</name>
+	<name>ION_3</name>
+	
+	<name>ION_CHAINGUN</name>
+	<name>ION_CHARGEGUN</name>
+	<name>ION_STUN</name>
+	<name>ION_STUN_HEAVY</name>
+	
+	<name>ION_TRI</name>
+	<name>ION_FIRE</name>
+	<name>ION_BIO</name>
+	<name>LASER_FROST_1</name>
+	<name>LASER_STUN</name>
+	<name>BEAM_STUN</name>
+</blueprintList>
+
+<blueprintList name="LIST_DRONES_NECRO">
+	<name>AEA_DEFENSE_NECRO_1_DRONE</name>
+	<name>AEA_DEFENSE_NECRO_1_MISSILE</name>
+	<name>AEA_DEFENSE_NECRO_2_DRONE</name>
+	<name>AEA_DEFENSE_NECRO_2_MISSILE</name>
+	<name>AEA_COMBAT_NECRO_1_LASER</name>
+	<name>AEA_COMBAT_NECRO_1_BEAM</name>
+	<name>AMPHI_DEFENSE</name>
+	<name>AMPHI_COMBAT</name>
+	<name>HELLRAISER_HULL</name>
+	<name>HELLRAISER_FIRE</name>
+	<name>REPAIR</name>
+	<name>MANNING</name>
+	<name>BATTLETOG_DEFEND</name>
+	<name>BATTLETOG_BOARDER</name>
+	<name>BATTLETOG2_DEFEND</name>
+	<name>BATTLETOG2_BOARDER</name>
+	<name>BOARDER_ION</name>
 </blueprintList>
 
 <blueprintList name="LIST_SHIPS_AEA_ACID_ALL">
@@ -183,8 +293,8 @@
 		<mind power="1" max="1" room="4" start="true" />
 		<oxygen power="2" max="3" room="7" start="true" />
 		<pilot power="1" max="1" room="2" start="true" />
-		<shields power="4" max="10" room="5" start="true" />
-		<weapons power="3" max="10" room="9" start="true" />
+		<shields power="2" max="10" room="5" start="true" />
+		<weapons power="2" max="10" room="9" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
@@ -609,6 +719,17 @@
 
 
 
+<blueprintList name="LIST_CREW_AEA_NECRO">
+	<name>aea_necro_engi</name>
+	<name>aea_necro_lich</name>
+</blueprintList>
+
+<blueprintList name="LIST_CREW_AEA_ENGI_OTHER">
+	<name>engi</name>
+	<name>engi_separatist</name>
+	<name>engi_separatist_nano</name>
+	<name>engi_defender</name>
+</blueprintList>
 
 <blueprintList name="LIST_CREW_ORGANIC_AEA_NECRO">
 	<name>human</name>
@@ -803,6 +924,42 @@
 	<name>AEA_NECRO_TRAPPER</name>
 </blueprintList>
 
+<shipBlueprint name="AEA_NECRO_BOSS" layout="aea_necro_boss" img="aea_necro_boss">
+	<class>Heretic Cruiser</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<doors power="3" max="3" room="1" start="true" />
+		<drones power="2" max="7" room="2" start="true" />
+		<engines power="1" max="1" room="9" start="true" />
+		<medbay power="2" max="3" room="11" start="true" />
+		<mind power="1" max="1" room="5" start="true" />
+		<oxygen power="2" max="2" room="14" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="3" start="true" />
+		<teleporter power="3" max="3" room="13" start="true" />
+		<weapons power="4" max="10" room="12" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="11" count="4">
+		<weapon name="AEA_LASER_NECRO_2" />
+		<weapon name="MISSILES_BURST" />
+		<weapon name="ION_PIERCE_1" />
+		<weapon name="LASER_LIGHT_2" />
+	</weaponList>
+	<droneList drones="8" count="4">
+		<drone name="AEA_DEFENSE_NECRO_1_MISSILE" />
+		<drone name="AEA_DEFENSE_NECRO_1_MISSILE" />
+		<drone name="AEA_COMBAT_NECRO_1_BEAM" />
+	</droneList>
+	<health amount="15" />
+	<maxPower amount="30" />
+	<crewCount amount="5" max="7" class="aea_necro_engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_NECRO_SAVE_ENEMY" />
+</shipBlueprint>
+
 <shipBlueprint name="AEA_NECRO_BOMBER" layout="aea_necro_bomber" img="aea_necro_bomber">
 	<class>Heretic Bomber</class>
 	<minSector>3</minSector>
@@ -819,14 +976,14 @@
 		<weapons power="2" max="6" room="11" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>2</droneSlots>
-	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="4" count="2" load="LIST_DRONES_ENGI" />
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="4" count="2" load="LIST_DRONES_NECRO" />
 	<health amount="10" />
 	<maxPower amount="8" />
-	<crewCount amount="3" max="6" class="engi" />
+	<crewCount amount="4" max="7" class="aea_necro_engi" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY" />
 </shipBlueprint>
 
 <shipBlueprint name="AEA_NECRO_DROPSHIP" layout="aea_necro_dropship" img="aea_necro_dropship">
@@ -848,14 +1005,14 @@
 		<weapons power="2" max="8" room="9" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>2</droneSlots>
-	<weaponList missiles="0" count="4" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="11" count="2" load="LIST_DRONES_ENGI_DROPSHIP" />
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="0" count="4" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="11" count="2" load="LIST_DRONES_NECRO" />
 	<health amount="12" />
 	<maxPower amount="10" />
-	<crewCount amount="2" max="7" class="engi" />
+	<crewCount amount="4" max="7" class="aea_necro_engi" />
 	<boardingAI>invasion</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY_WEAK" />
 </shipBlueprint>
 
 <shipBlueprint name="AEA_NECRO_ENFORCER" layout="aea_necro_enforcer" img="aea_necro_enforcer">
@@ -875,14 +1032,14 @@
 		<weapons power="2" max="6" room="10" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>2</droneSlots>
-	<weaponList missiles="6" count="4" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="6" count="2" load="LIST_DRONES_ENGI" />
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="6" count="2" load="LIST_DRONES_NECRO" />
 	<health amount="12" />
 	<maxPower amount="10" />
-	<crewCount amount="2" max="6" class="engi" />
+	<crewCount amount="4" max="7" class="aea_necro_engi" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY" />
 </shipBlueprint>
 
 <shipBlueprint name="AEA_NECRO_FIGHTER" layout="aea_necro_fighter" img="aea_necro_fighter">
@@ -900,14 +1057,14 @@
 		<weapons power="2" max="7" room="1" start="true" />
 	</systemList>
 	<weaponSlots>3</weaponSlots>
-	<droneSlots>3</droneSlots>
-	<weaponList missiles="0" count="3" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="10" count="3" load="LIST_DRONES_ENGI" />
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="3" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="10" count="3" load="LIST_DRONES_NECRO" />
 	<health amount="14" />
 	<maxPower amount="9" />
-	<crewCount amount="2" max="6" class="engi" />
+	<crewCount amount="4" max="7" class="aea_necro_engi" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY" />
 </shipBlueprint>
 
 <shipBlueprint name="AEA_NECRO_GUARD" layout="aea_necro_guard" img="aea_necro_guard">
@@ -928,14 +1085,14 @@
 		<weapons power="2" max="8" room="4" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>3</droneSlots>
-	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="10" count="3" load="LIST_DRONES_ENGI" />
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="10" count="3" load="LIST_DRONES_NECRO" />
 	<health amount="13" />
 	<maxPower amount="9" />
-	<crewCount amount="3" max="7" class="engi" />
+	<crewCount amount="5" max="8" class="aea_necro_engi" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY" />
 </shipBlueprint>
 
 <shipBlueprint name="AEA_NECRO_MOTHERSHIP" layout="aea_necro_mothership" img="aea_necro_mothership">
@@ -955,14 +1112,14 @@
 		<weapons power="2" max="5" room="11" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>4</droneSlots>
-	<weaponList missiles="7" count="4" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="25" count="4" load="LIST_DRONES_ENGI" />
+	<droneSlots>5</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="25" count="4" load="LIST_DRONES_NECRO" />
 	<health amount="13" />
 	<maxPower amount="11" />
-	<crewCount amount="4" max="7" class="engi" />
+	<crewCount amount="5" max="8" class="aea_necro_engi" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY" />
 </shipBlueprint>
 
 <shipBlueprint name="AEA_NECRO_OUTRIDER" layout="aea_necro_outrider" img="aea_necro_outrider">
@@ -981,14 +1138,14 @@
 		<weapons power="2" max="6" room="6" start="true" />
 	</systemList>
 	<weaponSlots>3</weaponSlots>
-	<droneSlots>2</droneSlots>
-	<weaponList missiles="6" count="3" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="4" count="2" load="LIST_DRONES_ENGI" />
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="6" count="3" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="4" count="2" load="LIST_DRONES_NECRO" />
 	<health amount="11" />
 	<maxPower amount="8" />
-	<crewCount amount="2" max="5" class="engi" />
+	<crewCount amount="4" max="7" class="aea_necro_engi" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY" />
 </shipBlueprint>
 
 <shipBlueprint name="AEA_NECRO_PROTECTOR" layout="aea_necro_protector" img="aea_necro_protector">
@@ -1009,14 +1166,14 @@
 		<weapons power="2" max="8" room="10" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>3</droneSlots>
-	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="8" count="3" load="LIST_DRONES_ENGI" />
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="8" count="3" load="LIST_DRONES_NECRO" />
 	<health amount="16" />
 	<maxPower amount="11" />
-	<crewCount amount="3" max="8" class="engi" />
+	<crewCount amount="5" max="8" class="aea_necro_engi" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY" />
 </shipBlueprint>
 
 <shipBlueprint name="AEA_NECRO_RIGGER" layout="aea_necro_rigger" img="aea_necro_rigger">
@@ -1036,14 +1193,14 @@
 		<weapons power="2" max="5" room="7" start="true" />
 	</systemList>
 	<weaponSlots>3</weaponSlots>
-	<droneSlots>3</droneSlots>
-	<weaponList missiles="5" count="3" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="7" count="3" load="LIST_DRONES_ENGI" />
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="5" count="3" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="7" count="3" load="LIST_DRONES_NECRO" />
 	<health amount="14" />
 	<maxPower amount="11" />
-	<crewCount amount="2" max="5" class="engi" />
+	<crewCount amount="5" max="7" class="aea_necro_engi" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY" />
 </shipBlueprint>
 
 <shipBlueprint name="AEA_NECRO_SCOUT" layout="aea_necro_scout" img="aea_necro_scout">
@@ -1061,14 +1218,14 @@
 		<weapons power="2" max="6" room="4" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>2</droneSlots>
-	<weaponList missiles="6" count="4" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="4" count="2" load="LIST_DRONES_ENGI" />
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="4" count="2" load="LIST_DRONES_NECRO" />
 	<health amount="12" />
 	<maxPower amount="10" />
-	<crewCount amount="2" max="5" class="engi" />
+	<crewCount amount="4" max="6" class="aea_necro_engi" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY" />
 </shipBlueprint>
 
 <shipBlueprint name="AEA_NECRO_STATION" layout="aea_necro_station" img="aea_necro_station">
@@ -1088,14 +1245,14 @@
 		<weapons power="2" max="8" room="12" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>3</droneSlots>
-	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="15" count="3" load="LIST_DRONES_ENGI" />
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="15" count="3" load="LIST_DRONES_NECRO" />
 	<health amount="16" />
 	<maxPower amount="10" />
-	<crewCount amount="3" max="7" class="engi" />
+	<crewCount amount="5" max="8" class="aea_necro_engi" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY_WEAK" />
 	<aug name="UPG_TECH_RESPIRATOR" />
 </shipBlueprint>
 
@@ -1117,14 +1274,14 @@
 		<weapons power="2" max="5" room="11" start="true" />
 	</systemList>
 	<weaponSlots>3</weaponSlots>
-	<droneSlots>3</droneSlots>
-	<weaponList missiles="6" count="3" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="7" count="3" load="LIST_DRONES_ENGI" />
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="6" count="3" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="7" count="3" load="LIST_DRONES_NECRO" />
 	<health amount="13" />
 	<maxPower amount="9" />
-	<crewCount amount="3" max="8" class="engi" />
+	<crewCount amount="6" max="9" class="aea_necro_engi" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY_WEAK" />
 </shipBlueprint>
 
 <shipBlueprint name="AEA_NECRO_TRAPPER" layout="aea_necro_trapper" img="aea_necro_trapper">
@@ -1144,14 +1301,14 @@
 		<weapons power="3" max="7" room="7" start="true" />
 	</systemList>
 	<weaponSlots>2</weaponSlots>
-	<droneSlots>2</droneSlots>
-	<weaponList missiles="10" count="2" load="LIST_WEAPONS_ENGI" />
-	<droneList drones="10" count="2" load="LIST_DRONES_ENGI" />
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="10" count="2" load="LIST_WEAPONS_NECRO" />
+	<droneList drones="10" count="2" load="LIST_DRONES_NECRO" />
 	<health amount="14" />
 	<maxPower amount="10" />
-	<crewCount amount="2" max="5" class="engi" />
+	<crewCount amount="4" max="6" class="aea_necro_engi" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="AEA_NECRO_SAVE_ENEMY" />
 </shipBlueprint>
 
 

@@ -294,7 +294,7 @@
 			</slot>
 		</shields>
 		<teleporter power="1" room="1" start="false" />
-		<weapons power="2" max="9" room="2" start="true" img="room_weapons_2">
+		<weapons power="3" max="9" room="2" start="true" img="room_weapons_2">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -304,7 +304,7 @@
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="5" count="4">
-		<weapon name="AEA_LASER_ACID_1" />
+		<weapon name="AEA_BEAM_ACID_1" />
 		<weapon name="AEA_LASER_ACID_1" />
 	</weaponList>
 	<droneList drones="3" count="2" />
@@ -1171,7 +1171,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 <shipBlueprint name="PLAYER_SHIP_AEA_NECRO_ENGI" layout="aeap_necro_engi_1" img="aeap_necro_engi_1">
 	<class>Heresy Cruiser</class>
 	<name>The Blasphemous</name>
-	<desc>A vessel belonging</desc>
+	<desc>A vessel belonging to the Engi Heretics. Through use of its powerful shatter laser and capable crew this ship is effective at eliminating any crew on the enemy ship.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_ENGI_unlock" />
 	<systemList>
 		<battery power="1" max="3" room="14" start="false" img="room_battery_9" />
@@ -1246,7 +1246,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 <shipBlueprint name="PLAYER_SHIP_AEA_NECRO_ENGI_2" layout="aeap_necro_engi_2" img="aeap_necro_engi_2">
 	<class>Heresy Cruiser</class>
 	<name>The Hegemonic</name>
-	<desc>A vessel belonging</desc>
+	<desc>It appears some of the Engi Heretic's enemies have gotten their hands on this vessel. However the vessel is still equiped with the technology to turn Engis into Engi heretics.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_ENGI_2_unlock" />
 	<systemList>
 		<battery max="3" power="1" room="4" start="true" img="room_battery_15" />
 		<cloaking power="1" room="13" start="false" img="room_cloaking_4" />
@@ -1322,7 +1323,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 <shipBlueprint name="PLAYER_SHIP_AEA_NECRO_ENGI_3" layout="aeap_necro_engi_3" img="aeap_necro_engi_3">
 	<class>Heresy Cruiser</class>
 	<name>The Recusant</name>
-	<desc>A vessel belonging</desc>
+	<desc>Manned by only a single Engi Heretic elite, this vessel makes up for the lack of numbers with powerful systems and crew abilities.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_ENGI_3_unlock" />
 	<systemList>
 		<battery max="3" power="1" room="4" start="false" img="room_battery_14" />
 		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
@@ -1381,9 +1383,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<weaponSlots>2</weaponSlots>
 	<droneSlots>4</droneSlots>
 	<weaponList missiles="0" count="2" />
-	<droneList drones="14" count="4">
-		<drone name="BATTLETOG2_BOARDER" />
-		<drone name="AEA_DEFENSE_NECRO_1_DRONE" />
+	<droneList drones="15" count="4">
+		<drone name="AEA_COMBAT_NECRO_2_LASER" />
 		<drone name="DOCTOR_DEFENSE" />
 		<drone name="REPAIR" />
 	</droneList>
@@ -1398,7 +1399,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 <shipBlueprint name="PLAYER_SHIP_AEA_NECRO_SEPA" layout="aeap_necro_sepa_1" img="aeap_necro_sepa_1">
 	<class>Blasphemy Cruiser</class>
 	<name>The Unholy</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>Manned by the Engi Heretic Elites, this vessel is a powerful boarding vessel, just make sure not to use up all those nanite swarms.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_SEPA_unlock" />
 	<systemList>
 		<battery power="1" max="3" room="1" start="false" img="room_battery_3" />
 		<cloaking power="1" room="13" start="false" img="room_cloaking_13" />
@@ -1472,7 +1474,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 <shipBlueprint name="PLAYER_SHIP_AEA_NECRO_SEPA_2" layout="aeap_necro_sepa_2" img="aeap_necro_sepa_2">
 	<class>Blasphemy Cruiser</class>
 	<name>The Deserter</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>Another stolen Heretic vessel, pirates are able to make full use of this ships powerful systems, aswell as creating Engi Heretics to fight on their side.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_SEPA_2_unlock" />
 	<systemList>
 		<battery max="3" power="1" room="12" start="false" img="room_battery_2" />
 		<cloaking power="1" room="7" start="false" img="room_cloaking_6" />
@@ -1548,7 +1551,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 <shipBlueprint name="PLAYER_SHIP_AEA_NECRO_SEPA_3" layout="aeap_necro_sepa_3" img="aeap_necro_sepa_3">
 	<class>Blasphemy Cruiser</class>
 	<name>The Assassin</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>Unlike other Heretic Vessels, this one is focussed on powerful weapons and drones, with no cloaking or boarding capabilities.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_SEPA_3_unlock" />
 	<systemList>
 		<battery max="3" power="1" room="13" start="false" img="room_battery_14" />
 		<cloaking power="1" room="6" start="true" img="room_cloaking" />
@@ -1621,9 +1625,100 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
     <mv-mapImage>map_icon_mup_separatist_a</mv-mapImage>
 </shipBlueprint>
 
+<shipBlueprint name="PLAYER_SHIP_AEA_CREW2" layout="aeap_necro_king" img="aeap_necro_king">
+	<class>Lich King's Crewser</class>
+	<name>The Elder</name>
+	<desc>The personal vessel of the Lich King, a powerful boarding vessel. Able to build up a capable crew quickly the Lich King  often heads off alone.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_KING_unlock" />
+	<systemList>
+		<battery max="3" power="1" room="4" start="false" img="room_battery_2" />
+		<cloaking power="1" room="10" start="false" img="room_cloaking_13" />
+		<clonebay power="1" room="1" start="true">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="8" start="false" img="room_doors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="6" start="false" img="room_drones_14" />
+		<engines power="2" room="12" start="true" img="room_engines_5">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="5" start="false" img="room_hacking_5" />
+		<medbay power="1" room="1" start="false" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="9" start="false" img="room_mind_7" />
+		<oxygen power="1" room="3" start="true" img="room_oxygen_17" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="2" room="15" start="true" img="room_sensors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="7" start="true" img="room_shields_13">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="13" start="true" />
+		<weapons max="8" power="2" room="2" start="true" img="room_weapons_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="5" count="3">
+		<weapon name="AEA_LASER_NECRO_CHARGE" />
+	</weaponList>
+	<droneList drones="5" count="3" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<aug name="EX_FIRE_EXTINGUISHERS" />
+	<shieldImage>mup_orb1</shieldImage>
+    <mv-mapImage>map_icon_mup_separatist_a</mv-mapImage>
+</shipBlueprint>
+
 <augBlueprint name="AEA_NECRO_CONVERT">
 	<title>Heretic Converter</title>
 	<desc>Able to transform different Engi into Engi Heretics at the cost of drone parts.</desc>
+	<cost>50</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+
+<augBlueprint name="AEA_NECRO_SAVE_ENEMY">
+	<title>Repair Burst</title>
+	<desc>The ship deploys a last second repair burst that full heals the ship.</desc>
+	<cost>50</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+
+<augBlueprint name="AEA_NECRO_SAVE_ENEMY_WEAK">
+	<title>Repair Burst</title>
+	<desc>The ship deploys a last second repair burst that full heals the ship.</desc>
 	<cost>50</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
@@ -1866,10 +1961,63 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<iconImage>combat</iconImage>
 </droneBlueprint>
 
+<blueprintList name="AEA_COMBAT_TOGGLE_2">
+	<name>AEA_COMBAT_NECRO_2_LASER</name>
+	<name>AEA_COMBAT_NECRO_2_BEAM</name>
+</blueprintList>
+<droneBlueprint name="AEA_COMBAT_NECRO_2_LASER">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Technomancy Drone Mk. III [Laser]</title>
+	<short>Techno II [L]</short>
+	<desc>[CURRENT MODE: Laser] Multipurpose combat drone use by the Engi Heretics. On death, the drone will create three smaller faster drones that shoot 3 shots before falling apart. Moves faster and creates more mini drones than the MK I.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>30</speed>
+	<cost>90</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_necro_com2_l</droneImage>
+	<weaponBlueprint>AEA_LASER_NECRO_COMBAT</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_NECRO_2_BEAM">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Technomancy Drone Mk. II [Beam]</title>
+	<short>Techno II [B]</short>
+	<desc>[CURRENT MODE: Beam] Multipurpose combat drone use by the Engi Heretics. On death, the drone will create three smaller faster drones that shoot 3 shots before falling apart. Moves faster and creates more mini drones than the MK I.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>27</speed>
+	<cost>90</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_necro_com2_b</droneImage>
+	<weaponBlueprint>AEA_BEAM_NECRO_COMBAT</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+
 <weaponBlueprint name="AEA_LASER_NECRO_FRAGMENT">
 	<type>LASER</type>
 	<title>Fragment Laser</title>
 	<damage>0</damage>
+	<statBoosts>
+		<statBoost name="damageMultiplier" save="AEA_NECRO_DAMAGE">
+			<boostType>MULT</boostType>
+			<amount>0.8</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>10</duration>
+			<boostAnim>bio_poison</boostAnim>
+		</statBoost>
+	</statBoosts>
 	<persDamage>1</persDamage>
 	<shots>1</shots>
 	<fireChance>0</fireChance>
@@ -1909,19 +2057,6 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<persDamage>-1</persDamage>
 	<shots>1</shots>
 	<sp>0</sp>
-	<statBoosts>
-		<statBoost name="damageMultiplier" save="AEA_NECRO_DAMAGE">
-			<boostType>MULT</boostType>
-			<amount>0.8</amount>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ENEMIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<affectsSelf>true</affectsSelf>
-			<maxStacks>1</maxStacks>
-			<duration>10</duration>
-			<boostAnim>bio_poison</boostAnim>
-		</statBoost>
-	</statBoosts>
 	<fireChance>0</fireChance>
 	<breachChance>2</breachChance>
 	<stunChance>3</stunChance>
@@ -1964,9 +2099,6 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<persDamage>-1</persDamage>
 	<shots>2</shots>
 	<sp>0</sp>
-	<statBoosts>
-		<statBoost name="damageMultiplier" load="AEA_NECRO_DAMAGE"/>
-	</statBoosts>
 	<fireChance>0</fireChance>
 	<breachChance>2</breachChance>
 	<stunChance>3</stunChance>
@@ -2009,9 +2141,6 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<persDamage>-1</persDamage>
 	<shots>3</shots>
 	<sp>0</sp>
-	<statBoosts>
-		<statBoost name="damageMultiplier" load="AEA_NECRO_DAMAGE"/>
-	</statBoosts>
 	<fireChance>0</fireChance>
 	<breachChance>2</breachChance>
 	<stunChance>3</stunChance>
@@ -2038,6 +2167,91 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 		<sound>miss</sound>
 	</missSounds>
 	<weaponArt>aea_laser_necro_3</weaponArt>
+	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_NECRO_2_LOOT">
+	<type>LASER</type>
+	<title>Shatter Laser MK II</title>
+	<short>Shatter II</short>
+	<tip>loot_aea_necro_1</tip>
+	<desc>Shatter Lasers are heavy duty lasers which shatter on contact with shields, fragments of the laser pierce the shields inflicting a weakening effect and heavy damage to the enemy crew in the area.
+Shatters into 3 fragments.
+Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage reduction effect to enemy crew.</desc>
+	<tooltip>Heavy laser; 2 damage, 1 shot. 9 second cooldown.</tooltip>
+	<damage>1</damage>
+	<persDamage>-1</persDamage>
+	<shots>4</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>2</breachChance>
+	<stunChance>3</stunChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>70</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>laser_heavy</image>
+	<launchSounds>
+		<sound>heavyLaser1</sound>
+		<sound>heavyLaser2</sound>
+		<sound>heavyLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_necro_2_loot</weaponArt>
+	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_NECRO_CHARGE">
+	<type>LASER</type>
+	<title>Shatter Charge Laser</title>
+	<short>Shatter C.</short>
+	<tip>tip_laser</tip>
+	<desc>Shatter Lasers are heavy duty lasers which shatter on contact with shields, fragments of the laser pierce the shields inflicting a weakening effect and heavy damage to the enemy crew in the area.
+Shatters into 3 fragments.
+Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage reduction effect to enemy crew.</desc>
+	<tooltip>Heavy laser; 2 damage, 1 shot. 9 second cooldown.</tooltip>
+	<damage>2</damage>
+	<persDamage>-1</persDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>2</breachChance>
+	<stunChance>3</stunChance>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<cost>55</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<chargeLevels>2</chargeLevels>
+	<image>laser_heavy</image>
+	<launchSounds>
+		<sound>heavyLaser1</sound>
+		<sound>heavyLaser2</sound>
+		<sound>heavyLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_necro_charge</weaponArt>
 	<iconImage>heavyL</iconImage>
 </weaponBlueprint>
 </FTL>
@@ -2104,9 +2318,9 @@ The Engi Heretics use their Nano bots to take control of the enemies they kill, 
 	<short>Heretic</short>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Active Ability: Resurrect the last enemy killed by this crewmember, costs 1 Nanite Swarm</power>
+		<power>Active Ability: Resurrect the last enemy killed in melee combat by this crewmember, costs 1 Nanite Swarm</power>
 		<power>Max Health is increased to 125</power>
-		<power>Each enemy crew killed by this crew member generates 1 nanite swarm</power>
+		<power>Enemy crew killed in the presence of an Engi Heretic generate 1 nanite swarm</power>
 		<power>0.75x combat damage, 1.5x repair speed</power>
 		<power>Reduced suffocation damage</power>
 	</powerList>
@@ -2135,12 +2349,12 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 	<short>Lich</short>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Active Ability: Inflict all enemy crew in the room with a status effect, causes crew to be resurrected on the side of the Engi Lich and inflicts a 5% damage reduction, costs 3 Nanite Swarms</power>
-		<power>Active Ability: Resurrect the last enemy killed by this crewmember, costs 1 Nanite Swarm</power>
+		<power>Active Ability: Split every enemy in the room in two, creating a weaker copy to fight on the side of the Engi Lich, costs 3 Nanite Swarms</power>
+		<power>Active Ability: Resurrect the last enemy killed in melee combat by this crewmember, costs 1 Nanite Swarm</power>
 		<power>Max Health is increased to 125</power>
-		<power>Each enemy crew killed by this crew member generates 1 nanite swarm</power>
+		<power>Enemy crew killed in the presence of an Engi Heretic generate 1 nanite swarm</power>
 		<power>0.8x combat damage, 1.2x ranged damage, 1.75x repair speed</power>
-		<power>Nano bots reduce healing of the target crew by 10%</power>
+		<power>Nano bots reduce healing of the target crew by 50%</power>
 		<power>Reduced suffocation damage</power>
 	</powerList>
 	<colorList>
@@ -2156,5 +2370,23 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 			<color r="255" g="255" b="255" a="0.5" /> <!--mix-->
 		</layer>
 	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_necro_king">
+	<desc>The leader of the Engi Heretics, an ancient engi, one of the first to split off from the harmony. Possesses fine control over Engi nano-bots giving it the ability to resurrect almost any life form.</desc>
+	<cost>100</cost>
+	<bp>2</bp>
+	<title>The Lich King</title>
+	<short>Lich King</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Permanently resurrect the last enemy killed in melee combat by this crewmember, costs 5 Nanite Swarms</power>
+		<power>Active Ability: Resurrect the last enemy killed in melee combat by this crewmember, costs 1 Nanite Swarm</power>
+		<power>Max Health is increased to 180</power>
+		<power>Enemy killed on the same ship as the Lich King generate 1 nanite swarm</power>
+		<power>1.5x combat damage, 2x repair speed</power>
+		<power>Nano bots reduce healing of the target crew by 100%</power>
+		<power>Immune to suffocation damage</power>
+	</powerList>
 </crewBlueprint>
 </FTL>

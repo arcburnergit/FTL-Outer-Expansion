@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
 
-<mod:findName type="sectorType" name="SECTOR_LIST_HOSTILE">
+<mod:findName type="sectorType" name="SECTOR_LIST_NEUTRAL">
     <mod-append:sector>SECTOR_AEA_ACID_NEBULA</mod-append:sector>
+</mod:findName>
+<mod:findName type="sectorType" name="SECTOR_LIST_HOSTILE">
+    <mod-append:sector>SECTOR_AEA_NECRO</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorType" name="SECTOR_LIST_UNIQUE_DEADLY">
     <mod-append:sector>SECTOR_AEA_ACID_UNIQUE</mod-append:sector>
+    <mod-append:sector>SECTOR_AEA_NECRO_UNIQUE</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorType" name="NEBULA">
     <mod-append:sector>SECTOR_AEA_ACID_NEBULA</mod-append:sector>
     <mod-append:sector>SECTOR_AEA_ACID_UNIQUE</mod-append:sector>
+</mod:findName>
+
+<mod:findName type="sectorType" name="HOSTILE">
+    <mod-append:sector>SECTOR_AEA_NECRO</mod-append:sector>
+    <mod-append:sector>SECTOR_AEA_NECRO_UNIQUE</mod-append:sector>
 </mod:findName>
 
 <sectorDescription name="SECTOR_AEA_ACID_NEBULA" unique="false">
@@ -34,7 +43,6 @@
 	<trackList>
 		<track>AEA_Acidic</track>
 		<track>debris</track>
-		<track>wasteland</track>
 		<track>deepspace</track>
 	</trackList>
 	<rarityList>
@@ -104,7 +112,6 @@
 	<trackList>
 		<track>AEA_Acidic</track>
 		<track>debris</track>
-		<track>wasteland</track>
 		<track>deepspace</track>
 	</trackList>
 	<rarityList>
@@ -168,4 +175,167 @@
 	<event name="PIRACY_LIST" min="1" max="2" />
 	<event name="FILLER_LIST" min="999" max="999" />
 </sectorDescription>
+
+
+<sectorDescription name="SECTOR_AEA_NECRO" unique="false">
+	<nameList>
+		<name>Blasphemous Sector</name>
+		<name>Blasphemous Space</name>
+		<name>Blasphemous Colonies</name>
+		<name>Blasphemous Settlements</name>
+		<name>Blasphemous Regions</name>
+		<name>Blasphemous District</name>
+		<name>Blasphemous Quarter</name>
+		<name>Blasphemous Outreaches</name>
+		<name>Blasphemous Zone</name>
+	</nameList>
+	<trackList>
+		<track>AEA_Heretic</track>
+		<track>separatist</track>
+		<track>cosmos</track>
+	</trackList>
+	<rarityList>
+		<blueprint name="human" rarity="0" />
+		<blueprint name="human_medic" rarity="0" />
+		<blueprint name="human_engineer" rarity="0" />
+		<blueprint name="engi" rarity="3" />
+		<blueprint name="engi_separatist" rarity="3" />
+		<blueprint name="aea_engi_necro" rarity="2" />
+		<blueprint name="zoltan" rarity="0" />
+		<blueprint name="zoltan_monk" rarity="0" />
+		<blueprint name="zoltan_devotee" rarity="0" />
+		<blueprint name="rock" rarity="0" />
+		<blueprint name="rock_outcast" rarity="0" />
+		<blueprint name="rock_commando" rarity="0" />
+		<blueprint name="mantis" rarity="3" />
+		<blueprint name="mantis_free" rarity="0" />
+		<blueprint name="slug" rarity="0" />
+		<blueprint name="slug_clansman" rarity="0" />
+		<blueprint name="shell" rarity="0" />
+		<blueprint name="shell_scientist" rarity="0" />
+		<blueprint name="shell_mechanic" rarity="0" />
+		<blueprint name="shell_guardian" rarity="0" />
+		<blueprint name="crystal" rarity="0" />
+		<blueprint name="crystal_liberator" rarity="0" />
+		<blueprint name="orchid" rarity="0" />
+		<blueprint name="orchid_vampweed" rarity="0" />
+		<blueprint name="leech" rarity="0" />
+		<blueprint name="lanius" rarity="3" />
+		<blueprint name="phantom" rarity="0" />
+		<blueprint name="phantom_goul" rarity="0" />
+		<blueprint name="phantom_mare" rarity="0" />
+		<blueprint name="phantom_wraith" rarity="0" />
+        <blueprint name="AEA_LASER_NECRO_1" rarity="2" />
+        <blueprint name="AEA_LASER_NECRO_2" rarity="1" />
+        <blueprint name="AEA_LASER_NECRO_3" rarity="2" />
+        <blueprint name="AEA_COMBAT_NECRO_1_LASER" rarity="2" />
+        <blueprint name="AEA_COMBAT_NECRO_2_LASER" rarity="3" />
+        <blueprint name="AEA_DEFENSE_NECRO_1_MISSILE" rarity="1" />
+        <blueprint name="AEA_DEFENSE_NECRO_2_MISSILE" rarity="2" />
+	</rarityList>
+	<startEvent>ENTER_AEA_NECRO</startEvent>
+	<removeFirstBeaconNebula />
+	<exitBeacon event="FINISH_BEACON_AEA_NECRO" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ELITE" />
+	<rebelBeacon event="FLEET_THREAT_LOW" nebulaEvent="FLEET_THREAT_LOW_NEBULA" />
+	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
+	<event name="MV_TRAVELER" min="1" max="1" />
+	<priorityEvent name="NEMESIS_ENCOUNTER" min="0" max="1" req="prof_finalsector" lvl="1" />
+	
+	<event name="HARMONY_LINK_AEA_NECRO" min="1" max="1" />
+
+	<event name="STORELIST_AEA_NECRO" min="1" max="2" />
+	
+	<event name="ITEMS_AEA_NECRO" min="3" max="4" />
+	<event name="NEUTRAL_AEA_NECRO" min="4" max="5" />
+	<event name="DISTRESS_AEA_NECRO" min="2" max="3" />
+	<event name="QUESTS_AEA_NECRO" min="1" max="1" />
+	
+	<event name="HOSTILE_AEA_NECRO" min="4" max="8" />
+	
+	<event name="PIRACY_LIST" min="1" max="3" />
+	<event name="FILLER_LIST" min="999" max="999" />
+</sectorDescription>
+
+<sectorDescription name="SECTOR_AEA_NECRO_UNIQUE" unique="false">
+	<nameList>
+		<name>Blasphemous Sector</name>
+		<name>Blasphemous Space</name>
+		<name>Blasphemous Colonies</name>
+		<name>Blasphemous Settlements</name>
+		<name>Blasphemous Regions</name>
+		<name>Blasphemous District</name>
+		<name>Blasphemous Quarter</name>
+		<name>Blasphemous Outreaches</name>
+		<name>Blasphemous Zone</name>
+	</nameList>
+	<trackList>
+		<track>AEA_Heretic</track>
+		<track>separatist</track>
+		<track>cosmos</track>
+	</trackList>
+	<rarityList>
+		<blueprint name="human" rarity="0" />
+		<blueprint name="human_medic" rarity="0" />
+		<blueprint name="human_engineer" rarity="0" />
+		<blueprint name="engi" rarity="3" />
+		<blueprint name="engi_separatist" rarity="3" />
+		<blueprint name="aea_engi_necro" rarity="2" />
+		<blueprint name="zoltan" rarity="0" />
+		<blueprint name="zoltan_monk" rarity="0" />
+		<blueprint name="zoltan_devotee" rarity="0" />
+		<blueprint name="rock" rarity="0" />
+		<blueprint name="rock_outcast" rarity="0" />
+		<blueprint name="rock_commando" rarity="0" />
+		<blueprint name="mantis" rarity="3" />
+		<blueprint name="mantis_free" rarity="0" />
+		<blueprint name="slug" rarity="0" />
+		<blueprint name="slug_clansman" rarity="0" />
+		<blueprint name="shell" rarity="0" />
+		<blueprint name="shell_scientist" rarity="0" />
+		<blueprint name="shell_mechanic" rarity="0" />
+		<blueprint name="shell_guardian" rarity="0" />
+		<blueprint name="crystal" rarity="0" />
+		<blueprint name="crystal_liberator" rarity="0" />
+		<blueprint name="orchid" rarity="0" />
+		<blueprint name="orchid_vampweed" rarity="0" />
+		<blueprint name="leech" rarity="0" />
+		<blueprint name="lanius" rarity="3" />
+		<blueprint name="phantom" rarity="0" />
+		<blueprint name="phantom_goul" rarity="0" />
+		<blueprint name="phantom_mare" rarity="0" />
+		<blueprint name="phantom_wraith" rarity="0" />
+        <blueprint name="AEA_LASER_NECRO_1" rarity="2" />
+        <blueprint name="AEA_LASER_NECRO_2" rarity="1" />
+        <blueprint name="AEA_LASER_NECRO_3" rarity="2" />
+        <blueprint name="AEA_COMBAT_NECRO_1_LASER" rarity="2" />
+        <blueprint name="AEA_COMBAT_NECRO_2_LASER" rarity="3" />
+        <blueprint name="AEA_DEFENSE_NECRO_1_MISSILE" rarity="1" />
+        <blueprint name="AEA_DEFENSE_NECRO_2_MISSILE" rarity="2" />
+	</rarityList>
+	<startEvent>ENTER_AEA_NECRO_UNIQUE</startEvent>
+	<removeFirstBeaconNebula />
+	<exitBeacon event="FINISH_BEACON_AEA_NECRO" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ELITE" />
+	<rebelBeacon event="FLEET_THREAT_LOW" nebulaEvent="FLEET_THREAT_LOW_NEBULA" />
+	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
+	<event name="MV_TRAVELER" min="1" max="1" />
+	<priorityEvent name="NEMESIS_ENCOUNTER" min="0" max="1" req="prof_finalsector" lvl="1" />
+	
+	<event name="AEA_NECRO_SANCTUM" min="1" max="1" />
+
+	<event name="HARMONY_LINK_UNIQUE_AEA_NECRO" min="1" max="1" />
+
+	<event name="TRANSPORT_AEA_NECRO_LOOT" min="1" max="1" />
+	<event name="STORELIST_AEA_NECRO" min="1" max="2" />
+	
+	<event name="ITEMS_AEA_NECRO_UNIQUE" min="3" max="4" />
+	<event name="NEUTRAL_AEA_NECRO_UNIQUE" min="4" max="5" />
+	<event name="DISTRESS_AEA_NECRO_UNIQUE" min="2" max="3" />
+	<event name="QUESTS_AEA_NECRO_UNIQUE" min="1" max="1" />
+	
+	<event name="HOSTILE_AEA_NECRO_UNIQUE" min="3" max="7" />
+	
+	<event name="PIRACY_LIST" min="1" max="3" />
+	<event name="FILLER_LIST" min="999" max="999" />
+</sectorDescription>
+
 </FTL>

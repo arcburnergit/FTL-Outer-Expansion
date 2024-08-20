@@ -7,7 +7,19 @@
 	<img w="1280" h="720">stars_acid/low_nebula.png</img>
 </imageList>
 
+<imageList name="BACK_SECTOR_AEA_NECRO">
+	<img w="1280" h="720">stars_sectors/bg_separatist.png</img>
+</imageList>
+
 <imageList name="PLANET_AEA_ACID_STATION">
 	<img w="289" h="121">stars_acid/station.png</img>
+</imageList>
+
+<imageList name="BACK_EVENT_LINK_AEA_NECRO_WHALE">
+	<img w="1280" h="720">stars_necro/bg_linkwhale.png</img>
+</imageList>
+
+<imageList name="BACK_EVENT_AEA_NECRO_SANCTUM">
+	<img w="1280" h="720">stars_necro/bg_necro_sanctum.png</img>
 </imageList>
 </FTL>

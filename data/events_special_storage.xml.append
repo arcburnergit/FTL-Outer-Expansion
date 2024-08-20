@@ -114,6 +114,15 @@
 		  <text>(Technomancy Drone I) Set the state of the drone. [Current mode: Beam]</text>
 		  <event load="COMBAT_CHECK_AEA_COMBAT_NECRO_1_BEAM" />
 	  </mod-append:choice>
+
+	  <mod-append:choice req="AEA_COMBAT_NECRO_2_LASER" blue="false">
+			<text>(Technomancy Drone II) Set the state of the drone. [Current mode: Laser]</text>
+			<event load="COMBAT_CHECK_AEA_COMBAT_NECRO_2_LASER" />
+		</mod-append:choice>
+		<mod-append:choice req="AEA_COMBAT_NECRO_2_BEAM" blue="false">
+			<text>(Technomancy Drone II) Set the state of the drone. [Current mode: Beam]</text>
+			<event load="COMBAT_CHECK_AEA_COMBAT_NECRO_2_BEAM" />
+		</mod-append:choice>
 </mod:findName>
 
 <event name="STORAGE_CHECK_AEA_O2SYS">
@@ -303,7 +312,7 @@
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-					LASER/BEAM DRONE 2
+					LASER/BEAM DRONE 1
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->	
@@ -356,5 +365,116 @@
 		<text>Return to the toggle menu.</text>
 		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
 	</choice>
+</event>
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					LASER/BEAM DRONE 2
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="COMBAT_CHECK_AEA_COMBAT_NECRO_2_LASER">
+	<text>Are you sure you want to change the drone's settings?</text>
+	<choice hidden="true">
+		<text>Set the drone to Beam Mode.</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_COMBAT_NECRO_2_LASER" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_COMBAT_NECRO_2_BEAM" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+	</choice>
+</event>
+<event name="COMBAT_CHECK_AEA_COMBAT_NECRO_2_BEAM">
+	<text>Are you sure you want to change the drone's settings?</text>
+	<choice hidden="true">
+		<text>Set the drone to Laser Mode.</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_COMBAT_NECRO_2_BEAM" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_COMBAT_NECRO_2_LASER" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+	</choice>
+</event>
+
+
+<mod:findName type="event" name="STORAGE_CHECK_SYSTEM">
+	<mod-append:choice req="SHIP_AEA_NECRO" hidden="true">
+		<text>Heretic Tech.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_NECRO" />
+	</mod-append:choice>
+</mod:findName>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_NECRO">
+	<text>Based on the Heretic Tech your ship is using, you might be able to make further upgrades using the technology.</text>
+	<choice req="aea_p_has_repair" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Repair Burst. [ALREADY INSTALLED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_p_has_repair" lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Repair Burst. [Cost: 20~]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_NECRO_REPAIR" />
+	</choice>
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_NECRO_REPAIR">
+	<text>You are about to install the Repair Burst.
+	[Effects: Repairs all systems when the hull integrity drops to 5, consumed upon use, can be re-bought]</text>
+	<choice req="LIST_CREW_AEA_NECRO" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 20~]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="scrap" min="-20" max="-20" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_NECRO_REPAIR" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="LIST_CREW_AEA_NECRO" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>This upgrade is unavailable. You need an Engi Heretic to perform the upgrade.</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_NECRO_REPAIR">
+	<variable name="aea_p_has_repair" op="set" val="1" />
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
 </event>
 </FTL>

@@ -14,9 +14,19 @@
 The oxygen system on this ship will heal all crew onboard and extinguishes fires, however it won't provide oxygen.</tooltip>
 		</mod-append:shipIcon>
 		<mod-append:shipIcon>
-            <name>icon_aea_acidic_filter</name>
+            <name>icon_aea_acidic_filter_weak</name>
             <tooltip>WEAK ACIDIC FILTERING SYSTEM:
 The oxygen system will provide a slow healing effect to all crew.</tooltip>
+		</mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_necro_repair</name>
+            <tooltip>Heretic Repair Burst:
+The enemy ship will full repair all system damage once at 5hp.</tooltip>
+		</mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_necro_repair_weak</name>
+            <tooltip>Weak Heretic Repair Burst:
+The enemy ship will full repair the shield system once at 5hp.</tooltip>
 		</mod-append:shipIcon>
 	</mod:findLike>
 
@@ -32,7 +42,7 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_LONG</mod-append:ship>
 
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_CREW1</mod-append:ship>
-		<mod-append:empty />
+		<mod-append:ship>PLAYER_SHIP_AEA_CREW2</mod-append:ship>
 	</mod:findLike>
 
 	<mod-append:ship name="PLAYER_SHIP_AEA_ACID_ARTY" b="true" c="true" >
@@ -116,6 +126,11 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
             <shipReq>PLAYER_SHIP_AEA_NECRO_SEPA</shipReq>
         </unlock>
 	</mod-append:ship>
+	<mod-append:ship name="PLAYER_SHIP_AEA_CREW2" b="false" c="false" >
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+	</mod-append:ship>
 
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_ARTY">
@@ -191,9 +206,38 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
 
+	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_ENGI_2">
+		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_ENGI_3">
+		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
 	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_SEPA">
 		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_SEPA_2">
+		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_SEPA_3">
+		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_CREW2">
+		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crewLimit>11</crewLimit>
+		<crew>
+			<aea_necro_king room="5" name="L-0031" />
+		</crew>
 	</mod-append:customShip>
 
 
@@ -276,7 +320,7 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 
 	<mod-append:customShip name="AEA_ACID_TRANSPORT">
 		<shipIcons>
-			<shipIcon>icon_aea_acidic_filter</shipIcon>
+			<shipIcon>icon_aea_acidic_filter_weak</shipIcon>
             <shipIcon>icon_invasion</shipIcon>
         </shipIcons>
 		<crew>
@@ -361,7 +405,7 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 
 	<mod-append:customShip name="AEA_ACID_TRANSPORT_ELITE">
 		<shipIcons>
-			<shipIcon>icon_aea_acidic_filter</shipIcon>
+			<shipIcon>icon_aea_acidic_filter_weak</shipIcon>
             <shipIcon>icon_invasion</shipIcon>
         </shipIcons>
 		<crew>
@@ -383,6 +427,109 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 			<aea_acid_soldier room="5" name="Acidic Soldier" />
 			<aea_acid_soldier room="2" name="Acidic Soldier" />
 		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_BOSS">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair</shipIcon>
+			<shipIcon>icon_threat</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_necro_lich room="0"/>
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_BOMBER">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_DROPSHIP">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair_weak</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_ENFORCER">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_FIGHTER">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_GUARD">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_necro_lich room="0"/>
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_MOTHERSHIP">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_necro_lich room="0"/>
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_OUTRIDER">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_PROTECTOR">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_necro_lich room="0"/>
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_RIGGER">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_SCOUT">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_STATION">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair_weak</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_necro_lich room="0"/>
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_TRANSPORT">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair_weak</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_necro_lich room="0"/>
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_NECRO_TRAPPER">
+		<shipIcons>
+			<shipIcon>icon_aea_necro_repair</shipIcon>
+        </shipIcons>
 	</mod-append:customShip>
 </mod:findLike>
 
@@ -554,7 +701,7 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 			</req>
 			<buttonText>RESURRECT</buttonText>
 			<tooltip>[COOLDOWN:20s]
-				Resurrect the last enemy crew killed by this crew.
+				Resurrect the last enemy crew killed in melee combat by this Engi.
 				-Costs 1 Nanite Swarm
 				-Resurrected crew last for 30 seconds
 				-Resurrected crew have 25% less hp and damage</tooltip>
@@ -575,7 +722,7 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 		<passiveStatBoosts>
 			<statBoost name="healSpeed">
 				<boostType>MULT</boostType>
-				<amount>0.9</amount>
+				<amount>0.5</amount>
 				<shipTarget>CREW_TARGET</shipTarget>
 				<crewTarget>ALL</crewTarget>
 				<droneTarget>CREW</droneTarget>
@@ -592,12 +739,12 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 			</req>
 			<buttonText>REND APART</buttonText>
 			<tooltip>[COOLDOWN:30s]
-				Rip enemies in the room apart, resurrect part of their bodies to create a copy
-				-Costs 3 Nanite Swarm
+				Rip enemies in the room apart, resurrect part of their bodies to create a copy.
+				-Costs 3 Nanite Swarms
 				-Resurrected crew last 10 seconds
 				-Resurrected crew have 50% less hp and damage
 				-Aflicted enemy crew in the room have 10% less hp and damage
-				-The Engi Lich's damage is reduced by 50%</tooltip>
+				-The Engi Lich's damage is increased by 50%</tooltip>
 			<cooldownColor r="188" g="35" b="31" />
 			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
 			<temporaryEffect>
@@ -605,7 +752,7 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 				<statBoosts>
 					<statBoost name="damageMultiplier">
 						<boostType>MULT</boostType>
-						<amount>0.5</amount>
+						<amount>1.5</amount>
 						<shipTarget>CURRENT_ROOM</shipTarget>
 						<crewTarget>SELF</crewTarget>
 						<droneTarget>ALL</droneTarget>
@@ -646,7 +793,63 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 			</req>
 			<buttonText>RESURRECT</buttonText>
 			<tooltip>[COOLDOWN:20s]
-				Resurrect the last enemy crew killed by this crew.
+				Resurrect the last enemy crew killed in melee combat by this Engi.
+				-Costs 1 Nanite Swarm
+				-Resurrected crew last for 30 seconds
+				-Resurrected crew have 25% less hp and damage</tooltip>
+			<cooldownColor r="120" g="99" b="84" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+		</powerEffect>
+	</race>
+	<race name="aea_necro_king">
+		<repairSpeed>2</repairSpeed>
+		<damageMultiplier>1.5</damageMultiplier>
+		<canSuffocate>false</canSuffocate>
+		<maxHealth>180</maxHealth>
+		<animBase>engi</animBase>
+		<deathSounds>
+			<deathSound>engiDeath</deathSound>
+		</deathSounds>
+		<passiveStatBoosts>
+			<statBoost name="healSpeed">
+				<boostType>MULT</boostType>
+				<amount>0</amount>
+				<shipTarget>CREW_TARGET</shipTarget>
+				<crewTarget>ALL</crewTarget>
+				<droneTarget>CREW</droneTarget>
+			</statBoost>
+		</passiveStatBoosts>
+		<powerEffect>
+			<cooldown>60</cooldown>
+			<powerSounds>
+				<powerSound>spiderRoar</powerSound>
+			</powerSounds>
+			<powerCharges>1</powerCharges>
+			<initialCharges>1</initialCharges>
+			<chargesPerJump>1</chargesPerJump>
+			<jumpCooldown>full</jumpCooldown>
+			<req type="enemy">
+				<enemyInRoom />
+			</req>
+			<buttonText>REANIMATE</buttonText>
+			<tooltip>[COOLDOWN:60s]
+				Permanently resurrect the last enemy crew killed in melee combat by this Engi.
+				-Costs 5 Nanite Swarms</tooltip>
+			<cooldownColor r="190" g="99" b="84" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+		</powerEffect>
+		<powerEffect>
+			<cooldown>2</cooldown>
+			<powerSounds>
+				<powerSound>spiderRoar</powerSound>
+			</powerSounds>
+			<jumpCooldown>full</jumpCooldown>
+			<req type="enemy">
+				<enemyInRoom />
+			</req>
+			<buttonText>RESURRECT</buttonText>
+			<tooltip>[COOLDOWN:2s]
+				Resurrect the last enemy crew killed in melee combat by this Engi.
 				-Costs 1 Nanite Swarm
 				-Resurrected crew last for 30 seconds
 				-Resurrected crew have 25% less hp and damage</tooltip>
@@ -789,12 +992,12 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 	<metaVariable name="juke_aea_necro" op="set" val="0" />
 	<variable name="aea_necro_ability_points" op="set" val="0" />
 	<variable name="ach_trans_aea_necro" op="set" val="0" />
+	<variable name="aea_p_has_repair" op="set" val="0" />
+	<variable name="aea_e_has_repair" op="set" val="1" />
   	<eventFile>special_aea_acid</eventFile>
   	<eventFile>sector_aea_acid</eventFile>
-  	<!--eventFile>special_aea_necro</eventFile>
-  	<eventFile>sector_aea_necro</eventFile-->
-
-	
+  	<eventFile>special_aea_necro</eventFile>
+  	<eventFile>sector_aea_necro</eventFile>
 	
 	<fleetDef name="CUSTOM_FLEET_AEA_ACID">
         <ship layer="0">fleetaea_acid_1_small</ship>
@@ -808,8 +1011,8 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 		<ship layer="2">fleetaea_acid_3_big</ship>
         <bigShip>fleetaea_acid_2_big</bigShip>
         <numShips layer="2">1</numShips>
-        <numShips layer="1">4</numShips>
-		<numShips layer="0">6</numShips>
+        <numShips layer="1">3</numShips>
+		<numShips layer="0">4</numShips>
     </fleetDef>
 	
 	<fleetDef name="CUSTOM_FLEET_AEA_NECRO">
@@ -869,6 +1072,13 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 				<secretDescription>Obtain the loot from the Acidic loot transport.</secretDescription>
 				<description>Obtain the ??? from the Acidic loot transport.</description>
 				<icon>ach_trans_aea_acid</icon>
+				<header>Loot Acquired</header>
+			</mod-append:achievement>
+			<mod-append:achievement name="ACH_TRANS_AEA_NECRO">
+				<name>Heretic Transport</name>
+				<secretDescription>Obtain the loot from the Heretic loot transport.</secretDescription>
+				<description>Obtain the ??? from the Heretic loot transport.</description>
+				<icon>ach_trans_aea_necro</icon>
 				<header>Loot Acquired</header>
 			</mod-append:achievement>
 		</mod:findLike>

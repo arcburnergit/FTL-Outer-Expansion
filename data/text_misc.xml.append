@@ -4,6 +4,7 @@
 <text name="map_icon_aea_acid_nebula">ACIDIC</text>
 <text name="map_icon_aea_acid_nebula_core">ACIDIC CORE [!]</text>
 <text name="map_icon_aea_acid_nebula_shipyard">ACIDIC SHIPYARD</text>
+<text name="map_icon_aea_necro_home">SANCTUM</text>
 <text name="map_icon_transport_aea_acid">TRANSPORT [!]</text>
 
 
@@ -11,6 +12,9 @@
 -1 ion damage
 3x erosion speed
 2x erosion max speed</text>
+<text name="loot_aea_necro_1">HERETIC LOOT
+-1 damage
++2 shots</text>
 
 <text name="atlas_aea_acid">Name: Acidic Origins
 Type: Hostile (Nebula)
@@ -19,8 +23,19 @@ Dominant Faction: The Acidic Growth
 Rebel Threat Level: Low
 Locations of Interest: Central Acidic Shipyards
     
-The Acidic Origins are a dangerous place, only the most dangerous ships survive the Acidic nebula, and that isn't even considering the Acidic ships themselves.</text>
+The Acidic Origins are a dangerous place, only the most extreme ships survive the Acidic nebula, and that isn't even considering the Acidic ships themselves.</text>
+
+<text name="atlas_aea_necro">Name: Blasphemous Core
+Type: Hostile
+Unique: True
+Dominant Faction: Engi Heretics
+Rebel Threat Level: Low
+Locations of Interest: The Sanctum
+    
+The Engi Heretics are outcasts even from the separatists, broken free from the harmony these engi prefer to use organic life as a tool to do their bidding. You'll be able to get by if you don't have an organic crew.</text>
+
 <text name="ship_PLAYER_SHIP_AEA_ACID_BILL_unlock">Consult the advice of a certain Acidic outcast about a certain artifact to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_NECRO_KING_unlock">Consult the advice of a certain Heretic leader about a certain artifact to unlock this ship.</text>
 
 <text name="ship_PLAYER_SHIP_AEA_ACID_ARTY_unlock">Help an Acidic outcast.</text>
 <text name="ship_PLAYER_SHIP_AEA_ACID_ARTY_2_unlock">Get to Sector 5 with the Acidic Cruiser Type A to unlock this ship.</text>

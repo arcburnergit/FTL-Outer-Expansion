@@ -529,6 +529,43 @@ script.on_internal_event(Defines.InternalEvents.DRONE_COLLISION, function(drone,
 			drone:BlowUp(false)
         end
     end
+
+    if drone.blueprint.name == "AEA_COMBAT_NECRO_2_LASER" or drone.blueprint.name == "AEA_COMBAT_NECRO_2_BEAM" then
+		local ship = Hyperspace.ships(drone.iShipId)
+		local otherShip = Hyperspace.ships(1 - drone.iShipId)
+		local droneBlueprint = Hyperspace.Blueprints:GetDroneBlueprint("AEA_COMBAT_NECRO_1_LASER_TEMP")
+		if drone.blueprint.name == "AEA_COMBAT_NECRO_2_BEAM" then
+			droneBlueprint = Hyperspace.Blueprints:GetDroneBlueprint("AEA_COMBAT_NECRO_1_BEAM_TEMP")
+		end
+		if ship and otherShip and not droneTable[drone.selfId] then
+            local drone2 = spawn_temp_drone(
+                droneBlueprint,
+                ship,
+                otherShip,
+            	nil,
+                3,
+                drone.currentLocation)
+            userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
+            local drone3 = spawn_temp_drone(
+                droneBlueprint,
+                ship,
+                otherShip,
+            	nil,
+                3,
+                drone.currentLocation)
+            userdata_table(drone3, "mods.mv.droneStuff").clearOnJump = true
+            local drone4 = spawn_temp_drone(
+                droneBlueprint,
+                ship,
+                otherShip,
+            	nil,
+                3,
+                drone.currentLocation)
+            userdata_table(drone4, "mods.mv.droneStuff").clearOnJump = true
+            droneTable[drone.selfId] = true
+			drone:BlowUp(false)
+        end
+    end
 end)
 
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
@@ -538,13 +575,6 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 				local droneBlueprint = Hyperspace.Blueprints:GetDroneBlueprint(drone.blueprint.name.."_TEMP")
 				local ship = shipManager
 				local otherShip = Hyperspace.ships(1 - shipManager.iShipId)
-				--[[print(drone.blueprint.name)
-				print(drone.destroyedTimer)
-				print(drone:GetDroneHealth())
-				print(drone:Destroyed())
-				print(drone.deployed)
-				print(drone.powered)
-				print(drone.bDead)]]
 				if drone.deployed and not drone.powered and not drone.bDead and not droneTable[drone.selfId] then
 					local drone2 = spawn_temp_drone(
 		                droneBlueprint,
@@ -562,7 +592,47 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 		                3,
 		                drone.currentLocation)
 		            userdata_table(drone3, "mods.mv.droneStuff").clearOnJump = true
-					print("kill")
+					--print("kill")
+					drone:BlowUp(false)
+            		droneTable[drone.selfId] = true
+		        end
+		        if drone.destroyedTimer > 0.5 and drone.destroyedTimer < 1 then
+		        	droneTable[drone.selfId] = nil
+		        end
+			end
+			if drone.blueprint.name == "AEA_COMBAT_NECRO_2_LASER" or drone.blueprint.name == "AEA_COMBAT_NECRO_2_BEAM" then
+				local droneBlueprint = Hyperspace.Blueprints:GetDroneBlueprint("AEA_COMBAT_NECRO_1_LASER_TEMP")
+				if drone.blueprint.name == "AEA_COMBAT_NECRO_2_BEAM" then
+					droneBlueprint = Hyperspace.Blueprints:GetDroneBlueprint("AEA_COMBAT_NECRO_1_BEAM_TEMP")
+				end
+				local ship = shipManager
+				local otherShip = Hyperspace.ships(1 - shipManager.iShipId)
+				if drone.deployed and not drone.powered and not drone.bDead and not droneTable[drone.selfId] then
+					local drone2 = spawn_temp_drone(
+		                droneBlueprint,
+		                ship,
+		                otherShip,
+		            	nil,
+		                3,
+		                drone.currentLocation)
+		            userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
+		            local drone3 = spawn_temp_drone(
+		                droneBlueprint,
+		                ship,
+		                otherShip,
+		            	nil,
+		                3,
+		                drone.currentLocation)
+		            userdata_table(drone3, "mods.mv.droneStuff").clearOnJump = true
+		            local drone4 = spawn_temp_drone(
+		                droneBlueprint,
+		                ship,
+		                otherShip,
+		            	nil,
+		                3,
+		                drone.currentLocation)
+		            userdata_table(drone4, "mods.mv.droneStuff").clearOnJump = true
+					--print("kill")
 					drone:BlowUp(false)
             		droneTable[drone.selfId] = true
 		        end
@@ -583,6 +653,7 @@ local zombieTable = {}
 local necro_crew = {}
 necro_crew["aea_necro_engi"] = true
 necro_crew["aea_necro_lich"] = true
+necro_crew["aea_necro_king"] = true
 
 --script.on_internal_event(Defines.InternalEvents.POWER_TOOLTIP, function(power, powerState)
 	--[[local crew = necro_crew[power.crew.type]
@@ -598,27 +669,36 @@ necro_crew["aea_necro_lich"] = true
 	--return Defines.Chain.CONTINUE, false, "powerState"
 --end)
 
+local dead_crew = {}
+
 script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
-	local crew = necro_crew[crewmem.type]
-	if crewmem.iShipId == 0 and crew then
-		local crewTable = userdata_table(crewmem, "mods.aea.necro")
-		if crewTable.kills then
-			if crewmem.stats.stat[1] > crewTable.kills then
-				crewTable.kills = crewmem.stats.stat[1]
-				local crewShip = Hyperspace.ships(crewmem.currentShipId)
-				for crew in vter(crewShip.vCrewList) do
-					if crew.iRoomId == crewmem.iRoomId and crew.health.first <= 0 then
-						crewTable.lastKill = crew.type
-						crewTable.lastKillName = crew.species
-						--print("NEW KILL: "..crew.type)
-					end
-				end
-				Hyperspace.playerVariables.aea_necro_ability_points = Hyperspace.playerVariables.aea_necro_ability_points + 1
+	if crewmem.health.first <= 0 and not (dead_crew[crewmem.extend.selfId]) and not crewmem:IsDrone() then
+		--print("CREW DYING: "..tostring(crewmem.type))
+		dead_crew[crewmem.extend.selfId] = true
+		local crewShip = Hyperspace.ships(crewmem.currentShipId)
+		local hasEngiInRoom = false
+		for crew in vter(crewShip.vCrewList) do
+			local crew_necro = necro_crew[crew.type]
+			if crew.iShipId ~= crewmem.iShipId and crew.currentSlot.slotId == crewmem.currentSlot.slotId and crew.iRoomId == crewmem.iRoomId and crew_necro then
+				--print("HAS NECRO ENGI IN SQUARE")
+				local crewTable = userdata_table(crew, "mods.aea.necro")
+				crewTable.lastKill = crewmem.type
+				crewTable.lastKillName = crewmem.blueprint:GetNameShort()
+				hasEngiInRoom = true
+			elseif crew.iShipId ~= crewmem.iShipId and crew.iRoomId == crewmem.iRoomId and crew_necro then
+				--print("HAS NECRO ENGI IN ROOM")
+				hasEngiInRoom = true
+			elseif crew.type == "aea_necro_king" then
+				hasEngiInRoom = true
 			end
-		else
-			--print("RESET STATS")
-			crewTable.kills = crewmem.stats.stat[1]
 		end
+		if hasEngiInRoom then
+			--print("ADD ONE")
+            Hyperspace.Sounds:PlaySoundMix("levelup", -1, false)
+			Hyperspace.playerVariables.aea_necro_ability_points = Hyperspace.playerVariables.aea_necro_ability_points + 1
+		end
+	elseif crewmem.health.first > 0 and dead_crew[crewmem.extend.selfId] then
+		dead_crew[crewmem.extend.selfId] = nil
 	end
 	if zombieTable[crewmem.extend.selfId] then
 		local textString = Hyperspace.TextString()
@@ -633,6 +713,7 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
 		end
 	end
 end)
+
 local def0XCREWSLOT = Hyperspace.StatBoostDefinition()
 def0XCREWSLOT.stat = Hyperspace.CrewStat.CREW_SLOTS
 def0XCREWSLOT.value = true
@@ -732,17 +813,35 @@ Hyperspace.StatBoostDefinition.statBoostDefs:push_back(defHDMP)
 script.on_internal_event(Defines.InternalEvents.POWER_READY, function(power, powerState)
 	local crew = necro_crew[power.crew.type]
 	local crewmem = power.crew
-	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 20 then
+	if crew and crewmem.iShipId == 0 and (power.powerCooldown.second == 20 or power.powerCooldown.second == 2) then
 		local crewTable = userdata_table(crewmem, "mods.aea.necro")
 		if not (Hyperspace.playerVariables.aea_necro_ability_points > 0 and crewTable.lastKill) then
-			powerState = 27
+			powerState = 22
+		end
+		if crewmem.bMindControlled then
+			powerState = 22
+		end
+	end
+	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 60 then
+		local crewTable = userdata_table(crewmem, "mods.aea.necro")
+		if not (Hyperspace.playerVariables.aea_necro_ability_points > 4 and crewTable.lastKill) then
+			powerState = 22
+		end
+		if crewmem.bMindControlled then
+			powerState = 22
 		end
 	end
 	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 30 then
 		local crewTable = userdata_table(crewmem, "mods.aea.necro")
 		if not (Hyperspace.playerVariables.aea_necro_ability_points > 2) then
-			powerState = 27
+			powerState = 22
 		end
+		if crewmem.bMindControlled then
+			powerState = 22
+		end
+	end
+	if crew and crewmem.iShipId == 1 and crewmem.bMindControlled then
+		powerState = 22
 	end
 	return Defines.Chain.CONTINUE, powerState
 end)
@@ -752,8 +851,8 @@ enemyResurrections = RandomList:New {"human", "rebel", "rock", "zoltan", "orchid
 script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, shipManager)
 	local crew = necro_crew[power.crew.type]
 	local crewmem = power.crew
-	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 20 then
-		print("RESURRECT")
+	if crew and crewmem.iShipId == 0 and (power.powerCooldown.second == 20 or power.powerCooldown.second == 2) and (not crewmem.bMindControlled) then
+		--print("RESURRECT")
 		local crewTable = userdata_table(crewmem, "mods.aea.necro")
 		if Hyperspace.playerVariables.aea_necro_ability_points > 0 and crewTable.lastKill then
 			local playerShip = Hyperspace.ships.player
@@ -784,7 +883,7 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 			Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defRDMP), zombie)
 			zombieTable[zombie.extend.selfId] = 30
 		end
-	elseif crew and power.powerCooldown.second == 20 then
+	elseif crew and power.powerCooldown.second == 20 and (not crewmem.bMindControlled) then
 		local rCrew = enemyResurrections:GetItem()
 		local crewShip = Hyperspace.ships(crewmem.currentShipId)
 		local intruder = false
@@ -798,11 +897,11 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 		Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHMHP), zombie)
 		Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
 		Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHDMP), zombie)
-		zombieTable[zombie.extend.selfId] = 20
+		zombieTable[zombie.extend.selfId] = 15
 	end
 
 
-	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 30 then
+	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 30 and (not crewmem.bMindControlled) then
 		--print("REND")
 		local crewTable = userdata_table(crewmem, "mods.aea.necro")
 		if Hyperspace.playerVariables.aea_necro_ability_points > 2 then
@@ -823,7 +922,7 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 			end
 			for enemyCrew in vter(crewShip.vCrewList) do
 				--print(enemyCrew.type)
-				if enemyCrew.iShipId ~= crewmem.iShipId and enemyCrew.iRoomId == crewmem.iRoomId and (not zombieTable[enemyCrew.extend.selfId]) then
+				if enemyCrew.iShipId ~= crewmem.iShipId and enemyCrew.iRoomId == crewmem.iRoomId and (not zombieTable[enemyCrew.extend.selfId]) and not crewmem:IsDrone() then
 					--print("REND LOOP CREW")
 					local rCrew = enemyCrew.type
 					local intruder = false
@@ -842,10 +941,10 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 				end
 			end
 		end
-	elseif crew and power.powerCooldown.second == 30 then
+	elseif crew and power.powerCooldown.second == 30 and (not crewmem.bMindControlled) then
 		local crewShip = Hyperspace.ships(crewmem.currentShipId)
 		for enemyCrew in vter(crewShip.vCrewList) do
-			if enemyCrew.iShipId ~= crewmem.iShipId and enemyCrew.iRoomId == crewmem.iRoomId and (not zombieTable[enemyCrew.extend.selfId]) then
+			if enemyCrew.iShipId ~= crewmem.iShipId and enemyCrew.iRoomId == crewmem.iRoomId and (not zombieTable[enemyCrew.extend.selfId]) and not crewmem:IsDrone() then
 				local rCrew = enemyCrew.type
 				local intruder = false
 				if crewmem.intruder then
@@ -858,16 +957,31 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHMHP), zombie)
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHDMP), zombie)
-				zombieTable[zombie.extend.selfId] = 10
+				zombieTable[zombie.extend.selfId] = 8
 			end
+		end
+	end
+
+	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 60 and (not crewmem.bMindControlled) then
+		local crewTable = userdata_table(crewmem, "mods.aea.necro")
+		if crewTable.lastKill then
+			local rCrew = crewTable.lastKill
+			local crewShip = Hyperspace.ships(crewmem.currentShipId)
+			local intruder = false
+			if crewmem.intruder then
+				intruder = true
+			end
+			local slot = Hyperspace.ShipGraph.GetShipInfo(crewShip.iShipId):GetClosestSlot(crewmem:GetLocation(), crewShip.iShipId, intruder)
+			local zombie = crewShip:AddCrewMemberFromString(crewTable.lastKillName, rCrew, intruder, slot.roomId, true, true)
+			crewTable.lastKill = nil
 		end
 	end
 end)
 
-local xNPos = 434
-local yNPos = 43
-local xNText = 485
-local yNText = 58
+local xNPos = 122
+local yNPos = 75
+local xNText = xNPos + 51
+local yNText = yNPos + 15
 local widthN = 75
 local heightN = 40
 local naniteText = "Nanite Swarms, used by the Engi Heretics to perform various tasks.\nCurrent Last Kills:"
@@ -879,11 +993,12 @@ local tempNanitImage = Hyperspace.Resources:CreateImagePrimitiveString(
     Graphics.GL_Color(1, 1, 1, 1),
     1.0,
     false)
-script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
+script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function()
     if Hyperspace.Global.GetInstance():GetCApp().world.bStartedGame then
         local shipManager = Hyperspace.ships.player
         local naniteSwarms = Hyperspace.playerVariables.aea_necro_ability_points
-        if shipManager:HasEquipment("aea_necro_engi") > 0 or shipManager:HasEquipment("aea_necro_lich") > 0 then
+        local commandGui = Hyperspace.Global.GetInstance():GetCApp().gui
+        if shipManager:HasEquipment("aea_necro_engi") > 0 or shipManager:HasEquipment("aea_necro_lich") > 0 or shipManager:HasEquipment("aea_necro_king") > 0 and not (commandGui.event_pause or commandGui.menu_pause) then
             local hullHP = math.floor(naniteSwarms)
             Graphics.CSurface.GL_RenderPrimitive(tempNanitImage)
             --[[local xMod = 0
@@ -931,6 +1046,8 @@ local necro_lasers = mods.aea.necro_lasers
 necro_lasers["AEA_LASER_NECRO_1"] = "AEA_LASER_NECRO_FRAGMENT"
 necro_lasers["AEA_LASER_NECRO_2"] = "AEA_LASER_NECRO_FRAGMENT"
 necro_lasers["AEA_LASER_NECRO_3"] = "AEA_LASER_NECRO_FRAGMENT"
+necro_lasers["AEA_LASER_NECRO_2_LOOT"] = "AEA_LASER_NECRO_FRAGMENT"
+necro_lasers["AEA_LASER_NECRO_CHARGE"] = "AEA_LASER_NECRO_FRAGMENT"
 
 script.on_internal_event(Defines.InternalEvents.SHIELD_COLLISION, function(shipManager, projectile, damage, response) 
 	local nData = nil
@@ -941,7 +1058,7 @@ script.on_internal_event(Defines.InternalEvents.SHIELD_COLLISION, function(shipM
             projectile.position,
             projectile.currentSpace,
             projectile.ownerId,
-            get_random_point_in_radius(projectile.target, 40),
+            get_random_point_in_radius(projectile.target, 25),
             projectile.destinationSpace,
             projectile.heading)
         local proj2 = spaceManager:CreateLaserBlast(
@@ -949,7 +1066,7 @@ script.on_internal_event(Defines.InternalEvents.SHIELD_COLLISION, function(shipM
             projectile.position,
             projectile.currentSpace,
             projectile.ownerId,
-            get_random_point_in_radius(projectile.target, 40),
+            get_random_point_in_radius(projectile.target, 25),
             projectile.destinationSpace,
             projectile.heading)
         local proj3 = spaceManager:CreateLaserBlast(
@@ -957,8 +1074,42 @@ script.on_internal_event(Defines.InternalEvents.SHIELD_COLLISION, function(shipM
             projectile.position,
             projectile.currentSpace,
             projectile.ownerId,
-            get_random_point_in_radius(projectile.target, 40),
+            get_random_point_in_radius(projectile.target, 25),
             projectile.destinationSpace,
             projectile.heading)
 	end
 end)
+
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function()
+	Hyperspace.playerVariables.aea_e_has_repair = 1
+end)
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	if shipManager:HasAugmentation("AEA_NECRO_SAVE_ENEMY") > 0 and Hyperspace.playerVariables.aea_e_has_repair == 1 and shipManager.ship.hullIntegrity.first <= 5 then
+		for system in vter(shipManager.vSystemList) do
+			if system:NeedsRepairing() then
+				--print("REPAIR ENEMY SYSTEM")
+				system:AddDamage(-10)
+				Hyperspace.playerVariables.aea_e_has_repair = 0
+			end
+		end
+	elseif shipManager:HasAugmentation("AEA_NECRO_SAVE_ENEMY_WEAK") > 0 and Hyperspace.playerVariables.aea_e_has_repair == 1 and shipManager.ship.hullIntegrity.first <= 5 then
+		local system = shipManager:GetSystem(0)
+		if system:NeedsRepairing() then
+			--print("REPAIR ENEMY SHIELD SYSTEM")
+			system:AddDamage(-10)
+			Hyperspace.playerVariables.aea_e_has_repair = 0
+		end
+	end
+
+	if shipManager.iShipId == 0 and Hyperspace.playerVariables.aea_p_has_repair == 1 and shipManager.ship.hullIntegrity.first <= 5 then
+		for system in vter(shipManager.vSystemList) do
+			if system:NeedsRepairing() then
+				--print("REPAIR PLAYER SYSTEM")
+				system:AddDamage(-10)
+				Hyperspace.playerVariables.aea_p_has_repair = 0
+			end
+		end
+	end
+end)
+

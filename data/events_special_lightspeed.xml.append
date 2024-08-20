@@ -8,7 +8,16 @@
 		<text>Proceed to the Acidic Origins.</text>
 		<event load="AEA_ACID_UNIQUE_WARP" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_NECRO" blue="false">
+		<text>Proceed to the Heretic Sector.</text>
+		<event load="AEA_NECRO_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_NECRO_UNIQUE" blue="false">
+		<text>Proceed to the Blasphemous Core.</text>
+		<event load="AEA_NECRO_UNIQUE_WARP" />
+	</mod-append:choice>
 </mod:findName>
+
 <mod:findName type="event" name="ATLAS_MENU_NOEQUIPMENT">
 	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_ACID_NEBULA" blue="false">
 		<text>Proceed to the Acidic Sector.</text>
@@ -17,6 +26,14 @@
 	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_ACID_UNIQUE" blue="false">
 		<text>Proceed to the Acidic Origins.</text>
 		<event load="AEA_ACID_UNIQUE_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_NECRO" blue="false">
+		<text>Proceed to the Heretic Sector.</text>
+		<event load="AEA_NECRO_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_NECRO_UNIQUE" blue="false">
+		<text>Proceed to the Blasphemous Core.</text>
+		<event load="AEA_NECRO_UNIQUE_WARP" />
 	</mod-append:choice>
 </mod:findName>
 
@@ -38,6 +55,10 @@
 	<mod-append:choice hidden="true">
 		<text>Go to the Acidic Origins.</text> 
 		<event load="LIGHTSPEED_SECTOR_WARP_AEA_BILL_HAT" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true">
+		<text>Go to the Blasphemous Core.</text> 
+		<event load="LIGHTSPEED_SECTOR_WARP_AEA_NECRO_HAT" />
 	</mod-append:choice>
 </mod:findName>
 
@@ -62,7 +83,7 @@
 </event>
 <event name="AEA_ACID_WARP">
 	<text>Name: Acidic Territory
-Type: Hostile (Nebula)
+Type: Neutral (Nebula)
 Unique: False
 Dominant Faction: The Acidic Growth
 Rebel Threat Level: Low
@@ -168,23 +189,84 @@ The Acidic Growth is a rather unknown faction, believed to be a form of hivemind
 	<secretSector>SECTOR_AEA_ACID_UNIQUE</secretSector>
 </event>
 
-<!--<event name="ENTER_AEA_ACID_OUT">
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					HERETIC
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="ENTER_AEA_NECRO">
 	<text load="TEXT_LIGHTSPEED" />
 	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="LOAD_ATLAS_MARKER" />
 	</choice>
-</event> 
-<event name="AEA_ACID_OUT_WARP">
-	<text id="atlas_aea_acid_out" />
+</event>
+<event name="AEA_NECRO_WARP">
+	<text>Name: Heretic Territory
+Type: Hostile
+Unique: False
+Dominant Faction: Engi Heretics
+Rebel Threat Level: Low
+
+The Engi Heretics are outcasts even from the separatists, broken free from the harmony these engi prefer to use organic life as a tool to do their bidding. You'll be able to get by if you don't have an organic crew.</text>
 	<choice hidden="true">
 		<text>Exit hyperspeed.</text>
-		<event load="START_AEA_ACID_OUT" />
+		<event load="START_AEA_NECRO" />
 	</choice>
 	<choice hidden="true" req="COORDS" blue="false">
 		<text>Reroute.</text>
 		<event load="REROUTE_MENU" />
 	</choice>
-</event>-->
+</event>
+
+<event name="ENTER_AEA_NECRO_UNIQUE">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event>
+<event name="AEA_NECRO_UNIQUE_WARP">
+	<text id="atlas_aea_necro" />
+	<choice hidden="true">
+		<text>Exit hyperspeed.</text>
+		<event load="START_AEA_NECRO_UNIQUE" />
+	</choice>
+	<choice hidden="true" req="COORDS" blue="false">
+		<text>Reroute.</text>
+		<event load="REROUTE_MENU" />
+	</choice>
+</event>
+
+<event name="LIGHTSPEED_SECTOR_WARP_AEA_NECRO_HAT">
+	<text id="atlas_aea_necro" />
+	<choice hidden="true">
+		<text>Continue with the jump.</text>
+		<event>
+			<text>You prepare to jump to the new co-ordinates, and change your flight path accordingly.</text>
+			<variable name="coords_aea_bill" op="set" val="0" />
+			<variable name="magical_hat_active" op="set" val="0" />
+			<variable name="loc_sector_count" op="add" val="-1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="JUMP_TO_AEA_BILL" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind.</text>
+		<event>
+			<loadEvent>ATLAS_MENU_NOEQUIPMENT</loadEvent>
+		</event>
+	</choice>
+</event>
+
 </FTL>
