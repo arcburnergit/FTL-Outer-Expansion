@@ -21,12 +21,12 @@ The oxygen system will provide a slow healing effect to all crew.</tooltip>
 		<mod-append:shipIcon>
             <name>icon_aea_necro_repair</name>
             <tooltip>Heretic Repair Burst:
-The enemy ship will full repair all system damage once at 5hp.</tooltip>
+The enemy ship will repair 2 system damage once at 5hp.</tooltip>
 		</mod-append:shipIcon>
 		<mod-append:shipIcon>
             <name>icon_aea_necro_repair_weak</name>
             <tooltip>Weak Heretic Repair Burst:
-The enemy ship will full repair the shield system once at 5hp.</tooltip>
+The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 		</mod-append:shipIcon>
 	</mod:findLike>
 
@@ -236,7 +236,7 @@ The enemy ship will full repair the shield system once at 5hp.</tooltip>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crewLimit>11</crewLimit>
 		<crew>
-			<aea_necro_king room="5" name="L-0031" />
+			<aea_necro_king room="0" name="L-0031" />
 		</crew>
 	</mod-append:customShip>
 
@@ -932,6 +932,14 @@ The enemy ship will full repair the shield system once at 5hp.</tooltip>
 					<fourPwr>2</fourPwr>
 				</systemPowerScaling>
 			</statBoost>
+			<statBoost name="maxHealth">
+				<boostType>MULT</boostType>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>0.6</amount>
+				<priority>0</priority>
+			</statBoost>
 		</statBoosts>
     	<function name="FIRE_EXTINGUISHERS" value="2" useForReqs="true" />
     </aug>
@@ -955,6 +963,47 @@ The enemy ship will full repair the shield system once at 5hp.</tooltip>
 					<threePwr>1.8</threePwr>
 					<fourPwr>2</fourPwr>
 				</systemPowerScaling>
+			</statBoost>
+			<statBoost name="maxHealth">
+				<boostType>MULT</boostType>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>0.6</amount>
+				<priority>0</priority>
+			</statBoost>
+		</statBoosts>
+    </aug>
+	
+    <aug name="AEA_NECRO_SAVE_ENEMY">
+		<statBoosts>
+			<statBoost name="maxHealth">
+				<boostType>FLAT</boostType>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>-25</amount>
+				<priority>0</priority>
+				<whiteList>
+					<aea_necro_engi />
+					<aea_necro_lich />
+				</whiteList>
+			</statBoost>
+		</statBoosts>
+    </aug>
+    <aug name="AEA_NECRO_SAVE_ENEMY_WEAK">
+		<statBoosts>
+			<statBoost name="maxHealth">
+				<boostType>FLAT</boostType>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>-25</amount>
+				<priority>0</priority>
+				<whiteList>
+					<aea_necro_engi />
+					<aea_necro_lich />
+				</whiteList>
 			</statBoost>
 		</statBoosts>
     </aug>

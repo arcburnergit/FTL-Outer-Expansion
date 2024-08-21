@@ -176,8 +176,8 @@
 	<name>AEA_LASER_NECRO_3</name>
 	<name>LASER_BURST_1</name>
 	<name>LASER_BURST_2_ENEMY</name>
-	<name>LASER_BURST_3</name>
-	<name>LASER_HEAVY_1</name>
+	<name>LASER_PIERCE_ENEMY</name>
+	<name>LASER_HULL_1_ENEMY</name>
 	<name>BEAM_1</name>
 	<name>BEAM_2</name>
 	<name>BEAM_LONG</name>
@@ -196,6 +196,7 @@
 	<name>LASER_FROST_1</name>
 	<name>LASER_STUN</name>
 	<name>BEAM_STUN</name>
+	<name>BOMB_1_ENEMY</name>
 </blueprintList>
 
 <blueprintList name="LIST_DRONES_NECRO">
@@ -212,10 +213,6 @@
 	<name>REPAIR</name>
 	<name>MANNING</name>
 	<name>BATTLETOG_DEFEND</name>
-	<name>BATTLETOG_BOARDER</name>
-	<name>BATTLETOG2_DEFEND</name>
-	<name>BATTLETOG2_BOARDER</name>
-	<name>BOARDER_ION</name>
 </blueprintList>
 
 <blueprintList name="LIST_SHIPS_AEA_ACID_ALL">
@@ -991,12 +988,10 @@
 	<minSector>3</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="2" room="7" start="false" />
 		<clonebay power="1" max="1" room="8" start="true" />
 		<doors power="1" max="3" room="6" start="false" />
 		<drones power="2" max="8" room="5" start="true" />
 		<engines power="1" max="2" room="4" start="true" />
-		<hacking power="1" max="3" room="10" start="false" />
 		<mind power="1" max="1" room="3" start="true" />
 		<oxygen power="1" max="2" room="2" start="true" />
 		<pilot power="1" max="3" room="0" start="true" />
@@ -1024,7 +1019,6 @@
 		<doors power="1" max="3" room="3" start="false" />
 		<drones power="2" max="8" room="5" start="true" />
 		<engines power="1" max="2" room="7" start="true" />
-		<mind power="1" max="1" room="4" start="true" />
 		<oxygen power="1" max="2" room="1" start="true" />
 		<pilot power="1" max="2" room="0" start="true" />
 		<shields power="2" max="8" room="9" start="true" />
@@ -1072,11 +1066,10 @@
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<clonebay power="1" max="1" room="5" start="true" />
+		<clonebay power="1" max="2" room="5" start="true" />
 		<doors power="1" max="3" room="3" start="false" />
 		<drones power="2" max="8" room="9" start="true" />
 		<engines power="1" max="1" room="1" start="true" />
-		<hacking power="1" max="3" room="6" start="false" />
 		<mind power="1" max="1" room="10" start="true" />
 		<oxygen power="1" max="3" room="8" start="true" />
 		<pilot power="1" max="3" room="0" start="true" />
@@ -1127,7 +1120,6 @@
 	<minSector>1</minSector>
 	<maxSector>4</maxSector>
 	<systemList>
-		<cloaking power="1" max="2" room="3" start="false" />
 		<clonebay power="1" max="1" room="7" start="true" />
 		<drones power="2" max="7" room="2" start="true" />
 		<engines power="1" max="2" room="1" start="true" />
@@ -1153,12 +1145,10 @@
 	<minSector>3</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="2" room="8" start="false" />
 		<clonebay power="1" max="3" room="2" start="true" />
 		<doors power="1" max="3" room="6" start="false" />
 		<drones power="2" max="7" room="13" start="true" />
 		<engines power="1" max="2" room="7" start="true" />
-		<mind power="1" max="3" room="5" start="true" />
 		<oxygen power="1" max="3" room="3" start="true" />
 		<pilot power="1" max="3" room="0" start="true" />
 		<shields power="2" max="10" room="4" start="true" />
@@ -1185,7 +1175,6 @@
 		<doors power="1" max="3" room="6" start="false" />
 		<drones power="2" max="10" room="1" start="true" />
 		<engines power="1" max="2" room="3" start="true" />
-		<mind power="1" max="2" room="4" start="false" />
 		<oxygen power="1" max="2" room="2" start="true" />
 		<pilot power="1" max="3" room="0" start="true" />
 		<shields power="2" max="8" room="8" start="true" />
@@ -1234,7 +1223,6 @@
 	<maxSector>8</maxSector>
 	<systemList>
 		<battery power="1" max="2" room="13" start="false" />
-		<cloaking power="1" max="2" room="15" start="false" />
 		<clonebay power="1" max="3" room="5" start="true" />
 		<doors power="1" max="3" room="11" start="false" />
 		<drones power="2" max="8" room="6" start="true" />
@@ -1266,7 +1254,6 @@
 		<doors power="1" max="3" room="1" start="false" />
 		<drones power="2" max="8" room="2" start="true" />
 		<engines power="1" max="2" room="8" start="true" />
-		<mind power="1" max="3" room="4" start="true" />
 		<oxygen power="1" max="2" room="5" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="7" start="true" />
@@ -1293,7 +1280,6 @@
 		<clonebay power="1" max="3" room="5" start="true" />
 		<drones power="2" max="8" room="3" start="true" />
 		<engines power="1" max="2" room="9" start="true" />
-		<mind power="1" max="3" room="1" start="false" />
 		<oxygen power="1" max="2" room="8" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="6" start="true" />

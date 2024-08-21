@@ -1694,6 +1694,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<health amount="30" />
 	<maxPower amount="8" />
 	<aug name="EX_FIRE_EXTINGUISHERS" />
+	<aug name="EX_TELEPORT_HEAL" />
 	<shieldImage>mup_orb1</shieldImage>
     <mv-mapImage>map_icon_mup_separatist_a</mv-mapImage>
 </shipBlueprint>
@@ -2253,6 +2254,33 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	</missSounds>
 	<weaponArt>aea_laser_necro_charge</weaponArt>
 	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_BEAM_NECRO_1">
+	<type>BEAM</type>
+	<flavorType>Pinpoint</flavorType>
+	<tip>tip_focus</tip>
+	<title>'Kris' Pinpoint</title>
+	<short>'Kris'</short>
+	<desc>A fairly simple weapon that fires a straight beam that can only hit 1 room, but does 2 damage. The weapon also splits enemy crew in two on hit.</desc>
+	<tooltip>One damage per room beam weapon</tooltip>
+	<damage>2</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>2</breachChance>
+	<cooldown>12</cooldown>
+	<speed>1</speed>
+	<power>1</power>
+	<cost>45</cost>
+	<bp>2</bp>
+	<rarity>2</rarity>
+	<image>beam_contact</image>
+	<length>1</length>
+	<launchSounds>
+		<sound>focus_weak</sound>
+	</launchSounds>
+	<weaponArt>aea_beam_necro_1</weaponArt>
+	<iconImage>beam</iconImage>
 </weaponBlueprint>
 </FTL>
 

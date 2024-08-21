@@ -1281,7 +1281,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 		<text>Take the weapon</text>
 		<event>
 			<text>You rip the weapon from it's housing and retreat back to your ship, its not going to take the Engi long to realize something is wrong.</text>
-			<weapon name="AEA_BEAM_ACID_1"/>
+			<weapon name="AEA_BEAM_NECRO_1"/>
 			<choice>
 				<text>Continue...</text>
 				<event/>
@@ -1379,6 +1379,7 @@ A moment later the general is alive again, however this time something is differ
 				<text>Accept the mission</text>
 				<event>
 					<text>"Try not to die Captain." The coordinates for the vessel are uploaded to your computer.</text>
+					<quest event="QUEST_AEA_NECRO_SANCTUM_QUEST"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event/>
@@ -1399,7 +1400,7 @@ A moment later the general is alive again, however this time something is differ
 	</choice>
 </event>
 
-<event name="QUEST_AEA_NECRO_ELITE_QUEST">
+<event name="QUEST_AEA_NECRO_SANCTUM_QUEST">
 	<beaconType id="map_icon_quest" global="true">
 		<color r="69" g="168" b="235" a="1" />
 		<unvisitedTooltip>The dangerous rebel vessel you're tasked with destroyed by the gilded Engi</unvisitedTooltip>

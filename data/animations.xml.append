@@ -219,6 +219,18 @@
 	<time>1.0</time>
 </anim>
 
+
+<animSheet name="aea_beam_necro_1" w="165" h="73" fw="33" fh="73">weapon_necro/aea_beam_necro_1.png</animSheet>
+<weaponAnim name="aea_beam_necro_1">
+	<sheet>aea_beam_necro_1</sheet>
+	<desc length="5" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="23" y="43" />
+	<mountPoint x="4" y="47" />
+	<chargeImage>weapon_necro/aea_beam_necro_1_glow.png</chargeImage>
+</weaponAnim>
+
 </FTL>
 
 <FTL>

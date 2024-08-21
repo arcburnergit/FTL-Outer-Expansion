@@ -257,7 +257,7 @@ The Engi Heretics are outcasts even from the separatists, broken free from the h
 			<variable name="loc_sector_count" op="add" val="-1" />
 			<choice hidden="true">
 				<text>Continue...</text>
-				<event load="JUMP_TO_AEA_BILL" />
+				<event load="JUMP_TO_AEA_NECRO_CORE" />
 			</choice>
 		</event>
 	</choice>
@@ -269,4 +269,7 @@ The Engi Heretics are outcasts even from the separatists, broken free from the h
 	</choice>
 </event>
 
+<event name="JUMP_TO_AEA_NECRO_CORE">
+	<secretSector>SECTOR_AEA_NECRO_UNIQUE</secretSector>
+</event>
 </FTL>
