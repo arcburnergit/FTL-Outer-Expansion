@@ -23,6 +23,44 @@
     <mod-append:sector>SECTOR_AEA_NECRO_UNIQUE</mod-append:sector>
 </mod:findName>
 
+<mod:findName type="sectorDescription" name="FINAL">
+	<mod-append:priorityEvent name="AEA_OLD_GATE" min="1" max="1" priority="1"/>
+</mod:findName>
+
+<mod:findName type="sectorDescription" name="SECRET_ANCIENT">
+	<mod:findLike type="rarityList">
+    <mod-append:blueprint name="AEA_LASER_ACID_1" rarity="0" />
+    <mod-append:blueprint name="AEA_LASER_ACID_2" rarity="0" />
+    <mod-append:blueprint name="AEA_LASER_ACID_3" rarity="0" />
+    <mod-append:blueprint name="AEA_ION_ACID_1" rarity="0" />
+	<mod-append:blueprint name="AEA_DEFENSE_NECRO_1_MISSILE" rarity="0" />
+	<mod-append:blueprint name="AEA_DEFENSE_NECRO_2_MISSILE" rarity="0" />
+	<mod-append:blueprint name="AEA_COMBAT_NECRO_1_LASER" rarity="0" />
+	<mod-append:blueprint name="AEA_COMBAT_NECRO_2_LASER" rarity="0" />
+	<mod-append:blueprint name="AEA_LASER_NECRO_1" rarity="0" />
+	<mod-append:blueprint name="AEA_LASER_NECRO_2" rarity="0" />
+	<mod-append:blueprint name="AEA_LASER_NECRO_3" rarity="0" />
+    <mod-append:blueprint name="AEA_LASER_NECRO_CHARGE" rarity="0" />
+	</mod:findLike>
+</mod:findName>
+
+<mod:findName type="sectorDescription" name="SECRET_ROYAL">
+	<mod:findLike type="rarityList">
+		<mod-append:blueprint name="AEA_LASER_ACID_1" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_ACID_2" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_ACID_3" rarity="0" />
+		<mod-append:blueprint name="AEA_ION_ACID_1" rarity="0" />
+		<mod-append:blueprint name="AEA_DEFENSE_NECRO_1_MISSILE" rarity="0" />
+		<mod-append:blueprint name="AEA_DEFENSE_NECRO_2_MISSILE" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_NECRO_1_LASER" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_NECRO_2_LASER" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_NECRO_1" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_NECRO_2" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_NECRO_3" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_NECRO_CHARGE" rarity="0" />
+	</mod:findLike>
+</mod:findName>
+
 <sectorDescription name="SECTOR_AEA_ACID_NEBULA" unique="false">
 	<nameList>
 		<name>Acidic Expansion</name>
@@ -87,6 +125,7 @@
 	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
 	<event name="NEBULA_SYLVAN_CHANCE" min="0" max="1" />
 	
+	<priorityEvent name="NEBULA_AEA_ACID_POWER_CELL" min="1" max="1" priority="1" />
 	<priorityEvent name="NEBULA_DISTRESS_REROUTE_ACIDIC" min="0" max="1" priority="1" />
 	
 	<event name="NEBULA_STORELIST_AEA_ACID" min="1" max="2" />
@@ -98,7 +137,7 @@
 	<event name="NEBULA_QUEST_AEA_ACID" min="1" max="1" />
 	<priorityEvent name="CLEARING_AEA_ACID" min="1" max="4" priority="0" />
 	
-	<event name="NEBULA_HOSTILE_AEA_ACID" min="3" max="7" />
+	<event name="NEBULA_HOSTILE_AEA_ACID" min="3" max="6" />
 	
 	<event name="PIRACY_LIST" min="1" max="2" />
 	<event name="FILLER_LIST" min="999" max="999" />
@@ -156,6 +195,7 @@
 	<!--<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1"/>-->
 	<priorityEvent name="NEBULA_SYLVAN" min="1" max="1" priority="1" />
 	
+	<priorityEvent name="NEBULA_AEA_ACID_POWER_CELL" min="1" max="1" priority="1" />
 	<priorityEvent name="NEBULA_ACIDIC_AEA_ACID_BILL_MEET" min="1" max="1" priority="1" />
 	<priorityEvent name="NEBULA_ACIDIC_AEA_ACID_SHIPYARD" min="1" max="1" priority="1" />
 	
@@ -256,17 +296,9 @@
 	<event name="FILLER_LIST" min="999" max="999" />
 </sectorDescription>
 
-<sectorDescription name="SECTOR_AEA_NECRO_UNIQUE" unique="false">
+<sectorDescription name="SECTOR_AEA_NECRO_UNIQUE" unique="true">
 	<nameList>
-		<name>Blasphemous Sector</name>
-		<name>Blasphemous Space</name>
-		<name>Blasphemous Colonies</name>
-		<name>Blasphemous Settlements</name>
-		<name>Blasphemous Regions</name>
-		<name>Blasphemous District</name>
-		<name>Blasphemous Quarter</name>
-		<name>Blasphemous Outreaches</name>
-		<name>Blasphemous Zone</name>
+		<name>Blasphemous Core [!]</name>
 	</nameList>
 	<trackList>
 		<track>AEA_Heretic</track>

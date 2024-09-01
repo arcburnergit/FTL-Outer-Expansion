@@ -466,6 +466,12 @@ function createCloud(x, y)
 end
 
 
+-----------------------------------------
+-----------------------------------------
+--------------END OF ACIDIC--------------
+-----------------------------------------
+-----------------------------------------
+
 script.on_internal_event(Defines.InternalEvents.DRONE_COLLISION, function(drone, projectile, damage, response)
 	if projectile.extend.name == "AEA_LASER_NECRO_DRONE" then
 		local ship = Hyperspace.ships(projectile.ownerId)
@@ -734,7 +740,7 @@ defNOCLONE.boostType = Hyperspace.StatBoostDefinition.BoostType.SET
 defNOCLONE.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
 defNOCLONE.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
 defNOCLONE.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
-defNOCLONE.duration = 40
+defNOCLONE.duration = 99
 defNOCLONE.priority = 9999
 defNOCLONE.realBoostId = Hyperspace.StatBoostDefinition.statBoostDefs:size()
 Hyperspace.StatBoostDefinition.statBoostDefs:push_back(defNOCLONE)
@@ -746,7 +752,7 @@ defNOSLOT.boostType = Hyperspace.StatBoostDefinition.BoostType.SET
 defNOSLOT.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
 defNOSLOT.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
 defNOSLOT.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
-defNOSLOT.duration = 40
+defNOSLOT.duration = 99
 defNOSLOT.priority = 9999
 defNOSLOT.realBoostId = Hyperspace.StatBoostDefinition.statBoostDefs:size()
 Hyperspace.StatBoostDefinition.statBoostDefs:push_back(defNOSLOT)
@@ -758,7 +764,7 @@ defRMHP.boostType = Hyperspace.StatBoostDefinition.BoostType.MULT
 defRMHP.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
 defRMHP.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
 defRMHP.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
-defRMHP.duration = 40
+defRMHP.duration = 99
 defRMHP.priority = 9999
 defRMHP.realBoostId = Hyperspace.StatBoostDefinition.statBoostDefs:size()
 Hyperspace.StatBoostDefinition.statBoostDefs:push_back(defRMHP)
@@ -770,7 +776,7 @@ defNOWARNING.boostType = Hyperspace.StatBoostDefinition.BoostType.SET
 defNOWARNING.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
 defNOWARNING.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
 defNOWARNING.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
-defNOWARNING.duration = 40
+defNOWARNING.duration = 99
 defNOWARNING.priority = 9999
 defNOWARNING.realBoostId = Hyperspace.StatBoostDefinition.statBoostDefs:size()
 Hyperspace.StatBoostDefinition.statBoostDefs:push_back(defNOWARNING)
@@ -782,7 +788,7 @@ defRDMP.boostType = Hyperspace.StatBoostDefinition.BoostType.MULT
 defRDMP.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
 defRDMP.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
 defRDMP.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
-defRDMP.duration = 40
+defRDMP.duration = 99
 defRDMP.priority = 9999
 defRDMP.realBoostId = Hyperspace.StatBoostDefinition.statBoostDefs:size()
 Hyperspace.StatBoostDefinition.statBoostDefs:push_back(defRDMP)
@@ -794,7 +800,7 @@ defHMHP.boostType = Hyperspace.StatBoostDefinition.BoostType.MULT
 defHMHP.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
 defHMHP.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
 defHMHP.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
-defHMHP.duration = 40
+defHMHP.duration = 99
 defHMHP.priority = 9999
 defHMHP.realBoostId = Hyperspace.StatBoostDefinition.statBoostDefs:size()
 Hyperspace.StatBoostDefinition.statBoostDefs:push_back(defHMHP)
@@ -806,7 +812,7 @@ defHDMP.boostType = Hyperspace.StatBoostDefinition.BoostType.MULT
 defHDMP.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
 defHDMP.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
 defHDMP.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
-defHDMP.duration = 40
+defHDMP.duration = 99
 defHDMP.priority = 9999
 defHDMP.realBoostId = Hyperspace.StatBoostDefinition.statBoostDefs:size()
 Hyperspace.StatBoostDefinition.statBoostDefs:push_back(defHDMP)
@@ -834,7 +840,7 @@ script.on_internal_event(Defines.InternalEvents.POWER_READY, function(power, pow
 	end
 	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 30 then
 		local crewTable = userdata_table(crewmem, "mods.aea.necro")
-		if not (Hyperspace.playerVariables.aea_necro_ability_points > 2) then
+		if not (Hyperspace.playerVariables.aea_necro_ability_points > 1) then
 			powerState = 22
 		end
 		if crewmem.bMindControlled then
@@ -916,10 +922,10 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 			local zombie = crewShip:AddCrewMemberFromString("Zombie", rCrew, intruder, slot.roomId, true, true)
 			Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOCLONE), zombie)
 			Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOSLOT), zombie)
-			Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defRMHP), zombie)
+			--Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defRMHP), zombie)
 			Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
-			Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defRDMP), zombie)
-			zombieTable[zombie.extend.selfId] = 30
+			--Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defRDMP), zombie)
+			zombieTable[zombie.extend.selfId] = 90
 		end
 	elseif crew and power.powerCooldown.second == 20 and (not crewmem.bMindControlled) then
 		local rCrew = enemyResurrections:GetItem()
@@ -935,15 +941,15 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 		Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHMHP), zombie)
 		Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
 		Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHDMP), zombie)
-		zombieTable[zombie.extend.selfId] = 10
+		zombieTable[zombie.extend.selfId] = 20
 	end
 
 
 	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 30 and (not crewmem.bMindControlled) then
 		--print("REND")
 		local crewTable = userdata_table(crewmem, "mods.aea.necro")
-		if Hyperspace.playerVariables.aea_necro_ability_points > 2 then
-			Hyperspace.playerVariables.aea_necro_ability_points = Hyperspace.playerVariables.aea_necro_ability_points - 3
+		if Hyperspace.playerVariables.aea_necro_ability_points > 1 then
+			Hyperspace.playerVariables.aea_necro_ability_points = Hyperspace.playerVariables.aea_necro_ability_points - 2
 			local crewShip = Hyperspace.ships(crewmem.currentShipId)
 			--print("before loop")
 			local playerShip = Hyperspace.ships.player
@@ -972,10 +978,10 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 					local zombie = crewShip:AddCrewMemberFromString("Zombie", rCrew, intruder, slot.roomId, true, true)
 					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOCLONE), zombie)
 					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOSLOT), zombie)
-					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHMHP), zombie)
+					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defRMHP), zombie)
 					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
-					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHDMP), zombie)
-					zombieTable[zombie.extend.selfId] = 10
+					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defRDMP), zombie)
+					zombieTable[zombie.extend.selfId] = 30
 				end
 			end
 		end
@@ -996,7 +1002,7 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHMHP), zombie)
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHDMP), zombie)
-				zombieTable[zombie.extend.selfId] = 6
+				zombieTable[zombie.extend.selfId] = 9
 			end
 		end
 	end
@@ -1148,3 +1154,272 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	end
 end)
 
+script.on_game_event("START_BEACON_EXPLAIN", false, function()
+    local shipManager = Hyperspace.Global.GetInstance():GetShipManager(0)
+    if shipManager:HasAugmentation("SHIP_AEA_NECRO") > 0 then
+    	Hyperspace.playerVariables.aea_necro_ability_points = Hyperspace.playerVariables.aea_necro_ability_points + 10
+    end
+    if shipManager:HasAugmentation("AEA_NECRO_ENGI_SLOT_C") > 0 then
+    	Hyperspace.playerVariables.aea_necro_ability_points = Hyperspace.playerVariables.aea_necro_ability_points + 90
+    end
+end)
+
+-----------------------------------------
+-----------------------------------------
+-------------END OF HERETICS-------------
+-----------------------------------------
+-----------------------------------------
+
+
+script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function() end, function() end)
+
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_INITIALIZE, function(projectile, weaponBlueprint) 
+	if Hyperspace.ships(projectile.destinationSpace):HasAugmentation("AEA_OLD_EVASION_ENEMY") > 0 and projectile.destinationSpace ~= projectile.currentSpace then
+		local dodgeFactor = Hyperspace.ships.enemy:GetDodgeFactor()
+		print("ORGINAL: "..tostring(projectile.entryAngle))
+		if dodgeFactor >= 5 then
+			projectile.entryAngle = (projectile.entryAngle / 6) + 270 - 30
+			print(tostring((360/6) + 270 - 30).." TO "..tostring(270 - 30))
+		end
+		print(projectile.entryAngle)
+	end
+	if Hyperspace.ships(projectile.destinationSpace):HasAugmentation("AEA_OLD_EVASION_ENEMY_WEAK") > 0 and projectile.destinationSpace ~= projectile.currentSpace then
+		local dodgeFactor = Hyperspace.ships.enemy:GetDodgeFactor()
+		if dodgeFactor >= 10 then
+			projectile.entryAngle = (projectile.entryAngle / 4) + 270 - 45
+			print(tostring((360/4) + 270 - 45).." TO "..tostring(270 - 45))
+		end
+		print(projectile.entryAngle)
+	end
+	if Hyperspace.ships(projectile.destinationSpace):HasAugmentation("AEA_OLD_EVASION") > 0 and projectile.destinationSpace ~= projectile.currentSpace then
+		local dodgeFactor = Hyperspace.ships.player:GetDodgeFactor()
+		--print("ORGINAL: "..tostring(projectile.entryAngle))
+		if dodgeFactor >= 60 then
+			projectile.entryAngle = (projectile.entryAngle / 32) - 5.265
+			--print(tostring((360/32) - 5.265).." TO "..tostring(-5.265))
+		elseif dodgeFactor >= 50 then
+			projectile.entryAngle = (projectile.entryAngle / 16) - 11.25
+			--print(tostring((360/16) - 11.25).." TO "..tostring(-11.25))
+		elseif dodgeFactor >= 40 then
+			projectile.entryAngle = (projectile.entryAngle / 12) - 15
+			--print(tostring((360/12) - 15).." TO "..tostring(-15))
+		elseif dodgeFactor >= 30 then
+			projectile.entryAngle = (projectile.entryAngle / 8) - 22.5
+			--print(tostring((360/8) - 22.5).." TO "..tostring(-22.5))
+		elseif dodgeFactor >= 20 then
+			projectile.entryAngle = (projectile.entryAngle / 6) - 30
+			--print(tostring((360/6) - 30).." TO "..tostring(-30))
+		elseif dodgeFactor >= 10 then
+			projectile.entryAngle = (projectile.entryAngle / 4) - 45
+			--print(tostring((360/4) - 45).." TO "..tostring(-45))
+		end
+		if projectile.entryAngle < 0 then
+			projectile.entryAngle = projectile.entryAngle + 360
+		end
+		--print(projectile.entryAngle)
+	end
+end)
+
+mods.aea.armouredShips = {}
+local armouredShips = mods.aea.armouredShips
+armouredShips["PLAYER_SHIP_AEA_OLD_ARMOUR"] = {r2 = true, r3 = true}
+armouredShips["AEA_OLD_GUARD_BOSS"] = {r2 = true, r3 = true, r28 = true, r30 = true}
+
+local playerRooms = {}
+local enemyRooms = {}
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	if shipManager.iShipId == 0 and shipManager:HasAugmentation("AEA_OLD_EVASION") > 0 then
+		--print("ADD PLAYER ROOMS")
+		playerRooms = armouredShips[shipManager.myBlueprint.blueprintName]
+	elseif shipManager.iShipId == 1 and (shipManager:HasAugmentation("AEA_OLD_EVASION_ENEMY") > 0 or shipManager:HasAugmentation("AEA_OLD_EVASION_ENEMY_WEAK") > 0) then
+		enemyRooms = armouredShips[shipManager.myBlueprint.blueprintName]
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_PRE, function(projectile) 
+	--print("PROJECTILE_PRE")
+	if projectile.currentSpace == projectile.destinationSpace and projectile.ownerId ~= projectile.currentSpace then
+		local shipManager = Hyperspace.ships(projectile.currentSpace)
+		local roomAtProjectile = get_room_at_location(shipManager, projectile.position, false)
+		if shipManager:HasAugmentation("AEA_OLD_EVASION") > 0 then
+			--print("ROOM: ".."r"..tostring(math.floor(roomAtProjectile)))
+			local isRoom = playerRooms["r"..tostring(math.floor(roomAtProjectile))]
+			--print(isRoom)
+			if isRoom then 
+				--print("IS ROOM")
+				projectile.target = projectile.position
+				projectile:ComputerHeading()
+			end
+		elseif shipManager:HasAugmentation("AEA_OLD_EVASION_ENEMY") > 0 or shipManager:HasAugmentation("AEA_OLD_EVASION_ENEMY_WEAK") > 0 then
+			local isRoom = enemyRooms["r"..tostring(math.floor(roomAtProjectile))]
+			if isRoom then 
+				--print("IS ROOM")
+				projectile.target = projectile.position
+				projectile:ComputerHeading()
+			end
+		end
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_UPDATE_PRE, function(projectile) 
+	--print("PROJECTILE_UPDATE_PRE")
+end)
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_UPDATE_POST, function(projectile, preempted)  
+	--print("PROJECTILE_UPDATE_POST")
+end)
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_POST, function(projectile, preempted) 
+	--print("PROJECTILE_POST")
+end)
+
+--[[script.on_internal_event(Defines.InternalEvents.CONSTRUCT_SHIP_MANAGER, function(shipManager)
+	print("CONSTRUCT SHIP")
+	--[[local engineInfo = shipManager.myBlueprint.systemInfo[1]
+	print(engineInfo.systemId)
+	pritn(engineInfo.powerLevel)
+	print(engineInfo.maxPower)
+
+	for key, value in pairs(shipManager.myBlueprint.systemInfo) do
+		print("START INFO AAAAAAAAA")
+		print(value.systemId)
+		pritn(value.powerLevel)
+		print(value.maxPower)
+	end
+end)]]
+
+local setSystemMaxVars = false
+script.on_init(function() setSystemMaxVars = true end)
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+    if not (setSystemMaxVars and Hyperspace.ships.player) then return end
+    local sysInfo = Hyperspace.ships.player.myBlueprint.systemInfo
+    --print("SYSTEM LOOP START")
+    for id, sys in pairs(mods.multiverse.systemIds) do
+    	local currValue = Hyperspace.playerVariables[sys.."_cap"]
+    	if currValue < 0 then
+    		if sys == "weapons" then Hyperspace.playerVariables[sys.."_cap_aea"] = 8 end
+    		if sys == "shields" then Hyperspace.playerVariables[sys.."_cap_aea"] = 16 end
+    		if sys == "engines" then Hyperspace.playerVariables[sys.."_cap_aea"] = 8 end
+    		if sys == "oxygen" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
+    		if sys == "teleporter" then Hyperspace.playerVariables[sys.."_cap_aea"] = 4 end
+    		if sys == "medbay" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
+    		if sys == "clonebay" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
+
+    		if sys == "drones" then Hyperspace.playerVariables[sys.."_cap_aea"] = 15 end
+    		if sys == "cloaking" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
+    		if sys == "hacking" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
+    		if sys == "mind" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
+    		if sys == "artillery" then Hyperspace.playerVariables[sys.."_cap_aea"] = 5 end
+    		if sys == "temporal" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
+
+    		if sys == "piloting" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
+    		if sys == "sensors" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
+    		if sys == "doors" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
+    		if sys == "battery" then Hyperspace.playerVariables[sys.."_cap_aea"] = 2 end
+    	else
+    		Hyperspace.playerVariables[sys.."_cap_aea"] = Hyperspace.playerVariables[sys.."_cap"]
+    	end
+    	--print(tostring(sys)..": "..tostring(Hyperspace.playerVariables[sys.."_cap"]).." & "..tostring(Hyperspace.playerVariables[sys.."_cap_aea"]))
+    end
+
+    local maxReactor = Hyperspace.CustomShipSelect.GetInstance():GetDefinition(Hyperspace.ships.player.myBlueprint.blueprintName).maxReactorLevel
+    if maxReactor then
+    	Hyperspace.playerVariables.reactor_cap_aea = maxReactor
+    else
+    	Hyperspace.playerVariables.reactor_cap_aea = 25
+    end
+    local powerManager = Hyperspace.PowerManager.GetPowerManager(0)
+    local reactorPower = powerManager.currentPower.second
+    if reactorPower >= Hyperspace.playerVariables.reactor_cap_aea then
+    	Hyperspace.playerVariables.aea_can_upgrade_reactor = 1
+    end
+end)
+
+script.on_game_event("INSTALL_AEA_OLD_SHIELDS", false, function()
+    Hyperspace.ships.player:GetSystem(0):UpgradeSystem(1)
+end)
+script.on_game_event("INSTALL_AEA_OLD_ENGINES", false, function()
+    Hyperspace.ships.player:GetSystem(1):UpgradeSystem(1)
+end)
+script.on_game_event("INSTALL_AEA_OLD_WEAPONS", false, function()
+    Hyperspace.ships.player:GetSystem(3):UpgradeSystem(1)
+end)
+script.on_game_event("INSTALL_AEA_OLD_DRONES", false, function()
+    Hyperspace.ships.player:GetSystem(4):UpgradeSystem(1)
+end)
+script.on_game_event("INSTALL_AEA_OLD_CLOAKING", false, function()
+    Hyperspace.ships.player:GetSystem(10):UpgradeSystem(1)
+end)
+script.on_game_event("INSTALL_AEA_OLD_MIND", false, function()
+    Hyperspace.ships.player:GetSystem(14):UpgradeSystem(1)
+end)
+script.on_game_event("INSTALL_AEA_OLD_HACKING", false, function()
+    Hyperspace.ships.player:GetSystem(15):UpgradeSystem(1)
+end)
+script.on_game_event("INSTALL_AEA_OLD_MEDBAY", false, function()
+    Hyperspace.ships.player:GetSystem(5):UpgradeSystem(1)
+end)
+script.on_game_event("INSTALL_AEA_OLD_CLONEBAY", false, function()
+    Hyperspace.ships.player:GetSystem(13):UpgradeSystem(1)
+end)
+script.on_game_event("INSTALL_AEA_OLD_REACTOR", false, function()
+    local powerManager = Hyperspace.PowerManager.GetPowerManager(0)
+    --[[print("GetMaxPower(): "..tostring(powerManager:GetMaxPower()))
+    print("GetAvailablePower(): "..tostring(powerManager:GetAvailablePower()))
+    print("currentPower.first: "..tostring(powerManager.currentPower.first))
+    print("currentPower.second: "..tostring(powerManager.currentPower.second))]]
+    powerManager.currentPower.second = powerManager.currentPower.second + 1
+    --local CustomShipDef = Hyperspace.CustomShipSelect.GetInstance():GetDefinition(Hyperspace.ships.player.myBlueprint.blueprintName)
+end)
+
+script.on_internal_event(Defines.InternalEvents.GET_DODGE_FACTOR, function(shipManager, value)
+	if shipManager:HasSystem(1) then
+		local engine = shipManager:GetSystem(1)
+		if engine.powerState.first >= 9 then
+			local powerExtra = engine.powerState.first - 8
+			local pilot = shipManager:GetSystem(6)
+			if pilot.bManned then
+				value = value + 35 + (5 * powerExtra)
+			elseif pilot.powerState.first == 2 then
+				value = value + ((35 + (5 * powerExtra)) * 0.5)
+				--print("50% ")
+			elseif pilot.powerState.first == 3 then
+				value = value + ((35 + (5 * powerExtra)) * 0.8)
+				--print("80% ")
+			end
+		end
+	end
+	return Defines.Chain.CONTINUE, value
+end)
+
+--[[script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	if shipManager:HasSystem(6) then
+		local pilot = shipManager:GetSystem(6)
+		print("START -----------------")
+		print(pilot.bNeedsManned)
+		print(pilot.bManned)
+		print(pilot.iActiveManned)
+		print(pilot.bFriendlies)
+		print(pilot.bOccupied)
+		print(pilot.bOccupied)
+		print(pilot.powerState.first)
+		print("-END- -----------------")
+	end
+end)]]
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	if shipManager.myBlueprint.blueprintName == "AEA_OLD_GUARD_BOSS" then
+		local artilleryOn = false
+		for artillery in vter(shipManager.artillerySystems) do 
+	        if artillery.powerState.first > 0 then
+	        	artilleryOn = true
+	        end
+ 	    end
+ 	    if artilleryOn == true and Hyperspace.playerVariables.aea_old_gate_guard_activated == 0 then
+ 	    	shipManager.ship.hullIntegrity.first = shipManager.ship.hullIntegrity.second
+ 	    end
+ 	    if Hyperspace.playerVariables.aea_old_gate_guard_activated == 0 and artilleryOn == false then
+ 	    	Hyperspace.playerVariables.aea_old_gate_guard_activated = 1
+ 	    	local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
+            Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"AEA_OLD_GATE_GUARD_BOSS_ACTIVATE",false,-1)
+        end
+	end
+end)

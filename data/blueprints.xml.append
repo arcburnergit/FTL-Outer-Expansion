@@ -22,7 +22,7 @@
 	<desc>Originating from the Acidic Growth, the vessel allowed the Growth to extend it's reach beyond the nebulas it formed in. So far only the orchids have brokered peace with the Acidic Growth. This ship has an upgraded oxygen system.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_ARTY_unlock" />
 	<systemList>
-		<battery power="1" room="13" max="3" start="false" img="room_battery_16" />
+		<battery power="1" room="13" max="2" start="false" img="room_battery_16" />
 		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="4" start="false">
 			<slot>
@@ -97,7 +97,7 @@
 	<systemList>
 		<artillery power="1" max="3" room="1" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" img="room_artillery_4" />
 		<artillery power="1" max="3" room="0" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" img="room_artillery_7" />
-		<battery power="1" room="14" max="3" start="false" img="room_battery_16" />
+		<battery power="1" room="14" max="2" start="false" img="room_battery_16" />
 		<cloaking power="1" room="5" start="false" img="room_cloaking_11" />
 		<clonebay power="1" room="13" start="false">
 			<slot>
@@ -170,7 +170,7 @@
 	<desc>A federation modification of the Acidic Cruiser, this vessel replaces the Acidic filtering system with a more traditional fire suppression system.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_ARTY_3_unlock" />
 	<systemList>
-		<battery power="1" room="15" max="3" start="false" img="room_battery_9" />
+		<battery power="1" room="15" max="2" start="false" img="room_battery_9" />
 		<cloaking power="1" room="13" start="false" img="room_cloaking_13" />
 		<clonebay power="1" room="17" start="false">
 			<slot>
@@ -247,7 +247,7 @@
 	<desc>A new line of Acidic Cruiser, these ships are specifically designed for high fire power, however this comes at the cost of a weaker shielding system.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_LONG_unlock" />
 	<systemList>
-		<battery power="1" room="10" start="false" img="room_battery_13" />
+		<battery max="2" power="1" room="10" start="false" img="room_battery_13" />
 		<cloaking power="1" room="8" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="11" start="false">
 			<slot>
@@ -321,7 +321,7 @@
 	<desc>This ship combines a strong weapon system with a boarding setup to create a powerful and dangerous ship.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_LONG_2_unlock" />
 	<systemList>
-		<battery power="1" room="2" start="false" img="room_battery_13" />
+		<battery max="2" power="1" room="2" start="false" img="room_battery_13" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="9" start="false">
 			<slot>
@@ -394,7 +394,7 @@
 	<desc>This vessel gets rid of the shield system entirely, focusing on using cloaking and it's more powerful weapon system capable of handling up to 5 weapons at once.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_LONG_3_unlock" />
 	<systemList>
-		<battery power="1" room="13" start="false" img="room_battery_2" />
+		<battery max="2" power="1" room="13" start="false" img="room_battery_2" />
 		<cloaking power="2" room="8" start="true" img="room_cloaking_3" />
 		<clonebay power="1" room="11" start="false">
 			<slot>
@@ -469,7 +469,7 @@
 	<desc>Bill has made a few friends on his adventures since becoming an Acidic Outcast.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_BILL_unlock" />
 	<systemList>
-		<battery power="1" room="13" max="3" start="false" img="room_battery_2" />
+		<battery max="2" power="1" room="13" start="false" img="room_battery_2" />
 		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="6" start="false">
 			<slot>
@@ -753,7 +753,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<power>1</power>
 	<cost>40</cost>
 	<bp>7</bp>
-	<rarity>0</rarity>
+	<rarity>5</rarity>
 	<image>ase_proj_acid_laser</image>
 	<launchSounds>
 		<sound>lightLaser1</sound>
@@ -807,7 +807,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<power>2</power>
 	<cost>52</cost>
 	<bp>7</bp>
-	<rarity>0</rarity>
+	<rarity>5</rarity>
 	<image>ase_proj_acid_laser</image>
 	<launchSounds>
 		<sound>lightLaser1</sound>
@@ -861,7 +861,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<power>3</power>
 	<cost>70</cost>
 	<bp>7</bp>
-	<rarity>0</rarity>
+	<rarity>5</rarity>
 	<image>ase_proj_acid_laser</image>
 	<launchSounds>
 		<sound>lightLaser1</sound>
@@ -1082,7 +1082,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<power>2</power>
 	<cost>80</cost>
 	<bp>6</bp>
-	<rarity>0</rarity>
+	<rarity>5</rarity>
 	<image>ase_proj_acid_ion</image>
 	<explosion>explosion_small_ion</explosion>
 	<launchSounds>
@@ -1127,9 +1127,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<erosionChance>10</erosionChance>
 	<erosion>
 		<speed>0.9</speed>
-		<maxSpeed>1.6</maxSpeed>
-		<time>10.0</time>
-		<maxTime>20.0</maxTime>
+		<maxSpeed>1.8</maxSpeed>
+		<time>20.0</time>
+		<maxTime>50.0</maxTime>
 		<systemRepairMultiplier>0.75</systemRepairMultiplier>
 		<erodeShields>true</erodeShields>
 		<roomAnim renderLayer="1">                                                    
@@ -1165,6 +1165,269 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<weaponArt>aea_ion_acid_1_loot</weaponArt>
 	<iconImage>ion</iconImage>
 </weaponBlueprint>
+
+
+
+
+<weaponBlueprint name="AEA_LASER_ACID_1_ENEMY">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Acid Laser MK I</title>
+	<short>Acid I</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<shots>2</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>0.8</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>15</cooldown>
+	<power>1</power>
+	<cost>40</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_laser</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_ACID_2_ENEMY">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Acid Laser MK II</title>
+	<short>Acid II</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<shots>3</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>0.8</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>15</cooldown>
+	<power>2</power>
+	<cost>52</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_laser</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_ACID_3_ENEMY">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Acid Laser MK III</title>
+	<short>Acid III</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<shots>5</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>0.8</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>70</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_laser</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_3</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_BEAM_ACID_1_ENEMY">
+	<type>BEAM</type>
+	<flavorType>Acid Beam</flavorType>
+	<title>'Trident' Beam</title>
+	<short>'Trident'</short>
+	<tip>tip_beams</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>.</tooltip>
+	<damage>1</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>0.8</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>18</cooldown>
+	<power>2</power>
+	<cost>68</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<length>50</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_beam_acid_1</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_ION_ACID_1_ENEMY">
+	<type>LASER</type>
+	<flavorType>Acidic Ion</flavorType>
+	<title>Acidic Barrage</title>
+	<short>Acidic B.</short>
+	<tip>tip_ion</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<tooltip>Fires a single blast that does 1 ion damage and recharges very quickly. Can hit and disable shields as well as systems.</tooltip>
+	<damage>0</damage>
+	<spin>720</spin>
+	<ion>1</ion>
+	<speed>30</speed>
+	<shots>2</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.3</speed>
+		<maxSpeed>0.6</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>true</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>9</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_ion</image>
+	<explosion>explosion_small_ion</explosion>
+	<launchSounds>
+		<sound>ionShoot1</sound>
+		<sound>ionShoot2</sound>
+		<sound>ionShoot3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>ionHit1</sound>
+		<sound>ionHit2</sound>
+		<sound>ionHit3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>ionShields1</sound>
+		<sound>ionShields2</sound>
+		<sound>ionShields3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_ion_acid_1</weaponArt>
+	<iconImage>ion</iconImage>
+</weaponBlueprint>
 </FTL>
 
 <FTL>
@@ -1174,7 +1437,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>A vessel belonging to the Engi Heretics. Through use of its powerful shatter laser and capable crew this ship is effective at eliminating any crew on the enemy ship.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_ENGI_unlock" />
 	<systemList>
-		<battery power="1" max="3" room="14" start="false" img="room_battery_9" />
+		<battery power="1" max="2" room="14" start="false" img="room_battery_9" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="13" start="false">
 			<slot>
@@ -1249,7 +1512,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>It appears some of the Engi Heretic's enemies have gotten their hands on this vessel. However the vessel is still equiped with the technology to turn Engis into Engi heretics.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_ENGI_2_unlock" />
 	<systemList>
-		<battery max="3" power="1" room="4" start="true" img="room_battery_15" />
+		<battery max="2" power="1" room="4" start="true" img="room_battery_15" />
 		<cloaking power="1" room="13" start="false" img="room_cloaking_4" />
 		<clonebay power="1" room="10" start="false">
 			<slot>
@@ -1326,7 +1589,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>Manned by only a single Engi Heretic elite, this vessel makes up for the lack of numbers with powerful systems and crew abilities.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_ENGI_3_unlock" />
 	<systemList>
-		<battery max="3" power="1" room="4" start="false" img="room_battery_14" />
+		<battery max="2" power="1" room="4" start="false" img="room_battery_14" />
 		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="5" start="true">
 			<slot>
@@ -1402,7 +1665,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>Manned by the Engi Heretic Elites, this vessel is a powerful boarding vessel, just make sure not to use up all those nanite swarms.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_SEPA_unlock" />
 	<systemList>
-		<battery power="1" max="3" room="1" start="false" img="room_battery_3" />
+		<battery power="1" max="2" room="1" start="false" img="room_battery_3" />
 		<cloaking power="1" room="13" start="false" img="room_cloaking_13" />
 		<clonebay power="1" room="6" start="true">
 			<slot>
@@ -1461,12 +1724,14 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<weaponList missiles="2" count="2" />
 	<droneList drones="12" count="4">
 		<drone name="AEA_DEFENSE_NECRO_1_DRONE"/>
+		<drone name="DOCTOR_DEFENSE"/>
 	</droneList>
 	<health amount="30" />
 	<maxPower amount="7" />
+	<crewCount amount="1" class="engi" />
 	<crewCount amount="1" class="aea_necro_lich" />
 	<crewCount amount="1" class="aea_necro_lich" />
-	<crewCount amount="1" class="aea_necro_engi" />
+	<crewCount amount="1" class="blobweaver" />
 	<shieldImage>mup_orb1</shieldImage>
     <mv-mapImage>map_icon_mup_separatist_a</mv-mapImage>
 </shipBlueprint>
@@ -1477,7 +1742,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>Another stolen Heretic vessel, pirates are able to make full use of this ships powerful systems, aswell as creating Engi Heretics to fight on their side.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_SEPA_2_unlock" />
 	<systemList>
-		<battery max="3" power="1" room="12" start="false" img="room_battery_2" />
+		<battery max="2" power="1" room="12" start="false" img="room_battery_2" />
 		<cloaking power="1" room="7" start="false" img="room_cloaking_6" />
 		<clonebay power="1" room="13" start="false">
 			<slot>
@@ -1554,7 +1819,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>Unlike other Heretic Vessels, this one is focussed on powerful weapons and drones, with no cloaking or boarding capabilities.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_SEPA_3_unlock" />
 	<systemList>
-		<battery max="3" power="1" room="13" start="false" img="room_battery_14" />
+		<battery max="2" power="1" room="13" start="false" img="room_battery_14" />
 		<cloaking power="1" room="6" start="true" img="room_cloaking" />
 		<clonebay power="1" room="8" start="false">
 			<slot>
@@ -1631,7 +1896,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>The personal vessel of the Lich King, a powerful boarding vessel. Able to build up a capable crew quickly the Lich King  often heads off alone.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_KING_unlock" />
 	<systemList>
-		<battery max="3" power="1" room="4" start="false" img="room_battery_2" />
+		<battery max="2" power="1" room="4" start="false" img="room_battery_2" />
 		<cloaking power="1" room="10" start="false" img="room_cloaking_13" />
 		<clonebay power="1" room="1" start="true">
 			<slot>
@@ -1708,6 +1973,15 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<bp>0</bp>
 </augBlueprint>
 
+<augBlueprint name="AEA_NECRO_ENGI_SLOT_C">
+	<title>Heretic Converter</title>
+	<desc>Able to transform different Engi into Engi Heretics at the cost of drone parts.</desc>
+	<cost>50</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+
 <augBlueprint name="AEA_NECRO_SAVE_ENEMY">
 	<title>Repair Burst</title>
 	<desc>The ship deploys a last second repair burst that full heals the ship.</desc>
@@ -1735,7 +2009,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<shots>1</shots>
 	<fireChance>0</fireChance>
 	<breachChance>0</breachChance>
-	<speed>200</speed>
+	<speed>50</speed>
 	<rarity>0</rarity>
 	<image>laser_light</image>
 	<launchSounds>
@@ -1775,7 +2049,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<droneImage>drone_aea_necro_def1</droneImage>
 	<weaponBlueprint>AEA_LASER_NECRO_DRONE</weaponBlueprint>
 	<iconImage>defense</iconImage>
-	<rarity>0</rarity>
+	<rarity>5</rarity>
 </droneBlueprint>
 
 <droneBlueprint name="AEA_DEFENSE_NECRO_1_DRONE">
@@ -1816,7 +2090,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<droneImage>drone_aea_necro_def2</droneImage>
 	<weaponBlueprint>AEA_LASER_NECRO_DRONE</weaponBlueprint>
 	<iconImage>defense</iconImage>
-	<rarity>0</rarity>
+	<rarity>5</rarity>
 </droneBlueprint>
 
 <droneBlueprint name="AEA_DEFENSE_NECRO_2_DRONE">
@@ -1906,7 +2180,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<bp>3</bp>
 	<droneImage>drone_aea_necro_com_l</droneImage>
 	<weaponBlueprint>AEA_LASER_NECRO_COMBAT</weaponBlueprint>
-	<rarity>0</rarity>
+	<rarity>5</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
 <droneBlueprint name="AEA_COMBAT_NECRO_1_BEAM">
@@ -1980,7 +2254,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<bp>3</bp>
 	<droneImage>drone_aea_necro_com2_l</droneImage>
 	<weaponBlueprint>AEA_LASER_NECRO_COMBAT</weaponBlueprint>
-	<rarity>0</rarity>
+	<rarity>5</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
 <droneBlueprint name="AEA_COMBAT_NECRO_2_BEAM">
@@ -2065,7 +2339,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<power>1</power>
 	<cost>50</cost>
 	<bp>6</bp>
-	<rarity>0</rarity>
+	<rarity>5</rarity>
 	<image>laser_heavy</image>
 	<launchSounds>
 		<sound>heavyLaser1</sound>
@@ -2107,7 +2381,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<power>2</power>
 	<cost>50</cost>
 	<bp>6</bp>
-	<rarity>0</rarity>
+	<rarity>5</rarity>
 	<image>laser_heavy</image>
 	<launchSounds>
 		<sound>heavyLaser1</sound>
@@ -2149,7 +2423,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<power>3</power>
 	<cost>50</cost>
 	<bp>6</bp>
-	<rarity>0</rarity>
+	<rarity>5</rarity>
 	<image>laser_heavy</image>
 	<launchSounds>
 		<sound>heavyLaser1</sound>
@@ -2233,7 +2507,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<power>2</power>
 	<cost>55</cost>
 	<bp>6</bp>
-	<rarity>0</rarity>
+	<rarity>5</rarity>
 	<chargeLevels>2</chargeLevels>
 	<image>laser_heavy</image>
 	<launchSounds>
@@ -2268,12 +2542,12 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<sp>0</sp>
 	<fireChance>0</fireChance>
 	<breachChance>2</breachChance>
-	<cooldown>12</cooldown>
+	<cooldown>10</cooldown>
 	<speed>1</speed>
 	<power>1</power>
-	<cost>45</cost>
+	<cost>75</cost>
 	<bp>2</bp>
-	<rarity>2</rarity>
+	<rarity>0</rarity>
 	<image>beam_contact</image>
 	<length>1</length>
 	<launchSounds>
@@ -2281,6 +2555,371 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	</launchSounds>
 	<weaponArt>aea_beam_necro_1</weaponArt>
 	<iconImage>beam</iconImage>
+</weaponBlueprint>
+</FTL>
+
+<FTL>
+<shipBlueprint name="PLAYER_SHIP_AEA_OLD_ARMOUR" layout="aeap_old_arm_1" img="aeap_old_arm_1">
+	<class>Oppressor Cruiser</class>
+	<name>Bulk</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<systemList>
+		<battery max="2" power="1" room="29" start="false" img="room_battery_6" />
+		<cloaking power="1" room="14" start="false" img="room_cloaking" />
+		<clonebay power="1" room="15" start="false">
+			<slot>
+				<number>3</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="26" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="1" room="13" start="true" img="room_drones_17" />
+		<engines power="3" room="9" start="true" img="room_engines_11">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="11" start="false" img="room_hacking_9" />
+		<medbay power="2" room="15" start="true" img="room_medbay_3">
+			<slot>
+				<number>3</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="10" start="false" img="room_mind" />
+		<oxygen power="1" room="28" start="false" img="room_oxygen_6" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="27" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="6" start="false" img="room_shields_8">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="19" start="false" />
+		<temporal power="1" room="22" start="false" img="room_temporal_4" />
+		<weapons max="8" power="3" room="7" start="true" img="room_weapons_10">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="4" count="4">
+		<weapon name="AEA_LASER_OLD_2" />
+	</weaponList>
+	<droneList drones="4" count="2">
+		<drone name="REPAIR" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="2" class="aea_old_1" />
+	<aug name="AEA_OLD_EVASION" />
+</shipBlueprint>
+
+<augBlueprint name="AEA_OLD_EVASION">
+	<title>Predictive Guidance</title>
+	<desc>Predicts the position of the enemy ship allowing the pilot to ensure armour faces towards the enemy.
+The projectiles appear X degrees infront of the ship where X is determined by your ships evasion.
+	60%+ evasion = 11.25 degrees
+	50%+ evasion = 22.5 degrees
+	40%+ evasion = 30 degrees
+	30%+ evasion = 45 degrees
+	20%+ evasion = 60 degrees
+	10%+ evasion = 90 degrees
+	</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+
+<weaponBlueprint name="ARTILLERY_AEA_GRAPPLE">
+	<type>BOMB</type>
+	<flavorType>???</flavorType>
+	<title>???</title>
+	<short>???</short>
+	<tip>tip_beams</tip>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<tooltip>.</tooltip>
+	<damage>0</damage>
+	<sysDamage>1</sysDamage>
+	<persDamage>0</persDamage>
+	<missiles>0</missiles>
+	<shots>1</shots>
+	<sp>0</sp>
+	<accuracyMod>200</accuracyMod>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<cooldown>10</cooldown>
+	<power>1</power>
+	<cost>45</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>aea_invisible</image>
+	<roomStatBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<duration>25</duration>
+			<boostAnim>salt_particles</boostAnim>
+			<roomAnim renderLayer="2">
+				<anim animType="center">hazard_aea_old_grapple</anim>
+			</roomAnim>
+		</statBoost>
+	</roomStatBoosts>
+	<explosion>aea_invisible</explosion>
+	<weaponArt>aea_invisible_gun</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<augBlueprint name="AEA_OLD_NO_ARTY_REPAIR">
+	<title>NEVER SEE THIS</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>50</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+
+<augBlueprint name="AEA_OLD_EVASION_ENEMY">
+	<title>Predictive Guidance</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>50</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+
+<augBlueprint name="AEA_OLD_EVASION_ENEMY_WEAK">
+	<title>Weak Predictive Guidance</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>50</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+
+<augBlueprint name="AEA_OLD_SHIELD">
+	<title>Mysterious Shields</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>80</cost>
+	<bp>15</bp>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
+</FTL>
+
+<FTL>
+<weaponBlueprint name="AEA_COMPONENT_OLD">
+	<type>BEAM</type>
+	<flavorType>Scrap Component</flavorType>
+	<tip>tip_storage</tip>
+	<title>High Tech Components</title>
+	<short>High Tech C.</short>
+	<desc>Components belonging to the technology constructed by the Lylmik, can be used to perform various upgrades to extend your ships capabilities.</desc>
+	<tooltip>Storage Weapon</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>30</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>aea_old_scrap</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_OLD_1_CELL">
+	<type>LASER</type>
+	<title>???</title>
+	<short>???</short>
+	<tip>tip_aea_old_unknown</tip>
+	<desc>???</desc>
+	<tooltip>???</tooltip>
+	<damage>2</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<mv-pop>
+		<count>1</count>
+		<countSuper>1</countSuper>
+	</mv-pop>
+	<fireChance>3</fireChance>
+	<breachChance>4</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>20</cooldown>
+	<power>1</power>
+	<cost>68</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_heavy1</image>
+	<launchSounds>
+		<sound>aea_laser_old_fire1</sound>
+		<sound>aea_laser_old_fire2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_old_1</weaponArt>
+	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_OLD_1">
+	<type>LASER</type>
+	<title>'Mace' Heavy Laser</title>
+	<short>'Mace'</short>
+	<tip>tip_laser</tip>
+	<desc>A powerful laser that breaks two shield layers with each hit. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip> </tooltip>
+	<damage>2</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<mv-pop>
+		<count>1</count>
+		<countSuper>1</countSuper>
+	</mv-pop>
+	<fireChance>2</fireChance>
+	<breachChance>5</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>7</cooldown>
+	<power>1</power>
+	<cost>75</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_heavy1</image>
+	<launchSounds>
+		<sound>aea_laser_old_fire1</sound>
+		<sound>aea_laser_old_fire2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_old_1</weaponArt>
+	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_OLD_2">
+	<type>LASER</type>
+	<title>'Flail' Heavy Laser</title>
+	<short>'Flail'</short>
+	<tip>tip_laser</tip>
+	<desc>A powerful laser that breaks two shield layers with each hit. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip> </tooltip>
+	<damage>2</damage>
+	<shots>2</shots>
+	<sp>0</sp>
+	<mv-pop>
+		<count>1</count>
+		<countSuper>1</countSuper>
+	</mv-pop>
+	<fireChance>2</fireChance>
+	<breachChance>5</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>11</cooldown>
+	<power>2</power>
+	<cost>75</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_heavy1</image>
+	<launchSounds>
+		<sound>aea_laser_old_fire1</sound>
+		<sound>aea_laser_old_fire2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_old_2</weaponArt>
+	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_OLDP_2">
+	<type>LASER</type>
+	<title>'Shotel' Burst Laser</title>
+	<short>'Shotel'</short>
+	<tip>tip_laser</tip>
+	<desc>A powerful laser that breaks shields but do not do any hull damage. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip> </tooltip>
+	<damage>0</damage>
+	<sysDamage>1</sysDamage>
+	<shots>4</shots>
+	<sp>0</sp>
+	<mv-pop>
+		<count>1</count>
+		<countSuper>1</countSuper>
+	</mv-pop>
+	<fireChance>2</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>11</cooldown>
+	<power>2</power>
+	<cost>70</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_oldp_2</weaponArt>
+	<iconImage>laser</iconImage>
 </weaponBlueprint>
 </FTL>
 
@@ -2415,6 +3054,95 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 		<power>1.5x combat damage, 2x repair speed</power>
 		<power>Nano bots reduce healing of the target crew by 100%</power>
 		<power>Immune to suffocation damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_old_1">
+	<desc>An Ancient race which used their own advances in Multiversal travel to seal themselves off from the rest of the multiverse.</desc>
+	<cost>60</cost>
+	<title>Lylmik</title>
+	<short>Lylmik</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Does not lose skills when cloned, cloning takes twice as long</power>
+		<power>Moves at 1.75x speed</power>
+		<power>Heals at 2x speed and does 1.75x damage in crew combat</power>
+		<power>Cannot suffocate or burn</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_old_unique_1">
+	<desc>The leader of the Lylmik, commanding and leading them since before they sealed themselves away from the rest of the multiverse.</desc>
+	<cost>100</cost>
+	<title>Atoning Unifex</title>
+	<short>Atoning Unifex</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Max Health is increased to 200</power>
+		<power>Does not lose skills when cloned</power>
+		<power>Moves at 1.75x speed</power>
+		<power>Heals at 2x speed and does 2x damage in crew combat</power>
+		<power>Cannot suffocate or burn</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_old_unique_2">
+	<desc>One of the original Lylmik leaders, more powerful than other Lylmik.</desc>
+	<cost>100</cost>
+	<title>Asymptotic Essence</title>
+	<short>Asymptotic Essence</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Max Health is increased to 200</power>
+		<power>Does not lose skills when cloned</power>
+		<power>Moves at 1.75x speed</power>
+		<power>Heals at 2x speed and does 2x damage in crew combat</power>
+		<power>Cannot suffocate or burn</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_old_unique_3">
+	<desc>One of the original Lylmik leaders, more powerful than other Lylmik.</desc>
+	<cost>100</cost>
+	<title>Eupathic Impulse</title>
+	<short>Eupathic Impulse</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Max Health is increased to 200</power>
+		<power>Does not lose skills when cloned</power>
+		<power>Moves at 1.75x speed</power>
+		<power>Heals at 2x speed and does 2x damage in crew combat</power>
+		<power>Cannot suffocate or burn</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_old_unique_4">
+	<desc>One of the original Lylmik leaders, more powerful than other Lylmik.</desc>
+	<cost>100</cost>
+	<title>Homologous Trend</title>
+	<short>Homologous Trend</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Max Health is increased to 200</power>
+		<power>Does not lose skills when cloned</power>
+		<power>Moves at 1.75x speed</power>
+		<power>Heals at 2x speed and does 2x damage in crew combat</power>
+		<power>Cannot suffocate or burn</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_old_unique_5">
+	<desc>One of the original Lylmik leaders, more powerful than other Lylmik.</desc>
+	<cost>100</cost>
+	<title>Noetic Concordance</title>
+	<short>Noetic Concordance</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Max Health is increased to 200</power>
+		<power>Does not lose skills when cloned</power>
+		<power>Moves at 1.75x speed</power>
+		<power>Heals at 2x speed and does 2x damage in crew combat</power>
+		<power>Cannot suffocate or burn</power>
 	</powerList>
 </crewBlueprint>
 </FTL>

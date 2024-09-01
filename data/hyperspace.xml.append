@@ -28,13 +28,30 @@ The enemy ship will repair 2 system damage once at 5hp.</tooltip>
             <tooltip>Weak Heretic Repair Burst:
 The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 		</mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_old_evasion</name>
+            <tooltip>Predictive Guidance:
+The enemy ship will recieve projectiles from front 60 degrees while evasion is above 5%.
+This makes lasers and missiles more likely to hit the armour of the ship.</tooltip>
+		</mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_old_evasion_weak</name>
+            <tooltip>Weak Predictive Guidance:
+The enemy ship will recieve projectiles from front 90 degrees while evasion is above 10%.
+This makes lasers and missiles more likely to hit the armour of the ship.</tooltip>
+		</mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_old_shield</name>
+            <tooltip>MYSTERIOUS SHIELD:
+This enemy is protected by a stronger than usual Energy Shield.</tooltip>
+        </mod-append:shipIcon>
 	</mod:findLike>
 
   	<mod:findLike type="shipOrder">
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_ARTY</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_NECRO_ENGI</mod-append:ship>
 		<mod-append:empty />
-		<mod-append:empty />
+		<mod-append:ship>PLAYER_SHIP_AEA_OLD_ARMOUR</mod-append:ship>
 			<!-- -->
 		<mod-append:empty />
 		<mod-append:empty />
@@ -132,6 +149,13 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 		</unlock>
 	</mod-append:ship>
 
+	
+	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_ARMOUR" b="false" c="false" >
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+	</mod-append:ship>
+
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_ARTY">
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
@@ -214,6 +238,7 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_ENGI_3">
 		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_NECRO_ENGI_SLOT_C</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_SEPA">
@@ -238,6 +263,61 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 		<crew>
 			<aea_necro_king room="0" name="L-0031" />
 		</crew>
+	</mod-append:customShip>
+
+	
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_ARMOUR">
+		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<rooms>
+			<room id="2">
+				<roomAnim renderLayer="0">aea_armour_top_1x4</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">aea_armour_bot_1x4</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_OLD_GUARD_BOSS">
+		<hiddenAug>AEA_OLD_NO_ARTY_REPAIR</hiddenAug>
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
+			<shipIcon>icon_no2</shipIcon>
+        </shipIcons>
+		<autoShipForce>true</autoShipForce>
+		<rooms>
+			<!--room id="1">
+				<roomAnim renderLayer="0">aea_armour_4x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room-->
+			<room id="2">
+				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="28">
+				<roomAnim renderLayer="0">aea_armour_rig_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="30">
+				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
 	</mod-append:customShip>
 
 
@@ -703,8 +783,7 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 			<tooltip>[COOLDOWN:20s]
 				Resurrect the last enemy crew killed in melee combat by this Engi.
 				-Costs 1 Nanite Swarm
-				-Resurrected crew last for 30 seconds
-				-Resurrected crew have 25% less hp and damage</tooltip>
+				-Resurrected crew last for 90 seconds</tooltip>
 			<cooldownColor r="120" g="99" b="84" />
 			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
 		</powerEffect>
@@ -740,9 +819,9 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 			<buttonText>REND APART</buttonText>
 			<tooltip>[COOLDOWN:30s]
 				Rip enemies in the room apart, resurrect part of their bodies to create a copy.
-				-Costs 3 Nanite Swarms
-				-Resurrected crew last 10 seconds
-				-Resurrected crew have 50% less hp and damage
+				-Costs 2 Nanite Swarms
+				-Resurrected crew last 30 seconds
+				-Resurrected crew have 25% less hp and damage
 				-Aflicted enemy crew in the room have 10% less hp and damage
 				-The Engi Lich's damage is increased by 50%</tooltip>
 			<cooldownColor r="188" g="35" b="31" />
@@ -795,8 +874,7 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 			<tooltip>[COOLDOWN:20s]
 				Resurrect the last enemy crew killed in melee combat by this Engi.
 				-Costs 1 Nanite Swarm
-				-Resurrected crew last for 30 seconds
-				-Resurrected crew have 25% less hp and damage</tooltip>
+				-Resurrected crew last for 90 seconds</tooltip>
 			<cooldownColor r="120" g="99" b="84" />
 			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
 		</powerEffect>
@@ -851,17 +929,139 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 			<tooltip>[COOLDOWN:2s]
 				Resurrect the last enemy crew killed in melee combat by this Engi.
 				-Costs 1 Nanite Swarm
-				-Resurrected crew last for 30 seconds
-				-Resurrected crew have 25% less hp and damage</tooltip>
+				-Resurrected crew last for 90 seconds</tooltip>
 			<cooldownColor r="120" g="99" b="84" />
 			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
 		</powerEffect>
 	</race>
+	<race name="aea_old_1">
+		<canSuffocate>false</canSuffocate>
+		<canBurn>false</canBurn>
+		<defaultSkillLevel>1</defaultSkillLevel>
+		<cloneLoseSkills>false</cloneLoseSkills>
+		<maxHealth>100</maxHealth>
+		<damageMultiplier>1.75</damageMultiplier>
+		<healSpeed>2.0</healSpeed>
+		<moveSpeedMultiplier>1.75</moveSpeedMultiplier>
+		<stunMultiplier>0.2</stunMultiplier>
+		<cloneSpeedMultiplier>0.5</cloneSpeedMultiplier> 
+		<deathSounds>
+			<deathSound>sysExplosion</deathSound>
+		</deathSounds>
+	</race>
+	<race name="aea_old_unique_1">
+		<canSuffocate>false</canSuffocate>
+		<canBurn>false</canBurn>
+		<defaultSkillLevel>1</defaultSkillLevel>
+		<cloneLoseSkills>false</cloneLoseSkills>
+		<maxHealth>200</maxHealth>
+		<damageMultiplier>2</damageMultiplier>
+		<healSpeed>2.0</healSpeed>
+		<moveSpeedMultiplier>1.75</moveSpeedMultiplier>
+		<stunMultiplier>0.2</stunMultiplier>
+		<cloneSpeedMultiplier>0.5</cloneSpeedMultiplier> 
+		<deathSounds>
+			<deathSound>sysExplosion</deathSound>
+		</deathSounds>
+	</race>
+	<race name="aea_old_unique_2">
+		<canSuffocate>false</canSuffocate>
+		<canBurn>false</canBurn>
+		<defaultSkillLevel>1</defaultSkillLevel>
+		<cloneLoseSkills>false</cloneLoseSkills>
+		<maxHealth>200</maxHealth>
+		<damageMultiplier>2</damageMultiplier>
+		<healSpeed>2.0</healSpeed>
+		<moveSpeedMultiplier>1.75</moveSpeedMultiplier>
+		<stunMultiplier>0.2</stunMultiplier>
+		<cloneSpeedMultiplier>0.5</cloneSpeedMultiplier> 
+		<deathSounds>
+			<deathSound>sysExplosion</deathSound>
+		</deathSounds>
+	</race>
+	<race name="aea_old_unique_3">
+		<canSuffocate>false</canSuffocate>
+		<canBurn>false</canBurn>
+		<defaultSkillLevel>1</defaultSkillLevel>
+		<cloneLoseSkills>false</cloneLoseSkills>
+		<maxHealth>200</maxHealth>
+		<damageMultiplier>2</damageMultiplier>
+		<healSpeed>2.0</healSpeed>
+		<moveSpeedMultiplier>1.75</moveSpeedMultiplier>
+		<stunMultiplier>0.2</stunMultiplier>
+		<cloneSpeedMultiplier>0.5</cloneSpeedMultiplier> 
+		<deathSounds>
+			<deathSound>sysExplosion</deathSound>
+		</deathSounds>
+	</race>
+	<race name="aea_old_unique_4">
+		<canSuffocate>false</canSuffocate>
+		<canBurn>false</canBurn>
+		<defaultSkillLevel>1</defaultSkillLevel>
+		<cloneLoseSkills>false</cloneLoseSkills>
+		<maxHealth>200</maxHealth>
+		<damageMultiplier>2</damageMultiplier>
+		<healSpeed>2.0</healSpeed>
+		<moveSpeedMultiplier>1.75</moveSpeedMultiplier>
+		<stunMultiplier>0.2</stunMultiplier>
+		<cloneSpeedMultiplier>0.5</cloneSpeedMultiplier> 
+		<deathSounds>
+			<deathSound>sysExplosion</deathSound>
+		</deathSounds>
+	</race>
+	<race name="aea_old_unique_5">
+		<canSuffocate>false</canSuffocate>
+		<canBurn>false</canBurn>
+		<defaultSkillLevel>1</defaultSkillLevel>
+		<cloneLoseSkills>false</cloneLoseSkills>
+		<maxHealth>200</maxHealth>
+		<damageMultiplier>2</damageMultiplier>
+		<healSpeed>2.0</healSpeed>
+		<moveSpeedMultiplier>1.75</moveSpeedMultiplier>
+		<stunMultiplier>0.2</stunMultiplier>
+		<cloneSpeedMultiplier>0.5</cloneSpeedMultiplier> 
+		<deathSounds>
+			<deathSound>sysExplosion</deathSound>
+		</deathSounds>
+	</race>
 </crew>
 
 <augments>
+	<aug name="AEA_OLD_NO_ARTY_REPAIR">
+		<statBoosts>
+			<statBoost name="canRepair">
+				<boostType>SET</boostType>
+				<value>false</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALL</crewTarget>
+				<affectsSelf>false</affectsSelf>
+				<priority>1001</priority>
+				<systemRoomTarget>ALL</systemRoomTarget>
+				<systemList>
+				  <artillery />
+				</systemList>
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="AEA_OLD_EVASION_ENEMY">
+		<icon>icon_aea_old_evasion</icon>
+	</aug>
+	<aug name="AEA_OLD_EVASION_ENEMY_WEAK">
+		<icon>icon_aea_old_evasion_weak</icon>
+	</aug>
+	<aug name="AEA_OLD_SHIELD">
+		<icon>icon_aea_old_shield</icon>
+		<superShield>
+			<value>7</value>
+			<color r="204" g="189" b="125" a="0.8"/>
+			<shieldImage>ship/enemy_shields_white.png</shieldImage>
+		</superShield>
+    </aug>
 	<aug name="AEA_ACID_JUMPER">
     	<function name="FTL_JUMPER_GOOD" value="1" warning="false" />
+		<locked />
+	</aug>
+	<aug name="AEA_OLD_EVASION">
 		<locked />
 	</aug>
     <aug name="AEA_ACID_O2SYS">
@@ -918,7 +1118,7 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 				<shipTarget>ORIGINAL_SHIP</shipTarget>
 				<crewTarget>ALL</crewTarget>
 				<droneTarget>CREW</droneTarget>
-				<amount>1.2</amount>
+				<amount>0.6</amount>
 				<priority>0</priority>
 				<systemPowerDependency>
 					<oxygen />
@@ -940,6 +1140,14 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 				<amount>0.6</amount>
 				<priority>0</priority>
 			</statBoost>
+			<statBoost name="repairSpeed">
+				<boostType>MULT</boostType>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>0.6</amount>
+				<priority>0</priority>
+			</statBoost>
 		</statBoosts>
     	<function name="FIRE_EXTINGUISHERS" value="2" useForReqs="true" />
     </aug>
@@ -950,7 +1158,7 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 				<shipTarget>ORIGINAL_SHIP</shipTarget>
 				<crewTarget>ALL</crewTarget>
 				<droneTarget>CREW</droneTarget>
-				<amount>0.4</amount>
+				<amount>0.3</amount>
 				<priority>0</priority>
 				<systemPowerDependency>
 					<oxygen />
@@ -965,6 +1173,14 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 				</systemPowerScaling>
 			</statBoost>
 			<statBoost name="maxHealth">
+				<boostType>MULT</boostType>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>0.6</amount>
+				<priority>0</priority>
+			</statBoost>
+			<statBoost name="repairSpeed">
 				<boostType>MULT</boostType>
 				<shipTarget>ORIGINAL_SHIP</shipTarget>
 				<crewTarget>ALLIES</crewTarget>
@@ -1043,10 +1259,606 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 	<variable name="ach_trans_aea_necro" op="set" val="0" />
 	<variable name="aea_p_has_repair" op="set" val="0" />
 	<variable name="aea_e_has_repair" op="set" val="1" />
+	
+	<variable name="aea_old_has_cell" op="set" val="0" />
+	<variable name="aea_old_activated_cell" op="set" val="0" />
+	<variable name="aea_old_gate_guard_activated" op="set" val="0" />
+
+	<variable name="shields_cap_aea" op="set" val="0" />
+	<variable name="engines_cap_aea" op="set" val="0" />
+	<variable name="oxygen_cap_aea" op="set" val="0" />
+	<variable name="weapons_cap_aea" op="set" val="0" />
+	<variable name="drones_cap_aea" op="set" val="0" />
+	<variable name="medbay_cap_aea" op="set" val="0" />
+	<variable name="piloting_cap_aea" op="set" val="0" />
+	<variable name="sensors_cap_aea" op="set" val="0" />
+	<variable name="doors_cap_aea" op="set" val="0" />
+	<variable name="teleporter_cap_aea" op="set" val="0" />
+	<variable name="cloaking_cap_aea" op="set" val="0" />
+	<variable name="artillery_cap_aea" op="set" val="0" />
+	<variable name="battery_cap_aea" op="set" val="0" />
+	<variable name="clonebay_cap_aea" op="set" val="0" />
+	<variable name="mind_cap_aea" op="set" val="0" />
+	<variable name="hacking_cap_aea" op="set" val="0" />
+	<variable name="temporal_cap_aea" op="set" val="0" />
+
+	<variable name="reactor_cap_aea" op="set" val="0" />
+
+	<variable name="aea_can_upgrade_reactor" op="set" val="0" />
+	<variable name="aea_old_reactor_upgrades" op="set" val="0"/>
+	<req name="aea_show_upgrade_reactor" type="all">
+		<name>aea_old_activated_cell</name>
+		<req type="all" lvl="0" max_lvl="1">
+			<name>aea_old_reactor_upgrades</name>
+		</req>
+	</req>
+
+	<req name="aea_can_upgrade_shields" type="any">
+		<req type="all">
+			<req lvl="10" max_lvl="11">
+				<name>shields</name>
+			</req>
+			<req lvl="10" max_lvl="10">
+				<name>shields_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="9" max_lvl="10">
+				<name>shields</name>
+			</req>
+			<req lvl="9" max_lvl="9">
+				<name>shields_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="8" max_lvl="9">
+				<name>shields</name>
+			</req>
+			<req lvl="8" max_lvl="8">
+				<name>shields_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="7" max_lvl="8">
+				<name>shields</name>
+			</req>
+			<req lvl="7" max_lvl="7">
+				<name>shields_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="6" max_lvl="7">
+				<name>shields</name>
+			</req>
+			<req lvl="6" max_lvl="6">
+				<name>shields_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="5" max_lvl="6">
+				<name>shields</name>
+			</req>
+			<req lvl="5" max_lvl="5">
+				<name>shields_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="4" max_lvl="5">
+				<name>shields</name>
+			</req>
+			<req lvl="4" max_lvl="4">
+				<name>shields_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="3" max_lvl="4">
+				<name>shields</name>
+			</req>
+			<req lvl="3" max_lvl="3">
+				<name>shields_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="2" max_lvl="3">
+				<name>shields</name>
+			</req>
+			<req lvl="2" max_lvl="2">
+				<name>shields_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="1" max_lvl="2">
+				<name>shields</name>
+			</req>
+			<req lvl="1" max_lvl="1">
+				<name>shields_cap_aea</name>
+			</req>
+		</req>
+	</req>
+	<variable name="aea_old_shields_upgrades" op="set" val="0"/>
+	<req name="aea_show_upgrade_shields" type="all">
+		<name>aea_old_activated_cell</name>
+		<req type="all" lvl="0" max_lvl="1">
+			<name>aea_old_shields_upgrades</name>
+		</req>
+		<name>shields</name>
+	</req>
+
+	<req name="aea_can_upgrade_engines" type="any">
+		<req type="all">
+			<req lvl="8" max_lvl="9">
+				<name>engines</name>
+			</req>
+			<req lvl="-1" max_lvl="-1">
+				<name>engines_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="10" max_lvl="11">
+				<name>engines</name>
+			</req>
+			<req lvl="10" max_lvl="10">
+				<name>engines_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="9" max_lvl="10">
+				<name>engines</name>
+			</req>
+			<req lvl="9" max_lvl="9">
+				<name>engines_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="8" max_lvl="9">
+				<name>engines</name>
+			</req>
+			<req lvl="8" max_lvl="8">
+				<name>engines_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="7" max_lvl="8">
+				<name>engines</name>
+			</req>
+			<req lvl="7" max_lvl="7">
+				<name>engines_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="6" max_lvl="7">
+				<name>engines</name>
+			</req>
+			<req lvl="6" max_lvl="6">
+				<name>engines_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="5" max_lvl="6">
+				<name>engines</name>
+			</req>
+			<req lvl="5" max_lvl="5">
+				<name>engines_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="4" max_lvl="5">
+				<name>engines</name>
+			</req>
+			<req lvl="4" max_lvl="4">
+				<name>engines_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="3" max_lvl="4">
+				<name>engines</name>
+			</req>
+			<req lvl="3" max_lvl="3">
+				<name>engines_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="2" max_lvl="3">
+				<name>engines</name>
+			</req>
+			<req lvl="2" max_lvl="2">
+				<name>engines_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="1" max_lvl="2">
+				<name>engines</name>
+			</req>
+			<req lvl="1" max_lvl="1">
+				<name>engines_cap_aea</name>
+			</req>
+		</req>
+	</req>
+	<variable name="aea_old_engines_upgrades" op="set" val="0"/>
+	<req name="aea_show_upgrade_engines" type="all">
+		<name>aea_old_activated_cell</name>
+		<req type="all" lvl="0" max_lvl="1">
+			<name>aea_old_engines_upgrades</name>
+		</req>
+		<name>engines</name>
+	</req>
+
+	<req name="aea_can_upgrade_weapons" type="any">
+		<req type="all">
+			<req lvl="10" max_lvl="11">
+				<name>weapons</name>
+			</req>
+			<req lvl="10" max_lvl="10">
+				<name>weapons_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="9" max_lvl="10">
+				<name>weapons</name>
+			</req>
+			<req lvl="9" max_lvl="9">
+				<name>weapons_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="8" max_lvl="9">
+				<name>weapons</name>
+			</req>
+			<req lvl="8" max_lvl="8">
+				<name>weapons_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="7" max_lvl="8">
+				<name>weapons</name>
+			</req>
+			<req lvl="7" max_lvl="7">
+				<name>weapons_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="6" max_lvl="7">
+				<name>weapons</name>
+			</req>
+			<req lvl="6" max_lvl="6">
+				<name>weapons_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="5" max_lvl="6">
+				<name>weapons</name>
+			</req>
+			<req lvl="5" max_lvl="5">
+				<name>weapons_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="4" max_lvl="5">
+				<name>weapons</name>
+			</req>
+			<req lvl="4" max_lvl="4">
+				<name>weapons_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="3" max_lvl="4">
+				<name>weapons</name>
+			</req>
+			<req lvl="3" max_lvl="3">
+				<name>weapons_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="2" max_lvl="3">
+				<name>weapons</name>
+			</req>
+			<req lvl="2" max_lvl="2">
+				<name>weapons_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="1" max_lvl="2">
+				<name>weapons</name>
+			</req>
+			<req lvl="1" max_lvl="1">
+				<name>weapons_cap_aea</name>
+			</req>
+		</req>
+	</req>
+	<variable name="aea_old_weapons_upgrades" op="set" val="0"/>
+	<req name="aea_show_upgrade_weapons" type="all">
+		<name>aea_old_activated_cell</name>
+		<req type="all" lvl="0" max_lvl="1">
+			<name>aea_old_weapons_upgrades</name>
+		</req>
+		<name>weapons</name>
+	</req>
+
+	<req name="aea_can_upgrade_drones" type="any">
+		<req type="all">
+			<req lvl="8" max_lvl="9">
+				<name>drones</name>
+			</req>
+			<req lvl="-1" max_lvl="-1">
+				<name>drones_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="10" max_lvl="11">
+				<name>drones</name>
+			</req>
+			<req lvl="10" max_lvl="10">
+				<name>drones_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="9" max_lvl="10">
+				<name>drones</name>
+			</req>
+			<req lvl="9" max_lvl="9">
+				<name>drones_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="8" max_lvl="9">
+				<name>drones</name>
+			</req>
+			<req lvl="8" max_lvl="8">
+				<name>drones_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="7" max_lvl="8">
+				<name>drones</name>
+			</req>
+			<req lvl="7" max_lvl="7">
+				<name>drones_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="6" max_lvl="7">
+				<name>drones</name>
+			</req>
+			<req lvl="6" max_lvl="6">
+				<name>drones_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="5" max_lvl="6">
+				<name>drones</name>
+			</req>
+			<req lvl="5" max_lvl="5">
+				<name>drones_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="4" max_lvl="5">
+				<name>drones</name>
+			</req>
+			<req lvl="4" max_lvl="4">
+				<name>drones_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="3" max_lvl="4">
+				<name>drones</name>
+			</req>
+			<req lvl="3" max_lvl="3">
+				<name>drones_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="2" max_lvl="3">
+				<name>drones</name>
+			</req>
+			<req lvl="2" max_lvl="2">
+				<name>drones_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="1" max_lvl="2">
+				<name>drones</name>
+			</req>
+			<req lvl="1" max_lvl="1">
+				<name>drones_cap_aea</name>
+			</req>
+		</req>
+	</req>
+	<variable name="aea_old_drones_upgrades" op="set" val="0"/>
+	<req name="aea_show_upgrade_drones" type="all">
+		<name>aea_old_activated_cell</name>
+		<req type="all" lvl="0" max_lvl="1">
+			<name>aea_old_drones_upgrades</name>
+		</req>
+		<name>drones</name>
+	</req>
+
+	<req name="aea_can_upgrade_cloaking" type="any">
+		<req type="all">
+			<req lvl="3" max_lvl="3">
+				<name>cloaking</name>
+			</req>
+			<req lvl="3" max_lvl="3">
+				<name>cloaking_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="2" max_lvl="2">
+				<name>cloaking</name>
+			</req>
+			<req lvl="2" max_lvl="2">
+				<name>cloaking_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="1" max_lvl="1">
+				<name>cloaking</name>
+			</req>
+			<req lvl="1" max_lvl="1">
+				<name>cloaking_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="2" max_lvl="2">
+				<name>cloaking</name>
+			</req>
+			<name>UPG_CLOAK_FIRE</name>
+		</req>
+	</req>
+	<variable name="aea_old_cloaking_upgrades" op="set" val="0"/>
+	<req name="aea_show_upgrade_cloaking" type="all">
+		<name>aea_old_activated_cell</name>
+		<req type="all" lvl="0" max_lvl="1">
+			<name>aea_old_cloaking_upgrades</name>
+		</req>
+		<name>cloaking</name>
+	</req>
+
+	<req name="aea_can_upgrade_mind" type="any">
+		<req type="all">
+			<req lvl="3" max_lvl="3">
+				<name>mind</name>
+			</req>
+			<req lvl="3" max_lvl="3">
+				<name>mind_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="2" max_lvl="2">
+				<name>mind</name>
+			</req>
+			<req lvl="2" max_lvl="2">
+				<name>mind_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="1" max_lvl="1">
+				<name>mind</name>
+			</req>
+			<req lvl="1" max_lvl="1">
+				<name>mind_cap_aea</name>
+			</req>
+		</req>
+	</req>
+	<variable name="aea_old_mind_upgrades" op="set" val="0"/>
+	<req name="aea_show_upgrade_mind" type="all">
+		<name>aea_old_activated_cell</name>
+		<req type="all" lvl="0" max_lvl="1">
+			<name>aea_old_mind_upgrades</name>
+		</req>
+		<name>mind</name>
+	</req>
+
+	
+	<req name="aea_can_upgrade_hacking" type="any">
+		<req type="all">
+			<req lvl="2" max_lvl="2">
+				<name>hacking</name>
+			</req>
+			<req lvl="2" max_lvl="2">
+				<name>hacking_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="1" max_lvl="1">
+				<name>hacking</name>
+			</req>
+			<req lvl="1" max_lvl="1">
+				<name>hacking_cap_aea</name>
+			</req>
+		</req>
+	</req>
+	<variable name="aea_old_hacking_upgrades" op="set" val="0"/>
+	<req name="aea_show_upgrade_hacking" type="all">
+		<name>aea_old_activated_cell</name>
+		<req type="all" lvl="0" max_lvl="1">
+			<name>aea_old_hacking_upgrades</name>
+		</req>
+		<name>hacking</name>
+	</req>
+
+	
+	<req name="aea_can_upgrade_medbay" type="any">
+		<req type="all">
+			<req lvl="3" max_lvl="3">
+				<name>medbay</name>
+			</req>
+			<req lvl="3" max_lvl="3">
+				<name>medbay_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="2" max_lvl="2">
+				<name>medbay</name>
+			</req>
+			<req lvl="2" max_lvl="2">
+				<name>medbay_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="1" max_lvl="1">
+				<name>medbay</name>
+			</req>
+			<req lvl="1" max_lvl="1">
+				<name>medbay_cap_aea</name>
+			</req>
+		</req>
+	</req>
+	<variable name="aea_old_medbay_upgrades" op="set" val="0"/>
+	<req name="aea_show_upgrade_medbay" type="all">
+		<name>aea_old_activated_cell</name>
+		<req type="all" lvl="0" max_lvl="1">
+			<name>aea_old_medbay_upgrades</name>
+		</req>
+		<name>medbay</name>
+	</req>
+
+	
+	<req name="aea_can_upgrade_clonebay" type="any">
+		<req type="all">
+			<req lvl="3" max_lvl="3">
+				<name>clonebay</name>
+			</req>
+			<req lvl="3" max_lvl="3">
+				<name>clonebay_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="2" max_lvl="2">
+				<name>clonebay</name>
+			</req>
+			<req lvl="2" max_lvl="2">
+				<name>clonebay_cap_aea</name>
+			</req>
+		</req>
+		<req type="all">
+			<req lvl="1" max_lvl="1">
+				<name>clonebay</name>
+			</req>
+			<req lvl="1" max_lvl="1">
+				<name>clonebay_cap_aea</name>
+			</req>
+		</req>
+	</req>
+	<variable name="aea_old_clonebay_upgrades" op="set" val="0"/>
+	<req name="aea_show_upgrade_clonebay" type="all">
+		<name>aea_old_activated_cell</name>
+		<req type="all" lvl="0" max_lvl="1">
+			<name>aea_old_clonebay_upgrades</name>
+		</req>
+		<name>clonebay</name>
+	</req>
+
+	<req name="aea_can_precursor_tech" type="all">
+		<name>aea_old_activated_cell</name>
+		<name>BLUELIST_PRECURSOR_TECH</name>
+	</req>
+
   	<eventFile>special_aea_acid</eventFile>
   	<eventFile>sector_aea_acid</eventFile>
   	<eventFile>special_aea_necro</eventFile>
   	<eventFile>sector_aea_necro</eventFile>
+  	<eventFile>special_aea_old</eventFile>
 	
 	<fleetDef name="CUSTOM_FLEET_AEA_ACID">
         <ship layer="0">fleetaea_acid_1_small</ship>
@@ -1082,6 +1894,7 @@ The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 	
 	<bossShip yOffset="180">AEA_ACID_BOSS</bossShip>
 	<bossShip yOffset="180">AEA_ACID_ASSUALT</bossShip>
+	<bossShip yOffset="100">AEA_OLD_GUARD_BOSS</bossShip>
 </events>
 
 <store>

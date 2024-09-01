@@ -86,6 +86,12 @@
 		<event load="OPTION_INVALID" />
   </mod-append:choice>
 </mod:findName>
+<mod:findName type="event" name="STORAGE_CHECK_STATUS_LOOT">
+  <mod-append:choice hidden="true" req="ach_trans_aea_necro" lvl="1" blue="false">
+		<text>(Acidic Origins)</text>
+		<event load="OPTION_INVALID" />
+  </mod-append:choice>
+</mod:findName>
 
 <mod:findName type="event" name="COMBAT_CHECK_TOGGLE">
   <mod-append:choice req="AEA_DEFENSE_NECRO_1_MISSILE" blue="false">
@@ -430,6 +436,10 @@
 		<text>Heretic Tech.</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_NECRO" />
 	</mod-append:choice>
+	<mod-append:choice req="BLUELIST_PRECURSOR_TECH" hidden="true">
+		<text>Mystery Tech.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD" />
+	</mod-append:choice>
 </mod:findName>
 
 <event name="STORAGE_CHECK_SYSTEM_AEA_NECRO">
@@ -475,6 +485,495 @@
 </event>
 <event name="INSTALL_AEA_NECRO_REPAIR">
 	<variable name="aea_p_has_repair" op="set" val="1" />
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_OLD">
+	<text>Based on the mysterious tech in your cargo, you might be able to make further upgrades using the technology.</text>
+	<choice req="shields" lvl="-1" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Upgrade Shields. [NO SYSTEM]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_shields_upgrades" lvl="2" max_group="0" blue="false" hidden="true">
+		<text>Upgrade Shields. [MAXED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_activated_cell" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Upgrade Shields. [TECH INACTIVE]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_show_upgrade_shields" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Upgrade Shields. [Cost: 120~]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_SHIELDS" />
+	</choice>
+
+
+	<choice req="engines" lvl="-1" max_lvl="0" max_group="1" blue="false" hidden="true">
+		<text>Upgrade Engines. [NO SYSTEM]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_engines_upgrades" lvl="2" max_group="1" blue="false" hidden="true">
+		<text>Upgrade Engines. [MAXED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_activated_cell" lvl="0" max_lvl="0" max_group="1" blue="false" hidden="true">
+		<text>Upgrade Engines. [TECH INACTIVE]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_show_upgrade_engines" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Upgrade Engines. [Cost: 120~]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_ENGINES" />
+	</choice>
+
+
+	<choice req="weapons" lvl="-1" max_lvl="0" max_group="2" blue="false" hidden="true">
+		<text>Upgrade Weapons. [NO SYSTEM]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_weapons_upgrades" lvl="2" max_group="2" blue="false" hidden="true">
+		<text>Upgrade Weapons. [MAXED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_activated_cell" lvl="0" max_lvl="0" max_group="2" blue="false" hidden="true">
+		<text>Upgrade Weapons. [TECH INACTIVE]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_show_upgrade_weapons" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Upgrade Weapons. [Cost: 120~]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_WEAPONS" />
+	</choice>
+
+
+	<choice req="drones" lvl="-1" max_lvl="0" max_group="3" blue="false" hidden="true">
+		<text>Upgrade Drones. [NO SYSTEM]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_drones_upgrades" lvl="2" max_group="3" blue="false" hidden="true">
+		<text>Upgrade Drones. [MAXED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_activated_cell" lvl="0" max_lvl="0" max_group="3" blue="false" hidden="true">
+		<text>Upgrade Drones. [TECH INACTIVE]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_show_upgrade_drones" lvl="1" max_group="3" blue="false" hidden="true">
+		<text>Upgrade Drones. [Cost: 120~]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_DRONES" />
+	</choice>
+
+
+	<choice req="cloaking" lvl="-1" max_lvl="0" max_group="4" blue="false" hidden="true">
+		<text>Upgrade Cloaking. [NO SYSTEM]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_cloaking_upgrades" lvl="1" max_group="4" blue="false" hidden="true">
+		<text>Upgrade Cloaking. [MAXED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_activated_cell" lvl="0" max_lvl="0" max_group="4" blue="false" hidden="true">
+		<text>Upgrade Cloaking. [TECH INACTIVE]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_show_upgrade_cloaking" lvl="1" max_group="4" blue="false" hidden="true">
+		<text>Upgrade Cloaking. [Cost: 120~]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_CLOAKING" />
+	</choice>
+
+
+	<choice req="mind" lvl="-1" max_lvl="0" max_group="5" blue="false" hidden="true">
+		<text>Upgrade Mind Control. [NO SYSTEM]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_mind_upgrades" lvl="1" max_group="5" blue="false" hidden="true">
+		<text>Upgrade Mind Control. [MAXED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_activated_cell" lvl="0" max_lvl="0" max_group="5" blue="false" hidden="true">
+		<text>Upgrade Mind Control. [TECH INACTIVE]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_show_upgrade_mind" lvl="1" max_group="5" blue="false" hidden="true">
+		<text>Upgrade Mind Control. [Cost: 120~]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_MIND" />
+	</choice>
+
+
+	<choice req="hacking" lvl="-1" max_lvl="0" max_group="6" blue="false" hidden="true">
+		<text>Upgrade Hacking. [NO SYSTEM]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="hacking" lvl="3" max_group="6" blue="false" hidden="true">
+		<text>Upgrade Hacking. [MAXED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_hacking_upgrades" lvl="1" max_group="6" blue="false" hidden="true">
+		<text>Upgrade Hacking. [MAXED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_activated_cell" lvl="0" max_lvl="0" max_group="6" blue="false" hidden="true">
+		<text>Upgrade Hacking. [TECH INACTIVE]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_show_upgrade_hacking" lvl="1" max_group="6" blue="false" hidden="true">
+		<text>Upgrade Hacking. [Cost: 120~]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_HACKING" />
+	</choice>
+
+	
+	<choice req="medbay" lvl="-1" max_lvl="0" max_group="7" blue="false" hidden="true">
+		<text>Upgrade Medbay. [NO SYSTEM]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_medbay_upgrades" lvl="1" max_group="7" blue="false" hidden="true">
+		<text>Upgrade Medbay. [MAXED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_activated_cell" lvl="0" max_lvl="0" max_group="7" blue="false" hidden="true">
+		<text>Upgrade Medbay. [TECH INACTIVE]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_show_upgrade_medbay" lvl="1" max_group="7" blue="false" hidden="true">
+		<text>Upgrade Medbay. [Cost: 120~]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_MEDBAY" />
+	</choice>
+
+
+	<choice req="clonebay" lvl="-1" max_lvl="0" max_group="8" blue="false" hidden="true">
+		<text>Upgrade Clonebay. [NO SYSTEM]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_clonebay_upgrades" lvl="1" max_group="8" blue="false" hidden="true">
+		<text>Upgrade Clonebay. [MAXED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_activated_cell" lvl="0" max_lvl="0" max_group="8" blue="false" hidden="true">
+		<text>Upgrade Clonebay. [TECH INACTIVE]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_show_upgrade_clonebay" lvl="1" max_group="8" blue="false" hidden="true">
+		<text>Upgrade Clonebay. [Cost: 120~]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_CLONEBAY" />
+	</choice>
+
+
+	<choice req="aea_old_reactor_upgrades" lvl="5" max_group="9" blue="false" hidden="true">
+		<text>Upgrade Reactor. [MAXED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_old_activated_cell" lvl="0" max_lvl="0" max_group="9" blue="false" hidden="true">
+		<text>Upgrade Clonebay. [TECH INACTIVE]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="aea_show_upgrade_reactor" lvl="1" max_group="9" blue="false" hidden="true">
+		<text>Upgrade Reactor. [Cost: 120~]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_REACTOR" />
+	</choice>
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_OLD_SHIELDS">
+	<text>You are about to install a shield system upgrade.
+	[Effects: Upgrades shields beyond their maximum level, cannot be done more than twice]</text>
+	<choice req="aea_can_upgrade_shields" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="scrap" min="-120" max="-120" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_OLD_SHIELDS" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="aea_can_upgrade_shields" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>This upgrade is unavailable. You need to upgrade your shields to it's natural maximum.</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_OLD_SHIELDS">
+	<variable name="aea_old_shields_upgrades" op="add" val="1"/>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_OLD_ENGINES">
+	<text>You are about to install a engine system upgrade.
+	[Effects: Upgrades engines beyond their maximum level, Each level above 8 adds an additional 5 evasion and 0.25x FTL charge rate, cannot be upgraded more than twice]</text>
+	<choice req="aea_can_upgrade_engines" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="scrap" min="-120" max="-120" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_OLD_ENGINES" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="aea_can_upgrade_engines" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>This upgrade is unavailable. You need to upgrade your engines to it's natural maximum.</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_OLD_ENGINES">
+	<variable name="aea_old_engines_upgrades" op="add" val="1"/>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_OLD_WEAPONS">
+	<text>You are about to install a weapon system upgrade.
+	[Effects: Upgrades weapons beyond their maximum level, cannot be done more than twice]</text>
+	<choice req="aea_can_upgrade_weapons" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="scrap" min="-120" max="-120" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_OLD_WEAPONS" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="aea_can_upgrade_weapons" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>This upgrade is unavailable. You need to upgrade your weapons to it's natural maximum.</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_OLD_WEAPONS">
+	<variable name="aea_old_weapons_upgrades" op="add" val="1"/>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_OLD_DRONES">
+	<text>You are about to install a drone system upgrade.
+	[Effects: Upgrades drones beyond their maximum level, cannot be done more than twice]</text>
+	<choice req="aea_can_upgrade_drones" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="scrap" min="-120" max="-120" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_OLD_DRONES" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="aea_can_upgrade_drones" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>This upgrade is unavailable. You need to upgrade your drones to it's natural maximum.</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_OLD_DRONES">
+	<variable name="aea_old_drones_upgrades" op="add" val="1"/>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_OLD_CLOAKING">
+	<text>You are about to install a cloaking system upgrade.
+	[Effects: Upgrades cloaking beyond their maximum level, cannot be done more than once, cannot be upgraded beyond lvl 4]</text>
+	<choice req="aea_can_upgrade_cloaking" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="scrap" min="-120" max="-120" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_OLD_CLOAKING" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="aea_can_upgrade_cloaking" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>This upgrade is unavailable. You need to upgrade your cloaking to it's natural maximum.</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_OLD_CLOAKING">
+	<variable name="aea_old_cloaking_upgrades" op="add" val="1"/>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_OLD_MIND">
+	<text>You are about to install a mind control system upgrade.
+	[Effects: Upgrades mind control beyond their maximum level, cannot be done more than once, cannot be upgraded beyond lvl 4]</text>
+	<choice req="aea_can_upgrade_mind" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="scrap" min="-120" max="-120" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_OLD_MIND" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="aea_can_upgrade_mind" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>This upgrade is unavailable. You need to upgrade your mind control to it's natural maximum.</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_OLD_MIND">
+	<variable name="aea_old_mind_upgrades" op="add" val="1"/>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_OLD_HACKING">
+	<text>You are about to install a hacking system upgrade.
+	[Effects: Upgrades hacking beyond their maximum level, cannot be done more than once, cannot be upgraded beyond lvl 3]</text>
+	<choice req="aea_can_upgrade_hacking" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="scrap" min="-120" max="-120" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_OLD_HACKING" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="aea_can_upgrade_hacking" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>This upgrade is unavailable. You need to upgrade your hacking to it's natural maximum.</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_OLD_HACKING">
+	<variable name="aea_old_hacking_upgrades" op="add" val="1"/>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_OLD_MEDBAY">
+	<text>You are about to install a medbay system upgrade.
+	[Effects: Upgrades medbay beyond their maximum level, cannot be done more than once, cannot be upgraded beyond lvl 4]</text>
+	<choice req="aea_can_upgrade_medbay" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="scrap" min="-120" max="-120" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_OLD_MEDBAY" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="aea_can_upgrade_medbay" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>This upgrade is unavailable. You need to upgrade your medbay to it's natural maximum.</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_OLD_MEDBAY">
+	<variable name="aea_old_medbay_upgrades" op="add" val="1"/>
+	<variable name="aea_old_clonebay_upgrades" op="add" val="1"/>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_OLD_CLONEBAY">
+	<text>You are about to install a clonebay system upgrade.
+	[Effects: Upgrades clonebay beyond their maximum level, cannot be done more than once, cannot be upgraded beyond lvl 4]</text>
+	<choice req="aea_can_upgrade_clonebay" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="scrap" min="-120" max="-120" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_OLD_CLONEBAY" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="aea_can_upgrade_clonebay" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>This upgrade is unavailable. You need to upgrade your clonebay to it's natural maximum.</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_OLD_CLONEBAY">
+	<variable name="aea_old_medbay_upgrades" op="add" val="1"/>
+	<variable name="aea_old_clonebay_upgrades" op="add" val="1"/>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_OLD_REACTOR">
+	<text>You are about to install a clonebay system upgrade.
+	[Effects: Upgrades clonebay beyond their maximum level, cannot be done more than 5 times]</text>
+	<choice req="aea_can_upgrade_reactor" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 25~]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="scrap" min="-50" max="-50" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_OLD_REACTOR" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="aea_can_upgrade_reactor" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>This upgrade is unavailable. You need to upgrade your reactor to it's natural maximum.</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_OLD_REACTOR">
+	<variable name="aea_old_reactor_upgrades" op="add" val="1"/>
 	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
 </event>
 </FTL>

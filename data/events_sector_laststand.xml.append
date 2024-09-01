@@ -12,7 +12,7 @@
 					</choice>
 				</event>
 			</mod-append:choice>
-			<mod-append:choice hidden="true" max_group="1" req="SHIP_AEA_ACIDIC" blue="false">
+			<mod-append:choice hidden="true" max_group="1" req="SHIP_AEA_NECRO" blue="false">
 				<text>Contact Federation command.</text>
 				<event>
 					<text>On the vidscreen appears several Federation and Engi officers, as well as Admiral Tully in the center. "I didn't expect to see a Heretic vessel, but you've managed to get your hands on one, good luck out there."</text>

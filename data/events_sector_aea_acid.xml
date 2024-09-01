@@ -2804,5 +2804,26 @@ The wreck is relatively intact, however it appears to have been filled with hole
     </choice>
 </event>
 
+
+<event name="NEBULA_AEA_ACID_POWER_CELL" unique="true">
+	<preventQuest />
+	<environment type="nebula" />
+	<text>The beacon sits inside a dense nebula.</text>
+	<choice hidden="true" req="aea_old_has_cell" blue="false">
+		<text>Continue...</text>
+		<event load="AEA_OLD_POWER_CELL_CONTINUE"/>
+	</choice>
+	<choice hidden="true" req="aea_old_has_cell" lvl="0" max_lvl="0" blue="false">
+		<text>Continue...</text>
+		<event>
+			<text load="NEBULA_AEA_ACID_FIGHT" />
+			<ship load="SHIP_AEA_ACID_FIGHT" hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+</event>
 </FTL>
 

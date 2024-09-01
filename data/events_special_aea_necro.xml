@@ -733,4 +733,22 @@
 		</choice>
 	</deadCrew>
 </ship>
+
+<event name="AEA_TEST_SHIELDS">
+	<text>TEST SHIELDS REQ</text>
+	<choice req="aea_can_upgrade_shields">
+		<text>SUCCESS</text>
+		<event name="AEA_UPGRADE_SHIELDS">
+			<text>UPGRADE SHIELDS NOW</text>
+		</event>
+	</choice>
+	<choice req="aea_can_upgrade_shields" lvl="0" max_lvl="0">
+		<text>FAILURE</text>
+		<event/>
+	</choice>
+	<choice>
+		<text>CONTINUE...</text>
+		<event/>
+	</choice>
+</event>
 </FTL>

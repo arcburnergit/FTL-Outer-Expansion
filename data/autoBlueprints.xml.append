@@ -62,6 +62,13 @@
     <mod-append:name>aea_necro_king</mod-append:name>
 </mod:findName>
 
+<blueprintList name="BLUELIST_PRECURSOR_TECH">
+	<name>AEA_LASER_OLD_1_CELL</name>
+	<name>AEA_LASER_OLD_1</name>
+	<name>AEA_LASER_OLD_2</name>
+
+	<name>AEA_LASER_OLDP_2</name>
+</blueprintList>
 <blueprintList name="GIFTLIST_WEAPONS_ACIDIC">
     <name>AEA_LASER_ACID_1</name>
     <name>AEA_LASER_ACID_2</name>
@@ -97,11 +104,11 @@
 </blueprintList>
 
 <blueprintList name="LIST_WEAPONS_ACIDIC">
-    <name>AEA_LASER_ACID_1</name>
-    <name>AEA_LASER_ACID_2</name>
-    <name>AEA_LASER_ACID_3</name>
-    <name>AEA_BEAM_ACID_1</name>
-    <name>AEA_ION_ACID_1</name>
+    <name>AEA_LASER_ACID_1_ENEMY</name>
+    <name>AEA_LASER_ACID_2_ENEMY</name>
+    <name>AEA_LASER_ACID_3_ENEMY</name>
+    <name>AEA_BEAM_ACID_1_ENEMY</name>
+    <name>AEA_ION_ACID_1_ENEMY</name>
     
     <name>LASER_HEAVY_1</name>
 	<name>LASER_HULL_1_ENEMY</name>
@@ -125,7 +132,7 @@
 	<name>ENERGY_HULL</name>
 </blueprintList>
 <blueprintList name="LIST_WEAPONS_ACIDIC_ELITE">
-    <name>AEA_LASER_ACID_1</name>
+    <name>AEA_LASER_ACID_1_ENEMY</name>
     <name>AEA_LASER_ACID_2</name>
     <name>AEA_LASER_ACID_3</name>
     <name>AEA_BEAM_ACID_1</name>
@@ -1296,6 +1303,1468 @@
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_NECRO_SAVE_ENEMY" />
 </shipBlueprint>
+</FTL>
 
+<FTL>
+<shipBlueprint name="AEA_OLD_GUARD_BOSS" layout="aea_old_guard_boss" img="aea_old_guard_boss">
+	<class>???</class>
+	<systemList>
+		<artillery power="1" max="1" room="8" start="true" weapon="ARTILLERY_AEA_GRAPPLE" />
+		<artillery power="1" max="1" room="7" start="true" weapon="ARTILLERY_AEA_GRAPPLE" />
+		<battery power="2" max="2" room="20" start="true" />
+		<doors power="2" max="2" room="23" start="true" />
+		<drones power="2" max="10" room="11" start="true" />
+		<engines power="2" max="2" room="14" start="true" />
+		<hacking power="2" max="2" room="24" start="true" />
+		<medbay power="2" max="3" room="19" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="4" max="12" room="6" start="true" />
+		<teleporter power="2" max="2" room="12" start="true" />
+		<temporal power="2" max="2" room="13" start="true" />
+		<weapons power="10" max="10" room="29" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="24" count="4">
+		<weapon name="AEA_LASER_OLD_2" />
+		<weapon name="AEA_LASER_OLD_2" />
+		<weapon name="AEA_LASER_OLDP_2" />
+		<weapon name="AEA_LASER_OLDP_2" />
+	</weaponList>
+	<droneList drones="16" count="6">
+		<drone name="AEA_DEFENSE_NECRO_2_DRONE" />
+		<drone name="AEA_COMBAT_NECRO_2_LASER" />
+		<drone name="ATOM_DEFEND" />
+		<drone name="DIRECTOR" />
+		<drone name="DIRECTOR" />
+		<drone name="MENDER" />
+	</droneList>
+	<health amount="50" />
+	<maxPower amount="50" />
+	<crewCount amount="4" max="4" class="aea_old_1" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+</FTL>
+
+<FTL>
+<blueprintList name="AEA_OLD_SHIPS_MU_ALL">
+	<name>AEA_OLD_COALITION_ASSAULT_ELITE</name>
+	<name>AEA_OLD_COALITION_DESTROYER_ELITE</name>
+	<name>AEA_OLD_COALITION_CEALAFORMER</name>
+	<name>AEA_OLD_CRYSTAL_ENFORCER_ELITE</name>
+	<name>AEA_OLD_CRYSTAL_BOMBER_ELITE</name>
+	<name>AEA_OLD_DUSK_BATTLESHIP_ELITE</name>
+	<name>AEA_OLD_DUSK_JAILER_ELITE</name>
+	<name>AEA_OLD_DYNASTY_ASSAULT_ELITE</name>
+	<name>AEA_OLD_DYNASTY_SCOUT_ELITE</name>
+	<name>AEA_OLD_ENGI_ENFORCER_ELITE</name>
+	<name>AEA_OLD_ENGI_MOTHERSHIP_ELITE</name>
+	<name>AEA_OLD_ENGI_BOMBER_ELITE</name>
+	<name>AEA_OLD_FED_BOMBER_ELITE</name>
+	<name>AEA_OLD_FED_CORVETTE_ELITE</name>
+	<name>AEA_OLD_FREEMANTIS_BATTLESHIP_ELITE</name>
+	<name>AEA_OLD_FREEMANTIS_INTERCEPTOR_ELITE</name>
+	<name>AEA_OLD_KNIGHT_GUARD</name>
+	<name>AEA_OLD_KNIGHT_DESTROYER</name>
+	<name>AEA_OLD_KNIGHT_TRANSPORT</name>
+	<name>AEA_OLD_LANIUS_BATTLESHIP_ELITE</name>
+	<name>AEA_OLD_LANIUS_MARAUDER_ELITE</name>
+	<name>AEA_OLD_LANIUS_ASSAULT_ELITE</name>
+	<name>AEA_OLD_LEECH_BATTLESHIP_ELITE</name>
+	<name>AEA_OLD_LEECH_PICKET_ELITE</name>
+	<name>AEA_OLD_LOSTSUN_BATTLESHIP</name>
+	<name>AEA_OLD_LOSTSUN_GUARD</name>
+	<name>AEA_OLD_MILITIA_GUARD_ELITE</name>
+	<name>AEA_OLD_MILITIA_RIGGER_ELITE</name>
+	<name>AEA_OLD_ORCHID_BOMBER_ELITE</name>
+	<name>AEA_OLD_ORCHID_INSTIGATOR_ELITE</name>
+	<name>AEA_OLD_MFK_GUNBOAT</name>
+	<name>AEA_OLD_REBEL_ASSAULT_SELITE</name>
+	<name>AEA_OLD_REBEL_DESTROYER_SELITE</name>
+	<name>AEA_OLD_REBEL_GUARD_SELITE</name>
+	<name>AEA_OLD_ROCK_BATTLESHIP_SELITE</name>
+	<name>AEA_OLD_ROCK_PICKET_SELITE</name>
+	<name>AEA_OLD_ROCK_FIGHTER_SELITE</name>
+	<name>AEA_OLD_SHELL_ABDUCTOR_ELITE</name>
+	<name>AEA_OLD_SHELL_FIGHTER_ELITE</name>
+	<name>AEA_OLD_SHELL_SKIRMISHER_ELITE</name>
+	<name>AEA_OLD_SUZERAIN_JAILER</name>
+	<name>AEA_OLD_SUZERAIN_PREDATOR</name>
+	<name>AEA_OLD_SUZERAIN_MOTHERSHIP</name>
+	<name>AEA_OLD_VAMPWEED_ESCORT_ELITE</name>
+	<name>AEA_OLD_VAMPWEED_FIGHTER_ELITE</name>
+	<name>AEA_OLD_VAMPWEED_OUTRIDER_ELITE</name>
+	<name>AEA_OLD_ZOLTAN_DROPSHIP_ELITE</name>
+	<name>AEA_OLD_ZOLTAN_ABDUCTOR_ELITE</name>
+	<name>AEA_OLD_ZOLTAN_GUARD_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_COALITION">
+	<name>AEA_OLD_COALITION_ASSAULT_ELITE</name>
+	<name>AEA_OLD_COALITION_DESTROYER_ELITE</name>
+	<name>AEA_OLD_COALITION_CEALAFORMER</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_CRYSTAL">
+	<name>AEA_OLD_CRYSTAL_ENFORCER_ELITE</name>
+	<name>AEA_OLD_CRYSTAL_BOMBER_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_DUSK">
+	<name>AEA_OLD_DUSK_BATTLESHIP_ELITE</name>
+	<name>AEA_OLD_DUSK_JAILER_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_DYNASTY">
+	<name>AEA_OLD_DYNASTY_ASSAULT_ELITE</name>
+	<name>AEA_OLD_DYNASTY_SCOUT_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_ENGI">
+	<name>AEA_OLD_ENGI_ENFORCER_ELITE</name>
+	<name>AEA_OLD_ENGI_MOTHERSHIP_ELITE</name>
+	<name>AEA_OLD_ENGI_BOMBER_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_FED">
+	<name>AEA_OLD_FED_BOMBER_ELITE</name>
+	<name>AEA_OLD_FED_CORVETTE_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_FREEMANTIS">
+	<name>AEA_OLD_FREEMANTIS_BATTLESHIP_ELITE</name>
+	<name>AEA_OLD_FREEMANTIS_INTERCEPTOR_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_KNIGHT">
+	<name>AEA_OLD_KNIGHT_GUARD</name>
+	<name>AEA_OLD_KNIGHT_DESTROYER</name>
+	<name>AEA_OLD_KNIGHT_TRANSPORT</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_LANIUS">
+	<name>AEA_OLD_LANIUS_BATTLESHIP_ELITE</name>
+	<name>AEA_OLD_LANIUS_MARAUDER_ELITE</name>
+	<name>AEA_OLD_LANIUS_ASSAULT_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_LEECH">
+	<name>AEA_OLD_LEECH_BATTLESHIP_ELITE</name>
+	<name>AEA_OLD_LEECH_PICKET_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_LOSTSUN">
+	<name>AEA_OLD_LOSTSUN_BATTLESHIP</name>
+	<name>AEA_OLD_LOSTSUN_GUARD</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_MILITIA">
+	<name>AEA_OLD_MILITIA_GUARD_ELITE</name>
+	<name>AEA_OLD_MILITIA_RIGGER_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_ORCHID">
+	<name>AEA_OLD_ORCHID_BOMBER_ELITE</name>
+	<name>AEA_OLD_ORCHID_INSTIGATOR_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_REBEL">
+	<name>AEA_OLD_MFK_GUNBOAT</name>
+	<name>AEA_OLD_REBEL_ASSAULT_SELITE</name>
+	<name>AEA_OLD_REBEL_DESTROYER_SELITE</name>
+	<name>AEA_OLD_REBEL_GUARD_SELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_ROCK">
+	<name>AEA_OLD_ROCK_BATTLESHIP_SELITE</name>
+	<name>AEA_OLD_ROCK_PICKET_SELITE</name>
+	<name>AEA_OLD_ROCK_FIGHTER_SELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_SHELL">
+	<name>AEA_OLD_SHELL_ABDUCTOR_ELITE</name>
+	<name>AEA_OLD_SHELL_FIGHTER_ELITE</name>
+	<name>AEA_OLD_SHELL_SKIRMISHER_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_SUZERAIN">
+	<name>AEA_OLD_SUZERAIN_JAILER</name>
+	<name>AEA_OLD_SUZERAIN_PREDATOR</name>
+	<name>AEA_OLD_SUZERAIN_MOTHERSHIP</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_VAMPWEED">
+	<name>AEA_OLD_VAMPWEED_ESCORT_ELITE</name>
+	<name>AEA_OLD_VAMPWEED_FIGHTER_ELITE</name>
+	<name>AEA_OLD_VAMPWEED_OUTRIDER_ELITE</name>
+</blueprintList>
+<blueprintList name="AEA_OLD_SHIPS_ZOLTAN">
+	<name>AEA_OLD_ZOLTAN_DROPSHIP_ELITE</name>
+	<name>AEA_OLD_ZOLTAN_ABDUCTOR_ELITE</name>
+	<name>AEA_OLD_ZOLTAN_GUARD_ELITE</name>
+</blueprintList>
+
+<!--COALITION-->
+
+<shipBlueprint name="AEA_OLD_COALITION_ASSAULT_ELITE" layout="mu_coalition_assault" img="mu_coalition_assault_elite">
+	<class>R.U.E.S. Assault</class>
+	<systemList>
+		<cloaking power="1" max="3" room="3" start="false" />
+		<engines power="1" max="2" room="2" start="true" />
+		<hacking power="1" max="3" room="1" start="false" />
+		<medbay power="1" max="2" room="9" start="false" />
+		<clonebay power="1" max="2" room="9" start="false" />
+		<oxygen power="1" max="3" room="0" start="true" />
+		<pilot power="1" max="2" room="4" start="true" />
+		<shields power="4" max="12" room="7" start="true" />
+		<teleporter power="1" max="3" room="10" start="false" />
+		<weapons power="4" max="12" room="8" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_COALITION" />
+	<droneList drones="3" count="0" />
+	<health amount="12" />
+	<maxPower amount="13" />
+	<crewCount amount="1" max="1" class="slug_saboteur" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="CREW_STIMS" />
+	<aug name="ROCK_ARMOR" />
+	<aug name="SLUG_GEL" />
+	<cloakImage>mu_coalition_assault</cloakImage>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_COALITION_DESTROYER_ELITE" layout="mu_coalition_destroyer" img="mu_coalition_destroyer_elite">
+	<class>R.U.E.S. Destroyer</class>
+	<systemList>
+		<clonebay power="1" max="3" room="5" start="false" />
+		<engines power="1" max="3" room="1" start="true" />
+		<hacking power="1" max="3" room="10" start="false" />
+		<medbay power="1" max="3" room="5" start="false" />
+		<mind power="1" max="2" room="9" start="false" />
+		<oxygen power="1" max="2" room="6" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="4" max="12" room="7" start="true" />
+		<teleporter power="1" max="3" room="8" start="false" />
+		<weapons power="4" max="12" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_COALITION" />
+	<droneList drones="3" count="0" />
+	<health amount="13" />
+	<maxPower amount="13" />
+	<crewCount amount="1" max="1" class="slug_saboteur" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="CREW_STIMS" />
+	<aug name="ROCK_ARMOR" />
+	<aug name="SLUG_GEL" />
+</shipBlueprint>
+
+
+<shipBlueprint name="AEA_OLD_COALITION_CEALAFORMER" layout="mu_coalition_cealaformer" img="mu_coalition_cealaformer">
+	<class>Coalition Cealaformer</class>
+	<systemList>
+		<artillery power="3" max="3" room="11" start="true" weapon="ARTILLERY_COALITION_CEALAFORMER" />
+		<artillery power="3" max="3" room="12" start="true" weapon="ARTILLERY_COALITION_CEALAFORMER" />
+		<artillery power="3" max="3" room="10" start="true" weapon="ARTILLERY_COALITION_CEALAFORMER" />
+		<artillery power="3" max="3" room="9" start="true" weapon="ARTILLERY_COALITION_CEALAFORMER" />
+		<artillery power="3" max="3" room="13" start="true" weapon="ARTILLERY_COALITION_CEALAFORMER" />
+		<cloaking power="2" max="3" room="14" start="true" />
+		<engines power="1" max="2" room="15" start="true" />
+		<medbay power="2" max="2" room="5" start="true" />
+		<mind power="3" max="3" room="7" start="true" />
+		<oxygen power="3" max="3" room="8" start="true" />
+		<pilot power="2" max="2" room="4" start="true" />
+		<shields power="4" max="12" room="0" start="true" />
+		<teleporter power="3" max="3" room="6" start="true" />
+		<weapons power="6" max="10" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_COALITION" />
+	<droneList drones="0" count="0" />
+	<health amount="12" />
+	<maxPower amount="39" />
+	<crewCount amount="1" max="1" class="slug_saboteur" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SLUG_GEL" />
+	<aug name="ROCK_ARMOR" />
+	<aug name="CREW_STIMS" />
+</shipBlueprint>
+
+<!--CRYSTAL-->
+
+
+<shipBlueprint name="AEA_OLD_CRYSTAL_ENFORCER_ELITE" layout="mu_crystal_enforcer_a" img="mu_crystal_enforcer_b">
+	<class>Sentinel Enforcer</class>
+	<systemList>
+		<engines power="1" max="2" room="6" start="true" />
+		<mind power="1" max="3" room="7" start="false" />
+		<oxygen power="1" max="2" room="5" start="true" />
+		<pilot power="1" max="3" room="3" start="true" />
+		<shields power="4" max="12" room="4" start="true" />
+		<teleporter power="1" max="2" room="0" start="false" />
+		<weapons power="3" max="12" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_CRYSTAL_ELITE_ENEMY" />
+	<droneList drones="0" count="0" />
+	<health amount="12" />
+	<maxPower amount="11" />
+	<crewCount amount="4" max="9" class="crystal" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="CRYSTAL_ARMOR_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_CRYSTAL_BOMBER_ELITE" layout="mu_crystal_bomber_a" img="mu_crystal_bomber_b">
+	<class>Sentinel Bomber</class>
+	<systemList>
+		<doors power="1" max="3" room="8" start="false" />
+		<engines power="1" max="2" room="5" start="true" />
+		<medbay power="1" max="3" room="0" start="false" />
+		<oxygen power="1" max="2" room="6" start="true" />
+		<pilot power="1" max="3" room="2" start="true" />
+		<shields power="2" max="12" room="4" start="true" />
+		<weapons power="2" max="12" room="7" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_CRYSTAL_ELITE_ENEMY" />
+	<droneList drones="0" count="2" />
+	<health amount="14" />
+	<maxPower amount="11" />
+	<crewCount amount="4" max="9" class="crystal" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="CRYSTAL_ARMOR_ENEMY" />
+</shipBlueprint>
+
+<!--DUSKBRINGERS-->
+
+
+<shipBlueprint name="AEA_OLD_DUSK_BATTLESHIP_ELITE" layout="mu_dusk_battleship" img="mu_dusk_battleship_elite">
+	<class>New Order Battleship</class>
+	<minSector>3</minSector>
+	<systemList>
+		<battery power="1" max="2" room="12" start="false" />
+		<clonebay power="1" max="3" room="11" start="true" />
+		<doors power="1" max="3" room="16" start="false" />
+		<drones power="1" max="3" room="3" start="false" />
+		<engines power="1" max="2" room="14" start="true" />
+		<oxygen power="1" max="3" room="9" start="true" />
+		<pilot power="1" max="3" room="7" start="true" />
+		<shields power="4" max="10" room="5" start="true" />
+		<teleporter power="1" max="2" room="8" start="false" />
+		<weapons power="4" max="12" room="2" start="true" />
+	</systemList>
+	<weaponSlots>6</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="6" load="LIST_WEAPONS_DUSKBRINGER" />
+	<droneList drones="6" count="2" load="LIST_DRONES_ENEMY_CREW" />
+	<health amount="14" />
+	<maxPower amount="12" />
+	<crewCount amount="5" max="10" class="LIST_CREW_DUSKBRINGER_RANDOM" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="ENERGY_SHIELD" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_DUSK_JAILER_ELITE" layout="mu_dusk_jailer" img="mu_dusk_jailer_elite">
+	<class>New Order Jailer</class>
+	<systemList>
+		<clonebay power="1" max="3" room="7" start="true" />
+		<doors power="1" max="3" room="9" start="true" />
+		<engines power="1" max="1" room="5" start="true" />
+		<mind power="1" max="3" room="2" start="false" />
+		<oxygen power="1" max="2" room="3" start="true" />
+		<pilot power="1" max="2" room="10" start="true" />
+		<shields power="4" max="12" room="1" start="true" />
+		<teleporter power="1" max="3" room="8" start="true" />
+		<weapons power="3" max="10" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_DUSKBRINGER" />
+	<droneList drones="0" count="0" />
+	<health amount="12" />
+	<maxPower amount="11" />
+	<crewCount amount="3" max="7" class="LIST_CREW_DUSKBRINGER_RANDOM" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="ENERGY_SHIELD" />
+</shipBlueprint>
+
+<!--DYNASTY-->
+
+
+<shipBlueprint name="AEA_OLD_DYNASTY_ASSAULT_ELITE" layout="mu_dynasty_assault" img="mu_dynasty_assault_elite">
+	<class>Assault Reaper</class>
+	<minSector>3</minSector>
+	<systemList>
+		<cloaking power="1" max="2" room="8" start="true" />
+		<doors power="1" max="3" room="3" start="false" />
+		<drones power="2" max="8" room="9" start="false" />
+		<engines power="1" max="2" room="1" start="true" />
+		<medbay power="1" max="2" room="2" start="false" />
+		<pilot power="1" max="2" room="12" start="true" />
+		<shields power="4" max="12" room="6" start="true" />
+		<teleporter power="1" max="3" room="0" start="false" />
+		<weapons power="4" max="12" room="5" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_DYNASTY" />
+	<droneList drones="3" count="2" load="LIST_DRONES_DYNASTY" />
+	<health amount="14" />
+	<maxPower amount="13" />
+	<crewCount amount="4" max="9" class="phantom_alpha" />
+	<boardingAI>sabotage</boardingAI>
+	<cloakImage>mu_dynasty_assault</cloakImage>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_DYNASTY_SCOUT_ELITE" layout="mu_dynasty_scout" img="mu_dynasty_scout_elite">
+	<class>Scouting Reaper</class>
+	<maxSector>5</maxSector>
+	<systemList>
+		<cloaking power="1" max="3" room="5" start="true" />
+		<drones power="2" max="6" room="3" start="false" />
+		<engines power="1" max="1" room="6" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="12" room="4" start="true" />
+		<teleporter power="1" max="2" room="1" start="false" />
+		<weapons power="3" max="12" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="4" count="4" load="LIST_WEAPONS_DYNASTY" />
+	<droneList drones="4" count="2" load="LIST_DRONES_DYNASTY" />
+	<health amount="10" />
+	<maxPower amount="11" />
+	<crewCount amount="3" max="8" class="phantom_alpha" />
+	<boardingAI>sabotage</boardingAI>
+	<cloakImage>mu_dynasty_scout</cloakImage>
+</shipBlueprint>
+
+<!--ENGI-->
+
+
+<shipBlueprint name="AEA_OLD_ENGI_ENFORCER_ELITE" layout="mu_engi_enforcer_a" img="mu_engi_enforcer_c">
+	<class>Harmony Enforcer</class>
+	<systemList>
+		<cloaking power="1" max="1" room="11" start="false" />
+		<hacking power="1" max="3" room="3" start="false" />
+		<drones power="2" max="12" room="5" start="true" />
+		<engines power="1" max="2" room="7" start="true" />
+		<medbay power="1" max="2" room="6" start="false" />
+		<oxygen power="1" max="2" room="1" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="4" max="12" room="9" start="true" />
+		<weapons power="4" max="12" room="10" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="6" count="3" load="LIST_DRONES_ENGI" />
+	<health amount="12" />
+	<maxPower amount="14" />
+	<crewCount amount="3" max="8" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="UPG_TECH_SCRAMBLER_ENEMY" />
+	<cloakImage>mu_engi_enforcer_a</cloakImage>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_ENGI_MOTHERSHIP_ELITE" layout="mu_engi_mothership_a" img="mu_engi_mothership_c">
+	<class>Harmony Mothership</class>
+	<minSector>3</minSector>
+	<systemList>
+		<doors power="1" max="3" room="13" start="false" />
+		<drones power="3" max="12" room="7" start="true" />
+		<engines power="1" max="2" room="6" start="true" />
+		<hacking power="1" max="3" room="8" start="false" />
+		<medbay power="1" max="2" room="1" start="false" />
+		<oxygen power="1" max="2" room="3" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="12" room="5" start="true" />
+		<weapons power="3" max="12" room="11" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="25" count="5" load="LIST_DRONES_ENGI" />
+	<health amount="12" />
+	<maxPower amount="16" />
+	<crewCount amount="5" max="9" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="UPG_TECH_SCRAMBLER_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_ENGI_BOMBER_ELITE" layout="mu_engi_bomber_a" img="mu_engi_bomber_c">
+	<class>Harmony Bomber</class>
+	<minSector>3</minSector>
+	<systemList>
+		<hacking power="1" max="2" room="2" start="false" />
+		<drones power="2" max="12" room="5" start="true" />
+		<engines power="1" max="2" room="9" start="true" />
+		<medbay power="1" max="3" room="4" start="false" />
+		<oxygen power="1" max="3" room="3" start="true" />
+		<pilot power="1" max="3" room="1" start="true" />
+		<shields power="4" max="12" room="7" start="true" />
+		<weapons power="4" max="10" room="11" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ENGI" />
+	<droneList drones="4" count="3" load="LIST_DRONES_ENGI" />
+	<health amount="11" />
+	<maxPower amount="12" />
+	<crewCount amount="4" max="8" class="engi" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+	<aug name="UPG_TECH_SCRAMBLER_ENEMY" />
+</shipBlueprint>
+
+<!--FEDERATION-->
+
+
+<shipBlueprint name="AEA_OLD_FED_BOMBER_ELITE" layout="mu_fed_bomber" img="mu_fed_bomber_elite">
+	<class>Unity Bomber</class>
+	<systemList>
+		<cloaking power="1" max="2" room="3" start="false" />
+		<doors power="1" max="3" room="2" start="false" />
+		<engines power="1" max="2" room="9" start="true" />
+		<medbay power="1" max="2" room="8" start="false" />
+		<oxygen power="1" max="2" room="5" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="4" max="12" room="1" start="true" />
+		<weapons power="4" max="12" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_FED" />
+	<droneList drones="0" count="2" />
+	<health amount="13" />
+	<maxPower amount="11" />
+	<crewCount amount="3" max="8" class="LIST_CREW_FEDERATION_ELITE_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<cloakImage>mu_fed_bomber</cloakImage>
+	<aug name="ENERGY_SHIELD" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_FED_CORVETTE_ELITE" layout="mu_fed_corvette" img="mu_fed_corvette_elite">
+	<class>Unity Corvette</class>
+	<systemList>
+		<engines power="1" max="2" room="3" start="true" />
+		<medbay power="1" max="2" room="5" start="false" />
+		<oxygen power="1" max="3" room="4" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="4" max="12" room="2" start="true" />
+		<weapons power="4" max="12" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_FED" />
+	<droneList drones="0" count="0" />
+	<health amount="11" />
+	<maxPower amount="10" />
+	<crewCount amount="4" max="9" class="LIST_CREW_FEDERATION_ELITE_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="ENERGY_SHIELD" />
+</shipBlueprint>
+
+<!--FREEMANTIS-->
+
+
+<shipBlueprint name="AEA_OLD_FREEMANTIS_BATTLESHIP_ELITE" layout="mu_freemantis_battleship" img="mu_freemantis_battleship_elite">
+	<class>Warlord Battleship</class>
+	<minSector>3</minSector>
+	<systemList>
+		<clonebay power="1" max="3" room="4" start="false" />
+		<doors power="1" max="3" room="16" start="false" />
+		<engines power="1" max="2" room="1" start="true" />
+		<mind power="1" max="3" room="14" start="false" />
+		<oxygen power="1" max="2" room="15" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="12" room="6" start="true" />
+		<teleporter power="2" max="3" room="5" start="true" />
+		<weapons power="4" max="12" room="9" start="true" />
+	</systemList>
+	<weaponSlots>6</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="7" count="6" load="LIST_WEAPONS_FREEMANTIS" />
+	<droneList drones="0" count="0" />
+	<health amount="13" />
+	<maxPower amount="12" />
+	<crewCount amount="5" max="11" class="mantis_warlord" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="SUPER_CREW_STIMS" />
+	<aug name="UPG_TECH_BYPASS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_FREEMANTIS_INTERCEPTOR_ELITE" layout="mu_freemantis_interceptor" img="mu_freemantis_interceptor_elite">
+	<class>Warlord Interceptor</class>
+	<systemList>
+		<engines power="1" max="2" room="9" start="true" />
+		<oxygen power="1" max="1" room="1" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="12" room="5" start="true" />
+		<teleporter power="1" max="3" room="2" start="true" />
+		<weapons power="3" max="12" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_FREEMANTIS" />
+	<droneList drones="0" count="0" />
+	<health amount="10" />
+	<maxPower amount="10" />
+	<crewCount amount="4" max="8" class="mantis_warlord" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="SUPER_CREW_STIMS" />
+	<aug name="UPG_TECH_BYPASS" />
+</shipBlueprint>
+
+<!--KNIGHTS-->
+
+
+<shipBlueprint name="AEA_OLD_KNIGHT_GUARD" layout="mu_knight_guard" img="mu_knight_guard">
+	<class>Knighted Guard</class>
+	<systemList>
+		<cloaking power="1" max="2" room="5" start="true" />
+		<doors power="1" max="3" room="10" start="false" />
+		<engines power="1" max="1" room="1" start="true" />
+		<medbay power="1" max="2" room="2" start="false" />
+		<mind power="1" max="2" room="7" start="false" />
+		<oxygen power="1" max="1" room="11" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="4" max="12" room="3" start="true" />
+		<teleporter power="1" max="1" room="6" start="true" />
+		<weapons power="4" max="12" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_SLUG" />
+	<droneList drones="4" count="0" />
+	<health amount="10" />
+	<maxPower amount="12" />
+	<crewCount amount="4" max="8" class="slug_knight" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SLUG_GEL" />
+	<aug name="UPG_CLOAK_FIRE" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_KNIGHT_DESTROYER" layout="mu_knight_destroyer" img="mu_knight_destroyer">
+	<class>Knighted Destroyer</class>
+	<systemList>
+		<cloaking power="1" max="1" room="10" start="true" />
+		<clonebay power="1" max="3" room="8" start="false" />
+		<doors power="1" max="3" room="9" start="false" />
+		<engines power="1" max="2" room="2" start="true" />
+		<hacking power="1" max="2" room="13" start="true" />
+		<medbay power="1" max="3" room="8" start="false" />
+		<mind power="1" max="1" room="12" start="true" />
+		<oxygen power="1" max="1" room="5" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="4" max="12" room="11" start="true" />
+		<weapons power="4" max="12" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_SLUG" />
+	<droneList drones="5" count="0" />
+	<health amount="13" />
+	<maxPower amount="14" />
+	<crewCount amount="5" max="9" class="slug_knight" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SLUG_GEL" />
+	<aug name="UPG_CLOAK_FIRE" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_KNIGHT_TRANSPORT" layout="mu_knight_transport" img="mu_knight_transport">
+	<class>Knighted Transport</class>
+	<systemList>
+		<cloaking power="1" max="2" room="9" start="true" />
+		<doors power="1" max="3" room="4" start="false" />
+		<engines power="1" max="1" room="5" start="true" />
+		<medbay power="1" max="3" room="6" start="false" />
+		<oxygen power="1" max="3" room="12" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="12" room="1" start="true" />
+		<teleporter power="1" max="3" room="11" start="true" />
+		<weapons power="4" max="12" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_SLUG" />
+	<droneList drones="7" count="2" />
+	<health amount="11" />
+	<maxPower amount="12" />
+	<crewCount amount="4" max="8" class="slug_knight" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SLUG_GEL" />
+	<aug name="UPG_CLOAK_FIRE" />
+</shipBlueprint>
+
+<!--LANIUS-->
+
+
+<shipBlueprint name="AEA_OLD_LANIUS_BATTLESHIP_ELITE" layout="mu_lanius_battleship_a" img="mu_lanius_battleship_b">
+	<class>Swarm Battleship</class>
+	<minSector>3</minSector>
+	<systemList>
+		<clonebay power="1" max="3" room="7" start="false" />
+		<engines power="1" max="2" room="1" start="true" />
+		<hacking power="1" max="3" room="11" start="false" />
+		<mind power="1" max="3" room="6" start="false" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="12" room="2" start="true" />
+		<teleporter power="1" max="2" room="10" start="false" />
+		<weapons power="4" max="12" room="3" start="true" />
+	</systemList>
+	<weaponSlots>6</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="6" load="LIST_WEAPONS_LANIUS" />
+	<droneList drones="6" count="0" />
+	<health amount="12" />
+	<maxPower amount="13" />
+	<crewCount amount="4" max="9" class="lanius" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_LANIUS_MARAUDER_ELITE" layout="mu_lanius_marauder_a" img="mu_lanius_marauder_b">
+	<class>Swarm Marauder</class>
+	<systemList>
+		<clonebay power="1" max="2" room="4" start="false" />
+		<doors power="1" max="3" room="7" start="false" />
+		<engines power="1" max="2" room="1" start="true" />
+		<mind power="1" max="2" room="8" start="false" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="12" room="3" start="true" />
+		<teleporter power="1" max="3" room="5" start="false" />
+		<weapons power="4" max="12" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_LANIUS" />
+	<droneList drones="0" count="0" />
+	<health amount="10" />
+	<maxPower amount="10" />
+	<crewCount amount="3" max="7" class="lanius" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_LANIUS_ASSAULT_ELITE" layout="mu_lanius_assault_a" img="mu_lanius_assault_b">
+	<class>Swarm Assault</class>
+	<minSector>3</minSector>
+	<systemList>
+		<cloaking power="1" max="3" room="8" start="false" />
+		<clonebay power="1" max="3" room="3" start="false" />
+		<doors power="1" max="3" room="2" start="false" />
+		<engines power="1" max="2" room="1" start="true" />
+		<hacking power="1" max="3" room="9" start="false" />
+		<mind power="1" max="2" room="6" start="false" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="12" room="5" start="true" />
+		<teleporter power="1" max="3" room="7" start="false" />
+		<weapons power="4" max="12" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_LANIUS" />
+	<droneList drones="0" count="0" />
+	<health amount="11" />
+	<maxPower amount="14" />
+	<crewCount amount="4" max="8" class="lanius" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<!--LEECH-->
+
+
+<shipBlueprint name="AEA_OLD_LEECH_BATTLESHIP_ELITE" layout="mu_leech_battleship" img="mu_leech_battleship_elite">
+	<class>Ampere Battleship</class>
+	<minSector>4</minSector>
+	<systemList>
+		<battery power="1" max="2" room="4" start="true" />
+		<doors power="1" max="3" room="5" start="true" />
+		<engines power="1" max="1" room="18" start="true" />
+		<hacking power="1" max="1" room="7" start="true" />
+		<oxygen power="1" max="2" room="1" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="4" max="12" room="2" start="true" />
+		<teleporter power="1" max="3" room="11" start="true" />
+		<weapons power="4" max="12" room="10" start="true" />
+	</systemList>
+	<weaponSlots>6</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="6" load="LIST_WEAPONS_LEECH_ELITE" />
+	<droneList drones="3" count="0" />
+	<health amount="12" />
+	<maxPower amount="10" />
+	<crewCount amount="4" max="10" class="leech_ampere" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_LEECH_PICKET_ELITE" layout="mu_leech_picket" img="mu_leech_picket_elite">
+	<class>Ampere Picket</class>
+	<minSector>4</minSector>
+	<systemList>
+		<battery power="1" max="2" room="13" start="false" />
+		<doors power="1" max="3" room="14" start="false" />
+		<engines power="1" max="1" room="10" start="true" />
+		<hacking power="1" max="3" room="9" start="true" />
+		<oxygen power="1" max="2" room="4" start="true" />
+		<pilot power="1" max="1" room="8" start="true" />
+		<shields power="4" max="12" room="5" start="true" />
+		<teleporter power="1" max="3" room="3" start="true" />
+		<weapons power="4" max="12" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="9" count="4" load="LIST_WEAPONS_LEECH_ELITE" />
+	<droneList drones="3" count="0" />
+	<health amount="13" />
+	<maxPower amount="10" />
+	<crewCount amount="4" max="10" class="leech_ampere" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<!--LOST SUN-->
+
+
+<shipBlueprint name="AEA_OLD_LOSTSUN_BATTLESHIP" layout="mu_lostsun_battleship" img="mu_lostsun_battleship">
+	<class>Lost Sun Battleship</class>
+	<minSector>3</minSector>
+	<systemList>
+		<clonebay power="1" max="3" room="3" start="false" />
+		<drones power="2" max="7" room="6" start="true" />
+		<engines power="1" max="2" room="1" start="true" />
+		<medbay power="1" max="3" room="3" start="false" />
+		<oxygen power="2" max="3" room="9" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="12" room="8" start="true" />
+		<teleporter power="1" max="2" room="2" start="false" />
+		<weapons power="2" max="12" room="7" start="true" />
+	</systemList>
+	<weaponSlots>6</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="15" count="6" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="12" count="3" load="LIST_DRONES_LOSTSUN" />
+	<health amount="12" />
+	<maxPower amount="10" />
+	<crewCount amount="4" max="10" class="rock_commando" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_TECH_EXTINGUISHERS" />
+	<aug name="REGEN_ARMOR" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_LOSTSUN_GUARD" layout="mu_lostsun_guard" img="mu_lostsun_guard">
+	<class>Lost Sun Guard</class>
+	<systemList>
+		<clonebay power="1" max="3" room="5" start="false" />
+		<doors power="1" max="3" room="4" start="false" />
+		<engines power="1" max="2" room="1" start="true" />
+		<medbay power="1" max="3" room="5" start="false" />
+		<oxygen power="2" max="3" room="6" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="12" room="3" start="true" />
+		<teleporter power="1" max="3" room="8" start="false" />
+		<weapons power="2" max="12" room="7" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="5" count="0" />
+	<health amount="11" />
+	<maxPower amount="9" />
+	<crewCount amount="4" max="7" class="rock_commando" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="REGEN_ARMOR" />
+	<aug name="UPG_TECH_EXTINGUISHERS" />
+</shipBlueprint>
+
+<!--MILITIA-->
+
+
+<shipBlueprint name="AEA_OLD_MILITIA_GUARD_ELITE" layout="mu_militia_guard_elite" img="mu_militia_guard_elite">
+	<class>EDC Guard</class>
+	<systemList>
+		<cloaking power="1" max="3" room="4" start="false" />
+		<clonebay power="1" max="3" room="2" start="false" />
+		<engines power="1" max="2" room="7" start="true" />
+		<medbay power="1" max="3" room="2" start="false" />
+		<oxygen power="1" max="3" room="3" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="4" max="12" room="1" start="true" />
+		<teleporter power="1" max="3" room="6" start="false" />
+		<weapons power="4" max="12" room="5" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_MILITIA_ELITE" />
+	<droneList drones="0" count="0" />
+	<health amount="10" />
+	<maxPower amount="7" />
+	<crewCount amount="4" max="9" class="LIST_CREW_MILITIA_ELITE_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_SHIELDS_PERFORMANCE" />
+	<cloakImage>mu_militia_guard</cloakImage>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_MILITIA_RIGGER_ELITE" layout="mu_militia_rigger" img="mu_militia_rigger_elite">
+	<class>EDC Rigger</class>
+	<systemList>
+		<doors power="1" max="3" room="8" start="false" />
+		<drones power="3" max="10" room="1" start="false" />
+		<engines power="1" max="2" room="4" start="true" />
+		<oxygen power="1" max="3" room="7" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="4" max="12" room="3" start="true" />
+		<weapons power="3" max="12" room="2" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="6" count="3" load="LIST_WEAPONS_MILITIA_ELITE" />
+	<droneList drones="5" count="4" load="LIST_DRONES_ENEMY_STANDARD" />
+	<health amount="11" />
+	<maxPower amount="13" />
+	<crewCount amount="3" max="6" class="LIST_CREW_MILITIA_ELITE_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_SHIELDS_PERFORMANCE" />
+</shipBlueprint>
+
+<!--ORCHID-->
+
+
+<shipBlueprint name="AEA_OLD_ORCHID_BOMBER_ELITE" layout="mu_orchid_bomber" img="mu_orchid_bomber_elite">
+	<class>Praetorian Bomber</class>
+	<systemList>
+		<doors power="1" max="3" room="6" start="false" />
+		<drones power="2" max="8" room="7" start="false" />
+		<engines power="1" max="2" room="10" start="true" />
+		<medbay power="1" max="3" room="9" start="true" />
+		<oxygen power="1" max="1" room="1" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="12" room="5" start="true" />
+		<weapons power="4" max="12" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ORCHID_ELITE" />
+	<droneList drones="5" count="3" load="LIST_DRONES_ENEMY_STANDARD" />
+	<health amount="10" />
+	<maxPower amount="11" />
+	<crewCount amount="3" max="8" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_ORCHID_INSTIGATOR_ELITE" layout="mu_orchid_instigator" img="mu_orchid_instigator_elite">
+	<class>Praetorian Instigator</class>
+	<systemList>
+		<battery power="1" max="2" room="8" start="false" />
+		<cloaking power="1" max="2" room="5" start="false" />
+		<doors power="2" max="3" room="4" start="false" />
+		<engines power="1" max="2" room="1" start="true" />
+		<medbay power="1" max="3" room="6" start="false" />
+		<mind power="1" max="2" room="9" start="false" />
+		<oxygen power="1" max="1" room="7" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="4" max="12" room="3" start="true" />
+		<weapons power="3" max="10" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_ORCHID_ELITE" />
+	<droneList drones="0" count="0" />
+	<health amount="11" />
+	<maxPower amount="10" />
+	<crewCount amount="4" max="9" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+	<cloakImage>mu_orchid_instigator</cloakImage>
+</shipBlueprint>
+
+<!--REBEL-->
+
+
+<shipBlueprint name="AEA_OLD_MFK_GUNBOAT" layout="mu_rebel_artillery_selite" img="mu_rebel_artillery_selite">
+	<class>MFK Gunboat Ace</class>
+	<systemList>
+		<artillery power="1" max="3" room="8" start="true" weapon="LIST_ARTILLERY_MFK" />
+		<cloaking power="1" max="3" room="5" start="false" />
+		<doors power="1" max="3" room="9" start="true" />
+		<engines power="1" max="1" room="1" start="true" />
+		<medbay power="1" max="3" room="7" start="false" />
+		<oxygen power="1" max="2" room="10" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="4" max="14" room="4" start="true" />
+		<weapons power="3" max="12" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_REBEL_SELITEA" />
+	<droneList drones="0" count="0" />
+	<health amount="11" />
+	<maxPower amount="11" />
+	<crewCount amount="3" max="7" class="human_soldier" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_SHIELDS_PERFORMANCE" />
+	<aug name="UPG_TECH_RESPIRATOR" />
+	<aug name="ENERGY_SHIELD" />
+	<cloakImage>mu_rebel_artillery_selite</cloakImage>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_REBEL_ASSAULT_SELITE" layout="mu_rebel_assault" img="mu_rebel_assault_superelite">
+	<class>MFK Assault Ace</class>
+	<minSector>3</minSector>
+	<systemList>
+		<cloaking power="1" max="2" room="3" start="false" />
+		<clonebay power="1" max="3" room="4" start="false" />
+		<doors power="1" max="3" room="10" start="false" />
+		<engines power="1" max="2" room="2" start="true" />
+		<medbay power="1" max="3" room="4" start="false" />
+		<oxygen power="1" max="3" room="9" start="true" />
+		<pilot power="2" max="3" room="0" start="true" />
+		<shields power="4" max="13" room="5" start="true" />
+		<teleporter power="1" max="2" room="1" start="false" />
+		<weapons power="4" max="12" room="7" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_REBEL_SELITE" />
+	<droneList drones="0" count="0" />
+	<health amount="12" />
+	<maxPower amount="17" />
+	<crewCount amount="5" max="10" class="human_soldier" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_SHIELDS_PERFORMANCE" />
+	<aug name="UPG_TECH_RESPIRATOR" />
+	<cloakImage>mu_rebel_assault_elite</cloakImage>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_REBEL_DESTROYER_SELITE" layout="mu_rebel_destroyer" img="mu_rebel_destroyer_superelite">
+	<class>MFK Destroyer Ace</class>
+	<minSector>3</minSector>
+	<systemList>
+		<clonebay power="1" max="2" room="7" start="false" />
+		<drones power="2" max="9" room="6" start="false" />
+		<engines power="1" max="2" room="10" start="true" />
+		<hacking power="1" max="2" room="3" start="false" />
+		<medbay power="1" max="2" room="7" start="false" />
+		<oxygen power="1" max="2" room="4" start="true" />
+		<pilot power="2" max="3" room="0" start="true" />
+		<shields power="4" max="13" room="5" start="true" />
+		<weapons power="4" max="12" room="8" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_REBEL_SELITE" />
+	<droneList drones="6" count="3" load="LIST_DRONES_ENEMY_COMBAT" />
+	<health amount="13" />
+	<maxPower amount="18" />
+	<crewCount amount="5" max="10" class="human_soldier" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_SHIELDS_PERFORMANCE" />
+	<aug name="UPG_TECH_RESPIRATOR" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_REBEL_GUARD_SELITE" layout="mu_rebel_guard_elite" img="mu_rebel_guard_superelite">
+	<class>MFK Guard Ace</class>
+	<systemList>
+		<artillery power="2" max="4" room="1" start="true" weapon="ARTILLERY_BOSS_2" />
+		<doors power="1" max="3" room="9" start="false" />
+		<engines power="1" max="1" room="10" start="true" />
+		<medbay power="2" max="3" room="6" start="false" />
+		<oxygen power="2" max="3" room="7" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="13" room="13" start="true" />
+		<teleporter power="1" max="2" room="4" start="false" />
+		<weapons power="4" max="12" room="14" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_REBEL_SELITE" />
+	<droneList drones="0" count="0" />
+	<health amount="11" />
+	<maxPower amount="13" />
+	<crewCount amount="4" max="9" class="human_soldier" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_SHIELDS_PERFORMANCE" />
+	<aug name="UPG_TECH_RESPIRATOR" />
+</shipBlueprint>
+
+<!--ROCK-->
+
+
+<shipBlueprint name="AEA_OLD_ROCK_BATTLESHIP_SELITE" layout="mu_rock_battleship" img="mu_rock_battleship_selite">
+	<class>Paladin Battleship</class>
+	<minSector>3</minSector>
+	<systemList>
+		<doors power="2" max="3" room="9" start="false" />
+		<engines power="1" max="1" room="5" start="true" />
+		<medbay power="2" max="3" room="14" start="false" />
+		<mind power="1" max="3" room="13" start="false" />
+		<oxygen power="1" max="3" room="8" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="12" room="4" start="true" />
+		<teleporter power="1" max="3" room="12" start="false" />
+		<weapons power="4" max="12" room="1" start="true" />
+	</systemList>
+	<weaponSlots>6</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="6" load="LIST_WEAPONS_ROCK_SELITE" />
+	<droneList drones="0" count="0" />
+	<health amount="10" />
+	<maxPower amount="13" />
+	<crewCount amount="3" max="8" class="rock_paladin" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="PALADIN_ARMOR" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_ROCK_PICKET_SELITE" layout="mu_rock_picket" img="mu_rock_picket_selite">
+	<class>Paladin Picket</class>
+	<minSector>3</minSector>
+	<systemList>
+		<battery power="1" max="2" room="0" start="false" />
+		<doors power="1" max="3" room="9" start="false" />
+		<engines power="1" max="1" room="3" start="true" />
+		<medbay power="1" max="3" room="6" start="false" />
+		<mind power="1" max="1" room="12" start="false" />
+		<oxygen power="1" max="3" room="10" start="true" />
+		<pilot power="1" max="3" room="11" start="true" />
+		<shields power="4" max="12" room="2" start="true" />
+		<teleporter power="1" max="3" room="7" start="false" />
+		<weapons power="4" max="12" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_ROCK_SELITE" />
+	<droneList drones="0" count="0" />
+	<health amount="10" />
+	<maxPower amount="11" />
+	<crewCount amount="3" max="8" class="rock_paladin" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="PALADIN_ARMOR" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_ROCK_FIGHTER_SELITE" layout="mu_rock_fighter" img="mu_rock_fighter_selite">
+	<class>Paladin Fighter</class>
+	<systemList>
+		<doors power="1" max="3" room="4" start="false" />
+		<engines power="1" max="2" room="8" start="true" />
+		<medbay power="1" max="2" room="6" start="false" />
+		<mind power="1" max="1" room="2" start="false" />
+		<oxygen power="1" max="2" room="7" start="true" />
+		<pilot power="1" max="2" room="3" start="true" />
+		<shields power="4" max="12" room="5" start="true" />
+		<teleporter power="1" max="2" room="1" start="false" />
+		<weapons power="4" max="12" room="0" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_ROCK_SELITE" />
+	<droneList drones="0" count="2" />
+	<health amount="9" />
+	<maxPower amount="10" />
+	<crewCount amount="4" max="6" class="rock_paladin" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="PALADIN_ARMOR" />
+</shipBlueprint>
+
+<!--SHELL-->
+
+
+<shipBlueprint name="AEA_OLD_SHELL_ABDUCTOR_ELITE" layout="mu_shell_abductor" img="mu_shell_abductor_elite">
+	<class>Radiant Abductor</class>
+	<systemList>
+		<cloaking power="1" max="2" room="0" start="false" />
+		<clonebay power="1" max="3" room="2" start="false" />
+		<doors power="2" max="3" room="1" start="false" />
+		<engines power="1" max="1" room="4" start="true" />
+		<medbay power="1" max="3" room="2" start="false" />
+		<mind power="1" max="3" room="5" start="true" />
+		<oxygen power="2" max="3" room="6" start="true" />
+		<pilot power="1" max="2" room="7" start="true" />
+		<shields power="5" max="12" room="3" start="true" />
+		<teleporter power="1" max="3" room="9" start="true" />
+		<weapons power="3" max="12" room="8" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_SHELL" />
+	<droneList drones="0" count="0" />
+	<health amount="9" />
+	<maxPower amount="12" />
+	<crewCount amount="3" max="7" class="shell" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="TOXIC_GAS" />
+	<cloakImage>mu_shell_abductor</cloakImage>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_SHELL_FIGHTER_ELITE" layout="mu_shell_fighter" img="mu_shell_fighter_elite">
+	<class>Radiant Fighter</class>
+	<systemList>
+		<battery power="1" max="2" room="10" start="false" />
+		<cloaking power="1" max="2" room="7" start="false" />
+		<clonebay power="1" max="3" room="4" start="false" />
+		<doors power="2" max="3" room="9" start="false" />
+		<engines power="1" max="1" room="1" start="true" />
+		<medbay power="1" max="3" room="4" start="false" />
+		<mind power="1" max="1" room="5" start="false" />
+		<oxygen power="2" max="3" room="6" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="5" max="12" room="3" start="true" />
+		<weapons power="3" max="12" room="8" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_SHELL" />
+	<droneList drones="0" count="0" />
+	<health amount="10" />
+	<maxPower amount="11" />
+	<crewCount amount="3" max="8" class="shell" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="TOXIC_GAS" />
+	<cloakImage>mu_shell_fighter</cloakImage>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_SHELL_SKIRMISHER_ELITE" layout="mu_shell_skirmisher" img="mu_shell_skirmisher_elite">
+	<class>Radiant Skirmisher</class>
+	<maxSector>5</maxSector>
+	<systemList>
+		<cloaking power="1" max="3" room="3" start="false" />
+		<clonebay power="1" max="3" room="5" start="false" />
+		<doors power="2" max="3" room="8" start="false" />
+		<engines power="1" max="1" room="1" start="true" />
+		<medbay power="1" max="3" room="5" start="false" />
+		<mind power="1" max="2" room="4" start="false" />
+		<oxygen power="2" max="3" room="0" start="true" />
+		<pilot power="1" max="2" room="7" start="true" />
+		<shields power="5" max="12" room="2" start="true" />
+		<weapons power="3" max="12" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_SHELL" />
+	<droneList drones="0" count="0" />
+	<health amount="10" />
+	<maxPower amount="11" />
+	<crewCount amount="3" max="7" class="shell" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="TOXIC_GAS" />
+	<cloakImage>mu_shell_skirmisher</cloakImage>
+</shipBlueprint>
+
+<!--SUZERAIN-->
+
+
+<shipBlueprint name="AEA_OLD_SUZERAIN_JAILER" layout="mu_suzerain_jailer" img="mu_suzerain_jailer">
+	<class>Suzerain Jailer</class>
+	<systemList>
+		<clonebay power="1" max="3" room="3" start="false" />
+		<doors power="1" max="3" room="2" start="true" />
+		<drones power="2" max="8" room="4" start="true" />
+		<engines power="1" max="2" room="8" start="true" />
+		<hacking power="1" max="3" room="9" start="false" />
+		<medbay power="1" max="3" room="3" start="false" />
+		<mind power="1" max="3" room="10" start="false" />
+		<oxygen power="1" max="2" room="11" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="2" max="12" room="12" start="true" />
+		<teleporter power="1" max="3" room="1" start="true" />
+		<weapons power="1" max="12" room="5" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_SUZERAIN" />
+	<droneList drones="4" count="3" load="LIST_DRONES_SUZERAIN" />
+	<health amount="11" />
+	<maxPower amount="12" />
+	<crewCount amount="4" max="8" class="mantis_suzerain" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_DRONE_SPEED" />
+	<aug name="SUZERAIN_CREW_STIMS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_SUZERAIN_PREDATOR" layout="mu_suzerain_predator" img="mu_suzerain_predator">
+	<class>Suzerain Predator</class>
+	<maxSector>5</maxSector>
+	<systemList>
+		<clonebay power="1" max="2" room="1" start="false" />
+		<drones power="2" max="8" room="3" start="false" />
+		<engines power="1" max="2" room="9" start="true" />
+		<medbay power="1" max="2" room="1" start="false" />
+		<oxygen power="1" max="2" room="0" start="true" />
+		<pilot power="1" max="2" room="4" start="true" />
+		<shields power="4" max="12" room="8" start="true" />
+		<teleporter power="1" max="3" room="2" start="true" />
+		<weapons power="1" max="12" room="7" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_SUZERAIN" />
+	<droneList drones="5" count="2" load="LIST_DRONES_SUZERAIN" />
+	<health amount="9" />
+	<maxPower amount="10" />
+	<crewCount amount="3" max="7" class="mantis_suzerain" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_DRONE_SPEED" />
+	<aug name="SUZERAIN_CREW_STIMS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_SUZERAIN_MOTHERSHIP" layout="mu_suzerain_mothership" img="mu_suzerain_mothership">
+	<class>Suzerain Mothership</class>
+	<minSector>4</minSector>
+	<systemList>
+		<clonebay power="1" max="1" room="9" start="false" />
+		<doors power="1" max="3" room="1" start="false" />
+		<drones power="3" max="11" room="11" start="true" />
+		<engines power="1" max="1" room="3" start="true" />
+		<hacking power="1" max="3" room="4" start="false" />
+		<medbay power="1" max="1" room="9" start="false" />
+		<oxygen power="1" max="2" room="2" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="4" max="12" room="5" start="true" />
+		<teleporter power="1" max="1" room="7" start="true" />
+		<weapons power="1" max="10" room="6" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="6" count="2" load="LIST_WEAPONS_SUZERAIN" />
+	<droneList drones="11" count="5" load="LIST_DRONES_SUZERAIN" />
+	<health amount="11" />
+	<maxPower amount="12" />
+	<crewCount amount="3" max="8" class="mantis_suzerain" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_DRONE_SPEED" />
+	<aug name="SUZERAIN_CREW_STIMS" />
+</shipBlueprint>
+
+<!--VAMPWEED-->
+
+
+<shipBlueprint name="AEA_OLD_VAMPWEED_ESCORT_ELITE" layout="mu_vampweed_escort" img="mu_vampweed_escort_elite">
+	<class>Cultivation Escort</class>
+	<systemList>
+		<drones power="2" max="7" room="2" start="false" />
+		<engines power="1" max="2" room="6" start="true" />
+		<oxygen power="1" max="1" room="1" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="4" max="12" room="3" start="true" />
+		<teleporter power="1" max="2" room="5" start="true" />
+		<weapons power="4" max="12" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_VAMPWEED_ELITE" />
+	<droneList drones="6" count="3" load="LIST_DRONES_VAMPWEED" />
+	<health amount="9" />
+	<maxPower amount="13" />
+	<crewCount amount="3" max="7" class="orchid_vampweed" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_VAMPWEED_FIGHTER_ELITE" layout="mu_vampweed_fighter" img="mu_vampweed_fighter_elite">
+	<class>Cultivation Fighter</class>
+	<systemList>
+		<doors power="1" max="3" room="1" start="false" />
+		<engines power="1" max="2" room="3" start="true" />
+		<medbay power="1" max="3" room="2" start="false" />
+		<mind power="1" max="3" room="6" start="false" />
+		<oxygen power="1" max="1" room="7" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="4" max="12" room="4" start="true" />
+		<weapons power="4" max="12" room="5" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_VAMPWEED_ELITE" />
+	<droneList drones="0" count="0" />
+	<health amount="10" />
+	<maxPower amount="12" />
+	<crewCount amount="4" max="8" class="orchid_vampweed" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_VAMPWEED_OUTRIDER_ELITE" layout="mu_vampweed_outrider" img="mu_vampweed_outrider_elite">
+	<class>Cultivation Outrider</class>
+	<maxSector>5</maxSector>
+	<systemList>
+		<doors power="1" max="2" room="4" start="false" />
+		<drones power="2" max="9" room="5" start="true" />
+		<engines power="1" max="2" room="6" start="true" />
+		<medbay power="1" max="3" room="3" start="false" />
+		<oxygen power="1" max="1" room="7" start="true" />
+		<pilot power="2" max="2" room="2" start="true" />
+		<shields power="4" max="12" room="0" start="true" />
+		<weapons power="4" max="12" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_VAMPWEED_ELITE" />
+	<droneList drones="5" count="3" load="LIST_DRONES_VAMPWEED" />
+	<health amount="10" />
+	<maxPower amount="13" />
+	<crewCount amount="3" max="6" class="orchid_vampweed" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<!--ZOLTAN-->
+
+<shipBlueprint name="AEA_OLD_ZOLTAN_DROPSHIP_ELITE" layout="mu_zoltan_dropship" img="mu_zoltan_dropship_elite">
+	<class>Peace-Keeping Dropship</class>
+	<systemList>
+		<clonebay power="1" max="3" room="2" start="false" />
+		<doors power="1" max="3" room="6" start="false" />
+		<engines power="1" max="2" room="4" start="true" />
+		<medbay power="1" max="3" room="2" start="false" />
+		<oxygen power="1" max="3" room="1" start="true" />
+		<pilot power="1" max="3" room="8" start="true" />
+		<shields power="4" max="12" room="0" start="true" />
+		<teleporter power="2" max="3" room="5" start="true" />
+		<weapons power="3" max="12" room="7" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="3" load="LIST_WEAPONS_ZOLTAN" />
+	<droneList drones="0" count="0" />
+	<health amount="13" />
+	<maxPower amount="12" />
+	<crewCount amount="4" max="10" class="zoltan" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="ANCIENT_SHIELD" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_ZOLTAN_ABDUCTOR_ELITE" layout="mu_zoltan_abductor" img="mu_zoltan_abductor_elite">
+	<class>Peace-Keeping Abductor</class>
+	<systemList>
+		<engines power="1" max="2" room="8" start="true" />
+		<mind power="1" max="3" room="10" start="true" />
+		<oxygen power="1" max="3" room="4" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="12" room="7" start="true" />
+		<teleporter power="1" max="3" room="2" start="true" />
+		<weapons power="3" max="12" room="3" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ZOLTAN" />
+	<droneList drones="0" count="0" />
+	<health amount="10" />
+	<maxPower amount="10" />
+	<crewCount amount="3" max="7" class="zoltan" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="ANCIENT_SHIELD" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_ZOLTAN_GUARD_ELITE" layout="mu_zoltan_guard" img="mu_zoltan_guard_elite">
+	<class>Peace-Keeping Guard</class>
+	<systemList>
+		<clonebay power="1" max="3" room="7" start="false" />
+		<doors power="1" max="3" room="3" start="false" />
+		<drones power="2" max="9" room="8" start="false" />
+		<engines power="1" max="2" room="1" start="true" />
+		<medbay power="1" max="3" room="7" start="false" />
+		<oxygen power="1" max="3" room="5" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="4" max="12" room="2" start="true" />
+		<weapons power="4" max="12" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ZOLTAN" />
+	<droneList drones="7" count="3" load="LIST_DRONES_ZOLTAN" />
+	<health amount="11" />
+	<maxPower amount="12" />
+	<crewCount amount="4" max="8" class="zoltan" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="ANCIENT_SHIELD" />
+</shipBlueprint>
 
 </FTL>

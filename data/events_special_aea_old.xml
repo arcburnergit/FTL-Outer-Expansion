@@ -1,0 +1,182 @@
+<FTL>
+<event name="AEA_OLD_POWER_CELL_CONTINUE">
+	<text> TEST TEST </text>
+	<weapon name="AEA_LASER_OLD_1_CELL"/>
+	<variable name="aea_old_has_cell" op="set" val="1" />
+</event>
+
+
+<event name="AEA_OLD_GATE" unique="true">
+	<preventQuest />
+	<preventFleet />
+	<preventBossFleet />
+	<beaconType id="map_icon_aea_old_gate" global="true">
+		<color r="120" g="99" b="84" a="1"/>
+		<unvisitedTooltip>This is the location of a large structure.</unvisitedTooltip>
+		<visitedTooltip>This is the location of a large structure.</visitedTooltip>
+	</beaconType>
+	<text>A massive ring sits in orbit nearby the beacon, an imposing structure with no apparent use. Apparently having been put here long ago, the use of the ring remains a mystery to this day.</text>
+	<choice hidden="true" req="AEA_LASER_OLD_1_CELL" blue="false">
+		<text>Continue...</text>
+		<event>
+			<text>The strange weapon you collected earlier in your travels begins to glow as you near the structure.</text>
+			<choice hidden="true" req="AEA_LASER_OLD_1_CELL">
+				<text>(??? Weapon) Insert the weapon into the gate</text>
+				<event>
+					<text>The gate begins to glow, a moment later a rift opens in the middle, and a large cruiser immerges.</text>
+					<ship load="AEA_OLD_GATE_GUARD_BOSS" hostile="true"/>
+					<remove name="AEA_LASER_OLD_1_CELL"/>
+					<variable name="aea_old_activated_cell" op="set" val="1" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon you put into the gate is spat out once again, it appears to have pulled part of the gate out with it.</text>
+							<weapon name="AEA_LASER_OLD_1"/>
+							<choice hidden="true">
+								<text>Continue...</text>
+								<event>
+									<text>As you collect the scrap from the gate you notice the large cruiser is now bearing down on your, you notice two weapons charging, however the rest of it's impressive arsenal is still offline.</text>
+									<weapon name="AEA_COMPONENT_OLD"/>
+									<status type="limit" target="enemy" system="weapons" amount="0" />
+									<status type="limit" target="enemy" system="drones" amount="0" />
+									<status type="limit" target="enemy" system="teleporter" amount="0" />
+									<status type="limit" target="enemy" system="temporal" amount="0" />
+									<choice>
+										<text>Continue...</text>
+										<event load="COMBAT_CHECK"/>
+									</choice>
+								</event>
+							</choice>
+						</event>
+					</choice>	
+				</event>
+			</choice>
+			<choice hidden="false">
+				<text>Ignore it</text>
+				<event>
+					<text>You admire the structure while your FTL drive changes.</text>
+					<choice>
+						<text>Do something onboard the ship.</text>
+						<event load="STORAGE_CHECK" />
+					</choice>
+					<choice>
+						<text>Do nothing.</text>
+						<event />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="AEA_LASER_OLD_1_CELL" lvl="0" max_lvl="0" blue="false">
+		<text>Continue...</text>
+		<event>
+			<text>You admire the structure while your FTL drive changes.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<ship name="AEA_OLD_GATE_GUARD_BOSS" auto_blueprint="AEA_OLD_GUARD_BOSS">\
+	<escape chance="0" min="0" max="100" load="ESCAPE_AEA_OLD_GUARD_BOSS" />
+	<gotaway load="GOTAWAY_AEA_OLD_GUARD_BOSS" />
+	<destroyed>
+		<text>You've destroyed the Angelic cruiser, you begin salvaging the vessel.</text>
+		<autoReward level="HIGH">standard_no_item</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="AEA_NECRO_SANCTUM_ANGEL_WIN"/>
+		</choice>
+	</destroyed>
+</ship>
+
+<event name="ESCAPE_AEA_OLD_GUARD_BOSS">
+	<text>Surprisingly it appears the cruiser is trying to run away, if you're not careful you might get pulled away with it...</text>
+</event>
+<event name="GOTAWAY_AEA_OLD_GUARD_BOSS" />
+
+
+<event name="AEA_OLD_GATE_GUARD_BOSS_ACTIVATE">
+	<text>It appears that whatever you've done has pissed the ship off enough to activate the rest of it's weapons.</text>
+	<status type="clear" target="enemy" system="weapons" amount="100" />
+	<status type="clear" target="enemy" system="drones" amount="100" />
+	<status type="clear" target="enemy" system="teleporter" amount="100" />
+	<status type="clear" target="enemy" system="temporal" amount="100" />
+	<choice>
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<eventList name="DESTROYED_AEA_OLD_MV">
+	<event load="DESTROYED_AEA_OLD_MV_GENERIC" />
+	<event load="DESTROYED_AEA_OLD_MV_GENERIC" />
+	<event load="DESTROYED_AEA_OLD_MV_GENERIC" />
+	<event load="DESTROYED_AEA_OLD_MV_GENERIC" />
+	
+	<event load="DESTROYED_AEA_OLD_MV_GUN" />
+</eventList>
+<event name="DESTROYED_AEA_OLD_MV_GENERIC">
+	<text load="TEXT_DESTROYED_AEA_OLD_MV" />
+	<autoReward level="MED">standard</autoReward>
+</event>
+<textList name="TEXT_DESTROYED_AEA_OLD_MV">
+	<text>The wreck breaks apart into thousands of pieces of scrap metal, Unfortunately not all of those are actually useful bits of scrap.</text>
+	<text>As the ship breaks apart you wonder how long it will take another ship of the same kind to be pulled into this segment of the multiverse.</text>
+	<text>The ship foundries in Lylmik space simply aren't as capable as the ones with access to the rest of the multiverse, and as a result you're unlikely to see another ship like the one that just blew up soon.</text>
+	<text>Another powerful foe felled. It hasn't really gotten you much closer to escaping, but you did get some scrap out of it.</text>
+</textList>
+<event name="DESTROYED_AEA_OLD_MV_GUN">
+	<text>To your surprise, a weapon managed to survive the explosion. It's a little crisp from the explosion but with a few touch ups you can salvage it.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<weapon name="RANDOM" />
+</event>
+
+<eventList name="DEAD_CREW_AEA_OLD_MV">
+	<event load="DEAD_CREW_AEA_OLD_MV_GENERIC" />
+	<event load="DEAD_CREW_AEA_OLD_MV_GENERIC" />
+	<event load="DEAD_CREW_AEA_OLD_MV_GENERIC" />
+	<event load="DEAD_CREW_AEA_OLD_MV_GENERIC" />
+	
+	<event load="DEAD_CREW_AEA_OLD_MV_GUN" />
+</eventList>
+<event name="DEAD_CREW_AEA_OLD_MV_GENERIC">
+	<text load="TEXT_DEAD_CREW_AEA_OLD_MV" />
+	<autoReward level="HIGH">standard</autoReward>
+</event>
+<textList name="TEXT_DEAD_CREW_AEA_OLD_MV">
+	<text>With advanced ships like these in short supply, it probably won't take long for this one to be recovered by some other Unfortunate souls.</text>
+	<text>With the crew but a red smear on the walls of the ship, you're able to scrap the ship in peace.</text>
+	<text>Only the most dangerous ships survive out here. Unfortunately for the crew of this ship you're the most dangerous around.</text>
+</textList>
+<event name="DEAD_CREW_AEA_OLD_MV_GUN">
+	<text>Now emptied of crew, you find one of their weapons on board. You take it back with you before scrapping the ship.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<weapon name="RANDOM" />
+</event>
+
+
+<ship name="SHIP_AEA_OLD_MU_ALL" auto_blueprint="AEA_OLD_SHIPS_MU_ALL">
+	<destroyed load="DESTROYED_AEA_OLD_MV" />
+	<deadCrew load="DEAD_CREW_AEA_OLD_MV" />
+</ship>
+
+</FTL>
