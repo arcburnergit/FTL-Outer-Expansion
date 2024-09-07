@@ -7,6 +7,20 @@
 <text name="map_icon_aea_necro_home">SANCTUM</text>
 <text name="map_icon_transport_aea_acid">TRANSPORT [!]</text>
 <text name="map_icon_aea_old_gate">GATE [!]</text>
+<text name="map_icon_aea_old_baron">BARON [!]</text>
+<text name="map_icon_aea_old_council">COUNCIL [!]</text>
+
+<text name="map_icon_aea_old_uni_1">Unifex</text>
+<text name="map_icon_aea_old_uni_2">Essence</text>
+<text name="map_icon_aea_old_uni_3">Impulse</text>
+<text name="map_icon_aea_old_uni_4">Trend</text>
+<text name="map_icon_aea_old_uni_5">Concordance</text>
+
+<text name="map_icon_aea_old_uni_1_i">Unifex [!]</text>
+<text name="map_icon_aea_old_uni_2_i">Essence [!]</text>
+<text name="map_icon_aea_old_uni_3_i">Impulse [!]</text>
+<text name="map_icon_aea_old_uni_4_i">Trend [!]</text>
+<text name="map_icon_aea_old_uni_5_i">Concordance [!]</text>
 
 
 <text name="loot_aea_acid_1">ACIDIC LOOT
@@ -17,7 +31,9 @@
 -1 damage
 +2 shots</text>
 
-<text name="tip_aea_old_unknown">A strange weapon? You wonder where it's from and what it's for.</text>
+<text name="tip_aea_old_unknown">Tip: A strange weapon? You wonder where it's from and what it's for.</text>
+<text name="tip_laser_old">Tip: Each laser shot will be blocked by two shield bubbles, regardless of the laser's damage.</text>
+<text name="tip_laser_oldp">Tip: Each laser shot will be blocked by a single shield bubble, despite having 0 hull damage.</text>
 
 <text name="atlas_aea_acid">Name: Acidic Origins
 Type: Hostile (Nebula)
@@ -40,20 +56,44 @@ The Engi Heretics are outcasts even from the separatists, broken free from the h
 <text name="ship_PLAYER_SHIP_AEA_ACID_BILL_unlock">Consult the advice of a certain Acidic outcast about a certain artifact to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_NECRO_KING_unlock">Consult the advice of a certain Heretic leader about a certain artifact to unlock this ship.</text>
 
-<text name="ship_PLAYER_SHIP_AEA_ACID_ARTY_unlock">Help an Acidic outcast.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_UNI_1_unlock">Seek out the help of a certain Lylmik Council member and escape quarantine to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_UNI_2_unlock">Seek out the help of a certain Lylmik Council member and escape quarantine to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_UNI_3_unlock">Seek out the help of a certain Lylmik Council member and escape quarantine to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_UNI_4_unlock">Seek out the help of a certain Lylmik Council member and escape quarantine to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_UNI_5_unlock">Seek out the help of a certain Lylmik Council member and escape quarantine to unlock this ship.</text>
+
+<text name="ship_PLAYER_SHIP_AEA_ACID_ARTY_unlock">Help an Acidic outcast to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_ACID_ARTY_2_unlock">Get to Sector 5 with the Acidic Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_ACID_ARTY_3_unlock">Get to Sector 5 with the Acidic Cruiser Type B or beat the game with the Acidic Cruiser Type A to unlock this ship.</text>
 
-<text name="ship_PLAYER_SHIP_AEA_ACID_LONG_unlock">Find the central shipyards of the Acidic Growth.</text>
+<text name="ship_PLAYER_SHIP_AEA_ACID_LONG_unlock">Find the central shipyards of the Acidic Growth to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_ACID_LONG_2_unlock">Get to Sector 5 with the Acidic Destroyer Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_ACID_LONG_3_unlock">Get to Sector 5 with the Acidic Destroyer Type B or beat the game with the Acidic Destroyer Type A to unlock this ship.</text>
 
-<text name="ship_PLAYER_SHIP_AEA_NECRO_ENGI_unlock">Visit the Sanctum and impress an Engi.</text>
+<text name="ship_PLAYER_SHIP_AEA_NECRO_ENGI_unlock">Visit the Sanctum and impress an Engi to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_NECRO_ENGI_2_unlock">Get to Sector 5 with the Heresy Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_NECRO_ENGI_3_unlock">Get to Sector 5 with the Heresy Cruiser Type B or beat the game with the Heresy Cruiser Type A to unlock this ship.</text>
 
-<text name="ship_PLAYER_SHIP_AEA_NECRO_SEPA_unlock">Visit an unusual engi link.</text>
+<text name="ship_PLAYER_SHIP_AEA_NECRO_SEPA_unlock">Visit an unusual engi link to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_NECRO_SEPA_2_unlock">Get to Sector 5 with the Blasphemy Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_NECRO_SEPA_3_unlock">Get to Sector 5 with the Blasphemy Cruiser Type B or beat the game with the Blasphemy Cruiser Type A to unlock this ship.</text>
+
+<text name="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_unlock">Escape quarantine to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_2_unlock">Get to Sector 5 with the Oppressor Cruiser Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_3_unlock">Get to Sector 5 with the Oppressor Cruiser Type B or beat the game with the Oppressor Cruiser Type A to unlock this ship.</text>
+
+<text name="ship_PLAYER_SHIP_AEA_OLD_HAMMER_unlock">Defeat the baron to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_HAMMER_2_unlock">Get to Sector 5 with the Tyrant Cruiser Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_HAMMER_3_unlock">Get to Sector 5 with the Tyrant Cruiser Type B or beat the game with the Tyrant Cruiser Type A to unlock this ship.</text>
+
+<text name="ship_PLAYER_SHIP_AEA_BIRD_BIG_unlock">Coming Soon.</text>
+<text name="ship_PLAYER_SHIP_AEA_BIRD_BIG_2_unlock">Get to Sector 5 with the Eagle Cruiser Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_BIRD_BIG_3_unlock">Get to Sector 5 with the Eagle Cruiser Type B or beat the game with the Eagle Cruiser Type A to unlock this ship.</text>
+
+<text name="ship_PLAYER_SHIP_AEA_BIRD_TRAN_unlock">Coming Soon.</text>
+<text name="ship_PLAYER_SHIP_AEA_BIRD_TRAN_2_unlock">Get to Sector 5 with the Albatross Cruiser Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_BIRD_TRAN_3_unlock">Get to Sector 5 with the Albatross Cruiser Type B or beat the game with the Albatross Cruiser Type A to unlock this ship.</text>
+
+<text name="credit_victory_aea_old">The Multiverse Flagship of this reality has been destroyed. The Rebel forces were weakened, and the Federation troops, along with reinforcements, successfully defeated the Rebel forces of this reality.</text>
 
 </FTL>

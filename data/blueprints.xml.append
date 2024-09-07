@@ -15,6 +15,14 @@
 	<stackable>false</stackable>
 	<bp>0</bp>
 </augBlueprint>
+<augBlueprint name="SHIP_AEA_OLD">
+	<title>Lylmik Cruiser</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY" layout="aeap_acid_arty_1" img="aeap_acid_arty_1">
 	<class>Acidic Cruiser</class>
@@ -2562,7 +2570,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 <shipBlueprint name="PLAYER_SHIP_AEA_OLD_ARMOUR" layout="aeap_old_arm_1" img="aeap_old_arm_1">
 	<class>Oppressor Cruiser</class>
 	<name>Bulk</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>This ship relies on it's heavy frontal armour to protect itself from a variety of different projectiles and missiles.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_unlock" />
 	<systemList>
 		<battery max="2" power="1" room="29" start="false" img="room_battery_6" />
 		<cloaking power="1" room="14" start="false" img="room_cloaking" />
@@ -2631,6 +2640,768 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<maxPower amount="6" />
 	<crewCount amount="2" class="aea_old_1" />
 	<aug name="AEA_OLD_EVASION" />
+	<shieldImage>mup_disk</shieldImage>
+    <mv-mapImage>map_icon_aeap_old_arm_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_OLD_ARMOUR_2" layout="aeap_old_arm_2" img="aeap_old_arm_2">
+	<class>Oppressor Cruiser</class>
+	<name>Statue</name>
+	<desc>When an obelisk ship got pulled into Lylmik space they managed to take over a Lylmik cruiser and used it to escape.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_2_unlock" />
+	<systemList>
+		<artillery power="1" room="5" start="true" weapon="ANCIENT_DREAD" img="room_artillery" />
+		<battery max="2" power="1" room="17" start="false" img="room_battery_6" />
+		<cloaking power="1" room="10" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="7" start="true">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="27" start="true" img="room_doors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="12" start="false" img="room_drones_15" />
+		<engines power="2" room="6" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="21" start="false" img="room_hacking_4" />
+		<medbay power="1" room="7" start="false" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="18" start="false" img="room_mind_3" />
+		<oxygen power="1" room="16" start="false" img="room_oxygen_13" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="25" start="true" img="room_sensors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="10" power="2" room="9" start="true" img="room_shields_5">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="13" start="false" />
+		<temporal power="1" room="1" start="false" />
+		<weapons max="8" power="2" room="8" start="true" img="room_weapons_10">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="4" count="3">
+		<weapon name="ANCIENT_BEAM" />
+	</weaponList>
+	<droneList drones="4" count="3" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="obelisk" />
+	<crewCount amount="1" class="obelisk" />
+	<aug name="AEA_OLD_EVASION" />
+	<shieldImage>mup_disk</shieldImage>
+    <mv-mapImage>map_icon_aeap_old_arm_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_OLD_ARMOUR_3" layout="aeap_old_arm_3" img="aeap_old_arm_3">
+	<class>Oppressor Cruiser</class>
+	<name>Sylvan</name>
+	<desc>Sylvan's capable crew managed to take over a Lylmik cruiser when they got trapped in Lylmik space. They removed the armour to enable the engines to be much more powerful than usual</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_3_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="15" start="false" img="room_battery_5" />
+		<cloaking power="1" room="9" start="true" img="room_cloaking_2" />
+		<clonebay power="1" room="10" start="true">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="3" start="true" img="room_doors_9">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="26" start="false" img="room_drones_18" />
+		<engines max="10" power="5" room="6" start="true" img="room_engines">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="27" start="false" img="room_hacking_2" />
+		<medbay power="1" room="10" start="false" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="13" start="false" img="room_mind_6" />
+		<oxygen power="1" room="14" start="true" img="room_oxygen_15" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="4" start="false" img="room_sensors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="2" start="false" img="room_shields">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="23" start="false" />
+		<temporal power="1" room="16" start="false" />
+		<weapons max="8" power="3" room="1" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="4" count="3">
+		<weapon name="LASER_CHAINGUN_2" />
+	</weaponList>
+	<droneList drones="4" count="3" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="unique_sylvan" />
+	<crewCount amount="1" class="slug_saboteur" />
+	<crewCount amount="1" class="slug" />
+	<aug name="LOCKED_SLUG_GEL" />
+	<shieldImage>mup_disk</shieldImage>
+    <mv-mapImage>map_icon_aeap_old_arm_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_OLD_HAMMER" layout="aeap_old_ham_1" img="aeap_old_ham_1">
+	<class>Tyrant Cruiser</class>
+	<name>Hammer Head</name>
+	<desc>A lightly armoured ship with a varied crew of experienced adventurers. The armour on this ship is able to absorb the damage of projectiles but won't prevent the hull damage.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_OLD_HAMMER_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="21" start="false" img="room_battery_14" />
+		<cloaking power="1" room="7" start="true" img="room_cloaking_2" />
+		<clonebay power="1" room="22" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="10" start="true" img="room_doors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="8" start="false" img="room_drones_13" />
+		<engines power="2" room="14" start="true" img="room_engines">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="9" start="false" img="room_hacking_8" />
+		<medbay power="1" room="22" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="18" start="false" img="room_mind_6" />
+		<oxygen power="1" room="11" start="true" img="room_oxygen_8" />
+		<pilot power="3" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="23" start="false" img="room_sensors_2">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="1" room="5" start="false" img="room_shields_5">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="17" start="false" />
+		<weapons max="8" power="2" room="6" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="6" count="4">
+		<weapon name="LASER_HEAVY_1" />
+		<weapon name="LASER_LIGHT" />
+	</weaponList>
+	<droneList drones="3" count="2" />
+	<health amount="36" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="aea_old_1" />
+	<crewCount amount="1" class="crystal" />
+	<crewCount amount="1" class="slug_clansman" />
+	<aug name="AEA_OLD_EVASION" />
+	<shieldImage>mup_orb3</shieldImage>
+    <mv-mapImage>map_icon_aeap_old_ham_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_OLD_HAMMER_2" layout="aeap_old_ham_2" img="aeap_old_ham_2">
+	<class>Tyrant Cruiser</class>
+	<name>The Harrier</name>
+	<desc>When the federation got their hands on this vessel they reconfigured the armour for ultimate protection of the shields room, unfortunetly it also made shields alot harder to repair.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_OLD_HAMMER_2_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="10" start="false" img="room_battery_6" />
+		<cloaking power="1" room="24" start="false" img="room_cloaking" />
+		<clonebay power="1" room="7" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="22" start="true" img="room_doors_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="15" start="false" img="room_drones_4" />
+		<engines power="1" room="20" start="true" img="room_engines_6">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="14" start="false" img="room_hacking_3" />
+		<medbay power="1" room="7" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="19" start="false" img="room_mind_5" />
+		<oxygen power="1" room="16" start="true" img="room_oxygen_5" />
+		<pilot power="3" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="23" start="true" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="5" start="true" img="room_shields_5">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="21" start="false" />
+		<temporal power="1" room="13" start="false" img="room_temporal_4" />
+		<weapons max="8" power="3" room="6" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="9" count="4">
+		<weapon name="LASER_BURST_3" />
+		<weapon name="BOMB_BREACH_1" />
+	</weaponList>
+	<droneList drones="1" count="2" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="human" />
+	<crewCount amount="1" class="human_engineer" />
+	<crewCount amount="1" class="zoltan" />
+	<crewCount amount="1" class="human" />
+	<aug name="AEA_OLD_SHIELD_REPAIR" />
+	<shieldImage>mup_orb3</shieldImage>
+    <mv-mapImage>map_icon_aeap_old_ham_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_OLD_HAMMER_3" layout="aeap_old_ham_3" img="aeap_old_ham_3">
+	<class>Tyrant Cruiser</class>
+	<name>The Milieu</name>
+	<desc>This vessel incomporates an experimental allow that provides the entire ship with resistance to damage.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_OLD_HAMMER_3_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="9" start="false" img="room_battery_10" />
+		<cloaking power="1" room="17" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="18" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="4" start="true" img="room_doors_9">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="15" start="false" img="room_drones_15" />
+		<engines power="1" room="16" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="14" start="false" img="room_hacking_8" />
+		<medbay power="2" room="18" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="12" start="false" img="room_mind_3" />
+		<oxygen power="1" room="2" start="true" img="room_oxygen_20" />
+		<pilot power="3" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="3" start="true" img="room_sensors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="4" power="2" room="5" start="false" img="room_shields_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="1" start="false" />
+		<weapons max="8" power="2" room="6" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="9" count="3">
+		<weapon name="BEAM_FIRE" />
+		<weapon name="ENERGY_1" />
+	</weaponList>
+	<droneList drones="1" count="3" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="aea_old_1" />
+	<crewCount amount="1" class="aea_old_1" />
+	<crewCount amount="1" class="human" />
+	<aug name="AEA_OLD_ARMOUR_ALLOY" />
+	<shieldImage>mup_orb3</shieldImage>
+    <mv-mapImage>map_icon_aeap_old_ham_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_OLD_UNIA" layout="aeap_old_unia_1" img="aeap_old_unia_1">
+	<class>Atoning Unifex</class>
+	<name>Remorse</name>
+	<desc>The personal ship of Atoning Unifex, a well armed ship that exploits the weaknesses exposed by the ability to board and hack the enemy's systems.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_OLD_UNI_1_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="9" start="false" img="room_battery_8" />
+		<cloaking power="1" room="18" start="false" img="room_cloaking_5" />
+		<clonebay power="1" room="7" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="11" start="false" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="2" start="false" img="room_drones_6" />
+		<engines power="2" room="1" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="4" start="false" img="room_hacking_8" />
+		<medbay power="1" room="7" start="true" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="8" start="false" img="room_mind_7" />
+		<oxygen power="1" room="16" start="true" img="room_oxygen_19" />
+		<pilot power="2" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="2" room="12" start="true" img="room_sensors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="13" start="true" img="room_shields">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="2" room="20" start="false" />
+		<temporal power="1" room="6" start="false" />
+		<weapons max="8" power="2" room="14" start="true" img="room_weapons_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="6" count="4">
+		<weapon name="BEAM_SCYTHE" />
+	</weaponList>
+	<droneList drones="3" count="2" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<aug name="AEA_OLD_EVASION" />
+	<shieldImage>mup_orb3</shieldImage>
+    <mv-mapImage>map_icon_aeap_old_ham_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_OLD_UNIA_2" layout="aeap_old_unia_2" img="aeap_old_unia_2">
+	<class>Asymptotic Essence</class>
+	<name>Aspect</name>
+	<desc>The personal ship of Eupathic Impulse, a utility focussed ship, able to make the most of it's systems using their effective abilities.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_OLD_UNI_2_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="7" start="false" img="room_battery" />
+		<cloaking power="1" room="16" start="true" img="room_cloaking_3" />
+		<clonebay power="1" room="11" start="true">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="21" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="6" start="false" img="room_drones_10" />
+		<engines power="2" room="20" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="14" start="true" img="room_hacking_8" />
+		<medbay power="1" room="11" start="false" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="12" start="false" img="room_mind_4" />
+		<oxygen power="1" room="19" start="false" img="room_oxygen_6" />
+		<pilot power="3" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="22" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="10" start="false" img="room_shields_5">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="1" start="false" />
+		<temporal power="1" room="5" start="false" />
+		<weapons max="8" power="3" room="4" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="6" count="3">
+		<weapon name="LASER_FROST_1" />
+		<weapon name="LASER_FIRE" />
+	</weaponList>
+	<droneList drones="3" count="3" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<aug name="AEA_OLD_EVASION" />
+	<shieldImage>mup_orb3</shieldImage>
+    <mv-mapImage>map_icon_aeap_old_ham_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_OLD_UNIA_3" layout="aeap_old_unia_3" img="aeap_old_unia_3">
+	<class>Eupathic Impulse</class>
+	<name>Motive</name>
+	<desc>The personal ship of Eupathic Impulse, a boarding focused ship able to set the enemy alight with their dangerous abilities.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_OLD_UNI_3_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="14" start="false" img="room_battery_5" />
+		<cloaking power="1" room="16" start="false" img="room_cloaking_7" />
+		<clonebay power="1" room="1" start="false">
+			<slot>
+				<number>3</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="10" start="true" img="room_doors_9">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="13" start="false" img="room_drones_17" />
+		<engines power="2" room="5" start="true" img="room_engines">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="3" start="false" img="room_hacking_3" />
+		<medbay power="2" room="1" start="true" img="room_medbay_3">
+			<slot>
+				<number>3</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="4" start="false" img="room_mind_2" />
+		<oxygen power="1" room="21" start="false" img="room_oxygen" />
+		<pilot power="2" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="9" start="true" img="room_sensors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="4" room="6" start="true" img="room_shields">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="2" room="2" start="true" />
+		<temporal power="1" room="8" start="false" />
+		<weapons max="8" power="2" room="7" start="false" img="room_weapons_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="6" count="3" />
+	<droneList drones="3" count="3" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<aug name="COMBAT_WEAPON_JAMMER" />
+	<shieldImage>mup_orb3</shieldImage>
+    <mv-mapImage>map_icon_aeap_old_ham_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_OLD_UNIB" layout="aeap_old_unib_1" img="aeap_old_unib_1">
+	<class>Homologous Trend</class>
+	<name>Tendency</name>
+	<desc>The personal ship of Homologous Trend, a defensive ship able to heal back damage using their powerful abilities.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_OLD_UNI_4_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="24" start="false" img="room_battery_6" />
+		<cloaking power="1" room="14" start="false" img="room_cloaking_3" />
+		<clonebay power="1" room="1" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="18" start="true" img="room_doors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="3" room="2" start="true" img="room_drones_13" />
+		<engines power="1" room="11" start="true" img="room_engines_6">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="6" start="false" img="room_hacking_2" />
+		<medbay power="1" room="1" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="10" start="false" img="room_mind_5" />
+		<oxygen power="1" room="17" start="true" img="room_oxygen_13" />
+		<pilot power="3" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="23" start="true" img="room_sensors_8">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="1" room="25" start="true" img="room_shields_3">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="4" start="false" />
+		<temporal power="1" room="3" start="true" img="room_temporal_4" />
+		<weapons max="8" power="2" room="16" start="true" img="room_weapons_10">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="3" count="2">
+		<weapon name="LASER_HULL_2" />
+	</weaponList>
+	<droneList drones="6" count="4">
+		<drone name="REPAIR" />
+		<drone name="GUARDIAN_1_DRONE" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="8" />
+	<aug name="EX_MEDBAY_NANO" />
+	<shieldImage>mup_orb3</shieldImage>
+    <mv-mapImage>map_icon_aeap_old_ham_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_OLD_UNIB_2" layout="aeap_old_unib_2" img="aeap_old_unib_2">
+	<class>Noetic Concordance</class>
+	<name>Harmony</name>
+	<desc>The personal ship of Noetic Concordance, designed around making use of their ability to create super shield layers on demand.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_OLD_UNI_5_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="9" start="false" img="room_battery_6" />
+		<cloaking power="1" room="13" start="false" img="room_cloaking_10" />
+		<clonebay power="1" room="1" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="15" start="true" img="room_doors_10">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="8" start="false" img="room_drones_14" />
+		<engines power="3" room="11" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="14" start="false" img="room_hacking_7" />
+		<medbay power="1" room="1" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="5" start="false" img="room_mind_7" />
+		<oxygen power="1" room="4" start="true" img="room_oxygen_20" />
+		<pilot power="3" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="16" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="1" room="12" start="true" img="room_shields_8">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="6" start="false" />
+		<temporal power="1" room="10" start="false" />
+		<weapons max="8" power="3" room="2" start="true" img="room_weapons_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="4" count="4">
+		<weapon name="AEA_LASER_ACID_1" />
+		<weapon name="AEA_LASER_NECRO_1" />
+	</weaponList>
+	<droneList drones="4" count="2" />
+	<health amount="30" />
+	<maxPower amount="4" />
+	<aug name="AEA_OLD_EVASION" />
+	<shieldImage>mup_orb3</shieldImage>
+    <mv-mapImage>map_icon_aeap_old_ham_a</mv-mapImage>
 </shipBlueprint>
 
 <augBlueprint name="AEA_OLD_EVASION">
@@ -2644,6 +3415,23 @@ The projectiles appear X degrees infront of the ship where X is determined by yo
 	20%+ evasion = 60 degrees
 	10%+ evasion = 90 degrees
 	</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+<augBlueprint name="AEA_OLD_SHIELD_REPAIR">
+	<title>Armoured Shields</title>
+	<desc>You shield system is surrounded by armour which will reduce the damage of projectiles by 1.
+Unfortunately it makes shields repair at 50% speed.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+<augBlueprint name="AEA_OLD_ARMOUR_ALLOY">
+	<title>Alloy Armour</title>
+	<desc>This ship uses a prototype alloy that enables the entire ship to reduce damage of incoming projectiles by 1.</desc>
 	<cost>80</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
@@ -2676,7 +3464,7 @@ The projectiles appear X degrees infront of the ship where X is determined by yo
 	<roomStatBoosts>
 		<statBoost name="trueHealAmount">
 			<boostType>FLAT</boostType>
-			<amount>-1</amount>
+			<amount>-0.5</amount>
 			<shipTarget>ALL</shipTarget>
 			<crewTarget>ENEMIES</crewTarget>
 			<droneTarget>CREW</droneTarget>
@@ -2720,6 +3508,15 @@ The projectiles appear X degrees infront of the ship where X is determined by yo
 </augBlueprint>
 
 <augBlueprint name="AEA_OLD_SHIELD">
+	<title>Mysterious Shields</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>80</cost>
+	<bp>15</bp>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
+<augBlueprint name="AEA_OLD_SHIELD_WEAK">
 	<title>Mysterious Shields</title>
 	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<cost>80</cost>
@@ -2798,7 +3595,7 @@ The projectiles appear X degrees infront of the ship where X is determined by yo
 	<type>LASER</type>
 	<title>'Mace' Heavy Laser</title>
 	<short>'Mace'</short>
-	<tip>tip_laser</tip>
+	<tip>tip_laser_old</tip>
 	<desc>A powerful laser that breaks two shield layers with each hit. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
 	<tooltip> </tooltip>
 	<damage>2</damage>
@@ -2840,7 +3637,7 @@ The projectiles appear X degrees infront of the ship where X is determined by yo
 	<type>LASER</type>
 	<title>'Flail' Heavy Laser</title>
 	<short>'Flail'</short>
-	<tip>tip_laser</tip>
+	<tip>tip_laser_old</tip>
 	<desc>A powerful laser that breaks two shield layers with each hit. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
 	<tooltip> </tooltip>
 	<damage>2</damage>
@@ -2878,11 +3675,97 @@ The projectiles appear X degrees infront of the ship where X is determined by yo
 	<iconImage>heavyL</iconImage>
 </weaponBlueprint>
 
+<weaponBlueprint name="AEA_LASER_OLD_3">
+	<type>LASER</type>
+	<title>'Sali' Heavy Laser</title>
+	<short>'Sali'</short>
+	<tip>tip_laser_old</tip>
+	<desc>A powerful laser that breaks two shield layers with each hit. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip> </tooltip>
+	<damage>2</damage>
+	<shots>3</shots>
+	<sp>0</sp>
+	<mv-pop>
+		<count>1</count>
+		<countSuper>1</countSuper>
+	</mv-pop>
+	<fireChance>2</fireChance>
+	<breachChance>5</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>75</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_heavy1</image>
+	<launchSounds>
+		<sound>aea_laser_old_fire1</sound>
+		<sound>aea_laser_old_fire2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_old_2</weaponArt> <!--FIXME: REPLACE IMAGE WHEN IMAGE EXISTS-->
+	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_OLDP_1">
+	<type>LASER</type>
+	<title>'Machete' Burst Laser</title>
+	<short>'Machete'</short>
+	<tip>tip_laser_oldp</tip>
+	<desc>A powerful laser that breaks shields but do not do any hull damage. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip> </tooltip>
+	<damage>0</damage>
+	<sysDamage>1</sysDamage>
+	<shots>3</shots>
+	<sp>0</sp>
+	<mv-pop>
+		<count>1</count>
+		<countSuper>1</countSuper>
+	</mv-pop>
+	<fireChance>2</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>11</cooldown>
+	<power>1</power>
+	<cost>70</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_old_1</weaponArt> <!--FIXME: REPLACE IMAGE WHEN IMAGE EXISTS-->
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
 <weaponBlueprint name="AEA_LASER_OLDP_2">
 	<type>LASER</type>
 	<title>'Shotel' Burst Laser</title>
 	<short>'Shotel'</short>
-	<tip>tip_laser</tip>
+	<tip>tip_laser_oldp</tip>
 	<desc>A powerful laser that breaks shields but do not do any hull damage. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
 	<tooltip> </tooltip>
 	<damage>0</damage>
@@ -2921,6 +3804,256 @@ The projectiles appear X degrees infront of the ship where X is determined by yo
 	<weaponArt>aea_laser_oldp_2</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_OLDP_3">
+	<type>LASER</type>
+	<title>'Nagamaki' Burst Laser</title>
+	<short>'Nagamaki'</short>
+	<tip>tip_laser_oldp</tip>
+	<desc>A powerful laser that breaks shields but do not do any hull damage. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip> </tooltip>
+	<damage>0</damage>
+	<sysDamage>1</sysDamage>
+	<shots>6</shots>
+	<sp>0</sp>
+	<mv-pop>
+		<count>1</count>
+		<countSuper>1</countSuper>
+	</mv-pop>
+	<fireChance>2</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>11</cooldown>
+	<power>3</power>
+	<cost>70</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_oldp_3</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+</FTL>
+
+<FTL>
+<shipBlueprint name="PLAYER_SHIP_AEA_BIRD_BIG" layout="aeap_bird_big_1" img="aeap_bird_big_1">
+	<class>Eagle Cruiser</class>
+	<name>The Wedge-Tailed</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_BIG_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="8" start="false" img="room_battery_6" />
+		<cloaking power="1" room="11" start="false" img="room_cloaking_10" />
+		<clonebay power="1" room="15" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="14" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="3" room="5" start="true" img="room_drones_12" />
+		<engines power="2" room="1" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="7" start="false" img="room_hacking_3" />
+		<medbay power="1" room="15" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="6" start="false" img="room_mind_2" />
+		<oxygen power="1" room="9" start="true" img="room_oxygen_2" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="13" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="4" start="true" img="room_shields_4">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="10" start="false" />
+		<weapons max="8" power="2" room="16" start="false" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="2" count="2" />
+	<droneList drones="8" count="4">
+		<drone name="AEA_COMBAT_BIRD_BURST_2" />
+		<drone name="PEST_RAD" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="aea_bird_avali" />
+	<crewCount amount="1" class="aea_bird_avali" />
+	<crewCount amount="1" class="aea_bird_avali" />
+	<aug name="COMBAT_CLOAKING_JAMMER" />
+</shipBlueprint>
+</FTL>
+
+<FTL>
+<weaponBlueprint name="AEA_BEAM_BIRD_BURST_1">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>Drone Beam</title>
+	<damage>0</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<color> <!-- Color only works for beams -->
+		<r>0</r>
+		<g>0</g>
+		<b>0</b>
+		<a>0</a>
+	</color>
+	<speed>1</speed>
+	<rarity>0</rarity>
+	<image>aea_invisible</image>
+	<length>10</length>
+	<weaponArt>beam_1</weaponArt>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_BEAM_BIRD_BURST_2">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>Drone Beam</title>
+	<damage>0</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<color> <!-- Color only works for beams -->
+		<r>0</r>
+		<g>0</g>
+		<b>0</b>
+		<a>0</a>
+	</color>
+	<speed>1</speed>
+	<rarity>0</rarity>
+	<image>aea_invisible</image>
+	<length>20</length>
+	<weaponArt>beam_1</weaponArt>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_BEAM_BIRD_BURST_3">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>Drone Beam</title>
+	<damage>0</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<color> <!-- Color only works for beams -->
+		<r>0</r>
+		<g>0</g>
+		<b>0</b>
+		<a>0</a>
+	</color>
+	<speed>1</speed>
+	<rarity>0</rarity>
+	<image>aea_invisible</image>
+	<length>40</length>
+	<weaponArt>beam_1</weaponArt>
+</weaponBlueprint>
+
+<blueprintList name="LIST_AMP_AEA_BIRD_BURST_1">
+	<name>AEA_COMBAT_BIRD_BURST_1</name>
+	<name>AEA_COMBAT_BIRD_BURST_2</name>
+	<name>AEA_COMBAT_BIRD_BURST_3</name>
+</blueprintList>
+<droneBlueprint name="AEA_COMBAT_BIRD_BURST_1">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Amp Burst</title>
+	<short>Burst [1]</short>
+	<desc>[CURRENT POWER: 1] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
+
+This drone fires 2 shots.
+	</desc>
+	<power>1</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>8</speed>
+	<cost>70</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_burst_a1</droneImage>
+	<weaponBlueprint>AEA_BEAM_BIRD_BURST_1</weaponBlueprint>
+	<rarity>5</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_BURST_2">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Amp Burst</title>
+	<short>Burst [2]</short>
+	<desc>[CURRENT POWER: 2] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
+
+This drone fires 3 shots.
+	</desc>
+	<power>2</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>6</speed>
+	<cost>70</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_burst_a2</droneImage>
+	<weaponBlueprint>AEA_BEAM_BIRD_BURST_2</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_BURST_3">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Amp Burst</title>
+	<short>Burst [3]</short>
+	<desc>[CURRENT POWER: 3] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
+
+This drone fires 4 shots.
+	</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>4</speed>
+	<cost>70</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_burst_a3</droneImage>
+	<weaponBlueprint>AEA_BEAM_BIRD_BURST_3</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
 </FTL>
 
 <FTL>
@@ -3072,19 +4205,50 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 </crewBlueprint>
 
 <crewBlueprint name="aea_old_unique_1">
-	<desc>The leader of the Lylmik, commanding and leading them since before they sealed themselves away from the rest of the multiverse.</desc>
+	<desc>Originally one of the great Lylmik military leaders, now head of the council.</desc>
 	<cost>100</cost>
 	<title>Atoning Unifex</title>
 	<short>Atoning Unifex</short>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Active Ability: Hack the current system and stun all crew in the room for the duration of the hack</power>
+		<power>Can teleport between ships</power>
 		<power>Max Health is increased to 200</power>
-		<power>Does not lose skills when cloned</power>
+		<power>Does not lose skills when cloned, cloning takes twice as long</power>
 		<power>Moves at 1.75x speed</power>
 		<power>Heals at 2x speed and does 2x damage in crew combat</power>
 		<power>Cannot suffocate or burn</power>
 	</powerList>
 </crewBlueprint>
+
+<weaponBlueprint name="AEA_OLD_HACK_BOMB">
+	<type>BOMB</type>
+	<flavorType>BOMB</flavorType>
+	<title>BOMB</title>
+	<short>BOMB</short>
+	<tip>tip_beams</tip>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<tooltip>.</tooltip>
+	<damage>0</damage>
+    <mv-hack duration="10" immuneAfterHack="5" />
+	<sysDamage>0</sysDamage>
+	<persDamage>0</persDamage>
+	<missiles>0</missiles>
+	<shots>1</shots>
+	<sp>0</sp>
+	<accuracyMod>200</accuracyMod>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>13</cooldown>
+	<power>1</power>
+	<cost>45</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>aea_invisible</image>
+	<explosion>aea_invisible</explosion>
+	<weaponArt>aea_invisible_gun</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
 
 <crewBlueprint name="aea_old_unique_2">
 	<desc>One of the original Lylmik leaders, more powerful than other Lylmik.</desc>
@@ -3093,13 +4257,15 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 	<short>Asymptotic Essence</short>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Active Ability: Clear all ion damage on the room and repair 2 system damage.</power>
 		<power>Max Health is increased to 200</power>
-		<power>Does not lose skills when cloned</power>
+		<power>Does not lose skills when cloned, cloning takes twice as long</power>
 		<power>Moves at 1.75x speed</power>
 		<power>Heals at 2x speed and does 2x damage in crew combat</power>
 		<power>Cannot suffocate or burn</power>
 	</powerList>
 </crewBlueprint>
+
 
 <crewBlueprint name="aea_old_unique_3">
 	<desc>One of the original Lylmik leaders, more powerful than other Lylmik.</desc>
@@ -3108,8 +4274,9 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 	<short>Eupathic Impulse</short>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Active Ability: Detonate fire bombs on the enemy ship equal to the number of enemies in the current room plus one</power>
 		<power>Max Health is increased to 200</power>
-		<power>Does not lose skills when cloned</power>
+		<power>Does not lose skills when cloned, cloning takes twice as long</power>
 		<power>Moves at 1.75x speed</power>
 		<power>Heals at 2x speed and does 2x damage in crew combat</power>
 		<power>Cannot suffocate or burn</power>
@@ -3123,8 +4290,9 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 	<short>Homologous Trend</short>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Active Ability: Heal 1 hull damage and 100 crew health</power>
 		<power>Max Health is increased to 200</power>
-		<power>Does not lose skills when cloned</power>
+		<power>Does not lose skills when cloned, cloning takes twice as long</power>
 		<power>Moves at 1.75x speed</power>
 		<power>Heals at 2x speed and does 2x damage in crew combat</power>
 		<power>Cannot suffocate or burn</power>
@@ -3138,11 +4306,92 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 	<short>Noetic Concordance</short>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Active Ability: Generate 2 super shield layers</power>
 		<power>Max Health is increased to 200</power>
-		<power>Does not lose skills when cloned</power>
+		<power>Does not lose skills when cloned, cloning takes twice as long</power>
 		<power>Moves at 1.75x speed</power>
 		<power>Heals at 2x speed and does 2x damage in crew combat</power>
 		<power>Cannot suffocate or burn</power>
+	</powerList>
+</crewBlueprint>
+
+
+
+<crewBlueprint name="aea_bird_avali">
+	<desc>A feathered race obsessed with technology, especially drones.</desc>
+	<cost>40</cost>
+	<title>Gi</title>
+	<short>Gi</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power> </power>
+	</powerList>
+	<colorList>
+		<layer>
+			<!--fluff-->
+			<color r="255" g="255" b="255" a="0.8" />
+			<!--lightened-->
+			<color r="90" g="60" b="40" a="0.8" />
+			<!--darkened-->
+			<color r="255" g="124" b="89" a="0" />
+			<!--base-->
+		</layer>
+		<layer>
+			<!--cloak-->
+			<color r="255" g="255" b="255" a="0" />
+			<!--base-->
+			<color r="255" g="255" b="255" a="0.9" />
+			<!--white-->
+			<color r="255" g="255" b="255" a="0.2" />
+			<!--yellow-->
+			<color r="140" g="140" b="255" a="0.7" />
+			<!--blue-->
+			<color r="255" g="200" b="130" a="0.6" />
+			<!--tan-->
+			<color r="255" g="145" b="130" a="0.7" />
+			<!--red-->
+			<color r="255" g="138" b="0" a="0.7" />
+			<!--orange-->
+		</layer>
+		<layer>
+			<!--plummage-->
+			<color r="61" g="59" b="53" a="0" />
+			<!--base-->
+			<color r="0" g="0" b="0" a="0.8" />
+			<!--darkened-->
+			<color r="201" g="127" b="11" a="0.7" />
+			<!--orange-->
+			<color r="255" g="0" b="0" a="0.8" />
+			<!--red-->
+			<color r="46" g="200" b="60" a="0.7" />
+			<!--green-->
+			<color r="255" g="0" b="174" a="0.9" />
+			<!--pink-->
+			<color r="113" g="57" b="205" a="0.8" />
+			<!--purple-->
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_bird_illuminant">
+	<desc>Elite Gi Crew. Specially trained drone technicians that adapt well to any situation.</desc>
+	<cost>60</cost>
+	<title>Gi Technician</title>
+	<short>Technician</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power></power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_bird_unique">
+	<desc>The chief Gi engineer responsible for the powerful drones the Avali use.</desc>
+	<cost>90</cost>
+	<title>Chief Engineer</title>
+	<short>Engineer</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power> </power>
 	</powerList>
 </crewBlueprint>
 </FTL>

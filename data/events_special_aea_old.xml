@@ -83,15 +83,15 @@
 	</choice>
 </event>
 
-<ship name="AEA_OLD_GATE_GUARD_BOSS" auto_blueprint="AEA_OLD_GUARD_BOSS">\
-	<escape chance="0" min="0" max="100" load="ESCAPE_AEA_OLD_GUARD_BOSS" />
+<ship name="AEA_OLD_GATE_GUARD_BOSS" auto_blueprint="AEA_OLD_GUARD_BOSS">
+	<escape timer="60" chance="0" min="999" max="999" load="ESCAPE_AEA_OLD_GUARD_BOSS" />
 	<gotaway load="GOTAWAY_AEA_OLD_GUARD_BOSS" />
 	<destroyed>
-		<text>You've destroyed the Angelic cruiser, you begin salvaging the vessel.</text>
+		<text>You've destroyed the Mysterious cruiser, you begin salvaging the vessel.</text>
 		<autoReward level="HIGH">standard_no_item</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>
-			<event load="AEA_NECRO_SANCTUM_ANGEL_WIN"/>
+			<event/>
 		</choice>
 	</destroyed>
 </ship>
@@ -99,7 +99,26 @@
 <event name="ESCAPE_AEA_OLD_GUARD_BOSS">
 	<text>Surprisingly it appears the cruiser is trying to run away, if you're not careful you might get pulled away with it...</text>
 </event>
-<event name="GOTAWAY_AEA_OLD_GUARD_BOSS" />
+<event name="GOTAWAY_AEA_OLD_GUARD_BOSS">
+	<text>The ship's jump drive initiates and pulls it away.</text>
+	<choice hidden="true" req="aea_old_gate_guard_attached" blue="false">
+		<text>Continue...</text>
+		<event>
+			<text>Almost in the same instance you're pulled off your feet when the ship is ripped into Hyperspeed with the cruiser.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<secretSectorWarp>SECRET_AEA_OLD_1</secretSectorWarp>
+					<secretSector />
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="aea_old_gate_guard_attached" lvl="0" max_lvl="0" blue="false">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
 
 
 <event name="AEA_OLD_GATE_GUARD_BOSS_ACTIVATE">
@@ -115,8 +134,24 @@
 </event>
 
 
+<ship name="SHIP_NEMESIS_AEA_OLD" auto_blueprint="AEA_BEAM_MASTER_OLD">
+	<destroyed load="DEFEAT_NEMESIS" />
+	<deadCrew load="DEFEAT_NEMESIS" />
+</ship>
 
-
+<event name="AEA_OLD_BEAM_MASTER" unique="true">
+	<text>"I've finally figured it out, the reason why I kept losing is because you keep shooting at my ship! First I thought - 'Well, why don't I take away their guns?', but my crew told me it's not really feasible, so I though about what you usually shoot and Eureka! You aim for my systems, don't you? You sneaky bastard, the secret is out! And now - no more. These cool lylmik dudes sold me this armour stuff and I basically ripped them off, just cost me all my other guns, but now I am practically become invincible. Now I am the ARMOUR MASTER! Good luck hitting anything, beyatch!"</text>
+	<ship load="SHIP_NEMESIS_AEA_OLD" hostile="true" />
+	<status type="limit" target="enemy" system="engines" amount="0" />
+	<choice hidden="true">
+		<text>Here we go again.</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+	<choice hidden="true" req="BLUELIST_WEAPONS_BEAM_POWERFUL">
+		<text>(Powerful Beam) Show the Beam to Leah.</text>
+		<event load="NEMESIS_FLIRT" />
+	</choice>
+</event>
 
 
 
@@ -173,10 +208,223 @@
 	<weapon name="RANDOM" />
 </event>
 
-
 <ship name="SHIP_AEA_OLD_MU_ALL" auto_blueprint="AEA_OLD_SHIPS_MU_ALL">
 	<destroyed load="DESTROYED_AEA_OLD_MV" />
 	<deadCrew load="DEAD_CREW_AEA_OLD_MV" />
+</ship>
+
+<ship name="SHIP_AEA_OLD_MU_STATIONDEFEND" auto_blueprint="AEA_OLD_SHIPS_MU_ALL">
+	<destroyed>
+		<text>With the ship destroyed you're able to scrap it for a decent reward.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="AEA_OLD_COLONY_WIN"/>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>With the ship cleared of crew you're able to scrap it for a decent reward.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="AEA_OLD_COLONY_WIN"/>
+		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_OLD_MU_STORE_PROTECT" auto_blueprint="AEA_OLD_SHIPS_MU_ALL">
+	<destroyed>
+		<text>With the ship destroyed you're able to scrap it for a decent reward.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="STORE_HOSTILE_WIN"/>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>With the ship cleared of crew you're able to scrap it for a decent reward.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="STORE_HOSTILE_WIN"/>
+		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_OLD_1_STATION_LOOT" auto_blueprint="AEA_OLD_STATION">
+	<destroyed load="TRANSPORT_DESTROYED" />
+	<deadCrew load="TRANSPORT_CAPTURE_AEA_NECRO" />
+</ship>
+
+<event name="TRANSPORT_AEA_OLD_1_LOOT" unique="true">
+	<preventQuest />
+	<beaconType id="map_icon_transport" global="true" req="LOOT_COMPASS">
+		<color r="221" g="168" b="130" a="1"/>
+		<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<text>This beacon hosts Lylmik station. It's safe to bet the station is most likely carrying some special tech. If you can kill the crew onboard, the cargo will be yours.</text>
+	<ship load="SHIP_AEA_OLD_1_STATION_LOOT" hostile="false" />
+	<choice>
+		<text>Demand the surrender of the goods.</text>
+		<event>
+			<text>You prepare to secure the cargo by force.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+        <text>Avoid the station.</text>
+        <event>
+            <text>You stay outside of the station's range and prepare to jump away.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+        </event>
+    </choice>
+</event>
+<event name="TRANSPORT_CAPTURE_AEA_NECRO" unique="true">
+	<text>The crew is dead, leaving you with the station. Its cargo is yours for the taking. Aboard is the special tech you expected, which you bring back to your ship.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<weapon name="LIST_LOOT_AEA_OLD_1" />
+	<variable name="ach_trans_aea_old_1" op="set" val="1" />
+	<achievement>ACH_TRANS_AEA_NECRO</achievement>
+</event>
+
+
+
+
+
+<event name="DESTROYED_AEA_OLD">
+	<text load="TEXT_DESTROYED_AEA_OLD" />
+	<autoReward level="HIGH">standard</autoReward>
+</event>
+<textList name="TEXT_DESTROYED_AEA_OLD">
+	<text>The Lylmik ship explodes into many smaller pieces, you can make out chunks of armour, still whole even after being exploded. It's oddly satisfying, and you reflect fondly on your handiwork as you scrap the remains.</text>
+	<text>You wonder how you never heard about the Lylmiks before, but then you remember the whole being kidnapped thing.</text>
+	<text>With every Lilmik ship destroyed you're one step closer to escaping their quarantine, it isn't a lot but it's enough to keep you going.</text>
+</textList>
+
+<event name="DEAD_CREW_AEA_OLD">
+	<text load="TEXT_DEAD_CREW_AEA_OLD" />
+	<autoReward level="HIGH">standard</autoReward>
+</event>
+<textList name="TEXT_DEAD_CREW_AEA_OLD">
+	<text>As the last Lylmik collapses, it lets out two last words. "Screw... you..."</text>
+	<text>You've made quick work of these aliens. You don't feel any guilt, afterall these aren't really murders anyway.</text>
+	<text>You've heard that instead of dying the Lylmik just get redirected to a new body, better hope those new bodies aren't anywhere nearby.</text>
+	<text>You may not feel bad about the lylmik, but their organic crew may not always deserve it.</text>
+</textList>
+
+<eventList name="AEA_OLD_SURRENDER_LIST">
+	<event>
+		<text>"Good, I see you are smarter than most. Be grateful that we too have decided to show you mercy."</text>
+		<ship hostile="false" /> 
+		<choice hidden="true">
+			<text>Let them go.</text>
+			<event />
+		</choice>
+		<choice hidden="true">
+			<text>Finish these bastards off.</text>
+			<event>
+				<text>"Really? You dare try to try and fight us again? Hah, how laughable."</text>
+				<ship hostile="true" /> 
+			</event>
+		</choice>
+	</event>
+</eventList>
+
+
+<ship name="SHIP_AEA_OLD_ALL_SURRENDER" auto_blueprint="LIST_SHIPS_AEA_OLD_ALL">
+	<surrender min="3" max="4">
+		<text>"Mortal beings, you must not be aware of the consequences of your actions. We are not meant to die. Kill us, and you will suffer a terrible fate."</text>
+		<choice hidden="true">
+			<text>Let them go.</text>
+			<event load="AEA_OLD_SURRENDER_LIST" />
+		</choice>
+		<choice>
+			<text>We aren't afraid of you.</text>
+			<event />
+		</choice>
+	</surrender>
+	<destroyed load="DESTROYED_AEA_OLD" />
+	<deadCrew load="DEAD_CREW_AEA_OLD" />
+	<crew>
+		<crewMember type="aea_old_1" prop="0.7" />
+		<crewMember type="BLUELIST_AEA_OLD_ELITE_FILL_IN" prop="0.3" />
+	</crew>
+</ship>
+
+<ship name="SHIP_AEA_OLD_ALL" auto_blueprint="LIST_SHIPS_AEA_OLD_ALL">
+	<destroyed load="DESTROYED_AEA_OLD" />
+	<deadCrew load="DEAD_CREW_AEA_OLD" />
+	<crew>
+		<crewMember type="aea_old_1" prop="0.7" />
+		<crewMember type="BLUELIST_AEA_OLD_ELITE_FILL_IN" prop="0.3" />
+	</crew>
+</ship>
+<ship name="SHIP_AEA_OLD_GENERIC" auto_blueprint="LIST_SHIPS_AEA_OLD_GENERIC">
+	<destroyed load="DESTROYED_AEA_OLD" />
+	<deadCrew load="DEAD_CREW_AEA_OLD" />
+	<crew>
+		<crewMember type="aea_old_1" prop="0.7" />
+		<crewMember type="BLUELIST_AEA_OLD_ELITE_FILL_IN" prop="0.3" />
+	</crew>
+</ship>
+<ship name="SHIP_AEA_OLD_FIGHT" auto_blueprint="LIST_SHIPS_AEA_OLD_FIGHT">
+	<destroyed load="DESTROYED_AEA_OLD" />
+	<deadCrew load="DEAD_CREW_AEA_OLD" />
+	<crew>
+		<crewMember type="aea_old_1" prop="0.7" />
+		<crewMember type="BLUELIST_AEA_OLD_ELITE_FILL_IN" prop="0.3" />
+	</crew>
+</ship>
+
+
+
+
+
+
+<ship name="AEA_OLD_STATION_EXCLUSIVE" auto_blueprint="AEA_OLD_STATION">
+	<surrender min="3" max="4">
+		<text>"Fine, fine, you can have access to the station, just don't kill us."</text>
+		<choice hidden="true">
+			<text>Let them live</text>
+			<event>
+				<ship hostile="false"/>
+				<text>You gain access to the station, and discover its basically just one big store.</text>
+				<store>STORE_AEA_OLD_EXCLUSIVE</store>
+			</event>
+		</choice>
+		<choice>
+			<text>Finish them off</text>
+			<event />
+		</choice>
+	</surrender>
+	<destroyed load="DESTROYED_AEA_OLD"/>
+	<deadCrew load="DEAD_CREW_AEA_OLD"/>
+	<crew>
+		<crewMember type="aea_old_1" prop="0.7" />
+		<crewMember type="BLUELIST_AEA_OLD_ELITE_FILL_IN" prop="0.3" />
+	</crew>
+</ship>
+
+<ship name="AEA_OLD_BARON_BATTLESHIP" auto_blueprint="AEA_OLD_BATTLESHIP">
+	<destroyed load="AEA_OLD_BARON_DESTROYED"/>
+	<deadCrew load="AEA_OLD_BARON_DESTROYED"/>
+	<crew>
+		<crewMember type="aea_old_1" prop="0.7" />
+		<crewMember type="BLUELIST_AEA_OLD_ELITE_FILL_IN" prop="0.3" />
+	</crew>
 </ship>
 
 </FTL>

@@ -4,5 +4,6 @@
 <mod:findLike type="nameList">
     <mod:selector sex="male"/>
 	<mod-append:name>Arc</mod-append:name>
+	<mod-append:name>Lizzard</mod-append:name>
 </mod:findLike>
 </FTL>

@@ -16,6 +16,10 @@
 		<text>Proceed to the Blasphemous Core.</text>
 		<event load="AEA_NECRO_UNIQUE_WARP" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_2" blue="false">
+		<text>Proceed to the Lylmik Core.</text>
+		<event load="AEA_OLD_2_WARP" />
+	</mod-append:choice>
 </mod:findName>
 
 <mod:findName type="event" name="ATLAS_MENU_NOEQUIPMENT">
@@ -34,6 +38,10 @@
 	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_NECRO_UNIQUE" blue="false">
 		<text>Proceed to the Blasphemous Core.</text>
 		<event load="AEA_NECRO_UNIQUE_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_2" blue="false">
+		<text>Proceed to the Lylmik Core.</text>
+		<event load="AEA_OLD_2_WARP" />
 	</mod-append:choice>
 </mod:findName>
 
@@ -271,5 +279,101 @@ The Engi Heretics are outcasts even from the separatists, broken free from the h
 
 <event name="JUMP_TO_AEA_NECRO_CORE">
 	<secretSector>SECTOR_AEA_NECRO_UNIQUE</secretSector>
+</event>
+
+
+
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					LYLMIK
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="ENTER_AEA_OLD_1">
+	<text>You've been pulled into hyperspeed by the mysterious vessel, you're unable to pickup the vessel anymore.</text>
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Proceed to ???</text>
+		<event load="AEA_OLD_1_WARP" />
+	</choice>
+</event>
+<event name="AEA_OLD_1_WARP">
+	<text>Name: ???
+	Type: ???
+	Dominant Faction: ???
+	Rebel Threat Level: ???
+
+	There is no data about the next sector in your Atlas.</text>
+	<choice hidden="true">
+		<text>Exit hyperspeed.</text>
+		<event load="START_BEACON_AEA_OLD_1" />
+	</choice>
+	<choice hidden="true" req="loc_task_accepted" blue="false">
+		<text>Your connection with C.U.R.A. is currently unavailable.</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="COORDS" blue="false">
+		<text>You cannot reroute during this jump.</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+</event>
+
+<event name="ENTER_AEA_OLD_2">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event>
+<event name="AEA_OLD_2_WARP">
+	<text>Name: Lylmik Core
+	Type: ???
+	Dominant Faction: ???
+	Rebel Threat Level: ???
+
+	There is very little data about the next sector in your Atlas.</text>
+	<choice hidden="true">
+		<text>Exit hyperspeed.</text>
+		<event load="START_BEACON_AEA_OLD_2" />
+	</choice>
+	<choice hidden="true" req="loc_task_accepted" blue="false">
+		<text>Your connection with C.U.R.A. is currently unavailable.</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="COORDS" blue="false">
+		<text>You cannot reroute during this jump.</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+</event>
+<event name="ENTER_AEA_OLD_3">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEA_OLD_3_WARP" />
+	</choice>
+</event>
+<event name="AEA_OLD_3_WARP">
+	<text>Name: Gate Passage
+	Type: ???
+	Dominant Faction: ???
+	Rebel Threat Level: ???
+
+	There is very little data about the next sector in your Atlas.</text>
+	<choice hidden="true">
+		<text>Exit hyperspeed.</text>
+		<event load="START_BEACON_AEA_OLD_3" />
+	</choice>
+	<choice hidden="true" req="COORDS" blue="false">
+		<text>You cannot reroute during this jump.</text>
+		<event load="OPTION_INVALID" />
+	</choice>
 </event>
 </FTL>

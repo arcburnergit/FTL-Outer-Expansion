@@ -1,0 +1,1324 @@
+<FTL>
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					LYLMIK SECTOR 2
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+<event name="START_BEACON_AEA_OLD_2">
+	<metaVariable name="juke_aea_old_2" op="set" val="1" />
+	<text>You've arrived in the Lylmik core, a heavily populated zone full of both Lylmik and Rich or Powerful Captains. Now that you're here you'll need to contact the council and in order to contact the council you'll need a sponsor.</text>
+	<variable name="loc_unique_sectors" op="add" val="1" />
+	<changeBackground>BACK_EVENT_AEA_OLD_2_START</changeBackground>
+	<playSound>lightspeed</playSound>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>You refer to a local public database, There are five different council members. They even have a system for booking 1 to 1 meetings with them, however it's only possible to book a meeting with a single sponsor at any time.</text>
+			<choice req="aea_meet_unique_1" blue="false" hidden="true">
+				<text>Seek sponsorship with Atoning Unifex</text>
+				<event load="AEA_OLD_SPONSOR_1_START"/>
+			</choice>
+			<choice req="aea_meet_unique_1" lvl="0" max_lvl="0" blue="false" hidden="true">
+				<text>Seek sponsorship with Atoning Unifex [UNAVAILABLE]</text>
+				<event load="OPTION_INVALID"/>
+			</choice>
+			<choice req="aea_meet_unique_2" blue="false" hidden="true">
+				<text>Seek sponsorship with Asymptotic Essence</text>
+				<event load="AEA_OLD_SPONSOR_2_START"/>
+			</choice>
+			<choice req="aea_meet_unique_2" lvl="0" max_lvl="0" blue="false" hidden="true">
+				<text>Seek sponsorship with Asymptotic Essence [UNAVAILABLE]</text>
+				<event load="OPTION_INVALID"/>
+			</choice>
+			<choice req="aea_meet_unique_3" blue="false" hidden="true">
+				<text>Seek sponsorship with Eupathic Impulse</text>
+				<event load="AEA_OLD_SPONSOR_3_START"/>
+			</choice>
+			<choice req="aea_meet_unique_3" lvl="0" max_lvl="0" blue="false" hidden="true">
+				<text>Seek sponsorship with Eupathic Impulse [UNAVAILABLE]</text>
+				<event load="OPTION_INVALID"/>
+			</choice>
+			<choice req="aea_meet_unique_4" blue="false" hidden="true">
+				<text>Seek sponsorship with Homologous Trend</text>
+				<event load="AEA_OLD_SPONSOR_4_START"/>
+			</choice>
+			<choice req="aea_meet_unique_4" lvl="0" max_lvl="0" blue="false" hidden="true">
+				<text>Seek sponsorship with Homologous Trend [UNAVAILABLE]</text>
+				<event load="OPTION_INVALID"/>
+			</choice>
+			<choice req="aea_meet_unique_5" blue="false" hidden="true">
+				<text>Seek sponsorship with Noetic Concordance</text>
+				<event load="AEA_OLD_SPONSOR_5_START"/>
+			</choice>
+			<choice req="aea_meet_unique_5" lvl="0" max_lvl="0" blue="false" hidden="true">
+				<text>Seek sponsorship with Noetic Concordance [UNAVAILABLE]</text>
+				<event load="OPTION_INVALID"/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_1_START">
+	<text>You book an meeting with Atoning Unifex, you'll need to negotiate with them before you'll be able to go before the council.</text>
+	<metaVariable name="aea_old_sponser_choice" op="set" val="1" />
+	<quest event="AEA_OLD_SPONSOR_1"/>
+	<choice>
+		<text>Continue...</text>
+		<event>
+			<text>You also download the location of the other council members, it might come in handy.
+
+[DOWNLOADING: 25%]
+			</text>
+			<quest event="AEA_OLD_SPONSOR_2_FIGHT"/>
+			<choice>
+				<text>Continue...</text>
+				<event>
+					<text>You also download the location of the other council members, it might come in handy.
+		
+[DOWNLOADING: 50%]
+					</text>
+					<quest event="AEA_OLD_SPONSOR_3_FIGHT"/>
+					<choice>
+						<text>Continue...</text>
+						<event>
+							<text>You also download the location of the other council members, it might come in handy.
+				
+[DOWNLOADING: 75%]
+							</text>
+							<quest event="AEA_OLD_SPONSOR_4_FIGHT"/>
+							<choice>
+								<text>Continue...</text><event>
+									<text>You also download the location of the other council members, it might come in handy.
+						
+[DOWNLOADING: 100%]
+									</text>
+									<quest event="AEA_OLD_SPONSOR_5_FIGHT"/>
+									<choice>
+										<text>Continue...</text>
+										<event load="AEA_OLD_SPONSOR_CONTINUE"/>
+									</choice>
+								</event>
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_2_START">
+	<text>You book an meeting with Atoning Unifex, you'll need to negotiate with them before you'll be able to go before the council.</text>
+	<metaVariable name="aea_old_sponser_choice" op="set" val="2" />
+	<quest event="AEA_OLD_SPONSOR_2"/>
+	<choice>
+		<text>Continue...</text>
+		<event>
+			<text>You also download the location of the other council members, it might come in handy.
+
+[DOWNLOADING: 25%]
+			</text>
+			<quest event="AEA_OLD_SPONSOR_1_FIGHT"/>
+			<choice>
+				<text>Continue...</text>
+				<event>
+					<text>You also download the location of the other council members, it might come in handy.
+		
+[DOWNLOADING: 50%]
+					</text>
+					<quest event="AEA_OLD_SPONSOR_3_FIGHT"/>
+					<choice>
+						<text>Continue...</text>
+						<event>
+							<text>You also download the location of the other council members, it might come in handy.
+				
+[DOWNLOADING: 75%]
+							</text>
+							<quest event="AEA_OLD_SPONSOR_4_FIGHT"/>
+							<choice>
+								<text>Continue...</text><event>
+									<text>You also download the location of the other council members, it might come in handy.
+						
+[DOWNLOADING: 100%]
+									</text>
+									<quest event="AEA_OLD_SPONSOR_5_FIGHT"/>
+									<choice>
+										<text>Continue...</text>
+										<event load="AEA_OLD_SPONSOR_CONTINUE"/>
+									</choice>
+								</event>
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_3_START">
+	<text>You book an meeting with Atoning Unifex, you'll need to negotiate with them before you'll be able to go before the council.</text>
+	<metaVariable name="aea_old_sponser_choice" op="set" val="3" />
+	<quest event="AEA_OLD_SPONSOR_3"/>
+	<choice>
+		<text>Continue...</text>
+		<event>
+			<text>You also download the location of the other council members, it might come in handy.
+
+[DOWNLOADING: 25%]
+			</text>
+			<quest event="AEA_OLD_SPONSOR_1_FIGHT"/>
+			<choice>
+				<text>Continue...</text>
+				<event>
+					<text>You also download the location of the other council members, it might come in handy.
+		
+[DOWNLOADING: 50%]
+					</text>
+					<quest event="AEA_OLD_SPONSOR_2_FIGHT"/>
+					<choice>
+						<text>Continue...</text>
+						<event>
+							<text>You also download the location of the other council members, it might come in handy.
+				
+[DOWNLOADING: 75%]
+							</text>
+							<quest event="AEA_OLD_SPONSOR_4_FIGHT"/>
+							<choice>
+								<text>Continue...</text><event>
+									<text>You also download the location of the other council members, it might come in handy.
+						
+[DOWNLOADING: 100%]
+									</text>
+									<quest event="AEA_OLD_SPONSOR_5_FIGHT"/>
+									<choice>
+										<text>Continue...</text>
+										<event load="AEA_OLD_SPONSOR_CONTINUE"/>
+									</choice>
+								</event>
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_4_START">
+	<text>You book an meeting with Atoning Unifex, you'll need to negotiate with them before you'll be able to go before the council.</text>
+	<metaVariable name="aea_old_sponser_choice" op="set" val="4" />
+	<quest event="AEA_OLD_SPONSOR_4"/>
+	<choice>
+		<text>Continue...</text>
+		<event>
+			<text>You also download the location of the other council members, it might come in handy.
+
+[DOWNLOADING: 25%]
+			</text>
+			<quest event="AEA_OLD_SPONSOR_1_FIGHT"/>
+			<choice>
+				<text>Continue...</text>
+				<event>
+					<text>You also download the location of the other council members, it might come in handy.
+		
+[DOWNLOADING: 50%]
+					</text>
+					<quest event="AEA_OLD_SPONSOR_2_FIGHT"/>
+					<choice>
+						<text>Continue...</text>
+						<event>
+							<text>You also download the location of the other council members, it might come in handy.
+				
+[DOWNLOADING: 75%]
+							</text>
+							<quest event="AEA_OLD_SPONSOR_3_FIGHT"/>
+							<choice>
+								<text>Continue...</text><event>
+									<text>You also download the location of the other council members, it might come in handy.
+						
+[DOWNLOADING: 100%]
+									</text>
+									<quest event="AEA_OLD_SPONSOR_5_FIGHT"/>
+									<choice>
+										<text>Continue...</text>
+										<event load="AEA_OLD_SPONSOR_CONTINUE"/>
+									</choice>
+								</event>
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_5_START">
+	<text>You book an meeting with Atoning Unifex, you'll need to negotiate with them before you'll be able to go before the council.</text>
+	<metaVariable name="aea_old_sponser_choice" op="set" val="5" />
+	<quest event="AEA_OLD_SPONSOR_5"/>
+	<choice>
+		<text>Continue...</text>
+		<event>
+			<text>You also download the location of the other council members, it might come in handy.
+
+[DOWNLOADING: 25%]
+			</text>
+			<quest event="AEA_OLD_SPONSOR_1_FIGHT"/>
+			<choice>
+				<text>Continue...</text>
+				<event>
+					<text>You also download the location of the other council members, it might come in handy.
+		
+[DOWNLOADING: 50%]
+					</text>
+					<quest event="AEA_OLD_SPONSOR_2_FIGHT"/>
+					<choice>
+						<text>Continue...</text>
+						<event>
+							<text>You also download the location of the other council members, it might come in handy.
+				
+[DOWNLOADING: 75%]
+							</text>
+							<quest event="AEA_OLD_SPONSOR_3_FIGHT"/>
+							<choice>
+								<text>Continue...</text><event>
+									<text>You also download the location of the other council members, it might come in handy.
+						
+[DOWNLOADING: 100%]
+									</text>
+									<quest event="AEA_OLD_SPONSOR_4_FIGHT"/>
+									<choice>
+										<text>Continue...</text>
+										<event load="AEA_OLD_SPONSOR_CONTINUE"/>
+									</choice>
+								</event>
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_CONTINUE">
+	<text>Just as your download finishes a new vessel arrives. "Hey, what are you doing here, this place is off limits to the likes of you!" Looks like you're not very welcome here.</text>
+	<ship load="SHIP_AEA_OLD_2_GUARD" hostile="true"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+
+<ship name="SHIP_AEA_OLD_2_GUARD" auto_blueprint="AEA_OLD_PROTECTOR_ELITE">
+	<surrender min="5" max="6" load="GUARD_SIGNAL" />
+	<destroyed load="GUARD_AEA_OLD_2_DESTROY" />
+	<deadCrew load="GUARD_AEA_OLD_2_DEADCREW" />
+</ship>
+
+<event name="GUARD_AEA_OLD_2_DESTROY">
+	<text>You have defeated the Lylmik guard. Whatever might have been in their cargo has for certain been destroyed, but you can at least salvage some supplies from the ship.</text>
+	<autoReward level="HIGH">standard</autoReward>
+</event>
+<event name="GUARD_AEA_OLD_2_DEADCREW">
+	<text>You have defeated the Lylmik guard. Without crew on board to stop you, you can investigate their cargo. You find a weapon to bring back to the ship, and move on to scrap their hull.</text>
+	<autoReward level="HIGH">standard</autoReward>
+	<weapon name="RANDOM" />
+</event>
+
+<ship name="SHIP_AEA_OLD_2_SPONSOR_GUARD" auto_blueprint="LIST_SHIPS_AEA_OLD_ELITE_FIGHT">
+	<destroyed load="AEA_OLD_SPONSOR_DESTROY" />
+	<deadCrew load="AEA_OLD_SPONSOR_DESTROY" />
+</ship>
+
+<event name="AEA_OLD_SPONSOR_DESTROY">
+	<text>You've defeated the Elite vessel, however the facility has gone to full lockdown. There's no way you'll be able to get in now.</text>
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<weapon name="AEA_COMPONENT_OLD" />
+</event>
+
+<event name="AEA_OLD_SPONSOR_1_FIGHT" unique="true">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_old_uni_1" global="true">
+		<color r="255" g="255" b="255" a="1"/>
+		<unvisitedTooltip>This is the location of a council member.</unvisitedTooltip>
+		<visitedTooltip>This is the location of a council member.</visitedTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_AEA_OLD_UNIQUE_1" planet="NONE" />
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. As you get close alarms start going off and the Elite moves in to attack.</text>
+	<ship load="SHIP_AEA_OLD_2_SPONSOR_GUARD" hostile="true"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_2_FIGHT" unique="true">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_old_uni_2" global="true">
+		<color r="255" g="255" b="255" a="1"/>
+		<unvisitedTooltip>This is the location of a council member.</unvisitedTooltip>
+		<visitedTooltip>This is the location of a council member.</visitedTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_AEA_OLD_UNIQUE_2" planet="NONE" />
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. As you get close alarms start going off and the Elite moves in to attack.</text>
+	<ship load="SHIP_AEA_OLD_2_SPONSOR_GUARD" hostile="true"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_3_FIGHT" unique="true">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_old_uni_3" global="true">
+		<color r="255" g="255" b="255" a="1"/>
+		<unvisitedTooltip>This is the location of a council member.</unvisitedTooltip>
+		<visitedTooltip>This is the location of a council member.</visitedTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_AEA_OLD_UNIQUE_3" planet="NONE" />
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. As you get close alarms start going off and the Elite moves in to attack.</text>
+	<ship load="SHIP_AEA_OLD_2_SPONSOR_GUARD" hostile="true"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_4_FIGHT" unique="true">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_old_uni_4" global="true">
+		<color r="255" g="255" b="255" a="1"/>
+		<unvisitedTooltip>This is the location of a council member.</unvisitedTooltip>
+		<visitedTooltip>This is the location of a council member.</visitedTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_AEA_OLD_UNIQUE_4" planet="NONE" />
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. As you get close alarms start going off and the Elite moves in to attack.</text>
+	<ship load="SHIP_AEA_OLD_2_SPONSOR_GUARD" hostile="true"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_5_FIGHT" unique="true">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_old_uni_5" global="true">
+		<color r="255" g="255" b="255" a="1"/>
+		<unvisitedTooltip>This is the location of a council member.</unvisitedTooltip>
+		<visitedTooltip>This is the location of a council member.</visitedTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_AEA_OLD_UNIQUE_5" planet="NONE" />
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. As you get close alarms start going off and the Elite moves in to attack.</text>
+	<ship load="SHIP_AEA_OLD_2_SPONSOR_GUARD" hostile="true"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_1" unique="true">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_old_uni_1_i" global="true">
+		<color r="255" g="255" b="255" a="1"/>
+		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
+		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_AEA_OLD_UNIQUE_1" planet="NONE" />
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land an greet Atoning Unifex.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
+			<choice hidden="true">
+				<text>Sure</text>
+				<event>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
+					<crewMember  all_skills="2" amount="1" class="aea_old_unique_1">Atoning Unifex</crewMember>
+					<quest event="AEA_OLD_SPONSOR_1_QUEST"/>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_2" unique="true">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_old_uni_2_i" global="true">
+		<color r="255" g="255" b="255" a="1"/>
+		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
+		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_AEA_OLD_UNIQUE_2" planet="NONE" />
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land an greet Asymptotic Essence.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
+			<choice hidden="true">
+				<text>Sure</text>
+				<event>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
+					<crewMember  all_skills="2" amount="1" class="aea_old_unique_2">Asymptotic Essence</crewMember>
+					<quest event="AEA_OLD_SPONSOR_2_QUEST"/>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_3" unique="true">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_old_uni_3_i" global="true">
+		<color r="255" g="255" b="255" a="1"/>
+		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
+		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_AEA_OLD_UNIQUE_3" planet="NONE" />
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land an greet Eupathic Impulse.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
+			<choice hidden="true">
+				<text>Sure</text>
+				<event>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
+					<crewMember  all_skills="2" amount="1" class="aea_old_unique_3">Eupathic Impulse</crewMember>
+					<quest event="AEA_OLD_SPONSOR_3_QUEST"/>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_4" unique="true">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_old_uni_4_i" global="true">
+		<color r="255" g="255" b="255" a="1"/>
+		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
+		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_AEA_OLD_UNIQUE_4" planet="NONE" />
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land an greet Homologous Trend.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
+			<choice hidden="true">
+				<text>Sure</text>
+				<event>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
+					<crewMember  all_skills="2" amount="1" class="aea_old_unique_4">Homologous Trend</crewMember>
+					<quest event="AEA_OLD_SPONSOR_4_QUEST"/>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_5" unique="true">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_old_uni_5_i" global="true">
+		<color r="255" g="255" b="255" a="1"/>
+		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
+		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_AEA_OLD_UNIQUE_5" planet="NONE" />
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land an greet Noetic Concordance.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
+			<choice hidden="true">
+				<text>Sure</text>
+				<event>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
+					<crewMember  all_skills="2" amount="1" class="aea_old_unique_5">Noetic Concordance</crewMember>
+					<quest event="AEA_OLD_SPONSOR_5_QUEST"/>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_1_QUEST">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_quest" global="true">
+		<color r="69" g="168" b="235" a="1" />
+		<unvisitedTooltip>The location of the target Atoning Unifex gave you.</unvisitedTooltip>
+	</beaconType>
+	<revisitEvent>AEA_OLD_SPONSOR_1_QUEST</revisitEvent>
+	<ship load="AEA_OLD_SPONSOR_1_BOUNTY" hostile="true"/>
+	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
+	<ship load="AEA_OLD_SPONSOR_1_BOUNTY" hostile="true"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<ship name="AEA_OLD_SPONSOR_1_BOUNTY" auto_blueprint="AEA_OLD_SPONSOR_1_BOUNTY">
+	<destroyed load="AEA_OLD_SPONSOR_1_BOUNTY_DESTROY" />
+	<deadCrew load="AEA_OLD_SPONSOR_1_BOUNTY_DESTROY" />
+</ship>
+
+
+<event name="AEA_OLD_SPONSOR_1_BOUNTY_DESTROY">
+	<text>You've defeated the Elite vessel, however the facility has gone to full lockdown. There's no way you'll be able to get in now.</text>
+	<variable name="aea_old_completed_sponsor" op="set" val="1" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<drone name="AEA_COMBAT_BIRD_BURST_1" />
+	<revisitEvent>EMPTY_AEA_OLD</revisitEvent>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>You find a second drone in the wreckage.</text>
+			<drone name="AEA_COMBAT_BIRD_BURST_1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_2_QUEST">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_quest" global="true">
+		<color r="69" g="168" b="235" a="1" />
+		<unvisitedTooltip>The location of the target Asymptotic Essence gave you.</unvisitedTooltip>
+	</beaconType>
+	<revisitEvent>AEA_OLD_SPONSOR_2_QUEST</revisitEvent>
+	<ship load="AEA_OLD_SPONSOR_2_BOUNTY" hostile="true"/>
+	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<ship name="AEA_OLD_SPONSOR_2_BOUNTY" auto_blueprint="MT_BOSS_ROCK_CHAOS">
+	<destroyed load="AEA_OLD_SPONSOR_2_BOUNTY_DESTROY" />
+	<deadCrew load="AEA_OLD_SPONSOR_2_BOUNTY_DESTROY" />
+</ship>
+
+
+<event name="AEA_OLD_SPONSOR_2_BOUNTY_DESTROY">
+	<text>You've defeated the Elite vessel, however the facility has gone to full lockdown. There's no way you'll be able to get in now.</text>
+	<variable name="aea_old_completed_sponsor" op="set" val="1" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<weapon name="MISSILES_OBSIDIAN" />
+	<revisitEvent>EMPTY_AEA_OLD</revisitEvent>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_3_QUEST">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_quest" global="true">
+		<color r="69" g="168" b="235" a="1" />
+		<unvisitedTooltip>The location of the target Eupathic Impulse gave you.</unvisitedTooltip>
+	</beaconType>
+	<revisitEvent>AEA_OLD_SPONSOR_3_QUEST</revisitEvent>
+	<ship load="AEA_OLD_SPONSOR_3_BOUNTY" hostile="true"/>
+	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<ship name="AEA_OLD_SPONSOR_3_BOUNTY" auto_blueprint="MT_BOSS_MANTIS_CHAOS">
+	<destroyed load="AEA_OLD_SPONSOR_3_BOUNTY_DESTROY" />
+	<deadCrew load="AEA_OLD_SPONSOR_3_BOUNTY_DESTROY" />
+</ship>
+
+
+<event name="AEA_OLD_SPONSOR_3_BOUNTY_DESTROY">
+	<text>You've defeated the Elite vessel, however the facility has gone to full lockdown. There's no way you'll be able to get in now.</text>
+	<variable name="aea_old_completed_sponsor" op="set" val="1" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<weapon name="BOMB_CONSERVRECYCLER" />
+	<revisitEvent>EMPTY_AEA_OLD</revisitEvent>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_4_QUEST">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_quest" global="true">
+		<color r="69" g="168" b="235" a="1" />
+		<unvisitedTooltip>The location of the target Homologous Trend gave you.</unvisitedTooltip>
+	</beaconType>
+	<revisitEvent>AEA_OLD_SPONSOR_4_QUEST</revisitEvent>
+	<ship load="AEA_OLD_SPONSOR_4_BOUNTY" hostile="true"/>
+	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<ship name="AEA_OLD_SPONSOR_4_BOUNTY" auto_blueprint="MT_BOSS_ENGINEER_CHAOS">
+	<destroyed load="AEA_OLD_SPONSOR_4_BOUNTY_DESTROY" />
+	<deadCrew load="AEA_OLD_SPONSOR_4_BOUNTY_DESTROY" />
+</ship>
+
+
+<event name="AEA_OLD_SPONSOR_4_BOUNTY_DESTROY">
+	<text>You've defeated the Elite vessel, however the facility has gone to full lockdown. There's no way you'll be able to get in now.</text>
+	<variable name="aea_old_completed_sponsor" op="set" val="1" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<drone name="SURGEON_BATTLE" />
+	<revisitEvent>EMPTY_AEA_OLD</revisitEvent>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
+
+<event name="AEA_OLD_SPONSOR_5_QUEST">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_quest" global="true">
+		<color r="69" g="168" b="235" a="1" />
+		<unvisitedTooltip>The location of the target Noetic Concordance gave you.</unvisitedTooltip>
+	</beaconType>
+	<revisitEvent>AEA_OLD_SPONSOR_5_QUEST</revisitEvent>
+	<ship load="AEA_OLD_SPONSOR_5_BOUNTY" hostile="true"/>
+	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<ship name="AEA_OLD_SPONSOR_5_BOUNTY" auto_blueprint="MT_BOSS_STEALTH_CHAOS">
+	<destroyed load="AEA_OLD_SPONSOR_5_BOUNTY_DESTROY" />
+	<deadCrew load="AEA_OLD_SPONSOR_5_BOUNTY_DESTROY" />
+</ship>
+
+
+<event name="AEA_OLD_SPONSOR_5_BOUNTY_DESTROY">
+	<text>You've defeated the Elite vessel, however the facility has gone to full lockdown. There's no way you'll be able to get in now.</text>
+	<variable name="aea_old_completed_sponsor" op="set" val="1" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<weapon name="BEAM_ADAPT_3" />
+	<revisitEvent>EMPTY_AEA_OLD</revisitEvent>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					EXIT BEACON
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+<event name="AEA_OLD_2_COUNCIL">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_old_council" global="true">
+		<color r="119" g="0" b="0" a="1"/>
+		<unvisitedTooltip>This is the location of the Council Administration Building.</unvisitedTooltip>
+		<visitedTooltip>This is the location of the Council Administration Building.</visitedTooltip>
+	</beaconType>
+	<revisitEvent>AEA_OLD_2_COUNCIL</revisitEvent>
+	<img back="BACK_EVENT_AEA_OLD_2_END" planet="NONE"/>
+	<text>You've arrived at the location of the Council Administration Building. This is where the council regularly meets to discuss and maintain the sectors they're quarantined in.</text>
+	<choice req="aea_old_completed_sponsor" lvl="1" hidden="true" blue="false">
+		<text>Enter with your sponsoring council member.</text>
+		<event>
+			<text>You enter the vast building, after many turns and corridors you finally arrive face to face with the other council members.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>It takes a while, however your presence is barely required by the council. You're particularly surprised to see how much of your presence here was actually recorded, they have evidence of almost every battle you fought in their space.</text>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="AEA_OLD_2_COUNCIL_JUMP"/>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_old_completed_sponsor" lvl="0" max_lvl="0" hidden="true" blue="false">
+		<text>You'll need to come back later once you've found a sponsor.</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice hidden="true">
+		<text>Come back later.</text>
+		<event/>
+	</choice>
+</event>
+
+<event name="AEA_OLD_2_COUNCIL_JUMP">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_old_council" global="true">
+		<color r="119" g="0" b="0" a="1"/>
+		<unvisitedTooltip>This is the location of the Council Administration Building.</unvisitedTooltip>
+		<visitedTooltip>This is the location of the Council Administration Building.</visitedTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_AEA_OLD_2_END" planet="NONE"/>
+	<revisitEvent>AEA_OLD_2_COUNCIL_JUMP</revisitEvent>
+	<text>Eventually you recieve the verdict, you'll be allowed to leave. They tell you of a secret gate, similar to the one you activated in Node 17.
+
+Due to the location gate you'll need to be escorted there by your sponsor, you should deal with any unfinished buisness here before you leave.
+	</text>
+	<choice>
+		<text>Leave for the gate immediately</text>
+		<event>
+			<secretSectorWarp>SECRET_AEA_OLD_3</secretSectorWarp>
+			<secretSector />
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Give me a moment to prepare.</text>
+		<event>
+			<jumpEvent>AEA_OLD_2_COUNCIL_JUMP</jumpEvent>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>We'll come back here later</text>
+		<event/>
+	</choice>
+</event>
+
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					STORE EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+
+<event name="STORE_HOSTILE_AEA_OLD">
+	<preventQuest />
+	<beaconType id="map_icon_hostilestore" global="false">
+		<color r="215" g="175" b="175" a="1" />
+	</beaconType>
+	<text>Surprisingly a Lylmik merchant appears to be under attack from a heavily armed elite, If you want to trade with them you'll need to take care of the elite.</text>
+	<ship load="SHIP_AEA_OLD_MU_STORE_PROTECT" hostile="false" />
+	<choice hidden="true">
+		<text>Rescue the store</text>
+		<event>
+			<text>You prepare for combat.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the merchant</text>
+		<event>
+			<text>Fortunately, the Elite remain oblivious to your presence.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<eventList name="STORELIST_AEA_OLD_GENERIC">
+	<event load="STOREEVENT_OUTPOST" />
+	<event load="STOREEVENT_DAMAGED" />
+	
+	<event load="STOREEVENT_FED_MARKET" />
+</eventList>
+
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					ITEM EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<eventList name="ITEMS_AEA_OLD_2">
+	<event load="AEA_OLD_FREE_ELITE" />
+
+	<event load="AEA_OLD_CLEARANCE_SALE" />
+	<event load="AEA_OLD_FOOD_CREW" />
+	<event load="AEA_OLD_MIRROR_CACHE" />
+	<event load="AEA_OLD_AUTO_STUCK" />
+	<event load="AEA_OLD_REPAIR_YARD" />
+</eventList>
+
+<event name="AEA_OLD_CLEARANCE_SALE" unique="true">
+	<preventQuest />
+	<beaconType id="map_icon_store_generic" global="false">
+		<color r="215" g="255" b="200" a="1" />
+	</beaconType>
+	<img planet="PLANET_MOONS" />
+	<text>You see a small, populated moon in the distance, there's heavy traffic outside the store. Shall we approach?</text>
+	<choice hidden="true">
+		<text>Get in line to land</text>
+		<event>
+			<text>You eventually manage to land in their limited space and get into the store, unbelievably it appears everything in the store is on sale.</text>
+			<store>STORE_AEA_OLD_CLEARANCE</store>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the moon</text>
+		<event>
+			<text>As you wait for the FTL drive to charge, you notice an advertising ship fly past, apparently the big store down there is having a clearance sale.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_FOOD_CREW" unique="true">
+	<preventQuest/>
+	<img planet="PLANET_POPULATED"/>
+	<text>You arrive at the beacon and are immediately bombarded by multiple advertisements referencing some planetary fair. It appears that people have come from all over the sector to eat and show off their own foods.</text>
+	<choice hidden="true">
+		<text>Head down and look around</text>
+		<event>
+			<text>You arrive down on the planet and begin to explore the fair. There are many different options to choose from.</text>
+			<choice hidden="true">
+				<text>Visit Green Eggs and Ham</text>
+				<event>
+					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
+					<crewMember  all_skills="2" amount="1" class="human_soldier"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Visit Soft-Light</text>
+				<event>
+					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
+					<crewMember  all_skills="2" amount="1" class="zoltan_peacekeeper"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Visit Natures Necter</text>
+				<event>
+					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
+					<crewMember  all_skills="2" amount="1" class="orchid_preator"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Visit Bob's Intestines</text>
+				<event>
+					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
+					<crewMember  all_skills="2" amount="1" class="mantis_suzerain"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Visit Inflection</text>
+				<event>
+					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
+					<crewMember  all_skills="2" amount="1" class="crystal_sentinel"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Visit Hot-Rock</text>
+				<event>
+					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
+					<crewMember  all_skills="2" amount="1" class="rock_commando"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Visit Lettuce Eat</text>
+				<event>
+					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
+					<crewMember  all_skills="2" amount="1" class="slug_saboteur"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Visit Ethereal Foods</text>
+				<event>
+					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
+					<crewMember  all_skills="2" amount="1" class="phantom_alpha"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Visit Gregs Scrapyard</text>
+				<event>
+					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
+					<crewMember  all_skills="2" amount="1" class="lanius_welder"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Leave</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the event</text>
+		<event>
+			<text>You begin charging your FTL drive.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_MIRROR_CACHE" unique="true">
+	<preventQuest />
+	<text>Upon arriving at this beacon, you come face to face with... yourself? Positional data is wonky but as far as your sensors can tell, you're looking at an exact copy of your ship, lifesigns and all.</text>
+	<choice hidden="true">
+		<text>Leave as quickly as possible</text>
+		<event>
+			<text>You fly away a safe distance and begin charging your FTL drive.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Fire at that ship</text>
+		<event>
+			<text>You scored a direct hit with your weapons, but the mysterious mirror ship fired at same time and hit back just as hard. Exactly as hard, in fact, as you notice the damage on their hull matches your own. You decide it might be best to leave the area after all.</text>
+			<damage amount="5" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="UPG_AETHER_SCANNERS">
+		<text>(Anomaly Detector) Your scanners are showing all kinds of strange results.</text>
+		<event>
+			<text>Your Aether-enhanced scanners manage to make sense of what's happening: Some sort of space-bending device was concealing a storage cache by making any path heading to it loop back to its origin, while providing another, much more convoluted route to the actual entrance. With this newfound knowledge, you secure its contents.</text>
+			<autoReward level="HIGH">stuff</autoReward>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_AUTO_STUCK" unique="true">
+	<environment type="asteroid" />
+	<text>The beacon sits inside of an asteriod field, nearby you see a Lylmik autoship wedged between two rocks. The autoship appears offline.</text>
+	<choice hidden="true">
+		<text>Blow the ship up</text>
+		<event>
+			<text>You put a hole in the ship before scrapping it for anything useful.</text>
+			<autoReward level="MED">stuff</autoReward>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Attempt to power on the autoship</text>
+		<event>
+			<text>The ship powers on and attempts to dislodge itself, the ship begins trying to blast the rocks it's stuck between sending shrapnel everywhere, you retreat your ship but are unable to avoid some light damage.
+Instead of getting itself unstuck the autoship manages to loose a large chunk of rock which destroys the central processor of the autoship. You scrap the remains.</text>
+			<damage amount="1"/>
+			<autoReward level="MED">stuff</autoReward>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the ship</text>
+		<event>
+			<text>You fly away a safe distance and begin charging your FTL drive.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+
+<event name="AEA_OLD_REPAIR_YARD">
+	<preventQuest />
+	<text>You arrive to find a small automatic repair yard, you could probably try to sneak in and hope it repairs you for free, it also appears like you could purchase some repairs.</text>
+    <choice hidden="true">
+        <text>Sneak into the queue.</text>
+        <event load="AEA_OLD_REPAIR_SNEAK"/>
+    </choice>
+    <choice>
+        <text>Purchase 10 hull repair for 20 scrap.</text>
+        <event>
+            <text>You perform the transaction and watch carefully as the machines patch the hull. However, everything seems fine. Once they're complete you get ready to jump.</text>
+            <damage amount="-10" />				
+            <item_modify>
+                <item type="scrap" min="-20" max="-20" />
+            </item_modify>
+        </event>
+    </choice>
+    <choice hidden="true">
+		<text>Avoid the repair yard.</text>
+		<event>
+			<text>You prepare to jump.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+<eventList name="AEA_OLD_REPAIR_SNEAK" unique="true">
+    <event>
+        <text>Just as you think you're about to get a free repair job a ship moves out of the queue behind you and activates their weapons.</text>
+        <ship load="SHIP_AEA_OLD_MU_ALL" hostile="true"/>
+        <choice hidden="true">
+            <text>Continue...</text>
+            <event load="COMBAT_CHECK" />
+        </choice>
+    </event>
+    <event>
+        <text>You make it to the front of the line and recieve a free repair.</text>
+        <damage amount="-10" />
+        <choice hidden="true">
+            <text>Continue...</text>
+            <event>
+                <text>Just as you think you're about to get away with it you're intercepted by an upset vessel from the other end of the queue.</text>
+                <ship load="SHIP_AEA_OLD_MU_ALL" hostile="true"/>
+                <choice hidden="true">
+                    <text>Continue...</text>
+                    <event load="COMBAT_CHECK" />
+                </choice>
+            </event>
+        </choice>
+    </event>
+    <event>
+        <text>You make it to the front of the line and recieve a free repair.</text>
+        <damage amount="-10" />
+        <choice hidden="true">
+            <text>Continue...</text>
+            <event>
+                <text>Just as you think you're about to get away with it you're intercepted by an upset vessel from the other end of the queue.</text>
+                <ship load="SHIP_AEA_OLD_MU_ALL" hostile="false"/>
+                <choice hidden="true">
+                    <text>Continue...</text>
+                    <event>
+                        <text>However the vessel just continues to fly on past you, it looks like they weren't intercepting you after all.</text>
+                    </event>
+                </choice>
+            </event>
+        </choice>
+    </event>
+</eventList>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					NEUTRAL EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<eventList name="NEUTRAL_AEA_OLD_2">
+	<event load="AEA_OLD_CHOICE_LIST" />
+	
+    <event load="AEA_OLD_LIZZARD" />
+    <event load="AEA_OLD_ONCEUPONABAN" />
+
+    <event load="AEA_OLD_AUTO_RAM" />
+</eventList>
+
+<event name="AEA_OLD_AUTO_RAM" unique="true">
+	<preventQuest />
+	<text>our sensors spot a Lylmik autoship signature. It seems to have been accelerating in the same direction for a very long time and accumulated a tremendous amount of speed as a result. You're not sure whether this is some sort of experiment with regard to the viability of sublight travel or simply a malfunction, but a much more pressing issue is that your ship just happened to drop out of hyperspace right in its path.</text>
+	<choice hidden="true">
+		<text>Brace for impact!</text>
+		<event>
+			<text>Out of all the ships to collide with at high speed, a Lylmik-made one was probably the worst possible outcome, what with their love of heavy armor plating. The sheer mass of the deceptively small autoship sends your vessel careening through space as you black out. Once everyone comes to their senses, the damage report reveals many gaping holes in the hull from the impact. It's a miracle no one fell through one of them.</text>
+			<damage amount="2" effect="breach" system="random" />
+			<damage amount="2" effect="breach" system="random" />
+			<damage amount="2" effect="breach" system="room" />
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="engines" lvl="6">
+		<text>(Upg. Engines) Evasive maneuvers!</text>
+		<event>
+			<text>Thankfully, the thrusters are powerful enough to get your ship out of the way before the impact. The whole crew watches the speed demon fly past with relief.</text>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="weapons" lvl="8">
+		<text>(Upg. Weapons) Make it stop, one way or the other.</text>
+		<event>
+			<text>The Lylmik's ships are known for their very effective armor, but every ship has its weak spot. A few well aimed shots manage to knock down some thrusters, throwing the autoship out of alignment, and the subsequent barrage from your weapons convert the out of control vessel into a cloud of scrap, which you harvest.</text>
+			<autoReward level="MED">standard</autoReward>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="shields" lvl="8">
+		<text>(Upg. Shields) Reroute all power to shields!</text>
+		<event>
+			<text>Your shields take the brunt of the force, the autoship is half crushed and deflected to the side leaving a substantial amount of scrap. Unfortunately the impact overloaded the shield capacitors and they blew up.</text>
+			<autoReward level="LOW">standard</autoReward>
+			<damage amount="1" effect="fire" system="shields" />
+			<damage amount="1" effect="fire" system="shields" />
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					DISTRESS EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					QUEST EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					HOSTILE EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<eventList name="HOSTILE_AEA_OLD_2">
+	<event load="ENCOUNTER_AEA_OLD_2" />
+</eventList>
+
+<event name="ENCOUNTER_AEA_OLD_2">
+	<text load="TEXT_ENCOUNTER_AEA_OLD_2_FIGHT" />
+	<ship load="SHIP_AEA_OLD_MU_ALL" hostile="true" /> 
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+<textList name="TEXT_ENCOUNTER_AEA_OLD_2_FIGHT">
+	<text>A large vessel approaches you, it appears they're interested in getting their hands on any of the new tech you might have on your ship.</text>
+	<text>It's clear the ship moving in to attack you has only survived so long from being incredibly dangerous.</text>
+	<text>The only way to survive trapped in this section of the Multiverse is to take resources from others, and theres a survivor approaching you now.</text>
+	<text>Although against killing themselves, the Lylmik do nothing about keeping citizens of their realm from killing each other. As it happens a citizen moving into an attack position.</text>
+</textList>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					SPECIAL EVENTS
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+
+</FTL>

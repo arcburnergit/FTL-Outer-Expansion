@@ -254,7 +254,7 @@
 	<chargedFrame>6</chargedFrame>
 	<fireFrame>7</fireFrame>
 	<firePoint x="21" y="33" />
-	<mountPoint x="4" y="38" />
+	<mountPoint x="5" y="38" />
 </weaponAnim>
 
 <animSheet name="aea_laser_old_2" w="640" h="79" fw="64" fh="79">weapon_old/aea_laser_old_2.png</animSheet>
@@ -264,7 +264,7 @@
 	<chargedFrame>6</chargedFrame>
 	<fireFrame>7</fireFrame>
 	<firePoint x="37" y="42" />
-	<mountPoint x="4" y="54" />
+	<mountPoint x="5" y="55" />
 </weaponAnim>
 
 
@@ -276,7 +276,17 @@
 	<chargedFrame>6</chargedFrame>
 	<fireFrame>7</fireFrame>
 	<firePoint x="34" y="42" />
-	<mountPoint x="4" y="54" />
+	<mountPoint x="5" y="54" />
+</weaponAnim>
+
+<animSheet name="aea_laser_oldp_3" w="560" h="100" fw="56" fh="100">weapon_old/aea_laser_oldp_3.png</animSheet>
+<weaponAnim name="aea_laser_oldp_3">
+	<sheet>aea_laser_oldp_3</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>6</chargedFrame>
+	<fireFrame>7</fireFrame>
+	<firePoint x="35" y="50" />
+	<mountPoint x="5" y="56" />
 </weaponAnim>
 
 </FTL>
@@ -307,6 +317,20 @@
 <animSheet name="aea_armour_bot_1x4" w="35" h="140" fw="35" fh="140">effects/aea_armour_bot_1x4.png</animSheet>
 <anim name="aea_armour_bot_1x4">
 	<sheet>aea_armour_bot_1x4</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_armour_top_1x3" w="35" h="105" fw="35" fh="105">effects/aea_armour_top_1x3.png</animSheet>
+<anim name="aea_armour_top_1x3">
+	<sheet>aea_armour_top_1x3</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_armour_bot_1x3" w="35" h="105" fw="35" fh="105">effects/aea_armour_bot_1x3.png</animSheet>
+<anim name="aea_armour_bot_1x3">
+	<sheet>aea_armour_bot_1x3</sheet>
 	<desc length="1" x="0" y="0" />
 	<time>1</time>
 </anim>
@@ -342,6 +366,63 @@
 <animSheet name="aea_armour_rig_2x1" w="70" h="35" fw="70" fh="35">effects/aea_armour_rig_2x1.png</animSheet>
 <anim name="aea_armour_rig_2x1">
 	<sheet>aea_armour_rig_2x1</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_armour_2x1" w="70" h="35" fw="70" fh="35">effects/aea_armour_2x1.png</animSheet>
+<anim name="aea_armour_2x1">
+	<sheet>aea_armour_2x1</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_armour_1x1" w="35" h="35" fw="35" fh="35">effects/aea_armour_1x1.png</animSheet>
+<anim name="aea_armour_1x1">
+	<sheet>aea_armour_1x1</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_armour_r_1x1" w="35" h="35" fw="35" fh="35">effects/aea_armour_r_1x1.png</animSheet>
+<anim name="aea_armour_r_1x1">
+	<sheet>aea_armour_r_1x1</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_armour_1x2" w="35" h="70" fw="35" fh="70">effects/aea_armour_1x2.png</animSheet>
+<anim name="aea_armour_1x2">
+	<sheet>aea_armour_1x2</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_armour_up_1x2" w="35" h="70" fw="35" fh="70">effects/aea_armour_up_1x2.png</animSheet>
+<anim name="aea_armour_up_1x2">
+	<sheet>aea_armour_up_1x2</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_armour_down_1x2" w="35" h="70" fw="35" fh="70">effects/aea_armour_down_1x2.png</animSheet>
+<anim name="aea_armour_down_1x2">
+	<sheet>aea_armour_down_1x2</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+
+<animSheet name="aea_armour_up_2x1" w="70" h="35" fw="70" fh="35">effects/aea_armour_up_2x1.png</animSheet>
+<anim name="aea_armour_up_2x1">
+	<sheet>aea_armour_up_2x1</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_armour_down_2x1" w="70" h="35" fw="70" fh="35">effects/aea_armour_down_2x1.png</animSheet>
+<anim name="aea_armour_down_2x1">
+	<sheet>aea_armour_down_2x1</sheet>
 	<desc length="1" x="0" y="0" />
 	<time>1</time>
 </anim>
@@ -2213,4 +2294,390 @@
 	<desc length="1" x="0" y="0" />
 	<time>1</time>
 </anim>
+
+<!--BIRDS-->
+
+<animSheet fh="35" fw="35" h="455" w="350" name="aea_bird_avali">people/aea_bird_avali_base.png</animSheet>
+<anim name="aea_bird_avali_clone">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="2" x="0" length="7" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_avali_death_right">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="0" x="3" length="5" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_avali_death_left">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="2" x="0" length="5" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_avali_walk_down">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="12" x="0" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_walk_right">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="12" x="4" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_walk_up">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="11" x="0" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_walk_left">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="11" x="4" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_shoot_down">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="10" x="0" length="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_shoot_right">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="10" x="3" length="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_shoot_up">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="10" x="6" length="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_shoot_left">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="1" x="0" length="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_fire_down">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="9" x="0" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_fire_right">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="9" x="4" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_fire_up">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="8" x="0" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_fire_left">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="8" x="4" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_repair">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="7" x="0" length="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_punch_up">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="1" x="3" length="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_punch_down">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="6" x="0" length="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_avali_teleport">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="3" x="0" length="7" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_bird_avali_type_right">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="5" x="0" length="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_avali_type_left">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="5" x="4" length="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_avali_type_up">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="4" x="0" length="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_avali_type_down">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="4" x="4" length="4" />
+	<time>0.75</time>
+</anim>
+<anim name="crewLaser">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="0" x="1" length="1" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_bird_avali_portrait">
+	<sheet>aea_bird_avali</sheet>
+	<desc y="0" x="0" length="1" />
+	<time>1</time>
+</anim>
+
+<!--skygirr-->
+<animSheet fh="35" fw="35" h="455" w="350" name="aea_bird_unique">people/aea_bird_unique_base.png</animSheet>
+<anim name="aea_bird_unique_clone">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="2" x="0" length="7" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_unique_death_right">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="0" x="3" length="5" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_unique_death_left">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="2" x="0" length="5" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_unique_walk_down">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="12" x="0" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_walk_right">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="12" x="4" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_walk_up">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="11" x="0" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_walk_left">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="11" x="4" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_shoot_down">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="10" x="0" length="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_shoot_right">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="10" x="3" length="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_shoot_up">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="10" x="6" length="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_shoot_left">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="1" x="0" length="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_fire_down">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="9" x="0" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_fire_right">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="9" x="4" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_fire_up">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="8" x="0" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_fire_left">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="8" x="4" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_repair">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="7" x="0" length="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_punch_up">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="1" x="3" length="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_punch_down">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="6" x="0" length="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_unique_teleport">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="3" x="0" length="7" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_bird_unique_type_right">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="5" x="0" length="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_unique_type_left">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="5" x="4" length="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_unique_type_up">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="4" x="0" length="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_unique_type_down">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="4" x="4" length="4" />
+	<time>0.75</time>
+</anim>
+<anim name="crewLaser">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="0" x="1" length="1" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_bird_unique_portrait">
+	<sheet>aea_bird_unique</sheet>
+	<desc y="0" x="0" length="1" />
+	<time>1</time>
+</anim>
+
+<!--illuminant-->
+<animSheet fh="35" fw="35" h="455" w="350" name="aea_bird_illuminant">people/aea_bird_illuminant_base.png</animSheet>
+<anim name="aea_bird_illuminant_clone">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="2" x="0" length="7" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_illuminant_death_right">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="0" x="3" length="5" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_illuminant_death_left">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="2" x="0" length="5" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_illuminant_walk_down">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="12" x="0" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_walk_right">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="12" x="4" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_walk_up">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="11" x="0" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_walk_left">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="11" x="4" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_shoot_down">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="10" x="0" length="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_shoot_right">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="10" x="3" length="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_shoot_up">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="10" x="6" length="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_shoot_left">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="1" x="0" length="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_fire_down">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="9" x="0" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_fire_right">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="9" x="4" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_fire_up">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="8" x="0" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_fire_left">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="8" x="4" length="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_repair">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="7" x="0" length="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_punch_up">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="1" x="3" length="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_punch_down">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="6" x="0" length="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_bird_illuminant_teleport">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="3" x="0" length="7" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_bird_illuminant_type_right">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="5" x="0" length="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_illuminant_type_left">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="5" x="4" length="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_illuminant_type_up">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="4" x="0" length="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_bird_illuminant_type_down">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="4" x="4" length="4" />
+	<time>0.75</time>
+</anim>
+<anim name="crewLaser">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="0" x="1" length="1" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_bird_illuminant_portrait">
+	<sheet>aea_bird_illuminant</sheet>
+	<desc y="0" x="0" length="1" />
+	<time>1</time>
+</anim>
+
 </FTL>

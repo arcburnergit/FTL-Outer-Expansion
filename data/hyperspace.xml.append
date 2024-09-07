@@ -29,6 +29,12 @@ The enemy ship will repair 2 system damage once at 5hp.</tooltip>
 The enemy ship will repair 1 system damage once at 5hp.</tooltip>
 		</mod-append:shipIcon>
 		<mod-append:shipIcon>
+            <name>icon_aea_old_armour</name>
+            <tooltip>Armoured Rooms:
+Armoured rooms on the enemy ship will protect it against incoming projectiles such as lasers and missiles.
+Armour will absorb 1 damage of projectiles that pass over it.</tooltip>
+		</mod-append:shipIcon>
+		<mod-append:shipIcon>
             <name>icon_aea_old_evasion</name>
             <tooltip>Predictive Guidance:
 The enemy ship will recieve projectiles from front 60 degrees while evasion is above 5%.
@@ -45,21 +51,39 @@ This makes lasers and missiles more likely to hit the armour of the ship.</toolt
             <tooltip>MYSTERIOUS SHIELD:
 This enemy is protected by a stronger than usual Energy Shield.</tooltip>
         </mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_old_shield_weak</name>
+            <tooltip>MYSTERIOUS SHIELD:
+This enemy is protected by an Energy Shield.</tooltip>
+        </mod-append:shipIcon>
 	</mod:findLike>
 
   	<mod:findLike type="shipOrder">
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_ARTY</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_NECRO_ENGI</mod-append:ship>
-		<mod-append:empty />
-		<mod-append:ship>PLAYER_SHIP_AEA_OLD_ARMOUR</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_BIRD_BIG</mod-append:ship>
+		<mod-append:empty/>
 			<!-- -->
-		<mod-append:empty />
-		<mod-append:empty />
+		<mod-append:empty/>
+		<mod-append:empty/>
 		<mod-append:ship>PLAYER_SHIP_AEA_NECRO_SEPA</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_LONG</mod-append:ship>
 
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_CREW1</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_CREW2</mod-append:ship>
+
+		<mod-append:ship>PLAYER_SHIP_AEA_OLD_HAMMER</mod-append:ship>
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:empty/>
+			<!-- -->
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:ship>PLAYER_SHIP_AEA_OLD_ARMOUR</mod-append:ship>
+
+		<mod-append:ship>PLAYER_SHIP_AEA_OLD_UNIA</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_OLD_UNIB</mod-append:ship>
 	</mod:findLike>
 
 	<mod-append:ship name="PLAYER_SHIP_AEA_ACID_ARTY" b="true" c="true" >
@@ -149,13 +173,75 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 		</unlock>
 	</mod-append:ship>
 
-	
-	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_ARMOUR" b="false" c="false" >
+	<mod-append:ship name="PLAYER_SHIP_AEA_BIRD_BIG" b="false" c="false" >
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
 	</mod-append:ship>
 
+	
+	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_ARMOUR" b="true" c="true" >
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_OLD_ARMOUR</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_OLD_ARMOUR_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_OLD_ARMOUR</shipReq>
+        </unlock>
+	</mod-append:ship>
+
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_HAMMER" b="true" c="true" >
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_OLD_HAMMER</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_OLD_HAMMER_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_OLD_HAMMER</shipReq>
+        </unlock>
+	</mod-append:ship>
+
+	
+	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_UNIA" b="true" c="true" >
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="c" silent="false">
+			<type>4</type>
+		</unlock>
+	</mod-append:ship>
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_UNIB" b="true" c="false" >
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
+			<type>4</type>
+		</unlock>
+	</mod-append:ship>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_ARTY">
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
@@ -267,7 +353,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 
 	
 	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_ARMOUR">
-		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
+		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<rooms>
 			<room id="2">
@@ -283,12 +369,172 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 		</rooms>
 	</mod-append:customShip>
 
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_ARMOUR_2">
+		<hiddenAug>SHIP_ANCIENT</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<rooms>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_1x4</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_ARMOUR_3">
+		<hiddenAug>SHIP_SYLVAN</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_HAMMER">
+		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<rooms>
+			<room id="1">
+				<roomAnim renderLayer="0">aea_armour_top_1x3</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">aea_armour_bot_1x3</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_HAMMER_2">
+		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<rooms>
+			<room id="1">
+				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">aea_armour_down_1x2</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_down_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_HAMMER_3">
+		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+	
+	
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_UNIA">
+		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<rooms>
+			<room id="17">
+				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="19">
+				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_unique_1 name="Atoning Unifex" room="0"/>
+			<human_soldier room="1"/>
+			<human_soldier room="14"/>
+		</crew>
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_UNIA_2">
+		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<rooms>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_unique_2 name="Asymptotic Essence" room="20"/>
+			<aea_acid_soldier name="Acidic Soldier" room="0"/>
+			<orchid_caretaker room="4"/>
+		</crew>
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_UNIA_3">
+		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<rooms>
+			<room id="17">
+				<roomAnim renderLayer="0">aea_armour_down_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="18">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_unique_3 name="Eupathic Impulse" room="2"/>
+			<aea_old_1 room="2"/>
+			<aea_old_1 room="0"/>
+		</crew>
+	</mod-append:customShip>
+
+	
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_UNIB">
+		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<aea_old_unique_4 name="Homologous Trend" room="0"/>
+			<human_medic room="1"/>
+			<human_soldier room="14"/>
+		</crew>
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_UNIB_2">
+		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<rooms>
+			<room id="21">
+				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_unique_5 name="Noetic Concordance" room="0"/>
+			<zoltan room="11"/>
+			<zoltan_peacekeeper room="12"/>
+		</crew>
+	</mod-append:customShip>
+
 	<mod-append:customShip name="AEA_OLD_GUARD_BOSS">
 		<hiddenAug>AEA_OLD_NO_ARTY_REPAIR</hiddenAug>
+		<hiddenAug>UPG_TECH_BYPASS</hiddenAug>
 		<shipIcons>
 			<shipIcon>icon_threat</shipIcon>
 			<shipIcon>icon_auto</shipIcon>
 			<shipIcon>icon_no2</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
         </shipIcons>
 		<autoShipForce>true</autoShipForce>
 		<rooms>
@@ -318,6 +564,380 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_OLD_BATTLESHIP">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<noFuelStalemate />
+		<noJump />
+		<rooms>
+			<room id="8">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_OLD_PROTECTOR">
+		<shipIcons>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<rooms>
+			<room id="11">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="AEA_OLD_ASSAULT">
+		<shipIcons>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<rooms>
+			<room id="8">
+				<roomAnim renderLayer="0">aea_armour_rig_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="AEA_OLD_RIGGER">
+		<shipIcons>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<rooms>
+			<room id="8">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="AEA_OLD_ENFORCER">
+		<shipIcons>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<rooms>
+			<room id="3">
+				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_OLD_STATION">
+		<shipIcons>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<rooms>
+			<room id="6">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">aea_armour_down_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+
+
+	<mod-append:customShip name="AEA_BEAM_MASTER_OLD">
+		<rooms>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_1x1</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">aea_armour_2x1</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">aea_armour_2x1</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">aea_armour_2x1</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="0">aea_armour_2x1</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">aea_armour_2x1</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">aea_armour_2x1</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">aea_armour_r_1x1</roomAnim>
+			</room>
+		</rooms>
+		<shipIcons>
+			<shipIcon>icon_lowthreat</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<crew>
+			<unique_leah room="0" name="Leah" /> <!--pilot-->
+			<aea_old_1 room="3" /> <!--shields-->
+			<human_rebel room="7" /> <!--engines-->
+		</crew>
+		<autoShipForce>false</autoShipForce>
+	</mod-append:customShip>
+
+
+	
+
+	<mod-append:customShip name="AEA_OLD_PROTECTOR_ELITE">
+		<shipIcons>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<rooms>
+			<room id="11">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="AEA_OLD_ASSAULT_ELITE">
+		<shipIcons>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<rooms>
+			<room id="8">
+				<roomAnim renderLayer="0">aea_armour_rig_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="AEA_OLD_RIGGER_ELITE">
+		<shipIcons>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<rooms>
+			<room id="8">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="AEA_OLD_ENFORCER_ELITE">
+		<shipIcons>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<rooms>
+			<room id="3">
+				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_OLD_SPONSOR_1_BOUNTY">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+        </shipIcons>
+		<noJump/>
+		<noFuelStalemate />
+	</mod-append:customShip>
+
+
+	
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_CASUAL">
+		<shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto_boss</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<rooms>
+			<room id="2">
+				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_1 room="0" /> <!--piloting-->
+			<aea_old_1 room="7" /> <!--right arty-->
+			<aea_old_1 room="8" /> <!--left arty-->
+			<aea_old_1 room="29" /> <!--weapons-->
+			<aea_old_1 room="11" /> <!--drones-->
+			<aea_old_1 room="14" /> <!--engines-->
+			<aea_old_1 room="6" /> <!--shields-->
+			<aea_old_1 room="13" /> <!--temporal-->
+			<aea_old_1 room="12" /> <!--teleporter-->
+		</crew>
+		<noJump />
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_NORMAL">
+		<shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto_boss</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<rooms>
+			<room id="2">
+				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_1 room="0" /> <!--piloting-->
+			<aea_old_1 room="7" /> <!--right arty-->
+			<aea_old_1 room="8" /> <!--left arty-->
+			<aea_old_1 room="29" /> <!--weapons-->
+			<aea_old_1 room="11" /> <!--drones-->
+			<aea_old_1 room="14" /> <!--engines-->
+			<aea_old_1 room="6" /> <!--shields-->
+			<aea_old_1 room="13" /> <!--temporal-->
+			<aea_old_1 room="12" /> <!--teleporter-->
+			<aea_old_1 room="12" /> <!--teleporter-->
+		</crew>
+		<noJump />
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_CHALLENGE">
+		<shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto_boss</shipIcon>
+			<shipIcon>icon_invasion</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<rooms>
+			<room id="2">
+				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_1 room="0" /> <!--piloting-->
+			<aea_old_1 room="7" /> <!--right arty-->
+			<aea_old_1 room="8" /> <!--left arty-->
+			<aea_old_1 room="29" /> <!--weapons-->
+			<aea_old_1 room="11" /> <!--drones-->
+			<aea_old_1 room="14" /> <!--engines-->
+			<aea_old_1 room="6" /> <!--shields-->
+			<aea_old_1 room="13" /> <!--temporal-->
+			<aea_old_1 room="12" /> <!--teleporter-->
+			<aea_old_1 room="12" /> <!--teleporter-->
+		</crew>
+		<noJump />
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_EXTREME">
+		<shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto_boss</shipIcon>
+			<shipIcon>icon_invasion</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<rooms>
+			<room id="2">
+				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_1 room="0" /> <!--piloting-->
+			<aea_old_1 room="7" /> <!--right arty-->
+			<aea_old_1 room="8" /> <!--left arty-->
+			<aea_old_1 room="29" /> <!--weapons-->
+			<aea_old_1 room="11" /> <!--drones-->
+			<aea_old_1 room="14" /> <!--engines-->
+			<aea_old_1 room="6" /> <!--shields-->
+			<aea_old_1 room="13" /> <!--temporal-->
+			<aea_old_1 room="12" /> <!--teleporter-->
+			<aea_old_1 room="12" /> <!--teleporter-->
+		</crew>
+		<noJump />
+		<noFuelStalemate />
 	</mod-append:customShip>
 
 
@@ -950,6 +1570,8 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 		</deathSounds>
 	</race>
 	<race name="aea_old_unique_1">
+		<essential>1</essential>
+		<teleportMoveOtherShip>true</teleportMoveOtherShip>
 		<canSuffocate>false</canSuffocate>
 		<canBurn>false</canBurn>
 		<defaultSkillLevel>1</defaultSkillLevel>
@@ -963,8 +1585,36 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 		<deathSounds>
 			<deathSound>sysExplosion</deathSound>
 		</deathSounds>
+		<powerEffect>
+			<cooldown>30</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>ionHit1</powerSound>
+				<powerSound>ionHit2</powerSound>
+				<powerSound>ionHit3</powerSound>
+				<powerSound>ionShields1</powerSound>
+				<powerSound>ionShields2</powerSound>
+				<powerSound>ionShields3</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<systemInRoom />
+				<playerShip />
+			</req>
+			<powerCharges>3</powerCharges>
+			<initialCharges>3</initialCharges>
+			<chargesPerJump>1</chargesPerJump>
+			<friendlyFire>true</friendlyFire>
+			<stun>10</stun>
+			<buttonText>HACK</buttonText>
+			<tooltip>[COOLDOWN:30s]
+				Hacks room and stuns all crew in the room for 10 seconds.
+			</tooltip>
+			<cooldownColor r="57" g="59" b="61" />
+			<effectAnim>explosion_stun_ion</effectAnim>
+		</powerEffect>
 	</race>
 	<race name="aea_old_unique_2">
+		<essential>1</essential>
 		<canSuffocate>false</canSuffocate>
 		<canBurn>false</canBurn>
 		<defaultSkillLevel>1</defaultSkillLevel>
@@ -978,8 +1628,30 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 		<deathSounds>
 			<deathSound>sysExplosion</deathSound>
 		</deathSounds>
+		<powerEffect>
+			<cooldown>30</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>healBomb</powerSound>
+			</powerSounds>
+			<req type="enemy">
+			</req>
+			<powerCharges>3</powerCharges>
+			<initialCharges>3</initialCharges>
+			<chargesPerJump>1</chargesPerJump>
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<friendlyFire>true</friendlyFire>
+			<shipFriendlyFire>true</shipFriendlyFire>
+			<buttonText>CLEANSE</buttonText>
+			<sysDamage>-1</sysDamage>
+			<tooltip>[COOLDOWN:30s]
+				Cleanse all ion effects on the room and heal 2 system damage.</tooltip>
+			<cooldownColor r="123" g="135" b="151" />
+			<effectAnim>explosion_big1_heal</effectAnim>
+		</powerEffect>
 	</race>
 	<race name="aea_old_unique_3">
+		<essential>1</essential>
 		<canSuffocate>false</canSuffocate>
 		<canBurn>false</canBurn>
 		<defaultSkillLevel>1</defaultSkillLevel>
@@ -993,8 +1665,30 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 		<deathSounds>
 			<deathSound>sysExplosion</deathSound>
 		</deathSounds>
+		<powerEffect>
+			<cooldown>30</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>multiexplosion</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<enemyInRoom />
+			</req>
+			<powerCharges>3</powerCharges>
+			<initialCharges>3</initialCharges>
+			<chargesPerJump>1</chargesPerJump>
+			<friendlyFire>true</friendlyFire>
+			<shipFriendlyFire>true</shipFriendlyFire>
+			<buttonText>BOMB</buttonText>
+			<tooltip>[COOLDOWN:30s]
+				Detonate fire bombs on the enemy ship equal to the number of enemy crew in the room plus one.
+			</tooltip>
+			<cooldownColor r="173" g="67" b="32" />
+			<effectAnim>explosion_stun_ion</effectAnim>
+		</powerEffect>
 	</race>
 	<race name="aea_old_unique_4">
+		<essential>1</essential>
 		<canSuffocate>false</canSuffocate>
 		<canBurn>false</canBurn>
 		<defaultSkillLevel>1</defaultSkillLevel>
@@ -1008,8 +1702,35 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 		<deathSounds>
 			<deathSound>sysExplosion</deathSound>
 		</deathSounds>
+		<powerEffect>
+			<cooldown>30</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>healBomb</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<friendlyInRoom />
+				<maxHealth>50</maxHealth>
+				<inCombat />
+			</req>
+			<powerCharges>2</powerCharges>
+			<initialCharges>2</initialCharges>
+			<chargesPerJump>1</chargesPerJump>
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<friendlyFire>true</friendlyFire>
+			<shipFriendlyFire>true</shipFriendlyFire>
+			<buttonText>HEAL BURST</buttonText>
+			<damage>-1</damage>
+			<tooltip>[COOLDOWN:30s]
+				Heal all other friendly crew in the room including themselves for 100 hitpoints and repair 1 damage.</tooltip>
+			<cooldownColor r="156" g="80" b="144" />
+			<effectAnim>explosion_big1_heal</effectAnim>
+			<crewHealth>100</crewHealth>
+			<selfHealth>100</selfHealth>
+		</powerEffect>
 	</race>
 	<race name="aea_old_unique_5">
+		<essential>1</essential>
 		<canSuffocate>false</canSuffocate>
 		<canBurn>false</canBurn>
 		<defaultSkillLevel>1</defaultSkillLevel>
@@ -1023,7 +1744,80 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 		<deathSounds>
 			<deathSound>sysExplosion</deathSound>
 		</deathSounds>
+		<powerEffect>
+			<cooldown>30</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>shieldsUp</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<systemInRoom />
+				<playerShip />
+			</req>
+			<friendlyFire>true</friendlyFire>
+			<shipFriendlyFire>true</shipFriendlyFire>
+			<buttonText>SHIELD</buttonText>
+			<tooltip>[COOLDOWN:30s]
+				Generates two super shield layers.
+			</tooltip>
+			<cooldownColor r="62" g="91" b="51" />
+			<effectAnim>explosion_stun_ion</effectAnim>
+		</powerEffect>
 	</race>
+
+	<mod-append:race name="aea_bird_avali">
+    	<maxHealth>70</maxHealth>
+    	<moveSpeedMultiplier>1.5</moveSpeedMultiplier>
+    	<repairSpeed>1.2</repairSpeed>
+    	<fireRepairMultiplier>0.5</fireRepairMultiplier>
+    	<damageMultiplier>0.8</damageMultiplier>
+    	<fireDamageMultiplier>2</fireDamageMultiplier>
+    	<animBase>human</animBase>
+    	<deathSounds>
+    		<deathSound>death1</deathSound>
+    		<deathSound>death2</deathSound>
+    	</deathSounds>
+    	<deathSounds>
+    		<deathSound>death1</deathSound>
+    		<deathSound>death2</deathSound>
+    	</deathSounds>
+    </mod-append:race>
+    <mod-append:race name="aea_bird_illuminant">
+    	<maxHealth>90</maxHealth>
+    	<moveSpeedMultiplier>2</moveSpeedMultiplier>
+    	<repairSpeed>1.2</repairSpeed>
+    	<fireRepairMultiplier>0.8</fireRepairMultiplier>
+    	<damageMultiplier>1</damageMultiplier>
+    	<fireDamageMultiplier>1.5</fireDamageMultiplier>
+    	<damageTakenMultiplier>0.9</damageTakenMultiplier>
+    	<animBase>human</animBase>
+    	<deathSounds>
+    		<deathSound>death1</deathSound>
+    		<deathSound>death2</deathSound>
+    	</deathSounds>
+    	<deathSounds>
+    		<deathSound>death1</deathSound>
+    		<deathSound>death2</deathSound>
+    	</deathSounds>
+    </mod-append:race>
+	<mod-append:race name="aea_bird_unique">
+    	<maxHealth>90</maxHealth>
+    	<moveSpeedMultiplier>2</moveSpeedMultiplier>
+    	<repairSpeed>1.5</repairSpeed>
+    	<fireRepairMultiplier>0.8</fireRepairMultiplier>
+    	<damageMultiplier>1</damageMultiplier>
+    	<fireDamageMultiplier>1</fireDamageMultiplier>
+    	<damageTakenMultiplier>0.9</damageTakenMultiplier>
+    	<animBase>human</animBase>
+    	<deathSounds>
+    		<deathSound>death1</deathSound>
+    		<deathSound>death2</deathSound>
+    	</deathSounds>
+    	<deathSounds>
+    		<deathSound>death1</deathSound>
+    		<deathSound>death2</deathSound>
+    	</deathSounds>
+    </mod-append:race>
 </crew>
 
 <augments>
@@ -1043,6 +1837,25 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			</statBoost>
 		</statBoosts>
 	</aug>
+	<aug name="AEA_OLD_SHIELD_REPAIR">
+		<locked/>
+		<statBoosts>
+			<statBoost name="repairSpeed">
+				<boostType>MULT</boostType>
+				<amount>0.50</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALL</crewTarget>
+				<priority>1001</priority>
+				<systemRoomTarget>ALL</systemRoomTarget>
+				<systemList>
+				  <shields />
+				</systemList>
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="AEA_OLD_ARMOUR_ALLOY">
+		<locked/>
+	</aug>
 	<aug name="AEA_OLD_EVASION_ENEMY">
 		<icon>icon_aea_old_evasion</icon>
 	</aug>
@@ -1054,6 +1867,14 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 		<superShield>
 			<value>7</value>
 			<color r="204" g="189" b="125" a="0.8"/>
+			<shieldImage>ship/enemy_shields_white.png</shieldImage>
+		</superShield>
+    </aug>
+	<aug name="AEA_OLD_SHIELD_WEAK">
+		<icon>icon_aea_old_shield_weak</icon>
+		<superShield>
+			<value>4</value>
+			<color r="204" g="189" b="125" a="0.6"/>
 			<shieldImage>ship/enemy_shields_white.png</shieldImage>
 		</superShield>
     </aug>
@@ -1260,9 +2081,56 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 	<variable name="aea_p_has_repair" op="set" val="0" />
 	<variable name="aea_e_has_repair" op="set" val="1" />
 	
+
+	<metaVariable name="juke_aea_old_1" op="set" val="0" />
+	<metaVariable name="juke_aea_old_2" op="set" val="0" />
 	<variable name="aea_old_has_cell" op="set" val="0" />
 	<variable name="aea_old_activated_cell" op="set" val="0" />
 	<variable name="aea_old_gate_guard_activated" op="set" val="0" />
+	<variable name="aea_old_gate_guard_attached" op="set" val="0" />
+	<variable name="ach_trans_aea_old_1" op="set" val="0" />
+	<variable name="aea_old_completed_sponsor" op="set" val="0" />
+
+	<metaVariable name="aea_old_sponser_choice" op="set" val="0" />
+
+	<req name="aea_meet_unique_1" type="any">
+		<req lvl="0" max_lvl="0">
+			<name>aea_old_sponser_choice</name>
+		</req>
+		<req lvl="2">
+			<name>aea_old_sponser_choice</name>
+		</req>
+	</req>
+	<req name="aea_meet_unique_2" type="any">
+		<req lvl="0" max_lvl="1">
+			<name>aea_old_sponser_choice</name>
+		</req>
+		<req lvl="3" >
+			<name>aea_old_sponser_choice</name>
+		</req>
+	</req>
+	<req name="aea_meet_unique_3" type="any">
+		<req lvl="0" max_lvl="2">
+			<name>aea_old_sponser_choice</name>
+		</req>
+		<req lvl="4">
+			<name>aea_old_sponser_choice</name>
+		</req>	
+	</req>
+	<req name="aea_meet_unique_4" type="any">
+		<req lvl="0" max_lvl="3">
+			<name>aea_old_sponser_choice</name>
+		</req>
+		<req lvl="5">
+			<name>aea_old_sponser_choice</name>
+		</req>	
+	</req>
+	<req name="aea_meet_unique_5" type="any">
+		<req lvl="0" max_lvl="4">
+			<name>challenge_level</name>
+		</req>
+	</req>
+
 
 	<variable name="shields_cap_aea" op="set" val="0" />
 	<variable name="engines_cap_aea" op="set" val="0" />
@@ -1288,7 +2156,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 	<variable name="aea_old_reactor_upgrades" op="set" val="0"/>
 	<req name="aea_show_upgrade_reactor" type="all">
 		<name>aea_old_activated_cell</name>
-		<req type="all" lvl="0" max_lvl="1">
+		<req type="all" lvl="0" max_lvl="4">
 			<name>aea_old_reactor_upgrades</name>
 		</req>
 	</req>
@@ -1301,6 +2169,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="10" max_lvl="10">
 				<name>shields_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="9" max_lvl="10">
@@ -1309,6 +2178,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="9" max_lvl="9">
 				<name>shields_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="8" max_lvl="9">
@@ -1317,6 +2187,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="8" max_lvl="8">
 				<name>shields_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="7" max_lvl="8">
@@ -1325,6 +2196,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="7" max_lvl="7">
 				<name>shields_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="6" max_lvl="7">
@@ -1333,6 +2205,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="6" max_lvl="6">
 				<name>shields_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="5" max_lvl="6">
@@ -1341,6 +2214,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="5" max_lvl="5">
 				<name>shields_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="4" max_lvl="5">
@@ -1349,6 +2223,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="4" max_lvl="4">
 				<name>shields_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="3" max_lvl="4">
@@ -1357,6 +2232,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="3" max_lvl="3">
 				<name>shields_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="2" max_lvl="3">
@@ -1365,6 +2241,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="2" max_lvl="2">
 				<name>shields_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="1" max_lvl="2">
@@ -1373,6 +2250,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="1" max_lvl="1">
 				<name>shields_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 	</req>
 	<variable name="aea_old_shields_upgrades" op="set" val="0"/>
@@ -1392,6 +2270,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="-1" max_lvl="-1">
 				<name>engines_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="10" max_lvl="11">
@@ -1400,6 +2279,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="10" max_lvl="10">
 				<name>engines_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="9" max_lvl="10">
@@ -1408,6 +2288,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="9" max_lvl="9">
 				<name>engines_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="8" max_lvl="9">
@@ -1416,6 +2297,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="8" max_lvl="8">
 				<name>engines_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="7" max_lvl="8">
@@ -1424,6 +2306,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="7" max_lvl="7">
 				<name>engines_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="6" max_lvl="7">
@@ -1432,6 +2315,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="6" max_lvl="6">
 				<name>engines_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="5" max_lvl="6">
@@ -1440,6 +2324,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="5" max_lvl="5">
 				<name>engines_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="4" max_lvl="5">
@@ -1448,6 +2333,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="4" max_lvl="4">
 				<name>engines_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="3" max_lvl="4">
@@ -1456,6 +2342,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="3" max_lvl="3">
 				<name>engines_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="2" max_lvl="3">
@@ -1464,6 +2351,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="2" max_lvl="2">
 				<name>engines_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="1" max_lvl="2">
@@ -1472,12 +2360,13 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="1" max_lvl="1">
 				<name>engines_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 	</req>
 	<variable name="aea_old_engines_upgrades" op="set" val="0"/>
 	<req name="aea_show_upgrade_engines" type="all">
 		<name>aea_old_activated_cell</name>
-		<req type="all" lvl="0" max_lvl="1">
+		<req type="all" lvl="0" max_lvl="4">
 			<name>aea_old_engines_upgrades</name>
 		</req>
 		<name>engines</name>
@@ -1491,6 +2380,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="10" max_lvl="10">
 				<name>weapons_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="9" max_lvl="10">
@@ -1499,6 +2389,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="9" max_lvl="9">
 				<name>weapons_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="8" max_lvl="9">
@@ -1507,6 +2398,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="8" max_lvl="8">
 				<name>weapons_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="7" max_lvl="8">
@@ -1515,6 +2407,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="7" max_lvl="7">
 				<name>weapons_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="6" max_lvl="7">
@@ -1523,6 +2416,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="6" max_lvl="6">
 				<name>weapons_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="5" max_lvl="6">
@@ -1531,6 +2425,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="5" max_lvl="5">
 				<name>weapons_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="4" max_lvl="5">
@@ -1539,6 +2434,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="4" max_lvl="4">
 				<name>weapons_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="3" max_lvl="4">
@@ -1547,6 +2443,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="3" max_lvl="3">
 				<name>weapons_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="2" max_lvl="3">
@@ -1555,6 +2452,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="2" max_lvl="2">
 				<name>weapons_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="1" max_lvl="2">
@@ -1563,6 +2461,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="1" max_lvl="1">
 				<name>weapons_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 	</req>
 	<variable name="aea_old_weapons_upgrades" op="set" val="0"/>
@@ -1582,6 +2481,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="-1" max_lvl="-1">
 				<name>drones_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="10" max_lvl="11">
@@ -1590,6 +2490,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="10" max_lvl="10">
 				<name>drones_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="9" max_lvl="10">
@@ -1598,6 +2499,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="9" max_lvl="9">
 				<name>drones_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="8" max_lvl="9">
@@ -1606,6 +2508,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="8" max_lvl="8">
 				<name>drones_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="7" max_lvl="8">
@@ -1614,6 +2517,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="7" max_lvl="7">
 				<name>drones_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="6" max_lvl="7">
@@ -1622,6 +2526,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="6" max_lvl="6">
 				<name>drones_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="5" max_lvl="6">
@@ -1630,6 +2535,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="5" max_lvl="5">
 				<name>drones_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="4" max_lvl="5">
@@ -1638,6 +2544,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="4" max_lvl="4">
 				<name>drones_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="3" max_lvl="4">
@@ -1646,6 +2553,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="3" max_lvl="3">
 				<name>drones_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="2" max_lvl="3">
@@ -1654,6 +2562,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="2" max_lvl="2">
 				<name>drones_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="1" max_lvl="2">
@@ -1662,6 +2571,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="1" max_lvl="1">
 				<name>drones_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 	</req>
 	<variable name="aea_old_drones_upgrades" op="set" val="0"/>
@@ -1681,6 +2591,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="3" max_lvl="3">
 				<name>cloaking_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="2" max_lvl="2">
@@ -1689,6 +2600,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="2" max_lvl="2">
 				<name>cloaking_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="1" max_lvl="1">
@@ -1697,12 +2609,14 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="1" max_lvl="1">
 				<name>cloaking_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="2" max_lvl="2">
 				<name>cloaking</name>
 			</req>
 			<name>UPG_CLOAK_FIRE</name>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 	</req>
 	<variable name="aea_old_cloaking_upgrades" op="set" val="0"/>
@@ -1722,6 +2636,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="3" max_lvl="3">
 				<name>mind_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="2" max_lvl="2">
@@ -1730,6 +2645,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="2" max_lvl="2">
 				<name>mind_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="1" max_lvl="1">
@@ -1738,6 +2654,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="1" max_lvl="1">
 				<name>mind_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 	</req>
 	<variable name="aea_old_mind_upgrades" op="set" val="0"/>
@@ -1758,6 +2675,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="2" max_lvl="2">
 				<name>hacking_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="1" max_lvl="1">
@@ -1766,6 +2684,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="1" max_lvl="1">
 				<name>hacking_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 	</req>
 	<variable name="aea_old_hacking_upgrades" op="set" val="0"/>
@@ -1786,6 +2705,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="3" max_lvl="3">
 				<name>medbay_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="2" max_lvl="2">
@@ -1794,6 +2714,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="2" max_lvl="2">
 				<name>medbay_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="1" max_lvl="1">
@@ -1802,6 +2723,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="1" max_lvl="1">
 				<name>medbay_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 	</req>
 	<variable name="aea_old_medbay_upgrades" op="set" val="0"/>
@@ -1822,6 +2744,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="3" max_lvl="3">
 				<name>clonebay_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="2" max_lvl="2">
@@ -1830,6 +2753,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="2" max_lvl="2">
 				<name>clonebay_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 		<req type="all">
 			<req lvl="1" max_lvl="1">
@@ -1838,6 +2762,7 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<req lvl="1" max_lvl="1">
 				<name>clonebay_cap_aea</name>
 			</req>
+			<name>AEA_COMPONENT_OLD</name>
 		</req>
 	</req>
 	<variable name="aea_old_clonebay_upgrades" op="set" val="0"/>
@@ -1859,6 +2784,9 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
   	<eventFile>special_aea_necro</eventFile>
   	<eventFile>sector_aea_necro</eventFile>
   	<eventFile>special_aea_old</eventFile>
+  	<eventFile>sector_aea_old_1</eventFile>
+  	<eventFile>sector_aea_old_2</eventFile>
+  	<eventFile>sector_aea_old_3</eventFile>
 	
 	<fleetDef name="CUSTOM_FLEET_AEA_ACID">
         <ship layer="0">fleetaea_acid_1_small</ship>
@@ -1895,7 +2823,25 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 	<bossShip yOffset="180">AEA_ACID_BOSS</bossShip>
 	<bossShip yOffset="180">AEA_ACID_ASSUALT</bossShip>
 	<bossShip yOffset="100">AEA_OLD_GUARD_BOSS</bossShip>
+	
+	<bossShip>AEA_OLD_BATTLESHIP</bossShip>
+	<bossShip>AEA_OLD_SPONSOR_1_BOUNTY</bossShip>
+	<bossShip>AEA_OLD_FINAL_BOSS_CASUAL</bossShip>
+	<bossShip>AEA_OLD_FINAL_BOSS_NORMAL</bossShip>
+	<bossShip>AEA_OLD_FINAL_BOSS_CHALLENGE</bossShip>
+	<bossShip>AEA_OLD_FINAL_BOSS_EXTREME</bossShip>
 </events>
+
+<mod:findLike type="victories"> <!-- adds the victory marker for lylmik ending -->
+	<mod-append:aea_old_win>	
+		<name>\1 Quarantine Ending</name>
+		<description>Escape Lylmik Quarantine aboard any layout of the \1</description>
+		<icon>S_AEA_OLD_WIN</icon>
+		<secretName>\1 ????? Ending</secretName>
+		<secretDescription>Escape the clutches of a powerful race aboard any layout of the \1</secretDescription>
+		<secretIcon>S_secret</secretIcon>
+	</mod-append:aea_old_win>
+</mod:findLike>
 
 <store>
 	<customStore id="STORE_AEA_ACID_CACHE">
@@ -1924,6 +2870,124 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			</item>
         </category>
     </customStore>
+
+	<customStore id="STORE_AEA_OLD_EXCLUSIVE">
+        <itemPurchaseLimit>1</itemPurchaseLimit>
+		<category type="WEAPONS">
+            <item>
+				<blueprint>GIFTLIST_WEAPONS_AEA_OLD</blueprint>
+                <modifier flat="false">0.5</modifier> 
+                <price>-1</price>
+			</item>
+            <item>
+				<blueprint>GIFTLIST_WEAPONS_AEA_OLD</blueprint>
+                <modifier flat="false">0.5</modifier> 
+                <price>-1</price>
+			</item>
+            <item>
+				<blueprint>GIFTLIST_WEAPONS_AEA_OLD</blueprint>
+                <modifier flat="false">0.5</modifier> 
+                <price>-1</price>
+			</item>
+        </category>
+		<category type="WEAPONS">
+            <item>
+				<blueprint>GIFTLIST_WEAPONS_AEA_OLD</blueprint>
+                <modifier flat="false">0.5</modifier> 
+                <price>-1</price>
+			</item>
+            <item>
+				<blueprint>GIFTLIST_WEAPONS_AEA_OLD</blueprint>
+                <modifier flat="false">0.5</modifier> 
+                <price>-1</price>
+			</item>
+            <item>
+				<blueprint>GIFTLIST_WEAPONS_AEA_OLD</blueprint>
+                <modifier flat="false">0.5</modifier> 
+                <price>-1</price>
+			</item>
+        </category>
+    </customStore>
+
+	<customStore id="STORE_AEA_OLD_CLEARANCE">
+		<hullRepair>
+			<price min="2" max="2" />
+			<sectorScaled />
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="4" max="4" />
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="3" max="3" />
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="5" max="5" />
+		</resource>
+		<category type="WEAPONS">
+            <customTitle>CLEARANCE SALE [25% OFF]</customTitle>
+            <item>
+                <modifier flat="false">0.75</modifier> 
+                <price>-1</price>
+			</item>
+            <item>
+                <modifier flat="false">0.75</modifier> 
+                <price>-1</price>
+			</item>
+            <item>
+                <modifier flat="false">0.75</modifier> 
+                <price>-1</price>
+			</item>
+        </category>
+		<category type="DRONES">
+            <customTitle>CLEARANCE SALE [25% OFF]</customTitle>
+            <item>
+                <modifier flat="false">0.75</modifier> 
+                <price>-1</price>
+			</item>
+            <item>
+                <modifier flat="false">0.75</modifier> 
+                <price>-1</price>
+			</item>
+            <item>
+                <modifier flat="false">0.75</modifier> 
+                <price>-1</price>
+			</item>
+        </category>
+		<category type="SYSTEMS">
+            <customTitle>ESSENTIAL SYSTEMS</customTitle>
+			<guaranteedSystems>
+                <weapons />
+				<shields />
+				<oxygen />
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>AUXILIARY SYSTEMS</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+    </customStore>
 </store>
 
 <mod:findLike type="achievements">
@@ -1932,15 +2996,24 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
 			<mod-append:achievement name="ACH_TRANS_AEA_ACID">
 				<name>Acidic Transport</name>
 				<secretDescription>Obtain the loot from the Acidic loot transport.</secretDescription>
-				<description>Obtain the ??? from the Acidic loot transport.</description>
+				<description>Obtain the Acidic Barrage from the Acidic loot transport.</description>
 				<icon>ach_trans_aea_acid</icon>
 				<header>Loot Acquired</header>
 			</mod-append:achievement>
 			<mod-append:achievement name="ACH_TRANS_AEA_NECRO">
 				<name>Heretic Transport</name>
 				<secretDescription>Obtain the loot from the Heretic loot transport.</secretDescription>
-				<description>Obtain the ??? from the Heretic loot transport.</description>
+				<description>Obtain the Shatter Laser II from the Heretic loot transport.</description>
 				<icon>ach_trans_aea_necro</icon>
+				<header>Loot Acquired</header>
+			</mod-append:achievement>
+			<mod-append:achievement name="ACH_TRANS_AEA_OLD_1">
+				<name>Lylmik Station</name>
+				<secretName>Secret Transport</secretName>
+				<description>Obtain a Lylmik weapon from the Lylmik loot station.</description>
+				<secretDescription>Obtain the loot from the ??? loot transport.</secretDescription>
+				<icon>ach_trans_aea_old_1</icon>
+				<lockImage>ach_locked</lockImage>
 				<header>Loot Acquired</header>
 			</mod-append:achievement>
 		</mod:findLike>

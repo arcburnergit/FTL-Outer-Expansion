@@ -864,9 +864,11 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(def0XCREWSLOT), playerCrew)
 			end
 		end
-		for playerCrew in vter(enemyShip.vCrewList) do
-			if playerCrew.iShipId == 0 then
-				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(def0XCREWSLOT), playerCrew)
+		if enemyShip then
+			for playerCrew in vter(enemyShip.vCrewList) do
+				if playerCrew.iShipId == 0 then
+					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(def0XCREWSLOT), playerCrew)
+				end
 			end
 		end
         for i, crewmem in ipairs(get_ship_crew_point(shipManager, location.x, location.y)) do
@@ -906,9 +908,11 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(def0XCREWSLOT), playerCrew)
 				end
 			end
-			for playerCrew in vter(enemyShip.vCrewList) do
-				if playerCrew.iShipId == 0 then
-					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(def0XCREWSLOT), playerCrew)
+			if enemyShip then
+				for playerCrew in vter(enemyShip.vCrewList) do
+					if playerCrew.iShipId == 0 then
+						Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(def0XCREWSLOT), playerCrew)
+					end
 				end
 			end
 			Hyperspace.playerVariables.aea_necro_ability_points = Hyperspace.playerVariables.aea_necro_ability_points - 1
@@ -959,14 +963,16 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(def0XCREWSLOT), playerCrew)
 				end
 			end
-			for playerCrew in vter(enemyShip.vCrewList) do
-				if playerCrew.iShipId == 0 then
-					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(def0XCREWSLOT), playerCrew)
+			if enemyShip then
+				for playerCrew in vter(enemyShip.vCrewList) do
+					if playerCrew.iShipId == 0 then
+						Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(def0XCREWSLOT), playerCrew)
+					end
 				end
 			end
 			for enemyCrew in vter(crewShip.vCrewList) do
 				--print(enemyCrew.type)
-				if enemyCrew.iShipId ~= crewmem.iShipId and enemyCrew.iRoomId == crewmem.iRoomId and (not zombieTable[enemyCrew.extend.selfId]) and not crewmem:IsDrone() then
+				if enemyCrew.iShipId ~= crewmem.iShipId and enemyCrew.iRoomId == crewmem.iRoomId and (not zombieTable[enemyCrew.extend.selfId]) and (not crewmem:IsDrone()) then
 					--print("REND LOOP CREW")
 					local rCrew = enemyCrew.type
 					local intruder = false
@@ -1176,20 +1182,20 @@ script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function() end, funct
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_INITIALIZE, function(projectile, weaponBlueprint) 
 	if Hyperspace.ships(projectile.destinationSpace):HasAugmentation("AEA_OLD_EVASION_ENEMY") > 0 and projectile.destinationSpace ~= projectile.currentSpace then
 		local dodgeFactor = Hyperspace.ships.enemy:GetDodgeFactor()
-		print("ORGINAL: "..tostring(projectile.entryAngle))
+		--print("ORGINAL: "..tostring(projectile.entryAngle))
 		if dodgeFactor >= 5 then
 			projectile.entryAngle = (projectile.entryAngle / 6) + 270 - 30
-			print(tostring((360/6) + 270 - 30).." TO "..tostring(270 - 30))
+			--print(tostring((360/6) + 270 - 30).." TO "..tostring(270 - 30))
 		end
-		print(projectile.entryAngle)
+		--print(projectile.entryAngle)
 	end
 	if Hyperspace.ships(projectile.destinationSpace):HasAugmentation("AEA_OLD_EVASION_ENEMY_WEAK") > 0 and projectile.destinationSpace ~= projectile.currentSpace then
 		local dodgeFactor = Hyperspace.ships.enemy:GetDodgeFactor()
 		if dodgeFactor >= 10 then
 			projectile.entryAngle = (projectile.entryAngle / 4) + 270 - 45
-			print(tostring((360/4) + 270 - 45).." TO "..tostring(270 - 45))
+			--print(tostring((360/4) + 270 - 45).." TO "..tostring(270 - 45))
 		end
-		print(projectile.entryAngle)
+		--print(projectile.entryAngle)
 	end
 	if Hyperspace.ships(projectile.destinationSpace):HasAugmentation("AEA_OLD_EVASION") > 0 and projectile.destinationSpace ~= projectile.currentSpace then
 		local dodgeFactor = Hyperspace.ships.player:GetDodgeFactor()
@@ -1223,42 +1229,91 @@ end)
 mods.aea.armouredShips = {}
 local armouredShips = mods.aea.armouredShips
 armouredShips["PLAYER_SHIP_AEA_OLD_ARMOUR"] = {r2 = true, r3 = true}
+armouredShips["PLAYER_SHIP_AEA_OLD_ARMOUR_2"] = {r4 = true}
+
+armouredShips["PLAYER_SHIP_AEA_OLD_HAMMER"] = {r1 = true, r2 = true}
+armouredShips["PLAYER_SHIP_AEA_OLD_HAMMER_2"] = {r1 = true, r2 = true, r3 = true, r4 = true}
+
+armouredShips["PLAYER_SHIP_AEA_OLD_UNIA"] = {r17 = true, r19 = true}
+armouredShips["PLAYER_SHIP_AEA_OLD_UNIA_2"] = {r13 = true, r15 = true}
+armouredShips["PLAYER_SHIP_AEA_OLD_UNIA_3"] = {r17 = true, r18 = true}
+
+armouredShips["PLAYER_SHIP_AEA_OLD_UNIB_2"] = {r21 = true}
+
 armouredShips["AEA_OLD_GUARD_BOSS"] = {r2 = true, r3 = true, r28 = true, r30 = true}
+armouredShips["AEA_OLD_FINAL_BOSS_CASUAL"] = {r2 = true, r3 = true}
+armouredShips["AEA_OLD_FINAL_BOSS_NORMAL"] = {r2 = true, r3 = true}
+armouredShips["AEA_OLD_FINAL_BOSS_CHALLENGE"] = {r2 = true, r3 = true}
+armouredShips["AEA_OLD_FINAL_BOSS_EXTREME"] = {r2 = true, r3 = true}
+armouredShips["AEA_OLD_BATTLESHIP"] = {r8 = true}
+armouredShips["AEA_OLD_ASSAULT"] = {r7 = true, r8 = true}
+armouredShips["AEA_OLD_RIGGER"] = {r8 = true, r9 = true}
+armouredShips["AEA_OLD_STATION"] = {r6 = true, r7 = true}
+armouredShips["AEA_OLD_PROTECTOR"] = {r11 = true}
+armouredShips["AEA_OLD_ENFORCER"] = {r3 = true, r4 = true}
+armouredShips["AEA_OLD_ASSAULT_ELITE"] = {r7 = true, r8 = true}
+armouredShips["AEA_OLD_RIGGER_ELITE"] = {r8 = true, r9 = true}
+armouredShips["AEA_OLD_PROTECTOR_ELITE"] = {r11 = true}
+armouredShips["AEA_OLD_ENFORCER_ELITE"] = {r3 = true, r4 = true}
+armouredShips["AEA_BEAM_MASTER_OLD"] = {r14 = true, r5 = true, r16 = true, r9 = true, r13 = true, r12 = true, r1 = true, r17 = true, r6 = true, r11 = true, r10 = true, r8 = true, r15 = true}
+
 
 local playerRooms = {}
 local enemyRooms = {}
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
-	if shipManager.iShipId == 0 and shipManager:HasAugmentation("AEA_OLD_EVASION") > 0 then
+	if shipManager.iShipId == 0 then
 		--print("ADD PLAYER ROOMS")
 		playerRooms = armouredShips[shipManager.myBlueprint.blueprintName]
-	elseif shipManager.iShipId == 1 and (shipManager:HasAugmentation("AEA_OLD_EVASION_ENEMY") > 0 or shipManager:HasAugmentation("AEA_OLD_EVASION_ENEMY_WEAK") > 0) then
+	elseif shipManager.iShipId == 1 then
 		enemyRooms = armouredShips[shipManager.myBlueprint.blueprintName]
 	end
 end)
+
+local reducedProjectiles = {}
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_PRE, function(projectile) 
 	--print("PROJECTILE_PRE")
 	if projectile.currentSpace == projectile.destinationSpace and projectile.ownerId ~= projectile.currentSpace then
 		local shipManager = Hyperspace.ships(projectile.currentSpace)
 		local roomAtProjectile = get_room_at_location(shipManager, projectile.position, false)
-		if shipManager:HasAugmentation("AEA_OLD_EVASION") > 0 then
+		if shipManager.iShipId == 0 and playerRooms then
 			--print("ROOM: ".."r"..tostring(math.floor(roomAtProjectile)))
 			local isRoom = playerRooms["r"..tostring(math.floor(roomAtProjectile))]
 			--print(isRoom)
-			if isRoom then 
+			if isRoom and (not reducedProjectiles[projectile.selfId]) then 
 				--print("IS ROOM")
-				projectile.target = projectile.position
-				projectile:ComputerHeading()
+				if projectile.damage.iDamage <= 1 then
+					--print("DELETE PROJ")
+					projectile.target = projectile.position
+					--projectile:ComputeHeading()
+				else
+					--print("REDUCE DAMAGE")
+					reducedProjectiles[projectile.selfId] = true
+					local damageNew = projectile.damage
+					damageNew.iDamage = damageNew.iDamage - 1
+					projectile:SetDamage(damageNew)
+				end
 			end
-		elseif shipManager:HasAugmentation("AEA_OLD_EVASION_ENEMY") > 0 or shipManager:HasAugmentation("AEA_OLD_EVASION_ENEMY_WEAK") > 0 then
+		elseif shipManager.iShipId == 1 and enemyRooms then
 			local isRoom = enemyRooms["r"..tostring(math.floor(roomAtProjectile))]
-			if isRoom then 
-				--print("IS ROOM")
-				projectile.target = projectile.position
-				projectile:ComputerHeading()
+			if isRoom and (not reducedProjectiles[projectile.selfId]) then 
+				if projectile.damage.iDamage <= 1 then
+					--print("DELETE PROJ")
+					projectile.target = projectile.position
+					--projectile:ComputeHeading()
+				else
+					--print("REDUCE DAMAGE")
+					reducedProjectiles[projectile.selfId] = true
+					local damageNew = projectile.damage
+					damageNew.iDamage = damageNew.iDamage - 1
+					projectile:SetDamage(damageNew)
+				end
 			end
 		end
 	end
+end)
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
+	reducedProjectiles = {}
 end)
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_UPDATE_PRE, function(projectile) 
@@ -1421,5 +1476,287 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
  	    	local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
             Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"AEA_OLD_GATE_GUARD_BOSS_ACTIVATE",false,-1)
         end
+	end
+end)
+
+local hackingBombBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("AEA_OLD_HACK_BOMB")
+local fireBombBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("BOMB_FIRE")
+script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, shipManager)
+	local crewmem = power.crew
+	local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
+
+	if crewmem.type == "aea_old_unique_1" then
+		--print("UNIFEX_BOMB")
+		local crewShip = Hyperspace.ships(crewmem.currentShipId)
+		local hackingBomb = spaceManager:CreateBomb(
+	        hackingBombBlueprint,
+	        crewmem.iShipId,
+	        crewShip:GetRoomCenter(crewmem.iRoomId),
+	        crewmem.currentShipId)
+
+	elseif crewmem.type == "aea_old_unique_2" then
+		--print("UNI2")
+		local crewShip = Hyperspace.ships(crewmem.currentShipId)
+		local system = crewShip:GetSystemInRoom(crewmem.iRoomId)
+		if system then
+			system:LockSystem(0)
+		end
+
+	elseif crewmem.type == "aea_old_unique_3" then
+		--print("UNI3")
+		local crewShip = Hyperspace.ships(crewmem.currentShipId)
+		local enemyShip = Hyperspace.ships(1-crewmem.iShipId)
+		--local crewCount = 0
+		local fireBomb = spaceManager:CreateBomb(
+	        fireBombBlueprint,
+	        1 - crewmem.iShipId,
+	        enemyShip:GetRandomRoomCenter(),
+	        enemyShip.iShipId)
+		for crew in vter(crewShip.vCrewList) do
+			if crew.iShipId ~= crewmem.iShipId and crew.iRoomId == crewmem.iRoomId then
+				--crewCount = crewCount + 1
+				--print("BOMB")
+				local fireBomb = spaceManager:CreateBomb(
+			        fireBombBlueprint,
+			        1 - crewmem.iShipId,
+			        enemyShip:GetRandomRoomCenter(),
+			        enemyShip.iShipId)
+			end
+		end
+
+	elseif crewmem.type == "aea_old_unique_5" then
+		--print("UNI5")
+		crewShip = Hyperspace.ships(crewmem.iShipId)
+		if crewShip:HasSystem(0) then
+			crewShip.shieldSystem:AddSuperShield(crewShip.shieldSystem.superUpLoc)
+			crewShip.shieldSystem:AddSuperShield(crewShip.shieldSystem.superUpLoc)
+		end
+	end
+end)
+
+local attachedTimer = 0
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+    if projectile then
+	    if projectile.extend.name == "ARTILLERY_AEA_GRAPPLE" then
+	    	attachedTimer = 25
+	    end
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	if shipManager.iShipId == 0 then
+		attachedTimer = attachedTimer - Hyperspace.FPS.SpeedFactor/16
+	end
+	if attachedTimer > 0 then
+		Hyperspace.playerVariables.aea_old_gate_guard_attached = 1
+	else
+		Hyperspace.playerVariables.aea_old_gate_guard_attached = 0
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+	local map = Hyperspace.App.world.starMap
+	local startBeacon = nil
+	local bossBeacon = nil
+	local exitBeacon = nil
+	for loc in vter(map.locations) do
+		if loc.event.eventName == "ENTER_AEA_OLD_3" then
+			--print("FOUND ENTER")
+			startBeacon = loc
+		elseif loc.event.eventName == "AEA_OLD_VICTORY" then
+			--print("FOUND EXIT")
+			exitBeacon = loc
+		elseif loc.event.eventName == "AEA_OLD_3_BOSS" then
+			--print("FOUND BOSS")
+			bossBeacon = loc
+		end
+	end
+
+	if (startBeacon or bossBeacon or exitBeacon) and (not startBeacon) then
+		error("NO START BEACON PRESENT")
+	end
+	if (startBeacon or bossBeacon or exitBeacon) and (not bossBeacon) then
+		error("NO BOSS BEACON PRESENT")
+	end
+	if (startBeacon or bossBeacon or exitBeacon) and (not exitBeacon) then
+		error("NO EXIT BEACON PRESENT")
+	end
+	if (startBeacon and bossBeacon and exitBeacon) then
+		--print("START")
+		for loc in vter(map.locations) do
+			loc.connectedLocations:clear()
+		end
+
+		startBeacon.connectedLocations:push_back(bossBeacon)
+
+		bossBeacon.connectedLocations:push_back(startBeacon)
+		bossBeacon.connectedLocations:push_back(exitBeacon)
+
+		exitBeacon.connectedLocations:push_back(bossBeacon)
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
+	local map = Hyperspace.App.world.starMap
+	local sourceLoc = nil
+	--print("CHECK FOR BEACON")
+	for loc in vter(map.locations) do
+		if loc.event.eventName == "AEA_OLD_1_BARON" then
+			--print("FOUND EXIT BEACON")
+			sourceLoc = loc
+		end
+	end
+	if sourceLoc then
+		if sourceLoc.visited > 0 then return end
+		local numberOfConnections = sourceLoc.connectedLocations:size()
+		local random = math.random(0, numberOfConnections - 1)
+		--print("random:"..tostring(random).." number of connections:"..tostring(numberOfConnections))
+		local targetLoc = sourceLoc.connectedLocations[random]
+
+		local sourceConnections = {}
+		table.insert(sourceConnections, sourceLoc)
+		--print("ADD SOURCE LOCATION:"..tostring(sourceLoc))
+
+		for loc in vter(sourceLoc.connectedLocations) do
+			if loc ~= targetLoc then
+				--print("ADD SOURCE LOCATION:"..tostring(loc))
+				table.insert(sourceConnections, loc)
+			end
+		end
+		local sourcePoint = Hyperspace.Pointf(sourceLoc.loc.x,sourceLoc.loc.y) 
+
+		local targetConnections = {}
+		table.insert(targetConnections, targetLoc)
+		--print("ADD TARGET LOCATION:"..tostring(targetLoc))
+
+		for loc in vter(targetLoc.connectedLocations) do
+			if loc ~= sourceLoc then
+				--print("ADD TARGET LOCATION:"..tostring(loc))
+				table.insert(targetConnections, loc)
+			end
+		end
+		local targetPoint = Hyperspace.Pointf(targetLoc.loc.x,targetLoc.loc.y)
+
+		--print("GOT ALL VALUES")
+
+
+		targetLoc.connectedLocations:clear()
+		sourceLoc.connectedLocations:clear()
+
+		--[[
+		print("SOURCE CONNECTIONS")
+		for k,v in pairs(sourceConnections) do
+			print("key:"..tostring(k).." value:"..tostring(v))
+		end
+		print("SOURCE POINT: x:"..tostring(sourcePoint.x).." y:"..tostring(sourcePoint.y))
+
+		print("TARGET CONNECTIONS")
+		for k,v in pairs(targetConnections) do
+			print("key:"..tostring(k).." value:"..tostring(v))
+		end
+		print("SOURCE POINT: x:"..tostring(targetPoint.x).." y:"..tostring(targetPoint.y))
+		]]
+		for k,loc in pairs(sourceConnections) do
+			targetLoc.connectedLocations:push_back(loc)
+
+			local adjacentConnections = {}
+			table.insert(adjacentConnections, targetLoc)
+			for loc2 in vter(loc.connectedLocations) do
+				if loc2 ~= sourceLoc then
+					table.insert(adjacentConnections, loc2)
+				end
+			end
+			loc.connectedLocations:clear()
+			for k, loc2 in pairs(adjacentConnections) do
+				loc.connectedLocations:push_back(loc2)
+			end
+		end
+		targetLoc.loc = sourcePoint
+
+		for k,loc in pairs(targetConnections) do
+			sourceLoc.connectedLocations:push_back(loc)
+
+			local adjacentConnections = {}
+			table.insert(adjacentConnections, sourceLoc)
+			for loc2 in vter(loc.connectedLocations) do
+				if loc2 ~= targetLoc then
+					table.insert(adjacentConnections, loc2)
+				end
+			end
+			loc.connectedLocations:clear()
+			for k, loc2 in pairs(adjacentConnections) do
+				loc.connectedLocations:push_back(loc2)
+			end
+		end
+		sourceLoc.loc = targetPoint
+	end
+end)
+
+
+-----------------------------------------
+-----------------------------------------
+--------------END OF LYLMIK--------------
+-----------------------------------------
+-----------------------------------------
+
+mods.aea.burstDrones = {}
+local burstDrones = mods.aea.burstDrones
+burstDrones["AEA_BEAM_BIRD_BURST_1"] = 2
+burstDrones["AEA_BEAM_BIRD_BURST_2"] = 3
+burstDrones["AEA_BEAM_BIRD_BURST_3"] = 4
+
+
+script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile, drone)
+	local burstAmount = burstDrones[projectile.extend.name]
+	if burstAmount then
+		--print("DRONE FIRE")
+		userdata_table(drone, "mods.aea.burstDrones").table = {0.0, burstAmount, projectile.position.x, projectile.position.y, projectile.currentSpace, projectile.target1, projectile.destinationSpace, projectile.heading, projectile.entryAngle}
+		projectile:Kill()
+	end
+	return Defines.Chain.CONTINUE
+end)
+
+local burstLaserBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("DRONE_LASER_COMBAT")
+burstSounds = RandomList:New {"lightLaser1", "lightLaser2", "lightLaser3"}
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+    for drone in vter(shipManager.spaceDrones) do
+    	--print("DRONE LOOP")
+    	local burstDrone = userdata_table(drone, "mods.aea.burstDrones")
+    	if burstDrone.table then
+    		burstDrone.table[1] = math.max(burstDrone.table[1] - Hyperspace.FPS.SpeedFactor/16, 0)
+    		if burstDrone.table[1] == 0 then
+    			--print("DRONE_BURST_FIRE")
+    			local soundName = burstSounds:GetItem()
+    			Hyperspace.Sounds:PlaySoundMix(soundName, -1, false)
+    			local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
+				local laser = spaceManager:CreateLaserBlast(
+                    burstLaserBlueprint,
+                    Hyperspace.Pointf(burstDrone.table[3],burstDrone.table[4]),
+                    burstDrone.table[5],
+                    shipManager.iShipId,
+                    burstDrone.table[6],
+                    burstDrone.table[7],
+                    burstDrone.table[8])
+                laser.entryAngle = burstDrone.table[9]
+
+                if burstDrone.table[2] <= 1 then
+                    burstDrone.table = nil
+                else
+                    burstDrone.table[1] = 0.25
+                    burstDrone.table[2] = burstDrone.table[2] -1
+                end
+            end
+        end
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+    if shipManager:HasAugmentation("AEA_OLD_ARMOUR_ALLOY") > 0 then
+    	if projectile.damage.iDamage > 0 then
+    		local damageNew = projectile.damage
+			damageNew.iDamage = damageNew.iDamage - 1
+			projectile:SetDamage(damageNew)
+		end
 	end
 end)

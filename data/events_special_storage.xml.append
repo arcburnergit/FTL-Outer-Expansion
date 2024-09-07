@@ -129,6 +129,19 @@
 			<text>(Technomancy Drone II) Set the state of the drone. [Current mode: Beam]</text>
 			<event load="COMBAT_CHECK_AEA_COMBAT_NECRO_2_BEAM" />
 		</mod-append:choice>
+		
+		<mod-append:choice req="AEA_COMBAT_BIRD_BURST_1" blue="false">
+			<text>(Amp Burst) Set the state of the drone. [Current power: 1]</text>
+			<event load="COMBAT_CHECK_AEA_BIRD_BURST_AMP_1" />
+		</mod-append:choice>
+		<mod-append:choice req="AEA_COMBAT_BIRD_BURST_2" blue="false">
+			<text>(Amp Burst) Set the state of the drone. [Current power: 2]</text>
+			<event load="COMBAT_CHECK_AEA_BIRD_BURST_AMP_2" />
+		</mod-append:choice>
+		<mod-append:choice req="AEA_COMBAT_BIRD_BURST_3" blue="false">
+			<text>(Amp Burst) Set the state of the drone. [Current power: 3]</text>
+			<event load="COMBAT_CHECK_AEA_BIRD_BURST_AMP_3" />
+		</mod-append:choice>
 </mod:findName>
 
 <event name="STORAGE_CHECK_AEA_O2SYS">
@@ -504,7 +517,7 @@
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="aea_show_upgrade_shields" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Upgrade Shields. [Cost: 120~]</text>
+		<text>Upgrade Shields. [Cost: 120~, High Tech Component]</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_SHIELDS" />
 	</choice>
 
@@ -522,7 +535,7 @@
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="aea_show_upgrade_engines" lvl="1" max_group="1" blue="false" hidden="true">
-		<text>Upgrade Engines. [Cost: 120~]</text>
+		<text>Upgrade Engines. [Cost: 120~, High Tech Component]</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_ENGINES" />
 	</choice>
 
@@ -540,7 +553,7 @@
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="aea_show_upgrade_weapons" lvl="1" max_group="2" blue="false" hidden="true">
-		<text>Upgrade Weapons. [Cost: 120~]</text>
+		<text>Upgrade Weapons. [Cost: 120~, High Tech Component]</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_WEAPONS" />
 	</choice>
 
@@ -558,7 +571,7 @@
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="aea_show_upgrade_drones" lvl="1" max_group="3" blue="false" hidden="true">
-		<text>Upgrade Drones. [Cost: 120~]</text>
+		<text>Upgrade Drones. [Cost: 120~, High Tech Component]</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_DRONES" />
 	</choice>
 
@@ -576,7 +589,7 @@
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="aea_show_upgrade_cloaking" lvl="1" max_group="4" blue="false" hidden="true">
-		<text>Upgrade Cloaking. [Cost: 120~]</text>
+		<text>Upgrade Cloaking. [Cost: 120~, High Tech Component]</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_CLOAKING" />
 	</choice>
 
@@ -594,7 +607,7 @@
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="aea_show_upgrade_mind" lvl="1" max_group="5" blue="false" hidden="true">
-		<text>Upgrade Mind Control. [Cost: 120~]</text>
+		<text>Upgrade Mind Control. [Cost: 120~, High Tech Component]</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_MIND" />
 	</choice>
 
@@ -616,7 +629,7 @@
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="aea_show_upgrade_hacking" lvl="1" max_group="6" blue="false" hidden="true">
-		<text>Upgrade Hacking. [Cost: 120~]</text>
+		<text>Upgrade Hacking. [Cost: 120~, High Tech Component]</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_HACKING" />
 	</choice>
 
@@ -634,7 +647,7 @@
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="aea_show_upgrade_medbay" lvl="1" max_group="7" blue="false" hidden="true">
-		<text>Upgrade Medbay. [Cost: 120~]</text>
+		<text>Upgrade Medbay. [Cost: 120~, High Tech Component]</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_MEDBAY" />
 	</choice>
 
@@ -652,7 +665,7 @@
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="aea_show_upgrade_clonebay" lvl="1" max_group="8" blue="false" hidden="true">
-		<text>Upgrade Clonebay. [Cost: 120~]</text>
+		<text>Upgrade Clonebay. [Cost: 120~, High Tech Component]</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_CLONEBAY" />
 	</choice>
 
@@ -662,11 +675,11 @@
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="aea_old_activated_cell" lvl="0" max_lvl="0" max_group="9" blue="false" hidden="true">
-		<text>Upgrade Clonebay. [TECH INACTIVE]</text>
+		<text>Upgrade Reactor. [TECH INACTIVE]</text>
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="aea_show_upgrade_reactor" lvl="1" max_group="9" blue="false" hidden="true">
-		<text>Upgrade Reactor. [Cost: 120~]</text>
+		<text>Upgrade Reactor. [Cost: 50~]</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_OLD_REACTOR" />
 	</choice>
 	<choice>
@@ -678,13 +691,18 @@
 <event name="STORAGE_CHECK_SYSTEM_AEA_OLD_SHIELDS">
 	<text>You are about to install a shield system upgrade.
 	[Effects: Upgrades shields beyond their maximum level, cannot be done more than twice]</text>
+	<choice req="AEA_COMPONENT_OLD" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
 	<choice req="aea_can_upgrade_shields" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Perform the upgrade. [Cost: 120~]</text>
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
 		<event>
 			<text>You install the upgrade.</text>
 			<item_modify>
 				<item type="scrap" min="-120" max="-120" />
 			</item_modify>
+			<remove name="AEA_COMPONENT_OLD"/>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="INSTALL_AEA_OLD_SHIELDS" />
@@ -708,13 +726,18 @@
 <event name="STORAGE_CHECK_SYSTEM_AEA_OLD_ENGINES">
 	<text>You are about to install a engine system upgrade.
 	[Effects: Upgrades engines beyond their maximum level, Each level above 8 adds an additional 5 evasion and 0.25x FTL charge rate, cannot be upgraded more than twice]</text>
+	<choice req="AEA_COMPONENT_OLD" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
 	<choice req="aea_can_upgrade_engines" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Perform the upgrade. [Cost: 120~]</text>
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
 		<event>
 			<text>You install the upgrade.</text>
 			<item_modify>
 				<item type="scrap" min="-120" max="-120" />
 			</item_modify>
+			<remove name="AEA_COMPONENT_OLD"/>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="INSTALL_AEA_OLD_ENGINES" />
@@ -738,13 +761,18 @@
 <event name="STORAGE_CHECK_SYSTEM_AEA_OLD_WEAPONS">
 	<text>You are about to install a weapon system upgrade.
 	[Effects: Upgrades weapons beyond their maximum level, cannot be done more than twice]</text>
+	<choice req="AEA_COMPONENT_OLD" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
 	<choice req="aea_can_upgrade_weapons" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Perform the upgrade. [Cost: 120~]</text>
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
 		<event>
 			<text>You install the upgrade.</text>
 			<item_modify>
 				<item type="scrap" min="-120" max="-120" />
 			</item_modify>
+			<remove name="AEA_COMPONENT_OLD"/>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="INSTALL_AEA_OLD_WEAPONS" />
@@ -768,13 +796,18 @@
 <event name="STORAGE_CHECK_SYSTEM_AEA_OLD_DRONES">
 	<text>You are about to install a drone system upgrade.
 	[Effects: Upgrades drones beyond their maximum level, cannot be done more than twice]</text>
+	<choice req="AEA_COMPONENT_OLD" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
 	<choice req="aea_can_upgrade_drones" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Perform the upgrade. [Cost: 120~]</text>
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
 		<event>
 			<text>You install the upgrade.</text>
 			<item_modify>
 				<item type="scrap" min="-120" max="-120" />
 			</item_modify>
+			<remove name="AEA_COMPONENT_OLD"/>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="INSTALL_AEA_OLD_DRONES" />
@@ -798,13 +831,18 @@
 <event name="STORAGE_CHECK_SYSTEM_AEA_OLD_CLOAKING">
 	<text>You are about to install a cloaking system upgrade.
 	[Effects: Upgrades cloaking beyond their maximum level, cannot be done more than once, cannot be upgraded beyond lvl 4]</text>
+	<choice req="AEA_COMPONENT_OLD" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
 	<choice req="aea_can_upgrade_cloaking" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Perform the upgrade. [Cost: 120~]</text>
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
 		<event>
 			<text>You install the upgrade.</text>
 			<item_modify>
 				<item type="scrap" min="-120" max="-120" />
 			</item_modify>
+			<remove name="AEA_COMPONENT_OLD"/>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="INSTALL_AEA_OLD_CLOAKING" />
@@ -828,13 +866,18 @@
 <event name="STORAGE_CHECK_SYSTEM_AEA_OLD_MIND">
 	<text>You are about to install a mind control system upgrade.
 	[Effects: Upgrades mind control beyond their maximum level, cannot be done more than once, cannot be upgraded beyond lvl 4]</text>
+	<choice req="AEA_COMPONENT_OLD" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
 	<choice req="aea_can_upgrade_mind" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Perform the upgrade. [Cost: 120~]</text>
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
 		<event>
 			<text>You install the upgrade.</text>
 			<item_modify>
 				<item type="scrap" min="-120" max="-120" />
 			</item_modify>
+			<remove name="AEA_COMPONENT_OLD"/>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="INSTALL_AEA_OLD_MIND" />
@@ -858,13 +901,18 @@
 <event name="STORAGE_CHECK_SYSTEM_AEA_OLD_HACKING">
 	<text>You are about to install a hacking system upgrade.
 	[Effects: Upgrades hacking beyond their maximum level, cannot be done more than once, cannot be upgraded beyond lvl 3]</text>
+	<choice req="AEA_COMPONENT_OLD" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
 	<choice req="aea_can_upgrade_hacking" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Perform the upgrade. [Cost: 120~]</text>
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
 		<event>
 			<text>You install the upgrade.</text>
 			<item_modify>
 				<item type="scrap" min="-120" max="-120" />
 			</item_modify>
+			<remove name="AEA_COMPONENT_OLD"/>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="INSTALL_AEA_OLD_HACKING" />
@@ -888,13 +936,18 @@
 <event name="STORAGE_CHECK_SYSTEM_AEA_OLD_MEDBAY">
 	<text>You are about to install a medbay system upgrade.
 	[Effects: Upgrades medbay beyond their maximum level, cannot be done more than once, cannot be upgraded beyond lvl 4]</text>
+	<choice req="AEA_COMPONENT_OLD" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
 	<choice req="aea_can_upgrade_medbay" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Perform the upgrade. [Cost: 120~]</text>
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
 		<event>
 			<text>You install the upgrade.</text>
 			<item_modify>
 				<item type="scrap" min="-120" max="-120" />
 			</item_modify>
+			<remove name="AEA_COMPONENT_OLD"/>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="INSTALL_AEA_OLD_MEDBAY" />
@@ -919,13 +972,18 @@
 <event name="STORAGE_CHECK_SYSTEM_AEA_OLD_CLONEBAY">
 	<text>You are about to install a clonebay system upgrade.
 	[Effects: Upgrades clonebay beyond their maximum level, cannot be done more than once, cannot be upgraded beyond lvl 4]</text>
+	<choice req="AEA_COMPONENT_OLD" lvl="0" max_lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
+		<event load="OPTION_INVALID" />
+	</choice> 
 	<choice req="aea_can_upgrade_clonebay" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Perform the upgrade. [Cost: 120~]</text>
+		<text>Perform the upgrade. [Cost: 120~, High Tech Component]</text>
 		<event>
 			<text>You install the upgrade.</text>
 			<item_modify>
 				<item type="scrap" min="-120" max="-120" />
 			</item_modify>
+			<remove name="AEA_COMPONENT_OLD"/>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="INSTALL_AEA_OLD_CLONEBAY" />
@@ -951,7 +1009,7 @@
 	<text>You are about to install a clonebay system upgrade.
 	[Effects: Upgrades clonebay beyond their maximum level, cannot be done more than 5 times]</text>
 	<choice req="aea_can_upgrade_reactor" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Perform the upgrade. [Cost: 25~]</text>
+		<text>Perform the upgrade. [Cost: 50~]</text>
 		<event>
 			<text>You install the upgrade.</text>
 			<item_modify>
@@ -976,4 +1034,148 @@
 	<variable name="aea_old_reactor_upgrades" op="add" val="1"/>
 	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
 </event>
+
+
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					AMP BURST
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="COMBAT_CHECK_AEA_BIRD_BURST_AMP_1">
+	<text>What power do you want to set the drone to?
+	Current stats; [projectiles: 2, speed 8]</text>
+	<choice hidden="true">
+		<text>Set the drone to 2 power. [projectiles: 3, speed: 6]</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_COMBAT_BIRD_BURST_1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_COMBAT_BIRD_BURST_2" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Set the drone to 3 power. [projectiles: 5, speed: 4]</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_COMBAT_BIRD_BURST_1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_COMBAT_BIRD_BURST_3" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+	</choice>
+</event>
+<event name="COMBAT_CHECK_AEA_BIRD_BURST_AMP_2">
+	<text>What power do you want to set the drone to?
+	Current stats; [projectiles: 3, speed 6]</text>
+	<choice hidden="true">
+		<text>Set the drone to 1 power. [projectiles: 2, speed: 8]</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_COMBAT_BIRD_BURST_2" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_COMBAT_BIRD_BURST_1" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Set the drone to 3 power. [projectiles: 5, speed: 4]</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_COMBAT_BIRD_BURST_2" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_COMBAT_BIRD_BURST_3" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+	</choice>
+</event>
+<event name="COMBAT_CHECK_AEA_BIRD_BURST_AMP_3">
+	<text>What power do you want to set the drone to?
+	Current stats; [projectiles: 5, speed 4]</text>
+	<choice hidden="true">
+		<text>Set the drone to 1 power. [projectiles: 2, speed: 8]</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_COMBAT_BIRD_BURST_3" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_COMBAT_BIRD_BURST_1" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Set the drone to 2 power. [projectiles: 3, speed: 6]</text>
+		<event>
+			<text>You start calibrating the drone...</text>
+			<remove name="AEA_COMBAT_BIRD_BURST_3" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You finish calibrating the drone successfully.</text>
+					<drone name="AEA_COMBAT_BIRD_BURST_2" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+	</choice>
+</event>
+
+
 </FTL>

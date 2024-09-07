@@ -1519,7 +1519,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</event>
 	<event>
 		<text>"Thanks for your purchase! May this robot thing help you in whatever you're doing out here!"</text>
-		<crewMember amount="1" class="aea_acid_soldier" />
+		<crewMember amount="1" class="aea_acid_soldier">Acidic Soldier</crewMember>
 		<item_modify>
 			<item max="-20" min="-30" type="scrap" />
 		</item_modify>
