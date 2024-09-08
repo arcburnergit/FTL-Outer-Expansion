@@ -3108,7 +3108,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 <shipBlueprint name="PLAYER_SHIP_AEA_OLD_UNIA_2" layout="aeap_old_unia_2" img="aeap_old_unia_2">
 	<class>Asymptotic Essence</class>
 	<name>Aspect</name>
-	<desc>The personal ship of Eupathic Impulse, a utility focussed ship, able to make the most of it's systems using their effective abilities.</desc>
+	<desc>The personal ship of Asymptotic Essence, a utility focussed ship, able to make the most of it's systems using their effective abilities.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_UNI_2_unlock" />
 	<systemList>
 		<battery max="2" power="1" room="7" start="false" img="room_battery" />

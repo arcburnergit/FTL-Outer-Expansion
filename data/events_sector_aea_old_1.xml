@@ -247,7 +247,7 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 		<unvisitedTooltip>This is the location of the Baron.</unvisitedTooltip>
 		<visitedTooltip>This is the location of the Baron.</visitedTooltip>
 	</beaconType>
-	<revisitEvent>AEA_OLD_1_BARON</revisitEvent>
+	<revisitEvent>AEA_OLD_BARON_JUMP</revisitEvent>
 	<text>You've arrived at the beacon to discover a large extravagant vessel, this must be the baron. If you destroy the vessel you should be able to recover the co-ordinates to the Lylmik coreworlds.</text>
 	<ship load="AEA_OLD_BARON_BATTLESHIP" hostile="true"/>
 	<choice hidden="true">
@@ -259,10 +259,6 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 				<event load="COMBAT_CHECK" />
 			</choice>
 		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Come back later.</text>
-		<event/>
 	</choice>
 </event>
 

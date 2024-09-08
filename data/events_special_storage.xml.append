@@ -1006,8 +1006,8 @@
 </event>
 
 <event name="STORAGE_CHECK_SYSTEM_AEA_OLD_REACTOR">
-	<text>You are about to install a clonebay system upgrade.
-	[Effects: Upgrades clonebay beyond their maximum level, cannot be done more than 5 times]</text>
+	<text>You are about to install a reactor upgrade.
+	[Effects: Upgrades the reactor beyond it's maximum level, cannot be done more than 5 times]</text>
 	<choice req="aea_can_upgrade_reactor" lvl="1" max_group="0" blue="false" hidden="true">
 		<text>Perform the upgrade. [Cost: 50~]</text>
 		<event>

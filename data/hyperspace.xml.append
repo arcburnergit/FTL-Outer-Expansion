@@ -405,22 +405,22 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<rooms>
 			<room id="1">
-				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
-				<hullDamageResistChance>100</hullDamageResistChance>
-			</room>
-			<room id="2">
-				<roomAnim renderLayer="0">aea_armour_down_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
-				<hullDamageResistChance>100</hullDamageResistChance>
-			</room>
-			<room id="3">
 				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
 				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
-			<room id="4">
+			<room id="2">
 				<roomAnim renderLayer="0">aea_armour_down_2x1</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
+				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_down_1x2</roomAnim>
 				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
@@ -2092,6 +2092,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 	<variable name="aea_old_completed_sponsor" op="set" val="0" />
 
 	<metaVariable name="aea_old_sponser_choice" op="set" val="0" />
+
+	<req name="AEA_CELL_SPAWN_CHECK">
+		<req lvl="0" max_lvl="0">
+			<name>aea_old_has_cell</name>
+		</req>
+	</req>
 
 	<req name="aea_meet_unique_1" type="any">
 		<req lvl="0" max_lvl="0">

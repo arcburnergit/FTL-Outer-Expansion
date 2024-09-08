@@ -220,19 +220,19 @@
 		<event load="AEA_OLD_VICTORY_CREW_AEA_OLD_UNIQUE_1" />
 	</choice>
 	<choice hidden="true" req="aea_old_unique_2">
-		<text>Ask Atoning Unifex about this.</text>
+		<text>Ask Asymptotic Essence about this.</text>
 		<event load="AEA_OLD_VICTORY_CREW_AEA_OLD_UNIQUE_2" />
 	</choice>
 	<choice hidden="true" req="aea_old_unique_3">
-		<text>Ask Atoning Unifex about this.</text>
+		<text>Ask Eupathic Impulse about this.</text>
 		<event load="AEA_OLD_VICTORY_CREW_AEA_OLD_UNIQUE_3" />
 	</choice>
 	<choice hidden="true" req="aea_old_unique_4">
-		<text>Ask Atoning Unifex about this.</text>
+		<text>Ask Homologous Trend about this.</text>
 		<event load="AEA_OLD_VICTORY_CREW_AEA_OLD_UNIQUE_4" />
 	</choice>
 	<choice hidden="true" req="aea_old_unique_5">
-		<text>Ask Atoning Unifex about this.</text>
+		<text>Ask Noetic Concordance about this.</text>
 		<event load="AEA_OLD_VICTORY_CREW_AEA_OLD_UNIQUE_5" />
 	</choice>
 

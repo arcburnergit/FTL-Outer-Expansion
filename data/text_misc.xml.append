@@ -7,6 +7,7 @@
 <text name="map_icon_aea_necro_home">SANCTUM</text>
 <text name="map_icon_transport_aea_acid">TRANSPORT [!]</text>
 <text name="map_icon_aea_old_gate">GATE [!]</text>
+<text name="map_icon_aea_old_cell">???</text>
 <text name="map_icon_aea_old_baron">BARON [!]</text>
 <text name="map_icon_aea_old_council">COUNCIL [!]</text>
 

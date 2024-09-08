@@ -70,6 +70,11 @@
 <mod:findName type="blueprintList" name="LIST_CREW_PARAGON_UNIQUE">
 	<mod-append:name>aea_acid_bill</mod-append:name>
     <mod-append:name>aea_necro_king</mod-append:name>
+    <mod-append:name>aea_old_unique_1</mod-append:name>
+    <mod-append:name>aea_old_unique_2</mod-append:name>
+    <mod-append:name>aea_old_unique_3</mod-append:name>
+    <mod-append:name>aea_old_unique_4</mod-append:name>
+    <mod-append:name>aea_old_unique_5</mod-append:name>
 </mod:findName>
 
 <blueprintList name="BLUELIST_PRECURSOR_TECH">

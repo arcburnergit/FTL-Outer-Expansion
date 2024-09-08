@@ -70,7 +70,7 @@
 </event>
 
 <event name="AEA_OLD_SPONSOR_1_START">
-	<text>You book an meeting with Atoning Unifex, you'll need to negotiate with them before you'll be able to go before the council.</text>
+	<text>You book a meeting with Atoning Unifex, you'll need to negotiate with them before you'll be able to go before the council.</text>
 	<metaVariable name="aea_old_sponser_choice" op="set" val="1" />
 	<quest event="AEA_OLD_SPONSOR_1"/>
 	<choice>
@@ -119,7 +119,7 @@
 </event>
 
 <event name="AEA_OLD_SPONSOR_2_START">
-	<text>You book an meeting with Atoning Unifex, you'll need to negotiate with them before you'll be able to go before the council.</text>
+	<text>You book a meeting with Asymptotic Essence, you'll need to negotiate with them before you'll be able to go before the council.</text>
 	<metaVariable name="aea_old_sponser_choice" op="set" val="2" />
 	<quest event="AEA_OLD_SPONSOR_2"/>
 	<choice>
@@ -168,7 +168,7 @@
 </event>
 
 <event name="AEA_OLD_SPONSOR_3_START">
-	<text>You book an meeting with Atoning Unifex, you'll need to negotiate with them before you'll be able to go before the council.</text>
+	<text>You book a meeting with Eupathic Impulse, you'll need to negotiate with them before you'll be able to go before the council.</text>
 	<metaVariable name="aea_old_sponser_choice" op="set" val="3" />
 	<quest event="AEA_OLD_SPONSOR_3"/>
 	<choice>
@@ -217,7 +217,7 @@
 </event>
 
 <event name="AEA_OLD_SPONSOR_4_START">
-	<text>You book an meeting with Atoning Unifex, you'll need to negotiate with them before you'll be able to go before the council.</text>
+	<text>You book a meeting with Homologous Trend, you'll need to negotiate with them before you'll be able to go before the council.</text>
 	<metaVariable name="aea_old_sponser_choice" op="set" val="4" />
 	<quest event="AEA_OLD_SPONSOR_4"/>
 	<choice>
@@ -266,7 +266,7 @@
 </event>
 
 <event name="AEA_OLD_SPONSOR_5_START">
-	<text>You book an meeting with Atoning Unifex, you'll need to negotiate with them before you'll be able to go before the council.</text>
+	<text>You book a meeting with Noetic Concordance, you'll need to negotiate with them before you'll be able to go before the council.</text>
 	<metaVariable name="aea_old_sponser_choice" op="set" val="5" />
 	<quest event="AEA_OLD_SPONSOR_5"/>
 	<choice>

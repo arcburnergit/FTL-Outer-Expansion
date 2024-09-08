@@ -1573,13 +1573,13 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 	end
 
 	if (startBeacon or bossBeacon or exitBeacon) and (not startBeacon) then
-		error("NO START BEACON PRESENT")
+		--error("NO START BEACON PRESENT")
 	end
 	if (startBeacon or bossBeacon or exitBeacon) and (not bossBeacon) then
-		error("NO BOSS BEACON PRESENT")
+		--error("NO BOSS BEACON PRESENT")
 	end
 	if (startBeacon or bossBeacon or exitBeacon) and (not exitBeacon) then
-		error("NO EXIT BEACON PRESENT")
+		--error("NO EXIT BEACON PRESENT")
 	end
 	if (startBeacon and bossBeacon and exitBeacon) then
 		--print("START")

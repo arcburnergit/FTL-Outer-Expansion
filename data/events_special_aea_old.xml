@@ -5,6 +5,20 @@
 	<variable name="aea_old_has_cell" op="set" val="1" />
 </event>
 
+<event name="AEA_OLD_POWER_CELL_GET">
+	<beaconType id="map_icon_aea_old_cell" global="true">
+		<color r="120" g="99" b="84" a="1"/>
+		<unvisitedTooltip>???</unvisitedTooltip>
+		<visitedTooltip>???</visitedTooltip>
+	</beaconType>
+	<text>There's a strange weapon wreck at this beacon. Almost none of it is salvagable. You manage to recover a strange weapon from the wreckage.</text>
+	<weapon name="AEA_LASER_OLD_1_CELL"/>
+	<variable name="aea_old_has_cell" op="set" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
 
 <event name="AEA_OLD_GATE" unique="true">
 	<preventQuest />

@@ -23,6 +23,31 @@
     <mod-append:sector>SECTOR_AEA_NECRO_UNIQUE</mod-append:sector>
 </mod:findName>
 
+<mod:findName type="sectorDescription" name="SECTOR_OUTCAST">
+	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_LOSTSUN_UNIQUE">
+	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_IMPERIAL">
+	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_SEPARATIST">
+	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_CONFEDERATE">
+	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_REPUBLIC">
+	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_SEPARATIST_UNIQUE">
+	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_CONFEDERATE_UNIQUE">
+	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+</mod:findName>
+
 <mod:findName type="sectorDescription" name="FINAL">
 	<mod-append:priorityEvent name="AEA_OLD_GATE" min="1" max="1" priority="1"/>
 </mod:findName>
@@ -127,7 +152,7 @@
 	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
 	<event name="NEBULA_SYLVAN_CHANCE" min="0" max="1" />
 	
-	<priorityEvent name="NEBULA_AEA_ACID_POWER_CELL" min="1" max="1" priority="1" />
+	<priorityEvent name="AEA_OLD_POWER_CELL_GET" min="1" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
 	<priorityEvent name="NEBULA_DISTRESS_REROUTE_ACIDIC" min="0" max="1" priority="1" />
 	
 	<event name="NEBULA_STORELIST_AEA_ACID" min="1" max="2" />
@@ -197,7 +222,7 @@
 	<!--<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1"/>-->
 	<priorityEvent name="NEBULA_SYLVAN" min="1" max="1" priority="1" />
 	
-	<priorityEvent name="NEBULA_AEA_ACID_POWER_CELL" min="1" max="1" priority="1" />
+	<priorityEvent name="AEA_OLD_POWER_CELL_GET" min="1" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
 	<priorityEvent name="NEBULA_ACIDIC_AEA_ACID_BILL_MEET" min="1" max="1" priority="1" />
 	<priorityEvent name="NEBULA_ACIDIC_AEA_ACID_SHIPYARD" min="1" max="1" priority="1" />
 	
@@ -283,6 +308,7 @@
 	<event name="MV_TRAVELER" min="1" max="1" />
 	<priorityEvent name="NEMESIS_ENCOUNTER" min="0" max="1" req="prof_finalsector" lvl="1" />
 	
+	<priorityEvent name="AEA_OLD_POWER_CELL_GET" min="1" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
 	<event name="HARMONY_LINK_AEA_NECRO" min="1" max="1" />
 
 	<event name="STORELIST_AEA_NECRO" min="1" max="2" />
@@ -353,6 +379,8 @@
 	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
 	<event name="MV_TRAVELER" min="1" max="1" />
 	<priorityEvent name="NEMESIS_ENCOUNTER" min="0" max="1" req="prof_finalsector" lvl="1" />
+
+	<priorityEvent name="AEA_OLD_POWER_CELL_GET" min="1" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
 	
 	<event name="AEA_NECRO_SANCTUM" min="1" max="1" />
 
