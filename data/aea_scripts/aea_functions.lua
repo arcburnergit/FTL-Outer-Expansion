@@ -1560,15 +1560,17 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 	local bossBeacon = nil
 	local exitBeacon = nil
 	for loc in vter(map.locations) do
-		if loc.event.eventName == "ENTER_AEA_OLD_3" then
-			--print("FOUND ENTER")
-			startBeacon = loc
-		elseif loc.event.eventName == "AEA_OLD_VICTORY" then
-			--print("FOUND EXIT")
-			exitBeacon = loc
-		elseif loc.event.eventName == "AEA_OLD_3_BOSS" then
-			--print("FOUND BOSS")
-			bossBeacon = loc
+		if loc.event then
+			if loc.event.eventName == "ENTER_AEA_OLD_3" then
+				--print("FOUND ENTER")
+				startBeacon = loc
+			elseif loc.event.eventName == "AEA_OLD_VICTORY" then
+				--print("FOUND EXIT")
+				exitBeacon = loc
+			elseif loc.event.eventName == "AEA_OLD_3_BOSS" then
+				--print("FOUND BOSS")
+				bossBeacon = loc
+			end
 		end
 	end
 

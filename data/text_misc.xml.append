@@ -32,7 +32,7 @@
 -1 damage
 +2 shots</text>
 
-<text name="tip_aea_old_unknown">Tip: A strange weapon? You wonder where it's from and what it's for.</text>
+<text name="tip_aea_old_unknown">Tip: A strange weapon? You wonder if it's related to that strange gate in Node 17...</text>
 <text name="tip_laser_old">Tip: Each laser shot will be blocked by two shield bubbles, regardless of the laser's damage.</text>
 <text name="tip_laser_oldp">Tip: Each laser shot will be blocked by a single shield bubble, despite having 0 hull damage.</text>
 

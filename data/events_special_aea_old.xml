@@ -98,10 +98,20 @@
 </event>
 
 <ship name="AEA_OLD_GATE_GUARD_BOSS" auto_blueprint="AEA_OLD_GUARD_BOSS">
-	<escape timer="60" chance="0" min="999" max="999" load="ESCAPE_AEA_OLD_GUARD_BOSS" />
-	<gotaway load="GOTAWAY_AEA_OLD_GUARD_BOSS" />
+	<!--escape timer="9990" chance="0" min="999" max="999" load="ESCAPE_AEA_OLD_GUARD_BOSS" />
+	<gotaway load="GOTAWAY_AEA_OLD_GUARD_BOSS" /-->
+	<triggeredEvent event="GOTAWAY_AEA_OLD_GUARD_BOSS" time="50">
+		<triggeredEventBox load="DEFAULT_TIMER" pos="combat">
+			<warning time="10.0" flash="true" />
+			<tooltip>The Mysterious Cruiser is charging its MV drive. It's artillery appear to be a strange weapon which grab hold of your ship and tethers you to them. You'll probably be pulled away with them if they go into hyperspace...</tooltip>
+		</triggeredEventBox>
+		<timerSounds load="DEFAULT_TIMER_SOUNDS" />
+	</triggeredEvent>
 	<destroyed>
-		<text>You've destroyed the Mysterious cruiser, you begin salvaging the vessel.</text>
+		<text>You've destroyed the Mysterious cruiser, you begin salvaging the vessel.
+
+You wonder if perhaps something would have happened if you let it escape and take you with it.
+		</text>
 		<autoReward level="HIGH">standard_no_item</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -111,10 +121,13 @@
 </ship>
 
 <event name="ESCAPE_AEA_OLD_GUARD_BOSS">
-	<text>Surprisingly it appears the cruiser is trying to run away, if you're not careful you might get pulled away with it...</text>
+	<text>Surprisingly it appears the cruiser is trying to run away, if you're not careful you might get pulled away with it.
+
+It's artillery appear to be some kind of hooks which grab hold of your ship and tether you to them. You'll probably be pulled away with them if they go into hyperspace...</text>
 </event>
 <event name="GOTAWAY_AEA_OLD_GUARD_BOSS">
 	<text>The ship's jump drive initiates and pulls it away.</text>
+	<instantEscape/>
 	<choice hidden="true" req="aea_old_gate_guard_attached" blue="false">
 		<text>Continue...</text>
 		<event>

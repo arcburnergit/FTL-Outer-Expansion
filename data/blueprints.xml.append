@@ -658,10 +658,10 @@
 		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>
 		<erodeShields>true</erodeShields>
-		<!--roomAnim renderLayer="3">                                                    
+		<roomAnim renderLayer="3">                                                    
 			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
 				<wallAnim>aea_acid_wall</wallAnim>  
-		</roomAnim-->
+		</roomAnim>
 	</erosion>
 	<cooldown>13</cooldown>
 	<power>1</power>
