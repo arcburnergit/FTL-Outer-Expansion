@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
+<version>^1.14.0</version>
 <mod:findLike type="scripts">
   <mod-append:script>data/aea_scripts/aea_functions.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aeaIcon.lua</mod-append:script>

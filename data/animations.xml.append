@@ -3,7 +3,7 @@
 <anim name="aea_invisible">
 	<sheet>aea_invisible</sheet>
 	<desc length="1" x="0" y="0" />
-	<time>1</time>
+	<time>0.1</time>
 </anim>
 
 <animSheet name="aea_invisible_gun" w="33" h="35" fw="11" fh="35">effects/invisible.png</animSheet>

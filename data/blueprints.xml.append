@@ -2251,7 +2251,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 <droneBlueprint name="AEA_COMBAT_NECRO_2_LASER">
 	<type>COMBAT</type>
 	<tip>tip_toggle_combat</tip>
-	<title>Technomancy Drone Mk. III [Laser]</title>
+	<title>Technomancy Drone Mk. II [Laser]</title>
 	<short>Techno II [L]</short>
 	<desc>[CURRENT MODE: Laser] Multipurpose combat drone use by the Engi Heretics. On death, the drone will create three smaller faster drones that shoot 3 shots before falling apart. Moves faster and creates more mini drones than the MK I.</desc>
 	<power>3</power>
@@ -2844,7 +2844,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>0</number>
 			</slot>
 		</sensors>
-		<shields max="8" power="1" room="5" start="false" img="room_shields_5">
+		<shields max="8" power="2" room="5" start="false" img="room_shields_5">
 			<slot>
 				<direction>up</direction>
 				<number>0</number>

@@ -20,7 +20,7 @@
 	</choice>
 </event>
 
-<event name="AEA_OLD_GATE" unique="true">
+<event name="AEA_OLD_GATE">
 	<preventQuest />
 	<preventFleet />
 	<preventBossFleet />
