@@ -1,4 +1,14 @@
 <FTL>
+
+<mod:findName type="systemBlueprint" name="engines">
+	<mod:findLike type="upgradeCost">
+		<mod-append:level>120</mod-append:level>
+		<mod-append:level>120</mod-append:level>
+		<mod-append:level>120</mod-append:level>
+		<mod-append:level>120</mod-append:level>
+	</mod:findLike>
+</mod:findName>
+
 <augBlueprint name="SHIP_AEA_ACIDIC">
 	<title>Acidic Cruiser</title>
 	<desc>YOU SHOULD NEVER SEE THIS</desc>
@@ -2650,7 +2660,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<desc>When an obelisk ship got pulled into Lylmik space they managed to take over a Lylmik cruiser and used it to escape.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_2_unlock" />
 	<systemList>
-		<artillery power="1" room="5" start="true" weapon="ANCIENT_DREAD" img="room_artillery" />
+		<artillery power="1" room="5" start="true" weapon="AEA_ANCIENT_DREAD_INVIS" img="room_artillery" />
 		<battery max="2" power="1" room="17" start="false" img="room_battery_6" />
 		<cloaking power="1" room="10" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="7" start="true">
@@ -2721,6 +2731,41 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
     <mv-mapImage>map_icon_aeap_old_arm_a</mv-mapImage>
 </shipBlueprint>
 
+<weaponBlueprint name="AEA_ANCIENT_DREAD_INVIS">
+	<type>BOMB</type>
+	<tip>tip_ancient</tip>
+	<flavorType>Ancient Tech</flavorType>
+	<title>Dreadnought Artillery</title>
+	<short>Dread</short>
+	<desc>A bomb weapon, but unlike any you've ever seen. It appears to be much stronger than common bombs.</desc>
+	<tooltip>Bomb weapon; requires a missile; does 2 damage, but only damages system, not hull. Can target your own ship.</tooltip>
+	<damage>1</damage>
+	<sysDamage>3</sysDamage>
+	<persDamage>2</persDamage>
+	<missiles>0</missiles>
+	<shots>6</shots>
+	<sp>0</sp>
+	<stun>7</stun>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>10</stunChance>
+	<cooldown>30</cooldown>
+	<power>1</power>
+	<cost>100</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>ancient_bomb</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>aea_invisible_gun</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
 <shipBlueprint name="PLAYER_SHIP_AEA_OLD_ARMOUR_3" layout="aeap_old_arm_3" img="aeap_old_arm_3">
 	<class>Oppressor Cruiser</class>
 	<name>Sylvan</name>
@@ -2789,10 +2834,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	</weaponList>
 	<droneList drones="4" count="3" />
 	<health amount="30" />
-	<maxPower amount="6" />
-	<crewCount amount="1" class="unique_sylvan" />
-	<crewCount amount="1" class="slug_saboteur" />
-	<crewCount amount="1" class="slug" />
+	<maxPower amount="9" />
 	<aug name="LOCKED_SLUG_GEL" />
 	<shieldImage>mup_disk</shieldImage>
     <mv-mapImage>map_icon_aeap_old_arm_a</mv-mapImage>
@@ -3007,7 +3049,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 			</slot>
 		</shields>
 		<teleporter power="1" room="1" start="false" />
-		<weapons max="8" power="2" room="6" start="true" img="room_weapons">
+		<weapons max="8" power="3" room="6" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -3431,7 +3473,7 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 </augBlueprint>
 <augBlueprint name="AEA_OLD_ARMOUR_ALLOY">
 	<title>Alloy Armour</title>
-	<desc>This ship uses a prototype alloy that enables the entire ship to reduce damage of incoming projectiles by 1.</desc>
+	<desc>This ship uses a prototype alloy that enables the entire ship to reduce damage of incoming projectiles by 1. Does not work on beams.</desc>
 	<cost>80</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>

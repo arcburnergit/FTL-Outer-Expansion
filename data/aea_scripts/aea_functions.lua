@@ -1276,6 +1276,7 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_PRE, function(project
 	if projectile.currentSpace == projectile.destinationSpace and projectile.ownerId ~= projectile.currentSpace then
 		local shipManager = Hyperspace.ships(projectile.currentSpace)
 		local roomAtProjectile = get_room_at_location(shipManager, projectile.position, false)
+		local roomAtTarget = get_room_at_location(shipManager, projectile.position, false)
 		if shipManager.iShipId == 0 and playerRooms then
 			--print("ROOM: ".."r"..tostring(math.floor(roomAtProjectile)))
 			local isRoom = playerRooms["r"..tostring(math.floor(roomAtProjectile))]
@@ -1309,6 +1310,12 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_PRE, function(project
 					projectile:SetDamage(damageNew)
 				end
 			end
+		end
+		if shipManager:HasAugmentation("AEA_OLD_ARMOUR_ALLOY") > 0 and roomAtProjectile == roomAtTarget and projectile.currentSpace == projectile.destinationSpace and (not reducedProjectiles[projectile.selfId]) then
+			reducedProjectiles[projectile.selfId] = true
+			local damageNew = projectile.damage
+			damageNew.iDamage = damageNew.iDamage - 1
+			projectile:SetDamage(damageNew)
 		end
 	end
 end)
@@ -1753,12 +1760,14 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
     end
 end)
 
-script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+--[[script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA, function(shipManager, projectile, location, damage, evasion, friendlyfire) 
     if shipManager:HasAugmentation("AEA_OLD_ARMOUR_ALLOY") > 0 then
     	if projectile.damage.iDamage > 0 then
+    		print("REDUCE")
     		local damageNew = projectile.damage
 			damageNew.iDamage = damageNew.iDamage - 1
+			damage = damageNew
 			projectile:SetDamage(damageNew)
 		end
 	end
-end)
+end)]]

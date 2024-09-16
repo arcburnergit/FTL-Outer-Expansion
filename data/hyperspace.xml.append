@@ -385,6 +385,11 @@ This enemy is protected by an Energy Shield.</tooltip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_ARMOUR_3">
 		<hiddenAug>SHIP_SYLVAN</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<unique_sylvan room="0" name="Sylvan" />  <!--piloting-->
+			<slug_saboteur room="6" />  <!--engines-->
+			<slug room="1" /> <!--weapons-->
+		</crew>
 	</mod-append:customShip>
 
 
