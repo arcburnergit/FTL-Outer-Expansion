@@ -359,12 +359,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="2">
 				<roomAnim renderLayer="0">aea_armour_top_1x4</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="3">
 				<roomAnim renderLayer="0">aea_armour_bot_1x4</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -376,7 +376,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="4">
 				<roomAnim renderLayer="0">aea_armour_1x4</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -394,9 +394,13 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="1">
 				<roomAnim renderLayer="0">aea_armour_top_1x3</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="2">
 				<roomAnim renderLayer="0">aea_armour_bot_1x3</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
 	</mod-append:customShip>
@@ -407,22 +411,22 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="1">
 				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="2">
 				<roomAnim renderLayer="0">aea_armour_down_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="3">
 				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="4">
 				<roomAnim renderLayer="0">aea_armour_down_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -440,12 +444,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="17">
 				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="19">
 				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -462,12 +466,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="13">
 				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="15">
 				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -484,12 +488,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="17">
 				<roomAnim renderLayer="0">aea_armour_down_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="18">
 				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -517,7 +521,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="21">
 				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -541,27 +545,27 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<!--room id="1">
 				<roomAnim renderLayer="0">aea_armour_4x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room-->
 			<room id="2">
 				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="3">
 				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="28">
 				<roomAnim renderLayer="0">aea_armour_rig_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="30">
 				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -577,7 +581,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="8">
 				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -590,7 +594,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="11">
 				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -603,12 +607,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="8">
 				<roomAnim renderLayer="0">aea_armour_rig_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="7">
 				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -621,12 +625,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="8">
 				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="9">
 				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -639,12 +643,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="3">
 				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="4">
 				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -657,12 +661,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="6">
 				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="7">
 				<roomAnim renderLayer="0">aea_armour_down_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -733,7 +737,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="11">
 				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -746,12 +750,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="8">
 				<roomAnim renderLayer="0">aea_armour_rig_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="7">
 				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -764,12 +768,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="8">
 				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="9">
 				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -782,12 +786,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="3">
 				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="4">
 				<roomAnim renderLayer="0">aea_armour_1x2</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -813,12 +817,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="2">
 				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="3">
 				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -846,12 +850,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="2">
 				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="3">
 				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -881,12 +885,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="2">
 				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="3">
 				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
@@ -916,12 +920,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<rooms>
 			<room id="2">
 				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 			<room id="3">
 				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
-				<roomAnim renderLayer="0">aea_resist_shield_ui</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>

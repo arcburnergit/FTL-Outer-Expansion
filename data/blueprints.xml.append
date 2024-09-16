@@ -2801,7 +2801,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 <shipBlueprint name="PLAYER_SHIP_AEA_OLD_HAMMER" layout="aeap_old_ham_1" img="aeap_old_ham_1">
 	<class>Tyrant Cruiser</class>
 	<name>Hammer Head</name>
-	<desc>A lightly armoured ship with a varied crew of experienced adventurers. The armour on this ship is able to absorb the damage of projectiles but won't prevent the hull damage.</desc>
+	<desc>An armoured ship capable of preventing frontal damage with it's powerful armour.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_HAMMER_unlock" />
 	<systemList>
 		<battery max="2" power="1" room="21" start="false" img="room_battery_14" />
