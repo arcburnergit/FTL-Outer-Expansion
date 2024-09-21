@@ -3883,7 +3883,7 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<missSounds>
 		<sound>miss</sound>
 	</missSounds>
-	<weaponArt>aea_laser_oldp_3</weaponArt>
+	<weaponArt>aea_laser_oldp_3_new</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
 </FTL>
