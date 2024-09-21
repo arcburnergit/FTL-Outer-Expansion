@@ -301,6 +301,18 @@
 
 
 
+<animSheet name="aea_laser_oldp_3_new" w="320" h="135" fw="40" fh="135">weapon_old/aea_laser_oldp_3_new.png</animSheet>
+<weaponAnim name="aea_laser_oldp_3_new">
+	<sheet>aea_laser_oldp_3_new</sheet>
+	<desc length="8" x="0" y="0" />
+	<chargedFrame>4</chargedFrame>
+	<fireFrame>6</fireFrame>
+	<firePoint x="22" y="20" />
+	<mountPoint x="4" y="89" />
+</weaponAnim>
+
+
+
 <animSheet name="aea_laser_oldp_2" w="560" h="78" fw="56" fh="78">weapon_old/aea_laser_oldp_2.png</animSheet>
 <weaponAnim name="aea_laser_oldp_2">
 	<sheet>aea_laser_oldp_2</sheet>
