@@ -2057,19 +2057,37 @@ This enemy is protected by an Energy Shield.</tooltip>
 </augments>
 
 <mod:findLike type="events">
-  <mod:findName name="COORDS">
-    <mod-append:name>coords_aea_bill</mod-append:name>
-  </mod:findName>
-  <mod:findName name="COORDS_BOSS">
-    <mod:findLike type="req" limit="1">
-      <mod-append:name>coords_aea_bill</mod-append:name>
-    </mod:findLike>
-  </mod:findName>
-  <mod:findName name="COORDS_BOSS_TOOLATE">
-    <mod:findLike type="req" limit="1">
-      <mod-append:name>coords_aea_bill</mod-append:name>
-    </mod:findLike>
-  </mod:findName>
+	<mod:findName name="LIST_CHECK_TOGGLES_AND_AMPS">
+		<mod:findLike type="req" limit="1">
+			<mod:findLike type="req" start="1">
+				<mod-append:name>AEA_COMBAT_BIRD_BURST_1</mod-append:name>
+				<mod-append:name>AEA_COMBAT_BIRD_BURST_2</mod-append:name>
+				<mod-append:name>AEA_COMBAT_BIRD_BURST_3</mod-append:name>
+				<mod-append:name>AEA_COMBAT_NECRO_1_BEAM</mod-append:name>
+				<mod-append:name>AEA_COMBAT_NECRO_1_LASER</mod-append:name>
+				<mod-append:name>AEA_COMBAT_NECRO_2_BEAM</mod-append:name>
+				<mod-append:name>AEA_COMBAT_NECRO_2_LASER</mod-append:name>
+				<mod-append:name>AEA_DEFENSE_NECRO_1_DRONE</mod-append:name>
+				<mod-append:name>AEA_DEFENSE_NECRO_1_MISSILE</mod-append:name>
+				<mod-append:name>AEA_DEFENSE_NECRO_2_DRONE</mod-append:name>
+				<mod-append:name>AEA_DEFENSE_NECRO_2_MISSILE</mod-append:name>
+			</mod:findLike>
+		</mod:findLike>
+	</mod:findName>
+
+	<mod:findName name="COORDS">
+		<mod-append:name>coords_aea_bill</mod-append:name>
+	</mod:findName>
+	<mod:findName name="COORDS_BOSS">
+		<mod:findLike type="req" limit="1">
+			<mod-append:name>coords_aea_bill</mod-append:name>
+		</mod:findLike>
+	</mod:findName>
+	<mod:findName name="COORDS_BOSS_TOOLATE">
+		<mod:findLike type="req" limit="1">
+			<mod-append:name>coords_aea_bill</mod-append:name>
+		</mod:findLike>
+	</mod:findName>
 </mod:findLike>
 
 <events>

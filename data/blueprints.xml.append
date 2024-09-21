@@ -3608,14 +3608,13 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<fireChance>3</fireChance>
 	<breachChance>4</breachChance>
 	<stunChance>2</stunChance>
-	<cooldown>20</cooldown>
-	<power>1</power>
+	<cooldown>12</cooldown>
+	<power>2</power>
 	<cost>68</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
 	<image>laser_heavy1</image>
 	<launchSounds>
-		<sound>aea_laser_old_fire1</sound>
 		<sound>aea_laser_old_fire2</sound>
 	</launchSounds>
 	<hitShipSounds>
@@ -3629,7 +3628,7 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<missSounds>
 		<sound>miss</sound>
 	</missSounds>
-	<weaponArt>aea_laser_old_1</weaponArt>
+	<weaponArt>aea_laser_old_1_new</weaponArt>
 	<iconImage>heavyL</iconImage>
 </weaponBlueprint>
 
@@ -3647,18 +3646,17 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 		<count>1</count>
 		<countSuper>1</countSuper>
 	</mv-pop>
-	<fireChance>2</fireChance>
-	<breachChance>5</breachChance>
-	<stunChance>2</stunChance>
-	<cooldown>7</cooldown>
-	<power>1</power>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>10</stunChance>
+	<cooldown>6</cooldown>
+	<power>2</power>
 	<cost>75</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
 	<image>laser_heavy1</image>
 	<launchSounds>
 		<sound>aea_laser_old_fire1</sound>
-		<sound>aea_laser_old_fire2</sound>
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull1</sound>
@@ -3671,7 +3669,7 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<missSounds>
 		<sound>miss</sound>
 	</missSounds>
-	<weaponArt>aea_laser_old_1</weaponArt>
+	<weaponArt>aea_laser_old_1_new</weaponArt>
 	<iconImage>heavyL</iconImage>
 </weaponBlueprint>
 
@@ -3689,18 +3687,17 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 		<count>1</count>
 		<countSuper>1</countSuper>
 	</mv-pop>
-	<fireChance>2</fireChance>
-	<breachChance>5</breachChance>
-	<stunChance>2</stunChance>
-	<cooldown>11</cooldown>
-	<power>2</power>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>10</stunChance>
+	<cooldown>9</cooldown>
+	<power>3</power>
 	<cost>75</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
 	<image>laser_heavy1</image>
 	<launchSounds>
 		<sound>aea_laser_old_fire1</sound>
-		<sound>aea_laser_old_fire2</sound>
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull1</sound>
@@ -3713,7 +3710,7 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<missSounds>
 		<sound>miss</sound>
 	</missSounds>
-	<weaponArt>aea_laser_old_2</weaponArt>
+	<weaponArt>aea_laser_old_2_new</weaponArt>
 	<iconImage>heavyL</iconImage>
 </weaponBlueprint>
 
@@ -3731,18 +3728,17 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 		<count>1</count>
 		<countSuper>1</countSuper>
 	</mv-pop>
-	<fireChance>2</fireChance>
-	<breachChance>5</breachChance>
-	<stunChance>2</stunChance>
-	<cooldown>14</cooldown>
-	<power>3</power>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>10</stunChance>
+	<cooldown>12</cooldown>
+	<power>4</power>
 	<cost>75</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
 	<image>laser_heavy1</image>
 	<launchSounds>
 		<sound>aea_laser_old_fire1</sound>
-		<sound>aea_laser_old_fire2</sound>
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull1</sound>
@@ -3755,7 +3751,7 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<missSounds>
 		<sound>miss</sound>
 	</missSounds>
-	<weaponArt>aea_laser_old_2</weaponArt> <!--FIXME: REPLACE IMAGE WHEN IMAGE EXISTS-->
+	<weaponArt>aea_laser_old_3_new</weaponArt> <!--FIXME: REPLACE IMAGE WHEN IMAGE EXISTS-->
 	<iconImage>heavyL</iconImage>
 </weaponBlueprint>
 
@@ -3774,9 +3770,9 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 		<count>1</count>
 		<countSuper>1</countSuper>
 	</mv-pop>
-	<fireChance>2</fireChance>
+	<fireChance>10</fireChance>
 	<breachChance>0</breachChance>
-	<cooldown>11</cooldown>
+	<cooldown>12</cooldown>
 	<power>1</power>
 	<cost>70</cost>
 	<bp>7</bp>
@@ -3818,9 +3814,9 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 		<count>1</count>
 		<countSuper>1</countSuper>
 	</mv-pop>
-	<fireChance>2</fireChance>
+	<fireChance>10</fireChance>
 	<breachChance>0</breachChance>
-	<cooldown>11</cooldown>
+	<cooldown>16</cooldown>
 	<power>2</power>
 	<cost>70</cost>
 	<bp>7</bp>
@@ -3862,9 +3858,9 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 		<count>1</count>
 		<countSuper>1</countSuper>
 	</mv-pop>
-	<fireChance>2</fireChance>
+	<fireChance>10</fireChance>
 	<breachChance>0</breachChance>
-	<cooldown>11</cooldown>
+	<cooldown>19</cooldown>
 	<power>3</power>
 	<cost>70</cost>
 	<bp>7</bp>
