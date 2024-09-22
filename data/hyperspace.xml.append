@@ -2161,7 +2161,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 	</req>
 	<req name="aea_meet_unique_5" type="any">
 		<req lvl="0" max_lvl="4">
-			<name>challenge_level</name>
+			<name>aea_old_sponser_choice</name>
 		</req>
 	</req>
 

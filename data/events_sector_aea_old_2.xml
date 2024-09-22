@@ -443,8 +443,9 @@
 		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
 		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
 	</beaconType>
+	<revisitEvent>AEA_OLD_SPONSOR_1_QUEST</revisitEvent>
 	<img back="BACK_EVENT_AEA_OLD_UNIQUE_1" planet="NONE" />
-	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land an greet Atoning Unifex.</text>
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land and greet Atoning Unifex.</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -454,7 +455,10 @@
 				<event>
 					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_1">Atoning Unifex</crewMember>
-					<quest event="AEA_OLD_SPONSOR_1_QUEST"/>
+					<choice hidden="true">
+						<text>Head out to the location</text>
+						<event load="AEA_OLD_SPONSOR_1_QUEST"/>
+					</choice>
 				</event>
 			</choice>
 		</event>
@@ -469,8 +473,9 @@
 		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
 		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
 	</beaconType>
+	<revisitEvent>AEA_OLD_SPONSOR_2_QUEST</revisitEvent>
 	<img back="BACK_EVENT_AEA_OLD_UNIQUE_2" planet="NONE" />
-	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land an greet Asymptotic Essence.</text>
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land and greet Asymptotic Essence.</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -480,7 +485,10 @@
 				<event>
 					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_2">Asymptotic Essence</crewMember>
-					<quest event="AEA_OLD_SPONSOR_2_QUEST"/>
+					<choice hidden="true">
+						<text>Head out to the location</text>
+						<event load="AEA_OLD_SPONSOR_2_QUEST"/>
+					</choice>
 				</event>
 			</choice>
 		</event>
@@ -495,8 +503,9 @@
 		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
 		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
 	</beaconType>
+	<revisitEvent>AEA_OLD_SPONSOR_3_QUEST</revisitEvent>
 	<img back="BACK_EVENT_AEA_OLD_UNIQUE_3" planet="NONE" />
-	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land an greet Eupathic Impulse.</text>
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land and greet Eupathic Impulse.</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -506,7 +515,10 @@
 				<event>
 					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_3">Eupathic Impulse</crewMember>
-					<quest event="AEA_OLD_SPONSOR_3_QUEST"/>
+					<choice hidden="true">
+						<text>Head out to the location</text>
+						<event load="AEA_OLD_SPONSOR_3_QUEST"/>
+					</choice>
 				</event>
 			</choice>
 		</event>
@@ -521,8 +533,9 @@
 		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
 		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
 	</beaconType>
+	<revisitEvent>AEA_OLD_SPONSOR_4_QUEST</revisitEvent>
 	<img back="BACK_EVENT_AEA_OLD_UNIQUE_4" planet="NONE" />
-	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land an greet Homologous Trend.</text>
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land and greet Homologous Trend.</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -532,7 +545,10 @@
 				<event>
 					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_4">Homologous Trend</crewMember>
-					<quest event="AEA_OLD_SPONSOR_4_QUEST"/>
+					<choice hidden="true">
+						<text>Head out to the location</text>
+						<event load="AEA_OLD_SPONSOR_4_QUEST"/>
+					</choice>
 				</event>
 			</choice>
 		</event>
@@ -547,8 +563,9 @@
 		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
 		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
 	</beaconType>
+	<revisitEvent>AEA_OLD_SPONSOR_5_QUEST</revisitEvent>
 	<img back="BACK_EVENT_AEA_OLD_UNIQUE_5" planet="NONE" />
-	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land an greet Noetic Concordance.</text>
+	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land and greet Noetic Concordance.</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -558,7 +575,10 @@
 				<event>
 					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_5">Noetic Concordance</crewMember>
-					<quest event="AEA_OLD_SPONSOR_5_QUEST"/>
+					<choice hidden="true">
+						<text>Head out to the location</text>
+						<event load="AEA_OLD_SPONSOR_5_QUEST"/>
+					</choice>
 				</event>
 			</choice>
 		</event>
@@ -572,6 +592,7 @@
 		<color r="69" g="168" b="235" a="1" />
 		<unvisitedTooltip>The location of the target Atoning Unifex gave you.</unvisitedTooltip>
 	</beaconType>
+	<changeBackground>BACK_SECTOR_ABANDONED</changeBackground>
 	<revisitEvent>AEA_OLD_SPONSOR_1_QUEST</revisitEvent>
 	<ship load="AEA_OLD_SPONSOR_1_BOUNTY" hostile="true"/>
 	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
@@ -613,6 +634,7 @@
 		<color r="69" g="168" b="235" a="1" />
 		<unvisitedTooltip>The location of the target Asymptotic Essence gave you.</unvisitedTooltip>
 	</beaconType>
+	<changeBackground>BACK_SECTOR_ABANDONED</changeBackground>
 	<revisitEvent>AEA_OLD_SPONSOR_2_QUEST</revisitEvent>
 	<ship load="AEA_OLD_SPONSOR_2_BOUNTY" hostile="true"/>
 	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
@@ -646,6 +668,7 @@
 		<color r="69" g="168" b="235" a="1" />
 		<unvisitedTooltip>The location of the target Eupathic Impulse gave you.</unvisitedTooltip>
 	</beaconType>
+	<changeBackground>BACK_SECTOR_ABANDONED</changeBackground>
 	<revisitEvent>AEA_OLD_SPONSOR_3_QUEST</revisitEvent>
 	<ship load="AEA_OLD_SPONSOR_3_BOUNTY" hostile="true"/>
 	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
@@ -679,7 +702,7 @@
 		<color r="69" g="168" b="235" a="1" />
 		<unvisitedTooltip>The location of the target Homologous Trend gave you.</unvisitedTooltip>
 	</beaconType>
-	<revisitEvent>AEA_OLD_SPONSOR_4_QUEST</revisitEvent>
+	<changeBackground>BACK_SECTOR_ABANDONED</changeBackground>
 	<ship load="AEA_OLD_SPONSOR_4_BOUNTY" hostile="true"/>
 	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
 	<choice hidden="true">
@@ -712,6 +735,7 @@
 		<color r="69" g="168" b="235" a="1" />
 		<unvisitedTooltip>The location of the target Noetic Concordance gave you.</unvisitedTooltip>
 	</beaconType>
+	<changeBackground>BACK_SECTOR_ABANDONED</changeBackground>
 	<revisitEvent>AEA_OLD_SPONSOR_5_QUEST</revisitEvent>
 	<ship load="AEA_OLD_SPONSOR_5_BOUNTY" hostile="true"/>
 	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>

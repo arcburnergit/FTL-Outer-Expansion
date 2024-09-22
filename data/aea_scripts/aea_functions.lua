@@ -822,6 +822,7 @@ script.on_internal_event(Defines.InternalEvents.POWER_READY, function(power, pow
 	local crewmem = power.crew
 	if crew and crewmem.iShipId == 0 and (power.powerCooldown.second == 20 or power.powerCooldown.second == 2) then
 		local crewTable = userdata_table(crewmem, "mods.aea.necro")
+		if not crewTable then return end
 		if not (Hyperspace.playerVariables.aea_necro_ability_points > 0 and crewTable.lastKill) then
 			powerState = 22
 		end
@@ -831,6 +832,7 @@ script.on_internal_event(Defines.InternalEvents.POWER_READY, function(power, pow
 	end
 	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 60 then
 		local crewTable = userdata_table(crewmem, "mods.aea.necro")
+		if not crewTable then return end
 		if not (Hyperspace.playerVariables.aea_necro_ability_points > 4 and crewTable.lastKill) then
 			powerState = 22
 		end
@@ -840,6 +842,7 @@ script.on_internal_event(Defines.InternalEvents.POWER_READY, function(power, pow
 	end
 	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 30 then
 		local crewTable = userdata_table(crewmem, "mods.aea.necro")
+		if not crewTable then return end
 		if not (Hyperspace.playerVariables.aea_necro_ability_points > 1) then
 			powerState = 22
 		end
@@ -900,6 +903,7 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 	if crew and crewmem.iShipId == 0 and (power.powerCooldown.second == 20 or power.powerCooldown.second == 2) and (not crewmem.bMindControlled) then
 		--print("RESURRECT")
 		local crewTable = userdata_table(crewmem, "mods.aea.necro")
+		if not crewTable then return end
 		if Hyperspace.playerVariables.aea_necro_ability_points > 0 and crewTable.lastKill then
 			local playerShip = Hyperspace.ships.player
 			local enemyShip = Hyperspace.ships.enemy
@@ -952,6 +956,7 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 30 and (not crewmem.bMindControlled) then
 		--print("REND")
 		local crewTable = userdata_table(crewmem, "mods.aea.necro")
+		if not crewTable then return end
 		if Hyperspace.playerVariables.aea_necro_ability_points > 1 then
 			Hyperspace.playerVariables.aea_necro_ability_points = Hyperspace.playerVariables.aea_necro_ability_points - 2
 			local crewShip = Hyperspace.ships(crewmem.currentShipId)
@@ -1015,6 +1020,7 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 
 	if crew and crewmem.iShipId == 0 and power.powerCooldown.second == 60 and (not crewmem.bMindControlled) then
 		local crewTable = userdata_table(crewmem, "mods.aea.necro")
+		if not crewTable then return end
 		if crewTable.lastKill then
 			Hyperspace.playerVariables.aea_necro_ability_points = Hyperspace.playerVariables.aea_necro_ability_points - 5
 			local rCrew = crewTable.lastKill
@@ -1064,6 +1070,7 @@ script.on_render_event(Defines.RenderEvents.SPACE_STATUS, function()
 					local crew = necro_crew[crewmem.type]
 	        		if crew and crewmem.iShipId == 0 then
 	        			local crewTable = userdata_table(crewmem, "mods.aea.necro")
+						if not crewTable then return end
 	        			if crewTable.lastKillRace then
 							text = text.."\n"..crewmem:GetLongName()..": "..crewTable.lastKillRace
 						end
@@ -1074,6 +1081,7 @@ script.on_render_event(Defines.RenderEvents.SPACE_STATUS, function()
 						local crew = necro_crew[crewmem.type]
 		        		if crew and crewmem.iShipId == 0 then
 		        			local crewTable = userdata_table(crewmem, "mods.aea.necro")
+							if not crewTable then return end
 		        			if crewTable.lastKillRace then
 								text = text.."\n"..crewmem:GetLongName()..": "..crewTable.lastKillRace
 							end
