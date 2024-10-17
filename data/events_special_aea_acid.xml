@@ -930,7 +930,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	</deadCrew>
 </ship>
 
-<ship name="SHIP_AEA_ACID_DISTRESS_ACIDIC_SLUG" auto_blueprint="LIST_SHIPS_AEA_ACID_GENERIC">
+<ship name="SHIP_AEA_ACID_DISTRESS_ACIDIC_SLUG" auto_blueprint="LIST_SHIPS_SLUG_GENERIC">
 	<destroyed>
 		<text>At last the Slugs' prized possessions are yours for the taking. After, that is, you split your takings with the Acidic vessel.</text>
 		<autoReward level="HIGH">standard</autoReward>

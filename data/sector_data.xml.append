@@ -25,6 +25,9 @@
 
 <mod:findName type="sectorDescription" name="SECTOR_OUTCAST">
 	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+	<mod:findLike type="rarityList">
+    	<mod-append:blueprint name="aea_cult_wizard" rarity="3" />
+	</mod:findLike>
 </mod:findName>
 <mod:findName type="sectorDescription" name="SECTOR_LOSTSUN_UNIQUE">
 	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
@@ -37,6 +40,9 @@
 </mod:findName>
 <mod:findName type="sectorDescription" name="SECTOR_CONFEDERATE">
 	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+	<mod:findLike type="rarityList">
+    	<mod-append:blueprint name="aea_cult_wizard" rarity="3" />
+	</mod:findLike>
 </mod:findName>
 <mod:findName type="sectorDescription" name="SECTOR_REPUBLIC">
 	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
@@ -46,6 +52,9 @@
 </mod:findName>
 <mod:findName type="sectorDescription" name="SECTOR_CONFEDERATE_UNIQUE">
 	<mod-append:priorityEvent name="AEA_OLD_POWER_CELL_GET" min="0" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+	<mod:findLike type="rarityList">
+    	<mod-append:blueprint name="aea_cult_wizard" rarity="3" />
+	</mod:findLike>
 </mod:findName>
 
 <mod:findName type="sectorDescription" name="FINAL">
@@ -67,6 +76,8 @@
 	<mod-append:blueprint name="AEA_LASER_NECRO_3" rarity="0" />
     <mod-append:blueprint name="AEA_LASER_NECRO_CHARGE" rarity="0" />
 	<mod-append:blueprint name="AEA_COMBAT_BIRD_BURST_1" rarity="0" />
+
+	<mod-append:blueprint name="aea_cult_wizard" rarity="0" />
 	</mod:findLike>
 </mod:findName>
 
@@ -85,6 +96,8 @@
 		<mod-append:blueprint name="AEA_LASER_NECRO_3" rarity="0" />
 		<mod-append:blueprint name="AEA_LASER_NECRO_CHARGE" rarity="0" />
 		<mod-append:blueprint name="AEA_COMBAT_BIRD_BURST_1" rarity="0" />
+
+		<mod-append:blueprint name="aea_cult_wizard" rarity="0" />
 	</mod:findLike>
 </mod:findName>
 

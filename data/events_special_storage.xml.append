@@ -13,7 +13,72 @@
     <text>Heretic Converter.</text>
     <event load="STORAGE_CHECK_AEA_NECRO_CONVERT" />
   </mod-append:choice>
+  <mod-append:choice req="AEA_CULTISTS" blue="true" hidden="true">
+    <text>Cultists.</text>
+    <event load="STORAGE_CHECK_AEA_CULTIST_WIZARD" />
+  </mod-append:choice>
 </mod:findName>
+
+<mod:findName type="event" name="STORAGE_CHECK_LAB_ORCHID">
+	<mod-append:choice req="LAB_ORCHID_AEA_COMMUNION" lvl="1" max_group="5" blue="false" hidden="true">
+		<text>Sec [Cultist]: Ancient Communion. [An upgrade is already installed]
+		[You can purchase spells at empty beacons]</text>
+		<event load="OPTION_INVALID" />
+	</mod-append:choice>
+	<mod-append:choice req="LAB_ORCHID_AEA_COMMUNION" lvl="0" max_group="5" blue="false" hidden="true">
+		<text>Sec [Vampweed]: Ancient Communion. [Cost: 35~, 4{]</text>
+		<event load="STORAGE_CHECK_LAB_AEA_COMMUNION" />
+	</mod-append:choice>
+</mod:findName>
+
+<mod:findName type="event" name="STORAGE_CHECK_AUG">
+	<mod-append:choice req="LAB_ORCHID_AEA_COMMUNION">
+        <text>(Ancient Communion) Commune.</text>
+        <event>
+			<store>STORE_AEA_COMMUNION</store>
+        </event>
+    </mod-append:choice>
+	<mod-append:choice req="EX_LAB_ORCHID_AEA_COMMUNION">
+        <text>(Ancient Communion) Commune.</text>
+        <event>
+			<store>STORE_AEA_COMMUNION</store>
+        </event>
+    </mod-append:choice>
+</mod:findName>
+
+
+<event name="STORAGE_CHECK_LAB_AEA_COMMUNION">
+	<text>You are about to install the Ancient Communion modification.
+	[Effects: You can purchase spells at empty beacons]
+	
+	[Warning: This will affect Cultist Crew only. You will be able to install other secondary mods and primary mods afterwards.]</text>
+	<choice hidden="true" req="LAB_UPGRADE" lvl="1" max_group="0" blue="false">
+		<text>Install the modification. [Cost: 35~, 4{]</text>
+		<event>
+			<text>You install the modification.</text>
+			<item_modify>
+				<item type="scrap" min="-35" max="-25" />
+				<item type="fuel" min="-4" max="-4" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_LAB_AEA_COMMUNION" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="LAB_UPGRADE" lvl="0" max_lvl="2" max_group="0" blue="false" hidden="true">
+		<text>You must have the lab upgrade for this modification.</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="pilot" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_LAB_AEA_COMMUNION">
+	<hiddenAug>LAB_ORCHID_AEA_COMMUNION</hiddenAug>
+	<loadEvent>STORAGE_CHECK_LAB_ORCHID</loadEvent>
+</event>
 
 <event name="STORAGE_CHECK_AEA_NECRO_CONVERT">
 	<text>What do you want to do?</text>
@@ -1177,5 +1242,440 @@
 	</choice>
 </event>
 
+<event name="STOREEVENT_AEA_CULT_SPELLS" unique="true">
+	<preventQuest />
+	<beaconType id="map_icon_store_orchid" global="true">
+		<color r="200" g="100" b="200" a="1" />
+	</beaconType>
+	<text>This beacon is an outpost and trade hub for the Cult of the bud. Theres a varied collection of spells here, you'll probably need to pickup a few cultists if you want to use them.</text>
+	<ship load="SHIP_ORCHID_STATION" hostile="false" />
+	<choice hidden="true">
+		<text>Visit the market.</text>
+		<event>
+			<text>Multiple Orchids wave to customers, trying to get their attention, while curious shoppers of various species look about.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORE_LOAD_AEA_CULT" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Attack the Orchids.</text>
+		<event>
+			<text>Looks like no one's eager in helping out the Orchids, though your attack sends the market into lockdown. No time to worry about that, you need to focus your sights on your new prey.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="MORALITY_UPDATE_ORCHID_FIGHT" />
+			</choice>
+		</event>
+	</choice>
+</event>
+<event name="STORE_LOAD_AEA_CULT">
+	<store>STORE_AEA_CULT</store>
+	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event />
+	</choice>
+</event>
+
+<event name="STORAGE_CHECK_AEA_CULTIST_WIZARD">
+	<text>What do you want to do?</text>
+  	<checkCargo />
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice req="aea_cult_wizard">
+		<text>(Unlearned Cultist) Learn a spell</text>
+		<event>
+			<text>Your cultist is capable of learning a variety of spells.</text>
+			<choice>
+				<text>Nevermind.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice req="AEA_SPELL_ITEM_01">
+				<text>Learn [Protect]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_01"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_a01</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_02">
+				<text>Learn [Beacon]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_02"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_a02</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_03">
+				<text>Learn [Bio Bolt]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_03"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_s03</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_04">
+				<text>Learn [Bolt]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_04"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_s04</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_05">
+				<text>Learn [Bolt Burst]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_05"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_s05</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_06">
+				<text>Learn [Hull Bolt]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_06"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_s06</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_07">
+				<text>Learn [Warp]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_07"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_a07</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_08">
+				<text>Learn [Warp Bolt]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_08"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_s08</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_09">
+				<text>Learn [Heal Bolt]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_09"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_a09</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_10">
+				<text>Learn [Heal Aura]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_10"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_a10</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_11">
+				<text>Learn [Drone]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_11"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_a11</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_12">
+				<text>Learn [Barrier]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_12"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_a12</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_13">
+				<text>Learn [Lockdown]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_13"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_a13</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_14">
+				<text>Learn [Ally]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_14"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_a14</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_15">
+				<text>Learn [Mind Bolt]</text>
+				<event>
+					<text>Your cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_15"/>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_a15</transformRace>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_a01">
+		<text>([Protect] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_a01">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_a02">
+		<text>([Beacon] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_a02">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_s03">
+		<text>([Bio Bolt] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_s03">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_s04">
+		<text>([Bolt] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_s04">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_s05">
+		<text>([Bolt Burst] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_s05">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_s06">
+		<text>([Hull Bolt] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_s06">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_a07">
+		<text>([Warp] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_a07">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_s08">
+		<text>([Warp Bolt] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_s08">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_a09">
+		<text>([Heal Bolt] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_a09">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_a10">
+		<text>([Heal Aura] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_a10">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_a11">
+		<text>([Drone] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_a11">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_a12">
+		<text>([Barrier] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_a12">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_a13">
+		<text>([Lockdown] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_a13">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_a14">
+		<text>([Ally] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_a14">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_wizard_a15">
+		<text>([Mind Bolt] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<transformRace class="aea_cult_wizard_a15">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+</event>
 
 </FTL>

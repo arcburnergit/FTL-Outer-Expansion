@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<mod:findName type="eventList" name="STORELIST_ALL">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_NODE17">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_ASTEROID">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_UNION">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_MILITIA">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_ENGI">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_ZOLTAN">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_ORCHID">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_VAMPWEED">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_FREEMANTIS">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_SEPARATIST">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_OUTCAST">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_CRYSTAL">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_FEDERATION">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_MANTIS">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_LOSTSUN">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+
+<mod:findName type="eventList" name="STORELIST_SLUG">
+  <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+</mod:findName>
+</FTL>

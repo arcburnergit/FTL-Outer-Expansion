@@ -4092,6 +4092,163 @@ This drone fires 4 shots.
 	<rarity>0</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
+
+<weaponBlueprint name="AEA_LASER_BIO_DRONE">
+	<type>LASER</type>
+	<title>Drone Laser</title>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>1</persDamage>
+	<shots>1</shots>
+	<fireChance>1</fireChance>
+	<breachChance>0</breachChance>
+	<speed>200</speed>
+	<rarity>0</rarity>
+	<image>laser_bio</image>
+	<statBoosts>
+		<statBoost name="deathEffect">
+			<boostType>SET</boostType>
+			<deathEffect>
+				<sysDamage>2</sysDamage>
+				<fireChance>10</fireChance>
+				<friendlyFire>true</friendlyFire>
+				<shipFriendlyFire>true</shipFriendlyFire>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<maxStacks>1</maxStacks>
+			<duration>20</duration>
+			<boostAnim>bio_poison</boostAnim>
+		</statBoost>
+	</statBoosts>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_burst_1</weaponArt>
+</weaponBlueprint>
+
+<droneBlueprint name="AEA_COMBAT_BIRD_BIO_1">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Bio Drone Mk. 1</title>
+	<short>Bio 1</short>
+	<desc>A drone that specifically targets enemy crewmembers. Does 15 personal damage and inflicts enemy crew with a death effect that does 2 system damage and creates a fire for 20 seconds.</desc>
+	<power>1</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>35</speed>
+	<cost>60</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_bio_1</droneImage>
+	<weaponBlueprint>AEA_LASER_BIO_DRONE</weaponBlueprint>
+	<rarity>5</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<droneBlueprint name="AEA_COMBAT_BIRD_BIO_2">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Bio Drone Mk. 2</title>
+	<short>Bio 2</short>
+	<desc>A drone that specifically targets enemy crewmembers, faster than the Mk 1. Does 15 personal damage and inflicts enemy crew with a death effect that does 2 system damage and creates a fire for 20 seconds.</desc>
+	<power>2</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>55</speed>
+	<cost>60</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_bio_2</droneImage>
+	<weaponBlueprint>AEA_LASER_BIO_DRONE</weaponBlueprint>
+	<rarity>5</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<weaponBlueprint name="AEA_BEAM_BIRD_DELETE">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>Drone Beam</title>
+	<damage>0</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<color> <!-- Color only works for beams -->
+		<r>0</r>
+		<g>0</g>
+		<b>0</b>
+		<a>0</a>
+	</color>
+	<speed>1</speed>
+	<rarity>0</rarity>
+	<image>aea_invisible</image>
+	<length>1</length>
+	<weaponArt>beam_1</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_BEAM_BIRD_SWEEP">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>Drone Beam</title>
+	<damage>1</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<speed>1</speed>
+	<rarity>0</rarity>
+	<image>aea_invisible</image>
+	<length>200</length>
+	<weaponArt>beam_1</weaponArt>
+</weaponBlueprint>
+
+<droneBlueprint name="AEA_COMBAT_BIRD_SWEEP">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Eagle Drone</title>
+	<short>Eagle</short>
+	<desc>A drone equiped with a small fabricated that creates motionless drones that fire long duration beams across the enemy ship.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>25</speed>
+	<cost>60</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_thick</droneImage>
+	<weaponBlueprint>AEA_BEAM_BIRD_SWEEP</weaponBlueprint>
+	<rarity>5</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<droneBlueprint name="AEA_COMBAT_BIRD_SWEEP_DELETE">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Eagle Drone</title>
+	<short>Eagle</short>
+	<desc>A drone equiped with a small fabricated that creates motionless drones that fire long duration beams across the enemy ship.</desc>
+	<power>1</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>1</speed>
+	<cost>60</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_bomb</droneImage>
+	<weaponBlueprint>AEA_BEAM_BIRD_DELETE</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
 </FTL>
 
 <FTL>
@@ -4432,4 +4589,1727 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 		<power> </power>
 	</powerList>
 </crewBlueprint>
+
+<crewBlueprint name="aea_cult_vampbig">
+	<title>Cultivator Cultist</title>
+	<short>Cultist</short>
+	<desc>A Cultivator cultist, these crew are focused around dealing with enemy crew and draw on the power of the bud to temporarily convert enemy to ally.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>68</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Mind control a random enemy crew member.</power>
+		<power>Max Health is increased to 150</power>
+		<power>Enemy crew in the same room heal 25% slower</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard">
+	<title>Vampweed Cultist</title>
+	<short>Cultist</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>68</cost>
+	<bp>2</bp>
+	<rarity>4</rarity>
+	<powerList>
+		<power>Active Ability: Casts a spell in the current room which does nothing</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_a01">
+	<title>Vampweed Cultist [Protect]</title>
+	<short>Cultist [Protect]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (5 charges): Casts a spell which protects the current room from hull and system damage for 10 seconds</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_a02">
+	<title>Vampweed Cultist [Beacon]</title>
+	<short>Cultist [Beacon]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Casts a spell which retargets all the enemy projectiles on screen to the current room</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s03">
+	<title>Vampweed Cultist [Bio Bolt]</title>
+	<short>Cultist [Bio Bolt]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (3 charges): Cast a spell at a target room dealing 45 personal damage</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s04">
+	<title>Vampweed Cultist [Bolt]</title>
+	<short>Cultist [Bolt]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (2 charges): Cast a spell at a target room dealing 1 damage</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s05">
+	<title>Vampweed Cultist [Bolt Burst]</title>
+	<short>Cultist [Bolt Burst]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (2 charges): Cast 3 spells at a target room dealing 1 damage each</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s06">
+	<title>Vampweed Cultist [Hull Bolt]</title>
+	<short>Cultist [Hull Bolt]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (2 charges): Cast a spell at a target room doing 3 hull damage but no system or crew damage</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_a07">
+	<title>Vampweed Cultist [Warp]</title>
+	<short>Cultist [Warp]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Cast a spell in the current room that warps all crew in the current room to a random room on the opposite ship</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s08">
+	<title>Vampweed Cultist [Warp Bolt]</title>
+	<short>Cultist [Warp Bolt]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Cast a spell at a target room that warps all crew in the room to a random room on the opposite ship</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s09">
+	<title>Vampweed Cultist [Heal Bolt]</title>
+	<short>Cultist [Heal Bolt]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (3 charges): Cast a spell at the lowest health (%) friendly crew that heals all friendly crew in the room for 75 hp</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_a10">
+	<title>Vampweed Cultist [Heal Aura]</title>
+	<short>Cultist [Heal Aura]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Cast a spell in the current room that heals all friendly crew for 45 hp</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_a11">
+	<title>Vampweed Cultist [Drone]</title>
+	<short>Cultist [Drone]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (1 charge): Spawn a conservative combat drone around the enemy ship</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s12">
+	<title>Vampweed Cultist [Barrier]</title>
+	<short>Cultist [Barrier]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (3 charge): Spawn a barrier capable of stopping 2 projectiles</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s13">
+	<title>Vampweed Cultist [Lockdown]</title>
+	<short>Cultist [Lockdown]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (3 charge): Cast a spell at the target room which applies a lockdown</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s14">
+	<title>Vampweed Cultist [Ally]</title>
+	<short>Cultist [Ally]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (2 charge): Cast a spell at the target room which spawns a random ally</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s15">
+	<title>Vampweed Cultist [Mind Bolt]</title>
+	<short>Cultist [Mind Bolt]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (3 charge): Cast a spell at the target room which mind controls a random enemy</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+</crewBlueprint>
+</FTL>
+
+<FTL>
+	<weaponBlueprint name="AEA_LASER_SFAKE">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>0</damage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<hitShipSounds>
+			<sound>hitHull2</sound>
+			<sound>hitHull3</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SFAKE_HEAL">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>0</damage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_heal</image>
+		<hitShipSounds>
+			<sound>hitHull2</sound>
+			<sound>hitHull3</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SFAKE_HULL">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>0</damage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_hull</image>
+		<hitShipSounds>
+			<sound>hitHull2</sound>
+			<sound>hitHull3</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SFAKE_SYS">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>0</damage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_syhs</image>
+		<hitShipSounds>
+			<sound>hitHull2</sound>
+			<sound>hitHull3</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+
+
+
+	<weaponBlueprint name="AEA_LASER_SPELL_03">
+		<type>BOMB</type>
+		<title>Bomb Launcher</title>
+		<damage>0</damage>
+		<persDamage>3</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_03">
+		<type>BOMB</type>
+		<title>Bomb Launcher</title>
+		<damage>0</damage>
+		<persDamage>3</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_04">
+		<type>BOMB</type>
+		<title>Bomb Launcher</title>
+		<damage>1</damage>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_06">
+		<type>BOMB</type>
+		<title>Bomb Launcher</title>
+		<damage>3</damage>
+		<sysDamage>-3</sysDamage>
+		<persDamage>-3</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_08">
+		<type>BOMB</type>
+		<title>Bomb Launcher</title>
+		<damage>0</damage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_09">
+		<type>BOMB</type>
+		<title>Bomb Launcher</title>
+		<damage>0</damage>
+		<persDamage>-5</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_10">
+		<type>BOMB</type>
+		<title>Bomb Launcher</title>
+		<damage>0</damage>
+		<persDamage>-3</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+	<droneBlueprint name="AEA_COMBAT_SPELL_11">
+		<type>COMBAT</type>
+		<tip>tip_drone_conservative</tip>
+		<title>Conservative Drone [Laser]</title>
+		<short>Cons. [LASER]</short>
+		<desc>[CURRENT MODE: Laser] Slow moving toggle Drone that can switch between a Laser and Beam weapon and uses no power. Cannot be turned off but functions even if Drone Control is disabled.</desc>
+		<power>0</power>
+		<cooldown>1000</cooldown>
+		<dodge>0</dodge>
+		<speed>10</speed>
+		<cost>55</cost>
+		<bp>3</bp>
+		<droneImage>drone_aea_magic</droneImage>
+		<weaponBlueprint>DRONE_LASER_COMBAT</weaponBlueprint>
+		<rarity>0</rarity>
+		<iconImage>combat</iconImage>
+	</droneBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_12">
+		<type>BOMB</type>
+		<title>Bomb Launcher</title>
+		<damage>0</damage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_13">
+		<type>BOMB</type>
+		<title>Bomb Launcher</title>
+		<damage>0</damage>
+		<accuracyMod>100</accuracyMod>
+		<lockdown>1</lockdown>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_14">
+		<type>BOMB</type>
+		<title>Bomb Launcher</title>
+		<damage>0</damage>
+		<accuracyMod>100</accuracyMod>
+		<spawnCrew>
+			<number>1</number>
+			<race>LIST_CREW_SPELL_ALLY</race>
+			<lifetime>20</lifetime>
+			<statBoosts>
+				<statBoost name="noClone">
+					<boostType>SET</boostType>
+					<value>true</value>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ALL</crewTarget>
+					<priority>999999</priority>
+				</statBoost>
+				<statBoost name="lowHealthThreshold">
+					<boostType>SET</boostType>
+					<amount>-1</amount>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ALL</crewTarget>
+					<priority>999999</priority>
+				</statBoost>
+			</statBoosts>
+			<noSlot>true</noSlot>
+		</spawnCrew>
+		<crewSpawnChance>10</crewSpawnChance>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_15">
+		<type>BOMB</type>
+		<title>Bomb Launcher</title>
+		<damage>0</damage>
+		<accuracyMod>100</accuracyMod>
+		<mv-mindControl>
+			<duration>20</duration>
+		</mv-mindControl>
+		<mv-crewTarget>MOST_CREW</mv-crewTarget>
+		<statBoosts>
+			<statBoost name="controllable">
+				<boostType>SET</boostType>
+				<value>false</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<duration>45</duration>
+				<!--<blackList load="LIST_CREW_MADNESS_IMMUNE"/>-->
+				<blackList>
+					<slug_hektar_box/>
+					<unique_billy_box/>
+					<unique_irwin_demon/>
+					<unique_dessius/>
+					<siren/>
+					<siren_harpy/>
+					<eldritch_thing/>
+					<eldritch_thing_weak/>
+					<eldritch_cat/>
+					<gnome/>
+				</blackList>
+			</statBoost>
+			<statBoost name="silenced">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<duration>45</duration>
+				<!--<blackList load="LIST_CREW_MADNESS_IMMUNE"/>-->
+				<blackList>
+					<slug_hektar_box/>
+					<unique_billy_box/>
+					<unique_irwin_demon/>
+					<unique_dessius/>
+					<siren/>
+					<siren_harpy/>
+					<eldritch_thing/>
+					<eldritch_thing_weak/>
+					<eldritch_cat/>
+					<gnome/>
+				</blackList>
+			</statBoost>
+		</statBoosts>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+
+
+
+
+
+	<weaponBlueprint name="AEA_LASER_SPELL_03_OLD">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>0</damage>
+		<persDamage>3</persDamage>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_syhs</image>
+		<hitShipSounds>
+			<sound>hitHull2</sound>
+			<sound>hitHull3</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_03_2_OLD">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>0</damage>
+		<persDamage>0</persDamage>
+		<statBoosts>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>-45</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>ALL</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<priority>0</priority>
+				<boostAnim>bio_poison</boostAnim>
+				<maxStacks>1</maxStacks>
+				<duration>1</duration>
+			</statBoost>
+		</statBoosts>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_syhs</image>
+		<hitShipSounds>
+			<sound>hitHull2</sound>
+			<sound>hitHull3</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_04_OLD">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>1</damage>
+		<persDamage>0</persDamage>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<hitShipSounds>
+			<sound>hitHull2</sound>
+			<sound>hitHull3</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_04_2_OLD">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>1</damage>
+		<persDamage>-1</persDamage>
+		<statBoosts>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>-15</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>ALL</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<priority>0</priority>
+				<boostAnim>bio_poison</boostAnim>
+				<maxStacks>1</maxStacks>
+				<duration>1</duration>
+			</statBoost>
+		</statBoosts>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<hitShipSounds>
+			<sound>hitHull2</sound>
+			<sound>hitHull3</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_06_OLD">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>3</damage>
+		<sysDamage>-3</sysDamage>
+		<persDamage>-3</persDamage>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_hull</image>
+		<hitShipSounds>
+			<sound>hitHull2</sound>
+			<sound>hitHull3</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_08_OLD">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>0</damage>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<hitShipSounds>
+			<sound>hitHull2</sound>
+			<sound>hitHull3</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_09_OLD">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>0</damage>
+		<persDamage>-5</persDamage>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_heal</image>
+		<hitShipSounds>
+			<sound>healBomb</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_09_2_OLD">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>0</damage>
+		<statBoosts>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>75</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>ALL</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<priority>0</priority>
+				<boostAnim>heal_particles</boostAnim>
+				<maxStacks>1</maxStacks>
+				<duration>1</duration>
+			</statBoost>
+		</statBoosts>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_heal</image>
+		<hitShipSounds>
+			<sound>healBomb</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_10_OLD">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>0</damage>
+		<statBoosts>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>45</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>ALL</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<priority>0</priority>
+				<boostAnim>heal_particles</boostAnim>
+				<maxStacks>1</maxStacks>
+				<duration>1</duration>
+			</statBoost>
+		</statBoosts>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_heal</image>
+		<hitShipSounds>
+			<sound>healBomb</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_12_OLD">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>0</damage>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_hull</image>
+		<hitShipSounds>
+			<sound>ampere_zap</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_13_OLD">
+		<type>LASER</type>
+		<title>Drone Laser</title>
+		<damage>0</damage>
+		<lockdown>1</lockdown>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_hull</image>
+		<hitShipSounds>
+			<sound>smallExplosion</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_14_OLD">
+		<type>BOMB</type>
+		<tip>tip_bombs</tip>
+		<title>Bomb Launcher</title>
+		<short>Bomb</short>
+		<locked>1</locked>
+		<desc>Self-teleporting explosive that damages systems and crew but not the hull. Can target your own ship.</desc>
+		<tooltip>Bomb weapon; requires a missile; does 2 damage, but only damages system, not hull. Can target your own ship.</tooltip>
+		<damage>0</damage>
+		<spawnCrew>
+			<number>1</number>
+			<race>LIST_CREW_SPELL_ALLY</race>
+			<lifetime>20</lifetime>
+			<statBoosts>
+				<statBoost name="noClone">
+					<boostType>SET</boostType>
+					<value>true</value>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ALL</crewTarget>
+					<priority>999999</priority>
+				</statBoost>
+				<statBoost name="lowHealthThreshold">
+					<boostType>SET</boostType>
+					<amount>-1</amount>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ALL</crewTarget>
+					<priority>999999</priority>
+				</statBoost>
+			</statBoosts>
+			<noSlot>true</noSlot>
+		</spawnCrew>
+		<crewSpawnChance>10</crewSpawnChance>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>aea_proj_magic_hull</image>
+		<launchSounds>
+			<sound>bombTeleport</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>smallExplosion</sound>
+		</hitShipSounds>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_15_OLD">
+		<type>BOMB</type>
+		<tip>tip_bombs</tip>
+		<title>Bomb Launcher</title>
+		<short>Bomb</short>
+		<locked>1</locked>
+		<desc>Self-teleporting explosive that damages systems and crew but not the hull. Can target your own ship.</desc>
+		<tooltip>Bomb weapon; requires a missile; does 2 damage, but only damages system, not hull. Can target your own ship.</tooltip>
+		<damage>0</damage>
+		<shots>1</shots>
+		<mv-mindControl>
+			<duration>45</duration>
+		</mv-mindControl>
+		<mv-crewTarget>MOST_CREW</mv-crewTarget>
+		<statBoosts>
+			<statBoost name="controllable">
+				<boostType>SET</boostType>
+				<value>false</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<duration>45</duration>
+				<!--<blackList load="LIST_CREW_MADNESS_IMMUNE"/>-->
+				<blackList>
+					<slug_hektar_box/>
+					<unique_billy_box/>
+					<unique_irwin_demon/>
+					<unique_dessius/>
+					<siren/>
+					<siren_harpy/>
+					<eldritch_thing/>
+					<eldritch_thing_weak/>
+					<eldritch_cat/>
+					<gnome/>
+				</blackList>
+			</statBoost>
+			<statBoost name="silenced">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<duration>45</duration>
+				<!--<blackList load="LIST_CREW_MADNESS_IMMUNE"/>-->
+				<blackList>
+					<slug_hektar_box/>
+					<unique_billy_box/>
+					<unique_irwin_demon/>
+					<unique_dessius/>
+					<siren/>
+					<siren_harpy/>
+					<eldritch_thing/>
+					<eldritch_thing_weak/>
+					<eldritch_cat/>
+					<gnome/>
+				</blackList>
+			</statBoost>
+		</statBoosts>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>11</cooldown>
+		<power>1</power>
+		<cost>45</cost>
+		<bp>4</bp>
+		<rarity>1</rarity>
+		<image>bomb_small</image>
+		<explosion>explosion_random</explosion>
+		<launchSounds>
+			<sound>bombTeleport</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>smallExplosion</sound>
+		</hitShipSounds>
+		<weaponArt>bomblauncher_small</weaponArt>
+		<iconImage>bomb</iconImage>
+	</weaponBlueprint>
+</FTL>
+
+<FTL>
+	<weaponBlueprint name="AEA_SPELL_ITEM_01">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Protect]</title>
+		<short>[Protect]</short>
+		<desc>Casts a spell which protects the current room from hull and system damage for 10 seconds.
+	Cast Delay: 1 second
+	Charge Time: 20 seconds
+	Uses per combat: 5
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_01</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_02">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Beacon]</title>
+		<short>[Beacon]</short>
+		<desc>Casts a spell which retargets all the enemy projectiles on screen to the current room.
+	Cast Delay: 1 second
+	Charge Time: 20 seconds
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_02</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_03">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Bio Bolt]</title>
+		<short>[Bio Bolt]</short>
+		<desc>Cast a spell that pierces all normal shields at a target room dealing 45 personal damage.
+	Cast Delay: 3 seconds
+	Charge Time: 20 seconds
+	Uses per combat: 3
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_03</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_04">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Bolt]</title>
+		<short>[Bolt]</short>
+		<desc>Cast a spell that pierces all normal shields at a target room dealing 1 damage.
+	Cast Delay: 8 seconds
+	Charge Time: 20 seconds
+	Uses per combat: 2
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_04</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_05">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Bolt Burst]</title>
+		<short>[Bolt Burst]</short>
+		<desc>Cast 3 spells that pierces all normal shields at a target room dealing 1 damage.
+	Cast Delay: 20 seconds
+	Charge Time: 20 seconds
+	Uses per combat: 2
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_05</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_06">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Hull Bolt]</title>
+		<short>[Hull Bolt]</short>
+		<desc>Cast a spell that pierces all normal shields at a target room dealing 3 hull damage but no system or crew damage.
+	Cast Delay: 10 seconds
+	Charge Time: 20 seconds
+	Uses per combat: 2
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_06</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_07">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Warp]</title>
+		<short>[Warp]</short>
+		<desc>Cast a spell in the current room that warps all crew in the current room to a random room on the opposite ship.
+	Cast Delay: 6 seconds
+	Charge Time: 20 seconds
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_07</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_08">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Warp Bolt]</title>
+		<short>[Warp Bolt]</short>
+		<desc>Cast a spell that pierces all shields at a target room that warps all crew in the room to a random room on the opposite ship.
+	Cast Delay: 8 seconds
+	Charge Time: 20 seconds
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_08</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_09">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Heal Bolt]</title>
+		<short>[Heal Bolt]</short>
+		<desc>Cast a spell at the lowest health (%) friendly crew that heals all friendly crew in the room for 75 hp.
+	Cast Delay: 2 seconds
+	Charge Time: 20 seconds
+	Uses per combat: 3
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_09</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_10">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Heal Aura]</title>
+		<short>[Heal Aura]</short>
+		<desc>Cast a spell in the current room that heals all friendly crew in the room for 45 hp.
+	Cast Delay: 5 seconds
+	Charge Time: 20 seconds
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_10</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_11">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Drone]</title>
+		<short>[Drone]</short>
+		<desc>Spawn a conservative combat drone around the enemy ship.
+	Cast Delay: 10 seconds
+	Charge Time: 20 seconds
+	Uses per combat: 1
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_11</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_12">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Barrier]</title>
+		<short>[Barrier]</short>
+		<desc>Cast a spell that pierces all normal shields at a target room that spawns a barrier capable of blocking 2 projectiles.
+	Cast Delay: 2 second
+	Charge Time: 20 seconds
+	Uses per combat: 3
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_12</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_13">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Lockdown]</title>
+		<short>[Lockdown]</short>
+		<desc>Cast a spell that pierces all normal shields at a target room that applies a lockdown effect.
+	Cast Delay: 4 second
+	Charge Time: 20 seconds
+	Uses per combat: 3
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_13</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_14">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Ally]</title>
+		<short>[Ally]</short>
+		<desc>Cast a spell that pierces all normal shields at a target room that spawns a random ally.
+	Cast Delay: 7 second
+	Charge Time: 20 seconds
+	Uses per combat: 2
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_14</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_SPELL_ITEM_15">
+		<type>BEAM</type>
+		<flavorType>Spell</flavorType>
+		<title>Spell: [Mind Bolt]</title>
+		<short>[Mind Bolt]</short>
+		<desc>Cast a spell that pierces all normal shields at a target room that mind controls the enemy for 20 seconds.
+	Cast Delay: 8 second
+	Charge Time: 20 seconds
+	Uses per combat: 3
+		</desc>
+		<tooltip>Storage Weapon</tooltip>
+		<damage>0</damage>
+		<sp>0</sp>
+		<cooldown>-1</cooldown>
+		<speed>0</speed>
+		<length>0</length>
+		<rarity>0</rarity>
+		<power>0</power>
+		<cost>15</cost>
+		<image>beam_contact</image>
+		<weaponArt>invisible</weaponArt>
+		<iconReplace>aea_spell_15</iconReplace>
+	</weaponBlueprint>
+</FTL>
+
+<FTL>
+	<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BUD" layout="aeap_cult_bud_1" img="aeap_cult_bud_1">
+		<class>Bud Cruiser</class>
+		<name>The Petals</name>
+		<desc>Although the ship itself is nothing special, the crew are able to draw on the power of their god to destroy their enemies.</desc>
+		<unlock id="ship_PLAYER_SHIP_AEA_CULT_BUD_unlock" />
+		<systemList>
+			<battery max="2" power="1" room="14" start="false" img="room_battery_3" />
+			<cloaking power="1" room="12" start="false" img="room_cloaking_2" />
+			<clonebay power="1" room="7" start="false">
+				<slot>
+					<number>2</number>
+				</slot>
+			</clonebay>
+			<doors power="1" room="4" start="true" img="room_doors_9">
+				<slot>
+					<direction>right</direction>
+					<number>1</number>
+				</slot>
+			</doors>
+			<drones max="8" power="2" room="1" start="false" img="room_drones_7" />
+			<engines power="2" room="11" start="true" img="room_engines_4">
+				<slot>
+					<direction>down</direction>
+					<number>2</number>
+				</slot>
+			</engines>
+			<hacking power="1" room="18" start="false" img="room_hacking_2" />
+			<medbay power="2" room="7" start="true" img="room_medbay_7">
+				<slot>
+					<number>2</number>
+				</slot>
+			</medbay>
+			<mind power="1" room="17" start="false" img="room_mind_5" />
+			<oxygen power="1" room="13" start="true" img="room_oxygen_20" />
+			<pilot power="1" room="0" start="true" img="room_pilot">
+				<slot>
+					<direction>right</direction>
+					<number>0</number>
+				</slot>
+			</pilot>
+			<sensors power="2" room="5" start="true" img="room_sensors_3">
+				<slot>
+					<direction>right</direction>
+					<number>1</number>
+				</slot>
+			</sensors>
+			<shields max="8" power="3" room="2" start="true" img="room_shields_13">
+				<slot>
+					<direction>down</direction>
+					<number>3</number>
+				</slot>
+			</shields>
+			<teleporter power="1" room="10" start="false" />
+			<temporal power="1" room="9" start="false" />
+			<weapons max="8" power="1" room="8" start="true" img="room_weapons_4">
+				<slot>
+					<direction>up</direction>
+					<number>0</number>
+				</slot>
+			</weapons>
+		</systemList>
+		<weaponSlots>2</weaponSlots>
+		<droneSlots>4</droneSlots>
+		<weaponList missiles="2" count="2">
+			<weapon name="LASER_BURST_2" />
+			<weapon name="AEA_SPELL_LIST_COMMON" />
+		</weaponList>
+		<droneList drones="2" count="4" />
+		<health amount="30" />
+		<maxPower amount="7" />
+		<crewCount amount="1" class="aea_cult_wizard" />
+		<crewCount amount="1" class="aea_cult_wizard_s04" />
+		<crewCount amount="1" class="aea_cult_wizard_s05" />
+		<aug name="EX_LAB_ORCHID_AEA_COMMUNION" />
+		<shieldImage>mup_standard2</shieldImage>
+		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+	</shipBlueprint>
+
+	<augBlueprint name="LAB_ORCHID_AEA_COMMUNION">
+		<title>Ancient Communion</title>
+		<desc>You can purchase spells at empty beacons.</desc>
+		<cost>0</cost>
+		<rarity>0</rarity>
+		<stackable>false</stackable>
+	</augBlueprint>
+	
+	<augBlueprint name="EX_LAB_ORCHID_AEA_COMMUNION">
+		<title>[L] Ancient Communion</title>
+		<desc>You can purchase spells at empty beacons.
+		
+		[L] - As an external lab upgrade, this augment will provide its normal effect but take up an augment slot. It cannot be converted into an actual lab upgrade, but will not consume your primary slot. Does not stack with itself.</desc>
+		<cost>45</cost>
+		<rarity>0</rarity>
+		<stackable>false</stackable>
+	</augBlueprint>
+
+	<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BUD_2" layout="aeap_cult_bud_2" img="aeap_cult_bud_2">
+		<class>Bud Cruiser</class>
+		<name>The Vines</name>
+		<desc>The crew here are especially good at dealing with enemy crew by kidnapping them onto their own ship.</desc>
+		<unlock id="ship_PLAYER_SHIP_AEA_CULT_BUD_2_unlock" />
+		<systemList>
+			<battery max="2" power="1" room="10" start="false" img="room_battery_3" />
+			<cloaking power="1" room="4" start="false" img="room_cloaking_2" />
+			<clonebay power="1" room="14" start="true">
+				<slot>
+					<number>2</number>
+				</slot>
+			</clonebay>
+			<doors power="1" room="15" start="true" img="room_doors_10">
+				<slot>
+					<direction>up</direction>
+					<number>1</number>
+				</slot>
+			</doors>
+			<drones max="8" power="2" room="9" start="false" img="room_drones_13" />
+			<engines power="2" room="1" start="true" img="room_engines_2">
+				<slot>
+					<direction>down</direction>
+					<number>2</number>
+				</slot>
+			</engines>
+			<hacking power="1" room="16" start="false" img="room_hacking_13" />
+			<medbay power="1" room="14" start="false" img="room_medbay_7">
+				<slot>
+					<number>2</number>
+				</slot>
+			</medbay>
+			<mind power="1" room="17" start="false" img="room_mind_9" />
+			<oxygen power="1" room="11" start="true" img="room_oxygen_20" />
+			<pilot power="1" room="0" start="true" img="room_pilot">
+				<slot>
+					<direction>right</direction>
+					<number>0</number>
+				</slot>
+			</pilot>
+			<sensors power="2" room="6" start="true" img="room_sensors_8">
+				<slot>
+					<direction>right</direction>
+					<number>1</number>
+				</slot>
+			</sensors>
+			<shields max="8" power="2" room="7" start="true" img="room_shields_2">
+				<slot>
+					<direction>down</direction>
+					<number>3</number>
+				</slot>
+			</shields>
+			<teleporter power="1" room="5" start="false" />
+			<!--temporal power="1" room="11" start="false" img="room_temporal_4" /-->
+			<weapons max="8" power="2" room="8" start="true" img="room_weapons_3">
+				<slot>
+					<direction>up</direction>
+					<number>1</number>
+				</slot>
+			</weapons>
+		</systemList>
+		<weaponSlots>3</weaponSlots>
+		<droneSlots>3</droneSlots>
+		<weaponList missiles="7" count="3">
+			<weapon name="KERNEL_FIRE" />
+		</weaponList>
+		<droneList drones="0" count="3" />
+		<health amount="30" />
+		<maxPower amount="6" />
+		<crewCount amount="1" class="aea_cult_wizard_s08" />
+		<crewCount amount="1" class="aea_cult_wizard_a10" />
+		<crewCount amount="1" class="orchid_cultivator" />
+		<shieldImage>mup_standard2</shieldImage>
+		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+	</shipBlueprint>
+
+	<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BUD_3" layout="aeap_cult_bud_3" img="aeap_cult_bud_3">
+		<class>Bud Cruiser</class>
+		<name>The Roots</name>
+		<desc>With no shield system the crew have learnt other ways of protecting the ship.</desc>
+		<unlock id="ship_PLAYER_SHIP_AEA_CULT_BUD_3_unlock" />
+		<systemList>
+			<battery max="2" power="1" room="16" start="false" img="room_battery_2" />
+			<cloaking power="1" room="3" start="false" img="room_cloaking" />
+			<clonebay power="1" room="2" start="false">
+				<slot>
+					<number>3</number>
+				</slot>
+			</clonebay>
+			<doors power="1" room="5" start="true" img="room_doors_5">
+				<slot>
+					<direction>right</direction>
+					<number>0</number>
+				</slot>
+			</doors>
+			<drones max="8" power="2" room="9" start="false" img="room_drones_2" />
+			<engines power="3" room="13" start="true" img="room_engines_2">
+				<slot>
+					<direction>down</direction>
+					<number>2</number>
+				</slot>
+			</engines>
+			<hacking power="1" room="10" start="false" img="room_hacking_10" />
+			<medbay power="1" room="2" start="true" img="room_medbay_3">
+				<slot>
+					<number>3</number>
+				</slot>
+			</medbay>
+			<mind power="1" room="12" start="true" img="room_mind_6" />
+			<oxygen power="1" room="14" start="true" img="room_oxygen_10" />
+			<pilot power="1" room="0" start="true" img="room_pilot">
+				<slot>
+					<direction>right</direction>
+					<number>0</number>
+				</slot>
+			</pilot>
+			<sensors power="2" room="4" start="true" img="room_sensors_6">
+				<slot>
+					<direction>right</direction>
+					<number>1</number>
+				</slot>
+			</sensors>
+			<shields max="8" power="2" room="11" start="false" img="room_shields_5">
+				<slot>
+					<direction>up</direction>
+					<number>0</number>
+				</slot>
+			</shields>
+			<teleporter power="1" room="17" start="false" />
+			<temporal power="1" room="15" start="false" />
+			<weapons max="8" power="3" room="1" start="true" img="room_weapons_4">
+				<slot>
+					<direction>up</direction>
+					<number>0</number>
+				</slot>
+			</weapons>
+		</systemList>
+		<weaponSlots>4</weaponSlots>
+		<droneSlots>2</droneSlots>
+		<weaponList missiles="5" count="4">
+			<weapon name="KERNEL_1_ELITE" />
+			<weapon name="SHOTGUN_2" />
+		</weaponList>
+		<droneList drones="0" count="2" />
+		<health amount="30" />
+		<maxPower amount="7" />
+		<crewCount amount="1" class="aea_cult_wizard_s12" />
+		<crewCount amount="1" class="aea_cult_wizard_a01" />
+		<crewCount amount="1" class="aea_cult_wizard_a01" />
+		<crewCount amount="1" class="aea_cult_wizard_a02" />
+		<shieldImage>mup_standard2</shieldImage>
+		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+	</shipBlueprint>
 </FTL>

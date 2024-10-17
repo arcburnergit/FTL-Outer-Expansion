@@ -63,7 +63,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_ARTY</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_NECRO_ENGI</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_BIRD_BIG</mod-append:ship>
-		<mod-append:empty/>
+		<mod-append:ship>PLAYER_SHIP_AEA_CULT_BUD</mod-append:ship>
 			<!-- -->
 		<mod-append:empty/>
 		<mod-append:empty/>
@@ -178,6 +178,23 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
+	</mod-append:ship>
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_CULT_BUD" b="true" c="true" >
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_CULT_BUD</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_CULT_BUD_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_CULT_BUD</shipReq>
+        </unlock>
 	</mod-append:ship>
 
 	
@@ -350,6 +367,21 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<crew>
 			<aea_necro_king room="0" name="L-0031" />
 		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BUD">
+		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BUD_2">
+		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BUD_3">
+		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
 
 	
@@ -1828,7 +1860,652 @@ This enemy is protected by an Energy Shield.</tooltip>
     		<deathSound>death2</deathSound>
     	</deathSounds>
     </mod-append:race>
+
+	
+	
+	<mod-append:race name="aea_cult_wizard">
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<friendlyInRoom />
+				<inCombat />
+				<systemInRoom />
+				<playerShip />
+			</req>
+			<buttonText>Spell</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Casts a spell in the current room which does nothing
+	Cast Duration: 5s
+	Will be interupted during casting if the crew takes damage</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<!--powerCharges>1</powerCharges-->
+			<temporaryEffect>
+				<duration>5</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMove>false</canMove>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_a01">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+				<systemInRoom />
+			</req>
+			<buttonText>Protect</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Casts a spell which protects the current room from hull and system damage for 10 seconds
+	Cast Duration: 1s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<powerCharges>5</powerCharges>
+			<temporaryEffect>
+				<duration>1</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_a02">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Beacon</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Casts a spell which retargets all the enemy projectiles on screen to the current room
+	Cast Duration: 1s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<!--powerCharges>1</powerCharges-->
+			<temporaryEffect>
+				<duration>1</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_s03">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Bio Bolt</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Cast a spell that pierces all normal shields at a target room dealing 45 personal damage
+	Cast Duration: 3s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<powerCharges>3</powerCharges>
+			<temporaryEffect>
+				<duration>3</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_s04">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Bolt</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Cast a spell that pierces all normal shields at a target room dealing 1 damage
+	Cast Duration: 8s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<powerCharges>2</powerCharges>
+			<temporaryEffect>
+				<duration>8</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_s05">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Bolt Burst</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Cast 3 spells that pierces all normal shields at a target room dealing 1 damage
+	Cast Duration: 20s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<powerCharges>2</powerCharges>
+			<temporaryEffect>
+				<duration>20</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_s06">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Hull Bolt</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Cast a spell that pierces all normal shields at a target room dealing 3 hull damage but no system or crew damage
+	Cast Duration: 10s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<powerCharges>2</powerCharges>
+			<temporaryEffect>
+				<duration>10</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_a07">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Warp</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Cast a spell in the current room that warps all crew in the current room to a random room on the opposite ship
+	Cast Duration: 6s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>6</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_s08">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Warp Bolt</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Cast a spell that pierces all shields at a target room that warps all crew in the room to a random room on the opposite ship
+	Cast Duration: 8s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>8</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_s09">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Heal Bolt</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Cast a spell at the lowest health (%) friendly crew that heals all friendly crew in the room for 75 hp
+	Cast Duration: 2s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<powerCharges>3</powerCharges>
+			<temporaryEffect>
+				<duration>2</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_a10">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Heal Aura</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Cast a spell in the current room that heals all friendly crew in the room for 45 hp
+	Cast Duration: 5s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>5</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_a11">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Drone</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Spawn a conservative combat drone around the enemy ship
+	Cast Duration: 10s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<powerCharges>1</powerCharges>
+			<temporaryEffect>
+				<duration>10</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_s12">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Barrier</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Cast a spell that pierces all normal shields at a target room that spawns a barrier capable of blocking 2 projectiles
+	Cast Duration: 2s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<powerCharges>3</powerCharges>
+			<temporaryEffect>
+				<duration>2</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_s13">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Lockdown</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Cast a spell that pierces all normal shields at a target room that applies a lockdown effect
+	Cast Duration: 4s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<powerCharges>3</powerCharges>
+			<temporaryEffect>
+				<duration>4</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_s14">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Ally</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Cast a spell that pierces all normal shields at a target room that spawns a random ally
+	Cast Duration: 7s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<powerCharges>2</powerCharges>
+			<temporaryEffect>
+				<duration>7</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_wizard_s15">
+		<animSheet>aea_cult_wizard</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<shootTimer min="450" max="550"/>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Mind Bolt</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Cast a spell that pierces all normal shields at a target room that mind controls the enemy for 20 seconds
+	Cast Duration: 8s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<powerCharges>3</powerCharges>
+			<temporaryEffect>
+				<duration>8</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
 </crew>
+
+
 
 <augments>
 	<aug name="AEA_OLD_NO_ARTY_REPAIR">
@@ -2054,6 +2731,10 @@ This enemy is protected by an Energy Shield.</tooltip>
 			</statBoost>
 		</statBoosts>
     </aug>
+    <aug name="LAB_ORCHID_AEA_COMMUNION">
+    </aug>
+    <aug name="EX_LAB_ORCHID_AEA_COMMUNION">
+    </aug>
 </augments>
 
 <mod:findLike type="events">
@@ -2073,6 +2754,13 @@ This enemy is protected by an Energy Shield.</tooltip>
 				<mod-append:name>AEA_DEFENSE_NECRO_2_MISSILE</mod-append:name>
 			</mod:findLike>
 		</mod:findLike>
+	</mod:findName>
+	<mod:findName name="LIST_LAB_ALL">
+		<mod-append:name>LAB_ORCHID_AEA_COMMUNION</mod-append:name>
+	</mod:findName>
+	<mod:findName name="LIST_CHECK_AUGMENTS">
+		<mod-append:name>LAB_ORCHID_AEA_COMMUNION</mod-append:name>
+		<mod-append:name>EX_LAB_ORCHID_AEA_COMMUNION</mod-append:name>
 	</mod:findName>
 
 	<mod:findName name="COORDS">
@@ -2877,6 +3565,196 @@ This enemy is protected by an Energy Shield.</tooltip>
 	</mod-append:aea_old_win>
 </mod:findLike>
 
+<mod:findLike type="store">
+	<mod:findLike type="customStore"><mod:selector id="STORE_STANDARD" />
+		<mod-append:category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<chance>10</chance>
+		</mod-append:category>
+	</mod:findLike>
+	<mod:findLike type="customStore"><mod:selector id="STORE_EVERYTHING" />
+		<mod-append:category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<chance>100</chance>
+		</mod-append:category>
+	</mod:findLike>
+	<mod:findLike type="customStore"><mod:selector id="STORE_NOSYS" />
+		<mod-append:category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<chance>10</chance>
+		</mod-append:category>
+	</mod:findLike>
+	<mod:findLike type="customStore"><mod:selector id="STORE_NOCREW" />
+		<mod-append:category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<chance>10</chance>
+		</mod-append:category>
+	</mod:findLike>
+	<mod:findLike type="customStore"><mod:selector id="STORE_MERCHANTS_LASERS" />
+		<mod-append:category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<chance>10</chance>
+		</mod-append:category>
+	</mod:findLike>
+	<mod:findLike type="customStore"><mod:selector id="STORE_MERCHANTS_MISSILES" />
+		<mod-append:category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<chance>10</chance>
+		</mod-append:category>
+	</mod:findLike>
+	<mod:findLike type="customStore"><mod:selector id="STORE_MERCHANTS_IONS" />
+		<mod-append:category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<chance>10</chance>
+		</mod-append:category>
+	</mod:findLike>
+	<mod:findLike type="customStore"><mod:selector id="STORE_ORCHID" />
+		<mod-append:category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+		</mod-append:category>
+	</mod:findLike>
+	<mod:findLike type="customStore"><mod:selector id="STORE_VAMPWEED" />
+		<mod-append:category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+		</mod-append:category>
+	</mod:findLike>
+</mod:findLike>
+
 <store>
 	<customStore id="STORE_AEA_ACID_CACHE">
         <itemPurchaseLimit>1</itemPurchaseLimit>
@@ -3021,6 +3899,187 @@ This enemy is protected by an Energy Shield.</tooltip>
             </item>
 			<chance>100</chance>
         </category>
+    </customStore>
+
+	<customStore id="STORE_AEA_CULT">
+		<hullRepair>
+			<price min="2" max="4" />
+			<sectorScaled />
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="4" max="8" />
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="4" max="8" />
+			<modifier flat="true">-1</modifier>
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="6" max="11" />
+		</resource>
+		<category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.5" max="0.8" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="0.8" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<chance>100</chance>
+		</category>
+		<category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.5" max="0.8" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<chance>100</chance>
+		</category>
+		<category type="CREW">
+            <customTitle>CULT WIZARDS</customTitle>
+			<item>
+				<blueprint>aea_cult_wizard</blueprint>
+                <modifier min="0.5" max="0.5" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>aea_cult_wizard</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>aea_cult_wizard</blueprint>
+                <modifier min="0.8" max="1.2" flat="false"/>
+				<price>-1</price>
+			</item>
+			<chance>100</chance>
+		</category>
+		<category type="DRONES" group="0">
+            <item />
+            <item />
+            <item />
+			<chance>30</chance>
+			<groupChance>30</groupChance>
+        </category>
+		<category type="AUGMENTS" group="0">
+            <item />
+            <item />
+            <item />
+			<chance>65</chance>
+			<groupChance>70</groupChance>
+        </category>
+		<category type="CREW">
+			<customTitle>DECKHANDS</customTitle>
+		    <allowDuplicates />
+			<item />
+            <item />
+            <item>
+                <blueprint>aea_cult_wizard</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="WEAPONS">
+            <item />
+            <item />
+            <item>
+                <blueprint>SHOP_ORCHID_ITEM_WEAPONS_KERNEL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+            <customTitle>ESSENTIAL SYSTEMS</customTitle>
+			<guaranteedSystems>
+                <weapons />
+				<shields />
+				<oxygen />
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>AUXILIARY SYSTEMS</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>65</chance>
+        </category>
+    </customStore>
+
+	<customStore id="STORE_AEA_COMMUNION">
+		<category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="0.9" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="1" max="1.4" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="1" max="1.4" flat="false"/>
+				<price>-1</price>
+			</item>
+			<chance>100</chance>
+		</category>
+		<category type="WEAPONS">
+            <customTitle>SPELLS</customTitle>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="0.8" max="0.9" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="1" max="1.4" flat="false"/>
+				<price>-1</price>
+			</item>
+			<item>
+				<blueprint>AEA_SPELL_LIST_COMMON</blueprint>
+                <modifier min="1" max="1.4" flat="false"/>
+				<price>-1</price>
+			</item>
+			<chance>100</chance>
+		</category>
     </customStore>
 </store>
 

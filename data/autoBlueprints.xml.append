@@ -40,6 +40,28 @@
     <mod-append:name>aea_necro_engi</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
     <mod-append:name>aea_necro_king</mod-append:name>
+    <mod-append:name>aea_old_1</mod-append:name>
+    <mod-append:name>aea_old_unique_1</mod-append:name>
+    <mod-append:name>aea_old_unique_2</mod-append:name>
+    <mod-append:name>aea_old_unique_3</mod-append:name>
+    <mod-append:name>aea_old_unique_4</mod-append:name>
+    <mod-append:name>aea_old_unique_5</mod-append:name>
+    <mod-append:name>aea_cult_wizard</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a01</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a02</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s03</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s04</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s05</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s06</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a07</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s08</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s09</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a10</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a11</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s12</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s13</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s14</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s15</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ALIENS">
@@ -49,6 +71,28 @@
     <mod-append:name>aea_necro_engi</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
     <mod-append:name>aea_necro_king</mod-append:name>
+    <mod-append:name>aea_old_1</mod-append:name>
+    <mod-append:name>aea_old_unique_1</mod-append:name>
+    <mod-append:name>aea_old_unique_2</mod-append:name>
+    <mod-append:name>aea_old_unique_3</mod-append:name>
+    <mod-append:name>aea_old_unique_4</mod-append:name>
+    <mod-append:name>aea_old_unique_5</mod-append:name>
+    <mod-append:name>aea_cult_wizard</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a01</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a02</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s03</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s04</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s05</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s06</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a07</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s08</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s09</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a10</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a11</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s12</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s13</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s14</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s15</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ENGI">
@@ -76,6 +120,211 @@
     <mod-append:name>aea_old_unique_4</mod-append:name>
     <mod-append:name>aea_old_unique_5</mod-append:name>
 </mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_GAS">
+	<mod-append:name>aea_acid_soldier</mod-append:name>
+	<mod-append:name>aea_acid_captain</mod-append:name>
+	<mod-append:name>aea_acid_bill</mod-append:name>
+    <mod-append:name>aea_old_1</mod-append:name>
+    <mod-append:name>aea_old_unique_1</mod-append:name>
+    <mod-append:name>aea_old_unique_2</mod-append:name>
+    <mod-append:name>aea_old_unique_3</mod-append:name>
+    <mod-append:name>aea_old_unique_4</mod-append:name>
+    <mod-append:name>aea_old_unique_5</mod-append:name>
+    <mod-append:name>aea_cult_wizard</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a01</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a02</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s03</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s04</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s05</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s06</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a07</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s08</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s09</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a10</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a11</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s12</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s13</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s14</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s15</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_METAL">
+    <mod-append:name>aea_acid_soldier</mod-append:name>
+    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_acid_bill</mod-append:name>
+    <mod-append:name>aea_necro_engi</mod-append:name>
+    <mod-append:name>aea_necro_lich</mod-append:name>
+    <mod-append:name>aea_necro_king</mod-append:name>
+    <mod-append:name>aea_old_1</mod-append:name>
+    <mod-append:name>aea_old_unique_1</mod-append:name>
+    <mod-append:name>aea_old_unique_2</mod-append:name>
+    <mod-append:name>aea_old_unique_3</mod-append:name>
+    <mod-append:name>aea_old_unique_4</mod-append:name>
+    <mod-append:name>aea_old_unique_5</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_ELITE">
+    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_necro_lich</mod-append:name>
+    <mod-append:name>aea_old_1</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_ELITE_FIRE">
+    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_necro_lich</mod-append:name>
+    <mod-append:name>aea_old_1</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_ELITE_RHYME">
+    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_necro_lich</mod-append:name>
+    <mod-append:name>aea_old_1</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_ORCHID">
+    <mod-append:name>aea_cult_wizard</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a01</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a02</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s03</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s04</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s05</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s06</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a07</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s08</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s09</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a10</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a11</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s12</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s13</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s14</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s15</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_VAMPWEED">
+    <mod-append:name>aea_cult_wizard</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a01</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a02</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s03</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s04</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s05</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s06</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a07</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s08</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s09</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a10</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a11</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s12</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s13</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s14</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s15</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_GATHERING_RANDOM">
+    <mod-append:name>aea_acid_soldier</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a01</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_METAL">
+    <mod-append:name>aea_acid_soldier</mod-append:name>
+    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_acid_bill</mod-append:name>
+    <mod-append:name>aea_necro_engi</mod-append:name>
+    <mod-append:name>aea_necro_lich</mod-append:name>
+    <mod-append:name>aea_necro_king</mod-append:name>
+    <mod-append:name>aea_old_1</mod-append:name>
+    <mod-append:name>aea_old_unique_1</mod-append:name>
+    <mod-append:name>aea_old_unique_2</mod-append:name>
+    <mod-append:name>aea_old_unique_3</mod-append:name>
+    <mod-append:name>aea_old_unique_4</mod-append:name>
+    <mod-append:name>aea_old_unique_5</mod-append:name>
+    <mod-append:name>aea_cult_wizard</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a01</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a02</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s03</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s04</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s05</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s06</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a07</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s08</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s09</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a10</mod-append:name>
+    <mod-append:name>aea_cult_wizard_a11</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s12</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s13</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s14</mod-append:name>
+    <mod-append:name>aea_cult_wizard_s15</mod-append:name>
+</mod:findName>
+
+
+
+
+<blueprintList name="AEA_SPELL_LIST_ALL">
+	<name>AEA_SPELL_ITEM_01</name>
+	<name>AEA_SPELL_ITEM_02</name>
+	<name>AEA_SPELL_ITEM_03</name>
+	<name>AEA_SPELL_ITEM_04</name>
+	<name>AEA_SPELL_ITEM_05</name>
+	<name>AEA_SPELL_ITEM_06</name>
+	<name>AEA_SPELL_ITEM_07</name>
+	<name>AEA_SPELL_ITEM_08</name>
+	<name>AEA_SPELL_ITEM_09</name>
+	<name>AEA_SPELL_ITEM_10</name>
+	<name>AEA_SPELL_ITEM_11</name>
+	<name>AEA_SPELL_ITEM_12</name>
+	<name>AEA_SPELL_ITEM_13</name>
+	<name>AEA_SPELL_ITEM_14</name>
+	<name>AEA_SPELL_ITEM_15</name>
+</blueprintList>
+<blueprintList name="AEA_SPELL_LIST_COMMON">
+	<name>AEA_SPELL_ITEM_01</name>
+	<name>AEA_SPELL_ITEM_02</name>
+	<name>AEA_SPELL_ITEM_03</name>
+	<name>AEA_SPELL_ITEM_04</name>
+	<name>AEA_SPELL_ITEM_05</name>
+	<name>AEA_SPELL_ITEM_06</name>
+	<name>AEA_SPELL_ITEM_07</name>
+	<name>AEA_SPELL_ITEM_08</name>
+	<name>AEA_SPELL_ITEM_09</name>
+	<name>AEA_SPELL_ITEM_10</name>
+	<name>AEA_SPELL_ITEM_11</name>
+	<name>AEA_SPELL_ITEM_12</name>
+	<name>AEA_SPELL_ITEM_13</name>
+	<name>AEA_SPELL_ITEM_14</name>
+	<name>AEA_SPELL_ITEM_15</name>
+</blueprintList>
+
+<blueprintList name="LIST_CREW_SPELL_ALLY">
+	<name>human</name>
+	<name>orchid</name>
+	<name>rock</name>
+	<name>zoltan</name>
+	<name>mantis</name>
+	<name>slug</name>
+	<name>lanius</name>
+	<name>shell</name>
+	<name>leech</name>
+	<name>blob</name>
+</blueprintList>
+<blueprintList name="AEA_CULTISTS">
+	<name>aea_cult_wizard</name>
+	<name>aea_cult_wizard_a01</name>
+	<name>aea_cult_wizard_a02</name>
+	<name>aea_cult_wizard_s03</name>
+	<name>aea_cult_wizard_s04</name>
+	<name>aea_cult_wizard_s05</name>
+	<name>aea_cult_wizard_s06</name>
+	<name>aea_cult_wizard_a07</name>
+	<name>aea_cult_wizard_s08</name>
+	<name>aea_cult_wizard_s09</name>
+	<name>aea_cult_wizard_a10</name>
+	<name>aea_cult_wizard_a11</name>
+	<name>aea_cult_wizard_s12</name>
+	<name>aea_cult_wizard_s13</name>
+	<name>aea_cult_wizard_s14</name>
+	<name>aea_cult_wizard_s15</name>
+</blueprintList>
+
 
 <blueprintList name="BLUELIST_PRECURSOR_TECH">
 	<name>AEA_LASER_OLD_1_CELL</name>
