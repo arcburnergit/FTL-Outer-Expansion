@@ -238,22 +238,6 @@
     <mod-append:name>aea_old_unique_3</mod-append:name>
     <mod-append:name>aea_old_unique_4</mod-append:name>
     <mod-append:name>aea_old_unique_5</mod-append:name>
-    <mod-append:name>aea_cult_wizard</mod-append:name>
-    <mod-append:name>aea_cult_wizard_a01</mod-append:name>
-    <mod-append:name>aea_cult_wizard_a02</mod-append:name>
-    <mod-append:name>aea_cult_wizard_s03</mod-append:name>
-    <mod-append:name>aea_cult_wizard_s04</mod-append:name>
-    <mod-append:name>aea_cult_wizard_s05</mod-append:name>
-    <mod-append:name>aea_cult_wizard_s06</mod-append:name>
-    <mod-append:name>aea_cult_wizard_a07</mod-append:name>
-    <mod-append:name>aea_cult_wizard_s08</mod-append:name>
-    <mod-append:name>aea_cult_wizard_s09</mod-append:name>
-    <mod-append:name>aea_cult_wizard_a10</mod-append:name>
-    <mod-append:name>aea_cult_wizard_a11</mod-append:name>
-    <mod-append:name>aea_cult_wizard_s12</mod-append:name>
-    <mod-append:name>aea_cult_wizard_s13</mod-append:name>
-    <mod-append:name>aea_cult_wizard_s14</mod-append:name>
-    <mod-append:name>aea_cult_wizard_s15</mod-append:name>
 </mod:findName>
 
 
@@ -2358,6 +2342,440 @@
 	<aug name="AEA_OLD_SHIELD" />
 	<aug name="UPG_TECH_SEALANT" />
 </shipBlueprint>
+</FTL>
+
+<FTL>
+<shipBlueprint name="AEA_CULT_BOSS_FLOWER" layout="aea_cult_boss_flower" img="aea_cult_boss_flower">
+	<class>The Oneflower</class>
+	<systemList>
+		<artillery power="2" max="3" room="1" start="true" weapon="AEA_LASER_SPELL_ARTILLERY" />
+		<artillery power="2" max="3" room="2" start="true" weapon="AEA_LASER_SPELL_ARTILLERY" />
+		<cloaking power="1" max="2" room="7" start="true" />
+		<doors power="1" max="2" room="5" start="true" />
+		<engines power="1" max="2" room="9" start="true" />
+		<mind power="1" max="2" room="8" start="true" />
+		<oxygen power="1" max="1" room="6" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="10" room="3" start="true" />
+		<weapons power="2" max="10" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_LOOT_ORCHID" />
+	<droneList drones="0" count="0" />
+	<health amount="20" />
+	<maxPower amount="15" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_CULT_BOSS_FLOWER_FAKE" layout="aea_cult_boss_flower" img="aea_cult_boss_flower_fake">
+	<class>The ImposterFlower</class>
+	<systemList>
+		<artillery power="2" max="3" room="1" start="true" weapon="AEA_LASER_SPELL_ARTILLERY" />
+		<artillery power="2" max="3" room="2" start="true" weapon="AEA_LASER_SPELL_ARTILLERY" />
+		<cloaking power="1" max="2" room="7" start="true" />
+		<doors power="1" max="2" room="5" start="true" />
+		<engines power="1" max="2" room="9" start="true" />
+		<mind power="1" max="2" room="8" start="true" />
+		<oxygen power="1" max="1" room="6" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="4" max="10" room="3" start="true" />
+		<weapons power="4" max="10" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_LOOT_ORCHID" />
+	<droneList drones="0" count="0" />
+	<health amount="20" />
+	<crewCount amount="1" max="1" class="aea_cult_priest_off" />
+	<maxPower amount="20" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+			AEA_CULT SHIPS
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+-->
+<blueprintList name="LIST_WEAPONS_AEA_CULT">
+	<name>LASER_BURST_2_ENEMY</name>
+	<name>LASER_HEAVY_1</name>
+	<name>LASER_HEAVY_2</name>
+	<name>LASER_HEAVY_3</name>
+	<name>LASER_HEAVY_CHAINGUN</name>
+	<name>LASER_HULL_1_ENEMY</name>
+	<name>LASER_HULL_2</name>
+	<name>LASER_HULL_3</name>
+	<name>LASER_HULL_CHAINGUN</name>
+	
+	<name>BEAM_1</name>
+	<name>BEAM_2</name>
+	<name>BEAM_3</name>
+	<name>BEAM_CHAIN</name>
+	<name>BEAM_BREACH</name>
+	<name>FOCUS_1</name>
+	
+	<name>MISSILES_1_ENEMY</name>
+	<name>MISSILES_2_ENEMY</name>
+	<name>MISSILES_3_ENEMY</name>
+	<name>MISSILES_FIRE_ENEMY</name>
+	<name>MISSILES_STUN_ENEMY</name>
+	
+	<name>SHOTGUN_1_ENEMY</name>
+	<name>SHOTGUN_2</name>
+	<name>SHOTGUN_3</name>
+	<name>SHOTGUN_4</name>
+	
+	<name>SPORE_1_ENEMY</name>
+	<name>SPORE_2_ENEMY</name>
+	<name>SPORE_HEAVY_ENEMY</name>
+	<name>SPORE_CHAIN_ENEMY</name>
+	<name>SPORE_STUN_ENEMY</name>
+	<name>SPORE_1_ENEMY</name>
+	<name>SPORE_2_ENEMY</name>
+	<name>SPORE_HEAVY_ENEMY</name>
+	<name>SPORE_CHAIN_ENEMY</name>
+	<name>SPORE_STUN_ENEMY</name>
+</blueprintList>
+<blueprintList name="LIST_DRONES_AEA_CULT">
+	<name>CONSTRUCTOR</name>
+	<name>PRODUCER</name>
+	<name>GRAZIER_BATTLE</name>
+	<name>GRAZIER_BOARDER</name>
+	
+	<name>COMBAT_1_BEAM</name>
+	<name>COMBAT_2_BEAM</name>
+	<name>HELLRAISER_HULL</name>
+	<name>HELLRAISER_FIRE</name>
+	<name>ASSAULT_PARTICLE</name>
+	<name>FOCUS_1_AMP2</name>
+	<name>FLAK_1_AMP3</name>
+</blueprintList>
+
+<blueprintList name="LIST_SHIPS_AEA_CULT_ALL">
+	<name>AEA_CULT_SCOUT</name>
+	<name>AEA_CULT_OUTRIDER</name>
+	<name>AEA_CULT_INTERCEPTOR</name>
+	<name>AEA_CULT_FIGHTER</name>
+	<name>AEA_CULT_BOMBER</name>
+	<name>AEA_CULT_ASSAULT</name>
+	<name>AEA_CULT_BATTLESHIP</name>
+	<name>AEA_CULT_ESCORT</name>
+	<name>AEA_CULT_TRANSPORT</name>
+	<name>AEA_CULT_GUARD</name>
+</blueprintList>
+<blueprintList name="LIST_SHIPS_AEA_CULT_GENERIC">
+	<name>AEA_CULT_SCOUT</name>
+	<name>AEA_CULT_OUTRIDER</name>
+	<name>AEA_CULT_INTERCEPTOR</name>
+	<name>AEA_CULT_FIGHTER</name>
+	<name>AEA_CULT_BOMBER</name>
+	<name>AEA_CULT_ASSAULT</name>
+	<name>AEA_CULT_ESCORT</name>
+	<name>AEA_CULT_TRANSPORT</name>
+</blueprintList>
+<blueprintList name="LIST_SHIPS_AEA_CULT_FIGHT">
+	<name>AEA_CULT_SCOUT</name>
+	<name>AEA_CULT_OUTRIDER</name>
+	<name>AEA_CULT_INTERCEPTOR</name>
+	<name>AEA_CULT_FIGHTER</name>
+	<name>AEA_CULT_BOMBER</name>
+	<name>AEA_CULT_ASSAULT</name>
+	<name>AEA_CULT_BATTLESHIP</name>
+</blueprintList>
+
+<blueprintList name="LIST_CREW_AEA_CULT_RANDOM">
+	<name>orchid_vampweed</name>
+	<name>aea_cult_wizard_a01</name>
+	<name>aea_cult_wizard_a01</name>
+	<name>aea_cult_wizard_a01</name>
+</blueprintList>
+
+<shipBlueprint name="AEA_CULT_SCOUT" layout="mu_vampweed_scout" img="aea_cult_scout">
+	<class>Cultist Scout</class>
+	<maxSector>5</maxSector>
+	<systemList>
+		<engines power="1" max="2" room="1" start="true" />
+		<oxygen power="1" max="1" room="2" start="true" />
+		<pilot power="1" max="2" room="5" start="true" />
+		<shields power="2" max="8" room="0" start="true" />
+		<mind power="1" max="2" room="3" start="false" />
+		<weapons power="2" max="7" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_AEA_CULT" />
+	<droneList drones="0" count="0" />
+	<health amount="7" />
+	<maxPower amount="7" />
+	<crewCount amount="3" max="5" class="LIST_CREW_AEA_CULT_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_CULT_OUTRIDER" layout="mu_vampweed_outrider" img="aea_cult_outrider">
+	<class>Cultist Outrider</class>
+	<maxSector>5</maxSector>
+	<systemList>
+		<doors power="1" max="2" room="4" start="false" />
+		<drones power="2" max="5" room="5" start="true" />
+		<engines power="1" max="2" room="6" start="true" />
+		<medbay power="1" max="2" room="3" start="false" />
+		<oxygen power="1" max="1" room="7" start="true" />
+		<pilot power="2" max="2" room="2" start="true" />
+		<shields power="2" max="8" room="0" start="true" />
+		<weapons power="2" max="6" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_AEA_CULT" />
+	<droneList drones="5" count="2" load="LIST_DRONES_AEA_CULT" />
+	<health amount="8" />
+	<maxPower amount="9" />
+	<crewCount amount="3" max="5" class="LIST_CREW_AEA_CULT_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_CULT_INTERCEPTOR" layout="mu_vampweed_interceptor" img="aea_cult_interceptor">
+	<class>Cultist Interceptor</class>
+	<maxSector>3</maxSector>
+	<systemList>
+		<engines power="1" max="2" room="3" start="true" />
+		<oxygen power="1" max="1" room="5" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<teleporter power="2" max="3" room="4" start="false" />
+		<weapons power="1" max="5" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_AEA_CULT" />
+	<droneList drones="0" count="0" />
+	<health amount="5" />
+	<maxPower amount="7" />
+	<crewCount amount="3" max="5" class="LIST_CREW_AEA_CULT_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_CULT_FIGHTER" layout="mu_vampweed_fighter" img="aea_cult_fighter">
+	<class>Cultist Fighter</class>
+	<systemList>
+		<doors power="1" max="3" room="1" start="false" />
+		<engines power="1" max="2" room="3" start="true" />
+		<medbay power="1" max="2" room="2" start="false" />
+		<mind power="1" max="2" room="6" start="false" />
+		<oxygen power="1" max="1" room="7" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="4" start="true" />
+		<weapons power="2" max="8" room="5" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_AEA_CULT" />
+	<droneList drones="0" count="0" />
+	<health amount="8" />
+	<maxPower amount="8" />
+	<crewCount amount="3" max="6" class="LIST_CREW_AEA_CULT_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_CULT_BOMBER" layout="mu_vampweed_bomber" img="aea_cult_bomber">
+	<class>Cultist Bomber</class>
+	<minSector>3</minSector>
+	<systemList>
+		<doors power="1" max="2" room="5" start="false" />
+		<drones power="2" max="6" room="4" start="true" />
+		<engines power="1" max="2" room="1" start="true" />
+		<medbay power="1" max="3" room="7" start="false" />
+		<oxygen power="1" max="1" room="8" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="2" max="10" room="3" start="true" />
+		<teleporter power="1" max="2" room="6" start="false" />
+		<weapons power="2" max="8" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_AEA_CULT" />
+	<droneList drones="5" count="2" load="LIST_DRONES_AEA_CULT" />
+	<health amount="10" />
+	<maxPower amount="10" />
+	<crewCount amount="3" max="6" class="LIST_CREW_AEA_CULT_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_CULT_ASSAULT" layout="mu_vampweed_assault" img="aea_cult_assault">
+	<class>Cultist Assault</class>
+	<minSector>3</minSector>
+	<systemList>
+		<doors power="1" max="3" room="2" start="false" />
+		<engines power="1" max="2" room="3" start="true" />
+		<medbay power="1" max="3" room="0" start="false" />
+		<oxygen power="1" max="1" room="1" start="true" />
+		<pilot power="1" max="2" room="10" start="true" />
+		<shields power="2" max="10" room="5" start="true" />
+		<teleporter power="1" max="3" room="4" start="false" />
+		<weapons power="2" max="8" room="11" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_AEA_CULT" />
+	<droneList drones="0" count="0" />
+	<health amount="10" />
+	<maxPower amount="7" />
+	<crewCount amount="3" max="7" class="LIST_CREW_AEA_CULT_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_CULT_BATTLESHIP" layout="mu_vampweed_battleship" img="aea_cult_battleship">
+	<class>Cultist Battleship</class>
+	<minSector>5</minSector>
+	<systemList>
+		<doors power="1" max="3" room="7" start="false" />
+		<drones power="2" max="7" room="11" start="true" />
+		<engines power="1" max="1" room="1" start="true" />
+		<medbay power="1" max="3" room="3" start="false" />
+		<mind power="1" max="2" room="8" start="false" />
+		<oxygen power="1" max="1" room="6" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="2" max="10" room="5" start="true" />
+		<teleporter power="1" max="3" room="2" start="false" />
+		<weapons power="2" max="10" room="4" start="true" />
+	</systemList>
+	<weaponSlots>6</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="7" count="6" load="LIST_WEAPONS_AEA_CULT" />
+	<droneList drones="6" count="2" load="LIST_DRONES_AEA_CULT" />
+	<health amount="11" />
+	<maxPower amount="11" />
+	<crewCount amount="3" max="9" class="LIST_CREW_AEA_CULT_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_CULT_ESCORT" layout="mu_vampweed_escort" img="aea_cult_escort">
+	<class>Cultist Escort</class>
+	<systemList>
+		<drones power="2" max="7" room="2" start="false" />
+		<engines power="1" max="2" room="6" start="true" />
+		<oxygen power="1" max="1" room="1" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="3" start="true" />
+		<teleporter power="1" max="2" room="5" start="false" />
+		<weapons power="2" max="7" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_AEA_CULT" />
+	<droneList drones="6" count="2" load="LIST_DRONES_AEA_CULT" />
+	<health amount="7" />
+	<maxPower amount="9" />
+	<crewCount amount="3" max="5" class="LIST_CREW_AEA_CULT_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_CULT_TRANSPORT" layout="mu_vampweed_transport" img="aea_cult_transport">
+	<class>Cultist Transport</class>
+	<systemList>
+		<doors power="1" max="3" room="8" start="false" />
+		<drones power="2" max="7" room="4" start="false" />
+		<engines power="1" max="2" room="3" start="true" />
+		<medbay power="1" max="2" room="5" start="true" />
+		<oxygen power="1" max="1" room="6" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="1" start="true" />
+		<teleporter power="1" max="3" room="7" start="true" />
+		<weapons power="2" max="7" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_AEA_CULT" />
+	<droneList drones="7" count="2" load="LIST_DRONES_AEA_CULT" />
+	<health amount="11" />
+	<maxPower amount="10" />
+	<crewCount amount="4" max="6" class="LIST_CREW_AEA_CULT_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_CULT_TRAPPER" layout="mu_vampweed_trapper" img="aea_cult_trapper">
+	<class>Cultist Minelayer</class>
+	<systemList>
+		<engines power="1" max="2" room="6" start="true" />
+		<medbay power="1" max="2" room="10" start="false" />
+		<oxygen power="1" max="1" room="9" start="true" />
+		<pilot power="1" max="1" room="5" start="true" />
+		<shields power="2" max="8" room="4" start="true" />
+		<teleporter power="1" max="2" room="0" start="false" />
+		<weapons power="2" max="7" room="3" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="11" count="4" load="LIST_WEAPONS_AEA_CULT" />
+	<droneList drones="0" count="0" />
+	<health amount="8" />
+	<maxPower amount="8" />
+	<crewCount amount="3" max="6" class="LIST_CREW_AEA_CULT_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_CULT_GUARD" layout="mu_vampweed_guard" img="aea_cult_guard">
+	<class>Cultist Guard</class>
+	<systemList>
+		<doors power="1" max="3" room="9" start="false" />
+		<drones power="2" max="7" room="4" start="false" />
+		<engines power="1" max="1" room="1" start="true" />
+		<medbay power="1" max="3" room="5" start="false" />
+		<oxygen power="1" max="1" room="10" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="3" start="true" />
+		<teleporter power="1" max="3" room="6" start="false" />
+		<weapons power="2" max="9" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_AEA_CULT" />
+	<droneList drones="5" count="2" load="LIST_DRONES_AEA_CULT" />
+	<health amount="8" />
+	<maxPower amount="10" />
+	<crewCount amount="3" max="6" class="LIST_CREW_AEA_CULT_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_CULT_STATION" layout="mu_vampweed_station" img="aea_cult_station">
+	<class>Cultist Station</class>
+	<systemList>
+		<doors power="1" max="3" room="1" start="false" />
+		<drones power="2" max="7" room="12" start="false" />
+		<medbay power="1" max="3" room="8" start="true" />
+		<mind power="1" max="2" room="14" start="false" />
+		<oxygen power="1" max="1" room="0" start="true" />
+		<shields power="2" max="10" room="15" start="true" />
+		<teleporter power="1" max="3" room="9" start="false" />
+		<weapons power="2" max="8" room="11" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_AEA_CULT" />
+	<droneList drones="6" count="3" load="LIST_DRONES_AEA_CULT" />
+	<health amount="11" />
+	<maxPower amount="10" />
+	<crewCount amount="4" max="9" class="LIST_CREW_AEA_CULT_RANDOM" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SPORE_AIR_BUFF" />
+</shipBlueprint>
+
 </FTL>
 
 <FTL>

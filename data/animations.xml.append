@@ -23,6 +23,16 @@
 	<mountPoint x="0" y="0" />
 </weaponAnim>
 
+<animSheet name="aea_laser_spell_artillery" w="350" h="35" fw="35" fh="35">weapon_cult/aea_laser_spell_artillery.png</animSheet>
+<weaponAnim name="aea_laser_spell_artillery">
+	<sheet>aea_laser_spell_artillery</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>8</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="17" y="17" />
+	<mountPoint x="17" y="17" />
+</weaponAnim>
+
 <animSheet name="aea_old_scrap" w="50" h="38" fw="50" fh="38">weapon_old/aea_old_scrap.png</animSheet>
 <anim name="aea_old_scrap">
 	<sheet>aea_old_scrap</sheet>
@@ -3135,7 +3145,7 @@
 *********************************************************************************************************
 -->
 
-<animSheet name="aea_cult_wizard" w="315" h="805" fw="35" fh="35">people/aea_cult_wizard_base.png</animSheet>
+<!--<animSheet name="aea_cult_wizard" w="315" h="805" fw="35" fh="35">people/aea_cult_wizard_base.png</animSheet>
 <anim name="aea_cult_wizard_walk_down">
 	<sheet>aea_cult_wizard</sheet>
 	<desc length="4" x="0" y="22" />
@@ -3250,6 +3260,262 @@
 	<sheet>aea_cult_wizard</sheet>
 	<desc length="1" x="0" y="0" />
 	<time>1</time>
+</anim>-->
+
+
+
+
+<!-- 
+*********************************************************************************************************
+                   CULTIVATORS
+*********************************************************************************************************
+-->
+
+<animSheet name="aea_cult_wizard" w="490" h="805" fw="35" fh="35">people/aea_cult_wizard_base.png</animSheet>
+<anim name="aea_cult_wizard_walk_down">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="4" x="0" y="22" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_wizard_walk_left">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="4" x="0" y="21" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_wizard_walk_right">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="4" x="0" y="20" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_wizard_walk_up">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="4" x="0" y="19" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_wizard_repair">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="9" x="0" y="18" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_wizard_type_down">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="4" x="0" y="17" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_wizard_type_left">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="4" x="0" y="16" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_wizard_type_right">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="4" x="0" y="15" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_wizard_type_up">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="4" x="0" y="14" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_wizard_fire_down">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="4" x="0" y="13" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_wizard_fire_left">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="4" x="0" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_wizard_fire_right">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="4" x="0" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_wizard_fire_up">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="4" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_wizard_punch_down">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="8" x="0" y="9" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_wizard_punch_up">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="8" x="0" y="8" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_wizard_shoot_down">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="8" x="0" y="7" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_wizard_shoot_left">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="8" x="0" y="6" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_wizard_shoot_right">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="8" x="0" y="5" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_wizard_shoot_up">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="8" x="0" y="4" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_wizard_teleport">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="9" x="0" y="3" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_wizard_death_right">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="8" x="0" y="2" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_wizard_clone">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="7" x="0" y="1" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_wizard_portrait">
+	<sheet>aea_cult_wizard</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<!-- 
+*********************************************************************************************************
+                   CULTIVATORS
+*********************************************************************************************************
+-->
+
+<animSheet name="aea_cult_priest" w="490" h="805" fw="35" fh="35">people/aea_cult_priest_base.png</animSheet>
+<anim name="aea_cult_priest_walk_down">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="4" x="0" y="22" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_priest_walk_left">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="4" x="0" y="21" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_priest_walk_right">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="4" x="0" y="20" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_priest_walk_up">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="4" x="0" y="19" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_priest_repair">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="9" x="0" y="18" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_priest_type_down">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="4" x="0" y="17" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_priest_type_left">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="4" x="0" y="16" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_priest_type_right">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="4" x="0" y="15" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_priest_type_up">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="4" x="0" y="14" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_priest_fire_down">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="4" x="0" y="13" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_priest_fire_left">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="4" x="0" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_priest_fire_right">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="4" x="0" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_priest_fire_up">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="4" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_priest_punch_down">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="8" x="0" y="9" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_priest_punch_up">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="8" x="0" y="8" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_priest_shoot_down">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="8" x="0" y="7" />
+	<time>0.25</time>
+</anim>
+<anim name="aea_cult_priest_shoot_left">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="8" x="0" y="6" />
+	<time>0.25</time>
+</anim>
+<anim name="aea_cult_priest_shoot_right">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="8" x="0" y="5" />
+	<time>0.25</time>
+</anim>
+<anim name="aea_cult_priest_shoot_up">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="8" x="0" y="4" />
+	<time>0.25</time>
+</anim>
+<anim name="aea_cult_priest_teleport">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="9" x="0" y="3" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_priest_death_right">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="8" x="0" y="2" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_priest_clone">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="7" x="0" y="1" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_priest_portrait">
+	<sheet>aea_cult_priest</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_summon" w="140" h="35" fw="35" fh="35">effects/aea_summon.png</animSheet>
+<anim name="aea_summon">
+	<sheet>aea_summon</sheet>
+	<desc length="4" x="0" y="0" />
+	<time>1.0</time>
 </anim>
 
 </FTL>

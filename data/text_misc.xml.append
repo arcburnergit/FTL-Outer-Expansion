@@ -95,9 +95,13 @@ The Engi Heretics are outcasts even from the separatists, broken free from the h
 <text name="ship_PLAYER_SHIP_AEA_BIRD_TRAN_2_unlock">Get to Sector 5 with the Albatross Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_BIRD_TRAN_3_unlock">Get to Sector 5 with the Albatross Cruiser Type B or beat the game with the Albatross Cruiser Type A to unlock this ship.</text>
 
-<text name="ship_PLAYER_SHIP_AEA_CULT_BUD_unlock">Coming Soon.</text>
+<text name="ship_PLAYER_SHIP_AEA_CULT_BUD_unlock">Thwart the overthrowing of a god.</text>
 <text name="ship_PLAYER_SHIP_AEA_CULT_BUD_2_unlock">Get to Sector 5 with the Bud Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_CULT_BUD_3_unlock">Get to Sector 5 with the Bud Cruiser Type B or beat the game with the Bud Cruiser Type A to unlock this ship.</text>
+
+<text name="ship_PLAYER_SHIP_AEA_CULT_BLOOM_unlock">Deliver the nectar of a god.</text>
+<text name="ship_PLAYER_SHIP_AEA_CULT_BLOOM_2_unlock">Get to Sector 5 with the Bloom Cruiser Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_CULT_BLOOM_3_unlock">Get to Sector 5 with the Bloom Cruiser Type B or beat the game with the Bloom Cruiser Type A to unlock this ship.</text>
 
 <text name="credit_victory_aea_old">The Multiverse Flagship of this reality has been destroyed. The Rebel forces were weakened, and the Federation troops, along with reinforcements, successfully defeated the Rebel forces of this reality.</text>
 

@@ -65,7 +65,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<mod-append:ship>PLAYER_SHIP_AEA_BIRD_BIG</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_CULT_BUD</mod-append:ship>
 			<!-- -->
-		<mod-append:empty/>
+		<mod-append:ship>PLAYER_SHIP_AEA_CULT_BLOOM</mod-append:ship>
 		<mod-append:empty/>
 		<mod-append:ship>PLAYER_SHIP_AEA_NECRO_SEPA</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_LONG</mod-append:ship>
@@ -181,6 +181,9 @@ This enemy is protected by an Energy Shield.</tooltip>
 	</mod-append:ship>
 
 	<mod-append:ship name="PLAYER_SHIP_AEA_CULT_BUD" b="true" c="true" >
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
 		<unlock variant="b" silent="false">
             <type>1</type>
             <shipReq>PLAYER_SHIP_AEA_CULT_BUD</shipReq>
@@ -196,6 +199,27 @@ This enemy is protected by an Energy Shield.</tooltip>
             <shipReq>PLAYER_SHIP_AEA_CULT_BUD</shipReq>
         </unlock>
 	</mod-append:ship>
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_CULT_BLOOM" b="true" c="true" >
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_CULT_BLOOM</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_CULT_BLOOM_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_CULT_BLOOM</shipReq>
+        </unlock>
+	</mod-append:ship>
+
 
 	
 	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_ARMOUR" b="true" c="true" >
@@ -380,6 +404,21 @@ This enemy is protected by an Energy Shield.</tooltip>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BUD_3">
+		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BLOOM">
+		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BLOOM_2">
+		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BLOOM_3">
 		<hiddenAug>SHIP_ORCHID</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
@@ -1868,8 +1907,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -1896,7 +1935,7 @@ Casts a spell in the current room which does nothing
 			<temporaryEffect>
 				<duration>5</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMove>false</canMove>
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
@@ -1912,8 +1951,8 @@ Casts a spell in the current room which does nothing
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -1938,7 +1977,7 @@ Casts a spell which protects the current room from hull and system damage for 10
 			<temporaryEffect>
 				<duration>1</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -1953,8 +1992,8 @@ Casts a spell which protects the current room from hull and system damage for 10
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -1978,7 +2017,7 @@ Casts a spell which retargets all the enemy projectiles on screen to the current
 			<temporaryEffect>
 				<duration>1</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -1993,8 +2032,8 @@ Casts a spell which retargets all the enemy projectiles on screen to the current
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2018,7 +2057,7 @@ Cast a spell that pierces all normal shields at a target room dealing 45 persona
 			<temporaryEffect>
 				<duration>3</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -2033,8 +2072,8 @@ Cast a spell that pierces all normal shields at a target room dealing 45 persona
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2058,7 +2097,7 @@ Cast a spell that pierces all normal shields at a target room dealing 1 damage
 			<temporaryEffect>
 				<duration>8</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -2073,8 +2112,8 @@ Cast a spell that pierces all normal shields at a target room dealing 1 damage
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2098,7 +2137,7 @@ Cast 3 spells that pierces all normal shields at a target room dealing 1 damage
 			<temporaryEffect>
 				<duration>20</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -2113,8 +2152,8 @@ Cast 3 spells that pierces all normal shields at a target room dealing 1 damage
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2138,7 +2177,7 @@ Cast a spell that pierces all normal shields at a target room dealing 3 hull dam
 			<temporaryEffect>
 				<duration>10</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -2153,8 +2192,8 @@ Cast a spell that pierces all normal shields at a target room dealing 3 hull dam
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2177,7 +2216,7 @@ Cast a spell in the current room that warps all crew in the current room to a ra
 			<temporaryEffect>
 				<duration>6</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -2192,8 +2231,8 @@ Cast a spell in the current room that warps all crew in the current room to a ra
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2216,7 +2255,7 @@ Cast a spell that pierces all shields at a target room that warps all crew in th
 			<temporaryEffect>
 				<duration>8</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -2231,8 +2270,8 @@ Cast a spell that pierces all shields at a target room that warps all crew in th
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2256,7 +2295,7 @@ Cast a spell at the lowest health (%) friendly crew that heals all friendly crew
 			<temporaryEffect>
 				<duration>2</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -2271,8 +2310,8 @@ Cast a spell at the lowest health (%) friendly crew that heals all friendly crew
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2295,7 +2334,7 @@ Cast a spell in the current room that heals all friendly crew in the room for 45
 			<temporaryEffect>
 				<duration>5</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -2310,8 +2349,8 @@ Cast a spell in the current room that heals all friendly crew in the room for 45
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2335,7 +2374,7 @@ Spawn a conservative combat drone around the enemy ship
 			<temporaryEffect>
 				<duration>10</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -2350,8 +2389,8 @@ Spawn a conservative combat drone around the enemy ship
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2375,7 +2414,7 @@ Cast a spell that pierces all normal shields at a target room that spawns a barr
 			<temporaryEffect>
 				<duration>2</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -2390,8 +2429,8 @@ Cast a spell that pierces all normal shields at a target room that spawns a barr
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2415,7 +2454,7 @@ Cast a spell that pierces all normal shields at a target room that applies a loc
 			<temporaryEffect>
 				<duration>4</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -2430,8 +2469,8 @@ Cast a spell that pierces all normal shields at a target room that applies a loc
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2455,7 +2494,7 @@ Cast a spell that pierces all normal shields at a target room that spawns a rand
 			<temporaryEffect>
 				<duration>7</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -2470,8 +2509,8 @@ Cast a spell that pierces all normal shields at a target room that spawns a rand
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
 		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
-		<shootTimer min="450" max="550"/>
-		<animBase>human</animBase>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
 		<deathSounds>
 			<deathSound>orchidDeath</deathSound>
 		</deathSounds>
@@ -2495,7 +2534,121 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			<temporaryEffect>
 				<duration>8</duration>
 				<cooldownColor r="200" g="100" b="200" />
-				<animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet>
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_priest_sup">
+		<animSheet>aea_cult_priest</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>13</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Support</buttonText>
+			<tooltip>[COOLDOWN:13s]
+Cast a random support spell that pierces all normal shields at a target room
+	Cast Duration: 1s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="255" g="0" b="160" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>1</duration>
+				<cooldownColor r="255" g="100" b="200" />
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_priest_off">
+		<animSheet>aea_cult_priest</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Offense</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast a random offensive spell that pierces all normal shields at a target room
+	Cast Duration: 4s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="255" g="0" b="160" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>4</duration>
+				<cooldownColor r="255" g="100" b="200" />
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_priest_bor">
+		<animSheet>aea_cult_priest</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>12</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Boarding</buttonText>
+			<tooltip>[COOLDOWN:12s]
+Cast a random boarding support spell that pierces all normal shields at a target room
+	Cast Duration: 2s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="255" g="0" b="160" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>2</duration>
+				<cooldownColor r="255" g="100" b="200" />
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -3505,6 +3658,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
   	<eventFile>sector_aea_acid</eventFile>
   	<eventFile>special_aea_necro</eventFile>
   	<eventFile>sector_aea_necro</eventFile>
+  	<eventFile>special_aea_cult</eventFile>
+  	<eventFile>sector_aea_cult</eventFile>
   	<eventFile>special_aea_old</eventFile>
   	<eventFile>sector_aea_old_1</eventFile>
   	<eventFile>sector_aea_old_2</eventFile>

@@ -20,13 +20,17 @@
 </mod:findName>
 
 <mod:findName type="event" name="STORAGE_CHECK_LAB_ORCHID">
-	<mod-append:choice req="LAB_ORCHID_AEA_COMMUNION" lvl="1" max_group="5" blue="false" hidden="true">
+	<mod:findWithChildLike type="choice" child-type="text">
+      <mod:selector>Go back.</mod:selector>
+      <mod:setAttributes max_group="997"/>
+    </mod:findWithChildLike>
+	<mod-append:choice req="LAB_ORCHID_AEA_COMMUNION" lvl="1" max_group="7" blue="false" hidden="true">
 		<text>Sec [Cultist]: Ancient Communion. [An upgrade is already installed]
 		[You can purchase spells at empty beacons]</text>
 		<event load="OPTION_INVALID" />
 	</mod-append:choice>
-	<mod-append:choice req="LAB_ORCHID_AEA_COMMUNION" lvl="0" max_group="5" blue="false" hidden="true">
-		<text>Sec [Vampweed]: Ancient Communion. [Cost: 35~, 4{]</text>
+	<mod-append:choice req="LAB_ORCHID_AEA_COMMUNION" lvl="0" max_group="7" blue="false" hidden="true">
+		<text>Sec [Cultist]: Ancient Communion. [Cost: 35~, 4{]</text>
 		<event load="STORAGE_CHECK_LAB_AEA_COMMUNION" />
 	</mod-append:choice>
 </mod:findName>
@@ -1368,7 +1372,7 @@
 				<event>
 					<text>Your cultist equips the new spell to their staff.</text>
 					<remove name="AEA_SPELL_ITEM_09"/>
-					<transformRace class="aea_cult_wizard">aea_cult_wizard_a09</transformRace>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_s09</transformRace>
 				</event>
 			</choice>
 			<choice req="AEA_SPELL_ITEM_10">
@@ -1392,7 +1396,7 @@
 				<event>
 					<text>Your cultist equips the new spell to their staff.</text>
 					<remove name="AEA_SPELL_ITEM_12"/>
-					<transformRace class="aea_cult_wizard">aea_cult_wizard_a12</transformRace>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_s12</transformRace>
 				</event>
 			</choice>
 			<choice req="AEA_SPELL_ITEM_13">
@@ -1400,7 +1404,7 @@
 				<event>
 					<text>Your cultist equips the new spell to their staff.</text>
 					<remove name="AEA_SPELL_ITEM_13"/>
-					<transformRace class="aea_cult_wizard">aea_cult_wizard_a13</transformRace>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_s13</transformRace>
 				</event>
 			</choice>
 			<choice req="AEA_SPELL_ITEM_14">
@@ -1408,7 +1412,7 @@
 				<event>
 					<text>Your cultist equips the new spell to their staff.</text>
 					<remove name="AEA_SPELL_ITEM_14"/>
-					<transformRace class="aea_cult_wizard">aea_cult_wizard_a14</transformRace>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_s14</transformRace>
 				</event>
 			</choice>
 			<choice req="AEA_SPELL_ITEM_15">
@@ -1416,7 +1420,7 @@
 				<event>
 					<text>Your cultist equips the new spell to their staff.</text>
 					<remove name="AEA_SPELL_ITEM_15"/>
-					<transformRace class="aea_cult_wizard">aea_cult_wizard_a15</transformRace>
+					<transformRace class="aea_cult_wizard">aea_cult_wizard_s15</transformRace>
 				</event>
 			</choice>
 		</event>
@@ -1557,7 +1561,7 @@
 			</choice>
 		</event>
 	</choice>
-	<choice req="aea_cult_wizard_a09">
+	<choice req="aea_cult_wizard_s09">
 		<text>([Heal Bolt] Cultist) Reset spell</text>
 		<event>
 			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
@@ -1565,7 +1569,7 @@
 				<text>Reset</text>
 				<event>
 					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
-					<transformRace class="aea_cult_wizard_a09">aea_cult_wizard</transformRace>
+					<transformRace class="aea_cult_wizard_s09">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
 			<choice>
@@ -1608,7 +1612,7 @@
 			</choice>
 		</event>
 	</choice>
-	<choice req="aea_cult_wizard_a12">
+	<choice req="aea_cult_wizard_s12">
 		<text>([Barrier] Cultist) Reset spell</text>
 		<event>
 			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
@@ -1616,7 +1620,7 @@
 				<text>Reset</text>
 				<event>
 					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
-					<transformRace class="aea_cult_wizard_a12">aea_cult_wizard</transformRace>
+					<transformRace class="aea_cult_wizard_s12">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
 			<choice>
@@ -1625,7 +1629,7 @@
 			</choice>
 		</event>
 	</choice>
-	<choice req="aea_cult_wizard_a13">
+	<choice req="aea_cult_wizard_s13">
 		<text>([Lockdown] Cultist) Reset spell</text>
 		<event>
 			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
@@ -1633,7 +1637,7 @@
 				<text>Reset</text>
 				<event>
 					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
-					<transformRace class="aea_cult_wizard_a13">aea_cult_wizard</transformRace>
+					<transformRace class="aea_cult_wizard_s13">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
 			<choice>
@@ -1642,7 +1646,7 @@
 			</choice>
 		</event>
 	</choice>
-	<choice req="aea_cult_wizard_a14">
+	<choice req="aea_cult_wizard_s14">
 		<text>([Ally] Cultist) Reset spell</text>
 		<event>
 			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
@@ -1650,7 +1654,7 @@
 				<text>Reset</text>
 				<event>
 					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
-					<transformRace class="aea_cult_wizard_a14">aea_cult_wizard</transformRace>
+					<transformRace class="aea_cult_wizard_s14">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
 			<choice>
@@ -1659,7 +1663,7 @@
 			</choice>
 		</event>
 	</choice>
-	<choice req="aea_cult_wizard_a15">
+	<choice req="aea_cult_wizard_s15">
 		<text>([Mind Bolt] Cultist) Reset spell</text>
 		<event>
 			<text>Do you wish to reset the spell of this cultist, the spell will be lost however you will be able to teach the cultist a new spell.</text>
@@ -1667,7 +1671,7 @@
 				<text>Reset</text>
 				<event>
 					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
-					<transformRace class="aea_cult_wizard_a15">aea_cult_wizard</transformRace>
+					<transformRace class="aea_cult_wizard_s15">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
 			<choice>

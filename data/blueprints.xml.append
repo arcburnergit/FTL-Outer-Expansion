@@ -4619,6 +4619,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability: Casts a spell in the current room which does nothing</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_a01">
@@ -4634,6 +4651,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability (5 charges): Casts a spell which protects the current room from hull and system damage for 10 seconds</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_a02">
@@ -4649,6 +4683,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability: Casts a spell which retargets all the enemy projectiles on screen to the current room</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_s03">
@@ -4664,6 +4715,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability (3 charges): Cast a spell at a target room dealing 45 personal damage</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_s04">
@@ -4679,6 +4747,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability (2 charges): Cast a spell at a target room dealing 1 damage</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_s05">
@@ -4694,6 +4779,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability (2 charges): Cast 3 spells at a target room dealing 1 damage each</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_s06">
@@ -4709,6 +4811,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability (2 charges): Cast a spell at a target room doing 3 hull damage but no system or crew damage</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_a07">
@@ -4724,6 +4843,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability: Cast a spell in the current room that warps all crew in the current room to a random room on the opposite ship</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_s08">
@@ -4739,6 +4875,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability: Cast a spell at a target room that warps all crew in the room to a random room on the opposite ship</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_s09">
@@ -4754,6 +4907,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability (3 charges): Cast a spell at the lowest health (%) friendly crew that heals all friendly crew in the room for 75 hp</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_a10">
@@ -4769,6 +4939,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability: Cast a spell in the current room that heals all friendly crew for 45 hp</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_a11">
@@ -4784,6 +4971,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability (1 charge): Spawn a conservative combat drone around the enemy ship</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_s12">
@@ -4799,6 +5003,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability (3 charge): Spawn a barrier capable of stopping 2 projectiles</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_s13">
@@ -4814,6 +5035,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability (3 charge): Cast a spell at the target room which applies a lockdown</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_s14">
@@ -4829,6 +5067,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability (2 charge): Cast a spell at the target room which spawns a random ally</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_cult_wizard_s15">
@@ -4844,6 +5099,23 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>Active Ability (3 charge): Cast a spell at the target room which mind controls a random enemy</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - Leaves -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="191" g="234" b="32" a="0.7" />
+			<color r="0" g="229" b="237" a="0.7" />
+			<color r="255" g="206" b="255" a="0.7" />
+		</layer>
+		<layer><!-- Layer 2 - petals -->
+			<color r="0" g="0" b="0" a="0" />
+			<color r="255" g="255" b="255" a="0.25"/>
+			<color r="255" g="255" b="255" a="0.5"/>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
 </crewBlueprint>
 </FTL>
 
@@ -4872,6 +5144,34 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 			<sound>miss</sound>
 		</missSounds>
 		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_ARTILLERY">
+		<type>LASER</type>
+		<title>Spell Artillery</title>
+		<desc>[Base Cooldown: 16] Channels the power of the bud to fire spells at the enemy ship.</desc>
+		<tooltip>Artillery: Channels the power of the bud to fire spells at the enemy ship.</tooltip>
+		<damage>0</damage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>16</cooldown>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<hitShipSounds>
+			<sound>hitHull2</sound>
+			<sound>hitHull3</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_laser_spell_artillery</weaponArt>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_LASER_SFAKE_HEAL">
 		<type>LASER</type>
@@ -4965,7 +5265,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
 		<explosion>aea_invis_bomb</explosion>
 		<weaponArt>bomblauncher_small</weaponArt>
@@ -4985,7 +5285,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
 		<explosion>aea_invis_bomb</explosion>
 		<weaponArt>bomblauncher_small</weaponArt>
@@ -5005,7 +5305,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
 		<explosion>aea_invis_bomb</explosion>
 		<weaponArt>bomblauncher_small</weaponArt>
@@ -5026,7 +5326,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
 		<explosion>aea_invis_bomb</explosion>
 		<weaponArt>bomblauncher_small</weaponArt>
@@ -5045,7 +5345,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
 		<explosion>aea_invis_bomb</explosion>
 		<weaponArt>bomblauncher_small</weaponArt>
@@ -5065,7 +5365,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
 		<explosion>aea_invis_bomb</explosion>
 		<weaponArt>bomblauncher_small</weaponArt>
@@ -5085,7 +5385,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
 		<explosion>aea_invis_bomb</explosion>
 		<weaponArt>bomblauncher_small</weaponArt>
@@ -5121,7 +5421,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
 		<explosion>aea_invis_bomb</explosion>
 		<weaponArt>bomblauncher_small</weaponArt>
@@ -5141,7 +5441,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
 		<explosion>aea_invis_bomb</explosion>
 		<weaponArt>bomblauncher_small</weaponArt>
@@ -5183,7 +5483,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
 		<explosion>aea_invis_bomb</explosion>
 		<weaponArt>bomblauncher_small</weaponArt>
@@ -5252,7 +5552,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
 		<explosion>aea_invis_bomb</explosion>
 		<weaponArt>bomblauncher_small</weaponArt>
@@ -5626,7 +5926,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>aea_proj_magic_hull</image>
 		<launchSounds>
 			<sound>bombTeleport</sound>
@@ -5704,7 +6004,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>1</power>
 		<cost>45</cost>
 		<bp>4</bp>
-		<rarity>1</rarity>
+		<rarity>0</rarity>
 		<image>bomb_small</image>
 		<explosion>explosion_random</explosion>
 		<launchSounds>
@@ -6312,4 +6612,306 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<shieldImage>mup_standard2</shieldImage>
 		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
 	</shipBlueprint>
+
+	<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BLOOM" layout="aeap_cult_bloom_1" img="aeap_cult_bloom_1">
+		<class>Bloom Cruiser</class>
+		<name>The Leaves</name>
+		<desc>This ship directly channels the power of the bud to launch spells at the enemy ship.</desc>
+		<systemList>
+			<artillery max="4" power="1" room="11" start="true" weapon="AEA_LASER_SPELL_ARTILLERY" img="room_artillery" />
+			<battery max="2" power="1" room="21" start="false" img="room_battery" />
+			<cloaking power="1" room="25" start="false" img="room_cloaking_11" />
+			<clonebay power="1" room="24" start="false">
+				<slot>
+					<number>0</number>
+				</slot>
+			</clonebay>
+			<doors power="1" room="22" start="true" img="room_doors">
+				<slot>
+					<direction>up</direction>
+					<number>1</number>
+				</slot>
+			</doors>
+			<drones max="8" power="2" room="3" start="false" img="room_drones_6" />
+			<engines power="2" room="12" start="true" img="room_engines_2">
+				<slot>
+					<direction>down</direction>
+					<number>2</number>
+				</slot>
+			</engines>
+			<hacking power="1" room="2" start="false" img="room_hacking_2" />
+			<medbay power="1" room="24" start="true" img="room_medbay_4">
+				<slot>
+					<number>0</number>
+				</slot>
+			</medbay>
+			<mind power="1" room="29" start="false" img="room_mind_5" />
+			<oxygen power="1" room="1" start="true" img="room_oxygen_2" />
+			<pilot power="1" room="0" start="true" img="room_pilot_5">
+				<slot>
+					<direction>right</direction>
+					<number>1</number>
+				</slot>
+			</pilot>
+			<sensors power="1" room="17" start="true" img="room_sensors_7">
+				<slot>
+					<direction>down</direction>
+					<number>3</number>
+				</slot>
+			</sensors>
+			<shields max="8" power="2" room="13" start="true" img="room_shields_6">
+				<slot>
+					<direction>left</direction>
+					<number>0</number>
+				</slot>
+			</shields>
+			<teleporter power="1" room="28" start="false" />
+			<temporal power="1" room="19" start="false" />
+			<weapons max="8" power="2" room="4" start="false" img="room_weapons_5">
+				<slot>
+					<direction>right</direction>
+					<number>1</number>
+				</slot>
+			</weapons>
+		</systemList>
+		<weaponSlots>4</weaponSlots>
+		<droneSlots>2</droneSlots>
+		<weaponList missiles="4" count="4" />
+		<droneList drones="4" count="2" />
+		<health amount="30" />
+		<maxPower amount="6" />
+		<crewCount amount="1" class="aea_acid_soldier" />
+		<crewCount amount="1" class="aea_cult_wizard_s04" />
+		<crewCount amount="1" class="aea_cult_priest_off" />
+		<crewCount amount="1" class="aea_cult_priest_off" />
+		<shieldImage>mup_giant</shieldImage>
+		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+	</shipBlueprint>
+
+	<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BLOOM_2" layout="aeap_cult_bloom_2" img="aeap_cult_bloom_2">
+		<class>Bloom Cruiser</class>
+		<name>The Trunk</name>
+		<desc>This ship protects itself with capable crew and a prototype generator that creates barriers on rooms each time you fire a weapon.</desc>
+		<systemList>
+			<battery max="2" power="1" room="17" start="false" img="room_battery_9" />
+			<cloaking power="1" room="28" start="false" img="room_cloaking_2" />
+			<clonebay power="1" room="27" start="false">
+				<slot>
+					<number>1</number>
+				</slot>
+			</clonebay>
+			<doors power="1" room="30" start="true" img="room_doors_10">
+				<slot>
+					<direction>up</direction>
+					<number>1</number>
+				</slot>
+			</doors>
+			<drones max="8" power="2" room="15" start="false" img="room_drones_14" />
+			<engines power="2" room="1" start="true" img="room_engines_8">
+				<slot>
+					<direction>left</direction>
+					<number>2</number>
+				</slot>
+			</engines>
+			<hacking power="1" room="24" start="false" img="room_hacking_2" />
+			<medbay power="1" room="27" start="true" img="room_medbay">
+				<slot>
+					<number>1</number>
+				</slot>
+			</medbay>
+			<mind power="1" room="16" start="false" img="room_mind_5" />
+			<oxygen power="1" room="14" start="true" img="room_oxygen_15" />
+			<pilot power="1" room="0" start="true" img="room_pilot">
+				<slot>
+					<direction>right</direction>
+					<number>0</number>
+				</slot>
+			</pilot>
+			<sensors power="1" room="29" start="true" img="room_sensors_8">
+				<slot>
+					<direction>right</direction>
+					<number>1</number>
+				</slot>
+			</sensors>
+			<shields max="8" power="2" room="5" start="false" img="room_shields">
+				<slot>
+					<direction>left</direction>
+					<number>0</number>
+				</slot>
+			</shields>
+			<teleporter power="1" room="31" start="false" />
+			<temporal power="1" room="3" start="false" />
+			<weapons max="8" power="3" room="2" start="true" img="room_weapons">
+				<slot>
+					<direction>up</direction>
+					<number>1</number>
+				</slot>
+			</weapons>
+		</systemList>
+		<weaponSlots>4</weaponSlots>
+		<droneSlots>2</droneSlots>
+		<weaponList missiles="6" count="4">
+			<weapon name="SPORE_1" />
+			<weapon name="LASER_BURST_3" />
+		</weaponList>
+		<droneList drones="1" count="2" />
+		<health amount="30" />
+		<maxPower amount="6" />
+		<crewCount amount="1" class="aea_cult_wizard_s12" />
+		<crewCount amount="1" class="aea_cult_wizard_s12" />
+		<crewCount amount="1" class="aea_cult_priest_sup" />
+		<crewCount amount="1" class="aea_cult_priest_sup" />
+		<aug name="AEA_BARRIER_RELAY" />
+		<shieldImage>mup_giant</shieldImage>
+		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+	</shipBlueprint>
+
+	<augBlueprint name="AEA_BARRIER_RELAY"> <!-- Inspired by void war-->
+		<title>Barrier Generator</title>
+		<desc>Generates a barrier each time you fire a weapon, can generate up to a maximum of 6 active barriers.</desc>
+		<cost>20</cost>
+		<rarity>0</rarity>
+		<stackable>false</stackable>
+	</augBlueprint>
+
+	<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BLOOM_3" layout="aeap_cult_bloom_3" img="aeap_cult_bloom_3">
+		<class>Bloom Cruiser</class>
+		<name>The Seeds</name>
+		<desc>A powerful boarding ship with dangerous crew.</desc>
+		<systemList>
+			<battery max="2" power="1" room="6" start="false" img="room_battery_6" />
+			<cloaking power="1" room="20" start="false" img="room_cloaking_3" />
+			<clonebay power="1" room="2" start="false">
+				<slot>
+					<number>1</number>
+				</slot>
+			</clonebay>
+			<doors power="1" room="24" start="false" img="room_doors">
+				<slot>
+					<direction>up</direction>
+					<number>0</number>
+				</slot>
+			</doors>
+			<drones max="8" power="2" room="16" start="false" img="room_drones" />
+			<engines power="1" room="9" start="true" img="room_engines_4">
+				<slot>
+					<direction>down</direction>
+					<number>2</number>
+				</slot>
+			</engines>
+			<hacking power="1" room="13" start="false" img="room_hacking_2" />
+			<medbay power="1" room="2" start="true" img="room_medbay_8">
+				<slot>
+					<number>-2</number>
+				</slot>
+			</medbay>
+			<mind power="1" room="21" start="false" img="room_mind_5" />
+			<oxygen power="1" room="19" start="true" img="room_oxygen_20" />
+			<pilot power="1" room="0" start="true" img="room_pilot">
+				<slot>
+					<direction>right</direction>
+					<number>0</number>
+				</slot>
+			</pilot>
+			<sensors power="1" room="25" start="true" img="room_sensors">
+				<slot>
+					<direction>up</direction>
+					<number>1</number>
+				</slot>
+			</sensors>
+			<shields max="8" power="2" room="8" start="true" img="room_shields_7">
+				<slot>
+					<direction>left</direction>
+					<number>0</number>
+				</slot>
+			</shields>
+			<teleporter power="1" room="1" start="true" />
+			<temporal power="1" room="7" start="false" />
+			<weapons max="8" power="2" room="17" start="true" img="room_weapons">
+				<slot>
+					<direction>up</direction>
+					<number>1</number>
+				</slot>
+			</weapons>
+		</systemList>
+		<weaponSlots>2</weaponSlots>
+		<droneSlots>4</droneSlots>
+		<weaponList missiles="8" count="2">
+			<weapon name="SPORE_STUN_ELITE" />
+		</weaponList>
+		<droneList drones="1" count="4" />
+		<health amount="30" />
+		<maxPower amount="6" />
+		<crewCount amount="1" class="aea_acid_soldier" />
+		<crewCount amount="1" class="orchid_cultivator" />
+		<crewCount amount="1" class="aea_cult_priest_bor" />
+		<crewCount amount="1" class="aea_cult_priest_bor" />
+		<shieldImage>mup_giant</shieldImage>
+		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+	</shipBlueprint>
+</FTL>
+
+<FTL>
+<crewBlueprint name="aea_cult_priest_sup">
+	<title>Vampweed Support Priest</title>
+	<short>Support Priest</short>
+	<desc>A Vampweed priest, this priest is specialised in casting support spells which are use to buff or protect your ship.
+Possible Spells: [Protect], [Barrier], and [Ally].
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>84</cost>
+	<bp>2</bp>
+	<rarity>5</rarity>
+	<powerList>
+		<power>Active Ability: Casts a random support spell at the target room</power>
+		<power>Ranged attack speed is quadrupled, but only deals 0.5x ranged damage</power>
+	</powerList>
+	<colorList>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_priest_off">
+	<title>Vampweed Offence Priest</title>
+	<short>Offence Priest</short>
+	<desc>A Vampweed priest, this priest is specialised in casting offensive spells which are use to attack the enemy ship.
+Possible Spells: [Bolt], [Hull Bolt], [Drone], and [Lockdown].
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>84</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Casts a random boarding spell at the target room</power>
+		<power>Ranged attack speed is quadrupled, but only deals 0.5x ranged damage</power>
+	</powerList>
+	<colorList>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_priest_bor">
+	<title>Vampweed Boarding Priest</title>
+	<short>Boarding Priest</short>
+	<desc>A Vampweed priest, this priest is specialised in casting boarding spells which are used to deal with the enemy crew.
+Possible Spells: [Bio Bolt], [Warp Bolt], [Ally], and [Mind Bolt].
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>84</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Casts a random offence spell at the target room</power>
+		<power>Ranged attack speed is quadrupled, but only deals 0.5x ranged damage</power>
+	</powerList>
+	<colorList>
+		<layer><!-- Layer 3 - Orb -->
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
 </FTL>
