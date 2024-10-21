@@ -11,6 +11,11 @@
 		<combat>aea_MUS_HereticBattle.ogg</combat>
 	</track>
 	<track>
+		<name>aea_cultist</name> <!--Music by lizzard-->
+		<explore>aea_MUS_CultistExplore.ogg</explore>
+		<combat>aea_MUS_CultistBattle.ogg</combat>
+	</track>
+	<track>
 		<name>aea_lylmik</name> <!--Music by lizzard-->
 		<explore>aea_MUS_LylmikExplore.ogg</explore>
 		<combat>aea_MUS_LylmikBattle.ogg</combat>

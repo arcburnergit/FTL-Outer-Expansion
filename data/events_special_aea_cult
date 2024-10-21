@@ -16,7 +16,7 @@
 	<text>Confederate sectors are some of the most industrialized in the galaxy. With most heavy manufacturing now done by the Vampweeds, the economy of these sectors is soaring and draws the attention of many merchants. Unfortunately, regional politics have drawn the attention of Coalition recruiters too. Keep a sharp eye out for friends and enemies.</text>
 </textList>
 <event name="START_AEA_CULT">
-	<metaVariable name="juke_vampweed" op="set" val="1" />
+	<metaVariable name="juke_aea_cult" op="set" val="1" />
 	<preventQuest />
 	<beaconType id="map_icon_start" global="false">
 		<color r="46" g="252" b="51" a="1" />
@@ -329,11 +329,11 @@
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-					VAMPWEED
+					AEA_CULT
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->	
-<eventList name="STORELIST_VAMPWEED">
+<eventList name="STORELIST_AEA_CULT">
 	<event load="STOREEVENT_MERCHANTS" />
 	<event load="STOREEVENT_TERRAFORMING" />
 	<event load="STOREEVENT_WEATHER_STUCK" />
@@ -348,12 +348,11 @@
 	<event load="STOREEVENT_VAMPWEED_INSURRECTIONIST" />
 	<event load="STOREEVENT_VAMPWEED_SPORES" />
 	<event load="STOREEVENT_VAMPWEED_TERRAFORMER" />
+
+	<event load="STOREEVENT_AEA_CULT_SPELLS" />
 	
 	<event load="STOREEVENT_MANTIS_RARE" />
 	<event load="STOREEVENT_MANTIS_WHALE" />
-	
-	<event load="STOREEVENT_ROCK_RACIST" />
-	<event load="STOREEVENT_ROCK_MISSION" />
 	
 	<event load="STOREEVENT_COALITION_MYSTERYRACE" />
 	<event load="STOREEVENT_COALITION_RACES" />
@@ -366,29 +365,69 @@
 	<event load="STOREEVENT_PIRATE_ODDSHOP" />
 	
 	<event load="STOREEVENT_SHELL_BOWLING" />
-	<event load="STOREEVENT_SHELL_BIOLOGIST" />
-	<event load="STOREEVENT_SHELL_MEDICAL" />
 	
 	<event load="STOREEVENT_TONY" />
 </eventList>
 
+<event name="STOREEVENT_AEA_CULT_SPELLS" unique="true">
+	<preventQuest />
+	<beaconType id="map_icon_store_orchid" global="true">
+		<color r="200" g="100" b="200" a="1" />
+	</beaconType>
+	<text>This beacon is an outpost and trade hub for the Cult of the bud. Theres a varied collection of spells here, you'll probably need to pickup a few cultists if you want to use them.</text>
+	<ship load="SHIP_ORCHID_STATION" hostile="false" />
+	<choice hidden="true">
+		<text>Visit the market.</text>
+		<event>
+			<text>Multiple Orchids wave to customers, trying to get their attention, while curious shoppers of various species look about.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORE_LOAD_AEA_CULT" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Attack the Orchids.</text>
+		<event>
+			<text>Looks like no one's eager in helping out the Orchids, though your attack sends the market into lockdown. No time to worry about that, you need to focus your sights on your new prey.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="MORALITY_UPDATE_ORCHID_FIGHT" />
+			</choice>
+		</event>
+	</choice>
+</event>
+<event name="STORE_LOAD_AEA_CULT">
+	<store>STORE_AEA_CULT</store>
+	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event />
+	</choice>
+</event>
+
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-					VAMPWEED
+					AEA_CULT
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->	
-<ship name="SHIP_VAMPWEED_TRANSPORT_LOOT" auto_blueprint="MU_VAMPWEED_TRANSPORT">
+<ship name="SHIP_AEA_CULT_TRANSPORT_LOOT" auto_blueprint="AEA_CULT_TRANSPORT">
 	<escape timer="40" min="999" max="999">
 		<text>They look like they don't want to fight. They are trying to escape.</text>
 		<ship hostile="true" />
 	</escape>
 	<destroyed load="TRANSPORT_DESTROYED" />
-	<deadCrew load="TRANSPORT_CAPTURE_VAMPWEED" />
+	<deadCrew load="TRANSPORT_CAPTURE_AEA_CULT" />
 </ship>
 
-<event name="TRANSPORT_VAMPWEED_LOOT" unique="true">
+<event name="TRANSPORT_AEA_CULT_LOOT" unique="true">
 	<preventQuest />
 	<beaconType id="map_icon_transport" global="true" req="LOOT_COMPASS">
 		<color r="255" g="186" b="0" a="1" />
@@ -397,7 +436,7 @@
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
 	<text>This beacon hosts a Confederate transport. It's safe to bet the ship is most likely carrying some special tech. If you can kill its crew, their cargo will be yours.</text>
-	<ship load="SHIP_VAMPWEED_TRANSPORT_LOOT" hostile="false" />
+	<ship load="SHIP_AEA_CULT_TRANSPORT_LOOT" hostile="false" />
 	<choice>
 		<text>Demand the surrender of their goods.</text>
 		<event>
@@ -418,14 +457,14 @@
 				<event>
 					<text>The transaction is done. With the looks of it, this piece of equipment might prove useful.</text>
 					<achievement>ACH_TRANS_CONVINCE</achievement>
-					<weapon name="LIST_LOOT_VAMPWEED" />
+					<weapon name="LIST_LOOT_AEA_CULT" />
 					<item_modify>
 						<item type="scrap" min="-75" max="-60" />
 					</item_modify>
 					<choice>
 						<text>Continue...</text>
 						<event>
-							<achievement>ACH_TRANS_VAMPWEED</achievement>
+							<achievement>ACH_TRANS_AEA_CULT</achievement>
 						</event>
 					</choice>
 				</event>
@@ -472,12 +511,12 @@
         </event>
     </choice>
 </event>
-<event name="TRANSPORT_CAPTURE_VAMPWEED" unique="true">
+<event name="TRANSPORT_CAPTURE_AEA_CULT" unique="true">
 	<text>The crew is dead, leaving you with the ship. Its cargo is yours for the taking. Aboard is the special tech you expected, which you bring back to your ship.</text>
 	<autoReward level="MED">standard_no_item</autoReward>
-	<achievement>ACH_TRANS_VAMPWEED</achievement>
-	<weapon name="LIST_LOOT_VAMPWEED" />
-	<variable name="ach_trans_vampweed" op="set" val="1" />
+	<achievement>ACH_TRANS_AEA_CULT</achievement>
+	<weapon name="LIST_LOOT_AEA_CULT" />
+	<variable name="ach_trans_aea_cult" op="set" val="1" />
 </event>
 
 <!--

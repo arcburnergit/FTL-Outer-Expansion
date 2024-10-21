@@ -2950,6 +2950,9 @@ Cast a random boarding support spell that pierces all normal shields at a target
 	<variable name="aea_p_has_repair" op="set" val="0" />
 	<variable name="aea_e_has_repair" op="set" val="1" />
 	
+	<metaVariable name="juke_aea_cult" op="set" val="0" />
+	<variable name="ach_trans_aea_cult" op="set" val="0" />
+	
 
 	<metaVariable name="juke_aea_old_1" op="set" val="0" />
 	<metaVariable name="juke_aea_old_2" op="set" val="0" />
@@ -4253,6 +4256,13 @@ Cast a random boarding support spell that pierces all normal shields at a target
 				<secretDescription>Obtain the loot from the Heretic loot transport.</secretDescription>
 				<description>Obtain the Shatter Laser II from the Heretic loot transport.</description>
 				<icon>ach_trans_aea_necro</icon>
+				<header>Loot Acquired</header>
+			</mod-append:achievement>
+			<mod-append:achievement name="ACH_TRANS_AEA_CULT">
+				<name>Vampweed Cultist Transport</name>
+				<secretDescription>Obtain the loot from the Vampweed Cultist loot transport.</secretDescription>
+				<description>Obtain the XXXX from the Vampweed Cultist loot transport.</description>
+				<icon>ach_trans_aea_cult</icon>
 				<header>Loot Acquired</header>
 			</mod-append:achievement>
 			<mod-append:achievement name="ACH_TRANS_AEA_OLD_1">

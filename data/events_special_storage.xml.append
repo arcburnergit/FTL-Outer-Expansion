@@ -1246,47 +1246,7 @@
 	</choice>
 </event>
 
-<event name="STOREEVENT_AEA_CULT_SPELLS" unique="true">
-	<preventQuest />
-	<beaconType id="map_icon_store_orchid" global="true">
-		<color r="200" g="100" b="200" a="1" />
-	</beaconType>
-	<text>This beacon is an outpost and trade hub for the Cult of the bud. Theres a varied collection of spells here, you'll probably need to pickup a few cultists if you want to use them.</text>
-	<ship load="SHIP_ORCHID_STATION" hostile="false" />
-	<choice hidden="true">
-		<text>Visit the market.</text>
-		<event>
-			<text>Multiple Orchids wave to customers, trying to get their attention, while curious shoppers of various species look about.</text>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event load="STORE_LOAD_AEA_CULT" />
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Attack the Orchids.</text>
-		<event>
-			<text>Looks like no one's eager in helping out the Orchids, though your attack sends the market into lockdown. No time to worry about that, you need to focus your sights on your new prey.</text>
-			<ship hostile="true" />
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event load="MORALITY_UPDATE_ORCHID_FIGHT" />
-			</choice>
-		</event>
-	</choice>
-</event>
-<event name="STORE_LOAD_AEA_CULT">
-	<store>STORE_AEA_CULT</store>
-	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
-	<choice>
-		<text>Do something onboard the ship.</text>
-		<event load="STORAGE_CHECK" />
-	</choice>
-	<choice>
-		<text>Do nothing.</text>
-		<event />
-	</choice>
-</event>
+
 
 <event name="STORAGE_CHECK_AEA_CULTIST_WIZARD">
 	<text>What do you want to do?</text>
