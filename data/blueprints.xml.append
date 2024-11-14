@@ -5359,44 +5359,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<weaponArt>bomblauncher_small</weaponArt>
 		<iconImage>bomb</iconImage>
 	</weaponBlueprint>
-	<weaponBlueprint name="AEA_LASER_CULT_03">
-		<type>LASER</type>
-		<flavorType>Spellspore</flavorType>
-		<title>Spellspore [Bio Bolt]</title>
-		<short>[Bio Bolt]</short>
-		<tip>tip_aea_spellspore</tip>
-		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
-		<tooltip>Spellspore.</tooltip>
-		<damage>0</damage>
-		<persDamage>3</persDamage>
-		<accuracyMod>100</accuracyMod>
-		<shots>1</shots>
-		<sp>0</sp>
-		<boost>
-			<type>cooldown</type>
-			<amount>0.05</amount>
-			<count>3</count>
-		</boost>
-		<fireChance>0</fireChance>
-		<breachChance>0</breachChance>
-		<cooldown>18</cooldown>
-		<power>2</power>
-		<cost>70</cost>
-		<bp>6</bp>
-		<rarity>0</rarity>
-		<image>aea_proj_magic_pur</image>
-		<launchSounds>
-			<sound>heavyLaser1</sound>
-		</launchSounds>
-		<hitShipSounds>
-			<sound>hitHull1</sound>
-		</hitShipSounds>
-		<missSounds>
-			<sound>miss</sound>
-		</missSounds>
-		<weaponArt>aea_cult_laser_3</weaponArt>
-		<iconImage>heavyL</iconImage>
-	</weaponBlueprint>
 	<weaponBlueprint name="AEA_LASER_SPELL_03">
 		<type>BOMB</type>
 		<title>Bomb Launcher</title>
@@ -6218,6 +6180,44 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<image>beam_contact</image>
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_03</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_03">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Bio Bolt]</title>
+		<short>[Bio Bolt]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<damage>0</damage>
+		<persDamage>3</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>0.05</amount>
+			<count>3</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>18</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_pur</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_3</weaponArt>
+		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_04">
 		<type>BEAM</type>
