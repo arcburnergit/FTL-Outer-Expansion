@@ -97,6 +97,12 @@
 	<desc length="1" x="0" y="0" />
 	<time>0.5</time>
 </anim>
+<animSheet name="aea_proj_magic_pur" w="60" h="20" fw="60" fh="20">projectiles/aea_proj_magic_pur.png</animSheet>
+<anim name="aea_proj_magic_pur">
+	<sheet>aea_proj_magic_pur</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>0.5</time>
+</anim>
 <animSheet name="aea_proj_magic_heal" w="60" h="20" fw="60" fh="20">projectiles/aea_proj_magic_heal.png</animSheet>
 <anim name="aea_proj_magic_heal">
 	<sheet>aea_proj_magic_heal</sheet>
@@ -3517,5 +3523,413 @@
 	<desc length="4" x="0" y="0" />
 	<time>1.0</time>
 </anim>
+
+<!-- 
+*********************************************************************************************************
+                   SEED
+*********************************************************************************************************
+-->
+
+<animSheet name="aea_seed" w="280" h="455" fw="35" fh="35">people/aea_seed_base.png</animSheet>
+<anim name="aea_seed_clone">
+	<sheet>aea_seed</sheet>
+	<desc length="8" x="0" y="1" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_seed_death_right">
+	<sheet>aea_seed</sheet>
+	<desc length="5" x="3" y="0" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_seed_death_left">
+	<sheet>aea_seed</sheet>
+	<desc length="5" x="0" y="2" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_seed_walk_down">
+	<sheet>aea_seed</sheet>
+	<desc length="4" x="0" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_walk_right">
+	<sheet>aea_seed</sheet>
+	<desc length="4" x="4" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_walk_up">
+	<sheet>aea_seed</sheet>
+	<desc length="4" x="0" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_walk_left">
+	<sheet>aea_seed</sheet>
+	<desc length="4" x="4" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_shoot_down">
+	<sheet>aea_seed</sheet>
+	<desc length="3" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_shoot_right">
+	<sheet>aea_seed</sheet>
+	<desc length="3" x="3" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_shoot_up">
+	<sheet>aea_seed</sheet>
+	<desc length="3" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_shoot_left">
+	<sheet>aea_seed</sheet>
+	<desc length="3" x="0" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_fire_down">
+	<sheet>aea_seed</sheet>
+	<desc length="4" x="0" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_fire_right">
+	<sheet>aea_seed</sheet>
+	<desc length="4" x="4" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_fire_up">
+	<sheet>aea_seed</sheet>
+	<desc length="4" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_fire_left">
+	<sheet>aea_seed</sheet>
+	<desc length="4" x="4" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_repair">
+	<sheet>aea_seed</sheet>
+	<desc length="8" x="0" y="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_punch_up">
+	<sheet>aea_seed</sheet>
+	<desc length="6" x="0" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_punch_down">
+	<sheet>aea_seed</sheet>
+	<desc length="6" x="0" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_seed_teleport">
+	<sheet>aea_seed</sheet>
+	<desc length="8" x="0" y="3" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_seed_type_right">
+	<sheet>aea_seed</sheet>
+	<desc length="4" x="0" y="5" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_seed_type_left">
+	<sheet>aea_seed</sheet>
+	<desc length="4" x="4" y="5" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_seed_type_up">
+	<sheet>aea_seed</sheet>
+	<desc length="4" x="0" y="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_seed_type_down">
+	<sheet>aea_seed</sheet>
+	<desc length="4" x="4" y="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_seed_portrait">
+	<sheet>aea_seed</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_cult_tiny" w="490" h="805" fw="35" fh="35">people/aea_cult_tiny_base.png</animSheet>
+<anim name="aea_cult_tiny_walk_down">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="4" x="0" y="22" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_tiny_walk_left">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="4" x="0" y="21" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_tiny_walk_right">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="4" x="0" y="20" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_tiny_walk_up">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="4" x="0" y="19" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_tiny_repair">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="9" x="0" y="18" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_tiny_type_down">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="4" x="0" y="17" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_tiny_type_left">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="4" x="0" y="16" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_tiny_type_right">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="4" x="0" y="15" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_tiny_type_up">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="4" x="0" y="14" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_tiny_fire_down">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="4" x="0" y="13" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_tiny_fire_left">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="4" x="0" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_tiny_fire_right">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="4" x="0" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_tiny_fire_up">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="4" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_tiny_punch_down">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="8" x="0" y="9" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_tiny_punch_up">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="8" x="0" y="8" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_tiny_shoot_down">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="8" x="0" y="7" />
+	<time>0.33</time>
+</anim>
+<anim name="aea_cult_tiny_shoot_left">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="8" x="0" y="6" />
+	<time>0.33</time>
+</anim>
+<anim name="aea_cult_tiny_shoot_right">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="8" x="0" y="5" />
+	<time>0.33</time>
+</anim>
+<anim name="aea_cult_tiny_shoot_up">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="8" x="0" y="4" />
+	<time>0.33</time>
+</anim>
+<anim name="aea_cult_tiny_teleport">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="9" x="0" y="3" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_cult_tiny_death_right">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="8" x="0" y="2" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_cult_tiny_clone">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="7" x="0" y="1" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_cult_tiny_portrait">
+	<sheet>aea_cult_tiny</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+
+<animSheet name="aea_cult_laser" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser.png</animSheet>
+<weaponAnim name="aea_cult_laser">
+	<sheet>aea_cult_laser</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="aea_cult_laser_1" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_1.png</animSheet>
+<weaponAnim name="aea_cult_laser_1">
+	<sheet>aea_cult_laser_1</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_2" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_2.png</animSheet>
+<weaponAnim name="aea_cult_laser_2">
+	<sheet>aea_cult_laser_2</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_3" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_3.png</animSheet>
+<weaponAnim name="aea_cult_laser_3">
+	<sheet>aea_cult_laser_3</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_4" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_4.png</animSheet>
+<weaponAnim name="aea_cult_laser_4">
+	<sheet>aea_cult_laser_4</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_5" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_5.png</animSheet>
+<weaponAnim name="aea_cult_laser_5">
+	<sheet>aea_cult_laser_5</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_6" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_6.png</animSheet>
+<weaponAnim name="aea_cult_laser_6">
+	<sheet>aea_cult_laser_6</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_7" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_7.png</animSheet>
+<weaponAnim name="aea_cult_laser_7">
+	<sheet>aea_cult_laser_7</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_8" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_8.png</animSheet>
+<weaponAnim name="aea_cult_laser_8">
+	<sheet>aea_cult_laser_8</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_9" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_9.png</animSheet>
+<weaponAnim name="aea_cult_laser_9">
+	<sheet>aea_cult_laser_9</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_10" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_10.png</animSheet>
+<weaponAnim name="aea_cult_laser_10">
+	<sheet>aea_cult_laser_10</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_11" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_11.png</animSheet>
+<weaponAnim name="aea_cult_laser_11">
+	<sheet>aea_cult_laser_11</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_12" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_12.png</animSheet>
+<weaponAnim name="aea_cult_laser_12">
+	<sheet>aea_cult_laser_12</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_13" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_13.png</animSheet>
+<weaponAnim name="aea_cult_laser_13">
+	<sheet>aea_cult_laser_13</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_14" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_14.png</animSheet>
+<weaponAnim name="aea_cult_laser_14">
+	<sheet>aea_cult_laser_14</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_cult_laser_15" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_15.png</animSheet>
+<weaponAnim name="aea_cult_laser_15">
+	<sheet>aea_cult_laser_15</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
 
 </FTL>

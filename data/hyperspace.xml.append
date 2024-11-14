@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-<version>^1.14.0</version>
+<version>^1.15.0</version>
 <mod:findLike type="scripts">
   <mod-append:script>data/aea_scripts/aea_functions.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aeaIcon.lua</mod-append:script>
@@ -62,26 +62,27 @@ This enemy is protected by an Energy Shield.</tooltip>
   	<mod:findLike type="shipOrder">
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_ARTY</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_NECRO_ENGI</mod-append:ship>
-		<mod-append:ship>PLAYER_SHIP_AEA_BIRD_BIG</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_CULT_BUD</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_BIRD_BIG</mod-append:ship>
 			<!-- -->
+		<mod-append:ship>PLAYER_SHIP_AEA_BIRD_TRAN</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_CULT_BLOOM</mod-append:ship>
-		<mod-append:empty/>
 		<mod-append:ship>PLAYER_SHIP_AEA_NECRO_SEPA</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_LONG</mod-append:ship>
 
-		<mod-append:ship>PLAYER_SHIP_AEA_ACID_CREW1</mod-append:ship>
-		<mod-append:ship>PLAYER_SHIP_AEA_CREW2</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_SLUG_LONG</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_SLUG_WIDE</mod-append:ship>
 
+
+		<mod-append:ship>PLAYER_SHIP_AEA_ACID_CREW1</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_CULT_WHALE</mod-append:ship>
+		<mod-append:empty/>
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_HAMMER</mod-append:ship>
-		<mod-append:empty/>
-		<mod-append:empty/>
-		<mod-append:empty/>
 			<!-- -->
-		<mod-append:empty/>
-		<mod-append:empty/>
-		<mod-append:empty/>
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_ARMOUR</mod-append:ship>
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:ship>PLAYER_SHIP_AEA_CREW2</mod-append:ship>
 
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_UNIA</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_UNIB</mod-append:ship>
@@ -130,6 +131,11 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<type>4</type>
 		</unlock>
 	</mod-append:ship>
+	<mod-append:ship name="PLAYER_SHIP_AEA_CULT_WHALE" b="false" c="false" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+	</mod-append:ship>
 	<mod-append:ship name="PLAYER_SHIP_AEA_NECRO_ENGI" b="true" c="true" >
 		<unlock variant="a" silent="false">
 			<type>4</type>
@@ -169,12 +175,6 @@ This enemy is protected by an Energy Shield.</tooltip>
         </unlock>
 	</mod-append:ship>
 	<mod-append:ship name="PLAYER_SHIP_AEA_CREW2" b="false" c="false" >
-		<unlock variant="a" silent="false">
-			<type>4</type>
-		</unlock>
-	</mod-append:ship>
-
-	<mod-append:ship name="PLAYER_SHIP_AEA_BIRD_BIG" b="false" c="false" >
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
@@ -220,9 +220,26 @@ This enemy is protected by an Energy Shield.</tooltip>
         </unlock>
 	</mod-append:ship>
 
+	<mod-append:ship name="PLAYER_SHIP_AEA_BIRD_BIG" b="false" c="false" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+	</mod-append:ship>
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_BIRD_TRAN" b="false" c="false" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+	</mod-append:ship>
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_SLUG_LONG" b="false" c="false" secret="true">
+	</mod-append:ship>
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_SLUG_WIDE" b="false" c="false" secret="true">
+	</mod-append:ship>
 
 	
-	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_ARMOUR" b="true" c="true" >
+	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_ARMOUR" b="true" c="true" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
@@ -243,7 +260,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 	</mod-append:ship>
 
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_HAMMER" b="true" c="true" >
+	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_HAMMER" b="true" c="true" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
@@ -264,7 +281,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 	</mod-append:ship>
 
 	
-	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_UNIA" b="true" c="true" >
+	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_UNIA" b="true" c="true" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
@@ -276,7 +293,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 		</unlock>
 	</mod-append:ship>
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_UNIB" b="true" c="false" >
+	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_UNIB" b="true" c="false" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
@@ -351,6 +368,11 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<slug_ranger room="5"/>
 		</crew>
 	</mod-append:customShip>
+		
+	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_WHALE">
+		<hiddenAug>SHIP_AEA_WHALE</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
 
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_ENGI">
@@ -420,6 +442,26 @@ This enemy is protected by an Energy Shield.</tooltip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BLOOM_3">
 		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_BIG">
+		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_TRAN">
+		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_SLUG_LONG">
+		<hiddenAug>SHIP_SLUG</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_SLUG_WIDE">
+		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
 
@@ -1314,8 +1356,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 	</mod-append:customShip>
 </mod:findLike>
 
-<crew>
-	<race name="aea_acid_soldier">
+<mod:findLike type="crew" limit="1">
+	<mod-append:race name="aea_acid_soldier">
 		<canFight>true</canFight>
 		<canPunch>false</canPunch>
 		<canShoot>true</canShoot>
@@ -1341,8 +1383,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<shootingSound>crewLaser2</shootingSound>
 			<shootingSound>crewLaser3</shootingSound>
 		</shootingSounds>
-	</race>
-	<race name="aea_acid_captain">
+	</mod-append:race>
+	<mod-append:race name="aea_acid_captain">
 		<canFight>true</canFight>
 		<canPunch>false</canPunch>
 		<canShoot>true</canShoot>
@@ -1382,8 +1424,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 				</whiteList>
 			</statBoost>
 		</passiveStatBoosts>
-	</race>
-	<race name="aea_acid_bill">
+	</mod-append:race>
+	<mod-append:race name="aea_acid_bill">
 		<essential>1</essential>
 		<canFight>true</canFight>
 		<canPunch>false</canPunch>
@@ -1416,7 +1458,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 				<shipTarget>CURRENT_ROOM</shipTarget>
 				<crewTarget>ALLIES</crewTarget>
 				<droneTarget>CREW</droneTarget>
-				<amount>1.6</amount>
+				<amount>1.2</amount>
 				<priority>0</priority>
 				<maxStacks>1</maxStacks>
 				<blackList>
@@ -1431,38 +1473,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<powerSounds>
 				<powerSound>siren_death</powerSound>
 			</powerSounds>
-			<buttonText>FINISH OFF</buttonText>
-			<tooltip>Ready: immediately kill all enemy crew in the room below 50 hp</tooltip>
+			<buttonText>EXTERMINATE</buttonText>
+			<tooltip>Ready: immediately kill all enemy crew below 35hp</tooltip>
 			<cooldownColor r="138" g="237" b="31"/>
-			<statBoosts>
-				<statBoost name="powerEffect">
-					<boostType>ADD</boostType>
-					<shipTarget>CURRENT_ROOM</shipTarget>
-					<crewTarget>ENEMIES</crewTarget>
-					<droneTarget>CREW</droneTarget>
-					<priority>1000</priority>
-					<powerEffect>
-						<powerSounds>
-							<powerSound>explosionShell</powerSound>
-						</powerSounds>
-						<req>
-							<maxHealth>50</maxHealth>
-						</req>
-						<activateWhenReady enemiesOnly="false">true</activateWhenReady>
-						<cooldown>0.1</cooldown>
-						<jumpCooldown>reset</jumpCooldown>
-						<buttonText>DEATH</buttonText>
-						<tooltip>DEATH</tooltip>
-						<cooldownColor r="200" g="200" b="200" />
-						<selfHealth>-9999999</selfHealth>
-						<effectAnim>explosion_shell_death</effectAnim>
-					</powerEffect>
-					<duration>2</duration>
-				</statBoost>
-			</statBoosts>
 		</powerEffect>
-	</race>
-	<race name="aea_necro_engi">
+	</mod-append:race>
+	<mod-append:race name="aea_necro_engi">
 		<repairSpeed>1.75</repairSpeed>
 		<damageMultiplier>0.75</damageMultiplier>
 		<suffocationModifier>0.5</suffocationModifier>
@@ -1488,8 +1504,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<cooldownColor r="120" g="99" b="84" />
 			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
 		</powerEffect>
-	</race>
-	<race name="aea_necro_lich">
+	</mod-append:race>
+	<mod-append:race name="aea_necro_lich">
 		<repairSpeed>1.75</repairSpeed>
 		<damageMultiplier>0.75</damageMultiplier>
 		<rangedDamageMultiplier>1.5</rangedDamageMultiplier>
@@ -1579,8 +1595,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<cooldownColor r="120" g="99" b="84" />
 			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
 		</powerEffect>
-	</race>
-	<race name="aea_necro_king">
+	</mod-append:race>
+	<mod-append:race name="aea_necro_king">
 		<repairSpeed>2</repairSpeed>
 		<damageMultiplier>1.5</damageMultiplier>
 		<canSuffocate>false</canSuffocate>
@@ -1634,8 +1650,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<cooldownColor r="120" g="99" b="84" />
 			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
 		</powerEffect>
-	</race>
-	<race name="aea_old_1">
+	</mod-append:race>
+	<mod-append:race name="aea_old_1">
 		<canSuffocate>false</canSuffocate>
 		<canBurn>false</canBurn>
 		<defaultSkillLevel>1</defaultSkillLevel>
@@ -1649,8 +1665,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<deathSounds>
 			<deathSound>sysExplosion</deathSound>
 		</deathSounds>
-	</race>
-	<race name="aea_old_unique_1">
+	</mod-append:race>
+	<mod-append:race name="aea_old_unique_1">
 		<essential>1</essential>
 		<teleportMoveOtherShip>true</teleportMoveOtherShip>
 		<canSuffocate>false</canSuffocate>
@@ -1693,8 +1709,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<cooldownColor r="57" g="59" b="61" />
 			<effectAnim>explosion_stun_ion</effectAnim>
 		</powerEffect>
-	</race>
-	<race name="aea_old_unique_2">
+	</mod-append:race>
+	<mod-append:race name="aea_old_unique_2">
 		<essential>1</essential>
 		<canSuffocate>false</canSuffocate>
 		<canBurn>false</canBurn>
@@ -1730,8 +1746,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<cooldownColor r="123" g="135" b="151" />
 			<effectAnim>explosion_big1_heal</effectAnim>
 		</powerEffect>
-	</race>
-	<race name="aea_old_unique_3">
+	</mod-append:race>
+	<mod-append:race name="aea_old_unique_3">
 		<essential>1</essential>
 		<canSuffocate>false</canSuffocate>
 		<canBurn>false</canBurn>
@@ -1767,8 +1783,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<cooldownColor r="173" g="67" b="32" />
 			<effectAnim>explosion_stun_ion</effectAnim>
 		</powerEffect>
-	</race>
-	<race name="aea_old_unique_4">
+	</mod-append:race>
+	<mod-append:race name="aea_old_unique_4">
 		<essential>1</essential>
 		<canSuffocate>false</canSuffocate>
 		<canBurn>false</canBurn>
@@ -1809,8 +1825,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<crewHealth>100</crewHealth>
 			<selfHealth>100</selfHealth>
 		</powerEffect>
-	</race>
-	<race name="aea_old_unique_5">
+	</mod-append:race>
+	<mod-append:race name="aea_old_unique_5">
 		<essential>1</essential>
 		<canSuffocate>false</canSuffocate>
 		<canBurn>false</canBurn>
@@ -1844,7 +1860,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<cooldownColor r="62" g="91" b="51" />
 			<effectAnim>explosion_stun_ion</effectAnim>
 		</powerEffect>
-	</race>
+	</mod-append:race>
 
 	<mod-append:race name="aea_bird_avali">
     	<maxHealth>70</maxHealth>
@@ -2322,6 +2338,8 @@ Cast a spell at the lowest health (%) friendly crew that heals all friendly crew
 				<powerSound>cultivatorSpore</powerSound>
 			</powerSounds>
 			<req type="enemy">
+				<friendlyInRoom />
+				<maxHealth>50</maxHealth>
 				<inCombat />
 			</req>
 			<buttonText>Heal Aura</buttonText>
@@ -2656,11 +2674,161 @@ Cast a random boarding support spell that pierces all normal shields at a target
 			</temporaryEffect>
 		</powerEffect>
 	</mod-append:race>
-</crew>
 
+	<mod-append:race name="aea_seed">
+		<essential>3</essential>
+		<lowHealthThreshold>2500.0</lowHealthThreshold>
+		<lowHealthThresholdPercentage>0.75</lowHealthThresholdPercentage>
+		<maxHealth>100</maxHealth>
+		<noClone>true</noClone>
+		<canMove>false</canMove>
+		<snapToSlot>true</snapToSlot>
+		<canRepair>false</canRepair>
+		<canFight>false</canFight>
+		<canSabotage>false</canSabotage>
+		<canMan>false</canMan>
+		<canBurn>false</canBurn>
+		<canSuffocate>false</canSuffocate>
+		<resistsMindControl>true</resistsMindControl>
+		<moveSpeedMultiplier>0.75</moveSpeedMultiplier>
+		<healSpeed>0</healSpeed>
+		<stunMultiplier>0</stunMultiplier>
+		<canTeleport>false</canTeleport>
+		<deathSounds>
+			<deathSound>engiDeath</deathSound>
+		</deathSounds>
+		<passiveStatBoosts>  
+			<statBoost name="statBoost">
+				<statBoost name="canMove">
+                    <boostType>SET</boostType>
+                    <value>true</value>
+                    <shipTarget>CURRENT_ROOM</shipTarget>
+                    <crewTarget>ALLIED</crewTarget>
+                    <priority>0</priority>
+					<whiteList>
+						<aea_seed />
+					</whiteList>
+                </statBoost>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+                <crewTarget>ALLIED</crewTarget>
+				<affectsSelf>false</affectsSelf>
+			</statBoost>
+			<statBoost name="moveSpeedMultiplier">
+				<boostType>SET</boostType>
+				<amount>0.75</amount>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ALLIED</crewTarget>
+				<priority>-999</priority>
+			</statBoost>
+		</passiveStatBoosts>
+	 </mod-append:race>
+
+	 <mod-append:race name="aea_cult_tiny">
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<maxHealth>75</maxHealth>
+		<moveSpeedMultiplier>1.5</moveSpeedMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<friendlyInRoom />
+				<inCombat />
+				<systemInRoom />
+				<playerShip />
+			</req>
+			<buttonText>Spell</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Casts a spell in the current room which does nothing
+	Cast Duration: 2.5s
+	Will be interupted during casting if the crew takes damage</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<!--powerCharges>1</powerCharges-->
+			<temporaryEffect>
+				<duration>2.5</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
+				<canMove>false</canMove>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+</mod:findLike>
 
 
 <augments>
+	<aug name="AEA_AUG_WHALE">
+    	<locked/>
+		<statBoosts>
+			<statBoost name="suffocationModifier">
+				<boostType>FLAT</boostType>
+				<amount>-1.0</amount>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ALL</crewTarget>
+				<priority>999</priority>
+				<systemPowerDependency>
+					<oxygen />
+				</systemPowerDependency>
+				<systemPowerScaling>
+					<noSys>0</noSys>
+					<noPwr>0</noPwr>
+					<onePwr>1</onePwr>
+					<twoPwr>1</twoPwr>
+					<threePwr>1</threePwr>
+					<fourPwr>1</fourPwr>
+				</systemPowerScaling>
+			</statBoost>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>-1</amount>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<priority>999</priority>
+				<blackList>
+					<sylvansans />
+				</blackList>
+				<systemPowerDependency>
+					<oxygen />
+				</systemPowerDependency>
+				<systemPowerScaling>
+					<noSys>3</noSys>
+					<noPwr>3</noPwr>
+					<onePwr>4</onePwr>
+					<twoPwr>5</twoPwr>
+					<threePwr>6</threePwr>
+					<fourPwr>7</fourPwr>
+				</systemPowerScaling>
+			</statBoost>
+			<statBoost name="deathEffect">
+				<boostType>ADD</boostType>
+				<deathEffect>
+					<damage>-1</damage>
+					<friendlyFire>false</friendlyFire>
+					<shipFriendlyFire>true</shipFriendlyFire>
+				</deathEffect>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+                <crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="AEA_CULT_MAGIC_BOOST">
+    	<function name="FTL_JUMPER_GOOD" value="1" warning="false" />
+	</aug>
 	<aug name="AEA_OLD_NO_ARTY_REPAIR">
 		<statBoosts>
 			<statBoost name="canRepair">
@@ -2952,7 +3120,12 @@ Cast a random boarding support spell that pierces all normal shields at a target
 	
 	<metaVariable name="juke_aea_cult" op="set" val="0" />
 	<variable name="ach_trans_aea_cult" op="set" val="0" />
-	
+	<variable name="aea_cult_boost" op="set" val="0" />
+
+	<variable name="aea_cult_visit_eng" op="set" val="0" />
+	<variable name="aea_cult_visit_str" op="set" val="0" />
+	<variable name="aea_cult_visit_gen" op="set" val="0" />
+	<variable name="aea_cult_code" op="set" val="0" />
 
 	<metaVariable name="juke_aea_old_1" op="set" val="0" />
 	<metaVariable name="juke_aea_old_2" op="set" val="0" />
@@ -3699,6 +3872,23 @@ Cast a random boarding support spell that pierces all normal shields at a target
         <numShips layer="1">4</numShips>
 		<numShips layer="0">6</numShips>
     </fleetDef>
+	
+	<fleetDef name="CUSTOM_FLEET_AEA_WHALES">
+        <ship layer="0">fleetaea_whale_1_small</ship>
+		<ship layer="0">fleetaea_whale_2_small</ship>
+		<ship layer="0">fleetaea_whale_3_small</ship>
+		<ship layer="1">fleetaea_whale_1_med</ship>
+		<ship layer="1">fleetaea_whale_2_med</ship>
+		<ship layer="1">fleetaea_whale_3_med</ship>
+        <ship layer="2">fleetaea_whale_1_big</ship>
+		<ship layer="2">fleetaea_whale_2_big</ship>
+		<ship layer="2">fleetaea_whale_3_big</ship>
+        <bigShip>fleetaea_whale_1_big</bigShip>
+        <numShips layer="2">1</numShips>
+        <numShips layer="1">4</numShips>
+		<numShips layer="0">6</numShips>
+    </fleetDef>
+	
 	
 	<bossShip yOffset="180">AEA_ACID_BOSS</bossShip>
 	<bossShip yOffset="180">AEA_ACID_ASSUALT</bossShip>

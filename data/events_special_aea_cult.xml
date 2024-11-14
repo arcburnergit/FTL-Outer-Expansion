@@ -531,7 +531,7 @@
 	<autoReward level="MED">standard</autoReward>
 </event>
 <textList name="TEXT_DESTROYED_AEA_CULT">
-	<text>The AEA_CULT captain salutes to his crew and accepts his fate. "At least I die a proud industrialist and democrat, and not a butcher for a corrupt bureaucracy! GLORY TO THE CONFEDERACY!"</text>
+	<text>The vampweed captain salutes to his crew and accepts his fate. "At least I die a proud industrialist and democrat, and not a butcher for a corrupt bureaucracy! GLORY TO THE CONFEDERACY!"</text>
 	<text>Without any words, the Confederate vessel explodes. The possibly expensive factory cargo is jettisonned far out into the abyss out of reach, but at least you can scrap the debris.</text>
 	<text>"Noooo! I never even... got pollen on my pistil... Screw you, Renegade!"</text>
 	<text>With the death of this vessel, the workforce of the mighty Confederate economy is now a couple workers shorter.</text>
@@ -543,7 +543,7 @@
 </event>
 <textList name="TEXT_DEAD_CREW_AEA_CULT">
 	<text>"They... were right... the Coalition was the only thing that could save us... and now it's too late..."</text>
-	<text>The halls of the once lively AEA_CULT vessel are now as silent as the living members of their Floral brethren. Perhaps there's something poetic to this, but you're here for scrap and not deeper meanings.</text>
+	<text>The halls of the once lively vampweed vessel are now as silent as the living members of their Floral brethren. Perhaps there's something poetic to this, but you're here for scrap and not deeper meanings.</text>
 	<text>"I'm not a religious man, that's a greenleaf's thing... but when you're taking your last breath, it's a rather spiritual moment. God... I hope there isn't a hell..."</text>
 	<text>As you board the AEA_CULT vessel to scrap it, you find various propaganda and paraphernalia relating to the Coalition and the Confederacy. These guys were apparently radicals and nationalists, but in a court of law, you aren't sure that would hold as a defense on its own.</text>
 </textList>
@@ -561,9 +561,9 @@
 </event>
 <textList name="TEXT_SURRENDER_AEA_CULT">
 	<text>"Okay, okay! I've been hitting the liquor a bit hard and it made me act stupid. Maybe I have a problem. Look, if you spare me, I'll give you whatever I've got AND I promise I'll get help, okay? Deal?"</text>
-	<text>Out of breath, the AEA_CULT captain's petals are a bit singed at the tips. "If the Federation... truly represents peace as it claims... then I hope you will find it in you to spare me... despite my mistakes here today."</text>
+	<text>Out of breath, the vampweed captain's petals are a bit singed at the tips. "If the Federation... truly represents peace as it claims... then I hope you will find it in you to spare me... despite my mistakes here today."</text>
 	<text>"You can't kill me, I'm a valued member of the industrial work force! If I'm not there screwing the cap onto every Kardoche fertilizer bottle, then who else will?!"</text>
-	<text>The AEA_CULT nods to you. "I... apologize for my rash behavior. I have made an ill decision in fighting you. This is the kind of behavior that caused the old war. I hope you have it in your heart to forgive me."</text>
+	<text>The vampweed nods to you. "I... apologize for my rash behavior. I have made an ill decision in fighting you. This is the kind of behavior that caused the old war. I hope you have it in your heart to forgive me."</text>
 	<text>The Confederate captain falls to his knees, begging you for mercy. He apologizes on behalf of his entire species for their past mistakes and offers you all of this month's wages at his factory job in return for sparing him.</text>
 </textList>
 
@@ -594,9 +594,80 @@
 	<destroyed load="DESTROYED_AEA_CULT" />
 	<deadCrew load="DEAD_CREW_AEA_CULT" />
 </ship>
-<ship name="SHIP_AEA_CULT_STATION" auto_blueprint="MU_AEA_CULT_STATION">
+<ship name="SHIP_AEA_CULT_STATION" auto_blueprint="AEA_CULT_STATION">
 	<destroyed load="DESTROYED_AEA_CULT" />
 	<deadCrew load="DEAD_CREW_AEA_CULT" />
 </ship>
 
+<ship name="SHIP_AEA_CULT_FACTORY" auto_blueprint="LIST_SHIPS_AEA_CULT_FIGHT">
+	<destroyed>
+		<text>You've destroyed the Cultist vessel and gain access to the factory, you quickly loot it before moving on.</text>
+		<autoReward level="HIGH">standard</autoReward>
+	</destroyed>
+	<deadCrew>
+		<text>You've cleared out the cultist and gain access to the factory, you quickly loot it before moving on.</text>
+		<autoReward level="HIGH">standard_no_item</autoReward>
+		<weapon name="RANDOM"/>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_CULT_WHALE" auto_blueprint="AEA_CULT_WHALE">
+	<destroyed>
+		<text>You've killed the whale.
+
+You monster!</text>
+		<autoReward level="HIGH">standard</autoReward>
+	</destroyed>
+</ship>
+
+<ship name="SHIP_AEA_CULT_ELITE_FIGHT" auto_blueprint="LIST_SHIPS_VAMPWEED_ELITE_FIGHT">
+	<destroyed load="DEFEAT_VAMPWEED_ELITE" />
+	<deadCrew load="DEFEAT_VAMPWEED_ELITE" />
+	<crew>
+		<crewMember type="aea_cult_priest_bor" prop="0.25" />
+		<crewMember type="aea_cult_priest_sup" prop="0.25" />
+		<crewMember type="aea_cult_priest_off" prop="0.25" />
+		<crewMember type="orchid_cultivator" prop="0.25" />
+	</crew>
+</ship>
+
+<event name="DEFEAT_VAMPWEED_ELITE">
+    <text>You've managed to take down an elite cultist ship, and now the remains are yours to scrap.</text>
+    <autoReward level="HIGH">standard_no_item</autoReward>
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event>
+            <text>It seems the cargo of the Elite Cultist ship survived the fight. Inside is a functional weapon, which you bring back on board.</text>
+            <weapon name="GIFTLIST_SPORE_ELITE" />
+        </event>
+    </choice>
+</event>
+
+<ship name="SHIP_AEA_CULT_WHALE_HUNTER" auto_blueprint="LIST_SHIPS_CLAN_LARGE">
+	<destroyed>
+		<text>You expected the Clansmen to surrender at least once, but they never did. Instead, your final blow rocks the ship, and you watch as it explodes...</text>
+		<autoReward level="MED">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="AEA_CULT_WHALE_SAVE"/>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>You've successfully neutralised the Clan vessel, allowing you to board it to claim your spoils.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="AEA_CULT_WHALE_SAVE"/>
+		</choice>
+	</deadCrew>
+	<crew>
+		<crewMember type="slug_clansman" prop="0.7" />
+		<crewMember type="slug_ranger" prop="0.3" />
+	</crew>
+</ship>
+
+<ship name="SHIP_AEA_CULT_FLOWER_TRUE" auto_blueprint="AEA_CULT_BOSS_FLOWER" />
+<ship name="SHIP_AEA_CULT_FLOWER_FAKE" auto_blueprint="AEA_CULT_BOSS_FLOWER_FAKE">
+	<destroyed load="AEA_CULT_CON_FLOWER_DEAD"/>
+</ship>
 </FTL>

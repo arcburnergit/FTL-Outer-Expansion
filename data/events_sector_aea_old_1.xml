@@ -274,7 +274,7 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 			<weapon name="GIFTLIST_WEAPONS_AEA_OLD" />
 			<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_HAMMER</unlockCustomShip>
 			<choice>
-				<text>Use the coordinates immediately</text>
+				<text>Use the coordinates immediately [WARNING: Do not use if your crew an onboard the baron's ship]</text>
 				<event>
 					<secretSectorWarp>SECRET_AEA_OLD_2</secretSectorWarp>
 					<secretSector />

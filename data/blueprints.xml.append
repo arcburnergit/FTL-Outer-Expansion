@@ -17,6 +17,14 @@
 	<stackable>false</stackable>
 	<bp>0</bp>
 </augBlueprint>
+<augBlueprint name="SHIP_AEA_WHALE">
+	<title>Whale Cruiser</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
 <augBlueprint name="SHIP_AEA_NECRO">
 	<title>Heretic Cruiser</title>
 	<desc>YOU SHOULD NEVER SEE THIS</desc>
@@ -3962,6 +3970,86 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<crewCount amount="1" class="aea_bird_avali" />
 	<crewCount amount="1" class="aea_bird_avali" />
 	<aug name="COMBAT_CLOAKING_JAMMER" />
+	<shieldImage>mup_standard2</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_BIRD_TRAN" layout="aeap_bird_tran_1" img="aeap_bird_tran_1">
+	<class>Albatross Cruiser</class>
+	<name>The Nameless One</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_TRAN_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="18" start="false" img="room_battery_2" />
+		<cloaking power="1" room="11" start="true" img="room_cloaking_2" />
+		<clonebay power="1" room="3" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="4" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="12" start="true" img="room_drones" />
+		<engines power="2" room="8" start="true" img="room_engines_aea_1">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="13" start="false" img="room_hacking_2" />
+		<medbay power="1" room="3" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="14" start="false" img="room_mind_5" />
+		<oxygen power="1" room="15" start="true" img="room_oxygen_16" />
+		<pilot power="1" room="0" start="true" img="room_pilot_2">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="5" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="2" start="true" img="room_shields_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="19" start="false" />
+		<weapons max="8" power="1" room="1" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="2" count="2" >
+		<weapon name="ION_1" />
+	</weaponList>
+	<droneList drones="2" count="4">
+		<drone name="AEA_COMBAT_BIRD_BIO_2" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="9" />
+	<crewCount amount="1" class="aea_bird_avali" />
+	<crewCount amount="1" class="aea_bird_illuminant" />
+	<crewCount amount="1" class="aea_bird_illuminant" />
+	<aug name="AEA_BARRIER_RELAY" />
+	<shieldImage>mup_standard1</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
 </shipBlueprint>
 </FTL>
 
@@ -4151,7 +4239,7 @@ This drone fires 4 shots.
 	<power>1</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
-	<speed>35</speed>
+	<speed>40</speed>
 	<cost>60</cost>
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_bio_1</droneImage>
@@ -4169,7 +4257,7 @@ This drone fires 4 shots.
 	<power>2</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
-	<speed>55</speed>
+	<speed>60</speed>
 	<cost>60</cost>
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_bio_2</droneImage>
@@ -5271,6 +5359,44 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<weaponArt>bomblauncher_small</weaponArt>
 		<iconImage>bomb</iconImage>
 	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_03">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Bio Bolt]</title>
+		<short>[Bio Bolt]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<damage>0</damage>
+		<persDamage>3</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>0.05</amount>
+			<count>3</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>18</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_pur</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_3</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
 	<weaponBlueprint name="AEA_LASER_SPELL_03">
 		<type>BOMB</type>
 		<title>Bomb Launcher</title>
@@ -5367,7 +5493,10 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<bp>4</bp>
 		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
-		<explosion>aea_invis_bomb</explosion>
+		<explosion>explosion_big1_heal</explosion>
+		<hitShipSounds>
+			<sound>healBomb</sound>
+		</hitShipSounds>
 		<weaponArt>bomblauncher_small</weaponArt>
 		<iconImage>bomb</iconImage>
 	</weaponBlueprint>
@@ -5387,7 +5516,10 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<bp>4</bp>
 		<rarity>0</rarity>
 		<image>aea_invis_bomb</image>
-		<explosion>aea_invis_bomb</explosion>
+		<explosion>explosion_big1_heal</explosion>
+		<hitShipSounds>
+			<sound>healBomb</sound>
+		</hitShipSounds>
 		<weaponArt>bomblauncher_small</weaponArt>
 		<iconImage>bomb</iconImage>
 	</weaponBlueprint>
@@ -6092,7 +6224,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Bolt]</title>
 		<short>[Bolt]</short>
-		<desc>Cast a spell that pierces all normal shields at a target room dealing 1 damage.
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
 	Cast Delay: 8 seconds
 	Charge Time: 20 seconds
 	Uses per combat: 2
@@ -6109,6 +6241,45 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<image>beam_contact</image>
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_04</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_04">
+		<type>BOMB</type>
+		<flavorType>Spore Launcher</flavorType>
+		<title>Spellspore [Bolt]</title>
+		<short>[Bolt]</short>
+		<tip>tip_laser</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<damage>0</damage>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>0.05</amount>
+			<count>2</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>18</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_4</weaponArt>
+		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_05">
 		<type>BEAM</type>
@@ -6133,6 +6304,45 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_05</iconReplace>
 	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_05">
+		<type>BOMB</type>
+		<flavorType>Spore Launcher</flavorType>
+		<title>Spellspore [Bolt Burst]</title>
+		<short>[Bolt Burst]</short>
+		<tip>tip_laser</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<damage>0</damage>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>0.05</amount>
+			<count>2</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>18</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_5</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_06">
 		<type>BEAM</type>
 		<flavorType>Spell</flavorType>
@@ -6155,6 +6365,45 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<image>beam_contact</image>
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_06</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_06">
+		<type>BOMB</type>
+		<flavorType>Spore Launcher</flavorType>
+		<title>Spellspore [Hull Bolt]</title>
+		<short>[Hull Bolt]</short>
+		<tip>tip_laser</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<damage>0</damage>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>0.05</amount>
+			<count>3</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>18</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_invis_bomb</image>
+		<explosion>aea_invis_bomb</explosion>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_4</weaponArt>
+		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_07">
 		<type>BEAM</type>
@@ -6363,492 +6612,586 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 </FTL>
 
 <FTL>
-	<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BUD" layout="aeap_cult_bud_1" img="aeap_cult_bud_1">
-		<class>Bud Cruiser</class>
-		<name>The Petals</name>
-		<desc>Although the ship itself is nothing special, the crew are able to draw on the power of their god to destroy their enemies.</desc>
-		<unlock id="ship_PLAYER_SHIP_AEA_CULT_BUD_unlock" />
-		<systemList>
-			<battery max="2" power="1" room="14" start="false" img="room_battery_3" />
-			<cloaking power="1" room="12" start="false" img="room_cloaking_2" />
-			<clonebay power="1" room="7" start="false">
-				<slot>
-					<number>2</number>
-				</slot>
-			</clonebay>
-			<doors power="1" room="4" start="true" img="room_doors_9">
-				<slot>
-					<direction>right</direction>
-					<number>1</number>
-				</slot>
-			</doors>
-			<drones max="8" power="2" room="1" start="false" img="room_drones_7" />
-			<engines power="2" room="11" start="true" img="room_engines_4">
-				<slot>
-					<direction>down</direction>
-					<number>2</number>
-				</slot>
-			</engines>
-			<hacking power="1" room="18" start="false" img="room_hacking_2" />
-			<medbay power="2" room="7" start="true" img="room_medbay_7">
-				<slot>
-					<number>2</number>
-				</slot>
-			</medbay>
-			<mind power="1" room="17" start="false" img="room_mind_5" />
-			<oxygen power="1" room="13" start="true" img="room_oxygen_20" />
-			<pilot power="1" room="0" start="true" img="room_pilot">
-				<slot>
-					<direction>right</direction>
-					<number>0</number>
-				</slot>
-			</pilot>
-			<sensors power="2" room="5" start="true" img="room_sensors_3">
-				<slot>
-					<direction>right</direction>
-					<number>1</number>
-				</slot>
-			</sensors>
-			<shields max="8" power="3" room="2" start="true" img="room_shields_13">
-				<slot>
-					<direction>down</direction>
-					<number>3</number>
-				</slot>
-			</shields>
-			<teleporter power="1" room="10" start="false" />
-			<temporal power="1" room="9" start="false" />
-			<weapons max="8" power="1" room="8" start="true" img="room_weapons_4">
-				<slot>
-					<direction>up</direction>
-					<number>0</number>
-				</slot>
-			</weapons>
-		</systemList>
-		<weaponSlots>2</weaponSlots>
-		<droneSlots>4</droneSlots>
-		<weaponList missiles="2" count="2">
-			<weapon name="LASER_BURST_2" />
-			<weapon name="AEA_SPELL_LIST_COMMON" />
-		</weaponList>
-		<droneList drones="2" count="4" />
-		<health amount="30" />
-		<maxPower amount="7" />
-		<crewCount amount="1" class="aea_cult_wizard" />
-		<crewCount amount="1" class="aea_cult_wizard_s04" />
-		<crewCount amount="1" class="aea_cult_wizard_s05" />
-		<aug name="EX_LAB_ORCHID_AEA_COMMUNION" />
-		<shieldImage>mup_standard2</shieldImage>
-		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
-	</shipBlueprint>
+<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BUD" layout="aeap_cult_bud_1" img="aeap_cult_bud_1">
+	<class>Bud Cruiser</class>
+	<name>The Petals</name>
+	<desc>Although the ship itself is nothing special, the crew are able to draw on the power of their god to destroy their enemies.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_CULT_BUD_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="14" start="false" img="room_battery_3" />
+		<cloaking power="1" room="12" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="7" start="false">
+			<slot>
+				<number>2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="4" start="true" img="room_doors_9">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="1" start="false" img="room_drones_7" />
+		<engines power="2" room="11" start="true" img="room_engines_4">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="18" start="false" img="room_hacking_2" />
+		<medbay power="2" room="7" start="true" img="room_medbay_7">
+			<slot>
+				<number>2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="17" start="false" img="room_mind_5" />
+		<oxygen power="1" room="13" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="2" room="5" start="true" img="room_sensors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="3" room="2" start="true" img="room_shields_13">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="10" start="false" />
+		<temporal power="1" room="9" start="false" />
+		<weapons max="8" power="1" room="8" start="true" img="room_weapons_4">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="2" count="2">
+		<weapon name="LASER_BURST_2" />
+		<weapon name="AEA_SPELL_LIST_COMMON" />
+	</weaponList>
+	<droneList drones="2" count="4" />
+	<health amount="30" />
+	<maxPower amount="7" />
+	<crewCount amount="1" class="aea_cult_wizard" />
+	<crewCount amount="1" class="aea_cult_wizard_s04" />
+	<crewCount amount="1" class="aea_cult_wizard_s05" />
+	<aug name="EX_LAB_ORCHID_AEA_COMMUNION" />
+	<shieldImage>mup_standard2</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
 
-	<augBlueprint name="LAB_ORCHID_AEA_COMMUNION">
-		<title>Ancient Communion</title>
-		<desc>You can purchase spells at empty beacons.</desc>
-		<cost>0</cost>
-		<rarity>0</rarity>
-		<stackable>false</stackable>
-	</augBlueprint>
+<augBlueprint name="LAB_ORCHID_AEA_COMMUNION">
+	<title>Ancient Communion</title>
+	<desc>You can purchase spells at empty beacons.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
+<augBlueprint name="EX_LAB_ORCHID_AEA_COMMUNION">
+	<title>[L] Ancient Communion</title>
+	<desc>You can purchase spells at empty beacons.
 	
-	<augBlueprint name="EX_LAB_ORCHID_AEA_COMMUNION">
-		<title>[L] Ancient Communion</title>
-		<desc>You can purchase spells at empty beacons.
-		
-		[L] - As an external lab upgrade, this augment will provide its normal effect but take up an augment slot. It cannot be converted into an actual lab upgrade, but will not consume your primary slot. Does not stack with itself.</desc>
-		<cost>45</cost>
-		<rarity>0</rarity>
-		<stackable>false</stackable>
-	</augBlueprint>
+	[L] - As an external lab upgrade, this augment will provide its normal effect but take up an augment slot. It cannot be converted into an actual lab upgrade, but will not consume your primary slot. Does not stack with itself.</desc>
+	<cost>45</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
 
-	<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BUD_2" layout="aeap_cult_bud_2" img="aeap_cult_bud_2">
-		<class>Bud Cruiser</class>
-		<name>The Vines</name>
-		<desc>The crew here are especially good at dealing with enemy crew by kidnapping them onto their own ship.</desc>
-		<unlock id="ship_PLAYER_SHIP_AEA_CULT_BUD_2_unlock" />
-		<systemList>
-			<battery max="2" power="1" room="10" start="false" img="room_battery_3" />
-			<cloaking power="1" room="4" start="false" img="room_cloaking_2" />
-			<clonebay power="1" room="14" start="true">
-				<slot>
-					<number>2</number>
-				</slot>
-			</clonebay>
-			<doors power="1" room="15" start="true" img="room_doors_10">
-				<slot>
-					<direction>up</direction>
-					<number>1</number>
-				</slot>
-			</doors>
-			<drones max="8" power="2" room="9" start="false" img="room_drones_13" />
-			<engines power="2" room="1" start="true" img="room_engines_2">
-				<slot>
-					<direction>down</direction>
-					<number>2</number>
-				</slot>
-			</engines>
-			<hacking power="1" room="16" start="false" img="room_hacking_13" />
-			<medbay power="1" room="14" start="false" img="room_medbay_7">
-				<slot>
-					<number>2</number>
-				</slot>
-			</medbay>
-			<mind power="1" room="17" start="false" img="room_mind_9" />
-			<oxygen power="1" room="11" start="true" img="room_oxygen_20" />
-			<pilot power="1" room="0" start="true" img="room_pilot">
-				<slot>
-					<direction>right</direction>
-					<number>0</number>
-				</slot>
-			</pilot>
-			<sensors power="2" room="6" start="true" img="room_sensors_8">
-				<slot>
-					<direction>right</direction>
-					<number>1</number>
-				</slot>
-			</sensors>
-			<shields max="8" power="2" room="7" start="true" img="room_shields_2">
-				<slot>
-					<direction>down</direction>
-					<number>3</number>
-				</slot>
-			</shields>
-			<teleporter power="1" room="5" start="false" />
-			<!--temporal power="1" room="11" start="false" img="room_temporal_4" /-->
-			<weapons max="8" power="2" room="8" start="true" img="room_weapons_3">
-				<slot>
-					<direction>up</direction>
-					<number>1</number>
-				</slot>
-			</weapons>
-		</systemList>
-		<weaponSlots>3</weaponSlots>
-		<droneSlots>3</droneSlots>
-		<weaponList missiles="7" count="3">
-			<weapon name="KERNEL_FIRE" />
-		</weaponList>
-		<droneList drones="0" count="3" />
-		<health amount="30" />
-		<maxPower amount="6" />
-		<crewCount amount="1" class="aea_cult_wizard_s08" />
-		<crewCount amount="1" class="aea_cult_wizard_a10" />
-		<crewCount amount="1" class="orchid_cultivator" />
-		<shieldImage>mup_standard2</shieldImage>
-		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
-	</shipBlueprint>
+<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BUD_2" layout="aeap_cult_bud_2" img="aeap_cult_bud_2">
+	<class>Bud Cruiser</class>
+	<name>The Vines</name>
+	<desc>The crew here are especially good at dealing with enemy crew by kidnapping them onto their own ship.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_CULT_BUD_2_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="10" start="false" img="room_battery_3" />
+		<cloaking power="1" room="4" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="14" start="true">
+			<slot>
+				<number>2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="15" start="true" img="room_doors_10">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="9" start="false" img="room_drones_13" />
+		<engines power="2" room="1" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="16" start="false" img="room_hacking_13" />
+		<medbay power="1" room="14" start="false" img="room_medbay_7">
+			<slot>
+				<number>2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="17" start="false" img="room_mind_9" />
+		<oxygen power="1" room="11" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="2" room="6" start="true" img="room_sensors_8">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="7" start="true" img="room_shields_2">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="5" start="false" />
+		<!--temporal power="1" room="11" start="false" img="room_temporal_4" /-->
+		<weapons max="8" power="2" room="8" start="true" img="room_weapons_3">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="7" count="3">
+		<weapon name="KERNEL_FIRE" />
+	</weaponList>
+	<droneList drones="0" count="3" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="aea_cult_wizard_s08" />
+	<crewCount amount="1" class="aea_cult_wizard_a10" />
+	<crewCount amount="1" class="orchid_cultivator" />
+	<shieldImage>mup_standard2</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
 
-	<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BUD_3" layout="aeap_cult_bud_3" img="aeap_cult_bud_3">
-		<class>Bud Cruiser</class>
-		<name>The Roots</name>
-		<desc>With no shield system the crew have learnt other ways of protecting the ship.</desc>
-		<unlock id="ship_PLAYER_SHIP_AEA_CULT_BUD_3_unlock" />
-		<systemList>
-			<battery max="2" power="1" room="16" start="false" img="room_battery_2" />
-			<cloaking power="1" room="3" start="false" img="room_cloaking" />
-			<clonebay power="1" room="2" start="false">
-				<slot>
-					<number>3</number>
-				</slot>
-			</clonebay>
-			<doors power="1" room="5" start="true" img="room_doors_5">
-				<slot>
-					<direction>right</direction>
-					<number>0</number>
-				</slot>
-			</doors>
-			<drones max="8" power="2" room="9" start="false" img="room_drones_2" />
-			<engines power="3" room="13" start="true" img="room_engines_2">
-				<slot>
-					<direction>down</direction>
-					<number>2</number>
-				</slot>
-			</engines>
-			<hacking power="1" room="10" start="false" img="room_hacking_10" />
-			<medbay power="1" room="2" start="true" img="room_medbay_3">
-				<slot>
-					<number>3</number>
-				</slot>
-			</medbay>
-			<mind power="1" room="12" start="true" img="room_mind_6" />
-			<oxygen power="1" room="14" start="true" img="room_oxygen_10" />
-			<pilot power="1" room="0" start="true" img="room_pilot">
-				<slot>
-					<direction>right</direction>
-					<number>0</number>
-				</slot>
-			</pilot>
-			<sensors power="2" room="4" start="true" img="room_sensors_6">
-				<slot>
-					<direction>right</direction>
-					<number>1</number>
-				</slot>
-			</sensors>
-			<shields max="8" power="2" room="11" start="false" img="room_shields_5">
-				<slot>
-					<direction>up</direction>
-					<number>0</number>
-				</slot>
-			</shields>
-			<teleporter power="1" room="17" start="false" />
-			<temporal power="1" room="15" start="false" />
-			<weapons max="8" power="3" room="1" start="true" img="room_weapons_4">
-				<slot>
-					<direction>up</direction>
-					<number>0</number>
-				</slot>
-			</weapons>
-		</systemList>
-		<weaponSlots>4</weaponSlots>
-		<droneSlots>2</droneSlots>
-		<weaponList missiles="5" count="4">
-			<weapon name="KERNEL_1_ELITE" />
-			<weapon name="SHOTGUN_2" />
-		</weaponList>
-		<droneList drones="0" count="2" />
-		<health amount="30" />
-		<maxPower amount="7" />
-		<crewCount amount="1" class="aea_cult_wizard_s12" />
-		<crewCount amount="1" class="aea_cult_wizard_a01" />
-		<crewCount amount="1" class="aea_cult_wizard_a01" />
-		<crewCount amount="1" class="aea_cult_wizard_a02" />
-		<shieldImage>mup_standard2</shieldImage>
-		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
-	</shipBlueprint>
+<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BUD_3" layout="aeap_cult_bud_3" img="aeap_cult_bud_3">
+	<class>Bud Cruiser</class>
+	<name>The Roots</name>
+	<desc>With no shield system the crew have learnt other ways of protecting the ship.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_CULT_BUD_3_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="16" start="false" img="room_battery_2" />
+		<cloaking power="1" room="3" start="false" img="room_cloaking" />
+		<clonebay power="1" room="2" start="false">
+			<slot>
+				<number>3</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="5" start="true" img="room_doors_5">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="9" start="false" img="room_drones_2" />
+		<engines power="3" room="13" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="10" start="false" img="room_hacking_10" />
+		<medbay power="1" room="2" start="true" img="room_medbay_3">
+			<slot>
+				<number>3</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="12" start="true" img="room_mind_6" />
+		<oxygen power="1" room="14" start="true" img="room_oxygen_10" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="2" room="4" start="true" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="11" start="false" img="room_shields_5">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="17" start="false" />
+		<temporal power="1" room="15" start="false" />
+		<weapons max="8" power="3" room="1" start="true" img="room_weapons_4">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="5" count="4">
+		<weapon name="KERNEL_1_ELITE" />
+		<weapon name="SHOTGUN_2" />
+	</weaponList>
+	<droneList drones="0" count="2" />
+	<health amount="30" />
+	<maxPower amount="7" />
+	<crewCount amount="1" class="aea_cult_wizard_s12" />
+	<crewCount amount="1" class="aea_cult_wizard_a01" />
+	<crewCount amount="1" class="aea_cult_wizard_a01" />
+	<crewCount amount="1" class="aea_cult_wizard_a02" />
+	<shieldImage>mup_standard2</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
 
-	<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BLOOM" layout="aeap_cult_bloom_1" img="aeap_cult_bloom_1">
-		<class>Bloom Cruiser</class>
-		<name>The Leaves</name>
-		<desc>This ship directly channels the power of the bud to launch spells at the enemy ship.</desc>
-		<systemList>
-			<artillery max="4" power="1" room="11" start="true" weapon="AEA_LASER_SPELL_ARTILLERY" img="room_artillery" />
-			<battery max="2" power="1" room="21" start="false" img="room_battery" />
-			<cloaking power="1" room="25" start="false" img="room_cloaking_11" />
-			<clonebay power="1" room="24" start="false">
-				<slot>
-					<number>0</number>
-				</slot>
-			</clonebay>
-			<doors power="1" room="22" start="true" img="room_doors">
-				<slot>
-					<direction>up</direction>
-					<number>1</number>
-				</slot>
-			</doors>
-			<drones max="8" power="2" room="3" start="false" img="room_drones_6" />
-			<engines power="2" room="12" start="true" img="room_engines_2">
-				<slot>
-					<direction>down</direction>
-					<number>2</number>
-				</slot>
-			</engines>
-			<hacking power="1" room="2" start="false" img="room_hacking_2" />
-			<medbay power="1" room="24" start="true" img="room_medbay_4">
-				<slot>
-					<number>0</number>
-				</slot>
-			</medbay>
-			<mind power="1" room="29" start="false" img="room_mind_5" />
-			<oxygen power="1" room="1" start="true" img="room_oxygen_2" />
-			<pilot power="1" room="0" start="true" img="room_pilot_5">
-				<slot>
-					<direction>right</direction>
-					<number>1</number>
-				</slot>
-			</pilot>
-			<sensors power="1" room="17" start="true" img="room_sensors_7">
-				<slot>
-					<direction>down</direction>
-					<number>3</number>
-				</slot>
-			</sensors>
-			<shields max="8" power="2" room="13" start="true" img="room_shields_6">
-				<slot>
-					<direction>left</direction>
-					<number>0</number>
-				</slot>
-			</shields>
-			<teleporter power="1" room="28" start="false" />
-			<temporal power="1" room="19" start="false" />
-			<weapons max="8" power="2" room="4" start="false" img="room_weapons_5">
-				<slot>
-					<direction>right</direction>
-					<number>1</number>
-				</slot>
-			</weapons>
-		</systemList>
-		<weaponSlots>4</weaponSlots>
-		<droneSlots>2</droneSlots>
-		<weaponList missiles="4" count="4" />
-		<droneList drones="4" count="2" />
-		<health amount="30" />
-		<maxPower amount="6" />
-		<crewCount amount="1" class="aea_acid_soldier" />
-		<crewCount amount="1" class="aea_cult_wizard_s04" />
-		<crewCount amount="1" class="aea_cult_priest_off" />
-		<crewCount amount="1" class="aea_cult_priest_off" />
-		<shieldImage>mup_giant</shieldImage>
-		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
-	</shipBlueprint>
+<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BLOOM" layout="aeap_cult_bloom_1" img="aeap_cult_bloom_1">
+	<class>Bloom Cruiser</class>
+	<name>The Leaves</name>
+	<desc>This ship directly channels the power of the bud to launch spells at the enemy ship.</desc>
+	<systemList>
+		<artillery max="4" power="1" room="11" start="true" weapon="AEA_LASER_SPELL_ARTILLERY" img="room_artillery" />
+		<battery max="2" power="1" room="21" start="false" img="room_battery" />
+		<cloaking power="1" room="25" start="false" img="room_cloaking_11" />
+		<clonebay power="1" room="24" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="22" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="3" start="false" img="room_drones_6" />
+		<engines power="2" room="12" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="2" start="false" img="room_hacking_2" />
+		<medbay power="1" room="24" start="true" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="29" start="false" img="room_mind_5" />
+		<oxygen power="1" room="1" start="true" img="room_oxygen_2" />
+		<pilot power="1" room="0" start="true" img="room_pilot_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="17" start="true" img="room_sensors_7">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="13" start="true" img="room_shields_6">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="28" start="false" />
+		<temporal power="1" room="19" start="false" />
+		<weapons max="8" power="2" room="4" start="false" img="room_weapons_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="4" count="4" />
+	<droneList drones="4" count="2" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="aea_acid_soldier" />
+	<crewCount amount="1" class="aea_cult_wizard_s04" />
+	<crewCount amount="1" class="aea_cult_priest_off" />
+	<crewCount amount="1" class="aea_cult_priest_off" />
+	<shieldImage>mup_giant</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
 
-	<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BLOOM_2" layout="aeap_cult_bloom_2" img="aeap_cult_bloom_2">
-		<class>Bloom Cruiser</class>
-		<name>The Trunk</name>
-		<desc>This ship protects itself with capable crew and a prototype generator that creates barriers on rooms each time you fire a weapon.</desc>
-		<systemList>
-			<battery max="2" power="1" room="17" start="false" img="room_battery_9" />
-			<cloaking power="1" room="28" start="false" img="room_cloaking_2" />
-			<clonebay power="1" room="27" start="false">
-				<slot>
-					<number>1</number>
-				</slot>
-			</clonebay>
-			<doors power="1" room="30" start="true" img="room_doors_10">
-				<slot>
-					<direction>up</direction>
-					<number>1</number>
-				</slot>
-			</doors>
-			<drones max="8" power="2" room="15" start="false" img="room_drones_14" />
-			<engines power="2" room="1" start="true" img="room_engines_8">
-				<slot>
-					<direction>left</direction>
-					<number>2</number>
-				</slot>
-			</engines>
-			<hacking power="1" room="24" start="false" img="room_hacking_2" />
-			<medbay power="1" room="27" start="true" img="room_medbay">
-				<slot>
-					<number>1</number>
-				</slot>
-			</medbay>
-			<mind power="1" room="16" start="false" img="room_mind_5" />
-			<oxygen power="1" room="14" start="true" img="room_oxygen_15" />
-			<pilot power="1" room="0" start="true" img="room_pilot">
-				<slot>
-					<direction>right</direction>
-					<number>0</number>
-				</slot>
-			</pilot>
-			<sensors power="1" room="29" start="true" img="room_sensors_8">
-				<slot>
-					<direction>right</direction>
-					<number>1</number>
-				</slot>
-			</sensors>
-			<shields max="8" power="2" room="5" start="false" img="room_shields">
-				<slot>
-					<direction>left</direction>
-					<number>0</number>
-				</slot>
-			</shields>
-			<teleporter power="1" room="31" start="false" />
-			<temporal power="1" room="3" start="false" />
-			<weapons max="8" power="3" room="2" start="true" img="room_weapons">
-				<slot>
-					<direction>up</direction>
-					<number>1</number>
-				</slot>
-			</weapons>
-		</systemList>
-		<weaponSlots>4</weaponSlots>
-		<droneSlots>2</droneSlots>
-		<weaponList missiles="6" count="4">
-			<weapon name="SPORE_1" />
-			<weapon name="LASER_BURST_3" />
-		</weaponList>
-		<droneList drones="1" count="2" />
-		<health amount="30" />
-		<maxPower amount="6" />
-		<crewCount amount="1" class="aea_cult_wizard_s12" />
-		<crewCount amount="1" class="aea_cult_wizard_s12" />
-		<crewCount amount="1" class="aea_cult_priest_sup" />
-		<crewCount amount="1" class="aea_cult_priest_sup" />
-		<aug name="AEA_BARRIER_RELAY" />
-		<shieldImage>mup_giant</shieldImage>
-		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
-	</shipBlueprint>
+<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BLOOM_2" layout="aeap_cult_bloom_2" img="aeap_cult_bloom_2">
+	<class>Bloom Cruiser</class>
+	<name>The Trunk</name>
+	<desc>This ship protects itself with capable crew and a prototype generator that creates barriers on rooms each time you fire a weapon.</desc>
+	<systemList>
+		<battery max="2" power="1" room="17" start="false" img="room_battery_9" />
+		<cloaking power="1" room="28" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="27" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="30" start="true" img="room_doors_10">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="15" start="false" img="room_drones_14" />
+		<engines power="2" room="1" start="true" img="room_engines_8">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="24" start="false" img="room_hacking_2" />
+		<medbay power="1" room="27" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="16" start="false" img="room_mind_5" />
+		<oxygen power="1" room="14" start="true" img="room_oxygen_15" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="29" start="true" img="room_sensors_8">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="5" start="false" img="room_shields">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="31" start="false" />
+		<temporal power="1" room="3" start="false" />
+		<weapons max="8" power="3" room="2" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="6" count="4">
+		<weapon name="SPORE_1" />
+		<weapon name="LASER_BURST_3" />
+	</weaponList>
+	<droneList drones="1" count="2" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="aea_cult_wizard_s12" />
+	<crewCount amount="1" class="aea_cult_wizard_s12" />
+	<crewCount amount="1" class="aea_cult_priest_sup" />
+	<crewCount amount="1" class="aea_cult_priest_sup" />
+	<aug name="AEA_BARRIER_RELAY" />
+	<shieldImage>mup_giant</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
 
-	<augBlueprint name="AEA_BARRIER_RELAY"> <!-- Inspired by void war-->
-		<title>Barrier Generator</title>
-		<desc>Generates a barrier each time you fire a weapon, can generate up to a maximum of 6 active barriers.</desc>
-		<cost>20</cost>
-		<rarity>0</rarity>
-		<stackable>false</stackable>
-	</augBlueprint>
+<augBlueprint name="AEA_BARRIER_RELAY"> <!-- Inspired by void war-->
+	<title>Barrier Generator</title>
+	<desc>Generates a barrier each time you fire a weapon, can generate up to a maximum of 6 active barriers.</desc>
+	<cost>20</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="AEA_CULT_MAGIC_BOOST">
+	<title>MAGIC JUMP</title>
+	<desc>   </desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
 
-	<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BLOOM_3" layout="aeap_cult_bloom_3" img="aeap_cult_bloom_3">
-		<class>Bloom Cruiser</class>
-		<name>The Seeds</name>
-		<desc>A powerful boarding ship with dangerous crew.</desc>
-		<systemList>
-			<battery max="2" power="1" room="6" start="false" img="room_battery_6" />
-			<cloaking power="1" room="20" start="false" img="room_cloaking_3" />
-			<clonebay power="1" room="2" start="false">
-				<slot>
-					<number>1</number>
-				</slot>
-			</clonebay>
-			<doors power="1" room="24" start="false" img="room_doors">
-				<slot>
-					<direction>up</direction>
-					<number>0</number>
-				</slot>
-			</doors>
-			<drones max="8" power="2" room="16" start="false" img="room_drones" />
-			<engines power="1" room="9" start="true" img="room_engines_4">
-				<slot>
-					<direction>down</direction>
-					<number>2</number>
-				</slot>
-			</engines>
-			<hacking power="1" room="13" start="false" img="room_hacking_2" />
-			<medbay power="1" room="2" start="true" img="room_medbay_8">
-				<slot>
-					<number>-2</number>
-				</slot>
-			</medbay>
-			<mind power="1" room="21" start="false" img="room_mind_5" />
-			<oxygen power="1" room="19" start="true" img="room_oxygen_20" />
-			<pilot power="1" room="0" start="true" img="room_pilot">
-				<slot>
-					<direction>right</direction>
-					<number>0</number>
-				</slot>
-			</pilot>
-			<sensors power="1" room="25" start="true" img="room_sensors">
-				<slot>
-					<direction>up</direction>
-					<number>1</number>
-				</slot>
-			</sensors>
-			<shields max="8" power="2" room="8" start="true" img="room_shields_7">
-				<slot>
-					<direction>left</direction>
-					<number>0</number>
-				</slot>
-			</shields>
-			<teleporter power="1" room="1" start="true" />
-			<temporal power="1" room="7" start="false" />
-			<weapons max="8" power="2" room="17" start="true" img="room_weapons">
-				<slot>
-					<direction>up</direction>
-					<number>1</number>
-				</slot>
-			</weapons>
-		</systemList>
-		<weaponSlots>2</weaponSlots>
-		<droneSlots>4</droneSlots>
-		<weaponList missiles="8" count="2">
-			<weapon name="SPORE_STUN_ELITE" />
-		</weaponList>
-		<droneList drones="1" count="4" />
-		<health amount="30" />
-		<maxPower amount="6" />
-		<crewCount amount="1" class="aea_acid_soldier" />
-		<crewCount amount="1" class="orchid_cultivator" />
-		<crewCount amount="1" class="aea_cult_priest_bor" />
-		<crewCount amount="1" class="aea_cult_priest_bor" />
-		<shieldImage>mup_giant</shieldImage>
-		<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
-	</shipBlueprint>
+<shipBlueprint name="PLAYER_SHIP_AEA_CULT_BLOOM_3" layout="aeap_cult_bloom_3" img="aeap_cult_bloom_3">
+	<class>Bloom Cruiser</class>
+	<name>The Seeds</name>
+	<desc>A powerful boarding ship with dangerous crew.</desc>
+	<systemList>
+		<battery max="2" power="1" room="6" start="false" img="room_battery_6" />
+		<cloaking power="1" room="20" start="false" img="room_cloaking_3" />
+		<clonebay power="1" room="2" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="24" start="false" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="16" start="false" img="room_drones" />
+		<engines power="1" room="9" start="true" img="room_engines_4">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="13" start="false" img="room_hacking_2" />
+		<medbay power="1" room="2" start="true" img="room_medbay_8">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="21" start="false" img="room_mind_5" />
+		<oxygen power="1" room="19" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="25" start="true" img="room_sensors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="8" start="true" img="room_shields_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="1" start="true" />
+		<temporal power="1" room="7" start="false" />
+		<weapons max="8" power="2" room="17" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="8" count="2">
+		<weapon name="SPORE_STUN_ELITE" />
+	</weaponList>
+	<droneList drones="1" count="4" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="aea_acid_soldier" />
+	<crewCount amount="1" class="orchid_cultivator" />
+	<crewCount amount="1" class="aea_cult_priest_bor" />
+	<crewCount amount="1" class="aea_cult_priest_bor" />
+	<shieldImage>mup_giant</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_CULT_WHALE" layout="aeap_cult_whale" img="aeap_cult_whale">
+	<class>Space Whale</class>
+	<name>OOOoooooOOOoooOoo</name>
+	<desc>A massive space whale which has aligned itself with the federation.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_CULT_WHALE_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="11" start="false" img="room_battery_7" />
+		<cloaking power="1" room="10" start="false" img="room_cloaking_6" />
+		<clonebay power="1" room="17" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="2" room="8" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="1" room="9" start="false" img="room_drones_15" />
+		<engines power="2" room="12" start="true" img="room_engines_10">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="15" start="false" img="room_hacking_12" />
+		<medbay power="1" room="17" start="false" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="5" start="true" img="room_mind" />
+		<oxygen power="1" room="6" start="false" img="room_oxygen_7" />
+		<pilot power="1" room="0" start="true" img="room_pilot_7">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="7" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="1" start="true" img="room_shields_6">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="16" start="false" />
+		<weapons max="8" power="2" room="2" start="true" img="room_weapons_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="3" count="4">
+		<weapon name="SHOTGUN_1" />
+		<weapon name="SHOTGUN_1" />
+	</weaponList>
+	<droneList drones="2" count="2" />
+	<health amount="30" />
+	<maxPower amount="7" />
+	<aug name="AEA_AUG_WHALE" />
+	<shieldImage>mup_long2</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
+
+<augBlueprint name="AEA_AUG_WHALE">
+	<title>Space Whale</title>
+	<desc>You are a space whale.
+  - Boarders take damage over time on your ship at a rate of 3hp/s.
+  - Your oxygen system cannot fill your "ship" up with oxygen (it would make you explode), however the oxygen system at level 1 will provide suffocation immunity to ALL crew onboard and each level in oxygen will also increase the damage over time on enemy crew by 1 hp/s.
+  - Whenever enemy crew die on your ship you heal 1 hull damage.
+  - Each breach onboard the ship lowers weapon charge speed and shield recharge speed by 5%.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
 </FTL>
 
 <FTL>
@@ -6861,7 +7204,7 @@ Possible Spells: [Protect], [Barrier], and [Ally].
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>84</cost>
 	<bp>2</bp>
-	<rarity>5</rarity>
+	<rarity>0</rarity>
 	<powerList>
 		<power>Active Ability: Casts a random support spell at the target room</power>
 		<power>Ranged attack speed is quadrupled, but only deals 0.5x ranged damage</power>
@@ -6914,4 +7257,516 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		</layer>
 	</colorList>
 </crewBlueprint>
+
+<crewBlueprint name="aea_seed">
+	<desc>A seed given to you by the powerful flower worshipped by the vampweed cultists.</desc>
+	<title>Seed</title>
+	<short>Seed</short>
+	<cost>55</cost>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Can only be moved if another crew is in the room, but slows allied crew in the room to the same speed.</power>
+		<power>A fragile object, cannot be cloned or healed.</power>
+	</powerList>
+</crewBlueprint>
+</FTL>
+
+<FTL>
+<shipBlueprint name="PLAYER_SHIP_AEA_SLUG_LONG" layout="aeap_slug_long_1" img="aeap_slug_long_1">
+	<class>Slug Long Cruiser</class>
+	<name>The Nameless One</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_LONG_unlock" />
+	<systemList>
+		<artillery power="2" room="14" start="true" weapon="ARTILLERY_FED" img="room_artillery" />
+		<battery power="1" room="4" start="false" img="room_battery_13" />
+		<cloaking power="1" room="3" start="true" img="room_cloaking_2" />
+		<clonebay power="1" room="15" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="16" start="true" img="room_doors_2">
+			<slot>
+				<direction>down</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones power="2" room="7" start="false" img="room_drones_14" />
+		<engines power="1" room="2" start="true" img="room_engines_4">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="10" start="false" img="room_hacking_2" />
+		<medbay power="1" room="15" start="true" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="9" start="false" img="room_mind_5" />
+		<oxygen power="1" room="17" start="true" img="room_oxygen_2" />
+		<pilot power="1" room="0" start="true" img="room_pilot_7">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="8" start="false" img="room_sensors_4">
+			<slot>
+				<direction>left</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" room="6" start="true" img="room_shields">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="11" start="false" />
+		<temporal power="1" room="1" start="false" />
+		<weapons power="2" room="5" start="true" img="room_weapons_6">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="3" count="2">
+		<weapon name="ION_2" />
+		<weapon name="LASER_BURST_2" />
+	</weaponList>
+	<droneList drones="2" count="4" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="slug_ranger" />
+	<crewCount amount="1" class="slug" />
+	<crewCount amount="1" class="slug" />
+	<aug name="SLUG_GEL" />
+	<shieldImage>mup_standard1</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_SLUG_WIDE" layout="aeap_slug_wide_1" img="aeap_slug_wide_1">
+	<class>Slug Wide Cruiser</class>
+	<name>The Unnamed</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_WIDE_unlock" />
+	<systemList>
+		<battery power="1" room="10" start="false" img="room_battery_15" />
+		<cloaking power="1" room="9" start="false" img="room_cloaking_7" />
+		<clonebay power="1" room="17" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="1" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" room="13" start="false" img="room_drones_15" />
+		<engines power="1" room="5" start="true" img="room_engines_8">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="12" start="false" img="room_hacking_3" />
+		<medbay power="1" room="17" start="true" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="16" start="false" img="room_mind_3" />
+		<oxygen power="1" room="11" start="true" img="room_oxygen" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="2" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" room="3" start="true" img="room_shields_3">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="8" start="false" />
+		<temporal power="1" room="14" start="false" img="room_temporal_4" />
+		<weapons power="3" room="4" start="true" img="room_weapons_4">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="2" count="4">
+		<weapon name="ENERGY_1" />
+		<weapon name="BEAM_BIO_CHAIN" />
+	</weaponList>
+	<droneList drones="2" count="2" />
+	<health amount="30" />
+	<maxPower amount="7" />
+	<crewCount amount="1" class="slug" />
+	<crewCount amount="1" class="slug" />
+	<crewCount amount="1" class="rock" />
+	<aug name="SLUG_GEL" />
+	<shieldImage>mup_orb2</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
+</FTL>
+
+<FTL>
+
+<crewBlueprint name="aea_cult_tiny">
+	<title>Tiny Vampweed Cultist</title>
+	<short>Tiny Cultist</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>68</cost>
+	<bp>2</bp>
+	<rarity>4</rarity>
+	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2.0x cast speed, cannot run out of spell charges</power>
+		<power>Active Ability: Casts a spell in the current room which does nothing</power>
+		<power>Ranged attack speed is tripled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+<!--
+<crewBlueprint name="aea_cult_wizard_a01">
+	<title>Vampweed Cultist [Protect]</title>
+	<short>Cultist [Protect]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (5 charges): Casts a spell which protects the current room from hull and system damage for 10 seconds</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_a02">
+	<title>Vampweed Cultist [Beacon]</title>
+	<short>Cultist [Beacon]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Casts a spell which retargets all the enemy projectiles on screen to the current room</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s03">
+	<title>Vampweed Cultist [Bio Bolt]</title>
+	<short>Cultist [Bio Bolt]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (3 charges): Cast a spell at a target room dealing 45 personal damage</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s04">
+	<title>Vampweed Cultist [Bolt]</title>
+	<short>Cultist [Bolt]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (2 charges): Cast a spell at a target room dealing 1 damage</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s05">
+	<title>Vampweed Cultist [Bolt Burst]</title>
+	<short>Cultist [Bolt Burst]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (2 charges): Cast 3 spells at a target room dealing 1 damage each</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s06">
+	<title>Vampweed Cultist [Hull Bolt]</title>
+	<short>Cultist [Hull Bolt]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (2 charges): Cast a spell at a target room doing 3 hull damage but no system or crew damage</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_a07">
+	<title>Vampweed Cultist [Warp]</title>
+	<short>Cultist [Warp]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Cast a spell in the current room that warps all crew in the current room to a random room on the opposite ship</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s08">
+	<title>Vampweed Cultist [Warp Bolt]</title>
+	<short>Cultist [Warp Bolt]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Cast a spell at a target room that warps all crew in the room to a random room on the opposite ship</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s09">
+	<title>Vampweed Cultist [Heal Bolt]</title>
+	<short>Cultist [Heal Bolt]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (3 charges): Cast a spell at the lowest health (%) friendly crew that heals all friendly crew in the room for 75 hp</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_a10">
+	<title>Vampweed Cultist [Heal Aura]</title>
+	<short>Cultist [Heal Aura]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Cast a spell in the current room that heals all friendly crew for 45 hp</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_a11">
+	<title>Vampweed Cultist [Drone]</title>
+	<short>Cultist [Drone]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (1 charge): Spawn a conservative combat drone around the enemy ship</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s12">
+	<title>Vampweed Cultist [Barrier]</title>
+	<short>Cultist [Barrier]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (3 charge): Spawn a barrier capable of stopping 2 projectiles</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s13">
+	<title>Vampweed Cultist [Lockdown]</title>
+	<short>Cultist [Lockdown]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (3 charge): Cast a spell at the target room which applies a lockdown</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s14">
+	<title>Vampweed Cultist [Ally]</title>
+	<short>Cultist [Ally]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (2 charge): Cast a spell at the target room which spawns a random ally</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer> 
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_cult_wizard_s15">
+	<title>Vampweed Cultist [Mind Bolt]</title>
+	<short>Cultist [Mind Bolt]</short>
+	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+
+Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability (3 charge): Cast a spell at the target room which mind controls a random enemy</power>
+		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+	</powerList>
+	<colorList>
+		 
+		<layer>
+			<color r="255" g="255" b="255" a="1"/>
+		</layer>
+	</colorList>
+</crewBlueprint>-->
 </FTL>

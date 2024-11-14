@@ -50,4 +50,8 @@
 <imageList name="BACK_EVENT_AEA_OLD_2_END">
 	<img w="1280" h="720">stars_old/bg_old_2_end.png</img>
 </imageList>
+
+<imageList name="BACK_EVENT_AEA_CONSPIRACY">
+	<img w="1280" h="720">stars_cult/aea_factory_base.png</img>
+</imageList>
 </FTL>

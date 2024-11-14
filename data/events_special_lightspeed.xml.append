@@ -16,6 +16,14 @@
 		<text>Proceed to the Blasphemous Core.</text>
 		<event load="AEA_NECRO_UNIQUE_WARP" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_CULT" blue="false">
+		<text>Proceed to the Cultist Sector.</text>
+		<event load="AEA_CULT_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_CULT_UNIQUE" blue="false">
+		<text>Proceed to the Home of the Oneflower.</text>
+		<event load="AEA_CULT_UNIQUE_WARP" />
+	</mod-append:choice>
 	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_2" blue="false">
 		<text>Proceed to the Lylmik Core.</text>
 		<event load="AEA_OLD_2_WARP" />
@@ -38,6 +46,14 @@
 	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_NECRO_UNIQUE" blue="false">
 		<text>Proceed to the Blasphemous Core.</text>
 		<event load="AEA_NECRO_UNIQUE_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_CULT" blue="false">
+		<text>Proceed to the Cultist Sector.</text>
+		<event load="AEA_CULT_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_CULT_UNIQUE" blue="false">
+		<text>Proceed to the Home of the Oneflower.</text>
+		<event load="AEA_CULT_UNIQUE_WARP" />
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_2" blue="false">
 		<text>Proceed to the Lylmik Core.</text>
@@ -67,6 +83,10 @@
 	<mod-append:choice hidden="true">
 		<text>Go to the Blasphemous Core.</text> 
 		<event load="LIGHTSPEED_SECTOR_WARP_AEA_NECRO_HAT" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true">
+		<text>Go to the Home of the Oneflower.</text> 
+		<event load="LIGHTSPEED_SECTOR_WARP_AEA_CULT_HAT" />
 	</mod-append:choice>
 </mod:findName>
 
@@ -260,7 +280,6 @@ The Engi Heretics are outcasts even from the separatists, broken free from the h
 		<text>Continue with the jump.</text>
 		<event>
 			<text>You prepare to jump to the new co-ordinates, and change your flight path accordingly.</text>
-			<variable name="coords_aea_bill" op="set" val="0" />
 			<variable name="magical_hat_active" op="set" val="0" />
 			<variable name="loc_sector_count" op="add" val="-1" />
 			<choice hidden="true">
@@ -281,8 +300,88 @@ The Engi Heretics are outcasts even from the separatists, broken free from the h
 	<secretSector>SECTOR_AEA_NECRO_UNIQUE</secretSector>
 </event>
 
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					VAMPWEED
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="ENTER_AEA_CULT">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event>
+<event name="AEA_CULT_WARP">
+	<text>Name: Confederacy Cultist Controlled Sector
+Type: Neutral
+Unique: False
+Dominant Faction: Vampweed Cult
+Rebel Threat Level: Medium-Low
 
+While not directly considered part of the Confederacy, the Cult has close ties with it and your actions in their space will still reflect poorly on you.</text>
+	<choice hidden="true">
+		<text>Exit hyperspeed.</text>
+		<event load="START_VAMPWEED" />
+	</choice>
+	<choice hidden="true" req="COORDS" blue="false">
+		<text>Reroute.</text>
+		<event load="REROUTE_MENU" />
+	</choice>
+</event>
 
+<event name="ENTER_AEA_CULT_UNIQUE">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event>
+<event name="AEA_CULT_UNIQUE_WARP">
+	<text id="atlas_aea_cult" />
+    <choice hidden="true">
+        <text>Exit hyperspeed.</text>
+        <event load="START_VAMPHOME" />
+    </choice>
+    <choice hidden="true" req="COORDS" blue="false">
+		<text>Reroute.</text>
+		<event load="REROUTE_MENU" />
+	</choice>
+</event>
+
+<event name="LIGHTSPEED_SECTOR_WARP_AEA_CULT_HAT">
+	<text id="atlas_aea_cult" />
+	<choice hidden="true">
+		<text>Continue with the jump.</text>
+		<event>
+			<text>You prepare to jump to the new co-ordinates, and change your flight path accordingly.</text>
+			<variable name="magical_hat_active" op="set" val="0" />
+			<variable name="loc_sector_count" op="add" val="-1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="JUMP_TO_AEA_CULT_CORE" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind.</text>
+		<event>
+			<loadEvent>ATLAS_MENU_NOEQUIPMENT</loadEvent>
+		</event>
+	</choice>
+</event>
+
+<event name="JUMP_TO_AEA_CULT_CORE">
+	<secretSector>SECTOR_AEA_CULT_UNIQUE</secretSector>
+</event>
 
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

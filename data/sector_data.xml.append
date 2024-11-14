@@ -3,9 +3,14 @@
 
 <mod:findName type="sectorType" name="SECTOR_LIST_NEUTRAL">
     <mod-append:sector>SECTOR_AEA_ACID_NEBULA</mod-append:sector>
+    <mod-append:sector>SECTOR_AEA_CULT</mod-append:sector>
 </mod:findName>
 <mod:findName type="sectorType" name="SECTOR_LIST_HOSTILE">
     <mod-append:sector>SECTOR_AEA_NECRO</mod-append:sector>
+</mod:findName>
+
+<mod:findName type="sectorType" name="SECTOR_LIST_UNIQUE_SAFE">
+    <mod-append:sector>SECTOR_AEA_CULT_UNIQUE</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorType" name="SECTOR_LIST_UNIQUE_DEADLY">
@@ -414,7 +419,190 @@
 </sectorDescription>
 
 
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+VAMP CULT SECTOR
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<sectorDescription name="SECTOR_AEA_CULT" unique="false">
+	<nameList>
+		<name>Confederate Splinter Sector</name>
+		<name>Confederate Splinter Workzone</name>
+		<name>Confederate Splinter Space</name>
+		<name>Confederate Splinter Frontier</name>
+		<name>Confederate Splinter Domain</name>
+		<name>Confederate Splinter Regions</name>
+		<name>Confederate Splinter Precinct</name>
+		<name>Confederate Splinter District</name>
+		<name>Confederate Splinter Dominion</name>
+		<name>Confederate Splinter Quarter</name>
+	</nameList>
+	<trackList>
+		<track>aea_cultist</track>
+		<track>confederate</track>
+		<track>spaceass</track> 
+		<track>milkyway</track>
+	</trackList>
+	<rarityList>
+		<blueprint name="human" rarity="3" />
+		<blueprint name="human_medic" rarity="0" />
+		<blueprint name="human_engineer" rarity="0" />
+		<blueprint name="engi" rarity="0" />
+		<blueprint name="engi_separatist" rarity="0" />
+		<blueprint name="zoltan" rarity="0" />
+		<blueprint name="zoltan_monk" rarity="0" />
+		<blueprint name="zoltan_devotee" rarity="0" />
+		<blueprint name="rock" rarity="4" />
+		<blueprint name="rock_outcast" rarity="0" />
+		<blueprint name="rock_commando" rarity="0" />
+		<blueprint name="mantis" rarity="0" />
+		<blueprint name="mantis_free" rarity="0" />
+		<blueprint name="slug" rarity="0" />
+		<blueprint name="slug_clansman" rarity="0" />
+		<blueprint name="shell" rarity="2" />
+		<blueprint name="shell_scientist" rarity="3" />
+		<blueprint name="shell_mechanic" rarity="0" />
+		<blueprint name="shell_guardian" rarity="0" />
+		<blueprint name="crystal" rarity="0" />
+		<blueprint name="crystal_liberator" rarity="0" />
+		<blueprint name="orchid" rarity="4" />
+		<blueprint name="orchid_caretaker" rarity="5" />
+		<blueprint name="aea_cult_wizard" rarity="1" />
+		<blueprint name="aea_cult_priest_off" rarity="5" />
+		<blueprint name="aea_cult_priest_sup" rarity="5" />
+		<blueprint name="aea_cult_priest_bor" rarity="5" />
+		<blueprint name="orchid_vampweed" rarity="3" />
+		<blueprint name="leech" rarity="0" />
+		<blueprint name="lanius" rarity="0" />
+		<blueprint name="phantom" rarity="0" />
+		<blueprint name="phantom_goul" rarity="0" />
+		<blueprint name="phantom_mare" rarity="0" />
+		<blueprint name="phantom_wraith" rarity="0" />
+		
+		<blueprint name="SPORE_1" rarity="1" />
+		<blueprint name="SPORE_2" rarity="3" />
+		<blueprint name="SPORE_HEAVY" rarity="2" />
+		<blueprint name="SPORE_CHAIN" rarity="4" />
+		<blueprint name="SPORE_STUN" rarity="3" />
+		<blueprint name="GRAZIER_BATTLE" rarity="3" />
+		<blueprint name="PRODUCER" rarity="2" />
+		<blueprint name="CONSTRUCTOR" rarity="2" />
+	</rarityList>
+	<startEvent>ENTER_AEA_CULT</startEvent>
+	<removeFirstBeaconNebula />
+	<exitBeacon event="FINISH_BEACON_AEA_CULT" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ELITE" />
+	<rebelBeacon event="FLEET_THREAT_MLOW" nebulaEvent="FLEET_THREAT_MLOW_NEBULA" />
+	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
+	<event name="MV_TRAVELER" min="1" max="1" />
+	<event name="SYLVAN_CHANCE" min="0" max="1" />
+	<priorityEvent name="NEMESIS_ENCOUNTER" min="0" max="1" req="prof_finalsector" lvl="1" />
+	
+	<event name="STORELIST_AEA_CULT" min="2" max="3" /> <!--has more stores than normal-->
+	
+	<event name="ITEMS_AEA_CULT" min="3" max="4" />
+	<event name="NEUTRAL_AEA_CULT" min="5" max="6" />
+	<event name="DISTRESS_AEA_CULT" min="2" max="3" />
+	
+	<event name="HOSTILE_AEA_CULT" min="3" max="7" />
+	
+	<event name="PIRACY_LIST" min="1" max="2" />
+	<event name="FILLER_LIST" min="999" max="999" />
+</sectorDescription>
+<sectorDescription name="SECTOR_AEA_CULT_UNIQUE" unique="true">
+	<nameList>
+		<name>Home of the Oneflower [!]</name>
+	</nameList>
+	<trackList>
+		<track>aea_cultist</track>
+		<track>confederate</track>
+		<track>spaceass</track> 
+		<track>milkyway</track>
+	</trackList>
+	<rarityList>
+		<blueprint name="human" rarity="3" />
+		<blueprint name="human_medic" rarity="0" />
+		<blueprint name="human_engineer" rarity="0" />
+		<blueprint name="engi" rarity="0" />
+		<blueprint name="engi_separatist" rarity="0" />
+		<blueprint name="zoltan" rarity="0" />
+		<blueprint name="zoltan_monk" rarity="0" />
+		<blueprint name="zoltan_devotee" rarity="0" />
+		<blueprint name="rock" rarity="4" />
+		<blueprint name="rock_outcast" rarity="0" />
+		<blueprint name="rock_commando" rarity="0" />
+		<blueprint name="mantis" rarity="0" />
+		<blueprint name="mantis_free" rarity="0" />
+		<blueprint name="slug" rarity="0" />
+		<blueprint name="slug_clansman" rarity="0" />
+		<blueprint name="shell" rarity="2" />
+		<blueprint name="shell_scientist" rarity="3" />
+		<blueprint name="shell_mechanic" rarity="0" />
+		<blueprint name="shell_guardian" rarity="0" />
+		<blueprint name="crystal" rarity="0" />
+		<blueprint name="crystal_liberator" rarity="0" />
+		<blueprint name="orchid" rarity="4" />
+		<blueprint name="orchid_caretaker" rarity="5" />
+		<blueprint name="aea_cult_wizard" rarity="2" />
+		<blueprint name="aea_cult_priest_off" rarity="3" />
+		<blueprint name="aea_cult_priest_sup" rarity="3" />
+		<blueprint name="aea_cult_priest_bor" rarity="3" />
+		<blueprint name="aea_cult_wizard_a01" rarity="5" />
+		<blueprint name="aea_cult_wizard_a02" rarity="5" />
+		<blueprint name="aea_cult_wizard_s03" rarity="5" />
+		<blueprint name="aea_cult_wizard_s04" rarity="5" />
+		<blueprint name="aea_cult_wizard_s05" rarity="5" />
+		<blueprint name="aea_cult_wizard_s06" rarity="5" />
+		<blueprint name="aea_cult_wizard_a07" rarity="5" />
+		<blueprint name="aea_cult_wizard_s08" rarity="5" />
+		<blueprint name="aea_cult_wizard_s09" rarity="5" />
+		<blueprint name="aea_cult_wizard_a10" rarity="5" />
+		<blueprint name="aea_cult_wizard_a11" rarity="5" />
+		<blueprint name="aea_cult_wizard_s12" rarity="5" />
+		<blueprint name="aea_cult_wizard_s13" rarity="5" />
+		<blueprint name="aea_cult_wizard_s14" rarity="5" />
+		<blueprint name="aea_cult_wizard_s15" rarity="5" />
+		<blueprint name="orchid_vampweed" rarity="3" />
+		<blueprint name="leech" rarity="0" />
+		<blueprint name="lanius" rarity="0" />
+		<blueprint name="phantom" rarity="0" />
+		<blueprint name="phantom_goul" rarity="0" />
+		<blueprint name="phantom_mare" rarity="0" />
+		<blueprint name="phantom_wraith" rarity="0" />
+		
+		<blueprint name="SPORE_1" rarity="1" />
+		<blueprint name="SPORE_2" rarity="3" />
+		<blueprint name="SPORE_HEAVY" rarity="2" />
+		<blueprint name="SPORE_CHAIN" rarity="4" />
+		<blueprint name="SPORE_STUN" rarity="3" />
+		<blueprint name="GRAZIER_BATTLE" rarity="3" />
+		<blueprint name="PRODUCER" rarity="2" />
+		<blueprint name="CONSTRUCTOR" rarity="2" />
+	</rarityList>
+	<startEvent>ENTER_VAMPWEED_UNIQUE</startEvent>
+	<removeFirstBeaconNebula />
+	<exitBeacon event="FINISH_BEACON_VAMPWEED" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ELITE" />
+	<rebelBeacon event="FLEET_THREAT_MLOW" nebulaEvent="FLEET_THREAT_MLOW_NEBULA" />
+	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
+	<event name="MV_TRAVELER" min="1" max="1" />
+	<event name="SYLVAN_CHANCE" min="0" max="1" />
+	<priorityEvent name="NEMESIS_ENCOUNTER" min="0" max="1" req="prof_finalsector" lvl="1" />
 
+	<event name="AEA_CULT_FLOWER_GOD" min="1" max="1" />
+	
+	<event name="TRANSPORT_AEA_CULT_LOOT" min="1" max="1" />
+	<event name="TRAPPER_AEA_CULT" min="1" max="1" />
+	<event name="STORELIST_AEA_CULT" min="2" max="3" /> <!-- +1 store from the unlock event -->
+	
+	<event name="ITEMS_AEA_CULT_UNIQUE" min="3" max="4" />
+	<event name="NEUTRAL_AEA_CULT_UNIQUE" min="5" max="5" />
+	<event name="DISTRESS_AEA_CULT_UNIQUE" min="2" max="3" />
+	
+	<event name="ENCOUNTER_AEA_CULT_ELITE" min="1" max="1" />
+	<event name="HOSTILE_AEA_CULT_UNIQUE" min="2" max="6" />
+	
+	<event name="PIRACY_LIST" min="1" max="2" />
+	<event name="FILLER_LIST" min="999" max="999" />
+</sectorDescription>
 
 
 <!--
