@@ -126,8 +126,11 @@ This enemy is protected by an Energy Shield.</tooltip>
             <shipReq>PLAYER_SHIP_AEA_ACID_LONG</shipReq>
         </unlock>
 	</mod-append:ship>
-	<mod-append:ship name="PLAYER_SHIP_AEA_ACID_CREW1" b="false" c="false" >
+	<mod-append:ship name="PLAYER_SHIP_AEA_ACID_CREW1" b="true" c="false" >
 		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
 			<type>4</type>
 		</unlock>
 	</mod-append:ship>
@@ -233,9 +236,15 @@ This enemy is protected by an Energy Shield.</tooltip>
 	</mod-append:ship>
 
 	<mod-append:ship name="PLAYER_SHIP_AEA_SLUG_LONG" b="false" c="false" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
 	</mod-append:ship>
 
 	<mod-append:ship name="PLAYER_SHIP_AEA_SLUG_WIDE" b="false" c="false" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
 	</mod-append:ship>
 
 	
@@ -416,33 +425,42 @@ This enemy is protected by an Energy Shield.</tooltip>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BUD">
-		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>SHIP_VAMPWEED</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BUD_2">
-		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>SHIP_VAMPWEED</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BUD_3">
-		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>SHIP_VAMPWEED</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BLOOM">
-		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>SHIP_VAMPWEED</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BLOOM_2">
-		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>SHIP_VAMPWEED</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CULT_BLOOM_3">
-		<hiddenAug>SHIP_ORCHID</hiddenAug>
+		<hiddenAug>SHIP_VAMPWEED</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_CREW1_2">
+		<hiddenAug>SHIP_VAMPWEED</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<aea_cult_tiny room="0" name="Tiny" />
+			<orchid_cultivator room="16" />
+		</crew>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_BIG">
@@ -2302,7 +2320,7 @@ Cast a spell that pierces all shields at a target room that warps all crew in th
 			</req>
 			<buttonText>Heal Bolt</buttonText>
 			<tooltip>[COOLDOWN:20s]
-Cast a spell at the lowest health (%) friendly crew that heals all friendly crew in the room for 75 hp
+Cast a spell that pierces all shields at a target room that heals all friendly crew for 75hp
 	Cast Duration: 2s
 	Will be interupted during casting if the crew takes damage or moves</tooltip>
 			<cooldownColor r="160" g="0" b="255" />
@@ -2724,10 +2742,11 @@ Cast a random boarding support spell that pierces all normal shields at a target
 	 </mod-append:race>
 
 	 <mod-append:race name="aea_cult_tiny">
+	 	<essential>1</essential>
 		<fireDamageMultiplier>1.75</fireDamageMultiplier>
 		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
 		<suffocationModifier>0.75</suffocationModifier>
-		<rangedDamageMultiplier>0.75</rangedDamageMultiplier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
 		<maxHealth>75</maxHealth>
 		<moveSpeedMultiplier>1.5</moveSpeedMultiplier>
 		<canPunch>false</canPunch>
@@ -2760,6 +2779,609 @@ Casts a spell in the current room which does nothing
 				<cooldownColor r="200" g="100" b="200" />
 				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMove>false</canMove>
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_a01">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+				<systemInRoom />
+			</req>
+			<buttonText>Protect</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Casts a spell which protects the current room from hull and system damage for 10 seconds
+	Cast Duration: 1s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>1</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_a02">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Beacon</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Casts a spell which retargets all the enemy projectiles on screen to the current room
+	Cast Duration: 1s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>1</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_s03">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Bio Bolt</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast a spell that pierces all normal shields at a target room dealing 45 personal damage
+	Cast Duration: 3s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>3</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_s04">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Bolt</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast a spell that pierces all normal shields at a target room dealing 1 damage
+	Cast Duration: 8s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>8</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_s05">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Bolt Burst</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast 3 spells that pierces all normal shields at a target room dealing 1 damage
+	Cast Duration: 20s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>20</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_s06">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Hull Bolt</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast a spell that pierces all normal shields at a target room dealing 3 hull damage but no system or crew damage
+	Cast Duration: 10s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>10</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_a07">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Warp</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast a spell in the current room that warps all crew in the current room to a random room on the opposite ship
+	Cast Duration: 6s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>6</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_s08">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Warp Bolt</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast a spell that pierces all shields at a target room that warps all crew in the room to a random room on the opposite ship
+	Cast Duration: 8s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>8</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_s09">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Heal Bolt</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast a spell that pierces all shields at a target room that heals all friendly crew for 75hp
+	Cast Duration: 2s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>2</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_a10">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<friendlyInRoom />
+				<maxHealth>50</maxHealth>
+				<inCombat />
+			</req>
+			<buttonText>Heal Aura</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast a spell in the current room that heals all friendly crew in the room for 45 hp
+	Cast Duration: 5s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>5</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_a11">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Drone</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Spawn a conservative combat drone around the enemy ship
+	Cast Duration: 10s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>10</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_s12">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Barrier</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast a spell that pierces all normal shields at a target room that spawns a barrier capable of blocking 2 projectiles
+	Cast Duration: 2s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>2</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_s13">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Lockdown</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast a spell that pierces all normal shields at a target room that applies a lockdown effect
+	Cast Duration: 4s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>4</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_s14">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Ally</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast a spell that pierces all normal shields at a target room that spawns a random ally
+	Cast Duration: 7s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>7</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_tiny_magic_out</animSheet-->
+				<canMan>false</canMan>
+				<canRepair>false</canRepair>
+				<canSabotage>false</canSabotage> 
+				<canFight>false</canFight>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_cult_tiny_s15">
+		<essential>1</essential>
+		<animSheet>aea_cult_tiny</animSheet>
+		<fireDamageMultiplier>1.75</fireDamageMultiplier>
+		<oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+		<suffocationModifier>0.75</suffocationModifier>
+		<rangedDamageMultiplier>0.5</rangedDamageMultiplier>
+		<canPunch>false</canPunch>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>orchidDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>Mind Bolt</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Cast a spell that pierces all normal shields at a target room that mind controls the enemy for 20 seconds
+	Cast Duration: 8s
+	Will be interupted during casting if the crew takes damage or moves</tooltip>
+			<cooldownColor r="160" g="0" b="255" />
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>8</duration>
+				<cooldownColor r="200" g="100" b="200" />
+				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -4451,7 +5073,7 @@ Casts a spell in the current room which does nothing
 			<mod-append:achievement name="ACH_TRANS_AEA_CULT">
 				<name>Vampweed Cultist Transport</name>
 				<secretDescription>Obtain the loot from the Vampweed Cultist loot transport.</secretDescription>
-				<description>Obtain the XXXX from the Vampweed Cultist loot transport.</description>
+				<description>Obtain the Spellspore from the Vampweed Cultist loot transport.</description>
 				<icon>ach_trans_aea_cult</icon>
 				<header>Loot Acquired</header>
 			</mod-append:achievement>

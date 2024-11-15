@@ -3894,6 +3894,50 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<weaponArt>aea_laser_oldp_3_new</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
+
+<weaponBlueprint name="AEA_LASER_OLDP_3_LOOT">
+	<type>LASER</type>
+	<title>'Nagamaki' Burst Laser</title>
+	<short>'Nagamaki'</short>
+	<tip>loot_aea_old_1</tip>
+	<desc>A powerful laser that breaks shields but do not do any hull damage. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip> </tooltip>
+	<damage>0</damage>
+	<sysDamage>1</sysDamage>
+	<shots>6</shots>
+	<sp>0</sp>
+	<mv-pop>
+		<count>1</count>
+		<countSuper>1</countSuper>
+	</mv-pop>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<cooldown>19</cooldown>
+	<power>3</power>
+	<cost>70</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_oldp_3_loot</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
 </FTL>
 
 <FTL>
@@ -4316,7 +4360,7 @@ This drone fires 4 shots.
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_thick</droneImage>
 	<weaponBlueprint>AEA_BEAM_BIRD_SWEEP</weaponBlueprint>
-	<rarity>5</rarity>
+	<rarity>0</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
 
@@ -4992,7 +5036,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Active Ability (3 charges): Cast a spell at the lowest health (%) friendly crew that heals all friendly crew in the room for 75 hp</power>
+		<power>Active Ability (3 charges): Cast a spell at a target room that heals all friendly crew for 75hp</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
 	</powerList>
 	<colorList>
@@ -6113,6 +6157,120 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 </FTL>
 
 <FTL>
+	<weaponBlueprint name="AEA_LASER_CULT">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore</title>
+		<short>Spellspore</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<damage>1</damage>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>10</cooldown>
+		<power>1</power>
+		<cost>60</cost>
+		<bp>6</bp>
+		<rarity>5</rarity>
+		<image>aea_proj_magic</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_LOOT">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore</title>
+		<short>Spellspore</short>
+		<tip>loot_aea_cult_1</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<damage>1</damage>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>8</cooldown>
+		<power>1</power>
+		<cost>60</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_loot</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_RANDOM">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Heavy Spellspore</title>
+		<short>H. Spellspore</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. This varient cannot equip spells but fires a random spell randomly at a high rate.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<damage>0</damage>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>6</cooldown>
+		<power>3</power>
+		<cost>85</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_random</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_01">
 		<type>BEAM</type>
 		<flavorType>Spell</flavorType>
@@ -6189,19 +6347,45 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<tip>tip_aea_spellspore</tip>
 		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
 		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 14 seconds
+
+	Shots Per Charge: 1
+	Charges: 3
+
+	Base Hull Damage: 0
+	Total System Damage: 0
+	Total Crew Damage: 45
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 14 seconds
+
+	Shots Per Charge: 1
+	Charges: 3
+
+	Base Hull Damage: 0
+	Total System Damage: 0
+	Total Crew Damage: 45
+	Shield Piercing: 16</tooltipOverride>
 		<damage>0</damage>
 		<persDamage>3</persDamage>
 		<accuracyMod>100</accuracyMod>
 		<shots>1</shots>
-		<sp>0</sp>
+		<sp>16</sp>
 		<boost>
 			<type>cooldown</type>
-			<amount>0.05</amount>
-			<count>3</count>
+			<amount>1</amount>
+			<count>50</count>
 		</boost>
 		<fireChance>0</fireChance>
 		<breachChance>0</breachChance>
-		<cooldown>18</cooldown>
+		<cooldown>14</cooldown>
 		<power>2</power>
 		<cost>70</cost>
 		<bp>6</bp>
@@ -6213,6 +6397,11 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<hitShipSounds>
 			<sound>hitHull1</sound>
 		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
 		<missSounds>
 			<sound>miss</sound>
 		</missSounds>
@@ -6224,7 +6413,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Bolt]</title>
 		<short>[Bolt]</short>
-		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<desc>Cast a spell that pierces all normal shields at a target room dealing 1 damage.
 	Cast Delay: 8 seconds
 	Charge Time: 20 seconds
 	Uses per combat: 2
@@ -6243,22 +6432,48 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<iconReplace>aea_spell_04</iconReplace>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_LASER_CULT_04">
-		<type>BOMB</type>
-		<flavorType>Spore Launcher</flavorType>
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
 		<title>Spellspore [Bolt]</title>
 		<short>[Bolt]</short>
-		<tip>tip_laser</tip>
+		<tip>tip_aea_spellspore</tip>
 		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
 		<tooltip>Spellspore.</tooltip>
-		<damage>0</damage>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 18 seconds
+
+	Shots Per Charge: 1
+	Charges: 2
+
+	Base Hull Damage: 1
+	Total System Damage: 1
+	Total Crew Damage: 15
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 18 seconds
+
+	Shots Per Charge: 1
+	Charges: 2
+
+	Base Hull Damage: 1
+	Total System Damage: 1
+	Total Crew Damage: 15
+	Shield Piercing: 16</tooltipOverride>
+		<damage>1</damage>
 		<persDamage>0</persDamage>
 		<accuracyMod>100</accuracyMod>
 		<shots>1</shots>
-		<sp>0</sp>
+		<sp>16</sp>
 		<boost>
 			<type>cooldown</type>
-			<amount>0.05</amount>
-			<count>2</count>
+			<amount>1</amount>
+			<count>50</count>
 		</boost>
 		<fireChance>0</fireChance>
 		<breachChance>0</breachChance>
@@ -6267,14 +6482,18 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<cost>70</cost>
 		<bp>6</bp>
 		<rarity>0</rarity>
-		<image>aea_invis_bomb</image>
-		<explosion>aea_invis_bomb</explosion>
+		<image>aea_proj_magic_pur</image>
 		<launchSounds>
 			<sound>heavyLaser1</sound>
 		</launchSounds>
 		<hitShipSounds>
 			<sound>hitHull1</sound>
 		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
 		<missSounds>
 			<sound>miss</sound>
 		</missSounds>
@@ -6305,38 +6524,68 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<iconReplace>aea_spell_05</iconReplace>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_LASER_CULT_05">
-		<type>BOMB</type>
-		<flavorType>Spore Launcher</flavorType>
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
 		<title>Spellspore [Bolt Burst]</title>
 		<short>[Bolt Burst]</short>
-		<tip>tip_laser</tip>
+		<tip>tip_aea_spellspore</tip>
 		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
 		<tooltip>Spellspore.</tooltip>
-		<damage>0</damage>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 26 seconds
+
+	Shots Per Charge: 3
+	Charges: 2
+
+	Base Hull Damage: 1
+	Total System Damage: 1
+	Total Crew Damage: 15
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 26 seconds
+
+	Shots Per Charge: 3
+	Charges: 2
+
+	Base Hull Damage: 1
+	Total System Damage: 1
+	Total Crew Damage: 15
+	Shield Piercing: 16</tooltipOverride>
+		<damage>1</damage>
 		<persDamage>0</persDamage>
 		<accuracyMod>100</accuracyMod>
-		<shots>1</shots>
-		<sp>0</sp>
+		<shots>3</shots>
+		<sp>16</sp>
 		<boost>
 			<type>cooldown</type>
-			<amount>0.05</amount>
-			<count>2</count>
+			<amount>1</amount>
+			<count>50</count>
 		</boost>
 		<fireChance>0</fireChance>
 		<breachChance>0</breachChance>
-		<cooldown>18</cooldown>
+		<cooldown>26</cooldown>
 		<power>2</power>
 		<cost>70</cost>
 		<bp>6</bp>
 		<rarity>0</rarity>
-		<image>aea_invis_bomb</image>
-		<explosion>aea_invis_bomb</explosion>
+		<image>aea_proj_magic_pur</image>
 		<launchSounds>
 			<sound>heavyLaser1</sound>
 		</launchSounds>
 		<hitShipSounds>
 			<sound>hitHull1</sound>
 		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
 		<missSounds>
 			<sound>miss</sound>
 		</missSounds>
@@ -6367,42 +6616,73 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<iconReplace>aea_spell_06</iconReplace>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_LASER_CULT_06">
-		<type>BOMB</type>
-		<flavorType>Spore Launcher</flavorType>
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
 		<title>Spellspore [Hull Bolt]</title>
 		<short>[Hull Bolt]</short>
-		<tip>tip_laser</tip>
+		<tip>tip_aea_spellspore</tip>
 		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
 		<tooltip>Spellspore.</tooltip>
-		<damage>0</damage>
-		<persDamage>0</persDamage>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 20 seconds
+
+	Shots Per Charge: 1
+	Charges: 2
+
+	Base Hull Damage: 3
+	Total System Damage: 0
+	Total Crew Damage: 0
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 20 seconds
+
+	Shots Per Charge: 1
+	Charges: 2
+
+	Base Hull Damage: 3
+	Total System Damage: 0
+	Total Crew Damage: 0
+	Shield Piercing: 16</tooltipOverride>
+		<damage>3</damage>
+		<sysDamage>-3</sysDamage>
+		<persDamage>-3</persDamage>
 		<accuracyMod>100</accuracyMod>
 		<shots>1</shots>
-		<sp>0</sp>
+		<sp>16</sp>
 		<boost>
 			<type>cooldown</type>
-			<amount>0.05</amount>
-			<count>3</count>
+			<amount>1</amount>
+			<count>50</count>
 		</boost>
 		<fireChance>0</fireChance>
 		<breachChance>0</breachChance>
-		<cooldown>18</cooldown>
+		<cooldown>20</cooldown>
 		<power>2</power>
 		<cost>70</cost>
 		<bp>6</bp>
 		<rarity>0</rarity>
-		<image>aea_invis_bomb</image>
-		<explosion>aea_invis_bomb</explosion>
+		<image>aea_proj_magic_hull</image>
 		<launchSounds>
 			<sound>heavyLaser1</sound>
 		</launchSounds>
 		<hitShipSounds>
 			<sound>hitHull1</sound>
 		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
 		<missSounds>
 			<sound>miss</sound>
 		</missSounds>
-		<weaponArt>aea_cult_laser_4</weaponArt>
+		<weaponArt>aea_cult_laser_6</weaponArt>
 		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_07">
@@ -6449,12 +6729,72 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_08</iconReplace>
 	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_08">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Warp Bolt]</title>
+		<short>[Warp Bolt]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 18 seconds
+
+	Shots Per Charge: 1
+	Charges: Infinite
+
+	Teleports any crew in the room to a random room on the enemy ship on hit
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 18 seconds
+
+	Shots Per Charge: 1
+	Charges: Infinite
+
+	Teleports any crew in the room to a random room on the enemy ship on hit
+	Shield Piercing: 16</tooltipOverride>
+		<damage>0</damage>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>18</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_8</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_09">
 		<type>BEAM</type>
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Heal Bolt]</title>
 		<short>[Heal Bolt]</short>
-		<desc>Cast a spell at the lowest health (%) friendly crew that heals all friendly crew in the room for 75 hp.
+		<desc>Cast a spell that pierces all shields at a target room that heals all friendly crew for 75hp.
 	Cast Delay: 2 seconds
 	Charge Time: 20 seconds
 	Uses per combat: 3
@@ -6471,6 +6811,75 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<image>beam_contact</image>
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_09</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_09">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Heal Bolt]</title>
+		<short>[Heal Bolt]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 13 seconds
+
+	Shots Per Charge: 1
+	Charges: 3
+
+	Base Hull Damage: 0
+	Total System Damage: 0
+	Total Crew Damage: -75
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 13 seconds
+
+	Shots Per Charge: 1
+	Charges: 3
+
+	Base Hull Damage: 0
+	Total System Damage: 0
+	Total Crew Damage: -75
+	Shield Piercing: 16</tooltipOverride>
+		<damage>0</damage>
+		<persDamage>-5</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>13</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_heal</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_9</weaponArt>
+		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_10">
 		<type>BEAM</type>
@@ -6540,6 +6949,71 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_12</iconReplace>
 	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_12">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Barrier]</title>
+		<short>[Barrier]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 13 seconds
+
+	Shots Per Charge: 1
+	Charges: 3
+
+	Spawns a barrier capable of blocking 2 projectiles on hit
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 13 seconds
+
+	Shots Per Charge: 1
+	Charges: 3
+
+	Spawns a barrier capable of blocking 2 projectiles on hit
+	Shield Piercing: 16</tooltipOverride>
+		<damage>0</damage>
+		<persDamage>3</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>13</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_12</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_13">
 		<type>BEAM</type>
 		<flavorType>Spell</flavorType>
@@ -6562,6 +7036,72 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<image>beam_contact</image>
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_13</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_13">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Lockdown]</title>
+		<short>[Lockdown]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 14 seconds
+
+	Shots Per Charge: 1
+	Charges: 3
+
+	Locks down room on hit
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 14 seconds
+
+	Shots Per Charge: 1
+	Charges: 3
+
+	Locks down room on hit
+	Shield Piercing: 16</tooltipOverride>
+		<damage>0</damage>
+		<persDamage>0</persDamage>
+		<lockdown/>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>14</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_hull</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_13</weaponArt>
+		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_14">
 		<type>BEAM</type>
@@ -6586,6 +7126,94 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_14</iconReplace>
 	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_14">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Ally]</title>
+		<short>[Ally]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 17 seconds
+
+	Shots Per Charge: 1
+	Charges: 2
+
+	Spawns a random ally on hit
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 17 seconds
+
+	Shots Per Charge: 1
+	Charges: 2
+
+	Spawns a random ally on hit
+	Shield Piercing: 16</tooltipOverride>
+		<damage>0</damage>
+		<spawnCrew>
+			<number>1</number>
+			<race>LIST_CREW_SPELL_ALLY</race>
+			<lifetime>20</lifetime>
+			<statBoosts>
+				<statBoost name="noClone">
+					<boostType>SET</boostType>
+					<value>true</value>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ALL</crewTarget>
+					<priority>999999</priority>
+				</statBoost>
+				<statBoost name="lowHealthThreshold">
+					<boostType>SET</boostType>
+					<amount>-1</amount>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ALL</crewTarget>
+					<priority>999999</priority>
+				</statBoost>
+			</statBoosts>
+			<noSlot>true</noSlot>
+		</spawnCrew>
+		<crewSpawnChance>10</crewSpawnChance>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>17</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_14</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_15">
 		<type>BEAM</type>
 		<flavorType>Spell</flavorType>
@@ -6608,6 +7236,121 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<image>beam_contact</image>
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_15</iconReplace>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_15">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Mind Bolt]</title>
+		<short>[Mind Bolt]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 18 seconds
+
+	Shots Per Charge: 1
+	Charges: 3
+
+	Mind controls enemy crew on hit
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 18 seconds
+
+	Shots Per Charge: 1
+	Charges: 3
+
+	Mind controls enemy crew on hit
+	Shield Piercing: 16</tooltipOverride>
+		<tooltip>Spellspore.</tooltip>
+		<damage>0</damage>
+		<mv-mindControl>
+			<duration>20</duration>
+		</mv-mindControl>
+		<mv-crewTarget>MOST_CREW</mv-crewTarget>
+		<statBoosts>
+			<statBoost name="controllable">
+				<boostType>SET</boostType>
+				<value>false</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<duration>45</duration>
+				<!--<blackList load="LIST_CREW_MADNESS_IMMUNE"/>-->
+				<blackList>
+					<slug_hektar_box/>
+					<unique_billy_box/>
+					<unique_irwin_demon/>
+					<unique_dessius/>
+					<siren/>
+					<siren_harpy/>
+					<eldritch_thing/>
+					<eldritch_thing_weak/>
+					<eldritch_cat/>
+					<gnome/>
+				</blackList>
+			</statBoost>
+			<statBoost name="silenced">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<duration>45</duration>
+				<!--<blackList load="LIST_CREW_MADNESS_IMMUNE"/>-->
+				<blackList>
+					<slug_hektar_box/>
+					<unique_billy_box/>
+					<unique_irwin_demon/>
+					<unique_dessius/>
+					<siren/>
+					<siren_harpy/>
+					<eldritch_thing/>
+					<eldritch_thing_weak/>
+					<eldritch_cat/>
+					<gnome/>
+				</blackList>
+			</statBoost>
+		</statBoosts>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>18</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_pur</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_15</weaponArt>
+		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 </FTL>
 
@@ -6866,6 +7609,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<class>Bloom Cruiser</class>
 	<name>The Leaves</name>
 	<desc>This ship directly channels the power of the bud to launch spells at the enemy ship.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_CULT_BLOOM_unlock"/>
 	<systemList>
 		<artillery max="4" power="1" room="11" start="true" weapon="AEA_LASER_SPELL_ARTILLERY" img="room_artillery" />
 		<battery max="2" power="1" room="21" start="false" img="room_battery" />
@@ -6934,13 +7678,14 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<crewCount amount="1" class="aea_cult_priest_off" />
 	<crewCount amount="1" class="aea_cult_priest_off" />
 	<shieldImage>mup_giant</shieldImage>
-	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+    <mv-mapImage>map_icon_mup_cultivator_a</mv-mapImage>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_CULT_BLOOM_2" layout="aeap_cult_bloom_2" img="aeap_cult_bloom_2">
 	<class>Bloom Cruiser</class>
 	<name>The Trunk</name>
 	<desc>This ship protects itself with capable crew and a prototype generator that creates barriers on rooms each time you fire a weapon.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_CULT_BLOOM_2_unlock"/>
 	<systemList>
 		<battery max="2" power="1" room="17" start="false" img="room_battery_9" />
 		<cloaking power="1" room="28" start="false" img="room_cloaking_2" />
@@ -7001,7 +7746,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="6" count="4">
 		<weapon name="SPORE_1" />
-		<weapon name="LASER_BURST_3" />
+		<weapon name="LIST_WEAPON_CULT" />
 	</weaponList>
 	<droneList drones="1" count="2" />
 	<health amount="30" />
@@ -7012,7 +7757,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<crewCount amount="1" class="aea_cult_priest_sup" />
 	<aug name="AEA_BARRIER_RELAY" />
 	<shieldImage>mup_giant</shieldImage>
-	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+    <mv-mapImage>map_icon_mup_cultivator_a</mv-mapImage>
 </shipBlueprint>
 
 <augBlueprint name="AEA_BARRIER_RELAY"> <!-- Inspired by void war-->
@@ -7034,6 +7779,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<class>Bloom Cruiser</class>
 	<name>The Seeds</name>
 	<desc>A powerful boarding ship with dangerous crew.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_CULT_BLOOM_3_unlock"/>
 	<systemList>
 		<battery max="2" power="1" room="6" start="false" img="room_battery_6" />
 		<cloaking power="1" room="20" start="false" img="room_cloaking_3" />
@@ -7103,7 +7849,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<crewCount amount="1" class="aea_cult_priest_bor" />
 	<crewCount amount="1" class="aea_cult_priest_bor" />
 	<shieldImage>mup_giant</shieldImage>
-	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+    <mv-mapImage>map_icon_mup_cultivator_a</mv-mapImage>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_CULT_WHALE" layout="aeap_cult_whale" img="aeap_cult_whale">
@@ -7177,7 +7923,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<maxPower amount="7" />
 	<aug name="AEA_AUG_WHALE" />
 	<shieldImage>mup_long2</shieldImage>
-	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+	<mv-mapImage>map_icon_aeap_whale</mv-mapImage>
 </shipBlueprint>
 
 <augBlueprint name="AEA_AUG_WHALE">
@@ -7191,6 +7937,83 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<rarity>0</rarity>
 	<stackable>false</stackable>
 </augBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_CREW1_2" layout="aeap_cult_tiny" img="aeap_cult_tiny">
+	<class>Tiny's Crewser</class>
+	<name>The Sprout</name>
+	<desc>Tiny's big adventure involving friendship and magic.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_CULT_TINY_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="15" start="false" img="room_battery_15" />
+		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="4" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="6" start="false" img="room_doors_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="11" start="false" img="room_drones_13" />
+		<engines power="2" room="16" start="true" img="room_engines_6">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="12" start="false" img="room_hacking_2" />
+		<medbay power="2" room="4" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="13" start="false" img="room_mind_5" />
+		<oxygen power="1" room="8" start="true" img="room_oxygen_5" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="2" room="5" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="2" start="true" img="room_shields_8">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="7" start="false" />
+		<temporal power="1" room="14" start="false" />
+		<weapons max="8" power="4" room="1" start="true" img="room_weapons_3">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="2" count="4">
+		<weapon name="AEA_LASER_CULT_08" />
+		<weapon name="AEA_LASER_CULT_04" />
+		<weapon name="AEA_SPELL_LIST_ALL" />
+		<weapon name="AEA_SPELL_LIST_ALL" />
+	</weaponList>
+	<droneList drones="2" count="2" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<aug name="EX_LAB_ORCHID_AEA_COMMUNION" />
+	<shieldImage>mup_standard2</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
 
 </FTL>
 
@@ -7438,15 +8261,15 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>68</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>4</rarity>
 	<powerList>
 		<power>Max Health is reduced to 75</power>
 		<power>1.5x move speed</power>
-		<power>2.0x cast speed, cannot run out of spell charges</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability: Casts a spell in the current room which does nothing</power>
-		<power>Ranged attack speed is tripled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		<layer> 
@@ -7454,19 +8277,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		</layer>
 	</colorList>
 </crewBlueprint>
-<!--
-<crewBlueprint name="aea_cult_wizard_a01">
-	<title>Vampweed Cultist [Protect]</title>
-	<short>Cultist [Protect]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_a01">
+	<title>Tiny Vampweed Cultist [Protect]</title>
+	<short>Tiny Cultist [Protect]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (5 charges): Casts a spell which protects the current room from hull and system damage for 10 seconds</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7476,18 +8301,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_a02">
-	<title>Vampweed Cultist [Beacon]</title>
-	<short>Cultist [Beacon]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_a02">
+	<title>Tiny Vampweed Cultist [Beacon]</title>
+	<short>Tiny Cultist [Beacon]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability: Casts a spell which retargets all the enemy projectiles on screen to the current room</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7497,18 +8325,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_s03">
-	<title>Vampweed Cultist [Bio Bolt]</title>
-	<short>Cultist [Bio Bolt]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_s03">
+	<title>Tiny Vampweed Cultist [Bio Bolt]</title>
+	<short>Tiny Cultist [Bio Bolt]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (3 charges): Cast a spell at a target room dealing 45 personal damage</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7518,18 +8349,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_s04">
-	<title>Vampweed Cultist [Bolt]</title>
-	<short>Cultist [Bolt]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_s04">
+	<title>Tiny Vampweed Cultist [Bolt]</title>
+	<short>Tiny Cultist [Bolt]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (2 charges): Cast a spell at a target room dealing 1 damage</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7539,18 +8373,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_s05">
-	<title>Vampweed Cultist [Bolt Burst]</title>
-	<short>Cultist [Bolt Burst]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_s05">
+	<title>Tiny Vampweed Cultist [Bolt Burst]</title>
+	<short>Tiny Cultist [Bolt Burst]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (2 charges): Cast 3 spells at a target room dealing 1 damage each</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7560,18 +8397,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_s06">
-	<title>Vampweed Cultist [Hull Bolt]</title>
-	<short>Cultist [Hull Bolt]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_s06">
+	<title>Tiny Vampweed Cultist [Hull Bolt]</title>
+	<short>Tiny Cultist [Hull Bolt]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (2 charges): Cast a spell at a target room doing 3 hull damage but no system or crew damage</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7581,18 +8421,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_a07">
-	<title>Vampweed Cultist [Warp]</title>
-	<short>Cultist [Warp]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_a07">
+	<title>Tiny Vampweed Cultist [Warp]</title>
+	<short>Tiny Cultist [Warp]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability: Cast a spell in the current room that warps all crew in the current room to a random room on the opposite ship</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7602,18 +8445,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_s08">
-	<title>Vampweed Cultist [Warp Bolt]</title>
-	<short>Cultist [Warp Bolt]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_s08">
+	<title>Tiny Vampweed Cultist [Warp Bolt]</title>
+	<short>Tiny Cultist [Warp Bolt]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability: Cast a spell at a target room that warps all crew in the room to a random room on the opposite ship</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7623,18 +8469,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_s09">
-	<title>Vampweed Cultist [Heal Bolt]</title>
-	<short>Cultist [Heal Bolt]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_s09">
+	<title>Tiny Vampweed Cultist [Heal Bolt]</title>
+	<short>Tiny Cultist [Heal Bolt]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (3 charges): Cast a spell at the lowest health (%) friendly crew that heals all friendly crew in the room for 75 hp</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7644,18 +8493,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_a10">
-	<title>Vampweed Cultist [Heal Aura]</title>
-	<short>Cultist [Heal Aura]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_a10">
+	<title>Tiny Vampweed Cultist [Heal Aura]</title>
+	<short>Tiny Cultist [Heal Aura]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability: Cast a spell in the current room that heals all friendly crew for 45 hp</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7665,18 +8517,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_a11">
-	<title>Vampweed Cultist [Drone]</title>
-	<short>Cultist [Drone]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_a11">
+	<title>Tiny Vampweed Cultist [Drone]</title>
+	<short>Tiny Cultist [Drone]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (1 charge): Spawn a conservative combat drone around the enemy ship</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7686,18 +8541,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_s12">
-	<title>Vampweed Cultist [Barrier]</title>
-	<short>Cultist [Barrier]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_s12">
+	<title>Tiny Vampweed Cultist [Barrier]</title>
+	<short>Tiny Cultist [Barrier]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (3 charge): Spawn a barrier capable of stopping 2 projectiles</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7707,18 +8565,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_s13">
-	<title>Vampweed Cultist [Lockdown]</title>
-	<short>Cultist [Lockdown]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_s13">
+	<title>Tiny Vampweed Cultist [Lockdown]</title>
+	<short>Tiny Cultist [Lockdown]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (3 charge): Cast a spell at the target room which applies a lockdown</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7728,18 +8589,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_s14">
-	<title>Vampweed Cultist [Ally]</title>
-	<short>Cultist [Ally]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_s14">
+	<title>Tiny Vampweed Cultist [Ally]</title>
+	<short>Tiny Cultist [Ally]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (2 charge): Cast a spell at the target room which spawns a random ally</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7749,18 +8613,21 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_cult_wizard_s15">
-	<title>Vampweed Cultist [Mind Bolt]</title>
-	<short>Cultist [Mind Bolt]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+<crewBlueprint name="aea_cult_tiny_s15">
+	<title>Tiny Vampweed Cultist [Mind Bolt]</title>
+	<short>Tiny Cultist [Mind Bolt]</short>
+	<desc>A Tiny Vampweed cultist, Able to cast spells twice as fast as normal cultists and won't ever run out of charges.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Max Health is reduced to 75</power>
+		<power>1.5x move speed</power>
+		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (3 charge): Cast a spell at the target room which mind controls a random enemy</power>
-		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
 	</powerList>
 	<colorList>
 		 
@@ -7768,5 +8635,5 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 			<color r="255" g="255" b="255" a="1"/>
 		</layer>
 	</colorList>
-</crewBlueprint>-->
+</crewBlueprint>
 </FTL>

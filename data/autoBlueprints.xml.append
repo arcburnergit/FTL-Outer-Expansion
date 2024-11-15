@@ -99,6 +99,22 @@
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
     <mod-append:name>aea_cult_priest_off</mod-append:name>
     <mod-append:name>aea_cult_priest_bor</mod-append:name>
+    <mod-append:name>aea_cult_tiny</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a01</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a02</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s03</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s04</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s05</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s06</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a07</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s08</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s09</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a10</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a11</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s12</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s13</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s14</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s15</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ENGI">
@@ -115,6 +131,22 @@
     <mod-append:name>aea_old_unique_3</mod-append:name>
     <mod-append:name>aea_old_unique_4</mod-append:name>
     <mod-append:name>aea_old_unique_5</mod-append:name>
+    <mod-append:name>aea_cult_tiny</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a01</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a02</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s03</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s04</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s05</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s06</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a07</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s08</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s09</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a10</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a11</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s12</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s13</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s14</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s15</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_PARAGON_UNIQUE">
@@ -125,6 +157,22 @@
     <mod-append:name>aea_old_unique_3</mod-append:name>
     <mod-append:name>aea_old_unique_4</mod-append:name>
     <mod-append:name>aea_old_unique_5</mod-append:name>
+    <mod-append:name>aea_cult_tiny</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a01</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a02</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s03</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s04</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s05</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s06</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a07</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s08</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s09</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a10</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a11</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s12</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s13</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s14</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s15</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_GAS">
@@ -174,18 +222,27 @@
     <mod-append:name>aea_acid_captain</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
     <mod-append:name>aea_old_1</mod-append:name>
+    <mod-append:name>aea_cult_priest_sup</mod-append:name>
+    <mod-append:name>aea_cult_priest_off</mod-append:name>
+    <mod-append:name>aea_cult_priest_bor</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ELITE_FIRE">
     <mod-append:name>aea_acid_captain</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
     <mod-append:name>aea_old_1</mod-append:name>
+    <mod-append:name>aea_cult_priest_sup</mod-append:name>
+    <mod-append:name>aea_cult_priest_off</mod-append:name>
+    <mod-append:name>aea_cult_priest_bor</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ELITE_RHYME">
     <mod-append:name>aea_acid_captain</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
     <mod-append:name>aea_old_1</mod-append:name>
+    <mod-append:name>aea_cult_priest_sup</mod-append:name>
+    <mod-append:name>aea_cult_priest_off</mod-append:name>
+    <mod-append:name>aea_cult_priest_bor</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ORCHID">
@@ -208,6 +265,22 @@
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
     <mod-append:name>aea_cult_priest_off</mod-append:name>
     <mod-append:name>aea_cult_priest_bor</mod-append:name>
+    <mod-append:name>aea_cult_tiny</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a01</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a02</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s03</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s04</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s05</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s06</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a07</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s08</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s09</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a10</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a11</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s12</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s13</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s14</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s15</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_VAMPWEED">
@@ -230,6 +303,22 @@
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
     <mod-append:name>aea_cult_priest_off</mod-append:name>
     <mod-append:name>aea_cult_priest_bor</mod-append:name>
+    <mod-append:name>aea_cult_tiny</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a01</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a02</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s03</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s04</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s05</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s06</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a07</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s08</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s09</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a10</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a11</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s12</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s13</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s14</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s15</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_GATHERING_RANDOM">
@@ -302,6 +391,21 @@
 	<name>leech</name>
 	<name>blob</name>
 </blueprintList>
+
+<blueprintList name="LIST_WEAPON_CULT">
+	<name>AEA_LASER_CULT</name>
+	<name>AEA_LASER_CULT_03</name>
+	<name>AEA_LASER_CULT_04</name>
+	<name>AEA_LASER_CULT_05</name>
+	<name>AEA_LASER_CULT_06</name>
+	<name>AEA_LASER_CULT_08</name>
+	<name>AEA_LASER_CULT_09</name>
+	<name>AEA_LASER_CULT_12</name>
+	<name>AEA_LASER_CULT_13</name>
+	<name>AEA_LASER_CULT_14</name>
+	<name>AEA_LASER_CULT_15</name>
+</blueprintList>
+
 <blueprintList name="AEA_CULTISTS_ALL">
 	<name>aea_cult_wizard</name>
 	<name>aea_cult_wizard_a01</name>
@@ -322,6 +426,22 @@
 	<name>aea_cult_priest_sup</name>
 	<name>aea_cult_priest_off</name>
 	<name>aea_cult_priest_bor</name>
+	<name>aea_cult_tiny</name>
+	<name>aea_cult_tiny_a01</name>
+	<name>aea_cult_tiny_a02</name>
+	<name>aea_cult_tiny_s03</name>
+	<name>aea_cult_tiny_s04</name>
+	<name>aea_cult_tiny_s05</name>
+	<name>aea_cult_tiny_s06</name>
+	<name>aea_cult_tiny_a07</name>
+	<name>aea_cult_tiny_s08</name>
+	<name>aea_cult_tiny_s09</name>
+	<name>aea_cult_tiny_a10</name>
+	<name>aea_cult_tiny_a11</name>
+	<name>aea_cult_tiny_s12</name>
+	<name>aea_cult_tiny_s13</name>
+	<name>aea_cult_tiny_s14</name>
+	<name>aea_cult_tiny_s15</name>
 </blueprintList>
 <blueprintList name="AEA_CULTISTS">
 	<name>aea_cult_wizard</name>
@@ -345,6 +465,24 @@
 	<name>aea_cult_priest_sup</name>
 	<name>aea_cult_priest_off</name>
 	<name>aea_cult_priest_bor</name>
+</blueprintList>
+<blueprintList name="AEA_TINY">
+	<name>aea_cult_tiny</name>
+	<name>aea_cult_tiny_a01</name>
+	<name>aea_cult_tiny_a02</name>
+	<name>aea_cult_tiny_s03</name>
+	<name>aea_cult_tiny_s04</name>
+	<name>aea_cult_tiny_s05</name>
+	<name>aea_cult_tiny_s06</name>
+	<name>aea_cult_tiny_a07</name>
+	<name>aea_cult_tiny_s08</name>
+	<name>aea_cult_tiny_s09</name>
+	<name>aea_cult_tiny_a10</name>
+	<name>aea_cult_tiny_a11</name>
+	<name>aea_cult_tiny_s12</name>
+	<name>aea_cult_tiny_s13</name>
+	<name>aea_cult_tiny_s14</name>
+	<name>aea_cult_tiny_s15</name>
 </blueprintList>
 
 

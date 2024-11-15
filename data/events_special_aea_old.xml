@@ -322,7 +322,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 <event name="TRANSPORT_CAPTURE_AEA_NECRO" unique="true">
 	<text>The crew is dead, leaving you with the station. Its cargo is yours for the taking. Aboard is the special tech you expected, which you bring back to your ship.</text>
 	<autoReward level="MED">standard_no_item</autoReward>
-	<weapon name="LIST_LOOT_AEA_OLD_1" />
+	<weapon name="AEA_LASER_OLDP_3_LOOT" />
 	<variable name="ach_trans_aea_old_1" op="set" val="1" />
 	<achievement>ACH_TRANS_AEA_NECRO</achievement>
 </event>

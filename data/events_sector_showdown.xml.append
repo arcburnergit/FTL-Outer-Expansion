@@ -8,6 +8,10 @@
 		<text>Ask L-0031 about this.</text>
 		<event load="TRUE_VICTORY_CREW_AEA_KING" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="AEA_TINY">
+		<text>Ask Tiny about this.</text>
+		<event load="TRUE_VICTORY_CREW_AEA_TINY" />
+	</mod-append:choice>
 </mod:findName>
 
 <event name="TRUE_VICTORY_CREW_AEA_BILL">
@@ -21,6 +25,14 @@
 <event name="TRUE_VICTORY_CREW_AEA_KING">
 	<text>"This has the potential of ending the lives of hundreds of thousands of organics, you should use it."</text>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW2</unlockCustomShip>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="TRUE_VICTORY_LOAD" />
+	</choice>
+</event>
+<event name="TRUE_VICTORY_CREW_AEA_TINY">
+	<text>Tiny just looks at you, you wonder if it even knows what the paragon is.</text>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_ACID_CREW1_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="TRUE_VICTORY_LOAD" />

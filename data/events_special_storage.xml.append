@@ -17,6 +17,14 @@
     <text>Cultists.</text>
     <event load="STORAGE_CHECK_AEA_CULTIST_WIZARD" />
   </mod-append:choice>
+  <mod-append:choice req="AEA_TINY" blue="true" hidden="true">
+    <text>Tiny Cultists.</text>
+    <event load="STORAGE_CHECK_AEA_CULTIST_TINY" />
+  </mod-append:choice>
+  <mod-append:choice req="LIST_WEAPON_CULT" blue="true" hidden="true">
+    <text>Cult Weapons.</text>
+    <event load="STORAGE_CHECK_AEA_CULTIST_LASER" />
+  </mod-append:choice>
 </mod:findName>
 
 <mod:findName type="event" name="STORAGE_CHECK_LAB_ORCHID">
@@ -1392,7 +1400,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_a01">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1409,7 +1417,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_a02">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1426,7 +1434,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s03">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1443,7 +1451,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s04">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1460,7 +1468,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s05">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1477,7 +1485,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s06">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1494,7 +1502,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_a07">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1511,7 +1519,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s08">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1528,7 +1536,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s09">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1545,7 +1553,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_a10">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1562,7 +1570,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_a11">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1579,7 +1587,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s12">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1596,7 +1604,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s13">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1613,7 +1621,7 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s14">aea_cult_wizard</transformRace>
 				</event>
 			</choice>
@@ -1630,8 +1638,815 @@
 			<choice>
 				<text>Reset</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previos spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s15">aea_cult_wizard</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+
+
+
+
+<event name="STORAGE_CHECK_AEA_CULTIST_LASER">
+	<text>What do you want to do?</text>
+  	<checkCargo />
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice req="AEA_LASER_CULT">
+		<text>(Empty Weapon) Equip a spell</text>
+		<event>
+			<text>Your weapon is capable of equiping a variety of spells.</text>
+			<choice>
+				<text>Nevermind.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice req="AEA_SPELL_ITEM_03">
+				<text>Equip [Bio Bolt]</text>
+				<event>
+					<text>You are able to dissolve the spell into the weapon.</text>
+					<remove name="AEA_SPELL_ITEM_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon thrums with power.</text>
+							<remove name="AEA_LASER_CULT"/>
+							<weapon name="AEA_LASER_CULT_03"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_04">
+				<text>Equip [Bolt]</text>
+				<event>
+					<text>You are able to dissolve the spell into the weapon.</text>
+					<remove name="AEA_SPELL_ITEM_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon thrums with power.</text>
+							<remove name="AEA_LASER_CULT"/>
+							<weapon name="AEA_LASER_CULT_03"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_05">
+				<text>Equip [Bolt Burst]</text>
+				<event>
+					<text>You are able to dissolve the spell into the weapon.</text>
+					<remove name="AEA_SPELL_ITEM_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon thrums with power.</text>
+							<remove name="AEA_LASER_CULT"/>
+							<weapon name="AEA_LASER_CULT_03"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_06">
+				<text>Equip [Hull Bolt]</text>
+				<event>
+					<text>You are able to dissolve the spell into the weapon.</text>
+					<remove name="AEA_SPELL_ITEM_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon thrums with power.</text>
+							<remove name="AEA_LASER_CULT"/>
+							<weapon name="AEA_LASER_CULT_03"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_08">
+				<text>Equip [Warp Bolt]</text>
+				<event>
+					<text>You are able to dissolve the spell into the weapon.</text>
+					<remove name="AEA_SPELL_ITEM_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon thrums with power.</text>
+							<remove name="AEA_LASER_CULT"/>
+							<weapon name="AEA_LASER_CULT_03"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_09">
+				<text>Equip [Heal Bolt]</text>
+				<event>
+					<text>You are able to dissolve the spell into the weapon.</text>
+					<remove name="AEA_SPELL_ITEM_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon thrums with power.</text>
+							<remove name="AEA_LASER_CULT"/>
+							<weapon name="AEA_LASER_CULT_03"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_12">
+				<text>Equip [Barrier]</text>
+				<event>
+					<text>You are able to dissolve the spell into the weapon.</text>
+					<remove name="AEA_SPELL_ITEM_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon thrums with power.</text>
+							<remove name="AEA_LASER_CULT"/>
+							<weapon name="AEA_LASER_CULT_03"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_13">
+				<text>Equip [Lockdown]</text>
+				<event>
+					<text>You are able to dissolve the spell into the weapon.]</text>
+					<remove name="AEA_SPELL_ITEM_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon thrums with power.</text>
+							<remove name="AEA_LASER_CULT"/>
+							<weapon name="AEA_LASER_CULT_03"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_14">
+				<text>Equip [Ally]</text>
+				<event>
+					<text>You are able to dissolve the spell into the weapon.]</text>
+					<remove name="AEA_SPELL_ITEM_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon thrums with power.</text>
+							<remove name="AEA_LASER_CULT"/>
+							<weapon name="AEA_LASER_CULT_03"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_15">
+				<text>Equip [Mind Bolt]</text>
+				<event>
+					<text>You are able to dissolve the spell into the weapon.]</text>
+					<remove name="AEA_SPELL_ITEM_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon thrums with power.</text>
+							<remove name="AEA_LASER_CULT"/>
+							<weapon name="AEA_LASER_CULT_03"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice req="AEA_LASER_CULT_03">
+		<text>([Bio Bolt] Weapon) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this weapon, the spell will be lost however you will be able to equip the weapon with a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<remove name="AEA_LASER_CULT_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon glows more dimly without a spell.</text>
+							<weapon name="AEA_LASER_CULT"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="AEA_LASER_CULT_04">
+		<text>([Bolt] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this weapon, the spell will be lost however you will be able to equip the weapon with a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<remove name="AEA_LASER_CULT_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon glows more dimly without a spell.</text>
+							<weapon name="AEA_LASER_CULT"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="AEA_LASER_CULT_05">
+		<text>([Bolt Burst] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this weapon, the spell will be lost however you will be able to equip the weapon with a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<remove name="AEA_LASER_CULT_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon glows more dimly without a spell.</text>
+							<weapon name="AEA_LASER_CULT"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="AEA_LASER_CULT_06">
+		<text>([Hull Bolt] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this weapon, the spell will be lost however you will be able to equip the weapon with a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<remove name="AEA_LASER_CULT_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon glows more dimly without a spell.</text>
+							<weapon name="AEA_LASER_CULT"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="AEA_LASER_CULT_08">
+		<text>([Warp Bolt] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this weapon, the spell will be lost however you will be able to equip the weapon with a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<remove name="AEA_LASER_CULT_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon glows more dimly without a spell.</text>
+							<weapon name="AEA_LASER_CULT"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="AEA_LASER_CULT_09">
+		<text>([Heal Bolt] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this weapon, the spell will be lost however you will be able to equip the weapon with a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<remove name="AEA_LASER_CULT_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon glows more dimly without a spell.</text>
+							<weapon name="AEA_LASER_CULT"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="AEA_LASER_CULT_12">
+		<text>([Barrier] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this weapon, the spell will be lost however you will be able to equip the weapon with a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<remove name="AEA_LASER_CULT_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon glows more dimly without a spell.</text>
+							<weapon name="AEA_LASER_CULT"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="AEA_LASER_CULT_13">
+		<text>([Lockdown] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this weapon, the spell will be lost however you will be able to equip the weapon with a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<remove name="AEA_LASER_CULT_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon glows more dimly without a spell.</text>
+							<weapon name="AEA_LASER_CULT"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="AEA_LASER_CULT_14">
+		<text>([Ally] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this weapon, the spell will be lost however you will be able to equip the weapon with a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<remove name="AEA_LASER_CULT_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon glows more dimly without a spell.</text>
+							<weapon name="AEA_LASER_CULT"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="AEA_LASER_CULT_15">
+		<text>([Mind Bolt] Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this weapon, the spell will be lost however you will be able to equip the weapon with a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<remove name="AEA_LASER_CULT_03"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The weapon glows more dimly without a spell.</text>
+							<weapon name="AEA_LASER_CULT"/>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="STORAGE_CHECK_AEA_CULTIST_TINY">
+	<text>What do you want to do?</text>
+  	<checkCargo />
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice req="aea_cult_tiny">
+		<text>(Unlearned Tiny Cultist) Learn a spell</text>
+		<event>
+			<text>Your tiny cultist is capable of learning a variety of spells.</text>
+			<choice>
+				<text>Nevermind.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice req="AEA_SPELL_ITEM_01">
+				<text>Learn [Protect]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_01"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_a01</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_02">
+				<text>Learn [Beacon]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_02"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_a02</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_03">
+				<text>Learn [Bio Bolt]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_03"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_s03</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_04">
+				<text>Learn [Bolt]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_04"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_s04</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_05">
+				<text>Learn [Bolt Burst]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_05"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_s05</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_06">
+				<text>Learn [Hull Bolt]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_06"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_s06</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_07">
+				<text>Learn [Warp]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_07"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_a07</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_08">
+				<text>Learn [Warp Bolt]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_08"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_s08</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_09">
+				<text>Learn [Heal Bolt]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_09"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_s09</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_10">
+				<text>Learn [Heal Aura]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_10"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_a10</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_11">
+				<text>Learn [Drone]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_11"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_a11</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_12">
+				<text>Learn [Barrier]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_12"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_s12</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_13">
+				<text>Learn [Lockdown]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_13"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_s13</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_14">
+				<text>Learn [Ally]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_14"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_s14</transformRace>
+				</event>
+			</choice>
+			<choice req="AEA_SPELL_ITEM_15">
+				<text>Learn [Mind Bolt]</text>
+				<event>
+					<text>Your tiny cultist equips the new spell to their staff.</text>
+					<remove name="AEA_SPELL_ITEM_15"/>
+					<transformRace class="aea_cult_tiny">aea_cult_tiny_s15</transformRace>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_a01">
+		<text>([Protect] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_a01">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_a02">
+		<text>([Beacon] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_a02">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_s03">
+		<text>([Bio Bolt] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_s03">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_s04">
+		<text>([Bolt] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_s04">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_s05">
+		<text>([Bolt Burst] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_s05">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_s06">
+		<text>([Hull Bolt] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_s06">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_a07">
+		<text>([Warp] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_a07">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_s08">
+		<text>([Warp Bolt] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_s08">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_s09">
+		<text>([Heal Bolt] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_s09">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_a10">
+		<text>([Heal Aura] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_a10">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_a11">
+		<text>([Drone] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_a11">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_s12">
+		<text>([Barrier] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_s12">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_s13">
+		<text>([Lockdown] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_s13">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_s14">
+		<text>([Ally] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_s14">aea_cult_tiny</transformRace>
+				</event>
+			</choice>
+			<choice>
+				<text>Nevermind</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_cult_tiny_s15">
+		<text>([Mind Bolt] Tiny Cultist) Reset spell</text>
+		<event>
+			<text>Do you wish to reset the spell of this tiny cultist, the spell will be lost however you will be able to teach the tiny cultist a new spell.</text>
+			<choice>
+				<text>Reset</text>
+				<event>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<transformRace class="aea_cult_tiny_s15">aea_cult_tiny</transformRace>
 				</event>
 			</choice>
 			<choice>

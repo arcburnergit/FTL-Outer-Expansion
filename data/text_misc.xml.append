@@ -34,10 +34,19 @@
 <text name="loot_aea_necro_1">HERETIC LOOT
 -1 damage
 +2 shots</text>
+<text name="loot_aea_old_1">LYLMIK LOOT
+-100% fire chance
++100% breach chance
+The last shot in the volley does 1 additional hull damage</text>
+<text name="loot_aea_cult_1">CULTIST LOOT
+Cannot equip spells
+-2 second cooldown
++1 damage per friendly cultist with an equipped spell</text>
 
 <text name="tip_aea_old_unknown">Tip: A strange weapon? You wonder if it's related to that strange gate in Node 17...</text>
 <text name="tip_laser_old">Tip: Each laser shot will be blocked by two shield bubbles, regardless of the laser's damage.</text>
 <text name="tip_laser_oldp">Tip: Each laser shot will be blocked by a single shield bubble, despite having 0 hull damage.</text>
+<text name="tip_aea_spellspore">Tip: Each spell equiped to the weapon can only be shot at the enemy ship.</text>
 
 <text name="atlas_aea_acid">Name: Acidic Origins
 Type: Hostile (Nebula)
@@ -68,6 +77,7 @@ The Engi Heretics are outcasts even from the separatists, broken free from the h
 
 <text name="ship_PLAYER_SHIP_AEA_ACID_BILL_unlock">Consult the advice of a certain Acidic outcast about a certain artifact to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_NECRO_KING_unlock">Consult the advice of a certain Heretic leader about a certain artifact to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_CULT_TINY_unlock">Consult the advice of a certain Tiny Vampweed about a certain artifact to unlock this ship.</text>
 
 <text name="ship_PLAYER_SHIP_AEA_OLD_UNI_1_unlock">Seek out the help of a certain Lylmik Council member and escape quarantine to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_OLD_UNI_2_unlock">Seek out the help of a certain Lylmik Council member and escape quarantine to unlock this ship.</text>
@@ -99,11 +109,11 @@ The Engi Heretics are outcasts even from the separatists, broken free from the h
 <text name="ship_PLAYER_SHIP_AEA_OLD_HAMMER_2_unlock">Get to Sector 5 with the Tyrant Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_OLD_HAMMER_3_unlock">Get to Sector 5 with the Tyrant Cruiser Type B or beat the game with the Tyrant Cruiser Type A to unlock this ship.</text>
 
-<text name="ship_PLAYER_SHIP_AEA_CULT_BUD_unlock">Thwart the overthrowing of a god.</text>
+<text name="ship_PLAYER_SHIP_AEA_CULT_BUD_unlock">Thwart a conspiracy to overthrow of a god.</text>
 <text name="ship_PLAYER_SHIP_AEA_CULT_BUD_2_unlock">Get to Sector 5 with the Bud Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_CULT_BUD_3_unlock">Get to Sector 5 with the Bud Cruiser Type B or beat the game with the Bud Cruiser Type A to unlock this ship.</text>
 
-<text name="ship_PLAYER_SHIP_AEA_CULT_BLOOM_unlock">Deliver the nectar of a god.</text>
+<text name="ship_PLAYER_SHIP_AEA_CULT_BLOOM_unlock">Deliver the seed of a god.</text>
 <text name="ship_PLAYER_SHIP_AEA_CULT_BLOOM_2_unlock">Get to Sector 5 with the Bloom Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_CULT_BLOOM_3_unlock">Get to Sector 5 with the Bloom Cruiser Type B or beat the game with the Bloom Cruiser Type A to unlock this ship.</text>
 
@@ -116,8 +126,8 @@ The Engi Heretics are outcasts even from the separatists, broken free from the h
 <text name="ship_PLAYER_SHIP_AEA_BIRD_TRAN_3_unlock">Get to Sector 5 with the Albatross Cruiser Type B or beat the game with the Albatross Cruiser Type A to unlock this ship.</text>
 
 <text name="ship_PLAYER_SHIP_AEA_SLUG_LONG_unlock">Coming Soon.</text>
-<text name="ship_PLAYER_SHIP_AEA_SLUG_LONG_unlock">Get to Sector 5 with the ??? Cruiser Type A to unlock this ship.</text>
-<text name="ship_PLAYER_SHIP_AEA_SLUG_LONG_unlock">Get to Sector 5 with the ??? Cruiser Type B or beat the game with the ??? Cruiser Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_SLUG_LONG_2_unlock">Get to Sector 5 with the ??? Cruiser Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_SLUG_LONG_3_unlock">Get to Sector 5 with the ??? Cruiser Type B or beat the game with the ??? Cruiser Type A to unlock this ship.</text>
 
 <text name="ship_PLAYER_SHIP_AEA_SLUG_WIDE_unlock">Coming Soon.</text>
 <text name="ship_PLAYER_SHIP_AEA_SLUG_WIDE_2_unlock">Get to Sector 5 with the ??? Cruiser Type A to unlock this ship.</text>

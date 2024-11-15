@@ -609,7 +609,7 @@
 
 
 <event name="AEA_OLD_SPONSOR_1_BOUNTY_DESTROY">
-	<text>You've defeated the Elite vessel, however the facility has gone to full lockdown. There's no way you'll be able to get in now.</text>
+	<text>You've defeated the Elite vessel, Your sponser appears satisfied and agrees to sponser you for the council.</text>
 	<variable name="aea_old_completed_sponsor" op="set" val="1" />
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<drone name="AEA_COMBAT_BIRD_BURST_1" />
@@ -650,7 +650,7 @@
 
 
 <event name="AEA_OLD_SPONSOR_2_BOUNTY_DESTROY">
-	<text>You've defeated the Elite vessel, however the facility has gone to full lockdown. There's no way you'll be able to get in now.</text>
+	<text>You've defeated the Elite vessel, Your sponser appears satisfied and agrees to sponser you for the council.</text>
 	<variable name="aea_old_completed_sponsor" op="set" val="1" />
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<weapon name="MISSILES_OBSIDIAN" />
@@ -684,7 +684,7 @@
 
 
 <event name="AEA_OLD_SPONSOR_3_BOUNTY_DESTROY">
-	<text>You've defeated the Elite vessel, however the facility has gone to full lockdown. There's no way you'll be able to get in now.</text>
+	<text>You've defeated the Elite vessel, Your sponser appears satisfied and agrees to sponser you for the council.</text>
 	<variable name="aea_old_completed_sponsor" op="set" val="1" />
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<weapon name="BOMB_CONSERVRECYCLER" />
@@ -717,7 +717,7 @@
 
 
 <event name="AEA_OLD_SPONSOR_4_BOUNTY_DESTROY">
-	<text>You've defeated the Elite vessel, however the facility has gone to full lockdown. There's no way you'll be able to get in now.</text>
+	<text>You've defeated the Elite vessel, Your sponser appears satisfied and agrees to sponser you for the council.</text>
 	<variable name="aea_old_completed_sponsor" op="set" val="1" />
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<drone name="SURGEON_BATTLE" />
@@ -751,7 +751,7 @@
 
 
 <event name="AEA_OLD_SPONSOR_5_BOUNTY_DESTROY">
-	<text>You've defeated the Elite vessel, however the facility has gone to full lockdown. There's no way you'll be able to get in now.</text>
+	<text>You've defeated the Elite vessel, Your sponser appears satisfied and agrees to sponser you for the council.</text>
 	<variable name="aea_old_completed_sponsor" op="set" val="1" />
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<weapon name="BEAM_ADAPT_3" />

@@ -378,6 +378,16 @@
 	<mountPoint x="4" y="89" />
 </weaponAnim>
 
+<animSheet name="aea_laser_oldp_3_loot" w="320" h="135" fw="40" fh="135">weapon_old/aea_laser_oldp_3_loot.png</animSheet>
+<weaponAnim name="aea_laser_oldp_3_loot">
+	<sheet>aea_laser_oldp_3_loot</sheet>
+	<desc length="8" x="0" y="0" />
+	<chargedFrame>4</chargedFrame>
+	<fireFrame>6</fireFrame>
+	<firePoint x="22" y="20" />
+	<mountPoint x="4" y="89" />
+</weaponAnim>
+
 
 
 <animSheet name="aea_laser_oldp_2" w="560" h="78" fw="56" fh="78">weapon_old/aea_laser_oldp_2.png</animSheet>
@@ -3770,6 +3780,28 @@
 </anim>
 
 
+<animSheet name="aea_cult_laser_random" w="460" h="70" fw="46" fh="70">weapon_cult/aea_cult_laser_random.png</animSheet>
+<weaponAnim name="aea_cult_laser_random">
+	<sheet>aea_cult_laser_random</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="27" y="13" />
+	<mountPoint x="10" y="44" />
+	<chargeImage>weapon_cult/aea_cult_laser_random_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="aea_cult_laser_loot" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_loot.png</animSheet>
+<weaponAnim name="aea_cult_laser_loot">
+	<sheet>aea_cult_laser_loot</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="22" y="10" />
+	<mountPoint x="7" y="33" />
+	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+</weaponAnim>
+
 <animSheet name="aea_cult_laser" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser.png</animSheet>
 <weaponAnim name="aea_cult_laser">
 	<sheet>aea_cult_laser</sheet>
@@ -3778,7 +3810,7 @@
 	<fireFrame>9</fireFrame>
 	<firePoint x="22" y="10" />
 	<mountPoint x="7" y="33" />
-	<chargeImage>weapon_cult/aea_cult_laser_glow.png</chargeImage>
+	<chargeImage>weapon_cult/aea_cult_laser_base_glow.png</chargeImage>
 </weaponAnim>
 
 <animSheet name="aea_cult_laser_1" w="400" h="57" fw="40" fh="57">weapon_cult/aea_cult_laser_1.png</animSheet>

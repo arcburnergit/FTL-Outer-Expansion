@@ -1008,7 +1008,11 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 				<text>Put the seed onto it</text>
 				<event>
 					<text>You insert the seed into the structure and it shifts and retracts into the ground. A moment later a tiny orchid sprouts from the ground. It doesn't seem to be able to talk, but it does gesture for you to follow it.</text>
-					<transformRace class="aea_seed">aea_cult_tiny</transformRace>
+					<removeCrew class="aea_seed">
+						<clone>false</clone>
+						<text> </text>
+					</removeCrew>
+					<crewMember amount="1" all_skills="2" class="aea_cult_tiny">Tiny</crewMember>
 					<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CULT_BUD</unlockCustomShip>
 					<choice hidden="true">
 						<text>Continue...</text>

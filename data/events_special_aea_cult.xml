@@ -435,7 +435,7 @@
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
-	<text>This beacon hosts a Confederate transport. It's safe to bet the ship is most likely carrying some special tech. If you can kill its crew, their cargo will be yours.</text>
+	<text>This beacon hosts a Cultist transport. It's safe to bet the ship is most likely carrying some special tech. If you can kill its crew, their cargo will be yours.</text>
 	<ship load="SHIP_AEA_CULT_TRANSPORT_LOOT" hostile="false" />
 	<choice>
 		<text>Demand the surrender of their goods.</text>
@@ -515,7 +515,7 @@
 	<text>The crew is dead, leaving you with the ship. Its cargo is yours for the taking. Aboard is the special tech you expected, which you bring back to your ship.</text>
 	<autoReward level="MED">standard_no_item</autoReward>
 	<achievement>ACH_TRANS_AEA_CULT</achievement>
-	<weapon name="LIST_LOOT_AEA_CULT" />
+	<weapon name="AEA_LASER_CULT_LOOT" />
 	<variable name="ach_trans_aea_cult" op="set" val="1" />
 </event>
 
