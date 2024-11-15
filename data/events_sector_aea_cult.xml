@@ -149,7 +149,7 @@
 		<text>Use the jump gate</text>
 		<event>
 			<changeBackground>BACKGROUND_LIGHTSPEED</changeBackground>
-			<text>You head into the jumpgate and find yourself in hyperspace, there appears to be a few wrecks floating around near you which you scrap for parts.</text>
+			<text>You head into the jumpgate and find yourself in hyperspace, there appears to be a few wrecks floating around near you which you scrap for parts. It appears the cultists were right, you can jump to any beacon in the sector from here!</text>
 			<hiddenAug>AEA_CULT_MAGIC_BOOST</hiddenAug>
 			<autoReward level="MED">stuff</autoReward>
 		</event>
@@ -615,11 +615,12 @@ The whale expresses their gratitude and asks you to follow it.</text>
 				<text>Continue...</text>
 				<event>
 					<text>Eventually you arrive at a nearby moon, it appears the whales discovered a hidden rebel supply cache. The whale, now content in having payed off your debt, returns back to the herd.</text>
+					<!-- As I wrote this, our family's dog, Pepper, passed away, She was a strong compassionate dog who always knew when someone was feeling pain, we love her dearly now and forever.-->
 					<item_modify>
-						<item type="fuel" min="2" max="6" />
-						<item type="missiles" min="1" max="5" />
-						<item type="drones" min="1" max="5" />
-						<item type="scrap" min="90" max="120" />
+						<item type="fuel" min="2" max="5" />
+						<item type="missiles" min="1" max="4" />
+						<item type="drones" min="1" max="4" />
+						<item type="scrap" min="60" max="80" />
 					</item_modify>
 					<weapon name="RANDOM"/>
 					<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CULT_WHALE</unlockCustomShip>
@@ -1012,12 +1013,12 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 						<clone>false</clone>
 						<text> </text>
 					</removeCrew>
-					<crewMember amount="1" all_skills="2" class="aea_cult_tiny">Tiny</crewMember>
 					<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CULT_BUD</unlockCustomShip>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>Eventually it leads you to a supply stash, it helps you load it up into the ship and then gets onboard with you, it seems like this tiny orchid is a new crewMember.</text>
+							<crewMember amount="1" all_skills="2" class="aea_cult_tiny">Tiny</crewMember>
 							<item_modify>
 								<item type="scrap" min="35" max="35"/>
 								<item type="drones" min="5" max="5"/>
@@ -1069,13 +1070,13 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 </event>
 
 <event name="AEA_CULT_CONSPIRACY_COMPOUND">
-	<text>You're able to makeout a few different locations around the compound. There's a workshop with visable ship components inside. A storage area with a few shipping containers spread about. A generator building that appears to be powerering the rest of the facility. An old hanger off to one side, you can't see inside of it. Finally theres the main command facility, your sensors indicate this is where the conspirators are, it appears they're all currently asleep.</text>
-	<!--choice hidden="true">
+	<text>You're able to makeout a few different locations around the compound. There's a workshop with visable ship components inside. A storage yard with a few shipping containers spread about. A generator building that appears to be powerering the rest of the facility. An old hanger off to one side, you can't see inside of it. Finally theres the main command facility, your sensors indicate this is where the conspirators are, it appears they're all currently asleep.</text>
+	<choice hidden="true">
 		<text>Search the workshop</text>
 		<event load="AEA_CULT_CON_WORKSHOP"/>
 	</choice>
 	<choice hidden="true">
-		<text>Search the storage area</text>
+		<text>Search the storage yard</text>
 		<event load="AEA_CULT_CON_STORAGE"/>
 	</choice>
 	<choice hidden="true">
@@ -1085,14 +1086,104 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 	<choice hidden="true">
 		<text>Search the hanger</text>
 		<event load="AEA_CULT_CON_HANGER"/>
-	</choice-->
+	</choice>
 	<choice hidden="true">
 		<text>Search the compound</text>
 		<event load="AEA_CULT_CON_COMPOUND"/>
 	</choice>
+</event>
+
+<event name="AEA_CULT_CON_WORKSHOP_LOAD">
+	<loadEvent>AEA_CULT_CON_WORKSHOP</loadEvent>
+</event>
+
+<event name="AEA_CULT_CON_WORKSHOP">
+	<text>You arrive in the workshop, it appears the workers have gone to sleep for the night.</text>
+	<choice hidden="true" req="aea_cult_visit_eng" lvl="0" max_lvl="0" blue="false">
+		<text>Search the workshop</text>
+		<event>
+			<text>Your search reveals nothing useful, infact the only bits you can make use out of a few drone parts.</text>
+			<item_modify>
+				<item type="drones" min="3" max="3" />
+			</item_modify>
+			<variable name="aea_cult_visit_eng" op="set" val="1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="AEA_CULT_CON_WORKSHOP_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="aea_cult_visit_eng" lvl="1" blue="false">
+		<text>You have already searched the workshop</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
 	<choice hidden="true">
-		<text>nevermind</text>
-		<event/>
+		<text>Go back</text>
+		<event load="AEA_CULT_CONSPIRACY_COMPOUND_LOAD"/>
+	</choice>
+</event>
+
+<event name="AEA_CULT_CON_STORAGE_LOAD">
+	<loadEvent>AEA_CULT_CON_STORAGE</loadEvent>
+</event>
+
+<event name="AEA_CULT_CON_STORAGE">
+	<text>You arrive in the storage yard, it's deserted and empty aside from a few shipping containers..</text>
+	<choice hidden="true" req="aea_cult_visit_str" lvl="0" max_lvl="0" blue="false">
+		<text>Search the shipping containers</text>
+		<event>
+			<text>You begin openning up the shipping containers, most are empty. It's only on the second to last crate that you discover a weapon. You don't find anything else.</text>
+			<weapon name="LIST_WEAPON_CULT"/>
+			<variable name="aea_cult_visit_str" op="set" val="1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="AEA_CULT_CON_STORAGE_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="aea_cult_visit_str" lvl="1" blue="false">
+		<text>You have already searched the storage yard</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice hidden="true">
+		<text>Go back</text>
+		<event load="AEA_CULT_CONSPIRACY_COMPOUND_LOAD"/>
+	</choice>
+</event>
+
+<event name="AEA_CULT_CON_GENERATOR_LOAD">
+	<loadEvent>AEA_CULT_CON_GENERATOR</loadEvent>
+</event>
+
+<event name="AEA_CULT_CON_GENERATOR">
+	<text>You arrive in the generator room, Access to the actual generator is blocked by a heavy security checkpoint. It's unlikely you'll be able to get inside the generator itself</text>
+	<choice hidden="true">
+		<text>Search the generator room entrance</text>
+		<event name="AEA_CULT_CON_GENERATOR_CODE">
+			<text>The room you're in is rather bare, on one side theres a thick glass window into the security control room, on another wall is an emergency escape route map, probably leftover from when this place wasn't abandoned.
+
+You're unable to find anything in the room, however you notice a sticky note through the glass window with a code on it: </text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="AEA_CULT_CON_GENERATOR_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Go back</text>
+		<event load="AEA_CULT_CONSPIRACY_COMPOUND_LOAD"/>
+	</choice>
+</event>
+
+<event name="AEA_CULT_CON_HANGER">
+	<text>You arrive at the hanger, you search the perimeter but can't find any way in, all of the doors are locked shut or sealed up.</text>
+	<choice hidden="true">
+		<text>You cannot search the hanger as you cannot find a way inside</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice hidden="true">
+		<text>Go back</text>
+		<event load="AEA_CULT_CONSPIRACY_COMPOUND_LOAD"/>
 	</choice>
 </event>
 
@@ -1217,6 +1308,7 @@ As you're watching you notice that one of the conspirator's room didn't lock pro
 
 You're able to scrap the fragments of the ship and discover a weapon amongst the wreckage</text>
 	<autoReward level="LOW">standard_no_item</autoReward>
+	<weapon name="AEA_LASER_CULT_RANDOM"/>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>

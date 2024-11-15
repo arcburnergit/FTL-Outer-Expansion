@@ -3079,6 +3079,20 @@ script.on_internal_event(Defines.InternalEvents.POST_CREATE_CHOICEBOX, function(
     if event.eventName == "AEA_CULT_CON_ENTER_CODE" then
     	goal_code = Hyperspace.playerVariables.aea_cult_code_goal
         choiceBox.mainText = "Entering Code: "..code_entered
+    elseif event.eventName == "AEA_CULT_CON_GENERATOR_CODE" then
+    	goal_code = Hyperspace.playerVariables.aea_cult_code_goal
+    	local goalString = tostring(goal_code)
+	    if #goalString > 2 and goalString:sub(#goalString - 1) == ".0" then
+	    	goalString = goalString:sub(1, #goalString - 2)
+	    end
+	    if #goalString == 1 then
+	    	goalString = "000" .. goalString
+	    elseif #goalString == 2 then
+	    	goalString = "00" .. goalString
+	    elseif #goalString == 3 then
+	    	goalString = "0" .. goalString
+	    end
+    	choiceBox.mainText = choiceBox.mainText..goalString..". You quickly note it down."
     end
 end)
 
@@ -3158,6 +3172,52 @@ magicCrewSpells["aea_cult_wizard_s12"] = true
 magicCrewSpells["aea_cult_wizard_s13"] = true
 magicCrewSpells["aea_cult_wizard_s14"] = true
 magicCrewSpells["aea_cult_wizard_s15"] = true
+magicCrewSpells["aea_cult_tiny_a01"] = true
+magicCrewSpells["aea_cult_tiny_a02"] = true
+magicCrewSpells["aea_cult_tiny_s03"] = true
+magicCrewSpells["aea_cult_tiny_s04"] = true
+magicCrewSpells["aea_cult_tiny_s05"] = true
+magicCrewSpells["aea_cult_tiny_s06"] = true
+magicCrewSpells["aea_cult_tiny_a07"] = true
+magicCrewSpells["aea_cult_tiny_s08"] = true
+magicCrewSpells["aea_cult_tiny_s09"] = true
+magicCrewSpells["aea_cult_tiny_a10"] = true
+magicCrewSpells["aea_cult_tiny_a11"] = true
+magicCrewSpells["aea_cult_tiny_s12"] = true
+magicCrewSpells["aea_cult_tiny_s13"] = true
+magicCrewSpells["aea_cult_tiny_s14"] = true
+magicCrewSpells["aea_cult_tiny_s15"] = true
+
+local cultist_count = 0
+local cultist_countTimer = 0
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	cultist_countTimer = cultist_countTimer + Hyperspace.FPS.SpeedFactor/16
+	for weapon in vter(shipManager:GetWeaponList()) do
+		if weapon.blueprint.name == "AEA_LASER_CULT_LOOT" then
+			if cultist_countTimer >= 0.1 then
+				cultist_countTimer = 0
+				cultist_count = 0
+				if Hyperspace.ships.player then
+					for crew in vter(Hyperspace.ships.player.vCrewList) do
+						if magicCrewSpells[crew.type] and crew.iShipId == shipManager.iShipId then
+							cultist_count = cultist_count + 1
+						end
+					end
+				end
+				if Hyperspace.ships.enemy then
+					for crew in vter(Hyperspace.ships.enemy.vCrewList) do
+						if magicCrewSpells[crew.type] and crew.iShipId == shipManager.iShipId then
+							cultist_count = cultist_count + 1
+						end
+					end
+				end
+			end
+			
+			weapon.boostLevel = math.min(cultist_count, 10)
+		end
+	end
+end)
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
 	if log_events then
@@ -3220,29 +3280,6 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
 			projectile:SetDamage(newDamage)
 			--print("SET DAMAGE")
 		end
-	end
-
-
-	if weapon.blueprint.name == "AEA_LASER_CULT_LOOT" then
-		local newDamage = Hyperspace.Damage()
-		local cultist_count = 0
-		if Hyperspace.ships.player then
-			for crew in vter(Hyperspace.ships.player.vCrewList) do
-				if magicCrewSpells[crew.type] and crew.iShipId == projectile.ownerId then
-					cultist_count = cultist_count + 1
-				end
-			end
-		end
-		if Hyperspace.ships.enemy then
-			for crew in vter(Hyperspace.ships.enemy.vCrewList) do
-				if magicCrewSpells[crew.type] and crew.iShipId == projectile.ownerId then
-					cultist_count = cultist_count + 1
-				end
-			end
-		end
-		newDamage.iDamage = 1 + cultist_count
-		projectile:SetDamage(newDamage)
-		--print("SET DAMAGE CULTIST: "..tostring(cultist_count))
 	end
 end)
 

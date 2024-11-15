@@ -706,6 +706,13 @@ This enemy is protected by an Energy Shield.</tooltip>
 			</room>
 		</rooms>
 	</mod-append:customShip>
+	
+	<mod-append:customShip name="AEA_CULT_BOSS_FLOWER_FAKE">
+		<shipIcons>
+			<shipIcon>icon_auto</shipIcon>
+        </shipIcons>
+		<autoShipForce>true</autoShipForce>
+	</mod-append:customShip>
 
 	<mod-append:customShip name="AEA_OLD_BATTLESHIP">
 		<shipIcons>
@@ -3746,7 +3753,6 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 	<variable name="aea_cult_visit_eng" op="set" val="0" />
 	<variable name="aea_cult_visit_str" op="set" val="0" />
-	<variable name="aea_cult_visit_gen" op="set" val="0" />
 	<variable name="aea_cult_code" op="set" val="0" />
 
 	<metaVariable name="juke_aea_old_1" op="set" val="0" />
@@ -4522,6 +4528,10 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<bossShip>AEA_OLD_FINAL_BOSS_NORMAL</bossShip>
 	<bossShip>AEA_OLD_FINAL_BOSS_CHALLENGE</bossShip>
 	<bossShip>AEA_OLD_FINAL_BOSS_EXTREME</bossShip>
+
+	<bossShip yOffset="140">AEA_CULT_STATION</bossShip>
+	<bossShip yOffset="180">AEA_CULT_BOSS_FLOWER</bossShip>
+	<bossShip yOffset="180">AEA_CULT_BOSS_FLOWER_FAKE</bossShip>
 </events>
 
 <mod:findLike type="victories"> <!-- adds the victory marker for lylmik ending -->

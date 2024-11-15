@@ -6211,6 +6211,11 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<fireChance>0</fireChance>
 		<breachChance>0</breachChance>
 		<cooldown>8</cooldown>
+		<boost>
+			<type>damage</type>
+			<amount>1</amount>
+			<count>10</count>
+		</boost>
 		<power>1</power>
 		<cost>60</cost>
 		<bp>6</bp>
@@ -7915,8 +7920,8 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="3" count="4">
-		<weapon name="SHOTGUN_1" />
-		<weapon name="SHOTGUN_1" />
+		<weapon name="AEA_LASER_CULT_04" />
+		<weapon name="AEA_LASER_CULT_04" />
 	</weaponList>
 	<droneList drones="2" count="2" />
 	<health amount="30" />
@@ -8263,7 +8268,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>100</cost>
 	<bp>2</bp>
-	<rarity>4</rarity>
+	<rarity>0</rarity>
 	<powerList>
 		<power>Max Health is reduced to 75</power>
 		<power>1.5x move speed</power>
