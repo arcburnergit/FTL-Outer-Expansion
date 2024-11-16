@@ -46,7 +46,7 @@ Cannot equip spells
 <text name="tip_aea_old_unknown">Tip: A strange weapon? You wonder if it's related to that strange gate in Node 17...</text>
 <text name="tip_laser_old">Tip: Each laser shot will be blocked by two shield bubbles, regardless of the laser's damage.</text>
 <text name="tip_laser_oldp">Tip: Each laser shot will be blocked by a single shield bubble, despite having 0 hull damage.</text>
-<text name="tip_aea_spellspore">Tip: Each spell equiped to the weapon can only be shot at the enemy ship.</text>
+<text name="tip_aea_spellspore">Tip: Each spell equiped to the weapon can only be shot at the enemy ship. Spells cannot miss and Spellspore weapons fire each spell twice per charge.</text>
 
 <text name="atlas_aea_acid">Name: Acidic Origins
 Type: Hostile (Nebula)

@@ -1578,7 +1578,7 @@ script.on_internal_event(Defines.InternalEvents.GET_DODGE_FACTOR, function(shipM
 	if shipManager:HasSystem(1) then
 		local engine = shipManager:GetSystem(1)
 		if engine.powerState.first + engine.iBonusPower >= 9 then
-			local powerExtra = engine.powerState.first + engine.iBonusPower - 8
+			local powerExtra = engine.powerState.first + engine.iBonusPower + engine.iBatteryPower - 8
 			local pilot = shipManager:GetSystem(6)
 			if pilot.bManned then
 				value = value + 35 + (5 * powerExtra)
@@ -1766,7 +1766,7 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
 	if log_events then
 		log("JUMP_ARRIVE 5")
 	end
-	local map = Hyperspace.App.world.starMap
+	--[[local map = Hyperspace.App.world.starMap
 	local sourceLoc = nil
 	--print("CHECK FOR BEACON")
 	for loc in vter(map.locations) do
@@ -1825,7 +1825,7 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
 		end
 		print("SOURCE POINT: x:"..tostring(targetPoint.x).." y:"..tostring(targetPoint.y))
 		]]
-		for k,loc in pairs(sourceConnections) do
+		--[[for k,loc in pairs(sourceConnections) do
 			targetLoc.connectedLocations:push_back(loc)
 
 			local adjacentConnections = {}
@@ -1858,7 +1858,7 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
 			end
 		end
 		sourceLoc.loc = targetPoint
-	end
+	end]]
 end)
 
 
@@ -2331,6 +2331,7 @@ local function activate_magic(crewmem, magic, target_room, target_ship)
             	nil,
                 9999,
                 nil)
+		userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
 	elseif magic == "12" then
 		local targetManager = Hyperspace.ships(crewmem.iShipId)
 		if target_ship then
@@ -2397,6 +2398,7 @@ local function activate_priest(crewmem, target_room, target_ship, type)
 	            	nil,
 	                9999,
 	                nil)
+			userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
 		else
 			--print("FIRE OFF:"..spell)
 	        fire_spell(crewmem, targetManager, spell, target_room, false)
@@ -2781,6 +2783,8 @@ end)
 
 local barrierTablePlayer = {}
 local barrierTableEnemy = {}
+local barrierTablePlayerLen = 0
+local barrierTableEnemyLen = 0
 
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function()
 	if log_events then
@@ -2788,6 +2792,8 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function()
 	end
 	barrierTablePlayer = {}
 	barrierTableEnemy = {}
+	barrierTablePlayerLen = 0
+	barrierTableEnemyLen = 0
 end)
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
@@ -2814,8 +2820,14 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipMa
     if weaponName then
     	local room = get_room_at_location(shipManager, location, true)
     	if shipManager.iShipId == 0 then
+    		if barrierTablePlayerLen >= 8 then return end
+
+    		if not barrierTablePlayer[room] then barrierTablePlayerLen = barrierTablePlayerLen + 1 end
     		barrierTablePlayer[room] = 2
     	else
+    		if barrierTableEnemyLen >= 8 then return end
+
+    		if not barrierTableEnemy[room] then barrierTableEnemyLen = barrierTableEnemyLen + 1 end
     		barrierTableEnemy[room] = 2
     	end
     end
@@ -2894,31 +2906,33 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_PRE, function(project
     if spellTable.owner then
     	return Defines.Chain.CONTINUE
     end
-	if projectile.currentSpace == 0 and projectile.ownerId == 1 then
+	if projectile.currentSpace == 0 and projectile.ownerId == 1 and not projectile.missed then
 		shipManager = Hyperspace.ships.player
 		for room, health in pairs(barrierTablePlayer) do
 			local pos = shipManager:GetRoomCenter(room)
-			if get_distance(projectile.position, pos) < 52 and get_distance(projectile.position, pos) > 40 then
+			if get_distance(projectile.position, pos) < 55 and get_distance(projectile.position, pos) > 40 then
 				projectile:Kill()
         		Hyperspace.Sounds:PlaySoundMix("hitShield1", -1, false)
 				local newHealth = health - 1
 				if newHealth <= 0 then
 					barrierTablePlayer[room] = nil
+					barrierTablePlayerLen = barrierTablePlayerLen - 1
 				else
 					barrierTablePlayer[room] = newHealth
 				end
 			end
 		end
-	elseif projectile.currentSpace == 1 and projectile.ownerId == 0 then
+	elseif projectile.currentSpace == 1 and projectile.ownerId == 0  and not projectile.missed then
 		shipManager = Hyperspace.ships.enemy
 		for room, health in pairs(barrierTableEnemy) do
 			local pos = shipManager:GetRoomCenter(room)
-			if get_distance(projectile.position, pos) < 52 and get_distance(projectile.position, pos) > 40 then
+			if get_distance(projectile.position, pos) < 55 and get_distance(projectile.position, pos) > 40 then
 				projectile:Kill()
         		Hyperspace.Sounds:PlaySoundMix("hitShield1", -1, false)
 				local newHealth = health - 1
 				if newHealth <= 0 then
 					barrierTableEnemy[room] = nil
+					barrierTableEnemyLen = barrierTableEnemyLen - 1
 				else
 					barrierTableEnemy[room] = newHealth
 				end
@@ -3031,6 +3045,8 @@ end)
 script.on_init(function() 
 	barrierTablePlayer = {}
 	barrierTableEnemy = {}
+	barrierTablePlayerLen = 0
+	barrierTableEnemyLen = 0
 end)
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
@@ -3042,8 +3058,14 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
 		if shipManager:HasAugmentation("AEA_BARRIER_RELAY") > 0 then
 			local room = get_room_at_location(shipManager, shipManager:GetRandomRoomCenter(), false)
 	    	if shipManager.iShipId == 0 then
+	    		if barrierTablePlayerLen >= 8 then return end
+
+    			if not barrierTablePlayer[room] then barrierTablePlayerLen = barrierTablePlayerLen + 1 end
 	    		barrierTablePlayer[room] = 2
 	    	else
+	    		if barrierTableEnemyLen >= 8 then return end
+
+    			if not barrierTableEnemy[room] then barrierTableEnemyLen = barrierTableEnemyLen + 1 end
 	    		barrierTableEnemy[room] = 2
 	    	end
 	    end
@@ -3219,22 +3241,51 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	end
 end)
 
+local cultLaserNames = {}
+cultLaserNames["AEA_LASER_CULT_03"] = 3
+cultLaserNames["AEA_LASER_CULT_04"] = 2
+cultLaserNames["AEA_LASER_CULT_05"] = 2
+cultLaserNames["AEA_LASER_CULT_06"] = 2
+cultLaserNames["AEA_LASER_CULT_09"] = 3
+cultLaserNames["AEA_LASER_CULT_12"] = 3
+cultLaserNames["AEA_LASER_CULT_13"] = 3
+cultLaserNames["AEA_LASER_CULT_14"] = 2
+cultLaserNames["AEA_LASER_CULT_15"] = 3
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	for weapon in vter(shipManager:GetWeaponList()) do
+		if cultLaserNames[weapon.blueprint.name] then
+			local sporeTable = userdata_table(weapon, "mods.aea.spellSpores")
+			if sporeTable.shots and sporeTable.shots > weapon.boostLevel then
+				weapon.boostLevel = sporeTable.shots
+			end
+		end
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
+	for weapon in vter(shipManager:GetWeaponList()) do
+		local sporeTable = userdata_table(weapon, "mods.aea.spellSpores")
+		if sporeTable.shots then
+			--print("SPELLSPORE SHOTS"..tostring(sporeTable.shots))
+			sporeTable.shots = nil
+		end
+	end
+end)
+
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
 	if log_events then
 		log("PROJECTILE_FIRE 4")
 	end
+
 	--print("NAME: "..weapon.blueprint.name.." BOOST: "..tostring(weapon.boostLevel).." BASE COOLDOWN: "..tostring(weapon.baseCooldown))
-	if (weapon.blueprint.name == "AEA_LASER_CULT_03" and weapon.boostLevel >= 3) or 
-		(weapon.blueprint.name == "AEA_LASER_CULT_04" and weapon.boostLevel >= 2) or 
-		(weapon.blueprint.name == "AEA_LASER_CULT_05" and weapon.boostLevel >= 2) or 
-		(weapon.blueprint.name == "AEA_LASER_CULT_06" and weapon.boostLevel >= 2) or 
-		(weapon.blueprint.name == "AEA_LASER_CULT_09" and weapon.boostLevel >= 3) or 
-		(weapon.blueprint.name == "AEA_LASER_CULT_12" and weapon.boostLevel >= 3) or 
-		(weapon.blueprint.name == "AEA_LASER_CULT_13" and weapon.boostLevel >= 3) or 
-		(weapon.blueprint.name == "AEA_LASER_CULT_14" and weapon.boostLevel >= 2) or 
-		(weapon.blueprint.name == "AEA_LASER_CULT_15" and weapon.boostLevel >= 3) then
+	if cultLaserNames[weapon.blueprint.name] and weapon.boostLevel == cultLaserNames[weapon.blueprint.name] then
 		--print("SET_COOLDOWN")
 		weapon.boostLevel = 50
+	end
+
+	if cultLaserNames[weapon.blueprint.name] then
+		userdata_table(weapon, "mods.aea.spellSpores").shots = weapon.boostLevel
 	end
 
 	if weapon.blueprint.name == "AEA_LASER_CULT_RANDOM" then
@@ -3268,7 +3319,7 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
 	        projectile.ownerId,
 	        projectile.target,
 	        projectile.destinationSpace,
-	        pon_internal_eventrojectile.heading)
+	        projectile.heading)
 	    projectile:Kill()
 	end
 
@@ -3283,3 +3334,13 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
 	end
 end)
 
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	if shipManager:HasAugmentation("AEA_AUG_WHALE") > 0 and shipManager:HasSystem(2) then
+		local oxygen = shipManager.oxygenSystem
+		local shipGraph = Hyperspace.ShipGraph.GetShipInfo(shipManager.iShipId)
+		for id = 0, shipGraph:RoomCount(), 1 do
+			--print("EMPTY:"..tostring(id))
+			oxygen:ModifyRoomOxygen(id, -100.0)
+		end
+	end
+end)

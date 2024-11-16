@@ -5277,18 +5277,47 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		</missSounds>
 		<weaponArt>laser_burst_1</weaponArt>
 	</weaponBlueprint>
-	<weaponBlueprint name="AEA_LASER_SPELL_ARTILLERY">
+	<weaponBlueprint name="AEA_LASER_SFAKE_NOP">
 		<type>LASER</type>
-		<title>Spell Artillery</title>
-		<desc>[Base Cooldown: 16] Channels the power of the bud to fire spells at the enemy ship.</desc>
-		<tooltip>Artillery: Channels the power of the bud to fire spells at the enemy ship.</tooltip>
+		<title>Drone Laser</title>
 		<damage>0</damage>
 		<accuracyMod>100</accuracyMod>
 		<shots>1</shots>
-		<sp>16</sp>
+		<sp>0</sp>
 		<fireChance>0</fireChance>
 		<breachChance>0</breachChance>
-		<cooldown>16</cooldown>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<hitShipSounds>
+			<sound>hitHull2</sound>
+			<sound>hitHull3</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>laser_burst_1</weaponArt>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_SPELL_ARTILLERY">
+		<type>LASER</type>
+		<title>Spell Artillery</title>
+		<desc>[Base Cooldown: 14] Channels the power of the bud to fire spells at the enemy ship.</desc>
+		<tooltip>Artillery: Channels the power of the bud to fire spells at the enemy ship.</tooltip>
+		<damage>0</damage>
+		<mv-pop>
+			<count>1</count>
+			<countSuper>1</countSuper>
+		</mv-pop>
+		<accuracyMod>100</accuracyMod>
+		<shots>1</shots>
+		<sp>0</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>14</cooldown>
 		<rarity>0</rarity>
 		<image>aea_proj_magic</image>
 		<hitShipSounds>
@@ -6275,6 +6304,747 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		</missSounds>
 		<weaponArt>aea_cult_laser_random</weaponArt>
 		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>	<weaponBlueprint name="AEA_LASER_CULT_03">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Bio Bolt]</title>
+		<short>[Bio Bolt]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 14 seconds
+
+	Shots Per Charge: 2
+	Charges: 3
+
+	Base Hull Damage: 0
+	Total System Damage: 0
+	Total Crew Damage: 45
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 14 seconds
+
+	Shots Per Charge: 2
+	Charges: 3
+
+	Base Hull Damage: 0
+	Total System Damage: 0
+	Total Crew Damage: 45
+	Shield Piercing: 16</tooltipOverride>
+		<damage>0</damage>
+		<persDamage>3</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>2</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>14</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_pur</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_3</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_04">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Bolt]</title>
+		<short>[Bolt]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 18 seconds
+
+	Shots Per Charge: 2
+	Charges: 2
+
+	Base Hull Damage: 1
+	Total System Damage: 1
+	Total Crew Damage: 15
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 18 seconds
+
+	Shots Per Charge: 2
+	Charges: 2
+
+	Base Hull Damage: 1
+	Total System Damage: 1
+	Total Crew Damage: 15
+	Shield Piercing: 16</tooltipOverride>
+		<damage>1</damage>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>2</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>18</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_pur</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_4</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_05">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Bolt Burst]</title>
+		<short>[Bolt Burst]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 26 seconds
+
+	Shots Per Charge: 6
+	Charges: 2
+
+	Base Hull Damage: 1
+	Total System Damage: 1
+	Total Crew Damage: 15
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 26 seconds
+
+	Shots Per Charge: 6
+	Charges: 2
+
+	Base Hull Damage: 1
+	Total System Damage: 1
+	Total Crew Damage: 15
+	Shield Piercing: 16</tooltipOverride>
+		<damage>1</damage>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>6</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>26</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_pur</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_5</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_06">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Hull Bolt]</title>
+		<short>[Hull Bolt]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 20 seconds
+
+	Shots Per Charge: 2
+	Charges: 2
+
+	Base Hull Damage: 3
+	Total System Damage: 0
+	Total Crew Damage: 0
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 20 seconds
+
+	Shots Per Charge: 2
+	Charges: 2
+
+	Base Hull Damage: 3
+	Total System Damage: 0
+	Total Crew Damage: 0
+	Shield Piercing: 16</tooltipOverride>
+		<damage>3</damage>
+		<sysDamage>-3</sysDamage>
+		<persDamage>-3</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>2</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>20</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_hull</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_6</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_08">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Warp Bolt]</title>
+		<short>[Warp Bolt]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 18 seconds
+
+	Shots Per Charge: 2
+	Charges: Infinite
+
+	Teleports any crew in the room to a random room on the enemy ship on hit
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 18 seconds
+
+	Shots Per Charge: 2
+	Charges: Infinite
+
+	Teleports any crew in the room to a random room on the enemy ship on hit
+	Shield Piercing: 16</tooltipOverride>
+		<damage>0</damage>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>2</shots>
+		<sp>16</sp>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>18</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_8</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_09">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Heal Bolt]</title>
+		<short>[Heal Bolt]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 13 seconds
+
+	Shots Per Charge: 2
+	Charges: 3
+
+	Base Hull Damage: 0
+	Total System Damage: 0
+	Total Crew Damage: -75
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 13 seconds
+
+	Shots Per Charge: 2
+	Charges: 3
+
+	Base Hull Damage: 0
+	Total System Damage: 0
+	Total Crew Damage: -75
+	Shield Piercing: 16</tooltipOverride>
+		<damage>0</damage>
+		<persDamage>-5</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>2</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>13</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_heal</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_9</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_12">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Barrier]</title>
+		<short>[Barrier]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 13 seconds
+
+	Shots Per Charge: 2
+	Charges: 3
+
+	Spawns a barrier capable of blocking 2 projectiles on hit
+	Maximum of 8 barrier active at once
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 13 seconds
+
+	Shots Per Charge: 2
+	Charges: 3
+
+	Spawns a barrier capable of blocking 2 projectiles on hit
+	Maximum of 8 barrier active at once
+	Shield Piercing: 16</tooltipOverride>
+		<damage>0</damage>
+		<persDamage>3</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>2</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>13</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_12</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_13">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Lockdown]</title>
+		<short>[Lockdown]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 14 seconds
+
+	Shots Per Charge: 2
+	Charges: 3
+
+	Locks down room on hit
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 14 seconds
+
+	Shots Per Charge: 2
+	Charges: 3
+
+	Locks down room on hit
+	Shield Piercing: 16</tooltipOverride>
+		<damage>0</damage>
+		<persDamage>0</persDamage>
+		<lockdown/>
+		<accuracyMod>100</accuracyMod>
+		<shots>2</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>14</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_hull</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_13</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_14">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Ally]</title>
+		<short>[Ally]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<tooltip>Spellspore.</tooltip>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 17 seconds
+
+	Shots Per Charge: 2
+	Charges: 2
+
+	Spawns a random ally on hit
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 17 seconds
+
+	Shots Per Charge: 2
+	Charges: 2
+
+	Spawns a random ally on hit
+	Shield Piercing: 16</tooltipOverride>
+		<damage>0</damage>
+		<spawnCrew>
+			<number>1</number>
+			<race>LIST_CREW_SPELL_ALLY</race>
+			<lifetime>20</lifetime>
+			<statBoosts>
+				<statBoost name="noClone">
+					<boostType>SET</boostType>
+					<value>true</value>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ALL</crewTarget>
+					<priority>999999</priority>
+				</statBoost>
+				<statBoost name="lowHealthThreshold">
+					<boostType>SET</boostType>
+					<amount>-1</amount>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ALL</crewTarget>
+					<priority>999999</priority>
+				</statBoost>
+			</statBoosts>
+			<noSlot>true</noSlot>
+		</spawnCrew>
+		<crewSpawnChance>10</crewSpawnChance>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>2</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>17</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_14</weaponArt>
+		<iconImage>heavyL</iconImage>
+	</weaponBlueprint>
+	<weaponBlueprint name="AEA_LASER_CULT_15">
+		<type>LASER</type>
+		<flavorType>Spellspore</flavorType>
+		<title>Spellspore [Mind Bolt]</title>
+		<short>[Mind Bolt]</short>
+		<tip>tip_aea_spellspore</tip>
+		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
+		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
+	
+	Stats:
+	Required Power: 2
+	Charge Time: 18 seconds
+
+	Shots Per Charge: 2
+	Charges: 3
+
+	Mind controls enemy crew on hit
+	Shield Piercing: 16
+	
+	Default Price: 70~   -   Selling Price: 35~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 2
+	Charge Time: 18 seconds
+
+	Shots Per Charge: 2
+	Charges: 3
+
+	Mind controls enemy crew on hit
+	Shield Piercing: 16</tooltipOverride>
+		<tooltip>Spellspore.</tooltip>
+		<damage>0</damage>
+		<mv-mindControl>
+			<duration>20</duration>
+		</mv-mindControl>
+		<mv-crewTarget>MOST_CREW</mv-crewTarget>
+		<statBoosts>
+			<statBoost name="controllable">
+				<boostType>SET</boostType>
+				<value>false</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<duration>45</duration>
+				<!--<blackList load="LIST_CREW_MADNESS_IMMUNE"/>-->
+				<blackList>
+					<slug_hektar_box/>
+					<unique_billy_box/>
+					<unique_irwin_demon/>
+					<unique_dessius/>
+					<siren/>
+					<siren_harpy/>
+					<eldritch_thing/>
+					<eldritch_thing_weak/>
+					<eldritch_cat/>
+					<gnome/>
+				</blackList>
+			</statBoost>
+			<statBoost name="silenced">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<duration>45</duration>
+				<!--<blackList load="LIST_CREW_MADNESS_IMMUNE"/>-->
+				<blackList>
+					<slug_hektar_box/>
+					<unique_billy_box/>
+					<unique_irwin_demon/>
+					<unique_dessius/>
+					<siren/>
+					<siren_harpy/>
+					<eldritch_thing/>
+					<eldritch_thing_weak/>
+					<eldritch_cat/>
+					<gnome/>
+				</blackList>
+			</statBoost>
+		</statBoosts>
+		<persDamage>0</persDamage>
+		<accuracyMod>100</accuracyMod>
+		<shots>2</shots>
+		<sp>16</sp>
+		<boost>
+			<type>cooldown</type>
+			<amount>1</amount>
+			<count>50</count>
+		</boost>
+		<fireChance>0</fireChance>
+		<breachChance>0</breachChance>
+		<cooldown>18</cooldown>
+		<power>2</power>
+		<cost>70</cost>
+		<bp>6</bp>
+		<rarity>0</rarity>
+		<image>aea_proj_magic_pur</image>
+		<launchSounds>
+			<sound>heavyLaser1</sound>
+		</launchSounds>
+		<hitShieldSounds>
+			<sound>hitShield1</sound>
+			<sound>hitShield2</sound>
+			<sound>hitShield3</sound>
+		</hitShieldSounds>
+		<hitShipSounds>
+			<sound>hitHull1</sound>
+		</hitShipSounds>
+		<missSounds>
+			<sound>miss</sound>
+		</missSounds>
+		<weaponArt>aea_cult_laser_15</weaponArt>
+		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_01">
 		<type>BEAM</type>
@@ -6344,75 +7114,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_03</iconReplace>
 	</weaponBlueprint>
-	<weaponBlueprint name="AEA_LASER_CULT_03">
-		<type>LASER</type>
-		<flavorType>Spellspore</flavorType>
-		<title>Spellspore [Bio Bolt]</title>
-		<short>[Bio Bolt]</short>
-		<tip>tip_aea_spellspore</tip>
-		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
-		<tooltip>Spellspore.</tooltip>
-		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
-	
-	Stats:
-	Required Power: 2
-	Charge Time: 14 seconds
 
-	Shots Per Charge: 1
-	Charges: 3
-
-	Base Hull Damage: 0
-	Total System Damage: 0
-	Total Crew Damage: 45
-	Shield Piercing: 16
-	
-	Default Price: 70~   -   Selling Price: 35~
-		</descriptionOverride>
-		<tooltipOverride>Required Power: 2
-	Charge Time: 14 seconds
-
-	Shots Per Charge: 1
-	Charges: 3
-
-	Base Hull Damage: 0
-	Total System Damage: 0
-	Total Crew Damage: 45
-	Shield Piercing: 16</tooltipOverride>
-		<damage>0</damage>
-		<persDamage>3</persDamage>
-		<accuracyMod>100</accuracyMod>
-		<shots>1</shots>
-		<sp>16</sp>
-		<boost>
-			<type>cooldown</type>
-			<amount>1</amount>
-			<count>50</count>
-		</boost>
-		<fireChance>0</fireChance>
-		<breachChance>0</breachChance>
-		<cooldown>14</cooldown>
-		<power>2</power>
-		<cost>70</cost>
-		<bp>6</bp>
-		<rarity>0</rarity>
-		<image>aea_proj_magic_pur</image>
-		<launchSounds>
-			<sound>heavyLaser1</sound>
-		</launchSounds>
-		<hitShipSounds>
-			<sound>hitHull1</sound>
-		</hitShipSounds>
-		<hitShieldSounds>
-			<sound>hitShield1</sound>
-			<sound>hitShield2</sound>
-			<sound>hitShield3</sound>
-		</hitShieldSounds>
-		<missSounds>
-			<sound>miss</sound>
-		</missSounds>
-		<weaponArt>aea_cult_laser_3</weaponArt>
-		<iconImage>heavyL</iconImage>
-	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_04">
 		<type>BEAM</type>
 		<flavorType>Spell</flavorType>
@@ -6435,75 +7137,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<image>beam_contact</image>
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_04</iconReplace>
-	</weaponBlueprint>
-	<weaponBlueprint name="AEA_LASER_CULT_04">
-		<type>LASER</type>
-		<flavorType>Spellspore</flavorType>
-		<title>Spellspore [Bolt]</title>
-		<short>[Bolt]</short>
-		<tip>tip_aea_spellspore</tip>
-		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
-		<tooltip>Spellspore.</tooltip>
-		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
-	
-	Stats:
-	Required Power: 2
-	Charge Time: 18 seconds
-
-	Shots Per Charge: 1
-	Charges: 2
-
-	Base Hull Damage: 1
-	Total System Damage: 1
-	Total Crew Damage: 15
-	Shield Piercing: 16
-	
-	Default Price: 70~   -   Selling Price: 35~
-		</descriptionOverride>
-		<tooltipOverride>Required Power: 2
-	Charge Time: 18 seconds
-
-	Shots Per Charge: 1
-	Charges: 2
-
-	Base Hull Damage: 1
-	Total System Damage: 1
-	Total Crew Damage: 15
-	Shield Piercing: 16</tooltipOverride>
-		<damage>1</damage>
-		<persDamage>0</persDamage>
-		<accuracyMod>100</accuracyMod>
-		<shots>1</shots>
-		<sp>16</sp>
-		<boost>
-			<type>cooldown</type>
-			<amount>1</amount>
-			<count>50</count>
-		</boost>
-		<fireChance>0</fireChance>
-		<breachChance>0</breachChance>
-		<cooldown>18</cooldown>
-		<power>2</power>
-		<cost>70</cost>
-		<bp>6</bp>
-		<rarity>0</rarity>
-		<image>aea_proj_magic_pur</image>
-		<launchSounds>
-			<sound>heavyLaser1</sound>
-		</launchSounds>
-		<hitShipSounds>
-			<sound>hitHull1</sound>
-		</hitShipSounds>
-		<hitShieldSounds>
-			<sound>hitShield1</sound>
-			<sound>hitShield2</sound>
-			<sound>hitShield3</sound>
-		</hitShieldSounds>
-		<missSounds>
-			<sound>miss</sound>
-		</missSounds>
-		<weaponArt>aea_cult_laser_4</weaponArt>
-		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_05">
 		<type>BEAM</type>
@@ -6528,75 +7161,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_05</iconReplace>
 	</weaponBlueprint>
-	<weaponBlueprint name="AEA_LASER_CULT_05">
-		<type>LASER</type>
-		<flavorType>Spellspore</flavorType>
-		<title>Spellspore [Bolt Burst]</title>
-		<short>[Bolt Burst]</short>
-		<tip>tip_aea_spellspore</tip>
-		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
-		<tooltip>Spellspore.</tooltip>
-		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
-	
-	Stats:
-	Required Power: 2
-	Charge Time: 26 seconds
-
-	Shots Per Charge: 3
-	Charges: 2
-
-	Base Hull Damage: 1
-	Total System Damage: 1
-	Total Crew Damage: 15
-	Shield Piercing: 16
-	
-	Default Price: 70~   -   Selling Price: 35~
-		</descriptionOverride>
-		<tooltipOverride>Required Power: 2
-	Charge Time: 26 seconds
-
-	Shots Per Charge: 3
-	Charges: 2
-
-	Base Hull Damage: 1
-	Total System Damage: 1
-	Total Crew Damage: 15
-	Shield Piercing: 16</tooltipOverride>
-		<damage>1</damage>
-		<persDamage>0</persDamage>
-		<accuracyMod>100</accuracyMod>
-		<shots>3</shots>
-		<sp>16</sp>
-		<boost>
-			<type>cooldown</type>
-			<amount>1</amount>
-			<count>50</count>
-		</boost>
-		<fireChance>0</fireChance>
-		<breachChance>0</breachChance>
-		<cooldown>26</cooldown>
-		<power>2</power>
-		<cost>70</cost>
-		<bp>6</bp>
-		<rarity>0</rarity>
-		<image>aea_proj_magic_pur</image>
-		<launchSounds>
-			<sound>heavyLaser1</sound>
-		</launchSounds>
-		<hitShipSounds>
-			<sound>hitHull1</sound>
-		</hitShipSounds>
-		<hitShieldSounds>
-			<sound>hitShield1</sound>
-			<sound>hitShield2</sound>
-			<sound>hitShield3</sound>
-		</hitShieldSounds>
-		<missSounds>
-			<sound>miss</sound>
-		</missSounds>
-		<weaponArt>aea_cult_laser_5</weaponArt>
-		<iconImage>heavyL</iconImage>
-	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_06">
 		<type>BEAM</type>
 		<flavorType>Spell</flavorType>
@@ -6619,76 +7183,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<image>beam_contact</image>
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_06</iconReplace>
-	</weaponBlueprint>
-	<weaponBlueprint name="AEA_LASER_CULT_06">
-		<type>LASER</type>
-		<flavorType>Spellspore</flavorType>
-		<title>Spellspore [Hull Bolt]</title>
-		<short>[Hull Bolt]</short>
-		<tip>tip_aea_spellspore</tip>
-		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
-		<tooltip>Spellspore.</tooltip>
-		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
-	
-	Stats:
-	Required Power: 2
-	Charge Time: 20 seconds
-
-	Shots Per Charge: 1
-	Charges: 2
-
-	Base Hull Damage: 3
-	Total System Damage: 0
-	Total Crew Damage: 0
-	Shield Piercing: 16
-	
-	Default Price: 70~   -   Selling Price: 35~
-		</descriptionOverride>
-		<tooltipOverride>Required Power: 2
-	Charge Time: 20 seconds
-
-	Shots Per Charge: 1
-	Charges: 2
-
-	Base Hull Damage: 3
-	Total System Damage: 0
-	Total Crew Damage: 0
-	Shield Piercing: 16</tooltipOverride>
-		<damage>3</damage>
-		<sysDamage>-3</sysDamage>
-		<persDamage>-3</persDamage>
-		<accuracyMod>100</accuracyMod>
-		<shots>1</shots>
-		<sp>16</sp>
-		<boost>
-			<type>cooldown</type>
-			<amount>1</amount>
-			<count>50</count>
-		</boost>
-		<fireChance>0</fireChance>
-		<breachChance>0</breachChance>
-		<cooldown>20</cooldown>
-		<power>2</power>
-		<cost>70</cost>
-		<bp>6</bp>
-		<rarity>0</rarity>
-		<image>aea_proj_magic_hull</image>
-		<launchSounds>
-			<sound>heavyLaser1</sound>
-		</launchSounds>
-		<hitShipSounds>
-			<sound>hitHull1</sound>
-		</hitShipSounds>
-		<hitShieldSounds>
-			<sound>hitShield1</sound>
-			<sound>hitShield2</sound>
-			<sound>hitShield3</sound>
-		</hitShieldSounds>
-		<missSounds>
-			<sound>miss</sound>
-		</missSounds>
-		<weaponArt>aea_cult_laser_6</weaponArt>
-		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_07">
 		<type>BEAM</type>
@@ -6734,66 +7228,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_08</iconReplace>
 	</weaponBlueprint>
-	<weaponBlueprint name="AEA_LASER_CULT_08">
-		<type>LASER</type>
-		<flavorType>Spellspore</flavorType>
-		<title>Spellspore [Warp Bolt]</title>
-		<short>[Warp Bolt]</short>
-		<tip>tip_aea_spellspore</tip>
-		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
-		<tooltip>Spellspore.</tooltip>
-		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
-	
-	Stats:
-	Required Power: 2
-	Charge Time: 18 seconds
-
-	Shots Per Charge: 1
-	Charges: Infinite
-
-	Teleports any crew in the room to a random room on the enemy ship on hit
-	Shield Piercing: 16
-	
-	Default Price: 70~   -   Selling Price: 35~
-		</descriptionOverride>
-		<tooltipOverride>Required Power: 2
-	Charge Time: 18 seconds
-
-	Shots Per Charge: 1
-	Charges: Infinite
-
-	Teleports any crew in the room to a random room on the enemy ship on hit
-	Shield Piercing: 16</tooltipOverride>
-		<damage>0</damage>
-		<persDamage>0</persDamage>
-		<accuracyMod>100</accuracyMod>
-		<shots>1</shots>
-		<sp>16</sp>
-		<fireChance>0</fireChance>
-		<breachChance>0</breachChance>
-		<cooldown>18</cooldown>
-		<power>2</power>
-		<cost>70</cost>
-		<bp>6</bp>
-		<rarity>0</rarity>
-		<image>aea_proj_magic</image>
-		<launchSounds>
-			<sound>heavyLaser1</sound>
-		</launchSounds>
-		<hitShipSounds>
-			<sound>hitHull1</sound>
-		</hitShipSounds>
-		<hitShieldSounds>
-			<sound>hitShield1</sound>
-			<sound>hitShield2</sound>
-			<sound>hitShield3</sound>
-		</hitShieldSounds>
-		<missSounds>
-			<sound>miss</sound>
-		</missSounds>
-		<weaponArt>aea_cult_laser_8</weaponArt>
-		<iconImage>heavyL</iconImage>
-	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_09">
 		<type>BEAM</type>
 		<flavorType>Spell</flavorType>
@@ -6816,75 +7250,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<image>beam_contact</image>
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_09</iconReplace>
-	</weaponBlueprint>
-	<weaponBlueprint name="AEA_LASER_CULT_09">
-		<type>LASER</type>
-		<flavorType>Spellspore</flavorType>
-		<title>Spellspore [Heal Bolt]</title>
-		<short>[Heal Bolt]</short>
-		<tip>tip_aea_spellspore</tip>
-		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
-		<tooltip>Spellspore.</tooltip>
-		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
-	
-	Stats:
-	Required Power: 2
-	Charge Time: 13 seconds
-
-	Shots Per Charge: 1
-	Charges: 3
-
-	Base Hull Damage: 0
-	Total System Damage: 0
-	Total Crew Damage: -75
-	Shield Piercing: 16
-	
-	Default Price: 70~   -   Selling Price: 35~
-		</descriptionOverride>
-		<tooltipOverride>Required Power: 2
-	Charge Time: 13 seconds
-
-	Shots Per Charge: 1
-	Charges: 3
-
-	Base Hull Damage: 0
-	Total System Damage: 0
-	Total Crew Damage: -75
-	Shield Piercing: 16</tooltipOverride>
-		<damage>0</damage>
-		<persDamage>-5</persDamage>
-		<accuracyMod>100</accuracyMod>
-		<shots>1</shots>
-		<sp>16</sp>
-		<boost>
-			<type>cooldown</type>
-			<amount>1</amount>
-			<count>50</count>
-		</boost>
-		<fireChance>0</fireChance>
-		<breachChance>0</breachChance>
-		<cooldown>13</cooldown>
-		<power>2</power>
-		<cost>70</cost>
-		<bp>6</bp>
-		<rarity>0</rarity>
-		<image>aea_proj_magic_heal</image>
-		<launchSounds>
-			<sound>heavyLaser1</sound>
-		</launchSounds>
-		<hitShipSounds>
-			<sound>hitHull1</sound>
-		</hitShipSounds>
-		<hitShieldSounds>
-			<sound>hitShield1</sound>
-			<sound>hitShield2</sound>
-			<sound>hitShield3</sound>
-		</hitShieldSounds>
-		<missSounds>
-			<sound>miss</sound>
-		</missSounds>
-		<weaponArt>aea_cult_laser_9</weaponArt>
-		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_10">
 		<type>BEAM</type>
@@ -6936,7 +7301,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Barrier]</title>
 		<short>[Barrier]</short>
-		<desc>Cast a spell that pierces all normal shields at a target room that spawns a barrier capable of blocking 2 projectiles.
+		<desc>Cast a spell that pierces all normal shields at a target room that spawns a barrier capable of blocking 2 projectiles. Cannot have more than 8 barrier active at once
 	Cast Delay: 2 second
 	Charge Time: 20 seconds
 	Uses per combat: 3
@@ -6953,71 +7318,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<image>beam_contact</image>
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_12</iconReplace>
-	</weaponBlueprint>
-	<weaponBlueprint name="AEA_LASER_CULT_12">
-		<type>LASER</type>
-		<flavorType>Spellspore</flavorType>
-		<title>Spellspore [Barrier]</title>
-		<short>[Barrier]</short>
-		<tip>tip_aea_spellspore</tip>
-		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
-		<tooltip>Spellspore.</tooltip>
-		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
-	
-	Stats:
-	Required Power: 2
-	Charge Time: 13 seconds
-
-	Shots Per Charge: 1
-	Charges: 3
-
-	Spawns a barrier capable of blocking 2 projectiles on hit
-	Shield Piercing: 16
-	
-	Default Price: 70~   -   Selling Price: 35~
-		</descriptionOverride>
-		<tooltipOverride>Required Power: 2
-	Charge Time: 13 seconds
-
-	Shots Per Charge: 1
-	Charges: 3
-
-	Spawns a barrier capable of blocking 2 projectiles on hit
-	Shield Piercing: 16</tooltipOverride>
-		<damage>0</damage>
-		<persDamage>3</persDamage>
-		<accuracyMod>100</accuracyMod>
-		<shots>1</shots>
-		<sp>16</sp>
-		<boost>
-			<type>cooldown</type>
-			<amount>1</amount>
-			<count>50</count>
-		</boost>
-		<fireChance>0</fireChance>
-		<breachChance>0</breachChance>
-		<cooldown>13</cooldown>
-		<power>2</power>
-		<cost>70</cost>
-		<bp>6</bp>
-		<rarity>0</rarity>
-		<image>aea_proj_magic</image>
-		<launchSounds>
-			<sound>heavyLaser1</sound>
-		</launchSounds>
-		<hitShipSounds>
-			<sound>hitHull1</sound>
-		</hitShipSounds>
-		<hitShieldSounds>
-			<sound>hitShield1</sound>
-			<sound>hitShield2</sound>
-			<sound>hitShield3</sound>
-		</hitShieldSounds>
-		<missSounds>
-			<sound>miss</sound>
-		</missSounds>
-		<weaponArt>aea_cult_laser_12</weaponArt>
-		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_13">
 		<type>BEAM</type>
@@ -7042,72 +7342,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_13</iconReplace>
 	</weaponBlueprint>
-	<weaponBlueprint name="AEA_LASER_CULT_13">
-		<type>LASER</type>
-		<flavorType>Spellspore</flavorType>
-		<title>Spellspore [Lockdown]</title>
-		<short>[Lockdown]</short>
-		<tip>tip_aea_spellspore</tip>
-		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
-		<tooltip>Spellspore.</tooltip>
-		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
-	
-	Stats:
-	Required Power: 2
-	Charge Time: 14 seconds
-
-	Shots Per Charge: 1
-	Charges: 3
-
-	Locks down room on hit
-	Shield Piercing: 16
-	
-	Default Price: 70~   -   Selling Price: 35~
-		</descriptionOverride>
-		<tooltipOverride>Required Power: 2
-	Charge Time: 14 seconds
-
-	Shots Per Charge: 1
-	Charges: 3
-
-	Locks down room on hit
-	Shield Piercing: 16</tooltipOverride>
-		<damage>0</damage>
-		<persDamage>0</persDamage>
-		<lockdown/>
-		<accuracyMod>100</accuracyMod>
-		<shots>1</shots>
-		<sp>16</sp>
-		<boost>
-			<type>cooldown</type>
-			<amount>1</amount>
-			<count>50</count>
-		</boost>
-		<fireChance>0</fireChance>
-		<breachChance>0</breachChance>
-		<cooldown>14</cooldown>
-		<power>2</power>
-		<cost>70</cost>
-		<bp>6</bp>
-		<rarity>0</rarity>
-		<image>aea_proj_magic_hull</image>
-		<launchSounds>
-			<sound>heavyLaser1</sound>
-		</launchSounds>
-		<hitShipSounds>
-			<sound>hitHull1</sound>
-		</hitShipSounds>
-		<hitShieldSounds>
-			<sound>hitShield1</sound>
-			<sound>hitShield2</sound>
-			<sound>hitShield3</sound>
-		</hitShieldSounds>
-		<missSounds>
-			<sound>miss</sound>
-		</missSounds>
-		<weaponArt>aea_cult_laser_13</weaponArt>
-		<iconImage>heavyL</iconImage>
-	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_14">
 		<type>BEAM</type>
 		<flavorType>Spell</flavorType>
@@ -7131,94 +7365,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_14</iconReplace>
 	</weaponBlueprint>
-	<weaponBlueprint name="AEA_LASER_CULT_14">
-		<type>LASER</type>
-		<flavorType>Spellspore</flavorType>
-		<title>Spellspore [Ally]</title>
-		<short>[Ally]</short>
-		<tip>tip_aea_spellspore</tip>
-		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
-		<tooltip>Spellspore.</tooltip>
-		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
-	
-	Stats:
-	Required Power: 2
-	Charge Time: 17 seconds
-
-	Shots Per Charge: 1
-	Charges: 2
-
-	Spawns a random ally on hit
-	Shield Piercing: 16
-	
-	Default Price: 70~   -   Selling Price: 35~
-		</descriptionOverride>
-		<tooltipOverride>Required Power: 2
-	Charge Time: 17 seconds
-
-	Shots Per Charge: 1
-	Charges: 2
-
-	Spawns a random ally on hit
-	Shield Piercing: 16</tooltipOverride>
-		<damage>0</damage>
-		<spawnCrew>
-			<number>1</number>
-			<race>LIST_CREW_SPELL_ALLY</race>
-			<lifetime>20</lifetime>
-			<statBoosts>
-				<statBoost name="noClone">
-					<boostType>SET</boostType>
-					<value>true</value>
-					<shipTarget>ALL</shipTarget>
-					<crewTarget>ALL</crewTarget>
-					<priority>999999</priority>
-				</statBoost>
-				<statBoost name="lowHealthThreshold">
-					<boostType>SET</boostType>
-					<amount>-1</amount>
-					<shipTarget>ALL</shipTarget>
-					<crewTarget>ALL</crewTarget>
-					<priority>999999</priority>
-				</statBoost>
-			</statBoosts>
-			<noSlot>true</noSlot>
-		</spawnCrew>
-		<crewSpawnChance>10</crewSpawnChance>
-		<persDamage>0</persDamage>
-		<accuracyMod>100</accuracyMod>
-		<shots>1</shots>
-		<sp>16</sp>
-		<boost>
-			<type>cooldown</type>
-			<amount>1</amount>
-			<count>50</count>
-		</boost>
-		<fireChance>0</fireChance>
-		<breachChance>0</breachChance>
-		<cooldown>17</cooldown>
-		<power>2</power>
-		<cost>70</cost>
-		<bp>6</bp>
-		<rarity>0</rarity>
-		<image>aea_proj_magic</image>
-		<launchSounds>
-			<sound>heavyLaser1</sound>
-		</launchSounds>
-		<hitShipSounds>
-			<sound>hitHull1</sound>
-		</hitShipSounds>
-		<hitShieldSounds>
-			<sound>hitShield1</sound>
-			<sound>hitShield2</sound>
-			<sound>hitShield3</sound>
-		</hitShieldSounds>
-		<missSounds>
-			<sound>miss</sound>
-		</missSounds>
-		<weaponArt>aea_cult_laser_14</weaponArt>
-		<iconImage>heavyL</iconImage>
-	</weaponBlueprint>
 	<weaponBlueprint name="AEA_SPELL_ITEM_15">
 		<type>BEAM</type>
 		<flavorType>Spell</flavorType>
@@ -7241,121 +7387,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<image>beam_contact</image>
 		<weaponArt>invisible</weaponArt>
 		<iconReplace>aea_spell_15</iconReplace>
-	</weaponBlueprint>
-	<weaponBlueprint name="AEA_LASER_CULT_15">
-		<type>LASER</type>
-		<flavorType>Spellspore</flavorType>
-		<title>Spellspore [Mind Bolt]</title>
-		<short>[Mind Bolt]</short>
-		<tip>tip_aea_spellspore</tip>
-		<desc>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.</desc>
-		<descriptionOverride>Deadly partly-organic bomb weapons manufactured by the Vampweed Cultists, these weapons are able to equip spells and fire them against the enemy. Spells which do not fire a projectile cannot be fitted to the weapon.
-	
-	Stats:
-	Required Power: 2
-	Charge Time: 18 seconds
-
-	Shots Per Charge: 1
-	Charges: 3
-
-	Mind controls enemy crew on hit
-	Shield Piercing: 16
-	
-	Default Price: 70~   -   Selling Price: 35~
-		</descriptionOverride>
-		<tooltipOverride>Required Power: 2
-	Charge Time: 18 seconds
-
-	Shots Per Charge: 1
-	Charges: 3
-
-	Mind controls enemy crew on hit
-	Shield Piercing: 16</tooltipOverride>
-		<tooltip>Spellspore.</tooltip>
-		<damage>0</damage>
-		<mv-mindControl>
-			<duration>20</duration>
-		</mv-mindControl>
-		<mv-crewTarget>MOST_CREW</mv-crewTarget>
-		<statBoosts>
-			<statBoost name="controllable">
-				<boostType>SET</boostType>
-				<value>false</value>
-				<shipTarget>ALL</shipTarget>
-				<crewTarget>ENEMIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<affectsSelf>false</affectsSelf>
-				<duration>45</duration>
-				<!--<blackList load="LIST_CREW_MADNESS_IMMUNE"/>-->
-				<blackList>
-					<slug_hektar_box/>
-					<unique_billy_box/>
-					<unique_irwin_demon/>
-					<unique_dessius/>
-					<siren/>
-					<siren_harpy/>
-					<eldritch_thing/>
-					<eldritch_thing_weak/>
-					<eldritch_cat/>
-					<gnome/>
-				</blackList>
-			</statBoost>
-			<statBoost name="silenced">
-				<boostType>SET</boostType>
-				<value>true</value>
-				<shipTarget>ALL</shipTarget>
-				<crewTarget>ENEMIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<affectsSelf>false</affectsSelf>
-				<duration>45</duration>
-				<!--<blackList load="LIST_CREW_MADNESS_IMMUNE"/>-->
-				<blackList>
-					<slug_hektar_box/>
-					<unique_billy_box/>
-					<unique_irwin_demon/>
-					<unique_dessius/>
-					<siren/>
-					<siren_harpy/>
-					<eldritch_thing/>
-					<eldritch_thing_weak/>
-					<eldritch_cat/>
-					<gnome/>
-				</blackList>
-			</statBoost>
-		</statBoosts>
-		<persDamage>0</persDamage>
-		<accuracyMod>100</accuracyMod>
-		<shots>1</shots>
-		<sp>16</sp>
-		<boost>
-			<type>cooldown</type>
-			<amount>1</amount>
-			<count>50</count>
-		</boost>
-		<fireChance>0</fireChance>
-		<breachChance>0</breachChance>
-		<cooldown>18</cooldown>
-		<power>2</power>
-		<cost>70</cost>
-		<bp>6</bp>
-		<rarity>0</rarity>
-		<image>aea_proj_magic_pur</image>
-		<launchSounds>
-			<sound>heavyLaser1</sound>
-		</launchSounds>
-		<hitShieldSounds>
-			<sound>hitShield1</sound>
-			<sound>hitShield2</sound>
-			<sound>hitShield3</sound>
-		</hitShieldSounds>
-		<hitShipSounds>
-			<sound>hitHull1</sound>
-		</hitShipSounds>
-		<missSounds>
-			<sound>miss</sound>
-		</missSounds>
-		<weaponArt>aea_cult_laser_15</weaponArt>
-		<iconImage>heavyL</iconImage>
 	</weaponBlueprint>
 </FTL>
 
@@ -7750,8 +7781,8 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="6" count="4">
-		<weapon name="SPORE_1" />
-		<weapon name="LIST_WEAPON_CULT" />
+		<weapon name="LASER_BURST_2" />
+		<weapon name="AEA_LASER_CULT_04" />
 	</weaponList>
 	<droneList drones="1" count="2" />
 	<health amount="30" />
@@ -7767,8 +7798,8 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 
 <augBlueprint name="AEA_BARRIER_RELAY"> <!-- Inspired by void war-->
 	<title>Barrier Generator</title>
-	<desc>Generates a barrier each time you fire a weapon, can generate up to a maximum of 6 active barriers.</desc>
-	<cost>20</cost>
+	<desc>Generates a barrier each time you fire a weapon, can generate up to a maximum of 8 active barriers.</desc>
+	<cost>56</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
 </augBlueprint>
@@ -7910,7 +7941,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 			</slot>
 		</shields>
 		<teleporter power="1" room="16" start="false" />
-		<weapons max="8" power="2" room="2" start="true" img="room_weapons_7">
+		<weapons max="8" power="4" room="2" start="true" img="room_weapons_7">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -7922,6 +7953,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<weaponList missiles="3" count="4">
 		<weapon name="AEA_LASER_CULT_04" />
 		<weapon name="AEA_LASER_CULT_04" />
+		<weapon name="MISSILES_FREE" />
 	</weaponList>
 	<droneList drones="2" count="2" />
 	<health amount="30" />
@@ -8008,7 +8040,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="2" count="4">
 		<weapon name="AEA_LASER_CULT_08" />
-		<weapon name="AEA_LASER_CULT_04" />
+		<weapon name="LASER_BURST_3" />
 		<weapon name="AEA_SPELL_LIST_ALL" />
 		<weapon name="AEA_SPELL_LIST_ALL" />
 	</weaponList>

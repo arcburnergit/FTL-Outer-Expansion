@@ -2448,7 +2448,7 @@ Spawn a conservative combat drone around the enemy ship
 			</req>
 			<buttonText>Barrier</buttonText>
 			<tooltip>[COOLDOWN:20s]
-Cast a spell that pierces all normal shields at a target room that spawns a barrier capable of blocking 2 projectiles
+Cast a spell that pierces all normal shields at a target room that spawns a barrier capable of blocking 2 projectiles, no more than 8 can be active at once
 	Cast Duration: 2s
 	Will be interupted during casting if the crew takes damage or moves</tooltip>
 			<cooldownColor r="160" g="0" b="255" />
@@ -3260,7 +3260,7 @@ Spawn a conservative combat drone around the enemy ship
 			</req>
 			<buttonText>Barrier</buttonText>
 			<tooltip>[COOLDOWN:10s]
-Cast a spell that pierces all normal shields at a target room that spawns a barrier capable of blocking 2 projectiles
+Cast a spell that pierces all normal shields at a target room that spawns a barrier capable of blocking 2 projectiles, no more than 8 can be active at once
 	Cast Duration: 2s
 	Will be interupted during casting if the crew takes damage or moves</tooltip>
 			<cooldownColor r="160" g="0" b="255" />
@@ -3403,12 +3403,12 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<aug name="AEA_AUG_WHALE">
     	<locked/>
 		<statBoosts>
-			<statBoost name="suffocationModifier">
-				<boostType>FLAT</boostType>
-				<amount>-1.0</amount>
+			<statBoost name="canSuffocate">
+				<boostType>SET</boostType>
+				<value>false</value>
 				<shipTarget>ORIGINAL_SHIP</shipTarget>
 				<crewTarget>ALL</crewTarget>
-				<priority>999</priority>
+				<priority>9999</priority>
 				<systemPowerDependency>
 					<oxygen />
 				</systemPowerDependency>
