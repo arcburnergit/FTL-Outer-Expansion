@@ -26,43 +26,43 @@
 		<event>
 			<text>You refer to a local public database, There are five different council members. They even have a system for booking 1 to 1 meetings with them, however it's only possible to book a meeting with a single sponsor at any time.</text>
 			<choice req="aea_meet_unique_1" blue="false" hidden="true">
-				<text>Seek sponsorship with Atoning Unifex</text>
+				<text>Seek sponsorship with Atoning Unifex.</text>
 				<event load="AEA_OLD_SPONSOR_1_START"/>
 			</choice>
 			<choice req="aea_meet_unique_1" lvl="0" max_lvl="0" blue="false" hidden="true">
-				<text>Seek sponsorship with Atoning Unifex [UNAVAILABLE]</text>
+				<text>Seek sponsorship with Atoning Unifex [UNAVAILABLE].</text>
 				<event load="OPTION_INVALID"/>
 			</choice>
 			<choice req="aea_meet_unique_2" blue="false" hidden="true">
-				<text>Seek sponsorship with Asymptotic Essence</text>
+				<text>Seek sponsorship with Asymptotic Essence.</text>
 				<event load="AEA_OLD_SPONSOR_2_START"/>
 			</choice>
 			<choice req="aea_meet_unique_2" lvl="0" max_lvl="0" blue="false" hidden="true">
-				<text>Seek sponsorship with Asymptotic Essence [UNAVAILABLE]</text>
+				<text>Seek sponsorship with Asymptotic Essence [UNAVAILABLE].</text>
 				<event load="OPTION_INVALID"/>
 			</choice>
 			<choice req="aea_meet_unique_3" blue="false" hidden="true">
-				<text>Seek sponsorship with Eupathic Impulse</text>
+				<text>Seek sponsorship with Eupathic Impulse.</text>
 				<event load="AEA_OLD_SPONSOR_3_START"/>
 			</choice>
 			<choice req="aea_meet_unique_3" lvl="0" max_lvl="0" blue="false" hidden="true">
-				<text>Seek sponsorship with Eupathic Impulse [UNAVAILABLE]</text>
+				<text>Seek sponsorship with Eupathic Impulse [UNAVAILABLE].</text>
 				<event load="OPTION_INVALID"/>
 			</choice>
 			<choice req="aea_meet_unique_4" blue="false" hidden="true">
-				<text>Seek sponsorship with Homologous Trend</text>
+				<text>Seek sponsorship with Homologous Trend.</text>
 				<event load="AEA_OLD_SPONSOR_4_START"/>
 			</choice>
 			<choice req="aea_meet_unique_4" lvl="0" max_lvl="0" blue="false" hidden="true">
-				<text>Seek sponsorship with Homologous Trend [UNAVAILABLE]</text>
+				<text>Seek sponsorship with Homologous Trend [UNAVAILABLE].</text>
 				<event load="OPTION_INVALID"/>
 			</choice>
 			<choice req="aea_meet_unique_5" blue="false" hidden="true">
-				<text>Seek sponsorship with Noetic Concordance</text>
+				<text>Seek sponsorship with Noetic Concordance.</text>
 				<event load="AEA_OLD_SPONSOR_5_START"/>
 			</choice>
 			<choice req="aea_meet_unique_5" lvl="0" max_lvl="0" blue="false" hidden="true">
-				<text>Seek sponsorship with Noetic Concordance [UNAVAILABLE]</text>
+				<text>Seek sponsorship with Noetic Concordance [UNAVAILABLE].</text>
 				<event load="OPTION_INVALID"/>
 			</choice>
 		</event>
@@ -79,7 +79,7 @@
 			<text>You also download the location of the other council members, it might come in handy.
 
 [DOWNLOADING: 25%]
-			</text>
+			.</text>
 			<quest event="AEA_OLD_SPONSOR_2_FIGHT"/>
 			<choice>
 				<text>Continue...</text>
@@ -87,7 +87,7 @@
 					<text>You also download the location of the other council members, it might come in handy.
 		
 [DOWNLOADING: 50%]
-					</text>
+					.</text>
 					<quest event="AEA_OLD_SPONSOR_3_FIGHT"/>
 					<choice>
 						<text>Continue...</text>
@@ -95,14 +95,14 @@
 							<text>You also download the location of the other council members, it might come in handy.
 				
 [DOWNLOADING: 75%]
-							</text>
+							.</text>
 							<quest event="AEA_OLD_SPONSOR_4_FIGHT"/>
 							<choice>
 								<text>Continue...</text><event>
 									<text>You also download the location of the other council members, it might come in handy.
 						
 [DOWNLOADING: 100%]
-									</text>
+									.</text>
 									<quest event="AEA_OLD_SPONSOR_5_FIGHT"/>
 									<choice>
 										<text>Continue...</text>
@@ -128,7 +128,7 @@
 			<text>You also download the location of the other council members, it might come in handy.
 
 [DOWNLOADING: 25%]
-			</text>
+			.</text>
 			<quest event="AEA_OLD_SPONSOR_1_FIGHT"/>
 			<choice>
 				<text>Continue...</text>
@@ -136,7 +136,7 @@
 					<text>You also download the location of the other council members, it might come in handy.
 		
 [DOWNLOADING: 50%]
-					</text>
+					.</text>
 					<quest event="AEA_OLD_SPONSOR_3_FIGHT"/>
 					<choice>
 						<text>Continue...</text>
@@ -144,14 +144,14 @@
 							<text>You also download the location of the other council members, it might come in handy.
 				
 [DOWNLOADING: 75%]
-							</text>
+							.</text>
 							<quest event="AEA_OLD_SPONSOR_4_FIGHT"/>
 							<choice>
 								<text>Continue...</text><event>
 									<text>You also download the location of the other council members, it might come in handy.
 						
 [DOWNLOADING: 100%]
-									</text>
+									.</text>
 									<quest event="AEA_OLD_SPONSOR_5_FIGHT"/>
 									<choice>
 										<text>Continue...</text>
@@ -177,7 +177,7 @@
 			<text>You also download the location of the other council members, it might come in handy.
 
 [DOWNLOADING: 25%]
-			</text>
+			.</text>
 			<quest event="AEA_OLD_SPONSOR_1_FIGHT"/>
 			<choice>
 				<text>Continue...</text>
@@ -185,7 +185,7 @@
 					<text>You also download the location of the other council members, it might come in handy.
 		
 [DOWNLOADING: 50%]
-					</text>
+					.</text>
 					<quest event="AEA_OLD_SPONSOR_2_FIGHT"/>
 					<choice>
 						<text>Continue...</text>
@@ -193,14 +193,14 @@
 							<text>You also download the location of the other council members, it might come in handy.
 				
 [DOWNLOADING: 75%]
-							</text>
+							.</text>
 							<quest event="AEA_OLD_SPONSOR_4_FIGHT"/>
 							<choice>
 								<text>Continue...</text><event>
 									<text>You also download the location of the other council members, it might come in handy.
 						
 [DOWNLOADING: 100%]
-									</text>
+									.</text>
 									<quest event="AEA_OLD_SPONSOR_5_FIGHT"/>
 									<choice>
 										<text>Continue...</text>
@@ -226,7 +226,7 @@
 			<text>You also download the location of the other council members, it might come in handy.
 
 [DOWNLOADING: 25%]
-			</text>
+			.</text>
 			<quest event="AEA_OLD_SPONSOR_1_FIGHT"/>
 			<choice>
 				<text>Continue...</text>
@@ -234,7 +234,7 @@
 					<text>You also download the location of the other council members, it might come in handy.
 		
 [DOWNLOADING: 50%]
-					</text>
+					.</text>
 					<quest event="AEA_OLD_SPONSOR_2_FIGHT"/>
 					<choice>
 						<text>Continue...</text>
@@ -242,14 +242,14 @@
 							<text>You also download the location of the other council members, it might come in handy.
 				
 [DOWNLOADING: 75%]
-							</text>
+							.</text>
 							<quest event="AEA_OLD_SPONSOR_3_FIGHT"/>
 							<choice>
 								<text>Continue...</text><event>
 									<text>You also download the location of the other council members, it might come in handy.
 						
 [DOWNLOADING: 100%]
-									</text>
+									.</text>
 									<quest event="AEA_OLD_SPONSOR_5_FIGHT"/>
 									<choice>
 										<text>Continue...</text>
@@ -275,7 +275,7 @@
 			<text>You also download the location of the other council members, it might come in handy.
 
 [DOWNLOADING: 25%]
-			</text>
+			.</text>
 			<quest event="AEA_OLD_SPONSOR_1_FIGHT"/>
 			<choice>
 				<text>Continue...</text>
@@ -283,7 +283,7 @@
 					<text>You also download the location of the other council members, it might come in handy.
 		
 [DOWNLOADING: 50%]
-					</text>
+					.</text>
 					<quest event="AEA_OLD_SPONSOR_2_FIGHT"/>
 					<choice>
 						<text>Continue...</text>
@@ -291,14 +291,14 @@
 							<text>You also download the location of the other council members, it might come in handy.
 				
 [DOWNLOADING: 75%]
-							</text>
+							.</text>
 							<quest event="AEA_OLD_SPONSOR_3_FIGHT"/>
 							<choice>
 								<text>Continue...</text><event>
 									<text>You also download the location of the other council members, it might come in handy.
 						
 [DOWNLOADING: 100%]
-									</text>
+									.</text>
 									<quest event="AEA_OLD_SPONSOR_4_FIGHT"/>
 									<choice>
 										<text>Continue...</text>
@@ -449,14 +449,14 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us.".</text>
 			<choice hidden="true">
-				<text>Sure</text>
+				<text>Sure.</text>
 				<event>
-					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself.".</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_1">Atoning Unifex</crewMember>
 					<choice hidden="true">
-						<text>Head out to the location</text>
+						<text>Head out to the location.</text>
 						<event load="AEA_OLD_SPONSOR_1_QUEST"/>
 					</choice>
 				</event>
@@ -479,14 +479,14 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us.".</text>
 			<choice hidden="true">
-				<text>Sure</text>
+				<text>Sure.</text>
 				<event>
-					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself.".</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_2">Asymptotic Essence</crewMember>
 					<choice hidden="true">
-						<text>Head out to the location</text>
+						<text>Head out to the location.</text>
 						<event load="AEA_OLD_SPONSOR_2_QUEST"/>
 					</choice>
 				</event>
@@ -509,14 +509,14 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us.".</text>
 			<choice hidden="true">
-				<text>Sure</text>
+				<text>Sure.</text>
 				<event>
-					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself.".</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_3">Eupathic Impulse</crewMember>
 					<choice hidden="true">
-						<text>Head out to the location</text>
+						<text>Head out to the location.</text>
 						<event load="AEA_OLD_SPONSOR_3_QUEST"/>
 					</choice>
 				</event>
@@ -539,14 +539,14 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us.".</text>
 			<choice hidden="true">
-				<text>Sure</text>
+				<text>Sure.</text>
 				<event>
-					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself.".</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_4">Homologous Trend</crewMember>
 					<choice hidden="true">
-						<text>Head out to the location</text>
+						<text>Head out to the location.</text>
 						<event load="AEA_OLD_SPONSOR_4_QUEST"/>
 					</choice>
 				</event>
@@ -569,14 +569,14 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us.".</text>
 			<choice hidden="true">
-				<text>Sure</text>
+				<text>Sure.</text>
 				<event>
-					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself.".</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_5">Noetic Concordance</crewMember>
 					<choice hidden="true">
-						<text>Head out to the location</text>
+						<text>Head out to the location.</text>
 						<event load="AEA_OLD_SPONSOR_5_QUEST"/>
 					</choice>
 				</event>
@@ -820,9 +820,9 @@
 	<text>Eventually you recieve the verdict, you'll be allowed to leave. They tell you of a secret gate, similar to the one you activated in Node 17.
 
 Due to the location gate you'll need to be escorted there by your sponsor, you should deal with any unfinished buisness here before you leave.
-	</text>
+	.</text>
 	<choice>
-		<text>Leave for the gate immediately</text>
+		<text>Leave for the gate immediately.</text>
 		<event>
 			<secretSectorWarp>SECRET_AEA_OLD_3</secretSectorWarp>
 			<secretSector />
@@ -835,7 +835,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>We'll come back here later</text>
+		<text>We'll come back here later.</text>
 		<event/>
 	</choice>
 </event>
@@ -857,7 +857,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 	<text>Surprisingly a Lylmik merchant appears to be under attack from a heavily armed elite, If you want to trade with them you'll need to take care of the elite.</text>
 	<ship load="SHIP_AEA_OLD_MU_STORE_PROTECT" hostile="false" />
 	<choice hidden="true">
-		<text>Rescue the store</text>
+		<text>Rescue the store.</text>
 		<event>
 			<text>You prepare for combat.</text>
 			<ship hostile="true" />
@@ -868,7 +868,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the merchant</text>
+		<text>Ignore the merchant.</text>
 		<event>
 			<text>Fortunately, the Elite remain oblivious to your presence.</text>
 			<choice>
@@ -914,16 +914,16 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 		<color r="215" g="255" b="200" a="1" />
 	</beaconType>
 	<img planet="PLANET_MOONS" />
-	<text>You see a small, populated moon in the distance, there's heavy traffic outside the store. Shall we approach?</text>
+	<text>You see a small, populated moon in the distance, there's heavy traffic outside the store. Shall we approach?.</text>
 	<choice hidden="true">
-		<text>Get in line to land</text>
+		<text>Get in line to land.</text>
 		<event>
 			<text>You eventually manage to land in their limited space and get into the store, unbelievably it appears everything in the store is on sale.</text>
 			<store>STORE_AEA_OLD_CLEARANCE</store>
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the moon</text>
+		<text>Ignore the moon.</text>
 		<event>
 			<text>As you wait for the FTL drive to charge, you notice an advertising ship fly past, apparently the big store down there is having a clearance sale.</text>
 			<choice hidden="true">
@@ -943,11 +943,11 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 	<img planet="PLANET_POPULATED"/>
 	<text>You arrive at the beacon and are immediately bombarded by multiple advertisements referencing some planetary fair. It appears that people have come from all over the sector to eat and show off their own foods.</text>
 	<choice hidden="true">
-		<text>Head down and look around</text>
+		<text>Head down and look around.</text>
 		<event>
 			<text>You arrive down on the planet and begin to explore the fair. There are many different options to choose from.</text>
 			<choice hidden="true">
-				<text>Visit Green Eggs and Ham</text>
+				<text>Visit Green Eggs and Ham.</text>
 				<event>
 					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
 					<crewMember  all_skills="2" amount="1" class="human_soldier"/>
@@ -958,7 +958,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Visit Soft-Light</text>
+				<text>Visit Soft-Light.</text>
 				<event>
 					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
 					<crewMember  all_skills="2" amount="1" class="zoltan_peacekeeper"/>
@@ -969,7 +969,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Visit Natures Necter</text>
+				<text>Visit Natures Necter.</text>
 				<event>
 					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
 					<crewMember  all_skills="2" amount="1" class="orchid_preator"/>
@@ -980,7 +980,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Visit Bob's Intestines</text>
+				<text>Visit Bob's Intestines.</text>
 				<event>
 					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
 					<crewMember  all_skills="2" amount="1" class="mantis_suzerain"/>
@@ -991,7 +991,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Visit Inflection</text>
+				<text>Visit Inflection.</text>
 				<event>
 					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
 					<crewMember  all_skills="2" amount="1" class="crystal_sentinel"/>
@@ -1002,7 +1002,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Visit Hot-Rock</text>
+				<text>Visit Hot-Rock.</text>
 				<event>
 					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
 					<crewMember  all_skills="2" amount="1" class="rock_commando"/>
@@ -1013,7 +1013,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Visit Lettuce Eat</text>
+				<text>Visit Lettuce Eat.</text>
 				<event>
 					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
 					<crewMember  all_skills="2" amount="1" class="slug_saboteur"/>
@@ -1024,7 +1024,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Visit Ethereal Foods</text>
+				<text>Visit Ethereal Foods.</text>
 				<event>
 					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
 					<crewMember  all_skills="2" amount="1" class="phantom_alpha"/>
@@ -1035,7 +1035,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Visit Gregs Scrapyard</text>
+				<text>Visit Gregs Scrapyard.</text>
 				<event>
 					<text>You walk up to the stall, but unfortunetly the stall is completely out of food. Even worse the person working in the stall has been left behind by their ship, they offer to join your crew.</text>
 					<crewMember  all_skills="2" amount="1" class="lanius_welder"/>
@@ -1046,13 +1046,13 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Leave</text>
+				<text>Leave.</text>
 				<event/>
 			</choice>
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the event</text>
+		<text>Ignore the event.</text>
 		<event>
 			<text>You begin charging your FTL drive.</text>
 			<choice hidden="true">
@@ -1071,7 +1071,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 	<preventQuest />
 	<text>Upon arriving at this beacon, you come face to face with... yourself? Positional data is wonky but as far as your sensors can tell, you're looking at an exact copy of your ship, lifesigns and all.</text>
 	<choice hidden="true">
-		<text>Leave as quickly as possible</text>
+		<text>Leave as quickly as possible.</text>
 		<event>
 			<text>You fly away a safe distance and begin charging your FTL drive.</text>
 			<choice hidden="true">
@@ -1085,7 +1085,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Fire at that ship</text>
+		<text>Fire at that ship.</text>
 		<event>
 			<text>You scored a direct hit with your weapons, but the mysterious mirror ship fired at same time and hit back just as hard. Exactly as hard, in fact, as you notice the damage on their hull matches your own. You decide it might be best to leave the area after all.</text>
 			<damage amount="5" />
@@ -1112,7 +1112,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 	<environment type="asteroid" />
 	<text>The beacon sits inside of an asteriod field, nearby you see a Lylmik autoship wedged between two rocks. The autoship appears offline.</text>
 	<choice hidden="true">
-		<text>Blow the ship up</text>
+		<text>Blow the ship up.</text>
 		<event>
 			<text>You put a hole in the ship before scrapping it for anything useful.</text>
 			<autoReward level="MED">stuff</autoReward>
@@ -1123,7 +1123,7 @@ Due to the location gate you'll need to be escorted there by your sponsor, you s
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Attempt to power on the autoship</text>
+		<text>Attempt to power on the autoship.</text>
 		<event>
 			<text>The ship powers on and attempts to dislodge itself, the ship begins trying to blast the rocks it's stuck between sending shrapnel everywhere, you retreat your ship but are unable to avoid some light damage.
 Instead of getting itself unstuck the autoship manages to loose a large chunk of rock which destroys the central processor of the autoship. You scrap the remains.</text>
@@ -1136,7 +1136,7 @@ Instead of getting itself unstuck the autoship manages to loose a large chunk of
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the ship</text>
+		<text>Ignore the ship.</text>
 		<event>
 			<text>You fly away a safe distance and begin charging your FTL drive.</text>
 			<choice hidden="true">
@@ -1247,7 +1247,7 @@ Instead of getting itself unstuck the autoship manages to loose a large chunk of
 	<preventQuest />
 	<text>our sensors spot a Lylmik autoship signature. It seems to have been accelerating in the same direction for a very long time and accumulated a tremendous amount of speed as a result. You're not sure whether this is some sort of experiment with regard to the viability of sublight travel or simply a malfunction, but a much more pressing issue is that your ship just happened to drop out of hyperspace right in its path.</text>
 	<choice hidden="true">
-		<text>Brace for impact!</text>
+		<text>Brace for impact!.</text>
 		<event>
 			<text>Out of all the ships to collide with at high speed, a Lylmik-made one was probably the worst possible outcome, what with their love of heavy armor plating. The sheer mass of the deceptively small autoship sends your vessel careening through space as you black out. Once everyone comes to their senses, the damage report reveals many gaping holes in the hull from the impact. It's a miracle no one fell through one of them.</text>
 			<damage amount="2" effect="breach" system="random" />
@@ -1260,7 +1260,7 @@ Instead of getting itself unstuck the autoship manages to loose a large chunk of
 		</event>
 	</choice>
 	<choice hidden="true" req="engines" lvl="6">
-		<text>(Upg. Engines) Evasive maneuvers!</text>
+		<text>(Upg. Engines) Evasive maneuvers!.</text>
 		<event>
 			<text>Thankfully, the thrusters are powerful enough to get your ship out of the way before the impact. The whole crew watches the speed demon fly past with relief.</text>
 			<choice>
@@ -1281,7 +1281,7 @@ Instead of getting itself unstuck the autoship manages to loose a large chunk of
 		</event>
 	</choice>
 	<choice hidden="true" req="shields" lvl="8">
-		<text>(Upg. Shields) Reroute all power to shields!</text>
+		<text>(Upg. Shields) Reroute all power to shields!.</text>
 		<event>
 			<text>Your shields take the brunt of the force, the autoship is half crushed and deflected to the side leaving a substantial amount of scrap. Unfortunately the impact overloaded the shield capacitors and they blew up.</text>
 			<autoReward level="LOW">standard</autoReward>

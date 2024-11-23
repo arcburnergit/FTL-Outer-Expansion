@@ -170,7 +170,7 @@
 
 
 <event name="AEA_OLD_SHOWDOWN_WIN">
-	<text>You watch in triumphant jubilation as the Flagship explodes. You've won this battle!</text>
+	<text>You watch in triumphant jubilation as the Flagship explodes. You've won this battle!.</text>
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<achievement silent="false">ACH_AEA_OLD_END</achievement>
 	<clearSuperDrones player="false" />
@@ -407,7 +407,7 @@
 </event>
 
 <event name="AEA_OLD_VICTORY_CREW_DETECTIVE">
-	<text>"We've come far, yeah? To think, not that long ago I was just working on a simple murder case, and I thought that was the most excitement I'd see in my whole life! Now look at us! I must say, it would be a terrible shame for my legacy to end like this, but whatever you choose, I'm onboard."</text>
+	<text>"We've come far, yeah? To think, not that long ago I was just working on a simple murder case, and I thought that was the most excitement I'd see in my whole life! Now look at us! I must say, it would be a terrible shame for my legacy to end like this, but whatever you choose, I'm onboard.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT1</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -415,7 +415,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_TULLY">
-	<text>"To think, I was worried about a silly civil war when such greater things were happening behind my back. How could I go back to the Federation now that I know it's all for naught? Vance, my oldest friend, is gone. I should have remorse, but he was gone long before this conflict. Don't let me influence your decision here, I haven't got a single right to sway your mind. You're the Admiral now, captain."</text>
+	<text>"To think, I was worried about a silly civil war when such greater things were happening behind my back. How could I go back to the Federation now that I know it's all for naught? Vance, my oldest friend, is gone. I should have remorse, but he was gone long before this conflict. Don't let me influence your decision here, I haven't got a single right to sway your mind. You're the Admiral now, captain.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT1_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -423,7 +423,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_A55">
-	<text>"Arg lad, it's been fun serving you. End of the day, don't matter much if I was built by Rebels or not when I got to be a part of your crew, matey. It'd be a mighty shame for the pirate king to die like this, but only because it's one hell of a story I could never tell!"</text>
+	<text>"Arg lad, it's been fun serving you. End of the day, don't matter much if I was built by Rebels or not when I got to be a part of your crew, matey. It'd be a mighty shame for the pirate king to die like this, but only because it's one hell of a story I could never tell!".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT1_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -431,7 +431,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_JERRY">
-	<text>Jerry looks down at his feet. "I... I think it's a good thing my uncle is gone. Not to say I hated him, but for the good of the Multiverse it's only best. I suppose this makes me the hero Vance always wanted me to be, just not in the way he expected. Savior of the Multiverse is a pretty good title! I'm glad I met you, captain. I'll stick with you to the end, whether that's today, tomorrow, or the end of time itself."</text>
+	<text>Jerry looks down at his feet. "I... I think it's a good thing my uncle is gone. Not to say I hated him, but for the good of the Multiverse it's only best. I suppose this makes me the hero Vance always wanted me to be, just not in the way he expected. Savior of the Multiverse is a pretty good title! I'm glad I met you, captain. I'll stick with you to the end, whether that's today, tomorrow, or the end of time itself.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -439,7 +439,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_ANURAK">
-	<text>"Oh dear, Shellskenbry! This is really quite something! I don't... I don't know what to make of it all! But, you want my opinion on this? Oh I'm not very good with decisions. No no not at all! Uhm... oh my... uh... uh... I think you should do it! The bomb! The bomb... is what you should do. Yes. Uhm. I don't know why. It's just what first comes to my head. I think if I tried to explain it I might change my mind and I don't want that kind of indecision right now! Just... just do it quickly, okay? Oh I hope it doesn't hurt..."</text>
+	<text>"Oh dear, Shellskenbry! This is really quite something! I don't... I don't know what to make of it all! But, you want my opinion on this? Oh I'm not very good with decisions. No no not at all! Uhm... oh my... uh... uh... I think you should do it! The bomb! The bomb... is what you should do. Yes. Uhm. I don't know why. It's just what first comes to my head. I think if I tried to explain it I might change my mind and I don't want that kind of indecision right now! Just... just do it quickly, okay? Oh I hope it doesn't hurt...".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT2_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -447,7 +447,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_DEVORAK">
-	<text>"That bastard Vance finally got what was coming to him, and I am damn glad I was aboard the ship that did it. If that does not clear my name to the eyes of the Federation and the Ministry, then I'll be damned. As for me... Blowing up myself along with the rest of time and space sounds like a pretty fitting end to my story. I've served my purpose - don't let me hold you back from pulling the trigger."</text>
+	<text>"That bastard Vance finally got what was coming to him, and I am damn glad I was aboard the ship that did it. If that does not clear my name to the eyes of the Federation and the Ministry, then I'll be damned. As for me... Blowing up myself along with the rest of time and space sounds like a pretty fitting end to my story. I've served my purpose - don't let me hold you back from pulling the trigger.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT2_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -455,7 +455,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_TURZIL">
-	<text>"It is [untraditional] for an Engi to feel emotions. It would seem my -logical- receptors have been clogged by most unusually pleasurable feelings in your company. This is not the mission I signed up for. But I do not regret it. I must [remind] you however, that my people still need me. My absence would cause -disastrous- consequences. But so would the continuation of the war. A troubling dilemma. Most troubling."</text>
+	<text>"It is [untraditional] for an Engi to feel emotions. It would seem my -logical- receptors have been clogged by most unusually pleasurable feelings in your company. This is not the mission I signed up for. But I do not regret it. I must [remind] you however, that my people still need me. My absence would cause -disastrous- consequences. But so would the continuation of the war. A troubling dilemma. Most troubling.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT2_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -463,7 +463,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_MAYEB">
-    <text>"All I've ever known is my life in the gardens, tending and advocating for plants that can't fight for themselves. Those plants, not to mention most life that exists out there, know nothing about Rebels, multiverses, Obelisks, interstellar wars... What I'm trying to say is, if we have to lay down our lives so that they won't be tread underfoot by forces they can't even comprehend, then I'm behind you all the way."</text>
+    <text>"All I've ever known is my life in the gardens, tending and advocating for plants that can't fight for themselves. Those plants, not to mention most life that exists out there, know nothing about Rebels, multiverses, Obelisks, interstellar wars... What I'm trying to say is, if we have to lay down our lives so that they won't be tread underfoot by forces they can't even comprehend, then I'm behind you all the way.".</text>
     <unlockCustomShip silent="false">CREW_SHIP_ORCHID</unlockCustomShip>
     <choice hidden="true">
         <text>Continue...</text>
@@ -471,7 +471,7 @@
     </choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_IVAR">
-    <text>Ivar is drinking some of his nicest wine in celebration, and offers you a glass as well. "Me? I think the multiverse is a nice thing. Sure, it might be dangerous, but I don't believe in limiting ourselves out of fear. Hah, but don't listen to me; I'm not gonna tell you what to think. Let's just share a glass before you make your decision. If you do decide to end it, just give me a minute or so to make sure the crew is drunk and happy first. Got it?"</text>
+    <text>Ivar is drinking some of his nicest wine in celebration, and offers you a glass as well. "Me? I think the multiverse is a nice thing. Sure, it might be dangerous, but I don't believe in limiting ourselves out of fear. Hah, but don't listen to me; I'm not gonna tell you what to think. Let's just share a glass before you make your decision. If you do decide to end it, just give me a minute or so to make sure the crew is drunk and happy first. Got it?".</text>
     <unlockCustomShip silent="false">CREW_SHIP_ORCHID_2</unlockCustomShip>
     <choice hidden="true">
         <text>Continue...</text>
@@ -491,7 +491,7 @@
     </choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_ALKALI">
-	<text>"Hahahah! I knew thhhere ain't no shit like immortal demigod aliens. We sure put the fear of science in thhhhose narcissists. I'll be highly disappointed if you flick thhhat switch and I don't get to rub my victory in thhhat bitch Nerva's stupid little face. Hah!... Erm. Sorry. You're alright, kid. I expected worse when we first met. Don't let it go to your head hearing it coming from me; thhhough I wouldn't blame you if it did."</text>
+	<text>"Hahahah! I knew thhhere ain't no shit like immortal demigod aliens. We sure put the fear of science in thhhhose narcissists. I'll be highly disappointed if you flick thhhat switch and I don't get to rub my victory in thhhat bitch Nerva's stupid little face. Hah!... Erm. Sorry. You're alright, kid. I expected worse when we first met. Don't let it go to your head hearing it coming from me; thhhough I wouldn't blame you if it did.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -508,7 +508,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_ELLIE">
-	<text>"Hahahah! Ellie is on top of the world! On top of the Multiverse! Neeeiiiigh!" Ellie spins around in circles. "It would be a shame for Ellie to die now! She still has a duty to all the children, all the children who will never see Ellie again if she died! Don't blow the bomb superfan, think about what you'd be robbing the Multiverse of!"</text>
+	<text>"Hahahah! Ellie is on top of the world! On top of the Multiverse! Neeeiiiigh!" Ellie spins around in circles. "It would be a shame for Ellie to die now! She still has a duty to all the children, all the children who will never see Ellie again if she died! Don't blow the bomb superfan, think about what you'd be robbing the Multiverse of!".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT3_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -516,7 +516,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_STEPHAN">
-	<text>"We've come so far! Maybe... maybe after this, I really am a hero. Something for children to look up to... Even if they'll never know what we've done. I don't... I don't care what happens next. You've given me a chance at redemption, and that's all I care about. Thank you, captain."</text>
+	<text>"We've come so far! Maybe... maybe after this, I really am a hero. Something for children to look up to... Even if they'll never know what we've done. I don't... I don't care what happens next. You've given me a chance at redemption, and that's all I care about. Thank you, captain.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT3_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -532,7 +532,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_SLOCKNOG">
-	<text>"Beat being king, the name Ssslocknog isss going down in hissstory as ssssavior of the universssse! Hehehe. Wait, if we blow that bomb, no one will know about thisss, will they? Ehhh, ssscrew thossse guysss. If you want my sssay, I sssay blow it. I got nothin' to go back to anywayssss."</text>
+	<text>"Beat being king, the name Ssslocknog isss going down in hissstory as ssssavior of the universssse! Hehehe. Wait, if we blow that bomb, no one will know about thisss, will they? Ehhh, ssscrew thossse guysss. If you want my sssay, I sssay blow it. I got nothin' to go back to anywayssss.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT4_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -540,7 +540,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_IRWIN">
-	<text>"I... I don't know what to think, mate. All thisss time I thought I wasss some hot ssshot Renegade hunting the biggessst game in the Multiversssse... and all thisss time I've jussst been an insssignificant ssspeck in the grand ssscheme of two different massster plansss. I feel like I'm having a moment of introssspection and I HATE it. Pleassse, don't let me live to sssee myssself become a good perssson. The Multiversssse sssucksss anywaysss. That bomb'll do only good."</text>
+	<text>"I... I don't know what to think, mate. All thisss time I thought I wasss some hot ssshot Renegade hunting the biggessst game in the Multiversssse... and all thisss time I've jussst been an insssignificant ssspeck in the grand ssscheme of two different massster plansss. I feel like I'm having a moment of introssspection and I HATE it. Pleassse, don't let me live to sssee myssself become a good perssson. The Multiversssse sssucksss anywaysss. That bomb'll do only good.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT4_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -548,7 +548,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_ALKRAM">
-	<text>Alkram grunts, pretending to be indifferent to the situation. "When we first met, the most important thing on my mind was overthrowing Tyrdeo. Yet, now that seems so insignificant... I'm a soldier, not a speaker. Lemme put my words as blunt as possible for you. Only way my people or ANY people are ever gonna learn, is when we stop relying on other people to fix our problems. This whole Multiversal War thing isn't helping anyone when the Federation, Rebellion, Coalition, or god knows who else keeps intervening and 'fixing' everything. I implore you to blow that bomb and put things the way they were before for the sake of everyone."</text>
+	<text>Alkram grunts, pretending to be indifferent to the situation. "When we first met, the most important thing on my mind was overthrowing Tyrdeo. Yet, now that seems so insignificant... I'm a soldier, not a speaker. Lemme put my words as blunt as possible for you. Only way my people or ANY people are ever gonna learn, is when we stop relying on other people to fix our problems. This whole Multiversal War thing isn't helping anyone when the Federation, Rebellion, Coalition, or god knows who else keeps intervening and 'fixing' everything. I implore you to blow that bomb and put things the way they were before for the sake of everyone.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT5</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -556,7 +556,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_TYRDEO">
-	<text>"Oh sweet heavens I feel faint. Is it true? We're alive? Remarkable. You're the first person not on my payroll to stand at my side while facing such adversity. I cannot thank you for all you've done for me. It feels out of place for silly old me to have any say in this... but I'd like to keep living. And I'm sure you would too. Heh... What do you think happens if we die to that thing? Are we gone for good? Oh I don't want to think about it."</text>
+	<text>"Oh sweet heavens I feel faint. Is it true? We're alive? Remarkable. You're the first person not on my payroll to stand at my side while facing such adversity. I cannot thank you for all you've done for me. It feels out of place for silly old me to have any say in this... but I'd like to keep living. And I'm sure you would too. Heh... What do you think happens if we die to that thing? Are we gone for good? Oh I don't want to think about it.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT5_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -564,7 +564,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_FREDDY">
-	<text>"Good work chap, this is truly a spectacular moment and I couldn't think of any better way to spend it than sipping tea at the end of time. You do intend to blow the bomb, yes? Don't worry about me, the Free Mantis haven't relied on my support for years. They'll be scared, yes, but they'll make do. No more Multiverse means no more Rebels, and maybe things will finally settle down for once. My days were numbered anyways. A Mantis can only live so long."</text>
+	<text>"Good work chap, this is truly a spectacular moment and I couldn't think of any better way to spend it than sipping tea at the end of time. You do intend to blow the bomb, yes? Don't worry about me, the Free Mantis haven't relied on my support for years. They'll be scared, yes, but they'll make do. No more Multiverse means no more Rebels, and maybe things will finally settle down for once. My days were numbered anyways. A Mantis can only live so long.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT6</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -572,7 +572,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_KAZ">
-	<text>Kazaaak seems uncertain of what to say. "For first time in long time, I am not knowing what to say. You are greater warrior than I ever was. But think, if we do not detonate Paragon and return home, we could achieve so much more! We could be greatest heroes in all of time! How could you pass up this chance?"</text>
+	<text>Kazaaak seems uncertain of what to say. "For first time in long time, I am not knowing what to say. You are greater warrior than I ever was. But think, if we do not detonate Paragon and return home, we could achieve so much more! We could be greatest heroes in all of time! How could you pass up this chance?".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT6_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -580,7 +580,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_ARIADNE">
-	<text>Even in the face of this great triumph, Ariadne remains stoic, save for a faint smirk on her face. "When I offered my services to you captain, I didn't expect you to drag me across the Multiverse into the pit of demigods to overthrow the Rebellion. But - it's been an honor. However, my initial mission is not complete. The Theocracy has not yet been defeated. I'm afraid that bomb of yours will do little to stop the Elders. I understand this is not my call to make, but I hope you have considered the weight of this decision."</text>
+	<text>Even in the face of this great triumph, Ariadne remains stoic, save for a faint smirk on her face. "When I offered my services to you captain, I didn't expect you to drag me across the Multiverse into the pit of demigods to overthrow the Rebellion. But - it's been an honor. However, my initial mission is not complete. The Theocracy has not yet been defeated. I'm afraid that bomb of yours will do little to stop the Elders. I understand this is not my call to make, but I hope you have considered the weight of this decision.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT7</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -588,7 +588,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_RUWEN">
-	<text>"I feel as though I have served a purpose far greater than the one I set out to. You are truly the most remarkable, accomplished captain I have ever had the honor of meeting. You remind me of someone else I met long ago, another Federation captain.. But even they couldn't come close to this! But, would the destruction of the Multiverse be worth it? Think of the wonders that this technology could accomplish. It's much the same situation as my people - there will be chaos in the beginning, but I'm certain things must settle eventually. No war can truly last forever!"</text>
+	<text>"I feel as though I have served a purpose far greater than the one I set out to. You are truly the most remarkable, accomplished captain I have ever had the honor of meeting. You remind me of someone else I met long ago, another Federation captain.. But even they couldn't come close to this! But, would the destruction of the Multiverse be worth it? Think of the wonders that this technology could accomplish. It's much the same situation as my people - there will be chaos in the beginning, but I'm certain things must settle eventually. No war can truly last forever!".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT7_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -596,7 +596,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_DIANESH">
-	<text>"To think, I merely joined your vessel as a trial to judge you foreigners. I think it is safe to say you have passed that test, and with flying colors. I wish I had the same fervor, to go jumping across the Multiverse just to save reality. This Multiverse tech has been the ruin of many civilizations, but it has also been the birth and savior of so many more. Had you asked me any other day, I would say to detonate that bomb in an instant. But now, I can only wonder if it's best left unused..."</text>
+	<text>"To think, I merely joined your vessel as a trial to judge you foreigners. I think it is safe to say you have passed that test, and with flying colors. I wish I had the same fervor, to go jumping across the Multiverse just to save reality. This Multiverse tech has been the ruin of many civilizations, but it has also been the birth and savior of so many more. Had you asked me any other day, I would say to detonate that bomb in an instant. But now, I can only wonder if it's best left unused...".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT6_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -604,7 +604,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_TUCO">
-	<text>"This whole journey I've felt drunker than I ever did back on Sky-Drifter. It's been one hell of a trip. But hah, I can drink to this victory!" Tuco pulls out a remarkably still intact bottle of booze and downs it in seconds. "My glory days are long since over. The Multiverse doesn't need me, and frankly no one needs the Multiverse either. But if we do live past this day, I'd love to share another drink with ya, pal."</text>
+	<text>"This whole journey I've felt drunker than I ever did back on Sky-Drifter. It's been one hell of a trip. But hah, I can drink to this victory!" Tuco pulls out a remarkably still intact bottle of booze and downs it in seconds. "My glory days are long since over. The Multiverse doesn't need me, and frankly no one needs the Multiverse either. But if we do live past this day, I'd love to share another drink with ya, pal.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT7_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -620,7 +620,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_ANOINTED">
-	<text>"From ancient ruins I heard mention of Paragon. But never in even dreams was I thinking I find it! If I am Anointed, then you are divine beyond doubt!" The Anointed bows to you. "For centuries my people revere Obelisks as gods, but now I am knowing of their true menace. I could not thinking any better end to their empire than the destruction of Multiverse."</text>
+	<text>"From ancient ruins I heard mention of Paragon. But never in even dreams was I thinking I find it! If I am Anointed, then you are divine beyond doubt!" The Anointed bows to you. "For centuries my people revere Obelisks as gods, but now I am knowing of their true menace. I could not thinking any better end to their empire than the destruction of Multiverse.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT8_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -628,7 +628,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_DESSIUS">
-	<text>"Oh grandfather Aneidio, if only thou could witness me now! Y-you. You are not worthy of a title. You have ascended past such mortal things. You have but completed in such short time what the legacy of all 16 Reapers could never. What are you? I dare not insult you with conjecture. But if you should accept my humblest opinion, then hark and listen. This Paragon, oh foul creation, is a tool of the Obelisks. An antithesis to their power yes, but of their making. Should it not seem to you most cruel after all of this to give them their way and let it be their invention that divide reality? The Obelisks will fall, but the Multiverse is a fact of our existence. Would it not be sorrowful to deprive reality of such a beautiful thing, to defile nature once again with the patent of cruel gods? Think these thoughts I ask of you, but do not let me be the one to stop you."</text>
+	<text>"Oh grandfather Aneidio, if only thou could witness me now! Y-you. You are not worthy of a title. You have ascended past such mortal things. You have but completed in such short time what the legacy of all 16 Reapers could never. What are you? I dare not insult you with conjecture. But if you should accept my humblest opinion, then hark and listen. This Paragon, oh foul creation, is a tool of the Obelisks. An antithesis to their power yes, but of their making. Should it not seem to you most cruel after all of this to give them their way and let it be their invention that divide reality? The Obelisks will fall, but the Multiverse is a fact of our existence. Would it not be sorrowful to deprive reality of such a beautiful thing, to defile nature once again with the patent of cruel gods? Think these thoughts I ask of you, but do not let me be the one to stop you.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT8_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -636,7 +636,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_VORTIGON">
-	<text>You find Vortigon is not with the rest of the crew, rather he has crumpled into a ball in the corner of the ship. "Oh you, Almighty Slayer of the Infernal Cube Demons, Saviour of the Multiverse, and Grand Lord of Being Above Average, everything I have ever known is a lie. I have SEEN the Ember spirits with my own eyes and I have killed them with my hands. How could a god bleed? Divinity is a lie. I cannot live with myself. I have led so many men and women astray, I have poisoned the masses with tainted lies. Yes, I believed them too, but if fate was not the one that put me there, then it was my own hubris. I ask you one final favor. I do not care what you do with the Paragon, it's far beyond my worries. But if we live past this day, take mercy on me and see to it I never return to my home. Cast me into the abyss before you sentence me to looking into the eyes of my victims once more."</text>
+	<text>You find Vortigon is not with the rest of the crew, rather he has crumpled into a ball in the corner of the ship. "Oh you, Almighty Slayer of the Infernal Cube Demons, Saviour of the Multiverse, and Grand Lord of Being Above Average, everything I have ever known is a lie. I have SEEN the Ember spirits with my own eyes and I have killed them with my hands. How could a god bleed? Divinity is a lie. I cannot live with myself. I have led so many men and women astray, I have poisoned the masses with tainted lies. Yes, I believed them too, but if fate was not the one that put me there, then it was my own hubris. I ask you one final favor. I do not care what you do with the Paragon, it's far beyond my worries. But if we live past this day, take mercy on me and see to it I never return to my home. Cast me into the abyss before you sentence me to looking into the eyes of my victims once more.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOTA</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -644,7 +644,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_BILLY">
-	<text>"Thissss isssn't quite what I expected when I joined your crew. But hey, if there wasss any doubt about a galactic hero, an interdimenssssional hero sssure asss hell doesssn't pay taxesss! Oh, and uh... thanksss for not ssstabbing me in the back, like everyone elssse hassss. Now, assssuming we live, do you think I could ssstart ssselling Paragon merchandise? I could immortalize your image forever! But if you don't mind, I'd really like to go home. I have ssso many thingsss I need to fix, and if our journey endsss here, I'll never get the chance."</text>
+	<text>"Thissss isssn't quite what I expected when I joined your crew. But hey, if there wasss any doubt about a galactic hero, an interdimenssssional hero sssure asss hell doesssn't pay taxesss! Oh, and uh... thanksss for not ssstabbing me in the back, like everyone elssse hassss. Now, assssuming we live, do you think I could ssstart ssselling Paragon merchandise? I could immortalize your image forever! But if you don't mind, I'd really like to go home. I have ssso many thingsss I need to fix, and if our journey endsss here, I'll never get the chance.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOTA_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -667,7 +667,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_OBYN">
-	<text>"Your heroics are unlike any other, captain. That fateful day we met, where you promised I would be a hero of the Federation, I did not expect this, and suspect you didn't either! My legend has been told, but it lacks an end. I've come to terms now with the truth. My people are gone. Maybe it's time I join them in the great beyond, if it's even real. If you choose to activate the bomb, well, I'd be content with that ending."</text>
+	<text>"Your heroics are unlike any other, captain. That fateful day we met, where you promised I would be a hero of the Federation, I did not expect this, and suspect you didn't either! My legend has been told, but it lacks an end. I've come to terms now with the truth. My people are gone. Maybe it's time I join them in the great beyond, if it's even real. If you choose to activate the bomb, well, I'd be content with that ending.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOTB_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -675,7 +675,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_SYMBIOTE">
-	<text>Tintan and Rig hobble over. "We cannot lie, it was hell like this in the beginning. But in this troubling journey we've come to terms with our situation. Forevermore we shall be known as Rintan." Rig's stomach rumbles. "What? Tinrig? That's stupid! God damn it. We're working on it. But our point was this; thank you. We weren't grateful at first, but now we realized you saved us. Though, we must ask one selfish thing. It would be a shame for this revelation to go to waste. Are you sure the Paragon would solve everything?"</text>
+	<text>Tintan and Rig hobble over. "We cannot lie, it was hell like this in the beginning. But in this troubling journey we've come to terms with our situation. Forevermore we shall be known as Rintan." Rig's stomach rumbles. "What? Tinrig? That's stupid! God damn it. We're working on it. But our point was this; thank you. We weren't grateful at first, but now we realized you saved us. Though, we must ask one selfish thing. It would be a shame for this revelation to go to waste. Are you sure the Paragon would solve everything?".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOTB_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -683,7 +683,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_TONY">
-	<text>"You have shown me something I didn't expect to find. Hope. My life has been nothing but misery for the last 7 years. I was so close to ending it all. I owe you everything I have. But I cannot help but think that this Paragon is the solution to something far greater than any of us. Those Slugs, the damn bastards responsible for my suffering, are just one of many chaotic bad actors in this universe. They shouldn't have access to this tech. No one should."</text>
+	<text>"You have shown me something I didn't expect to find. Hope. My life has been nothing but misery for the last 7 years. I was so close to ending it all. I owe you everything I have. But I cannot help but think that this Paragon is the solution to something far greater than any of us. Those Slugs, the damn bastards responsible for my suffering, are just one of many chaotic bad actors in this universe. They shouldn't have access to this tech. No one should.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOTB_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -691,7 +691,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_GUNTPUT">
-	<text>"In journey, I have seen both sides of technology. Good, bad. You undoubtedly are good. You fight for justice, even if actions sometimes questionable. Obelisk, purest form of technological corruption. This Paragon, it is fascinatingly grey. Most evilest of weapons, yet also only thing capable of ending technological evils! Glad I am not in your shoes, the decision ahead is incomprehensible in its difficulty. I am just glad I gave you second chance."</text>
+	<text>"In journey, I have seen both sides of technology. Good, bad. You undoubtedly are good. You fight for justice, even if actions sometimes questionable. Obelisk, purest form of technological corruption. This Paragon, it is fascinatingly grey. Most evilest of weapons, yet also only thing capable of ending technological evils! Glad I am not in your shoes, the decision ahead is incomprehensible in its difficulty. I am just glad I gave you second chance.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOTA_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -699,7 +699,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_METYUNT">
-	<text>"I have so little to say except... thank you. Thank you for giving me a second chance. Before we met I was nothing but a traitor, despised by my people and kept around only for my usefulness. While I may never be able to make it up to those I have betrayed, at least I have been given the chance to redeem myself through this journey."</text>
+	<text>"I have so little to say except... thank you. Thank you for giving me a second chance. Before we met I was nothing but a traitor, despised by my people and kept around only for my usefulness. While I may never be able to make it up to those I have betrayed, at least I have been given the chance to redeem myself through this journey.".</text>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOTA_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -707,7 +707,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_WITHER"> <!--no unlock-->
-	<text>"You've come so far - I'm impressed! For a mortal you're surprisingly resilient. But I implore you not to forget the mission. The Paragon must be detonated for the Obelisks to truly be defeated. I understand the sacrifice that must be made here, and trust me I don't look forward to it either. But our lives are just a drop in the ocean of those ruined by the Obelisks, Rebels, and even the Federation with the Multiverse tech in their hands."</text>
+	<text>"You've come so far - I'm impressed! For a mortal you're surprisingly resilient. But I implore you not to forget the mission. The Paragon must be detonated for the Obelisks to truly be defeated. I understand the sacrifice that must be made here, and trust me I don't look forward to it either. But our lives are just a drop in the ocean of those ruined by the Obelisks, Rebels, and even the Federation with the Multiverse tech in their hands.".</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="AEA_OLD_VICTORY_LOAD" />
@@ -728,7 +728,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_AEA_BILL">
-	<text>"You know, I had no idea what I even was at the start of this, I was still naive and clueless, What I am now is all thanks to you, I'll be with you no matter what you choose"</text>
+	<text>"You know, I had no idea what I even was at the start of this, I was still naive and clueless, What I am now is all thanks to you, I'll be with you no matter what you choose".</text>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_ACID_CREW1</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -736,7 +736,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_AEA_KING">
-	<text>"This has the potential of ending the lives of hundreds of thousands of organics, you should use it."</text>
+	<text>"This has the potential of ending the lives of hundreds of thousands of organics, you should use it.".</text>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -753,7 +753,7 @@
 </event>
 
 <event name="AEA_OLD_VICTORY_CREW_AEA_OLD_UNIQUE_1">
-	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text>
+	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space.".</text>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_UNIA</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -761,7 +761,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_AEA_OLD_UNIQUE_2">
-	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text>
+	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space.".</text>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_UNIA_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -769,7 +769,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_AEA_OLD_UNIQUE_3">
-	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text>
+	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space.".</text>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_UNIA_3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -777,7 +777,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_AEA_OLD_UNIQUE_4">
-	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text>
+	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space.".</text>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_UNIB</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -785,7 +785,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_AEA_OLD_UNIQUE_5">
-	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text>
+	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space.".</text>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_UNIB_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>

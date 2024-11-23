@@ -60,11 +60,11 @@
 	<text>You've arrived at a vacation planet right in the middle of cultist space. You're even more surprised when all of the marketting for the place is directed towards the cultists.</text>
 	<img planet="PLANET_POPULATED" />
 	<choice hidden="true">
-		<text>Take some time to relax on the beach</text>
+		<text>Take some time to relax on the beach.</text>
 		<event>
 			<text>You land and let your crew relax across the resort. The place is relatively normal aside from the cult members, but even they turn out to be pretty chill, one of them even offers to join your crew.</text>
 			<choice hidden="false">
-				<text>Accept them onboard</text>
+				<text>Accept them onboard.</text>
 				<event>
 					<text>As you leave the planet you notice the rebel fleet jumped forwards while you were relaxing.</text>
 					<modifyPursuit amount="1" />
@@ -72,7 +72,7 @@
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Politely decline</text>
+				<text>Politely decline.</text>
 				<event>
 					<text>As you leave the planet you notice the rebel fleet jumped forwards while you were relaxing.</text>
 					<modifyPursuit amount="1" />
@@ -81,14 +81,14 @@
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Grab some free snacks from the lobby</text>
+		<text>Grab some free snacks from the lobby.</text>
 		<event>
 			<text>You swing by the lobby and grab some supplies before heading back out.</text>
 			<autoReward level="MED">stuff</autoReward>
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Steal something from lost and found</text>
+		<text>Steal something from lost and found.</text>
 		<event>
 			<text>You grab an item from lost and found before sprinting out of there before anyone can catch up to you.</text>
 			<weapon name="RANDOM"/>
@@ -103,7 +103,7 @@
 <event name="AEA_CULT_FOOD_DRIVE" unique="true">
 	<text>You've arrived at the beacon to discover the cult is running a food drive, theres a long line of people waiting to get a free meal.</text>
 	<choice hidden="false">
-		<text>Donate some supplies to the cause</text>
+		<text>Donate some supplies to the cause.</text>
 		<event>
 			<text>They accept your help readily and appear very thankful, one of the attending even offers to join your crew.</text>
 			<item_modify>
@@ -112,22 +112,22 @@
 				<item type="drones" min="-1" max="-1" />
 			</item_modify>
 			<choice hidden="false">
-				<text>Accept them onboard</text>
+				<text>Accept them onboard.</text>
 				<event>
-					<text>You leave feeling much better about yourself</text>
+					<text>You leave feeling much better about yourself.</text>
 					<crewMember amount="1" class="AEA_CULTISTS" />
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Politely decline</text>
+				<text>Politely decline.</text>
 				<event>
-					<text>You leave feeling much better about yourself</text>
+					<text>You leave feeling much better about yourself.</text>
 				</event>
 			</choice>
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the food drive</text>
+		<text>Ignore the food drive.</text>
 		<event>
 			<text>You prepare to jump to the next beacon.</text>
 			<choice>
@@ -146,16 +146,16 @@
 	<text>A strange event is going on at this beacon, it appears the cultists have setup some kind of prototype jump gate. They claim it will allow you to jump to any beacon in the sector, they ask you to participate in the test.</text>
 	<img planet="NONE" />
 	<choice hidden="true">
-		<text>Use the jump gate</text>
+		<text>Use the jump gate.</text>
 		<event>
 			<changeBackground>BACKGROUND_LIGHTSPEED</changeBackground>
-			<text>You head into the jumpgate and find yourself in hyperspace, there appears to be a few wrecks floating around near you which you scrap for parts. It appears the cultists were right, you can jump to any beacon in the sector from here!</text>
+			<text>You head into the jumpgate and find yourself in hyperspace, there appears to be a few wrecks floating around near you which you scrap for parts. It appears the cultists were right, you can jump to any beacon in the sector from here!.</text>
 			<hiddenAug>AEA_CULT_MAGIC_BOOST</hiddenAug>
 			<autoReward level="MED">stuff</autoReward>
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Politely decline</text>
+		<text>Politely decline.</text>
 		<event>
 			<text>You prepare to jump to the next beacon.</text>
 			<choice>
@@ -186,32 +186,32 @@
 	<text>You arrive at lush, uncharted planet, your crew begins to hear faint whispers on the comms. Initially, you think it's static, but soon it becomes clear that the whispers are guiding you.</text>
 	<img planet="PLANET_UNPOPULATED"/>
 	<choice hidden="true">
-		<text>Follow the voice and investigate further</text>
+		<text>Follow the voice and investigate further.</text>
 		<event>
 			<text>You follow the faint whispers and eventually arrive at a small, hidden moon, covered with glowing flowers. Theres a large structure on the surface, it appears to be a massive garden. As you enter the heart of their garden the voices go stronger, they ask what you seek...</text>
 			<choice hidden="true">
-				<text>Supplies</text>
+				<text>Supplies.</text>
 				<event>
 					<text>A platform rises out of the ground, and on it a platter of various supplies.</text>
 					<autoReward level="HIGH">stuff</autoReward>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Tools</text>
+				<text>Tools.</text>
 				<event>
 					<text>A platform rises out of the ground, and on it a drone.</text>
 					<drone name="RANDOM"/>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Weaponry</text>
+				<text>Weaponry.</text>
 				<event>
 					<text>A platform rises out of the ground, and on it a weapon.</text>
 					<weapon name="RANDOM"/>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Leave the garden</text>
+				<text>Leave the garden.</text>
 				<event>
 					<text>You prepare to jump to the next beacon.</text>
 					<choice>
@@ -263,7 +263,7 @@
 <event name="AEA_CULT_FACTORY" unique="true">
 	<text>There's a factory in use at this beacon, it appears to be guarded by a single cultist ship. Your sensors pick up a pirate ship hiding in an asteroid field nearby.</text>
 	<choice hidden="true">
-		<text>Attack the guard and loot the factory</text>
+		<text>Attack the guard and loot the factory.</text>
 		<event>
 			<text>You move in and power on your weapons, the pirate vessel sticks back to watch the engagement.</text>
 			<ship load="SHIP_AEA_CULT_FACTORY" hostile="true"/>
@@ -274,7 +274,7 @@
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Attack the pirate and defend the factory</text>
+		<text>Attack the pirate and defend the factory.</text>
 		<event>
 			<text>You engage the pirate, unfortunately the Cultist vessel isn't in any hurry to join you.</text>
 			<ship load="SHIP_PIRATE_ALL" hostile="true" />
@@ -285,7 +285,7 @@
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the situation</text>
+		<text>Ignore the situation.</text>
 		<event>
 			<text>You prepare to jump to the next beacon.</text>
 			<choice>
@@ -354,13 +354,13 @@
 	<event name="AEA_CULT_CULTIST_FIRE_SUCCEED_GOOD">
 		<text>"Oh thank the flower you're here, we don't know what we would have done without you!
 
-Take this scrap as a thank you."</text>
+Take this scrap as a thank you.".</text>
 		<autoReward level="MED">stuff</autoReward>
 	</event>
 	<event name="AEA_CULT_CULTIST_FIRE_SUCCEED_BAD">
 		<text>"You've ruined the summoning circle, that fire was completely in control!
 			
-You've ruined everything, prepare to die!"</text>
+You've ruined everything, prepare to die!".</text>
 		<ship hostile="true"/>
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -397,11 +397,11 @@ You only just manage to make it back to your ship before the enemy warps away.</
 	<text>A cultist approaches you with a humble request. The vampweed cultists are in need of a rare resource, a specific crystal from a nearby asteroid field. They claim the crystal will be used in a sacred ceremony.</text>
 	<environment type="asteroid"/>
 	<choice hidden="true">
-		<text>Agree to help them and search for the crystal</text>
+		<text>Agree to help them and search for the crystal.</text>
 		<event>
 			<text>You begin scanning the asteroid field, after a while you detect something right on the edge of the field. Upon closer inspection you discover the crystal the cultists are looking for, and whats more it isn't any old crystal, its a diamond the size of a rockman.</text>
 			<choice hidden="true">
-				<text>Grab the crystal before the cultists see it and get out of there</text>
+				<text>Grab the crystal before the cultists see it and get out of there.</text>
 				<event>
 					<text>Just when you think no one saw, a cultist vessel intercepts you before you can make it out of the field. They clearly saw you take the crystal and are in no mood to negotiate.</text>
 					<ship load="SHIP_AEA_CULT_FIGHT" hostile="true"/>
@@ -415,7 +415,7 @@ You only just manage to make it back to your ship before the enemy warps away.</
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Hold true to your promise and bring them the crystal</text>
+				<text>Hold true to your promise and bring them the crystal.</text>
 				<event>
 					<text>You return to the orchids and present the crystal, they're incredibly thankful for your help and even thank you by giving you more scrap than the crystal was worth.</text>
 					<item_modify>
@@ -430,7 +430,7 @@ You only just manage to make it back to your ship before the enemy warps away.</
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Politely decline</text>
+		<text>Politely decline.</text>
 		<event>
 			<text>You prepare to jump to the next beacon.</text>
 			<choice>
@@ -450,7 +450,7 @@ You only just manage to make it back to your ship before the enemy warps away.</
 	<customFleet right="false" firing="false" autoDarkening="true">CUSTOM_FLEET_AEA_WHALES</customFleet>
 	<ship load="SHIP_AEA_CULT_WHALE" hostile="false"/>
 	<choice hidden="true">
-		<text>Defend yourself</text>
+		<text>Defend yourself.</text>
 		<event>
 			<text>You activate your weapons and move in to attack.</text>
 			<ship hostile="true"/>
@@ -461,20 +461,20 @@ You only just manage to make it back to your ship before the enemy warps away.</
 		</event>
 	</choice>
 	<choice hidden="true" req="AEA_CULTISTS_ALL">
-		<text>(Cultist  Crew) Communicate with the whale</text>
+		<text>(Cultist  Crew) Communicate with the whale.</text>
 		<event>
 			<text>Your cultist begins to communicate with the whale. After understanding your peaceful intentions the whale makes a request of you.
 
 It appears the whale's mate became seperated in an asteroid field a while back, it wants you to go look for it.</text>
 			<choice hidden="true">
-				<text>Agree to find the whale's mate</text>
+				<text>Agree to find the whale's mate.</text>
 				<event>
 					<text>The whale tells your cultist where they were seperated from their mate. It also tells you where to escort their mate to once you find them.</text>
 					<quest event="AEA_CULT_WHALE_FIELD"/>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Politely refuse</text>
+				<text>Politely refuse.</text>
 				<event>
 					<text>The whale seems disapointed but moves off to rejoin the herd.</text>
 				</event>
@@ -482,7 +482,7 @@ It appears the whale's mate became seperated in an asteroid field a while back, 
 		</event>
 	</choice>
 	<choice hidden="true" req="SHIP_AEA_WHALE"> <!--Whale cruiser-->
-		<text>(Space Whale) Romance the whale</text>
+		<text>(Space Whale) Romance the whale.</text>
 		<event>
 			<text>You, as a whale, attempt to seduce the whale.
 Unfortunately the whale is uninterested in your advances and once it realizes you don't belong to the herd it leaves.</text>
@@ -490,7 +490,7 @@ Unfortunately the whale is uninterested in your advances and once it realizes yo
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Back off and avoid the whales</text>
+		<text>Back off and avoid the whales.</text>
 		<event>
 			<text>You prepare to jump to the next beacon.</text>
 			<choice>
@@ -567,7 +567,7 @@ Unfortunately the whale is uninterested in your advances and once it realizes yo
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Give up</text>
+		<text>Give up.</text>
 		<event>
 			<text>You prepare to jump to the next beacon.</text>
 			<choice>
@@ -586,7 +586,7 @@ Unfortunately the whale is uninterested in your advances and once it realizes yo
 	<text>Eventually you pickup on a large organic object. On closer inspection you find it's the whale, unfortunately it appears to be under attack by a slug vessel.</text>
 	<ship load="SHIP_AEA_CULT_WHALE_HUNTER" hostile="true"/>
 	<choice hidden="true">
-		<text>Protect that whale!</text>
+		<text>Protect that whale!.</text>
 		<event load="COMBAT_CHECK"/>
 	</choice>
 </event>
@@ -670,10 +670,10 @@ The whale expresses their gratitude and asks you to follow it.</text>
 
 <event name="DISTRESS_AEA_CULT_NO_MAGIC" unique="true">
 	<distressBeacon />
-	<text>You've arrived at the beacon to discover a cultist vessel. They hail you. "Hello, I don't suppose you can help us, we were transporting some spells but we were hit by an asteroid and lost them nearby, our sensors aren't strong enough to pick them up."</text>
+	<text>You've arrived at the beacon to discover a cultist vessel. They hail you. "Hello, I don't suppose you can help us, we were transporting some spells but we were hit by an asteroid and lost them nearby, our sensors aren't strong enough to pick them up.".</text>
 	<ship load="SHIP_AEA_CULT_GENERIC" hostile="false"/>
 	<choice req="sensors" lvl="2" hidden="true" max_group="0">
-		<text>(Upg. Sensors) Run a scan at maximum sensitivity</text>
+		<text>(Upg. Sensors) Run a scan at maximum sensitivity.</text>
 		<event>
 			<text>You run an additional more focused scan and find an abandoned refueling platform.</text>
 			<item_modify>
@@ -686,7 +686,7 @@ The whale expresses their gratitude and asks you to follow it.</text>
 		</event>
 	</choice>
 	<choice req="sensors" lvl="3" hidden="true" max_group="0">
-		<text>(Adv. Sensors) Run a scan at maximum sensitivity</text>
+		<text>(Adv. Sensors) Run a scan at maximum sensitivity.</text>
 		<event>
 			<text>You run an additional more focused scan and find an abandoned refueling platform.</text>
 			<item_modify>
@@ -700,7 +700,7 @@ The whale expresses their gratitude and asks you to follow it.</text>
 		</event>
 	</choice>
 	<choice req="ADV_SCANNERS" lvl="3" hidden="true" max_group="0">
-		<text>(Long-Ranged Scanners) Run a scan at maximum sensitivity</text>
+		<text>(Long-Ranged Scanners) Run a scan at maximum sensitivity.</text>
 		<event>
 			<text>You run an additional more focused scan and find an abandoned refueling platform.</text>
 			<item_modify>
@@ -714,11 +714,11 @@ The whale expresses their gratitude and asks you to follow it.</text>
 		</event>
 	</choice>
 	<choice req="pilot" lvl="1" hidden="true" max_group="0">
-		<text>Your sensors aren't strong enough</text>
+		<text>Your sensors aren't strong enough.</text>
 		<event load="OPTION_INVALID"/>
 	</choice>
 	<choice hidden="true">
-		<text>Attack them instead</text>
+		<text>Attack them instead.</text>
 		<event>
 			<text>You turn your weapons on and engage the cultists.</text>
 			<ship hostile="true"/>
@@ -729,7 +729,7 @@ The whale expresses their gratitude and asks you to follow it.</text>
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Decline</text>
+		<text>Decline.</text>
 		<event>
 			<text>You prepare to jump to the next beacon.</text>
 			<choice>
@@ -819,18 +819,18 @@ The whale expresses their gratitude and asks you to follow it.</text>
 	</choice>
 </event>
 <textList name="TEXT_ENCOUNTER_AEA_CULT">
-	<text>"The Federation clings to the past, but you shall find it will be your own undoing for pushing us away! When Ivar sees the truth and joins the Coalition, your hypocritical leaders will be annihilated! And until then, we'll have to make do with picking off you intrusive Universe 0 Renegades!"</text>
-	<text>Following the Federation-Mantis war, it was agreed during the Kadahellian'ek Treaty that the Gathering and Confederacy would never enter war against each other. Despite this, tensions remain high, and it seems many Vampweeds still hold history against the Federation. One particularly radical vessel nearby locks onto you!</text>
-	<text>Vampweeds might not be your friends, but it's not too typical for them to act in such aggressive manners. However, scans show the crew of the nearby ship have succumbed to some kind of parasite that creates irrational behavior. Prepare to fight!</text>
+	<text>"The Federation clings to the past, but you shall find it will be your own undoing for pushing us away! When Ivar sees the truth and joins the Coalition, your hypocritical leaders will be annihilated! And until then, we'll have to make do with picking off you intrusive Universe 0 Renegades!".</text>
+	<text>Following the Federation-Mantis war, it was agreed during the Kadahellian'ek Treaty that the Gathering and Confederacy would never enter war against each other. Despite this, tensions remain high, and it seems many Vampweeds still hold history against the Federation. One particularly radical vessel nearby locks onto you!.</text>
+	<text>Vampweeds might not be your friends, but it's not too typical for them to act in such aggressive manners. However, scans show the crew of the nearby ship have succumbed to some kind of parasite that creates irrational behavior. Prepare to fight!.</text>
 	<text>"And so it's true, the Federation has finally sent Renegades to renew the old war! Well, we won't take this insult without a fight, scum!" Unfortunately, the ship refuses to listen to you, meaning a fight is inevitable.</text>
-	<text>A drunk Vampweed factory worker's vessel lurches towards you. "Ehhh... dumbass... Feds in my sector? You'll regret this, hear me!" Despite barely being able to form a coherent sentence, the captain is able to order his crew to attack!</text>
-	<text>Vampweeds are known to drink a fair bit as a culture, and intoxicated Orchids aren't an uncommon sight here. Unfortunately, the side effects of heavy drinking tend to cause irrational decisions, such as engaging Renegades in combat!</text>
-	<text>"I didn't side with the Hive during the old war, but now? Now I think I should have! The Federation has done nothing but push us away when we needed it most, and you're going to regret that!"</text>
-	<text>"Ivar has grown weak in trying to defend you Federation filth! It is time for insurrection, time to plant the seeds of rebellion so that it may flower into a galaxy where your lies no longer corrupt our youth!"</text>
+	<text>A drunk Vampweed factory worker's vessel lurches towards you. "Ehhh... dumbass... Feds in my sector? You'll regret this, hear me!" Despite barely being able to form a coherent sentence, the captain is able to order his crew to attack!.</text>
+	<text>Vampweeds are known to drink a fair bit as a culture, and intoxicated Orchids aren't an uncommon sight here. Unfortunately, the side effects of heavy drinking tend to cause irrational decisions, such as engaging Renegades in combat!.</text>
+	<text>"I didn't side with the Hive during the old war, but now? Now I think I should have! The Federation has done nothing but push us away when we needed it most, and you're going to regret that!".</text>
+	<text>"Ivar has grown weak in trying to defend you Federation filth! It is time for insurrection, time to plant the seeds of rebellion so that it may flower into a galaxy where your lies no longer corrupt our youth!".</text>
 </textList>
 
 <event name="ENCOUNTER_AEA_CULT_STATION">
-	<text>"Stop right there! This sector is a designated safe zone, non-Confederate military vessels are forbidden from entering this region!" You don't remember seeing such restrictions posted anywhere, but it seems you don't have time to argue. Get ready to fight!</text>
+	<text>"Stop right there! This sector is a designated safe zone, non-Confederate military vessels are forbidden from entering this region!" You don't remember seeing such restrictions posted anywhere, but it seems you don't have time to argue. Get ready to fight!.</text>
 	<ship load="SHIP_AEA_CULT_STATION" hostile="true" />
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -860,7 +860,7 @@ The whale expresses their gratitude and asks you to follow it.</text>
 -->
 
 <event name="ENCOUNTER_AEA_CULT_ELITE" unique="true">
-	<text>"The Confederacy is not the stomping grounds of the Federation or its hitmen! Your presence here violates the basic rights of any person to enjoy peace and prosperity without the invasion of intrusive foreign governments!" A proud Cultivator, claiming to act in the goodwill of his people, raises his weapons and attacks your ship!</text>
+	<text>"The Confederacy is not the stomping grounds of the Federation or its hitmen! Your presence here violates the basic rights of any person to enjoy peace and prosperity without the invasion of intrusive foreign governments!" A proud Cultivator, claiming to act in the goodwill of his people, raises his weapons and attacks your ship!.</text>
 	<ship load="SHIP_AEA_CULT_ELITE_FIGHT" hostile="true" />
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -887,19 +887,19 @@ The whale expresses their gratitude and asks you to follow it.</text>
 	<ship load="SHIP_AEA_CULT_FLOWER_TRUE" hostile="false"/>
 	<text>You've arrived at the location of the one flower, you can see the massive flower in orbit above the planet, aswell as hundreds of ships surrounding it.</text>
 	<choice hidden="true">
-		<text>Approach the flower</text>
+		<text>Approach the flower.</text>
 		<event>
 			<text>You approach the flower and receive a hail directly from the flower. It appears many other ships are also in communication with the flower.
 
-An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here often. I have a task for you if you're interested, two infact."</text>
+An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here often. I have a task for you if you're interested, two infact.".</text>
 			<choice hidden="true">
-				<text>Hear it out</text>
+				<text>Hear it out.</text>
 				<event>
 					<text>"The first task is an easy one, I need you to transport one of my seeds to a nearby sector. The only thing you'll need to be careful of is the seed's fragility, try to keep it safe."
 
-"The second task I have for you is more complicated, I have recently become aware of a plot to try and destroy and replace me with a fake. I need you to investigate the situation and resolve it, how you do is up to you."</text>
+"The second task I have for you is more complicated, I have recently become aware of a plot to try and destroy and replace me with a fake. I need you to investigate the situation and resolve it, how you do is up to you.".</text>
 					<choice hidden="true">
-						<text>Accept both tasks</text>
+						<text>Accept both tasks.</text>
 						<event>
 							<text>The flower transmits the coordinates and wishes you luck with the tasks. You leave the flower and explore the planet. You find a large store on the planet, Multiple Orchids wave to customers, trying to get their attention, while curious shoppers of various species look about.</text>
 							<quest event="AEA_CULT_POLLEN">
@@ -924,7 +924,7 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 						</event>
 					</choice>
 					<choice hidden="true">
-						<text>Accept the first task</text>
+						<text>Accept the first task.</text>
 						<event>
 							<text>The flower transmits the coordinates and wishes you luck with the task. You leave the flower and explore the planet. You find a large store on the planet, Multiple Orchids wave to customers, trying to get their attention, while curious shoppers of various species look about.</text>
 							<quest event="AEA_CULT_POLLEN">
@@ -942,7 +942,7 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 						</event>
 					</choice>
 					<choice hidden="true">
-						<text>Accept the second task</text>
+						<text>Accept the second task.</text>
 						<event>
 							<text>The flower transmits the coordinates and wishes you luck with the task. You leave the flower and explore the planet. You find a large store on the planet, Multiple Orchids wave to customers, trying to get their attention, while curious shoppers of various species look about.</text>
 							<quest event="AEA_CULT_CONSPIRACY" />
@@ -953,7 +953,7 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 						</event>
 					</choice>
 					<choice hidden="true">
-						<text>Politely decline</text>
+						<text>Politely decline.</text>
 						<event>
 							<text>You leave the flower and explore the planet. You find a large store on the planet, Multiple Orchids wave to customers, trying to get their attention, while curious shoppers of various species look about.</text>
 							<choice hidden="true">
@@ -967,7 +967,7 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the flower and explore the planet</text>
+		<text>Ignore the flower and explore the planet.</text>
 		<event>
 			<text>You find a large store on the planet, Multiple Orchids wave to customers, trying to get their attention, while curious shoppers of various species look about.</text>
 			<choice hidden="true">
@@ -1002,16 +1002,16 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 	<img planet="PLANET_UNPOPULATED"/>
 	<text>You've arrived at the location the flower asked you to deliver the seed to.</text>
 	<choice hidden="true" req="aea_seed" lvl="1" blue="false">
-		<text>Deliver the seed</text>
+		<text>Deliver the seed.</text>
 		<event>
 			<text>You take the seed down to the planet and find a large garden on the surface. At the center of the garden you find a strange structure, it appears to have a pedestal like growth where you could put the seed.</text>
 			<choice hidden="true">
-				<text>Put the seed onto it</text>
+				<text>Put the seed onto it.</text>
 				<event>
 					<text>You insert the seed into the structure and it shifts and retracts into the ground. A moment later a tiny orchid sprouts from the ground. It doesn't seem to be able to talk, but it does gesture for you to follow it.</text>
 					<removeCrew class="aea_seed">
 						<clone>false</clone>
-						<text> </text>
+						<text> .</text>
 					</removeCrew>
 					<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CULT_BUD</unlockCustomShip>
 					<choice hidden="true">
@@ -1032,7 +1032,7 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 		</event>
 	</choice>
 	<choice hidden="true" req="aea_seed" lvl="0" max_lvl="0" blue="false">
-		<text>You cannot deliver the seed</text>
+		<text>You cannot deliver the seed.</text>
 		<event load="OPTION_INVALID"/>
 	</choice>
 	<choice hidden="true">
@@ -1072,23 +1072,23 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 <event name="AEA_CULT_CONSPIRACY_COMPOUND">
 	<text>You're able to makeout a few different locations around the compound. There's a workshop with visable ship components inside. A storage yard with a few shipping containers spread about. A generator building that appears to be powerering the rest of the facility. An old hanger off to one side, you can't see inside of it. Finally theres the main command facility, your sensors indicate this is where the conspirators are, it appears they're all currently asleep.</text>
 	<choice hidden="true">
-		<text>Search the workshop</text>
+		<text>Search the workshop.</text>
 		<event load="AEA_CULT_CON_WORKSHOP"/>
 	</choice>
 	<choice hidden="true">
-		<text>Search the storage yard</text>
+		<text>Search the storage yard.</text>
 		<event load="AEA_CULT_CON_STORAGE"/>
 	</choice>
 	<choice hidden="true">
-		<text>Search the generator</text>
+		<text>Search the generator.</text>
 		<event load="AEA_CULT_CON_GENERATOR"/>
 	</choice>
 	<choice hidden="true">
-		<text>Search the hanger</text>
+		<text>Search the hanger.</text>
 		<event load="AEA_CULT_CON_HANGER"/>
 	</choice>
 	<choice hidden="true">
-		<text>Search the compound</text>
+		<text>Search the compound.</text>
 		<event load="AEA_CULT_CON_COMPOUND"/>
 	</choice>
 </event>
@@ -1100,7 +1100,7 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 <event name="AEA_CULT_CON_WORKSHOP">
 	<text>You arrive in the workshop, it appears the workers have gone to sleep for the night.</text>
 	<choice hidden="true" req="aea_cult_visit_eng" lvl="0" max_lvl="0" blue="false">
-		<text>Search the workshop</text>
+		<text>Search the workshop.</text>
 		<event>
 			<text>Your search reveals nothing useful, infact the only bits you can make use out of a few drone parts.</text>
 			<item_modify>
@@ -1114,11 +1114,11 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 		</event>
 	</choice>
 	<choice hidden="true" req="aea_cult_visit_eng" lvl="1" blue="false">
-		<text>You have already searched the workshop</text>
+		<text>You have already searched the workshop.</text>
 		<event load="OPTION_INVALID"/>
 	</choice>
 	<choice hidden="true">
-		<text>Go back</text>
+		<text>Go back.</text>
 		<event load="AEA_CULT_CONSPIRACY_COMPOUND_LOAD"/>
 	</choice>
 </event>
@@ -1130,10 +1130,10 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 <event name="AEA_CULT_CON_STORAGE">
 	<text>You arrive in the storage yard, it's deserted and empty aside from a few shipping containers..</text>
 	<choice hidden="true" req="aea_cult_visit_str" lvl="0" max_lvl="0" blue="false">
-		<text>Search the shipping containers</text>
+		<text>Search the shipping containers.</text>
 		<event>
-			<text>You begin openning up the shipping containers, most are empty. It's only on the second to last crate that you discover a weapon. You don't find anything else.</text>
-			<weapon name="LIST_WEAPON_CULT"/>
+			<text>You begin openning up the shipping containers, most are empty. It's only on the second to last crate that you discover a ship augment. You don't find anything else.</text>
+			<augment name="RANDOM"/>
 			<variable name="aea_cult_visit_str" op="set" val="1" />
 			<choice hidden="true">
 				<text>Continue...</text>
@@ -1142,11 +1142,11 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 		</event>
 	</choice>
 	<choice hidden="true" req="aea_cult_visit_str" lvl="1" blue="false">
-		<text>You have already searched the storage yard</text>
+		<text>You have already searched the storage yard.</text>
 		<event load="OPTION_INVALID"/>
 	</choice>
 	<choice hidden="true">
-		<text>Go back</text>
+		<text>Go back.</text>
 		<event load="AEA_CULT_CONSPIRACY_COMPOUND_LOAD"/>
 	</choice>
 </event>
@@ -1156,13 +1156,13 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 </event>
 
 <event name="AEA_CULT_CON_GENERATOR">
-	<text>You arrive in the generator room, Access to the actual generator is blocked by a heavy security checkpoint. It's unlikely you'll be able to get inside the generator itself</text>
+	<text>You arrive in the generator room, Access to the actual generator is blocked by a heavy security checkpoint. It's unlikely you'll be able to get inside the generator itself.</text>
 	<choice hidden="true">
-		<text>Search the generator room entrance</text>
+		<text>Search the generator room entrance.</text>
 		<event name="AEA_CULT_CON_GENERATOR_CODE">
 			<text>The room you're in is rather bare, on one side theres a thick glass window into the security control room, on another wall is an emergency escape route map, probably leftover from when this place wasn't abandoned.
 
-You're unable to find anything in the room, however you notice a sticky note through the glass window with a code on it: </text>
+You're unable to find anything in the room, however you notice a sticky note through the glass window with a code on it: .</text>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="AEA_CULT_CON_GENERATOR_LOAD"/>
@@ -1170,7 +1170,7 @@ You're unable to find anything in the room, however you notice a sticky note thr
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Go back</text>
+		<text>Go back.</text>
 		<event load="AEA_CULT_CONSPIRACY_COMPOUND_LOAD"/>
 	</choice>
 </event>
@@ -1178,11 +1178,11 @@ You're unable to find anything in the room, however you notice a sticky note thr
 <event name="AEA_CULT_CON_HANGER">
 	<text>You arrive at the hanger, you search the perimeter but can't find any way in, all of the doors are locked shut or sealed up.</text>
 	<choice hidden="true">
-		<text>You cannot search the hanger as you cannot find a way inside</text>
+		<text>You cannot search the hanger as you cannot find a way inside.</text>
 		<event load="OPTION_INVALID"/>
 	</choice>
 	<choice hidden="true">
-		<text>Go back</text>
+		<text>Go back.</text>
 		<event load="AEA_CULT_CONSPIRACY_COMPOUND_LOAD"/>
 	</choice>
 </event>
@@ -1192,73 +1192,73 @@ You're unable to find anything in the room, however you notice a sticky note thr
 	<choice hidden="true">
 		<text>Attempt to unlock the door.</text>
 		<event name="AEA_CULT_CON_ENTER_CODE">
-			<text>Entering Code: XXXX</text>
+			<text>Entering Code: XXXX.</text>
 			<choice hidden="true">
-				<text>Enter a 1</text>
+				<text>Enter a 1.</text>
 				<event name="AEA_CULT_CON_ENTER_CODE_1">
 					<loadEvent>AEA_CULT_CON_ENTER_CODE</loadEvent>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Enter a 2</text>
+				<text>Enter a 2.</text>
 				<event name="AEA_CULT_CON_ENTER_CODE_2">
 					<loadEvent>AEA_CULT_CON_ENTER_CODE</loadEvent>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Enter a 3</text>
+				<text>Enter a 3.</text>
 				<event name="AEA_CULT_CON_ENTER_CODE_3">
 					<loadEvent>AEA_CULT_CON_ENTER_CODE</loadEvent>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Enter a 4</text>
+				<text>Enter a 4.</text>
 				<event name="AEA_CULT_CON_ENTER_CODE_4">
 					<loadEvent>AEA_CULT_CON_ENTER_CODE</loadEvent>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Enter a 5</text>
+				<text>Enter a 5.</text>
 				<event name="AEA_CULT_CON_ENTER_CODE_5">
 					<loadEvent>AEA_CULT_CON_ENTER_CODE</loadEvent>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Enter a 6</text>
+				<text>Enter a 6.</text>
 				<event name="AEA_CULT_CON_ENTER_CODE_6">
 					<loadEvent>AEA_CULT_CON_ENTER_CODE</loadEvent>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Enter a 7</text>
+				<text>Enter a 7.</text>
 				<event name="AEA_CULT_CON_ENTER_CODE_7">
 					<loadEvent>AEA_CULT_CON_ENTER_CODE</loadEvent>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Enter a 8</text>
+				<text>Enter a 8.</text>
 				<event name="AEA_CULT_CON_ENTER_CODE_8">
 					<loadEvent>AEA_CULT_CON_ENTER_CODE</loadEvent>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Enter a 9</text>
+				<text>Enter a 9.</text>
 				<event name="AEA_CULT_CON_ENTER_CODE_9">
 					<loadEvent>AEA_CULT_CON_ENTER_CODE</loadEvent>
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Enter a 0</text>
+				<text>Enter a 0.</text>
 				<event name="AEA_CULT_CON_ENTER_CODE_0">
 					<loadEvent>AEA_CULT_CON_ENTER_CODE</loadEvent>
 				</event>
 			</choice>
 			<choice hidden="true" blue="true" req="aea_cult_code" lvl="1">
-				<text>Submit the code</text>
+				<text>Submit the code.</text>
 				<event load="AEA_CULT_CON_INSIDE"/>
 			</choice>
 			<choice hidden="true" blue="false" req="aea_cult_code" lvl="0" max_lvl="0">
-				<text>Submit the code</text>
+				<text>Submit the code.</text>
 				<event>
 					<text>You submit the code, however it appears you got it wrong and the door sends out an electric pulse which damages your ship.</text>
 					<damage amount="1"/>
@@ -1269,13 +1269,13 @@ You're unable to find anything in the room, however you notice a sticky note thr
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Nevermind</text>
+				<text>Nevermind.</text>
 				<event load="AEA_CULT_CONSPIRACY_COMPOUND_LOAD"/>
 			</choice>
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Nevermind</text>
+		<text>Nevermind.</text>
 		<event load="AEA_CULT_CONSPIRACY_COMPOUND_LOAD"/>
 	</choice>
 </event>
@@ -1283,13 +1283,13 @@ You're unable to find anything in the room, however you notice a sticky note thr
 <event name="AEA_CULT_CON_INSIDE">
 	<text>You're able to make it inside and sneak through the compound, eventually you come upon the security controls for the compound.</text>
 	<choice hidden="true">
-		<text>Lock the conspirators in their rooms</text>
+		<text>Lock the conspirators in their rooms.</text>
 		<event>
 			<text>You manage to secure the conspirators and you alert the cultist police forces.
 
 As you're watching you notice that one of the conspirator's room didn't lock properly, and what's more you're unable to find them, rewinding the footage you see them escape towards the hanger.</text>
 			<choice hidden="true">
-				<text>After them!</text>
+				<text>After them!.</text>
 				<event>
 					<text>As you make it back out of the base you see a strange vessel take to the air, it looks like the Oneflower, but something's off. You don't have time to work it out as it begins an attack run on you. You only just make it back to your ship in time.</text>
 					<ship load="SHIP_AEA_CULT_FLOWER_FAKE" hostile="true"/>
@@ -1306,7 +1306,7 @@ As you're watching you notice that one of the conspirator's room didn't lock pro
 <event name="AEA_CULT_CON_FLOWER_DEAD">
 	<text>The ship explodes, as it fragments it reveals the interior of the ship. It turns out the flower was actually an advanced autoship the conspirators had built.
 
-You're able to scrap the fragments of the ship and discover a weapon amongst the wreckage</text>
+You're able to scrap the fragments of the ship and discover a weapon amongst the wreckage.</text>
 	<autoReward level="LOW">standard_no_item</autoReward>
 	<weapon name="AEA_LASER_CULT_RANDOM"/>
 	<choice hidden="true">
@@ -1335,7 +1335,7 @@ You recieve a message from the Oneflower, it thanks you for a job well done and 
 	<text>"Renegade, this is a restricted zone. Did you not notice the minefield at this beacon? You can't be here!" A Cultist minelayer watches your movements, clearly hoping you'll leave without causing more of a scene.</text>
 	<ship load="SHIP_AEA_CULT_TRAPPER" hostile="false" /> 
 	<choice hidden="true">
-		<text>Attack, we can steal their Mine Launcher tech!</text>
+		<text>Attack, we can steal their Mine Launcher tech!.</text>
 		<event>
 			<text>You've taken the risky choice of fighting the ship. Hopefully, you can protect yourself from their salvo long enough.</text>
 			<ship hostile="true" />

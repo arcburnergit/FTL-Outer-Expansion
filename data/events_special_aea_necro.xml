@@ -31,9 +31,9 @@
 </event>
 
 <event name="GUARD_AEA_NECRO">
-	<text>You're hailed by a strange engi vessel. "Welcome to our domain, please turn over all organics to us."</text>
+	<text>You're hailed by a strange engi vessel. "Welcome to our domain, please turn over all organics to us.".</text>
 	<choice hidden="true">
-		<text>Fight your way through!</text>
+		<text>Fight your way through!.</text>
 		<event>
 			<text>You mute the ship and prepare for combat.</text>
 			<ship hostile="true" />
@@ -44,7 +44,7 @@
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_ORGANIC_AEA_NECRO" blue="false">
-		<text>Undergo Inspection</text>
+		<text>Undergo Inspection.</text>
 		<event>
 			<text>The engi immediately pickup on your organic crew and their vessel moves into an attack position.</text>
 			<ship hostile="true" />
@@ -55,7 +55,7 @@
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_ORGANIC_AEA_NECRO" lvl="0" max_lvl="0" blue="false">
-		<text>Undergo Inspection</text>
+		<text>Undergo Inspection.</text>
 		<event>
 			<text>You submit to inspection by the Engi Heretics and they find no organic life onboard. You're able to enter their sector freely without any conflict.</text>
 			<choice>
@@ -65,7 +65,7 @@
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_AEA_NECRO">
-		<text>(Heretic Crew) Request Supplies</text>
+		<text>(Heretic Crew) Request Supplies.</text>
 		<event>
 			<text>The guard, seeing another Heretic onboard your ship, agrees and transfers over some supplies.</text>
 			<autoReward level="MED">stuff</autoReward>
@@ -183,9 +183,9 @@
 </event>
 
 <event name="GUARD_AEA_NECRO">
-	<text>You're hailed by a strange engi vessel. "Only those without organics are allowed past, please prepare for inspection."</text>
+	<text>You're hailed by a strange engi vessel. "Only those without organics are allowed past, please prepare for inspection.".</text>
 	<choice hidden="true">
-		<text>Fight your way through!</text>
+		<text>Fight your way through!.</text>
 		<event>
 			<text>You mute the ship and prepare for combat.</text>
 			<ship hostile="true" />
@@ -196,7 +196,7 @@
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_ORGANIC_AEA_NECRO" blue="false">
-		<text>Undergo Inspection</text>
+		<text>Undergo Inspection.</text>
 		<event>
 			<text>The engi immediately pickup on your organic crew and their vessel moves into an attack position.</text>
 			<ship hostile="true" />
@@ -207,7 +207,7 @@
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_ORGANIC_AEA_NECRO" lvl="0" max_lvl="0" blue="false">
-		<text>Undergo Inspection</text>
+		<text>Undergo Inspection.</text>
 		<event>
 			<text>You submit to inspection by the Engi Heretics and they find no organic life onboard. You're able to enter their sector freely without any conflict.</text>
 			<choice>
@@ -217,7 +217,7 @@
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_AEA_NECRO">
-		<text>(Heretic Crew) Request Supplies</text>
+		<text>(Heretic Crew) Request Supplies.</text>
 		<event>
 			<text>The guard, seeing another Heretic onboard your ship, agrees and transfers over some supplies.</text>
 			<autoReward level="MED">stuff</autoReward>
@@ -440,7 +440,7 @@
 	<text load="TEXT_ESCAPE_AEA_NECRO" />
 </event>
 <textList name="TEXT_ESCAPE_AEA_NECRO">
-	<text>The Heretic ship powers up its engines and swerves away from you. It's trying to escape!</text>
+	<text>The Heretic ship powers up its engines and swerves away from you. It's trying to escape!.</text>
 	<text>You detect high spikes in engine power on the Heretic ship. It's trying to escape.</text>
 </textList>
 
@@ -489,11 +489,11 @@
 	</choice>
 </event>
 <textList name="TEXT_SURRENDER_AEA_NECRO">
-	<text>"Our damage levels are high. I hope this [offer] satisfies your lust for scrap."</text>
+	<text>"Our damage levels are high. I hope this [offer] satisfies your lust for scrap.".</text>
 	<text>The Heretic ship surrenders. They offer some supplies if you'll let them live.</text>
-	<text>"Your attempts at destroying us have been [considerable]. I request you do not kill us."</text>
+	<text>"Your attempts at destroying us have been [considerable]. I request you do not kill us.".</text>
 	<text>"Greed &gt; Murder." The Heretic ship offers some supplies if you let them live.</text>
-	<text>"Our desire to [survive] outweighs your desire to [kill] us. Let us go."</text>
+	<text>"Our desire to [survive] outweighs your desire to [kill] us. Let us go.".</text>
 </textList>
 
 <event name="SURRENDER_AEA_NECRO_ACCEPT">
@@ -504,7 +504,7 @@
 
 
 <event name="AEA_NECRO_TEST_FIGHT">
-    <text>TEST</text>
+    <text>TEST.</text>
     <ship load="SHIP_AEA_NECRO_ALL" hostile="true"/>
     <choice hidden="true">
         <text>Continue...</text>
@@ -573,7 +573,7 @@
 
 <ship name="SHIP_AEA_NECRO_PIRATE" auto_blueprint="LIST_SHIPS_AEA_NECRO_FIGHT">
     <surrender chance="1" min="2" max="3">
-		<text>"You win, please just let us live."</text>
+		<text>"You win, please just let us live.".</text>
 		<choice hidden="true">
 			<text>Work something out between the Pirates and the Heretic.</text>
 			<event>
@@ -596,7 +596,7 @@
 		</choice>
     </destroyed>
     <deadCrew>
-		<text>With all the Ghosts dead, the Heretic is able to reclaim their vessel. "Much gratitude. My [ship] is intact. The interlopers left something, take it [with] you."</text>
+		<text>With all the Ghosts dead, the Heretic is able to reclaim their vessel. "Much gratitude. My [ship] is intact. The interlopers left something, take it [with] you.".</text>
 		<weapon name="RANDOM" />
 		<autoReward level="MED">standard</autoReward>
 		<choice hidden="true">
@@ -623,7 +623,7 @@
 		</choice>
     </destroyed>
     <deadCrew>
-		<text>With the pirates all dead the Heretics contact you. "That was [very] impressive Captain, your skills in dealing with these organics are to be admired, I wish to join you so that in the future I may participate in your fights with the organics."</text>
+		<text>With the pirates all dead the Heretics contact you. "That was [very] impressive Captain, your skills in dealing with these organics are to be admired, I wish to join you so that in the future I may participate in your fights with the organics.".</text>
 		<crewMember amount="1" class="aea_necro_lich"/>
 		<autoReward level="HIGH">standard_no_item</autoReward>
 		<drone name="GIFTLIST_DRONES_NECRO" />
@@ -735,15 +735,15 @@
 </ship>
 
 <event name="AEA_TEST_SHIELDS">
-	<text>TEST SHIELDS REQ</text>
+	<text>TEST SHIELDS REQ.</text>
 	<choice req="aea_can_upgrade_shields">
-		<text>SUCCESS</text>
+		<text>SUCCESS.</text>
 		<event name="AEA_UPGRADE_SHIELDS">
-			<text>UPGRADE SHIELDS NOW</text>
+			<text>UPGRADE SHIELDS NOW.</text>
 		</event>
 	</choice>
 	<choice req="aea_can_upgrade_shields" lvl="0" max_lvl="0">
-		<text>FAILURE</text>
+		<text>FAILURE.</text>
 		<event/>
 	</choice>
 	<choice>

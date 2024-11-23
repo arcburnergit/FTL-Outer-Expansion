@@ -10,6 +10,82 @@
     <mod-append:name>AEA_LASER_NECRO_3</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_2_LOOT</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_CHARGE</mod-append:name>
+	<mod-append:name>AEA_LASER_CULT</mod-append:name>
+	<mod-append:name>AEA_LASER_CULT_03</mod-append:name>
+	<mod-append:name>AEA_LASER_CULT_04</mod-append:name>
+	<mod-append:name>AEA_LASER_CULT_05</mod-append:name>
+	<mod-append:name>AEA_LASER_CULT_06</mod-append:name>
+	<mod-append:name>AEA_LASER_CULT_08</mod-append:name>
+	<mod-append:name>AEA_LASER_CULT_09</mod-append:name>
+	<mod-append:name>AEA_LASER_CULT_12</mod-append:name>
+	<mod-append:name>AEA_LASER_CULT_13</mod-append:name>
+	<mod-append:name>AEA_LASER_CULT_14</mod-append:name>
+	<mod-append:name>AEA_LASER_CULT_15</mod-append:name>
+
+	<mod-append:name>AEA_LASER_OLD_1_CELL</mod-append:name>
+	<mod-append:name>AEA_LASER_OLD_1</mod-append:name>
+	<mod-append:name>AEA_LASER_OLD_2</mod-append:name>
+	<mod-append:name>AEA_LASER_OLD_3</mod-append:name>
+
+	<mod-append:name>AEA_LASER_OLDP_1</mod-append:name>
+	<mod-append:name>AEA_LASER_OLDP_2</mod-append:name>
+	<mod-append:name>AEA_LASER_OLDP_3</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_DRONES_ALL">
+    <mod-append:name>AEA_DEFENSE_NECRO_1_DRONE</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_1_MISSILE</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_2_DRONE</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_2_MISSILE</mod-append:name>
+    <mod-append:name>AEA_COMBAT_NECRO_1_LASER</mod-append:name>
+    <mod-append:name>AEA_COMBAT_NECRO_1_BEAM</mod-append:name>
+    <mod-append:name>AEA_COMBAT_NECRO_2_LASER</mod-append:name>
+    <mod-append:name>AEA_COMBAT_NECRO_2_BEAM</mod-append:name>
+
+	<mod-append:name>AEA_COMBAT_BIRD_BURST_1</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_BURST_2</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_BURST_3</mod-append:name>
+
+	<mod-append:name>AEA_COMBAT_BIRD_BIO_1</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_BIO_2</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_BIO_3</mod-append:name>
+
+
+	<mod-append:name>AEA_COMBAT_BIRD_MULTI_1_LASER</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_MULTI_1_BEAM</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_MULTI_2_LASER</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_MULTI_2_BEAM</mod-append:name>
+
+	<mod-append:name>AEA_COMBAT_BIRD_SMART_1</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_SMART_2</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_DRONES_ALL_CRAPBUCKET">
+    <mod-append:name>AEA_DEFENSE_NECRO_1_DRONE</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_1_MISSILE</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_2_DRONE</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_2_MISSILE</mod-append:name>
+    <mod-append:name>AEA_COMBAT_NECRO_1_LASER</mod-append:name>
+    <mod-append:name>AEA_COMBAT_NECRO_1_BEAM</mod-append:name>
+    <mod-append:name>AEA_COMBAT_NECRO_2_LASER</mod-append:name>
+    <mod-append:name>AEA_COMBAT_NECRO_2_BEAM</mod-append:name>
+
+	<mod-append:name>AEA_COMBAT_BIRD_BURST_1</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_BURST_2</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_BURST_3</mod-append:name>
+
+	<mod-append:name>AEA_COMBAT_BIRD_BIO_1</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_BIO_2</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_BIO_3</mod-append:name>
+
+
+	<mod-append:name>AEA_COMBAT_BIRD_MULTI_1_LASER</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_MULTI_1_BEAM</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_MULTI_2_LASER</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_MULTI_2_BEAM</mod-append:name>
+
+	<mod-append:name>AEA_COMBAT_BIRD_SMART_1</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_SMART_2</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_WEAPONS_ALL_CRAPBUCKET">
@@ -36,16 +112,9 @@
 <mod:findName type="blueprintList" name="LIST_CREW_ALL_CRAPBUCKET">
     <mod-append:name>aea_acid_soldier</mod-append:name>
     <mod-append:name>aea_acid_captain</mod-append:name>
-    <mod-append:name>aea_acid_bill</mod-append:name>
     <mod-append:name>aea_necro_engi</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
-    <mod-append:name>aea_necro_king</mod-append:name>
     <mod-append:name>aea_old_1</mod-append:name>
-    <mod-append:name>aea_old_unique_1</mod-append:name>
-    <mod-append:name>aea_old_unique_2</mod-append:name>
-    <mod-append:name>aea_old_unique_3</mod-append:name>
-    <mod-append:name>aea_old_unique_4</mod-append:name>
-    <mod-append:name>aea_old_unique_5</mod-append:name>
     <mod-append:name>aea_cult_wizard</mod-append:name>
     <mod-append:name>aea_cult_wizard_a01</mod-append:name>
     <mod-append:name>aea_cult_wizard_a02</mod-append:name>
@@ -65,6 +134,34 @@
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
     <mod-append:name>aea_cult_priest_off</mod-append:name>
     <mod-append:name>aea_cult_priest_bor</mod-append:name>
+    <mod-append:name>aea_bird_avali</mod-append:name>
+    <mod-append:name>aea_bird_illuminant</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_CREW_UNIQUE_CRAPBUCKET">
+    <mod-append:name>aea_necro_king</mod-append:name>
+    <mod-append:name>aea_acid_bill</mod-append:name>
+    <mod-append:name>aea_old_unique_1</mod-append:name>
+    <mod-append:name>aea_old_unique_2</mod-append:name>
+    <mod-append:name>aea_old_unique_3</mod-append:name>
+    <mod-append:name>aea_old_unique_4</mod-append:name>
+    <mod-append:name>aea_old_unique_5</mod-append:name>
+    <mod-append:name>aea_cult_tiny</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a01</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a02</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s03</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s04</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s05</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s06</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a07</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s08</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s09</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a10</mod-append:name>
+    <mod-append:name>aea_cult_tiny_a11</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s12</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s13</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s14</mod-append:name>
+    <mod-append:name>aea_cult_tiny_s15</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ALIENS">
@@ -115,6 +212,9 @@
     <mod-append:name>aea_cult_tiny_s13</mod-append:name>
     <mod-append:name>aea_cult_tiny_s14</mod-append:name>
     <mod-append:name>aea_cult_tiny_s15</mod-append:name>
+    <mod-append:name>aea_bird_avali</mod-append:name>
+    <mod-append:name>aea_bird_illuminant</mod-append:name>
+    <mod-append:name>aea_bird_unique</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ENGI">
@@ -147,6 +247,7 @@
     <mod-append:name>aea_cult_tiny_s13</mod-append:name>
     <mod-append:name>aea_cult_tiny_s14</mod-append:name>
     <mod-append:name>aea_cult_tiny_s15</mod-append:name>
+    <mod-append:name>aea_bird_unique</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_PARAGON_UNIQUE">
@@ -173,6 +274,7 @@
     <mod-append:name>aea_cult_tiny_s13</mod-append:name>
     <mod-append:name>aea_cult_tiny_s14</mod-append:name>
     <mod-append:name>aea_cult_tiny_s15</mod-append:name>
+    <mod-append:name>aea_bird_unique</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_GAS">
@@ -225,6 +327,7 @@
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
     <mod-append:name>aea_cult_priest_off</mod-append:name>
     <mod-append:name>aea_cult_priest_bor</mod-append:name>
+    <mod-append:name>aea_bird_illuminant</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ELITE_FIRE">
@@ -243,6 +346,7 @@
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
     <mod-append:name>aea_cult_priest_off</mod-append:name>
     <mod-append:name>aea_cult_priest_bor</mod-append:name>
+    <mod-append:name>aea_bird_illuminant</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ORCHID">
@@ -340,6 +444,38 @@
     <mod-append:name>aea_old_unique_4</mod-append:name>
     <mod-append:name>aea_old_unique_5</mod-append:name>
 </mod:findName>
+
+<blueprintList name="LIST_CREW_AEA_OLD">
+    <name>aea_old_1</name>
+    <name>aea_old_unique_1</name>
+    <name>aea_old_unique_2</name>
+    <name>aea_old_unique_3</name>
+    <name>aea_old_unique_4</name>
+    <name>aea_old_unique_5</name>
+</blueprintList>
+
+<blueprintList name="LIST_CREW_AEA_ACID">
+    <name>aea_acid_soldier</name>
+    <name>aea_acid_captain</name>
+    <name>aea_acid_bill</name>
+</blueprintList>
+
+<blueprintList name="LIST_CREW_AEA_BIRD">
+    <name>aea_bird_avali</name>
+    <name>aea_bird_illuminant</name>
+    <name>aea_bird_unique</name>
+</blueprintList>
+
+<blueprintList name="LIST_CREW_AEA_BIRD_ELITE">
+	<name>human_soldier</name>
+	<name>easter_coomer</name>
+	<name>engi_defender</name>
+	<name>zoltan_peacekeeper</name>
+	<name>orchid_praetor</name>
+    <name>aea_bird_avali</name>
+    <name>aea_bird_illuminant</name>
+    <name>aea_bird_unique</name>
+</blueprintList>
 
 
 
@@ -520,6 +656,45 @@
     <name>AEA_COMBAT_NECRO_1_BEAM</name>
     <name>AEA_COMBAT_NECRO_2_LASER</name>
     <name>AEA_COMBAT_NECRO_2_BEAM</name>
+</blueprintList>
+
+<blueprintList name="GIFTLIST_DRONES_AEA_BIRD">
+	<name>AEA_COMBAT_BIRD_BURST_1</name>
+	<name>AEA_COMBAT_BIRD_BURST_2</name>
+	<name>AEA_COMBAT_BIRD_BURST_3</name>
+
+	<name>AEA_COMBAT_BIRD_BIO_1</name>
+	<name>AEA_COMBAT_BIRD_BIO_2</name>
+	<name>AEA_COMBAT_BIRD_BIO_3</name>
+
+
+	<name>AEA_COMBAT_BIRD_MULTI_1_LASER</name>
+	<name>AEA_COMBAT_BIRD_MULTI_1_BEAM</name>
+	<name>AEA_COMBAT_BIRD_MULTI_2_LASER</name>
+	<name>AEA_COMBAT_BIRD_MULTI_2_BEAM</name>
+
+	<name>AEA_COMBAT_BIRD_SMART_1</name>
+	<name>AEA_COMBAT_BIRD_SMART_2</name>
+</blueprintList>
+
+<blueprintList name="LIST_LOOT_AEA_BIRD">
+	<name>AEA_COMBAT_BIRD_MULTI_2_LOOT_LASER</name>
+</blueprintList>
+
+<blueprintList name="GIFTLIST_AEA_OLD">
+	<name>AEA_LASER_OLD_1</name>
+	<name>AEA_LASER_OLD_2</name>
+
+	<name>AEA_LASER_OLDP_1</name>
+	<name>AEA_LASER_OLDP_2</name>
+</blueprintList>
+
+<blueprintList name="LIST_CREW_AEA_REBEL_ELITE_RANDOM">
+	<name>human_soldier</name>
+	<name>human_soldier</name>
+	<name>human_rebel</name>
+	<name>human_mfk</name>
+	<name>human_rebel_medic</name>
 </blueprintList>
 
 <blueprintList name="LIST_LOOT_AEA_ACID">
@@ -705,6 +880,70 @@
 	<name>AEA_ACID_INSTIGATOR_ELITE</name>
 	<name>AEA_ACID_BOMBER_ELITE</name>
 	<!--<name>MU_ORCHID_ASSAULT</name>-->
+</blueprintList>
+
+<blueprintList name="LIST_SHIPS_AEA_BIRD_ALL">
+	<name>AEA_BIRD_BOMBER</name>
+	<name>AEA_BIRD_ESCORT</name>
+	<name>AEA_BIRD_FIGHTER</name>
+	<name>AEA_BIRD_INTERCEPTOR</name>
+	<name>AEA_BIRD_MOTHERSHIP</name>
+	<name>AEA_BIRD_OUTRIDER</name>
+	<name>AEA_BIRD_SCOUT</name>
+	<name>AEA_BIRD_STRIKE</name>
+	<name>AEA_BIRD_TRANSPORT</name>
+</blueprintList>
+<blueprintList name="LIST_SHIPS_AEA_BIRD_GENERIC">
+	<name>AEA_BIRD_BOMBER</name>
+	<name>AEA_BIRD_ESCORT</name>
+	<name>AEA_BIRD_FIGHTER</name>
+	<name>AEA_BIRD_INTERCEPTOR</name>
+	<name>AEA_BIRD_MOTHERSHIP</name>
+	<name>AEA_BIRD_OUTRIDER</name>
+	<name>AEA_BIRD_SCOUT</name>
+	<name>AEA_BIRD_STRIKE</name>
+</blueprintList>
+<blueprintList name="LIST_SHIPS_AEA_BIRD_FIGHT">
+	<name>AEA_BIRD_BOMBER</name>
+	<name>AEA_BIRD_ESCORT</name>
+	<name>AEA_BIRD_FIGHTER</name>
+	<name>AEA_BIRD_INTERCEPTOR</name>
+	<name>AEA_BIRD_MOTHERSHIP</name>
+	<name>AEA_BIRD_OUTRIDER</name>
+	<name>AEA_BIRD_SCOUT</name>
+	<name>AEA_BIRD_STRIKE</name>
+</blueprintList>
+
+<blueprintList name="LIST_SHIPS_AEA_BIRD_ELITE_ALL">
+	<name>AEA_BIRD_BOMBER_ELITE</name>
+	<name>AEA_BIRD_ESCORT_ELITE</name>
+	<name>AEA_BIRD_FIGHTER_ELITE</name>
+	<name>AEA_BIRD_INTERCEPTOR_ELITE</name>
+	<name>AEA_BIRD_MOTHERSHIP_ELITE</name>
+	<name>AEA_BIRD_OUTRIDER_ELITE</name>
+	<name>AEA_BIRD_SCOUT_ELITE</name>
+	<name>AEA_BIRD_STRIKE_ELITE</name>
+	<name>AEA_BIRD_TRANSPORT_ELITE</name>
+</blueprintList>
+<blueprintList name="LIST_SHIPS_AEA_BIRD_ELITE_GENERIC">
+	<name>AEA_BIRD_BOMBER_ELITE</name>
+	<name>AEA_BIRD_ESCORT_ELITE</name>
+	<name>AEA_BIRD_FIGHTER_ELITE</name>
+	<name>AEA_BIRD_INTERCEPTOR_ELITE</name>
+	<name>AEA_BIRD_MOTHERSHIP_ELITE</name>
+	<name>AEA_BIRD_OUTRIDER_ELITE</name>
+	<name>AEA_BIRD_SCOUT_ELITE</name>
+	<name>AEA_BIRD_STRIKE_ELITE</name>
+</blueprintList>
+<blueprintList name="LIST_SHIPS_AEA_BIRD_ELITE_FIGHT">
+	<name>AEA_BIRD_BOMBER_ELITE</name>
+	<name>AEA_BIRD_ESCORT_ELITE</name>
+	<name>AEA_BIRD_FIGHTER_ELITE</name>
+	<name>AEA_BIRD_INTERCEPTOR_ELITE</name>
+	<name>AEA_BIRD_MOTHERSHIP_ELITE</name>
+	<name>AEA_BIRD_OUTRIDER_ELITE</name>
+	<name>AEA_BIRD_SCOUT_ELITE</name>
+	<name>AEA_BIRD_STRIKE_ELITE</name>
 </blueprintList>
 </FTL>
 
@@ -2695,11 +2934,6 @@
 	<name>aea_cult_wizard_a02</name>
 	<name>aea_cult_wizard_s03</name>
 	<name>aea_cult_wizard_s04</name>
-	<name>aea_cult_wizard_s05</name>
-	<name>aea_cult_wizard_s06</name>
-	<name>aea_cult_wizard_a07</name>
-	<name>aea_cult_wizard_s08</name>
-	<name>aea_cult_wizard_s09</name>
 	<name>aea_cult_wizard_a10</name>
 	<name>aea_cult_wizard_a11</name>
 	<name>aea_cult_wizard_s12</name>
@@ -2708,9 +2942,7 @@
 	<name>aea_cult_wizard_s14</name>
 	<name>aea_cult_wizard_s15</name>
 	<name>aea_cult_priest_off</name>
-	<name>aea_cult_priest_off</name>
 	<name>aea_cult_priest_sup</name>
-	<name>aea_cult_priest_bor</name>
 </blueprintList>
 
 <shipBlueprint name="AEA_CULT_SCOUT" layout="mu_vampweed_scout" img="aea_cult_scout">
@@ -2994,6 +3226,618 @@
 	<aug name="SPORE_AIR_BUFF" />
 </shipBlueprint>
 
+</FTL>
+
+<FTL>
+<blueprintList name="LIST_WEAPONS_AEA_BIRD">
+	<name>LASER_BURST_1</name>
+	<name>LASER_BURST_2_ENEMY</name>
+	<name>LASER_BURST_3</name>
+	<name>LASER_BURST_3</name>
+	<name>LASER_HEAVY_1</name>
+	<name>BEAM_1</name>
+	<name>BEAM_2</name>
+	<name>BEAM_3</name>
+	<name>BEAM_LONG</name>
+	<name>BEAM_FIRE</name>
+
+	<name>ION_1</name>
+	<name>ION_2</name>
+	<name>ION_3</name>
+	
+	<name>ION_CHAINGUN</name>
+	<name>ION_CHARGEGUN</name>
+	
+	<name>ION_HEAVY</name>
+	<name>ION_TRI</name>
+	<name>ION_FIRE</name>
+	<name>ION_BIO</name>
+	<name>LASER_FROST_1</name>
+	<name>LASER_STUN</name>
+	<name>ENERGY_1</name>
+	<name>ENERGY_2</name>
+	
+	<name>ENERGY_STUN</name>
+	<name>ENERGY_CHARGEGUN</name>
+</blueprintList>
+<blueprintList name="LIST_DRONES_AEA_BIRD">
+	<name>AEA_COMBAT_BIRD_BURST_1</name>
+	<name>AEA_COMBAT_BIRD_BURST_2</name>
+	<name>AEA_COMBAT_BIRD_BURST_3</name>
+
+	<name>AEA_COMBAT_BIRD_BURST_2</name>
+
+
+	<name>AEA_COMBAT_BIRD_BIO_1</name>
+	<name>AEA_COMBAT_BIRD_BIO_2</name>
+	
+	<name>AEA_COMBAT_BIRD_BIO_1</name>
+	<name>AEA_COMBAT_BIRD_BIO_2</name>
+
+
+	<name>AEA_COMBAT_BIRD_MULTI_1_LASER</name>
+	<name>AEA_COMBAT_BIRD_MULTI_1_BEAM</name>
+
+	<name>AEA_COMBAT_BIRD_MULTI_1_LASER</name>
+	<name>AEA_COMBAT_BIRD_MULTI_1_BEAM</name>
+
+	<name>AEA_COMBAT_BIRD_SMART_1</name>
+	<name>AEA_COMBAT_BIRD_SMART_1</name>
+	<name>AEA_COMBAT_BIRD_SMART_2</name>
+
+
+	<name>COMBAT_1_LASER</name>
+	<name>COMBAT_2_LASER</name>
+	<name>COMBAT_1_BEAM</name>
+	<name>COMBAT_2_BEAM</name>
+
+	<name>ION_1_AMP2_ENEMY</name>
+	<name>ION_1_AMP3_ENEMY</name>
+	<name>ENERGY_1_AMP2_ENEMY</name>
+	<name>ENERGY_1_AMP3_ENEMY</name>
+</blueprintList>
+
+<blueprintList name="LIST_DRONES_AEA_BIRD_ELITE">
+	<name>AEA_COMBAT_BIRD_BURST_1</name>
+	<name>AEA_COMBAT_BIRD_BURST_2</name>
+	<name>AEA_COMBAT_BIRD_BURST_3</name>
+
+	<name>AEA_COMBAT_BIRD_BURST_2</name>
+
+
+	<name>AEA_COMBAT_BIRD_BIO_1</name>
+	<name>AEA_COMBAT_BIRD_BIO_2</name>
+	
+	<name>AEA_COMBAT_BIRD_BIO_1</name>
+	<name>AEA_COMBAT_BIRD_BIO_2</name>
+
+
+	<name>AEA_COMBAT_BIRD_MULTI_1_LASER</name>
+	<name>AEA_COMBAT_BIRD_MULTI_1_BEAM</name>
+
+	<name>AEA_COMBAT_BIRD_MULTI_1_LASER</name>
+	<name>AEA_COMBAT_BIRD_MULTI_1_BEAM</name>
+
+	<name>AEA_COMBAT_BIRD_SMART_1</name>
+	<name>AEA_COMBAT_BIRD_SMART_1</name>
+	<name>AEA_COMBAT_BIRD_SMART_2</name>
+
+
+	<name>COMBAT_1_LASER</name>
+	<name>COMBAT_2_LASER</name>
+	<name>COMBAT_1_BEAM</name>
+	<name>COMBAT_2_BEAM</name>
+
+	<name>ION_1_AMP2_ENEMY</name>
+	<name>ION_1_AMP3_ENEMY</name>
+	<name>ENERGY_1_AMP2_ENEMY</name>
+	<name>ENERGY_1_AMP3_ENEMY</name>
+</blueprintList>
+
+<shipBlueprint name="AEA_BIRD_BOMBER" layout="aea_bird_bomber" img="aea_bird_bomber">
+	<class>Gi Bomber</class>
+	<systemList>
+		<cloaking power="1" max="1" room="2" start="false" />
+		<doors power="1" max="2" room="5" start="true" />
+		<drones power="2" max="8" room="8" start="true" />
+		<engines power="1" max="3" room="3" start="true" />
+		<medbay power="2" max="3" room="4" start="true" />
+		<oxygen power="1" max="2" room="6" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="1" start="true" />
+		<weapons power="2" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="6" count="3" load="LIST_DRONES_AEA_BIRD" />
+	<health amount="11" />
+	<maxPower amount="10" />
+	<crewCount amount="5" max="8" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_ESCORT" layout="aea_bird_escort" img="aea_bird_escort">
+	<class>Gi Escort</class>
+	<maxSector>6</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="3" start="false" />
+		<doors power="1" max="2" room="8" start="true" />
+		<drones power="2" max="8" room="6" start="true" />
+		<engines power="1" max="3" room="1" start="true" />
+		<medbay power="2" max="3" room="7" start="true" />
+		<oxygen power="1" max="2" room="4" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<weapons power="2" max="8" room="5" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD" />
+	<health amount="6" />
+	<maxPower amount="10" />
+	<crewCount amount="3" max="5" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_FIGHTER" layout="aea_bird_fighter" img="aea_bird_fighter">
+	<class>Gi Fighter</class>
+	<systemList>
+		<cloaking power="1" max="1" room="1" start="false" />
+		<doors power="1" max="2" room="4" start="true" />
+		<drones power="2" max="8" room="7" start="true" />
+		<engines power="1" max="2" room="12" start="true" />
+		<medbay power="2" max="3" room="2" start="true" />
+		<oxygen power="2" max="2" room="5" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="3" start="true" />
+		<weapons power="2" max="8" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="6" count="3" load="LIST_DRONES_AEA_BIRD" />
+	<health amount="12" />
+	<maxPower amount="11" />
+	<crewCount amount="4" max="7" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_INTERCEPTOR" layout="aea_bird_interceptor" img="aea_bird_interceptor">
+	<class>Gi Interceptor</class>
+	<systemList>
+		<cloaking power="1" max="1" room="5" start="false" />
+		<doors power="1" max="2" room="3" start="true" />
+		<drones power="2" max="8" room="8" start="true" />
+		<engines power="1" max="3" room="1" start="true" />
+		<medbay power="2" max="3" room="4" start="true" />
+		<oxygen power="1" max="1" room="2" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="7" start="true" />
+		<weapons power="2" max="8" room="6" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="3" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD" />
+	<health amount="9" />
+	<maxPower amount="10" />
+	<crewCount amount="4" max="6" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_MOTHERSHIP" layout="aea_bird_mothership" img="aea_bird_mothership">
+	<class>Gi Mothership</class>
+	<minSector>5</minSector>
+	<systemList>
+		<cloaking power="1" max="1" room="12" start="false" />
+		<doors power="1" max="2" room="10" start="true" />
+		<drones power="3" max="9" room="4" start="true" />
+		<engines power="1" max="2" room="5" start="true" />
+		<medbay power="2" max="3" room="1" start="true" />
+		<oxygen power="1" max="1" room="2" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="11" start="true" />
+		<weapons power="2" max="8" room="3" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>5</droneSlots>
+	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="6" count="5" load="LIST_DRONES_AEA_BIRD" />
+	<health amount="15" />
+	<maxPower amount="12" />
+	<crewCount amount="6" max="9" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_OUTRIDER" layout="aea_bird_outrider" img="aea_bird_outrider">
+	<class>Gi Outrider</class>
+	<systemList>
+		<cloaking power="1" max="2" room="5" start="false" />
+		<doors power="1" max="2" room="0" start="true" />
+		<drones power="3" max="9" room="7" start="true" />
+		<engines power="1" max="3" room="2" start="true" />
+		<medbay power="2" max="3" room="3" start="true" />
+		<oxygen power="1" max="2" room="1" start="true" />
+		<pilot power="1" max="1" room="4" start="true" />
+		<shields power="2" max="8" room="6" start="true" />
+		<weapons power="1" max="8" room="8" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>5</droneSlots>
+	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="6" count="5" load="LIST_DRONES_AEA_BIRD" />
+	<health amount="9" />
+	<maxPower amount="10" />
+	<crewCount amount="3" max="6" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_SCOUT" layout="aea_bird_scout" img="aea_bird_scout">
+	<class>Gi Scout</class>
+	<systemList>
+		<cloaking power="1" max="1" room="8" start="false" />
+		<doors power="1" max="1" room="2" start="true" />
+		<drones power="2" max="8" room="0" start="true" />
+		<engines power="1" max="4" room="6" start="true" />
+		<medbay power="2" max="3" room="4" start="true" />
+		<oxygen power="1" max="1" room="5" start="true" />
+		<pilot power="1" max="1" room="9" start="true" />
+		<shields power="2" max="8" room="7" start="true" />
+		<weapons power="2" max="8" room="1" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD" />
+	<health amount="8" />
+	<maxPower amount="10" />
+	<crewCount amount="3" max="5" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_STRIKE" layout="aea_bird_strike" img="aea_bird_strike">
+	<class>Gi Strike Fighter</class>
+	<maxSector>5</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="2" start="false" />
+		<doors power="1" max="2" room="6" start="true" />
+		<drones power="2" max="8" room="4" start="true" />
+		<engines power="2" max="4" room="1" start="true" />
+		<oxygen power="1" max="2" room="5" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<hacking power="2" max="2" room="3" start="true" />
+		<weapons power="3" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="6" count="3" load="LIST_DRONES_AEA_BIRD" />
+	<health amount="7" />
+	<maxPower amount="10" />
+	<crewCount amount="3" max="5" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_TRANSPORT" layout="aea_bird_transport" img="aea_bird_transport">
+	<class>Gi Transport</class>
+	<systemList>
+		<cloaking power="1" max="1" room="6" start="false" />
+		<doors power="1" max="2" room="2" start="true" />
+		<drones power="3" max="8" room="3" start="true" />
+		<engines power="1" max="2" room="5" start="true" />
+		<hacking power="1" max="1" room="13" start="false" />
+		<medbay power="2" max="3" room="1" start="true" />
+		<oxygen power="1" max="2" room="12" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="7" start="true" />
+		<weapons power="2" max="8" room="4" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="3" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD" />
+	<health amount="14" />
+	<maxPower amount="11" />
+	<crewCount amount="6" max="10" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_SHUTTLE" layout="aea_bird_shuttle" img="aea_bird_shuttle">
+	<class>Gi Shuttle</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<drones power="2" max="8" room="1" start="true" />
+		<engines power="1" max="4" room="2" start="true" />
+		<oxygen power="1" max="1" room="4" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="5" start="true" />
+		<teleporter power="1" max="1" room="3" start="true" />
+	</systemList>
+	<weaponSlots>0</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="0" count="0" />
+	<droneList drones="8" count="3" load="LIST_BUTLER" />
+	<health amount="6" />
+	<maxPower amount="7" />
+	<crewCount amount="1" max="1" class="aea_bird_avali" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_SHUTTLE_DRONE" layout="aea_bird_shuttle_drone" img="aea_bird_shuttle_drone">
+	<class>Gi Drone Shuttle</class>
+	<systemList>
+		<cloaking power="1" max="1" room="4" start="true" />
+		<drones power="2" max="8" room="1" start="true" />
+		<engines power="1" max="4" room="2" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="5" start="true" />
+		<weapons power="2" max="1" room="3" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="8" count="4" load="LIST_DRONES_AEA_BIRD" />
+	<health amount="9" />
+	<maxPower amount="8" />
+	<crewCount amount="1" max="1" class="aea_bird_avali" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="NANOBOT_DEFENSE_SYSTEM" />
+</shipBlueprint>
+
+
+
+<shipBlueprint name="AEA_BIRD_BOMBER_ELITE" layout="aea_bird_bomber" img="aea_bird_bomber_elite">
+	<class>Elite Gi Bomber</class>
+	<systemList>
+		<cloaking power="1" max="1" room="2" start="false" />
+		<doors power="1" max="2" room="5" start="true" />
+		<drones power="4" max="10" room="8" start="true" />
+		<engines power="1" max="3" room="3" start="true" />
+		<medbay power="2" max="3" room="4" start="true" />
+		<oxygen power="1" max="2" room="6" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="1" start="true" />
+		<weapons power="2" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="8" count="4" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<health amount="13" />
+	<maxPower amount="12" />
+	<crewCount amount="5" max="8" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_ESCORT_ELITE" layout="aea_bird_escort" img="aea_bird_escort_elite">
+	<class>Elite Gi Escort</class>
+	<maxSector>6</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="3" start="false" />
+		<doors power="1" max="2" room="8" start="true" />
+		<drones power="3" max="9" room="6" start="true" />
+		<engines power="1" max="3" room="1" start="true" />
+		<medbay power="2" max="3" room="7" start="true" />
+		<oxygen power="1" max="2" room="4" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<weapons power="2" max="8" room="5" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="8" count="4" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<health amount="9" />
+	<maxPower amount="11" />
+	<crewCount amount="3" max="5" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_FIGHTER_ELITE" layout="aea_bird_fighter" img="aea_bird_fighter_elite">
+	<class>Elite Gi Fighter</class>
+	<systemList>
+		<cloaking power="1" max="1" room="1" start="false" />
+		<doors power="1" max="2" room="4" start="true" />
+		<drones power="4" max="10" room="7" start="true" />
+		<engines power="1" max="2" room="12" start="true" />
+		<medbay power="2" max="3" room="2" start="true" />
+		<oxygen power="2" max="2" room="5" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="3" start="true" />
+		<weapons power="2" max="8" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="8" count="4" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<health amount="12" />
+	<maxPower amount="13" />
+	<crewCount amount="4" max="7" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_INTERCEPTOR_ELITE" layout="aea_bird_interceptor" img="aea_bird_interceptor_elite">
+	<class>Elite Gi Interceptor</class>
+	<systemList>
+		<cloaking power="1" max="1" room="5" start="false" />
+		<doors power="1" max="2" room="3" start="true" />
+		<drones power="3" max="9" room="8" start="true" />
+		<engines power="1" max="3" room="1" start="true" />
+		<medbay power="2" max="3" room="4" start="true" />
+		<oxygen power="1" max="1" room="2" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="7" start="true" />
+		<weapons power="2" max="8" room="6" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="3" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="8" count="4" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<health amount="10" />
+	<maxPower amount="11" />
+	<crewCount amount="4" max="6" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_MOTHERSHIP_ELITE" layout="aea_bird_mothership" img="aea_bird_mothership_elite">
+	<class>Elite Gi Mothership</class>
+	<minSector>4</minSector>
+	<systemList>
+		<cloaking power="1" max="1" room="12" start="false" />
+		<doors power="1" max="2" room="10" start="true" />
+		<drones power="5" max="11" room="4" start="true" />
+		<engines power="1" max="2" room="5" start="true" />
+		<medbay power="2" max="3" room="1" start="true" />
+		<oxygen power="1" max="1" room="2" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="11" start="true" />
+		<weapons power="2" max="8" room="3" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>6</droneSlots>
+	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="8" count="6" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<health amount="18" />
+	<maxPower amount="13" />
+	<crewCount amount="6" max="9" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_OUTRIDER_ELITE" layout="aea_bird_outrider" img="aea_bird_outrider_elite">
+	<class>Elite Gi Outrider</class>
+	<systemList>
+		<cloaking power="1" max="2" room="5" start="false" />
+		<doors power="1" max="2" room="0" start="true" />
+		<drones power="4" max="10" room="7" start="true" />
+		<engines power="1" max="3" room="2" start="true" />
+		<medbay power="2" max="3" room="3" start="true" />
+		<oxygen power="1" max="2" room="1" start="true" />
+		<pilot power="1" max="1" room="4" start="true" />
+		<shields power="2" max="8" room="6" start="true" />
+		<weapons power="2" max="8" room="8" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>5</droneSlots>
+	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="8" count="5" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<health amount="11" />
+	<maxPower amount="12" />
+	<crewCount amount="3" max="6" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_SCOUT_ELITE" layout="aea_bird_scout" img="aea_bird_scout_elite">
+	<class>Gi Scout</class>
+	<systemList>
+		<cloaking power="1" max="1" room="8" start="false" />
+		<doors power="1" max="1" room="2" start="true" />
+		<drones power="4" max="10" room="0" start="true" />
+		<engines power="1" max="4" room="6" start="true" />
+		<medbay power="2" max="3" room="4" start="true" />
+		<oxygen power="1" max="1" room="5" start="true" />
+		<pilot power="1" max="1" room="9" start="true" />
+		<shields power="2" max="8" room="7" start="true" />
+		<weapons power="2" max="8" room="1" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>5</droneSlots>
+	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="8" count="5" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<health amount="9" />
+	<maxPower amount="12" />
+	<crewCount amount="3" max="5" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_STRIKE_ELITE" layout="aea_bird_strike" img="aea_bird_strike_elite">
+	<class>Elite Gi Strike Fighter</class>
+	<maxSector>5</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="2" start="false" />
+		<doors power="1" max="2" room="6" start="true" />
+		<drones power="3" max="9" room="4" start="true" />
+		<engines power="1" max="4" room="1" start="true" />
+		<oxygen power="1" max="2" room="5" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<hacking power="2" max="2" room="3" start="true" />
+		<weapons power="3" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<health amount="9" />
+	<maxPower amount="10" />
+	<crewCount amount="3" max="5" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_TRANSPORT_ELITE" layout="aea_bird_transport" img="aea_bird_transport_elite">
+	<class>Elite Gi Transport</class>
+	<systemList>
+		<cloaking power="1" max="1" room="6" start="false" />
+		<doors power="1" max="2" room="2" start="true" />
+		<drones power="4" max="10" room="3" start="true" />
+		<engines power="1" max="2" room="5" start="true" />
+		<hacking power="1" max="1" room="13" start="false" />
+		<medbay power="2" max="3" room="1" start="true" />
+		<oxygen power="1" max="2" room="12" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="7" start="true" />
+		<weapons power="3" max="8" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>5</droneSlots>
+	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
+	<droneList drones="6" count="5" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<health amount="20" />
+	<maxPower amount="14" />
+	<crewCount amount="6" max="10" class="aea_bird_avali" />
+	<aug name="UPG_MEDBAY_NANO"/>
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_BIRD_AUTO_BOSS" layout="aea_bird_auto_boss" img="aea_bird_auto_boss">
+	<class>Auto-Cruiser</class>
+	<systemList>
+		<battery power="1" max="1" room="9" start="true" />
+		<cloaking power="1" max="2" room="5" start="true" />
+		<doors power="2" max="2" room="8" start="true" />
+		<drones power="2" max="10" room="15" start="true" />
+		<engines power="1" max="2" room="1" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="2" max="10" room="4" start="true" />
+		<weapons power="3" max="10" room="16" start="true" />
+	</systemList>
+	<weaponSlots>6</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="6" count="6" load="LIST_WEAPONS_AUTO" />
+	<droneList drones="8" count="3" load="LIST_DRONES_AUTO" />
+	<health amount="14" />
+	<maxPower amount="9" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
 </FTL>
 
 <FTL>

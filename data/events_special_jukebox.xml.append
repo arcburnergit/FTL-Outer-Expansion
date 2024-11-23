@@ -1,35 +1,42 @@
 <FTL>
 <mod:findName type="event" name="STORAGE_CHECK_JUKEBOX">
 	<mod-append:choice hidden="true" req="juke_aea_acid">
-		<text>OE: Acidic</text>
+		<text>OE: Acidic.</text>
 		<event>
 			<playMusic>aea_acidic</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_necro">
-		<text>OE: Heretic</text>
+		<text>OE: Heretic.</text>
 		<event>
 			<playMusic>aea_heretic</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_cult">
-		<text>OE: Cultist</text>
+		<text>OE: Cultist.</text>
 		<event>
 			<playMusic>aea_cultist</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="juke_aea_bird">
+		<text>OE: Gi.</text>
+		<event>
+			<playMusic>aea_bird</playMusic>
+			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
+		</event>
+	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_old_1">
-		<text>OE: Lylmik</text>
+		<text>OE: Lylmik.</text>
 		<event>
 			<playMusic>aea_lylmik</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_old_2">
-		<text>OE: Lylmik Core</text>
+		<text>OE: Lylmik Core.</text>
 		<event>
 			<playMusic>aea_lylmik_core</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>

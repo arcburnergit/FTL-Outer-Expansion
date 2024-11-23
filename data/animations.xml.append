@@ -2526,6 +2526,19 @@
 
 <!--BIRDS-->
 
+<animSheet name="laser_bio_aea_left" w="60" h="30" fw="60" fh="30">projectiles/laser_bio_aea_left.png</animSheet>
+<anim name="laser_bio_aea_left">
+	<sheet>laser_bio_aea_left</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>0.3</time>
+</anim>
+<animSheet name="laser_bio_aea_left" w="60" h="30" fw="60" fh="30">projectiles/laser_bio_aea_right.png</animSheet>
+<anim name="laser_bio_aea_left">
+	<sheet>laser_bio_aea_left</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>0.3</time>
+</anim>
+
 <animSheet fh="35" fw="35" h="455" w="350" name="aea_bird_avali">people/aea_bird_avali_base.png</animSheet>
 <anim name="aea_bird_avali_clone">
 	<sheet>aea_bird_avali</sheet>

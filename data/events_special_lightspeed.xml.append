@@ -24,6 +24,14 @@
 		<text>Proceed to the Home of the Oneflower.</text>
 		<event load="AEA_CULT_UNIQUE_WARP" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_BIRD" blue="false">
+		<text>Proceed to the Gi Sector.</text>
+		<event load="AEA_BIRD_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_BIRD_UNIQUE" blue="false">
+		<text>Proceed to the Gi Nesting Grounds.</text>
+		<event load="AEA_BIRD_UNIQUE_WARP" />
+	</mod-append:choice>
 	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_2" blue="false">
 		<text>Proceed to the Lylmik Core.</text>
 		<event load="AEA_OLD_2_WARP" />
@@ -54,6 +62,14 @@
 	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_CULT_UNIQUE" blue="false">
 		<text>Proceed to the Home of the Oneflower.</text>
 		<event load="AEA_CULT_UNIQUE_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_BIRD" blue="false">
+		<text>Proceed to the Gi Sector.</text>
+		<event load="AEA_BIRD_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_BIRD_UNIQUE" blue="false">
+		<text>Proceed to the Gi Nesting Grounds.</text>
+		<event load="AEA_BIRD_UNIQUE_WARP" />
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_2" blue="false">
 		<text>Proceed to the Lylmik Core.</text>
@@ -87,6 +103,10 @@
 	<mod-append:choice hidden="true">
 		<text>Go to the Home of the Oneflower.</text> 
 		<event load="LIGHTSPEED_SECTOR_WARP_AEA_CULT_HAT" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true">
+		<text>Go to the Gi Nesting Grounds.</text> 
+		<event load="LIGHTSPEED_SECTOR_WARP_AEA_BIRD_HAT" />
 	</mod-append:choice>
 </mod:findName>
 
@@ -329,7 +349,7 @@ Rebel Threat Level: Medium-Low
 While not directly considered part of the Confederacy, the Cult has close ties with it and your actions in their space will still reflect poorly on you.</text>
 	<choice hidden="true">
 		<text>Exit hyperspeed.</text>
-		<event load="START_VAMPWEED" />
+		<event load="START_AEA_CULT" />
 	</choice>
 	<choice hidden="true" req="COORDS" blue="false">
 		<text>Reroute.</text>
@@ -349,7 +369,7 @@ While not directly considered part of the Confederacy, the Cult has close ties w
 	<text id="atlas_aea_cult" />
     <choice hidden="true">
         <text>Exit hyperspeed.</text>
-        <event load="START_VAMPHOME" />
+        <event load="START_AEA_CULT" />
     </choice>
     <choice hidden="true" req="COORDS" blue="false">
 		<text>Reroute.</text>
@@ -388,6 +408,89 @@ While not directly considered part of the Confederacy, the Cult has close ties w
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					GI
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="ENTER_AEA_BIRD">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event>
+<event name="AEA_BIRD_WARP">
+	<text>Name: Gi Controlled Sector
+Type: Neutral
+Unique: False
+Dominant Faction: Gi Federation
+Rebel Threat Level: Medium (Neutral Fleet)
+
+The Gi are close allies with the federation, A recently discovered race they haven't managed to join the federation yet, however they're on their way there and have a strong federation presense in the sector.</text>
+	<choice hidden="true">
+		<text>Exit hyperspeed.</text>
+		<event load="START_AEA_BIRD" />
+	</choice>
+	<choice hidden="true" req="COORDS" blue="false">
+		<text>Reroute.</text>
+		<event load="REROUTE_MENU" />
+	</choice>
+</event>
+
+<event name="ENTER_AEA_BIRD_UNIQUE">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event>
+<event name="AEA_BIRD_UNIQUE_WARP">
+	<text id="atlas_aea_bird" />
+    <choice hidden="true">
+        <text>Exit hyperspeed.</text>
+        <event load="START_AEA_BIRD_UNIQUE" />
+    </choice>
+    <choice hidden="true" req="COORDS" blue="false">
+		<text>Reroute.</text>
+		<event load="REROUTE_MENU" />
+	</choice>
+</event>
+
+<event name="LIGHTSPEED_SECTOR_WARP_AEA_BIRD_HAT">
+	<text id="atlas_aea_bird" />
+	<choice hidden="true">
+		<text>Continue with the jump.</text>
+		<event>
+			<text>You prepare to jump to the new co-ordinates, and change your flight path accordingly.</text>
+			<variable name="magical_hat_active" op="set" val="0" />
+			<variable name="loc_sector_count" op="add" val="-1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="JUMP_TO_AEA_BIRD_CORE" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind.</text>
+		<event>
+			<loadEvent>ATLAS_MENU_NOEQUIPMENT</loadEvent>
+		</event>
+	</choice>
+</event>
+
+<event name="JUMP_TO_AEA_BIRD_CORE">
+	<secretSector>SECTOR_AEA_BIRD_UNIQUE</secretSector>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 					LYLMIK
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -398,7 +501,7 @@ While not directly considered part of the Confederacy, the Cult has close ties w
 	<text>You've been pulled into hyperspeed by the mysterious vessel, you're unable to pickup the vessel anymore.</text>
 	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
 	<choice hidden="true">
-		<text>Proceed to ???</text>
+		<text>Proceed to ???.</text>
 		<event load="AEA_OLD_1_WARP" />
 	</choice>
 </event>

@@ -81,7 +81,7 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<!-- -->
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_ARMOUR</mod-append:ship>
 		<mod-append:empty/>
-		<mod-append:empty/>
+		<mod-append:ship>PLAYER_SHIP_AEA_LANIUS_BATTLE</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_CREW2</mod-append:ship>
 
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_UNIA</mod-append:ship>
@@ -177,8 +177,11 @@ This enemy is protected by an Energy Shield.</tooltip>
             <shipReq>PLAYER_SHIP_AEA_NECRO_SEPA</shipReq>
         </unlock>
 	</mod-append:ship>
-	<mod-append:ship name="PLAYER_SHIP_AEA_CREW2" b="false" c="false" >
+	<mod-append:ship name="PLAYER_SHIP_AEA_CREW2" b="true" c="false" >
 		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
 			<type>4</type>
 		</unlock>
 	</mod-append:ship>
@@ -223,16 +226,44 @@ This enemy is protected by an Energy Shield.</tooltip>
         </unlock>
 	</mod-append:ship>
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_BIRD_BIG" b="false" c="false" secret="true">
+	<mod-append:ship name="PLAYER_SHIP_AEA_BIRD_BIG" b="true" c="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_BIRD_BIG</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_BIRD_BIG_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_BIRD_BIG</shipReq>
+        </unlock>
 	</mod-append:ship>
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_BIRD_TRAN" b="false" c="false" secret="true">
+	<mod-append:ship name="PLAYER_SHIP_AEA_BIRD_TRAN" b="true" c="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_BIRD_TRAN</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_BIRD_TRAN_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_BIRD_TRAN</shipReq>
+        </unlock>
 	</mod-append:ship>
 
 	<mod-append:ship name="PLAYER_SHIP_AEA_SLUG_LONG" b="false" c="false" secret="true">
@@ -242,6 +273,12 @@ This enemy is protected by an Energy Shield.</tooltip>
 	</mod-append:ship>
 
 	<mod-append:ship name="PLAYER_SHIP_AEA_SLUG_WIDE" b="false" c="false" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+	</mod-append:ship>
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_LANIUS_BATTLE" b="false" c="false" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
@@ -467,10 +504,36 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_BIG_2">
+		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_BIG_3">
+		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_TRAN">
 		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_TRAN_2">
+		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_TRAN_3">
+		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_CREW2_2">
+		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<aea_bird_unique room="0" name="Jay" />
+			<aea_bird_avali room="2" />
+			<shell_scientist room="5" />
+		</crew>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SLUG_LONG">
@@ -480,6 +543,11 @@ This enemy is protected by an Energy Shield.</tooltip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SLUG_WIDE">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_LANIUS_BATTLE">
+		<hiddenAug>SHIP_LANIUS</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
 
@@ -1888,12 +1956,9 @@ This enemy is protected by an Energy Shield.</tooltip>
 	</mod-append:race>
 
 	<mod-append:race name="aea_bird_avali">
-    	<maxHealth>70</maxHealth>
-    	<moveSpeedMultiplier>1.5</moveSpeedMultiplier>
-    	<repairSpeed>1.2</repairSpeed>
-    	<fireRepairMultiplier>0.5</fireRepairMultiplier>
-    	<damageMultiplier>0.8</damageMultiplier>
-    	<fireDamageMultiplier>2</fireDamageMultiplier>
+    	<maxHealth>100</maxHealth>
+    	<moveSpeedMultiplier>2</moveSpeedMultiplier>
+    	<repairSpeed>1</repairSpeed>
     	<animBase>human</animBase>
     	<deathSounds>
     		<deathSound>death1</deathSound>
@@ -1903,15 +1968,28 @@ This enemy is protected by an Energy Shield.</tooltip>
     		<deathSound>death1</deathSound>
     		<deathSound>death2</deathSound>
     	</deathSounds>
+		<passiveStatBoosts>  
+			<statBoost name="statBoost">
+				<statBoost name="moveSpeedMultiplier">
+                    <boostType>FLAT</boostType>
+					<amount>-1</amount>
+                    <shipTarget>CURRENT_ROOM</shipTarget>
+                    <crewTarget>ENEMIES</crewTarget>
+					<whiteList>
+						<aea_bird_avali />
+					</whiteList>
+					<maxStacks>1</maxStacks>
+                </statBoost>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<maxStacks>1</maxStacks>
+			</statBoost>
+		</passiveStatBoosts>
     </mod-append:race>
     <mod-append:race name="aea_bird_illuminant">
-    	<maxHealth>90</maxHealth>
+    	<maxHealth>100</maxHealth>
     	<moveSpeedMultiplier>2</moveSpeedMultiplier>
-    	<repairSpeed>1.2</repairSpeed>
-    	<fireRepairMultiplier>0.8</fireRepairMultiplier>
-    	<damageMultiplier>1</damageMultiplier>
-    	<fireDamageMultiplier>1.5</fireDamageMultiplier>
-    	<damageTakenMultiplier>0.9</damageTakenMultiplier>
+    	<repairSpeed>1</repairSpeed>
     	<animBase>human</animBase>
     	<deathSounds>
     		<deathSound>death1</deathSound>
@@ -1921,15 +1999,36 @@ This enemy is protected by an Energy Shield.</tooltip>
     		<deathSound>death1</deathSound>
     		<deathSound>death2</deathSound>
     	</deathSounds>
+		<passiveStatBoosts>  
+			<statBoost name="statBoost">
+				<statBoost name="moveSpeedMultiplier">
+                    <boostType>FLAT</boostType>
+					<amount>-1</amount>
+                    <shipTarget>CURRENT_ROOM</shipTarget>
+                    <crewTarget>ENEMIES</crewTarget>
+					<whiteList>
+						<aea_bird_illuminant />
+					</whiteList>
+					<maxStacks>1</maxStacks>
+                </statBoost>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<maxStacks>1</maxStacks>
+			</statBoost>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>3</amount>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>DRONES</droneTarget>
+				<priority>0</priority>
+			</statBoost>
+		</passiveStatBoosts>
     </mod-append:race>
 	<mod-append:race name="aea_bird_unique">
-    	<maxHealth>90</maxHealth>
+    	<maxHealth>140</maxHealth>
     	<moveSpeedMultiplier>2</moveSpeedMultiplier>
-    	<repairSpeed>1.5</repairSpeed>
-    	<fireRepairMultiplier>0.8</fireRepairMultiplier>
-    	<damageMultiplier>1</damageMultiplier>
-    	<fireDamageMultiplier>1</fireDamageMultiplier>
-    	<damageTakenMultiplier>0.9</damageTakenMultiplier>
+    	<repairSpeed>1</repairSpeed>
     	<animBase>human</animBase>
     	<deathSounds>
     		<deathSound>death1</deathSound>
@@ -1939,6 +2038,31 @@ This enemy is protected by an Energy Shield.</tooltip>
     		<deathSound>death1</deathSound>
     		<deathSound>death2</deathSound>
     	</deathSounds>
+		<passiveStatBoosts>  
+			<statBoost name="statBoost">
+				<statBoost name="moveSpeedMultiplier">
+                    <boostType>FLAT</boostType>
+					<amount>-1</amount>
+                    <shipTarget>CURRENT_ROOM</shipTarget>
+                    <crewTarget>ENEMIES</crewTarget>
+					<whiteList>
+						<aea_bird_unique />
+					</whiteList>
+					<maxStacks>1</maxStacks>
+                </statBoost>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<maxStacks>1</maxStacks>
+			</statBoost>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>3</amount>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>DRONES</droneTarget>
+				<priority>0</priority>
+			</statBoost>
+		</passiveStatBoosts>
     </mod-append:race>
 
 	
@@ -1977,7 +2101,6 @@ Casts a spell in the current room which does nothing
 				<duration>5</duration>
 				<cooldownColor r="200" g="100" b="200" />
 				<!--animSheet baseVisible="true">aea_cult_wizard_magic_out</animSheet-->
-				<canMove>false</canMove>
 				<canMan>false</canMan>
 				<canRepair>false</canRepair>
 				<canSabotage>false</canSabotage> 
@@ -3688,12 +3811,26 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 </augments>
 
 <mod:findLike type="events">
+	<mod:findName name="BLUELIST_CREW_NO2">
+		<mod-append:name>LIST_CREW_AEA_OLD</mod-append:name>
+		<mod-append:name>LIST_CREW_AEA_ACID</mod-append:name>
+	</mod:findName>
+	<mod:findName name="BLUELIST_CREW_NOFIRE">
+		<mod-append:name>LIST_CREW_AEA_OLD</mod-append:name>
+		<mod-append:name>LIST_CREW_AEA_ACID</mod-append:name>
+	</mod:findName>
 	<mod:findName name="LIST_CHECK_TOGGLES_AND_AMPS">
 		<mod:findLike type="req" limit="1">
 			<mod:findLike type="req" start="1">
 				<mod-append:name>AEA_COMBAT_BIRD_BURST_1</mod-append:name>
 				<mod-append:name>AEA_COMBAT_BIRD_BURST_2</mod-append:name>
 				<mod-append:name>AEA_COMBAT_BIRD_BURST_3</mod-append:name>
+				<mod-append:name>AEA_COMBAT_BIRD_MULTI_1_LASER</mod-append:name>
+				<mod-append:name>AEA_COMBAT_BIRD_MULTI_1_BEAM</mod-append:name>
+				<mod-append:name>AEA_COMBAT_BIRD_MULTI_2_LASER</mod-append:name>
+				<mod-append:name>AEA_COMBAT_BIRD_MULTI_2_BEAM</mod-append:name>
+				<mod-append:name>AEA_COMBAT_BIRD_MULTI_2_LOOT_LASER</mod-append:name>
+				<mod-append:name>AEA_COMBAT_BIRD_MULTI_2_LOOT_BEAM</mod-append:name>
 				<mod-append:name>AEA_COMBAT_NECRO_1_BEAM</mod-append:name>
 				<mod-append:name>AEA_COMBAT_NECRO_1_LASER</mod-append:name>
 				<mod-append:name>AEA_COMBAT_NECRO_2_BEAM</mod-append:name>
@@ -3754,6 +3891,24 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<variable name="aea_cult_visit_eng" op="set" val="0" />
 	<variable name="aea_cult_visit_str" op="set" val="0" />
 	<variable name="aea_cult_code" op="set" val="0" />
+
+	<metaVariable name="juke_aea_bird" op="set" val="0" />
+	<variable name="ach_trans_aea_bird" op="set" val="0" />
+	<req name="AEA_BIRD_CREW_MORAL" type="all">
+		<req type="any">
+			<req type="any" load="LIST_CREW_AEA_BIRD_ELITE" />
+			<req type="any" load="LIST_CREW_FEDERATION_ELITE_EASTER" />
+		</req>
+		<req lvl="-999" max_lvl="0">
+			<name>rep_comb_federation</name>
+		</req>
+	</req>
+	<variable name="aea_bird_roulette" op="set" val="0" />
+	<variable name="aea_bird_roulette_result" op="set" val="0" />
+	<variable name="aea_bird_roulette_result_player" op="set" val="0" />
+	<variable name="aea_bird_roulette_result_start" op="set" val="0" />
+	<variable name="aea_bird_medicine" op="set" val="0" />
+	<variable name="aea_bird_questions" op="set" val="0" />
 
 	<metaVariable name="juke_aea_old_1" op="set" val="0" />
 	<metaVariable name="juke_aea_old_2" op="set" val="0" />
@@ -4464,6 +4619,9 @@ Cast a spell that pierces all normal shields at a target room that mind controls
   	<eventFile>sector_aea_necro</eventFile>
   	<eventFile>special_aea_cult</eventFile>
   	<eventFile>sector_aea_cult</eventFile>
+  	<eventFile>special_aea_bird</eventFile>
+  	<eventFile>sector_aea_bird</eventFile>
+
   	<eventFile>special_aea_old</eventFile>
   	<eventFile>sector_aea_old_1</eventFile>
   	<eventFile>sector_aea_old_2</eventFile>
@@ -4532,6 +4690,11 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<bossShip yOffset="140">AEA_CULT_STATION</bossShip>
 	<bossShip yOffset="180">AEA_CULT_BOSS_FLOWER</bossShip>
 	<bossShip yOffset="180">AEA_CULT_BOSS_FLOWER_FAKE</bossShip>
+	
+	<bossShip yOffset="180">AEA_BIRD_MOTHERSHIP</bossShip>
+	<bossShip yOffset="180">AEA_BIRD_MOTHERSHIP_ELITE</bossShip>
+	<bossShip yOffset="180">AEA_BIRD_TRANSPORT</bossShip>
+	<bossShip yOffset="180">AEA_BIRD_TRANSPORT_ELITE</bossShip>
 </events>
 
 <mod:findLike type="victories"> <!-- adds the victory marker for lylmik ending -->
@@ -4736,6 +4899,149 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 </mod:findLike>
 
 <store>
+	<customStore id="STORE_AEA_BIRD">
+		<hullRepair>
+			<price min="2" max="4" />
+			<sectorScaled />
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="5" max="10" />
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="3" max="7" />
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="6" max="11" />
+		</resource>
+		<catagory type="DRONES">
+			<item/>
+			<item/>
+			<item/>
+			<chance>100</chance>
+		</catagory>
+		<category type="WEAPONS" group="1">
+            <customTitle>WEAPONS OF THE DAY [33% OFF]</customTitle>
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item>
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item>
+			<chance>50</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="DRONES" group="1">
+            <customTitle>DRONES OF THE DAY [33% OFF]</customTitle>
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<chance>25</chance>
+			<groupChance>15</groupChance>
+        </category>
+		<category type="AUGMENTS" group="1">
+            <customTitle>AUGMENTS OF THE DAY [33% OFF]</customTitle>
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<chance>25</chance>
+			<groupChance>35</groupChance>
+        </category>
+		<category type="WEAPONS">
+            <item />
+            <item />
+            <item />
+			<chance>100</chance>
+        </category>
+		<category type="DRONES" group="0">
+            <item />
+            <item />
+            <item />
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="AUGMENTS" group="0">
+            <item />
+            <item />
+            <item />
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="CREW">
+			<customTitle>DECKHANDS</customTitle>
+		    <allowDuplicates />
+			<item />
+            <item />
+            <item />
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+            <customTitle>ESSENTIAL SYSTEMS</customTitle>
+			<guaranteedSystems>
+                <weapons />
+				<shields />
+				<oxygen />
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>AUXILIARY SYSTEMS</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>65</chance>
+        </category>
+	</customStore>
 	<customStore id="STORE_AEA_ACID_CACHE">
         <itemPurchaseLimit>1</itemPurchaseLimit>
 		<category type="WEAPONS">
@@ -5085,6 +5391,13 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				<secretDescription>Obtain the loot from the Vampweed Cultist loot transport.</secretDescription>
 				<description>Obtain the Spellspore from the Vampweed Cultist loot transport.</description>
 				<icon>ach_trans_aea_cult</icon>
+				<header>Loot Acquired</header>
+			</mod-append:achievement>
+			<mod-append:achievement name="ACH_TRANS_AEA_BIRD">
+				<name>Gi Transport</name>
+				<secretDescription>Obtain the loot from the Gi loot transport.</secretDescription>
+				<description>Obtain the ??? from the Gi loot transport.</description>
+				<icon>ach_trans_aea_bird</icon>
 				<header>Loot Acquired</header>
 			</mod-append:achievement>
 			<mod-append:achievement name="ACH_TRANS_AEA_OLD_1">

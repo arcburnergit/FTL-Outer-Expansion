@@ -1929,6 +1929,7 @@ end)
 mods.aea.bioDrones = {}
 local bioDrones = mods.aea.bioDrones
 bioDrones["AEA_LASER_BIO_DRONE"] = true
+bioDrones["AEA_LASER_BIO_DRONE_3"] = true
 
 
 script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile, drone)
@@ -1937,6 +1938,8 @@ script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile,
 	end
 	local bioAmount = bioDrones[projectile.extend.name]
 	if bioAmount then
+		local random = math.random()
+		if drone.iShipId == 1 and random > 0.66 then return Defines.Chain.CONTINUE end
 		local shipManager = Hyperspace.ships(projectile.destinationSpace)
 		local crewList = shipManager.vCrewList
 		local crewListEnemy = {}
@@ -1980,10 +1983,6 @@ script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile,
             99999,
             drone.currentLocation)
         userdata_table(drone1, "mods.mv.droneStuff").clearOnJump = true
-        --drone1.currentAngle = drone.currentAngle
-        --drone1.aimingAngle = drone.aimingAngle
-        --drone1.lastAimingAngle = drone.lastAimingAngle
-        --drone1.desiredAimingAngle = drone.desiredAimingAngle
         sweepSpawns[drone1] = {20, projectile}
 	end
 	return Defines.Chain.CONTINUE
@@ -2030,9 +2029,214 @@ end)
 end)]]
 
 
+mods.aea.multiDrones = {}
+local multiDrones = mods.aea.multiDrones
+multiDrones["AEA_DRONE_LASER_COMBAT_MULTI"] = Hyperspace.Blueprints:GetWeaponBlueprint("AEA_DRONE_WION_COMBAT_MULTI")
+multiDrones["AEA_DRONE_BEAM_COMBAT_MULTI"] = Hyperspace.Blueprints:GetWeaponBlueprint("AEA_DRONE_WION_COMBAT_MULTI")
+
+multiDrones["AEA_DRONE_LASER_COMBAT_MULTI_LOOT"] = Hyperspace.Blueprints:GetWeaponBlueprint("AEA_DRONE_LOOT_COMBAT_MULTI")
+multiDrones["AEA_DRONE_BEAM_COMBAT_MULTI_LOOT"] = Hyperspace.Blueprints:GetWeaponBlueprint("AEA_DRONE_LOOT_COMBAT_MULTI")
 
 
+script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile, drone)
+	if log_events then
+		log("DRONE_FIRE 1")
+	end
+	local multi = multiDrones[projectile.extend.name]
+	if multi then
+		local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
 
+        local ionPoint = get_point_local_offset(projectile.position,projectile.target or projectile.target1, 0, 17)
+        local ion = spaceManager:CreateLaserBlast(
+            multi,
+            ionPoint,
+            projectile.currentSpace,
+            drone.iShipId,
+            projectile.target or projectile.target1,
+            projectile.destinationSpace,
+            projectile.heading)
+        ion:ComputeHeading()
+	end
+	return Defines.Chain.CONTINUE
+end)
+
+local weakIonDamage = Hyperspace.Damage()
+weakIonDamage.iIonDamage = 1
+script.on_internal_event(Defines.InternalEvents.SHIELD_COLLISION, function(shipManager, projectile, damage, response) 
+	if log_events then
+		log("SHIELD_COLLISION 2525")
+	end
+	if projectile and projectile.extend.name == "AEA_DRONE_WION_COMBAT_MULTI" then
+		if shipManager:HasSystem(0) then
+			local shieldSystem = shipManager.shieldSystem
+			print(shieldSystem.shields.power.super.first)
+			if shieldSystem.shields.power.super.first >= 1 then return end
+			local roomPos = shipManager:GetRoomCenter(shieldSystem.roomId)
+			shipManager:DamageArea(roomPos, weakIonDamage, true)
+		end
+	end
+end)
+
+
+mods.aea.birdCrew = {}
+local birdCrew = mods.aea.birdCrew
+birdCrew["aea_bird_avali"] = 0.5
+birdCrew["aea_bird_illuminant"] = 1
+birdCrew["aea_bird_unique"] = 1
+
+mods.aea.birdCrewFull = {}
+local birdCrewFull = mods.aea.birdCrewFull
+birdCrewFull["aea_bird_unique"] = 1
+
+script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
+	if birdCrew[crewmem.type] and crewmem.iShipId == crewmem.currentShipId then
+		local shipManager = Hyperspace.ships(crewmem.iShipId)
+		if not shipManager then return end
+		local system = shipManager:GetSystemInRoom(crewmem.iRoomId)
+		if system then
+			local speed = birdCrew[crewmem.type]
+			if crewmem.iShipId == 1 then
+				speed = speed / 2
+			end
+			system:PartialRepair(speed, true)
+		end
+	end
+
+	if birdCrewFull[crewmem.type] and crewmem.iShipId == crewmem.currentShipId then
+		local shipManager = Hyperspace.ships(crewmem.iShipId)
+		if not shipManager then return end
+		for system in vter(shipManager.vSystemList) do
+			local speed = birdCrewFull[crewmem.type]
+			if crewmem.iShipId == 1 then
+				speed = speed / 2
+			end
+			system:PartialRepair(speed, true)
+		end
+	end
+end)
+
+-- Make enemy effectors target only systems
+local systemTargetWeapons = {}
+local sysWeights = {}
+sysWeights.weapons = 6
+sysWeights.shields = 6
+sysWeights.drones = 5
+sysWeights.pilot = 3
+sysWeights.engines = 3
+sysWeights.teleporter = 2
+sysWeights.hacking = 2
+sysWeights.medbay = 2
+sysWeights.clonebay = 2
+systemTargetWeapons.AEA_DRONE_LASER_COMBAT_SMART = sysWeights
+
+mods.aea.intelDrones = {}
+local intelDrones = mods.aea.intelDrones
+intelDrones["AEA_DRONE_LASER_COMBAT_SMART"] = true
+
+
+local combatLaserBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("DRONE_LASER_COMBAT")
+
+script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile, drone)
+    local thisShip = Hyperspace.ships(drone.iShipId)
+    local otherShip = Hyperspace.ships(1 - drone.iShipId)
+
+    local sysWeights = systemTargetWeapons[projectile.extend.name]
+
+    if thisShip and otherShip and sysWeights then
+
+    	local random = math.random()
+		if drone.iShipId == 1 and random > 0.66 then return Defines.Chain.CONTINUE end
+
+        local sysTargets = {}
+        local weightSum = 0
+        
+        -- Collect all player systems and their weights
+        for system in vter(otherShip.vSystemList) do
+            local sysId = system:GetId()
+            if otherShip:HasSystem(sysId) then
+                local weight = sysWeights[Hyperspace.ShipSystem.SystemIdToName(sysId)] or 1
+                if weight > 0 then
+                    weightSum = weightSum + weight
+                    table.insert(sysTargets, {
+                        id = sysId,
+                        weight = weight
+                    })
+                end
+            end
+        end
+        
+        -- Pick a random system using the weights
+        if #sysTargets > 0 then
+            local rnd = math.random(weightSum);
+            for i = 1, #sysTargets do
+                if rnd <= sysTargets[i].weight then
+                	drone.targetLocation = otherShip:GetRoomCenter(otherShip:GetSystemRoom(sysTargets[i].id))
+                    return Defines.Chain.CONTINUE
+                end
+                rnd = rnd - sysTargets[i].weight
+            end
+            error("Weighted selection error - reached end of options without making a choice!")
+        end
+    end
+	return Defines.Chain.CONTINUE
+end)
+
+script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile, drone)
+	local intel = intelDrones[projectile.extend.name]
+	if intel then
+		local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
+
+        local ionPoint = get_point_local_offset(projectile.position,projectile.target or projectile.target1, 0, 20)
+        local ionTarget = get_point_local_offset(projectile.target or projectile.target1, projectile.position, 0, -15)
+        local ion = spaceManager:CreateLaserBlast(
+            combatLaserBlueprint,
+            ionPoint,
+            projectile.currentSpace,
+            drone.iShipId,
+            ionTarget,
+            projectile.destinationSpace,
+            projectile.heading)
+        ion:ComputeHeading()
+        
+        local ionPoint2 = get_point_local_offset(projectile.position,projectile.target or projectile.target1, 0, -20)
+        local ionTarget2 = get_point_local_offset(projectile.target or projectile.target1, projectile.position, 0, 15)
+        local ion2 = spaceManager:CreateLaserBlast(
+            combatLaserBlueprint,
+            ionPoint2,
+            projectile.currentSpace,
+            drone.iShipId,
+            ionTarget2,
+            projectile.destinationSpace,
+            projectile.heading)
+        ion2:ComputeHeading()
+        projectile:Kill()
+	end    
+	return Defines.Chain.CONTINUE
+end)
+
+local function rollEnemy()
+	Hyperspace.playerVariables.aea_bird_roulette_result = math.random(1,6)
+	log("THE GI SHIP ROLLED A: "..tostring(Hyperspace.playerVariables.aea_bird_roulette_result))
+end
+local function rollPlayer()
+	Hyperspace.playerVariables.aea_bird_roulette_result_player = math.random(1,6)
+	log("THE PLAYER ROLLED A: "..tostring(Hyperspace.playerVariables.aea_bird_roulette_result_player))
+end
+local function rollStart()
+	Hyperspace.playerVariables.aea_bird_roulette_result_start = math.random(1,2)
+	log("THE COIN ROLLED A: "..tostring(Hyperspace.playerVariables.aea_bird_roulette_result_start))
+end
+script.on_game_event("AEA_BIRD_RUSSIAN_ROLL_ENEMY_1", false, function() rollEnemy() end)
+script.on_game_event("AEA_BIRD_RUSSIAN_ROLL_ENEMY_2", false, function() rollEnemy() end)
+script.on_game_event("AEA_BIRD_RUSSIAN_ROLL_ENEMY_3", false, function() rollEnemy() end)
+script.on_game_event("AEA_BIRD_RUSSIAN_ROLL_ENEMY_4", false, function() rollEnemy() end)
+
+script.on_game_event("AEA_BIRD_RUSSIAN_ROULETTE_SPIN", false, function() rollPlayer() end)
+script.on_game_event("AEA_BIRD_RUSSIAN_ROLL_PLAYER_1", false, function() rollPlayer() end)
+script.on_game_event("AEA_BIRD_RUSSIAN_ROLL_PLAYER_2", false, function() rollPlayer() end)
+
+script.on_game_event("AEA_BIRD_ROULETTE_ROLL_START", false, function() rollStart() end)
+script.on_game_event("AEA_BIRD_ROULETTE_LOSE", false, function() rollStart() end)
 
 -----------------------------------------
 -----------------------------------------
@@ -2042,7 +2246,7 @@ end)]]
 local hasWarp = false
 local protectionTable = {}
 local protectionTableEnemy = {}
-local protectionImage = Hyperspace.Resources:CreateImagePrimitiveString("people/energy_shield_buff.png", -17, -17, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+local protectionImage = Hyperspace.Resources:CreateImagePrimitiveString("people/energy_shield_buff.png", -16, -18, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 local crosshairImage = Hyperspace.Resources:CreateImagePrimitiveString("misc/crosshairs_placed_aea_magic.png", -20, -20, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 local crosshairImage2 = Hyperspace.Resources:CreateImagePrimitiveString("misc/crosshairs_placed_aea_magic_yellow.png", -20, -20, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 
@@ -2073,6 +2277,8 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function()
 		log("JUMP_ARRIVE 6")
 	end
 	checkforWarp()
+	protectionTable = {}
+	protectionTableEnemy = {}
 end)
 
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
@@ -2818,16 +3024,21 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipMa
 	weaponName = false
     pcall(function() weaponName = projectile.extend.name == "AEA_LASER_SPELL_12" or projectile.extend.name == "AEA_LASER_CULT_12" end)
     if weaponName then
+    	--log("ADD BARRIER FROM: "..projectile.extend.name)
     	local room = get_room_at_location(shipManager, location, true)
     	if shipManager.iShipId == 0 then
-    		if barrierTablePlayerLen >= 8 then return end
 
-    		if not barrierTablePlayer[room] then barrierTablePlayerLen = barrierTablePlayerLen + 1 end
+    		if not barrierTablePlayer[room] then 
+    			if barrierTablePlayerLen >= 8 then return end
+    			barrierTablePlayerLen = barrierTablePlayerLen + 1 
+    		end
     		barrierTablePlayer[room] = 2
     	else
-    		if barrierTableEnemyLen >= 8 then return end
 
-    		if not barrierTableEnemy[room] then barrierTableEnemyLen = barrierTableEnemyLen + 1 end
+    		if not barrierTableEnemy[room] then
+	    		if barrierTableEnemyLen >= 8 then return end
+	    		 barrierTableEnemyLen = barrierTableEnemyLen + 1 
+    		end
     		barrierTableEnemy[room] = 2
     	end
     end
@@ -2973,13 +3184,14 @@ script.on_internal_event(Defines.InternalEvents.ON_MOUSE_L_BUTTON_DOWN, function
 		--log("ON_MOUSE_L_BUTTON_DOWN 2")
 	end
     if recallSelected then
-    	if Hyperspace.ships.enemy then
+    	if Hyperspace.ships.enemy and Hyperspace.ships.enemy.bContainsPlayerCrew and hasWarp and not Hyperspace.ships.enemy._targetable.hostile then
     		for crewmem in vter(Hyperspace.ships.enemy.vCrewList) do
     			if crewmem.iShipId == 0 and not crewmem:IsDrone() then
     				crewmem.extend:InitiateTeleport(0, 0, 0)
     			end
     		end
     	end
+    	recallSelected = false
     end
     return Defines.Chain.CONTINUE
 end)
@@ -3058,14 +3270,16 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
 		if shipManager:HasAugmentation("AEA_BARRIER_RELAY") > 0 then
 			local room = get_room_at_location(shipManager, shipManager:GetRandomRoomCenter(), false)
 	    	if shipManager.iShipId == 0 then
-	    		if barrierTablePlayerLen >= 8 then return end
-
-    			if not barrierTablePlayer[room] then barrierTablePlayerLen = barrierTablePlayerLen + 1 end
+    			if not barrierTablePlayer[room] then 
+    				if barrierTablePlayerLen >= 8 then return end
+    				barrierTablePlayerLen = barrierTablePlayerLen + 1 
+    			end
 	    		barrierTablePlayer[room] = 2
 	    	else
-	    		if barrierTableEnemyLen >= 8 then return end
-
-    			if not barrierTableEnemy[room] then barrierTableEnemyLen = barrierTableEnemyLen + 1 end
+    			if not barrierTableEnemy[room] then 
+    				if barrierTableEnemyLen >= 8 then return end
+    				barrierTableEnemyLen = barrierTableEnemyLen + 1 
+    			end
 	    		barrierTableEnemy[room] = 2
 	    	end
 	    end
@@ -3341,6 +3555,56 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 		for id = 0, shipGraph:RoomCount(), 1 do
 			--print("EMPTY:"..tostring(id))
 			oxygen:ModifyRoomOxygen(id, -100.0)
+		end
+	end
+end)
+
+
+mods.aea.allMagicCrew = {}
+local allMagicCrew = mods.aea.allMagicCrew
+allMagicCrew["aea_cult_wizard_a01"] = true
+allMagicCrew["aea_cult_wizard_a02"] = true
+allMagicCrew["aea_cult_wizard_s03"] = true
+allMagicCrew["aea_cult_wizard_s04"] = true
+allMagicCrew["aea_cult_wizard_s05"] = true
+allMagicCrew["aea_cult_wizard_s06"] = true
+allMagicCrew["aea_cult_wizard_a07"] = true
+allMagicCrew["aea_cult_wizard_s08"] = true
+allMagicCrew["aea_cult_wizard_s09"] = true
+allMagicCrew["aea_cult_wizard_a10"] = true
+allMagicCrew["aea_cult_wizard_a11"] = true
+allMagicCrew["aea_cult_wizard_s12"] = true
+allMagicCrew["aea_cult_wizard_s13"] = true
+allMagicCrew["aea_cult_wizard_s14"] = true
+allMagicCrew["aea_cult_wizard_s15"] = true
+allMagicCrew["aea_cult_priest_sup"] = true
+allMagicCrew["aea_cult_priest_off"] = true
+allMagicCrew["aea_cult_priest_bor"] = true
+allMagicCrew["aea_cult_tiny_a01"] = true
+allMagicCrew["aea_cult_tiny_a02"] = true
+allMagicCrew["aea_cult_tiny_s03"] = true
+allMagicCrew["aea_cult_tiny_s04"] = true
+allMagicCrew["aea_cult_tiny_s05"] = true
+allMagicCrew["aea_cult_tiny_s06"] = true
+allMagicCrew["aea_cult_tiny_a07"] = true
+allMagicCrew["aea_cult_tiny_s08"] = true
+allMagicCrew["aea_cult_tiny_s09"] = true
+allMagicCrew["aea_cult_tiny_a10"] = true
+allMagicCrew["aea_cult_tiny_a11"] = true
+allMagicCrew["aea_cult_tiny_s12"] = true
+allMagicCrew["aea_cult_tiny_s13"] = true
+allMagicCrew["aea_cult_tiny_s14"] = true
+allMagicCrew["aea_cult_tiny_s15"] = true
+
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_PRE, function(projectile)
+	if projectile.bBroadcastTarget then return end
+	local shipManager = Hyperspace.ships(projectile.destinationSpace) 
+	local room = get_room_at_location(shipManager, projectile.target, true)
+	if projectile.ownerId ~= shipManager.iShipId then
+		for crewmem in vter(shipManager.vCrewList) do
+			if allMagicCrew[crewmem.type] and crewmem.iShipId == shipManager.iShipId and crewmem.iRoomId == room then
+				projectile.bBroadcastTarget = true
+			end
 		end
 	end
 end)

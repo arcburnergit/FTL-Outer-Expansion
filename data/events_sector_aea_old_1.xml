@@ -24,22 +24,22 @@
 	<changeBackground>BACK_EVENT_AEA_OLD_1_START</changeBackground>
 	<playSound>lightspeed</playSound>
 	<choice hidden="true" req="ANCIENT_ACTIVATOR" blue="false">
-		<text>Answer the hail</text>
+		<text>Answer the hail.</text>
 		<event>
 			<text>As you go to answer the hail, you realise the Ancient Alien that was hybernating on your ship has disappeared.
 
-A strange species appears on screen. "Welcome to the Expanse, Unfortunately you stumbled upon something you're not meant to see, so we've taken you here, to be kept in exile for the rest of your natural life."</text>
+A strange species appears on screen. "Welcome to the Expanse, Unfortunately you stumbled upon something you're not meant to see, so we've taken you here, to be kept in exile for the rest of your natural life.".</text>
 			<remove name="HIDDEN ANCIENT_ACTIVATOR" />
 			<choice hidden="true">
-				<text>What?</text>
+				<text>What?.</text>
 				<event>
-					<text>"I suppose theres no harm in explaining it. Do you want to hear the short version, or the longer explanation of why you're here?"</text>
+					<text>"I suppose theres no harm in explaining it. Do you want to hear the short version, or the longer explanation of why you're here?".</text>
 					<choice hidden="true">
-						<text>The long version</text>
+						<text>The long version.</text>
 						<event load="AEA_OLD_EXPLAIN_LONG" />
 					</choice>
 					<choice hidden="true">
-						<text>The short version</text>
+						<text>The short version.</text>
 						<event load="AEA_OLD_EXPLAIN_SHORT" />
 					</choice>
 				</event>
@@ -47,19 +47,19 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 		</event>
 	</choice>
 	<choice hidden="true" req="ANCIENT_ACTIVATOR" lvl="0" max_lvl="0" blue="false">
-		<text>Answer the hail</text>
+		<text>Answer the hail.</text>
 		<event>
-			<text>A strange species appears on screen. "Welcome to the Expanse, Unfortunately you stumbled upon something you're not meant to see, so we've taken you here, to be kept in exile for the rest of your natural life."</text>
+			<text>A strange species appears on screen. "Welcome to the Expanse, Unfortunately you stumbled upon something you're not meant to see, so we've taken you here, to be kept in exile for the rest of your natural life.".</text>
 			<choice hidden="true">
-				<text>What?</text>
+				<text>What?.</text>
 				<event>
-					<text>"I suppose theres no harm in explaining it. Do you want to hear the short version, or the longer explanation of why you're here?"</text>
+					<text>"I suppose theres no harm in explaining it. Do you want to hear the short version, or the longer explanation of why you're here?".</text>
 					<choice hidden="true">
-						<text>The long version</text>
+						<text>The long version.</text>
 						<event load="AEA_OLD_EXPLAIN_LONG" />
 					</choice>
 					<choice hidden="true">
-						<text>The short version</text>
+						<text>The short version.</text>
 						<event load="AEA_OLD_EXPLAIN_SHORT" />
 					</choice>
 				</event>
@@ -69,25 +69,25 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 </event>
 
 <event name="AEA_OLD_EXPLAIN_LONG">
-	<text>"A long time ago, before your federation, or rebellion there was just us, the Lylmiks. We expanded across the multiverse asserting our dominance over the other races, however as time went on our control became less effective and we started to lose. We started losing control over parts of the multiverse, the races we held under our thumb for so long began to band together and attack us."</text>
+	<text>"A long time ago, before your federation, or rebellion there was just us, the Lylmiks. We expanded across the multiverse asserting our dominance over the other races, however as time went on our control became less effective and we started to lose. We started losing control over parts of the multiverse, the races we held under our thumb for so long began to band together and attack us.".</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>"At the same time we developed the technology to render ourselves practically immortal, we stopped reproducing and began to recede back to our core. A split happened within our civilisation, one half wanted to release our control over the multiverse and to retreat to our core sectors to exist peacefully away from the rest of the multiverse. The otherside wanted the opposite, they wanted to redouble our efforts to control the multiverse."</text>
+			<text>"At the same time we developed the technology to render ourselves practically immortal, we stopped reproducing and began to recede back to our core. A split happened within our civilisation, one half wanted to release our control over the multiverse and to retreat to our core sectors to exist peacefully away from the rest of the multiverse. The otherside wanted the opposite, they wanted to redouble our efforts to control the multiverse.".</text>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event>
-					<text>"The conflict was long and drawn out, similar to your own conflict with the rebellion. Although we had rendered ourselves almost immortal, both sides took the time to develop weapons capable of ripping each other out of the multiverse. As a result our numbers were drained throughout the conflict, it was only once both sides had been reduced to the thousands that the conflict finally ended."</text>
+					<text>"The conflict was long and drawn out, similar to your own conflict with the rebellion. Although we had rendered ourselves almost immortal, both sides took the time to develop weapons capable of ripping each other out of the multiverse. As a result our numbers were drained throughout the conflict, it was only once both sides had been reduced to the thousands that the conflict finally ended.".</text>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
-							<text>"The side that won was, as you may have guessed, the side that wanted to retreat from the multiverse. During the conflict major leaps in innovation were developped around Multiversal travel. One of those was the ability to quarantine certain realities. It was decided by the Lylmik council, the leaders of the Lylmik during the war, that we should quarantine ourselves, many of our species just wanted to be done with the multiverse."</text>
+							<text>"The side that won was, as you may have guessed, the side that wanted to retreat from the multiverse. During the conflict major leaps in innovation were developped around Multiversal travel. One of those was the ability to quarantine certain realities. It was decided by the Lylmik council, the leaders of the Lylmik during the war, that we should quarantine ourselves, many of our species just wanted to be done with the multiverse.".</text>
 							<choice hidden="true">
 								<text>Continue...</text>
 								<event>
-									<text>"And so it was that we shut ourselves out of the multiverse. We knew however that our solution wasn't perfect, people may be able to discover the remnants of our empire much like you did. We implemented security features so that we could not only eliminate those that discover our secrets, but we could contain them here to keep track of them."</text>
+									<text>"And so it was that we shut ourselves out of the multiverse. We knew however that our solution wasn't perfect, people may be able to discover the remnants of our empire much like you did. We implemented security features so that we could not only eliminate those that discover our secrets, but we could contain them here to keep track of them.".</text>
 									<choice hidden="true">
-										<text>So what is this place</text>
+										<text>So what is this place.</text>
 										<event load="AEA_OLD_EXPLAIN_AFTER" />
 									</choice>
 								</event>
@@ -101,13 +101,13 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 </event>
 
 <event name="AEA_OLD_EXPLAIN_SHORT">
-	<text>"We, the Lylmiks were a race that existed a long time ago. We ruled the multiverse for a time, but as other races grew up we slowly lost control. Eventually we split due to this loss of control, and after a long civil war we quarantined ourselves away from the rest of the multiverse."</text>
+	<text>"We, the Lylmiks were a race that existed a long time ago. We ruled the multiverse for a time, but as other races grew up we slowly lost control. Eventually we split due to this loss of control, and after a long civil war we quarantined ourselves away from the rest of the multiverse.".</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>"Part of that quarantine was making sure that those who may discover us are eliminated from the multiverse, that means you."</text>
+			<text>"Part of that quarantine was making sure that those who may discover us are eliminated from the multiverse, that means you.".</text>
 			<choice hidden="true">
-				<text>So what is this place</text>
+				<text>So what is this place.</text>
 				<event load="AEA_OLD_EXPLAIN_AFTER" />
 			</choice>
 		</event>
@@ -118,7 +118,7 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 	<text>"This is where we take those who stumble across our secrets, such as you. As a product of our quarantine you'll be trapped here forever, the only way anyone can leave is by going through the council and convincing them to let you leave. But good luck with that, the coordinates of the coreworlds where the council lives are only known to the most elite. The only person around here who has those coordinates is the *baron*."
 
 "Anyway, I need to get back to my job. If you need anything else contact the guard."
-	</text>
+	.</text>
 	<choice>
 		<text>Ignore the guard.</text>
 		<event>
@@ -151,7 +151,7 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 </event>
 
 <event name="GUARD_AEA_OLD_1_INTERACT">
-	<text>Normally a vessel of your calibre would be unexpected, however the guard here is clearly unimpressed. "If you think trying to destroy me will get you anywhere but dead, you're wrong."</text>
+	<text>Normally a vessel of your calibre would be unexpected, however the guard here is clearly unimpressed. "If you think trying to destroy me will get you anywhere but dead, you're wrong.".</text>
 	<choice hidden="true">
 		<text>Request supplies.</text>
 		<event load="GUARD_AEA_OLD_1_REQUEST" />
@@ -196,7 +196,7 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 
 <eventList name="GUARD_AEA_OLD_1_REQUEST">
 	<event>
-		<text>"I apologize, but we do not have orders to provide assistance to other ships."</text>
+		<text>"I apologize, but we do not have orders to provide assistance to other ships.".</text>
 	</event>
 	<event>
 		<text>The guard appears to take pity on you and agrees to your request. They transfer over a small crate of supplies.</text>
@@ -215,7 +215,6 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 </eventList>
 
 <ship name="SHIP_AEA_OLD_1_GUARD" auto_blueprint="AEA_OLD_ENFORCER">
-	<surrender min="5" max="6" load="GUARD_SIGNAL" />
 	<destroyed load="GUARD_AEA_OLD_1_DESTROY" />
 	<deadCrew load="GUARD_AEA_OLD_1_DEADCREW" />
 </ship>
@@ -274,7 +273,7 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 			<weapon name="GIFTLIST_WEAPONS_AEA_OLD" />
 			<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_HAMMER</unlockCustomShip>
 			<choice>
-				<text>Use the coordinates immediately [WARNING: Do not use if your crew an onboard the baron's ship]</text>
+				<text>Use the coordinates immediately [WARNING: Do not use if your crew an onboard the baron's ship].</text>
 				<event>
 					<secretSectorWarp>SECRET_AEA_OLD_2</secretSectorWarp>
 					<secretSector />
@@ -291,9 +290,9 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 </event>
 <event name="AEA_OLD_BARON_JUMP">
 	<revisitEvent>AEA_OLD_BARON_JUMP</revisitEvent>
-	<text>Use the coordinates now?</text>
+	<text>Use the coordinates now?.</text>
 	<choice>
-		<text>Use the coordinates immediately</text>
+		<text>Use the coordinates immediately.</text>
 		<event>
 			<secretSectorWarp>SECRET_AEA_OLD_2</secretSectorWarp>
 			<secretSector />
@@ -306,7 +305,7 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>We'll come back here later</text>
+		<text>We'll come back here later.</text>
 		<event/>
 	</choice>
 </event>
@@ -328,7 +327,7 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 	<text>Surprisingly a Lylmik merchant appears to be under attack from a heavily armed elite, If you want to trade with them you'll need to take care of the elite.</text>
 	<ship load="SHIP_AEA_OLD_MU_STORE_PROTECT" hostile="false" />
 	<choice hidden="true">
-		<text>Rescue the store</text>
+		<text>Rescue the store.</text>
 		<event>
 			<text>You prepare for combat.</text>
 			<ship hostile="true" />
@@ -339,7 +338,7 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the merchant</text>
+		<text>Ignore the merchant.</text>
 		<event>
 			<text>Fortunately, the Elite remain oblivious to your presence.</text>
 			<choice>
@@ -380,11 +379,11 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 	<text>You arrive at the beacon to discover a Lylmik vessel in orbit, there appears to be a small shuttle attached to the side of the ship.</text>
 	<ship load="SHIP_AEA_OLD_ALL" hostile="false"/>
 	<choice hidden="true">	
-		<text>Hail them</text>
+		<text>Hail them.</text>
 		<event>
-			<text>A lylmik appears on your screen "Captain, I don't suppose you want a new crewmember. We've had a pretty incredible event onboard, this person tried to take over our ENTIRE ship by themselves, completely on their own. Normally we'd have killed them immediately, however the sheer gaul to attempt something like this has saved their life. Anyway we've gotten a bit bored of the prisoner, do you want them?"</text>
+			<text>A lylmik appears on your screen "Captain, I don't suppose you want a new crewmember. We've had a pretty incredible event onboard, this person tried to take over our ENTIRE ship by themselves, completely on their own. Normally we'd have killed them immediately, however the sheer gaul to attempt something like this has saved their life. Anyway we've gotten a bit bored of the prisoner, do you want them?".</text>
 			<choice hidden="true">
-				<text>Sure?</text>
+				<text>Sure?.</text>
 				<event>
 					<text>"Fantastic, we'll send them over." A moment later a shuttle is remotely piloted over to your ship, and onboard is an elite crewmember.</text>
 					<crewMember all_skills="2" amount="1" class="BLUELIST_AEA_OLD_ELITE_FILL_IN"/>
@@ -395,13 +394,13 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>No thanks</text>
+				<text>No thanks.</text>
 				<event/>
 			</choice>
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the ship</text>
+		<text>Ignore the ship.</text>
 		<event>
 			<text>The lylmik ship ignores you.</text>
 			<choice>
@@ -419,10 +418,10 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 <event name="AEA_OLD_STORE_EXCLUSIVE" unique="true">
 	<text>You arrive at the beacon to discover an unmarked Lylmik merchant station. As you get closer a message plays from the station. "Welcome to the Marketplace Captain, an exclusive club for rich and dangerous ships, if you can't prove your might, you're better off turning back."
 You then get a popup telling you membership is ONLY 29.99~.
-	</text>
+	.</text>
 	<ship load="AEA_OLD_STATION_EXCLUSIVE" hostile="false"/>
 	<choice hidden="false">
-		<text>Pay the membership fee</text>
+		<text>Pay the membership fee.</text>
 		<event>
 			<item_modify>
 				<item type="scrap" min="-30" max="-30" />
@@ -432,7 +431,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 		</event>
 	</choice>
 	<choice hidden="false">
-		<text>Attack the station</text>
+		<text>Attack the station.</text>
 		<event>
 			<ship hostile="true"/>
 			<text>This is clearly a scam, getting rid of them will be a service to the sector.</text>
@@ -443,7 +442,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the station</text>
+		<text>Ignore the station.</text>
 		<event>
 			<text>You're not going to get involved in whatever this is.</text>
 			<choice>
@@ -461,11 +460,11 @@ You then get a popup telling you membership is ONLY 29.99~.
 <event name="AEA_OLD_CRATE_ITEM" unique="true">
 	<text>You've arrived at a relatively empty beacon, however your sensors pickup a large storage crate floating around in orbit near the beacon.</text>
 	<choice hidden="true">
-		<text>Investigate the crate</text>
+		<text>Investigate the crate.</text>
 		<event load="AEA_OLD_CRATE_LIST"/>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the crate</text>
+		<text>Ignore the crate.</text>
 		<event>
 			<text>You prepare your jump drive for the next jump.</text>
 			<choice>
@@ -587,7 +586,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 </event>
 <textList name="TEXT_AEA_OLD_CHOICE">
 	<text>The Lylmik ship at this beacon has not yet noticed your presence. If you wanted, you could fly away safely, or attack now and take them by surprise.</text>
-	<text>"You're lucky I'm not one to kill those I meet at random, you should leave before it's no longer random."</text>
+	<text>"You're lucky I'm not one to kill those I meet at random, you should leave before it's no longer random.".</text>
 	<text>You've caught a Lylmik vessel unaware of your presence, they'll be worth quite a bit of scrap if you can kill them.</text>
 </textList>
 
@@ -623,18 +622,18 @@ You then get a popup telling you membership is ONLY 29.99~.
 </event>
 <textList name="TEXT_AEA_OLD_CHOICE_MU">
 	<text>Another detainee is located at this beacon, they don't seem interested in attacking you.</text>
-	<text>"Captain, We don't want any trouble but if you force it we won't hold back"</text>
+	<text>"Captain, We don't want any trouble but if you force it we won't hold back".</text>
 	<text>You've caught another vessel trapped in Lylmik space off gaurd and they haven't noticed you yet.</text>
 </textList>
 
 <event name="AEA_OLD_COLONY" unique="true">
 	<text>You've arrived at the beacon to discover an entire civilian space station sitting in orbit around this beacon, you wonder how the Lylmiks even managed to bring it here.</text>
 	<choice hidden="true">
-		<text>Hail the station</text>
+		<text>Hail the station.</text>
 		<event>
-			<text>The station responds quickly, "Please. you've got to help us. Theres some maniac running around who keeps trying to destroy us, they'll be back at any moment."</text>
+			<text>The station responds quickly, "Please. you've got to help us. Theres some maniac running around who keeps trying to destroy us, they'll be back at any moment.".</text>
 			<choice>
-				<text>Help them deal with the threat</text>
+				<text>Help them deal with the threat.</text>
 				<event>
 					<text>It only takes a short while later before the ship shows up, you move in to block it's route to the station.</text>
 					<ship load="SHIP_AEA_OLD_MU_STATIONDEFEND" hostile="true"/>
@@ -645,7 +644,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Leave before this "maniac" gets here</text>
+				<text>Leave before this "maniac" gets here.</text>
 				<event>
 					<text>You prepare for the next jump.</text>
 					<choice>
@@ -661,7 +660,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Avoid the ship</text>
+		<text>Avoid the ship.</text>
 		<event>
 			<text>You prepare for the next jump.</text>
 			<choice>
@@ -677,7 +676,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 </event>
 
 <event name="AEA_OLD_COLONY_WIN">
-	<text>"Thank the Lylmik you were here to save us, here have some supplies."</text>
+	<text>"Thank the Lylmik you were here to save us, here have some supplies.".</text>
 	<autoReward level="HIGH">stuff</autoReward>
 	<choice>
 		<text>Continue...</text>
@@ -689,20 +688,20 @@ You then get a popup telling you membership is ONLY 29.99~.
 	<preventQuest/>
 	<text>Waiting for you at the beacon is a Lylmik vessel, your sensors pickup the crew scavenging the nearby debree field for parts, it isn't clear exactly what they're looking for.</text>
 	<choice hidden="true">
-		<text>Hail the ship</text>
+		<text>Hail the ship.</text>
 		<event>
-			<text>The Lylmik barely pays attention to you as they pick up the hail "Buzz off stupid Renegade."</text>
+			<text>The Lylmik barely pays attention to you as they pick up the hail "Buzz off stupid Renegade.".</text>
 			<!--choice hidden="true" req="JUDGELIST_ROCK_RENEGADE_LOOT">
-				<text>(Renegade Loot)"Hang on we might have something you'll be interested in!"</text>
+				<text>(Renegade Loot)"Hang on we might have something you'll be interested in!".</text>
 				<event>
-					<text>"Hmm, perhaps you're right, what do you want for it?"</text>
+					<text>"Hmm, perhaps you're right, what do you want for it?".</text>
 					<choice>
-						<text>A bunch of scrap</text>
+						<text>A bunch of scrap.</text>
 						<event>
 							<item_modify>
 								<item type="scrap" min="125" max="160" />
 							</item_modify>
-							<text>"An acceptable deal."</text>
+							<text>"An acceptable deal.".</text>
 							<remove name="JUDGELIST_ROCK_RENEGADE_LOOT"/>
 							<choice hidden="true">
 								<text>Continue...</text>
@@ -711,13 +710,13 @@ You then get a popup telling you membership is ONLY 29.99~.
 						</event>
 					</choice>
 					<choice>
-						<text>A bunch of scrap and a replacement crewmember</text>
+						<text>A bunch of scrap and a replacement crewmember.</text>
 						<event>
 							<item_modify>
 								<item type="scrap" min="80" max="120" />
 							</item_modify>
 							<crewMember  all_skills="2" amount="1" class="aea_old_1"/>
-							<text>"An acceptable deal."</text>
+							<text>"An acceptable deal.".</text>
 							<remove name="JUDGELIST_ROCK_RENEGADE_LOOT"/>
 							<choice hidden="true">
 								<text>Continue...</text>
@@ -726,22 +725,22 @@ You then get a popup telling you membership is ONLY 29.99~.
 						</event>
 					</choice>
 					<choice>
-						<text>Nevermind</text>
+						<text>Nevermind.</text>
 						<event load="AEA_OLD_LIZZARD_NEVERMIND"/>
 					</choice>
 				</event>
 			</choice-->
 			<choice hidden="true" req="LIST_CREW_UNIQUE">
-				<text>(Unique Crew)"Hang on we might have something you'll be interested in!"</text>
+				<text>(Unique Crew)"Hang on we might have something you'll be interested in!".</text>
 				<event>
-					<text>"Hmm, perhaps you're right, what do you want for it?"</text>
+					<text>"Hmm, perhaps you're right, what do you want for it?".</text>
 					<choice>
-						<text>A bunch of scrap</text>
+						<text>A bunch of scrap.</text>
 						<event>
 							<item_modify>
 								<item type="scrap" min="125" max="160" />
 							</item_modify>
-							<text>"An acceptable deal."</text>
+							<text>"An acceptable deal.".</text>
 							<removeCrew class="LIST_CREW_UNIQUE">
 								<clone>false</clone>
 								<text>They're just gone not dead. Yet.</text>
@@ -755,20 +754,20 @@ You then get a popup telling you membership is ONLY 29.99~.
 						</event>
 					</choice>
 					<choice>
-						<text>A bunch of scrap and a replacement crewmember</text>
+						<text>A bunch of scrap and a replacement crewmember.</text>
 						<event>
 							<item_modify>
 								<item type="scrap" min="80" max="120" />
 							</item_modify>
 							<crewMember  all_skills="2" amount="1" class="aea_old_1"/>
-							<text>"An acceptable deal."</text>
+							<text>"An acceptable deal.".</text>
 							<choice hidden="true">
 								<text>Continue...</text>
 								<event>
 									<text>It is only a moment after you deliver your crew over that you hear muffled screaming in the background, aswell as the clunk of heavy machinery...</text>
 									<removeCrew class="LIST_CREW_UNIQUE">
 										<clone>false</clone>
-										<text></text>
+										<text>.</text>
 									</removeCrew>
 									<choice>
 										<text>Continue...</text>
@@ -779,15 +778,15 @@ You then get a popup telling you membership is ONLY 29.99~.
 						</event>
 					</choice>
 					<choice>
-						<text>Nevermind</text>
+						<text>Nevermind.</text>
 						<event load="AEA_OLD_LIZZARD_NEVERMIND"/>
 					</choice>
 				</event>
 			</choice>
 			<choice hidden="false" >
-				<text>"What about all this scrap we have?"</text>
+				<text>"What about all this scrap we have?".</text>
 				<event>
-					<text>"Hmm, perhaps you're right, how about we give you a weapon we got from this weird ship we captured..."</text>
+					<text>"Hmm, perhaps you're right, how about we give you a weapon we got from this weird ship we captured...".</text>
 					<item_modify>
 						<item type="scrap" min="-150" max="-150" />
 					</item_modify>
@@ -799,7 +798,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 				</event>
 			</choice>
 			<choice hidden="true" >
-				<text>"Nevermind then..."</text>
+				<text>"Nevermind then...".</text>
 				<event name="AEA_OLD_LIZZARD_NEVERMIND">
 					<text>You decide not to interrupt the Lylmik vessel any further and fly away.</text>
 					<choice>
@@ -834,17 +833,17 @@ You then get a popup telling you membership is ONLY 29.99~.
 	<preventQuest/>
 	<text>You discover a strange device sitting in orbit around the beacon, it appears Lylmik in design.</text>
 	<choice hidden="true">
-		<text>Poke at what appears to be a button</text>
+		<text>Poke at what appears to be a button.</text>
 		<event load="AEA_OLD_BAN_LIST"/>
 	</choice>
 	<choice hidden="true" req="BLUELIST_AEA_OLD">
-		<text>(Lylmik Crew) Activate the device</text>
+		<text>(Lylmik Crew) Activate the device.</text>
 		<event load="AEA_OLD_BAN_GOODLIST"/>
 	</choice>
 	<choice hidden="true">
-		<text>Shoot it</text>
+		<text>Shoot it.</text>
 		<event>
-			<text>A moment after it disapears you pickup a Lylmik jumping to the beacon. "Hey dude, that's not very cool of you, prepare to die."</text>
+			<text>A moment after it disapears you pickup a Lylmik jumping to the beacon. "Hey dude, that's not very cool of you, prepare to die.".</text>
 			<ship load="SHIP_AEA_OLD_ALL" hostile="true"/>
 			<choice>
 				<text>Continue...</text>
@@ -853,7 +852,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore it</text>
+		<text>Ignore it.</text>
 		<event>
 			<text>You decide not to mess with the device.</text>
 			<choice>
@@ -921,11 +920,11 @@ You then get a popup telling you membership is ONLY 29.99~.
 	<text>You arrive at the beacon to discover a small MFK shuttle being battered about by a Lylmik vessel. The rebel shuttle attempts to hail you.</text>
 	<ship load="SHIP_AEA_OLD_ALL" hostile="false"/>
 	<choice hidden="true">
-		<text>Respond to the hail</text>
+		<text>Respond to the hail.</text>
 		<event>
-			<text>"Please get me out of here, those stupid aliens having been playing with me. I'll join your crew if only you let me repay those scum."</text>
+			<text>"Please get me out of here, those stupid aliens having been playing with me. I'll join your crew if only you let me repay those scum.".</text>
 			<choice hidden="true">
-				<text>Accept them aboard</text>
+				<text>Accept them aboard.</text>
 				<event>
 					<text>"This is why all xenos deserve death." Clearly the Lylmik's have a similar idea as they move to attack.</text>
 					<crewMember all_skills="2" amount="1" class="human_mfk"/>
@@ -937,7 +936,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Refuse</text>
+				<text>Refuse.</text>
 				<event>
 					<text>You decide not to interfere in the Lylmik's fun.</text>
 					<choice>
@@ -953,7 +952,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the ships</text>
+		<text>Ignore the ships.</text>
 		<event>
 			<text>You decide not to interfere in the Lylmik's fun.</text>
 			<choice>
@@ -972,7 +971,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 	<text>You're confronted by a Lylmik vessel as you arrive at the beacon, it only takes you a moment to realize the ship is almost completely powered down.</text>
 	<ship load="SHIP_AEA_OLD_ALL" hostile="false"/>
 	<choice hidden="true">
-		<text>Attack the vessel while it's powered down</text>
+		<text>Attack the vessel while it's powered down.</text>
 		<event>
 			<text>As you activate your weapons the enemy ship comes online in response.</text>
 			<ship hostile="true"/>
@@ -983,11 +982,11 @@ You then get a popup telling you membership is ONLY 29.99~.
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Wait</text>
+		<text>Wait.</text>
 		<event load="AEA_OLD_LYLMIK_GONE_LIST"/>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore it</text>
+		<text>Ignore it.</text>
 		<event>
 			<text>You fly away and decide not to mess with the ship.</text>
 			<choice>

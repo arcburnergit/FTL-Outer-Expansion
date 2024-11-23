@@ -57,7 +57,7 @@
 </eventList>
 
 <event name="ENCOUNTER_AEA_ACID_CLEARING" unique="true">
-	<text>Its unusual for the Acidic Growth to be found outside of their nebulae. However it appears to have decided you're a threat and is moving in to attack!</text>
+	<text>Its unusual for the Acidic Growth to be found outside of their nebulae. However it appears to have decided you're a threat and is moving in to attack!.</text>
 	<ship load="SHIP_AEA_ACID_FIGHT" hostile="true" />
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -88,9 +88,9 @@
 	</choice>
 </event>
 <textList name="TEXT_AEA_ACID_REBEL_CLEARING">
-	<text>As you arrive at the beacon, a hostile ship immediately registers on your scanners. You didn't expect to see Rebels extending their reach into the unknown regions of Acidic territory. Charge the weapons!</text>
-	<text>You jump into empty space and are relieved to see your sensors blink back to life. However, you are less pleased to see them immediately register a Rebel ship on an approach vector!</text>
-	<text>You receive a message from a nearby ship, "Looks like our intelligence was correct! You can't escape us by travelling into unknown territory... No one can hide from the Rebellion!"</text>
+	<text>As you arrive at the beacon, a hostile ship immediately registers on your scanners. You didn't expect to see Rebels extending their reach into the unknown regions of Acidic territory. Charge the weapons!.</text>
+	<text>You jump into empty space and are relieved to see your sensors blink back to life. However, you are less pleased to see them immediately register a Rebel ship on an approach vector!.</text>
+	<text>You receive a message from a nearby ship, "Looks like our intelligence was correct! You can't escape us by travelling into unknown territory... No one can hide from the Rebellion!".</text>
 </textList>
 
 <event name="ENCOUNTER_AEA_ACID_ORCHID_CLEARING" unique="true">
@@ -132,7 +132,7 @@
 <eventList name="REFUGEE_HAIL_LIST_AEA_ACID_MV">
 	<event load="REFUGEE_TRADER" />
 	<event>
-		<text>As you hail the refugee ship, a Acidic ship jumps into the system... it was hunting the refugee ship for sport and now it's found you instead!</text>
+		<text>As you hail the refugee ship, a Acidic ship jumps into the system... it was hunting the refugee ship for sport and now it's found you instead!.</text>
 		<ship load="SHIP_AEA_ACID_REFUGEE" hostile="true" />
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -142,7 +142,7 @@
 </eventList>
 
 <event name="DISTRESS_AEA_ACID_MANTIS_MV" unique="true">
-	<text>The distress call appears to be emanating from a Slug ship caught in open space by an Acidic vessel. They contact you on emergency frequencies: "Pleassse, we'll give you all we have if you sssave ussss!"</text>
+	<text>The distress call appears to be emanating from a Slug ship caught in open space by an Acidic vessel. They contact you on emergency frequencies: "Pleassse, we'll give you all we have if you sssave ussss!".</text>
 	<choice hidden="true">
 		<text>Attack the Acidic ship.</text>
 		<event>
@@ -253,7 +253,7 @@
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Attack!</text>
+		<text>Attack!.</text>
 		<event>
 			<text>Instead of replying you power on your weapons and engage the ship.</text>
             <ship hostile="true"/>
@@ -279,7 +279,7 @@
 	</choice>
 </event>
 <event name="NEBULA_AEA_ACID_MYSTERIOUS_TECH" unique="true">   
-	<text>You're hailed by a Hektar ship hiding deep in this nebula. "Hello captain, that issss one fine vesssel. However, we have sssome tech that we asssure you will make your ssship even better!"</text>
+	<text>You're hailed by a Hektar ship hiding deep in this nebula. "Hello captain, that issss one fine vesssel. However, we have sssome tech that we asssure you will make your ssship even better!".</text>
 	<ship load="SHIP_HEKTAR_GENERIC" hostile="false" />
 	<environment type="nebula" />
 	<choice hidden="true">
@@ -310,7 +310,7 @@
 		</item_modify>
 	</event>
 	<event>
-		<text>Though you paid the money to the Slugs, you're surprised when you find they have actually upgraded your reactor, without any tricks!</text>
+		<text>Though you paid the money to the Slugs, you're surprised when you find they have actually upgraded your reactor, without any tricks!.</text>
 		<upgrade amount="1" system="reactor" />
 		<item_modify>
 			<item type="scrap" min="-15" max="-15" />
@@ -319,10 +319,10 @@
 </eventList>
 
 <event name="NEBULA_AEA_ACID_GUN_UPGRADE" unique="true">   
-	<text>You're hailed by an Acidic ship, "We wish to test one of our new designs, however we require a weapon to combine with our own technology, please provide one for us and we will return it to you after our tests."</text>
+	<text>You're hailed by an Acidic ship, "We wish to test one of our new designs, however we require a weapon to combine with our own technology, please provide one for us and we will return it to you after our tests.".</text>
 	<environment type="nebula" />
 	<choice hidden="true" req="LASER_BURST_1">
-        <text>Hand over your Defense Laser</text>
+        <text>Hand over your Defense Laser.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_BURST_1"/>
@@ -333,7 +333,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_BURST_2">
-        <text>Hand over your Burst Laser MK I</text>
+        <text>Hand over your Burst Laser MK I.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_BURST_2"/>
@@ -344,7 +344,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_CHAINGUN">
-        <text>Hand over your Chain Burst Laser</text>
+        <text>Hand over your Chain Burst Laser.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_CHAINGUN"/>
@@ -355,7 +355,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_CHARGEGUN">
-        <text>Hand over your Charge Laser MK I</text>
+        <text>Hand over your Charge Laser MK I.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_CHARGEGUN"/>
@@ -366,7 +366,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_CHARGE_CHAIN">
-        <text>Hand over your Laser Chainger</text>
+        <text>Hand over your Laser Chainger.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_CHARGE_CHAIN"/>
@@ -377,7 +377,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_HEAVY_1">
-        <text>Hand over your Heavy Laser MK I</text>
+        <text>Hand over your Heavy Laser MK I.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_HEAVY_1"/>
@@ -388,7 +388,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_HEAVY_PIERCE">
-        <text>Hand over your Piercing Heavy Laser</text>
+        <text>Hand over your Piercing Heavy Laser.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_HEAVY_PIERCE"/>
@@ -399,7 +399,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_HEAVY_CHAINGUN">
-        <text>Hand over your Chain Heavy Laser</text>
+        <text>Hand over your Chain Heavy Laser.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_HEAVY_CHAINGUN"/>
@@ -410,7 +410,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_STUN">
-        <text>Hand over your Neural Laser</text>
+        <text>Hand over your Neural Laser.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_STUN"/>
@@ -421,7 +421,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_HULL_1">
-        <text>Hand over your Anti-Hull Laser MK I</text>
+        <text>Hand over your Anti-Hull Laser MK I.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_HULL_1"/>
@@ -432,7 +432,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_HULL_CHAINGUN">
-        <text>Hand over your Chain Anti-Hull Laser</text>
+        <text>Hand over your Chain Anti-Hull Laser.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_HULL_CHAINGUN"/>
@@ -443,7 +443,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_LIGHT">
-        <text>Hand over your Light Laser MK I</text>
+        <text>Hand over your Light Laser MK I.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_LIGHT"/>
@@ -454,7 +454,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_PARTICLE">
-        <text>Hand over your Particle Accelerator MK I</text>
+        <text>Hand over your Particle Accelerator MK I.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_PARTICLE"/>
@@ -466,7 +466,7 @@
 	</choice>
 
 	<choice hidden="true" req="LASER_BURST_3">
-        <text>Hand over your Burst Laser MK II</text>
+        <text>Hand over your Burst Laser MK II.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_BURST_3"/>
@@ -477,7 +477,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_CHARGEGUN_2">
-        <text>Hand over your Charge Laser MK II</text>
+        <text>Hand over your Charge Laser MK II.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_CHARGEGUN_2"/>
@@ -488,7 +488,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_HEAVY_2">
-        <text>Hand over your Heavy Laser MK II</text>
+        <text>Hand over your Heavy Laser MK II.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_HEAVY_2"/>
@@ -499,7 +499,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_HULL_2">
-        <text>Hand over your Anti-Hull Laser MK II</text>
+        <text>Hand over your Anti-Hull Laser MK II.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_HULL_2"/>
@@ -510,7 +510,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_CHAINGUN_DAMAGE">
-        <text>Hand over your Adaptive Laser</text>
+        <text>Hand over your Adaptive Laser.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_CHAINGUN_DAMAGE"/>
@@ -521,7 +521,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_LIGHT_2">
-        <text>Hand over your Light Laser MK II</text>
+        <text>Hand over your Light Laser MK II.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_LIGHT_2"/>
@@ -532,7 +532,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_PIERCE">
-        <text>Hand over your Pierce Laser MK I</text>
+        <text>Hand over your Pierce Laser MK I.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_PIERCE"/>
@@ -543,7 +543,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_FROST_1">
-        <text>Hand over your Frost Laser MK I</text>
+        <text>Hand over your Frost Laser MK I.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_FROST_1"/>
@@ -554,7 +554,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_PARTICLE_2">
-        <text>Hand over your Particle Accelerator MK II</text>
+        <text>Hand over your Particle Accelerator MK II.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_PARTICLE_2"/>
@@ -566,7 +566,7 @@
 	</choice>
 
 	<choice hidden="true" req="LASER_BURST_5">
-        <text>Hand over your Burst Laser MK III</text>
+        <text>Hand over your Burst Laser MK III.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_BURST_5"/>
@@ -577,7 +577,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_CHARGEGUN_3">
-        <text>Hand over your Charge Laser MK III</text>
+        <text>Hand over your Charge Laser MK III.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_CHARGEGUN_3"/>
@@ -588,7 +588,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_HEAVY_3">
-        <text>Hand over your Heavy Laser MK III</text>
+        <text>Hand over your Heavy Laser MK III.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_HEAVY_3"/>
@@ -599,7 +599,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_HULL_3">
-        <text>Hand over your Anti-Hull Laser MK III</text>
+        <text>Hand over your Anti-Hull Laser MK III.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_HULL_3"/>
@@ -610,7 +610,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_CHAINGUN_2">
-        <text>Hand over your Chain Vulcan</text>
+        <text>Hand over your Chain Vulcan.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_CHAINGUN_2"/>
@@ -621,7 +621,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_PIERCE_2">
-        <text>Hand over your Pierce Laser MK II</text>
+        <text>Hand over your Pierce Laser MK II.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_PIERCE_2"/>
@@ -632,7 +632,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_PIERCE_2">
-        <text>Hand over your Pierce Laser MK II</text>
+        <text>Hand over your Pierce Laser MK II.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_PIERCE_2"/>
@@ -643,7 +643,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="LASER_FROST_2">
-        <text>Hand over your Frost Laser MK II</text>
+        <text>Hand over your Frost Laser MK II.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="LASER_FROST_2"/>
@@ -655,7 +655,7 @@
 	</choice>
     
 	<choice hidden="true" req="BEAM_PARTICLE">
-        <text>Hand over your Particle Beam</text>
+        <text>Hand over your Particle Beam.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="BEAM_PARTICLE"/>
@@ -666,7 +666,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="BEAM_LONG">
-        <text>Hand over your 'Pike' Beam</text>
+        <text>Hand over your 'Pike' Beam.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="BEAM_LONG"/>
@@ -677,7 +677,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="BEAM_2">
-        <text>Hand over your 'Halberd' Beam</text>
+        <text>Hand over your 'Halberd' Beam.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="BEAM_2"/>
@@ -688,7 +688,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="BEAM_ADAPT">
-        <text>Hand over your 'Suyari' Beam</text>
+        <text>Hand over your 'Suyari' Beam.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="BEAM_ADAPT"/>
@@ -699,7 +699,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="BEAM_HULL">
-        <text>Hand over your 'Lucerne' Beam</text>
+        <text>Hand over your 'Lucerne' Beam.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="BEAM_HULL"/>
@@ -710,7 +710,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="BEAM_STUN">
-        <text>Hand over your 'Partisan' Beam</text>
+        <text>Hand over your 'Partisan' Beam.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="BEAM_STUN"/>
@@ -721,7 +721,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="BEAM_PIERCE">
-        <text>Hand over your 'Guisarme' Beam</text>
+        <text>Hand over your 'Guisarme' Beam.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="BEAM_PIERCE"/>
@@ -732,7 +732,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="BEAM_MINING">
-        <text>Hand over your Mining Beam</text>
+        <text>Hand over your Mining Beam.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="BEAM_MINING"/>
@@ -744,7 +744,7 @@
 	</choice>
 
 	<choice hidden="true" req="ION_2">
-        <text>Hand over your Ion Barrage MK I</text>
+        <text>Hand over your Ion Barrage MK I.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="ION_2"/>
@@ -755,7 +755,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="ION_3">
-        <text>Hand over your Ion Barrage MK III</text>
+        <text>Hand over your Ion Barrage MK III.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="ION_3"/>
@@ -766,7 +766,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="ION_4">
-        <text>Hand over your Ion Barrage MK III</text>
+        <text>Hand over your Ion Barrage MK III.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="ION_3"/>
@@ -777,7 +777,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="ION_HEAVY">
-        <text>Hand over your Heavy Ion</text>
+        <text>Hand over your Heavy Ion.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="ION_HEAVY"/>
@@ -788,7 +788,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="ION_TRI">
-        <text>Hand over your Tri-Ion</text>
+        <text>Hand over your Tri-Ion.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="ION_TRI"/>
@@ -799,7 +799,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="ION_CHAINGUN">
-        <text>Hand over your Adaptive Ion</text>
+        <text>Hand over your Adaptive Ion.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="ION_CHAINGUN"/>
@@ -810,7 +810,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="ION_CHARGEGUN">
-        <text>Hand over your Ion Charger</text>
+        <text>Hand over your Ion Charger.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="ION_CHARGEGUN"/>
@@ -821,7 +821,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="ION_STUN_2">
-        <text>Hand over your Stunner MK II</text>
+        <text>Hand over your Stunner MK II.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="ION_STUN_2"/>
@@ -832,7 +832,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="ION_STUN_HEAVY">
-        <text>Hand over your Heavy Stunner</text>
+        <text>Hand over your Heavy Stunner.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="ION_STUN_HEAVY"/>
@@ -843,7 +843,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="ION_STUN_CHARGEGUN">
-        <text>Hand over your Charge Stunner</text>
+        <text>Hand over your Charge Stunner.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="ION_STUN_CHARGEGUN"/>
@@ -854,7 +854,7 @@
         </event>
 	</choice>
 	<choice hidden="true" req="ION_PIERCE_2">
-        <text>Hand over your Phaser MK II</text>
+        <text>Hand over your Phaser MK II.</text>
         <event>
             <text>You send off the weapon, wondering just what the Acidic Growth will return.</text>
             <remove name="ION_PIERCE_2"/>
@@ -868,7 +868,7 @@
 	<choice hidden="true">
 		<text>We aren't able to supply a suitable weapon.</text>
 		<event>
-			<text>"Unfortunate." The acidic vessel drifts away, disappearing into the nebula</text>
+			<text>"Unfortunate." The acidic vessel drifts away, disappearing into the nebula.</text>
 			<choice>
 				<text>Do something onboard the ship.</text>
 				<event load="STORAGE_CHECK" />
@@ -939,7 +939,7 @@
 <event name="NEBULA_AEA_ACID_WRECK">
     <text>You arrive at the beacon to find strange wreck floating nearby.
 
-The wreck is relatively intact, however it appears to have been filled with holes</text>
+The wreck is relatively intact, however it appears to have been filled with holes.</text>
     <environment type="nebula" />
     <choice hidden="true">
         <text>Examine the wreck.</text>
@@ -971,7 +971,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
         <text>Just as you're about to dock with the wreck a vessel jumps to the beacon. It appears to be the vessel responsible for creating this wreck.</text>
         <ship load="SHIP_AEA_ACID_GENERIC" hostile="true" />
         <choice hidden="true">
-            <text>Defend yourself!</text>
+            <text>Defend yourself!.</text>
             <event>
                 <text>You're prepared for the attack as the Acidic vessel immediately initiates an attack on your ship.</text>
                 <ship hostile="true"/>
@@ -1068,7 +1068,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</choice>
 </event>
 <event name="NEBULA_ACID_AEA_ACID_ITEM_TIME">
-    <text>You finally make it through and begin salvaging the vessel. You're surprised when you discover an orchid, seemingly trapped onboard. "Who are you- Nevermind, just get me off here, I thought I was going to die, I think they forgot I was onboard and accidently locked me in here. Please just take me with you."</text>
+    <text>You finally make it through and begin salvaging the vessel. You're surprised when you discover an orchid, seemingly trapped onboard. "Who are you- Nevermind, just get me off here, I thought I was going to die, I think they forgot I was onboard and accidently locked me in here. Please just take me with you.".</text>
     <autoReward level="MED">standard</autoReward>
     <choice>
         <text>Rescue the orchid.</text>
@@ -1085,14 +1085,14 @@ The wreck is relatively intact, however it appears to have been filled with hole
     </choice>
 </event>
 <event name="NEBULA_ACID_AEA_ACID_ITEM_BOARD">
-    <text>While you were attempting to break into the Acidic vessel, the repair crew has broken onto yours!</text>
+    <text>While you were attempting to break into the Acidic vessel, the repair crew has broken onto yours!.</text>
     <boarders min="4" max="4" class="aea_acid_soldier" />
 </event>
 <event name="NEBULA_STORM_AEA_ACID_AUGITEM" unique="true">
 	<text>Right in the middle of an ion storm you find a strange shipyard. It appears to be operated by the Acidic Growth, however they aren't hostile, perhaps you'll be able to come to a deal with them.</text>
 	<environment type="storm" />
 	<choice hidden="true">
-		<text>Attack them!</text>
+		<text>Attack them!.</text>
 		<event>
 			<text>For some reason you have decided to attack the makeshift shipyard. Though the facility is unarmed, one of their vessels rises to meet you and defend them.</text>
 			<ship load="SHIP_AEA_ACID_AUGITEM" hostile="true" />
@@ -1229,7 +1229,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <eventList name="REFUGEE_HAIL_LIST_AEA_ACID">
 	<event load="REFUGEE_TRADER" />
 	<event>
-		<text>As you hail the refugee ship, an Slug ship jumps into the system... it was hunting the refugee ship for sport and now they've found you instead!</text>
+		<text>As you hail the refugee ship, an Slug ship jumps into the system... it was hunting the refugee ship for sport and now they've found you instead!.</text>
 		<ship load="SHIP_SLUG_REFUGEE" hostile="true" />
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -1249,7 +1249,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<status type="limit" target="player" system="sensors" amount="0" />
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
-	<text>Strangely an Orchid captain hails you from an Acidic vessel. "Captain, you wouldn't happen to have any Acidic Growth with you, we'd offer a reward for you to turn over any of it to be destroyed"</text>
+	<text>Strangely an Orchid captain hails you from an Acidic vessel. "Captain, you wouldn't happen to have any Acidic Growth with you, we'd offer a reward for you to turn over any of it to be destroyed".</text>
 	<ship load="SHIP_AEA_ACID_ORCHID_ONLY" hostile="false" />
 	<choice hidden="true" req="aea_acid_soldier">
 		<text>(Acidic Soldier) Take up their offer.</text>
@@ -1287,7 +1287,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<status type="limit" target="player" system="sensors" amount="0" />
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
-	<text>You are immediately hailed by a dangerous looking Acidic ship guarding a station. "You are not welcome here, choose your punishment and prepare to die."</text>
+	<text>You are immediately hailed by a dangerous looking Acidic ship guarding a station. "You are not welcome here, choose your punishment and prepare to die.".</text>
 	<choice req="shields" lvl="2" blue="false" max_group="0">
 		<text>Shields.</text>
 		<event>
@@ -1468,11 +1468,11 @@ The wreck is relatively intact, however it appears to have been filled with hole
 </eventList>
 
 <event name="NEBULA_AEA_ACID_ORCHID" unique="true">
-	<text>A rogue ship awaits you at the beacon. "Laborers for cheap! We have oxygen emitters and those advanced Acidic droids, come take a look!"</text>
+	<text>A rogue ship awaits you at the beacon. "Laborers for cheap! We have oxygen emitters and those advanced Acidic droids, come take a look!".</text>
 	<environment type="nebula" />
 	<ship hostile="false" load="SHIP_ORCHID_SLAVES" />
 	<choice hidden="true">
-		<text>Piracy is despicable. Attack the slavers!</text>
+		<text>Piracy is despicable. Attack the slavers!.</text>
 		<event>
 			<text>You attack the slavers.</text>
 			<ship hostile="true" />
@@ -1507,7 +1507,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 </event>
 <eventList name="NEBULA_AEA_ACID_SLAVER_SLAVES">
 	<event>
-		<text>"Thanks for your purchase! May your paths be blessed by whatever stupid plant god these things believe in!"</text>
+		<text>"Thanks for your purchase! May your paths be blessed by whatever stupid plant god these things believe in!".</text>
 		<crewMember amount="1" class="orchid" />
 		<item_modify>
 			<item max="-20" min="-30" type="scrap" />
@@ -1518,7 +1518,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 		</choice>
 	</event>
 	<event>
-		<text>"Thanks for your purchase! May this robot thing help you in whatever you're doing out here!"</text>
+		<text>"Thanks for your purchase! May this robot thing help you in whatever you're doing out here!".</text>
 		<crewMember amount="1" class="aea_acid_soldier">Acidic Soldier</crewMember>
 		<item_modify>
 			<item max="-20" min="-30" type="scrap" />
@@ -1529,7 +1529,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 		</choice>
 	</event>
 	<event>
-		<text>"Thanks for your purchase! May your paths be blessed by whatever stupid plant god these things believe in!"</text>
+		<text>"Thanks for your purchase! May your paths be blessed by whatever stupid plant god these things believe in!".</text>
 		<crewMember amount="1" class="orchid_caretaker" />
 		<item_modify>
 			<item max="-25" min="-35" type="scrap" />
@@ -1542,9 +1542,9 @@ The wreck is relatively intact, however it appears to have been filled with hole
 </eventList>
 <eventList name="NEBULA_AEA_ACID_SLAVER_CARETAKER">
 	<event name="NEBULA_AEA_ACID_SLAVER_CARETAKER_FAIL">
-		<text>The slavers watch your Orchid's signing in bored bemusement. "Yeah, yeah, that's great and all, but I missed the part where I was supposed to care. I'm not in this business because I give a damn about morals, if you didn't notice. If you're not going to buy something, get lost."</text>
+		<text>The slavers watch your Orchid's signing in bored bemusement. "Yeah, yeah, that's great and all, but I missed the part where I was supposed to care. I'm not in this business because I give a damn about morals, if you didn't notice. If you're not going to buy something, get lost.".</text>
 		<choice hidden="true">
-			<text>Attack the slavers!</text>
+			<text>Attack the slavers!.</text>
 			<event>
 				<text>If you can't convince these slavers to end their trade, then you'll forcefully end it yourself.</text>
 				<ship hostile="true" />
@@ -1589,7 +1589,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 </eventList>
 
 <event name="NEBULA_AEA_ACID_IMPORTANT_PRISONER" unique="true">
-	<text>An Acidic Elite appears to be protecting a small Orchid Jailer. You aren't certain why, but surely something important must be kept in there?</text>
+	<text>An Acidic Elite appears to be protecting a small Orchid Jailer. You aren't certain why, but surely something important must be kept in there?.</text>
 	<ship load="SHIP_AEA_ACID_PRISONER_ELITE" hostile="false" />
 	<environment type="nebula" />
 	<choice hidden="true">
@@ -1631,7 +1631,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
     <ship load="SHIP_SLUG_ELITE_FIGHT" hostile="false"/>
-    <text>You arrive at the scene to find a small Acidic vessel being chased down by an Elite Slug ship. "We will join crew, in exchange you destroy pursuers?"</text>
+    <text>You arrive at the scene to find a small Acidic vessel being chased down by an Elite Slug ship. "We will join crew, in exchange you destroy pursuers?".</text>
     <choice>
         <text>Welcome it aboard.</text>
         <event>
@@ -1647,7 +1647,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
     <choice>
         <text>Leave them be.</text>
         <event>
-            <text>You fly away, leaving the Acidic vessel to fend for itself. The Acidic growth can't really die anyway, right?</text>
+            <text>You fly away, leaving the Acidic vessel to fend for itself. The Acidic growth can't really die anyway, right?.</text>
             <choice hidden="true">
 				<text>Do something onboard the ship.</text>
 				<event load="STORAGE_CHECK" />
@@ -1722,7 +1722,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
     <choice hidden="true">
         <text>Attack them.</text>
         <event>
-            <text>You power on your weapons and engage the Rockmen</text>
+            <text>You power on your weapons and engage the Rockmen.</text>
             <ship hostile="true"/>
 			<choice hidden="true">
 				<text>Continue...</text>
@@ -1755,12 +1755,12 @@ The wreck is relatively intact, however it appears to have been filled with hole
         <text>(Friendly) Explain that you're friendly with the Acidic Growth.</text>
         <event>
             <ship hostile="false"/>
-            <text>"We didn't realize. We are sorry for luring you here under false pretenses. We will compensate you."</text>
+            <text>"We didn't realize. We are sorry for luring you here under false pretenses. We will compensate you.".</text>
             <autoReward level="MED">scrap_only</autoReward>
         </event>
     </choice>
     <choice hidden="true">
-        <text>Prepare for Combat!</text>
+        <text>Prepare for Combat!.</text>
         <event load="COMBAT_CHECK"/>
     </choice>
 </event>
@@ -1780,7 +1780,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 		<choice hidden="true">
 			<text>Investigate.</text>
 			<event>
-				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead."</text>
+				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead.".</text>
 				<choice hidden="true">
 					<text>Two.</text>
 					<event load="AEA_ACID_DISTRESS_QUESTION_TRUE" />
@@ -1805,7 +1805,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 		<choice hidden="true">
 			<text>Investigate.</text>
 			<event>
-				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead."</text>
+				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead.".</text>
 				<choice hidden="true">
 					<text>Two.</text>
 					<event load="AEA_ACID_DISTRESS_QUESTION_FALSE" />
@@ -1830,7 +1830,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 		<choice hidden="true">
 			<text>Investigate.</text>
 			<event>
-				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead."</text>
+				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead.".</text>
 				<choice hidden="true">
 					<text>Two.</text>
 					<event load="AEA_ACID_DISTRESS_QUESTION_FALSE" />
@@ -1860,7 +1860,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</item_modify>
 </event>
 <event name="AEA_ACID_DISTRESS_QUESTION_TRUE">   
-	<text>"We have accomplished our task then. We will join you on your journey." The Acidic Soldier beams aboard and joins your crew!</text>
+	<text>"We have accomplished our task then. We will join you on your journey." The Acidic Soldier beams aboard and joins your crew!.</text>
 	<crewMember amount="1" class="aea_acid_soldier" >Acidic Soldier</crewMember>  
 </event>
 <event name="AEA_ACID_DISTRESS_QUESTION_FAIL">
@@ -1957,7 +1957,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
     <choice hidden="true">
 		<text>Follow them.</text>
 		<event>
-			<text>The ship tries desperately to shake you, but you won't relent. At last, they give up and hail you. "Are you one of them? Please grant us mercy, we're just trying to escape!"</text>
+			<text>The ship tries desperately to shake you, but you won't relent. At last, they give up and hail you. "Are you one of them? Please grant us mercy, we're just trying to escape!".</text>
 			<ship load="SHIP_AEA_ACID_CIVILIAN" hostile="false" />
 			<choice hidden="true">
 				<text>Ignore their pleas and attack.</text>
@@ -1997,7 +1997,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</choice>
 </event>
 <event name="NEBULA_AEA_ACID_CIV_HUNT_WIN">   
-	<text>You jump as the Acidic ship comes out of its hiding place in the nebula before you can even contact them. "Efficient work, Here is the reward as promised."</text>
+	<text>You jump as the Acidic ship comes out of its hiding place in the nebula before you can even contact them. "Efficient work, Here is the reward as promised.".</text>
 	<autoReward level="MED">standard_no_item</autoReward>
 	<weapon name="RANDOM" />
 </event>
@@ -2039,11 +2039,11 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>Suddenly the first ship bursts into flames, and an urgent call arrives from the remaining Slugs. "We sssugest you distract the Assidic vesssel while we retrieve the valuables. Fifty fifty sssplit."</text>
+			<text>Suddenly the first ship bursts into flames, and an urgent call arrives from the remaining Slugs. "We sssugest you distract the Assidic vesssel while we retrieve the valuables. Fifty fifty sssplit.".</text>
 			<choice hidden="true">
 				<text>Engage the Acidic ship.</text>
 				<event>
-					<text>There's money to be made here. The Slugs know that. You turn on the Acidic vessel and intercept it just before they can reach the cache!</text>
+					<text>There's money to be made here. The Slugs know that. You turn on the Acidic vessel and intercept it just before they can reach the cache!.</text>
 					<ship load="SHIP_QUEST_AEA_ACID_PIRATE_TRAP1" hostile="true" />
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -2054,7 +2054,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 			<choice hidden="true">
 				<text>Head for the cache.</text>
 				<event>
-					<text>When he sees you making for the cache the Slug captain hails: "Foolish alienss, no eye for profit. Bessst of luck to you." They jump off, leaving you toe to toe with the Acidic vessel!</text>
+					<text>When he sees you making for the cache the Slug captain hails: "Foolish alienss, no eye for profit. Bessst of luck to you." They jump off, leaving you toe to toe with the Acidic vessel!.</text>
 					<ship load="SHIP_QUEST_AEA_ACID_PIRATE_TRAP2" hostile="true" />
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -2099,9 +2099,9 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</choice>
 </event>
 <textList name="NEBULA_AEA_ACID_FIGHT">
-	<text>At home in the nebula, you barely have time to react when an Acidic vessel emerges from astern!</text>
+	<text>At home in the nebula, you barely have time to react when an Acidic vessel emerges from astern!.</text>
 	<text>A shiny new Acidic vessel appears in the nebula ahead of you, too bad you're here to scratch their paint.</text>
-	<text>A strange looking Acidic vessel appears in the nebula, you cautiously approach unsure of the ships armaments. Luckily the Acidic vessel clears the air when weapons spring up out of it's hull!</text>
+	<text>A strange looking Acidic vessel appears in the nebula, you cautiously approach unsure of the ships armaments. Luckily the Acidic vessel clears the air when weapons spring up out of it's hull!.</text>
 	<text>You pickup an Acidic vessel approaching, it looks like this one isn't bothering with stealth and is just coming out swinging.</text>
 	<text>As you arrive at the beacon, one of the three circling acidic vessels breaks off to meet you, prepare for battle.</text>
 </textList>
@@ -2117,8 +2117,8 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <textList name="STORM_AEA_ACID_FIGHT">
 	<text>The ion storm here threatens to deactivate your core systems, a fact made all the worse for the impressive Acidic ship waiting for you.</text>
 	<text>You can't help but feel at a disadvantage against the Acidic ship, it seems almost at home in this ion storm.</text>
-	<text>You arrive in the middle of an ion storm. You luckily manage to pickup the Acidic vessel lying in ambush just in time. Prepare for a fight!</text>
-	<text>You find yourself stuck in the middle of an ion storm with an Acidic ship just a short distance away, refusing all hails. You cautiously try to slip further into the clouds, but they turn suddenly to attack!</text>	
+	<text>You arrive in the middle of an ion storm. You luckily manage to pickup the Acidic vessel lying in ambush just in time. Prepare for a fight!.</text>
+	<text>You find yourself stuck in the middle of an ion storm with an Acidic ship just a short distance away, refusing all hails. You cautiously try to slip further into the clouds, but they turn suddenly to attack!.</text>	
 </textList>
 
 <event name="NEBULA_ACIDIC_AEA_ACID_FIGHT" unique="true">
@@ -2154,7 +2154,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<text>You're surprised to find a ship stranded all the way out here inside of the Acidic Growth, and move in to provide assistance. When you see the pirate insignia on the hull you quickly reconsider.</text>
 	<ship load="SHIP_PIRATE_ALL" hostile="false" />
 	<choice>
-		<text>Attack!</text>
+		<text>Attack!.</text>
 		<event>
 			<text>You prepare for combat.</text>
 			<ship hostile="true" />
@@ -2178,7 +2178,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 </event>
 
 <event name="NEBULA_AEA_ACID_INFECTOR">
-	<text>You hear a shout from your crew and come running. A strange bomb has detonated in one of the rooms on your ship, poisoning one of your crew. It appears to have originated from a nearby Acidic vessel. "Thank you for testing our weapon, please let us know when your crewmember dies."</text>
+	<text>You hear a shout from your crew and come running. A strange bomb has detonated in one of the rooms on your ship, poisoning one of your crew. It appears to have originated from a nearby Acidic vessel. "Thank you for testing our weapon, please let us know when your crewmember dies.".</text>
 	<triggeredEvent name="TIMER_AEA_ACID_INFECTOR_POISON" event="AEA_ACID_INFECTOR_DEATH" jumps="1">
 		<triggeredEventBox load="DEFAULT_JUMPS">
 			<warning flash="false" />
@@ -2188,7 +2188,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<ship load="SHIP_AEA_ACID_INFECTOR" hostile="false" />
 	<environment type="nebula" />
 	<choice hidden="true">
-		<text>Attack them, they might have the antidote onboard!</text>
+		<text>Attack them, they might have the antidote onboard!.</text>
 		<event>
 			<text>You hurry to man the weapons and take the antidote from the Acidic vessel by force.</text>
 			<ship hostile="true" />
@@ -2201,7 +2201,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<choice>
 		<text>Buy the antidote.</text>
 		<event>
-			<text>"Offer is acceptable, it would have been preferable to properly test the weapon."</text>
+			<text>"Offer is acceptable, it would have been preferable to properly test the weapon.".</text>
 			<clearTriggeredEvent name="TIMER_AEA_ACID_INFECTOR_POISON" />
 			<item_modify>
 				<item type="scrap" min="-25" max="-25" />
@@ -2211,15 +2211,15 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<choice hidden="true" req="medbay" lvl="2">
 		<text>(Upg. Medbay) Cure your crew.</text>
 		<event>
-			<text>Luckily you're able to treat your crew. The Acidic vessel appears almost pleased by the news. "Thank you for testing our weapon, we will use this data to improve it for the future."</text>
+			<text>Luckily you're able to treat your crew. The Acidic vessel appears almost pleased by the news. "Thank you for testing our weapon, we will use this data to improve it for the future.".</text>
 			<clearTriggeredEvent name="TIMER_AEA_ACID_INFECTOR_POISON" />
 			<autoReward level="MED">scrap_only</autoReward>
 		</event>
 	</choice>
     <choice hidden="true">
-        <text>Let your crewmember die of the poison</text>
+        <text>Let your crewmember die of the poison.</text>
         <event>
-            <text>You let the Acidic vessel know of the outcome, it appears pleased by the results. "Thank you for testing our weapon, we will use this data to improve it for the future."</text>
+            <text>You let the Acidic vessel know of the outcome, it appears pleased by the results. "Thank you for testing our weapon, we will use this data to improve it for the future.".</text>
 			<clearTriggeredEvent name="TIMER_AEA_ACID_INFECTOR_POISON" />
 			<autoReward level="MED">scrap_only</autoReward>
             <removeCrew>
@@ -2371,17 +2371,17 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <event name="AEA_ACIDIC_LEADER_FIND">
 	<text>Eventually you arrive in a control room of sorts, and in the middle of it you find a single surviving Acidic Soldier, however there's something off about this soldier, the normally green acidic growth has turned purple, you're not sure what this means but you go over to make contact.</text>
 	<choice hidden="true">
-		<text>Hello?</text>
+		<text>Hello?.</text>
 		<event>
 			<text>"Oh jeez, I hope you're not here to kill me, I swear im not like the others, I'm not here to kill any more miners." It appears there's something wrong with this Acidic Soldier, if you had to guess you'd think it wasn't part of the Acidic Growth.</text>
 			<choice hidden="true">
-				<text>"What are you?"</text>
+				<text>"What are you?".</text>
 				<event>
-					<text>"I'm not entirely sure... I'm quite confident I was the Acidic Growth at some point, but everything is weird now, there's no more of me out there, its just me, in this robot, alone..." The Acidic Soldier trails off for a moment. "Hang on, do you guys think you can help me, if you guys can spare me a bit of scrap I can repair one of the ships and head back to try and recombine with myself."</text>
+					<text>"I'm not entirely sure... I'm quite confident I was the Acidic Growth at some point, but everything is weird now, there's no more of me out there, its just me, in this robot, alone..." The Acidic Soldier trails off for a moment. "Hang on, do you guys think you can help me, if you guys can spare me a bit of scrap I can repair one of the ships and head back to try and recombine with myself.".</text>
 					<choice hidden="false">
-                        <text>"Sure, What should we call you anyway?"</text>
+                        <text>"Sure, What should we call you anyway?".</text>
                         <event>
-                            <text>"Hmmm, I don't think I'm quite the Acidic Growth anymore, I suppose you can call me Bill, I've always liked the name Bill. By the way, if you ever want to visit here's the coordinates to my Acidic Nebula, maybe I'll see you around there."</text>
+                            <text>"Hmmm, I don't think I'm quite the Acidic Growth anymore, I suppose you can call me Bill, I've always liked the name Bill. By the way, if you ever want to visit here's the coordinates to my Acidic Nebula, maybe I'll see you around there.".</text>
                             <item_modify>
                                 <item type="scrap" min="-20" max="-20" />
                             </item_modify>
@@ -2468,11 +2468,11 @@ The wreck is relatively intact, however it appears to have been filled with hole
     <choice hidden="true" req="aea_acid_bill" lvl="1" blue="false">
         <text>You recognise the Acidic Soldier as Bill.</text>
         <event name="NEBULA_AEA_ACID_BILL_HELP">
-            <text>"Well I'm trying to get to the Acidic core, Hopefully I'll be able to reintergrate with the Acidic Growth once im there. The only problem is that I don't have a ship anymore, do you think you can take me there?"</text>
+            <text>"Well I'm trying to get to the Acidic core, Hopefully I'll be able to reintergrate with the Acidic Growth once im there. The only problem is that I don't have a ship anymore, do you think you can take me there?".</text>
             <choice hidden="true">
                 <text>Sure we can.</text>
                 <event>
-                    <text>"Thanks! I'll upload the cooridnates to your computer."</text>
+                    <text>"Thanks! I'll upload the cooridnates to your computer.".</text>
                     <quest event="NEBULA_ACIDIC_AEA_ACID_BILL_CORE">
                         <nebulaBeacon>true</nebulaBeacon>
                         <nebulaEvent>NEBULA_ACIDIC_AEA_ACID_BILL_CORE</nebulaEvent>
@@ -2491,11 +2491,11 @@ The wreck is relatively intact, however it appears to have been filled with hole
         <event>
             <text>Strangely the Acidic Soldier begins to tell you it's story, apparently it's become seperated from the Acidic Growth somehow and has been trying to rejoin it.</text>
             <choice hidden="true">
-                <text>"What should we call you then?"</text>
+                <text>"What should we call you then?".</text>
                 <event>
-                    <text>"Hmmm, I don't think I'm quite the Acidic Growth anymore, I suppose you can call me Bill, I've always liked the name Bill."</text>
+                    <text>"Hmmm, I don't think I'm quite the Acidic Growth anymore, I suppose you can call me Bill, I've always liked the name Bill.".</text>
                     <choice hidden="true">
-                        <text>"What can we do to help?"</text>
+                        <text>"What can we do to help?".</text>
                         <event load="NEBULA_AEA_ACID_BILL_HELP"/>
                     </choice>
                 </event>
@@ -2532,7 +2532,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
                                 <text>Continue...</text>
                                 <event>
                                     <ship load="SHIP_AEA_ACID_BILL_BOSS" hostile="true"/>
-                                    <text>"I can't believe it, It rejected me, I rejected me." Bill is silent for a moment. "I don't know what to do anymore, what is my purpose, why do I exist?"</text>
+                                    <text>"I can't believe it, It rejected me, I rejected me." Bill is silent for a moment. "I don't know what to do anymore, what is my purpose, why do I exist?".</text>
                                     <choice hidden="true">
                                         <text>Offer bill a place on your crew.</text>
                                         <event>
@@ -2691,7 +2691,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
         </event>
     </choice>
     <choice hidden="true" req="aea_acid_lab_visited" blue="false" lvl="1">
-        <text>Head to the laboratories. (ALREADY VISITED)</text>
+        <text>Head to the laboratories. (ALREADY VISITED).</text>
         <event load="OPTION_INVALID"/>
     </choice>
     <choice hidden="true" req="aea_acid_con_visited" blue="false" lvl="0" max_lvl="0">
@@ -2721,7 +2721,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
         </event>
     </choice>
     <choice hidden="true" req="aea_acid_con_visited" blue="false" lvl="1">
-        <text>Head to the control room. (ALREADY VISITED)</text>
+        <text>Head to the control room. (ALREADY VISITED).</text>
         <event load="OPTION_INVALID"/>
     </choice>
     <choice hidden="true" req="aea_acid_eng_visited" blue="false" lvl="0" max_lvl="0">
@@ -2747,7 +2747,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
         </event>
     </choice>
     <choice hidden="true" req="aea_acid_eng_visited" blue="false" lvl="1">
-        <text>Head to the engineering bays. (ALREADY VISITED)</text>
+        <text>Head to the engineering bays. (ALREADY VISITED).</text>
         <event load="OPTION_INVALID"/>
     </choice>
     <choice hidden="true">

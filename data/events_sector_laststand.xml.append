@@ -42,6 +42,16 @@
 					</choice>
 				</event>
 			</mod-append:choice>
+			<mod-append:choice hidden="true" max_group="1" req="SHIP_AEA_BIRD" blue="false">
+				<text>Contact Federation command.</text>
+				<event>
+					<text>On the vidscreen appears several Federation and Engi officers, as well as Admiral Tully in the center. "Ah a Gi ship, those birds make some good drones, good luck soldier!"</text>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="LAST_STAND_START_2" />
+					</choice>
+				</event>
+			</mod-append:choice>
 		</mod:findLike>
 	</mod:findLike>
 </mod:findName>

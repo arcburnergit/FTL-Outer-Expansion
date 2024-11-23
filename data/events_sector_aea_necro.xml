@@ -139,7 +139,7 @@
 </eventList>
 
 <event name="AEA_NECRO_WORTHLESS_JUNK" unique="true">
-	<text>You catch the two Separatists on the nearby ship squabbling over something about an augment. You hail them. "Yes, greetings. We have obtained object. Object's purpose is unknown, and our desire to keep it is 0. Please take this [worthless junk] off of our hands."</text>
+	<text>You catch the two Separatists on the nearby ship squabbling over something about an augment. You hail them. "Yes, greetings. We have obtained object. Object's purpose is unknown, and our desire to keep it is 0. Please take this [worthless junk] off of our hands.".</text>
 	<augment name="RANDOM" />
 	<choice>
 		<text>Do something onboard the ship.</text>
@@ -152,20 +152,20 @@
 </event>
 
 <event name="AEA_NECRO_FREE_CREW" unique="true">
-	<text>You arrive at the beacon to discover a damaged Heretic vessel adrift in the void, You're hailed by an Engi Heretic. "Renegade, I am in need of [new] vessel, are you in need of [new] crew?"</text>
+	<text>You arrive at the beacon to discover a damaged Heretic vessel adrift in the void, You're hailed by an Engi Heretic. "Renegade, I am in need of [new] vessel, are you in need of [new] crew?".</text>
 	<choice hidden="true" req="LIST_CREW_ORGANIC_AEA_NECRO" lvl="0" max_lvl="0" blue="false">
-		<text>Accept it onto your ship</text>
+		<text>Accept it onto your ship.</text>
 		<event>
 			<text>The Engi Heretic inspects your crew as it boards, however it doesn't find any organic crew, satisfyied with your crew it willingly submits to you.</text>
 			<crewMember amount="1" class="aea_necro_engi"/>
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_ORGANIC_AEA_NECRO" lvl="1" blue="false">
-		<text>Accept it onto your ship</text>
+		<text>Accept it onto your ship.</text>
 		<event load="AEA_NECRO_FREE_CREW_ORGANIC"/>
 	</choice>
 	<choice hidden="true">
-		<text>Turn down it's offer</text>
+		<text>Turn down it's offer.</text>
 		<event>
 			<text>The Engi Heretic seems slightly angry at your refusal, although it appears relieved when it notices an organic crewmember in the background of the feed.</text>
 			<choice>
@@ -181,7 +181,7 @@
 </event>
 <eventList name="AEA_NECRO_FREE_CREW_ORGANIC">
 	<event>
-		<text>As the Engi Heretic boards your vessel it looks over your crew. It notices your organic crew, "[Organics] are disgusting, however the need for a [new] vessel outweighs my contempt for your [disgusting] organics."</text>
+		<text>As the Engi Heretic boards your vessel it looks over your crew. It notices your organic crew, "[Organics] are disgusting, however the need for a [new] vessel outweighs my contempt for your [disgusting] organics.".</text>
 		<crewMember amount="1" class="aea_necro_engi"/>
 		<choice>
 			<text>Continue...</text>
@@ -189,7 +189,7 @@
 		</choice>
 	</event>
 	<event>
-		<text>As the Engi Heretic boards your vessel it looks over your crew. It notices your organic crew, "[Organics] are disgusting, I will return to my [damaged] vessel."</text>
+		<text>As the Engi Heretic boards your vessel it looks over your crew. It notices your organic crew, "[Organics] are disgusting, I will return to my [damaged] vessel.".</text>
 		<choice>
 			<text>Continue...</text>
 			<event/>
@@ -204,13 +204,13 @@
 	<ship load="SHIP_AEA_NECRO_ALL" hostile="false"/>
 	<status type="limit" target="enemy" system="shields" amount="0" />
 	<choice hidden="true">
-		<text>Board the ship</text>
+		<text>Board the ship.</text>
 		<event>
 			<text>As you board the ship you're constantly reminded of the assualt by asteroids smashing into the hull, the sounds echoing through the empty halls.
 
 You reach a crossroads in the hallway, there probably isn't enough to search all 3 paths. You read the markings above each direction.</text>
 			<choice hidden="true">
-				<text>Head to the Engineering bay</text>
+				<text>Head to the Engineering bay.</text>
 				<event>
 					<text>You enter the engineering bay, the room is in ruins, however you're able to grab one of the few remaining drones before evacuating back to your own ship.</text>
 					<drone name="RANDOM"/>
@@ -221,7 +221,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Head to the Bridge</text>
+				<text>Head to the Bridge.</text>
 				<event>
 					<text>You enter the bridge of the ship, its evident the crew of this ship have long since fled the dying vessel. You're able to access their computers and download the complete sector map before being forced to retreat.</text>
 					<reveal_map />
@@ -232,7 +232,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Head to the Cargo hold</text>
+				<text>Head to the Cargo hold.</text>
 				<event>
 					<text>The cargo bay is relatively empty, what catches your eye is a large cage in the corner, inside you find a prisoner, they offer to join your crew if you just let them out.</text>
 					<crewMember amount="1" class="RANDOM"/>
@@ -245,7 +245,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore it</text>
+		<text>Ignore it.</text>
 		<event>
 			<text>It's not worth the risk.</text>
 			<choice>
@@ -269,13 +269,13 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 </eventList>
 
 <event name="AEA_NECRO_ORGANICS_HATE" unique="true">
-	<text>You've arrive at the beacon to discover a Heretic vessel in orbit nearby. They contact you. "You don't happen to have a test subject do you? We require an organic."</text>
+	<text>You've arrive at the beacon to discover a Heretic vessel in orbit nearby. They contact you. "You don't happen to have a test subject do you? We require an organic.".</text>
 	<choice hidden="true" req="LIST_CREW_ORGANIC_AEA_NECRO" blue="false">
 		<text>(Organic Crew) Hand over an organic crewmember for the Engi Heretics to test on.</text>
 		<event load="AEA_NECRO_ORGANICS_HATE_LIST"/>
 	</choice>
 	<choice hidden="true">
-		<text>Say you can't help</text>
+		<text>Say you can't help.</text>
 		<event>
 			<text>The Engi Heretic seems slightly angry at your refusal, although it appears relieved when it notices an organic crewmember in the background of the feed.</text>
 			<choice>
@@ -311,7 +311,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 				<crewMember amount="1" class="LIST_SLAVES_GREAT"/>
 				<removeCrew class="LIST_CREW_ORGANIC_AEA_NECRO">
 					<clone>false</clone>
-					<text></text>
+					<text>.</text>
 				</removeCrew>
 			</event>
 		</choice>
@@ -353,7 +353,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 			<choice hidden="true">
 				<text>Side with the civilians.</text>
 				<event>
-					<text>"Renegade, I hope you're familiar with their tactics, they don't exactly fight fair."</text>
+					<text>"Renegade, I hope you're familiar with their tactics, they don't exactly fight fair.".</text>
 					<ship load="SHIP_AEA_NECRO_ENGI_CHOICE" hostile="true" />
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -388,7 +388,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 	</choice>
 </event>
 <event name="AEA_NECRO_ENGI_CHOICE_WIN">
-	<text>"Renegade, we're thankful that you were here to save us, please take this drone as a reward."</text>
+	<text>"Renegade, we're thankful that you were here to save us, please take this drone as a reward.".</text>
 	<autoReward level="MED">standard_no_item</autoReward>
 	<drone name="RANDOM" />
 	<choice>
@@ -406,15 +406,15 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 
 "We do not understand, why would we create robots to do the job of organics, it is more efficient this way?"
 
-"The role of organics is not to die and be resurrected for your cause, we have lives, families, feelings, we exist outside of your battles. Please, leave us out of this."</text>
+"The role of organics is not to die and be resurrected for your cause, we have lives, families, feelings, we exist outside of your battles. Please, leave us out of this.".</text>
 	<choice hidden="true">
 		<text>Encourage the Engi Heretics to use drones instead.</text>
 		<event>
-			<text>"But we don't have any, there are plenty of humans right here for use."</text>
+			<text>"But we don't have any, there are plenty of humans right here for use.".</text>
 			<choice hidden="true" req="BATTLETOG_DEFEND">
 				<text>Give them a battle drone.</text>
 				<event>
-					<text>"Perhaps the organics are right, this may serve our purposes. Perhaps we've been wrong about organics..."</text>
+					<text>"Perhaps the organics are right, this may serve our purposes. Perhaps we've been wrong about organics...".</text>
 					<remove name="BATTLETOG_DEFEND"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -425,7 +425,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 			<choice hidden="true" req="BATTLETOG_BOARDER">
 				<text>Give them a battle drone.</text>
 				<event>
-					<text>"Perhaps the organics are right, this may serve our purposes. Perhaps we've been wrong about organics..."</text>
+					<text>"Perhaps the organics are right, this may serve our purposes. Perhaps we've been wrong about organics...".</text>
 					<remove name="BATTLETOG_BOARDER"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -436,7 +436,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 			<choice hidden="true" req="BATTLETOG2_DEFEND">
 				<text>Give them a battle drone mk 2.</text>
 				<event>
-					<text>"Perhaps the organics are right, this may serve our purposes. Perhaps we've been wrong about organics..."</text>
+					<text>"Perhaps the organics are right, this may serve our purposes. Perhaps we've been wrong about organics...".</text>
 					<remove name="BATTLETOG2_DEFEND"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -447,7 +447,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 			<choice hidden="true" req="BATTLETOG2_BOARDER">
 				<text>Give them a battle drone mk 2.</text>
 				<event>
-					<text>"Perhaps the organics are right, this may serve our purposes. Perhaps we've been wrong about organics..."</text>
+					<text>"Perhaps the organics are right, this may serve our purposes. Perhaps we've been wrong about organics...".</text>
 					<remove name="BATTLETOG2_BOARDER"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -477,7 +477,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 	<choice hidden="true" req="LIST_CREW_ORGANIC_AEA_NECRO" blue="false">
 		<text>Tell the heretics to do what they need.</text>
 		<event>
-			<text>"You are right, you also possess organics, we will take them for the cause."</text>
+			<text>"You are right, you also possess organics, we will take them for the cause.".</text>
 			<ship load="SHIP_AEA_NECRO_FIGHT" hostile="true" />
 			<choice hidden="true">
 				<text>Continue...</text>
@@ -488,7 +488,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 	<choice hidden="true" req="LIST_CREW_ORGANIC_AEA_NECRO" lvl="0" max_lvl="0" blue="false">
 		<text>Tell the heretics to do what they need.</text>
 		<event>
-			<text>"You are right, organics are the way forward. Take this [drone] as a token of our support in your own quest against the organics known as the rebels."</text>
+			<text>"You are right, organics are the way forward. Take this [drone] as a token of our support in your own quest against the organics known as the rebels.".</text>
 			<drone name="GIFTLIST_DRONES_NECRO"/>
 			<choice>
 				<text>Continue...</text>
@@ -541,7 +541,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 				<event>
 					<text>As you're burying the bodies a large Heretic vessel appears nearby, they spot you and what you're doing.
 			
-"Those are ours, we'll have to take yours instead."</text>
+"Those are ours, we'll have to take yours instead.".</text>
 					<ship load="SHIP_AEA_NECRO_GENERIC" hostile="true" />
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -554,7 +554,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 				<event>
 					<text>You recieve word from your crew back on your ship, returning to the ship you find a Heretic vessel bearing down on you.
 
-"Those organics are ours, leave them to us."</text>
+"Those organics are ours, leave them to us.".</text>
 					<ship load="SHIP_AEA_NECRO_FIGHT" hostile="false" />
 					<choice hidden="true">
 						<text>Attack the ship.</text>
@@ -722,11 +722,11 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 </event>
 
 <event name="AEA_NECRO_FLEET_DELAY" unique="true">
-	<text>A Heretic vessel hails you. "Your situation with the fleet is known. We have: proposition. Help us with killing hostile ship, and we will delay fleet."</text>
+	<text>A Heretic vessel hails you. "Your situation with the fleet is known. We have: proposition. Help us with killing hostile ship, and we will delay fleet.".</text>
 	<choice hidden="true">
 		<text>Listen to their offer.</text>
 		<event>
-			<text>"Rebel Auto-ships, although not organic, it is controlled by the organics. It is proving annoying to deal with. Will you help?"</text>
+			<text>"Rebel Auto-ships, although not organic, it is controlled by the organics. It is proving annoying to deal with. Will you help?".</text>
 			<choice hidden="true">
 				<text>Agree to kill the Auto-ship.</text>
 				<event>
@@ -741,7 +741,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 			<choice hidden="true">
 				<text>Refuse their offer.</text>
 				<event>
-					<text>"I am -dissatisfied- with your response, but I will tolerate it. Try not to die, Captain."</text>
+					<text>"I am -dissatisfied- with your response, but I will tolerate it. Try not to die, Captain.".</text>
 					<choice>
 						<text>Do something onboard the ship.</text>
 						<event load="STORAGE_CHECK" />
@@ -757,7 +757,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 	<choice hidden="true">
 		<text>No thanks.</text>
 		<event>
-			<text>"Disapointing. Try not to die."</text>
+			<text>"Disapointing. Try not to die.".</text>
 			<choice>
 				<text>Do something onboard the ship.</text>
 				<event load="STORAGE_CHECK" />
@@ -770,11 +770,11 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 	</choice>
 </event>
 <event name="AEA_NECRO_FLEET_DELAY_WIN">
-	<text>"Very good. Now for your compensation. Please do not move your [ship]." The Heretics run a scan over your vessel, giving you a tingly feeling all over your body. The Heretics hail you again, this time looking very similar to you. "My job is less than 100%, but it will work for now. I have masked your jump signature. The fleet will now follow me. Good day."</text>
+	<text>"Very good. Now for your compensation. Please do not move your [ship]." The Heretics run a scan over your vessel, giving you a tingly feeling all over your body. The Heretics hail you again, this time looking very similar to you. "My job is less than 100%, but it will work for now. I have masked your jump signature. The fleet will now follow me. Good day.".</text>
 	<modifyPursuit amount="-2" />
 </event>
 <event name="AEA_NECRO_FLEET_DELAY_LOSE">
-	<text>"You have failed. Do not attempt to communicate with us again."</text>
+	<text>"You have failed. Do not attempt to communicate with us again.".</text>
 </event>
 
 <eventList name="NEUTRAL_AEA_NECRO_UNIQUE"> <!--TODO CREATE UNIQUE NEUTRAL EVENTS-->
@@ -800,12 +800,12 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 
 <event name="DISTRESS_AEA_NECRO_PIRATE" unique="true">
 	<distressBeacon />
-	<text>You locate the distress beacon, it belongs to a small escape capsule, piloted by an Engi Heretic. "Organics have taken control of my [ship], we did not realize they were still alive, or else we would not have brought them onboard."</text>
+	<text>You locate the distress beacon, it belongs to a small escape capsule, piloted by an Engi Heretic. "Organics have taken control of my [ship], we did not realize they were still alive, or else we would not have brought them onboard.".</text>
 	<ship load="SHIP_AEA_NECRO_PIRATE" hostile="false" />
 	<choice>
 		<text>Assist the Heretic.</text>
 		<event>
-			<text>You approach the occupied vessel. "Glad to hear. Don't destroy [it]."</text>
+			<text>You approach the occupied vessel. "Glad to hear. Don't destroy [it].".</text>
 			<ship hostile="true" />
 			<choice hidden="true">
 				<text>Continue...</text>
@@ -834,7 +834,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 			<event />
 		</event>
 		<event>
-			<text>"You've destroyed my [property]. I -will- have my revenge." </text>
+			<text>"You've destroyed my [property]. I -will- have my revenge." .</text>
 			<boarders min="1" max="1" class="aea_necro_engi" />
 		</event>
 </eventList>
@@ -846,7 +846,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 	<choice hidden="true">
 		<text>Contact them.</text>
 		<event>
-			<text>"Captain, we believe you may be able to assist us, we were attempting to resurrect the entire population, however something has gone wrong and we've lost control of the organics, please fix this"</text>
+			<text>"Captain, we believe you may be able to assist us, we were attempting to resurrect the entire population, however something has gone wrong and we've lost control of the organics, please fix this".</text>
 			<ship load="SHIP_AEA_NECRO_GENERIC" hostile="false"/>
 			<choice hidden="true" req="mind">
 				<text>(Mind Control) Return the population to the control of the Engi Heretic.</text>
@@ -909,7 +909,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>You can't help</text>
+				<text>You can't help.</text>
 				<event>
 					<text>The Engi Heretic is disapointed, but goes back to watching the planet.</text>
 					<choice>
@@ -949,7 +949,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 </event>
 <textList name="TEXT_DISTRESS_AEA_NECRO_TRAP_BEACON">
 	<text>The ship projecting the distress beacon is a Heretic ship, they hail you. "You organics always fall for it, prepare to die and become my vassal!" It appears you've falled for the Heretic's trap.</text>
-	<text>"Captain, you should have [known] this was a fake distress beacon. The differing micro-oscillations and gamma node frequencies are a -dead- giveaway. Only an organic would miss something so obvious, prepare to become my [slave]!"</text>
+	<text>"Captain, you should have [known] this was a fake distress beacon. The differing micro-oscillations and gamma node frequencies are a -dead- giveaway. Only an organic would miss something so obvious, prepare to become my [slave]!".</text>
 </textList>
 
 <eventList name="DISTRESS_AEA_NECRO_UNIQUE"> <!--TODO CREATE UNIQUE DISTRESS OR TWO-->
@@ -975,12 +975,12 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 <event name="QUEST_AEA_NECRO_ELITE" unique="true">
 	<text>A squadron of Heretic ships have assembled at this beacon. They aren't immediately attacking you, their weapons aren't even online.</text>
 	<choice hidden="true">
-		<text>Hail them</text>
+		<text>Hail them.</text>
 		<event>
 			<text>"Request for contact received. Timing is fortunate. We have an offer for you. Current objective: Eliminate the organics outpost. Organics have setup a powerful defense system to protect their outpost. Beware of asteroid field, previous attempts have [failed] when entering field and suddenly finding their [shields] offline."
 
 "We will give an extra reward if you manage to keep the outpost intact."
-			</text>
+			.</text>
 			<choice hidden="true">
 				<text>Agree.</text>
 				<event>
@@ -1063,7 +1063,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 	<text>With your shield system restored you push on towards the pirate outpost. As you get closer you realize this isn't any normal station, instead it appears the pirates have gotten their hands on a specialized militia platform equipped with a large weapon. This isn't going to be an easy fight.</text>
 	<ship load="SHIP_AEA_NECRO_PIRATE_PLATFORM" hostile="true"/>
 	<choice>
-		<text>Prepare to fight!</text>
+		<text>Prepare to fight!.</text>
 		<event load="COMBAT_CHECK"/>
 	</choice>
 </event>
@@ -1097,15 +1097,15 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 </event>
 <textList name="TEXT_ENCOUNTER_AEA_NECRO">
 	<text>A short screech plays over the comms followed by a looping message of binary. You don't have time to translate before a Heretic Ship fires a warning shot that ricochets off your defenses.</text>
-	<text>A strangely verbose Engi hails you. "Unfortunate time of encounter, -Federation- ship. I appear to have [damaged] the part of my system that encodes for reason and logic, and now have the burning desire to kill."</text>
-	<text>An enraged Separatist hails you. "Problem: You have -accidentally- stepped on lifelong friend of [mine] in microscopic state. Solution: die."</text>
+	<text>A strangely verbose Engi hails you. "Unfortunate time of encounter, -Federation- ship. I appear to have [damaged] the part of my system that encodes for reason and logic, and now have the burning desire to kill.".</text>
+	<text>An enraged Separatist hails you. "Problem: You have -accidentally- stepped on lifelong friend of [mine] in microscopic state. Solution: die.".</text>
 	<text>Though Separatists usually avoid other ships, the one at this beacon appears to be in critical condition, and in desperate need of scrap.</text>
 	<text>A Separatist ship moves in to attack. You aren't sure how you angered them, but it no longer matters.</text>
-	<text>You're hailed by a Separatist ship, who begins to speak a great deal about the works of some dead guy named Shakespeare. He suddenly stops his speech abruptly and attacks!</text>
+	<text>You're hailed by a Separatist ship, who begins to speak a great deal about the works of some dead guy named Shakespeare. He suddenly stops his speech abruptly and attacks!.</text>
 </textList>
 
 <event name="ENCOUNTER_ENGI_AEA_NECRO" unique="true">
-	<text>A Heretic ship orbits the beacon, but before you can contact them they jump away and a Separatist ship approaches. "Captain, those Heretics were pushed out of the Separatists for a reason, they are dangerous, you are therefor dangerous, you must be dealt with aswell."</text>
+	<text>A Heretic ship orbits the beacon, but before you can contact them they jump away and a Separatist ship approaches. "Captain, those Heretics were pushed out of the Separatists for a reason, they are dangerous, you are therefor dangerous, you must be dealt with aswell.".</text>
 	<ship load="SHIP_SEPARATIST_FIGHT" hostile="true" /> 
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -1114,7 +1114,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 </event>
 
 <event name="ENCOUNTER_REBEL_AUTO_AEA_NECRO" unique="true">
-	<text>"We suggest you avoid the Auto-ship. It is broken." You notice the Separatist ship that hailed you hiding behind some large asteroids, as well as the Rebel Auto-ship barreling towards you!</text>
+	<text>"We suggest you avoid the Auto-ship. It is broken." You notice the Separatist ship that hailed you hiding behind some large asteroids, as well as the Rebel Auto-ship barreling towards you!.</text>
 	<ship load="SHIP_REBEL_AUTO_FIGHT_AEA_NECRO" hostile="true" /> 
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -1228,12 +1228,12 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 	<text>It appears you've discovered a Harmony Link. Usually these are massive planet sized structures however this one has been corrupted by the Engi Heretics. Worse they appear to be using it to attempt to resurrect a massive space whale.</text>
 	<img back="BACK_EVENT_LINK_AEA_NECRO_WHALE" planet="NONE" />
 	<choice hidden="true">
-		<text>Investigate the structure</text>
+		<text>Investigate the structure.</text>
 		<event>
-			<text>As you get closer a massive Heretic cruiser emerges from the Link, it appears to be barring you passage. "Leave, this is not something for the likes of you."</text>
+			<text>As you get closer a massive Heretic cruiser emerges from the Link, it appears to be barring you passage. "Leave, this is not something for the likes of you.".</text>
 			<ship load="SHIP_AEA_NECRO_BOSS" hostile="false"/>
 			<choice hidden="true">
-				<text>Attempt to push past</text>
+				<text>Attempt to push past.</text>
 				<event>
 					<text>The Heretic cruiser activates it's weapons, it looks like you're not going to get past without a fight.</text>
 					<ship hostile="true"/>
@@ -1244,7 +1244,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Back off as suggested</text>
+				<text>Back off as suggested.</text>
 				<event>
 					<text>The Heretic cruiser continues to observe you as you back off to a save distance.</text>
 					<choice>
@@ -1278,7 +1278,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 <event name="LINK_AEA_NECRO_WHALE_FINISH">
 	<text>Now that you've dealt with the Heretic cruiser you're able to access the site of the resurrection. Eventually you make it to the control center of the structure, and inside you find a strange weapon mounted to it, pointing directly at the beast.</text>
 	<choice hidden="true">
-		<text>Take the weapon</text>
+		<text>Take the weapon.</text>
 		<event>
 			<text>You rip the weapon from it's housing and retreat back to your ship, its not going to take the Engi long to realize something is wrong.</text>
 			<weapon name="AEA_BEAM_NECRO_1"/>
@@ -1289,7 +1289,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Scrap the structure instead</text>
+		<text>Scrap the structure instead.</text>
 		<event>
 			<text>You grab any scrap you can from the structure before retreating back to your ship, its not going to take the Engi long to realize something is wrong.</text>
 			<autoReward level="MED">standard</autoReward>
@@ -1319,7 +1319,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 	<text>You've arrived at the Heretic's sanctum, one of the most important locations to the Heretics, this is where the upper command of the Heretics manipulate their forces to fight off their many enemies.</text>
 	<img planet="PLANET_POPULATED" />
 	<choice hidden="true">
-		<text>Land and investigate</text>
+		<text>Land and investigate.</text>
 		<event>
 			<text>It appears some kind of event is going down on the surface, hundreds of Engi Heretics are assembled in an open area, apparently waiting.</text>
 			<img back="BACK_EVENT_AEA_NECRO_SANCTUM" planet="NONE" />
@@ -1329,7 +1329,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 					<text>As you watch, a gilded Heretic emerges from a building nearby and behind it a prisoner in chains. The prisoner appears to be rebel general, although dirty you can still make out the distinctive uniform.
 
 The gilded Engi brings the general onto the raised platform, before bringing out a large blade. A moment later the general is dead, skewered by the sword.
-					</text>
+					.</text>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
@@ -1370,13 +1370,13 @@ A moment later the general is alive again, however this time something is differ
 </event>
 
 <event name="AEA_NECRO_SANCTUM_WIN">
-	<text>With the Heretic vessel destroyed you recieve an unexpected hail coming from the surface. "Greetings Captain, you were very efficient in destroying my vessel, I may have a use for you."</text>
+	<text>With the Heretic vessel destroyed you recieve an unexpected hail coming from the surface. "Greetings Captain, you were very efficient in destroying my vessel, I may have a use for you.".</text>
 	<choice>
 		<text>Continue...</text>
 		<event>
-			<text>"The general you saw on display here, quite valuable to the rebel organics, we've picked up their weak attempt to save the general at the edge of the sector. However our forces are spread to thin to deal with it, you may be able to, if you do we will reward you handsomely."</text>
+			<text>"The general you saw on display here, quite valuable to the rebel organics, we've picked up their weak attempt to save the general at the edge of the sector. However our forces are spread to thin to deal with it, you may be able to, if you do we will reward you handsomely.".</text>
 			<choice hidden="true">
-				<text>Accept the mission</text>
+				<text>Accept the mission.</text>
 				<event>
 					<text>"Try not to die Captain." The coordinates for the vessel are uploaded to your computer.</text>
 					<quest event="QUEST_AEA_NECRO_SANCTUM_QUEST"/>
@@ -1387,9 +1387,9 @@ A moment later the general is alive again, however this time something is differ
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Refuse the mission</text>
+				<text>Refuse the mission.</text>
 				<event>
-					<text>"Very well, Try not to die Captain."</text>
+					<text>"Very well, Try not to die Captain.".</text>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event/>
@@ -1422,14 +1422,14 @@ A moment later the general is alive again, however this time something is differ
 </event>
 
 <event name="AEA_NECRO_SANCTUM_ANGEL_WIN">
-	<text>A new vessel arrives at the beacon, you're once again hailed by the gilded Engi. "Congratulations on your victory Captain. I should formally introduce myself, My name is L-0031, however some call me the Lich King."</text>
+	<text>A new vessel arrives at the beacon, you're once again hailed by the gilded Engi. "Congratulations on your victory Captain. I should formally introduce myself, My name is L-0031, however some call me the Lich King.".</text>
 	<choice>
 		<text>Continue...</text>
 		<event>
-			<text>"You did quite well in defeating this foe, and for it we'll deliver the schematics for a cruiser we've been designing. However I also came here to ask something of you, I've spent too long building up the Engi Heretics, I've lived a long time, but I haven't truly experienced much. You're a capable ship, take me aboard and I will help kill whomever you want. This place will be fine without me."</text>
+			<text>"You did quite well in defeating this foe, and for it we'll deliver the schematics for a cruiser we've been designing. However I also came here to ask something of you, I've spent too long building up the Engi Heretics, I've lived a long time, but I haven't truly experienced much. You're a capable ship, take me aboard and I will help kill whomever you want. This place will be fine without me.".</text>
 			<unlockCustomShip silent="false">PLAYER_SHIP_AEA_NECRO_ENGI</unlockCustomShip>
 			<choice hidden="true">
-				<text>Welcome the engi onto your ship</text>
+				<text>Welcome the engi onto your ship.</text>
 				<event>
 					<text>The engi comes onboard your ship, if you had to guess L-0031 has been around since the beginning of the Engi, perhaps even one of the first to seperate from the harmony.</text>
 					<crewMember amount="1" all_skills="2" class="aea_necro_king">L-0031</crewMember>
@@ -1440,9 +1440,9 @@ A moment later the general is alive again, however this time something is differ
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Refuse the offer</text>
+				<text>Refuse the offer.</text>
 				<event>
-					<text>"Very well, Try not to die Captain."</text>
+					<text>"Very well, Try not to die Captain.".</text>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event/>

@@ -9,6 +9,8 @@
 <text name="map_icon_aea_flower">FLOWER [!]</text>
 <text name="map_icon_aea_seed">SEED [!]</text>
 <text name="map_icon_aea_conspiracy">CONSPIRACY [!]</text>
+<text name="map_icon_aea_bird_engineer">ENGINEERING [!]</text>
+
 <text name="map_icon_aea_old_gate">GATE [!]</text>
 <text name="map_icon_aea_old_cell">???</text>
 <text name="map_icon_aea_old_baron">BARON [!]</text>
@@ -42,6 +44,9 @@ The last shot in the volley does 1 additional hull damage</text>
 Cannot equip spells
 -2 second cooldown
 +1 damage per friendly cultist with an equipped spell</text>
+<text name="loot_aea_bird_1">GI LOOT
++1 ion damage to systems with the the secondary shot
++2 speed</text>
 
 <text name="tip_aea_old_unknown">Tip: A strange weapon? You wonder if it's related to that strange gate in Node 17...</text>
 <text name="tip_laser_old">Tip: Each laser shot will be blocked by two shield bubbles, regardless of the laser's damage.</text>
@@ -75,9 +80,19 @@ Locations of Interest: The Oneflower
     
 Although technically not part of the Confederacy, the cult has close ties with them, any actions against the cultists may still reflect poorly against you in the eyes of the confederacy. This sector is home to the Oneflower, the cult's god, many theorize that their god isn't actually a living creature, and instead some think it's an advanced AI intelligence. No one knows for sure, except probably the flower itself.</text>
 
+<text name="atlas_aea_bird">Name: Gi Nesting Grounds
+Type: Allied
+Unique: True
+Dominant Faction: Gi Federation
+Rebel Threat Level: Medium (Neutral Fleet)
+Locations of Interest: Central Engineering Facility
+    
+The Gi are close allies with the federation, A recently discovered race they haven't managed to join the federation yet, however they're on their way there and have a strong federation presense in the sector.</text>
+    
 <text name="ship_PLAYER_SHIP_AEA_ACID_BILL_unlock">Consult the advice of a certain Acidic outcast about a certain artifact to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_NECRO_KING_unlock">Consult the advice of a certain Heretic leader about a certain artifact to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_CULT_TINY_unlock">Consult the advice of a certain Tiny Vampweed about a certain artifact to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_BIRD_JAY_unlock">Consult the advice of a certain Avian Engineer about a certain artifact to unlock this ship.</text>
 
 <text name="ship_PLAYER_SHIP_AEA_OLD_UNI_1_unlock">Seek out the help of a certain Lylmik Council member and escape quarantine to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_OLD_UNI_2_unlock">Seek out the help of a certain Lylmik Council member and escape quarantine to unlock this ship.</text>
@@ -117,11 +132,11 @@ Although technically not part of the Confederacy, the cult has close ties with t
 <text name="ship_PLAYER_SHIP_AEA_CULT_BLOOM_2_unlock">Get to Sector 5 with the Bloom Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_CULT_BLOOM_3_unlock">Get to Sector 5 with the Bloom Cruiser Type B or beat the game with the Bloom Cruiser Type A to unlock this ship.</text>
 
-<text name="ship_PLAYER_SHIP_AEA_BIRD_BIG_unlock">Coming Soon.</text>
+<text name="ship_PLAYER_SHIP_AEA_BIRD_BIG_unlock">Secure an AI core for the Central Engineering Facility.</text>
 <text name="ship_PLAYER_SHIP_AEA_BIRD_BIG_2_unlock">Get to Sector 5 with the Eagle Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_BIRD_BIG_3_unlock">Get to Sector 5 with the Eagle Cruiser Type B or beat the game with the Eagle Cruiser Type A to unlock this ship.</text>
 
-<text name="ship_PLAYER_SHIP_AEA_BIRD_TRAN_unlock">Coming Soon.</text>
+<text name="ship_PLAYER_SHIP_AEA_BIRD_TRAN_unlock">Discover and stop a secret Rebel infiltration attack.</text>
 <text name="ship_PLAYER_SHIP_AEA_BIRD_TRAN_2_unlock">Get to Sector 5 with the Albatross Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_BIRD_TRAN_3_unlock">Get to Sector 5 with the Albatross Cruiser Type B or beat the game with the Albatross Cruiser Type A to unlock this ship.</text>
 

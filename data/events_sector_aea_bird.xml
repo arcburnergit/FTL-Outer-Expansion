@@ -1,0 +1,1620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					FEDERATION SECTOR
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					EXIT BEACON
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<event name="FINISH_BEACON_AEA_BIRD">
+	<text id="finish_beacon" />
+	<choice hidden="true">
+		<text>Explore.</text>
+		<event load="EXIT_FILLER_LIST" />
+	</choice>
+	<choice hidden="true">
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice hidden="true">
+		<text>Do nothing.</text>
+		<event />
+	</choice>
+</event>
+
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					ITEM EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<eventList name="ITEMS_AEA_BIRD">
+	<event load="AEA_BIRD_SUPPLY" />
+	<event load="AEA_BIRD_FREECREW" />
+	<event load="AEA_BIRD_CRICKET" />
+	<event load="AEA_BIRD_FED_AMMO" />
+</eventList>
+
+<event name="AEA_BIRD_SUPPLY" unique="true">
+	<text>You've come accross a heavy Gi Transport, it appears they're serving as a mobile supply station, passing out supplies to passing allied ships.</text>
+	<ship load="SHIP_AEA_BIRD_SUPPLIES" hostile="false"/>
+	<choice>
+		<text>Purchase fuel.</text>
+		<event>
+			<item_modify>
+				<item type="fuel" min="5" max="7" />
+				<item type="scrap" min="-20" max="-10" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice>
+		<text>Purchase drone parts.</text>
+		<event>
+			<item_modify>
+				<item type="drones" min="6" max="8" />
+				<item type="scrap" min="-40" max="-25" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice>
+		<text>Purchase a drone.</text>
+		<event>
+			<item_modify>
+				<item type="scrap" min="-60" max="-40" />
+			</item_modify>
+			<drone name="RANDOM" />
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Attack the transport!.</text>
+		<event>
+			<text>No one is safe from you, not even allied supply transports.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="MORALITY_UPDATE_GENERAL_FIGHT" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the ship.</text>
+		<event>
+			<text>You aren't interested in the supplies. You ignore them.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+<event name="AEA_BIRD_SUPPLIES_KILL">
+	<text>Your unnecessary, unprovoked, barbaric attack on an allied supply transport has been successful, if you could call killing them as success. You scrap what remains.</text>
+	<autoReward level="MED">standard</autoReward>
+</event>
+
+<event name="AEA_BIRD_FREECREW" unique="true">
+	<text>A damaged Gi shuttle floats nearby the beacon. "Oh thank the federation you're here, The mothership I was docked with experienced a catastrophic deconstruction and damaged the shuttle in the explosion. I'm an engine technician and I'm sure my skills could be of service to you.".</text>
+	<ship load="SHIP_AEA_BIRD_SHUTTLE" hostile="false"/>
+	<choice hidden="true">
+		<text>Welcome aboard.</text>
+		<event>
+			<text>The Gi officer is thankful for your assistance.</text>
+			<crewMember amount="1" class="aea_bird_avali" engines="1" />
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Offer to drop them off at the nearest station.</text>
+		<event>
+			<text>"Oh... ok. Feel free to loot whatever remains on the shuttle.".</text>
+			<autoReward level="MED">stuff</autoReward>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_CRICKET" unique="true">
+	<text>You've arrived at a large populated planet, you're immediately bombarded with advertisements about some sort of competition happening the surface. On closer inspection it appears they're playing some sort of sports game where two teams switch between batting and catching, they call it cricket.</text>
+	<img planet="PLANET_POPULATED"/>
+	<choice hidden="false">
+		<text>Bet 20~ on the red team.</text>
+		<event load="AEA_BIRD_20BET"/>
+	</choice>
+	<choice hidden="false">
+		<text>Bet 20~ on the blue team.</text>
+		<event load="AEA_BIRD_20BET"/>
+	</choice>
+	<choice hidden="false">
+		<text>Bet 50~ on the red team.</text>
+		<event load="AEA_BIRD_50BET"/>
+	</choice>
+	<choice hidden="false">
+		<text>Bet 50~ on the blue team.</text>
+		<event load="AEA_BIRD_50BET"/>
+	</choice>
+	<choice hidden="false">
+		<text>Bet 100~ on the red team.</text>
+		<event load="AEA_BIRD_100BET"/>
+	</choice>
+	<choice hidden="false">
+		<text>Bet 100~ on the blue team.</text>
+		<event load="AEA_BIRD_100BET"/>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the event.</text>
+		<event>
+			<text>You aren't interested in the supplies. You ignore them.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>	
+</event>
+
+<eventList name="AEA_BIRD_20BET">
+	<event>
+		<text>You watch from the edge of your seat as the game comes down to the last second.</text>
+		<item_modify>
+			<item type="scrap" min="-20" max="-20" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>Unfortunately your team is just edged out at the last moment by the other team.</text>
+				<choice>
+					<text>Do something onboard the ship.</text>
+					<event load="STORAGE_CHECK" />
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event />
+				</choice>
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>You watch from the edge of your seat as the game comes down to the last second.</text>
+		<item_modify>
+			<item type="scrap" min="-20" max="-20" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>You cheer as your team just manages to edge out the win in the last few minutes, you go to collect your winnings.</text>
+				<item_modify>
+					<item type="scrap" min="40" max="40" />
+				</item_modify>
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>It's clear early on that one team is much better than the other, and in this case it's your team struggling.</text>
+		<item_modify>
+			<item type="scrap" min="-20" max="-20" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>You continue watching to the end, however it was almost impossible for your team to come back.</text>
+				<choice>
+					<text>Do something onboard the ship.</text>
+					<event load="STORAGE_CHECK" />
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event />
+				</choice>
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>It's clear early on that one team is much better than the other, and in this case it's your team clearly in the lead.</text>
+		<item_modify>
+			<item type="scrap" min="-20" max="-20" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>Your team predictably wins. You collect your winnings.</text>
+				<item_modify>
+					<item type="scrap" min="40" max="40" />
+				</item_modify>
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>It's clear early on that one team is much better than the other, and in this case it's your team struggling.</text>
+		<item_modify>
+			<item type="scrap" min="-20" max="-20" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>Surprisingly your team manages to pull back the lead and surpass the other team, winning the game, you collect your winnings.</text>
+				<item_modify>
+					<item type="scrap" min="40" max="40" />
+				</item_modify>
+			</event>
+		</choice>
+	</event>
+</eventList>
+<eventList name="AEA_BIRD_50BET">
+	<event>
+		<text>You watch from the edge of your seat as the game comes down to the last second.</text>
+		<item_modify>
+			<item type="scrap" min="-50" max="-50" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>Unfortunately your team is just edged out at the last moment by the other team.</text>
+				<choice>
+					<text>Do something onboard the ship.</text>
+					<event load="STORAGE_CHECK" />
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event />
+				</choice>
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>You watch from the edge of your seat as the game comes down to the last second.</text>
+		<item_modify>
+			<item type="scrap" min="-50" max="-50" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>You cheer as your team just manages to edge out the win in the last few minutes, you go to collect your winnings.</text>
+				<item_modify>
+					<item type="scrap" min="100" max="100" />
+				</item_modify>
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>It's clear early on that one team is much better than the other, and in this case it's your team struggling.</text>
+		<item_modify>
+			<item type="scrap" min="-50" max="-50" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>You continue watching to the end, however it was almost impossible for your team to come back.</text>
+				<choice>
+					<text>Do something onboard the ship.</text>
+					<event load="STORAGE_CHECK" />
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event />
+				</choice>
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>It's clear early on that one team is much better than the other, and in this case it's your team clearly in the lead.</text>
+		<item_modify>
+			<item type="scrap" min="-50" max="-50" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>Your team predictably wins. You collect your winnings.</text>
+				<item_modify>
+					<item type="scrap" min="100" max="100" />
+				</item_modify>
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>It's clear early on that one team is much better than the other, and in this case it's your team struggling.</text>
+		<item_modify>
+			<item type="scrap" min="-50" max="-50" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>Surprisingly your team manages to pull back the lead and surpass the other team, winning the game, you collect your winnings.</text>
+				<item_modify>
+					<item type="scrap" min="100" max="100" />
+				</item_modify>
+			</event>
+		</choice>
+	</event>
+</eventList>
+<eventList name="AEA_BIRD_100BET">
+	<event>
+		<text>You watch from the edge of your seat as the game comes down to the last second.</text>
+		<item_modify>
+			<item type="scrap" min="-100" max="-100" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>Unfortunately your team is just edged out at the last moment by the other team.</text>
+				<choice>
+					<text>Do something onboard the ship.</text>
+					<event load="STORAGE_CHECK" />
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event />
+				</choice>
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>You watch from the edge of your seat as the game comes down to the last second.</text>
+		<item_modify>
+			<item type="scrap" min="-100" max="-100" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>You cheer as your team just manages to edge out the win in the last few minutes, you go to collect your winnings.</text>
+				<item_modify>
+					<item type="scrap" min="200" max="200" />
+				</item_modify>
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>It's clear early on that one team is much better than the other, and in this case it's your team struggling.</text>
+		<item_modify>
+			<item type="scrap" min="-100" max="-100" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>You continue watching to the end, however it was almost impossible for your team to come back.</text>
+				<choice>
+					<text>Do something onboard the ship.</text>
+					<event load="STORAGE_CHECK" />
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event />
+				</choice>
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>It's clear early on that one team is much better than the other, and in this case it's your team clearly in the lead.</text>
+		<item_modify>
+			<item type="scrap" min="-100" max="-100" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>Your team predictably wins. You collect your winnings.</text>
+				<item_modify>
+					<item type="scrap" min="200" max="200" />
+				</item_modify>
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>It's clear early on that one team is much better than the other, and in this case it's your team struggling.</text>
+		<item_modify>
+			<item type="scrap" min="-100" max="-100" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>Surprisingly your team manages to pull back the lead and surpass the other team, winning the game, you collect your winnings.</text>
+				<item_modify>
+					<item type="scrap" min="200" max="200" />
+				</item_modify>
+			</event>
+		</choice>
+	</event>
+</eventList>
+
+<event name="AEA_BIRD_FED_AMMO" unique="true">
+	<text>You've arrived at the beacon, surprisingly a Federation station is setup here. The station is sending out a request for ammunition, in return for scrap. Their high demand is likely due to the increasing number of Rebel blockades.</text>
+	<choice>
+		<text>Sell 3 missiles.</text>
+		<event>
+			<disableScrapAugments />
+			<item_modify>
+				<item type="scrap" min="21" max="21" />
+				<item type="missiles" min="-3" max="-3" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice>
+		<text>Sell 7 missiles.</text>
+		<event>
+			<disableScrapAugments />
+			<item_modify>
+				<item type="scrap" min="49" max="49" />
+				<item type="missiles" min="-7" max="-7" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice>
+		<text>Sell 12 missiles.</text>
+		<event>
+			<disableScrapAugments />
+			<item_modify>
+				<item type="scrap" min="84" max="84" />
+				<item type="missiles" min="-12" max="-12" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice>
+		<text>Sell 8 missiles in return for a drone.</text>
+		<event>
+			<disableScrapAugments />
+			<item_modify>
+				<item type="missiles" min="-8" max="-8" />
+			</item_modify>
+			<drone name="RANDOM"/>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>We don't have anything to sell.</text>
+		<event>
+			<text>You ignore the station.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					NEUTRAL EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<eventList name="NEUTRAL_AEA_BIRD">
+	<event load="AEA_BIRD_REBEL_CHOICE" />
+	<event load="AEA_BIRD_RUNAWAY_DRONE" />
+	<event load="AEA_BIRD_NESTING_PLANET" />
+	<event load="AEA_BIRD_RUSSIAN_ROULETTE" />
+	<event load="FEDERATION_SHIPCLASS" />
+</eventList>
+
+<event name="AEA_BIRD_REBEL_CHOICE">
+	<text load="TEXT_AEA_BIRD_REBEL_CHOICE" />
+	<ship load="SHIP_REBEL_FIGHT" hostile="false" />
+	<choice hidden="true">
+		<text>Fight the ship.</text>
+		<event>
+			<text>No Rebels will be allowed to live so long as you can help it.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Avoid the ship.</text>
+		<event>
+			<text>You have no interest in fighting the Rebel ship.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+<textList name="TEXT_AEA_BIRD_REBEL_CHOICE">
+	<text>A Rebel ship is making minor repairs at this beacon. They're unaware of your presence.</text>
+	<text>A Rebel ship nearby is searching for Federation ships. Somehow they have not yet seen you.</text>
+	<text>This sector is a prime spot for Rebels. Despite their usual thirst for killing Feds, the Rebel ship here is ignoring you.</text>
+	<text>The Rebel ship at this beacon is scouting for Federation and Gi ships to fight. It has not yet seen you.</text>
+</textList>
+
+<event name="AEA_BIRD_RUNAWAY_DRONE" unique="true">
+	<text>You arrive and notice a GI interceptor being chased by a small shuttle. "Renegade, we need your help, we were attempting to install the drone module from an intel drone into a small shuttle, unfortunately it went haywire and is now attempting to kill us, we have no weapons onboard and can't fight back.".</text>
+	<choice hidden="true">
+		<text>Attack the shuttle.</text>
+		<event>
+			<text>You move in to intercept the shuttle turned drone.</text>
+			<ship load="SHIP_AEA_BIRD_DRONE_SHUTTLE" hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the ships.</text>
+		<event>
+			<text>You have no interest in fighting the drone shuttle.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_DRONE_KILL">
+	<text>You saved the crew of the GI interceptor, they suplement the scrap you get from the remains of the drone with their own supplies. They also transfer a spare intel drone that they no longer need.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<drone name="AEA_COMBAT_BIRD_SMART_1"/>
+</event>
+
+<event name="AEA_BIRD_NESTING_PLANET" unique="true">
+	<text>You've arrived at a Gi nesting planet, these are the traditional nesting grounds of the Gi where members of the species will travel to in order to hatch their young.</text>
+	<img back="BACK_SECTOR_AUGMENTED" planet="NONE" />
+	<choice hidden="true">
+		<text>Travel down to the surface.</text>
+		<event>
+			<text>You've arrived on the surface of the planet, most of the planet is off-limits for visitors. There's a visitor center nearby.</text>
+			<changeBackground>BACK_EVENT_ORCHIDFOREST</changeBackground>
+			<choice hidden="true">
+				<text>Visit the visitor center.</text>
+				<event>
+					<store>STORE_AEA_BIRD</store>
+					<text>The visitor center starts with a brief history of the Gi before turning out to be mostly just a large giftshop.
+
+Before you shop, you still have some time to do something else aboard the ship.</text>
+					<choice>
+						<text>Do something onboard the ship.</text>
+						<event load="STORAGE_CHECK" />
+					</choice>
+					<choice>
+						<text>Do nothing.</text>
+						<event />
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Sneak off out of the visitor area.</text>
+				<event>
+					<text>You turn off your transponder and sneak away.
+
+You're not able to make it far though, a Gi ship has noticed your intrusion and moves in to attack.</text>
+					<ship load="SHIP_AEA_BIRD_FIGHT" hostile="true"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="MORALITY_UPDATE_GENERAL_FIGHT" />
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Leave.</text>
+				<event>
+					<text>You prepare to jump away.</text>
+					<choice>
+						<text>Do something onboard the ship.</text>
+						<event load="STORAGE_CHECK" />
+					</choice>
+					<choice>
+						<text>Do nothing.</text>
+						<event />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_RUSSIAN_ROULETTE" unique="true">
+	<text>You're hailed by a nearby Gi ship. "Ah, A renegade, perhaps you'd be interested in a game of chance, At this beacon there's a peculiar anomaly, a short wormhole that just spits you back out from where you enter it. However we found theres almost an exact 1/6 chance that on the way out part of the ship will be crumpled by the wormhole.
+
+"The game works as so, we flip a coin, whoever it indicates has to enter first, we then keep going until someone chickens out, or until someone gets crumpled a little bit. The loser has to pay 5~ to the other. So what do you say, you up for a game?"
+	.</text>
+	<ship load="SHIP_AEA_BIRD_FIGHT" hostile="false"/>
+	<variable name="aea_bird_roulette" op="set" val="0" />
+	<choice hidden="true">
+		<text>Game on!.</text>
+		<event>
+			<text>You flip a coin and in lands bird side up, the Gi ship enters first. The Gi ship flies into the wormhole.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>A moment later the Gi ship pops back out of the wormhole, unscathed. "Alright, your turn.".</text>
+					<choice hidden="true">
+						<text>Enter the wormhole.</text>
+						<event name="AEA_BIRD_RUSSIAN_ROLL_ENEMY_1">
+							<text>You enter the wormhole and almost immediately you pop out the otherside, right next to the GI ship. You check and find your vessel undamaged. "Alright, my turn again!" The Gi captain seems almost excited by this gambling.</text>
+							<choice hidden="true">
+								<text>Continue...</text>
+								<event load="AEA_BIRD_RUSSIAN_ROULETTE_LIST_ENEMY"/>
+							</choice>
+						</event>
+					</choice>
+					<choice hidden="false">
+						<text>Chicken out.</text>
+						<event load="AEA_BIRD_ROULETTE_LOSE"/>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the offer and attack.</text>
+		<event>
+			<text>You cut the comms and activate your weapons, the Gi vessel catches your meaning and does the same.</text>
+			<ship hostile="true"/>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="MORALITY_UPDATE_GENERAL_FIGHT" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Decline the offer.</text>
+		<event>
+			<text>You have no interest in playing a risky game of chance.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_ROULETTE_LOSE">
+	<text>You hand over the scrap, however the Gi captain offers to play again.</text>
+	<item_modify steal="true">
+		<item type="scrap" min="-5" max="-5" />
+	</item_modify>
+	<choice hidden="true">
+		<text>Play again.</text>
+		<event>
+			<loadEvent>AEA_BIRD_ROULETTE_AGAIN</loadEvent>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Leave.</text>
+		<event>
+			<text>The Gi vessel waits a moment before jumping away, leaving you alone at the beacon.</text>
+			<instantEscape/>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_ROULETTE_AGAIN">
+	<text>The Gi captain flips a coin, You have a moment to call the side it will land on, if you're right you'll go second, if you're wrong you'll have to go first.</text>
+	<choice req="aea_bird_roulette_result_start" lvl="2">
+		<text>Call "beaks".</text>
+		<event name="AEA_BIRD_RUSSIAN_ROLL_ENEMY_2">
+			<text>The coin lands beaks side up, the Gi captain is first to fly through the wormhole.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="AEA_BIRD_RUSSIAN_ROULETTE_LIST_ENEMY"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_bird_roulette_result_start" lvl="2">
+		<text>Call "feathers".</text>
+		<event name="AEA_BIRD_RUSSIAN_ROLL_PLAYER_1">
+			<text>The coin lands beaks side up, since you called the coin wrong its your turn to fly through the wormhole.</text>
+			<choice hidden="true">
+				<text>Enter the wormhole.</text>
+				<event load="AEA_BIRD_RUSSIAN_ROULETTE_LIST_PLAYER"/>
+			</choice>
+			<choice hidden="false">
+				<text>Chicken out.</text>
+				<event load="AEA_BIRD_ROULETTE_LOSE"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_bird_roulette_result_start" lvl="1" max_lvl="1">
+		<text>Call "beaks".</text>
+		<event name="AEA_BIRD_RUSSIAN_ROLL_PLAYER_2">
+			<text>The coin lands feathers side up, since you called the coin wrong its your turn to fly through the wormhole.</text>
+			<choice hidden="true">
+				<text>Enter the wormhole.</text>
+				<event load="AEA_BIRD_RUSSIAN_ROULETTE_LIST_PLAYER"/>
+			</choice>
+			<choice hidden="false">
+				<text>Chicken out.</text>
+				<event load="AEA_BIRD_ROULETTE_LOSE"/>
+			</choice>
+		</event>
+	</choice>
+	<choice req="aea_bird_roulette_result_start" lvl="1" max_lvl="1">
+		<text>Call "feathers".</text>
+		<event name="AEA_BIRD_RUSSIAN_ROLL_ENEMY_4">
+			<text>The coin lands beaks feathers side up, the Gi captain is first to fly through the wormhole.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="AEA_BIRD_RUSSIAN_ROULETTE_LIST_ENEMY"/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_RUSSIAN_ROLL_PLAYER">
+	<text>You flip a coin and in lands bird side down, It's your turn to enter first.</text>
+	<choice hidden="true">
+		<text>Enter the wormhole.</text>
+		<event load="AEA_BIRD_RUSSIAN_ROULETTE_LIST_PLAYER"/>
+	</choice>
+	<choice hidden="false">
+		<text>Chicken out.</text>
+		<event load="AEA_BIRD_ROULETTE_LOSE"/>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_RUSSIAN_ROULETTE_SPIN">
+	<text>It's your turn to go through the wormhole, theres a 1/6th chance you're damaged as you come out the other side.</text>
+	<choice hidden="true">
+		<text>Enter the wormhole.</text>
+		<event load="AEA_BIRD_RUSSIAN_ROULETTE_LIST_PLAYER"/>
+	</choice>
+	<choice hidden="false">
+		<text>Chicken out.</text>
+		<event load="AEA_BIRD_ROULETTE_LOSE"/>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_RUSSIAN_ROULETTE_LIST_PLAYER">
+	<loadEventList seeded="false" first="true" generate="true">
+		<event req="aea_bird_roulette_result_player" lvl="2" name="AEA_BIRD_RUSSIAN_ROLL_ENEMY_3" />
+		<event>
+			<playSound>lightspeed</playSound>
+			<text>You enter the wormhole, however as you pop out the otherside you hear a noticable crunch, your ship has been damaged by the wormhole. You've lost, the Gi captain has noticed and it waiting expectantly.</text>
+			<damage amount="1" system="room" effect="breach" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="AEA_BIRD_ROULETTE_LOSE"/>
+			</choice>
+		</event>
+	</loadEventList>
+</event>
+
+<event name="AEA_BIRD_RUSSIAN_ROLL_ENEMY_3">
+	<text>You enter the wormhole and almost immediately you pop out the otherside, right next to the GI ship. You check and find your vessel undamaged. "Alright, my turn again!" The Gi captain seems almost excited by this gambling.</text>
+	<playSound>lightspeed</playSound>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEA_BIRD_RUSSIAN_ROULETTE_LIST_ENEMY"/>
+	</choice>
+</event>
+
+
+<event name="AEA_BIRD_RUSSIAN_ROULETTE_LIST_ENEMY">
+	<loadEventList seeded="false" first="true" generate="true">
+		<event req="aea_bird_roulette_result" lvl="2">
+			<text>A moment later the Gi ship pops back out of the wormhole, unscathed. "Alright, your turn.".</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<loadEvent>AEA_BIRD_RUSSIAN_ROULETTE_SPIN</loadEvent>
+				</event>
+			</choice>
+		</event>
+		<event req="aea_bird_roulette" lvl="1">
+			<text>A moment later the Gi ship pops back out of the wormhole, or atleast part of it does, it appears the wormhole was too much for their vessel and they were ripped apart in transit. You scrap what remains of the veseel.</text>
+			<enemyDamage amount="99" />
+			<autoReward level="HIGH">standard</autoReward>
+		</event>
+		<event name="AEA_BIRD_ROULETTE_ROLL_START_2"/>
+	</loadEventList>
+</event>
+
+<event name="AEA_BIRD_ROULETTE_ROLL_START_2">
+	<text>A moment later the Gi ship pops back out of the wormhole, however this time you see a trail of liquid being left behind by the ship, there are noticable crunch marks down the side. "Alright you win, however I'm still willing to go again, how about it?".</text>
+	<variable name="aea_bird_roulette" op="set" val="1" />
+	<enemyDamage amount="1" />
+	<item_modify>
+		<item type="scrap" min="5" max="5" />
+	</item_modify>
+	<choice hidden="true">
+		<text>Play again.</text>
+		<event>
+			<loadEvent>AEA_BIRD_ROULETTE_AGAIN</loadEvent>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Leave.</text>
+		<event>
+			<text>The Gi vessel waits a moment before jumping away, leaving you alone at the beacon.</text>
+			<instantEscape/>
+		</event>
+	</choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					DISTRESS EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<eventList name="DISTRESS_AEA_BIRD">
+	<event load="DISTRESS_AEA_BIRD_COLONY" />
+	<event load="DISTRESS_FEDERATION_EMBASSY" />
+</eventList>
+
+<event name="DISTRESS_AEA_BIRD_COLONY" unique="true">
+	<distressBeacon />
+	<text>Arriving at the beacon you find a Gi colony is sending the distress signal. You attempt to hail the colony but get no response.</text>
+	<img back="BACK_EVENT_AEA_BIRDDD" planet="NONE"/>
+	<choice hidden="true">
+		<text>Land at the colony.</text>
+		<event>
+			<changeBackground>BACK_EVENT_ZOLTAN_TEMPLE</changeBackground>
+			<text>You land and the colony and find it abandoned, additionally you cannot find any signs of a struggle or battle.</text>
+			<choice hidden="true">
+				<text>Continue searching the colony.</text>
+				<event>
+					<text>Eventually you discover a colony member hiding under in a locked room. After assuring them of their safety they come out. "I suppose you're wondering what happened here, and unfortunately I'm not sure what happened either. I normally sleep with my room locked and so when I woke up this morning to bashing on my door I kept it locked. I don't know what happened but I was able to activate the distress beacon from my room.".</text>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The Gi leads you back to the security center where they're able to log into the system and play back the security footage. The footage only goes back to when your friend here at the colony turned on the distress beacon. It appears the rest of the colony, in a trance like state headed off to the east, you're unsure what happened but you did find some notes in the science lab talking about a strange fungus.</text>
+							<choice hidden="true">
+								<text>Head east.</text>
+								<event>
+									<text>You set off to the east, following the trail laid out by the rest of the colony members. Eventually you come to a large cliff face, the trail appears to stop here, until you look up and see all of the colony members spread across the cliff face. It appears theres a fungus or moss holding them in place.</text>
+									<choice hidden="true">
+										<text>Attempt to dislodge a colony member from the cliff using a wedge.</text>
+										<event>
+											<text>You find a colony member loosely attached to the wall and gently seperate them from the wall. They drop to the ground unresponsive. A moment later you hear a loud screeching coming from the rest of the colony. It goes on for several minutes until another noise overtakes it, the noise of a ship coming from the top of the cliff. 
+
+A Gi ship appears from over the top and begins an attack run on you. You scramble back to your ship.</text>
+											<ship load="SHIP_AEA_BIRD_COLONY_FIGHT" hostile="true"/>
+											<choice hidden="true">
+												<text>Continue...</text>
+												<event load="COMBAT_CHECK"/>
+											</choice>
+										</event>
+									</choice>
+									<choice hidden="true">
+										<text>Attempt to blast away some of the fungus around one of the victims.</text>
+										<event>
+											<text>You cautiously blast away some of the fungus from around one of the colony members, as you watch the fungus that has been seperated from the main mass begins to wither and die. Eventually the colony member detaches from the wall and revives, there's no reaction from the rest of the fungus and so you repeat the process until all of the colony members are detached.</text>
+											<choice hidden="true">
+												<text>Continue...</text>
+												<event>
+													<text>You manage to get all of the colony members back to the colony alive, they're incredibly thankful and reward you with a large amount of scrap and a combat drone from their stores.</text>
+													<autoReward level="HIGH">standard_no_item</autoReward>
+													<drone name="GIFTLIST_DRONES_AEA_BIRD"/>
+												</event>
+											</choice>
+										</event>
+									</choice>
+									<choice hidden="true" req="BLUELIST_WEAPONS_FIRE_ALL">
+										<text>(Fire Weapon) Burn it all!.</text>
+										<event>
+											<text>You ignite the wall, you watch the fire quickly spread across the fungus, consuming many of the colony members. Almost immediately the remaining colony members begin screeching. It goes on for several minutes until another noise overtakes it, the noise of a ship coming from the top of the cliff. 
+
+A Gi ship appears from over the top and begins an attack run on you. You scramble back to your ship.</text>
+											<ship load="SHIP_AEA_BIRD_COLONY_FIGHT" hostile="true"/>
+											<enemyDamage amount="1" system="random" effect="fire" damageHull="false" />
+											<enemyDamage amount="0" system="random" effect="fire" damageHull="false" />
+											<enemyDamage amount="0" system="room" effect="fire" damageHull="false" />
+											<enemyDamage amount="0" system="room" effect="fire" damageHull="false" />
+											<choice hidden="true">
+												<text>Continue...</text>
+												<event load="COMBAT_CHECK"/>
+											</choice>
+										</event>
+									</choice>
+								</event>
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the colony.</text>
+		<event>
+			<text>You have no interest in investigating the colony.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_COLONY_FIGHT_KILL">
+	<text>You find the original Gi colony member hiding at the cliffside where you left them, after defeating the ship it appears the rest of the fungus invested colony members died off. With no one to return back to the colony with the Gi offers to join your crew.</text>
+	<choice hidden="true">
+		<text>Accept them onboard.</text>
+		<event>
+			<text>They're sad about the loss of the colony and their friends but are atleast greatful for you saving them.</text>
+			<crewMember amount="1" class="aea_bird_avali" />
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Offer to drop them off at a nearby station.</text>
+		<event>
+			<text>They seem disapointed but are still atleast greatful for you saving them.</text>
+		</event>
+	</choice>
+</event>
+
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					QUEST EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<eventList name="QUESTS_AEA_BIRD">
+	<event load="AEA_BIRD_DELIVERY_QUEST" />
+</eventList>
+
+<event name="AEA_BIRD_DELIVERY_QUEST" unique="true">
+	<text>Arriving at the beacon you discover a Gi transport ship adrift nearby, scans indicate that the reactor is blown and they have no power. It appears they're carrying a backup for the life support system and so the crew has survived so far.</text>
+	<ship load="SHIP_AEA_BIRD_TRANSPORT_LOOT" hostile="true"/>
+	<status type="limit" target="enemy" system="reactor" amount="1" />
+	<choice hidden="true">
+		<text>Dock and contact the crew.</text>
+		<event>
+			<text>You're immediately met by one of the Gi crew. "Quick, you need to deliver this medicine to the colony, hundreds of lives are at stake." You get almost no say in the matter as they immediately start moving the cargo onboard, one of them gets onboard with it while the others say they'll wait behind for another vessel to pick them up.
+
+They tell you that there's only a few minutes before the medicide expires, you'll need to travel fast to get it there in time.</text>
+			<variable name="aea_bird_medicine" op="set" val="1" />
+			<triggeredEvent name="AEA_BIRD_DELIVERY_TIMER" event="AEA_BIRD_DELIVERY_FAILED" time="420" thisFight="false"  clearOnJump="false">
+                <triggeredEventBox load="DEFAULT_TIMER" pos="default">
+					<warning time="60" flash="true" />
+                    <tooltip>The medicine will expire when this timer runs out!</tooltip>
+                </triggeredEventBox>
+            </triggeredEvent>
+			<crewMember amount="1" class="aea_bird_avali" />
+			<quest event="AEA_BIRD_DELIVERY">
+				<aggressive>2</aggressive>
+			</quest>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Scrap the ship while it's defenseless.</text>
+		<event>
+			<text>You deconstruct the ship, trying to avoid thinking about the transport's crew whom you've sacrificed to the void.</text>
+			<enemyDamage amount="99" />
+			<autoReward level="MED">standard_no_item</autoReward>
+		</event>
+	</choice>
+	<choice hidden="false">
+		<text>Ignore the ship.</text>
+		<event>
+			<text>You prepare to jump to the next beacon.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_DELIVERY_FAILED">
+	<text>The medicine has expired, theres no way you can save the colony now...</text>
+	<variable name="aea_bird_medicine" op="set" val="0" />
+</event>
+
+<event name="AEA_BIRD_DELIVERY">
+	<preventQuest />
+	<beaconType id="map_icon_quest" global="true">
+		<color r="69" g="168" b="235" a="1" />
+		<unvisitedTooltip>The colony here is relying on your medicine to save them.</unvisitedTooltip>
+	</beaconType>
+	<clearTriggeredEvent name="AEA_BIRD_DELIVERY_TIMER" />
+	<img planet="PLANET_POPULATED_SMALL"/>
+	<text>You've arrived at the colony, hopefully the medicine hasn't gone off.</text>
+	<choice hidden="true" blue="true" req="aea_bird_medicine" lvl="1">
+		<text>Deliver the medicine.</text>
+		<event>
+			<text>You deliver the medicine and the medical staff at the colony immediately get to work distributing it to the sick. The staff are very thankful and repay you in a large amount of scrap a drone from their stores.</text>
+			<variable name="aea_bird_medicine" op="set" val="0" />
+			<autoReward level="HIGH">standard_no_item</autoReward>
+			<drone name="GIFTLIST_DRONES_AEA_BIRD"/>
+		</event>
+	</choice>
+	<choice hidden="true" blue="false" req="aea_bird_medicine" lvl="0" max_lvl="0">
+		<text>The medicine expired.</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true">
+		<text>Avoid the colony.</text>
+		<event>
+			<text>You prepare to jump to the next beacon.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					HOSTILE EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<eventList name="HOSTILE_AEA_BIRD">
+	<event load="ENCOUNTER_AEA_BIRD_SALVAGE" />
+	<event load="ENCOUNTER_AEA_BIRD_FED_SALVAGE" />
+	
+	<event load="ENCOUNTER_REBEL" />
+	<event load="ENCOUNTER_REBEL" />
+</eventList>
+
+<event name="ENCOUNTER_AEA_BIRD_SALVAGE" unique="true">
+	<text>You find the wreck of a Federation ship nearby. Before you can even begin to consider salvaging it, a Gi ship jumps in, surveys the scene, and blames you for the destruction of the ship!.</text>
+	<ship load="SHIP_AEA_BIRD_FIGHT" hostile="true" /> 
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<event name="ENCOUNTER_AEA_BIRD_FED_SALVAGE" unique="true">
+	<text>You find the wreck of a Gi ship nearby. Before you can even begin to consider salvaging it, a Federation ship jumps in, surveys the scene, and blames you for the destruction of the ship!.</text>
+	<ship load="SHIP_FED_FIGHT" hostile="true" /> 
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					SPECIAL EVENTS
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+<event name="AEA_BIRD_FED_SPIES" unique="true">
+	<distressBeacon/>
+	<preventFleet/>
+	<preventQuest/>
+	<text>You arrive at the beacon to discover a large elite federation vessel chasing down a civilian vessel. Before you're able to do anything you watch as the civilian vessel is shredded by the federation vessel. The large ship then turns to face you with it's weapons armed.</text>
+	<ship load="SHIP_AEA_BIRD_FED_SPIES" hostile="true"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_FED_SPIES_SURRENDER">
+	<text>The captain of the ship comes onto the screen, they're wearing a hastily put together federation outfit. "Captain, clearly we've got off on the wrong foot, lets have a ceasefire and we'll send over some scrap as an apology".</text>
+	<choice>
+		<text>Agree to the ceasefire.</text>
+		<event>
+			<text>You deactivate your weapons and they send over a shuttle. It comes to dock with your ship, but before you can open it an explosion rips across your hull. The shuttle was full of explosive, you've fallen for their trap.
+
+Somehow you didn't notice that the federation ship was full of rebels.</text>
+			<damage amount="1" system="random" effect="breach" />
+			<damage amount="1" system="random" effect="breach" />
+		</event>
+	</choice>
+	<choice>
+		<text>Mute them and continue fighting.</text>
+		<event />
+	</choice>
+</event>
+<event name="AEA_BIRD_FED_SPIES_DESTROY">
+	<text>You've destroyed the Federation ship, and with it the Rebel crew. You salvage the wreck as you investigate.</text>
+	<autoReward level="MED">standard</autoReward>
+	<choice>
+		<text>Continue...</text>
+		<event load="AEA_BIRD_FED_SPIES_INVEST"/>
+	</choice>
+</event>
+<event name="AEA_BIRD_FED_SPIES_DEADCREW">
+	<text>You've killed off all of the Rebel crew. You salvage the wreck as you investigate.</text>
+	<autoReward level="HIGH">standard</autoReward>
+	<choice>
+		<text>Continue...</text>
+		<event load="AEA_BIRD_FED_SPIES_INVEST"/>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_FED_SPIES_INVEST">
+	<text>You search the ship, in the remains of the storage bay you find a number of federation outfits. you search inside the pocket of one of the outfits and find a datapad, it appears the ship has been stationed at a beacon that, according to your computer, is completely empty and devoid of anything interesting. You mark the location on your map.</text>
+	<quest event="AEA_BIRD_FED_REBEL_BASE"/>
+</event>
+
+<ship name="SHIP_AEA_BIRD_FED_SPIES" auto_blueprint="MU_FED_LIGHT_CRUISER_ELITE">
+	<surrender chance="0" min="9" max="12" load="AEA_BIRD_FED_SPIES_SURRENDER" />
+	<destroyed load="AEA_BIRD_FED_SPIES_DESTROY" />
+	<deadCrew load="AEA_BIRD_FED_SPIES_DEADCREW" />
+	<crew>
+		<crewMember type="LIST_CREW_AEA_REBEL_ELITE_RANDOM" prop="1" />
+	</crew>
+</ship>
+
+<event name="AEA_BIRD_FED_REBEL_BASE">
+	<preventFleet />
+	<preventQuest />
+	<beaconType id="map_icon_merchantquest_major" global="true">
+		<color r="69" g="168" b="235" a="1" />
+		<unvisitedTooltip>The empty beacon that the Federation cruiser with rebel crew was stationed at.</unvisitedTooltip>
+	</beaconType>
+	<img planet="NONE"/>
+	<text>You've arrived at the apparently empty beacon to discover a rather large Gi military base near the beacon. You notice a small rebel shuttles docked with it, scans indicated the shuttles have been modified with stealth capabilities, they must have used them to sneak onboard of and then take over the base.</text>
+	<choice hidden="true">
+		<text>Trap them on the station by blowing up the shuttles.</text>
+		<event>
+			<text>It takes a few volleys but you manage to detonate all of the shuttles docked to the station. However as you destroy the last shuttle a hanger you thought empty opens, revealing a Gi Transport, this transport appears to be upgraded and quite dangerous. You wonder if this is why the military base was so secret, however you're cut off by the transport leave the hanger flying straight at your own ship.</text>
+			<ship load="SHIP_AEA_BIRD_REBEL_TRANSPORT" hostile="true"/>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_REBEL_TRANS_DESTROY">
+	<text>You've destroyed the stolen transport, you hope it wasn't too important to the Gi. You scrap the remains of the wreck.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<choice>
+		<text>Continue...</text>
+		<event load="AEA_BIRD_REBEL_TRANS_INVEST"/>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_REBEL_TRANS_DEADCREW">
+	<text>You've killed off all of the Rebel crew on the stoeln transport, you board and take all the rebel's scrap and supplies but leave the transport unharmed.</text>
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<choice>
+		<text>Continue...</text>
+		<event load="AEA_BIRD_REBEL_TRANS_INVEST"/>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_REBEL_TRANS_INVEST">
+	<text>With the transport dealt with the remaining rebels are completely trapped onboard the station. You send for the Gi and Federation to come cleanup the situation.
+
+Eventually your support arrives, GI and Federation soldiers take back the base after the rebels quickly surrender. The GI are very thankful for your help in saving the base, they didn't even realize the base had been taken over by the rebels, apparently the rebels had kept the base operating.
+The Gi even send one of their prototype cruiser's blueprints over to you, alongside a heap of scrap and supplies.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<drone name="LIST_LOOT_AEA_BIRD"/>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_BIRD_TRAN</unlockCustomShip>
+</event>
+
+<ship name="SHIP_AEA_BIRD_REBEL_TRANSPORT" auto_blueprint="AEA_BIRD_TRANSPORT_ELITE">
+	<destroyed load="AEA_BIRD_REBEL_TRANS_DESTROY" />
+	<deadCrew load="AEA_BIRD_REBEL_TRANS_DEADCREW" />
+	<crew>
+		<crewMember type="LIST_CREW_AEA_REBEL_ELITE_RANDOM" prop="1" />
+	</crew>
+</ship>
+
+<event name="AEA_BIRD_ENGINEER" unique="true">
+	<preventFleet />
+	<preventQuest />
+	<beaconType id="map_icon_aea_bird_engineer" global="true">
+		<color r="255" g="226" b="0" a="1"/>
+		<unvisitedTooltip>The Central Engineering Facility of the Gi Federation.</unvisitedTooltip>
+	</beaconType>
+	<img back="BACKGROUND_ARCHIVE_SHIPYARDS" planet="NONE"/>
+	<text>You've arrived at the Central Engineering Facility, most of the Facility is off limits to visitors however theres a large museum where the innovations of the Gi Engineers are presented.</text>
+	<choice hidden="true">
+		<text>Visit the museum.</text>
+		<event>
+			<text>The first exhibit covers first design of the Central Engineering Facility, the Twin Drone.
+"The Twin Drone is a modification of the standard combat drone. Gi engineers noticed the inability for some combat drones to penetrate the protective shield layers of an enemy ship. Gi engineers developped an attachement for the drone, a small and weak ion cannon, sufficient enough to ionize shield, but not any more. The biggest drawback of the drone was that the power source of the drone wasn't designed to power two weapons at once, and as such was slowed down by the additional weapon.".</text>
+			<choice hidden="true">
+				<text>Move onto the next exhibit.</text>
+				<event>
+					<text>The next exhibit covers the Burst Drone.
+"The Burst Drone was the first design native to the facility. The drone was designed around an adaptive power supply, this power supply was able to greatly increase the potency of the weapon, but increasing the power still reduced the speed of the drone. The drone is still very power efficient and these developments in drone reactor design lead to further developments.".</text>
+					<choice hidden="true">
+						<text>Move onto the next exhibit.</text>
+						<event>
+							<text>The next exhibit covers the Intel Drone.
+"The Intel Drone was a leap forwards in a different area of drone design. The Intelligence drone incorporates a brand new AI module, this greately increased the potency of the drone by allowing it to target important components on the enemy ship, increasing the reliablility of the damage. The drone also incorporates some of the previous advancements in drone reactor design and as such is able to power two laser cannons at once.".</text>
+							<choice hidden="true">
+								<text>Move onto the final exhibit.</text>
+								<event>
+									<text>The final exhibit covers the Bio Drone.
+"The Bio Drone is the most modern development in drone designs by this facility. One of the advancements in this drone incorporates the AI module of the Intel drone, however this time the AI has been adjusted to target enemy crew, this greately increases the effectiveness of the weapon. This leads onto the next development, the weapon on this drone series incorporates a powerful bio laser that causes the target to detonate on death, causing damage to the immediate area.".</text>
+									<choice hidden="true">
+										<text>Head to the giftshop.</text>
+										<event load="AEA_BIRD_GIFTSHOP"/>
+									</choice>
+									<choice hidden="true">
+										<text>Leave.</text>
+										<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+									</choice>
+								</event>
+							</choice>
+							<choice hidden="true">
+								<text>Leave.</text>
+								<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+							</choice>
+						</event>
+					</choice>
+					<choice hidden="true">
+						<text>Leave.</text>
+						<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Leave.</text>
+				<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the museum.</text>
+		<event>
+			<text>You prepare to jump to the next beacon.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_GIFTSHOP">
+	<text>The giftshop is full of mostly useless knick knacks, however something catches your eye. "You could win your very own intel drone if you manage to fill out this simple questionnaire!".</text>
+	<variable name="aea_bird_questions" op="set" val="0" />
+	<choice hidden="true">
+		<text>Attempt the questionnaire.</text>
+		<event>
+			<text>Question 1: What was the biggest drawback of the Twin Drone?.</text>
+			<choice hidden="true">
+				<text>The inability for the ion cannon to ionize systems.</text>
+				<event load="AEA_BIRD_QUESTIONS_2_FAIL"/>
+			</choice>
+			<choice hidden="true">
+				<text>The drag added by the additional weapon.</text>
+				<event load="AEA_BIRD_QUESTIONS_2_FAIL"/>
+			</choice>
+			<choice hidden="true">
+				<text>The inability for the laser cannon to penetrate shield layers.</text>
+				<event load="AEA_BIRD_QUESTIONS_2_FAIL"/>
+			</choice>
+			<choice hidden="true">
+				<text>The weakness of the power supply slowing down the drone.</text>
+				<event load="AEA_BIRD_QUESTIONS_2"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Leave.</text>
+		<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_QUESTIONS_2_FAIL">
+	<text>Question 2: What was the major innovation behind the Burst Drone?.</text>
+	<choice hidden="true">
+		<text>A multi shot laser cannon.</text>
+		<event load="AEA_BIRD_QUESTIONS_3_FAIL"/>
+	</choice>
+	<choice hidden="true">
+		<text>An adaptive power supply unit.</text>
+		<event load="AEA_BIRD_QUESTIONS_3"/>
+	</choice>
+	<choice hidden="true">
+		<text>An increased accuracy barrel.</text>
+		<event load="AEA_BIRD_QUESTIONS_3_FAIL"/>
+	</choice>
+	<choice hidden="true">
+		<text>More efficient use of drone parts.</text>
+		<event load="AEA_BIRD_QUESTIONS_3_FAIL"/>
+	</choice>
+</event>
+<event name="AEA_BIRD_QUESTIONS_2">
+	<variable name="aea_bird_questions" op="add" val="1" />
+	<text>Question 2: What was the major innovation behind the Burst Drone?.</text>
+	<choice hidden="true">
+		<text>A multi shot laser cannon.</text>
+		<event load="AEA_BIRD_QUESTIONS_3_FAIL"/>
+	</choice>
+	<choice hidden="true">
+		<text>An adaptive power supply unit.</text>
+		<event load="AEA_BIRD_QUESTIONS_3"/>
+	</choice>
+	<choice hidden="true">
+		<text>An increased accuracy barrel.</text>
+		<event load="AEA_BIRD_QUESTIONS_3_FAIL"/>
+	</choice>
+	<choice hidden="true">
+		<text>More efficient use of drone parts.</text>
+		<event load="AEA_BIRD_QUESTIONS_3_FAIL"/>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_QUESTIONS_3_FAIL">
+	<text>Question 3: What did the custom module of the Intel Drone do?.</text>
+	<choice hidden="true">
+		<text>Provided Sensor View of the target to the user even in a Nebula.</text>
+		<event load="AEA_BIRD_QUESTIONS_4_FAIL"/>
+	</choice>
+	<choice hidden="true">
+		<text>Stopped the drone from targetting systemless rooms.</text>
+		<event load="AEA_BIRD_QUESTIONS_4"/>
+	</choice>
+	<choice hidden="true">
+		<text>Deploys a Hologram onboard the enemy ship in the hit room.</text>
+		<event load="AEA_BIRD_QUESTIONS_4_FAIL"/>
+	</choice>
+	<choice hidden="true">
+		<text>Allowed the two weapons to target seperate rooms.</text>
+		<event load="AEA_BIRD_QUESTIONS_4_FAIL"/>
+	</choice>
+</event>
+<event name="AEA_BIRD_QUESTIONS_3">
+	<variable name="aea_bird_questions" op="add" val="1" />
+	<text>Question 3: What did the custom module of the Intel Drone do?.</text>
+	<choice hidden="true">
+		<text>Provided Sensor View of the target to the user even in a Nebula.</text>
+		<event load="AEA_BIRD_QUESTIONS_4_FAIL"/>
+	</choice>
+	<choice hidden="true">
+		<text>Stopped the drone from targetting systemless rooms.</text>
+		<event load="AEA_BIRD_QUESTIONS_4"/>
+	</choice>
+	<choice hidden="true">
+		<text>Deploys a Hologram onboard the enemy ship in the hit room.</text>
+		<event load="AEA_BIRD_QUESTIONS_4_FAIL"/>
+	</choice>
+	<choice hidden="true">
+		<text>Allowed the two weapons to target seperate rooms.</text>
+		<event load="AEA_BIRD_QUESTIONS_4_FAIL"/>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_QUESTIONS_4_FAIL">
+	<text>Question 4: What was special about the weapon on the Bio Drone?.</text>
+	<choice hidden="true">
+		<text>The lasers home in on enemy crew on the target ship.</text>
+		<event load="AEA_BIRD_QUESTIONS_5_FAIL"/>
+	</choice>
+	<choice hidden="true">
+		<text>The projectile damages all enemies in the hit room and adjacent rooms.</text>
+		<event load="AEA_BIRD_QUESTIONS_5_FAIL"/>
+	</choice>
+	<choice hidden="true">
+		<text>The lasers cause the enemy to explode dealing damage to the room.</text>
+		<event load="AEA_BIRD_QUESTIONS_5"/>
+	</choice>
+	<choice hidden="true">
+		<text>The projectile causes enemy crew to be mind controlled for a few seconds.</text>
+		<event load="AEA_BIRD_QUESTIONS_5_FAIL"/>
+	</choice>
+</event>
+<event name="AEA_BIRD_QUESTIONS_4">
+	<variable name="aea_bird_questions" op="add" val="1" />
+	<text>Question 4: What was special about the weapon on the Bio Drone?.</text>
+	<choice hidden="true">
+		<text>The lasers home in on enemy crew on the target ship.</text>
+		<event load="AEA_BIRD_QUESTIONS_5_FAIL"/>
+	</choice>
+	<choice hidden="true">
+		<text>The projectile damages all enemies in the hit room and adjacent rooms.</text>
+		<event load="AEA_BIRD_QUESTIONS_5_FAIL"/>
+	</choice>
+	<choice hidden="true">
+		<text>The lasers cause the enemy to explode dealing damage to the room.</text>
+		<event load="AEA_BIRD_QUESTIONS_5"/>
+	</choice>
+	<choice hidden="true">
+		<text>The projectile causes enemy crew to be mind controlled for a few seconds.</text>
+		<event load="AEA_BIRD_QUESTIONS_5_FAIL"/>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_QUESTIONS_5_FAIL">
+	<loadEventList seeded="false" first="true" generate="true">
+		<event req="aea_bird_questions" lvl="3">
+			<text>After completing the final question you recieve your results. 
+	RESULT: 3/4 (FAIL)
+Unfortunately you were unable to answer all the questions correctly.</text>
+			<choice hidden="true">
+				<text>Leave the museum.</text>
+				<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+			</choice>
+		</event>
+		<event req="aea_bird_questions" lvl="2">
+			<text>After completing the final question you recieve your results. 
+	RESULT: 2/4 (FAIL)
+Unfortunately you were unable to answer all the questions correctly.</text>
+			<choice hidden="true">
+				<text>Leave the museum.</text>
+				<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+			</choice>
+		</event>
+		<event req="aea_bird_questions" lvl="1">
+			<text>After completing the final question you recieve your results. 
+	RESULT: 1/4 (FAIL)
+Unfortunately you were unable to answer all the questions correctly.</text>
+			<choice hidden="true">
+				<text>Leave the museum.</text>
+				<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+			</choice>
+		</event>
+		<event>
+			<text>After completing the final question you recieve your results. 
+	RESULT: 0/4 (FAIL)
+Unfortunately you were unable to answer all the questions correctly.</text>
+			<choice hidden="true">
+				<text>Leave the museum.</text>
+				<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+			</choice>
+		</event>
+	</loadEventList>
+</event>
+<event name="AEA_BIRD_QUESTIONS_5">
+	<loadEventList seeded="false" first="true" generate="true">
+		<event req="aea_bird_questions" lvl="3">
+			<text>After completing the final question you recieve your results. 
+	RESULT: 4/4 (PASS)
+Success! You managed to get every question correct and you recieve your free Intel drone.</text>
+			<drone name="AEA_COMBAT_BIRD_SMART_1"/>
+			<choice hidden="true">
+				<text>Leave the museum.</text>
+				<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+			</choice>
+		</event>
+		<event req="aea_bird_questions" lvl="2">
+			<text>After completing the final question you recieve your results. 
+	RESULT: 3/4 (FAIL)
+Unfortunately you were unable to answer all the questions correctly.</text>
+			<choice hidden="true">
+				<text>Leave the museum.</text>
+				<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+			</choice>
+		</event>
+		<event req="aea_bird_questions" lvl="1">
+			<text>After completing the final question you recieve your results. 
+	RESULT: 2/4 (FAIL)
+Unfortunately you were unable to answer all the questions correctly.</text>
+			<choice hidden="true">
+				<text>Leave the museum.</text>
+				<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+			</choice>
+		</event>
+		<event>
+			<text>After completing the final question you recieve your results. 
+	RESULT: 1/4 (FAIL)
+Unfortunately you were unable to answer all the questions correctly.</text>
+			<choice hidden="true">
+				<text>Leave the museum.</text>
+				<event load="AEA_BIRD_ENGINEERING_LEAVE"/>
+			</choice>
+		</event>
+	</loadEventList>
+</event>
+<event name="AEA_BIRD_ENGINEERING_LEAVE">
+	<text>As your leaving the museum you hear a large explosion overhead. As you duck for cover you makeout a Gi shuttle shooting away from the explosion, it zips back around and performs another pass on the facility. You sprint back around and ready the ship for combat, Someone need to stop that shuttle!.</text>
+	<ship load="SHIP_AEA_BIRD_DRONE_QUEST" hostile="true"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_DRONE_KILL_QUEST">
+	<text>As you're scrapping the remains of the drone shuttle another Gi shuttle flies over to you and delivers a neat looking Gi engineer. "Hi, I'm so sorry about this, I didn't mean for the drone to get away like this, thats the problem with giving them a level of intelligence, you can never be quite sure how they'll react... Oh right, my name is Jay, I'm the chief engineer here. Saaayyy, you handled that drone pretty well, I've got a similar kind of mission you might be interested, although I'd need you to let me come with you.".</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<choice hidden="true">
+		<text>Agree to transport Jay.</text>
+		<event>
+			<text>"Alright! We've recently got word that the rebels have moved a large Auto-ship into the sector, we're trying to get our hands on an advanced rebel AI core, but all of the rebel auto-ships we've taken down have been small and simple. I need you to go and defeat the large auto-ship and then I'll be able to go in and harvast the core, these things are very well protected so don't worry about accidently blowing it up!".</text>
+			<quest event="AEA_BIRD_JAY_AUTO_QUEST"/>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Politely decline.</text>
+		<event>
+			<text>"Aww, too bad, well thanks for dealing with the drone, feel free to scrap it!" The engineer returns to her shuttle and flies back to the facility, you can already see repair drones zipping around the damaged sections.</text>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_JAY_AUTO_QUEST">
+	<preventFleet />
+	<preventQuest />
+	<beaconType id="map_icon_merchantquest_major" global="true">
+		<color r="235" g="69" b="69" a="1"/>
+		<unvisitedTooltip>The last reported location of the large Auto-ship you're hunting.</unvisitedTooltip>
+	</beaconType>
+	<img planet="NONE"/>
+	<text>You've arrived at the destination, A large Auto-ship sits some distance away. The ship begins to move towards you, it's smaller escort ships stay back to watch.</text>
+	<ship load="SHIP_AEA_BIRD_AUTO_BOSS" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+
+<event name="AEA_BIRD_AUTO_BOSS_KILL">
+	<text>With the auto-ship disassembled you begin scrapping the remains. Eventually you discover the AI core that Jay, the Chief Gi Engineer, was wanting. You bring it onboard for her and she begins pulling it apart with almost wreckless abandon.</text>
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<weapon name="RANDOM"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>After making a rather large mess in your cargo bay, Jay finally immerges holding a data stick. "Aha, I've finally got my hands on the AI the rebels use, atleast the part of it that was controlling the Auto-ship." She begins uploading it to the Engineering Facility from your ship.
+
+"Say, that was kinda fun, Would you consider letting me join your crew, I've always wanted to get out and see the rest of the Universe. Plus, it seems like you're quite adept at dismantling the enemy ships and I definitely want to see how everyone else builds their ships."</text>
+			<unlockCustomShip silent="false">PLAYER_SHIP_AEA_BIRD_BIG</unlockCustomShip>
+			<choice hidden="true">
+				<text>Accept her into the crew</text>
+				<event>
+					<text>Welcome aboard!</text>
+					<crewMember amount="1" all_skills="2" class="aea_bird_unique">Jay</crewMember>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Politely decline</text>
+				<event>
+					<text>You drop her off at a nearby Gi station.</text>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+</FTL>
+

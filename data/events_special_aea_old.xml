@@ -1,6 +1,6 @@
 <FTL>
 <event name="AEA_OLD_POWER_CELL_CONTINUE">
-	<text> TEST TEST </text>
+	<text> TEST TEST .</text>
 	<weapon name="AEA_LASER_OLD_1_CELL"/>
 	<variable name="aea_old_has_cell" op="set" val="1" />
 </event>
@@ -35,7 +35,7 @@
 		<event>
 			<text>The strange weapon you collected earlier in your travels begins to glow as you near the structure.</text>
 			<choice hidden="true" req="AEA_LASER_OLD_1_CELL">
-				<text>(??? Weapon) Insert the weapon into the gate</text>
+				<text>(??? Weapon) Insert the weapon into the gate.</text>
 				<event>
 					<text>The gate begins to glow, a moment later a rift opens in the middle, and a large cruiser immerges.</text>
 					<ship load="AEA_OLD_GATE_GUARD_BOSS" hostile="true"/>
@@ -66,7 +66,7 @@
 				</event>
 			</choice>
 			<choice hidden="false">
-				<text>Ignore it</text>
+				<text>Ignore it.</text>
 				<event>
 					<text>You admire the structure while your FTL drive changes.</text>
 					<choice>
@@ -111,7 +111,7 @@
 		<text>You've destroyed the Mysterious cruiser, you begin salvaging the vessel.
 
 You wonder if perhaps something would have happened if you let it escape and take you with it.
-		</text>
+		.</text>
 		<autoReward level="HIGH">standard_no_item</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -167,7 +167,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 </ship>
 
 <event name="AEA_OLD_BEAM_MASTER" unique="true">
-	<text>"I've finally figured it out, the reason why I kept losing is because you keep shooting at my ship! First I thought - 'Well, why don't I take away their guns?', but my crew told me it's not really feasible, so I though about what you usually shoot and Eureka! You aim for my systems, don't you? You sneaky bastard, the secret is out! And now - no more. These cool lylmik dudes sold me this armour stuff and I basically ripped them off, just cost me all my other guns, but now I am practically become invincible. Now I am the ARMOUR MASTER! Good luck hitting anything, beyatch!"</text>
+	<text>"I've finally figured it out, the reason why I kept losing is because you keep shooting at my ship! First I thought - 'Well, why don't I take away their guns?', but my crew told me it's not really feasible, so I though about what you usually shoot and Eureka! You aim for my systems, don't you? You sneaky bastard, the secret is out! And now - no more. These cool lylmik dudes sold me this armour stuff and I basically ripped them off, just cost me all my other guns, but now I am practically become invincible. Now I am the ARMOUR MASTER! Good luck hitting anything, beyatch!".</text>
 	<ship load="SHIP_NEMESIS_AEA_OLD" hostile="true" />
 	<status type="limit" target="enemy" system="engines" amount="0" />
 	<choice hidden="true">
@@ -280,7 +280,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 
 <ship name="SHIP_AEA_OLD_1_STATION_LOOT" auto_blueprint="AEA_OLD_STATION">
 	<destroyed load="TRANSPORT_DESTROYED" />
-	<deadCrew load="TRANSPORT_CAPTURE_AEA_NECRO" />
+	<deadCrew load="TRANSPORT_CAPTURE_AEA_OLD" />
 </ship>
 
 <event name="TRANSPORT_AEA_OLD_1_LOOT" unique="true">
@@ -319,12 +319,12 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
         </event>
     </choice>
 </event>
-<event name="TRANSPORT_CAPTURE_AEA_NECRO" unique="true">
+<event name="TRANSPORT_CAPTURE_AEA_OLD" unique="true">
 	<text>The crew is dead, leaving you with the station. Its cargo is yours for the taking. Aboard is the special tech you expected, which you bring back to your ship.</text>
 	<autoReward level="MED">standard_no_item</autoReward>
 	<weapon name="AEA_LASER_OLDP_3_LOOT" />
 	<variable name="ach_trans_aea_old_1" op="set" val="1" />
-	<achievement>ACH_TRANS_AEA_NECRO</achievement>
+	<achievement>ach_trans_aea_old_1</achievement>
 </event>
 
 
@@ -346,7 +346,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 	<autoReward level="HIGH">standard</autoReward>
 </event>
 <textList name="TEXT_DEAD_CREW_AEA_OLD">
-	<text>As the last Lylmik collapses, it lets out two last words. "Screw... you..."</text>
+	<text>As the last Lylmik collapses, it lets out two last words. "Screw... you...".</text>
 	<text>You've made quick work of these aliens. You don't feel any guilt, afterall these aren't really murders anyway.</text>
 	<text>You've heard that instead of dying the Lylmik just get redirected to a new body, better hope those new bodies aren't anywhere nearby.</text>
 	<text>You may not feel bad about the lylmik, but their organic crew may not always deserve it.</text>
@@ -354,7 +354,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 
 <eventList name="AEA_OLD_SURRENDER_LIST">
 	<event>
-		<text>"Good, I see you are smarter than most. Be grateful that we too have decided to show you mercy."</text>
+		<text>"Good, I see you are smarter than most. Be grateful that we too have decided to show you mercy.".</text>
 		<ship hostile="false" /> 
 		<choice hidden="true">
 			<text>Let them go.</text>
@@ -363,7 +363,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 		<choice hidden="true">
 			<text>Finish these bastards off.</text>
 			<event>
-				<text>"Really? You dare try to try and fight us again? Hah, how laughable."</text>
+				<text>"Really? You dare try to try and fight us again? Hah, how laughable.".</text>
 				<ship hostile="true" /> 
 			</event>
 		</choice>
@@ -373,7 +373,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 
 <ship name="SHIP_AEA_OLD_ALL_SURRENDER" auto_blueprint="LIST_SHIPS_AEA_OLD_ALL">
 	<surrender min="3" max="4">
-		<text>"Mortal beings, you must not be aware of the consequences of your actions. We are not meant to die. Kill us, and you will suffer a terrible fate."</text>
+		<text>"Mortal beings, you must not be aware of the consequences of your actions. We are not meant to die. Kill us, and you will suffer a terrible fate.".</text>
 		<choice hidden="true">
 			<text>Let them go.</text>
 			<event load="AEA_OLD_SURRENDER_LIST" />
@@ -423,9 +423,9 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 
 <ship name="AEA_OLD_STATION_EXCLUSIVE" auto_blueprint="AEA_OLD_STATION">
 	<surrender min="3" max="4">
-		<text>"Fine, fine, you can have access to the station, just don't kill us."</text>
+		<text>"Fine, fine, you can have access to the station, just don't kill us.".</text>
 		<choice hidden="true">
-			<text>Let them live</text>
+			<text>Let them live.</text>
 			<event>
 				<ship hostile="false"/>
 				<text>You gain access to the station, and discover its basically just one big store.</text>
@@ -433,7 +433,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 			</event>
 		</choice>
 		<choice>
-			<text>Finish them off</text>
+			<text>Finish them off.</text>
 			<event />
 		</choice>
 	</surrender>

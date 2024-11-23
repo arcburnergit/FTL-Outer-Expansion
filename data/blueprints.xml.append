@@ -33,6 +33,14 @@
 	<stackable>false</stackable>
 	<bp>0</bp>
 </augBlueprint>
+<augBlueprint name="SHIP_AEA_BIRD">
+	<title>Gi Cruiser</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
 <augBlueprint name="SHIP_AEA_OLD">
 	<title>Lylmik Cruiser</title>
 	<desc>YOU SHOULD NEVER SEE THIS</desc>
@@ -42,7 +50,7 @@
 	<bp>0</bp>
 </augBlueprint>
 
-<shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY" layout="aeap_acid_arty_1" img="aeap_acid_arty_1">
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY" layout="aeap_acid_arty_a" img="aeap_acid_arty_a">
 	<class>Acidic Cruiser</class>
 	<name>The Alkaline</name>
 	<desc>Originating from the Acidic Growth, the vessel allowed the Growth to extend it's reach beyond the nebulas it formed in. So far only the orchids have brokered peace with the Acidic Growth. This ship has an upgraded oxygen system.</desc>
@@ -115,7 +123,7 @@
     <mv-mapImage>map_icon_aeap_acid_arty_a</mv-mapImage>
 </shipBlueprint>
 
-<shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY_2" layout="aeap_acid_arty_2" img="aeap_acid_arty_2">
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY_2" layout="aeap_acid_arty_b" img="aeap_acid_arty_b">
 	<class>Acidic Cruiser</class>
 	<name>The Caustic</name>
 	<desc>This prototype design incorporates duel quick firing artillery beams to drill through enemy ships.</desc>
@@ -190,7 +198,7 @@
     <mv-mapImage>map_icon_aeap_acid_arty_a</mv-mapImage>
 </shipBlueprint>
 
-<shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY_3" layout="aeap_acid_arty_3" img="aeap_acid_arty_3">
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY_3" layout="aeap_acid_arty_c" img="aeap_acid_arty_c">
 	<class>Acidic Cruiser</class>
 	<name>The Acidic</name>
 	<desc>A federation modification of the Acidic Cruiser, this vessel replaces the Acidic filtering system with a more traditional fire suppression system.</desc>
@@ -267,7 +275,7 @@
     <mv-mapImage>map_icon_aeap_acid_arty_a</mv-mapImage>
 </shipBlueprint>
 
-<shipBlueprint name="PLAYER_SHIP_AEA_ACID_LONG" layout="aeap_acid_long_1" img="aeap_acid_long_1">
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_LONG" layout="aeap_acid_long_a" img="aeap_acid_long_a">
 	<class>Acidic Destroyer</class>
 	<name>Bleach</name>
 	<desc>A new line of Acidic Cruiser, these ships are specifically designed for high fire power, however this comes at the cost of a weaker shielding system.</desc>
@@ -341,7 +349,7 @@
     <mv-mapImage>map_icon_aeap_acid_long_a</mv-mapImage>
 </shipBlueprint>
 
-<shipBlueprint name="PLAYER_SHIP_AEA_ACID_LONG_2" layout="aeap_acid_long_2" img="aeap_acid_long_2">
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_LONG_2" layout="aeap_acid_long_b" img="aeap_acid_long_b">
 	<class>Acidic Destroyer</class>
 	<name>Antacid</name>
 	<desc>This ship combines a strong weapon system with a boarding setup to create a powerful and dangerous ship.</desc>
@@ -414,7 +422,7 @@
     <mv-mapImage>map_icon_aeap_acid_long_a</mv-mapImage>
 </shipBlueprint>
 
-<shipBlueprint name="PLAYER_SHIP_AEA_ACID_LONG_3" layout="aeap_acid_long_3" img="aeap_acid_long_3">
+<shipBlueprint name="PLAYER_SHIP_AEA_ACID_LONG_3" layout="aeap_acid_long_c" img="aeap_acid_long_c">
 	<class>Acidic Destroyer</class>
 	<name>Hydroxide</name>
 	<desc>This vessel gets rid of the shield system entirely, focusing on using cloaking and it's more powerful weapon system capable of handling up to 5 weapons at once.</desc>
@@ -3941,10 +3949,10 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 </FTL>
 
 <FTL>
-<shipBlueprint name="PLAYER_SHIP_AEA_BIRD_BIG" layout="aeap_bird_big_1" img="aeap_bird_big_1">
+<shipBlueprint name="PLAYER_SHIP_AEA_BIRD_BIG" layout="aeap_bird_big_a" img="aeap_bird_big_a">
 	<class>Eagle Cruiser</class>
 	<name>The Wedge-Tailed</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>With no weapons system this ship has to rely on a single intel drone to take out the enemy systems.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_BIG_unlock" />
 	<systemList>
 		<battery max="2" power="1" room="8" start="false" img="room_battery_6" />
@@ -4005,7 +4013,7 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<droneSlots>4</droneSlots>
 	<weaponList missiles="2" count="2" />
 	<droneList drones="8" count="4">
-		<drone name="AEA_COMBAT_BIRD_BURST_2" />
+		<drone name="AEA_COMBAT_BIRD_SMART_1" />
 		<drone name="PEST_RAD" />
 	</droneList>
 	<health amount="30" />
@@ -4015,13 +4023,170 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<crewCount amount="1" class="aea_bird_avali" />
 	<aug name="COMBAT_CLOAKING_JAMMER" />
 	<shieldImage>mup_standard2</shieldImage>
-	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+	<mv-mapImage>map_icon_aeap_bird_big</mv-mapImage>
 </shipBlueprint>
 
-<shipBlueprint name="PLAYER_SHIP_AEA_BIRD_TRAN" layout="aeap_bird_tran_1" img="aeap_bird_tran_1">
+<shipBlueprint name="PLAYER_SHIP_AEA_BIRD_BIG_2" layout="aeap_bird_big_b" img="aeap_bird_big_b">
+	<class>Eagle Cruiser</class>
+	<name>The Kingfisher</name>
+	<desc>The smart bio drone onboard this ship is capable of not only taking out crew but enemy systems too.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_BIG_2_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="16" start="false" img="room_battery_2" />
+		<cloaking power="1" room="15" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="9" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="6" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="7" start="true" img="room_drones_10" />
+		<engines power="1" room="14" start="true" img="room_engines_4">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="2" start="false" img="room_hacking_9" />
+		<medbay power="1" room="9" start="true" img="room_medbay_9">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="1" start="false" img="room_mind_1" />
+		<oxygen power="1" room="8" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="3" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="12" start="true" img="room_shields_4">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="17" start="false" />
+		<weapons max="8" power="2" room="11" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="2" count="3">
+		<weapon name="ENERGY_2" />
+	</weaponList>
+	<droneList drones="8" count="3">
+		<drone name="AEA_COMBAT_BIRD_BIO_2" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="aea_bird_avali" />
+	<crewCount amount="1" class="engi" />
+	<crewCount amount="1" class="human_soldier" />
+	<aug name="EX_DEFENSE_SCRAMBLER" />
+	<shieldImage>mup_standard2</shieldImage>
+	<mv-mapImage>map_icon_aeap_bird_big</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_BIRD_BIG_3" layout="aeap_bird_big_c" img="aeap_bird_big_c">
+	<class>Eagle Cruiser</class>
+	<name>The Black Hawk</name>
+	<desc>With both a bio drone and a intel drone this ship is quite capable of taking out any foe.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_BIG_3_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="8" start="false" img="room_battery_2" />
+		<cloaking power="1" room="2" start="false" img="room_cloaking_11" />
+		<clonebay power="1" room="14" start="true">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="20" start="true" img="room_doors_2">
+			<slot>
+				<direction>down</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones max="8" power="4" room="1" start="true" img="room_drones_17" />
+		<engines power="1" room="5" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="19" start="false" img="room_hacking_3" />
+		<medbay power="1" room="14" start="false" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="17" start="false" img="room_mind_9" />
+		<oxygen power="1" room="15" start="true" img="room_oxygen_2" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="18" start="true" img="room_sensors_8">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="4" start="true" img="room_shields_4">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="16" start="false" />
+		<temporal power="1" room="9" start="false" img="room_temporal_4" />
+		<weapons max="8" power="2" room="3" start="false" img="room_weapons_4">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="2" count="2" />
+	<droneList drones="8" count="4">
+		<drone name="AEA_COMBAT_BIRD_SMART_2" />
+		<drone name="AEA_COMBAT_BIRD_BIO_1" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="aea_bird_avali" />
+	<crewCount amount="1" class="aea_necro_engi" />
+	<crewCount amount="1" class="rock_commando" />
+	<aug name="DRONE_RECOVERY" />
+	<aug name="EX_MEDBAY_NANO" />
+	<shieldImage>mup_standard2</shieldImage>
+	<mv-mapImage>map_icon_aeap_bird_big</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_BIRD_TRAN" layout="aeap_bird_tran_a" img="aeap_bird_tran_a">
 	<class>Albatross Cruiser</class>
-	<name>The Nameless One</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<name>The Short-Tailed</name>
+	<desc>With a weak weapons system this ship relies on it's burst drone to quickly destroy the enemy.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_TRAN_unlock" />
 	<systemList>
 		<battery max="2" power="1" room="18" start="false" img="room_battery_2" />
@@ -4031,14 +4196,14 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 				<number>1</number>
 			</slot>
 		</clonebay>
-		<doors power="1" room="4" start="true" img="room_doors">
+		<doors power="1" room="4" start="false" img="room_doors">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
 			</slot>
 		</doors>
-		<drones max="8" power="2" room="12" start="true" img="room_drones" />
-		<engines power="2" room="8" start="true" img="room_engines_aea_1">
+		<drones max="8" power="3" room="12" start="true" img="room_drones" />
+		<engines power="1" room="8" start="true" img="room_engines_aea_1">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -4058,7 +4223,7 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 				<number>1</number>
 			</slot>
 		</pilot>
-		<sensors power="1" room="5" start="true" img="room_sensors">
+		<sensors power="2" room="5" start="true" img="room_sensors">
 			<slot>
 				<direction>down</direction>
 				<number>1</number>
@@ -4083,17 +4248,253 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<weaponList missiles="2" count="2" >
 		<weapon name="ION_1" />
 	</weaponList>
-	<droneList drones="2" count="4">
-		<drone name="AEA_COMBAT_BIRD_BIO_2" />
+	<droneList drones="6" count="4">
+		<drone name="AEA_COMBAT_BIRD_BURST_2" />
 	</droneList>
 	<health amount="30" />
 	<maxPower amount="9" />
 	<crewCount amount="1" class="aea_bird_avali" />
 	<crewCount amount="1" class="aea_bird_illuminant" />
 	<crewCount amount="1" class="aea_bird_illuminant" />
-	<aug name="AEA_BARRIER_RELAY" />
+	<aug name="DRONE_RECOVERY" />
 	<shieldImage>mup_standard1</shieldImage>
-	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+	<mv-mapImage>map_icon_aeap_bird_tran</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_BIRD_TRAN_2" layout="aeap_bird_tran_b" img="aeap_bird_tran_b">
+	<class>Albatross Cruiser</class>
+	<name>The White-Capped</name>
+	<desc>Lasers and Ions are a match made in heaven, well actually the Central Engineering Facility.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_TRAN_2_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="18" start="false" img="room_battery_3" />
+		<cloaking power="1" room="13" start="true" img="room_cloaking_3" />
+		<clonebay power="1" room="10" start="true">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="11" start="false" img="room_doors_10">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="3" room="5" start="true" img="room_drones" />
+		<engines power="1" room="14" start="true" img="room_engines_8">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="21" start="false" img="room_hacking_4" />
+		<medbay power="1" room="10" start="false" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="15" start="false" img="room_mind_7" />
+		<oxygen power="1" room="4" start="true" img="room_oxygen_17" />
+		<pilot power="1" room="0" start="true" img="room_pilot_2">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="2" room="7" start="true" img="room_sensors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="8" start="true" img="room_shields_11">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="20" start="false" />
+		<temporal power="1" room="19" start="false" />
+		<weapons max="8" power="1" room="6" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="3" count="4">
+		<weapon name="LASER_HEAVY_2" />
+		<weapon name="ION_CONSERVATIVE" />
+	</weaponList>
+	<droneList drones="6" count="2">
+		<drone name="AEA_COMBAT_BIRD_MULTI_1_BEAM" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="9" />
+	<crewCount amount="1" class="crystal" />
+	<crewCount amount="1" class="aea_bird_illuminant" />
+	<crewCount amount="1" class="human_medic" />
+	<aug name="EX_O2_MASKS" />
+	<shieldImage>mup_standard1</shieldImage>
+	<mv-mapImage>map_icon_aeap_bird_tran</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_BIRD_TRAN_3" layout="aeap_bird_tran_c" img="aeap_bird_tran_c">
+	<class>Albatross Cruiser</class>
+	<name>The Royal</name>
+	<desc>This ship relies on the shield breaking of the drone in order to unleash it's weapons on the enemy ship.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_TRAN_3_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="19" start="false" img="room_battery_2" />
+		<cloaking power="1" room="12" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="2" start="false">
+			<slot>
+				<number>3</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="17" start="false" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="3" room="4" start="true" img="room_drones" />
+		<engines power="2" room="1" start="true" img="room_engines_aea_1">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="10" start="false" img="room_hacking_2" />
+		<medbay power="1" room="2" start="true" img="room_medbay_3">
+			<slot>
+				<number>3</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="9" start="false" img="room_mind_5" />
+		<oxygen power="1" room="14" start="true" img="room_oxygen_9" />
+		<pilot power="1" room="0" start="true" img="room_pilot_2">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="2" room="18" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="3" start="true" img="room_shields_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="11" start="false" />
+		<temporal power="1" room="15" start="false" />
+		<weapons max="8" power="1" room="5" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="3" count="3">
+		<weapon name="BEAM_LONG_PLAYER" />
+	</weaponList>
+	<droneList drones="6" count="3">
+		<drone name="AEA_COMBAT_BIRD_MULTI_2_BEAM" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="9" />
+	<crewCount amount="1" class="technomanning" />
+	<crewCount amount="1" class="aea_bird_illuminant" />
+	<crewCount amount="1" class="mantis_suzerain" />
+	<aug name="EX_MEDBAY_NANO" />
+	<shieldImage>mup_standard1</shieldImage>
+	<mv-mapImage>map_icon_aeap_bird_tran</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_CREW2_2" layout="aeap_bird_jay" img="aeap_bird_jay">
+	<class>Jay's Crewser</class>
+	<name>The Blue Jay</name>
+	<desc>Although none of the crew can access the from of the ship, Jay and her drones are able to keep it online with ease.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_JAY_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="19" start="false" img="room_battery_13" />
+		<cloaking power="2" room="8" start="true" img="room_cloaking_11" />
+		<clonebay power="1" room="1" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="9" start="true" img="room_doors_9">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="17" start="true" img="room_drones_12" />
+		<engines power="3" room="2" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="15" start="false" img="room_hacking_7" />
+		<medbay power="1" room="1" start="true" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="18" start="false" img="room_mind_7" />
+		<oxygen power="1" room="6" start="true" img="room_oxygen_8" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="10" start="true" img="room_sensors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="5" start="false" img="room_shields_4">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="7" start="false" />
+		<temporal power="1" room="4" start="false" />
+		<weapons max="8" power="2" room="16" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="7" count="3">
+		<weapon name="MISSILES_CLOAK" />
+	</weaponList>
+	<droneList drones="7" count="3">
+		<drone name="MANNING" />
+		<drone name="AEA_COMBAT_BIRD_SMART_1" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="8" />
+	<aug name="COMBAT_CLOAKING_JAMMER" />
+	<shieldImage>mup_standard2</shieldImage>
+	<mv-mapImage>map_icon_aeap_bird_big</mv-mapImage>
 </shipBlueprint>
 </FTL>
 
@@ -4168,15 +4569,15 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<type>COMBAT</type>
 	<tip>tip_toggle_combat</tip>
 	<title>Amp Burst</title>
-	<short>Burst [1]</short>
-	<desc>[CURRENT POWER: 1] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
+	<short>Burst [2]</short>
+	<desc>[CURRENT POWER: 2] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
 
 This drone fires 2 shots.
 	</desc>
-	<power>1</power>
-	<cooldown>1000</cooldown>
+	<power>2</power>
+	<cooldown>2000</cooldown>
 	<dodge>0</dodge>
-	<speed>8</speed>
+	<speed>10</speed>
 	<cost>70</cost>
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_burst_a1</droneImage>
@@ -4188,15 +4589,15 @@ This drone fires 2 shots.
 	<type>COMBAT</type>
 	<tip>tip_toggle_combat</tip>
 	<title>Amp Burst</title>
-	<short>Burst [2]</short>
-	<desc>[CURRENT POWER: 2] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
+	<short>Burst [3]</short>
+	<desc>[CURRENT POWER: 3] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
 
 This drone fires 3 shots.
 	</desc>
-	<power>2</power>
-	<cooldown>1000</cooldown>
+	<power>3</power>
+	<cooldown>3000</cooldown>
 	<dodge>0</dodge>
-	<speed>6</speed>
+	<speed>8</speed>
 	<cost>70</cost>
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_burst_a2</droneImage>
@@ -4208,15 +4609,15 @@ This drone fires 3 shots.
 	<type>COMBAT</type>
 	<tip>tip_toggle_combat</tip>
 	<title>Amp Burst</title>
-	<short>Burst [3]</short>
-	<desc>[CURRENT POWER: 3] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
+	<short>Burst [4]</short>
+	<desc>[CURRENT POWER: 4] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
 
 This drone fires 4 shots.
 	</desc>
-	<power>3</power>
-	<cooldown>1000</cooldown>
+	<power>4</power>
+	<cooldown>4000</cooldown>
 	<dodge>0</dodge>
-	<speed>4</speed>
+	<speed>6</speed>
 	<cost>70</cost>
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_burst_a3</droneImage>
@@ -4238,7 +4639,7 @@ This drone fires 4 shots.
 	<rarity>0</rarity>
 	<image>laser_bio</image>
 	<statBoosts>
-		<statBoost name="deathEffect">
+		<statBoost name="deathEffect" save="AEA_BIO_DRONE_DEATHEFF">
 			<boostType>SET</boostType>
 			<deathEffect>
 				<sysDamage>2</sysDamage>
@@ -4274,17 +4675,56 @@ This drone fires 4 shots.
 	<weaponArt>laser_burst_1</weaponArt>
 </weaponBlueprint>
 
+<weaponBlueprint name="AEA_LASER_BIO_DRONE_3">
+	<type>BURST</type>
+	<drone_targetable>0</drone_targetable>
+	<title>Drone Laser</title>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>1</persDamage>
+	<shots>1</shots>
+	<fireChance>1</fireChance>
+	<breachChance>0</breachChance>
+	<speed>200</speed>
+	<rarity>0</rarity>
+	<projectiles>
+		<projectile count="1" fake="false">laser_bio_aea_left</projectile>
+		<projectile count="1" fake="false">laser_bio_aea_right</projectile>
+	</projectiles>
+	<statBoosts>
+		<statBoost name="deathEffect" load="AEA_BIO_DRONE_DEATHEFF" />
+	</statBoosts>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_burst_1</weaponArt>
+</weaponBlueprint>
+
 <droneBlueprint name="AEA_COMBAT_BIRD_BIO_1">
 	<type>COMBAT</type>
 	<tip>tip_toggle_combat</tip>
-	<title>Bio Drone Mk. 1</title>
-	<short>Bio 1</short>
+	<title>Bio Drone Mk. I</title>
+	<short>Bio I</short>
 	<desc>A drone that specifically targets enemy crewmembers. Does 15 personal damage and inflicts enemy crew with a death effect that does 2 system damage and creates a fire for 20 seconds.</desc>
 	<power>1</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
 	<speed>40</speed>
-	<cost>60</cost>
+	<cost>40</cost>
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_bio_1</droneImage>
 	<weaponBlueprint>AEA_LASER_BIO_DRONE</weaponBlueprint>
@@ -4295,18 +4735,36 @@ This drone fires 4 shots.
 <droneBlueprint name="AEA_COMBAT_BIRD_BIO_2">
 	<type>COMBAT</type>
 	<tip>tip_toggle_combat</tip>
-	<title>Bio Drone Mk. 2</title>
-	<short>Bio 2</short>
+	<title>Bio Drone Mk. II</title>
+	<short>Bio II</short>
 	<desc>A drone that specifically targets enemy crewmembers, faster than the Mk 1. Does 15 personal damage and inflicts enemy crew with a death effect that does 2 system damage and creates a fire for 20 seconds.</desc>
 	<power>2</power>
-	<cooldown>1000</cooldown>
+	<cooldown>500</cooldown>
 	<dodge>0</dodge>
-	<speed>60</speed>
+	<speed>70</speed>
 	<cost>60</cost>
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_bio_2</droneImage>
 	<weaponBlueprint>AEA_LASER_BIO_DRONE</weaponBlueprint>
 	<rarity>5</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<droneBlueprint name="AEA_COMBAT_BIRD_BIO_3">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Bio Drone Mk. III</title>
+	<short>Bio III</short>
+	<desc>A drone that specifically targets enemy crewmembers, faster than the Mk 2, fires 2 shots at once. Does 15 personal damage and inflicts enemy crew with a death effect that does 2 system damage and creates a fire for 20 seconds.</desc>
+	<power>3</power>
+	<cooldown>100</cooldown>
+	<dodge>0</dodge>
+	<speed>100</speed>
+	<cost>80</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_bio_3</droneImage>
+	<weaponBlueprint>AEA_LASER_BIO_DRONE_3</weaponBlueprint>
+	<rarity>0</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
 
@@ -4378,6 +4836,344 @@ This drone fires 4 shots.
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_bomb</droneImage>
 	<weaponBlueprint>AEA_BEAM_BIRD_DELETE</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<weaponBlueprint name="AEA_DRONE_LASER_COMBAT_MULTI">
+	<type>LASER</type>
+	<title>Drone Laser</title>
+	<damage>1</damage>
+	<shots>1</shots>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<rarity>0</rarity>
+	<image>laser_light</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_burst_1</weaponArt>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_DRONE_BEAM_COMBAT_MULTI">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>Drone Beam</title>
+	<damage>1</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<speed>10</speed>
+	<rarity>0</rarity>
+	<image>beam_contact</image>
+	<length>45</length>
+	<launchSounds>
+		<sound>beam1</sound>
+		<sound>beam1_2</sound>
+	</launchSounds>
+	<weaponArt>beam_1</weaponArt>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_DRONE_WION_COMBAT_MULTI">
+	<type>LASER</type>
+	<title>Drone Weak Ion</title>
+	<damage>0</damage>
+	<ion>0</ion>
+	<speed>25</speed>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<rarity>0</rarity>
+	<image>ion_1_shot</image>
+	<explosion>explosion_small_ion</explosion>
+	<launchSounds>
+		<sound>ionShoot1</sound>
+		<sound>ionShoot2</sound>
+		<sound>ionShoot3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>ionHit1</sound>
+		<sound>ionHit2</sound>
+		<sound>ionHit3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>ionShields1</sound>
+		<sound>ionShields2</sound>
+		<sound>ionShields3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>ion_1</weaponArt>
+</weaponBlueprint>
+
+<blueprintList name="LIST_TOGGLE_AEA_COMBAT_BIRD_MULTI_1">
+	<name>AEA_COMBAT_BIRD_MULTI_1_LASER</name>
+	<name>AEA_COMBAT_BIRD_MULTI_1_BEAM</name>
+</blueprintList>
+<blueprintList name="LIST_TOGGLE_AEA_COMBAT_BIRD_MULTI_2">
+	<name>AEA_COMBAT_BIRD_MULTI_2_LASER</name>
+	<name>AEA_COMBAT_BIRD_MULTI_2_BEAM</name>
+</blueprintList>
+<droneBlueprint name="AEA_COMBAT_BIRD_MULTI_1_LASER">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Twin Drone Mk. I [Laser]</title>
+	<short>Twin I [L]</short>
+	<desc>[CURRENT MODE: Laser] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon.</desc>
+	<power>2</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>10</speed>
+	<cost>65</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_multi_1_l</droneImage>
+	<weaponBlueprint>AEA_DRONE_LASER_COMBAT_MULTI</weaponBlueprint>
+	<rarity>5</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_MULTI_1_BEAM">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Twin Drone Mk. I [Beam]</title>
+	<short>Twin I [B]</short>
+	<desc>[CURRENT MODE: Beam] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon.</desc>
+	<power>2</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>8</speed>
+	<cost>65</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_multi_1_b</droneImage>
+	<weaponBlueprint>AEA_DRONE_BEAM_COMBAT_MULTI</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_MULTI_2_LASER">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Twin Drone Mk. II [Laser]</title>
+	<short>Twin II [L]</short>
+	<desc>[CURRENT MODE: Laser] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon. Moves faster than the MK I.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>20</speed>
+	<cost>90</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_multi_2_l</droneImage>
+	<weaponBlueprint>AEA_DRONE_LASER_COMBAT_MULTI</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_MULTI_2_BEAM">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Twin Drone Mk. II [Beam]</title>
+	<short>Twin II [B]</short>
+	<desc>[CURRENT MODE: Beam] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon. Moves faster than the MK I.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>18</speed>
+	<cost>90</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_multi_2_b</droneImage>
+	<weaponBlueprint>AEA_DRONE_BEAM_COMBAT_MULTI</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<weaponBlueprint name="AEA_DRONE_LASER_COMBAT_MULTI_LOOT">
+	<type>LASER</type>
+	<title>Drone Laser</title>
+	<damage>1</damage>
+	<shots>1</shots>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<rarity>0</rarity>
+	<image>laser_light</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_burst_1</weaponArt>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_DRONE_BEAM_COMBAT_MULTI_LOOT">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>Drone Beam</title>
+	<damage>1</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<speed>10</speed>
+	<rarity>0</rarity>
+	<image>beam_contact</image>
+	<length>45</length>
+	<launchSounds>
+		<sound>beam1</sound>
+		<sound>beam1_2</sound>
+	</launchSounds>
+	<weaponArt>beam_1</weaponArt>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_DRONE_LOOT_COMBAT_MULTI">
+	<type>LASER</type>
+	<title>Drone Weak Ion</title>
+	<damage>0</damage>
+	<ion>1</ion>
+	<speed>25</speed>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<rarity>0</rarity>
+	<image>ion_1_shot</image>
+	<explosion>explosion_small_ion</explosion>
+	<launchSounds>
+		<sound>ionShoot1</sound>
+		<sound>ionShoot2</sound>
+		<sound>ionShoot3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>ionHit1</sound>
+		<sound>ionHit2</sound>
+		<sound>ionHit3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>ionShields1</sound>
+		<sound>ionShields2</sound>
+		<sound>ionShields3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>ion_1</weaponArt>
+</weaponBlueprint>
+<blueprintList name="LIST_TOGGLE_AEA_COMBAT_BIRD_MULTI_2_LOOT">
+	<name>AEA_COMBAT_BIRD_MULTI_2_LOOT_LASER</name>
+	<name>AEA_COMBAT_BIRD_MULTI_2_LOOT_BEAM</name>
+</blueprintList>
+<droneBlueprint name="AEA_COMBAT_BIRD_MULTI_2_LOOT_LASER">
+	<type>COMBAT</type>
+	<tip>loot_aea_bird_1</tip>
+	<title>Twin Drone Mk. II [Laser]</title>
+	<short>Twin II [L]</short>
+	<desc>[CURRENT MODE: Laser] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon. Moves faster than the MK I.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>22</speed>
+	<cost>90</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_multi_2_l_loot</droneImage>
+	<weaponBlueprint>AEA_DRONE_LASER_COMBAT_MULTI_LOOT</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_MULTI_2_LOOT_BEAM">
+	<type>COMBAT</type>
+	<tip>loot_aea_bird_1</tip>
+	<title>Twin Drone Mk. II [Beam]</title>
+	<short>Twin II [B]</short>
+	<desc>[CURRENT MODE: Beam] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon. Moves faster than the MK I.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>20</speed>
+	<cost>90</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_multi_2_b_loot</droneImage>
+	<weaponBlueprint>AEA_DRONE_BEAM_COMBAT_MULTI_LOOT</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<weaponBlueprint name="AEA_DRONE_LASER_COMBAT_SMART">
+	<type>LASER</type>
+	<title>Drone Laser</title>
+	<damage>0</damage>
+	<shots>1</shots>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<rarity>0</rarity>
+	<image>laser_light</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_burst_1</weaponArt>
+</weaponBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_SMART_1">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Intel Drone Mk. I</title>
+	<short>Intel I</short>
+	<desc>A combat drone equiped with a pair of lasers. This specialist drone has a targetting computer onboard that enables the drone to only target enemy systems, and is weighted towards the more important systems.</desc>
+	<power>2</power>
+	<cooldown>1000</cooldown>
+	<dodge>5</dodge>
+	<speed>10</speed>
+	<cost>70</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_smart_1</droneImage>
+	<weaponBlueprint>AEA_DRONE_LASER_COMBAT_SMART</weaponBlueprint>
+	<rarity>5</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_SMART_2">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Intel Drone Mk. II</title>
+	<short>Intel II</short>
+	<desc>A combat drone equiped with a pair of lasers. This specialist drone has a targetting computer onboard that enables the drone to only target enemy systems, and is weighted towards the more important systems.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>5</dodge>
+	<speed>20</speed>
+	<cost>95</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_smart_2</droneImage>
+	<weaponBlueprint>AEA_DRONE_LASER_COMBAT_SMART</weaponBlueprint>
 	<rarity>0</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
@@ -4645,13 +5441,14 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 
 
 <crewBlueprint name="aea_bird_avali">
-	<desc>A feathered race obsessed with technology, especially drones.</desc>
+	<desc>A feathered race obsessed with technology, especially drones. Especially powerful when repairing.</desc>
 	<cost>40</cost>
 	<title>Gi</title>
 	<short>Gi</short>
 	<rarity>0</rarity>
 	<powerList>
-		<power> </power>
+		<power>Autorepairs the current system at 0.5x auto-ship speed</power>
+		<power>Move speed increased to 2x when there are not hostile crew in the room</power>
 	</powerList>
 	<colorList>
 		<layer>
@@ -4707,18 +5504,24 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 	<short>Technician</short>
 	<rarity>0</rarity>
 	<powerList>
-		<power></power>
+		<power>Autorepairs the current system at 1x auto-ship speed</power>
+		<power>Friendly Drones in the current room heal at 3hp/s</power>
+		<power>Move speed increased to 2x when there are not hostile crew in the room</power>
 	</powerList>
 </crewBlueprint>
 
 <crewBlueprint name="aea_bird_unique">
 	<desc>The chief Gi engineer responsible for the powerful drones the Avali use.</desc>
-	<cost>90</cost>
+	<cost>100</cost>
 	<title>Chief Engineer</title>
 	<short>Engineer</short>
 	<rarity>0</rarity>
 	<powerList>
-		<power> </power>
+		<power>Max Health is incresed to 140</power>
+		<power>Autorepairs the entire ship at 1x auto-ship speed</power>
+		<power>Autorepairs the current system at 2x auto-ship speed</power>
+		<power>Friendly Drones in the current room heal at 3hp/s</power>
+		<power>Move speed increased to 2x when there are not hostile crew in the room</power>
 	</powerList>
 </crewBlueprint>
 
@@ -4741,7 +5544,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard">
 	<title>Vampweed Cultist</title>
 	<short>Cultist</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>68</cost>
@@ -4750,6 +5553,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability: Casts a spell in the current room which does nothing</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -4773,7 +5577,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_a01">
 	<title>Vampweed Cultist [Protect]</title>
 	<short>Cultist [Protect]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -4805,7 +5609,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_a02">
 	<title>Vampweed Cultist [Beacon]</title>
 	<short>Cultist [Beacon]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -4814,6 +5618,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability: Casts a spell which retargets all the enemy projectiles on screen to the current room</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -4837,7 +5642,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_s03">
 	<title>Vampweed Cultist [Bio Bolt]</title>
 	<short>Cultist [Bio Bolt]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -4846,6 +5651,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability (3 charges): Cast a spell at a target room dealing 45 personal damage</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -4869,7 +5675,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_s04">
 	<title>Vampweed Cultist [Bolt]</title>
 	<short>Cultist [Bolt]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -4878,6 +5684,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability (2 charges): Cast a spell at a target room dealing 1 damage</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -4901,7 +5708,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_s05">
 	<title>Vampweed Cultist [Bolt Burst]</title>
 	<short>Cultist [Bolt Burst]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -4910,6 +5717,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability (2 charges): Cast 3 spells at a target room dealing 1 damage each</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -4933,7 +5741,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_s06">
 	<title>Vampweed Cultist [Hull Bolt]</title>
 	<short>Cultist [Hull Bolt]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -4942,6 +5750,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability (2 charges): Cast a spell at a target room doing 3 hull damage but no system or crew damage</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -4965,7 +5774,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_a07">
 	<title>Vampweed Cultist [Warp]</title>
 	<short>Cultist [Warp]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -4974,6 +5783,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability: Cast a spell in the current room that warps all crew in the current room to a random room on the opposite ship</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -4997,7 +5807,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_s08">
 	<title>Vampweed Cultist [Warp Bolt]</title>
 	<short>Cultist [Warp Bolt]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -5006,6 +5816,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability: Cast a spell at a target room that warps all crew in the room to a random room on the opposite ship</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -5029,7 +5840,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_s09">
 	<title>Vampweed Cultist [Heal Bolt]</title>
 	<short>Cultist [Heal Bolt]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -5038,6 +5849,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability (3 charges): Cast a spell at a target room that heals all friendly crew for 75hp</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -5061,7 +5873,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_a10">
 	<title>Vampweed Cultist [Heal Aura]</title>
 	<short>Cultist [Heal Aura]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -5070,6 +5882,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability: Cast a spell in the current room that heals all friendly crew for 45 hp</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -5093,7 +5906,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_a11">
 	<title>Vampweed Cultist [Drone]</title>
 	<short>Cultist [Drone]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -5102,6 +5915,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability (1 charge): Spawn a conservative combat drone around the enemy ship</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -5125,7 +5939,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_s12">
 	<title>Vampweed Cultist [Barrier]</title>
 	<short>Cultist [Barrier]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -5134,6 +5948,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability (3 charge): Spawn a barrier capable of stopping 2 projectiles</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -5157,7 +5972,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_s13">
 	<title>Vampweed Cultist [Lockdown]</title>
 	<short>Cultist [Lockdown]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -5166,6 +5981,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability (3 charge): Cast a spell at the target room which applies a lockdown</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -5189,7 +6005,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_s14">
 	<title>Vampweed Cultist [Ally]</title>
 	<short>Cultist [Ally]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -5198,6 +6014,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability (2 charge): Cast a spell at the target room which spawns a random ally</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -5221,7 +6038,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 <crewBlueprint name="aea_cult_wizard_s15">
 	<title>Vampweed Cultist [Mind Bolt]</title>
 	<short>Cultist [Mind Bolt]</short>
-	<desc>A Vampweed cultist, specialized in casting spells these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
+	<desc>A Vampweed cultist, specialized in casting spells, these orchids draw on the power of the bud to both protect themselves and destroy their enemies.
 
 Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more damage from fire, refills oxygen</desc>
 	<cost>80</cost>
@@ -5230,6 +6047,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability (3 charge): Cast a spell at the target room which mind controls a random enemy</power>
 		<power>Ranged attack speed is doubled, but only deals 0.75x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 1 - Leaves -->
@@ -8068,6 +8886,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<powerList>
 		<power>Active Ability: Casts a random support spell at the target room</power>
 		<power>Ranged attack speed is quadrupled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 3 - Orb -->
@@ -8087,8 +8906,9 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Active Ability: Casts a random boarding spell at the target room</power>
+		<power>Active Ability: Casts a random offensive spell at the target room</power>
 		<power>Ranged attack speed is quadrupled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 3 - Orb -->
@@ -8108,8 +8928,9 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Active Ability: Casts a random offence spell at the target room</power>
+		<power>Active Ability: Casts a random boarding spell at the target room</power>
 		<power>Ranged attack speed is quadrupled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer><!-- Layer 3 - Orb -->
@@ -8307,6 +9128,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability: Casts a spell in the current room which does nothing</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		<layer> 
@@ -8329,6 +9151,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (5 charges): Casts a spell which protects the current room from hull and system damage for 10 seconds</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8353,6 +9176,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability: Casts a spell which retargets all the enemy projectiles on screen to the current room</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8377,6 +9201,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (3 charges): Cast a spell at a target room dealing 45 personal damage</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8401,6 +9226,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (2 charges): Cast a spell at a target room dealing 1 damage</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8425,6 +9251,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (2 charges): Cast 3 spells at a target room dealing 1 damage each</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8449,6 +9276,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (2 charges): Cast a spell at a target room doing 3 hull damage but no system or crew damage</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8473,6 +9301,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability: Cast a spell in the current room that warps all crew in the current room to a random room on the opposite ship</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8497,6 +9326,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability: Cast a spell at a target room that warps all crew in the room to a random room on the opposite ship</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8521,6 +9351,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (3 charges): Cast a spell at the lowest health (%) friendly crew that heals all friendly crew in the room for 75 hp</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8545,6 +9376,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability: Cast a spell in the current room that heals all friendly crew for 45 hp</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8569,6 +9401,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (1 charge): Spawn a conservative combat drone around the enemy ship</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8593,6 +9426,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (3 charge): Spawn a barrier capable of stopping 2 projectiles</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8617,6 +9451,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (3 charge): Cast a spell at the target room which applies a lockdown</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8641,6 +9476,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (2 charge): Cast a spell at the target room which spawns a random ally</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8665,6 +9501,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<power>2x spell recharge rate, cannot run out of spell charges</power>
 		<power>Active Ability (3 charge): Cast a spell at the target room which mind controls a random enemy</power>
 		<power>Ranged attack speed is tripled, but only deals 0.5x ranged damage</power>
+		<power>Enemy projectiles fired at the current room will broadcast their target.</power>
 	</powerList>
 	<colorList>
 		 
@@ -8674,3 +9511,81 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 </FTL>
+
+<FTL>
+<shipBlueprint name="PLAYER_SHIP_AEA_LANIUS_BATTLE" layout="aeap_lanius_battle_a" img="aeap_lanius_battle_a">
+	<class>Lanius Battleship</class>
+	<name>The Nameless One</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<systemList>
+		<battery max="2" power="1" room="14" start="false" img="room_battery" />
+		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="8" start="true">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="16" start="true" img="room_doors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="5" start="false" img="room_drones_9" />
+		<engines power="1" room="7" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="20" start="false" img="room_hacking_2" />
+		<medbay power="1" room="8" start="false" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="21" start="false" img="room_mind_7" />
+		<oxygen power="1" room="13" start="false" img="room_oxygen_17" />
+		<pilot power="1" room="0" start="true" img="room_pilot_2">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="15" start="true" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="9" start="true" img="room_shields_8">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="22" start="false" />
+		<temporal power="1" room="17" start="false" />
+		<weapons max="8" power="2" room="11" start="true" img="room_weapons_6">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="2" count="4">
+		<weapon name="AEA_LASER_OLDP_1" />
+		<weapon name="LASER_HULL_1" />
+	</weaponList>
+	<droneList drones="3" count="2" />
+	<health amount="30" />
+	<maxPower amount="0" />
+	<crewCount amount="1" class="lanius_welder" />
+	<crewCount amount="1" class="lanius" />
+	<crewCount amount="1" class="phantom" />
+	<shieldImage>mup_orb3</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
+</FTL> 

@@ -41,7 +41,7 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>It seems your track record has caught up to you. The guard's crew have heard enough of the crimes you've been committing, and they don't intend to let you into the sector!</text>
+			<text>It seems your track record has caught up to you. The guard's crew have heard enough of the crimes you've been committing, and they don't intend to let you into the sector!.</text>
 			<ship hostile="true" />
 			<choice hidden="true">
 				<text>Continue...</text>
@@ -52,9 +52,9 @@
 </event>
 
 <event name="GUARD_AEA_CULT">
-	<text>The Confederate guard hails you, their captain reciting words as if it's the hundreth time today they've had to say them. "Welcome to the Confederacy. On behalf of Premier Ivar we welcome all visitors who come in peace. However, to ensure the stability and order of our sectors, we request that all military vessels such as yourself submit to a minor tax before entering."</text>
+	<text>The Confederate guard hails you, their captain reciting words as if it's the hundreth time today they've had to say them. "Welcome to the Confederacy. On behalf of Premier Ivar we welcome all visitors who come in peace. However, to ensure the stability and order of our sectors, we request that all military vessels such as yourself submit to a minor tax before entering.".</text>
 	<choice hidden="true">
-		<text>We refuse to pay the fee, fight your way through!</text>
+		<text>We refuse to pay the fee, fight your way through!.</text>
 		<event>
 			<text>You mute the ship and prepare for combat.</text>
 			<ship hostile="true" />
@@ -67,7 +67,7 @@
 	<choice>
 		<text>Pay the fee.</text>
 		<event>
-			<text>The Vampweed nods and combs over the scrap for a brief moment. "Very well. Security will let you through momentarily."</text>
+			<text>The Vampweed nods and combs over the scrap for a brief moment. "Very well. Security will let you through momentarily.".</text>
 			<item_modify>
 				<item type="scrap" min="-30" max="-20" />
 			</item_modify>
@@ -78,27 +78,27 @@
 		<event load="GUARD_AEA_CULT_WAVER" />
 	</choice>
 	<choice req="unique_ivar">
-		<text>(Ivar) "Hey, I pay your salary!"</text>
+		<text>(Ivar) "Hey, I pay your salary!".</text>
 		<event>
-			<text>The guard looks ashamed. "Uh... Premier, I do apologize! We weren't aware you were coming. You are... uh, quite unpredictable sometimes. The fee will be waived, of course." The guard blinks. "Please don't mention this to my superiors."</text>
+			<text>The guard looks ashamed. "Uh... Premier, I do apologize! We weren't aware you were coming. You are... uh, quite unpredictable sometimes. The fee will be waived, of course." The guard blinks. "Please don't mention this to my superiors.".</text>
 		</event>
 	</choice>
 	<choice req="unique_tyerel">
 		<text>(Ty E'Rel) Show Ty E'Rel's credentials.</text>
 		<event>
-			<text>"Welcome, Ambassador. I hadn't been told that you had a conference in this sector. You may pass, free of charge."</text>
+			<text>"Welcome, Ambassador. I hadn't been told that you had a conference in this sector. You may pass, free of charge.".</text>
 		</event>
 	</choice>
 	<choice req="unique_alkali">
 		<text>(Alkali) Alkali has business here.</text>
 		<event>
-			<text>The guard looks relieved to see a familiar face. "Welcome back, Doctor! You're always welcome within our borders. I'll waive the fee, of course. I hope your time here is productive."</text>
+			<text>The guard looks relieved to see a familiar face. "Welcome back, Doctor! You're always welcome within our borders. I'll waive the fee, of course. I hope your time here is productive.".</text>
 		</event>
 	</choice>
 	<choice hidden="true" req="shell_scientist">
 		<text>(Shell Scientist Crew) Explain that you have business in the area.</text>
 		<event>
-			<text>"Ah, a Scientist! We are always pleased to accept one of your number into our lovely sector. As usual, you're entitled to the discount. We hope your business goes well."</text>
+			<text>"Ah, a Scientist! We are always pleased to accept one of your number into our lovely sector. As usual, you're entitled to the discount. We hope your business goes well.".</text>
 			<choice>
 				<text>Pay the toll.</text>
 				<event>
@@ -139,7 +139,7 @@
 	<choice req="orchid_cultivator">
 		<text>(Cultivator Crew) Demand a discount.</text>
 		<event>
-			<text>"Oh, a Cultivator is aboard? We can offer you a substantial discount. We hope your business goes well."</text>
+			<text>"Oh, a Cultivator is aboard? We can offer you a substantial discount. We hope your business goes well.".</text>
 			<choice>
 				<text>Pay the toll.</text>
 				<event>
@@ -180,7 +180,7 @@
 	<choice req="orchid_vampweed">
 		<text>(Vampweed Crew) Request a discount.</text>
 		<event>
-			<text>"So you have a countryman aboard? Very well, we will apply the standard discount."</text>
+			<text>"So you have a countryman aboard? Very well, we will apply the standard discount.".</text>
 			<choice>
 				<text>Pay the toll.</text>
 				<event>
@@ -237,9 +237,9 @@
 </event>
 <eventList name="GUARD_AEA_CULT_WAVER">
 	<event name="GUARD_AEA_CULT_WAVER_FAIL">
-		<text>"Why should I wave your fee? You are a Renegade, correct? If you are not aware, the Confederacy is not beholden to Federation laws, and frankly having people like you here is a liability. We should be charging you more, not less."</text>
+		<text>"Why should I wave your fee? You are a Renegade, correct? If you are not aware, the Confederacy is not beholden to Federation laws, and frankly having people like you here is a liability. We should be charging you more, not less.".</text>
 		<choice hidden="true">
-			<text>Then we'll fight our way through!</text>
+			<text>Then we'll fight our way through!.</text>
 			<event>
 				<text>You mute the ship and prepare for combat.</text>
 				<ship hostile="true" />
@@ -252,7 +252,7 @@
 		<choice>
 			<text>Pay the fee.</text>
 			<event>
-				<text>The Vampweed nods and combs over the scrap for a brief moment. "Very well. Security will let you through momentarily."</text>
+				<text>The Vampweed nods and combs over the scrap for a brief moment. "Very well. Security will let you through momentarily.".</text>
 				<item_modify>
 					<item type="scrap" min="-30" max="-20" />
 				</item_modify>
@@ -261,7 +261,7 @@
 	</event>
 	<event load="GUARD_AEA_CULT_WAVER_FAIL" />
 	<event>
-		<text>The Vampweed scratches the long petals on their face with their vines. "As you are likely aware, the Confederacy is not beholden to Federation laws or jurisdiction. That said, I understand that your cause represents the best interests of everyone here. The Federation might not be our friend, but the Rebellion is more certainly our enemy. I will do you this one favor, but do not expect everyone to be so generous."</text>
+		<text>The Vampweed scratches the long petals on their face with their vines. "As you are likely aware, the Confederacy is not beholden to Federation laws or jurisdiction. That said, I understand that your cause represents the best interests of everyone here. The Federation might not be our friend, but the Rebellion is more certainly our enemy. I will do you this one favor, but do not expect everyone to be so generous.".</text>
 	</event>
 </eventList>
 
@@ -317,7 +317,7 @@
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
-	<text>"There was a time I might have sided with the Federation, but seeing the kind of barbarians it employs to 'enforce peace and prosperity' across the Multiverse has shown me! This is for all my fellow greenbloods you massacred on your way here to disturb the peace, scum!"</text>
+	<text>"There was a time I might have sided with the Federation, but seeing the kind of barbarians it employs to 'enforce peace and prosperity' across the Multiverse has shown me! This is for all my fellow greenbloods you massacred on your way here to disturb the peace, scum!".</text>
 	<ship load="SHIP_AEA_CULT_REINFORCEMENTS" hostile="true" />
 	<environment type="PDS" target="player" />
 	<choice hidden="true">
@@ -531,9 +531,9 @@
 	<autoReward level="MED">standard</autoReward>
 </event>
 <textList name="TEXT_DESTROYED_AEA_CULT">
-	<text>The vampweed captain salutes to his crew and accepts his fate. "At least I die a proud industrialist and democrat, and not a butcher for a corrupt bureaucracy! GLORY TO THE CONFEDERACY!"</text>
+	<text>The vampweed captain salutes to his crew and accepts his fate. "At least I die a proud industrialist and democrat, and not a butcher for a corrupt bureaucracy! GLORY TO THE CONFEDERACY!".</text>
 	<text>Without any words, the Confederate vessel explodes. The possibly expensive factory cargo is jettisonned far out into the abyss out of reach, but at least you can scrap the debris.</text>
-	<text>"Noooo! I never even... got pollen on my pistil... Screw you, Renegade!"</text>
+	<text>"Noooo! I never even... got pollen on my pistil... Screw you, Renegade!".</text>
 	<text>With the death of this vessel, the workforce of the mighty Confederate economy is now a couple workers shorter.</text>
 </textList>
 
@@ -542,9 +542,9 @@
 	<autoReward level="HIGH">standard</autoReward>
 </event>
 <textList name="TEXT_DEAD_CREW_AEA_CULT">
-	<text>"They... were right... the Coalition was the only thing that could save us... and now it's too late..."</text>
+	<text>"They... were right... the Coalition was the only thing that could save us... and now it's too late...".</text>
 	<text>The halls of the once lively vampweed vessel are now as silent as the living members of their Floral brethren. Perhaps there's something poetic to this, but you're here for scrap and not deeper meanings.</text>
-	<text>"I'm not a religious man, that's a greenleaf's thing... but when you're taking your last breath, it's a rather spiritual moment. God... I hope there isn't a hell..."</text>
+	<text>"I'm not a religious man, that's a greenleaf's thing... but when you're taking your last breath, it's a rather spiritual moment. God... I hope there isn't a hell...".</text>
 	<text>As you board the AEA_CULT vessel to scrap it, you find various propaganda and paraphernalia relating to the Coalition and the Confederacy. These guys were apparently radicals and nationalists, but in a court of law, you aren't sure that would hold as a defense on its own.</text>
 </textList>
 
@@ -560,15 +560,15 @@
 	</choice>
 </event>
 <textList name="TEXT_SURRENDER_AEA_CULT">
-	<text>"Okay, okay! I've been hitting the liquor a bit hard and it made me act stupid. Maybe I have a problem. Look, if you spare me, I'll give you whatever I've got AND I promise I'll get help, okay? Deal?"</text>
-	<text>Out of breath, the vampweed captain's petals are a bit singed at the tips. "If the Federation... truly represents peace as it claims... then I hope you will find it in you to spare me... despite my mistakes here today."</text>
-	<text>"You can't kill me, I'm a valued member of the industrial work force! If I'm not there screwing the cap onto every Kardoche fertilizer bottle, then who else will?!"</text>
-	<text>The vampweed nods to you. "I... apologize for my rash behavior. I have made an ill decision in fighting you. This is the kind of behavior that caused the old war. I hope you have it in your heart to forgive me."</text>
+	<text>"Okay, okay! I've been hitting the liquor a bit hard and it made me act stupid. Maybe I have a problem. Look, if you spare me, I'll give you whatever I've got AND I promise I'll get help, okay? Deal?".</text>
+	<text>Out of breath, the vampweed captain's petals are a bit singed at the tips. "If the Federation... truly represents peace as it claims... then I hope you will find it in you to spare me... despite my mistakes here today.".</text>
+	<text>"You can't kill me, I'm a valued member of the industrial work force! If I'm not there screwing the cap onto every Kardoche fertilizer bottle, then who else will?!".</text>
+	<text>The vampweed nods to you. "I... apologize for my rash behavior. I have made an ill decision in fighting you. This is the kind of behavior that caused the old war. I hope you have it in your heart to forgive me.".</text>
 	<text>The Confederate captain falls to his knees, begging you for mercy. He apologizes on behalf of his entire species for their past mistakes and offers you all of this month's wages at his factory job in return for sparing him.</text>
 </textList>
 
 <event name="AEA_CULT_TEST_FIGHT">
-    <text>TEST</text>
+    <text>TEST.</text>
     <ship load="SHIP_AEA_CULT_ALL" hostile="true"/>
     <choice hidden="true">
         <text>Continue...</text>
@@ -615,7 +615,7 @@
 	<destroyed>
 		<text>You've killed the whale.
 
-You monster!</text>
+You monster!.</text>
 		<autoReward level="HIGH">standard</autoReward>
 	</destroyed>
 </ship>

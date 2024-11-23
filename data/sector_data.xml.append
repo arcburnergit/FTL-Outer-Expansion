@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
+	
+<mod:findName type="sectorType" name="SECTOR_LIST_ALLIED">
+	<mod-append:sector>SECTOR_AEA_ACID_NEBULA</mod-append:sector>
+	<mod-append:sector>SECTOR_AEA_CULT</mod-append:sector>
+</mod:findName>
 
 <mod:findName type="sectorType" name="SECTOR_LIST_NEUTRAL">
     <mod-append:sector>SECTOR_AEA_ACID_NEBULA</mod-append:sector>
@@ -11,6 +16,7 @@
 
 <mod:findName type="sectorType" name="SECTOR_LIST_UNIQUE_SAFE">
     <mod-append:sector>SECTOR_AEA_CULT_UNIQUE</mod-append:sector>
+    <mod-append:sector>SECTOR_AEA_BIRD_UNIQUE</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorType" name="SECTOR_LIST_UNIQUE_DEADLY">
@@ -26,6 +32,11 @@
 <mod:findName type="sectorType" name="HOSTILE">
     <mod-append:sector>SECTOR_AEA_NECRO</mod-append:sector>
     <mod-append:sector>SECTOR_AEA_NECRO_UNIQUE</mod-append:sector>
+</mod:findName>
+
+<mod:findName type="sectorType" name="CIVILIAN">
+    <mod-append:sector>SECTOR_AEA_BIRD</mod-append:sector>
+    <mod-append:sector>SECTOR_AEA_BIRD_UNIQUE</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorDescription" name="SECTOR_OUTCAST">
@@ -497,6 +508,7 @@ VAMP CULT SECTOR
 	<event name="SYLVAN_CHANCE" min="0" max="1" />
 	<priorityEvent name="NEMESIS_ENCOUNTER" min="0" max="1" req="prof_finalsector" lvl="1" />
 	
+	<priorityEvent name="AEA_OLD_POWER_CELL_GET" min="1" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
 	<event name="STORELIST_AEA_CULT" min="2" max="3" /> <!--has more stores than normal-->
 	
 	<event name="ITEMS_AEA_CULT" min="3" max="4" />
@@ -588,6 +600,7 @@ VAMP CULT SECTOR
 	<priorityEvent name="NEMESIS_ENCOUNTER" min="0" max="1" req="prof_finalsector" lvl="1" />
 
 	<event name="AEA_CULT_FLOWER_GOD" min="1" max="1" />
+	<priorityEvent name="AEA_OLD_POWER_CELL_GET" min="1" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
 	
 	<event name="TRANSPORT_AEA_CULT_LOOT" min="1" max="1" />
 	<event name="TRAPPER_AEA_CULT" min="1" max="1" />
@@ -601,6 +614,180 @@ VAMP CULT SECTOR
 	<event name="HOSTILE_AEA_CULT_UNIQUE" min="2" max="6" />
 	
 	<event name="PIRACY_LIST" min="1" max="2" />
+	<event name="FILLER_LIST" min="999" max="999" />
+</sectorDescription>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Bird SECTOR
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<sectorDescription name="SECTOR_AEA_BIRD" unique="false">
+	<nameList>
+		<name>Gi Sector</name>
+		<name>Gi Colonies</name>
+		<name>Gi Space</name>
+		<name>Gi Settlements</name>
+		<name>Gi Frontier</name>
+		<name>Gi Territory</name>
+		<name>Gi Domain</name>
+		<name>Gi Rimworlds</name>
+		<name>Gi Regions</name>
+		<name>Gi Precinct</name>
+		<name>Gi District</name>
+		<name>Gi Turf</name>
+		<name>Gi Quarter</name>
+		<name>Gi Outreaches</name>
+	</nameList>
+	<trackList>
+		<track>aea_bird</track> 
+		<track>spaceass</track>
+		<track>lostship</track>
+		<track>milkyway</track> 
+	</trackList>
+	<rarityList>
+		<blueprint name="AEA_COMBAT_BIRD_BURST_2" rarity="1" />
+		<blueprint name="AEA_COMBAT_BIRD_BIO_1" rarity="2" />
+		<blueprint name="AEA_COMBAT_BIRD_BIO_2" rarity="3" />
+		<blueprint name="AEA_COMBAT_BIRD_BIO_3" rarity="3" />
+		<blueprint name="AEA_COMBAT_BIRD_MULTI_1_LASER" rarity="1" />
+		<blueprint name="AEA_COMBAT_BIRD_MULTI_2_LASER" rarity="2" />
+
+		<blueprint name="AEA_COMBAT_BIRD_SMART_1" rarity="2" />
+		<blueprint name="AEA_COMBAT_BIRD_SMART_2" rarity="3" />
+
+		<blueprint name="aea_bird_avali" rarity="1" />
+		<blueprint name="aea_bird_illuminant" rarity="4" />
+		<blueprint name="human" rarity="1" />
+		<blueprint name="human_medic" rarity="4" />
+		<blueprint name="human_engineer" rarity="0" />
+		<blueprint name="orchid" rarity="1" />
+		<blueprint name="orchid_vampweed" rarity="0" />
+		<blueprint name="engi" rarity="2" />
+		<blueprint name="engi_separatist" rarity="0" />
+		<blueprint name="zoltan" rarity="2" />
+		<blueprint name="zoltan_monk" rarity="0" />
+		<blueprint name="zoltan_devotee" rarity="0" />
+		<blueprint name="rock" rarity="0" />
+		<blueprint name="rock_outcast" rarity="0" />
+		<blueprint name="rock_commando" rarity="5" />
+		<blueprint name="mantis" rarity="0" />
+		<blueprint name="mantis_free" rarity="1" />
+		<blueprint name="slug" rarity="5" />
+		<blueprint name="slug_clansman" rarity="0" />
+		<blueprint name="shell" rarity="0" />
+		<blueprint name="shell_scientist" rarity="0" />
+		<blueprint name="shell_mechanic" rarity="0" />
+		<blueprint name="shell_guardian" rarity="0" />
+		<blueprint name="crystal" rarity="3" />
+		<blueprint name="crystal_liberator" rarity="0" />
+		<blueprint name="leech" rarity="0" />
+		<blueprint name="lanius" rarity="5" />
+		<blueprint name="phantom" rarity="0" />
+		<blueprint name="phantom_goul" rarity="0" />
+		<blueprint name="phantom_mare" rarity="0" />
+		<blueprint name="phantom_wraith" rarity="0" />
+	</rarityList>
+	<startEvent>ENTER_AEA_BIRD</startEvent>
+	<removeFirstBeaconNebula />
+	<exitBeacon event="FINISH_BEACON_AEA_BIRD" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ELITE_FEDERATION" />
+	<rebelBeacon event="FLEET_THREAT_MEDIUM_FEDERATION" nebulaEvent="FLEET_THREAT_MEDIUM_NEBULA" />
+	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
+	<event name="MV_TRAVELER" min="1" max="1" />
+	<event name="SYLVAN_CHANCE" min="0" max="1" />
+	
+	<priorityEvent name="AEA_OLD_POWER_CELL_GET" min="1" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+	<event name="OUTPOST_FEDERATION_SPAWNER" min="0" max="1" />
+	<event name="STORELIST_AEA_BIRD" min="2" max="3" />
+	
+	<event name="ITEMS_AEA_BIRD" min="3" max="4" />
+	<event name="NEUTRAL_AEA_BIRD" min="4" max="5" />
+	<event name="DISTRESS_AEA_BIRD" min="1" max="2" />
+	<event name="QUESTS_AEA_BIRD" min="1" max="1" />
+	
+	<event name="HOSTILE_AEA_BIRD" min="4" max="6" />
+	
+	<event name="PIRACY_LIST" min="0" max="2" />
+	<event name="FILLER_LIST" min="999" max="999" />
+</sectorDescription>
+<sectorDescription name="SECTOR_AEA_BIRD_UNIQUE" unique="true">
+	<nameList>
+		<name>Gi Nesting Grounds [!]</name>
+	</nameList>
+	<trackList>
+		<track>aea_bird</track> 
+		<track>spaceass</track>
+		<track>lostship</track>
+		<track>milkyway</track> 
+	</trackList>
+	<rarityList>
+		<blueprint name="AEA_COMBAT_BIRD_BURST_2" rarity="1" />
+		<blueprint name="AEA_COMBAT_BIRD_BIO_1" rarity="2" />
+		<blueprint name="AEA_COMBAT_BIRD_BIO_2" rarity="3" />
+		<blueprint name="AEA_COMBAT_BIRD_BIO_3" rarity="3" />
+		<blueprint name="AEA_COMBAT_BIRD_MULTI_1_LASER" rarity="1" />
+		<blueprint name="AEA_COMBAT_BIRD_MULTI_2_LASER" rarity="2" />
+
+		<blueprint name="AEA_COMBAT_BIRD_SMART_1" rarity="2" />
+		<blueprint name="AEA_COMBAT_BIRD_SMART_2" rarity="3" />
+
+		<blueprint name="aea_bird_avali" rarity="1" />
+		<blueprint name="aea_bird_illuminant" rarity="3" />
+		<blueprint name="human" rarity="1" />
+		<blueprint name="human_medic" rarity="4" />
+		<blueprint name="human_engineer" rarity="0" />
+		<blueprint name="human_soldier" rarity="5" />
+		<blueprint name="orchid" rarity="1" />
+		<blueprint name="orchid_vampweed" rarity="0" />
+		<blueprint name="engi" rarity="2" />
+		<blueprint name="engi_separatist" rarity="0" />
+		<blueprint name="zoltan" rarity="2" />
+		<blueprint name="zoltan_monk" rarity="0" />
+		<blueprint name="zoltan_devotee" rarity="0" />
+		<blueprint name="rock" rarity="0" />
+		<blueprint name="rock_outcast" rarity="0" />
+		<blueprint name="rock_commando" rarity="5" />
+		<blueprint name="mantis" rarity="0" />
+		<blueprint name="mantis_free" rarity="1" />
+		<blueprint name="slug" rarity="5" />
+		<blueprint name="slug_clansman" rarity="0" />
+		<blueprint name="shell" rarity="0" />
+		<blueprint name="shell_scientist" rarity="0" />
+		<blueprint name="shell_mechanic" rarity="0" />
+		<blueprint name="shell_guardian" rarity="0" />
+		<blueprint name="crystal" rarity="3" />
+		<blueprint name="crystal_liberator" rarity="0" />
+		<blueprint name="leech" rarity="0" />
+		<blueprint name="lanius" rarity="5" />
+		<blueprint name="phantom" rarity="0" />
+		<blueprint name="phantom_goul" rarity="0" />
+		<blueprint name="phantom_mare" rarity="0" />
+		<blueprint name="phantom_wraith" rarity="0" />
+	</rarityList>
+	<startEvent>ENTER_AEA_BIRD_UNIQUE</startEvent>
+	<removeFirstBeaconNebula />
+	<exitBeacon event="FINISH_BEACON_AEA_BIRD" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ACE_FEDERATION" />
+	<rebelBeacon event="FLEET_THREAT_MEDIUM_FEDERATION" nebulaEvent="FLEET_THREAT_MEDIUM_NEBULA" />
+	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
+	<event name="MV_TRAVELER" min="1" max="1" />
+	<event name="SYLVAN_CHANCE" min="0" max="1" />
+	
+	<event name="AEA_BIRD_FED_SPIES" min="1" max="1" />
+	<event name="AEA_BIRD_ENGINEER" min="1" max="1" />
+	<priorityEvent name="AEA_OLD_POWER_CELL_GET" min="1" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+	
+	<event name="TRANSPORT_AEA_BIRD_LOOT" min="1" max="1" />
+	<event name="OUTPOST_FEDERATION_SPAWNER" min="1" max="1" />
+	<event name="STORELIST_AEA_BIRD" min="2" max="3" />
+	
+	<event name="ITEMS_AEA_BIRD" min="3" max="4" />
+	<event name="NEUTRAL_AEA_BIRD" min="4" max="5" />
+	<event name="DISTRESS_AEA_BIRD" min="1" max="2" />
+	<event name="QUESTS_AEA_BIRD" min="1" max="1" />
+	
+	<event name="HOSTILE_AEA_BIRD" min="4" max="6" />
+	
+	<event name="PIRACY_LIST" min="0" max="2" />
 	<event name="FILLER_LIST" min="999" max="999" />
 </sectorDescription>
 

@@ -54,4 +54,8 @@
 <imageList name="BACK_EVENT_AEA_CONSPIRACY">
 	<img w="1280" h="720">stars_cult/aea_factory_base.png</img>
 </imageList>
+
+<imageList name="BACK_EVENT_AEA_BIRDDD">
+	<img w="1280" h="720">stars_bird/bg_bird_moon.png</img>
+</imageList>
 </FTL>
