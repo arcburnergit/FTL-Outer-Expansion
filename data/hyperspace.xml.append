@@ -640,6 +640,22 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_BIRD_SHUTTLE_DRONE">
+		<shipIcons>
+			<shipIcon>icon_auto</shipIcon>
+			<shipIcon>icon_no2</shipIcon>
+        </shipIcons>
+		<autoShipForce>true</autoShipForce>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_BIRD_AUTO_BOSS">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
+			<shipIcon>icon_no2</shipIcon>
+        </shipIcons>
+		<autoShipForce>true</autoShipForce>
+	</mod-append:customShip>
 	
 	
 	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_UNIA">
@@ -4691,10 +4707,11 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<bossShip yOffset="180">AEA_CULT_BOSS_FLOWER</bossShip>
 	<bossShip yOffset="180">AEA_CULT_BOSS_FLOWER_FAKE</bossShip>
 	
-	<bossShip yOffset="180">AEA_BIRD_MOTHERSHIP</bossShip>
-	<bossShip yOffset="180">AEA_BIRD_MOTHERSHIP_ELITE</bossShip>
-	<bossShip yOffset="180">AEA_BIRD_TRANSPORT</bossShip>
-	<bossShip yOffset="180">AEA_BIRD_TRANSPORT_ELITE</bossShip>
+	<bossShip yOffset="160">AEA_BIRD_MOTHERSHIP</bossShip>
+	<bossShip yOffset="160">AEA_BIRD_MOTHERSHIP_ELITE</bossShip>
+	<bossShip yOffset="160">AEA_BIRD_TRANSPORT</bossShip>
+	<bossShip yOffset="160">AEA_BIRD_TRANSPORT_ELITE</bossShip>
+	<bossShip yOffset="140">AEA_BIRD_AUTO_BOSS</bossShip>
 </events>
 
 <mod:findLike type="victories"> <!-- adds the victory marker for lylmik ending -->

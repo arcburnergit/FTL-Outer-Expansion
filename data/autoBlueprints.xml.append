@@ -3261,29 +3261,28 @@
 	<name>ENERGY_CHARGEGUN</name>
 </blueprintList>
 <blueprintList name="LIST_DRONES_AEA_BIRD">
-	<name>AEA_COMBAT_BIRD_BURST_1</name>
-	<name>AEA_COMBAT_BIRD_BURST_2</name>
-	<name>AEA_COMBAT_BIRD_BURST_3</name>
+	<name>AEA_COMBAT_BIRD_BURST_2_ENEMY</name>
+	<name>AEA_COMBAT_BIRD_BURST_1_ENEMY</name>
 
-	<name>AEA_COMBAT_BIRD_BURST_2</name>
+	<name>AEA_COMBAT_BIRD_BURST_2_ENEMY</name>
 
 
-	<name>AEA_COMBAT_BIRD_BIO_1</name>
-	<name>AEA_COMBAT_BIRD_BIO_2</name>
+	<name>AEA_COMBAT_BIRD_BIO_1_ENEMY</name>
+	<name>AEA_COMBAT_BIRD_BIO_2_ENEMY</name>
 	
-	<name>AEA_COMBAT_BIRD_BIO_1</name>
-	<name>AEA_COMBAT_BIRD_BIO_2</name>
+	<name>AEA_COMBAT_BIRD_BIO_1_ENEMY</name>
+	<name>AEA_COMBAT_BIRD_BIO_2_ENEMY</name>
 
 
-	<name>AEA_COMBAT_BIRD_MULTI_1_LASER</name>
-	<name>AEA_COMBAT_BIRD_MULTI_1_BEAM</name>
+	<name>AEA_COMBAT_BIRD_MULTI_1_LASER_ENEMY</name>
+	<name>AEA_COMBAT_BIRD_MULTI_1_BEAM_ENEMY</name>
 
-	<name>AEA_COMBAT_BIRD_MULTI_1_LASER</name>
-	<name>AEA_COMBAT_BIRD_MULTI_1_BEAM</name>
+	<name>AEA_COMBAT_BIRD_MULTI_1_LASER_ENEMY</name>
+	<name>AEA_COMBAT_BIRD_MULTI_1_BEAM_ENEMY</name>
 
-	<name>AEA_COMBAT_BIRD_SMART_1</name>
-	<name>AEA_COMBAT_BIRD_SMART_1</name>
-	<name>AEA_COMBAT_BIRD_SMART_2</name>
+	<name>AEA_COMBAT_BIRD_SMART_1_ENEMY</name>
+	<name>AEA_COMBAT_BIRD_SMART_1_ENEMY</name>
+	<name>AEA_COMBAT_BIRD_SMART_2_ENEMY</name>
 
 
 	<name>COMBAT_1_LASER</name>
@@ -3298,29 +3297,27 @@
 </blueprintList>
 
 <blueprintList name="LIST_DRONES_AEA_BIRD_ELITE">
-	<name>AEA_COMBAT_BIRD_BURST_1</name>
-	<name>AEA_COMBAT_BIRD_BURST_2</name>
-	<name>AEA_COMBAT_BIRD_BURST_3</name>
+	<name>AEA_COMBAT_BIRD_BURST_2_ENEMY</name>
+	<name>AEA_COMBAT_BIRD_BURST_1_ENEMY</name>
 
-	<name>AEA_COMBAT_BIRD_BURST_2</name>
+	<name>AEA_COMBAT_BIRD_BURST_2_ENEMY</name>
 
 
-	<name>AEA_COMBAT_BIRD_BIO_1</name>
-	<name>AEA_COMBAT_BIRD_BIO_2</name>
+	<name>AEA_COMBAT_BIRD_BIO_1_ENEMY</name>
+	<name>AEA_COMBAT_BIRD_BIO_2_ENEMY</name>
 	
-	<name>AEA_COMBAT_BIRD_BIO_1</name>
-	<name>AEA_COMBAT_BIRD_BIO_2</name>
+	<name>AEA_COMBAT_BIRD_BIO_2_ENEMY</name>
 
 
 	<name>AEA_COMBAT_BIRD_MULTI_1_LASER</name>
 	<name>AEA_COMBAT_BIRD_MULTI_1_BEAM</name>
 
-	<name>AEA_COMBAT_BIRD_MULTI_1_LASER</name>
-	<name>AEA_COMBAT_BIRD_MULTI_1_BEAM</name>
+	<name>AEA_COMBAT_BIRD_MULTI_2_LASER_ENEMY</name>
+	<name>AEA_COMBAT_BIRD_MULTI_2_BEAM_ENEMY</name>
 
-	<name>AEA_COMBAT_BIRD_SMART_1</name>
-	<name>AEA_COMBAT_BIRD_SMART_1</name>
-	<name>AEA_COMBAT_BIRD_SMART_2</name>
+	<name>AEA_COMBAT_BIRD_SMART_1_ENEMY</name>
+	<name>AEA_COMBAT_BIRD_SMART_1_ENEMY</name>
+	<name>AEA_COMBAT_BIRD_SMART_2_ENEMY</name>
 
 
 	<name>COMBAT_1_LASER</name>
@@ -3341,15 +3338,15 @@
 		<doors power="1" max="2" room="5" start="true" />
 		<drones power="2" max="8" room="8" start="true" />
 		<engines power="1" max="3" room="3" start="true" />
-		<medbay power="2" max="3" room="4" start="true" />
+		<medbay power="2" max="2" room="4" start="true" />
 		<oxygen power="1" max="2" room="6" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="1" start="true" />
 		<weapons power="2" max="8" room="7" start="true" />
 	</systemList>
-	<weaponSlots>4</weaponSlots>
+	<weaponSlots>3</weaponSlots>
 	<droneSlots>3</droneSlots>
-	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
+	<weaponList missiles="0" count="3" load="LIST_WEAPONS_AEA_BIRD" />
 	<droneList drones="6" count="3" load="LIST_DRONES_AEA_BIRD" />
 	<health amount="11" />
 	<maxPower amount="10" />
@@ -3366,16 +3363,16 @@
 		<doors power="1" max="2" room="8" start="true" />
 		<drones power="2" max="8" room="6" start="true" />
 		<engines power="1" max="3" room="1" start="true" />
-		<medbay power="2" max="3" room="7" start="true" />
+		<medbay power="2" max="2" room="7" start="true" />
 		<oxygen power="1" max="2" room="4" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="2" start="true" />
 		<weapons power="2" max="8" room="5" start="true" />
 	</systemList>
 	<weaponSlots>2</weaponSlots>
-	<droneSlots>4</droneSlots>
+	<droneSlots>3</droneSlots>
 	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD" />
+	<droneList drones="6" count="3" load="LIST_DRONES_AEA_BIRD" />
 	<health amount="6" />
 	<maxPower amount="10" />
 	<crewCount amount="3" max="5" class="aea_bird_avali" />
@@ -3390,16 +3387,16 @@
 		<doors power="1" max="2" room="4" start="true" />
 		<drones power="2" max="8" room="7" start="true" />
 		<engines power="1" max="2" room="12" start="true" />
-		<medbay power="2" max="3" room="2" start="true" />
+		<medbay power="2" max="2" room="2" start="true" />
 		<oxygen power="2" max="2" room="5" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="3" start="true" />
 		<weapons power="2" max="8" room="6" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>3</droneSlots>
+	<droneSlots>2</droneSlots>
 	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="6" count="3" load="LIST_DRONES_AEA_BIRD" />
+	<droneList drones="6" count="2" load="LIST_DRONES_AEA_BIRD" />
 	<health amount="12" />
 	<maxPower amount="11" />
 	<crewCount amount="4" max="7" class="aea_bird_avali" />
@@ -3414,16 +3411,16 @@
 		<doors power="1" max="2" room="3" start="true" />
 		<drones power="2" max="8" room="8" start="true" />
 		<engines power="1" max="3" room="1" start="true" />
-		<medbay power="2" max="3" room="4" start="true" />
+		<medbay power="2" max="2" room="4" start="true" />
 		<oxygen power="1" max="1" room="2" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="7" start="true" />
 		<weapons power="2" max="8" room="6" start="true" />
 	</systemList>
 	<weaponSlots>3</weaponSlots>
-	<droneSlots>4</droneSlots>
+	<droneSlots>3</droneSlots>
 	<weaponList missiles="0" count="3" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD" />
+	<droneList drones="6" count="3" load="LIST_DRONES_AEA_BIRD" />
 	<health amount="9" />
 	<maxPower amount="10" />
 	<crewCount amount="4" max="6" class="aea_bird_avali" />
@@ -3439,16 +3436,16 @@
 		<doors power="1" max="2" room="10" start="true" />
 		<drones power="3" max="9" room="4" start="true" />
 		<engines power="1" max="2" room="5" start="true" />
-		<medbay power="2" max="3" room="1" start="true" />
+		<medbay power="2" max="2" room="1" start="true" />
 		<oxygen power="1" max="1" room="2" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="11" start="true" />
 		<weapons power="2" max="8" room="3" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>5</droneSlots>
+	<droneSlots>4</droneSlots>
 	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="6" count="5" load="LIST_DRONES_AEA_BIRD" />
+	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD" />
 	<health amount="15" />
 	<maxPower amount="12" />
 	<crewCount amount="6" max="9" class="aea_bird_avali" />
@@ -3463,16 +3460,16 @@
 		<doors power="1" max="2" room="0" start="true" />
 		<drones power="3" max="9" room="7" start="true" />
 		<engines power="1" max="3" room="2" start="true" />
-		<medbay power="2" max="3" room="3" start="true" />
+		<medbay power="2" max="2" room="3" start="true" />
 		<oxygen power="1" max="2" room="1" start="true" />
 		<pilot power="1" max="1" room="4" start="true" />
 		<shields power="2" max="8" room="6" start="true" />
 		<weapons power="1" max="8" room="8" start="true" />
 	</systemList>
 	<weaponSlots>2</weaponSlots>
-	<droneSlots>5</droneSlots>
+	<droneSlots>4</droneSlots>
 	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="6" count="5" load="LIST_DRONES_AEA_BIRD" />
+	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD" />
 	<health amount="9" />
 	<maxPower amount="10" />
 	<crewCount amount="3" max="6" class="aea_bird_avali" />
@@ -3487,16 +3484,16 @@
 		<doors power="1" max="1" room="2" start="true" />
 		<drones power="2" max="8" room="0" start="true" />
 		<engines power="1" max="4" room="6" start="true" />
-		<medbay power="2" max="3" room="4" start="true" />
+		<medbay power="2" max="2" room="4" start="true" />
 		<oxygen power="1" max="1" room="5" start="true" />
 		<pilot power="1" max="1" room="9" start="true" />
 		<shields power="2" max="8" room="7" start="true" />
 		<weapons power="2" max="8" room="1" start="true" />
 	</systemList>
 	<weaponSlots>2</weaponSlots>
-	<droneSlots>4</droneSlots>
+	<droneSlots>3</droneSlots>
 	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD" />
+	<droneList drones="6" count="3" load="LIST_DRONES_AEA_BIRD" />
 	<health amount="8" />
 	<maxPower amount="10" />
 	<crewCount amount="3" max="5" class="aea_bird_avali" />
@@ -3518,9 +3515,9 @@
 		<weapons power="3" max="8" room="7" start="true" />
 	</systemList>
 	<weaponSlots>2</weaponSlots>
-	<droneSlots>3</droneSlots>
+	<droneSlots>2</droneSlots>
 	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="6" count="3" load="LIST_DRONES_AEA_BIRD" />
+	<droneList drones="6" count="2" load="LIST_DRONES_AEA_BIRD" />
 	<health amount="7" />
 	<maxPower amount="10" />
 	<crewCount amount="3" max="5" class="aea_bird_avali" />
@@ -3536,15 +3533,15 @@
 		<drones power="3" max="8" room="3" start="true" />
 		<engines power="1" max="2" room="5" start="true" />
 		<hacking power="1" max="1" room="13" start="false" />
-		<medbay power="2" max="3" room="1" start="true" />
+		<medbay power="2" max="2" room="1" start="true" />
 		<oxygen power="1" max="2" room="12" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="7" start="true" />
 		<weapons power="2" max="8" room="4" start="true" />
 	</systemList>
-	<weaponSlots>3</weaponSlots>
+	<weaponSlots>2</weaponSlots>
 	<droneSlots>4</droneSlots>
-	<weaponList missiles="0" count="3" load="LIST_WEAPONS_AEA_BIRD" />
+	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
 	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD" />
 	<health amount="14" />
 	<maxPower amount="11" />
@@ -3606,20 +3603,21 @@
 		<doors power="1" max="2" room="5" start="true" />
 		<drones power="4" max="10" room="8" start="true" />
 		<engines power="1" max="3" room="3" start="true" />
-		<medbay power="2" max="3" room="4" start="true" />
+		<medbay power="2" max="2" room="4" start="true" />
 		<oxygen power="1" max="2" room="6" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="1" start="true" />
 		<weapons power="2" max="8" room="7" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>4</droneSlots>
+	<droneSlots>3</droneSlots>
 	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="8" count="4" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<droneList drones="8" count="3" load="LIST_DRONES_AEA_BIRD_ELITE" />
 	<health amount="13" />
 	<maxPower amount="12" />
 	<crewCount amount="5" max="8" class="aea_bird_avali" />
 	<aug name="UPG_MEDBAY_NANO"/>
+	<aug name="UPG_TECH_SCRAMBLER_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 </shipBlueprint>
 
@@ -3631,7 +3629,7 @@
 		<doors power="1" max="2" room="8" start="true" />
 		<drones power="3" max="9" room="6" start="true" />
 		<engines power="1" max="3" room="1" start="true" />
-		<medbay power="2" max="3" room="7" start="true" />
+		<medbay power="2" max="2" room="7" start="true" />
 		<oxygen power="1" max="2" room="4" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="2" start="true" />
@@ -3645,6 +3643,7 @@
 	<maxPower amount="11" />
 	<crewCount amount="3" max="5" class="aea_bird_avali" />
 	<aug name="UPG_MEDBAY_NANO"/>
+	<aug name="UPG_TECH_SCRAMBLER_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 </shipBlueprint>
 
@@ -3655,20 +3654,21 @@
 		<doors power="1" max="2" room="4" start="true" />
 		<drones power="4" max="10" room="7" start="true" />
 		<engines power="1" max="2" room="12" start="true" />
-		<medbay power="2" max="3" room="2" start="true" />
+		<medbay power="2" max="2" room="2" start="true" />
 		<oxygen power="2" max="2" room="5" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="3" start="true" />
 		<weapons power="2" max="8" room="6" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>4</droneSlots>
+	<droneSlots>3</droneSlots>
 	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="8" count="4" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<droneList drones="8" count="3" load="LIST_DRONES_AEA_BIRD_ELITE" />
 	<health amount="12" />
 	<maxPower amount="13" />
 	<crewCount amount="4" max="7" class="aea_bird_avali" />
 	<aug name="UPG_MEDBAY_NANO"/>
+	<aug name="UPG_TECH_SCRAMBLER_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 </shipBlueprint>
 
@@ -3679,20 +3679,21 @@
 		<doors power="1" max="2" room="3" start="true" />
 		<drones power="3" max="9" room="8" start="true" />
 		<engines power="1" max="3" room="1" start="true" />
-		<medbay power="2" max="3" room="4" start="true" />
+		<medbay power="2" max="2" room="4" start="true" />
 		<oxygen power="1" max="1" room="2" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="7" start="true" />
 		<weapons power="2" max="8" room="6" start="true" />
 	</systemList>
 	<weaponSlots>3</weaponSlots>
-	<droneSlots>4</droneSlots>
+	<droneSlots>3</droneSlots>
 	<weaponList missiles="0" count="3" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="8" count="4" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<droneList drones="8" count="3" load="LIST_DRONES_AEA_BIRD_ELITE" />
 	<health amount="10" />
 	<maxPower amount="11" />
 	<crewCount amount="4" max="6" class="aea_bird_avali" />
 	<aug name="UPG_MEDBAY_NANO"/>
+	<aug name="UPG_TECH_SCRAMBLER_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 </shipBlueprint>
 
@@ -3704,20 +3705,21 @@
 		<doors power="1" max="2" room="10" start="true" />
 		<drones power="5" max="11" room="4" start="true" />
 		<engines power="1" max="2" room="5" start="true" />
-		<medbay power="2" max="3" room="1" start="true" />
+		<medbay power="2" max="2" room="1" start="true" />
 		<oxygen power="1" max="1" room="2" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="11" start="true" />
 		<weapons power="2" max="8" room="3" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>6</droneSlots>
+	<droneSlots>5</droneSlots>
 	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="8" count="6" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<droneList drones="8" count="5" load="LIST_DRONES_AEA_BIRD_ELITE" />
 	<health amount="18" />
 	<maxPower amount="13" />
 	<crewCount amount="6" max="9" class="aea_bird_avali" />
 	<aug name="UPG_MEDBAY_NANO"/>
+	<aug name="UPG_TECH_SCRAMBLER_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 </shipBlueprint>
 
@@ -3728,20 +3730,21 @@
 		<doors power="1" max="2" room="0" start="true" />
 		<drones power="4" max="10" room="7" start="true" />
 		<engines power="1" max="3" room="2" start="true" />
-		<medbay power="2" max="3" room="3" start="true" />
+		<medbay power="2" max="2" room="3" start="true" />
 		<oxygen power="1" max="2" room="1" start="true" />
 		<pilot power="1" max="1" room="4" start="true" />
 		<shields power="2" max="8" room="6" start="true" />
 		<weapons power="2" max="8" room="8" start="true" />
 	</systemList>
 	<weaponSlots>2</weaponSlots>
-	<droneSlots>5</droneSlots>
+	<droneSlots>4</droneSlots>
 	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="8" count="5" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<droneList drones="8" count="4" load="LIST_DRONES_AEA_BIRD_ELITE" />
 	<health amount="11" />
 	<maxPower amount="12" />
 	<crewCount amount="3" max="6" class="aea_bird_avali" />
 	<aug name="UPG_MEDBAY_NANO"/>
+	<aug name="UPG_TECH_SCRAMBLER_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 </shipBlueprint>
 
@@ -3752,20 +3755,21 @@
 		<doors power="1" max="1" room="2" start="true" />
 		<drones power="4" max="10" room="0" start="true" />
 		<engines power="1" max="4" room="6" start="true" />
-		<medbay power="2" max="3" room="4" start="true" />
+		<medbay power="2" max="2" room="4" start="true" />
 		<oxygen power="1" max="1" room="5" start="true" />
 		<pilot power="1" max="1" room="9" start="true" />
 		<shields power="2" max="8" room="7" start="true" />
 		<weapons power="2" max="8" room="1" start="true" />
 	</systemList>
 	<weaponSlots>2</weaponSlots>
-	<droneSlots>5</droneSlots>
+	<droneSlots>4</droneSlots>
 	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="8" count="5" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<droneList drones="8" count="4" load="LIST_DRONES_AEA_BIRD_ELITE" />
 	<health amount="9" />
 	<maxPower amount="12" />
 	<crewCount amount="3" max="5" class="aea_bird_avali" />
 	<aug name="UPG_MEDBAY_NANO"/>
+	<aug name="UPG_TECH_SCRAMBLER_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 </shipBlueprint>
 
@@ -3783,13 +3787,14 @@
 		<weapons power="3" max="8" room="7" start="true" />
 	</systemList>
 	<weaponSlots>2</weaponSlots>
-	<droneSlots>4</droneSlots>
+	<droneSlots>3</droneSlots>
 	<weaponList missiles="0" count="2" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<droneList drones="6" count="3" load="LIST_DRONES_AEA_BIRD_ELITE" />
 	<health amount="9" />
 	<maxPower amount="10" />
 	<crewCount amount="3" max="5" class="aea_bird_avali" />
 	<aug name="UPG_MEDBAY_NANO"/>
+	<aug name="UPG_TECH_SCRAMBLER_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 </shipBlueprint>
 
@@ -3801,20 +3806,21 @@
 		<drones power="4" max="10" room="3" start="true" />
 		<engines power="1" max="2" room="5" start="true" />
 		<hacking power="1" max="1" room="13" start="false" />
-		<medbay power="2" max="3" room="1" start="true" />
+		<medbay power="2" max="2" room="1" start="true" />
 		<oxygen power="1" max="2" room="12" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="7" start="true" />
 		<weapons power="3" max="8" room="4" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>5</droneSlots>
+	<droneSlots>4</droneSlots>
 	<weaponList missiles="0" count="4" load="LIST_WEAPONS_AEA_BIRD" />
-	<droneList drones="6" count="5" load="LIST_DRONES_AEA_BIRD_ELITE" />
+	<droneList drones="6" count="4" load="LIST_DRONES_AEA_BIRD_ELITE" />
 	<health amount="20" />
 	<maxPower amount="14" />
 	<crewCount amount="6" max="10" class="aea_bird_avali" />
 	<aug name="UPG_MEDBAY_NANO"/>
+	<aug name="UPG_TECH_SCRAMBLER_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 </shipBlueprint>
 

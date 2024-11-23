@@ -601,14 +601,16 @@ script.on_internal_event(Defines.InternalEvents.DRONE_COLLISION, function(drone,
                 3,
                 drone.currentLocation)
             userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
-            local drone3 = spawn_temp_drone(
-                droneBlueprint,
-                ship,
-                otherShip,
-            	nil,
-                3,
-                drone.currentLocation)
-            userdata_table(drone3, "mods.mv.droneStuff").clearOnJump = true
+            if drone.iShipId == 0 then
+	            local drone3 = spawn_temp_drone(
+	                droneBlueprint,
+	                ship,
+	                otherShip,
+	            	nil,
+	                3,
+	                drone.currentLocation)
+	            userdata_table(drone3, "mods.mv.droneStuff").clearOnJump = true
+	        end
             droneTable[drone.selfId] = true
 			drone:BlowUp(false)
         end
@@ -638,14 +640,16 @@ script.on_internal_event(Defines.InternalEvents.DRONE_COLLISION, function(drone,
                 3,
                 drone.currentLocation)
             userdata_table(drone3, "mods.mv.droneStuff").clearOnJump = true
-            local drone4 = spawn_temp_drone(
-                droneBlueprint,
-                ship,
-                otherShip,
-            	nil,
-                3,
-                drone.currentLocation)
-            userdata_table(drone4, "mods.mv.droneStuff").clearOnJump = true
+            if drone.iShipId == 0 then
+	            local drone4 = spawn_temp_drone(
+	                droneBlueprint,
+	                ship,
+	                otherShip,
+	            	nil,
+	                3,
+	                drone.currentLocation)
+	            userdata_table(drone4, "mods.mv.droneStuff").clearOnJump = true
+	        end
             droneTable[drone.selfId] = true
 			drone:BlowUp(false)
         end
@@ -671,14 +675,16 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 		                3,
 		                drone.currentLocation)
 		            userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
-		            local drone3 = spawn_temp_drone(
-		                droneBlueprint,
-		                ship,
-		                otherShip,
-		            	nil,
-		                3,
-		                drone.currentLocation)
-		            userdata_table(drone3, "mods.mv.droneStuff").clearOnJump = true
+            		if drone.iShipId == 0 then
+			            local drone3 = spawn_temp_drone(
+			                droneBlueprint,
+			                ship,
+			                otherShip,
+			            	nil,
+			                3,
+			                drone.currentLocation)
+			            userdata_table(drone3, "mods.mv.droneStuff").clearOnJump = true
+			        end
 					--print("kill")
 					drone:BlowUp(false)
             		droneTable[drone.selfId] = true

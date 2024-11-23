@@ -17,6 +17,7 @@
 	<text>You have arrived in Gi space. This may be a sector full of allies, but it is bound to attract plenty of Rebels too.</text>
 </textList>
 <event name="START_AEA_BIRD">
+	<metaVariable name="juke_aea_bird" op="set" val="1" />
 	<preventQuest />
 	<beaconType id="map_icon_start" global="false">
 		<color r="46" g="252" b="51" a="1" />
@@ -123,7 +124,7 @@
 	</choice>
 </event>
 
-<ship name="SHIP_GUARD_AEA_BIRD" auto_blueprint="AEA_BIRD_MOTHERSHIP">
+<ship name="SHIP_GUARD_AEA_BIRD" auto_blueprint="LIST_SHIPS_AEA_BIRD_ELITE_FIGHT">
 	<surrender min="999" max="999" load="GUARD_SIGNAL" />
 	<destroyed load="GUARD_AEA_BIRD_DESTROY" />
 	<deadCrew load="GUARD_AEA_BIRD_DEADCREW" />
@@ -200,6 +201,7 @@
 	<text>You have arrived in Gi space. This may be a sector full of allies, but it is bound to attract plenty of Rebels too.</text>
 </textList>
 <event name="START_AEA_BIRD_UNIQUE">
+	<metaVariable name="juke_aea_bird" op="set" val="1" />
 	<preventQuest />
 	<beaconType id="map_icon_start" global="false">
 		<color r="46" g="252" b="51" a="1" />

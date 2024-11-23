@@ -4585,6 +4585,26 @@ This drone fires 2 shots.
 	<rarity>5</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_BURST_1_ENEMY">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Amp Burst</title>
+	<short>Burst [2]</short>
+	<desc>[CURRENT POWER: 2] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
+
+This drone fires 2 shots.
+	</desc>
+	<power>3</power>
+	<cooldown>2000</cooldown>
+	<dodge>0</dodge>
+	<speed>10</speed>
+	<cost>70</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_burst_a1</droneImage>
+	<weaponBlueprint>AEA_BEAM_BIRD_BURST_1</weaponBlueprint>
+	<rarity>5</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
 <droneBlueprint name="AEA_COMBAT_BIRD_BURST_2">
 	<type>COMBAT</type>
 	<tip>tip_toggle_combat</tip>
@@ -4595,6 +4615,26 @@ This drone fires 2 shots.
 This drone fires 3 shots.
 	</desc>
 	<power>3</power>
+	<cooldown>3000</cooldown>
+	<dodge>0</dodge>
+	<speed>8</speed>
+	<cost>70</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_burst_a2</droneImage>
+	<weaponBlueprint>AEA_BEAM_BIRD_BURST_2</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_BURST_2_ENEMY">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Amp Burst</title>
+	<short>Burst [3]</short>
+	<desc>[CURRENT POWER: 3] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
+
+This drone fires 3 shots.
+	</desc>
+	<power>4</power>
 	<cooldown>3000</cooldown>
 	<dodge>0</dodge>
 	<speed>8</speed>
@@ -4723,7 +4763,7 @@ This drone fires 4 shots.
 	<power>1</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
-	<speed>40</speed>
+	<speed>35</speed>
 	<cost>40</cost>
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_bio_1</droneImage>
@@ -4741,7 +4781,43 @@ This drone fires 4 shots.
 	<power>2</power>
 	<cooldown>500</cooldown>
 	<dodge>0</dodge>
-	<speed>70</speed>
+	<speed>60</speed>
+	<cost>60</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_bio_2</droneImage>
+	<weaponBlueprint>AEA_LASER_BIO_DRONE</weaponBlueprint>
+	<rarity>5</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<droneBlueprint name="AEA_COMBAT_BIRD_BIO_1_ENEMY">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Bio Drone Mk. I</title>
+	<short>Bio I</short>
+	<desc>A drone that specifically targets enemy crewmembers. Does 15 personal damage and inflicts enemy crew with a death effect that does 2 system damage and creates a fire for 20 seconds.</desc>
+	<power>2</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>35</speed>
+	<cost>40</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_bio_1</droneImage>
+	<weaponBlueprint>AEA_LASER_BIO_DRONE</weaponBlueprint>
+	<rarity>5</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<droneBlueprint name="AEA_COMBAT_BIRD_BIO_2_ENEMY">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Bio Drone Mk. II</title>
+	<short>Bio II</short>
+	<desc>A drone that specifically targets enemy crewmembers, faster than the Mk 1. Does 15 personal damage and inflicts enemy crew with a death effect that does 2 system damage and creates a fire for 20 seconds.</desc>
+	<power>3</power>
+	<cooldown>500</cooldown>
+	<dodge>0</dodge>
+	<speed>60</speed>
 	<cost>60</cost>
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_bio_2</droneImage>
@@ -4759,7 +4835,7 @@ This drone fires 4 shots.
 	<power>3</power>
 	<cooldown>100</cooldown>
 	<dodge>0</dodge>
-	<speed>100</speed>
+	<speed>85</speed>
 	<cost>80</cost>
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_bio_3</droneImage>
@@ -4996,6 +5072,74 @@ This drone fires 4 shots.
 	<rarity>0</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_MULTI_1_LASER_ENEMY">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Twin Drone Mk. I [Laser]</title>
+	<short>Twin I [L]</short>
+	<desc>[CURRENT MODE: Laser] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>10</speed>
+	<cost>65</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_multi_1_l</droneImage>
+	<weaponBlueprint>AEA_DRONE_LASER_COMBAT_MULTI</weaponBlueprint>
+	<rarity>5</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_MULTI_1_BEAM_ENEMY">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Twin Drone Mk. I [Beam]</title>
+	<short>Twin I [B]</short>
+	<desc>[CURRENT MODE: Beam] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>8</speed>
+	<cost>65</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_multi_1_b</droneImage>
+	<weaponBlueprint>AEA_DRONE_BEAM_COMBAT_MULTI</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_MULTI_2_LASER_ENEMY">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Twin Drone Mk. II [Laser]</title>
+	<short>Twin II [L]</short>
+	<desc>[CURRENT MODE: Laser] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon. Moves faster than the MK I.</desc>
+	<power>4</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>20</speed>
+	<cost>90</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_multi_2_l</droneImage>
+	<weaponBlueprint>AEA_DRONE_LASER_COMBAT_MULTI</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_MULTI_2_BEAM_ENEMY">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Twin Drone Mk. II [Beam]</title>
+	<short>Twin II [B]</short>
+	<desc>[CURRENT MODE: Beam] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon. Moves faster than the MK I.</desc>
+	<power>4</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>18</speed>
+	<cost>90</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_multi_2_b</droneImage>
+	<weaponBlueprint>AEA_DRONE_BEAM_COMBAT_MULTI</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
 
 <weaponBlueprint name="AEA_DRONE_LASER_COMBAT_MULTI_LOOT">
 	<type>LASER</type>
@@ -5152,7 +5296,7 @@ This drone fires 4 shots.
 	<power>2</power>
 	<cooldown>1000</cooldown>
 	<dodge>5</dodge>
-	<speed>10</speed>
+	<speed>9</speed>
 	<cost>70</cost>
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_smart_1</droneImage>
@@ -5169,7 +5313,42 @@ This drone fires 4 shots.
 	<power>3</power>
 	<cooldown>1000</cooldown>
 	<dodge>5</dodge>
-	<speed>20</speed>
+	<speed>18</speed>
+	<cost>95</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_smart_2</droneImage>
+	<weaponBlueprint>AEA_DRONE_LASER_COMBAT_SMART</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<droneBlueprint name="AEA_COMBAT_BIRD_SMART_1_ENEMY">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Intel Drone Mk. I</title>
+	<short>Intel I</short>
+	<desc>A combat drone equiped with a pair of lasers. This specialist drone has a targetting computer onboard that enables the drone to only target enemy systems, and is weighted towards the more important systems.</desc>
+	<power>2</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>6</speed>
+	<cost>70</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_smart_1</droneImage>
+	<weaponBlueprint>AEA_DRONE_LASER_COMBAT_SMART</weaponBlueprint>
+	<rarity>5</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_SMART_2_ENEMY">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Intel Drone Mk. II</title>
+	<short>Intel II</short>
+	<desc>A combat drone equiped with a pair of lasers. This specialist drone has a targetting computer onboard that enables the drone to only target enemy systems, and is weighted towards the more important systems.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>12</speed>
 	<cost>95</cost>
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_smart_2</droneImage>
