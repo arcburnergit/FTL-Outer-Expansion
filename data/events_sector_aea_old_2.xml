@@ -449,11 +449,11 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us.".</text>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
 			<choice hidden="true">
 				<text>Sure.</text>
 				<event>
-					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself.".</text>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_1">Atoning Unifex</crewMember>
 					<choice hidden="true">
 						<text>Head out to the location.</text>
@@ -479,11 +479,11 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us.".</text>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
 			<choice hidden="true">
 				<text>Sure.</text>
 				<event>
-					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself.".</text>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_2">Asymptotic Essence</crewMember>
 					<choice hidden="true">
 						<text>Head out to the location.</text>
@@ -509,11 +509,11 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us.".</text>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
 			<choice hidden="true">
 				<text>Sure.</text>
 				<event>
-					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself.".</text>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_3">Eupathic Impulse</crewMember>
 					<choice hidden="true">
 						<text>Head out to the location.</text>
@@ -539,11 +539,11 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us.".</text>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
 			<choice hidden="true">
 				<text>Sure.</text>
 				<event>
-					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself.".</text>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_4">Homologous Trend</crewMember>
 					<choice hidden="true">
 						<text>Head out to the location.</text>
@@ -569,11 +569,11 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us.".</text>
+			<text>"Captain, I believe I already know why you're here, we've had others like you come through destroying everything in their path. Inevitably they want to leave and we let them, however first they, well you, need to do something for us."</text>
 			<choice hidden="true">
 				<text>Sure.</text>
 				<event>
-					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself.".</text>
+					<text>"My task for you is relatively simple, there's another like you running rampant in our sectors, if you take them out, you get to leave, if they take you out, they get to leave. I shall come with you to see the event myself."</text>
 					<crewMember  all_skills="2" amount="1" class="aea_old_unique_5">Noetic Concordance</crewMember>
 					<choice hidden="true">
 						<text>Head out to the location.</text>

@@ -116,7 +116,7 @@
 </event>
 
 <event name="AEA_BIRD_FREECREW" unique="true">
-	<text>A damaged Gi shuttle floats nearby the beacon. "Oh thank the federation you're here, The mothership I was docked with experienced a catastrophic deconstruction and damaged the shuttle in the explosion. I'm an engine technician and I'm sure my skills could be of service to you.".</text>
+	<text>A damaged Gi shuttle floats nearby the beacon. "Oh thank the federation you're here, The mothership I was docked with experienced a catastrophic deconstruction and damaged the shuttle in the explosion. I'm an engine technician and I'm sure my skills could be of service to you."</text>
 	<ship load="SHIP_AEA_BIRD_SHUTTLE" hostile="false"/>
 	<choice hidden="true">
 		<text>Welcome aboard.</text>
@@ -128,7 +128,7 @@
 	<choice hidden="true">
 		<text>Offer to drop them off at the nearest station.</text>
 		<event>
-			<text>"Oh... ok. Feel free to loot whatever remains on the shuttle.".</text>
+			<text>"Oh... ok. Feel free to loot whatever remains on the shuttle."</text>
 			<autoReward level="MED">stuff</autoReward>
 		</event>
 	</choice>
@@ -497,6 +497,123 @@
 	</choice>
 </event>
 
+<eventList name="ITEMS_AEA_BIRD_UNIQUE">
+	<event load="AEA_BIRD_SUPPLY" />
+	<event load="AEA_BIRD_FREECREW" />
+	<event load="AEA_BIRD_CRICKET" />
+	<event load="AEA_BIRD_FABRICATOR" />
+</eventList>
+
+<event name="AEA_BIRD_FABRICATOR">
+	<text>The beacon sits in orbit of a Gi Industrial Planet. This planet is home to some of the large manufacturing plants the Gi use to produce their drones.
+You receive a hail from a facility on the surface of the planet, they ask you if you could come down and help test their new fabricator.</text>
+	<choice hidden="true">
+		<text>Head down to the facility.</text>
+		<event>
+			<text>You arrive at the facility and are greeted by a Gi Engineer. They explain that they've developped an experimental fabricator but need some fuel to power it, The delivery they ordered for the fuel hasn't arrived and so they need some of your fuel to get it started.</text>
+			<choice hidden="false">
+				<text>Give them the fuel.</text>
+				<event>
+					<text>As compensation they offer to let you use the fabricator first. Now that it's up and running it just requires a small amount of scrap to get going.</text>
+					<item_modify>
+						<item type="fuel" min="-1" max="-1"/>
+					</item_modify>
+					<choice hidden="false">
+						<text>Put in the scrap.</text>
+						<event>
+							<text>You load the machine up with scrap and it begins whirring as it turns the scrap into useful supplies.</text>
+							<item_modify>
+								<item type="scrap" min="-5" max="-5"/>
+							</item_modify>
+							<choice hidden="true">
+								<text>Continue.</text>
+								<event>
+									<text>The machine stops and spits out your supplies.
+
+You could use it again but it would give the rebels time to catch up.</text>
+									<autoReward level="RANDOM">stuff</autoReward>
+									<choice hidden="false">
+										<text>Put in the scrap.</text>
+										<event>
+											<text>You load the machine up with scrap and it begins whirring as it turns the scrap into useful supplies.</text>
+											<item_modify>
+												<item type="scrap" min="-5" max="-5"/>
+											</item_modify>
+											<choice hidden="true">
+												<text>Continue.</text>
+												<event>
+													<text>The machine spits out your supplies.</text>
+													<autoReward level="RANDOM">stuff</autoReward>
+												</event>
+											</choice>
+										</event>
+									</choice>
+									<choice hidden="false">
+										<text>Leave.</text>
+										<event>
+											<text>You aren't interested in any more supplies.</text>
+											<choice>
+												<text>Do something onboard the ship.</text>
+												<event load="STORAGE_CHECK" />
+											</choice>
+											<choice>
+												<text>Do nothing.</text>
+												<event />
+											</choice>
+										</event>
+									</choice>
+								</event>
+							</choice>
+							<choice hidden="false">
+								<text>Leave.</text>
+								<event>
+									<text>You aren't interested in any more supplies.</text>
+									<choice>
+										<text>Do something onboard the ship.</text>
+										<event load="STORAGE_CHECK" />
+									</choice>
+									<choice>
+										<text>Do nothing.</text>
+										<event />
+									</choice>
+								</event>
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="false">
+				<text>Leave.</text>
+				<event>
+					<text>You aren't interested in any more supplies.</text>
+					<choice>
+						<text>Do something onboard the ship.</text>
+						<event load="STORAGE_CHECK" />
+					</choice>
+					<choice>
+						<text>Do nothing.</text>
+						<event />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="false">
+		<text>Ignore them.</text>
+		<event>
+			<text>You aren't interested in the facility or the sketch request.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -549,7 +666,7 @@
 </textList>
 
 <event name="AEA_BIRD_RUNAWAY_DRONE" unique="true">
-	<text>You arrive and notice a GI interceptor being chased by a small shuttle. "Renegade, we need your help, we were attempting to install the drone module from an intel drone into a small shuttle, unfortunately it went haywire and is now attempting to kill us, we have no weapons onboard and can't fight back.".</text>
+	<text>You arrive and notice a GI interceptor being chased by a small shuttle. "Renegade, we need your help, we were attempting to install the drone module from an intel drone into a small shuttle, unfortunately it went haywire and is now attempting to kill us, we have no weapons onboard and can't fight back."</text>
 	<choice hidden="true">
 		<text>Attack the shuttle.</text>
 		<event>
@@ -653,7 +770,7 @@ You're not able to make it far though, a Gi ship has noticed your intrusion and 
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event>
-					<text>A moment later the Gi ship pops back out of the wormhole, unscathed. "Alright, your turn.".</text>
+					<text>A moment later the Gi ship pops back out of the wormhole, unscathed. "Alright, your turn."</text>
 					<choice hidden="true">
 						<text>Enter the wormhole.</text>
 						<event name="AEA_BIRD_RUSSIAN_ROLL_ENEMY_1">
@@ -722,7 +839,7 @@ You're not able to make it far though, a Gi ship has noticed your intrusion and 
 <event name="AEA_BIRD_ROULETTE_AGAIN">
 	<text>The Gi captain flips a coin, You have a moment to call the side it will land on, if you're right you'll go second, if you're wrong you'll have to go first.</text>
 	<choice req="aea_bird_roulette_result_start" lvl="2">
-		<text>Call "beaks".</text>
+		<text>Call "beaks"</text>
 		<event name="AEA_BIRD_RUSSIAN_ROLL_ENEMY_2">
 			<text>The coin lands beaks side up, the Gi captain is first to fly through the wormhole.</text>
 			<choice hidden="true">
@@ -732,7 +849,7 @@ You're not able to make it far though, a Gi ship has noticed your intrusion and 
 		</event>
 	</choice>
 	<choice req="aea_bird_roulette_result_start" lvl="2">
-		<text>Call "feathers".</text>
+		<text>Call "feathers"</text>
 		<event name="AEA_BIRD_RUSSIAN_ROLL_PLAYER_1">
 			<text>The coin lands beaks side up, since you called the coin wrong its your turn to fly through the wormhole.</text>
 			<choice hidden="true">
@@ -746,7 +863,7 @@ You're not able to make it far though, a Gi ship has noticed your intrusion and 
 		</event>
 	</choice>
 	<choice req="aea_bird_roulette_result_start" lvl="1" max_lvl="1">
-		<text>Call "beaks".</text>
+		<text>Call "beaks"</text>
 		<event name="AEA_BIRD_RUSSIAN_ROLL_PLAYER_2">
 			<text>The coin lands feathers side up, since you called the coin wrong its your turn to fly through the wormhole.</text>
 			<choice hidden="true">
@@ -760,7 +877,7 @@ You're not able to make it far though, a Gi ship has noticed your intrusion and 
 		</event>
 	</choice>
 	<choice req="aea_bird_roulette_result_start" lvl="1" max_lvl="1">
-		<text>Call "feathers".</text>
+		<text>Call "feathers"</text>
 		<event name="AEA_BIRD_RUSSIAN_ROLL_ENEMY_4">
 			<text>The coin lands beaks feathers side up, the Gi captain is first to fly through the wormhole.</text>
 			<choice hidden="true">
@@ -823,7 +940,7 @@ You're not able to make it far though, a Gi ship has noticed your intrusion and 
 <event name="AEA_BIRD_RUSSIAN_ROULETTE_LIST_ENEMY">
 	<loadEventList seeded="false" first="true" generate="true">
 		<event req="aea_bird_roulette_result" lvl="2">
-			<text>A moment later the Gi ship pops back out of the wormhole, unscathed. "Alright, your turn.".</text>
+			<text>A moment later the Gi ship pops back out of the wormhole, unscathed. "Alright, your turn."</text>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event>
@@ -841,7 +958,7 @@ You're not able to make it far though, a Gi ship has noticed your intrusion and 
 </event>
 
 <event name="AEA_BIRD_ROULETTE_ROLL_START_2">
-	<text>A moment later the Gi ship pops back out of the wormhole, however this time you see a trail of liquid being left behind by the ship, there are noticable crunch marks down the side. "Alright you win, however I'm still willing to go again, how about it?".</text>
+	<text>A moment later the Gi ship pops back out of the wormhole, however this time you see a trail of liquid being left behind by the ship, there are noticable crunch marks down the side. "Alright you win, however I'm still willing to go again, how about it?"</text>
 	<variable name="aea_bird_roulette" op="set" val="1" />
 	<enemyDamage amount="1" />
 	<item_modify>
@@ -862,6 +979,13 @@ You're not able to make it far though, a Gi ship has noticed your intrusion and 
 	</choice>
 </event>
 
+<eventList name="NEUTRAL_AEA_BIRD_UNIQUE">
+	<event load="AEA_BIRD_REBEL_CHOICE" />
+	<event load="AEA_BIRD_RUNAWAY_DRONE" />
+	<event load="AEA_BIRD_NESTING_PLANET" />
+	<event load="AEA_BIRD_RUSSIAN_ROULETTE" />
+	<event load="FEDERATION_SHIPCLASS" />
+</eventList>
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -886,7 +1010,7 @@ You're not able to make it far though, a Gi ship has noticed your intrusion and 
 			<choice hidden="true">
 				<text>Continue searching the colony.</text>
 				<event>
-					<text>Eventually you discover a colony member hiding under in a locked room. After assuring them of their safety they come out. "I suppose you're wondering what happened here, and unfortunately I'm not sure what happened either. I normally sleep with my room locked and so when I woke up this morning to bashing on my door I kept it locked. I don't know what happened but I was able to activate the distress beacon from my room.".</text>
+					<text>Eventually you discover a colony member hiding under in a locked room. After assuring them of their safety they come out. "I suppose you're wondering what happened here, and unfortunately I'm not sure what happened either. I normally sleep with my room locked and so when I woke up this morning to bashing on my door I kept it locked. I don't know what happened but I was able to activate the distress beacon from my room."</text>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
@@ -980,6 +1104,10 @@ A Gi ship appears from over the top and begins an attack run on you. You scrambl
 	</choice>
 </event>
 
+<eventList name="DISTRESS_AEA_BIRD_UNIQUE">
+	<event load="DISTRESS_AEA_BIRD_COLONY" />
+	<event load="" />
+</eventList>
 
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1081,6 +1209,11 @@ They tell you that there's only a few minutes before the medicide expires, you'l
 		</event>
 	</choice>
 </event>
+
+<eventList name="QUESTS_AEA_BIRD_UNIQUE">
+	<event load="AEA_BIRD_DELIVERY_QUEST" />
+	<event load="AEA_CULT_WHALE"/>
+</eventList>
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1114,6 +1247,13 @@ They tell you that there's only a few minutes before the medicide expires, you'l
 	</choice>
 </event>
 
+<eventList name="HOSTILE_AEA_BIRD_UNIQUE">
+	<event load="ENCOUNTER_AEA_BIRD_SALVAGE" />
+	<event load="" />
+	
+	<event load="ENCOUNTER_REBEL" />
+	<event load="ENCOUNTER_REBEL" />
+</eventList>
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1135,7 +1275,7 @@ They tell you that there's only a few minutes before the medicide expires, you'l
 </event>
 
 <event name="AEA_BIRD_FED_SPIES_SURRENDER">
-	<text>The captain of the ship comes onto the screen, they're wearing a hastily put together federation outfit. "Captain, clearly we've got off on the wrong foot, lets have a ceasefire and we'll send over some scrap as an apology".</text>
+	<text>The captain of the ship comes onto the screen, they're wearing a hastily put together federation outfit. "Captain, clearly we've got off on the wrong foot, lets have a ceasefire and we'll send over some scrap as an apology"</text>
 	<choice>
 		<text>Agree to the ceasefire.</text>
 		<event>
@@ -1253,22 +1393,22 @@ The Gi even send one of their prototype cruiser's blueprints over to you, alongs
 		<text>Visit the museum.</text>
 		<event>
 			<text>The first exhibit covers first design of the Central Engineering Facility, the Twin Drone.
-"The Twin Drone is a modification of the standard combat drone. Gi engineers noticed the inability for some combat drones to penetrate the protective shield layers of an enemy ship. Gi engineers developped an attachement for the drone, a small and weak ion cannon, sufficient enough to ionize shield, but not any more. The biggest drawback of the drone was that the power source of the drone wasn't designed to power two weapons at once, and as such was slowed down by the additional weapon.".</text>
+"The Twin Drone is a modification of the standard combat drone. Gi engineers noticed the inability for some combat drones to penetrate the protective shield layers of an enemy ship. Gi engineers developped an attachement for the drone, a small and weak ion cannon, sufficient enough to ionize shield, but not any more. The biggest drawback of the drone was that the power source of the drone wasn't designed to power two weapons at once, and as such was slowed down by the additional weapon."</text>
 			<choice hidden="true">
 				<text>Move onto the next exhibit.</text>
 				<event>
 					<text>The next exhibit covers the Burst Drone.
-"The Burst Drone was the first design native to the facility. The drone was designed around an adaptive power supply, this power supply was able to greatly increase the potency of the weapon, but increasing the power still reduced the speed of the drone. The drone is still very power efficient and these developments in drone reactor design lead to further developments.".</text>
+"The Burst Drone was the first design native to the facility. The drone was designed around an adaptive power supply, this power supply was able to greatly increase the potency of the weapon, but increasing the power still reduced the speed of the drone. The drone is still very power efficient and these developments in drone reactor design lead to further developments."</text>
 					<choice hidden="true">
 						<text>Move onto the next exhibit.</text>
 						<event>
 							<text>The next exhibit covers the Intel Drone.
-"The Intel Drone was a leap forwards in a different area of drone design. The Intelligence drone incorporates a brand new AI module, this greately increased the potency of the drone by allowing it to target important components on the enemy ship, increasing the reliablility of the damage. The drone also incorporates some of the previous advancements in drone reactor design and as such is able to power two laser cannons at once.".</text>
+"The Intel Drone was a leap forwards in a different area of drone design. The Intelligence drone incorporates a brand new AI module, this greately increased the potency of the drone by allowing it to target important components on the enemy ship, increasing the reliablility of the damage. The drone also incorporates some of the previous advancements in drone reactor design and as such is able to power two laser cannons at once."</text>
 							<choice hidden="true">
 								<text>Move onto the final exhibit.</text>
 								<event>
 									<text>The final exhibit covers the Bio Drone.
-"The Bio Drone is the most modern development in drone designs by this facility. One of the advancements in this drone incorporates the AI module of the Intel drone, however this time the AI has been adjusted to target enemy crew, this greately increases the effectiveness of the weapon. This leads onto the next development, the weapon on this drone series incorporates a powerful bio laser that causes the target to detonate on death, causing damage to the immediate area.".</text>
+"The Bio Drone is the most modern development in drone designs by this facility. One of the advancements in this drone incorporates the AI module of the Intel drone, however this time the AI has been adjusted to target enemy crew, this greately increases the effectiveness of the weapon. This leads onto the next development, the weapon on this drone series incorporates a powerful bio laser that causes the target to detonate on death, causing damage to the immediate area."</text>
 									<choice hidden="true">
 										<text>Head to the giftshop.</text>
 										<event load="AEA_BIRD_GIFTSHOP"/>
@@ -1314,7 +1454,7 @@ The Gi even send one of their prototype cruiser's blueprints over to you, alongs
 </event>
 
 <event name="AEA_BIRD_GIFTSHOP">
-	<text>The giftshop is full of mostly useless knick knacks, however something catches your eye. "You could win your very own intel drone if you manage to fill out this simple questionnaire!".</text>
+	<text>The giftshop is full of mostly useless knick knacks, however something catches your eye. "You could win your very own intel drone if you manage to fill out this simple questionnaire!"</text>
 	<variable name="aea_bird_questions" op="set" val="0" />
 	<choice hidden="true">
 		<text>Attempt the questionnaire.</text>
@@ -1555,12 +1695,12 @@ Unfortunately you were unable to answer all the questions correctly.</text>
 </event>
 
 <event name="AEA_BIRD_DRONE_KILL_QUEST">
-	<text>As you're scrapping the remains of the drone shuttle another Gi shuttle flies over to you and delivers a neat looking Gi engineer. "Hi, I'm so sorry about this, I didn't mean for the drone to get away like this, thats the problem with giving them a level of intelligence, you can never be quite sure how they'll react... Oh right, my name is Jay, I'm the chief engineer here. Saaayyy, you handled that drone pretty well, I've got a similar kind of mission you might be interested, although I'd need you to let me come with you.".</text>
+	<text>As you're scrapping the remains of the drone shuttle another Gi shuttle flies over to you and delivers a neat looking Gi engineer. "Hi, I'm so sorry about this, I didn't mean for the drone to get away like this, thats the problem with giving them a level of intelligence, you can never be quite sure how they'll react... Oh right, my name is Jay, I'm the chief engineer here. Saaayyy, you handled that drone pretty well, I've got a similar kind of mission you might be interested, although I'd need you to let me come with you."</text>
 	<autoReward level="MED">standard_no_item</autoReward>
 	<choice hidden="true">
 		<text>Agree to transport Jay.</text>
 		<event>
-			<text>"Alright! We've recently got word that the rebels have moved a large Auto-ship into the sector, we're trying to get our hands on an advanced rebel AI core, but all of the rebel auto-ships we've taken down have been small and simple. I need you to go and defeat the large auto-ship and then I'll be able to go in and harvast the core, these things are very well protected so don't worry about accidently blowing it up!".</text>
+			<text>"Alright! We've recently got word that the rebels have moved a large Auto-ship into the sector, we're trying to get our hands on an advanced rebel AI core, but all of the rebel auto-ships we've taken down have been small and simple. I need you to go and defeat the large auto-ship and then I'll be able to go in and harvast the core, these things are very well protected so don't worry about accidently blowing it up!"</text>
 			<quest event="AEA_BIRD_JAY_AUTO_QUEST"/>
 		</event>
 	</choice>

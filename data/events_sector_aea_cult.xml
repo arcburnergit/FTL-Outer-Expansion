@@ -354,13 +354,13 @@
 	<event name="AEA_CULT_CULTIST_FIRE_SUCCEED_GOOD">
 		<text>"Oh thank the flower you're here, we don't know what we would have done without you!
 
-Take this scrap as a thank you.".</text>
+Take this scrap as a thank you."</text>
 		<autoReward level="MED">stuff</autoReward>
 	</event>
 	<event name="AEA_CULT_CULTIST_FIRE_SUCCEED_BAD">
 		<text>"You've ruined the summoning circle, that fire was completely in control!
 			
-You've ruined everything, prepare to die!".</text>
+You've ruined everything, prepare to die!"</text>
 		<ship hostile="true"/>
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -461,9 +461,30 @@ You only just manage to make it back to your ship before the enemy warps away.</
 		</event>
 	</choice>
 	<choice hidden="true" req="AEA_CULTISTS_ALL">
-		<text>(Cultist  Crew) Communicate with the whale.</text>
+		<text>(Cultist Crew) Communicate with the whale.</text>
 		<event>
 			<text>Your cultist begins to communicate with the whale. After understanding your peaceful intentions the whale makes a request of you.
+
+It appears the whale's mate became seperated in an asteroid field a while back, it wants you to go look for it.</text>
+			<choice hidden="true">
+				<text>Agree to find the whale's mate.</text>
+				<event>
+					<text>The whale tells your cultist where they were seperated from their mate. It also tells you where to escort their mate to once you find them.</text>
+					<quest event="AEA_CULT_WHALE_FIELD"/>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Politely refuse.</text>
+				<event>
+					<text>The whale seems disapointed but moves off to rejoin the herd.</text>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="LIST_CREW_AEA_BIRD">
+		<text>(Gi Crew) Communicate with the whale.</text>
+		<event>
+			<text>Your Gi begins to communicate with the whale. After understanding your peaceful intentions the whale makes a request of you.
 
 It appears the whale's mate became seperated in an asteroid field a while back, it wants you to go look for it.</text>
 			<choice hidden="true">
@@ -592,7 +613,7 @@ Unfortunately the whale is uninterested in your advances and once it realizes yo
 </event>
 
 <event name="AEA_CULT_WHALE_SAVE">
-	<text>Your cultist begins communicating with the now safe whale, it agrees to follow you to the meeting point.</text>
+	<text>Your crewmember begins communicating with the now safe whale, it agrees to follow you to the meeting point.</text>
 	<quest event="AEA_CULT_WHALE_MEETING"/>
 </event>
 
@@ -615,7 +636,6 @@ The whale expresses their gratitude and asks you to follow it.</text>
 				<text>Continue...</text>
 				<event>
 					<text>Eventually you arrive at a nearby moon, it appears the whales discovered a hidden rebel supply cache. The whale, now content in having payed off your debt, returns back to the herd.</text>
-					<!-- As I wrote this, our family's dog, Pepper, passed away, She was a strong compassionate dog who always knew when someone was feeling pain, we love her dearly now and forever.-->
 					<item_modify>
 						<item type="fuel" min="2" max="5" />
 						<item type="missiles" min="1" max="4" />
@@ -670,7 +690,7 @@ The whale expresses their gratitude and asks you to follow it.</text>
 
 <event name="DISTRESS_AEA_CULT_NO_MAGIC" unique="true">
 	<distressBeacon />
-	<text>You've arrived at the beacon to discover a cultist vessel. They hail you. "Hello, I don't suppose you can help us, we were transporting some spells but we were hit by an asteroid and lost them nearby, our sensors aren't strong enough to pick them up.".</text>
+	<text>You've arrived at the beacon to discover a cultist vessel. They hail you. "Hello, I don't suppose you can help us, we were transporting some spells but we were hit by an asteroid and lost them nearby, our sensors aren't strong enough to pick them up."</text>
 	<ship load="SHIP_AEA_CULT_GENERIC" hostile="false"/>
 	<choice req="sensors" lvl="2" hidden="true" max_group="0">
 		<text>(Upg. Sensors) Run a scan at maximum sensitivity.</text>
@@ -819,14 +839,14 @@ The whale expresses their gratitude and asks you to follow it.</text>
 	</choice>
 </event>
 <textList name="TEXT_ENCOUNTER_AEA_CULT">
-	<text>"The Federation clings to the past, but you shall find it will be your own undoing for pushing us away! When Ivar sees the truth and joins the Coalition, your hypocritical leaders will be annihilated! And until then, we'll have to make do with picking off you intrusive Universe 0 Renegades!".</text>
+	<text>"The Federation clings to the past, but you shall find it will be your own undoing for pushing us away! When Ivar sees the truth and joins the Coalition, your hypocritical leaders will be annihilated! And until then, we'll have to make do with picking off you intrusive Universe 0 Renegades!"</text>
 	<text>Following the Federation-Mantis war, it was agreed during the Kadahellian'ek Treaty that the Gathering and Confederacy would never enter war against each other. Despite this, tensions remain high, and it seems many Vampweeds still hold history against the Federation. One particularly radical vessel nearby locks onto you!.</text>
 	<text>Vampweeds might not be your friends, but it's not too typical for them to act in such aggressive manners. However, scans show the crew of the nearby ship have succumbed to some kind of parasite that creates irrational behavior. Prepare to fight!.</text>
 	<text>"And so it's true, the Federation has finally sent Renegades to renew the old war! Well, we won't take this insult without a fight, scum!" Unfortunately, the ship refuses to listen to you, meaning a fight is inevitable.</text>
 	<text>A drunk Vampweed factory worker's vessel lurches towards you. "Ehhh... dumbass... Feds in my sector? You'll regret this, hear me!" Despite barely being able to form a coherent sentence, the captain is able to order his crew to attack!.</text>
 	<text>Vampweeds are known to drink a fair bit as a culture, and intoxicated Orchids aren't an uncommon sight here. Unfortunately, the side effects of heavy drinking tend to cause irrational decisions, such as engaging Renegades in combat!.</text>
-	<text>"I didn't side with the Hive during the old war, but now? Now I think I should have! The Federation has done nothing but push us away when we needed it most, and you're going to regret that!".</text>
-	<text>"Ivar has grown weak in trying to defend you Federation filth! It is time for insurrection, time to plant the seeds of rebellion so that it may flower into a galaxy where your lies no longer corrupt our youth!".</text>
+	<text>"I didn't side with the Hive during the old war, but now? Now I think I should have! The Federation has done nothing but push us away when we needed it most, and you're going to regret that!"</text>
+	<text>"Ivar has grown weak in trying to defend you Federation filth! It is time for insurrection, time to plant the seeds of rebellion so that it may flower into a galaxy where your lies no longer corrupt our youth!"</text>
 </textList>
 
 <event name="ENCOUNTER_AEA_CULT_STATION">
@@ -891,13 +911,13 @@ The whale expresses their gratitude and asks you to follow it.</text>
 		<event>
 			<text>You approach the flower and receive a hail directly from the flower. It appears many other ships are also in communication with the flower.
 
-An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here often. I have a task for you if you're interested, two infact.".</text>
+An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here often. I have a task for you if you're interested, two infact."</text>
 			<choice hidden="true">
 				<text>Hear it out.</text>
 				<event>
 					<text>"The first task is an easy one, I need you to transport one of my seeds to a nearby sector. The only thing you'll need to be careful of is the seed's fragility, try to keep it safe."
 
-"The second task I have for you is more complicated, I have recently become aware of a plot to try and destroy and replace me with a fake. I need you to investigate the situation and resolve it, how you do is up to you.".</text>
+"The second task I have for you is more complicated, I have recently become aware of a plot to try and destroy and replace me with a fake. I need you to investigate the situation and resolve it, how you do is up to you."</text>
 					<choice hidden="true">
 						<text>Accept both tasks.</text>
 						<event>
@@ -1102,7 +1122,7 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 	<choice hidden="true" req="aea_cult_visit_eng" lvl="0" max_lvl="0" blue="false">
 		<text>Search the workshop.</text>
 		<event>
-			<text>Your search reveals nothing useful, infact the only bits you can make use out of a few drone parts.</text>
+			<text>Your search reveals nothing useful, infact the only bits you can make use out of arc a few drone parts.</text>
 			<item_modify>
 				<item type="drones" min="3" max="3" />
 			</item_modify>

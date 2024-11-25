@@ -1429,6 +1429,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_a01">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_01"/>
 				</event>
 			</choice>
 			<choice>
@@ -1446,6 +1447,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_a02">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_02"/>
 				</event>
 			</choice>
 			<choice>
@@ -1463,6 +1465,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s03">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_03"/>
 				</event>
 			</choice>
 			<choice>
@@ -1480,6 +1483,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s04">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_04"/>
 				</event>
 			</choice>
 			<choice>
@@ -1497,6 +1501,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s05">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_05"/>
 				</event>
 			</choice>
 			<choice>
@@ -1514,6 +1519,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s06">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_06"/>
 				</event>
 			</choice>
 			<choice>
@@ -1531,6 +1537,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_a07">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_07"/>
 				</event>
 			</choice>
 			<choice>
@@ -1548,6 +1555,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s08">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_08"/>
 				</event>
 			</choice>
 			<choice>
@@ -1565,6 +1573,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s09">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_09"/>
 				</event>
 			</choice>
 			<choice>
@@ -1582,6 +1591,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_a10">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_10"/>
 				</event>
 			</choice>
 			<choice>
@@ -1599,6 +1609,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_a11">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_11"/>
 				</event>
 			</choice>
 			<choice>
@@ -1616,6 +1627,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s12">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_12"/>
 				</event>
 			</choice>
 			<choice>
@@ -1633,6 +1645,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s13">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_13"/>
 				</event>
 			</choice>
 			<choice>
@@ -1650,6 +1663,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s14">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_14"/>
 				</event>
 			</choice>
 			<choice>
@@ -1667,6 +1681,7 @@
 				<event>
 					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_wizard_s15">aea_cult_wizard</transformRace>
+					<weapon name="AEA_SPELL_ITEM_15"/>
 				</event>
 			</choice>
 			<choice>
@@ -1862,6 +1877,13 @@
 						<event>
 							<text>The weapon glows more dimly without a spell.</text>
 							<weapon name="AEA_LASER_CULT"/>
+							<choice hidden="false">
+								<text>Continue...</text>
+								<event>
+									<text>You recieve the spell back from the weapon.</text>
+									<weapon name="AEA_SPELL_ITEM_03"/>
+								</event>
+							</choice>
 						</event>
 					</choice>
 				</event>
@@ -1880,12 +1902,19 @@
 				<text>Reset.</text>
 				<event>
 					<text>You reset the weapon, losing any previous spells it had equiped.</text>
-					<remove name="AEA_LASER_CULT_03"/>
+					<remove name="AEA_LASER_CULT_04"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon glows more dimly without a spell.</text>
 							<weapon name="AEA_LASER_CULT"/>
+							<choice hidden="false">
+								<text>Continue...</text>
+								<event>
+									<text>You recieve the spell back from the weapon.</text>
+									<weapon name="AEA_SPELL_ITEM_04"/>
+								</event>
+							</choice>
 						</event>
 					</choice>
 				</event>
@@ -1904,12 +1933,19 @@
 				<text>Reset.</text>
 				<event>
 					<text>You reset the weapon, losing any previous spells it had equiped.</text>
-					<remove name="AEA_LASER_CULT_03"/>
+					<remove name="AEA_LASER_CULT_05"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon glows more dimly without a spell.</text>
 							<weapon name="AEA_LASER_CULT"/>
+							<choice hidden="false">
+								<text>Continue...</text>
+								<event>
+									<text>You recieve the spell back from the weapon.</text>
+									<weapon name="AEA_SPELL_ITEM_05"/>
+								</event>
+							</choice>
 						</event>
 					</choice>
 				</event>
@@ -1928,12 +1964,19 @@
 				<text>Reset.</text>
 				<event>
 					<text>You reset the weapon, losing any previous spells it had equiped.</text>
-					<remove name="AEA_LASER_CULT_03"/>
+					<remove name="AEA_LASER_CULT_06"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon glows more dimly without a spell.</text>
 							<weapon name="AEA_LASER_CULT"/>
+							<choice hidden="false">
+								<text>Continue...</text>
+								<event>
+									<text>You recieve the spell back from the weapon.</text>
+									<weapon name="AEA_SPELL_ITEM_06"/>
+								</event>
+							</choice>
 						</event>
 					</choice>
 				</event>
@@ -1952,12 +1995,19 @@
 				<text>Reset.</text>
 				<event>
 					<text>You reset the weapon, losing any previous spells it had equiped.</text>
-					<remove name="AEA_LASER_CULT_03"/>
+					<remove name="AEA_LASER_CULT_08"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon glows more dimly without a spell.</text>
 							<weapon name="AEA_LASER_CULT"/>
+							<choice hidden="false">
+								<text>Continue...</text>
+								<event>
+									<text>You recieve the spell back from the weapon.</text>
+									<weapon name="AEA_SPELL_ITEM_08"/>
+								</event>
+							</choice>
 						</event>
 					</choice>
 				</event>
@@ -1976,12 +2026,19 @@
 				<text>Reset.</text>
 				<event>
 					<text>You reset the weapon, losing any previous spells it had equiped.</text>
-					<remove name="AEA_LASER_CULT_03"/>
+					<remove name="AEA_LASER_CULT_09"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon glows more dimly without a spell.</text>
 							<weapon name="AEA_LASER_CULT"/>
+							<choice hidden="false">
+								<text>Continue...</text>
+								<event>
+									<text>You recieve the spell back from the weapon.</text>
+									<weapon name="AEA_SPELL_ITEM_09"/>
+								</event>
+							</choice>
 						</event>
 					</choice>
 				</event>
@@ -2000,12 +2057,19 @@
 				<text>Reset.</text>
 				<event>
 					<text>You reset the weapon, losing any previous spells it had equiped.</text>
-					<remove name="AEA_LASER_CULT_03"/>
+					<remove name="AEA_LASER_CULT_12"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon glows more dimly without a spell.</text>
 							<weapon name="AEA_LASER_CULT"/>
+							<choice hidden="false">
+								<text>Continue...</text>
+								<event>
+									<text>You recieve the spell back from the weapon.</text>
+									<weapon name="AEA_SPELL_ITEM_12"/>
+								</event>
+							</choice>
 						</event>
 					</choice>
 				</event>
@@ -2024,12 +2088,19 @@
 				<text>Reset.</text>
 				<event>
 					<text>You reset the weapon, losing any previous spells it had equiped.</text>
-					<remove name="AEA_LASER_CULT_03"/>
+					<remove name="AEA_LASER_CULT_13"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon glows more dimly without a spell.</text>
 							<weapon name="AEA_LASER_CULT"/>
+							<choice hidden="false">
+								<text>Continue...</text>
+								<event>
+									<text>You recieve the spell back from the weapon.</text>
+									<weapon name="AEA_SPELL_ITEM_13"/>
+								</event>
+							</choice>
 						</event>
 					</choice>
 				</event>
@@ -2048,12 +2119,19 @@
 				<text>Reset.</text>
 				<event>
 					<text>You reset the weapon, losing any previous spells it had equiped.</text>
-					<remove name="AEA_LASER_CULT_03"/>
+					<remove name="AEA_LASER_CULT_14"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon glows more dimly without a spell.</text>
 							<weapon name="AEA_LASER_CULT"/>
+							<choice hidden="false">
+								<text>Continue...</text>
+								<event>
+									<text>You recieve the spell back from the weapon.</text>
+									<weapon name="AEA_SPELL_ITEM_14"/>
+								</event>
+							</choice>
 						</event>
 					</choice>
 				</event>
@@ -2072,12 +2150,19 @@
 				<text>Reset.</text>
 				<event>
 					<text>You reset the weapon, losing any previous spells it had equiped.</text>
-					<remove name="AEA_LASER_CULT_03"/>
+					<remove name="AEA_LASER_CULT_15"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon glows more dimly without a spell.</text>
 							<weapon name="AEA_LASER_CULT"/>
+							<choice hidden="false">
+								<text>Continue...</text>
+								<event>
+									<text>You recieve the spell back from the weapon.</text>
+									<weapon name="AEA_SPELL_ITEM_15"/>
+								</event>
+							</choice>
 						</event>
 					</choice>
 				</event>
@@ -2236,6 +2321,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_a01">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_01"/>
 				</event>
 			</choice>
 			<choice>
@@ -2253,6 +2339,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_a02">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_02"/>
 				</event>
 			</choice>
 			<choice>
@@ -2270,6 +2357,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_s03">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_03"/>
 				</event>
 			</choice>
 			<choice>
@@ -2287,6 +2375,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_s04">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_04"/>
 				</event>
 			</choice>
 			<choice>
@@ -2304,6 +2393,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_s05">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_05"/>
 				</event>
 			</choice>
 			<choice>
@@ -2321,6 +2411,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_s06">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_06"/>
 				</event>
 			</choice>
 			<choice>
@@ -2338,6 +2429,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_a07">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_07"/>
 				</event>
 			</choice>
 			<choice>
@@ -2355,6 +2447,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_s08">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_08"/>
 				</event>
 			</choice>
 			<choice>
@@ -2372,6 +2465,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_s09">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_09"/>
 				</event>
 			</choice>
 			<choice>
@@ -2389,6 +2483,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_a10">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_10"/>
 				</event>
 			</choice>
 			<choice>
@@ -2406,6 +2501,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_a11">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_11"/>
 				</event>
 			</choice>
 			<choice>
@@ -2423,6 +2519,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_s12">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_12"/>
 				</event>
 			</choice>
 			<choice>
@@ -2440,6 +2537,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_s13">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_13"/>
 				</event>
 			</choice>
 			<choice>
@@ -2457,6 +2555,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_s14">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_14"/>
 				</event>
 			</choice>
 			<choice>
@@ -2474,6 +2573,7 @@
 				<event>
 					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
 					<transformRace class="aea_cult_tiny_s15">aea_cult_tiny</transformRace>
+					<weapon name="AEA_SPELL_ITEM_15"/>
 				</event>
 			</choice>
 			<choice>

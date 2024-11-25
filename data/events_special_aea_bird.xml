@@ -47,7 +47,7 @@
 	<choice>
 		<text>Attack the guard.</text>
 		<event>
-			<text>The guard's captain is shocked that you've turned on them. "You must be a Rebel spy! We won't take this lightly!".</text>
+			<text>The guard's captain is shocked that you've turned on them. "You must be a Rebel spy! We won't take this lightly!"</text>
 			<ship hostile="true" />
 			<choice hidden="true">
 				<text>Continue...</text>
@@ -393,8 +393,8 @@
 <textList name="TEXT_DEAD_CREW_AEA_BIRD">
 	<text>A Federation crew has been downed. As you scrap their hull, you notice their radios are active, with command calling out to them still trying to understand what's happening. You mute the radio and continue.</text>
 	<text>"Man down, man down! Agh!" The crewmate's shouts go unheard as he is put down with the rest of his crew.</text>
-	<text>"This death of mine signifies the death of the Federation." The dying captain pauses as someone in the background shouts at him. "I am NOT overreacting! God damn it... you just had to ruin my final moments...".</text>
-	<text>"My name will be etched in a memorial for my service to the Multiverse... yours will be forever inscribed on a watchlist for the criminally deranged...".</text>
+	<text>"This death of mine signifies the death of the Federation." The dying captain pauses as someone in the background shouts at him. "I am NOT overreacting! God damn it... you just had to ruin my final moments..."</text>
+	<text>"My name will be etched in a memorial for my service to the Multiverse... yours will be forever inscribed on a watchlist for the criminally deranged..."</text>
 	<text>"I never even... got my promotion! I'm not ready to die!" The Federation captain sobs into their hands as their crew fall one by one, ending with them.</text>
 </textList>
 
@@ -414,11 +414,11 @@
 	</choice>
 </event>
 <textList name="TEXT_SURRENDER_AEA_BIRD">
-	<text>"Continuing this any further would be madness - we're on the same side!".</text>
+	<text>"Continuing this any further would be madness - we're on the same side!"</text>
 	<text>The Federation ship is in tatters. You could probably negotiate their surrender at this point.</text>
-	<text>"Please, we don't have to do this! We're willing to give you anything to let us go!".</text>
-	<text>"Don't destroy us! We're Federation! At least let us surrender!".</text>
-	<text>"Take everything we have, just leave, and no more blood has to be spilt!".</text>
+	<text>"Please, we don't have to do this! We're willing to give you anything to let us go!"</text>
+	<text>"Don't destroy us! We're Federation! At least let us surrender!"</text>
+	<text>"Take everything we have, just leave, and no more blood has to be spilt!"</text>
 	<text>The ship repeatedly hails you, pleading for you to stop your assault and let them go.</text>
 </textList>
 

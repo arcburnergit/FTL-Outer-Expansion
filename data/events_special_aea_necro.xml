@@ -31,7 +31,7 @@
 </event>
 
 <event name="GUARD_AEA_NECRO">
-	<text>You're hailed by a strange engi vessel. "Welcome to our domain, please turn over all organics to us.".</text>
+	<text>You're hailed by a strange engi vessel. "Welcome to our domain, please turn over all organics to us."</text>
 	<choice hidden="true">
 		<text>Fight your way through!.</text>
 		<event>
@@ -183,7 +183,7 @@
 </event>
 
 <event name="GUARD_AEA_NECRO">
-	<text>You're hailed by a strange engi vessel. "Only those without organics are allowed past, please prepare for inspection.".</text>
+	<text>You're hailed by a strange engi vessel. "Only those without organics are allowed past, please prepare for inspection."</text>
 	<choice hidden="true">
 		<text>Fight your way through!.</text>
 		<event>
@@ -489,11 +489,11 @@
 	</choice>
 </event>
 <textList name="TEXT_SURRENDER_AEA_NECRO">
-	<text>"Our damage levels are high. I hope this [offer] satisfies your lust for scrap.".</text>
+	<text>"Our damage levels are high. I hope this [offer] satisfies your lust for scrap."</text>
 	<text>The Heretic ship surrenders. They offer some supplies if you'll let them live.</text>
-	<text>"Your attempts at destroying us have been [considerable]. I request you do not kill us.".</text>
+	<text>"Your attempts at destroying us have been [considerable]. I request you do not kill us."</text>
 	<text>"Greed &gt; Murder." The Heretic ship offers some supplies if you let them live.</text>
-	<text>"Our desire to [survive] outweighs your desire to [kill] us. Let us go.".</text>
+	<text>"Our desire to [survive] outweighs your desire to [kill] us. Let us go."</text>
 </textList>
 
 <event name="SURRENDER_AEA_NECRO_ACCEPT">
@@ -573,7 +573,7 @@
 
 <ship name="SHIP_AEA_NECRO_PIRATE" auto_blueprint="LIST_SHIPS_AEA_NECRO_FIGHT">
     <surrender chance="1" min="2" max="3">
-		<text>"You win, please just let us live.".</text>
+		<text>"You win, please just let us live."</text>
 		<choice hidden="true">
 			<text>Work something out between the Pirates and the Heretic.</text>
 			<event>
@@ -596,7 +596,7 @@
 		</choice>
     </destroyed>
     <deadCrew>
-		<text>With all the Ghosts dead, the Heretic is able to reclaim their vessel. "Much gratitude. My [ship] is intact. The interlopers left something, take it [with] you.".</text>
+		<text>With all the Ghosts dead, the Heretic is able to reclaim their vessel. "Much gratitude. My [ship] is intact. The interlopers left something, take it [with] you."</text>
 		<weapon name="RANDOM" />
 		<autoReward level="MED">standard</autoReward>
 		<choice hidden="true">
@@ -623,7 +623,7 @@
 		</choice>
     </destroyed>
     <deadCrew>
-		<text>With the pirates all dead the Heretics contact you. "That was [very] impressive Captain, your skills in dealing with these organics are to be admired, I wish to join you so that in the future I may participate in your fights with the organics.".</text>
+		<text>With the pirates all dead the Heretics contact you. "That was [very] impressive Captain, your skills in dealing with these organics are to be admired, I wish to join you so that in the future I may participate in your fights with the organics."</text>
 		<crewMember amount="1" class="aea_necro_lich"/>
 		<autoReward level="HIGH">standard_no_item</autoReward>
 		<drone name="GIFTLIST_DRONES_NECRO" />

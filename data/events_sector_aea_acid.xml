@@ -90,7 +90,7 @@
 <textList name="TEXT_AEA_ACID_REBEL_CLEARING">
 	<text>As you arrive at the beacon, a hostile ship immediately registers on your scanners. You didn't expect to see Rebels extending their reach into the unknown regions of Acidic territory. Charge the weapons!.</text>
 	<text>You jump into empty space and are relieved to see your sensors blink back to life. However, you are less pleased to see them immediately register a Rebel ship on an approach vector!.</text>
-	<text>You receive a message from a nearby ship, "Looks like our intelligence was correct! You can't escape us by travelling into unknown territory... No one can hide from the Rebellion!".</text>
+	<text>You receive a message from a nearby ship, "Looks like our intelligence was correct! You can't escape us by travelling into unknown territory... No one can hide from the Rebellion!"</text>
 </textList>
 
 <event name="ENCOUNTER_AEA_ACID_ORCHID_CLEARING" unique="true">
@@ -142,7 +142,7 @@
 </eventList>
 
 <event name="DISTRESS_AEA_ACID_MANTIS_MV" unique="true">
-	<text>The distress call appears to be emanating from a Slug ship caught in open space by an Acidic vessel. They contact you on emergency frequencies: "Pleassse, we'll give you all we have if you sssave ussss!".</text>
+	<text>The distress call appears to be emanating from a Slug ship caught in open space by an Acidic vessel. They contact you on emergency frequencies: "Pleassse, we'll give you all we have if you sssave ussss!"</text>
 	<choice hidden="true">
 		<text>Attack the Acidic ship.</text>
 		<event>
@@ -279,7 +279,7 @@
 	</choice>
 </event>
 <event name="NEBULA_AEA_ACID_MYSTERIOUS_TECH" unique="true">   
-	<text>You're hailed by a Hektar ship hiding deep in this nebula. "Hello captain, that issss one fine vesssel. However, we have sssome tech that we asssure you will make your ssship even better!".</text>
+	<text>You're hailed by a Hektar ship hiding deep in this nebula. "Hello captain, that issss one fine vesssel. However, we have sssome tech that we asssure you will make your ssship even better!"</text>
 	<ship load="SHIP_HEKTAR_GENERIC" hostile="false" />
 	<environment type="nebula" />
 	<choice hidden="true">
@@ -319,7 +319,7 @@
 </eventList>
 
 <event name="NEBULA_AEA_ACID_GUN_UPGRADE" unique="true">   
-	<text>You're hailed by an Acidic ship, "We wish to test one of our new designs, however we require a weapon to combine with our own technology, please provide one for us and we will return it to you after our tests.".</text>
+	<text>You're hailed by an Acidic ship, "We wish to test one of our new designs, however we require a weapon to combine with our own technology, please provide one for us and we will return it to you after our tests."</text>
 	<environment type="nebula" />
 	<choice hidden="true" req="LASER_BURST_1">
         <text>Hand over your Defense Laser.</text>
@@ -1068,7 +1068,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</choice>
 </event>
 <event name="NEBULA_ACID_AEA_ACID_ITEM_TIME">
-    <text>You finally make it through and begin salvaging the vessel. You're surprised when you discover an orchid, seemingly trapped onboard. "Who are you- Nevermind, just get me off here, I thought I was going to die, I think they forgot I was onboard and accidently locked me in here. Please just take me with you.".</text>
+    <text>You finally make it through and begin salvaging the vessel. You're surprised when you discover an orchid, seemingly trapped onboard. "Who are you- Nevermind, just get me off here, I thought I was going to die, I think they forgot I was onboard and accidently locked me in here. Please just take me with you."</text>
     <autoReward level="MED">standard</autoReward>
     <choice>
         <text>Rescue the orchid.</text>
@@ -1249,7 +1249,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<status type="limit" target="player" system="sensors" amount="0" />
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
-	<text>Strangely an Orchid captain hails you from an Acidic vessel. "Captain, you wouldn't happen to have any Acidic Growth with you, we'd offer a reward for you to turn over any of it to be destroyed".</text>
+	<text>Strangely an Orchid captain hails you from an Acidic vessel. "Captain, you wouldn't happen to have any Acidic Growth with you, we'd offer a reward for you to turn over any of it to be destroyed"</text>
 	<ship load="SHIP_AEA_ACID_ORCHID_ONLY" hostile="false" />
 	<choice hidden="true" req="aea_acid_soldier">
 		<text>(Acidic Soldier) Take up their offer.</text>
@@ -1287,7 +1287,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<status type="limit" target="player" system="sensors" amount="0" />
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
-	<text>You are immediately hailed by a dangerous looking Acidic ship guarding a station. "You are not welcome here, choose your punishment and prepare to die.".</text>
+	<text>You are immediately hailed by a dangerous looking Acidic ship guarding a station. "You are not welcome here, choose your punishment and prepare to die."</text>
 	<choice req="shields" lvl="2" blue="false" max_group="0">
 		<text>Shields.</text>
 		<event>
@@ -1468,7 +1468,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 </eventList>
 
 <event name="NEBULA_AEA_ACID_ORCHID" unique="true">
-	<text>A rogue ship awaits you at the beacon. "Laborers for cheap! We have oxygen emitters and those advanced Acidic droids, come take a look!".</text>
+	<text>A rogue ship awaits you at the beacon. "Laborers for cheap! We have oxygen emitters and those advanced Acidic droids, come take a look!"</text>
 	<environment type="nebula" />
 	<ship hostile="false" load="SHIP_ORCHID_SLAVES" />
 	<choice hidden="true">
@@ -1507,7 +1507,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 </event>
 <eventList name="NEBULA_AEA_ACID_SLAVER_SLAVES">
 	<event>
-		<text>"Thanks for your purchase! May your paths be blessed by whatever stupid plant god these things believe in!".</text>
+		<text>"Thanks for your purchase! May your paths be blessed by whatever stupid plant god these things believe in!"</text>
 		<crewMember amount="1" class="orchid" />
 		<item_modify>
 			<item max="-20" min="-30" type="scrap" />
@@ -1518,7 +1518,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 		</choice>
 	</event>
 	<event>
-		<text>"Thanks for your purchase! May this robot thing help you in whatever you're doing out here!".</text>
+		<text>"Thanks for your purchase! May this robot thing help you in whatever you're doing out here!"</text>
 		<crewMember amount="1" class="aea_acid_soldier">Acidic Soldier</crewMember>
 		<item_modify>
 			<item max="-20" min="-30" type="scrap" />
@@ -1529,7 +1529,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 		</choice>
 	</event>
 	<event>
-		<text>"Thanks for your purchase! May your paths be blessed by whatever stupid plant god these things believe in!".</text>
+		<text>"Thanks for your purchase! May your paths be blessed by whatever stupid plant god these things believe in!"</text>
 		<crewMember amount="1" class="orchid_caretaker" />
 		<item_modify>
 			<item max="-25" min="-35" type="scrap" />
@@ -1542,7 +1542,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 </eventList>
 <eventList name="NEBULA_AEA_ACID_SLAVER_CARETAKER">
 	<event name="NEBULA_AEA_ACID_SLAVER_CARETAKER_FAIL">
-		<text>The slavers watch your Orchid's signing in bored bemusement. "Yeah, yeah, that's great and all, but I missed the part where I was supposed to care. I'm not in this business because I give a damn about morals, if you didn't notice. If you're not going to buy something, get lost.".</text>
+		<text>The slavers watch your Orchid's signing in bored bemusement. "Yeah, yeah, that's great and all, but I missed the part where I was supposed to care. I'm not in this business because I give a damn about morals, if you didn't notice. If you're not going to buy something, get lost."</text>
 		<choice hidden="true">
 			<text>Attack the slavers!.</text>
 			<event>
@@ -1631,7 +1631,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
     <ship load="SHIP_SLUG_ELITE_FIGHT" hostile="false"/>
-    <text>You arrive at the scene to find a small Acidic vessel being chased down by an Elite Slug ship. "We will join crew, in exchange you destroy pursuers?".</text>
+    <text>You arrive at the scene to find a small Acidic vessel being chased down by an Elite Slug ship. "We will join crew, in exchange you destroy pursuers?"</text>
     <choice>
         <text>Welcome it aboard.</text>
         <event>
@@ -1755,7 +1755,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
         <text>(Friendly) Explain that you're friendly with the Acidic Growth.</text>
         <event>
             <ship hostile="false"/>
-            <text>"We didn't realize. We are sorry for luring you here under false pretenses. We will compensate you.".</text>
+            <text>"We didn't realize. We are sorry for luring you here under false pretenses. We will compensate you."</text>
             <autoReward level="MED">scrap_only</autoReward>
         </event>
     </choice>
@@ -1780,7 +1780,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 		<choice hidden="true">
 			<text>Investigate.</text>
 			<event>
-				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead.".</text>
+				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead."</text>
 				<choice hidden="true">
 					<text>Two.</text>
 					<event load="AEA_ACID_DISTRESS_QUESTION_TRUE" />
@@ -1805,7 +1805,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 		<choice hidden="true">
 			<text>Investigate.</text>
 			<event>
-				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead.".</text>
+				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead."</text>
 				<choice hidden="true">
 					<text>Two.</text>
 					<event load="AEA_ACID_DISTRESS_QUESTION_FALSE" />
@@ -1830,7 +1830,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 		<choice hidden="true">
 			<text>Investigate.</text>
 			<event>
-				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead.".</text>
+				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead."</text>
 				<choice hidden="true">
 					<text>Two.</text>
 					<event load="AEA_ACID_DISTRESS_QUESTION_FALSE" />
@@ -1957,7 +1957,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
     <choice hidden="true">
 		<text>Follow them.</text>
 		<event>
-			<text>The ship tries desperately to shake you, but you won't relent. At last, they give up and hail you. "Are you one of them? Please grant us mercy, we're just trying to escape!".</text>
+			<text>The ship tries desperately to shake you, but you won't relent. At last, they give up and hail you. "Are you one of them? Please grant us mercy, we're just trying to escape!"</text>
 			<ship load="SHIP_AEA_ACID_CIVILIAN" hostile="false" />
 			<choice hidden="true">
 				<text>Ignore their pleas and attack.</text>
@@ -1997,7 +1997,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</choice>
 </event>
 <event name="NEBULA_AEA_ACID_CIV_HUNT_WIN">   
-	<text>You jump as the Acidic ship comes out of its hiding place in the nebula before you can even contact them. "Efficient work, Here is the reward as promised.".</text>
+	<text>You jump as the Acidic ship comes out of its hiding place in the nebula before you can even contact them. "Efficient work, Here is the reward as promised."</text>
 	<autoReward level="MED">standard_no_item</autoReward>
 	<weapon name="RANDOM" />
 </event>
@@ -2039,7 +2039,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>Suddenly the first ship bursts into flames, and an urgent call arrives from the remaining Slugs. "We sssugest you distract the Assidic vesssel while we retrieve the valuables. Fifty fifty sssplit.".</text>
+			<text>Suddenly the first ship bursts into flames, and an urgent call arrives from the remaining Slugs. "We sssugest you distract the Assidic vesssel while we retrieve the valuables. Fifty fifty sssplit."</text>
 			<choice hidden="true">
 				<text>Engage the Acidic ship.</text>
 				<event>
@@ -2178,7 +2178,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 </event>
 
 <event name="NEBULA_AEA_ACID_INFECTOR">
-	<text>You hear a shout from your crew and come running. A strange bomb has detonated in one of the rooms on your ship, poisoning one of your crew. It appears to have originated from a nearby Acidic vessel. "Thank you for testing our weapon, please let us know when your crewmember dies.".</text>
+	<text>You hear a shout from your crew and come running. A strange bomb has detonated in one of the rooms on your ship, poisoning one of your crew. It appears to have originated from a nearby Acidic vessel. "Thank you for testing our weapon, please let us know when your crewmember dies."</text>
 	<triggeredEvent name="TIMER_AEA_ACID_INFECTOR_POISON" event="AEA_ACID_INFECTOR_DEATH" jumps="1">
 		<triggeredEventBox load="DEFAULT_JUMPS">
 			<warning flash="false" />
@@ -2201,7 +2201,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<choice>
 		<text>Buy the antidote.</text>
 		<event>
-			<text>"Offer is acceptable, it would have been preferable to properly test the weapon.".</text>
+			<text>"Offer is acceptable, it would have been preferable to properly test the weapon."</text>
 			<clearTriggeredEvent name="TIMER_AEA_ACID_INFECTOR_POISON" />
 			<item_modify>
 				<item type="scrap" min="-25" max="-25" />
@@ -2211,7 +2211,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<choice hidden="true" req="medbay" lvl="2">
 		<text>(Upg. Medbay) Cure your crew.</text>
 		<event>
-			<text>Luckily you're able to treat your crew. The Acidic vessel appears almost pleased by the news. "Thank you for testing our weapon, we will use this data to improve it for the future.".</text>
+			<text>Luckily you're able to treat your crew. The Acidic vessel appears almost pleased by the news. "Thank you for testing our weapon, we will use this data to improve it for the future."</text>
 			<clearTriggeredEvent name="TIMER_AEA_ACID_INFECTOR_POISON" />
 			<autoReward level="MED">scrap_only</autoReward>
 		</event>
@@ -2219,7 +2219,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
     <choice hidden="true">
         <text>Let your crewmember die of the poison.</text>
         <event>
-            <text>You let the Acidic vessel know of the outcome, it appears pleased by the results. "Thank you for testing our weapon, we will use this data to improve it for the future.".</text>
+            <text>You let the Acidic vessel know of the outcome, it appears pleased by the results. "Thank you for testing our weapon, we will use this data to improve it for the future."</text>
 			<clearTriggeredEvent name="TIMER_AEA_ACID_INFECTOR_POISON" />
 			<autoReward level="MED">scrap_only</autoReward>
             <removeCrew>
@@ -2375,13 +2375,13 @@ The wreck is relatively intact, however it appears to have been filled with hole
 		<event>
 			<text>"Oh jeez, I hope you're not here to kill me, I swear im not like the others, I'm not here to kill any more miners." It appears there's something wrong with this Acidic Soldier, if you had to guess you'd think it wasn't part of the Acidic Growth.</text>
 			<choice hidden="true">
-				<text>"What are you?".</text>
+				<text>"What are you?"</text>
 				<event>
-					<text>"I'm not entirely sure... I'm quite confident I was the Acidic Growth at some point, but everything is weird now, there's no more of me out there, its just me, in this robot, alone..." The Acidic Soldier trails off for a moment. "Hang on, do you guys think you can help me, if you guys can spare me a bit of scrap I can repair one of the ships and head back to try and recombine with myself.".</text>
+					<text>"I'm not entirely sure... I'm quite confident I was the Acidic Growth at some point, but everything is weird now, there's no more of me out there, its just me, in this robot, alone..." The Acidic Soldier trails off for a moment. "Hang on, do you guys think you can help me, if you guys can spare me a bit of scrap I can repair one of the ships and head back to try and recombine with myself."</text>
 					<choice hidden="false">
-                        <text>"Sure, What should we call you anyway?".</text>
+                        <text>"Sure, What should we call you anyway?"</text>
                         <event>
-                            <text>"Hmmm, I don't think I'm quite the Acidic Growth anymore, I suppose you can call me Bill, I've always liked the name Bill. By the way, if you ever want to visit here's the coordinates to my Acidic Nebula, maybe I'll see you around there.".</text>
+                            <text>"Hmmm, I don't think I'm quite the Acidic Growth anymore, I suppose you can call me Bill, I've always liked the name Bill. By the way, if you ever want to visit here's the coordinates to my Acidic Nebula, maybe I'll see you around there."</text>
                             <item_modify>
                                 <item type="scrap" min="-20" max="-20" />
                             </item_modify>
@@ -2468,11 +2468,11 @@ The wreck is relatively intact, however it appears to have been filled with hole
     <choice hidden="true" req="aea_acid_bill" lvl="1" blue="false">
         <text>You recognise the Acidic Soldier as Bill.</text>
         <event name="NEBULA_AEA_ACID_BILL_HELP">
-            <text>"Well I'm trying to get to the Acidic core, Hopefully I'll be able to reintergrate with the Acidic Growth once im there. The only problem is that I don't have a ship anymore, do you think you can take me there?".</text>
+            <text>"Well I'm trying to get to the Acidic core, Hopefully I'll be able to reintergrate with the Acidic Growth once im there. The only problem is that I don't have a ship anymore, do you think you can take me there?"</text>
             <choice hidden="true">
                 <text>Sure we can.</text>
                 <event>
-                    <text>"Thanks! I'll upload the cooridnates to your computer.".</text>
+                    <text>"Thanks! I'll upload the cooridnates to your computer."</text>
                     <quest event="NEBULA_ACIDIC_AEA_ACID_BILL_CORE">
                         <nebulaBeacon>true</nebulaBeacon>
                         <nebulaEvent>NEBULA_ACIDIC_AEA_ACID_BILL_CORE</nebulaEvent>
@@ -2491,11 +2491,11 @@ The wreck is relatively intact, however it appears to have been filled with hole
         <event>
             <text>Strangely the Acidic Soldier begins to tell you it's story, apparently it's become seperated from the Acidic Growth somehow and has been trying to rejoin it.</text>
             <choice hidden="true">
-                <text>"What should we call you then?".</text>
+                <text>"What should we call you then?"</text>
                 <event>
-                    <text>"Hmmm, I don't think I'm quite the Acidic Growth anymore, I suppose you can call me Bill, I've always liked the name Bill.".</text>
+                    <text>"Hmmm, I don't think I'm quite the Acidic Growth anymore, I suppose you can call me Bill, I've always liked the name Bill."</text>
                     <choice hidden="true">
-                        <text>"What can we do to help?".</text>
+                        <text>"What can we do to help?"</text>
                         <event load="NEBULA_AEA_ACID_BILL_HELP"/>
                     </choice>
                 </event>
@@ -2532,7 +2532,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
                                 <text>Continue...</text>
                                 <event>
                                     <ship load="SHIP_AEA_ACID_BILL_BOSS" hostile="true"/>
-                                    <text>"I can't believe it, It rejected me, I rejected me." Bill is silent for a moment. "I don't know what to do anymore, what is my purpose, why do I exist?".</text>
+                                    <text>"I can't believe it, It rejected me, I rejected me." Bill is silent for a moment. "I don't know what to do anymore, what is my purpose, why do I exist?"</text>
                                     <choice hidden="true">
                                         <text>Offer bill a place on your crew.</text>
                                         <event>
