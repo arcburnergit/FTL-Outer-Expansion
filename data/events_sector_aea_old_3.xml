@@ -504,7 +504,6 @@
 </event>
 <event name="AEA_OLD_VICTORY_CREW_OOJ">
 	<text>"Pur too look-loo kik pik ripple steep." You have no idea what this means, but the sentiment behind it is not lost when OOJ shapes himself into a large heart. You give the giant blob a hug as he jiggles in your arms.</text>
-	<transformRace class="unique_ooj">unique_ooj_love</transformRace>
 	<unlockCustomShip silent="false">CREW_SHIP_SLOT3_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>

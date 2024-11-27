@@ -3614,3 +3614,176 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_PRE, function(project
 		end
 	end
 end)
+
+
+
+
+
+
+local playerRoomsSlugPlayer = {}
+local playerRoomsSlugEnemy = {}
+local enemyRoomsSlugPlayer = {}
+local enemyRoomsSlugEnemy = {}
+
+script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, shipManager)
+	if log_events then
+		log("ACTIVATE_POWER 6")
+	end
+	local crewmem = power.crew
+	local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
+
+	if crewmem.type == "aea_shleg_shell" then
+		local currentManager = Hyperspace.ships(crewmem.currentShipId)
+		for crewCurrent in vter(currentManager.vCrewList) do
+			if crewCurrent.iRoomId == crewmem.iRoomId and crewCurrent.iShipId ~= crewmem.iShipId and crewCurrent.bMindControlled then
+				crewCurrent:Kill(false)
+			end
+		end
+	elseif crewmem.type == "aea_shleg_slug" then
+		if crewmem.currentShipId == 0 and crewmem.iShipId == 0 then
+			playerRoomsSlugPlayer[crewmem.iRoomId] = 60
+		elseif crewmem.currentShipId == 0 and crewmem.iShipId == 1 then
+			playerRoomsSlugEnemy[crewmem.iRoomId] = 60
+		elseif crewmem.currentShipId == 1 and crewmem.iShipId == 0 then
+			enemyRoomsSlugPlayer[crewmem.iRoomId] = 60
+		elseif crewmem.currentShipId == 1 and crewmem.iShipId == 1 then
+			enemyRoomsSlugEnemy[crewmem.iRoomId] = 60
+		end
+	end
+end)
+mods.aea.gasWeapons = {}
+local gasWeapons = mods.aea.gasWeapons
+gasWeapons["AEA_SHLEG_BOMB"] = 60
+gasWeapons["AEA_SHLEG_MISSILES"] = 60
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+	if projectile and gasWeapons[projectile.extend.name] then
+		if projectile.destinationSpace == 0 and projectile.ownerId == 0 then
+			if playerRoomsSlugPlayer[crewmem.iRoomId] and playerRoomsSlugPlayer[crewmem.iRoomId] < gasWeapons[projectile.extend.name] then
+				playerRoomsSlugPlayer[crewmem.iRoomId] = gasWeapons[projectile.extend.name]
+			end
+		elseif projectile.destinationSpace == 0 and projectile.ownerId == 1 then
+			if playerRoomsSlugEnemy[crewmem.iRoomId] and playerRoomsSlugEnemy[crewmem.iRoomId] < gasWeapons[projectile.extend.name] then
+				playerRoomsSlugEnemy[crewmem.iRoomId] = gasWeapons[projectile.extend.name]
+			end
+		elseif projectile.destinationSpace == 1 and projectile.ownerId == 0 then
+			if enemyRoomsSlugPlayer[crewmem.iRoomId] and enemyRoomsSlugPlayer[crewmem.iRoomId] < gasWeapons[projectile.extend.name] then
+				enemyRoomsSlugPlayer[crewmem.iRoomId] = gasWeapons[projectile.extend.name]
+			end
+		elseif projectile.destinationSpace == 1 and projectile.ownerId == 1 then
+			if enemyRoomsSlugEnemy[crewmem.iRoomId] and enemyRoomsSlugEnemy[crewmem.iRoomId] < gasWeapons[projectile.extend.name] then
+				enemyRoomsSlugEnemy[crewmem.iRoomId] = gasWeapons[projectile.extend.name]
+			end
+		end
+	end
+end)
+
+local resists_mind_control = mods.multiverse.resists_mind_control
+local can_be_mind_controlled = mods.multiverse.can_be_mind_controlled
+
+local gasImmuneCrew = {}
+for crew in vter(Hyperspace.Blueprints:GetBlueprintList("LIST_CREW_GAS")) do
+    gasImmuneCrew[crew] = true
+end
+
+script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
+	if gasImmuneCrew[crewmem.type] then return end
+	local shipManager = Hyperspace.ships(crewmem.currentShipId)
+	local shlegTable = userdata_table(crewmem, "mods.aea.shlegGas")
+	local commandGui = Hyperspace.Global.GetInstance():GetCApp().gui
+	if (commandGui.bPaused or commandGui.event_pause or commandGui.menu_pause or commandGui.bAutoPaused or commandGui.touch_pause) then return end
+	if shlegTable.amount then
+		if crewmem.bMindControlled then 
+			shlegTable.amount = math.max(0, shlegTable.amount - (Hyperspace.FPS.SpeedFactor/16 * 7.5))
+		elseif (crewmem.iShipId ~= crewmem.currentShipId and shipManager:HasAugmentation("LOCKED_AEA_SHLEG_MIND_GAS") > 0) or 
+				(crewmem.iShipId ~= crewmem.currentShipId and shipManager:HasAugmentation("LOCKED_AEA_SHLEG_MIND_GAS") > 0) or 
+				(crewmem.currentShipId == 0 and crewmem.iShipId == 0 and playerRoomsSlugEnemy[crewmem.iRoomId]) or 
+				(crewmem.currentShipId == 0 and crewmem.iShipId == 1 and playerRoomsSlugPlayer[crewmem.iRoomId]) or 
+				(crewmem.currentShipId == 1 and crewmem.iShipId == 0 and enemyRoomsSlugEnemy[crewmem.iRoomId]) or 
+				(crewmem.currentShipId == 1 and crewmem.iShipId == 1 and enemyRoomsSlugPlayer[crewmem.iRoomId]) then
+			
+			shlegTable.amount = math.min(crewmem.health.first, shlegTable.amount + (Hyperspace.FPS.SpeedFactor/16 * 5))
+			if shlegTable.amount >= crewmem.health.first then
+				if can_be_mind_controlled(crewmem) then
+                    crewmem:SetMindControl(true)
+                    local mcTable = userdata_table(crewmem, "mods.mv.crewStuff")
+                    mcTable.mcTime = math.max((crewmem.health.first / 7.5), mcTable.mcTime or 0)
+                elseif resists_mind_control(crewmem) then
+                    crewmem.bResisted = true
+                    shlegTable.amount = 0
+                end
+			end
+		else 
+			shlegTable.amount = math.max(0, shlegTable.amount - (Hyperspace.FPS.SpeedFactor/16 * 5))
+		end
+	else
+		userdata_table(crewmem, "mods.aea.shlegGas").amount = 0
+		--print("SET CREW MIND: "..crewmem.type)
+	end
+end)
+
+
+
+local barBack1 = Hyperspace.Resources:CreateImagePrimitiveString("effects/aea_shleg_mind_bigred.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
+local barBack2 = Hyperspace.Resources:CreateImagePrimitiveString("effects/aea_shleg_mind_bigblue.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
+local barBack = Hyperspace.Resources:CreateImagePrimitiveString("effects/aea_shleg_mind.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
+local mindBar = Hyperspace.Resources:CreateImagePrimitiveString("effects/aea_shleg_mindbar.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
+script.on_render_event(Defines.RenderEvents.CREW_MEMBER_HEALTH, function(crewmem) end, function(crewmem)
+	--print(crewmem.type)
+	local shlegTable = userdata_table(crewmem, "mods.aea.shlegGas")
+	if shlegTable.amount and shlegTable.amount > 0 then
+		--print("CREW: "..crewmem.type.." #: "..tostring(shlegTable.amount))
+		local position = crewmem:GetPosition()
+		--[[Graphics.CSurface.GL_PushMatrix()
+		Graphics.CSurface.GL_Translate(position.x - 11, position.y + 11, 0)
+        Graphics.CSurface.GL_RenderPrimitive(barBack)
+        Graphics.CSurface.GL_PopMatrix()]]
+
+        local barScale = (shlegTable.amount / crewmem.health.second) * 25
+        local offset = {x = -13, y = -11}
+        if crewmem.iShipId == crewmem.currentShipId and crewmem.bSharedSpot then
+        	offset.y = -15
+        elseif crewmem.bSharedSpot then offset.y = -4 end
+		Graphics.CSurface.GL_PushMatrix()
+		Graphics.CSurface.GL_Translate(position.x + offset.x, position.y + offset.y, 0)
+        Graphics.CSurface.GL_Scale(barScale,1,1)
+        Graphics.CSurface.GL_RenderPrimitive(mindBar)
+        Graphics.CSurface.GL_PopMatrix()
+    end
+end)
+
+
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	local commandGui = Hyperspace.Global.GetInstance():GetCApp().gui
+	if (commandGui.bPaused or commandGui.event_pause or commandGui.menu_pause or commandGui.bAutoPaused or commandGui.touch_pause) then return end
+	for room in vter(shipManager.ship.vRoomList) do
+    	if shipManager.iShipId == 0 then
+    		if playerRoomsSlugPlayer[room.iRoomId] then
+    			playerRoomsSlugPlayer[room.iRoomId] = playerRoomsSlugPlayer[room.iRoomId] - Hyperspace.FPS.SpeedFactor/16
+    			if playerRoomsSlugPlayer[room.iRoomId] <= 0 then
+    				playerRoomsSlugPlayer[room.iRoomId] = nil
+    			end
+    		end
+    		if playerRoomsSlugEnemy[room.iRoomId] then
+    			playerRoomsSlugEnemy[room.iRoomId] = playerRoomsSlugEnemy[room.iRoomId] - Hyperspace.FPS.SpeedFactor/16
+    			if playerRoomsSlugEnemy[room.iRoomId] <= 0 then
+    				playerRoomsSlugEnemy[room.iRoomId] = nil
+    			end
+    		end
+    	else
+    		if enemyRoomsSlugPlayer[room.iRoomId] then
+    			enemyRoomsSlugPlayer[room.iRoomId] = enemyRoomsSlugPlayer[room.iRoomId] - Hyperspace.FPS.SpeedFactor/16
+    			if enemyRoomsSlugPlayer[room.iRoomId] <= 0 then
+    				enemyRoomsSlugPlayer[room.iRoomId] = nil
+    			end
+    		end
+    		if enemyRoomsSlugEnemy[room.iRoomId] then
+    			enemyRoomsSlugEnemy[room.iRoomId] = enemyRoomsSlugEnemy[room.iRoomId] - Hyperspace.FPS.SpeedFactor/16
+    			if enemyRoomsSlugEnemy[room.iRoomId] <= 0 then
+    				enemyRoomsSlugEnemy[room.iRoomId] = nil
+    			end
+    		end
+    	end
+    end
+end)

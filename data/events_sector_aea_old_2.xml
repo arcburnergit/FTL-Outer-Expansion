@@ -443,7 +443,7 @@
 		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
 		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
 	</beaconType>
-	<revisitEvent>AEA_OLD_SPONSOR_1_QUEST</revisitEvent>
+	<!--revisitEvent>AEA_OLD_SPONSOR_1_QUEST</revisitEvent-->
 	<img back="BACK_EVENT_AEA_OLD_UNIQUE_1" planet="NONE" />
 	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land and greet Atoning Unifex.</text>
 	<choice hidden="true">
@@ -473,7 +473,7 @@
 		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
 		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
 	</beaconType>
-	<revisitEvent>AEA_OLD_SPONSOR_2_QUEST</revisitEvent>
+	<!--revisitEvent>AEA_OLD_SPONSOR_2_QUEST</revisitEvent-->
 	<img back="BACK_EVENT_AEA_OLD_UNIQUE_2" planet="NONE" />
 	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land and greet Asymptotic Essence.</text>
 	<choice hidden="true">
@@ -503,7 +503,7 @@
 		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
 		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
 	</beaconType>
-	<revisitEvent>AEA_OLD_SPONSOR_3_QUEST</revisitEvent>
+	<!--revisitEvent>AEA_OLD_SPONSOR_3_QUEST</revisitEvent-->
 	<img back="BACK_EVENT_AEA_OLD_UNIQUE_3" planet="NONE" />
 	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land and greet Eupathic Impulse.</text>
 	<choice hidden="true">
@@ -533,7 +533,7 @@
 		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
 		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
 	</beaconType>
-	<revisitEvent>AEA_OLD_SPONSOR_4_QUEST</revisitEvent>
+	<!--revisitEvent>AEA_OLD_SPONSOR_4_QUEST</revisitEvent-->
 	<img back="BACK_EVENT_AEA_OLD_UNIQUE_4" planet="NONE" />
 	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land and greet Homologous Trend.</text>
 	<choice hidden="true">
@@ -563,7 +563,7 @@
 		<unvisitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</unvisitedTooltip>
 		<visitedTooltip>This is the location of the council member whom you're seeking sponsorship from.</visitedTooltip>
 	</beaconType>
-	<revisitEvent>AEA_OLD_SPONSOR_5_QUEST</revisitEvent>
+	<!--revisitEvent>AEA_OLD_SPONSOR_5_QUEST</revisitEvent-->
 	<img back="BACK_EVENT_AEA_OLD_UNIQUE_5" planet="NONE" />
 	<text>You've arrived at the location of one of the Council members, An elite Lylmik vessel is guarding the location. Due to your meeting you're able to land and greet Noetic Concordance.</text>
 	<choice hidden="true">
@@ -593,7 +593,7 @@
 		<unvisitedTooltip>The location of the target Atoning Unifex gave you.</unvisitedTooltip>
 	</beaconType>
 	<changeBackground>BACK_SECTOR_ABANDONED</changeBackground>
-	<revisitEvent>AEA_OLD_SPONSOR_1_QUEST</revisitEvent>
+	<!--revisitEvent>AEA_OLD_SPONSOR_1_QUEST</revisitEvent-->
 	<ship load="AEA_OLD_SPONSOR_1_BOUNTY" hostile="true"/>
 	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
 	<ship load="AEA_OLD_SPONSOR_1_BOUNTY" hostile="true"/>
@@ -613,7 +613,7 @@
 	<variable name="aea_old_completed_sponsor" op="set" val="1" />
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<drone name="AEA_COMBAT_BIRD_BURST_1" />
-	<revisitEvent>EMPTY_AEA_OLD</revisitEvent>
+	<!--revisitEvent>EMPTY_AEA_OLD</revisitEvent-->
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -635,7 +635,7 @@
 		<unvisitedTooltip>The location of the target Asymptotic Essence gave you.</unvisitedTooltip>
 	</beaconType>
 	<changeBackground>BACK_SECTOR_ABANDONED</changeBackground>
-	<revisitEvent>AEA_OLD_SPONSOR_2_QUEST</revisitEvent>
+	<!--revisitEvent>AEA_OLD_SPONSOR_2_QUEST</revisitEvent-->
 	<ship load="AEA_OLD_SPONSOR_2_BOUNTY" hostile="true"/>
 	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
 	<choice hidden="true">
@@ -654,7 +654,7 @@
 	<variable name="aea_old_completed_sponsor" op="set" val="1" />
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<weapon name="MISSILES_OBSIDIAN" />
-	<revisitEvent>EMPTY_AEA_OLD</revisitEvent>
+	<!--revisitEvent>EMPTY_AEA_OLD</revisitEvent-->
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event/>
@@ -669,7 +669,7 @@
 		<unvisitedTooltip>The location of the target Eupathic Impulse gave you.</unvisitedTooltip>
 	</beaconType>
 	<changeBackground>BACK_SECTOR_ABANDONED</changeBackground>
-	<revisitEvent>AEA_OLD_SPONSOR_3_QUEST</revisitEvent>
+	<!--revisitEvent>AEA_OLD_SPONSOR_3_QUEST</revisitEvent-->
 	<ship load="AEA_OLD_SPONSOR_3_BOUNTY" hostile="true"/>
 	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
 	<choice hidden="true">
@@ -688,7 +688,7 @@
 	<variable name="aea_old_completed_sponsor" op="set" val="1" />
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<weapon name="BOMB_CONSERVRECYCLER" />
-	<revisitEvent>EMPTY_AEA_OLD</revisitEvent>
+	<!--revisitEvent>EMPTY_AEA_OLD</revisitEvent-->
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event/>
@@ -721,7 +721,7 @@
 	<variable name="aea_old_completed_sponsor" op="set" val="1" />
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<drone name="SURGEON_BATTLE" />
-	<revisitEvent>EMPTY_AEA_OLD</revisitEvent>
+	<!--revisitEvent>EMPTY_AEA_OLD</revisitEvent-->
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event/>
@@ -736,7 +736,7 @@
 		<unvisitedTooltip>The location of the target Noetic Concordance gave you.</unvisitedTooltip>
 	</beaconType>
 	<changeBackground>BACK_SECTOR_ABANDONED</changeBackground>
-	<revisitEvent>AEA_OLD_SPONSOR_5_QUEST</revisitEvent>
+	<!--revisitEvent>AEA_OLD_SPONSOR_5_QUEST</revisitEvent-->
 	<ship load="AEA_OLD_SPONSOR_5_BOUNTY" hostile="true"/>
 	<text>The target of your sponsor floats nearby the beacon. As you get closer their weapons and drones come online and engage you.</text>
 	<choice hidden="true">
@@ -755,7 +755,7 @@
 	<variable name="aea_old_completed_sponsor" op="set" val="1" />
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<weapon name="BEAM_ADAPT_3" />
-	<revisitEvent>EMPTY_AEA_OLD</revisitEvent>
+	<!--revisitEvent>EMPTY_AEA_OLD</revisitEvent-->
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event/>

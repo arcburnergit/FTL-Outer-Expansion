@@ -3978,3 +3978,311 @@
 </weaponAnim>
 
 </FTL>
+
+<FTL>
+
+<animSheet name="aea_shleg_gas_tile" w="35" h="35" fw="35" fh="35">effects/aea_shleg_gas_tile.png</animSheet>
+<anim name="aea_shleg_gas_tile">
+	<sheet>aea_shleg_gas_tile</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="bomblauncher_aea_shleg_gas" w="528" h="41" fw="33" fh="41">weapon_shleg/bomblauncher_aea_shleg_gas.png</animSheet>
+<weaponAnim name="bomblauncher_aea_shleg_gas">
+	<sheet>bomblauncher_aea_shleg_gas</sheet>
+	<desc length="15" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>12</fireFrame>
+	<firePoint x="19" y="20" />
+	<mountPoint x="2" y="24" />
+	<chargeImage>weapon_shleg/bomblauncher_aea_shleg_gas_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="missile_aea_shleg_gas" w="32" h="85" fw="32" fh="85">projectiles/missile_aea_shleg_gas.png</animSheet>
+<anim name="missile_aea_shleg_gas">
+	<sheet>missile_aea_shleg_gas</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+<animSheet name="missiles_aea_shleg_gas" w="341" h="63" fw="31" fh="63">weapon_shleg/missiles_aea_shleg_gas.png</animSheet>
+<weaponAnim name="missiles_aea_shleg_gas">
+	<sheet>missiles_aea_shleg_gas</sheet>
+	<desc length="11" x="0" y="0" />
+	<chargedFrame>9</chargedFrame>
+	<fireFrame>10</fireFrame>
+	<firePoint x="18" y="22" />
+	<mountPoint x="5" y="43" />
+</weaponAnim>
+
+<!-- 
+*********************************************************************************************************
+                   SHLEG SHELLS
+*********************************************************************************************************
+-->
+
+<animSheet name="aea_shleg_shell" w="385" h="455" fw="35" fh="35">people/aea_shleg_shell_base.png</animSheet>
+<anim name="aea_shleg_shell_portrait">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_crewLaser">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="1" x="1" y="0" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_shleg_shell_clone">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="6" x="2" y="0" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_death_right">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="7" x="0" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_teleport">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="9" x="0" y="2" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_shleg_shell_repair">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="9" x="0" y="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_punch_down">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="5" x="0" y="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_punch_up">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="5" x="5" y="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_fire_right">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="4" x="0" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_fire_left">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="4" x="4" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_shoot_left">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="3" x="8" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_fire_down">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="4" x="0" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_fire_up">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="4" x="4" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_shoot_right">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="3" x="8" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_type_right">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="4" x="0" y="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_type_left">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="4" x="4" y="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_shoot_up">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="3" x="8" y="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_type_down">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="4" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_type_up">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="4" x="4" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_shoot_down">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="3" x="8" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_shell_walk_left">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="11" x="0" y="9" />
+	<time>0.25</time>
+</anim>
+<anim name="aea_shleg_shell_walk_right">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="11" x="0" y="10" />
+	<time>0.25</time>
+</anim>
+<anim name="aea_shleg_shell_walk_up">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="11" x="0" y="11" />
+	<time>0.25</time>
+</anim>
+<anim name="aea_shleg_shell_walk_down">
+	<sheet>aea_shleg_shell</sheet>
+	<desc length="11" x="0" y="12" />
+	<time>0.25</time>
+</anim>
+
+<!-- 
+*********************************************************************************************************
+                   SHLEG SLUGS
+*********************************************************************************************************
+-->
+<animSheet name="aea_shleg_slug" w="315" h="455" fw="35" fh="35">people/aea_shleg_slug_base.png</animSheet>
+
+<anim name="aea_shleg_slug_clone">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="6" x="0" y="1" />
+	<time>0.75</time>
+</anim>
+
+<anim name="aea_shleg_slug_death_right">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="7" x="2" y="0" />
+	<time>0.75</time>
+</anim>
+
+<anim name="aea_shleg_slug_walk_down">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="4" x="0" y="12" />
+	<time>0.75</time>
+</anim>
+
+<anim name="aea_shleg_slug_walk_right">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="4" x="4" y="12" />
+	<time>0.75</time>
+</anim>
+
+<anim name="aea_shleg_slug_walk_up">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="4" x="0" y="11" />
+	<time>0.75</time>
+</anim>
+
+<anim name="aea_shleg_slug_walk_left">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="4" x="4" y="11" />
+	<time>0.75</time>
+</anim>
+
+<anim name="aea_shleg_slug_shoot_down">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="3" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_slug_shoot_right">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="3" x="3" y="10" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_slug_shoot_up">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="3" x="6" y="10" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_slug_shoot_left">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="3" x="6" y="6" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_slug_fire_down">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="4" x="0" y="9" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_slug_fire_right">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="4" x="4" y="9" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_slug_fire_up">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="4" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_slug_fire_left">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="4" x="4" y="8" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_slug_repair">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="9" x="0" y="7" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_slug_punch_up">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="6" x="0" y="5" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_slug_punch_down">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="6" x="0" y="6" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_slug_teleport">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="9" x="0" y="2" />
+	<time>0.5</time>
+</anim>
+
+<anim name="aea_shleg_slug_type_right">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="4" x="0" y="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_shleg_slug_type_left">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="4" x="4" y="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_shleg_slug_type_up">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="4" x="0" y="3" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_shleg_slug_type_down">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="4" x="4" y="3" />
+	<time>0.75</time>
+</anim>
+
+
+<anim name="aea_shleg_slug_portrait">
+	<sheet>aea_shleg_slug</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+</FTL>

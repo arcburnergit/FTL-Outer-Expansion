@@ -52,6 +52,7 @@ Cannot equip spells
 <text name="tip_laser_old">Tip: Each laser shot will be blocked by two shield bubbles, regardless of the laser's damage.</text>
 <text name="tip_laser_oldp">Tip: Each laser shot will be blocked by a single shield bubble, despite having 0 hull damage.</text>
 <text name="tip_aea_spellspore">Tip: Each spell equiped to the weapon can only be shot at the enemy ship. Spells cannot miss and Spellspore weapons fire each spell twice per charge.</text>
+<text name="tip_aea_shleg">Tip: Inculcation Gas's mind control effect builds up at 5hp/s. Once the status effect reaches the enemy crew's current HP it then drains at 8hp/s and mind controls the enemy.</text>
 
 <text name="atlas_aea_acid">Name: Acidic Origins
 Type: Hostile (Nebula)

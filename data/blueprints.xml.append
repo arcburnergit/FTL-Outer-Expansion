@@ -9131,164 +9131,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 </crewBlueprint>
 </FTL>
 
-<FTL>
-<shipBlueprint name="PLAYER_SHIP_AEA_SLUG_LONG" layout="aeap_slug_long_1" img="aeap_slug_long_1">
-	<class>Slug Long Cruiser</class>
-	<name>The Nameless One</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
-	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_LONG_unlock" />
-	<systemList>
-		<artillery power="2" room="14" start="true" weapon="ARTILLERY_FED" img="room_artillery" />
-		<battery power="1" room="4" start="false" img="room_battery_13" />
-		<cloaking power="1" room="3" start="true" img="room_cloaking_2" />
-		<clonebay power="1" room="15" start="false">
-			<slot>
-				<number>0</number>
-			</slot>
-		</clonebay>
-		<doors power="1" room="16" start="true" img="room_doors_2">
-			<slot>
-				<direction>down</direction>
-				<number>0</number>
-			</slot>
-		</doors>
-		<drones power="2" room="7" start="false" img="room_drones_14" />
-		<engines power="1" room="2" start="true" img="room_engines_4">
-			<slot>
-				<direction>down</direction>
-				<number>2</number>
-			</slot>
-		</engines>
-		<hacking power="1" room="10" start="false" img="room_hacking_2" />
-		<medbay power="1" room="15" start="true" img="room_medbay_4">
-			<slot>
-				<number>0</number>
-			</slot>
-		</medbay>
-		<mind power="1" room="9" start="false" img="room_mind_5" />
-		<oxygen power="1" room="17" start="true" img="room_oxygen_2" />
-		<pilot power="1" room="0" start="true" img="room_pilot_7">
-			<slot>
-				<direction>right</direction>
-				<number>1</number>
-			</slot>
-		</pilot>
-		<sensors power="1" room="8" start="false" img="room_sensors_4">
-			<slot>
-				<direction>left</direction>
-				<number>1</number>
-			</slot>
-		</sensors>
-		<shields power="2" room="6" start="true" img="room_shields">
-			<slot>
-				<direction>left</direction>
-				<number>0</number>
-			</slot>
-		</shields>
-		<teleporter power="1" room="11" start="false" />
-		<temporal power="1" room="1" start="false" />
-		<weapons power="2" room="5" start="true" img="room_weapons_6">
-			<slot>
-				<direction>up</direction>
-				<number>1</number>
-			</slot>
-		</weapons>
-	</systemList>
-	<weaponSlots>2</weaponSlots>
-	<droneSlots>4</droneSlots>
-	<weaponList missiles="3" count="2">
-		<weapon name="ION_2" />
-		<weapon name="LASER_BURST_2" />
-	</weaponList>
-	<droneList drones="2" count="4" />
-	<health amount="30" />
-	<maxPower amount="6" />
-	<crewCount amount="1" class="slug_ranger" />
-	<crewCount amount="1" class="slug" />
-	<crewCount amount="1" class="slug" />
-	<aug name="SLUG_GEL" />
-	<shieldImage>mup_standard1</shieldImage>
-	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
-</shipBlueprint>
-
-<shipBlueprint name="PLAYER_SHIP_AEA_SLUG_WIDE" layout="aeap_slug_wide_1" img="aeap_slug_wide_1">
-	<class>Slug Wide Cruiser</class>
-	<name>The Unnamed</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
-	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_WIDE_unlock" />
-	<systemList>
-		<battery power="1" room="10" start="false" img="room_battery_15" />
-		<cloaking power="1" room="9" start="false" img="room_cloaking_7" />
-		<clonebay power="1" room="17" start="false">
-			<slot>
-				<number>0</number>
-			</slot>
-		</clonebay>
-		<doors power="1" room="1" start="true" img="room_doors">
-			<slot>
-				<direction>up</direction>
-				<number>1</number>
-			</slot>
-		</doors>
-		<drones power="2" room="13" start="false" img="room_drones_15" />
-		<engines power="1" room="5" start="true" img="room_engines_8">
-			<slot>
-				<direction>left</direction>
-				<number>2</number>
-			</slot>
-		</engines>
-		<hacking power="1" room="12" start="false" img="room_hacking_3" />
-		<medbay power="1" room="17" start="true" img="room_medbay_4">
-			<slot>
-				<number>0</number>
-			</slot>
-		</medbay>
-		<mind power="1" room="16" start="false" img="room_mind_3" />
-		<oxygen power="1" room="11" start="true" img="room_oxygen" />
-		<pilot power="1" room="0" start="true" img="room_pilot_4">
-			<slot>
-				<direction>right</direction>
-				<number>0</number>
-			</slot>
-		</pilot>
-		<sensors power="1" room="2" start="true" img="room_sensors">
-			<slot>
-				<direction>down</direction>
-				<number>1</number>
-			</slot>
-		</sensors>
-		<shields power="2" room="3" start="true" img="room_shields_3">
-			<slot>
-				<direction>left</direction>
-				<number>2</number>
-			</slot>
-		</shields>
-		<teleporter power="1" room="8" start="false" />
-		<temporal power="1" room="14" start="false" img="room_temporal_4" />
-		<weapons power="3" room="4" start="true" img="room_weapons_4">
-			<slot>
-				<direction>up</direction>
-				<number>0</number>
-			</slot>
-		</weapons>
-	</systemList>
-	<weaponSlots>4</weaponSlots>
-	<droneSlots>2</droneSlots>
-	<weaponList missiles="2" count="4">
-		<weapon name="ENERGY_1" />
-		<weapon name="BEAM_BIO_CHAIN" />
-	</weaponList>
-	<droneList drones="2" count="2" />
-	<health amount="30" />
-	<maxPower amount="7" />
-	<crewCount amount="1" class="slug" />
-	<crewCount amount="1" class="slug" />
-	<crewCount amount="1" class="rock" />
-	<aug name="SLUG_GEL" />
-	<shieldImage>mup_orb2</shieldImage>
-	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
-</shipBlueprint>
-</FTL>
 
 <FTL>
 
@@ -9768,3 +9610,365 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
 </shipBlueprint>
 </FTL> 
+
+<FTL>
+<crewBlueprint name="aea_shleg_shell">
+	<title>Shell Anarchist</title>
+	<short>Shell Anarchist</short>
+	<desc>The Shell Anarchists are a faction seperated from the main shell government. They have used genetically engineering themselves with genetic material from their slug brethren to manipulate mind controlled enemy crew.</desc>
+	<cost>50</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Combusts, taking heavy self damage to kill all mind controlled crew in the room. Slowly regenerates health back afterwards.</power>
+		<power>Max Health is reduced to 80</power>
+		<power>Takes 1.8x damage from suffocation</power>
+		<power>Takes 0.6x damage from crew combat</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_shleg_slug">
+	<desc>These slugs have been shunned by the universe as a whole and are now hell-bent on taking down every single government. Their bio bombs have been upgraded by their shell breathren to deploy a toxic gas in the room.</desc>
+	<title>Slug Anarchist</title>
+	<short>Slug Anarchist</short>
+	<cost>50</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Deploys an Toxin bomb that deploys a mind control gas, but becomes immobile and hidden temporarily</power>
+		<power>Telepathic powers reveal rooms and lifeforms even when sensors are down</power>
+		<power>Immune to mind control and toxins</power>
+	</powerList>
+	<colorList>
+		<layer>
+			<color r="255" g="230" b="175" a="0.8" />
+			<!-- pale -->
+			<color r="120" g="240" b="60" a="0.6" />
+			<!-- green -->
+			<color r="255" g="241" b="0" a="1" />
+			<color r="255" g="170" b="0" a="1" />
+			<!-- orange -->
+			<color r="0" g="0" b="0" a="0" />
+			<!--  -->
+			<color r="140" g="140" b="200" a="0.5" />
+			<!--blu  -->
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<augBlueprint name="AEA_SHLEG_MIND_GAS">
+	<title>Inculcation Gas</title>
+	<desc>This odd formula of Shell gas carries toxins developped by Shell Anarchists to mind control enemy crew. The Effect takes 20 seconds to build up and then lasts for 10 seconds. Prevents allied crew from being mind controlled. Damages enemy boarders at a rate of 3hp/s.
+	
+Drones and the following species will be immune to the damage of the augment:
+Shells, Vampweeds, Lanius, Ghosts.</desc>
+    <cost>50</cost>
+    <bp>4</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="LOCKED_AEA_SHLEG_MIND_GAS">
+	<title>Inculcation Gas</title>
+	<desc>This odd formula of Shell gas carries toxins developped by Shell Anarchists to mind control enemy crew. The Effect takes 20 seconds to build up and then lasts for 10 seconds. Prevents allied crew from being mind controlled. Damages enemy boarders at a rate of 6hp/s.
+	
+Drones and the following species will be immune to the damage of the augment:
+Shells, Vampweeds, Lanius, Ghosts.</desc>
+    <cost>50</cost>
+    <bp>4</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+</augBlueprint>
+
+<augBlueprint name="AEA_SHLEG_GEL">
+	<title>Inculcation Gas</title>
+	<desc>This odd formula of Shell gas carries toxins developped by Shell Anarchists to mind control enemy crew. The Effect takes 20 seconds to build up and then lasts for 10 seconds. Prevents allied crew from being mind controlled.
+	
+Drones and the following species will be immune to the damage of the augment:
+Shells, Vampweeds, Lanius, Ghosts.</desc>
+    <cost>50</cost>
+    <bp>4</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="LOCKED_AEA_SHLEG_GEL">
+	<title>Inculcation Gas</title>
+	<desc>This odd formula of Shell gas carries toxins developped by Shell Anarchists to mind control enemy crew. The Effect takes 20 seconds to build up and then lasts for 10 seconds. Prevents allied crew from being mind controlled.
+	
+Drones and the following species will be immune to the damage of the augment:
+Shells, Vampweeds, Lanius, Ghosts.</desc>
+    <cost>50</cost>
+    <bp>4</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+</augBlueprint>
+
+
+<weaponBlueprint name="AEA_SHLEG_BOMB">
+	<type>BOMB</type>
+	<tip>tip_aea_shleg</tip>
+	<title>Inculcation Bomb</title>
+	<short>Inc B.</short>
+	<locked>1</locked>
+	<desc>This bomb deploys toxic gas that does 3hp/s and builds up mind control on enemy crew.</desc>
+	<tooltip>No hull or system damage, but deals much bio damage</tooltip>
+	<damage>0</damage>
+	<sysDamage>1</sysDamage>
+	<persDamage>0</persDamage>
+	<accuracyMod>30</accuracyMod>
+	<missiles>1</missiles>
+	<statBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-3</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<duration>60</duration>
+			<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
+			<priority>999</priority>
+			<blackList load="LIST_CREW_GAS" />
+			<roomAnim renderLayer="0">
+				<anim animType="default">aea_invisible</anim>
+				<tileAnim>aea_shleg_gas_tile</tileAnim>
+			</roomAnim>
+		</statBoost>
+    </statBoosts>
+	<shots>1</shots>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>1</power>
+	<cost>50</cost>
+	<bp>4</bp>
+	<rarity>3</rarity>
+	<image>bomb_bio</image>
+	<explosion>explosion_bio</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>bomblauncher_bio</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_SHLEG_MISSILES">
+	<type>MISSILES</type>
+	<tip>tip_aea_shleg</tip>
+	<title>'Hypnos' Missiles</title>
+	<short>'Hypnos'</short>
+	<desc>A powerful Missile loaded with a toxic gas that does 3hp/s and builds up mind control on enemy crew.</desc>
+	<tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
+	<damage>3</damage>
+	<accuracyMod>10</accuracyMod>
+	<persDamage>-1</persDamage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<statBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-3</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<duration>60</duration>
+			<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
+			<priority>999</priority>
+			<blackList load="LIST_CREW_GAS" />
+			<roomAnim renderLayer="0">
+				<anim animType="default">aea_invisible</anim>
+				<tileAnim>aea_shleg_gas_tile</tileAnim>
+			</roomAnim>
+		</statBoost>
+    </statBoosts>
+	<shots>1</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>1</stunChance>
+	<cooldown>16</cooldown>
+	<power>2</power>
+	<cost>60</cost>
+	<bp>6</bp>
+	<rarity>4</rarity>
+	<image>missile_aea_shleg_gas</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>explosion_heavy</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>missiles_aea_shleg_gas</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+</FTL>
+
+<FTL>
+<shipBlueprint name="PLAYER_SHIP_AEA_SHLEG_GEL" layout="aeap_slug_long_1" img="aeap_slug_long_1">
+	<class>Slug Long Cruiser</class>
+	<name>The Nameless One</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_LONG_unlock" />
+	<systemList>
+		<artillery power="2" room="14" start="true" weapon="ARTILLERY_FED" img="room_artillery" />
+		<battery max="2" power="1" room="4" start="false" img="room_battery_13" />
+		<cloaking power="1" room="3" start="true" img="room_cloaking_2" />
+		<clonebay power="1" room="15" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="16" start="true" img="room_doors_2">
+			<slot>
+				<direction>down</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="7" start="false" img="room_drones_14" />
+		<engines power="1" room="2" start="true" img="room_engines_4">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="10" start="false" img="room_hacking_2" />
+		<medbay power="1" room="15" start="true" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="9" start="false" img="room_mind_5" />
+		<oxygen power="1" room="17" start="true" img="room_oxygen_2" />
+		<pilot power="1" room="0" start="true" img="room_pilot_7">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="8" start="false" img="room_sensors_4">
+			<slot>
+				<direction>left</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="6" start="true" img="room_shields">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="11" start="false" />
+		<temporal power="1" room="1" start="false" />
+		<weapons max="8" power="2" room="5" start="true" img="room_weapons_6">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="3" count="2">
+		<weapon name="ION_2" />
+		<weapon name="LASER_BURST_2" />
+	</weaponList>
+	<droneList drones="2" count="4" />
+	<health amount="30" />
+	<maxPower amount="6" />
+	<crewCount amount="1" class="aea_shleg_slug" />
+	<crewCount amount="1" class="aea_shleg_slug" />
+	<crewCount amount="1" class="slug" />
+	<aug name="LOCKED_AEA_SHLEG_MIND_GAS" />
+	<shieldImage>mup_standard1</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_SHLEG_GAS" layout="aeap_slug_wide_1" img="aeap_slug_wide_1">
+	<class>Slug Wide Cruiser</class>
+	<name>The Unnamed</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_WIDE_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="10" start="false" img="room_battery_15" />
+		<cloaking power="1" room="9" start="false" img="room_cloaking_7" />
+		<clonebay power="1" room="17" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="1" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="13" start="false" img="room_drones_15" />
+		<engines power="1" room="5" start="true" img="room_engines_8">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="12" start="false" img="room_hacking_3" />
+		<medbay power="1" room="17" start="true" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="16" start="false" img="room_mind_3" />
+		<oxygen power="1" room="11" start="true" img="room_oxygen" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="2" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="3" start="true" img="room_shields_3">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="8" start="false" />
+		<temporal power="1" room="14" start="false" img="room_temporal_4" />
+		<weapons max="8" power="3" room="4" start="true" img="room_weapons_4">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="2" count="4">
+		<weapon name="ENERGY_1" />
+		<weapon name="BEAM_BIO_CHAIN" />
+	</weaponList>
+	<droneList drones="2" count="2" />
+	<health amount="30" />
+	<maxPower amount="7" />
+	<crewCount amount="1" class="shell" />
+	<crewCount amount="1" class="aea_shleg_shell" />
+	<crewCount amount="1" class="aea_shleg_shell" />
+	<aug name="LOCKED_AEA_SHLEG_MIND_GAS" />
+	<shieldImage>mup_orb2</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
+</FTL>

@@ -6,7 +6,7 @@
   <mod-append:script>data/aea_scripts/aeaIcon.lua</mod-append:script>
 </mod:findLike>
 
-<mod:findLike type="ships">
+<mod:findLike type="ships" limit="1">
 	
 	<mod:findLike type="shipIcons">
 		<mod-append:shipIcon>
@@ -57,6 +57,12 @@ This enemy is protected by a stronger than usual Energy Shield.</tooltip>
             <tooltip>MYSTERIOUS SHIELD:
 This enemy is protected by an Energy Shield.</tooltip>
         </mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_shleg_mind_gas</name>
+            <tooltip>INCULCATION GAS:
+This enemy ship is filled with a deadly neurotoxin which will build up and eventually mind control them for a short period of time and passively damage your crew over time for 3hp/s.
+Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
+        </mod-append:shipIcon>
 	</mod:findLike>
 
   	<mod:findLike type="shipOrder">
@@ -70,8 +76,8 @@ This enemy is protected by an Energy Shield.</tooltip>
 		<mod-append:ship>PLAYER_SHIP_AEA_NECRO_SEPA</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_LONG</mod-append:ship>
 
-		<mod-append:ship>PLAYER_SHIP_AEA_SLUG_LONG</mod-append:ship>
-		<mod-append:ship>PLAYER_SHIP_AEA_SLUG_WIDE</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_SHLEG_GEL</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_SHLEG_GAS</mod-append:ship>
 
 
 		<mod-append:ship>PLAYER_SHIP_AEA_ACID_CREW1</mod-append:ship>
@@ -266,13 +272,13 @@ This enemy is protected by an Energy Shield.</tooltip>
         </unlock>
 	</mod-append:ship>
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_SLUG_LONG" b="false" c="false" secret="true">
+	<mod-append:ship name="PLAYER_SHIP_AEA_SHLEG_GEL" b="false" c="false" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
 	</mod-append:ship>
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_SLUG_WIDE" b="false" c="false" secret="true">
+	<mod-append:ship name="PLAYER_SHIP_AEA_SHLEG_GAS" b="false" c="false" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
@@ -536,14 +542,136 @@ This enemy is protected by an Energy Shield.</tooltip>
 		</crew>
 	</mod-append:customShip>
 
-	<mod-append:customShip name="PLAYER_SHIP_AEA_SLUG_LONG">
+	<mod-append:customShip name="PLAYER_SHIP_AEA_SHLEG_GEL">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
 
-	<mod-append:customShip name="PLAYER_SHIP_AEA_SLUG_WIDE">
+	<mod-append:customShip name="PLAYER_SHIP_AEA_SHLEG_GAS">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="18">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="19">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_LANIUS_BATTLE">
@@ -1463,6 +1591,175 @@ This enemy is protected by an Energy Shield.</tooltip>
 			<shipIcon>icon_aea_necro_repair</shipIcon>
         </shipIcons>
 	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_OLD_COALITION_ASSAULT_ELITE">
+		<crew>
+			<rock_crusader room="8" />
+			<leech_ampere room="1" />
+			<mantis_suzerain room="7" />
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_COALITION_DESTROYER_ELITE">
+		<crew>
+			<rock_crusader room="4" />
+			<leech_ampere room="1" />
+			<mantis_suzerain room="7" />
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_COALITION_CEALAFORMER">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+        </shipIcons>
+		<noFuelStalemate />
+		<crew>
+			<rock_crusader room="1" />
+			<leech_ampere room="0" />
+			<mantis_suzerain room="15" />
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_DUSK_BATTLESHIP_ELITE">
+		<shipIcons>
+			<shipIcon>icon_invasion</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_DUSK_JAILER_ELITE">
+		<shipIcons>
+			<shipIcon>icon_invasion</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_DYNASTY_ASSAULT_ELITE">
+		<shipIcons>
+			<shipIcon>icon_no2</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_DYNASTY_SCOUT_ELITE">
+		<shipIcons>
+			<shipIcon>icon_no2</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_FREEMANTIS_BATTLESHIP_ELITE">
+		<shipIcons>
+            <shipIcon>icon_invasion</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_FREEMANTIS_INTERCEPTOR_ELITE">
+		<shipIcons>
+            <shipIcon>icon_invasion</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_LANIUS_BATTLESHIP_ELITE">
+		<shipIcons>
+            <shipIcon>icon_no2</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_LANIUS_ASSAULT_ELITE">
+		<shipIcons>
+            <shipIcon>icon_no2</shipIcon>
+        </shipIcons>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_SHELL_ABDUCTOR_ELITE">
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">gas_1x2</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">gas_1x2</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">gas_2x2</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">gas_2x2</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">gas_2x1</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">gas_1x2</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">gas_1x2</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">gas_1x2</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">gas_2x1</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">gas_2x1</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_SHELL_FIGHTER_ELITE">
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">gas_2x1</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">gas_2x2</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">gas_1x2</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">gas_2x2</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">gas_2x1</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">gas_1x2</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">gas_2x1</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">gas_2x2</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">gas_2x2</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">gas_1x2</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">gas_2x1</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_SHELL_SKIRMISHER_ELITE">
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">gas_2x1</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">gas_2x2</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">gas_2x2</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">gas_1x2</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">gas_2x1</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">gas_1x2</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">gas_2x2</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">gas_2x1</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">gas_1x2</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+
 </mod:findLike>
 
 <mod:findLike type="crew" limit="1">
@@ -2080,6 +2377,94 @@ This enemy is protected by an Energy Shield.</tooltip>
 			</statBoost>
 		</passiveStatBoosts>
     </mod-append:race>
+
+
+	<mod-append:race name="aea_shleg_shell">
+		<suffocationModifier>1.8</suffocationModifier>
+		<damageTakenMultiplier>0.6</damageTakenMultiplier>
+		<maxHealth>80</maxHealth>
+		<deathSounds>
+			<deathSound>shell_death</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>5</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>explosionShell</powerSound>
+			</powerSounds>
+			<req>
+				<enemyInRoom />
+				<minHealth>45</minHealth>
+			</req>
+			<friendlyFire>false</friendlyFire>
+			<shipFriendlyFire>false</shipFriendlyFire>
+			<buttonText>COMBUST</buttonText>
+			<tooltip>[CD:5s  DURATION:21s  -40HP]
+				Kills all enemy crew in the room that are mind controlled. Slowly regenerates 42 health back.</tooltip>
+			<cooldownColor r="170" g="206" b="39" />
+			<effectAnim>explosion_shell_death</effectAnim>
+			<selfHealth>-40</selfHealth>
+			<temporaryEffect>
+				<duration>21</duration>
+				<cooldownColor r="170" g="206" b="39" />
+				<healAmount>2</healAmount>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_shleg_slug">
+		<detectsLifeforms>true</detectsLifeforms>
+		<isTelepathic>true</isTelepathic>
+		<resistsMindControl>true</resistsMindControl>
+		<animBase>slug</animBase>
+		<powerEffect>
+			<cooldown>50</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>smallExplosion</powerSound>
+			</powerSounds>
+			<buttonText>BOMB</buttonText>
+			<tooltip>[COOLDOWN:50s  DURATION:10s]
+				Deploy a Toxin bomb that lasts for 1 minute, enemy crew in the room will build up a status effect at a rate of 5hp/s.
+				The status effect will mind control enemy crew once the buildup reaches their current health.
+				Will temporarily cloak and cease movements and attacks for 6 seconds, hiding from enemy crew.</tooltip>
+			<cooldownColor r="38" g="130" b="152" />
+			<friendlyFire>false</friendlyFire>
+			<persDamage>0</persDamage>
+			<effectAnim>bio_bomb_detinate</effectAnim>
+			<animFrame>8</animFrame>
+			<temporaryEffect>
+				<duration>10</duration>
+				<cooldownColor r="198" g="198" b="198" />
+				<finishSounds>
+					<finishSound>decloak</finishSound>
+				</finishSounds>
+				<moveSpeedMultiplier>0</moveSpeedMultiplier>
+				<validTarget>false</validTarget>
+				<animSheet baseVisible="true">slug_clansman_cloak</animSheet>
+				<canSabotage>false</canSabotage>
+				<canRepair>false</canRepair>
+				<canFight>false</canFight>
+			</temporaryEffect>
+			<roomStatBoosts>
+				<statBoost name="trueHealAmount">
+					<boostType>FLAT</boostType>
+					<amount>-3</amount>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ENEMIES</crewTarget>
+					<droneTarget>CREW</droneTarget>
+					<duration>60</duration>
+					<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
+					<priority>999</priority>
+					<blackList load="LIST_CREW_GAS" />
+					<roomAnim renderLayer="0">
+						<anim animType="default">aea_invisible</anim>
+						<tileAnim>aea_shleg_gas_tile</tileAnim>
+					</roomAnim>
+				</statBoost>
+			</roomStatBoosts>
+		</powerEffect>
+	</mod-append:race>
 
 	
 	
@@ -3539,6 +3924,54 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 
 <augments>
+	<aug name="AEA_SHLEG_MIND_GAS">
+		<statBoosts>
+			<statBoost name="resistsMindControl">
+				<boostType>SET</boostType>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>CURRENT_ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<value>true</value>
+				<priority>9999</priority>
+				<maxStacks id="aea_shleg_mind_gas_res">1</maxStacks>
+			</statBoost>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>-3</amount>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>999</priority>
+				<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
+				<blackList load="LIST_CREW_GAS" />
+			</statBoost>
+		</statBoosts>
+		<icon>icon_aea_shleg_mind_gas</icon>
+	</aug>
+	<aug name="LOCKED_AEA_SHLEG_MIND_GAS">
+    	<function name="AEA_SHLEG_MIND_GAS" value="0" warning="false" useForReqs="true" />
+		<statBoosts>
+			<statBoost name="resistsMindControl">
+				<boostType>SET</boostType>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>CURRENT_ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<value>true</value>
+				<priority>9999</priority>
+			</statBoost>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>-3</amount>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>999</priority>
+				<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
+				<blackList load="LIST_CREW_GAS" />
+			</statBoost>
+		</statBoosts>
+		<locked/>
+	</aug>
 	<aug name="AEA_AUG_WHALE">
     	<locked/>
 		<statBoosts>
@@ -4695,6 +5128,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<bossShip yOffset="180">AEA_ACID_BOSS</bossShip>
 	<bossShip yOffset="180">AEA_ACID_ASSUALT</bossShip>
 	<bossShip yOffset="100">AEA_OLD_GUARD_BOSS</bossShip>
+	<bossShip yOffset="180">AEA_OLD_LEECH_BATTLESHIP_ELITE</bossShip>
 	
 	<bossShip>AEA_OLD_BATTLESHIP</bossShip>
 	<bossShip>AEA_OLD_SPONSOR_1_BOUNTY</bossShip>
