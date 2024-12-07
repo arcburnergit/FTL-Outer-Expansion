@@ -459,6 +459,10 @@
     <mod-append:name>aea_shleg_shell</mod-append:name>
     <mod-append:name>aea_shleg_slug</mod-append:name>
 </mod:findName>
+<mod:findName type="blueprintList" name="BLUELIST_GAS">
+    <mod-append:name>LOCKED_AEA_SHLEG_MIND_GAS</mod-append:name>
+    <mod-append:name>AEA_SHLEG_MIND_GAS</mod-append:name>
+</mod:findName>
 
 <blueprintList name="LIST_CREW_AEA_OLD">
     <name>aea_old_1</name>

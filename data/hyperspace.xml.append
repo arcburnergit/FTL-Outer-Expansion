@@ -3924,6 +3924,131 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 
 <augments>
+	<aug name="AEA_SHLEG_GEL">
+		<function name="SLUG_GEL" value="1" useForReqs="true" warning="false" />
+		<statBoosts>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>-3</amount>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>999</priority>
+				<blackList load="LIST_CREW_GAS" />
+				<systemRoomTarget>NONE</systemRoomTarget>
+				<systemList>
+					<pilot />
+					<engines />
+					<shields />
+					<weapons />
+					<oxygen />
+					<medbay />
+					<clonebay />
+					<drones />
+					<sensors />
+					<doors />
+					<cloaking />
+					<mind />
+					<hacking />
+					<teleporter />
+					<artillery />
+					<battery />
+					<temporal />
+				</systemList>
+			</statBoost>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>3</amount>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>999</priority>
+				<systemRoomTarget>NONE</systemRoomTarget>
+				<systemList>
+					<pilot />
+					<engines />
+					<shields />
+					<weapons />
+					<oxygen />
+					<medbay />
+					<clonebay />
+					<drones />
+					<sensors />
+					<doors />
+					<cloaking />
+					<mind />
+					<hacking />
+					<teleporter />
+					<artillery />
+					<battery />
+					<temporal />
+				</systemList>
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="LOCKED_AEA_SHLEG_GEL">
+		<function name="SLUG_GEL" value="1" useForReqs="true" warning="false" />
+		<locked />
+		<statBoosts>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>-3</amount>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>999</priority>
+				<blackList load="LIST_CREW_GAS" />
+				<systemRoomTarget>NONE</systemRoomTarget>
+				<systemList>
+					<pilot />
+					<engines />
+					<shields />
+					<weapons />
+					<oxygen />
+					<medbay />
+					<clonebay />
+					<drones />
+					<sensors />
+					<doors />
+					<cloaking />
+					<mind />
+					<hacking />
+					<teleporter />
+					<artillery />
+					<battery />
+					<temporal />
+				</systemList>
+			</statBoost>
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>3</amount>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>999</priority>
+				<systemRoomTarget>NONE</systemRoomTarget>
+				<systemList>
+					<pilot />
+					<engines />
+					<shields />
+					<weapons />
+					<oxygen />
+					<medbay />
+					<clonebay />
+					<drones />
+					<sensors />
+					<doors />
+					<cloaking />
+					<mind />
+					<hacking />
+					<teleporter />
+					<artillery />
+					<battery />
+					<temporal />
+				</systemList>
+			</statBoost>
+		</statBoosts>
+	</aug>
 	<aug name="AEA_SHLEG_MIND_GAS">
 		<statBoosts>
 			<statBoost name="resistsMindControl">

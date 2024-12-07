@@ -5626,7 +5626,7 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 	<short>Gi</short>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Autorepairs the current system at 0.5x auto-ship speed</power>
+		<power>Autorepairs the current system at 0.5x repair speed</power>
 		<power>Move speed increased to 2x when there are not hostile crew in the room</power>
 	</powerList>
 	<colorList>
@@ -5683,7 +5683,7 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 	<short>Technician</short>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Autorepairs the current system at 1x auto-ship speed</power>
+		<power>Autorepairs the current system at 1x repair speed</power>
 		<power>Friendly Drones in the current room heal at 3hp/s</power>
 		<power>Move speed increased to 2x when there are not hostile crew in the room</power>
 	</powerList>
@@ -5697,8 +5697,8 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 	<rarity>0</rarity>
 	<powerList>
 		<power>Max Health is incresed to 140</power>
-		<power>Autorepairs the entire ship at 1x auto-ship speed</power>
-		<power>Autorepairs the current system at 2x auto-ship speed</power>
+		<power>Autorepairs the entire ship at 1x repair speed</power>
+		<power>Autorepairs the current system at 1.5x repair speed</power>
 		<power>Friendly Drones in the current room heal at 3hp/s</power>
 		<power>Move speed increased to 2x when there are not hostile crew in the room</power>
 	</powerList>
@@ -9660,7 +9660,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<title>Inculcation Gas</title>
 	<desc>This odd formula of Shell gas carries toxins developped by Shell Anarchists to mind control enemy crew. The Effect takes 20 seconds to build up and then lasts for 10 seconds. Prevents allied crew from being mind controlled. Damages enemy boarders at a rate of 3hp/s.
 	
-Drones and the following species will be immune to the damage of the augment:
+Drones and the following species will be immune to the damage and mind control of the augment:
 Shells, Vampweeds, Lanius, Ghosts.</desc>
     <cost>50</cost>
     <bp>4</bp>
@@ -9671,7 +9671,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<title>Inculcation Gas</title>
 	<desc>This odd formula of Shell gas carries toxins developped by Shell Anarchists to mind control enemy crew. The Effect takes 20 seconds to build up and then lasts for 10 seconds. Prevents allied crew from being mind controlled. Damages enemy boarders at a rate of 6hp/s.
 	
-Drones and the following species will be immune to the damage of the augment:
+Drones and the following species will be immune to the damage and mind control of the augment:
 Shells, Vampweeds, Lanius, Ghosts.</desc>
     <cost>50</cost>
     <bp>4</bp>
@@ -9680,9 +9680,10 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 </augBlueprint>
 
 <augBlueprint name="AEA_SHLEG_GEL">
-	<title>Inculcation Gas</title>
-	<desc>This odd formula of Shell gas carries toxins developped by Shell Anarchists to mind control enemy crew. The Effect takes 20 seconds to build up and then lasts for 10 seconds. Prevents allied crew from being mind controlled.
-	
+	<title>Slug Shell Gel</title>
+	<desc>Slug ships excrete a thick gel that repairs breaches and coats the inside of empty rooms, provides friendly crew with 3hp/s of healing and drains enemy crew at 3hp/s.
+Also provides a cheaper option for repairs at empty beacons.
+
 Drones and the following species will be immune to the damage of the augment:
 Shells, Vampweeds, Lanius, Ghosts.</desc>
     <cost>50</cost>
@@ -9691,9 +9692,10 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
     <stackable>false</stackable>
 </augBlueprint>
 <augBlueprint name="LOCKED_AEA_SHLEG_GEL">
-	<title>Inculcation Gas</title>
-	<desc>This odd formula of Shell gas carries toxins developped by Shell Anarchists to mind control enemy crew. The Effect takes 20 seconds to build up and then lasts for 10 seconds. Prevents allied crew from being mind controlled.
-	
+	<title>Slug Shell Gel</title>
+	<desc>Slug ships excrete a thick gel that repairs breaches and coats the inside of empty rooms, provides friendly crew with 3hp/s of healing and drains enemy crew at 3hp/s.
+Also provides a cheaper option for repairs at empty beacons.
+
 Drones and the following species will be immune to the damage of the augment:
 Shells, Vampweeds, Lanius, Ghosts.</desc>
     <cost>50</cost>
@@ -9740,7 +9742,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<power>1</power>
 	<cost>50</cost>
 	<bp>4</bp>
-	<rarity>3</rarity>
+	<rarity>5</rarity>
 	<image>bomb_bio</image>
 	<explosion>explosion_bio</explosion>
 	<launchSounds>
@@ -9791,7 +9793,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<power>2</power>
 	<cost>60</cost>
 	<bp>6</bp>
-	<rarity>4</rarity>
+	<rarity>5</rarity>
 	<image>missile_aea_shleg_gas</image>
 	<launchSounds>
 		<sound>smallMissile1</sound>
@@ -9889,7 +9891,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<crewCount amount="1" class="aea_shleg_slug" />
 	<crewCount amount="1" class="aea_shleg_slug" />
 	<crewCount amount="1" class="slug" />
-	<aug name="LOCKED_AEA_SHLEG_MIND_GAS" />
+	<aug name="AEA_SHLEG_GEL" />
 	<shieldImage>mup_standard1</shieldImage>
 	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
 </shipBlueprint>

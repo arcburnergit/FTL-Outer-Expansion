@@ -774,7 +774,12 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
 	if crewmem.health.first <= 0 and not (dead_crew[crewmem.extend.selfId]) and not crewmem:IsDrone() then
 		--print("CREW DYING: "..tostring(crewmem.type))
 		dead_crew[crewmem.extend.selfId] = true
+
+
 		local crewShip = Hyperspace.ships(crewmem.currentShipId)
+		if crewShip:HasAugmentation("AEA_AUG_WHALE")>0 then
+			crewShip:DamageHull(-1 , true)
+		end
 		local hasEngiInRoom = false
 		for crew in vter(crewShip.vCrewList) do
 			local crew_necro = necro_crew[crew.type]
@@ -2088,7 +2093,7 @@ mods.aea.birdCrew = {}
 local birdCrew = mods.aea.birdCrew
 birdCrew["aea_bird_avali"] = 0.5
 birdCrew["aea_bird_illuminant"] = 1
-birdCrew["aea_bird_unique"] = 1
+birdCrew["aea_bird_unique"] = 0.5
 
 mods.aea.birdCrewFull = {}
 local birdCrewFull = mods.aea.birdCrewFull
@@ -2104,7 +2109,7 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
 			if crewmem.iShipId == 1 then
 				speed = speed / 2
 			end
-			system:PartialRepair(speed, true)
+			system:PartialRepair(speed, false)
 		end
 	end
 
@@ -2116,7 +2121,7 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
 			if crewmem.iShipId == 1 then
 				speed = speed / 2
 			end
-			system:PartialRepair(speed, true)
+			system:PartialRepair(speed, false)
 		end
 	end
 end)

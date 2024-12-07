@@ -22,7 +22,7 @@
 		<color r="46" g="252" b="51" a="1" />
 	</beaconType>
 	<text load="TEXT_START_AEA_CULT" />
-	<changeBackground>BACK_SECTOR_AEA_CULT</changeBackground>
+	<changeBackground>BACK_SECTOR_VAMPWEED</changeBackground>
 	<playSound>lightspeed</playSound>
 	<customFleet right="false" firing="true" autoDarkening="true">CUSTOM_FLEET_VAMPWEED</customFleet>
 	<ship load="SHIP_GUARD_AEA_CULT" hostile="false" />
