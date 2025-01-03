@@ -1106,7 +1106,7 @@ A Gi ship appears from over the top and begins an attack run on you. You scrambl
 
 <eventList name="DISTRESS_AEA_BIRD_UNIQUE">
 	<event load="DISTRESS_AEA_BIRD_COLONY" />
-	<event load="" />
+	<event load="DISTRESS_FEDERATION_EMBASSY" />
 </eventList>
 
 <!--

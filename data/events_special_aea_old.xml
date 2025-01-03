@@ -324,7 +324,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 	<autoReward level="MED">standard_no_item</autoReward>
 	<weapon name="AEA_LASER_OLDP_3_LOOT" />
 	<variable name="ach_trans_aea_old_1" op="set" val="1" />
-	<achievement>ach_trans_aea_old_1</achievement>
+	<achievement>ACH_TRANS_AEA_OLD_1</achievement>
 </event>
 
 
