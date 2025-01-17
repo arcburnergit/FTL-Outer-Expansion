@@ -50,6 +50,16 @@
 	<bp>0</bp>
 </augBlueprint>
 
+<augBlueprint name="SHIP_AEA_BROADSIDE">
+	<title>Broadside Cruiser</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+
+
 <shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY" layout="aeap_acid_arty_a" img="aeap_acid_arty_a">
 	<class>Acidic Cruiser</class>
 	<name>The Alkaline</name>
@@ -497,7 +507,7 @@
     <mv-mapImage>map_icon_aeap_acid_long_a</mv-mapImage>
 </shipBlueprint>
 
-<shipBlueprint name="PLAYER_SHIP_AEA_ACID_CREW1" layout="aeap_acid_bill" img="aeap_acid_bill">
+<shipBlueprint name="PLAYER_SHIP_AEA_CREW1" layout="aeap_acid_bill" img="aeap_acid_bill">
 	<class>Bill's Crewser</class>
 	<name>Salt Water</name>
 	<desc>Bill has made a few friends on his adventures since becoming an Acidic Outcast.</desc>
@@ -4420,7 +4430,7 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<mv-mapImage>map_icon_aeap_bird_tran</mv-mapImage>
 </shipBlueprint>
 
-<shipBlueprint name="PLAYER_SHIP_AEA_CREW2_2" layout="aeap_bird_jay" img="aeap_bird_jay">
+<shipBlueprint name="PLAYER_SHIP_AEA_CREW4" layout="aeap_bird_jay" img="aeap_bird_jay">
 	<class>Jay's Crewser</class>
 	<name>The Blue Jay</name>
 	<desc>Although none of the crew can access the from of the ship, Jay and her drones are able to keep it online with ease.</desc>
@@ -8972,7 +8982,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<stackable>false</stackable>
 </augBlueprint>
 
-<shipBlueprint name="PLAYER_SHIP_AEA_ACID_CREW1_2" layout="aeap_cult_tiny" img="aeap_cult_tiny">
+<shipBlueprint name="PLAYER_SHIP_AEA_CREW3" layout="aeap_cult_tiny" img="aeap_cult_tiny">
 	<class>Tiny's Crewser</class>
 	<name>The Sprout</name>
 	<desc>Tiny's big adventure involving friendship and magic.</desc>
@@ -9531,84 +9541,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		</layer>
 	</colorList>
 </crewBlueprint>
-</FTL>
-
-<FTL>
-<shipBlueprint name="PLAYER_SHIP_AEA_LANIUS_BATTLE" layout="aeap_lanius_battle_a" img="aeap_lanius_battle_a">
-	<class>Lanius Battleship</class>
-	<name>The Nameless One</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
-	<systemList>
-		<battery max="2" power="1" room="14" start="false" img="room_battery" />
-		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
-		<clonebay power="1" room="8" start="true">
-			<slot>
-				<number>0</number>
-			</slot>
-		</clonebay>
-		<doors power="1" room="16" start="true" img="room_doors_6">
-			<slot>
-				<direction>right</direction>
-				<number>1</number>
-			</slot>
-		</doors>
-		<drones max="8" power="2" room="5" start="false" img="room_drones_9" />
-		<engines power="1" room="7" start="true" img="room_engines_2">
-			<slot>
-				<direction>down</direction>
-				<number>2</number>
-			</slot>
-		</engines>
-		<hacking power="1" room="20" start="false" img="room_hacking_2" />
-		<medbay power="1" room="8" start="false" img="room_medbay_4">
-			<slot>
-				<number>0</number>
-			</slot>
-		</medbay>
-		<mind power="1" room="21" start="false" img="room_mind_7" />
-		<oxygen power="1" room="13" start="false" img="room_oxygen_17" />
-		<pilot power="1" room="0" start="true" img="room_pilot_2">
-			<slot>
-				<direction>right</direction>
-				<number>1</number>
-			</slot>
-		</pilot>
-		<sensors power="1" room="15" start="true" img="room_sensors_6">
-			<slot>
-				<direction>right</direction>
-				<number>1</number>
-			</slot>
-		</sensors>
-		<shields max="8" power="2" room="9" start="true" img="room_shields_8">
-			<slot>
-				<direction>left</direction>
-				<number>0</number>
-			</slot>
-		</shields>
-		<teleporter power="1" room="22" start="false" />
-		<temporal power="1" room="17" start="false" />
-		<weapons max="8" power="2" room="11" start="true" img="room_weapons_6">
-			<slot>
-				<direction>up</direction>
-				<number>1</number>
-			</slot>
-		</weapons>
-	</systemList>
-	<weaponSlots>4</weaponSlots>
-	<droneSlots>2</droneSlots>
-	<weaponList missiles="2" count="4">
-		<weapon name="AEA_LASER_OLDP_1" />
-		<weapon name="LASER_HULL_1" />
-	</weaponList>
-	<droneList drones="3" count="2" />
-	<health amount="30" />
-	<maxPower amount="0" />
-	<crewCount amount="1" class="lanius_welder" />
-	<crewCount amount="1" class="lanius" />
-	<crewCount amount="1" class="phantom" />
-	<shieldImage>mup_orb3</shieldImage>
-	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
-</shipBlueprint>
 </FTL> 
 
 <FTL>
@@ -9620,7 +9552,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Active Ability: Combusts, taking heavy self damage to kill all mind controlled crew in the room. Slowly regenerates health back afterwards.</power>
+		<power>Active Ability: Combusts, taking heavy self damage to kill all mind controlled crew in the room. Slowly regenerates health back afterwards</power>
 		<power>Max Health is reduced to 80</power>
 		<power>Takes 1.8x damage from suffocation</power>
 		<power>Takes 0.6x damage from crew combat</power>
@@ -9635,7 +9567,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Active Ability: Deploys an Toxin bomb that deploys a mind control gas, but becomes immobile and hidden temporarily</power>
+		<power>Active Ability: Deploys an Toxin bomb full of mind control gas, but becomes immobile and hidden temporarily</power>
 		<power>Telepathic powers reveal rooms and lifeforms even when sensors are down</power>
 		<power>Immune to mind control and toxins</power>
 	</powerList>
@@ -9656,9 +9588,42 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	</colorList>
 </crewBlueprint>
 
+<crewBlueprint name="aea_shleg_sickle">
+	<desc>Originally a member of the KoN, Sickle struck out with an unlikely partner, a shell, and started the anarchists. Now she fights against the tyranny of both the slugs and the shells.
+		
+Inherited Slug stats: telepathic powers, mind control immunity</desc>
+	<title>The Sickle</title>
+	<short>The Sickle</short>
+	<cost>100</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Deploys an Toxin bomb full of a more powerful mind control gas, becomes temporarily hidden, moves and attacks with reduced efficiency</power>
+		<power>Max Health is increased to 150</power>
+		<power>Inflicts 1.6x damage in crew combat</power>
+		<power>Immune to stuns and toxins</power>
+	</powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_shleg_sorrow">
+	<desc>Sorrow started out as a shell radiant but when she left to join her partner, a slug knight, she modified herself with slug technology.
+		
+Inherited Shell stats: doubled suffocation damage, 0.9x damage taken in crew combat</desc>
+	<title>The Sorrow</title>
+	<short>The Sorrow</short>
+	<cost>100</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Combusts, taking heavy self damage to damage enemies and kill all mind controlled crew in the room. Cloaks herself while regenerating health back</power>
+		<power>Max Health is increased to 150</power>
+        <power>Creates a breach and deals 15 damage to enemy crew on death</power>
+	</powerList>
+</crewBlueprint>
+
 <augBlueprint name="AEA_SHLEG_MIND_GAS">
 	<title>Inculcation Gas</title>
-	<desc>This odd formula of Shell gas carries toxins developped by Shell Anarchists to mind control enemy crew. The Effect takes 20 seconds to build up and then lasts for 10 seconds. Prevents allied crew from being mind controlled. Damages enemy boarders at a rate of 3hp/s.
+	<desc>This odd formula of Shell gas carries toxins developed by Shell Anarchists to mind control enemy crew. The effect builds up at a rate of 5hp/s, when it reaches the current health of the crew it then mind controls the enemy. Prevents allied crew from being mind controlled. Damages enemy boarders at a rate of 3hp/s.
 	
 Drones and the following species will be immune to the damage and mind control of the augment:
 Shells, Vampweeds, Lanius, Ghosts.</desc>
@@ -9669,7 +9634,18 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 </augBlueprint>
 <augBlueprint name="LOCKED_AEA_SHLEG_MIND_GAS">
 	<title>Inculcation Gas</title>
-	<desc>This odd formula of Shell gas carries toxins developped by Shell Anarchists to mind control enemy crew. The Effect takes 20 seconds to build up and then lasts for 10 seconds. Prevents allied crew from being mind controlled. Damages enemy boarders at a rate of 6hp/s.
+	<desc>This odd formula of Shell gas carries toxins developed by Shell Anarchists to mind control enemy crew. The effect builds up at a rate of 5hp/s, when it reaches the current health of the crew it then mind controls the enemy. Prevents allied crew from being mind controlled. Damages enemy boarders at a rate of 3hp/s.
+	
+Drones and the following species will be immune to the damage and mind control of the augment:
+Shells, Vampweeds, Lanius, Ghosts.</desc>
+    <cost>50</cost>
+    <bp>4</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="LOCKED_AEA_SHLEG_MIND_GAS_PLUS">
+	<title>Inculcation Gas+</title>
+	<desc>This odd formula of Shell gas carries toxins developed by Shell Anarchists to mind control enemy crew. The effect builds up at a rate of 10hp/s, when it reaches the current health of the crew it then mind controls the enemy. Prevents allied crew from being mind controlled. Damages enemy boarders at a rate of 6hp/s.
 	
 Drones and the following species will be immune to the damage and mind control of the augment:
 Shells, Vampweeds, Lanius, Ghosts.</desc>
@@ -9718,14 +9694,14 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<persDamage>0</persDamage>
 	<accuracyMod>30</accuracyMod>
 	<missiles>1</missiles>
-	<statBoosts>
+	<roomStatBoosts>
 		<statBoost name="trueHealAmount">
 			<boostType>FLAT</boostType>
 			<amount>-3</amount>
 			<shipTarget>ALL</shipTarget>
 			<crewTarget>ENEMIES</crewTarget>
 			<droneTarget>CREW</droneTarget>
-			<duration>60</duration>
+			<duration>30</duration>
 			<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
 			<priority>999</priority>
 			<blackList load="LIST_CREW_GAS" />
@@ -9734,7 +9710,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 				<tileAnim>aea_shleg_gas_tile</tileAnim>
 			</roomAnim>
 		</statBoost>
-    </statBoosts>
+    </roomStatBoosts>
 	<shots>1</shots>
 	<fireChance>0</fireChance>
 	<breachChance>0</breachChance>
@@ -9767,14 +9743,14 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<persDamage>-1</persDamage>
 	<missiles>1</missiles>
 	<speed>50</speed>
-	<statBoosts>
+	<roomStatBoosts>
 		<statBoost name="trueHealAmount">
 			<boostType>FLAT</boostType>
 			<amount>-3</amount>
 			<shipTarget>ALL</shipTarget>
 			<crewTarget>ENEMIES</crewTarget>
 			<droneTarget>CREW</droneTarget>
-			<duration>60</duration>
+			<duration>30</duration>
 			<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
 			<priority>999</priority>
 			<blackList load="LIST_CREW_GAS" />
@@ -9783,7 +9759,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 				<tileAnim>aea_shleg_gas_tile</tileAnim>
 			</roomAnim>
 		</statBoost>
-    </statBoosts>
+    </roomStatBoosts>
 	<shots>1</shots>
 	<sp>10</sp>
 	<fireChance>0</fireChance>
@@ -9818,12 +9794,12 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 
 <FTL>
 <shipBlueprint name="PLAYER_SHIP_AEA_SHLEG_GEL" layout="aeap_slug_long_1" img="aeap_slug_long_1">
-	<class>Slug Long Cruiser</class>
-	<name>The Nameless One</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<class>Anarchy Cruiser</class>
+	<name>The Downfall</name>
+	<desc>This ship is equipped with a powerful artillery beam which damages systems and fills rooms with a mind control gas.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_LONG_unlock" />
 	<systemList>
-		<artillery power="2" room="14" start="true" weapon="ARTILLERY_FED" img="room_artillery" />
+		<artillery power="2" room="14" start="true" weapon="ARTILLERY_SHLEG_1" img="room_artillery" />
 		<battery max="2" power="1" room="4" start="false" img="room_battery_13" />
 		<cloaking power="1" room="3" start="true" img="room_cloaking_2" />
 		<clonebay power="1" room="15" start="false">
@@ -9872,7 +9848,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 		</shields>
 		<teleporter power="1" room="11" start="false" />
 		<temporal power="1" room="1" start="false" />
-		<weapons max="8" power="2" room="5" start="true" img="room_weapons_6">
+		<weapons max="8" power="1" room="5" start="true" img="room_weapons_6">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -9882,24 +9858,176 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<weaponSlots>2</weaponSlots>
 	<droneSlots>4</droneSlots>
 	<weaponList missiles="3" count="2">
-		<weapon name="ION_2" />
 		<weapon name="LASER_BURST_2" />
 	</weaponList>
 	<droneList drones="2" count="4" />
 	<health amount="30" />
-	<maxPower amount="6" />
+	<maxPower amount="7" />
 	<crewCount amount="1" class="aea_shleg_slug" />
 	<crewCount amount="1" class="aea_shleg_slug" />
 	<crewCount amount="1" class="slug" />
 	<aug name="AEA_SHLEG_GEL" />
 	<shieldImage>mup_standard1</shieldImage>
-	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+	<mv-mapImage>map_icon_aeap_shleg_gel</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_SHLEG_GEL_2" layout="aeap_slug_long_b" img="aeap_slug_long_b">
+	<class>Anarchy Cruiser</class>
+	<name>Late Stage Capitalism</name>
+	<desc>The crew of this ship use their abilities to board and destroy their enemies.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_LONG_2_unlock" />
+	<systemList>
+		<battery power="1" room="12" start="false" img="room_battery_2" />
+		<cloaking power="1" room="11" start="false" img="room_cloaking_13" />
+		<clonebay power="1" room="16" start="true">
+			<slot>
+				<number>3</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="7" start="true" img="room_doors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="14" start="false" img="room_drones_18" />
+		<engines power="1" room="1" start="true" img="room_engines_9">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="13" start="false" img="room_hacking_2" />
+		<medbay power="1" room="16" start="false" img="room_medbay_3">
+			<slot>
+				<number>3</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="9" start="false" img="room_mind_5" />
+		<oxygen power="1" room="3" start="true" img="room_oxygen_7" />
+		<pilot power="1" room="0" start="true" img="room_pilot_2">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="18" start="false" img="room_sensors_6">
+			<slot>
+				<direction>left</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="4" start="true" img="room_shields_5">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="2" room="17" start="true" />
+		<temporal power="1" room="10" start="false" />
+		<weapons power="2" max="8" room="8" start="true" img="room_weapons_6">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="2" count="3">
+		<weapon name="LASER_FROST_1" />
+	</weaponList>
+	<droneList drones="4" count="3" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="aea_shleg_slug" />
+	<crewCount amount="1" class="aea_shleg_slug" />
+	<crewCount amount="1" class="crystal" />
+	<aug name="AEA_SHLEG_GEL" />
+	<shieldImage>mup_standard1</shieldImage>
+	<mv-mapImage>map_icon_aeap_shleg_gel</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_SHLEG_GEL_3" layout="aeap_slug_long_c" img="aeap_slug_long_c">
+	<class>Anarchy Cruiser</class>
+	<name>The Visionary</name>
+	<desc>Originally constructed by the Slug Anarchists this ship has been reclaimed by the kleptocracy and now operates under their control.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_LONG_3_unlock" />
+	<systemList>
+		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="4" start="true">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="9" start="true" img="room_doors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="7" start="false" img="room_drones_8" />
+		<engines power="1" room="14" start="true" img="room_engines_4">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="10" start="false" img="room_hacking_2" />
+		<medbay power="1" room="4" start="false" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="11" start="false" img="room_mind_3" />
+		<oxygen power="1" room="15" start="true" img="room_oxygen_23" />
+		<pilot power="1" room="0" start="true" img="room_pilot_2">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="17" start="false" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="2" start="true" img="room_shields_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="6" start="true" />
+		<weapons power="3" max="8" room="5" start="true" img="room_weapons_3">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="7" count="4">
+		<weapon name="AEA_SHLEG_MISSILES" />
+		<weapon name="LASER_LIGHT" />
+	</weaponList>
+	<droneList drones="1" count="2" />
+	<health amount="30" />
+	<maxPower amount="7" />
+	<crewCount amount="1" class="slug_knight" />
+	<crewCount amount="1" class="slug_clansman" />
+	<crewCount amount="1" class="slug_saboteur" />
+	<aug name="SLUG_GEL" />
+	<shieldImage>mup_standard1</shieldImage>
+	<mv-mapImage>map_icon_aeap_shleg_gel</mv-mapImage>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_SHLEG_GAS" layout="aeap_slug_wide_1" img="aeap_slug_wide_1">
-	<class>Slug Wide Cruiser</class>
-	<name>The Unnamed</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<class>Disorder Cruiser</class>
+	<name>The Uprising</name>
+	<desc>This ship protects itself from enemy boarders with a powerful gas that mind controls enemies.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_WIDE_unlock" />
 	<systemList>
 		<battery max="2" power="1" room="10" start="false" img="room_battery_15" />
@@ -9959,7 +10087,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
-	<weaponList missiles="2" count="4">
+	<weaponList missiles="4" count="4">
 		<weapon name="ENERGY_1" />
 		<weapon name="BEAM_BIO_CHAIN" />
 	</weaponList>
@@ -9971,6 +10099,864 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<crewCount amount="1" class="aea_shleg_shell" />
 	<aug name="LOCKED_AEA_SHLEG_MIND_GAS" />
 	<shieldImage>mup_orb2</shieldImage>
+	<mv-mapImage>map_icon_aeap_shleg_gas</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_SHLEG_GAS_2" layout="aeap_slug_wide_b" img="aeap_slug_wide_b">
+	<class>Disorder Cruiser</class>
+	<name>The Socialist</name>
+	<desc>The crew on this ship are able to work together onboard the enemy ship to quickly cleanup enemy crew.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_WIDE_2_unlock" />
+	<systemList>
+		<battery power="1" max="2" room="15" start="false" img="room_battery_18" />
+		<cloaking power="1" room="4" start="false" img="room_cloaking_10" />
+		<clonebay power="1" room="1" start="true">
+			<slot>
+				<number>2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="14" start="false" img="room_doors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="7" start="false" img="room_drones_9" />
+		<engines power="1" room="9" start="true" img="room_engines_6">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="10" start="false" img="room_hacking_7" />
+		<medbay power="1" room="1" start="false" img="room_medbay_12">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="5" start="false" img="room_mind_4" />
+		<oxygen power="1" room="2" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="2" room="3" start="true" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="8" start="true" img="room_shields_5">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="11" start="true" />
+		<weapons power="2" max="8" room="6" start="true" img="room_weapons_3">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="3" count="3">
+		<weapon name="AEA_LASER_ACID_2" />
+		<weapon name="AEA_SHLEG_BOMB" />
+	</weaponList>
+	<droneList drones="3" count="3" />
+	<health amount="30" />
+	<maxPower amount="7" />
+	<crewCount amount="1" class="aea_shleg_shell" />
+	<crewCount amount="1" class="aea_shleg_slug" />
+	<crewCount amount="1" class="aea_shleg_shell" />
+	<aug name="LOCKED_AEA_SHLEG_MIND_GAS" />
+	<shieldImage>mup_orb2</shieldImage>
+	<mv-mapImage>map_icon_aeap_shleg_gas</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_SHLEG_GAS_3" layout="aeap_slug_wide_c" img="aeap_slug_wide_c">
+	<class>Disorder Cruiser</class>
+	<name>The Incoherent</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_WIDE_3_unlock" />
+	<systemList>
+		<battery power="1" max="2" room="2" start="false" img="room_battery_15" />
+		<cloaking power="1" room="16" start="false" img="room_cloaking_9" />
+		<clonebay power="1" room="6" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="17" start="true" img="room_doors_5">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="3" start="true" img="room_drones_17" />
+		<engines power="1" room="7" start="true" img="room_engines_8">
+			<slot>
+				<direction>left</direction>
+				<number>1</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="12" start="false" img="room_hacking_2" />
+		<medbay power="1" room="6" start="true" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="15" start="false" img="room_mind_6" />
+		<oxygen power="1" room="11" start="true" img="room_oxygen_17" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="2" room="10" start="false" img="room_sensors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="9" start="true" img="room_shields_3">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="13" start="false" />
+		<temporal power="1" room="1" start="false" />
+		<weapons power="2" max="8" room="8" start="true" img="room_weapons_4">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="2" count="2">
+		<weapon name="AEA_SHLEG_BOMB" />
+		<weapon name="ION_2" />
+	</weaponList>
+	<droneList drones="2" count="4">
+		<drone name="BATTLETOG2_BOARDER" />
+		<drone name="COMBAT_1_LASER" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="7" />
+	<crewCount amount="1" class="aea_shleg_shell" />
+	<crewCount amount="1" class="aea_shleg_slug" />
+	<crewCount amount="1" class="aea_bird_illuminant" />
+	<aug name="LOCKED_AEA_SHLEG_MIND_GAS" />
+	<shieldImage>mup_orb2</shieldImage>
+	<mv-mapImage>map_icon_aeap_shleg_gas</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_CREW5" layout="aeap_shleg_uni" img="aeap_shleg_uni">
+	<class>Sorrow and Sickle's Crewser</class>
+	<name>The Irukandji</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_SHLEG_UNI_unlock" />
+	<systemList>
+		<battery power="1" room="11" start="false" img="room_battery_15" />
+		<cloaking power="1" room="1" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="3" start="false">
+			<slot>
+				<number>3</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="17" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="6" start="false" img="room_drones_4" />
+		<engines power="2" room="2" start="true" img="room_engines_4">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="9" start="false" img="room_hacking_4" />
+		<medbay power="1" room="3" start="true" img="room_medbay_3">
+			<slot>
+				<number>3</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="10" start="false" img="room_mind_3" />
+		<oxygen power="1" room="5" start="true" img="room_oxygen_2" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="16" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="4" start="true" img="room_shields_3">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="13" start="true" />
+		<temporal power="1" room="12" start="false" />
+		<weapons power="2" room="14" start="true" img="room_weapons_12">
+			<slot>
+				<direction>right</direction>
+				<number>2</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="2" count="4">
+		<weapon name="ION_FIRE" />
+		<weapon name="BEAM_CONSERVATIVE" />
+	</weaponList>
+	<droneList drones="2" count="2" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<aug name="LOCKED_AEA_SHLEG_MIND_GAS_PLUS" />
+	<shieldImage>mup_orb2</shieldImage>
+	<mv-mapImage>map_icon_aeap_shleg_gas</mv-mapImage>
+</shipBlueprint>
+
+<weaponBlueprint name="ARTILLERY_SHLEG_1">
+	<type>BEAM</type>
+	<tip>tip_aea_shleg</tip>
+	<title>Inculcation Beam Artillery</title>
+	<short>Inculcation Beam Artillery</short>
+	<desc>[Base Cooldown: 20] Fires a more concentrated beam of chaotic gas. Deals minor crew and system damage, also fills any room it hits with inculcation gas.</desc>
+	<tooltip>Artillery: 1 system damage per room. Fills rooms with inculcation gas, damaging and mind controlling enemies over time.</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>0</persDamage>
+	<sp>16</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>20</cooldown>
+	<power>2</power>
+	<cost>65</cost>
+	<bp>7</bp>
+	<color>
+		<r>159</r>
+		<g>228</g>
+		<b>204</b>
+	</color>
+	<roomStatBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-3</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<duration>20</duration>
+			<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
+			<priority>999</priority>
+			<blackList load="LIST_CREW_GAS" />
+			<roomAnim renderLayer="0">
+				<anim animType="default">aea_invisible</anim>
+				<tileAnim>aea_shleg_gas_tile</tileAnim>
+			</roomAnim>
+		</statBoost>
+    </roomStatBoosts>
+	<rarity>0</rarity>
+	<length>120</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_invisible_gun</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+</FTL>
+
+<FTL>
+<crewBlueprint name="aea_shard_breaker">
+    <desc>A band of pirates who only allow other crystals into their ranks.</desc>
+    <title>Shard-Breaker</title>
+    <short>Shard-Breaker</short>
+    <cost>60</cost>
+    <bp>4</bp>
+    <rarity>5</rarity>
+    <powerList>
+        <power>Active Ability (2 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
+        <power>Reduced suffocation damage</power>
+        <power>Max Health is increased to 125</power>
+        <power>Inflicts 0.8x damage in crew combat</power>
+    </powerList>
+    <colorList>
+        <layer>
+            <color r="40" g="187" b="255" a="0.5" />
+            <color r="55" g="40" b="255" a="0.4" />
+            <color r="55" g="40" b="255" a="0.2" />
+            <color r="115" g="131" b="138" a="0.1" />
+            
+            <color r="234" g="0" b="255" a="0.3" /> <!--pink-->
+            <color r="144" g="0" b="255" a="0.3" /> <!--purple-->
+            <color r="0" g="255" b="255" a="0.5" /> <!--cyan-->
+            <!--<color r="255" g="0" b="0" a="0.5" /> ONLY ELITES CAN BE RED-->
+        </layer>
+    </colorList>
+</crewBlueprint>
+<shipBlueprint name="PLAYER_SHIP_AEA_SHARD_BATTLE" layout="aeap_shard_battle_a" img="aeap_shard_battle_a">
+	<class>Shard-Breaker Cruiser</class>
+	<name>The Dawnshard</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_BATTLE_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="17" start="false" img="room_battery_6" />
+		<cloaking power="1" room="3" start="false" img="room_cloaking_11" />
+		<clonebay power="1" room="2" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="21" start="true" img="room_doors_2">
+			<slot>
+				<direction>down</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="8" start="false" img="room_drones_15" />
+		<engines power="2" room="1" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="5" start="false" img="room_hacking_2" />
+		<medbay power="1" room="2" start="true" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="15" start="false" img="room_mind_3" />
+		<oxygen power="1" room="16" start="true" img="room_oxygen_2" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="9" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="4" start="true" img="room_shields_3">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="20" start="true" />
+		<temporal power="1" room="6" start="false" img="room_temporal_4" />
+		<weapons max="8" power="2" room="7" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="0" count="3">
+		<weapon name="CRYSTAL_BURST_2" />
+		<weapon name="BOMB_LOCK" />
+	</weaponList>
+	<droneList drones="0" count="3" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="aea_shard_breaker" />
+	<crewCount amount="1" class="aea_shard_breaker" />
+	<crewCount amount="1" class="engi_separatist" />
+	<aug name="LAB_CRYSTAL_SABOTAGE" />
+	<shieldImage>mup_disk</shieldImage>
 	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_SHARD_SCOUT" layout="aeap_shard_scout_a" img="aeap_shard_scout_a">
+	<class>Shard-Caller Cruiser</class>
+	<name>The Shardbearer</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_SCOUT_unlock" />
+	<systemList>
+		<battery power="1" max="2" room="12" start="true" img="room_battery_14" />
+		<cloaking power="1" room="4" start="false" img="room_cloaking_10" />
+		<clonebay power="1" room="13" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="11" start="true" img="room_doors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="1" start="false" img="room_drones_7" />
+		<engines power="2" room="3" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="15" start="true" img="room_hacking_7" />
+		<medbay power="1" room="13" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="6" start="false" img="room_mind_7" />
+		<oxygen power="1" room="5" start="true" img="room_oxygen_2" />
+		<pilot power="1" room="0" start="true" img="room_pilot_2">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="7" start="true" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="2" start="true" img="room_shields_9">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="8" start="false" />
+		<temporal power="1" room="16" start="false" />
+		<weapons power="2" max="8" room="9" start="true" img="room_weapons_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="0" count="2" >
+		<weapon name="CRYSTAL_BURST_2" />
+		<weapon name="BOMB_LOCK" />
+	</weaponList>
+	<droneList drones="0" count="3" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="aea_shard_breaker" />
+	<crewCount amount="1" class="aea_shard_breaker" />
+	<crewCount amount="1" class="engi_separatist" />
+	<shieldImage>mup_orb3</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
+</FTL>
+
+<FTL>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_BROADSIDE" layout="aeap_broadside_a" img="aeap_broadside_a">
+	<class>Rebel Broadsider</class>
+	<name>The Broadside</name>
+	<desc>A powerful ship designed around it's broadside mounted artillery. This ship's artillery system are modular allowing it to have a number of different combinations of artillery</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_BROADSIDE_unlock" />
+	<systemList>
+		<!--artillery power="2" room="2" start="false" weapon="ARTILLERY_REBEL_BEAM" img="room_artillery_3" />
+		<artillery power="2" room="2" start="false" weapon="ARTILLERY_REBEL_MISSILE" img="room_artillery_3" /-->
+		<!--artillery power="2" room="1" start="false" weapon="ARTILLERY_REBEL_BEAM" img="room_artillery_3" />
+		<artillery power="2" room="1" start="false" weapon="ARTILLERY_REBEL_MISSILE" img="room_artillery_3" /-->
+		<!--artillery power="2" room="0" start="false" weapon="ARTILLERY_REBEL_BEAM" img="room_artillery_3" />
+		<artillery power="2" room="0" start="false" weapon="ARTILLERY_REBEL_MISSILE" img="room_artillery_3" /-->
+		<artillery power="1" max="3" room="0" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
+		<artillery power="1" max="3" room="1" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
+		<artillery power="1" max="3" room="2" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
+		<battery power="1" room="11" start="false" img="room_battery_2" />
+		<cloaking power="1" room="9" start="false" img="room_cloaking_13" />
+		<clonebay power="1" room="8" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="4" start="true" img="room_doors_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="17" start="false" img="room_drones_3" />
+		<engines power="2" room="5" start="true" img="room_engines_10">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="13" start="false" img="room_hacking_3" />
+		<medbay power="1" room="8" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="16" start="false" img="room_mind_12" />
+		<oxygen power="1" room="12" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="3" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="7" start="true" img="room_sensors_9">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="14" start="true" img="room_shields_6">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="10" start="false" />
+		<temporal power="1" room="15" start="false" />
+		<weapons power="2" room="18" start="true" img="room_weapons_12">
+			<slot>
+				<direction>right</direction>
+				<number>2</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="0" count="2" />
+	<droneList drones="0" count="2" />
+	<health amount="24" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="human_engineer" />
+	<crewCount amount="1" class="human_medic" />
+	<crewCount amount="1" class="human" />
+	<crewCount amount="1" class="human" />
+	<aug name="EX_AUTO_COOLDOWN" />
+	<shieldImage>mup_long1</shieldImage>
+	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+</shipBlueprint>
+
+<weaponBlueprint name="ARTILLERY_BROADSIDE_PIERCE">
+	<type>LASER</type>
+	<title>Pierce Laser Artillery</title>
+	<short>Artillery</short>
+	<desc>[Base cooldown: 18] A slow charging duel laser cannon that fires 2 lasers per burst per barrel for a total of 4 shots per charge.</desc>
+	<tooltip>Artillery: A relatively slow charging burst of lasers capable of piercing one layer of shields.</tooltip>
+	<damage>1</damage>
+	<accuracyMod>10</accuracyMod>
+	<shots>2</shots>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>4</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>18</cooldown>
+	<power>1</power>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>laser_pierce</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>artillery_broadside_pierce</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_BROADSIDE_FOCUS">
+	<type>LASER</type>
+	<tip>tip_beams</tip>
+	<title>Burst Pinpoint Artillery</title>
+	<short>Artillery</short>
+	<short>Artillery</short>
+	<desc>[Base cooldown: 18] A powerful burst pinpoint artillery weapon that is able to fire multiple pinpoint beams in sequence.</desc>
+	<tooltip>Artillery: Powers a long and deadly beam that does 2 damage per room hit, but like the Halberd can only partially pierce through one shield layer.</tooltip>
+	<damage>0</damage>
+	<shots>2</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>18</cooldown>
+	<power>1</power>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>artillery_broadside_focus</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_BROADSIDE_FOCUS_BEAM">
+    <type>BEAM</type>
+    <flavorType>Pinpoint</flavorType>
+    <tip>tip_focus</tip>
+    <title>'Misericorde' Pinpoint</title>
+    <short>'Misericord'</short>
+    <desc>An upgraded Pinpoint weapon that does 3 damage.</desc>
+    <tooltip>One damage per room beam weapon</tooltip>
+    <damage>3</damage>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>3</breachChance>
+    <cooldown>14</cooldown>
+    <speed>1</speed>
+    <power>2</power>
+    <cost>80</cost>
+    <bp>2</bp>
+    <rarity>4</rarity>
+    <image>beam_contact</image>
+    <length>1</length>
+    <launchSounds>
+        <sound>focus_strong</sound>
+    </launchSounds>
+    <weaponArt>focus_2</weaponArt>
+    <iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_BROADSIDE_MISSILE">
+	<type>MISSILES</type>
+	<title>Duel Missile Artillery</title>
+	<short>Artillery</short>
+	<desc>[Base cooldown: 18] Fires a pair of missiles which do heavy damage and never miss.</desc>
+	<tooltip>Artillery: Fires a pair of missiles which do heavy damage and never miss.</tooltip>
+	<damage>3</damage>
+	<missiles>0</missiles>
+	<accuracyMod>100</accuracyMod>
+	<shots>2</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<cooldown>18</cooldown>
+	<power>1</power>
+	<cost>80</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>missile_heavy_2</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>artillery_broadside_missile</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_BROADSIDE_MINE">
+	<type>LASER</type>
+	<tip>tip_mine</tip>
+	<title>Ion Minelauncher Artillery</title>
+	<short>Artillery</short>
+	<desc>[Base cooldown: 18] Fires a burst of ionized mines which do hull damage and ionize systems.</desc>
+	<tooltip>Artillery: Fires a burst of ionized mines which do hull damage and ionize systems.</tooltip>
+	<damage>1</damage>
+	<noSysDamage>true</noSysDamage>
+	<ion>2</ion>
+	<speed>15</speed>
+	<shots>3</shots>
+	<sp>10</sp>
+	<stun>6</stun>
+	<fireChance>1</fireChance>
+	<breachChance>4</breachChance>
+	<cooldown>18</cooldown>
+	<power>1</power>
+	<cost>80</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>mine_medium</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>artillery_broadside_mine</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AMOD_BEAM_MULTI">
+	<type>BEAM</type>
+	<tip>tip_adapter</tip>
+    <title>'Hokoyari' Beam</title>
+    <short>'Hokoyari'</short>
+    <desc>A potentially incredibly powerful Beam, adapting to its environment. the number of parallel beams increases per shot, with no limit on the amount of beams.</desc>
+    <tooltip>Beam weapon, 2 damage per room.</tooltip>
+	<descriptionOverride>A potentially incredibly powerful Beam, adapting to its environment. the number of parallel beams increases per shot, with no limit on the amount of beams.
+
+Stats:
+Required Power: 3
+Charge Time: 13 seconds
+Chain Effect: Increase beam number by 1
+Chain Beam Cap: 999 beams (1000 damage)
+
+Beam Length: 60
+Beam Speed: 5
+
+Base Hull Damage: 1
+Total System Damage: 1
+Total Crew Damage: 15
+
+Breach Chance: 20% (Adjusted: 20%)
+
+Default Price: 80~   -   Selling Price: 40~
+		</descriptionOverride>
+		<tooltipOverride>Required Power: 3
+Charge Time: 13 seconds
+Chain Effect: Increase beam number by 1
+Chain Beam Cap: 999 beams (1000 damage)
+
+Beam Length: 60
+Beam Speed: 5
+
+Base Hull Damage: 1
+Total System Damage: 1
+Total Crew Damage: 15
+
+Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
+    <damage>1</damage>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>2</breachChance>
+    <cooldown>13</cooldown>
+    <power>3</power>
+    <cost>80</cost>
+    <bp>7</bp>
+    <rarity>5</rarity>
+    <length>60</length>
+    <image>beam_contact</image>
+    <boost>
+        <type>cooldown</type>
+        <amount>0.01</amount>
+        <count>999</count>
+    </boost>
+    <launchSounds>
+        <sound>beam2</sound>
+    </launchSounds>
+	<weaponArt>beam_amod_long</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AMOD_LANIUS_BATTLE" layout="amod_lanius_battle_a" img="amod_lanius_battle_a">
+	<class>Lanius Battle Cruiser</class>
+	<name>The Magpie</name>
+	<desc>This ship cuts up the enemy with it's powerful adaptive pinpoint that gains more beams as it chains.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_LANIUS_BATTLE_unlock" />
+	<systemList>
+		<battery max="2" power="1" room="14" start="false" img="room_battery" />
+		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="8" start="true">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="16" start="true" img="room_doors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="5" start="false" img="room_drones_9" />
+		<engines power="2" room="7" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="20" start="false" img="room_hacking_2" />
+		<medbay power="1" room="8" start="false" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="21" start="false" img="room_mind_7" />
+		<oxygen power="1" room="13" start="false" img="room_oxygen_17" />
+		<pilot power="1" room="0" start="true" img="room_pilot_2">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="15" start="true" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="9" start="true" img="room_shields_8">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="22" start="false" />
+		<temporal power="1" room="17" start="false" />
+		<weapons max="8" power="3" room="11" start="true" img="room_weapons_6">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="2" count="4">
+		<weapon name="AMOD_BEAM_MULTI" />
+		<weapon name="ION_CONSERVATIVE" />
+	</weaponList>
+	<droneList drones="3" count="2" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="lanius_welder" />
+	<crewCount amount="1" class="lanius" />
+	<crewCount amount="1" class="phantom" />
+	<shieldImage>mup_orb3</shieldImage>
+	<mv-mapImage>map_icon_amod_lanius_a</mv-mapImage>
 </shipBlueprint>
 </FTL>

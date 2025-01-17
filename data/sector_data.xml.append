@@ -82,16 +82,30 @@
     <mod-append:blueprint name="AEA_LASER_ACID_1" rarity="0" />
     <mod-append:blueprint name="AEA_LASER_ACID_2" rarity="0" />
     <mod-append:blueprint name="AEA_LASER_ACID_3" rarity="0" />
+    <mod-append:blueprint name="AEA_BEAM_ACID_1" rarity="0" />
     <mod-append:blueprint name="AEA_ION_ACID_1" rarity="0" />
-	<mod-append:blueprint name="AEA_DEFENSE_NECRO_1_MISSILE" rarity="0" />
-	<mod-append:blueprint name="AEA_DEFENSE_NECRO_2_MISSILE" rarity="0" />
-	<mod-append:blueprint name="AEA_COMBAT_NECRO_1_LASER" rarity="0" />
-	<mod-append:blueprint name="AEA_COMBAT_NECRO_2_LASER" rarity="0" />
+
 	<mod-append:blueprint name="AEA_LASER_NECRO_1" rarity="0" />
 	<mod-append:blueprint name="AEA_LASER_NECRO_2" rarity="0" />
 	<mod-append:blueprint name="AEA_LASER_NECRO_3" rarity="0" />
     <mod-append:blueprint name="AEA_LASER_NECRO_CHARGE" rarity="0" />
+
+    <mod-append:blueprint name="AEA_LASER_CULT" rarity="0" />
+
+	<mod-append:blueprint name="AEA_DEFENSE_NECRO_1_MISSILE" rarity="0" />
+	<mod-append:blueprint name="AEA_DEFENSE_NECRO_2_MISSILE" rarity="0" />
+	<mod-append:blueprint name="AEA_COMBAT_NECRO_1_LASER" rarity="0" />
+	<mod-append:blueprint name="AEA_COMBAT_NECRO_2_LASER" rarity="0" />
+
 	<mod-append:blueprint name="AEA_COMBAT_BIRD_BURST_1" rarity="0" />
+	<mod-append:blueprint name="AEA_COMBAT_BIRD_BIO_1" rarity="0" />
+	<mod-append:blueprint name="AEA_COMBAT_BIRD_BIO_2" rarity="0" />
+	<mod-append:blueprint name="AEA_COMBAT_BIRD_BIO_3" rarity="0" />
+	<mod-append:blueprint name="AEA_COMBAT_BIRD_MULTI_1_LASER" rarity="0" />
+	<mod-append:blueprint name="AEA_COMBAT_BIRD_MULTI_2_LASER" rarity="0" />
+	<mod-append:blueprint name="AEA_COMBAT_BIRD_SMART_1" rarity="0" />
+	<mod-append:blueprint name="AEA_COMBAT_BIRD_SMART_2" rarity="0" />
+
 
 	<mod-append:blueprint name="aea_cult_wizard" rarity="0" />
 	</mod:findLike>

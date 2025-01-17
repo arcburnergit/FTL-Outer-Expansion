@@ -3630,6 +3630,11 @@ local playerRoomsSlugEnemy = {}
 local enemyRoomsSlugPlayer = {}
 local enemyRoomsSlugEnemy = {}
 
+local playerRoomsSlugPlayerUnique = {}
+local playerRoomsSlugEnemyUnique = {}
+local enemyRoomsSlugPlayerUnique = {}
+local enemyRoomsSlugEnemyUnique = {}
+
 script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, shipManager)
 	if log_events then
 		log("ACTIVATE_POWER 6")
@@ -3637,7 +3642,7 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 	local crewmem = power.crew
 	local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
 
-	if crewmem.type == "aea_shleg_shell" then
+	if crewmem.type == "aea_shleg_shell" or crewmem.type == "aea_shleg_sorrow" then
 		local currentManager = Hyperspace.ships(crewmem.currentShipId)
 		for crewCurrent in vter(currentManager.vCrewList) do
 			if crewCurrent.iRoomId == crewmem.iRoomId and crewCurrent.iShipId ~= crewmem.iShipId and crewCurrent.bMindControlled then
@@ -3654,33 +3659,78 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 		elseif crewmem.currentShipId == 1 and crewmem.iShipId == 1 then
 			enemyRoomsSlugEnemy[crewmem.iRoomId] = 60
 		end
+	elseif crewmem.type == "aea_shleg_sickle" then
+		if crewmem.currentShipId == 0 and crewmem.iShipId == 0 then
+			playerRoomsSlugPlayer[crewmem.iRoomId] = 60
+		elseif crewmem.currentShipId == 0 and crewmem.iShipId == 1 then
+			playerRoomsSlugEnemy[crewmem.iRoomId] = 60
+		elseif crewmem.currentShipId == 1 and crewmem.iShipId == 0 then
+			enemyRoomsSlugPlayer[crewmem.iRoomId] = 60
+		elseif crewmem.currentShipId == 1 and crewmem.iShipId == 1 then
+			enemyRoomsSlugEnemy[crewmem.iRoomId] = 60
+		end
+		if crewmem.currentShipId == 0 and crewmem.iShipId == 0 then
+			playerRoomsSlugPlayerUnique[crewmem.iRoomId] = 60
+		elseif crewmem.currentShipId == 0 and crewmem.iShipId == 1 then
+			playerRoomsSlugEnemyUnique[crewmem.iRoomId] = 60
+		elseif crewmem.currentShipId == 1 and crewmem.iShipId == 0 then
+			enemyRoomsSlugPlayerUnique[crewmem.iRoomId] = 60
+		elseif crewmem.currentShipId == 1 and crewmem.iShipId == 1 then
+			enemyRoomsSlugEnemyUnique[crewmem.iRoomId] = 60
+		end
 	end
 end)
 mods.aea.gasWeapons = {}
 local gasWeapons = mods.aea.gasWeapons
-gasWeapons["AEA_SHLEG_BOMB"] = 60
-gasWeapons["AEA_SHLEG_MISSILES"] = 60
+gasWeapons["AEA_SHLEG_BOMB"] = 30
+gasWeapons["AEA_SHLEG_MISSILES"] = 30
+gasWeapons["ARTILLERY_SHLEG_1"] = 20
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
 	if projectile and gasWeapons[projectile.extend.name] then
+		local roomAtLoc = get_room_at_location(shipManager, location, true)
 		if projectile.destinationSpace == 0 and projectile.ownerId == 0 then
-			if playerRoomsSlugPlayer[crewmem.iRoomId] and playerRoomsSlugPlayer[crewmem.iRoomId] < gasWeapons[projectile.extend.name] then
-				playerRoomsSlugPlayer[crewmem.iRoomId] = gasWeapons[projectile.extend.name]
+			if not playerRoomsSlugPlayer[roomAtLoc] or playerRoomsSlugPlayer[roomAtLoc] < gasWeapons[projectile.extend.name] then
+				playerRoomsSlugPlayer[roomAtLoc] = gasWeapons[projectile.extend.name]
 			end
 		elseif projectile.destinationSpace == 0 and projectile.ownerId == 1 then
-			if playerRoomsSlugEnemy[crewmem.iRoomId] and playerRoomsSlugEnemy[crewmem.iRoomId] < gasWeapons[projectile.extend.name] then
-				playerRoomsSlugEnemy[crewmem.iRoomId] = gasWeapons[projectile.extend.name]
+			if not playerRoomsSlugEnemy[roomAtLoc] or playerRoomsSlugEnemy[roomAtLoc] < gasWeapons[projectile.extend.name] then
+				playerRoomsSlugEnemy[roomAtLoc] = gasWeapons[projectile.extend.name]
 			end
 		elseif projectile.destinationSpace == 1 and projectile.ownerId == 0 then
-			if enemyRoomsSlugPlayer[crewmem.iRoomId] and enemyRoomsSlugPlayer[crewmem.iRoomId] < gasWeapons[projectile.extend.name] then
-				enemyRoomsSlugPlayer[crewmem.iRoomId] = gasWeapons[projectile.extend.name]
+			if not enemyRoomsSlugPlayer[roomAtLoc] or enemyRoomsSlugPlayer[roomAtLoc] < gasWeapons[projectile.extend.name] then
+				enemyRoomsSlugPlayer[roomAtLoc] = gasWeapons[projectile.extend.name]
 			end
 		elseif projectile.destinationSpace == 1 and projectile.ownerId == 1 then
-			if enemyRoomsSlugEnemy[crewmem.iRoomId] and enemyRoomsSlugEnemy[crewmem.iRoomId] < gasWeapons[projectile.extend.name] then
-				enemyRoomsSlugEnemy[crewmem.iRoomId] = gasWeapons[projectile.extend.name]
+			if not enemyRoomsSlugEnemy[roomAtLoc] or enemyRoomsSlugEnemy[roomAtLoc] < gasWeapons[projectile.extend.name] then
+				enemyRoomsSlugEnemy[roomAtLoc] = gasWeapons[projectile.extend.name]
 			end
 		end
 	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
+	if projectile and gasWeapons[projectile.extend.name] and beamHitType == Defines.BeamHit.NEW_ROOM then
+		local roomAtLoc = get_room_at_location(shipManager, location, true)
+		if projectile.destinationSpace == 0 and projectile.ownerId == 0 then
+			if not playerRoomsSlugPlayer[roomAtLoc] or playerRoomsSlugPlayer[roomAtLoc] < gasWeapons[projectile.extend.name] then
+				playerRoomsSlugPlayer[roomAtLoc] = gasWeapons[projectile.extend.name]
+			end
+		elseif projectile.destinationSpace == 0 and projectile.ownerId == 1 then
+			if not playerRoomsSlugEnemy[roomAtLoc] or playerRoomsSlugEnemy[roomAtLoc] < gasWeapons[projectile.extend.name] then
+				playerRoomsSlugEnemy[roomAtLoc] = gasWeapons[projectile.extend.name]
+			end
+		elseif projectile.destinationSpace == 1 and projectile.ownerId == 0 then
+			if not enemyRoomsSlugPlayer[roomAtLoc] or enemyRoomsSlugPlayer[roomAtLoc] < gasWeapons[projectile.extend.name] then
+				enemyRoomsSlugPlayer[roomAtLoc] = gasWeapons[projectile.extend.name]
+			end
+		elseif projectile.destinationSpace == 1 and projectile.ownerId == 1 then
+			if not enemyRoomsSlugEnemy[roomAtLoc] or enemyRoomsSlugEnemy[roomAtLoc] < gasWeapons[projectile.extend.name] then
+				enemyRoomsSlugEnemy[roomAtLoc] = gasWeapons[projectile.extend.name]
+			end
+		end
+	end
+	return Defines.Chain.CONTINUE, beamHitType
 end)
 
 local resists_mind_control = mods.multiverse.resists_mind_control
@@ -3700,14 +3750,22 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
 	if shlegTable.amount then
 		if crewmem.bMindControlled then 
 			shlegTable.amount = math.max(0, shlegTable.amount - (Hyperspace.FPS.SpeedFactor/16 * 7.5))
-		elseif (crewmem.iShipId ~= crewmem.currentShipId and shipManager:HasAugmentation("LOCKED_AEA_SHLEG_MIND_GAS") > 0) or 
-				(crewmem.iShipId ~= crewmem.currentShipId and shipManager:HasAugmentation("LOCKED_AEA_SHLEG_MIND_GAS") > 0) or 
-				(crewmem.currentShipId == 0 and crewmem.iShipId == 0 and playerRoomsSlugEnemy[crewmem.iRoomId]) or 
-				(crewmem.currentShipId == 0 and crewmem.iShipId == 1 and playerRoomsSlugPlayer[crewmem.iRoomId]) or 
-				(crewmem.currentShipId == 1 and crewmem.iShipId == 0 and enemyRoomsSlugEnemy[crewmem.iRoomId]) or 
+		elseif (crewmem.iShipId ~= crewmem.currentShipId and shipManager:HasAugmentation("LOCKED_AEA_SHLEG_MIND_GAS") > 0) or
+				(crewmem.iShipId ~= crewmem.currentShipId and shipManager:HasAugmentation("LOCKED_AEA_SHLEG_MIND_GAS") > 0) or
+				(crewmem.iShipId ~= crewmem.currentShipId and shipManager:HasAugmentation("LOCKED_AEA_SHLEG_MIND_GAS_PLUS") > 0) or
+				(crewmem.currentShipId == 0 and crewmem.iShipId == 0 and playerRoomsSlugEnemy[crewmem.iRoomId]) or
+				(crewmem.currentShipId == 0 and crewmem.iShipId == 1 and playerRoomsSlugPlayer[crewmem.iRoomId]) or
+				(crewmem.currentShipId == 1 and crewmem.iShipId == 0 and enemyRoomsSlugEnemy[crewmem.iRoomId]) or
 				(crewmem.currentShipId == 1 and crewmem.iShipId == 1 and enemyRoomsSlugPlayer[crewmem.iRoomId]) then
-			
+			if crewmem.health.first < 1 then return end
 			shlegTable.amount = math.min(crewmem.health.first, shlegTable.amount + (Hyperspace.FPS.SpeedFactor/16 * 5))
+			if (crewmem.iShipId ~= crewmem.currentShipId and shipManager:HasAugmentation("LOCKED_AEA_SHLEG_MIND_GAS_PLUS") > 0) or
+				(crewmem.currentShipId == 0 and crewmem.iShipId == 0 and playerRoomsSlugEnemy[crewmem.iRoomId]) or
+				(crewmem.currentShipId == 0 and crewmem.iShipId == 1 and playerRoomsSlugPlayer[crewmem.iRoomId]) or
+				(crewmem.currentShipId == 1 and crewmem.iShipId == 0 and enemyRoomsSlugEnemy[crewmem.iRoomId]) or
+				(crewmem.currentShipId == 1 and crewmem.iShipId == 1 and enemyRoomsSlugPlayer[crewmem.iRoomId]) then
+				shlegTable.amount = math.min(crewmem.health.first, shlegTable.amount + (Hyperspace.FPS.SpeedFactor/16 * 5))
+			end
 			if shlegTable.amount >= crewmem.health.first then
 				if can_be_mind_controlled(crewmem) then
                     crewmem:SetMindControl(true)
@@ -3746,9 +3804,12 @@ script.on_render_event(Defines.RenderEvents.CREW_MEMBER_HEALTH, function(crewmem
 
         local barScale = (shlegTable.amount / crewmem.health.second) * 25
         local offset = {x = -13, y = -11}
-        if crewmem.iShipId == crewmem.currentShipId and crewmem.bSharedSpot then
+        if crewmem.iShipId == crewmem.currentShipId and not crewmem.bMindControlled and crewmem.bSharedSpot then
         	offset.y = -15
-        elseif crewmem.bSharedSpot then offset.y = -4 end
+        elseif crewmem.bSharedSpot then 
+        	offset.y = -4
+        	--print("SHARED") 
+        end
 		Graphics.CSurface.GL_PushMatrix()
 		Graphics.CSurface.GL_Translate(position.x + offset.x, position.y + offset.y, 0)
         Graphics.CSurface.GL_Scale(barScale,1,1)
@@ -3791,4 +3852,223 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
     		end
     	end
     end
+end)
+
+--local selectedArtillery1 = 1
+--local selectedArtillery1 = 2
+--local selectedArtillery1 = 3
+local nextWeapon = {}
+nextWeapon["ARTILLERY_REBEL_LASER"] = "ARTILLERY_REBEL_BEAM"
+nextWeapon["ARTILLERY_REBEL_BEAM"] = "ARTILLERY_REBEL_MISSILE"
+nextWeapon["ARTILLERY_REBEL_MISSILE"] = "ARTILLERY_REBEL_LASER"
+
+--[[script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	if Hyperspace.App.menu.shipBuilder.bOpen then
+		print("IN HANGER")
+		return
+		--[[for artillery in vter(shipManager.artillerySystems) do
+			local artyBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("ARTILLERY_REBEL_BEAM")
+			artillery.projectileFactory = Hyperspace.ProjectileFactory(artyBlueprint, 0)
+		end
+		--local artilleryCount = 0
+
+		--[[for system in vter(shipManager.vSystemList) do
+			print("SYSTEM: "..system.iSystemType.." IMAGE: "..system.interiorImageName)
+
+			if system.iSystemType == 11 then
+				artilleryCount = artilleryCount + 1
+				print("ARTILLERY: "..artilleryCount)
+
+				if artilleryCount == selectedArtillery1 then
+					print("SELECTED")
+				elseif artilleryCount - 3 == selectedArtillery2 then
+					print("SELECTED")
+				elseif artilleryCount - 6 == selectedArtillery2 then
+					print("SELECTED")
+				else
+					print("NOT SELECTED")
+				end
+			end
+		end]]
+	--[[end
+	print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+	for artillery in vter(shipManager.artillerySystems) do
+		local commandGui = Hyperspace.App.gui
+	    local equipment = commandGui.equipScreen
+	    local artyBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint(nextWeapon[artillery.projectileFactory.blueprint.name])
+    	equipment:AddWeapon(artyBlueprint, true, false)
+	    local artilleryWeapon = shipManager.weaponSystem.weapons[0]
+	    --print(artilleryWeapon.blueprint.name)
+	    artillery.projectileFactory = artilleryWeapon
+    	shipManager.weaponSystem:RemoveWeapon(0)
+    	--print("REPLACED ARTY")
+	end
+	--[[local commandGui = Hyperspace.App.gui
+    local equipment = commandGui.equipScreen
+    --local artyBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("ARTILLERY_REBEL_MISSILE")
+    local artyBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint(nextWeapon[shipManager.artillerySystems[0].projectileFactory.blueprint.name])
+    local shipManager = Hyperspace.ships.player
+    equipment:AddWeapon(artyBlueprint, true, false)
+    local artilleryWeapon = shipManager.weaponSystem.weapons[0]
+    print(artilleryWeapon.blueprint.name)
+    shipManager.artillerySystems[0].projectileFactory = artilleryWeapon
+    shipManager.weaponSystem:RemoveWeapon(0)]]--
+--end)]]
+
+
+--[[script.on_game_event("START_BEACON_REAL", false, function()
+
+    local commandGui = Hyperspace.App.gui
+    local equipment = commandGui.equipScreen
+    --local artyBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("ARTILLERY_REBEL_MISSILE")
+    local artyBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint(nextWeapon[shipManager.artillerySystems[0].projectileFactory.blueprint.name])
+    local shipManager = Hyperspace.ships.player
+    equipment:AddWeapon(artyBlueprint, true, false)
+    local artilleryWeapon = shipManager.weaponSystem.weapons[0]
+    print(artilleryWeapon.blueprint.name)
+    shipManager.artillerySystems[0].projectileFactory = artilleryWeapon
+    shipManager.weaponSystem:RemoveWeapon(0)
+	--shipManager.weaponSystem.weapons[0] = nil
+end)]]
+local function setArtySlot(blueprintName, slot)
+	--print("FUNCTION SLOT:"..slot.." BLUEPRINT:"..blueprintName)
+	if Hyperspace.ships.player.artillerySystems[slot].projectileFactory.blueprint.name == blueprintName then return end
+	--print("ACTUALLY SETTING")
+	local commandGui = Hyperspace.App.gui
+    local equipment = commandGui.equipScreen
+    local artyBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint(blueprintName)
+    local shipManager = Hyperspace.ships.player
+    equipment:AddWeapon(artyBlueprint, true, false)
+    local artilleryWeapon = shipManager.weaponSystem.weapons[0]
+    shipManager.artillerySystems[slot].projectileFactory = artilleryWeapon
+    shipManager.weaponSystem:RemoveWeapon(0)
+end
+
+script.on_game_event("AEA_BROADSIDE_CHOOSE_LASER_1", false, function()
+    setArtySlot("ARTILLERY_BROADSIDE_PIERCE", 0)
+end)
+script.on_game_event("AEA_BROADSIDE_CHOOSE_BEAM_1", false, function()
+    setArtySlot("ARTILLERY_BROADSIDE_FOCUS", 0)
+end)
+script.on_game_event("AEA_BROADSIDE_CHOOSE_MISSILE_1", false, function()
+    setArtySlot("ARTILLERY_BROADSIDE_MISSILE", 0)
+end)
+script.on_game_event("AEA_BROADSIDE_CHOOSE_ION_1", false, function()
+    setArtySlot("ARTILLERY_BROADSIDE_MINE", 0)
+end)
+
+
+script.on_game_event("AEA_BROADSIDE_CHOOSE_LASER_1", false, function()
+    setArtySlot("ARTILLERY_BROADSIDE_PIERCE", 1)
+end)
+script.on_game_event("AEA_BROADSIDE_CHOOSE_BEAM_2", false, function()
+    setArtySlot("ARTILLERY_BROADSIDE_FOCUS", 1)
+end)
+script.on_game_event("AEA_BROADSIDE_CHOOSE_MISSILE_2", false, function()
+    setArtySlot("ARTILLERY_BROADSIDE_MISSILE", 1)
+end)
+script.on_game_event("AEA_BROADSIDE_CHOOSE_ION_2", false, function()
+    setArtySlot("ARTILLERY_BROADSIDE_MINE", 1)
+end)
+
+
+script.on_game_event("AEA_BROADSIDE_CHOOSE_LASER_1", false, function()
+    setArtySlot("ARTILLERY_BROADSIDE_PIERCE", 2)
+end)
+script.on_game_event("AEA_BROADSIDE_CHOOSE_BEAM_3", false, function()
+    setArtySlot("ARTILLERY_BROADSIDE_FOCUS", 2)
+end)
+script.on_game_event("AEA_BROADSIDE_CHOOSE_MISSILE_3", false, function()
+    setArtySlot("ARTILLERY_BROADSIDE_MISSILE", 2)
+end)
+script.on_game_event("AEA_BROADSIDE_CHOOSE_ION_3", false, function()
+    setArtySlot("ARTILLERY_BROADSIDE_MINE", 2)
+end)
+
+local needSetArty = false
+--Run on game load
+script.on_init(function()
+	needSetArty = true
+end)
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	if Hyperspace.ships.player and needSetArty and shipManager:HasAugmentation("SHIP_AEA_BROADSIDE") > 0 and Hyperspace.playerVariables.aea_broadside_slot1 > 0 then
+		--print("SET slot1:"..Hyperspace.playerVariables.aea_broadside_slot1.. " slot2:"..Hyperspace.playerVariables.aea_broadside_slot2.." slot3:"..Hyperspace.playerVariables.aea_broadside_slot3)
+		needSetArty = flase
+		if Hyperspace.playerVariables.aea_broadside_slot1 == 1 then
+			setArtySlot("ARTILLERY_BROADSIDE_PIERCE", 0)
+		elseif Hyperspace.playerVariables.aea_broadside_slot1 == 2 then
+			setArtySlot("ARTILLERY_BROADSIDE_FOCUS", 0)
+		elseif Hyperspace.playerVariables.aea_broadside_slot1 == 3 then
+			setArtySlot("ARTILLERY_BROADSIDE_MISSILE", 0)
+		elseif Hyperspace.playerVariables.aea_broadside_slot1 == 4 then
+			setArtySlot("ARTILLERY_BROADSIDE_MINE", 0)
+		end
+		if Hyperspace.playerVariables.aea_broadside_slot2 == 1 then
+			setArtySlot("ARTILLERY_BROADSIDE_PIERCE", 1)
+		elseif Hyperspace.playerVariables.aea_broadside_slot2 == 2 then
+			setArtySlot("ARTILLERY_BROADSIDE_FOCUS", 1)
+		elseif Hyperspace.playerVariables.aea_broadside_slot2 == 3 then
+			setArtySlot("ARTILLERY_BROADSIDE_MISSILE", 1)
+		elseif Hyperspace.playerVariables.aea_broadside_slot2 == 4 then
+			setArtySlot("ARTILLERY_BROADSIDE_MINE", 1)
+		end
+		if Hyperspace.playerVariables.aea_broadside_slot3 == 1 then
+			setArtySlot("ARTILLERY_BROADSIDE_PIERCE", 2)
+		elseif Hyperspace.playerVariables.aea_broadside_slot3 == 2 then
+			setArtySlot("ARTILLERY_BROADSIDE_FOCUS", 2)
+		elseif Hyperspace.playerVariables.aea_broadside_slot3 == 3 then
+			setArtySlot("ARTILLERY_BROADSIDE_MISSILE", 2)
+		elseif Hyperspace.playerVariables.aea_broadside_slot3 == 4 then
+			setArtySlot("ARTILLERY_BROADSIDE_MINE", 2)
+		end
+	elseif Hyperspace.ships.player and needSetArty and shipManager.iShipId == 0 and Hyperspace.playerVariables.aea_broadside_slot1 > 0 then
+		--print("FAIL")
+		needSetArty = false
+	end
+end)
+
+local missileToggle = false
+local broadSideFocusBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("AEA_BROADSIDE_FOCUS_BEAM")
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+	if projectile.extend.name == "ARTILLERY_BROADSIDE_PIERCE" then
+		projectile.heading = -90
+        local spaceManager = Hyperspace.App.world.space
+		local laser = spaceManager:CreateLaserBlast(
+			weapon.blueprint,
+			Hyperspace.Pointf(projectile.position.x + 7, projectile.position.y),
+			projectile.currentSpace,
+			projectile.ownerId,
+			Hyperspace.Pointf(projectile.target.x + 7, projectile.target.y),
+			projectile.destinationSpace,
+			projectile.heading)
+		laser.entryAngle = projectile.entryAngle
+
+		projectile.position = Hyperspace.Pointf(projectile.position.x - 7, projectile.position.y)
+		projectile.target = Hyperspace.Pointf(projectile.target.x - 7, projectile.target.y)		
+	elseif projectile.extend.name == "ARTILLERY_BROADSIDE_MISSILE" then
+		projectile.heading = -90
+		if missileToggle then
+			projectile.position = Hyperspace.Pointf(projectile.position.x - 7 - 16, projectile.position.y)
+		else
+			projectile.position = Hyperspace.Pointf(projectile.position.x + 7 - 17, projectile.position.y)
+		end
+		missileToggle = not missileToggle
+	elseif projectile.extend.name == "ARTILLERY_BROADSIDE_MINE" then
+		projectile.heading = -90
+	elseif projectile.extend.name == "ARTILLERY_BROADSIDE_FOCUS" then
+        local spaceManager = Hyperspace.App.world.space
+		local beam1 = spaceManager:CreateBeam(
+			broadSideFocusBlueprint, 
+			projectile.position, 
+			projectile.currentSpace, 
+			projectile.ownerId, 
+			projectile.target, 
+			Hyperspace.Pointf(projectile.target.x, projectile.target.y + 1), 
+			projectile.destinationSpace, 
+			1, 
+			-0.1)
+		beam1.sub_end = Hyperspace.Pointf(projectile.position.x, projectile.position.y - 300)
+		projectile:Kill()
+	end
 end)

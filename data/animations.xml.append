@@ -3988,6 +3988,13 @@
 	<time>1</time>
 </anim>
 
+<animSheet name="aea_shleg_gas_extreme_tile" w="35" h="35" fw="35" fh="35">effects/aea_shleg_gas_extreme_tile.png</animSheet>
+<anim name="aea_shleg_gas_extreme_tile">
+	<sheet>aea_shleg_gas_extreme_tile</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
 <animSheet name="bomblauncher_aea_shleg_gas" w="528" h="41" fw="33" fh="41">weapon_shleg/bomblauncher_aea_shleg_gas.png</animSheet>
 <weaponAnim name="bomblauncher_aea_shleg_gas">
 	<sheet>bomblauncher_aea_shleg_gas</sheet>
@@ -4285,4 +4292,338 @@
 	<time>1</time>
 </anim>
 
+
+<!-- 
+*********************************************************************************************************
+                   SHLEG SLUGS
+*********************************************************************************************************
+-->
+<animSheet name="aea_shleg_sickle" w="315" h="455" fw="35" fh="35">people/aea_shleg_sickle_base.png</animSheet>
+
+<anim name="aea_shleg_sickle_clone">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="6" x="0" y="1" />
+	<time>0.75</time>
+</anim>
+
+<anim name="aea_shleg_sickle_death_right">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="7" x="2" y="0" />
+	<time>0.75</time>
+</anim>
+
+<anim name="aea_shleg_sickle_walk_down">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="4" x="0" y="12" />
+	<time>0.75</time>
+</anim>
+
+<anim name="aea_shleg_sickle_walk_right">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="4" x="4" y="12" />
+	<time>0.75</time>
+</anim>
+
+<anim name="aea_shleg_sickle_walk_up">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="4" x="0" y="11" />
+	<time>0.75</time>
+</anim>
+
+<anim name="aea_shleg_sickle_walk_left">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="4" x="4" y="11" />
+	<time>0.75</time>
+</anim>
+
+<anim name="aea_shleg_sickle_shoot_down">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="3" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_sickle_shoot_right">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="3" x="3" y="10" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_sickle_shoot_up">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="3" x="6" y="10" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_sickle_shoot_left">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="3" x="6" y="6" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_sickle_fire_down">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="4" x="0" y="9" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_sickle_fire_right">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="4" x="4" y="9" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_sickle_fire_up">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="4" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_sickle_fire_left">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="4" x="4" y="8" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_sickle_repair">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="9" x="0" y="7" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_sickle_punch_up">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="6" x="0" y="5" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_sickle_punch_down">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="6" x="0" y="6" />
+	<time>1.0</time>
+</anim>
+
+<anim name="aea_shleg_sickle_teleport">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="9" x="0" y="2" />
+	<time>0.5</time>
+</anim>
+
+<anim name="aea_shleg_sickle_type_right">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="4" x="0" y="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_shleg_sickle_type_left">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="4" x="4" y="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_shleg_sickle_type_up">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="4" x="0" y="3" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_shleg_sickle_type_down">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="4" x="4" y="3" />
+	<time>0.75</time>
+</anim>
+
+
+<anim name="aea_shleg_sickle_portrait">
+	<sheet>aea_shleg_sickle</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<!-- 
+*********************************************************************************************************
+                   SHLEG SHELLS
+*********************************************************************************************************
+-->
+
+<animSheet name="aea_shleg_sorrow" w="385" h="455" fw="35" fh="35">people/aea_shleg_sorrow_base.png</animSheet>
+<anim name="aea_shleg_sorrow_portrait">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_crewLaser">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="1" x="1" y="0" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_shleg_sorrow_clone">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="6" x="2" y="0" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_death_right">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="7" x="0" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_teleport">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="9" x="0" y="2" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_shleg_sorrow_repair">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="9" x="0" y="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_punch_down">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="5" x="0" y="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_punch_up">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="5" x="5" y="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_fire_right">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="4" x="0" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_fire_left">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="4" x="4" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_shoot_left">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="3" x="8" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_fire_down">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="4" x="0" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_fire_up">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="4" x="4" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_shoot_right">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="3" x="8" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_type_right">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="4" x="0" y="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_type_left">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="4" x="4" y="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_shoot_up">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="3" x="8" y="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_type_down">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="4" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_type_up">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="4" x="4" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_shoot_down">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="3" x="8" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shleg_sorrow_walk_left">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="11" x="0" y="9" />
+	<time>0.25</time>
+</anim>
+<anim name="aea_shleg_sorrow_walk_right">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="11" x="0" y="10" />
+	<time>0.25</time>
+</anim>
+<anim name="aea_shleg_sorrow_walk_up">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="11" x="0" y="11" />
+	<time>0.25</time>
+</anim>
+<anim name="aea_shleg_sorrow_walk_down">
+	<sheet>aea_shleg_sorrow</sheet>
+	<desc length="11" x="0" y="12" />
+	<time>0.25</time>
+</anim>
+
+</FTL>
+
+<FTL>
+	
+<animSheet name="aea_crystal_spike" w="35" h="35" fw="35" fh="35">effects/aea_crystal_spike.png</animSheet>
+<anim name="aea_crystal_spike">
+	<sheet>aea_crystal_spike</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="beam_amod_long" w="1100" h="94" fw="55" fh="94">weapons_arc/beam_amod_long.png</animSheet>
+<weaponAnim name="beam_amod_long">
+	<sheet>beam_amod_long</sheet>
+	<desc length="20" x="0" y="0" />
+	<chargedFrame>10</chargedFrame>
+	<fireFrame>11</fireFrame>
+	<firePoint x="35" y="42" />
+	<mountPoint x="5" y="62" />
+</weaponAnim>
+
+<animSheet name="artillery_broadside_pierce" w="462" h="66" fw="33" fh="66">weapons_aea/artillery_broadside_pierce.png</animSheet>
+<weaponAnim name="artillery_broadside_pierce">
+	<sheet>artillery_broadside_pierce</sheet>
+	<desc length="14" x="0" y="0" />
+	<chargedFrame>10</chargedFrame>
+	<fireFrame>12</fireFrame>
+	<firePoint x="16" y="39" />
+	<mountPoint x="16" y="52" />
+</weaponAnim>
+
+<animSheet name="artillery_broadside_focus" w="297" h="66" fw="33" fh="66">weapons_aea/artillery_broadside_focus.png</animSheet>
+<weaponAnim name="artillery_broadside_focus">
+	<sheet>artillery_broadside_focus</sheet>
+	<desc length="9" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="16" y="39" />
+	<mountPoint x="16" y="52" />
+	<chargeImage>weapons_aea/artillery_broadside_focus_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="artillery_broadside_missile" w="165" h="66" fw="33" fh="66">weapons_aea/artillery_broadside_missile.png</animSheet>
+<weaponAnim name="artillery_broadside_missile">
+	<sheet>artillery_broadside_missile</sheet>
+	<desc length="5" x="0" y="0" />
+	<chargedFrame>3</chargedFrame>
+	<fireFrame>4</fireFrame>
+	<firePoint x="16" y="39" />
+	<mountPoint x="16" y="52" />
+</weaponAnim>
+
+<animSheet name="artillery_broadside_mine" w="99" h="66" fw="33" fh="66">weapons_aea/artillery_broadside_mine.png</animSheet>
+<weaponAnim name="artillery_broadside_mine">
+	<sheet>artillery_broadside_mine</sheet>
+	<desc length="3" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="16" y="39" />
+	<mountPoint x="16" y="52" />
+	<chargeImage>weapons_aea/artillery_broadside_mine_glow.png</chargeImage>
+</weaponAnim>
 </FTL>

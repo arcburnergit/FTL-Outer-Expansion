@@ -20,7 +20,7 @@
 
 <event name="TRUE_VICTORY_CREW_AEA_BILL">
 	<text>"You know, I had no idea what I even was at the start of this, I was still naive and clueless, What I am now is all thanks to you, I'll be with you no matter what you choose."</text>
-	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_ACID_CREW1</unlockCustomShip>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW1</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="TRUE_VICTORY_LOAD" />
@@ -36,7 +36,7 @@
 </event>
 <event name="TRUE_VICTORY_CREW_AEA_TINY">
 	<text>Tiny just looks at you, you wonder if it even knows what the paragon is.</text>
-	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_ACID_CREW1_2</unlockCustomShip>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="TRUE_VICTORY_LOAD" />
@@ -44,7 +44,7 @@
 </event>
 <event name="TRUE_VICTORY_CREW_AEA_JAY">
 	<text>"Well, if you don't end up detonating the bomb, can I atleast try and disassemble it? I want to know how it works."</text>
-	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW2_2</unlockCustomShip>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW4</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="TRUE_VICTORY_LOAD" />
