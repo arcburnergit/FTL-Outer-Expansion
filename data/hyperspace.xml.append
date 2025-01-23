@@ -7967,14 +7967,14 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			<mod-append:achievement name="ACH_TRANS_AEA_BIRD">
 				<name>Gi Transport</name>
 				<secretDescription>Obtain the loot from the Gi loot transport.</secretDescription>
-				<description>Obtain the ??? from the Gi loot transport.</description>
+				<description>Obtain the Twin Drone from the Gi loot transport.</description>
 				<icon>ach_trans_aea_bird</icon>
 				<header>Loot Acquired</header>
 			</mod-append:achievement>
 			<mod-append:achievement name="ACH_TRANS_AEA_SHLEG">
 				<name>Anarchist Transport</name>
 				<secretDescription>Obtain the loot from the Anarchist loot transport.</secretDescription>
-				<description>Obtain the ??? from the Anarchist loot transport.</description>
+				<description>Obtain the 'Hypnos' Missile from the Anarchist loot transport.</description>
 				<icon>ach_trans_aea_shleg</icon>
 				<header>Loot Acquired</header>
 			</mod-append:achievement>
