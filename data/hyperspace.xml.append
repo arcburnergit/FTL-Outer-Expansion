@@ -5,6 +5,8 @@
   <mod-append:script>data/aea_scripts/aea_functions.lua</mod-append:script>
   <!--mod-append:script>data/aea_scripts/aea_functions_test.lua</mod-append:script-->
   <mod-append:script>data/aea_scripts/aeaIcon.lua</mod-append:script>
+  <mod-append:script>data/arc_scripts/arc_modathon.lua</mod-append:script>
+  <!--mod-append:script>data/aea_scripts/arc_test_light_nebula.lua</mod-append:script-->
 </mod:findLike>
 
 <mod:findLike type="ships" limit="1">
@@ -62,6 +64,12 @@ This enemy is protected by an Energy Shield.</tooltip>
             <name>icon_aea_shleg_mind_gas</name>
             <tooltip>INCULCATION GAS:
 This enemy ship is filled with a deadly neurotoxin which will build up and eventually mind control them for a short period of time and passively damage your crew over time for 3hp/s.
+Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
+        </mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_shleg_mind_gas</name>
+            <tooltip>SLUG SHELL REPAIR GEL:
+Breaches on this enemy will automatically be repaired even in the absence of crew. Also provides friendly crew with 3hp/s of healing and drains enemy crew at 3hp/s in empty rooms.
 Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
         </mod-append:shipIcon>
 	</mod:findLike>
@@ -378,7 +386,15 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 		</unlock>
 	</mod-append:ship>
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_BROADSIDE" b="false" c="false" secret="true">
+	<mod-append:ship name="PLAYER_SHIP_AEA_BROADSIDE" b="true" c="false" secret="true">
+		<!--unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock-->
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_BROADSIDE</shipReq>
+            <value>5</value>
+        </unlock>
 	</mod-append:ship>
 
 	<mod-append:ship name="PLAYER_SHIP_AMOD_LANIUS_BATTLE" b="false" c="false" secret="true">
@@ -1155,7 +1171,15 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BROADSIDE">
+		<hiddenAug>SHIP_REBEL</hiddenAug>
 		<hiddenAug>SHIP_AEA_BROADSIDE</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<systemLimit>10</systemLimit>
+		<customReactor maxLevel="35" />
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_BROADSIDE_2">
+		<hiddenAug>SHIP_REBEL</hiddenAug>
+		<hiddenAug>SHIP_AEA_BROADSIDE2</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<systemLimit>10</systemLimit>
 		<customReactor maxLevel="35" />
@@ -1360,6 +1384,1124 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 			<zoltan room="11"/>
 			<zoltan_peacekeeper room="12"/>
 		</crew>
+	</mod-append:customShip>
+
+	
+	<mod-append:customShip name="AEA_SHLEG_SCOUT_GAS">
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="18">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="19">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_SHLEG_BOMBER_GAS">
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="18">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="19">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_SHLEG_FRIGATE_GAS">
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="18">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="19">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_SHLEG_PROTECTOR_GAS">
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="18">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="19">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_SHLEG_ABDUCTOR_GAS">
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="18">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="19">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_SHLEG_TRANSPORT_GAS">
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="18">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="19">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_SHLEG_GUARD_GAS">
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="18">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="19">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_SHLEG_STATION_GAS">
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="18">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="19">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_SHLEG_ARTILLERY">
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="18">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="19">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="AEA_OLD_GUARD_BOSS">
@@ -2882,7 +4024,7 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 			<shipFriendlyFire>false</shipFriendlyFire>
 			<buttonText>COMBUST</buttonText>
 			<tooltip>[CD:5s  DURATION:21s  -40HP]
-				Kills all enemy crew in the room that are mind controlled. Slowly regenerates 42 health back.</tooltip>
+Deals 75 damage to all mind controlled enemy crew in the room, Cannot take enemy crew below 10 hp. Slowly regenerates 42 health back.</tooltip>
 			<cooldownColor r="170" g="206" b="39" />
 			<effectAnim>explosion_shell_death</effectAnim>
 			<selfHealth>-40</selfHealth>
@@ -2909,10 +4051,10 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 				<powerSound>smallExplosion</powerSound>
 			</powerSounds>
 			<buttonText>BOMB</buttonText>
-			<tooltip>[COOLDOWN:50s  DURATION:6s]
-				Deploy a Toxin bomb that lasts for 1 minute, enemy crew in the room will build up a status effect at a rate of 5hp/s.
+			<tooltip>[COOLDOWN:50s  DURATION:10s]
+				Deploy a Toxin bomb that lasts for 30 seconds, enemy crew in the room will build up a status effect at a rate of 5hp/s.
 				The status effect will mind control enemy crew once the buildup reaches their current health.
-				Will temporarily cloak and cease movements and attacks for 10 seconds, hiding from enemy crew.</tooltip>
+				Will temporarily cloak and cease movements and attacks for 10 seconds, hiding from enemy crew and healing at 2 hp/s.</tooltip>
 			<cooldownColor r="38" g="130" b="152" />
 			<friendlyFire>false</friendlyFire>
 			<persDamage>0</persDamage>
@@ -2925,6 +4067,7 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 				<finishSounds>
 					<finishSound>decloak</finishSound>
 				</finishSounds>
+				<healAmount>2</healAmount>
 				<moveSpeedMultiplier>0</moveSpeedMultiplier>
 				<validTarget>false</validTarget>
 				<animSheet baseVisible="true">aea_shleg_slug_cloak</animSheet>
@@ -2939,7 +4082,7 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 					<shipTarget>ALL</shipTarget>
 					<crewTarget>ENEMIES</crewTarget>
 					<droneTarget>CREW</droneTarget>
-					<duration>60</duration>
+					<duration>30</duration>
 					<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
 					<priority>999</priority>
 					<blackList load="LIST_CREW_GAS" />
@@ -4510,8 +5653,9 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			</temporaryEffect>
 		</powerEffect>
 	</mod-append:race>
+
+
 	<mod-append:race name="aea_shard_breaker">
-		<animSheet>crystal</animSheet>
 		<maxHealth>125</maxHealth>
 		<damageMultiplier>0.8</damageMultiplier>
 		<suffocationModifier>0.5</suffocationModifier>
@@ -4533,6 +5677,152 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 		  <repairSound>rockThud1</repairSound>
 		  <repairSound>rockThud2</repairSound>
 		  <repairSound>rockThud3</repairSound>
+		</repairSounds>
+		<powerEffect>
+			<cooldown>38</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<req>
+				<minHealth>20</minHealth>
+			</req>
+			<req type="enemy">
+				<maxHealth>115</maxHealth>
+			</req>
+			<powerSounds>
+				<powerSound>lockdown1</powerSound>
+				<powerSound>lockdown2</powerSound>  
+			</powerSounds>
+			<lockdown>true</lockdown>
+			<buttonText>BREAKDOWN</buttonText>
+			<tooltip>[COOLDOWN:38s  -25HP]
+				Locks down the occupied room for 12 seconds, preventing crew from moving in.
+				Enemy crew in the room take 5 damage per second.
+				Cannot attack enemy crew for the duration.
+			</tooltip>
+			<cooldownColor r="125" g="175" b="175" />
+			<effectAnim>explosion_crystal</effectAnim>
+			<powerCharges>2</powerCharges>
+			<initialCharges>2</initialCharges>
+			<chargesPerJump>1</chargesPerJump>
+			<selfHealth>-25</selfHealth>
+			<temporaryEffect>
+				<duration>12</duration>
+				<cooldownColor r="210" g="252" b="0188" />
+				<canFight>false</canFight>
+			</temporaryEffect>
+			<roomStatBoosts>
+				<statBoost name="trueHealAmount">
+					<boostType>FLAT</boostType>
+					<amount>-5</amount>
+					<shipTarget>CURRENT_ROOM</shipTarget>
+					<crewTarget>ENEMIES</crewTarget>
+					<affectsSelf>false</affectsSelf>
+					<duration>12</duration>
+					<priority>999</priority>
+					<maxStacks id="aea_shard_floor">1</maxStacks>
+					<roomAnim renderLayer="0">
+						<anim animType="default">aea_invisible</anim>
+						<tileAnim>aea_crystal_spike</tileAnim>
+					</roomAnim>
+				</statBoost>
+			</roomStatBoosts>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_shard_smasher">
+		<maxHealth>150</maxHealth>
+		<damageMultiplier>0.8</damageMultiplier>
+		<suffocationModifier>0.5</suffocationModifier>
+		<animBase>rock</animBase>
+		<deathSounds>
+			<deathSound>crystalDeath</deathSound>
+		</deathSounds>
+		<shootingSounds>
+			<shootingSound>rockThrow1</shootingSound>
+			<shootingSound>rockThrow2</shootingSound>
+			<shootingSound>rockThrow3</shootingSound>
+		</shootingSounds>
+		<shootingSounds>
+			<shootingSound>rockThrow1</shootingSound>
+			<shootingSound>rockThrow2</shootingSound>
+			<shootingSound>rockThrow3</shootingSound>
+		</shootingSounds>
+		<repairSounds animSoundFrame="5">
+		<repairSound>rockThud1</repairSound>
+		<repairSound>rockThud2</repairSound>
+		<repairSound>rockThud3</repairSound>
+		</repairSounds>
+		<powerEffect>
+			<cooldown>38</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<req>
+				<minHealth>20</minHealth>
+			</req>
+			<req type="enemy">
+				<maxHealth>115</maxHealth>
+			</req>
+			<powerSounds>
+				<powerSound>lockdown1</powerSound>
+				<powerSound>lockdown2</powerSound>  
+			</powerSounds>
+			<lockdown>true</lockdown>
+			<buttonText>BREAKDOWN</buttonText>
+			<tooltip>[COOLDOWN:38s  -7HP]
+				Locks down the occupied room for 12 seconds, preventing crew from moving in.
+				Enemy crew in the room take 5 damage per second.
+				Cannot attack enemy crew for the duration.
+			</tooltip>
+			<cooldownColor r="125" g="175" b="175" />
+			<effectAnim>explosion_crystal</effectAnim>
+			<powerCharges>2</powerCharges>
+			<initialCharges>2</initialCharges>
+			<chargesPerJump>1</chargesPerJump>
+			<selfHealth>-25</selfHealth>
+			<temporaryEffect>
+				<duration>12</duration>
+				<cooldownColor r="210" g="252" b="0188" />
+				<canFight>false</canFight>
+			</temporaryEffect>
+			<roomStatBoosts>
+				<statBoost name="trueHealAmount">
+					<boostType>FLAT</boostType>
+					<amount>-5</amount>
+					<shipTarget>CURRENT_ROOM</shipTarget>
+					<crewTarget>ENEMIES</crewTarget>
+					<affectsSelf>false</affectsSelf>
+					<duration>12</duration>
+					<priority>999</priority>
+					<maxStacks id="aea_shard_floor">1</maxStacks>
+					<roomAnim renderLayer="0">
+						<anim animType="default">aea_invisible</anim>
+						<tileAnim>aea_crystal_spike</tileAnim>
+					</roomAnim>
+				</statBoost>
+			</roomStatBoosts>
+		</powerEffect>
+	</mod-append:race>
+
+	<mod-append:race name="aea_shard_dawn">
+		<maxHealth>200</maxHealth>
+		<damageMultiplier>0.8</damageMultiplier>
+		<suffocationModifier>0.5</suffocationModifier>
+		<animBase>rock</animBase>
+		<deathSounds>
+			<deathSound>crystalDeath</deathSound>
+		</deathSounds>
+		<shootingSounds>
+			<shootingSound>rockThrow1</shootingSound>
+			<shootingSound>rockThrow2</shootingSound>
+			<shootingSound>rockThrow3</shootingSound>
+		</shootingSounds>
+		<shootingSounds>
+			<shootingSound>rockThrow1</shootingSound>
+			<shootingSound>rockThrow2</shootingSound>
+			<shootingSound>rockThrow3</shootingSound>
+		</shootingSounds>
+		<repairSounds animSoundFrame="5">
+		<repairSound>rockThud1</repairSound>
+		<repairSound>rockThud2</repairSound>
+		<repairSound>rockThud3</repairSound>
 		</repairSounds>
 		<powerEffect>
 			<cooldown>38</cooldown>
@@ -4648,6 +5938,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				</systemList>
 			</statBoost>
 		</statBoosts>
+		<icon>icon_aea_shleg_gel</icon>
 	</aug>
 	<aug name="LOCKED_AEA_SHLEG_GEL">
 		<function name="SLUG_GEL" value="1" useForReqs="true" warning="false" />
@@ -5127,6 +6418,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 </mod:findLike>
 
 <events>
+	<variable name="arc_test_light_nebula" op="set" val="0"/>
+
 	<variable name="aea_broadside_missile_chosen" op="set" val="0"/>
 	<variable name="aea_broadside_slot1" op="set" val="1"/>
 	<variable name="aea_broadside_slot2" op="set" val="1"/>
@@ -5175,6 +6468,12 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<variable name="aea_bird_roulette_result_start" op="set" val="0" />
 	<variable name="aea_bird_medicine" op="set" val="0" />
 	<variable name="aea_bird_questions" op="set" val="0" />
+
+	<metaVariable name="juke_aea_shleg" op="set" val="0" />
+	<variable name="rep_comb_aea_shleg" op="set" val="0" />
+	<variable name="ach_trans_aea_shleg" op="set" val="0" />
+	<variable name="aea_shleg_trading_station" op="set" val="0" />
+	<variable name="aea_shleg_radiant_dead" op="set" val="0" />
 
 	<metaVariable name="juke_aea_old_1" op="set" val="0" />
 	<metaVariable name="juke_aea_old_2" op="set" val="0" />
@@ -5889,6 +7188,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
   	<eventFile>sector_aea_cult</eventFile>
   	<eventFile>special_aea_bird</eventFile>
   	<eventFile>sector_aea_bird</eventFile>
+  	<eventFile>special_aea_shleg</eventFile>
+  	<eventFile>sector_aea_shleg</eventFile>
 
   	<eventFile>special_aea_old</eventFile>
   	<eventFile>sector_aea_old_1</eventFile>
@@ -6668,6 +7969,13 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				<secretDescription>Obtain the loot from the Gi loot transport.</secretDescription>
 				<description>Obtain the ??? from the Gi loot transport.</description>
 				<icon>ach_trans_aea_bird</icon>
+				<header>Loot Acquired</header>
+			</mod-append:achievement>
+			<mod-append:achievement name="ACH_TRANS_AEA_SHLEG">
+				<name>Anarchist Transport</name>
+				<secretDescription>Obtain the loot from the Anarchist loot transport.</secretDescription>
+				<description>Obtain the ??? from the Anarchist loot transport.</description>
+				<icon>ach_trans_aea_shleg</icon>
 				<header>Loot Acquired</header>
 			</mod-append:achievement>
 			<mod-append:achievement name="ACH_TRANS_AEA_OLD_1">

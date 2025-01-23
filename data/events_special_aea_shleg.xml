@@ -1,0 +1,533 @@
+<FTL>
+
+<event name="MORALITY_UPDATE_AEA_SHLEG">
+	<text>[NOTORIETY INCREASED - ANARCHIST]
+	Your actions here, justifiable or not, will not reflect well in the eyes of the Geniocracy or its citizens. Continuously perform actions like this and you might start to see negative reactions from the Anarchists and their allies.</text>
+	<variable name="rep_shell" op="add" val="1" />
+</event>
+<event name="MORALITY_UPDATE_AEA_SHLEG_FIGHT">
+	<text>[NOTORIETY INCREASED - ANARCHIST]
+	Your actions here, justifiable or not, will not reflect well in the eyes of the Geniocracy or its citizens. Continuously perform actions like this and you might start to see negative reactions from the Anarchists and their allies.</text>
+	<variable name="rep_shell" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<event name="MORALITY_REMOVE_AEA_SHLEG">
+	<text>[NOTORIETY DECREASED - ANARCHIST]
+	You have done a good deed here in the eyes of the Anarchists. If you've gained notoriety from other actions in the past, you're more likely to be forgiven for them.</text>
+	<variable name="rep_shell" op="add" val="-1" />
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					AEA_SHLEG
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+
+<textList name="TEXT_START_AEA_SHLEG">
+	<text>You have arrived in Anarchist Space. The Anarchists aren't strictly against federation but they aren't big fans of it either, they have enough to worry about with their rebellion against the Kleptocracy and Geniocracy.</text>
+	<text>You have arrived in Anarchist Space. Lots of the people here look a the federation with distrust, you'd be better to play it safe.</text>
+	<text>You have arrived in Anarchist Space. You won't find many allies here, you're just lucky they're slugs and shells and such don't have as much of a problem with the federation.</text>
+</textList>
+<event name="START_AEA_SHLEG">
+	<metaVariable name="juke_aea_shleg" op="set" val="1" />
+	<preventQuest />
+	<beaconType id="map_icon_start" global="false">
+		<color r="46" g="252" b="51" a="1" />
+	</beaconType>
+	<text load="TEXT_START_AEA_SHLEG" />
+	<ship load="SHIP_GUARD_AEA_SHLEG" hostile="false" />
+	<changeBackground>BACK_SECTOR_SHELL</changeBackground>
+	<playSound>lightspeed</playSound>
+	<customFleet right="false" firing="true" autoDarkening="true">CUSTOM_FLEET_SHELL</customFleet>
+	<choice hidden="true" req="rep_comb_aea_shleg" lvl="-999" max_lvl="1" max_group="0" blue="false">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_SHLEG" />
+	</choice>
+	<choice hidden="true" req="rep_comb_aea_shleg" lvl="2" max_lvl="999" max_group="0" blue="false">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_SHLEG_CRIMINAL" />
+	</choice>
+</event>
+
+<event name="START_AEA_SHLEG_UNIQUE">
+	<metaVariable name="juke_aea_shleg" op="set" val="1" />
+	<preventQuest />
+	<beaconType id="map_icon_start" global="false">
+		<color r="46" g="252" b="51" a="1" />
+	</beaconType>
+	<text load="TEXT_START_AEA_SHLEG" />
+	<ship load="SHIP_GUARD_AEA_SHLEG" hostile="false" />
+	<changeBackground>BACK_SECTOR_SHELL</changeBackground>
+	<playSound>lightspeed</playSound>
+	<customFleet right="false" firing="true" autoDarkening="true">CUSTOM_FLEET_SHELL</customFleet>
+	<choice hidden="true" req="rep_comb_aea_shleg" lvl="-999" max_lvl="0" max_group="0" blue="false">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_SHLEG" />
+	</choice>
+	<choice hidden="true" req="rep_comb_aea_shleg" lvl="1" max_lvl="999" max_group="0" blue="false">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_SHLEG_CRIMINAL" />
+	</choice>
+</event>
+
+<event name="GUARD_AEA_SHLEG_CRIMINAL">
+	<text>Something seems off here. Usually, the Anarchists wouldn't bat an eye at ships like yours, but now, you catch suspicious chatter on the guard ship.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>It seems your track record has caught up to you. The guard's crew have heard enough of the crimes you've been committing, and they don't intend to let you into the sector!</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="GUARD_AEA_SHLEG">
+	<text>The Anarchists value well maintained defenses not only on their ships but their sector as a whole. As such, a guard ship has been deployed to protect the entrance beacon. Fortunately, they don't seem to mind you being here.</text>
+	<choice>
+		<text>Ignore the guard.</text>
+		<event>
+			<text>You now have some time to do something on the ship.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Contact the guard.</text>
+		<event load="GUARD_AEA_SHLEG_INTERACT" />
+	</choice>
+	<choice>
+		<text>Attack the guard.</text>
+		<event>
+			<text id="text_guard_attack" />
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="MORALITY_UPDATE_AEA_SHLEG_FIGHT" />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<textList name="TEXT_GUARD_AEA_SHLEG_CONTACT">
+	<text>A small Shell appears on the screen, their singular eye locked onto you, waiting.</text>
+	<text>The Slug captain is surprised to receive a hail from you. Still, he accepts your hail.</text>
+</textList>
+<event name="GUARD_AEA_SHLEG_INTERACT">
+	<text load="TEXT_GUARD_AEA_SHLEG_CONTACT" />
+	<choice hidden="true">
+		<text>Request supplies.</text>
+		<event load="GUARD_AEA_SHLEG_REQUEST" />
+	</choice>
+	<choice hidden="true">
+		<text>Demand supplies.</text>
+		<event load="GUARD_AEA_SHLEG_DEMAND" />
+	</choice>
+	<choice req="weapons" lvl="5" hidden="true">
+		<text>(Upg. Weapons) Threaten the guard.</text>
+		<event load="GUARD_AEA_SHLEG_THREATEN" />
+	</choice>
+	<choice req="LIST_CREW_AEA_SHLEG" hidden="true">
+		<text>(Anarchist Crew) Request assistance.</text>
+		<event>
+			<text>"Ah, welcome back to thhhhe sector. My apologies, I do not often see our kind aboard Federation ships."</text>
+			<autoReward level="LOW">stuff</autoReward>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Change your mind and leave the guard alone.</text>
+		<event>
+			<text>You apologize and end comms. The guard makes no attempts to communicate further.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<eventList name="GUARD_AEA_SHLEG_REQUEST">
+	<event>
+		<text>"Sorry, but I cannot give anythhhhhhing." The Anarchist mutes your ship.</text>
+	</event>
+	<event>
+		<text>"Sorry, but I cannot give anythhhhhhing." The Anarchist mutes your ship.</text>
+	</event>
+	<event>
+		<text>To your surprise, the Anarchists transfer over some supplies. You wonder if they're doing it out of kindness, or out of fear.</text>
+		<autoReward level="LOW">stuff</autoReward>
+	</event>
+</eventList>
+<eventList name="GUARD_AEA_SHLEG_DEMAND">
+	<event>
+		<text>This guard isn't putting up with your demands. They arm their weapons, and you should do the same.</text>
+		<ship hostile="true" />
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="MORALITY_UPDATE_AEA_SHLEG_FIGHT" />
+		</choice>
+	</event>
+	<event>
+		<text>Whether Fearful of you or they're just usually kind, the Anarchists transfer over the supplies willingly.</text>
+		<autoReward level="MED">stuff</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="MORALITY_UPDATE_AEA_SHLEG" />
+		</choice>
+	</event>
+</eventList>
+<eventList name="GUARD_AEA_SHLEG_THREATEN">
+	<event>
+		<text>This guard isn't putting up with your demands. They arm their weapons, and you should do the same.</text>
+		<ship hostile="true" />
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="MORALITY_UPDATE_AEA_SHLEG_FIGHT" />
+		</choice>
+	</event>
+	<event>
+		<text>Whether Fearful of you or they're just usually kind, the Anarchists transfer over the supplies willingly.</text>
+		<autoReward level="MED">stuff</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="MORALITY_UPDATE_AEA_SHLEG" />
+		</choice>
+	</event>
+	<event>
+		<text>Whether Fearful of you or they're just usually kind, the Anarchists transfer over the supplies willingly.</text>
+		<autoReward level="MED">stuff</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="MORALITY_UPDATE_AEA_SHLEG" />
+		</choice>
+	</event>
+</eventList>
+
+<ship name="SHIP_GUARD_AEA_SHLEG" auto_blueprint="LIST_SHIPS_AEA_SHLEG_GUARDS">
+	<surrender min="7" max="8" load="GUARD_SIGNAL" />
+	<destroyed load="GUARD_AEA_SHLEG_DESTROY" />
+	<deadCrew load="GUARD_AEA_SHLEG_DEADCREW" />
+</ship>
+
+<event name="GUARD_AEA_SHLEG_DESTROY">
+	<text>You have defeated the Anarchist guard. Whatever might have been in their cargo has for certain been destroyed, but you can at least salvage some supplies from the ship.</text>
+	<autoReward level="MED">standard</autoReward>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_SHLEG_FOLLOWUP" />
+	</choice>
+</event>
+<event name="GUARD_AEA_SHLEG_DEADCREW">
+	<text>You have defeated the Anarchist guard. Without crew on board to stop you, you can investigate their cargo. You find a weapon to bring back to the ship, and move on to scrap their hull.</text>
+	<autoReward level="MED">standard</autoReward>
+	<weapon name="GIFTLIST_AEA_SHLEG" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_SHLEG_FOLLOWUP" />
+	</choice>
+</event>
+
+<ship name="SHIP_AEA_SHLEG_REINFORCEMENTS" auto_blueprint="LIST_SHIPS_AEA_SHLEG_FIGHT">
+	<destroyed load="DESTROYED_REINFORCEMENTS" />
+	<deadCrew load="DEADCREW_REINFORCEMENTS" />
+</ship>
+<event name="GUARD_AEA_SHLEG_FOLLOWUP">
+	<noQuestText />
+	<removeHazards />
+	<clearCustomFleet />
+	<text>By killing the Anarchist guard, you have no doubt caused them to dispatch reinforcements to track you down. Watch your step as you explore the sector.</text>
+	<quest event="REINFORCEMENTS_AEA_SHLEG">
+		<nebulaBeacon>true</nebulaBeacon>
+		<nextSector>false</nextSector>
+		<nebulaEvent>NEBULA_REINFORCEMENTS_AEA_SHLEG</nebulaEvent>
+		<createNebula>false</createNebula>
+		<aggressive>2</aggressive>
+	</quest>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event />
+	</choice>
+</event>
+<event name="REINFORCEMENTS_AEA_SHLEG">
+	<preventQuest />
+	<beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
+		<color r="200" g="55" b="82" a="1" />
+		<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<text>It takes a fair bit to convince the Anarchists to abandon their timid ways and engage a Federation ship like yours head on, but what else can you expect after you storm into this sector and kill their guard?</text>
+	<ship load="SHIP_AEA_SHLEG_REINFORCEMENTS" hostile="true" />
+	<environment type="PDS" target="player" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+<event name="NEBULA_REINFORCEMENTS_AEA_SHLEG">
+	<preventQuest />
+	<beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
+		<color r="200" g="55" b="82" a="1" />
+		<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<text>It takes a fair bit to convince the Anarchists to abandon their timid ways and engage a Federation ship like yours head on, but what else can you expect after you storm into this sector and kill their guard?</text>
+	<ship load="SHIP_AEA_SHLEG_REINFORCEMENTS" hostile="true" />
+	<img back="BACK_EVENT_LIGHTNEBULA" />
+	<status type="loss" target="player" system="sensors" amount="1" />
+	<environment type="PDS" target="player" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					FED
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<eventList name="STORELIST_AEA_SHLEG">
+	<event load="STOREEVENT_TERRAFORMING" />
+	<event load="STOREEVENT_WEATHER_STUCK" />
+	
+	<event load="STOREEVENT_VAMPWEED_SPORES" />
+	<event load="STOREEVENT_VAMPWEED_TERRAFORMER" />
+	
+	<event load="STOREEVENT_COALITION_FORCE" />
+
+	<event load="STOREEVENT_SLUG_ASTEROIDS" />
+	
+	<event load="STOREEVENT_SHELL_BOWLING" />
+</eventList>
+
+<eventList name="NEBULA_STORELIST_AEA_SHLEG">
+	<event load="NEBULA_STOREEVENT_DAMAGED" />
+	
+	<event load="NEBULA_STOREEVENT_ZOLTAN_MERCHANT" />
+	
+	<event load="NEBULA_STOREEVENT_AUTO_VENDER" />
+	
+	<event load="NEBULA_STOREEVENT_SLUG_TRAP" />
+	<event load="NEBULA_STOREEVENT_SLUG_HYPNO" />
+	<event load="NEBULA_STOREEVENT_SLUG_SHADY" />
+	
+	<event load="NEBULA_STOREEVENT_PIRATE_ODDSHOP" />
+	
+	<event load="NEBULA_STOREEVENT_SHELL_BIOLOGIST" />
+	<event load="NEBULA_STOREEVENT_SHELL_MEDICAL" />
+</eventList>
+
+<ship name="SHIP_AEA_SHLEG_TRANSPORT_LOOT" auto_blueprint="AEA_SHLEG_TRANSPORT">
+	<escape timer="40" min="999" max="999">
+		<text>They look like they don't want to fight. They are trying to escape.</text>
+		<ship hostile="true" />
+	</escape>
+	<destroyed load="TRANSPORT_DESTROYED" />
+	<deadCrew load="TRANSPORT_CAPTURE_AEA_SHLEG" />
+</ship>
+
+<event name="NEBULA_TRANSPORT_AEA_SHLEG_LOOT" unique="true">
+	<preventQuest />
+	<beaconType id="map_icon_transport" global="true" req="LOOT_COMPASS">
+		<color r="138" g="237" b="31" a="1"/>
+		<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+    <environment type="nebula"/>
+	<text>This beacon hosts an Anarchist transport. It's safe to bet the ship is most likely carrying some special tech. If you can kill the crew onboard, the cargo will be yours.</text>
+	<ship load="SHIP_AEA_SHLEG_TRANSPORT_LOOT" hostile="false" />
+	<choice>
+		<text>Demand the surrender of the goods.</text>
+		<event>
+			<text>You prepare to secure the cargo by force.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+        <text>Avoid the ship.</text>
+        <event>
+            <text>The ship stays outside your weapons range, and eventually jumps away.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+        </event>
+    </choice>
+</event>
+<event name="TRANSPORT_CAPTURE_AEA_SHLEG" unique="true">
+	<text>The crew is dead, leaving you with the ship. Its cargo is yours for the taking. Aboard is the special tech you expected, which you bring back to your ship.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<weapon name="LIST_LOOT_AEA_SHLEG" />
+	<variable name="ach_trans_aea_shleg" op="set" val="1" />
+	<achievement>ACH_TRANS_AEA_SHLEG</achievement>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					FED
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="DESTROYED_AEA_SHLEG">
+	<text load="TEXT_DESTROYED_AEA_SHLEG" />
+	<autoReward level="MED">standard</autoReward>
+</event>
+<textList name="TEXT_DESTROYED_AEA_SHLEG">
+	<text>For all the Slugs' efforts, they were not able to defeat you. The victor of this battle, you indulge yourself by scrapping their ship.</text>
+	<text>The Slug ship is no more. You scrap the wreckage.</text>
+	<text>At last, the traitorous nebula-dwellers have been silenced. You scrap the ship.</text>
+	<text>The Shell ship explodes, sending clouds of poisonous gas out into space. Hopefully there are no stations with open airlocks nearby...</text>
+	<text>Despite all their defensive measures, the Shell ship has been defeated. You scrap the remains.</text>
+	<text>The Shells are known for their well-maintained defenses, but your weaponry has proven effective once again.</text>
+</textList>
+
+<event name="DEAD_CREW_AEA_SHLEG">
+	<text load="TEXT_DEAD_CREW_AEA_SHLEG" />
+	<autoReward level="HIGH">standard</autoReward>
+</event>
+<textList name="TEXT_DEAD_CREW_AEA_SHLEG">
+    <text>You find the gasping corpse of the Slug Captain quivering on the ground. He utters one last word, "Sssshit", then collapses and dies.</text>
+	<text>You feel no remorse for the Slug crew, though you do wish their ship smelled better.</text>
+	<text>The interior of the ship is now coated in what appears to be a mixture of slime and mashed up Slug intestines. Yuck.</text>
+	<text>Fighting Shells is dangerous considering how well protected they are, but you've cleared the ship of crew. Their scrap is yours.</text>
+	<text>The Shell ship has been neutralized. You scrap the ship.</text>
+</textList>
+
+<event name="ESCAPE_AEA_SHLEG">
+	<text load="TEXT_ESCAPE_AEA_SHLEG" />
+</event>
+<textList name="TEXT_ESCAPE_AEA_SHLEG">
+	<text>It appears the Shell ship has reconsidered staying around to finish this fight. They're trying to escape!</text>
+</textList>
+
+<eventList name="GOTAWAY_AEA_SHLEG">
+	<event load="GOTAWAY_AEA_SHLEG_GENERIC" />
+	<event load="GOTAWAY_AEA_SHLEG_GENERIC" />
+	
+	<event load="GOTAWAY_AEA_SHLEG_REMAINS" />
+</eventList>
+<event name="GOTAWAY_AEA_SHLEG_GENERIC">
+	<text load="TEXT_GOTAWAY_AEA_SHLEG" />
+</event>
+<textList name="TEXT_GOTAWAY_AEA_SHLEG">
+	<text>The Shell ship jumps away, leaving you behind at the beacon.</text>
+</textList>
+<event name="GOTAWAY_AEA_SHLEG_REMAINS">
+	<text>The Shell ship jumps away. At first you're disappointed, but then you realise a portion of scrap matter has been left behind from the fight. It's not much, but it helps soften the blow of your failure.</text>
+	<autoReward level="LOW">scrap_only</autoReward>
+</event>
+
+<event name="SURRENDER_AEA_SHLEG">
+	<text load="TEXT_SURRENDER_AEA_SHLEG" />
+	<choice>
+		<text>Accept their surrender.</text>
+		<event load="SURRENDER_AEA_SHLEG_ACCEPT" />
+	</choice>
+	<choice req="LIST_CREW_AEA_SHLEG">
+		<text>(Anarchist Crew) Negotiate a different deal.</text>
+		<event name="SURRENDER_AEA_SHLEG_STONKS">
+			<ship hostile="false" />
+			<autoReward level="RANDOM">stuff</autoReward>
+		</event>
+	</choice>
+	<choice>
+		<text load="GENERIC_SURRENDER_CHOICE_NOMERCY" />
+		<event />
+	</choice>
+</event>
+<textList name="TEXT_SURRENDER_AEA_SHLEG">
+    <text>The Slug captain hails you. "Oh, your highnessss, you are ssso brave and truly the greatessst warrior to have ever lived. Will you ssspare ussssss, so that we may sssshare your tale?"</text>
+	<text>"Ok, I ssssee no reassson to lie right now. We're kinda ssssscrewed unlesssss you let usss go. We'll give you sssome junk if you agree."</text>
+	<text>Slugs are known for their cowardice, and as expected the Slug ship here has given up and surrendered.</text>
+	<text>"Dear godsss, I did not expect thisss! I applaud you for the sssuprissse. Now let ussss go."</text>
+	<text>"Please, you are too strong! We do not want to fight! Let us live!"</text>
+	<text>Unlike their Slug cousins, Shells aren't very greedy. They'd much rather pay some scrap instead of dying. Will you accept their offer?</text>
+	<text>You receive a hail from the Shell captain. "Yes yes, your guns are very good. Let us go, we have scrap!"</text>
+</textList>
+
+<event name="SURRENDER_AEA_SHLEG_ACCEPT">
+	<ship hostile="false" />
+	<autoReward level="RANDOM">droneparts</autoReward>
+</event>
+
+<event name="AEA_SHLEG_TEST_FIGHT">
+    <text>TEST.</text>
+    <ship load="SHIP_AEA_SHLEG_ALL" hostile="true"/>
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event load="COMBAT_CHECK"/>
+    </choice>
+</event>
+
+<ship name="SHIP_AEA_SHLEG_ALL" auto_blueprint="LIST_SHIPS_AEA_SHLEG_ALL">
+	<surrender chance="0.5" min="2" max="3" load="SURRENDER_AEA_SHLEG" />
+	<escape chance="0.5" min="3" max="4" load="ESCAPE_AEA_SHLEG" />
+	<gotaway load="GOTAWAY_AEA_SHLEG" />
+	<destroyed load="DESTROYED_AEA_SHLEG" />
+	<deadCrew load="DEAD_CREW_AEA_SHLEG" />
+</ship>
+
+<ship name="SHIP_AEA_SHLEG_GENERIC" auto_blueprint="LIST_SHIPS_AEA_SHLEG_GENERIC">
+	<surrender chance="0.5" min="2" max="3" load="SURRENDER_AEA_SHLEG" />
+	<escape chance="0.5" min="3" max="4" load="ESCAPE_AEA_SHLEG" />
+	<gotaway load="GOTAWAY_AEA_SHLEG" />
+	<destroyed load="DESTROYED_AEA_SHLEG" />
+	<deadCrew load="DEAD_CREW_AEA_SHLEG" />
+</ship>
+
+<ship name="SHIP_AEA_SHLEG_FIGHT" auto_blueprint="LIST_SHIPS_AEA_SHLEG_FIGHT">
+	<surrender chance="0.5" min="2" max="3" load="SURRENDER_AEA_SHLEG" />
+	<escape chance="0.5" min="3" max="4" load="ESCAPE_AEA_SHLEG" />
+	<gotaway load="GOTAWAY_AEA_SHLEG" />
+	<destroyed load="DESTROYED_AEA_SHLEG" />
+	<deadCrew load="DEAD_CREW_AEA_SHLEG" />
+</ship>
+
+<ship name="SHIP_AEA_SHLEG_STATION" auto_blueprint="LIST_SHIPS_AEA_SHLEG_STATIONS">
+	<surrender chance="0.5" min="2" max="3" load="SURRENDER_AEA_SHLEG" />
+	<destroyed load="DESTROYED_AEA_SHLEG" />
+	<deadCrew load="DEAD_CREW_AEA_SHLEG" />
+</ship>
+
+</FTL>

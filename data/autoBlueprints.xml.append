@@ -165,6 +165,8 @@
     <mod-append:name>aea_cult_tiny_s13</mod-append:name>
     <mod-append:name>aea_cult_tiny_s14</mod-append:name>
     <mod-append:name>aea_cult_tiny_s15</mod-append:name>
+    <mod-append:name>aea_shleg_sickle</mod-append:name>
+    <mod-append:name>aea_shleg_sorrow</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ALIENS">
@@ -218,6 +220,10 @@
     <mod-append:name>aea_bird_avali</mod-append:name>
     <mod-append:name>aea_bird_illuminant</mod-append:name>
     <mod-append:name>aea_bird_unique</mod-append:name>
+    <mod-append:name>aea_shleg_slug</mod-append:name>
+    <mod-append:name>aea_shleg_shell</mod-append:name>
+    <mod-append:name>aea_shleg_sickle</mod-append:name>
+    <mod-append:name>aea_shleg_sorrow</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ENGI">
@@ -251,6 +257,8 @@
     <mod-append:name>aea_cult_tiny_s14</mod-append:name>
     <mod-append:name>aea_cult_tiny_s15</mod-append:name>
     <mod-append:name>aea_bird_unique</mod-append:name>
+    <mod-append:name>aea_shleg_sickle</mod-append:name>
+    <mod-append:name>aea_shleg_sorrow</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_PARAGON_UNIQUE">
@@ -278,6 +286,8 @@
     <mod-append:name>aea_cult_tiny_s14</mod-append:name>
     <mod-append:name>aea_cult_tiny_s15</mod-append:name>
     <mod-append:name>aea_bird_unique</mod-append:name>
+    <mod-append:name>aea_shleg_sickle</mod-append:name>
+    <mod-append:name>aea_shleg_sorrow</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_GAS">
@@ -306,6 +316,10 @@
     <mod-append:name>aea_cult_wizard_s13</mod-append:name>
     <mod-append:name>aea_cult_wizard_s14</mod-append:name>
     <mod-append:name>aea_cult_wizard_s15</mod-append:name>
+    <mod-append:name>aea_shleg_slug</mod-append:name>
+    <mod-append:name>aea_shleg_shell</mod-append:name>
+    <mod-append:name>aea_shleg_sickle</mod-append:name>
+    <mod-append:name>aea_shleg_sorrow</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_METAL">
@@ -392,9 +406,11 @@
 
 <mod:findName type="blueprintList" name="LIST_CREW_SLUG">
     <mod-append:name>aea_shleg_slug</mod-append:name>
+    <mod-append:name>aea_shleg_sickle</mod-append:name>
 </mod:findName>
 <mod:findName type="blueprintList" name="LIST_CREW_SHELL">
     <mod-append:name>aea_shleg_shell</mod-append:name>
+    <mod-append:name>aea_shleg_sorrow</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_VAMPWEED">
@@ -459,10 +475,6 @@
     <mod-append:name>aea_old_unique_5</mod-append:name>
 </mod:findName>
 
-<mod:findName type="blueprintList" name="LIST_CREW_GAS">
-    <mod-append:name>aea_shleg_shell</mod-append:name>
-    <mod-append:name>aea_shleg_slug</mod-append:name>
-</mod:findName>
 <mod:findName type="blueprintList" name="BLUELIST_GAS">
     <mod-append:name>LOCKED_AEA_SHLEG_MIND_GAS</mod-append:name>
     <mod-append:name>AEA_SHLEG_MIND_GAS</mod-append:name>
@@ -525,7 +537,12 @@
 	<name>aea_cult_tiny_s14</name>
 	<name>aea_cult_tiny_s15</name>
 </blueprintList>
-
+<blueprintList name="LIST_CREW_AEA_SHLEG">
+	<name>aea_shleg_slug</name>
+	<name>aea_shleg_shell</name>
+	<name>aea_shleg_sorrow</name>
+	<name>aea_shleg_sickle</name>
+</blueprintList>
 
 <blueprintList name="AEA_CULTISTS">
 	<name>aea_cult_wizard</name>
@@ -704,6 +721,22 @@
 <blueprintList name="LIST_LOOT_AEA_BIRD">
 	<name>AEA_COMBAT_BIRD_MULTI_2_LOOT_LASER</name>
 </blueprintList>
+
+<blueprintList name="GIFTLIST_WEAPONS_AEA_SHLEG">
+	<name>AEA_SHLEG_BOMB</name>
+	<name>AEA_SHLEG_MISSILES</name>
+	<name>LASER_HULL_1</name>
+	<name>LASER_HULL_2</name>
+	<name>BEAM_HULL</name>
+	<name>BEAM_BIO</name>
+	<name>BEAM_BIO_CHAIN</name>
+	<name>LASER_BIO</name>
+	<name>BEAM_STUN</name>
+</blueprintList>
+<blueprintList name="LIST_LOOT_AEA_SHLEG">
+	<name>AEA_SHLEG_MISSILES_LOOT</name>
+</blueprintList>
+
 
 <blueprintList name="GIFTLIST_WEAPONS_SHARD">
     <name>AEA_LASER_NECRO_1</name>
@@ -1017,7 +1050,7 @@
 		<cloaking power="1" max="1" room="2" start="false" />
 		<doors power="2" max="3" room="7" start="true" />
 		<engines power="1" max="3" room="1" start="true" />
-		<hacking power="1" max="1" room="5" start="false" />
+		<mind power="1" max="1" room="5" start="false" />
 		<oxygen power="1" max="2" room="6" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="10" room="3" start="true" />
@@ -1043,7 +1076,6 @@
 		<doors power="2" max="3" room="9" start="true" />
 		<drones power="2" max="8" room="8" start="false" />
 		<engines power="1" max="3" room="0" start="true" />
-		<hacking power="1" max="2" room="6" start="false" />
 		<mind power="1" max="1" room="7" start="false" />
 		<oxygen power="1" max="2" room="5" start="true" />
 		<pilot power="1" max="1" room="3" start="true" />
@@ -1066,7 +1098,7 @@
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="2" room="6" start="false" />
+		<cloaking power="1" max="1" room="6" start="false" />
 		<doors power="2" max="2" room="4" start="true" />
 		<engines power="1" max="3" room="5" start="true" />
 		<mind power="1" max="2" room="7" start="false" />
@@ -1093,11 +1125,11 @@
 	<systemList>
 		<artillery power="1" max="2" room="2" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" />
 		<artillery power="1" max="2" room="3" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" />
-		<cloaking power="1" max="2" room="10" start="false" />
+		<cloaking power="1" max="1" room="10" start="false" />
 		<doors power="2" max="3" room="9" start="true" />
 		<drones power="2" max="8" room="1" start="true" />
 		<engines power="1" max="3" room="6" start="true" />
-		<hacking power="1" max="2" room="4" start="false" />
+		<mind power="1" max="2" room="4" start="false" />
 		<oxygen power="1" max="2" room="0" start="true" />
 		<pilot power="1" max="1" room="7" start="true" />
 		<shields power="2" max="10" room="8" start="true" />
@@ -1128,7 +1160,7 @@
 		<doors power="2" max="3" room="7" start="true" />
 		<drones power="2" max="7" room="3" start="false" />
 		<engines power="1" max="2" room="2" start="true" />
-		<hacking power="1" max="2" room="6" start="false" />
+		<mind power="1" max="2" room="6" start="false" />
 		<oxygen power="1" max="2" room="8" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="1" start="true" />
@@ -1154,7 +1186,7 @@
 		<doors power="2" max="2" room="2" start="true" />
 		<drones power="1" max="8" room="1" start="true" />
 		<engines power="1" max="2" room="11" start="true" />
-		<hacking power="1" max="1" room="6" start="true" />
+		<mind power="1" max="1" room="6" start="true" />
 		<oxygen power="1" max="2" room="9" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="10" room="3" start="true" />
@@ -1181,7 +1213,6 @@
 		<clonebay power="1" max="2" room="2" start="true" />
 		<doors power="2" max="3" room="10" start="true" />
 		<engines power="1" max="2" room="7" start="true" />
-		<hacking power="1" max="1" room="11" start="false" />
 		<mind power="1" max="1" room="6" start="false" />
 		<oxygen power="1" max="2" room="9" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
@@ -1205,10 +1236,10 @@
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="2" room="3" start="true" />
+		<cloaking power="1" max="1" room="3" start="true" />
 		<doors power="2" max="3" room="2" start="true" />
 		<engines power="1" max="3" room="7" start="true" />
-		<hacking power="1" max="2" room="1" start="true" />
+		<mind power="1" max="2" room="1" start="true" />
 		<oxygen power="2" max="3" room="6" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="10" room="4" start="true" />
@@ -1286,7 +1317,7 @@
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="2" room="6" start="true" />
+		<cloaking power="1" max="1" room="6" start="true" />
 		<doors power="2" max="2" room="4" start="true" />
 		<engines power="1" max="3" room="5" start="true" />
 		<mind power="1" max="2" room="7" start="true" />
@@ -1313,7 +1344,7 @@
 	<systemList>
 		<artillery power="1" max="2" room="2" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_2" />
 		<artillery power="1" max="2" room="3" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_2" />
-		<cloaking power="1" max="2" room="10" start="true" />
+		<cloaking power="1" max="1" room="10" start="true" />
 		<doors power="2" max="3" room="9" start="true" />
 		<drones power="2" max="8" room="1" start="true" />
 		<engines power="1" max="3" room="6" start="true" />
@@ -1398,10 +1429,10 @@
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="2" room="3" start="true" />
+		<cloaking power="1" max="1" room="3" start="true" />
 		<doors power="2" max="3" room="2" start="true" />
 		<engines power="1" max="3" room="7" start="true" />
-		<hacking power="1" max="2" room="1" start="true" />
+		<mind power="1" max="2" room="1" start="true" />
 		<oxygen power="2" max="3" room="6" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="10" room="4" start="true" />
@@ -1418,7 +1449,8 @@
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
 
-
+</FTL>
+<FTL>
 
 <blueprintList name="LIST_CREW_AEA_NECRO">
 	<name>aea_necro_engi</name>
@@ -2628,8 +2660,8 @@
 <shipBlueprint name="AEA_OLD_FINAL_BOSS_CASUAL" layout="aea_old_flagship" img="aea_old_flagship">
 	<class>Lylmik Flagship</class>
 	<systemList>
-		<artillery power="3" max="3" room="8" start="true" weapon="AEA_LASER_OLD_2" />
-		<artillery power="3" max="3" room="7" start="true" weapon="AEA_LASER_OLD_2" />
+		<artillery power="3" max="3" room="8" start="true" weapon="ARTILLER_AEA_OLD_BEAM" />
+		<artillery power="3" max="3" room="7" start="true" weapon="ARTILLER_AEA_OLD_BEAM" />
 		<battery power="2" max="2" room="20" start="true" />
 		<clonebay power="3" max="3" room="19" start="true" />
 		<doors power="3" max="3" room="23" start="true" />
@@ -2669,8 +2701,8 @@
 <shipBlueprint name="AEA_OLD_FINAL_BOSS_NORMAL" layout="aea_old_flagship" img="aea_old_flagship">
 	<class>Lylmik Flagship</class>
 	<systemList>
-		<artillery power="4" max="4" room="8" start="true" weapon="AEA_LASER_OLD_2" />
-		<artillery power="4" max="4" room="7" start="true" weapon="AEA_LASER_OLD_2" />
+		<artillery power="4" max="4" room="8" start="true" weapon="ARTILLER_AEA_OLD_BEAM" />
+		<artillery power="4" max="4" room="7" start="true" weapon="ARTILLER_AEA_OLD_BEAM" />
 		<battery power="2" max="2" room="20" start="true" />
 		<clonebay power="3" max="3" room="19" start="true" />
 		<doors power="3" max="3" room="23" start="true" />
@@ -2710,8 +2742,8 @@
 <shipBlueprint name="AEA_OLD_FINAL_BOSS_CHALLENGE" layout="aea_old_flagship" img="aea_old_flagship">
 	<class>Lylmik Flagship</class>
 	<systemList>
-		<artillery power="4" max="4" room="8" start="true" weapon="AEA_LASER_OLD_2" />
-		<artillery power="4" max="4" room="7" start="true" weapon="AEA_LASER_OLD_2" />
+		<artillery power="4" max="4" room="8" start="true" weapon="ARTILLER_AEA_OLD_BEAM_HARD" />
+		<artillery power="4" max="4" room="7" start="true" weapon="ARTILLER_AEA_OLD_BEAM_HARD" />
 		<battery power="2" max="2" room="20" start="true" />
 		<clonebay power="4" max="4" room="19" start="true" />
 		<doors power="3" max="3" room="23" start="true" />
@@ -2751,8 +2783,8 @@
 <shipBlueprint name="AEA_OLD_FINAL_BOSS_EXTREME" layout="aea_old_flagship" img="aea_old_flagship">
 	<class>Lylmik Flagship</class>
 	<systemList>
-		<artillery power="4" max="4" room="8" start="true" weapon="AEA_LASER_OLD_2" />
-		<artillery power="4" max="4" room="7" start="true" weapon="AEA_LASER_OLD_2" />
+		<artillery power="4" max="4" room="8" start="true" weapon="ARTILLER_AEA_OLD_BEAM_HARD" />
+		<artillery power="4" max="4" room="7" start="true" weapon="ARTILLER_AEA_OLD_BEAM_HARD" />
 		<battery power="2" max="2" room="20" start="true" />
 		<clonebay power="4" max="4" room="19" start="true" />
 		<doors power="3" max="3" room="23" start="true" />
@@ -3873,6 +3905,628 @@
 	<health amount="14" />
 	<maxPower amount="9" />
 	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+</FTL>
+
+<FTL>
+<shipBlueprint name="AEA_BROADSIDE_ENEMY" layout="aea_broadside_enemy" img="aea_broadside_enemy">
+	<class>Rebel Broadsider</class>
+	<systemList>
+		<artillery power="1" max="3" room="0" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE_ENEMY" />
+		<artillery power="1" max="3" room="1" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE_ENEMY_OFFSET" />
+		<artillery power="1" max="3" room="2" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE_ENEMY" />
+		<cloaking power="1" max="1" room="10" start="true" />
+		<doors power="1" max="1" room="9" start="true" />
+		<drones power="2" max="8" room="11" start="true" />
+		<engines power="1" max="3" room="4" start="true" />
+		<medbay power="1" max="1" room="6" start="true" />
+		<oxygen power="1" max="1" room="12" start="true" />
+		<pilot power="1" max="1" room="3" start="true" />
+		<shields power="3" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>0</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="5" count="0" />
+	<droneList drones="10" count="3" load="LIST_DRONES_ENEMY_COMBAT" />
+	<health amount="10" />
+	<maxPower amount="11" />
+	<crewCount amount="5" max="7" class="human_rebel" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+
+<blueprintList name="LIST_CREW_AEA_SHLEG_ENEMY_GEL">
+	<name>aea_shleg_slug</name>
+	<name>aea_shleg_slug</name>
+	<name>aea_shleg_slug</name>
+	<name>aea_shleg_shell</name>
+	<name>slug</name>
+</blueprintList>
+<blueprintList name="LIST_CREW_AEA_SHLEG_ENEMY_GAS">
+	<name>aea_shleg_shell</name>
+	<name>aea_shleg_shell</name>
+	<name>aea_shleg_shell</name>
+	<name>aea_shleg_slug</name>
+	<name>shell</name>
+</blueprintList>
+
+<blueprintList name="LIST_WEAPONS_AEA_SHLEG_ENEMY">
+	<name>AEA_SHLEG_BOMB</name>
+	<name>AEA_SHLEG_MISSILES</name>
+	<name>AEA_SHLEG_BOMB</name>
+	<name>AEA_SHLEG_MISSILES</name>
+	<name>AEA_SHLEG_BOMB</name>
+	<name>AEA_SHLEG_MISSILES</name>
+	<name>AEA_SHLEG_BOMB</name>
+	<name>AEA_SHLEG_MISSILES</name>
+
+	<name>LASER_BURST_1</name>
+	<name>LASER_BURST_2_ENEMY</name>
+	<name>LASER_BURST_3</name>
+	<name>LASER_HULL_1_ENEMY</name>
+	<name>LASER_HULL_2</name>
+	<name>LASER_HULL_3</name>
+	<name>BEAM_1</name>
+	<name>BEAM_2</name>
+	<name>BEAM_3</name>
+	<name>BEAM_BIO</name>
+	<name>BEAM_LONG</name>
+	<name>BEAM_FIRE</name>
+	<name>BOMB_BREACH_1_ENEMY</name>
+	<name>ION_1</name>
+	<name>ION_3</name>
+	<name>ION_STUN</name>
+	<name>ION_STUN_2</name>
+	<name>ION_STUN_HEAVY</name>
+	<name>ION_STUN_CHARGEGUN</name>
+	
+	<name>LASER_CHARGEGUN_2</name>
+	<name>LASER_CHARGEGUN_3</name>
+	<name>ION_CHARGEGUN</name>
+	
+	<name>BEAM_4</name>
+	<name>FOCUS_CHAIN_ENEMY</name>
+	<name>ION_BIO</name>
+	<name>BEAM_STUN</name>
+	<name>LASER_STUN</name>
+	<name>LASER_BIO</name>
+	<name>LASER_HULL_CHAINGUN</name>
+	<name>LASER_FROST_1</name>
+	<name>BEAM_PARTICLE</name>
+	<name>BEAM_CHAIN</name>
+	<name>BEAM_BIO_CHAIN</name>
+	<name>LASER_PARTICLE</name>
+	<name>MISSILES_PARTICLE</name>
+	<name>LASER_HEAVY_PIERCE</name>
+	<name>BEAM_LONG_2</name>
+	<name>LASER_HULL_1_ENEMY</name>
+	<name>LASER_HULL_1_ENEMY</name>
+	<name>LASER_HULL_2</name>
+	<name>LASER_HULL_2</name>
+	<name>LASER_HULL_3</name>
+	<name>LASER_HULL_3</name>
+	<name>LASER_HULL_CHAINGUN</name>
+	<name>LASER_HULL_CHAINGUN</name>
+	<name>BEAM_HULL</name>
+	<name>BEAM_HULL</name>
+	<name>BEAM_HULL_2</name>
+	<name>BEAM_HULL_2</name>
+
+	<name>ENERGY_1</name>
+	<name>ENERGY_2</name>
+	<name>ENERGY_3</name>
+	<name>ENERGY_HULL</name>
+	<name>ENERGY_CHAINGUN</name>
+	<name>ENERGY_CHARGEGUN</name>
+
+	<name>BEAM_1</name>
+	<name>BEAM_2</name>
+	<name>BEAM_CHAIN</name>
+	<name>BEAM_LONG</name>
+	<name>BEAM_BREACH</name>
+	<name>BOMB_BREACH_1_ENEMY</name>
+	<name>BOMB_1_ENEMY</name>
+	<name>FOCUS_CHAIN_ENEMY</name>
+	<name>LASER_FROST_1</name>
+	<name>LASER_FROST_2</name>
+	
+	<name>BEAM_BIO</name>
+	<name>BEAM_STUN</name>
+	<name>LASER_BIO</name>
+	<name>LASER_STUN</name>
+	
+	<name>LASER_CHARGEGUN_ENEMY</name>
+	<name>LASER_CHARGEGUN_2</name>
+	<name>LASER_CHARGEGUN_3</name>
+	<name>LASER_CHAINGUN_ENEMY</name>
+	<name>LASER_CHAINGUN_2</name>
+</blueprintList>
+
+<blueprintList name="LIST_SHIPS_AEA_SHLEG_GUARDS">
+	<name>AEA_SHLEG_GUARD_GEL</name>
+	<name>AEA_SHLEG_GUARD_GAS</name>
+</blueprintList>
+<blueprintList name="LIST_SHIPS_AEA_SHLEG_STATIONS">
+	<name>AEA_SHLEG_STATION_GEL</name>
+	<name>AEA_SHLEG_STATION_GAS</name>
+</blueprintList>
+
+<blueprintList name="LIST_SHIPS_AEA_SHLEG_ALL">
+	<name>AEA_SHLEG_SCOUT_GEL</name>
+	<name>AEA_SHLEG_SCOUT_GAS</name>
+	<name>AEA_SHLEG_BOMBER_GEL</name>
+	<name>AEA_SHLEG_BOMBER_GAS</name>
+	<name>AEA_SHLEG_FRIGATE_GEL</name>
+	<name>AEA_SHLEG_FRIGATE_GAS</name>
+	<name>AEA_SHLEG_PROTECTOR_GEL</name>
+	<name>AEA_SHLEG_PROTECTOR_GAS</name>
+	<name>AEA_SHLEG_ABDUCTOR_GEL</name>
+	<name>AEA_SHLEG_ABDUCTOR_GAS</name>
+	<name>AEA_SHLEG_TRANSPORT_GEL</name>
+	<name>AEA_SHLEG_TRANSPORT_GAS</name>
+	<name>AEA_SHLEG_GUARD_GEL</name>
+	<name>AEA_SHLEG_GUARD_GAS</name>
+</blueprintList>
+<blueprintList name="LIST_SHIPS_AEA_SHLEG_GENERIC">
+	<name>AEA_SHLEG_SCOUT_GEL</name>
+	<name>AEA_SHLEG_SCOUT_GAS</name>
+	<name>AEA_SHLEG_BOMBER_GEL</name>
+	<name>AEA_SHLEG_BOMBER_GAS</name>
+	<name>AEA_SHLEG_FRIGATE_GEL</name>
+	<name>AEA_SHLEG_FRIGATE_GAS</name>
+	<name>AEA_SHLEG_PROTECTOR_GEL</name>
+	<name>AEA_SHLEG_PROTECTOR_GAS</name>
+	<name>AEA_SHLEG_ABDUCTOR_GEL</name>
+	<name>AEA_SHLEG_ABDUCTOR_GAS</name>
+	<name>AEA_SHLEG_TRANSPORT_GEL</name>
+	<name>AEA_SHLEG_TRANSPORT_GAS</name>
+</blueprintList>
+<blueprintList name="LIST_SHIPS_AEA_SHLEG_FIGHT">
+	<name>AEA_SHLEG_SCOUT_GEL</name>
+	<name>AEA_SHLEG_SCOUT_GAS</name>
+	<name>AEA_SHLEG_BOMBER_GEL</name>
+	<name>AEA_SHLEG_BOMBER_GAS</name>
+	<name>AEA_SHLEG_FRIGATE_GEL</name>
+	<name>AEA_SHLEG_FRIGATE_GAS</name>
+	<name>AEA_SHLEG_PROTECTOR_GEL</name>
+	<name>AEA_SHLEG_PROTECTOR_GAS</name>
+	<name>AEA_SHLEG_ABDUCTOR_GEL</name>
+	<name>AEA_SHLEG_ABDUCTOR_GAS</name>
+</blueprintList>
+
+<shipBlueprint name="AEA_SHLEG_ARTILLERY" layout="aea_shleg_artillery" img="aea_shleg_artillery">
+	<class>Anarchist Cruiser A-Class</class>
+	<systemList>
+		<artillery power="2" max="3" room="0" start="true" weapon="ARTILLERY_SHLEG_1_ENEMY" />
+		<clonebay power="1" max="2" room="2" start="true" />
+		<doors power="1" max="1" room="3" start="true" />
+		<engines power="1" max="3" room="5" start="true" />
+		<hacking power="1" max="1" room="8" start="true" />
+		<oxygen power="1" max="1" room="1" start="true" />
+		<pilot power="2" max="2" room="4" start="true" />
+		<shields power="3" max="8" room="10" start="true" />
+		<teleporter power="1" max="2" room="7" start="true" />
+		<weapons power="2" max="8" room="9" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="0" count="0" />
+	<health amount="13" />
+	<maxPower amount="12" />
+	<crewCount amount="5" max="7" class="LIST_CREW_AEA_SHLEG_ENEMY_GAS" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_SCOUT_GEL" layout="mu_slug_scout_a" img="aea_shleg_scout">
+	<class>Anarchist Scout E-Class</class>
+	<maxSector>4</maxSector>
+	<systemList>
+		<cloaking power="1" max="2" room="4" start="false" />
+		<clonebay power="1" max="2" room="6" start="false" />
+		<engines power="1" max="2" room="2" start="true" />
+		<teleporter power="1" max="2" room="8" start="false" />
+		<medbay power="1" max="2" room="6" start="false" />
+		<mind power="1" max="2" room="5" start="false" />
+		<oxygen power="1" max="2" room="7" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="8" room="1" start="true" />
+		<weapons power="2" max="6" room="3" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="2" count="0" />
+	<health amount="7" />
+	<maxPower amount="9" />
+	<crewCount amount="3" max="5" class="LIST_CREW_AEA_SHLEG_ENEMY_GEL" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_GEL" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_BOMBER_GEL" layout="mu_slug_bomber_a" img="aea_shleg_bomber">
+	<class>Anarchist Bomber E-Class</class>
+	<systemList>
+		<cloaking power="1" max="3" room="6" start="false" />
+		<clonebay power="1" max="3" room="9" start="false" />
+		<doors power="1" max="3" room="10" start="false" />
+		<engines power="1" max="2" room="2" start="true" />
+		<teleporter power="1" max="3" room="12" start="false" />
+		<medbay power="1" max="3" room="9" start="false" />
+		<mind power="1" max="3" room="13" start="false" />
+		<oxygen power="1" max="2" room="11" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="10" room="1" start="true" />
+		<weapons power="2" max="8" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="5" count="0" />
+	<health amount="11" />
+	<maxPower amount="9" />
+	<crewCount amount="4" max="7" class="LIST_CREW_AEA_SHLEG_ENEMY_GEL" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_GEL" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_FRIGATE_GEL" layout="mu_slug_frigate_a" img="aea_shleg_frigate">
+	<class>Anarchist Frigate E-Class</class>
+	<minSector>3</minSector>
+	<systemList>
+		<clonebay power="1" max="3" room="12" start="false" />
+		<doors power="1" max="3" room="9" start="false" />
+		<engines power="1" max="2" room="5" start="true" />
+		<hacking power="1" max="3" room="11" start="false" />
+		<medbay power="1" max="3" room="12" start="false" />
+		<mind power="1" max="2" room="8" start="false" />
+		<oxygen power="1" max="2" room="10" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="10" room="4" start="true" />
+		<teleporter power="1" max="1" room="6" start="false" />
+		<weapons power="2" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="10" count="0" />
+	<health amount="12" />
+	<maxPower amount="9" />
+	<crewCount amount="5" max="8" class="LIST_CREW_AEA_SHLEG_ENEMY_GEL" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_GEL" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_PROTECTOR_GEL" layout="mu_slug_protector_a" img="aea_shleg_protector">
+	<class>Anarchist Protector E-Class</class>
+	<systemList>
+		<cloaking power="1" max="3" room="2" start="false" />
+		<clonebay power="1" max="3" room="6" start="false" />
+		<doors power="1" max="3" room="9" start="false" />
+		<engines power="1" max="2" room="8" start="true" />
+		<medbay power="1" max="3" room="6" start="false" />
+		<teleporter power="1" max="3" room="7" start="false" />
+		<oxygen power="1" max="2" room="4" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="10" room="3" start="true" />
+		<weapons power="2" max="7" room="10" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="5" count="0" />
+	<health amount="12" />
+	<maxPower amount="8" />
+	<crewCount amount="4" max="7" class="LIST_CREW_AEA_SHLEG_ENEMY_GEL" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_GEL" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_ABDUCTOR_GEL" layout="mu_slug_abductor_a" img="aea_shleg_abductor">
+	<class>Anarchist Abductor E-Class</class>
+	<systemList>
+		<clonebay power="1" max="3" room="8" start="false" />
+		<doors power="1" max="3" room="11" start="false" />
+		<engines power="1" max="2" room="4" start="true" />
+		<medbay power="1" max="3" room="8" start="false" />
+		<mind power="1" max="3" room="3" start="true" />
+		<oxygen power="1" max="2" room="5" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<teleporter power="1" max="3" room="1" start="false" />
+		<weapons power="1" max="8" room="10" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="2" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="6" count="0" />
+	<health amount="9" />
+	<maxPower amount="8" />
+	<crewCount amount="4" max="7" class="LIST_CREW_AEA_SHLEG_ENEMY_GEL" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_GEL" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_TRANSPORT_GEL" layout="mu_slug_transport_a" img="aea_shleg_transport">
+	<class>Anarchist Transport E-Class</class>
+	<systemList>
+		<cloaking power="1" max="2" room="9" start="false" />
+		<doors power="1" max="3" room="4" start="false" />
+		<engines power="1" max="1" room="5" start="true" />
+		<medbay power="1" max="3" room="6" start="false" />
+		<oxygen power="1" max="3" room="12" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="8" room="1" start="true" />
+		<teleporter power="1" max="3" room="11" start="true" />
+		<weapons power="2" max="7" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="7" count="2" />
+	<health amount="9" />
+	<maxPower amount="8" />
+	<crewCount amount="4" max="7" class="LIST_CREW_AEA_SHLEG_ENEMY_GEL" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_GEL" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_GUARD_GEL" layout="mu_slug_guard_a" img="aea_shleg_guard">
+	<class>Anarchist Guard E-Class</class>
+	<systemList>
+		<cloaking power="1" max="3" room="5" start="false" />
+		<doors power="1" max="3" room="10" start="false" />
+		<engines power="1" max="2" room="1" start="true" />
+		<teleporter power="1" max="3" room="2" start="false" />
+		<mind power="1" max="3" room="7" start="false" />
+		<oxygen power="1" max="2" room="11" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="3" start="true" />
+		<weapons power="2" max="8" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="4" count="0" />
+	<health amount="8" />
+	<maxPower amount="8" />
+	<crewCount amount="4" max="7" class="LIST_CREW_AEA_SHLEG_ENEMY_GEL" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_GEL" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_STATION_GEL" layout="mu_slug_station_a" img="aea_shleg_station">
+	<class>Anarchist Station E-Class</class>
+	<systemList>
+		<cloaking power="1" max="3" room="2" start="true" />
+		<clonebay power="1" max="3" room="1" start="false" />
+		<doors power="1" max="3" room="8" start="false" />
+		<hacking power="1" max="3" room="7" start="false" />
+		<medbay power="1" max="3" room="1" start="false" />
+		<mind power="1" max="3" room="5" start="true" />
+		<oxygen power="1" max="3" room="6" start="true" />
+		<shields power="2" max="10" room="0" start="true" />
+		<teleporter power="1" max="3" room="3" start="false" />
+		<weapons power="2" max="10" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="8" count="0" />
+	<health amount="12" />
+	<maxPower amount="9" />
+	<crewCount amount="4" max="9" class="LIST_CREW_AEA_SHLEG_ENEMY_GEL" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_GEL" />
+	<aug name="UPG_TECH_RESPIRATOR" />
+</shipBlueprint>
+
+<!--
+A CLASS
+-->
+
+<shipBlueprint name="AEA_SHLEG_SCOUT_GAS" layout="mu_slug_scout_a" img="aea_shleg_scout">
+	<class>Anarchist Scout A-Class</class>
+	<maxSector>4</maxSector>
+	<systemList>
+		<cloaking power="1" max="2" room="4" start="false" />
+		<clonebay power="1" max="2" room="6" start="false" />
+		<engines power="1" max="2" room="2" start="true" />
+		<hacking power="1" max="2" room="8" start="false" />
+		<medbay power="1" max="2" room="6" start="false" />
+		<mind power="1" max="2" room="5" start="false" />
+		<oxygen power="1" max="2" room="7" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="8" room="1" start="true" />
+		<weapons power="2" max="6" room="3" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="6" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="2" count="0" />
+	<health amount="7" />
+	<maxPower amount="9" />
+	<crewCount amount="2" max="4" class="LIST_CREW_AEA_SHLEG_ENEMY_GAS" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_BOMBER_GAS" layout="mu_slug_bomber_a" img="aea_shleg_bomber">
+	<class>Anarchist Bomber A-Class</class>
+	<systemList>
+		<cloaking power="1" max="3" room="6" start="false" />
+		<clonebay power="1" max="3" room="9" start="false" />
+		<doors power="1" max="3" room="10" start="false" />
+		<engines power="1" max="2" room="2" start="true" />
+		<hacking power="1" max="3" room="12" start="false" />
+		<medbay power="1" max="3" room="9" start="false" />
+		<mind power="1" max="3" room="13" start="false" />
+		<oxygen power="1" max="2" room="11" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="10" room="1" start="true" />
+		<weapons power="2" max="8" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="5" count="0" />
+	<health amount="11" />
+	<maxPower amount="9" />
+	<crewCount amount="3" max="6" class="LIST_CREW_AEA_SHLEG_ENEMY_GAS" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_FRIGATE_GAS" layout="mu_slug_frigate_a" img="aea_shleg_frigate">
+	<class>Anarchist Frigate A-Class</class>
+	<minSector>3</minSector>
+	<systemList>
+		<clonebay power="1" max="3" room="12" start="false" />
+		<doors power="1" max="3" room="9" start="false" />
+		<engines power="1" max="2" room="5" start="true" />
+		<hacking power="1" max="3" room="11" start="false" />
+		<medbay power="1" max="3" room="12" start="false" />
+		<mind power="1" max="2" room="8" start="false" />
+		<oxygen power="1" max="2" room="10" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="10" room="4" start="true" />
+		<teleporter power="1" max="1" room="6" start="false" />
+		<weapons power="2" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="10" count="0" />
+	<health amount="12" />
+	<maxPower amount="9" />
+	<crewCount amount="4" max="7" class="LIST_CREW_AEA_SHLEG_ENEMY_GAS" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_PROTECTOR_GAS" layout="mu_slug_protector_a" img="aea_shleg_protector">
+	<class>Anarchist Protector A-Class</class>
+	<systemList>
+		<cloaking power="1" max="3" room="2" start="false" />
+		<clonebay power="1" max="3" room="6" start="false" />
+		<doors power="1" max="3" room="9" start="false" />
+		<engines power="1" max="2" room="8" start="true" />
+		<medbay power="1" max="3" room="6" start="false" />
+		<mind power="1" max="3" room="7" start="false" />
+		<oxygen power="1" max="2" room="4" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="10" room="3" start="true" />
+		<weapons power="2" max="7" room="10" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="5" count="0" />
+	<health amount="12" />
+	<maxPower amount="8" />
+	<crewCount amount="3" max="6" class="LIST_CREW_AEA_SHLEG_ENEMY_GAS" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_ABDUCTOR_GAS" layout="mu_slug_abductor_a" img="aea_shleg_abductor">
+	<class>Anarchist Abductor A-Class</class>
+	<systemList>
+		<clonebay power="1" max="3" room="8" start="false" />
+		<doors power="1" max="3" room="11" start="false" />
+		<engines power="1" max="2" room="4" start="true" />
+		<medbay power="1" max="3" room="8" start="false" />
+		<mind power="1" max="3" room="3" start="true" />
+		<oxygen power="1" max="2" room="5" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<teleporter power="1" max="3" room="1" start="false" />
+		<weapons power="1" max="8" room="10" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="2" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="6" count="0" />
+	<health amount="9" />
+	<maxPower amount="8" />
+	<crewCount amount="3" max="6" class="LIST_CREW_AEA_SHLEG_ENEMY_GAS" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_TRANSPORT_GAS" layout="mu_slug_transport_a" img="aea_shleg_transport">
+	<class>Anarchist Transport A-Class</class>
+	<systemList>
+		<cloaking power="1" max="2" room="9" start="false" />
+		<doors power="1" max="3" room="4" start="false" />
+		<engines power="1" max="1" room="5" start="true" />
+		<medbay power="1" max="3" room="6" start="false" />
+		<oxygen power="1" max="3" room="12" start="true" />
+		<pilot power="1" max="3" room="0" start="true" />
+		<shields power="2" max="8" room="1" start="true" />
+		<teleporter power="1" max="3" room="11" start="true" />
+		<weapons power="2" max="7" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="7" count="2" />
+	<health amount="9" />
+	<maxPower amount="8" />
+	<crewCount amount="3" max="6" class="LIST_CREW_AEA_SHLEG_ENEMY_GAS" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_GUARD_GAS" layout="mu_slug_guard_a" img="aea_shleg_guard">
+	<class>Anarchist Guard A-Class</class>
+	<systemList>
+		<cloaking power="1" max="3" room="5" start="false" />
+		<doors power="1" max="3" room="10" start="false" />
+		<engines power="1" max="2" room="1" start="true" />
+		<hacking power="1" max="3" room="2" start="false" />
+		<mind power="1" max="3" room="7" start="false" />
+		<oxygen power="1" max="2" room="11" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="3" start="true" />
+		<weapons power="2" max="8" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="4" count="0" />
+	<health amount="8" />
+	<maxPower amount="8" />
+	<crewCount amount="3" max="6" class="LIST_CREW_AEA_SHLEG_ENEMY_GAS" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHLEG_STATION_GAS" layout="mu_slug_station_a" img="aea_shleg_station">
+	<class>Anarchist Station A-Class</class>
+	<systemList>
+		<cloaking power="1" max="3" room="2" start="true" />
+		<clonebay power="1" max="3" room="1" start="false" />
+		<doors power="1" max="3" room="8" start="false" />
+		<hacking power="1" max="3" room="7" start="false" />
+		<medbay power="1" max="3" room="1" start="false" />
+		<mind power="1" max="3" room="5" start="true" />
+		<oxygen power="1" max="3" room="6" start="true" />
+		<shields power="2" max="10" room="0" start="true" />
+		<teleporter power="1" max="3" room="3" start="false" />
+		<weapons power="2" max="10" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_AEA_SHLEG_ENEMY" />
+	<droneList drones="8" count="0" />
+	<health amount="12" />
+	<maxPower amount="9" />
+	<crewCount amount="3" max="8" class="LIST_CREW_AEA_SHLEG_ENEMY_GAS" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+	<aug name="UPG_TECH_RESPIRATOR" />
 </shipBlueprint>
 </FTL>
 

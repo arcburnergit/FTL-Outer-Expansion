@@ -408,6 +408,14 @@
 		<text>Ask Jay about this.</text>
 		<event load="AEA_OLD_VICTORY_CREW_AEA_JAY" />
 	</choice>
+	<mod-append:choice hidden="true" req="aea_shleg_sickle">
+		<text>Ask Sickle about this.</text>
+		<event load="AEA_OLD_VICTORY_CREW_AEA_SICKLE" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="aea_shleg_sorrow">
+		<text>Ask Sorrow about this.</text>
+		<event load="AEA_OLD_VICTORY_CREW_AEA_SORROW" />
+	</mod-append:choice>
 </event>
 
 <event name="AEA_OLD_VICTORY_CREW_DETECTIVE">
@@ -757,6 +765,22 @@
 <event name="AEA_OLD_VICTORY_CREW_AEA_JAY">
 	<text>Tiny just looks at you, you wonder if it even knows what the paragon is.</text>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW4</unlockCustomShip>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEA_OLD_VICTORY_LOAD" />
+	</choice>
+</event>
+<event name="AEA_OLD_VICTORY_CREW_AEA_SICKLE">
+	<text>"Do it, it would be really cool."</text>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW5</unlockCustomShip>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEA_OLD_VICTORY_LOAD" />
+	</choice>
+</event>
+<event name="AEA_OLD_VICTORY_CREW_AEA_SORROW">
+	<text>"Do it, it would be really cool."</text>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW5</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="AEA_OLD_VICTORY_LOAD" />

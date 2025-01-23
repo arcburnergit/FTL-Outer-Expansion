@@ -8,6 +8,7 @@
 
 <mod:findName type="sectorType" name="SECTOR_LIST_NEUTRAL">
     <mod-append:sector>SECTOR_AEA_ACID_NEBULA</mod-append:sector>
+    <mod-append:sector>SECTOR_AEA_SHLEG</mod-append:sector>
     <mod-append:sector>SECTOR_AEA_CULT</mod-append:sector>
 </mod:findName>
 <mod:findName type="sectorType" name="SECTOR_LIST_HOSTILE">
@@ -22,11 +23,14 @@
 <mod:findName type="sectorType" name="SECTOR_LIST_UNIQUE_DEADLY">
     <mod-append:sector>SECTOR_AEA_ACID_UNIQUE</mod-append:sector>
     <mod-append:sector>SECTOR_AEA_NECRO_UNIQUE</mod-append:sector>
+    <mod-append:sector>SECTOR_AEA_SHLEG_UNIQUE</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorType" name="NEBULA">
     <mod-append:sector>SECTOR_AEA_ACID_NEBULA</mod-append:sector>
     <mod-append:sector>SECTOR_AEA_ACID_UNIQUE</mod-append:sector>
+    <mod-append:sector>SECTOR_AEA_SHLEG</mod-append:sector>
+    <mod-append:sector>SECTOR_AEA_SHLEG_UNIQUE</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorType" name="HOSTILE">
@@ -75,37 +79,37 @@
 
 <mod:findName type="sectorDescription" name="FINAL">
 	<mod-append:priorityEvent name="AEA_OLD_GATE" min="1" max="1" priority="1"/>
+	<!--mod-append:priorityEvent name="AEA_ENEMY_BROADSIDE_EVENT" min="0" max="1" priority="1"/-->	
 </mod:findName>
 
 <mod:findName type="sectorDescription" name="SECRET_ANCIENT">
 	<mod:findLike type="rarityList">
-    <mod-append:blueprint name="AEA_LASER_ACID_1" rarity="0" />
-    <mod-append:blueprint name="AEA_LASER_ACID_2" rarity="0" />
-    <mod-append:blueprint name="AEA_LASER_ACID_3" rarity="0" />
-    <mod-append:blueprint name="AEA_BEAM_ACID_1" rarity="0" />
-    <mod-append:blueprint name="AEA_ION_ACID_1" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_ACID_1" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_ACID_2" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_ACID_3" rarity="0" />
+		<mod-append:blueprint name="AEA_BEAM_ACID_1" rarity="0" />
+		<mod-append:blueprint name="AEA_ION_ACID_1" rarity="0" />
 
-	<mod-append:blueprint name="AEA_LASER_NECRO_1" rarity="0" />
-	<mod-append:blueprint name="AEA_LASER_NECRO_2" rarity="0" />
-	<mod-append:blueprint name="AEA_LASER_NECRO_3" rarity="0" />
-    <mod-append:blueprint name="AEA_LASER_NECRO_CHARGE" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_NECRO_1" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_NECRO_2" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_NECRO_3" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_NECRO_CHARGE" rarity="0" />
 
-    <mod-append:blueprint name="AEA_LASER_CULT" rarity="0" />
+		<mod-append:blueprint name="AEA_LASER_CULT" rarity="0" />
 
-	<mod-append:blueprint name="AEA_DEFENSE_NECRO_1_MISSILE" rarity="0" />
-	<mod-append:blueprint name="AEA_DEFENSE_NECRO_2_MISSILE" rarity="0" />
-	<mod-append:blueprint name="AEA_COMBAT_NECRO_1_LASER" rarity="0" />
-	<mod-append:blueprint name="AEA_COMBAT_NECRO_2_LASER" rarity="0" />
+		<mod-append:blueprint name="AEA_DEFENSE_NECRO_1_MISSILE" rarity="0" />
+		<mod-append:blueprint name="AEA_DEFENSE_NECRO_2_MISSILE" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_NECRO_1_LASER" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_NECRO_2_LASER" rarity="0" />
 
-	<mod-append:blueprint name="AEA_COMBAT_BIRD_BURST_1" rarity="0" />
-	<mod-append:blueprint name="AEA_COMBAT_BIRD_BIO_1" rarity="0" />
-	<mod-append:blueprint name="AEA_COMBAT_BIRD_BIO_2" rarity="0" />
-	<mod-append:blueprint name="AEA_COMBAT_BIRD_BIO_3" rarity="0" />
-	<mod-append:blueprint name="AEA_COMBAT_BIRD_MULTI_1_LASER" rarity="0" />
-	<mod-append:blueprint name="AEA_COMBAT_BIRD_MULTI_2_LASER" rarity="0" />
-	<mod-append:blueprint name="AEA_COMBAT_BIRD_SMART_1" rarity="0" />
-	<mod-append:blueprint name="AEA_COMBAT_BIRD_SMART_2" rarity="0" />
-
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_BURST_1" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_BIO_1" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_BIO_2" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_BIO_3" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_MULTI_1_LASER" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_MULTI_2_LASER" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_SMART_1" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_SMART_2" rarity="0" />
 
 	<mod-append:blueprint name="aea_cult_wizard" rarity="0" />
 	</mod:findLike>
@@ -805,7 +809,163 @@ Bird SECTOR
 	<event name="FILLER_LIST" min="999" max="999" />
 </sectorDescription>
 
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+SHLEG SECTOR
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<sectorDescription name="SECTOR_AEA_SHLEG" unique="false">
+	<nameList>
+		<name>Anarchist Nebula</name>
+		<name>Anarchist Colonies</name>
+		<name>Anarchist Space</name>
+		<name>Anarchist Settlements</name>
+		<name>Anarchist Frontier</name>
+		<name>Anarchist Territory</name>
+		<name>Anarchist Domain</name>
+		<name>Anarchist Rimworlds</name>
+		<name>Anarchist Regions</name>
+		<name>Anarchist Parts</name>
+		<name>Anarchist Dominion</name>
+		<name>Anarchist Turf</name>
+		<name>Anarchist Realm</name>
+		<name>Anarchist Quarter</name>
+		<name>Anarchist Shire</name>
+		<name>Anarchist Outreaches</name>
+	</nameList>
+	<trackList>
+		<track>aea_shleg</track>
+		<track>shell</track>
+		<track>slug</track>
+		<track>deepspace</track>
+	</trackList>
+	<rarityList>
+		<blueprint name="human" rarity="0" />
+		<blueprint name="human_medic" rarity="0" />
+		<blueprint name="human_engineer" rarity="0" />
+		<blueprint name="engi" rarity="0" />
+		<blueprint name="engi_separatist" rarity="0" />
+		<blueprint name="zoltan" rarity="0" />
+		<blueprint name="zoltan_monk" rarity="0" />
+		<blueprint name="zoltan_devotee" rarity="0" />
+		<blueprint name="rock" rarity="0" />
+		<blueprint name="rock_outcast" rarity="0" />
+		<blueprint name="rock_commando" rarity="0" />
+		<blueprint name="mantis" rarity="0" />
+		<blueprint name="mantis_free" rarity="0" />
+		<blueprint name="aea_shleg_slug" rarity="1" />
+		<blueprint name="aea_shleg_shell" rarity="1" />
+		<blueprint name="shell" rarity="3" />
+		<blueprint name="shell_mechanic" rarity="4" />
+		<blueprint name="slug" rarity="3" />
+		<blueprint name="slug_clansman" rarity="4" />
+		<blueprint name="crystal" rarity="0" />
+		<blueprint name="crystal_liberator" rarity="0" />
+		<blueprint name="orchid" rarity="0" />
+		<blueprint name="orchid_vampweed" rarity="2" />
+		<blueprint name="leech" rarity="0" />
+		<blueprint name="lanius" rarity="0" />
+		<blueprint name="phantom" rarity="0" />
+		<blueprint name="phantom_goul" rarity="0" />
+		<blueprint name="phantom_mare" rarity="0" />
+		<blueprint name="phantom_wraith" rarity="0" />
 
+		<blueprint name="AEA_SHLEG_BOMB" rarity="2" />
+		<blueprint name="AEA_SHLEG_MISSILES" rarity="2" />
+	</rarityList>
+	<startEvent>ENTER_AEA_SHLEG</startEvent>
+	<removeFirstBeaconNebula />
+	<nebulaSector>true</nebulaSector>
+	<exitBeacon event="FINISH_BEACON_AEA_SHLEG" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_AUTO" />
+	<rebelBeacon event="FLEET_AUTO" nebulaEvent="FLEET_AUTO_NEBULA" />
+	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
+	<event name="NEBULA_SYLVAN_CHANCE" min="0" max="1" />
+	
+	<event name="NEBULA_STORELIST_AEA_SHLEG" min="1" max="2" />
+	<priorityEvent name="STORELIST_AEA_SHLEG" min="0" max="1" priority="0" />
+	<priorityEvent name="AEA_OLD_POWER_CELL_GET" min="1" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+	
+	<event name="NEBULA_ITEMS_AEA_SHLEG" min="2" max="4" />
+	<event name="NEBULA_NEUTRAL_AEA_SHLEG" min="3" max="5" />
+	<event name="NEBULA_DISTRESS_AEA_SHLEG" min="1" max="2" />
+	<priorityEvent name="CLEARING_AEA_SHLEG" min="1" max="4" priority="0" />
+	
+	<event name="NEBULA_HOSTILE_AEA_SHLEG" min="3" max="7" />
+	
+	<event name="PIRACY_LIST" min="1" max="2" />
+	<event name="FILLER_LIST" min="999" max="999" />
+</sectorDescription>
+<sectorDescription name="SECTOR_AEA_SHLEG_UNIQUE" unique="true">
+	<nameList>
+		<name>Anarchist Central Nebula [!]</name>
+	</nameList>
+	<trackList>
+		<track>aea_shleg</track>
+		<track>shell</track>
+		<track>slug</track>
+		<track>deepspace</track>
+	</trackList>
+	<rarityList>
+		<blueprint name="human" rarity="0" />
+		<blueprint name="human_medic" rarity="0" />
+		<blueprint name="human_engineer" rarity="0" />
+		<blueprint name="engi" rarity="0" />
+		<blueprint name="engi_separatist" rarity="0" />
+		<blueprint name="zoltan" rarity="0" />
+		<blueprint name="zoltan_monk" rarity="0" />
+		<blueprint name="zoltan_devotee" rarity="0" />
+		<blueprint name="rock" rarity="0" />
+		<blueprint name="rock_outcast" rarity="0" />
+		<blueprint name="rock_commando" rarity="0" />
+		<blueprint name="mantis" rarity="0" />
+		<blueprint name="mantis_free" rarity="0" />
+		<blueprint name="aea_shleg_slug" rarity="1" />
+		<blueprint name="aea_shleg_shell" rarity="1" />
+		<blueprint name="shell" rarity="3" />
+		<blueprint name="shell_mechanic" rarity="4" />
+		<blueprint name="slug" rarity="3" />
+		<blueprint name="slug_clansman" rarity="4" />
+		<blueprint name="crystal" rarity="0" />
+		<blueprint name="crystal_liberator" rarity="0" />
+		<blueprint name="orchid" rarity="0" />
+		<blueprint name="orchid_vampweed" rarity="2" />
+		<blueprint name="leech" rarity="0" />
+		<blueprint name="lanius" rarity="0" />
+		<blueprint name="phantom" rarity="0" />
+		<blueprint name="phantom_goul" rarity="0" />
+		<blueprint name="phantom_mare" rarity="0" />
+		<blueprint name="phantom_wraith" rarity="0" />
+
+		<blueprint name="AEA_SHLEG_BOMB" rarity="2" />
+		<blueprint name="AEA_SHLEG_MISSILES" rarity="2" />
+	</rarityList>
+	<startEvent>ENTER_AEA_SHLEG_UNIQUE</startEvent>
+	<removeFirstBeaconNebula />
+	<nebulaSector>true</nebulaSector>
+	<exitBeacon event="FINISH_BEACON_AEA_SHLEG" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_AUTO" />
+	<rebelBeacon event="FLEET_AUTO" nebulaEvent="FLEET_AUTO_NEBULA" />
+	<!--<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1"/>-->
+	<event name="NEBULA_SYLVAN_CHANCE" min="0" max="1" />
+	
+	<priorityEvent name="NEBULA_AEA_SHLEG_UNIQUE_BATTLE" min="1" max="1" priority="1" />
+	<priorityEvent name="NEBULA_AEA_SHLEG_OUTPOST_QUEST" min="1" max="1" priority="1" />
+	
+	<priorityEvent name="NEBULA_TRANSPORT_AEA_SHLEG_LOOT" min="1" max="1" priority="1" />
+	<event name="NEBULA_STORELIST_AEA_SHLEG" min="1" max="2" />
+	<priorityEvent name="STORELIST_AEA_SHLEG" min="0" max="1" priority="0" />
+	<priorityEvent name="AEA_OLD_POWER_CELL_GET" min="1" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
+	
+	<event name="NEBULA_ITEMS_AEA_SHLEG" min="2" max="4" />
+	<event name="NEBULA_NEUTRAL_AEA_SHLEG_UNIQUE" min="3" max="5" />
+	<event name="NEBULA_DISTRESS_AEA_SHLEG" min="1" max="2" />
+	<priorityEvent name="CLEARING_AEA_SHLEG" min="1" max="4" priority="0" />
+	
+	<event name="NEBULA_ENCOUNTER_AEA_SHLEG_ELITE" min="1" max="1" />
+	<event name="NEBULA_HOSTILE_AEA_SHLEG_UNIQUE" min="2" max="6" />
+	
+	<event name="PIRACY_LIST" min="1" max="2" />
+	<event name="FILLER_LIST" min="999" max="999" />
+</sectorDescription>
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 OBELISK SECTOR

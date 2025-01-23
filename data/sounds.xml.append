@@ -16,9 +16,14 @@
 		<combat>aea_MUS_CultistBattle.ogg</combat>
 	</track>
 	<track>
-		<name>aea_bird</name> <!--Music by lizzard-->
+		<name>aea_bird</name> <!--Music by lizzard - LOWERED VOLUME-->
 		<explore>aea_MUS_BirdExplore.ogg</explore>
 		<combat>aea_MUS_BirdBattle.ogg</combat>
+	</track>
+	<track>
+		<name>aea_shleg</name> <!--Music by lizzard - LOWERED VOLUME-->
+		<explore>aea_MUS_ShlegExplore.ogg</explore>
+		<combat>aea_MUS_ShlegBattle.ogg</combat>
 	</track>
 	<track>
 		<name>aea_lylmik</name> <!--Music by lizzard-->

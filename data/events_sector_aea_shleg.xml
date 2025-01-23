@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					AEA_SHLEG SECTOR
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					EXIT BEACON
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<event name="FINISH_BEACON_AEA_SHLEG">
+	<text id="finish_beacon" />
+	<choice hidden="true">
+		<text>Explore.</text>
+		<event load="EXIT_FILLER_LIST" />
+	</choice>
+	<choice hidden="true">
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice hidden="true">
+		<text>Do nothing.</text>
+		<event />
+	</choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					CLEARING EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<eventList name="CLEARING_AEA_SHLEG">
+	<event load="SHELL_VAMPWEED_HEALTH" />
+	<event load="AEA_SHLEG_CLEAR_CHOICE_SLUG" />
+	<event load="AEA_SHLEG_CLEAR_CHOICE_SHELL" />
+	<event load="ENCOUNTER_CLAN_SHELL_CLEARING" />
+</eventList>
+
+
+<event name="AEA_SHLEG_CLEAR_CHOICE_SLUG" unique="true">
+    <text>An Anarchist and a Kleptocracy ship have entered a dogfight at this beacon. It seems the only way to get past is to fight one of them.</text>
+    <choice>
+        <text>Attack the Anarchists.</text>
+        <event>
+            <text>You attack the Anarchist ship head on, prompting the Slug ship to break away. Apparently, their dedication to the hunt does not go so far as to putting themselves in debt of a Federation ship, and so they jump away to leave you alone with the Anarchists.</text>
+            <ship load="SHIP_AEA_SHLEG_FIGHT" hostile="true" />
+            <choice hidden="true">
+                <text>Continue...</text>
+                <event load="MORALITY_UPDATE_AEA_SHLEG_FIGHT" />
+            </choice>
+        </event>
+    </choice>
+    <choice>
+        <text>Attack the Slugs.</text>
+        <event>
+            <text>You attack the Slugs head on. The Anarchists don't seem to want to stick around to see the outcome, and jump away.</text>
+            <ship load="SHIP_SLUG_FIGHT" hostile="true" />
+            <choice hidden="true">
+                <text>Continue...</text>
+                <event load="COMBAT_CHECK" />
+            </choice>
+        </event>
+    </choice>
+    <choice req="cloaking">
+        <text>(Cloaking) Cloak and fly away.</text>
+        <event />
+    </choice>
+    <choice req="engines" lvl="5">
+        <text>(Upg. Engines) Fly away.</text>
+        <event />
+    </choice>
+</event>
+
+<event name="AEA_SHLEG_CLEAR_CHOICE_SHELL" unique="true">
+    <text>An Anarchist and a Geniocracy ship have entered a dogfight at this beacon. It seems the only way to get past is to fight one of them.</text>
+    <choice>
+        <text>Attack the Anarchists.</text>
+        <event>
+            <text>You attack the Anarchist ship head on, prompting the Shell ship to break away. Shells are well known to be cowards, so it's no surprise when they jump away to leave you alone with the Anarchists.</text>
+            <ship load="SHIP_AEA_SHLEG_FIGHT" hostile="true" />
+            <choice hidden="true">
+                <text>Continue...</text>
+                <event load="MORALITY_UPDATE_AEA_SHLEG_FIGHT" />
+            </choice>
+        </event>
+    </choice>
+    <choice>
+        <text>Attack the Shells.</text>
+        <event>
+            <text>You attack the Shells head on. The Anarchists don't seem to want to stick around to see the outcome, and jump away.</text>
+            <ship load="SHIP_SHELL_FIGHT" hostile="true" />
+            <choice hidden="true">
+                <text>Continue...</text>
+                <event load="COMBAT_CHECK" />
+            </choice>
+        </event>
+    </choice>
+    <choice req="cloaking">
+        <text>(Cloaking) Cloak and fly away.</text>
+        <event />
+    </choice>
+    <choice req="engines" lvl="5">
+        <text>(Upg. Engines) Fly away.</text>
+        <event />
+    </choice>
+</event>
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					ITEM EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<eventList name="NEBULA_ITEMS_AEA_SHLEG">
+	<event load="NEBULA_AEA_SHLEG_ARGUMENT" />
+	<event load="NEBULA_SHELL_FISHING" />
+	<event load="NEBULA_AEA_SHLEG_FUEL" />
+	<event load="NEBULA_SHELL_TOXINTEST" />
+</eventList>
+
+<event name="NEBULA_AEA_SHLEG_ARGUMENT" unique="true">
+	<text>You've arrived at the beacon to discover an Anarchist Slug Captain and an Anarchist Shell Captain in a heated argument over who is more evil, The Kleptocracy or the Geniocracy. The Slug Captain turns to you and asks which side you think is more evil.</text>
+    <environment type="nebula" />
+	<choice hidden="true">
+		<text>"You're right, the Kleptocracy is more evil."</text>
+		<event>
+			<text>"Sssseeeee, even the Federation think the Kleptocracy are more evil."
+The slug turns back to you. "Assss a token of my good will please take thissss weapon."</text>
+			<weapon name="GIFTLIST_SLUG"/>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>"The Shell is right, the Geniocracy is more evil."</text>
+		<event>
+			<text>"You see, even thhhhhhe Federation thhhhhhink the Geniocracy are more evil."
+The shell turns back to you. "As a token of my good will please take thhhhis weapon."</text>
+			<weapon name="GIFTLIST_SHELL"/>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>"The Federation is more evil."</text>
+		<event>
+			<text>"Thhhat is an interesting idea captain." Replies the shell captain.
+The slug turns back to you. "That isss a very honest answer, as a token of our good will please accept these supplies"</text>
+			<autoReward level="LOW">stuff</autoReward>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Leave before you accidently insult them.</text>
+		<event>
+			<text>You don't have time for this.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_SHLEG_FUEL" unique="true">
+	<text>At this beacon is an Anarchist trading station. You're hailed by a Shell onboard the station. "Hello Captain, It appears we've overstocked on fuel, would you be willing to buy it off us at a reduced price?"</text>
+	<environment type="nebula" />
+	<variable name="aea_shleg_trading_station" op="set" val="1" />
+	<choice>
+		<text>Buy the fuel</text>
+		<event>
+			<text>The shell transfers over the fuel.</text>
+			<item_modify>
+				<item type="fuel" min="8" max="8"/>
+				<item type="scrap" min="-20" max="-20"/>
+			</item_modify>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Refuse Politely.</text>
+		<event>
+			<text>You don't need the extra fuel.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					NEUTRAL EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<eventList name="NEBULA_NEUTRAL_AEA_SHLEG">
+	<event load="NEBULA_SHELL_SUZERAIN" />
+	<event load="NEBULA_AEA_SHLEG_DIGGING" />
+	<event load="NEBULA_AEA_SHLEG_KNIGHT" />
+	<event load="NEBULA_SHELL_HIDING" />
+	<event load="NEBULA_AEA_SHLEG_SPACE_WHALE" />
+	<event load="NEBULA_SHELL_ADBUCTION" />
+	<event load="NEBULA_AEA_SHLEG_NEUROTOXINLAB" />
+</eventList>
+
+<event name="NEBULA_AEA_SHLEG_KNIGHT">
+	<text>You've arrived at the beacon to discover a Slug Knight hiding in the nebula, you're lucky that you arrived just in time to pick them up through the nebula around you.</text>
+	<environment type="nebula" />
+	<ship load="SHIP_KNIGHT" hostile="false"/>
+	<choice hidden="true">
+		<text>Hail them.</text>
+		<event>
+			<text>"Hello Captain, It sssuprissses me to see a federation captain all the way out here. Kniving with Anarchists are we? Well worry not, All we neeeed is sssome information. We're looking for an Anarchist trading station somewhere out here, if you'd just give us the cooridinates to the last Anarchists you've seeen we'll be on our way."</text>
+			<choice hidden="true" req="aea_shleg_trading_station">
+				<text>(Trading Station Cooridinates) Give them the actual cooridinates to the trading station.</text>
+				<event>
+					<text>"A wise choice Captain, we will tell them of your betrayal." The ship jumps away however you notice they were in the process of scrapping a small Anarchist vessel. You loot the leftovers.</text>
+					<instantEscape/>
+					<autoReward level="HIGH">standard_no_item</autoReward>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="MORALITY_UPDATE_AEA_SHLEG"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Make up some cooridinates.</text>
+				<event>
+					<text>"A wise choice Captain, we will tell them of your betrayal." The ship jumps away however you notice they were in the process of scrapping a small Anarchist vessel. You loot the leftovers.</text>
+					<instantEscape/>
+					<autoReward level="MED">standard_no_item</autoReward>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Refuse.</text>
+				<event>
+					<text>That'ssss an unfortunate choice Captain, We'll have to take those coordinates from your corpssee.</text>
+					<ship hostile="true"/>
+					<choice hidden="true">
+						<text>Prepare to fight!</text>
+						<event load="COMBAT_CHECK"/>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Attack!</text>
+		<event>
+			<text>The ship turns to face you, it appears they knew you were there the entire time.</text>
+			<ship hostile="true"/>
+			<choice hidden="true">
+				<text>Prepare to fight!</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Hide yourself before they pick you up.</text>
+		<event>
+			<text>You manage to obscure yourself in the nebula and charge up your FTL drive.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_SHLEG_DIGGING">
+	<text>You've arrived at the beacon to discover a planet under excavation. You're not sure what they're doing but they've dug a massive pit on the planet's surface. As you get closer you notice that they're actually excavation a massive crashed space ship, its mostly black with a feint green tinge in areas. There's a guard protecting the area.</text>
+	<environment type="nebula" />
+	<img planet="PLANET_UNPOPULATED_SMALL"/>
+	<ship load="SHIP_AEA_SHLEG_RUIN" hostile="false"/>
+	<choice hidden="true">
+		<text>Attack the guard to access the ruins.</text>
+		<event>
+			<text>The guard sees you coming and activates it's weapons.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Leave them be</text>
+		<event>
+			<text>You manage to obscure yourself in the nebula and charge up your FTL drive.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<ship name="SHIP_AEA_SHLEG_RUIN" auto_blueprint="LIST_SHIPS_AEA_SHLEG_GUARDS">
+	<destroyed load="DESTROYED_AEA_SHLEG_RUIN" />
+	<deadCrew load="DESTROYED_AEA_SHLEG_RUIN" />
+</ship>
+
+<event name="DESTROYED_AEA_SHLEG_RUIN">
+	<text>Despite all their defensive measures, the Guard ship has been defeated. You scrap the remains. 
+		
+With the ship now out of the way you're free to inspect the ruins.</text>
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="RUINS_SALVAGE_LIST"/>
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_SHLEG_SPACE_WHALE">	
+	<environment type="nebula" />
+	<img planet="NONE"/>
+	<customFleet right="false" firing="false" autoDarkening="true">CUSTOM_FLEET_AEA_WHALES</customFleet>
+	<text>There's a pod of space whales at this beacon, you notice a slug clasman hiding in the nebula waiting for one of the whales to seperate from the pack.</text>
+	<choice hidden="true">
+		<text>Attack the clansman</text>
+		<event>
+			<ship load="SHIP_CLAN_FIGHT" hostile="true"/>
+			<text>You prepare for combat.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore them</text>
+		<event>
+			<text>You manage to obscure yourself in the nebula and charge up your FTL drive.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_SHLEG_NEUROTOXINLAB" unique="true">
+    <text>Through the clouds of this nebula you spot a Rebel science station. It's strange to see one of these in Anarchist space, but surely there's a good reason.</text>
+    <environment type="nebula" />
+    <choice hidden="true">
+        <text>Pull closer and inspect it.</text>
+        <event>
+            <text>Strangely, no Rebel ships interrupt you as you approach. Even stranger, the station appears to be empty of all life-signs except for one.</text>
+            <choice hidden="true">    
+                <text>Investigate closer.</text>
+                <event>
+                    <text>Surely, only one Rebel could cause no harm to you. You send over your crew. Inside, they find a large laboratory scattered with the corpses of scientists, though none have any visible wounds. The room smells faintly strange.</text>
+                    <choice hidden="true">    
+                        <text>Keep searching.</text>
+                        <event>
+                            <text>Your crew continue through the station, searching for the life-sign you had detected earlier. They find an unshaven, dishevelled engineer rocking back and forth, drooling and hugging a large cube. Your crew manage to calm him down long enough for him to explain the situation. It appears the engineers aboard were tasked with researching the neurotoxin released by the Shells and weaponize it, when one of their Auto-ships turned hostile. Using the toxin, it killed off all of the other scientists. The engineer warns you that now that you've boarded the station, the AI must know you're here too!</text>
+                            <choice hidden="true">    
+                                <text>Pull the crew back, now!</text>
+                                <event>
+                                    <text>Your crew, followed by the psychotic engineer, hurry back to the ship. As they do, a large Auto-ship detaches from the station and chases you!</text>
+                                    <crewMember amount="1" class="human_engineer">Ratman</crewMember>
+                                    <ship load="SHIP_AUTO_LARGE" hostile="true" />
+                                    <choice hidden="true">
+                                        <text>Continue...</text>
+                                        <event load="COMBAT_CHECK" />
+                                    </choice>
+                                </event>
+                            </choice>
+                        </event>
+                    </choice>
+                    <choice hidden="true">    
+                        <text>This is strange. Pull out your crew.</text>
+                        <event>
+                            <text>You call the crew back to the ship, just in case.</text>
+                        </event>
+                    </choice>
+                </event>
+            </choice>
+        </event>
+    </choice>
+    <choice hidden="true">    
+        <text>Ignore the station.</text>
+        <event>
+            <text>You put some distance between yourself and the Rebel station, for good measure.</text>
+            <choice hidden="true">
+                <text>Do something onboard the ship.</text>
+                <event load="STORAGE_CHECK" />
+            </choice>
+            <choice hidden="true">
+                <text>Do nothing.</text>
+                <event />
+            </choice>
+        </event>
+    </choice>
+</event>
+
+<eventList name="NEBULA_NEUTRAL_AEA_SHLEG_UNIQUE">
+	<event load="NEBULA_SHELL_MERCENARY" />
+	<event load="NEBULA_SHELL_IMMUNITY" />
+	<event load="NEBULA_AEA_SHLEG_HIDDEN_COLONY" />
+
+	<event load="NEBULA_AEA_SHLEG_KNIGHT" />
+	<event load="NEBULA_AEA_SHLEG_DIGGING" />
+</eventList>
+
+<event name="NEBULA_AEA_SHLEG_HIDDEN_COLONY" unique="true">
+	<text>You catch the rear of an Anarchist ship slip away into the nebula. If you're quick, you might be able to catch up to them.</text>
+	<environment type="nebula" />
+	<choice hidden="true">
+		<text>Follow them.</text>
+		<event>
+			<text>As you follow the ship through the nebula, you're shocked to find a massive Shell colony between several connected stations.</text>
+			<ship load="SHIP_AEA_SHLEG_COLONY_STATION" hostile="false" />
+			<choice hidden="true">
+				<text>Contact the Shells.</text>
+				<event>
+					<text>You hail the Shells within the colony. They wait for what you will say.</text>
+					<choice hidden="true">
+						<text>Attack!</text>
+						<event>
+							<text>You decide the best course of action here is to attack these peaceful aliens for no good reason.</text>
+							<ship hostile="true" />
+							<choice hidden="true">
+								<text>Continue...</text>
+								<event load="MORALITY_UPDATE_AEA_SHLEG_FIGHT" />
+							</choice>
+						</event>
+					</choice>
+					<choice hidden="true">
+						<text>Request to trade.</text>
+						<event>
+							<text>There is some talk amongst the Shells, but it seems they all agree trading with you will bring no harm.</text>
+							<store>STORE_SHELL</store>
+						</event>
+					</choice>
+					<choice hidden="true">
+						<text>Demand they hand over some supplies.</text>
+						<event load="AEA_SHLEG_HIDDEN_COLONY_DEMAND" />
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Ignore the colony.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">	
+		<text>Ignore them.</text>
+		<event>
+			<text>You don't know what's happening here, but whatever that lone Shell ship is doing is of no concern to your mission.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<ship name="SHIP_AEA_SHLEG_COLONY_STATION" auto_blueprint="LIST_SHIPS_AEA_SHLEG_STATIONS">
+	<destroyed>
+		<text>The Station explodes, rupturing the connections between the other stations nearby.</text>
+		<autoReward level="MED">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="AEA_SHLEG_HIDDEN_COLONY_SURRENDER" />
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>The Station has been emptied.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="AEA_SHLEG_HIDDEN_COLONY_SURRENDER" />
+		</choice>
+	</deadCrew>
+</ship>
+
+<eventList name="AEA_SHLEG_HIDDEN_COLONY_DEMAND">
+	<event>
+		<text>The Anarchists want to avoid a fight at all costs. They hand over what supplies they can spare.</text>
+		<autoReward level="MED">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="MORALITY_UPDATE_AEA_SHLEG" />
+		</choice>
+	</event>
+	<event>
+		<text>The colony does not take well to your demands. They retaliate with their weapons!</text>
+		<ship hostile="true" />
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="MORALITY_UPDATE_AEA_SHLEG_FIGHT" />
+		</choice>
+	</event>
+</eventList>
+<event name="AEA_SHLEG_HIDDEN_COLONY_SURRENDER" unique="true">
+	<text>"Please, stop! We will give you anythhhing, please just spare thhhe rest of us!"</text>
+	<choice>
+		<text>Demand a weapon.</text>
+		<event>
+			<weapon name="RANDOM" />
+		</event>
+	</choice>
+	<choice>
+		<text>Demand a slave.</text>
+		<event>
+			<crewMember amount="1" class="shell" />
+		</event>
+	</choice>
+	<choice>
+		<text>Demand scrap.</text>
+		<event>
+			<autoReward level="MED">scrap_only</autoReward>
+		</event>
+	</choice>
+</event>
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					DISTRESS EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<eventList name="NEBULA_DISTRESS_AEA_SHLEG">
+	<event load="NEBULA_DISTRESS_AEA_SHLEG_CHOICE" />
+	<event load="NEBULA_DISTRESS_AEA_SHLEG_GAS" />
+</eventList>
+
+<event name="NEBULA_DISTRESS_AEA_SHLEG_CHOICE" unique="true">
+	<distressBeacon />
+	<text>You spot an Anarchist ship approaching a small Slug transport. You aren't sure what the Slugs did to deserve this, but they appear to be in trouble.</text>
+	<ship load="SHIP_AEA_SHLEG_FIGHT" hostile="false" />
+	<environment type="nebula" />
+	<choice hidden="true">
+		<text>Help the Slugs.</text>
+		<event>
+			<text>Almost immediately after moving to help the Slugs they jump away, sending one last message to your ship's computer. "Psych!" The Anarchist ship is confused but assumes you have something to do with it and attacks!</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">	
+		<text>Ignore the Slugs.</text>
+		<event>
+			<text>You ignore the Slug ship and move past.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_DISTRESS_AEA_SHLEG_GAS" unique="true">
+	<distressBeacon />
+	<text>The distress beacon is originating from a nearby shell vessel, they reach out as soon as you arrive. "Please rescue us, our ship has been flooded with Anarchist mind control gas. If you dock with us your ship will also be flooded but your oxygen system should get rid of it in 90 seconds."</text>
+	<ship load="SHIP_SHELL_GENERIC" hostile="false" />
+	<environment type="nebula" />
+	<status type="limit" target="enemy" system="oxygen" amount="0" />
+	<choice hidden="true">
+		<text>Dock and purge the gas to save the shells!</text>
+		<event name="AEA_SHLEG_GAS_TIMER_START_LONG">
+			<text>You dock the ship and begin draining the mind control gas onto your own ship. It will now take 90 seconds for the gas to drain.</text>
+			<triggeredEvent name="AEA_SHLEG_GAS_TIMER" event="AEA_SHLEG_GAS_TIMER" time="90" thisFight="false"  clearOnJump="true">
+                <triggeredEventBox load="DEFAULT_TIMER" pos="default">
+					<warning time="10" flash="true" />
+                    <tooltip>The gas will clear when this timer runs out, survive until then.</tooltip>
+                </triggeredEventBox>
+            </triggeredEvent>
+		</event>
+	</choice>
+	<choice hidden="true" req="oxygen" lvl="2">
+		<text>(Upg. Oxygen) Dock and purge the gas 1.5x as fast.</text>
+		<event name="AEA_SHLEG_GAS_TIMER_START_SHORT">
+			<text>You dock the ship and begin draining the mind control gas onto your own ship. It will now take 60 seconds for the gas to drain.</text>
+			<crewMember amount="1" class="shell" />
+			<triggeredEvent name="AEA_SHLEG_GAS_TIMER" event="AEA_SHLEG_GAS_TIMER" time="60" thisFight="false"  clearOnJump="true">
+                <triggeredEventBox load="DEFAULT_TIMER" pos="default">
+					<warning time="10" flash="true" />
+                    <tooltip>The gas will clear when this timer runs out, survive until then.</tooltip>
+                </triggeredEventBox>
+            </triggeredEvent>
+		</event>
+	</choice>
+	<choice hidden="true">	
+		<text>Avoid the ship.</text>
+		<event>
+			<text>Unfortunately, docking with their ship is likely too hazardous, considering Shell ships contain neurotoxin gasses. It's best for you to not get involved.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_SHLEG_GAS_TIMER">
+	<text>You survived the gas and purged it from both your own ship and the Shell's ship. They thank you and send over a large reward</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<weapon name="RANDOM"/>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					QUEST EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					HOSTILE EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<eventList name="NEBULA_HOSTILE_AEA_SHLEG">
+	<event load="NEBULA_ENCOUNTER_AEA_SHLEG" />
+	
+	<event load="NEBULA_ENCOUNTER_AEA_SHLEG_STORM" />
+	<event load="NEBULA_ENCOUNTER_AEA_SHLEG_SLUG" />
+	<event load="NEBULA_ENCOUNTER_AEA_SHLEG_AUTO" />
+	
+	<event load="NEBULA_SHELL_SMUGGLER" />
+</eventList>
+
+<event name="NEBULA_ENCOUNTER_AEA_SHLEG">
+	<text>Anarchist civilians aren't usually ones for direct combat... but with their conflicts with both the Geniocracy and Kleptocracy, a few have felt the need to take it into their own hands to protect the sector. Apparently, you're a threat, because the nearby Anarchist ship attacks!</text>
+	<ship load="SHIP_AEA_SHLEG_FIGHT" hostile="true" />
+	<environment type="nebula" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+<event name="NEBULA_ENCOUNTER_AEA_SHLEG_STORM" unique="true">
+	<text>It appears an Anarchist ship is waiting inside this Ion storm. For what reasons they find you hostile you aren't sure, but it appears you can't get out of this fight so easily.</text>
+	<ship load="SHIP_AEA_SHLEG_FIGHT" hostile="true" />
+	<environment type="storm" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<event name="NEBULA_ENCOUNTER_AEA_SHLEG_SLUG" unique="true">
+	<text>Usually, a standard Slug ship wouldn't have made it this far into Anarchist sectors.  However, one outlier ship appears to have crossed paths with you, and now it seems they're looking to fight!</text>
+	<ship load="SHIP_SLUG_FIGHT" hostile="true" />
+	<environment type="nebula" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<event name="NEBULA_ENCOUNTER_AEA_SHLEG_AUTO" unique="true">
+	<text>The Rebels aren't big fans of the Anarchists, but they're usually too afraid of their toxins to attack them in person. Instead, they prefer to send Auto-ships to do their dirty work. Unfortunately, one of these Auto-ships recognizes you and attacks!</text>
+	<ship load="SHIP_AUTO_FIGHT" hostile="true" />
+	<environment type="nebula" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<event name="NEBULA_SHELL_SMUGGLER" unique="true">
+	<text>It appears a Smuggler ship is trying to sneak their way through this nebula! They notice you watching them and attack, not wanting you to rat out their location!</text>
+	<ship load="SHIP_SMUGGLER_SHELL" hostile="true" />
+	<environment type="nebula" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<eventList name="NEBULA_HOSTILE_AEA_SHLEG_UNIQUE">
+	<event load="NEBULA_ENCOUNTER_AEA_SHLEG" />
+	<event load="NEBULA_ENCOUNTER_AEA_SHLEG_STORM" />
+	
+	<event load="NEBULA_SHELL_SMUGGLER" />
+</eventList>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					UNIQUE EVENTS
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<eventList name="NEBULA_ENCOUNTER_AEA_SHLEG_ELITE">
+	<event load="NEBULA_ENCOUNTER_SHELL_ELITE" />
+	<event load="NEBULA_ENCOUNTER_SLUG_ELITE" />
+</eventList>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					SPECIAL EVENTS
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<event name="NEBULA_AEA_SHLEG_UNIQUE_BATTLE" unique="true">
+	<beaconType id="map_icon_aea_shleg_battle" global="true">
+		<color r="122" g="0" b="0" a="1"/>
+		<unvisitedTooltip>A large scale battle is taking place here, The Anarchists have an active distress beacon on.</unvisitedTooltip>
+	</beaconType>
+	<preventFleet />
+	<preventQuest />
+	<customFleet right="true" firing="true" autoDarkening="true">CUSTOM_FLEET_SLUG</customFleet>
+	<customFleet right="false" firing="true" autoDarkening="true">CUSTOM_FLEET_SLUG</customFleet>
+	<text>A massive battle is taking place at this beacon, you can immediately tell that the Anarchists are losing. A large Anarchist ship at the center of the battle is being attacked by an equally large slug KoN vessel, it appears they're on the defensive and don't have long to live.</text>
+	<environment type="nebula" />
+	<choice hidden="true">
+		<text>Move in front to defend the Anarchist ship.</text>
+		<event>
+			<text>The Anarchist ship is now unable to defend itself, and so when you move in to protect them, they're unable to help you.</text>
+			<ship load="AEA_SHLEG_KNIGHT_BATTLE" hostile="true"/>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Leave them to die.</text>
+		<event>
+			<text>The large Anarchist ship eventually splits apart under fire from the slugs, at this the battle quickly turns with the remaining Anarchists either being destroyed or fleeing. You hide in the nebula and charge your FTL drive.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<ship name="AEA_SHLEG_KNIGHT_BATTLE" auto_blueprint="LIST_SHIPS_KNIGHT_LARGE">
+	<destroyed load="AEA_SHLEG_KNIGHT_BATTLE_WIN" />
+	<deadCrew load="AEA_SHLEG_KNIGHT_BATTLE_WIN" />
+	<crew>
+		<crewMember type="slug" prop="0.25" />
+		<crewMember type="slug_saboteur" prop="0.25" />
+		<crewMember type="slug_knight" prop="0.50" />	
+	</crew>
+</ship>
+
+<event name="AEA_SHLEG_KNIGHT_BATTLE_WIN">
+	<text>You've destroyed the knight vessel and secured the safety of the large Anarchist ship. With that win the battle has turned and the anarchist ships begin pushing back the slugs.</text>
+	<autoReward level="HIGH">standard</autoReward>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>With the slugs on the retreat the Anarchist ship you rescued hails you. A Slug and Shell both appear on screen, these two aren't in normal anarchist colours. "Hello Captain, We're thankful for your help back there. We were wondering whether you'd help with a job we have planned. We'll spare most of the details but just know you'll have to distract the enemy for a time."</text>
+			<choice hidden="true">
+				<text>Accept the mission.</text>
+				<event>
+					<text>"Alright, we've discovered a heavily defended Radiant research base nearby, we'll need you to distract them while we sneak onboard the station. You'll need to be careful though, We can't risk you killing the guard and putting the base on lockdown. Insead you'll need to just keep them in combat for a few minutes while we work on the research base. we'll send over the coordinates."</text>
+					<quest event="NEBULA_AEA_SHLEG_RADIANT_QUEST"/>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Decline the mission.</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_SHLEG_RADIANT_QUEST">
+	<beaconType id="map_icon_aea_shleg_radiant" global="true">
+        <color r="90" g="205" b="180" a="1"/>
+        <unvisitedTooltip>Coordinates given by the two strange Anarchists.</unvisitedTooltip>
+        <visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+    </beaconType>
+	<preventFleet />
+	<preventQuest />
+	<quest>
+		<nebulaBeacon>true</nebulaBeacon>
+		<createNebula>false</createNebula>
+		<aggressive>2</aggressive>
+	</quest>
+	<text>Through a clearing in the nebula you find the research base the Anarchists promised, alongside a dangerous looking guard. You move back into the nebula to wait for the Anarchists to arrive.</text>
+	<img back="BACK_EVENT_LIGHTNEBULA" planet="NONE" />
+	<status type="loss" target="player" system="sensors" amount="1" />
+	<environment type="asteroid" />
+	<ship load="AEA_SHLEG_RADIANT_QUESTSHIP" hostile="false"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>A few moments later a small dark vessel arrives, initially you think it must belong to the slug knights but when it hails you, you realize its the Anarchists. Those two same Anarchists show up on the comms again. "We're here Captain, Remember do not kill the guard, just distract them until we're finished. We'll move in once you start."</text>
+			<choice hidden="true">
+				<text>Attack the guard.</text>
+				<event>
+					<text>You fly out of the nebula with weapons armed. The guard responds in kind</text>
+					<ship hostile="true"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Chicken out now.</text>
+				<event>
+					<text>When the anarchists realize you're not going to attack they jump away, clearly frustrated with you.</text>
+					<choice hidden="true">
+						<text>Do something onboard the ship.</text>
+						<event load="STORAGE_CHECK" />
+					</choice>
+					<choice hidden="true">
+						<text>Do nothing.</text>
+						<event />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="DEFEAT_AEA_SHLEG_RADIANT_ELITE">
+	<text>A Radiant vessel has fallen to your ship. You'd better have held off killing this ship or else you may have just gotten those Anarchists killed.</text>
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>It seems the cargo of the Elite Shell ship survived the fight. Inside is an Anti-Hull weapon, which you bring back on board.</text>
+			<weapon name="GIFTLIST_SHELL" />
+		</event>
+	</choice>
+</event>
+
+<ship name="AEA_SHLEG_RADIANT_QUESTSHIP" auto_blueprint="LIST_SHIPS_SHELL_ELITE_FIGHT">
+	<destroyed load="DEFEAT_AEA_SHLEG_RADIANT_ELITE" />
+	<deadCrew load="DEFEAT_AEA_SHLEG_RADIANT_ELITE" />
+	<triggeredEvent event="AEA_SHLEG_RADIANT_QUEST_WIN" time="55" clearOnJump="true" thisFight="true">
+		<triggeredEventBox load="DEFAULT_TIMER" pos="combat">
+			<warning time="10.0" flash="true" />
+			<tooltip>Keep the guard alive until this timer ends.</tooltip>
+		</triggeredEventBox>
+		<timerSounds load="DEFAULT_TIMER_SOUNDS" />
+	</triggeredEvent>
+	<crew>
+		<crewMember type="shell_radiant" prop="0.50" />
+		<crewMember type="shell" prop="0.50" />
+	</crew>
+</ship>
+
+<event name="AEA_SHLEG_RADIANT_QUEST_WIN">
+	<text>"We're out. We'll come dock with your ssssship."</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>The two anarchists dock with your ship and come onboard, one of them is holding a large tank full of gas that appears to be shifting colours. "Excellent work Captain, you handled that quite professionally and allowed us to get our hands on thhhhhis prototype gas."
+
+The slug picks up the conversation, "Sssssorry we haven't introduced oursselvesss properly, I'm sssickle and this is ssorrow, we were the original founding membersss of the Anarchistsss."
+Sorrow then continues, "We have one last proposition for you. We'd bothhh like to continue along withhh you on your ship, however one of us needs to take thhhhis gas back to our researchers."
+"We need you to pick between usssss."
+
+Alongside their offer they also give you the blueprints to a new ship and a nice amount of scrap.</text>
+			<autoReward level="MED">scrap_only</autoReward>
+			<unlockCustomShip silent="false">PLAYER_SHIP_AEA_SHLEG_GAS</unlockCustomShip>
+			<choice hidden="false">
+				<text>Take Sickle.</text>
+				<event>
+					<text>"It'ss my pleasure to ssserve along ssside you Captain." Sickle turns to Sorrow and says her good byes.</text>
+					<crewMember amount="1" all_skills="2" class="aea_shleg_sickle">Sickle</crewMember>
+				</event>
+			</choice>
+			<choice hidden="false">
+				<text>Take Sorrow.</text>
+				<event>
+					<text>"Thhhis will be a nice change of pace." Sorrow turns to Sickle and says her good byes.</text>
+					<crewMember amount="1" all_skills="2" class="aea_shleg_sorrow">Sorrow</crewMember>
+				</event>
+			</choice>
+			<choice hidden="false">
+				<text>Decline both of them.</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_SHLEG_OUTPOST_QUEST">
+	<beaconType id="map_icon_outpost" global="true">
+		<color r="233" g="123" b="74" a="1.0" />
+		<unvisitedTooltip id="map_outpost_unvisited" />
+		<visitedTooltip id="map_outpost_visited" />
+	</beaconType>
+	<preventFleet />
+	<preventQuest />
+	<ship load="SHIP_FEDERATION_OUTPOST" hostile="false" />
+	<text>You arrive at the beacon to discover a federation station however when you hail them you get a strange response, a camera feed appears showing the inside of the outpost appears to be filled with some strange gas, you can't see anyone around.</text>
+	<environment type="nebula" />
+	<choice hidden="true">
+		<text>Dock and investigate.</text>
+		<event>
+			<text>As you move in to dock you're interupted when an Anarchist ship emerges from the clouds. "Hey this is our experi- Oh damn that's a renegade, looks like they're with the Federation, we need to get out here!" The Anarchist ship takes off into the clouds.</text>
+			<choice hidden="true">
+				<text>Chase them!</text>
+				<event>
+					<text>You're able to track them through the clouds rather easily, it appears they forgot to turn off their comms. After a while you hear one tell another to put in a set of coordinates into the coordinates before the ship jumps away. You mark the coordinates on your own map.</text>
+					<quest event="NEBULA_AEA_SHLEG_OUTPOST_QUEST2"/>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Let them go</text>
+				<event>
+					<text>You turn back to the outpost but when you dock you find all of the crew dead. You scrap what you can.</text>
+					<autoReward level="MED">standard</autoReward>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Leave before anything bad happens to you aswell.</text>
+		<event>
+			<text>You back off into the nebula and charge your FTL drive.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_SHLEG_OUTPOST_QUEST2">
+	<beaconType id="map_icon_aea_shleg_quest" global="true">
+        <color r="90" g="205" b="180" a="1"/>
+        <unvisitedTooltip>Coordinates picked up from the Anarchist ship that escaped.</unvisitedTooltip>
+        <visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+    </beaconType>
+	<preventFleet />
+	<preventQuest />
+	<quest>
+		<nebulaBeacon>true</nebulaBeacon>
+		<createNebula>true</createNebula>
+		<aggressive>2</aggressive>
+	</quest>
+	<ship load="AEA_SHLEG_ARTILLERY_QUEST" hostile="false"/>
+	<text>You arrive at the beacon and pick up the Anarchists. It appears they're communicating with a tiny research outpost.</text>
+	<environment type="nebula" />
+	<choice hidden="true">
+		<text>Attack!</text>
+		<event>
+			<text>"Oh no, they followed us, I told you we left the comms on!"</text>
+			<ship hostile="true"/>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore them.</text>
+		<event>
+			<text>You back off into the nebula and charge your FTL drive.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<ship name="AEA_SHLEG_ARTILLERY_QUEST" auto_blueprint="AEA_SHLEG_ARTILLERY">
+	<destroyed load="NEBULA_AEA_SHLEG_OUTPOST_QUEST_WIN" />
+	<deadCrew load="NEBULA_AEA_SHLEG_OUTPOST_QUEST_WIN" />
+</ship>
+
+<event name="NEBULA_AEA_SHLEG_OUTPOST_QUEST_WIN">
+	<text>You've destroyed the usual ship and you loot it for everything they have. You find a weapon amongst the wreckage.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<weapon name="GIFTLIST_WEAPONS_AEA_SHLEG"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>You then turn you attention to the research base, onboard you find a complete sector map, aswell as the blueprint to the ship you destroyed.</text>
+			<reveal_map/>
+			<unlockCustomShip silent="false">PLAYER_SHIP_AEA_SHLEG_GEL</unlockCustomShip>
+		</event>
+	</choice>
+</event>
+</FTL>

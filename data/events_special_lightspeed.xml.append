@@ -32,6 +32,14 @@
 		<text>Proceed to the Gi Nesting Grounds.</text>
 		<event load="AEA_BIRD_UNIQUE_WARP" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_SHLEG" blue="false">
+		<text>Proceed to the Anarchist Sector.</text>
+		<event load="AEA_SHLEG_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_SHLEG_UNIQUE" blue="false">
+		<text>Proceed to the Anarchist Central Nebula.</text>
+		<event load="AEA_SHLEG_UNIQUE_WARP" />
+	</mod-append:choice>
 	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_2" blue="false">
 		<text>Proceed to the Lylmik Core.</text>
 		<event load="AEA_OLD_2_WARP" />
@@ -71,6 +79,14 @@
 		<text>Proceed to the Gi Nesting Grounds.</text>
 		<event load="AEA_BIRD_UNIQUE_WARP" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_SHLEG" blue="false">
+		<text>Proceed to the Anarchist Sector.</text>
+		<event load="AEA_SHLEG_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_SHLEG_UNIQUE" blue="false">
+		<text>Proceed to the Anarchist Central Nebula.</text>
+		<event load="AEA_SHLEG_UNIQUE_WARP" />
+	</mod-append:choice>
 	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_2" blue="false">
 		<text>Proceed to the Lylmik Core.</text>
 		<event load="AEA_OLD_2_WARP" />
@@ -107,6 +123,10 @@
 	<mod-append:choice hidden="true">
 		<text>Go to the Gi Nesting Grounds.</text> 
 		<event load="LIGHTSPEED_SECTOR_WARP_AEA_BIRD_HAT" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_SHLEG_UNIQUE" blue="false">
+		<text>Proceed to the Anarchist Central Nebula.</text>
+		<event load="LIGHTSPEED_SECTOR_WARP_AEA_SHLEG_HAT" />
 	</mod-append:choice>
 </mod:findName>
 
@@ -484,6 +504,89 @@ The Gi are close allies with the federation, A recently discovered race they hav
 
 <event name="JUMP_TO_AEA_BIRD_CORE">
 	<secretSector>SECTOR_AEA_BIRD_UNIQUE</secretSector>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					SHLEG
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="ENTER_AEA_SHLEG">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event>
+<event name="AEA_SHLEG_WARP">
+	<text>Name: Anarchist Controlled Sector
+Type: Neutral (Nebula)
+Unique: False
+Dominant Faction: Shell and Slug Anarchists
+Rebel Threat Level: Medium (Auto Fleet)
+
+The Anarchists are a combined group of both shells and slugs who have formed together to fight back against their collective governments. Although not directly in conflict with the federation they aren't fans either, be careful.</text>
+	<choice hidden="true">
+		<text>Exit hyperspeed.</text>
+		<event load="START_AEA_SHLEG" />
+	</choice>
+	<choice hidden="true" req="COORDS" blue="false">
+		<text>Reroute.</text>
+		<event load="REROUTE_MENU" />
+	</choice>
+</event>
+
+<event name="ENTER_AEA_SHLEG_UNIQUE">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event>
+<event name="AEA_SHLEG_UNIQUE_WARP">
+	<text id="atlas_aea_shleg" />
+    <choice hidden="true">
+        <text>Exit hyperspeed.</text>
+        <event load="START_AEA_SHLEG_UNIQUE" />
+    </choice>
+    <choice hidden="true" req="COORDS" blue="false">
+		<text>Reroute.</text>
+		<event load="REROUTE_MENU" />
+	</choice>
+</event>
+
+<event name="LIGHTSPEED_SECTOR_WARP_AEA_SHLEG_HAT">
+	<text id="atlas_aea_shleg" />
+	<choice hidden="true">
+		<text>Continue with the jump.</text>
+		<event>
+			<text>You prepare to jump to the new co-ordinates, and change your flight path accordingly.</text>
+			<variable name="magical_hat_active" op="set" val="0" />
+			<variable name="loc_sector_count" op="add" val="-1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="JUMP_TO_AEA_SHLEG_CORE" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind.</text>
+		<event>
+			<loadEvent>ATLAS_MENU_NOEQUIPMENT</loadEvent>
+		</event>
+	</choice>
+</event>
+
+<event name="JUMP_TO_AEA_SHLEG_CORE">
+	<secretSector>SECTOR_AEA_SHLEG_UNIQUE</secretSector>
 </event>
 
 <!--

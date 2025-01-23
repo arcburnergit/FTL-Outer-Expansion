@@ -11,13 +11,13 @@
 	<mount x="258" y="362" rotate="true" mirror="false" gib="-1" slide="down" />
 	<mount x="505" y="164" rotate="true" mirror="true" gib="-1" slide="up" />
 	<mount x="594" y="240" rotate="true" mirror="true" gib="-1" slide="right" />
+	<mount x="255" y="173" rotate="false" mirror="false" gib="-1" slide="no" />
+	<mount x="325" y="173" rotate="false" mirror="false" gib="-1" slide="no" />
 	<mount x="395" y="173" rotate="false" mirror="false" gib="-1" slide="no" />
 	<!--mount x="395" y="173" rotate="false" mirror="false" gib="-1" slide="no" />
 	<mount x="395" y="173" rotate="false" mirror="false" gib="-1" slide="no" /-->
-	<mount x="325" y="173" rotate="false" mirror="false" gib="-1" slide="no" />
 	<!--mount x="325" y="173" rotate="false" mirror="false" gib="-1" slide="no" />
 	<mount x="325" y="173" rotate="false" mirror="false" gib="-1" slide="no" /-->
-	<mount x="255" y="173" rotate="false" mirror="false" gib="-1" slide="no" />
 	<!--mount x="255" y="173" rotate="false" mirror="false" gib="-1" slide="no" />
 	<mount x="255" y="173" rotate="false" mirror="false" gib="-1" slide="no" /-->
 </weaponMounts>

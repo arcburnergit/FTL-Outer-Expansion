@@ -347,6 +347,17 @@
 	<mountPoint x="4" y="101" />
 </weaponAnim>
 
+<animSheet name="aea_beam_old_1_new" w="450" h="142" fw="50" fh="142">weapon_old/aea_beam_old_1_new.png</animSheet>
+<weaponAnim name="aea_beam_old_1_new">
+	<sheet>aea_beam_old_1_new</sheet>
+	<desc length="9" x="0" y="0" />
+	<chargedFrame>5</chargedFrame>
+	<fireFrame>7</fireFrame>
+	<firePoint x="31" y="16" />
+	<mountPoint x="4" y="101" />
+	<chargeImage>weapon_old/aea_beam_old_1_new_glow.png</chargeImage>
+</weaponAnim>
+
 
 <animSheet name="aea_laser_oldp_1_new" w="248" h="101" fw="31" fh="101">weapon_old/aea_laser_oldp_1_new.png</animSheet>
 <weaponAnim name="aea_laser_oldp_1_new">
@@ -4020,6 +4031,15 @@
 	<firePoint x="18" y="22" />
 	<mountPoint x="5" y="43" />
 </weaponAnim>
+<animSheet name="missiles_aea_shleg_gas_loot" w="341" h="63" fw="31" fh="63">weapon_shleg/missiles_aea_shleg_gas_loot.png</animSheet>
+<weaponAnim name="missiles_aea_shleg_gas_loot">
+	<sheet>missiles_aea_shleg_gas_loot</sheet>
+	<desc length="11" x="0" y="0" />
+	<chargedFrame>9</chargedFrame>
+	<fireFrame>10</fireFrame>
+	<firePoint x="18" y="22" />
+	<mountPoint x="5" y="43" />
+</weaponAnim>
 
 <!-- 
 *********************************************************************************************************
@@ -4567,6 +4587,393 @@
 </FTL>
 
 <FTL>
+<!-- 
+*********************************************************************************************************
+                   Breaker
+*********************************************************************************************************
+-->
+
+<animSheet name="aea_shard_breaker" w="350" h="455" fw="35" fh="35">people/aea_shard_breaker_base.png</animSheet>
+<animSheet name="explosion_aea_shard_breaker_death" w="288" h="48" fw="48" fh="48">effects/explosion_aea_shard_breaker.png</animSheet>
+<anim name="aea_shard_breaker_death_right">
+	<sheet>explosion_aea_shard_breaker_death</sheet>
+	<desc length="6" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_death_left">
+	<sheet>explosion_aea_shard_breaker_death</sheet>
+	<desc length="6" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_clone">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="6" x="0" y="2" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_walk_down">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="4" x="0" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_walk_right">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="4" x="4" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_walk_up">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="4" x="0" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_walk_left">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="4" x="4" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_shoot_down">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="4" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_shoot_right">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="4" x="4" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_shoot_up">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="4" x="0" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_shoot_left">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="4" x="4" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_fire_down">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="10" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_fire_right">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="10" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_fire_up">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="10" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_fire_left">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="10" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_repair">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="8" x="0" y="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_punch_up">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="6" x="3" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_punch_down">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="6" x="0" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_breaker_teleport">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="9" x="0" y="3" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_shard_breaker_type_right">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="4" x="0" y="5" />
+	<time>1</time>
+</anim>
+<anim name="aea_shard_breaker_type_left">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="4" x="4" y="5" />
+	<time>1</time>
+</anim>
+<anim name="aea_shard_breaker_type_up">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="4" x="0" y="4" />
+	<time>1</time>
+</anim>
+<anim name="aea_shard_breaker_type_down">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="4" x="4" y="4" />
+	<time>1</time>
+</anim>
+<anim name="aea_shard_breaker_portrait">
+	<sheet>aea_shard_breaker</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<!-- 
+*********************************************************************************************************
+                   SMASHER
+*********************************************************************************************************
+-->
+
+<animSheet name="aea_shard_smasher" w="700" h="455" fw="35" fh="35">people/aea_shard_smasher_base.png</animSheet>
+<anim name="aea_shard_smasher_clone">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="6" x="0" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_death_right">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="7" x="3" y="0" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_death_left">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="7" x="3" y="0" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_walk_down">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="4" x="0" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_walk_up">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="4" x="4" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_walk_left">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="4" x="8" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_walk_right">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="4" x="12" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_shoot_left">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="20" x="0" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_shoot_right">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="20" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_shoot_down">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="20" x="0" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_shoot_up">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="20" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_fire_down">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="14" x="0" y="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_fire_right">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="14" x="0" y="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_fire_up">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="14" x="0" y="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_fire_left">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="14" x="0" y="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_repair">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="8" x="0" y="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_punch_up">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="10" x="0" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_punch_down">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="10" x="0" y="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_smasher_teleport">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="7" x="0" y="2" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_shard_smasher_type_down">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="4" x="0" y="5" />
+	<time>1</time>
+</anim>
+<anim name="aea_shard_smasher_type_up">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="4" x="4" y="5" />
+	<time>1</time>
+</anim>
+<anim name="aea_shard_smasher_type_right">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="4" x="8" y="5" />
+	<time>1</time>
+</anim>
+<anim name="aea_shard_smasher_type_left">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="4" x="12" y="5" />
+	<time>1</time>
+</anim>
+<anim name="aea_shard_smasher_portrait">
+	<sheet>aea_shard_smasher</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<!-- 
+*********************************************************************************************************
+                   DAWN
+*********************************************************************************************************
+-->
+
+<animSheet name="aea_shard_dawn" w="350" h="455" fw="35" fh="35">people/aea_shard_dawn_base.png</animSheet>
+<anim name="aea_shard_dawn_clone">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="6" x="0" y="2" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_death_right">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="6" x="3" y="0" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_death_left">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="6" x="0" y="2" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_walk_down">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="4" x="0" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_walk_right">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="4" x="4" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_walk_up">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="4" x="0" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_walk_left">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="4" x="4" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_shoot_down">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="4" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_shoot_right">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="4" x="4" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_shoot_up">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="4" x="0" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_shoot_left">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="4" x="4" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_fire_down">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="10" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_fire_right">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="10" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_fire_up">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="10" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_fire_left">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="10" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_repair">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="8" x="0" y="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_punch_up">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="6" x="3" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_punch_down">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="6" x="0" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_teleport">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="9" x="0" y="3" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_shard_dawn_type_right">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="4" x="0" y="5" />
+	<time>1</time>
+</anim>
+<anim name="aea_shard_dawn_type_left">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="4" x="4" y="5" />
+	<time>1</time>
+</anim>
+<anim name="aea_shard_dawn_type_up">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="4" x="0" y="4" />
+	<time>1</time>
+</anim>
+<anim name="aea_shard_dawn_type_down">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="4" x="4" y="4" />
+	<time>1</time>
+</anim>
+<anim name="aea_shard_dawn_portrait">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+</FTL>
+
+<FTL>
 	
 <animSheet name="aea_crystal_spike" w="35" h="35" fw="35" fh="35">effects/aea_crystal_spike.png</animSheet>
 <anim name="aea_crystal_spike">
@@ -4588,6 +4995,16 @@
 <animSheet name="artillery_broadside_pierce" w="462" h="66" fw="33" fh="66">weapons_aea/artillery_broadside_pierce.png</animSheet>
 <weaponAnim name="artillery_broadside_pierce">
 	<sheet>artillery_broadside_pierce</sheet>
+	<desc length="14" x="0" y="0" />
+	<chargedFrame>10</chargedFrame>
+	<fireFrame>12</fireFrame>
+	<firePoint x="16" y="39" />
+	<mountPoint x="16" y="52" />
+</weaponAnim>
+
+<animSheet name="artillery_broadside_pierce_enemy" w="462" h="66" fw="33" fh="66">weapons_aea/artillery_broadside_pierce_enemy.png</animSheet>
+<weaponAnim name="artillery_broadside_pierce_enemy">
+	<sheet>artillery_broadside_pierce_enemy</sheet>
 	<desc length="14" x="0" y="0" />
 	<chargedFrame>10</chargedFrame>
 	<fireFrame>12</fireFrame>

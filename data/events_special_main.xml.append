@@ -47,8 +47,6 @@
 
 <event name="AEA_BROADSIDE_CHOOSE_ARTY">
   <loadEventList seeded="false" first="true" generate="false">
-    <event req="SHIP_AEA_BROADSIDE" lvl="0" max_lvl="0">
-    </event>
     <event req="SHIP_AEA_BROADSIDE" lvl="1" max_lvl="99999">
       <text>Choose an artillery for slot 1</text>
       <choice hidden="false">
@@ -84,6 +82,42 @@
         </event>
       </choice>
     </event>
+    <event req="SHIP_AEA_BROADSIDE2" lvl="1" max_lvl="99999">
+      <text>Choose an artillery for slot 1</text>
+      <choice hidden="false">
+        <text>Laser Artillery.</text>
+        <event>
+          <text>.</text>
+          <loadEvent>AEA_BROADSIDE2_CHOOSE_LASER_1</loadEvent>
+          <weapon name="ARTILLERY_BROADSIDE2_LASER"/>
+        </event>
+      </choice>
+      <choice hidden="false">
+        <text>Beam Artillery.</text>
+        <event>
+          <text>.</text>
+          <loadEvent>AEA_BROADSIDE2_CHOOSE_BEAM_1</loadEvent>
+          <weapon name="ARTILLERY_BROADSIDE2_BEAM"/>
+        </event>
+      </choice>
+      <choice hidden="false" req="aea_broadside_missile_chosen" lvl="0" max_lvl="1" blue="false">
+        <text>Missile Artillery (max: 2).</text>
+        <event>
+          <text>.</text>
+          <loadEvent>AEA_BROADSIDE2_CHOOSE_MISSILE_1</loadEvent>
+          <weapon name="ARTILLERY_BROADSIDE2_MISSILE"/>
+        </event>
+      </choice>
+      <choice hidden="false">
+        <text>Ion Artillery.</text>
+        <event>
+          <text>.</text>
+          <loadEvent>AEA_BROADSIDE2_CHOOSE_ION_1</loadEvent>
+          <weapon name="ARTILLERY_BROADSIDE2_ION"/>
+        </event>
+      </choice>
+    </event>
+    <event/>
   </loadEventList>
 </event>
 
@@ -260,6 +294,214 @@
     <text>Continue...</text>
     <event/>
   </choice>
+</event>
+
+
+<event name="AEA_BROADSIDE2_CHOOSE_LASER_1">
+  <text>You choose the laser.</text>
+	<variable name="aea_broadside_slot1" op="set" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="AEA_BROADSIDE2_CHOOSE_ARTY_2"/>
+  </choice>
+</event>
+<event name="AEA_BROADSIDE2_CHOOSE_BEAM_1">
+  <text>You choose the beam.</text>
+	<variable name="aea_broadside_slot1" op="set" val="2"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="AEA_BROADSIDE2_CHOOSE_ARTY_2"/>
+  </choice>
+</event>
+<event name="AEA_BROADSIDE2_CHOOSE_MISSILE_1">
+  <text>You choose the missile.</text>
+	<variable name="aea_broadside_slot1" op="set" val="3"/>
+	<variable name="aea_broadside_missile_chosen" op="add" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="AEA_BROADSIDE2_CHOOSE_ARTY_2"/>
+  </choice>
+</event>
+<event name="AEA_BROADSIDE2_CHOOSE_ION_1">
+  <text>You choose the ion.</text>
+	<variable name="aea_broadside_slot1" op="set" val="4"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="AEA_BROADSIDE2_CHOOSE_ARTY_2"/>
+  </choice>
+</event>
+
+<event name="AEA_BROADSIDE2_CHOOSE_ARTY_2">
+  <text>Choose an artillery for slot 2</text>
+  <choice hidden="false">
+    <text>Laser Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>AEA_BROADSIDE2_CHOOSE_LASER_2</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_LASER"/>
+    </event>
+  </choice>
+  <choice hidden="false">
+    <text>Beam Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>AEA_BROADSIDE2_CHOOSE_BEAM_2</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_BEAM"/>
+    </event>
+  </choice>
+  <choice hidden="false" req="aea_broadside_missile_chosen" lvl="0" max_lvl="1" blue="false">
+    <text>Missile Artillery (max: 2).</text>
+    <event>
+      <text>.</text>
+      <loadEvent>AEA_BROADSIDE2_CHOOSE_MISSILE_2</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_MISSILE"/>
+    </event>
+  </choice>
+  <choice hidden="false">
+    <text>Ion Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>AEA_BROADSIDE2_CHOOSE_ION_2</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_ION"/>
+    </event>
+  </choice>
+</event>
+
+
+<event name="AEA_BROADSIDE2_CHOOSE_LASER_2">
+  <text>You choose the laser.</text>
+	<variable name="aea_broadside_slot2" op="set" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="AEA_BROADSIDE2_CHOOSE_ARTY_3"/>
+  </choice>
+</event>
+<event name="AEA_BROADSIDE2_CHOOSE_BEAM_2">
+  <text>You choose the beam.</text>
+	<variable name="aea_broadside_slot2" op="set" val="2"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="AEA_BROADSIDE2_CHOOSE_ARTY_3"/>
+  </choice>
+</event>
+<event name="AEA_BROADSIDE2_CHOOSE_MISSILE_2">
+  <text>You choose the missile.</text>
+	<variable name="aea_broadside_slot2" op="set" val="3"/>
+	<variable name="aea_broadside_missile_chosen" op="add" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="AEA_BROADSIDE2_CHOOSE_ARTY_3"/>
+  </choice>
+</event>
+<event name="AEA_BROADSIDE2_CHOOSE_ION_2">
+  <text>You choose the ion.</text>
+	<variable name="aea_broadside_slot2" op="set" val="4"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="AEA_BROADSIDE2_CHOOSE_ARTY_3"/>
+  </choice>
+</event>
+
+<event name="AEA_BROADSIDE2_CHOOSE_ARTY_3">
+  <text>Choose an artillery for slot 3</text>
+  <choice hidden="false">
+    <text>Laser Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>AEA_BROADSIDE2_CHOOSE_LASER_3</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_LASER"/>
+    </event>
+  </choice>
+  <choice hidden="false">
+    <text>Beam Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>AEA_BROADSIDE2_CHOOSE_BEAM_3</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_BEAM"/>
+    </event>
+  </choice>
+  <choice hidden="false" req="aea_broadside_missile_chosen" lvl="0" max_lvl="1" blue="false">
+    <text>Missile Artillery (max: 2).</text>
+    <event>
+      <text>.</text>
+      <loadEvent>AEA_BROADSIDE2_CHOOSE_MISSILE_3</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_MISSILE"/>
+    </event>
+  </choice>
+  <choice hidden="false">
+    <text>Ion Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>AEA_BROADSIDE2_CHOOSE_ION_3</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_ION"/>
+    </event>
+  </choice>
+</event>
+
+<event name="AEA_BROADSIDE2_CHOOSE_LASER_3">
+  <text>You choose the laser.</text>
+	<variable name="aea_broadside_slot3" op="set" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event/>
+  </choice>
+</event>
+<event name="AEA_BROADSIDE2_CHOOSE_BEAM_3">
+  <text>You choose the beam.</text>
+	<variable name="aea_broadside_slot3" op="set" val="2"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event/>
+  </choice>
+</event>
+<event name="AEA_BROADSIDE2_CHOOSE_MISSILE_3">
+  <text>You choose the missile.</text>
+	<variable name="aea_broadside_slot3" op="set" val="3"/>
+	<variable name="aea_broadside_missile_chosen" op="add" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event/>
+  </choice>
+</event>
+<event name="AEA_BROADSIDE2_CHOOSE_ION_3">
+  <text>You choose the ion.</text>
+	<variable name="aea_broadside_slot3" op="set" val="4"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event/>
+  </choice>
+</event>
+
+<event name="AEA_ENEMY_BROADSIDE_EVENT">
+	<beaconType id="map_icon_aea_broadside" global="true">
+        <color r="229" g="142" b="46" a="1"/>
+        <unvisitedTooltip>There are reports of a strange rebel ship here.</unvisitedTooltip>
+        <visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+    </beaconType>
+	<preventFleet />
+  <preventBossFleet />
+	<preventQuest />
+  <text>You arrive at the beacon face to face with a strange rebel ship, it's unlike any design you've seen before. You don't have time to ponder as it turns it's weapons on you.</text>
+  <ship load="AEA_BROADSIDE_ENEMY" hostile="true"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="COMBAT_CHECK"/>
+  </choice>
+</event>
+
+<ship name="AEA_BROADSIDE_ENEMY" auto_blueprint="AEA_BROADSIDE_ENEMY">
+	<destroyed load="DESTROYED_AEA_BROADSIDE" />
+	<deadCrew load="DEAD_CREW_AEA_BROADSIDE" />
+</ship>
+<event name="DESTROYED_AEA_BROADSIDE">
+	<text>The fiery red of the explosions complements the orange hull of the Rebel ship. Satisfied with your handiwork, you scrap the ship.</text>
+  <unlockCustomShip silent="false">PLAYER_SHIP_AEA_BROADSIDE</unlockCustomShip>
+	<autoReward level="MED">standard</autoReward>
+</event>
+<event name="DEAD_CREW_AEA_BROADSIDE">
+	<text>With the Rebel vessel now clear of its crew, you are free to scrap the remains.</text>
+  <!--unlockCustomShip silent="false">PLAYER_SHIP_AEA_BROADSIDE</unlockCustomShip-->
+	<autoReward level="HIGH">standard</autoReward>
 </event>
 
 </FTL>

@@ -58,6 +58,14 @@
 	<stackable>false</stackable>
 	<bp>0</bp>
 </augBlueprint>
+<augBlueprint name="SHIP_AEA_BROADSIDE2">
+	<title>Broadside Cruiser</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
 
 
 <shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY" layout="aeap_acid_arty_a" img="aeap_acid_arty_a">
@@ -145,7 +153,7 @@
 		<cloaking power="1" room="5" start="false" img="room_cloaking_11" />
 		<clonebay power="1" room="13" start="false">
 			<slot>
-				<number>-2</number>
+				<number>2</number>
 			</slot>
 		</clonebay>
 		<doors power="1" room="11" start="true" img="room_doors">
@@ -218,7 +226,7 @@
 		<cloaking power="1" room="13" start="false" img="room_cloaking_13" />
 		<clonebay power="1" room="17" start="false">
 			<slot>
-				<number>-2</number>
+				<number>2</number>
 			</slot>
 		</clonebay>
 		<doors power="1" room="3" start="true" img="room_doors_9">
@@ -295,7 +303,7 @@
 		<cloaking power="1" room="8" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="11" start="false">
 			<slot>
-				<number>-2</number>
+				<number>2</number>
 			</slot>
 		</clonebay>
 		<doors power="1" room="6" start="true" img="room_doors_2">
@@ -442,7 +450,7 @@
 		<cloaking power="2" room="8" start="true" img="room_cloaking_3" />
 		<clonebay power="1" room="11" start="false">
 			<slot>
-				<number>-2</number>
+				<number>2</number>
 			</slot>
 		</clonebay>
 		<doors power="1" room="6" start="true" img="room_doors_2">
@@ -517,7 +525,7 @@
 		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="6" start="false">
 			<slot>
-				<number>-2</number>
+				<number>2</number>
 			</slot>
 		</clonebay>
 		<doors power="1" room="3" start="true" img="room_doors_2">
@@ -1485,7 +1493,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 		<cloaking power="1" room="3" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="13" start="false">
 			<slot>
-				<number>-2</number>
+				<number>2</number>
 			</slot>
 		</clonebay>
 		<doors power="1" room="11" start="true" img="room_doors_5">
@@ -3779,6 +3787,93 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	</missSounds>
 	<weaponArt>aea_laser_old_3_new</weaponArt> <!--FIXME: REPLACE IMAGE WHEN IMAGE EXISTS-->
 	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLER_AEA_OLD_BEAM">
+	<type>BEAM</type>
+	<title>Lylmik Artillery</title>
+	<short>Lylmik Artillery</short>
+	<tip>tip_beam_repair</tip>
+	<desc>Fires a powerful pinpoint that cannot pierce shields but applies erosion on hit.</desc>
+	<tooltip>Artillery: Fires a powerful pinpoint that cannot pierce shields but applies erosion on hit.</tooltip>
+	<damage>4</damage>
+	<sp>-10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>0.8</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>true</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>20</cooldown>
+	<color>
+		<r>255</r>
+		<g>120</g>
+		<b>120</b>
+	</color>
+	<speed>1</speed>
+	<power>0</power>
+	<cost>50</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>ancient_focus</sound>
+	</launchSounds>
+	<weaponArt>aea_beam_old_1_new</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="ARTILLER_AEA_OLD_BEAM_HARD">
+	<type>BEAM</type>
+	<title>Lylmik Artillery</title>
+	<short>Lylmik Artillery</short>
+	<tip>tip_beam_repair</tip>
+	<desc>Fires a powerful pinpoint that cannot pierce shields but applies erosion on hit.</desc>
+	<tooltip>Artillery: Fires a powerful pinpoint that cannot pierce shields but applies erosion on hit.</tooltip>
+	<damage>5</damage>
+	<sp>-10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.8</speed>
+		<maxSpeed>1.2</maxSpeed>
+		<time>10.0</time>
+		<maxTime>20.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>true</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>20</cooldown>
+	<color>
+		<r>255</r>
+		<g>120</g>
+		<b>120</b>
+	</color>
+	<speed>1</speed>
+	<power>0</power>
+	<cost>50</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>ancient_focus</sound>
+	</launchSounds>
+	<weaponArt>aea_beam_old_1_new</weaponArt>
+	<iconImage>beam</iconImage>
 </weaponBlueprint>
 
 <weaponBlueprint name="AEA_LASER_OLDP_1">
@@ -9552,7 +9647,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Active Ability: Combusts, taking heavy self damage to kill all mind controlled crew in the room. Slowly regenerates health back afterwards</power>
+		<power>Active Ability: Combusts, taking heavy self damage to deal 75 damage all enemy mind controlled crew in the room, cannot take them below 10hp. Slowly regenerates health back afterwards</power>
 		<power>Max Health is reduced to 80</power>
 		<power>Takes 1.8x damage from suffocation</power>
 		<power>Takes 0.6x damage from crew combat</power>
@@ -9567,7 +9662,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Active Ability: Deploys an Toxin bomb full of mind control gas, but becomes immobile and hidden temporarily</power>
+		<power>Active Ability: Deploys a Toxin bomb full of mind control gas, but becomes immobile and hidden temporarily</power>
 		<power>Telepathic powers reveal rooms and lifeforms even when sensors are down</power>
 		<power>Immune to mind control and toxins</power>
 	</powerList>
@@ -9598,7 +9693,7 @@ Inherited Slug stats: telepathic powers, mind control immunity</desc>
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Active Ability: Deploys an Toxin bomb full of a more powerful mind control gas, becomes temporarily hidden, moves and attacks with reduced efficiency</power>
+		<power>Active Ability: Deploys a Toxin bomb full of a more powerful mind control gas, becomes temporarily hidden, moves and attacks with reduced efficiency</power>
 		<power>Max Health is increased to 150</power>
 		<power>Inflicts 1.6x damage in crew combat</power>
 		<power>Immune to stuns and toxins</power>
@@ -9657,7 +9752,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 
 <augBlueprint name="AEA_SHLEG_GEL">
 	<title>Slug Shell Gel</title>
-	<desc>Slug ships excrete a thick gel that repairs breaches and coats the inside of empty rooms, provides friendly crew with 3hp/s of healing and drains enemy crew at 3hp/s.
+	<desc>Slug ships excrete a thick gel that repairs breaches and coats the inside of empty rooms, provides friendly crew with 3hp/s of healing and drains enemy crew at 3hp/s inside of empty rooms.
 Also provides a cheaper option for repairs at empty beacons.
 
 Drones and the following species will be immune to the damage of the augment:
@@ -9669,7 +9764,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 </augBlueprint>
 <augBlueprint name="LOCKED_AEA_SHLEG_GEL">
 	<title>Slug Shell Gel</title>
-	<desc>Slug ships excrete a thick gel that repairs breaches and coats the inside of empty rooms, provides friendly crew with 3hp/s of healing and drains enemy crew at 3hp/s.
+	<desc>Slug ships excrete a thick gel that repairs breaches and coats the inside of empty rooms, provides friendly crew with 3hp/s of healing and drains enemy crew at 3hp/s inside of empty rooms.
 Also provides a cheaper option for repairs at empty beacons.
 
 Drones and the following species will be immune to the damage of the augment:
@@ -9680,6 +9775,93 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
     <stackable>false</stackable>
 </augBlueprint>
 
+
+<weaponBlueprint name="AEA_SHLEG_BOMB_FAKE">
+	<type>BOMB</type>
+	<tip>tip_aea_shleg</tip>
+	<title>Inculcation Bomb</title>
+	<short>Inc B.</short>
+	<locked>1</locked>
+	<desc>This bomb deploys toxic gas that does 3hp/s and builds up mind control on enemy crew.</desc>
+	<tooltip>No hull or system damage, but deals much bio damage</tooltip>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>0</persDamage>
+	<accuracyMod>200</accuracyMod>
+	<missiles>0</missiles>
+	<roomStatBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>0</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<duration>90</duration>
+			<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
+			<priority>999</priority>
+			<blackList load="LIST_CREW_GAS" />
+			<roomAnim renderLayer="0">
+				<anim animType="default">aea_invisible</anim>
+				<tileAnim>aea_shleg_gas_tile</tileAnim>
+			</roomAnim>
+		</statBoost>
+    </roomStatBoosts>
+	<shots>1</shots>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>1</power>
+	<cost>50</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>aea_invisible</image>
+	<explosion>aea_invis_bomb</explosion>
+	<weaponArt>aea_invisible_gun</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_SHLEG_BOMB_FAKE_SHORT">
+	<type>BOMB</type>
+	<tip>tip_aea_shleg</tip>
+	<title>Inculcation Bomb</title>
+	<short>Inc B.</short>
+	<locked>1</locked>
+	<desc>This bomb deploys toxic gas that does 3hp/s and builds up mind control on enemy crew.</desc>
+	<tooltip>No hull or system damage, but deals much bio damage</tooltip>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>0</persDamage>
+	<accuracyMod>200</accuracyMod>
+	<missiles>0</missiles>
+	<roomStatBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>0</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<duration>60</duration>
+			<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
+			<priority>999</priority>
+			<blackList load="LIST_CREW_GAS" />
+			<roomAnim renderLayer="0">
+				<anim animType="default">aea_invisible</anim>
+				<tileAnim>aea_shleg_gas_tile</tileAnim>
+			</roomAnim>
+		</statBoost>
+    </roomStatBoosts>
+	<shots>1</shots>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>1</power>
+	<cost>50</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>aea_invisible</image>
+	<explosion>aea_invis_bomb</explosion>
+	<weaponArt>aea_invisible_gun</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
 
 <weaponBlueprint name="AEA_SHLEG_BOMB">
 	<type>BOMB</type>
@@ -9718,7 +9900,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<power>1</power>
 	<cost>50</cost>
 	<bp>4</bp>
-	<rarity>5</rarity>
+	<rarity>0</rarity>
 	<image>bomb_bio</image>
 	<explosion>explosion_bio</explosion>
 	<launchSounds>
@@ -9769,7 +9951,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<power>2</power>
 	<cost>60</cost>
 	<bp>6</bp>
-	<rarity>5</rarity>
+	<rarity>0</rarity>
 	<image>missile_aea_shleg_gas</image>
 	<launchSounds>
 		<sound>smallMissile1</sound>
@@ -9790,6 +9972,65 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<iconImage>missile</iconImage>
 </weaponBlueprint>
 
+<weaponBlueprint name="AEA_SHLEG_MISSILES_LOOT">
+	<type>MISSILES</type>
+	<tip>loot_aea_shleg_1</tip>
+	<title>'Hypnos' Missiles</title>
+	<short>'Hypnos'</short>
+	<desc>A powerful Missile loaded with a toxic gas that does 3hp/s and builds up mind control on enemy crew.</desc>
+	<tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
+	<damage>1</damage>
+	<sysDamage>1</sysDamage>
+	<accuracyMod>10</accuracyMod>
+	<persDamage>-1</persDamage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<roomStatBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-3</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<duration>60</duration>
+			<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
+			<priority>999</priority>
+			<blackList load="LIST_CREW_GAS" />
+			<roomAnim renderLayer="0">
+				<anim animType="default">aea_invisible</anim>
+				<tileAnim>aea_shleg_gas_tile</tileAnim>
+			</roomAnim>
+		</statBoost>
+    </roomStatBoosts>
+	<shots>1</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>1</stunChance>
+	<cooldown>16</cooldown>
+	<power>2</power>
+	<cost>60</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>missile_aea_shleg_gas</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>explosion_heavy</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>missiles_aea_shleg_gas</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
 </FTL>
 
 <FTL>
@@ -10383,6 +10624,54 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<weaponArt>aea_invisible_gun</weaponArt>
 	<iconImage>beam</iconImage>
 </weaponBlueprint>
+<weaponBlueprint name="ARTILLERY_SHLEG_1_ENEMY">
+	<type>BEAM</type>
+	<tip>tip_aea_shleg</tip>
+	<title>Inculcation Beam Artillery</title>
+	<short>Inculcation Beam Artillery</short>
+	<desc>[Base Cooldown: 20] Fires a more concentrated beam of chaotic gas. Deals minor crew and system damage, also fills any room it hits with inculcation gas.</desc>
+	<tooltip>Artillery: 1 system damage per room. Fills rooms with inculcation gas, damaging and mind controlling enemies over time.</tooltip>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>1</persDamage>
+	<sp>16</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>20</cooldown>
+	<power>2</power>
+	<cost>65</cost>
+	<bp>7</bp>
+	<color>
+		<r>159</r>
+		<g>228</g>
+		<b>204</b>
+	</color>
+	<roomStatBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>0</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<duration>20</duration>
+			<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
+			<priority>999</priority>
+			<blackList load="LIST_CREW_GAS" />
+			<roomAnim renderLayer="0">
+				<anim animType="default">aea_invisible</anim>
+				<tileAnim>aea_shleg_gas_tile</tileAnim>
+			</roomAnim>
+		</statBoost>
+    </roomStatBoosts>
+	<rarity>0</rarity>
+	<length>120</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_invisible_gun</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
 </FTL>
 
 <FTL>
@@ -10405,13 +10694,56 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
             <color r="55" g="40" b="255" a="0.4" />
             <color r="55" g="40" b="255" a="0.2" />
             <color r="115" g="131" b="138" a="0.1" />
-            
-            <color r="234" g="0" b="255" a="0.3" /> <!--pink-->
-            <color r="144" g="0" b="255" a="0.3" /> <!--purple-->
-            <color r="0" g="255" b="255" a="0.5" /> <!--cyan-->
-            <!--<color r="255" g="0" b="0" a="0.5" /> ONLY ELITES CAN BE RED-->
+        </layer>
+        <layer>
+            <color r="255" g="255" b="255" a="0"/>
+            <color r="0" g="0" b="0" a="0.1"/>
+            <color r="0" g="0" b="0" a="0.3"/>
+            <color r="0" g="0" b="0" a="0.5"/>
         </layer>
     </colorList>
+</crewBlueprint>
+<crewBlueprint name="aea_shard_smasher">
+    <desc>A band of pirates who only allow other crystals into their ranks.</desc>
+    <title>Shard-Smasher</title>
+    <short>Shard-Smasher</short>
+    <cost>60</cost>
+    <bp>4</bp>
+    <rarity>5</rarity>
+    <powerList>
+        <power>Active Ability (2 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
+        <power>Reduced suffocation damage</power>
+        <power>Max Health is increased to 150</power>
+        <power>Inflicts 0.8x damage in crew combat</power>
+    </powerList>
+    <colorList>
+        <layer>
+            <color r="40" g="187" b="255" a="0.5" />
+            <color r="55" g="40" b="255" a="0.4" />
+            <color r="55" g="40" b="255" a="0.2" />
+            <color r="115" g="131" b="138" a="0.1" />
+        </layer>
+        <layer>
+            <color r="255" g="255" b="255" a="0"/>
+            <color r="0" g="0" b="0" a="0.1"/>
+            <color r="0" g="0" b="0" a="0.3"/>
+            <color r="0" g="0" b="0" a="0.5"/>
+        </layer>
+    </colorList>
+</crewBlueprint>
+<crewBlueprint name="aea_shard_dawn">
+    <desc>A band of pirates who only allow other crystals into their ranks.</desc>
+    <title>Dawnshard</title>
+    <short>Dawnshard</short>
+    <cost>60</cost>
+    <bp>4</bp>
+    <rarity>5</rarity>
+    <powerList>
+        <power>Active Ability (2 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
+        <power>Reduced suffocation damage</power>
+        <power>Max Health is increased to 125</power>
+        <power>Inflicts 0.8x damage in crew combat</power>
+    </powerList>
 </crewBlueprint>
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_BATTLE" layout="aeap_shard_battle_a" img="aeap_shard_battle_a">
 	<class>Shard-Breaker Cruiser</class>
@@ -10483,7 +10815,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<droneList drones="0" count="3" />
 	<health amount="30" />
 	<maxPower amount="8" />
-	<crewCount amount="1" class="aea_shard_breaker" />
+	<crewCount amount="1" class="aea_shard_smasher" />
 	<crewCount amount="1" class="aea_shard_breaker" />
 	<crewCount amount="1" class="engi_separatist" />
 	<aug name="LAB_CRYSTAL_SABOTAGE" />
@@ -10583,9 +10915,9 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 		<artillery power="2" room="1" start="false" weapon="ARTILLERY_REBEL_MISSILE" img="room_artillery_3" /-->
 		<!--artillery power="2" room="0" start="false" weapon="ARTILLERY_REBEL_BEAM" img="room_artillery_3" />
 		<artillery power="2" room="0" start="false" weapon="ARTILLERY_REBEL_MISSILE" img="room_artillery_3" /-->
-		<artillery power="1" max="3" room="0" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
-		<artillery power="1" max="3" room="1" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
 		<artillery power="1" max="3" room="2" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
+		<artillery power="1" max="3" room="1" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
+		<artillery power="1" max="3" room="0" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
 		<battery power="1" room="11" start="false" img="room_battery_2" />
 		<cloaking power="1" room="9" start="false" img="room_cloaking_13" />
 		<clonebay power="1" room="8" start="false">
@@ -10653,7 +10985,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<crewCount amount="1" class="human" />
 	<aug name="EX_AUTO_COOLDOWN" />
 	<shieldImage>mup_long1</shieldImage>
-	<mv-mapImage>map_icon_mup_caretaker_a</mv-mapImage>
+	<mv-mapImage>map_icon_aeap_broadside</mv-mapImage>
 </shipBlueprint>
 
 <weaponBlueprint name="ARTILLERY_BROADSIDE_PIERCE">
@@ -10690,6 +11022,79 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	</missSounds>
 	<weaponArt>artillery_broadside_pierce</weaponArt>
 </weaponBlueprint>
+<weaponBlueprint name="ARTILLERY_BROADSIDE_PIERCE_ENEMY">
+	<type>LASER</type>
+	<title>Pierce Laser Artillery</title>
+	<short>Artillery</short>
+	<desc>[Base cooldown: 20] A slow charging duel laser cannon that fires 1 laser per burst per barrel for a total of 2 shots per charge.</desc>
+	<tooltip>Artillery: A relatively slow charging burst of lasers capable of piercing one layer of shields.</tooltip>
+	<damage>1</damage>
+	<accuracyMod>10</accuracyMod>
+	<shots>1</shots>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>4</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>20</cooldown>
+	<power>1</power>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>laser_pierce</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>artillery_broadside_pierce_enemy</weaponArt>
+</weaponBlueprint>
+<weaponBlueprint name="ARTILLERY_BROADSIDE_PIERCE_ENEMY_OFFSET">
+	<type>LASER</type>
+	<title>Pierce Laser Artillery</title>
+	<short>Artillery</short>
+	<desc>[Base cooldown: 18] A slow charging duel laser cannon that fires 1 laser per burst per barrel for a total of 2 shots per charge.</desc>
+	<tooltip>Artillery: A relatively slow charging burst of lasers capable of piercing one layer of shields.</tooltip>
+	<damage>1</damage>
+	<accuracyMod>10</accuracyMod>
+	<shots>1</shots>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>4</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>26</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>6</amount>
+		<count>1</count>
+	</boost>
+	<power>1</power>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>laser_pierce</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>artillery_broadside_pierce_enemy</weaponArt>
+</weaponBlueprint>
 
 <weaponBlueprint name="ARTILLERY_BROADSIDE_FOCUS">
 	<type>LASER</type>
@@ -10697,15 +11102,16 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<title>Burst Pinpoint Artillery</title>
 	<short>Artillery</short>
 	<short>Artillery</short>
-	<desc>[Base cooldown: 18] A powerful burst pinpoint artillery weapon that is able to fire multiple pinpoint beams in sequence.</desc>
+	<desc>[Base cooldown: 20] A powerful burst pinpoint artillery weapon that is able to fire multiple pinpoint beams in sequence.</desc>
 	<tooltip>Artillery: Powers a long and deadly beam that does 2 damage per room hit, but like the Halberd can only partially pierce through one shield layer.</tooltip>
+	<fireTime>1</fireTime>
 	<damage>0</damage>
 	<shots>2</shots>
 	<sp>0</sp>
 	<fireChance>0</fireChance>
 	<breachChance>0</breachChance>
 	<stunChance>0</stunChance>
-	<cooldown>18</cooldown>
+	<cooldown>20</cooldown>
 	<power>1</power>
 	<cost>0</cost>
 	<rarity>0</rarity>
@@ -10747,16 +11153,16 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<type>MISSILES</type>
 	<title>Duel Missile Artillery</title>
 	<short>Artillery</short>
-	<desc>[Base cooldown: 18] Fires a pair of missiles which do heavy damage and never miss.</desc>
+	<desc>[Base cooldown: 20] Fires a pair of missiles which do heavy damage and never miss.</desc>
 	<tooltip>Artillery: Fires a pair of missiles which do heavy damage and never miss.</tooltip>
-	<damage>3</damage>
+	<damage>2</damage>
 	<missiles>0</missiles>
 	<accuracyMod>100</accuracyMod>
 	<shots>2</shots>
 	<sp>10</sp>
 	<fireChance>0</fireChance>
 	<breachChance>10</breachChance>
-	<cooldown>18</cooldown>
+	<cooldown>20</cooldown>
 	<power>1</power>
 	<cost>80</cost>
 	<bp>7</bp>
@@ -10785,7 +11191,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<tip>tip_mine</tip>
 	<title>Ion Minelauncher Artillery</title>
 	<short>Artillery</short>
-	<desc>[Base cooldown: 18] Fires a burst of ionized mines which do hull damage and ionize systems.</desc>
+	<desc>[Base cooldown: 20] Fires a burst of ionized mines which do hull damage and ionize systems.</desc>
 	<tooltip>Artillery: Fires a burst of ionized mines which do hull damage and ionize systems.</tooltip>
 	<damage>1</damage>
 	<noSysDamage>true</noSysDamage>
@@ -10796,7 +11202,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<stun>6</stun>
 	<fireChance>1</fireChance>
 	<breachChance>4</breachChance>
-	<cooldown>18</cooldown>
+	<cooldown>20</cooldown>
 	<power>1</power>
 	<cost>80</cost>
 	<bp>7</bp>
@@ -10819,6 +11225,248 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	</missSounds>
 	<weaponArt>artillery_broadside_mine</weaponArt>
 	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_BROADSIDE_2" layout="aeap_broadside_b" img="aeap_broadside_b">
+	<class>Rebel Broadsider</class>
+	<name>The Sideboard</name>
+	<desc>A powerful ship designed around it's broadside mounted artillery. This ship's artillery system are modular allowing it to have a number of different combinations of artillery.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_BROADSIDE_2_unlock" />
+	<systemList>
+		<artillery power="1" max="3" room="0" start="true" weapon="ARTILLERY_MFK_1" img="room_artillery_4" />
+		<artillery power="1" max="3" room="1" start="true" weapon="ARTILLERY_MFK_1" img="room_artillery_4" />
+		<artillery power="1" max="3" room="2" start="true" weapon="ARTILLERY_MFK_1" img="room_artillery_4" />
+		<battery power="1" room="7" start="false" img="room_battery_2" />
+		<cloaking power="1" room="6" start="false" img="room_cloaking_9" />
+		<clonebay power="1" room="14" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="16" start="true" img="room_doors_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="13" start="false" img="room_drones_7" />
+		<engines power="2" room="8" start="true" img="room_engines_8">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="9" start="false" img="room_hacking_3" />
+		<medbay power="1" room="14" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="4" start="false" img="room_mind_10" />
+		<oxygen power="1" room="5" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="3" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="10" start="true" img="room_sensors_9">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="12" start="true" img="room_shields_4">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="17" start="false" />
+		<temporal power="1" room="11" start="false" />
+		<weapons power="2" room="15" start="true" img="room_weapons_12">
+			<slot>
+				<direction>right</direction>
+				<number>2</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>1</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="0" count="1" />
+	<droneList drones="0" count="3" />
+	<health amount="24" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="human_mfk" />
+	<crewCount amount="1" class="human" />
+	<crewCount amount="1" class="human" />
+	<aug name="EX_AUTO_COOLDOWN" />
+	<shieldImage>mup_long1</shieldImage>
+	<mv-mapImage>map_icon_aeap_broadside</mv-mapImage>
+</shipBlueprint>
+
+<weaponBlueprint name="ARTILLERY_BROADSIDE2_LASER">
+	<type>LASER</type>
+	<title>MFK Laser</title>
+	<short>MFK Laser</short>
+	<desc>[Base Cooldown: 25/21/17] A slow charging laser which fires 4 shots that deal double damage to empty rooms.</desc>
+	<tooltip>Artillery: A slow charging laser which fires 4 shots that deal double damage to empty rooms.</tooltip>
+	<damage>1</damage>
+	<hullBust>1</hullBust>
+	<shots>4</shots>
+	<sp>0</sp>
+	<fireChance>1</fireChance>
+	<breachChance>3</breachChance>
+	<cooldown>25</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>4</amount>
+		<count>2</count>
+	</boost>
+	<power>1</power>
+	<cost>55</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>laser_heavy</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>boss_1_mfk</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_BROADSIDE2_MISSILE">
+	<type>MISSILES</type>
+	<title>MFK Missile</title>
+	<short>MFK M.</short>
+	<desc>[Base Cooldown: 25/21/17] Fires 3 missiles that do 1 damage and 1 extra system damage.</desc>
+	<tooltip>Artillery: Fires 3 missiles; 1 damage each; pierces all shields.</tooltip>
+	<damage>1</damage>
+	<sysDamage>1</sysDamage>
+	<missiles>0</missiles>
+	<shots>3</shots>
+	<sp>10</sp>
+	<fireChance>1</fireChance>
+	<breachChance>10</breachChance>
+	<cooldown>25</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>4</amount>
+		<count>2</count>
+	</boost>
+	<power>1</power>
+	<cost>80</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>boss_2_mfk</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_BROADSIDE2_BEAM">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>MFK Beam</title>
+	<short>MFK Beam</short>
+	<desc>[Base Cooldown: 25/21/17] 2 damage beam with a long trail, deals double damage to empty rooms.</desc>
+	<tooltip>Artillery: 2 damage beam with a long trail, deals double damage to empty rooms.</tooltip>
+	<damage>2</damage>
+	<hullBust>1</hullBust>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>25</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>4</amount>
+		<count>2</count>
+	</boost>
+	<power>1</power>
+	<cost>70</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<length>100</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>boss_3_mfk</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_BROADSIDE2_ION">
+	<type>LASER</type>
+	<title>MFK Ion</title>
+	<short>MFK Ion</short>
+	<locked>1</locked>
+	<desc>[Base Cooldown: 25/21/17] A 3 shot ion that does 1 ion damage and 1 system damage.</desc>
+	<tooltip>Artillery: A 3 shot ion that does 1 ion damage and 1 system damage.</tooltip>
+	<damage>0</damage>
+	<ion>1</ion>
+	<sysDamage>1</sysDamage>
+	<speed>40</speed>
+	<shots>3</shots>
+	<sp>0</sp>
+	<stun>5</stun>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>25</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>4</amount>
+		<count>2</count>
+	</boost>
+	<power>1</power>
+	<cost>40</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<explosion>explosion_big1_ion</explosion>
+	<image>ion_4_shot</image>
+	<launchSounds>
+		<sound>ionShoot1</sound>
+		<sound>ionShoot2</sound>
+		<sound>ionShoot3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>ionHit1</sound>
+		<sound>ionHit2</sound>
+		<sound>ionHit3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>ionShields1</sound>
+		<sound>ionShields2</sound>
+		<sound>ionShields3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>boss_4_mfk</weaponArt>
 </weaponBlueprint>
 
 <weaponBlueprint name="AMOD_BEAM_MULTI">

@@ -10,6 +10,10 @@
 <text name="map_icon_aea_seed">SEED [!]</text>
 <text name="map_icon_aea_conspiracy">CONSPIRACY [!]</text>
 <text name="map_icon_aea_bird_engineer">ENGINEERING [!]</text>
+<text name="map_icon_aea_shleg_battle">DISTRESS [!]</text>
+<text name="map_icon_aea_shleg_radiant">RADIANT BASE [!]</text>
+<text name="map_icon_aea_shleg_quest">QUEST [!]</text>
+<text name="map_icon_aea_broadside">SHIP [!]</text>
 
 <text name="map_icon_aea_old_gate">GATE [!]</text>
 <text name="map_icon_aea_old_cell">???</text>
@@ -47,6 +51,10 @@ Cannot equip spells
 <text name="loot_aea_bird_1">GI LOOT
 +1 ion damage to systems with the the secondary shot
 +2 speed</text>
+<text name="loot_aea_shleg_1">ANARCHIST LOOT
++30 seconds of duration
+-2 hull damage
+-1 system damage</text>
 
 <text name="tip_aea_old_unknown">Tip: A strange weapon? You wonder if it's related to that strange gate in Node 17...</text>
 <text name="tip_laser_old">Tip: Each laser shot will be blocked by two shield bubbles, regardless of the laser's damage.</text>
@@ -89,6 +97,13 @@ Rebel Threat Level: Medium (Neutral Fleet)
 Locations of Interest: Central Engineering Facility
     
 The Gi are close allies with the federation, A recently discovered race they haven't managed to join the federation yet, however they're on their way there and have a strong federation presense in the sector.</text>
+<text name="atlas_aea_shleg">Name: Anarchist Central Nebula
+Type: Hostile (Nebula)
+Unique: True
+Dominant Faction: Shell and Slug Anarchists
+Rebel Threat Level: Medium (Auto Fleet)
+
+The Anarchists are a combined group of both shells and slugs who have formed together to fight back against their collective governments. Although not directly in conflict with the federation they aren't fans either, be careful.</text>
     
 <text name="ship_PLAYER_SHIP_AEA_ACID_BILL_unlock">Consult the advice of a certain Acidic outcast about a certain artifact to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_NECRO_KING_unlock">Consult the advice of a certain Heretic leader about a certain artifact to unlock this ship.</text>
@@ -119,12 +134,12 @@ The Gi are close allies with the federation, A recently discovered race they hav
 <text name="ship_PLAYER_SHIP_AEA_NECRO_SEPA_3_unlock">Get to Sector 5 with the Blasphemy Cruiser Type B or beat the game with the Blasphemy Cruiser Type A to unlock this ship.</text>
 
 <text name="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_unlock">Escape quarantine to unlock this ship.</text>
-<text name="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_2_unlock">Get to Sector 5 with the Oppressor Cruiser Type A to unlock this ship.</text>
-<text name="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_3_unlock">Get to Sector 5 with the Oppressor Cruiser Type B or beat the game with the Oppressor Cruiser Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_2_unlock">Get to Sector 5 with The Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_3_unlock">Get to Sector 5 with The Type B or beat the game with The Type A to unlock this ship.</text>
 
 <text name="ship_PLAYER_SHIP_AEA_OLD_HAMMER_unlock">Defeat the baron to unlock this ship.</text>
-<text name="ship_PLAYER_SHIP_AEA_OLD_HAMMER_2_unlock">Get to Sector 5 with the Tyrant Cruiser Type A to unlock this ship.</text>
-<text name="ship_PLAYER_SHIP_AEA_OLD_HAMMER_3_unlock">Get to Sector 5 with the Tyrant Cruiser Type B or beat the game with the Tyrant Cruiser Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_HAMMER_2_unlock">Get to Sector 5 with The Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_OLD_HAMMER_3_unlock">Get to Sector 5 with The Type B or beat the game with The Type A to unlock this ship.</text>
 
 <text name="ship_PLAYER_SHIP_AEA_CULT_BUD_unlock">Thwart a conspiracy to overthrow of a god.</text>
 <text name="ship_PLAYER_SHIP_AEA_CULT_BUD_2_unlock">Get to Sector 5 with the Bud Cruiser Type A to unlock this ship.</text>
@@ -159,7 +174,11 @@ The Gi are close allies with the federation, A recently discovered race they hav
 <text name="ship_PLAYER_SHIP_AEA_SHARD_SCOUT_3_unlock">Get to Sector 5 with the ??? Cruiser Type B or beat the game with the ??? Cruiser Type A to unlock this ship.</text>
 
 <text name="ship_PLAYER_SHIP_AEA_CULT_WHALE_unlock">Reunite two large lovers.</text>
+<text name="ship_PLAYER_SHIP_AEA_CULT_WHALE_2_unlock">Get to Sector 5 with The Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_CULT_WHALE_3_unlock">Get to Sector 5 with The Type B or beat the game with The Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_BROADSIDE_unlock">Coming Soon.</text>
+<text name="ship_PLAYER_SHIP_AEA_BROADSIDE_2_unlock">Get to Sector 5 with The Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_BROADSIDE_3_unlock">Get to Sector 5 with The Type B or beat the game with The Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_LANIUS_BATTLE_unlock">Coming Soon.</text>
 
 <text name="credit_victory_aea_old">The Multiverse Flagship of this reality has been destroyed. The Rebel forces were weakened, and the Federation troops, along with reinforcements, successfully defeated the Rebel forces of this reality.</text>
