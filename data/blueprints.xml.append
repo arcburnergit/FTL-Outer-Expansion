@@ -1248,7 +1248,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<wallAnim>aea_acid_wall</wallAnim>  
 		</roomAnim>
 	</erosion>
-	<cooldown>15</cooldown>
+	<cooldown>18</cooldown>
 	<power>1</power>
 	<cost>40</cost>
 	<bp>7</bp>
@@ -1302,7 +1302,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<wallAnim>aea_acid_wall</wallAnim>  
 		</roomAnim>
 	</erosion>
-	<cooldown>15</cooldown>
+	<cooldown>18</cooldown>
 	<power>2</power>
 	<cost>52</cost>
 	<bp>7</bp>
@@ -1338,7 +1338,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
 	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
 	<damage>1</damage>
-	<shots>5</shots>
+	<shots>4</shots>
 	<sp>0</sp>
 	<fireChance>0</fireChance>
 	<stunChance>0</stunChance>
@@ -1356,7 +1356,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<wallAnim>aea_acid_wall</wallAnim>  
 		</roomAnim>
 	</erosion>
-	<cooldown>15</cooldown>
+	<cooldown>18</cooldown>
 	<power>3</power>
 	<cost>70</cost>
 	<bp>7</bp>
@@ -1408,7 +1408,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<wallAnim>aea_acid_wall</wallAnim>  
 		</roomAnim>
 	</erosion>
-	<cooldown>18</cooldown>
+	<cooldown>22</cooldown>
 	<power>2</power>
 	<cost>68</cost>
 	<bp>7</bp>
@@ -1452,7 +1452,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<wallAnim>aea_acid_wall</wallAnim>  
 		</roomAnim>
 	</erosion>
-	<cooldown>9</cooldown>
+	<cooldown>11</cooldown>
 	<power>2</power>
 	<cost>80</cost>
 	<bp>6</bp>
@@ -10297,7 +10297,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 				<number>0</number>
 			</slot>
 		</medbay>
-		<mind power="1" room="16" start="false" img="room_mind_3" />
+		<mind power="1" room="16" start="true" img="room_mind_3" />
 		<oxygen power="1" room="11" start="true" img="room_oxygen" />
 		<pilot power="1" room="0" start="true" img="room_pilot_4">
 			<slot>
@@ -10329,12 +10329,12 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="4" count="4">
-		<weapon name="ENERGY_1" />
-		<weapon name="BEAM_BIO_CHAIN" />
+		<weapon name="LASER_PIERCE" />
+		<weapon name="LASER_BIO" />
 	</weaponList>
 	<droneList drones="2" count="2" />
 	<health amount="30" />
-	<maxPower amount="7" />
+	<maxPower amount="8" />
 	<crewCount amount="1" class="shell" />
 	<crewCount amount="1" class="aea_shleg_shell" />
 	<crewCount amount="1" class="aea_shleg_shell" />

@@ -775,6 +775,11 @@
     <name>AEA_LASER_ACID_3_ENEMY</name>
     <name>AEA_BEAM_ACID_1_ENEMY</name>
     <name>AEA_ION_ACID_1_ENEMY</name>
+    <name>AEA_LASER_ACID_1_ENEMY</name>
+    <name>AEA_LASER_ACID_2_ENEMY</name>
+    <name>AEA_LASER_ACID_3_ENEMY</name>
+    <name>AEA_BEAM_ACID_1_ENEMY</name>
+    <name>AEA_ION_ACID_1_ENEMY</name>
     
     <name>LASER_HEAVY_1</name>
 	<name>LASER_HULL_1_ENEMY</name>
@@ -799,26 +804,31 @@
 </blueprintList>
 <blueprintList name="LIST_WEAPONS_ACIDIC_ELITE">
     <name>AEA_LASER_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_2</name>
-    <name>AEA_LASER_ACID_3</name>
-    <name>AEA_BEAM_ACID_1</name>
-    <name>AEA_ION_ACID_1</name>
-    <name>AEA_ION_ACID_1_LOOT</name>
+    <name>AEA_LASER_ACID_2_ENEMY</name>
+    <name>AEA_LASER_ACID_3_ENEMY</name>
+    <name>AEA_BEAM_ACID_1_ENEMY</name>
+    <name>AEA_ION_ACID_1_ENEMY</name>
+    <name>AEA_LASER_ACID_1_ENEMY</name>
+    <name>AEA_LASER_ACID_2_ENEMY</name>
+    <name>AEA_LASER_ACID_3_ENEMY</name>
+    <name>AEA_BEAM_ACID_1_ENEMY</name>
+    <name>AEA_ION_ACID_1_ENEMY</name>
     
     <name>LASER_HEAVY_1</name>
-	<name>LASER_HULL_1</name>
+	<name>LASER_HULL_1_ENEMY</name>
 	<name>LASER_HEAVY_2</name>
 	<name>LASER_HULL_2</name>
+    
 	
-	<name>KERNEL_1</name>
-	<name>KERNEL_2</name>
-	<name>KERNEL_HEAVY</name>
+	<name>KERNEL_1_ENEMY</name>
+	<name>KERNEL_2_ENEMY</name>
+	<name>KERNEL_HEAVY_ENEMY</name>
 	<name>BOMB_1_ENEMY</name>
     
-	<name>SHOTGUN_1</name>
+	<name>SHOTGUN_1_ENEMY</name>
 	<name>SHOTGUN_2</name>
     
-	<name>LASER_PIERCE</name>
+	<name>LASER_PIERCE_ENEMY</name>
 	<name>LASER_PARTICLE</name>
 
 	<name>ENERGY_1</name>
@@ -1047,7 +1057,6 @@
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="1" room="2" start="false" />
 		<doors power="2" max="3" room="7" start="true" />
 		<engines power="1" max="3" room="1" start="true" />
 		<mind power="1" max="1" room="5" start="false" />
@@ -1062,7 +1071,7 @@
 	<droneList drones="0" count="0" />
 	<health amount="8" />
 	<maxPower amount="6" />
-	<crewCount amount="1" max="3" class="orchid" />
+	<crewCount amount="1" max="2" class="orchid" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
@@ -1072,7 +1081,6 @@
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="1" room="4" start="false" />
 		<doors power="2" max="3" room="9" start="true" />
 		<drones power="2" max="8" room="8" start="false" />
 		<engines power="1" max="3" room="0" start="true" />
@@ -1098,7 +1106,6 @@
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="1" room="6" start="false" />
 		<doors power="2" max="2" room="4" start="true" />
 		<engines power="1" max="3" room="5" start="true" />
 		<mind power="1" max="2" room="7" start="false" />
@@ -1123,9 +1130,8 @@
 	<minSector>3</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<artillery power="1" max="2" room="2" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" />
-		<artillery power="1" max="2" room="3" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" />
-		<cloaking power="1" max="1" room="10" start="false" />
+		<artillery power="1" max="1" room="2" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" />
+		<artillery power="1" max="1" room="3" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" />
 		<doors power="2" max="3" room="9" start="true" />
 		<drones power="2" max="8" room="1" start="true" />
 		<engines power="1" max="3" room="6" start="true" />
@@ -1156,7 +1162,6 @@
 	<minSector>2</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="1" room="5" start="false" />
 		<doors power="2" max="3" room="7" start="true" />
 		<drones power="2" max="7" room="3" start="false" />
 		<engines power="1" max="2" room="2" start="true" />
@@ -1209,7 +1214,6 @@
 	<minSector>4</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="1" room="12" start="false" />
 		<clonebay power="1" max="2" room="2" start="true" />
 		<doors power="2" max="3" room="10" start="true" />
 		<engines power="1" max="2" room="7" start="true" />
@@ -1236,7 +1240,6 @@
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="1" room="3" start="true" />
 		<doors power="2" max="3" room="2" start="true" />
 		<engines power="1" max="3" room="7" start="true" />
 		<mind power="1" max="2" room="1" start="true" />
@@ -1274,7 +1277,7 @@
 		<shields power="2" max="10" room="3" start="true" />
 		<weapons power="2" max="10" room="4" start="true" />
 	</systemList>
-	<weaponSlots>4</weaponSlots>
+	<weaponSlots>3</weaponSlots>
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
 	<droneList drones="0" count="0" />
@@ -1332,7 +1335,7 @@
 	<droneList drones="8" count="0" />
 	<health amount="11" />
 	<maxPower amount="6" />
-	<crewCount amount="1" max="3" class="orchid_caretaker" />
+	<crewCount amount="1" max="3" class="orchid" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
@@ -1365,7 +1368,7 @@
 	</droneList>
 	<health amount="14" />
 	<maxPower amount="7" />
-	<crewCount amount="1" max="4" class="orchid_caretaker" />
+	<crewCount amount="1" max="4" class="orchid" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
@@ -1391,7 +1394,7 @@
 	<droneList drones="7" count="3" load="LIST_DRONES_ACIDIC" />
 	<health amount="15" />
 	<maxPower amount="6" />
-	<crewCount amount="1" max="4" class="orchid_caretaker" />
+	<crewCount amount="1" max="4" class="orchid" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
@@ -1429,7 +1432,6 @@
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="1" room="3" start="true" />
 		<doors power="2" max="3" room="2" start="true" />
 		<engines power="1" max="3" room="7" start="true" />
 		<mind power="1" max="2" room="1" start="true" />
@@ -1444,7 +1446,7 @@
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="9" />
-	<crewCount amount="1" max="5" class="orchid_caretaker" />
+	<crewCount amount="1" max="2" class="orchid" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>

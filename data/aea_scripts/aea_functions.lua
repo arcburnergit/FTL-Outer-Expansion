@@ -3642,12 +3642,18 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 	local crewmem = power.crew
 	local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
 
-	if crewmem.type == "aea_shleg_shell" or crewmem.type == "aea_shleg_sorrow" then
+	if crewmem.type == "aea_shleg_shell" then
 		local currentManager = Hyperspace.ships(crewmem.currentShipId)
 		for crewCurrent in vter(currentManager.vCrewList) do
 			if crewCurrent.iRoomId == crewmem.iRoomId and crewCurrent.iShipId ~= crewmem.iShipId and crewCurrent.bMindControlled then
-				--crewCurrent:Kill(false)
 				crewCurrent.health.first = math.min(crewCurrent.health.first, math.max(10, crewCurrent.health.first - 75))
+			end
+		end
+	elseif crewmem.type == "aea_shleg_sorrow" then
+		local currentManager = Hyperspace.ships(crewmem.currentShipId)
+		for crewCurrent in vter(currentManager.vCrewList) do
+			if crewCurrent.iRoomId == crewmem.iRoomId and crewCurrent.iShipId ~= crewmem.iShipId and crewCurrent.bMindControlled then
+				crewCurrent:Kill(false)
 			end
 		end
 	elseif crewmem.type == "aea_shleg_slug" then
