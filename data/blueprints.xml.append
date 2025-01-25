@@ -10681,7 +10681,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
     <short>Shard-Breaker</short>
     <cost>60</cost>
     <bp>4</bp>
-    <rarity>5</rarity>
+    <rarity>0</rarity>
     <powerList>
         <power>Active Ability (2 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
         <power>Reduced suffocation damage</power>
@@ -10709,7 +10709,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
     <short>Shard-Smasher</short>
     <cost>60</cost>
     <bp>4</bp>
-    <rarity>5</rarity>
+    <rarity>0</rarity>
     <powerList>
         <power>Active Ability (2 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
         <power>Reduced suffocation damage</power>
@@ -10737,7 +10737,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
     <short>Dawnshard</short>
     <cost>60</cost>
     <bp>4</bp>
-    <rarity>5</rarity>
+    <rarity>0</rarity>
     <powerList>
         <power>Active Ability (2 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
         <power>Reduced suffocation damage</power>
