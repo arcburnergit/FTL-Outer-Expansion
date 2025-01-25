@@ -348,7 +348,7 @@
 	<event load="NEBULA_STOREEVENT_SHELL_MEDICAL" />
 </eventList>
 
-<ship name="SHIP_AEA_SHLEG_TRANSPORT_LOOT" auto_blueprint="AEA_SHLEG_TRANSPORT">
+<ship name="SHIP_AEA_SHLEG_TRANSPORT_LOOT" auto_blueprint="LIST_SHIPS_AEA_SHLEG_TRANSPORTS">
 	<escape timer="40" min="999" max="999">
 		<text>They look like they don't want to fight. They are trying to escape.</text>
 		<ship hostile="true" />

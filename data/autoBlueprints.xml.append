@@ -4053,6 +4053,11 @@
 	<name>AEA_SHLEG_STATION_GAS</name>
 </blueprintList>
 
+<blueprintList name="LIST_SHIPS_AEA_SHLEG_TRANSPORTS">
+	<name>AEA_SHLEG_TRANSPORT_GEL</name>
+	<name>AEA_SHLEG_TRANSPORT_GAS</name>
+</blueprintList>
+
 <blueprintList name="LIST_SHIPS_AEA_SHLEG_ALL">
 	<name>AEA_SHLEG_SCOUT_GEL</name>
 	<name>AEA_SHLEG_SCOUT_GAS</name>
