@@ -994,7 +994,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<title>Acid Laser Cannon</title>
 	<short>Acid L.C</short>
 	<tip>tip_laser</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact. This weapon will fire a projectile at every system on the enemy ship.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<tooltip>Fires x projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
 	<damage>1</damage>
 	<shots>1</shots>
@@ -1227,7 +1227,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<title>Acid Laser MK I</title>
 	<short>Acid I</short>
 	<tip>tip_laser</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
 	<damage>1</damage>
 	<shots>2</shots>
@@ -1281,7 +1281,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<title>Acid Laser MK II</title>
 	<short>Acid II</short>
 	<tip>tip_laser</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
 	<damage>1</damage>
 	<shots>3</shots>
@@ -1335,7 +1335,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<title>Acid Laser MK III</title>
 	<short>Acid III</short>
 	<tip>tip_laser</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
 	<damage>1</damage>
 	<shots>4</shots>
@@ -1389,7 +1389,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<title>'Trident' Beam</title>
 	<short>'Trident'</short>
 	<tip>tip_beams</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<tooltip>.</tooltip>
 	<damage>1</damage>
 	<sp>1</sp>
@@ -1428,7 +1428,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<title>Acidic Barrage</title>
 	<short>Acidic B.</short>
 	<tip>tip_ion</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<tooltip>Fires a single blast that does 1 ion damage and recharges very quickly. Can hit and disable shields as well as systems.</tooltip>
 	<damage>0</damage>
 	<spin>720</spin>
@@ -4695,10 +4695,7 @@ This drone fires 2 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Amp Burst</title>
 	<short>Burst [2]</short>
-	<desc>[CURRENT POWER: 2] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
-
-This drone fires 2 shots.
-	</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<power>3</power>
 	<cooldown>2000</cooldown>
 	<dodge>0</dodge>
@@ -4707,7 +4704,7 @@ This drone fires 2 shots.
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_burst_a1</droneImage>
 	<weaponBlueprint>AEA_BEAM_BIRD_BURST_1</weaponBlueprint>
-	<rarity>5</rarity>
+	<rarity>0</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
 <droneBlueprint name="AEA_COMBAT_BIRD_BURST_2">
@@ -4735,10 +4732,7 @@ This drone fires 3 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Amp Burst</title>
 	<short>Burst [3]</short>
-	<desc>[CURRENT POWER: 3] Unlike your standard drone, this specialized amp drone can fire multiple times at each target.
-
-This drone fires 3 shots.
-	</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<power>4</power>
 	<cooldown>3000</cooldown>
 	<dodge>0</dodge>
@@ -4900,7 +4894,7 @@ This drone fires 4 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Bio Drone Mk. I</title>
 	<short>Bio I</short>
-	<desc>A drone that specifically targets enemy crewmembers. Does 15 personal damage and inflicts enemy crew with a death effect that does 2 system damage and creates a fire for 20 seconds.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<power>2</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
@@ -4909,7 +4903,7 @@ This drone fires 4 shots.
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_bio_1</droneImage>
 	<weaponBlueprint>AEA_LASER_BIO_DRONE</weaponBlueprint>
-	<rarity>5</rarity>
+	<rarity>0</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
 
@@ -4918,7 +4912,7 @@ This drone fires 4 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Bio Drone Mk. II</title>
 	<short>Bio II</short>
-	<desc>A drone that specifically targets enemy crewmembers, faster than the Mk 1. Does 15 personal damage and inflicts enemy crew with a death effect that does 2 system damage and creates a fire for 20 seconds.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<power>3</power>
 	<cooldown>500</cooldown>
 	<dodge>0</dodge>
@@ -4927,7 +4921,7 @@ This drone fires 4 shots.
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_bio_2</droneImage>
 	<weaponBlueprint>AEA_LASER_BIO_DRONE</weaponBlueprint>
-	<rarity>5</rarity>
+	<rarity>0</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
 
@@ -5182,7 +5176,7 @@ This drone fires 4 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Twin Drone Mk. I [Laser]</title>
 	<short>Twin I [L]</short>
-	<desc>[CURRENT MODE: Laser] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<power>3</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
@@ -5191,7 +5185,7 @@ This drone fires 4 shots.
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_multi_1_l</droneImage>
 	<weaponBlueprint>AEA_DRONE_LASER_COMBAT_MULTI</weaponBlueprint>
-	<rarity>5</rarity>
+	<rarity>0</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
 <droneBlueprint name="AEA_COMBAT_BIRD_MULTI_1_BEAM_ENEMY">
@@ -5199,7 +5193,7 @@ This drone fires 4 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Twin Drone Mk. I [Beam]</title>
 	<short>Twin I [B]</short>
-	<desc>[CURRENT MODE: Beam] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<power>3</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
@@ -5216,7 +5210,7 @@ This drone fires 4 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Twin Drone Mk. II [Laser]</title>
 	<short>Twin II [L]</short>
-	<desc>[CURRENT MODE: Laser] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon. Moves faster than the MK I.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<power>4</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
@@ -5233,7 +5227,7 @@ This drone fires 4 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Twin Drone Mk. II [Beam]</title>
 	<short>Twin II [B]</short>
-	<desc>[CURRENT MODE: Beam] A modification of the combat drone that attaches a secondary ion cannon to the side of the drone which fires a weak ion blast alongside it's main weapon. This ion shot can only ionize shield layers and will have no effect on hit systems. The main weapon can be switched between a Laser and Beam weapon. Moves faster than the MK I.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<power>4</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
@@ -5432,7 +5426,7 @@ This drone fires 4 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Intel Drone Mk. I</title>
 	<short>Intel I</short>
-	<desc>A combat drone equiped with a pair of lasers. This specialist drone has a targetting computer onboard that enables the drone to only target enemy systems, and is weighted towards the more important systems.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<power>2</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
@@ -5441,7 +5435,7 @@ This drone fires 4 shots.
 	<bp>3</bp>
 	<droneImage>drone_aea_bird_smart_1</droneImage>
 	<weaponBlueprint>AEA_DRONE_LASER_COMBAT_SMART</weaponBlueprint>
-	<rarity>5</rarity>
+	<rarity>0</rarity>
 	<iconImage>combat</iconImage>
 </droneBlueprint>
 <droneBlueprint name="AEA_COMBAT_BIRD_SMART_2_ENEMY">
@@ -5449,7 +5443,7 @@ This drone fires 4 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Intel Drone Mk. II</title>
 	<short>Intel II</short>
-	<desc>A combat drone equiped with a pair of lasers. This specialist drone has a targetting computer onboard that enables the drone to only target enemy systems, and is weighted towards the more important systems.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<power>3</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
@@ -10629,7 +10623,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<tip>tip_aea_shleg</tip>
 	<title>Inculcation Beam Artillery</title>
 	<short>Inculcation Beam Artillery</short>
-	<desc>[Base Cooldown: 20] Fires a more concentrated beam of chaotic gas. Deals minor crew and system damage, also fills any room it hits with inculcation gas.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<tooltip>Artillery: 1 system damage per room. Fills rooms with inculcation gas, damaging and mind controlling enemies over time.</tooltip>
 	<damage>0</damage>
 	<sysDamage>0</sysDamage>
@@ -10992,7 +10986,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<type>LASER</type>
 	<title>Pierce Laser Artillery</title>
 	<short>Artillery</short>
-	<desc>[Base cooldown: 18] A slow charging duel laser cannon that fires 2 lasers per burst per barrel for a total of 4 shots per charge.</desc>
+	<desc>[Base cooldown: 20] A slow charging duel laser cannon that fires 2 lasers per burst per barrel for a total of 4 shots per charge.</desc>
 	<tooltip>Artillery: A relatively slow charging burst of lasers capable of piercing one layer of shields.</tooltip>
 	<damage>1</damage>
 	<accuracyMod>10</accuracyMod>
@@ -11001,7 +10995,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<fireChance>0</fireChance>
 	<breachChance>4</breachChance>
 	<stunChance>2</stunChance>
-	<cooldown>18</cooldown>
+	<cooldown>20</cooldown>
 	<power>1</power>
 	<cost>0</cost>
 	<rarity>0</rarity>
@@ -11026,7 +11020,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<type>LASER</type>
 	<title>Pierce Laser Artillery</title>
 	<short>Artillery</short>
-	<desc>[Base cooldown: 20] A slow charging duel laser cannon that fires 1 laser per burst per barrel for a total of 2 shots per charge.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<tooltip>Artillery: A relatively slow charging burst of lasers capable of piercing one layer of shields.</tooltip>
 	<damage>1</damage>
 	<accuracyMod>10</accuracyMod>
@@ -11060,7 +11054,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<type>LASER</type>
 	<title>Pierce Laser Artillery</title>
 	<short>Artillery</short>
-	<desc>[Base cooldown: 18] A slow charging duel laser cannon that fires 1 laser per burst per barrel for a total of 2 shots per charge.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<tooltip>Artillery: A relatively slow charging burst of lasers capable of piercing one layer of shields.</tooltip>
 	<damage>1</damage>
 	<accuracyMod>10</accuracyMod>
@@ -11105,11 +11099,11 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<desc>[Base cooldown: 20] A powerful burst pinpoint artillery weapon that is able to fire multiple pinpoint beams in sequence.</desc>
 	<tooltip>Artillery: Powers a long and deadly beam that does 2 damage per room hit, but like the Halberd can only partially pierce through one shield layer.</tooltip>
 	<fireTime>1</fireTime>
-	<damage>0</damage>
+	<damage>3</damage>
 	<shots>2</shots>
 	<sp>0</sp>
 	<fireChance>0</fireChance>
-	<breachChance>0</breachChance>
+	<breachChance>3</breachChance>
 	<stunChance>0</stunChance>
 	<cooldown>20</cooldown>
 	<power>1</power>
