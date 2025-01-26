@@ -75,8 +75,8 @@
 </event>
 <textList name="TEXT_AEA_ACID_PIRATE_CLEARING">
 	<text>There appears to be a pirate ship nearby. Be on your guard; anyone trying to hunt in Acidic territory is either formidable or deeply stupid, and in space, either can be dangerous.</text>
-	<text>"We knew anyone foolish enough to try and sneak through an Acidic nebula would stick to open space. Yield your goods and we may let you live." You cut the transmission in lieu of a response.</text>
-	<text>Before you can take a moment's rest from the ever present nebulas in this sector, a pirate ship appears behind you and opens fire.</text>
+	<text>"We knew anyone foolish enough to try and sneak through an Acidic nebula would stick to open space. Yield your goods, and we may let you live." You cut the transmission in lieu of a response.</text>
+	<text>Before you can take a moment's rest from the ever-present nebulas in this sector, a pirate ship appears behind you and opens fire.</text>
 </textList>
 
 <event name="ENCOUNTER_AEA_ACID_REBEL_CLEARING">
@@ -90,7 +90,7 @@
 <textList name="TEXT_AEA_ACID_REBEL_CLEARING">
 	<text>As you arrive at the beacon, a hostile ship immediately registers on your scanners. You didn't expect to see Rebels extending their reach into the unknown regions of Acidic territory. Charge the weapons!.</text>
 	<text>You jump into empty space and are relieved to see your sensors blink back to life. However, you are less pleased to see them immediately register a Rebel ship on an approach vector!.</text>
-	<text>You receive a message from a nearby ship, "Looks like our intelligence was correct! You can't escape us by travelling into unknown territory... No one can hide from the Rebellion!"</text>
+	<text>You receive a message from a nearby ship, "Looks like our intelligence was correct! You can't escape us by traveling into unknown territory... No one can hide from the Rebellion!"</text>
 </textList>
 
 <event name="ENCOUNTER_AEA_ACID_ORCHID_CLEARING" unique="true">
@@ -132,7 +132,7 @@
 <eventList name="REFUGEE_HAIL_LIST_AEA_ACID_MV">
 	<event load="REFUGEE_TRADER" />
 	<event>
-		<text>As you hail the refugee ship, a Acidic ship jumps into the system... it was hunting the refugee ship for sport and now it's found you instead!.</text>
+		<text>As you hail the refugee ship, an Acidic ship jumps into the system... it was hunting the refugee ship for sport, and now it has found you instead!.</text>
 		<ship load="SHIP_AEA_ACID_REFUGEE" hostile="true" />
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -166,9 +166,9 @@
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Leave the Acidic Growth to it's prize. You power up the jump drive.</text>
+		<text>Leave the Acidic Growth to its prize. Power up the jump drive.</text>
 		<event>
-			<text>You would think that the slugs greed would end at the Acidic Growth's borders, but apparently not.</text>
+			<text>You would think that the slug's greed would end at the Acidic Growth's borders, but apparently not.</text>
 			<choice>
 				<text>Do something onboard the ship.</text>
 				<event load="STORAGE_CHECK" />
@@ -182,7 +182,7 @@
 </event>
 <eventList name="AEA_ACID_DISTRESS_ACIDIC_SURRENDER">
 	<event>
-		<text>It doesn't look like they can stand much more damage. After a few shots their ship breaks apart and you move in to loot the remains.</text>
+		<text>It doesn't look like they can stand much more damage. After a few shots, their ship breaks apart, and you move in to loot the remains.</text>
 		<autoReward level="RANDOM">standard</autoReward>
 	</event>
 	<event>	
@@ -221,13 +221,13 @@
 	<event load="NEBULA_AEA_ACID_GUN_UPGRADE" />
 </eventList>
 <event name="NEBULA_AEA_ACID_HIGH_PRICE" unique="true">   
-	<text>A large Acidic vessel is sitting dormant, after a moment it hails you offering the services of one of itself in return for scrap.</text>
+	<text>A large Acidic vessel is sitting dormant. After a moment, it hails you, offering the services of one of them in return for scrap.</text>
 	<ship load="SHIP_AEA_ACID_TRANSPORT_NORMAL" hostile="false" />
 	<environment type="nebula" />
 	<choice>
 		<text>Accept the offer.</text>
 		<event>
-			<text>You send over your scrap and shortly there after a strange battle drone arrives at your ship, it appears the Acidic Growth has appropriated the technology for its own transportation.</text>
+			<text>You send over your scrap, and shortly thereafter a strange battle drone arrives at your ship. It appears the Acidic Growth has appropriated the technology for its own transportation.</text>
             <item_modify>
                 <item type="scrap" min="-60" max="-60"/>
             </item_modify>
@@ -241,7 +241,7 @@
 	<choice req="aea_acid_friendly" lvl="1">
 		<text>(Friendly) Accept the discounted offer.</text>
 		<event>
-			<text>You send over your scrap and shortly there after a strange battle drone arrives at your ship, it appears the Acidic Growth has appropriated the technology for its own transportation.</text>
+			<text>You send over your scrap, and shortly thereafter a strange battle drone arrives at your ship. It appears the Acidic Growth has appropriated the technology for its own transportation.</text>
 			<item_modify>
 				<item type="scrap" min="-40" max="-40" />
 			</item_modify>
@@ -255,7 +255,7 @@
 	<choice hidden="true">
 		<text>Attack!.</text>
 		<event>
-			<text>Instead of replying you power on your weapons and engage the ship.</text>
+			<text>Instead of replying, you power your weapons and engage the ship.</text>
             <ship hostile="true"/>
 			<choice>
 				<text>Continue...</text>
@@ -310,7 +310,7 @@
 		</item_modify>
 	</event>
 	<event>
-		<text>Though you paid the money to the Slugs, you're surprised when you find they have actually upgraded your reactor, without any tricks!.</text>
+		<text>Even though you paid the money to the Slugs, you're surprised when you find they have actually upgraded your reactor, without any tricks!.</text>
 		<upgrade amount="1" system="reactor" />
 		<item_modify>
 			<item type="scrap" min="-15" max="-15" />
@@ -319,7 +319,7 @@
 </eventList>
 
 <event name="NEBULA_AEA_ACID_GUN_UPGRADE" unique="true">   
-	<text>You're hailed by an Acidic ship, "We wish to test one of our new designs, however we require a weapon to combine with our own technology, please provide one for us and we will return it to you after our tests."</text>
+	<text>You're hailed by an Acidic ship, "We wish to test one of our new designs. However, we require a weapon to combine with our own technology. Please provide one for us, and we will return it to you after our tests."</text>
 	<environment type="nebula" />
 	<choice hidden="true" req="LASER_BURST_1">
         <text>Hand over your Defense Laser.</text>
@@ -883,7 +883,7 @@
 
 <eventList name="NEBULA_AEA_ACID_GUN_UPGRADE_RESULT_L1">
     <event>
-        <text>A short while later you recieve your weapon back, it appears to have been extensively modified by the Acidic Growth.</text>
+        <text>A short while later you receive your weapon back. It appears to have been extensively modified by the Acidic Growth.</text>
         <weapon name="AEA_LASER_ACID_1"/>
         <choice>
             <text>Continue...</text>
@@ -894,7 +894,7 @@
 
 <eventList name="NEBULA_AEA_ACID_GUN_UPGRADE_RESULT_L2">
     <event>
-        <text>A short while later you recieve your weapon back, it appears to have been extensively modified by the Acidic Growth.</text>
+        <text>A short while later you receive your weapon back. It appears to have been extensively modified by the Acidic Growth.</text>
         <weapon name="AEA_LASER_ACID_2"/>
         <choice>
             <text>Continue...</text>
@@ -905,7 +905,7 @@
 
 <eventList name="NEBULA_AEA_ACID_GUN_UPGRADE_RESULT_L3">
     <event>
-        <text>A short while later you recieve your weapon back, it appears to have been extensively modified by the Acidic Growth.</text>
+        <text>A short while later you receive your weapon back. It appears to have been extensively modified by the Acidic Growth.</text>
         <weapon name="AEA_LASER_ACID_3"/>
         <choice>
             <text>Continue...</text>
@@ -916,7 +916,7 @@
 
 <eventList name="NEBULA_AEA_ACID_GUN_UPGRADE_RESULT_B1">
     <event>
-        <text>A short while later you recieve your weapon back, it appears to have been extensively modified by the Acidic Growth.</text>
+        <text>A short while later you receive your weapon back. It appears to have been extensively modified by the Acidic Growth.</text>
         <weapon name="AEA_BEAM_ACID_1"/>
         <choice>
             <text>Continue...</text>
@@ -927,7 +927,7 @@
 
 <eventList name="NEBULA_AEA_ACID_GUN_UPGRADE_RESULT_I1">
     <event>
-        <text>A short while later you recieve your weapon back, it appears to have been extensively modified by the Acidic Growth.</text>
+        <text>A short while later you receive your weapon back. It appears to have been extensively modified by the Acidic Growth.</text>
         <weapon name="AEA_ION_ACID_1"/>
         <choice>
             <text>Continue...</text>
@@ -939,7 +939,7 @@
 <event name="NEBULA_AEA_ACID_WRECK">
     <text>You arrive at the beacon to find strange wreck floating nearby.
 
-The wreck is relatively intact, however it appears to have been filled with holes.</text>
+The wreck is relatively intact. However, it appears to have been riddled with holes.</text>
     <environment type="nebula" />
     <choice hidden="true">
         <text>Examine the wreck.</text>
@@ -963,12 +963,12 @@ The wreck is relatively intact, however it appears to have been filled with hole
 
 <eventList name="NEBULA_AEA_ACID_WRECK_LIST">
 	<event name="NEBULA_AEA_ACID_WRECK_RWEAP">
-        <text>You dock with the wreck and find it completely devoid of life, there is however an undamaged weapon cache in cargo hold. You bring it back and find a pristine weapon inside.</text>
+        <text>You dock with the wreck and find it completely devoid of life. There is, however, an undamaged weapon cache in the cargo hold. You bring it back and find a pristine weapon inside.</text>
         <weapon name="LIST_WEAPONS_ALL_CRAPBUCKET"/>
     </event>
     <event load="NEBULA_AEA_ACID_WRECK_RWEAP"/>
     <event>
-        <text>Just as you're about to dock with the wreck a vessel jumps to the beacon. It appears to be the vessel responsible for creating this wreck.</text>
+        <text>Just as you're about to dock with the wreck, a vessel jumps to the beacon. It appears to be the vessel responsible for creating this mess.</text>
         <ship load="SHIP_AEA_ACID_GENERIC" hostile="true" />
         <choice hidden="true">
             <text>Defend yourself!.</text>
@@ -999,7 +999,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
     <ship load="SHIP_AEA_ACID_CARETAKER_FIGHT" hostile="false" />
 	<environment type="nebula" />
 	<choice>
-		<text>Demand the surrender of the goods.</text>
+		<text>Demand the surrender of their goods.</text>
 		<event>
 			<text>You prepare to secure the cargo by force.</text>
 			<ship hostile="true" />
@@ -1012,7 +1012,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<choice>
         <text>Avoid the ship.</text>
         <event>
-            <text>The ship stays outside your weapons range, and eventually jumps away.</text>
+            <text>The ship stays outside your weapons' range and eventually jumps away.</text>
 			<choice hidden="true">
 				<text>Do something onboard the ship.</text>
 				<event load="STORAGE_CHECK" />
@@ -1030,19 +1030,19 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <event name="NEBULA_ACIDIC_AEA_ACID_ITEM">
 	<beaconType id="map_icon_aea_acid_nebula" global="false">
 		<color r="138" g="237" b="31" a="1"/>
-		<unvisitedTooltip>An unvisited location. This beacon is sitting within the Acidic Growth, this may be detrimental to the health of your ship.</unvisitedTooltip>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <text>You've arrived at the beacon to discover an Acidic Vessel being repaired, it appears to be unarmed and out of action at the moment. The crew repairing the ship hasn't spotted you yet.</text>
+    <text>You've arrived at the beacon to discover an Acidic Vessel being repaired. It appears to be unarmed and out of action at the moment. The crew repairing the ship hasn't spotted you yet.</text>
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
     <ship load="SHIP_AEA_ACID_FIGHT" hostile="false"/>
     <choice hidden="true">
         <text>Salvage the vessel.</text>
         <event>
-            <text>You dock with the vessel, however the airlock fails to open. It appears that the Acidic ship has a security system onboard, it'll take a minute to bypass...</text>
+            <text>You dock with the vessel; however, the airlock fails to open. It appears that the Acidic ship has a security system onboard. It'll take a minute to bypass...</text>
             <triggeredEvent event="NEBULA_ACID_AEA_ACID_ITEM_TIME" time="60" clearOnJump="true">
                 <triggeredEventBox load="DEFAULT_SMALL" pos="combat">
                     <tooltip>Bypassing Security System...</tooltip>
@@ -1055,7 +1055,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<choice hidden="true">
 		<text>Leave the Acidic ship alone.</text>
 		<event>
-			<text>You have no interest in the ship.</text>
+			<text>You show no interest in the ship.</text>
 			<choice>
 				<text>Do something onboard the ship.</text>
 				<event load="STORAGE_CHECK" />
@@ -1068,31 +1068,31 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	</choice>
 </event>
 <event name="NEBULA_ACID_AEA_ACID_ITEM_TIME">
-    <text>You finally make it through and begin salvaging the vessel. You're surprised when you discover an orchid, seemingly trapped onboard. "Who are you- Nevermind, just get me off here, I thought I was going to die, I think they forgot I was onboard and accidently locked me in here. Please just take me with you."</text>
+    <text>You finally make it through and begin salvaging the vessel. You're surprised when you discover an orchid, seemingly trapped onboard. "Who are you- Nevermind, just get me out of here. I thought I was going to die. I think they forgot I was onboard and accidentally locked me in here. Please just take me with you."</text>
     <autoReward level="MED">standard</autoReward>
     <choice>
         <text>Rescue the orchid.</text>
         <event>
             <crewMember amount="1" class="orchid" />
-            <text>You bring the orchid back to yourship after finishing up the salvage operation.</text>
+            <text>You bring the orchid back to your ship after finishing up the salvage operation.</text>
         </event>
     </choice>
     <choice>
         <text>Leave the orchid behind.</text>
         <event>
-            <text>You finish salvaging what you can and leave the orchid onboard, hopefully the Acidic Growth will remember it has an orchid onboard before they starves to death.</text>
+            <text>You finish salvaging what you can and leave the orchid, hopefully the Acidic Growth will remember it has them onboard before they starves to death.</text>
         </event>
     </choice>
 </event>
 <event name="NEBULA_ACID_AEA_ACID_ITEM_BOARD">
-    <text>While you were attempting to break into the Acidic vessel, the repair crew has broken onto yours!.</text>
+    <text>While you were attempting to break into the Acidic vessel, the repair crew has broken into yours!.</text>
     <boarders min="4" max="4" class="aea_acid_soldier" />
 </event>
 <event name="NEBULA_STORM_AEA_ACID_AUGITEM" unique="true">
-	<text>Right in the middle of an ion storm you find a strange shipyard. It appears to be operated by the Acidic Growth, however they aren't hostile, perhaps you'll be able to come to a deal with them.</text>
+	<text>Right in the middle of an ion storm, you find a strange shipyard. It appears to be operated by the Acidic Growth. However, they aren't hostile. Perhaps you'll be able to make a deal with them.</text>
 	<environment type="storm" />
 	<choice hidden="true">
-		<text>Attack them!.</text>
+		<text>Attack the shipyard!.</text>
 		<event>
 			<text>For some reason you have decided to attack the makeshift shipyard. Though the facility is unarmed, one of their vessels rises to meet you and defend them.</text>
 			<ship load="SHIP_AEA_ACID_AUGITEM" hostile="true" />
@@ -1105,7 +1105,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<choice>
 		<text>Pay them to upgrade your oxygen system.</text>
 		<event>
-			<text>The Acidic Growth quickly installs the upgrades to your oxygen system making it now capable of both healing and extinguishing fires, depending on the setting.</text>
+			<text>The Acidic Growth quickly installs the upgrades to your oxygen system, making it now capable of both healing and extinguishing fires, depending on the setting.</text>
 			<augment name="AEA_ACID_O2SYS_OFF" />
 			<item_modify>
 				<item type="scrap" min="-40" max="-40" />
@@ -1162,7 +1162,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<choice hidden="true">	
 		<text>Ignore it.</text>
 		<event>
-			<text>You turn away from the vessel, it probably isn't worth it, instead you collect some supplies floating nearby.</text>
+			<text>You turn away from the vessel, thinking that this probably isn't worth the risk. Instead you collect some supplies floating nearby.</text>
 			<autoReward level="LOW">fuel_only</autoReward>
 			<choice hidden="true">
 				<text>Do something onboard the ship.</text>
@@ -1177,13 +1177,13 @@ The wreck is relatively intact, however it appears to have been filled with hole
 </event>
 <eventList name="NEBULA_AEA_ACID_EMPTY_WRECK_INVEST">
 	<event>
-		<text>You find the ship empty of almost anything except a few crates of fuel.</text>
+		<text>You find the ship devoid of almost anything except for a few crates of fuel.</text>
 		<autoReward level="HIGH">fuel_only</autoReward>
 	</event>
 	<event>
-		<text>As you move closer to the vessel some kind of hidden trap goes off, your engines are knocked out and you're dead in the water.
+		<text>As you move closer to the vessel, some kind of hidden trap goes off, your engines are knocked out, and now you're dead in the water.
 
-    To make matters worse you just manage to detect a series of large asteriods heading your way, you'll have to take them out before they get to you.</text>
+    To make matters worse, you just manage to detect a series of large asteroids heading your way. You'll have to take them out before they get to you.</text>
         <status type="limit" target="player" system="engines" amount="0" />
 		<ship load="SHIP_AEA_ACID_ASTEROIDS" hostile="true" />
 		<choice hidden="true">
@@ -1192,9 +1192,9 @@ The wreck is relatively intact, however it appears to have been filled with hole
 		</choice>
 	</event>
 	<event>
-		<text>As you move closer to the vessel some kind of hidden trap goes off, your engines are knocked out and you're dead in the water.
+		<text>As you move closer to the vessel, some kind of hidden trap goes off, your engines are knocked out, and now you're dead in the water.
 
-    To make matters worse you just manage to detect a series of large asteriods heading your way, you'll have to take them out before they get to you.</text>
+    To make matters worse, you just manage to detect a series of large asteriods heading your way. You'll have to take them out before they get to you.</text>
         <status type="limit" target="player" system="engines" amount="0" />
 		<ship load="SHIP_AEA_ACID_ASTEROIDS" hostile="true" />
 		<choice hidden="true">
@@ -1229,7 +1229,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <eventList name="REFUGEE_HAIL_LIST_AEA_ACID">
 	<event load="REFUGEE_TRADER" />
 	<event>
-		<text>As you hail the refugee ship, an Slug ship jumps into the system... it was hunting the refugee ship for sport and now they've found you instead!.</text>
+		<text>As you hail the refugee ship, a Slug ship jumps into the system... it was hunting the refugee ship for sport, and now they've found you instead!.</text>
 		<ship load="SHIP_SLUG_REFUGEE" hostile="true" />
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -1241,7 +1241,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <event name="NEBULA_ACIDIC_AEA_ACID_BADORCHID" unique="true">
 	<beaconType id="map_icon_aea_acid_nebula" global="false">
 		<color r="138" g="237" b="31" a="1"/>
-		<unvisitedTooltip>An unvisited location. This beacon is sitting within the Acidic Growth, this may be detrimental to the health of your ship.</unvisitedTooltip>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
@@ -1249,12 +1249,12 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<status type="limit" target="player" system="sensors" amount="0" />
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
-	<text>Strangely an Orchid captain hails you from an Acidic vessel. "Captain, you wouldn't happen to have any Acidic Growth with you, we'd offer a reward for you to turn over any of it to be destroyed"</text>
+	<text>Strangely, an Orchid captain hails you from an Acidic vessel. "Captain, you wouldn't happen to have any Acidic Growth with you? We'd offer a reward for you to turn over any of it to be destroyed""</text>
 	<ship load="SHIP_AEA_ACID_ORCHID_ONLY" hostile="false" />
 	<choice hidden="true" req="aea_acid_soldier">
 		<text>(Acidic Soldier) Take up their offer.</text>
 		<event>
-            <text>You send over your Acidic Soldier, the orchids make true to their promise and exterminate the Acidic Growth inside, The Orchids send over the reward as promised.</text>
+            <text>You send over your Acidic Soldier, the orchids make true to their promise and exterminate the Acidic Growth inside. The Orchids send over the reward as promised.</text>
             <autoReward level="MED">standard</autoReward>
             <removeCrew>
                 <clone>true</clone>
@@ -1279,7 +1279,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <event name="NEBULA_ACIDIC_AEA_ACID_CHOOSE_DEATH" unique="true">
     <beaconType id="map_icon_aea_acid_nebula" global="false">
 		<color r="138" g="237" b="31" a="1"/>
-		<unvisitedTooltip>An unvisited location. This beacon is sitting within the Acidic Growth, this may be detrimental to the health of your ship.</unvisitedTooltip>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
@@ -1287,7 +1287,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<status type="limit" target="player" system="sensors" amount="0" />
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
-	<text>You are immediately hailed by a dangerous looking Acidic ship guarding a station. "You are not welcome here, choose your punishment and prepare to die."</text>
+	<text>You are immediately hailed by a dangerous-looking Acidic ship guarding a station. "You are not welcome here. Choose your punishment and prepare to die."</text>
 	<choice req="shields" lvl="2" blue="false" max_group="0">
 		<text>Shields.</text>
 		<event>
@@ -1393,7 +1393,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 </event>
 			
 <event name="NEBULA_AEA_ACID_REPAIR_YARD">
-	<text>You arrive to find a small automatic Acidic repair yard, you could probably try to sneak in and hope it repairs you for free, it also appears like you could purchase some repairs.</text>
+	<text>You arrive to find a small automatic Acidic repair yard. You could probably try to sneak in and hope it repairs you for free. It also appears like you could pay for some repairs.</text>
 	<environment type="nebula" />
     <choice hidden="true">
         <text>Sneak into the queue.</text>
@@ -1622,7 +1622,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <event name="NEBULA_ACIDIC_AEA_ACID_LEADER">
 	<beaconType id="map_icon_aea_acid_nebula" global="false">
 		<color r="138" g="237" b="31" a="1"/>
-		<unvisitedTooltip>An unvisited location. This beacon is sitting within the Acidic Growth, this may be detrimental to the health of your ship.</unvisitedTooltip>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
@@ -1883,7 +1883,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <event name="NEBULA_ACIDIC_AEA_ACID_CIV">
 	<beaconType id="map_icon_aea_acid_nebula" global="false">
 		<color r="138" g="237" b="31" a="1"/>
-		<unvisitedTooltip>An unvisited location. This beacon is sitting within the Acidic Growth, this may be detrimental to the health of your ship.</unvisitedTooltip>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
@@ -2124,7 +2124,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <event name="NEBULA_ACIDIC_AEA_ACID_FIGHT" unique="true">
 	<beaconType id="map_icon_aea_acid_nebula" global="false">
 		<color r="138" g="237" b="31" a="1"/>
-		<unvisitedTooltip>An unvisited location. This beacon is sitting within the Acidic Growth, this may be detrimental to the health of your ship.</unvisitedTooltip>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
@@ -2143,7 +2143,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <event name="NEBULA_ACIDIC_AEA_ACID_PIRATE" unique="true">
 	<beaconType id="map_icon_aea_acid_nebula" global="false">
 		<color r="138" g="237" b="31" a="1"/>
-		<unvisitedTooltip>An unvisited location. This beacon is sitting within the Acidic Growth, this may be detrimental to the health of your ship.</unvisitedTooltip>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
@@ -2265,7 +2265,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <event name="NEBULA_ACIDIC_ENCOUNTER_AEA_ACID_ELITE" unique="true">
 	<beaconType id="map_icon_aea_acid_nebula" global="false">
 		<color r="138" g="237" b="31" a="1"/>
-		<unvisitedTooltip>An unvisited location. This beacon is sitting within the Acidic Growth, this may be detrimental to the health of your ship.</unvisitedTooltip>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
@@ -2423,7 +2423,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <event name="NEBULA_ACIDIC_AEA_ACID_BILL_MEET" unique="true">
     <beaconType id="map_icon_aea_acid_nebula" global="false">
 		<color r="138" g="237" b="31" a="1"/>
-		<unvisitedTooltip>An unvisited location. This beacon is sitting within the Acidic Growth, this may be detrimental to the health of your ship.</unvisitedTooltip>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
@@ -2567,7 +2567,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 <event name="NEBULA_ACIDIC_AEA_ACID_SHIPYARD" unique="true">
     <beaconType id="map_icon_aea_acid_nebula_shipyard" global="true">
 		<color r="138" g="237" b="31" a="1"/>
-		<unvisitedTooltip>An unvisited location. This beacon is sitting within the Acidic Growth, this may be detrimental to the health of your ship.</unvisitedTooltip>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
@@ -2767,9 +2767,9 @@ The wreck is relatively intact, however it appears to have been filled with hole
 	<preventQuest />
 	<beaconType id="map_icon_transport_aea_acid" global="true">
 		<color r="138" g="237" b="31" a="1"/>
-		<unvisitedTooltip>An unvisited location. This beacon is sitting within the Acidic Growth, this may be detrimental to the health of your ship.</unvisitedTooltip>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
-		<undiscoveredTooltip>An unvisited location. This beacon is sitting within the Acidic Growth, this may be detrimental to the health of your ship.</undiscoveredTooltip>
+		<undiscoveredTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</undiscoveredTooltip>
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
