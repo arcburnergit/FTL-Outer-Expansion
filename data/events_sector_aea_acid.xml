@@ -1900,7 +1900,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
 			<choice hidden="true">
 				<text>Agree to hunt down the ship.</text>
 				<event>
-					<text>Despite also technically being a trespasser, clearly the Acidic Growth cares much more about dealing with this other ship. They send you the cooridnates for the last reported location.</text>
+					<text>Despite also technically being a trespasser, clearly the Acidic Growth cares much more about dealing with this other ship. They send you the coordinates for the last reported location.</text>
                     <variable name="aea_acid_friendly" op="set" val="1" />
 					<quest event="NEBULA_AEA_ACID_CIV_HUNT" />
 				</event>
@@ -2472,7 +2472,7 @@ The wreck is relatively intact, however it appears to have been filled with hole
             <choice hidden="true">
                 <text>Sure we can.</text>
                 <event>
-                    <text>"Thanks! I'll upload the cooridnates to your computer."</text>
+                    <text>"Thanks! I'll upload the coordinates to your computer."</text>
                     <quest event="NEBULA_ACIDIC_AEA_ACID_BILL_CORE">
                         <nebulaBeacon>true</nebulaBeacon>
                         <nebulaEvent>NEBULA_ACIDIC_AEA_ACID_BILL_CORE</nebulaEvent>
@@ -2697,12 +2697,12 @@ The wreck is relatively intact, however it appears to have been filled with hole
     <choice hidden="true" req="aea_acid_con_visited" blue="false" lvl="0" max_lvl="0">
         <text>Head to the control room.</text>
         <event>
-            <text>You enter the control room, luckily it's unmanned at the moment, Unfortunately you aren't able to access anything due to your lack of authorization, you are able to see the cooridnates of a transport carrying something important for an ongoing project, however you aren't entirely sure what it is.</text>
+            <text>You enter the control room, luckily it's unmanned at the moment, Unfortunately you aren't able to access anything due to your lack of authorization, you are able to see the coordinates of a transport carrying something important for an ongoing project, however you aren't entirely sure what it is.</text>
             <variable name="aea_acid_con_visited" op="set" val="1" />
             <choice>
-                <text>Download the cooridnates.</text>
+                <text>Download the coordinates.</text>
                 <event>
-                    <text>You quickly download the cooridnates to your ship.</text>
+                    <text>You quickly download the coordinates to your ship.</text>
                     <quest event="NEBULA_ACIDIC_AEA_ACID_TRANSPORT_BARREL">
                         <nebulaBeacon>true</nebulaBeacon>
                         <nebulaEvent>NEBULA_ACIDIC_AEA_ACID_TRANSPORT_BARREL</nebulaEvent>

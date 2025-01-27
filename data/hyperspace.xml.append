@@ -171,22 +171,10 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
-		<unlock variant="a" silent="false">
-			<type>3</type>
-            <otherUnlocks>
-				<ship>PLAYER_SHIP_AEA_ACID_CREW1</ship>
-            </otherUnlocks>
-		</unlock>
 	</mod-append:ship>
 	<mod-append:ship name="PLAYER_SHIP_AEA_CREW3" b="false" c="false" >
 		<unlock variant="a" silent="false">
 			<type>4</type>
-		</unlock>
-		<unlock variant="a" silent="false">
-			<type>3</type>
-            <otherUnlocks>
-				<ship>PLAYER_SHIP_AEA_ACID_CREW1_2</ship>
-            </otherUnlocks>
 		</unlock>
 	</mod-append:ship>
 	<mod-append:ship name="PLAYER_SHIP_AEA_CREW5" b="false" c="false" >
@@ -245,12 +233,6 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 	<mod-append:ship name="PLAYER_SHIP_AEA_CREW4" b="false" c="false" >
 		<unlock variant="a" silent="false">
 			<type>4</type>
-		</unlock>
-		<unlock variant="a" silent="false">
-			<type>3</type>
-            <otherUnlocks>
-				<ship>PLAYER_SHIP_AEA_CREW2_2</ship>
-            </otherUnlocks>
 		</unlock>
 	</mod-append:ship>
 
