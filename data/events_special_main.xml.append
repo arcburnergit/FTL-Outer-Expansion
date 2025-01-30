@@ -504,4 +504,46 @@
 	<autoReward level="HIGH">standard</autoReward>
 </event>
 
+
+<event name="TEST_RANDOMNESS">
+  <loadEventList seeded="false" first="false" generate="false">
+    <event>
+      <text>Outcome1</text>
+      <choice hidden="true">
+        <text>CONTINUE</text>
+        <event>
+          <loadEvent seeded="false">RANDOM_LOAD</loadEvent>
+        </event>
+      </event>
+      <choice>
+        <text>END</text>
+        <event/>
+      </choice>
+    </event>
+    <event>
+      <text>Outcome2</text>
+      <choice hidden="true">
+        <text>CONTINUE</text>
+        <event>
+          <loadEvent seeded="false">RANDOM_LOAD</loadEvent>
+        </event>
+      </choice>
+      <choice>
+        <text>END</text>
+        <event/>
+      </choice>
+    </event>
+  </loadEventList>
+</event>
+
+<event name="RANDOM_LOAD">
+  <text>LOAD</text>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event>
+      <loadEvent seeded="false">TEST_RANDOMNESS</loadEvent>
+    </event>
+  </choice>
+</event>
+
 </FTL>

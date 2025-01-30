@@ -4528,7 +4528,7 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 <shipBlueprint name="PLAYER_SHIP_AEA_CREW4" layout="aeap_bird_jay" img="aeap_bird_jay">
 	<class>Jay's Crewser</class>
 	<name>The Blue Jay</name>
-	<desc>Although none of the crew can access the from of the ship, Jay and her drones are able to keep it online with ease.</desc>
+	<desc>Although none of the crew can access the front of the ship, Jay and her drones are able to keep it online with ease.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_JAY_unlock" />
 	<systemList>
 		<battery max="2" power="1" room="19" start="false" img="room_battery_13" />
@@ -10417,7 +10417,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 <shipBlueprint name="PLAYER_SHIP_AEA_SHLEG_GAS_3" layout="aeap_slug_wide_c" img="aeap_slug_wide_c">
 	<class>Disorder Cruiser</class>
 	<name>The Incoherent</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>This ship has the kit to both take out the enemy crew or destroy the ship outright.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_WIDE_3_unlock" />
 	<systemList>
 		<battery power="1" max="2" room="2" start="false" img="room_battery_15" />
@@ -10498,7 +10498,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 <shipBlueprint name="PLAYER_SHIP_AEA_CREW5" layout="aeap_shleg_uni" img="aeap_shleg_uni">
 	<class>Sorrow and Sickle's Crewser</class>
 	<name>The Irukandji</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>Together Sickle and Sorrow are incredibly capable against enemies vunerable to the gas, but may struggle to deal with those who are immune.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHLEG_UNI_unlock" />
 	<systemList>
 		<battery power="1" room="11" start="false" img="room_battery_15" />
