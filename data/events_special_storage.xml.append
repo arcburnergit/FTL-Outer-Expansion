@@ -1730,13 +1730,13 @@
 				<text>Equip [Bolt].</text>
 				<event>
 					<text>You are able to dissolve the spell into the weapon.</text>
-					<remove name="AEA_SPELL_ITEM_03"/>
+					<remove name="AEA_SPELL_ITEM_04"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon thrums with power.</text>
 							<remove name="AEA_LASER_CULT"/>
-							<weapon name="AEA_LASER_CULT_03"/>
+							<weapon name="AEA_LASER_CULT_04"/>
 						</event>
 					</choice>
 				</event>
@@ -1745,13 +1745,13 @@
 				<text>Equip [Bolt Burst].</text>
 				<event>
 					<text>You are able to dissolve the spell into the weapon.</text>
-					<remove name="AEA_SPELL_ITEM_03"/>
+					<remove name="AEA_SPELL_ITEM_05"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon thrums with power.</text>
 							<remove name="AEA_LASER_CULT"/>
-							<weapon name="AEA_LASER_CULT_03"/>
+							<weapon name="AEA_LASER_CULT_05"/>
 						</event>
 					</choice>
 				</event>
@@ -1760,13 +1760,13 @@
 				<text>Equip [Hull Bolt].</text>
 				<event>
 					<text>You are able to dissolve the spell into the weapon.</text>
-					<remove name="AEA_SPELL_ITEM_03"/>
+					<remove name="AEA_SPELL_ITEM_06"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon thrums with power.</text>
 							<remove name="AEA_LASER_CULT"/>
-							<weapon name="AEA_LASER_CULT_03"/>
+							<weapon name="AEA_LASER_CULT_06"/>
 						</event>
 					</choice>
 				</event>
@@ -1775,13 +1775,13 @@
 				<text>Equip [Warp Bolt].</text>
 				<event>
 					<text>You are able to dissolve the spell into the weapon.</text>
-					<remove name="AEA_SPELL_ITEM_03"/>
+					<remove name="AEA_SPELL_ITEM_08"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon thrums with power.</text>
 							<remove name="AEA_LASER_CULT"/>
-							<weapon name="AEA_LASER_CULT_03"/>
+							<weapon name="AEA_LASER_CULT_08"/>
 						</event>
 					</choice>
 				</event>
@@ -1790,13 +1790,13 @@
 				<text>Equip [Heal Bolt].</text>
 				<event>
 					<text>You are able to dissolve the spell into the weapon.</text>
-					<remove name="AEA_SPELL_ITEM_03"/>
+					<remove name="AEA_SPELL_ITEM_09"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon thrums with power.</text>
 							<remove name="AEA_LASER_CULT"/>
-							<weapon name="AEA_LASER_CULT_03"/>
+							<weapon name="AEA_LASER_CULT_09"/>
 						</event>
 					</choice>
 				</event>
@@ -1805,13 +1805,13 @@
 				<text>Equip [Barrier].</text>
 				<event>
 					<text>You are able to dissolve the spell into the weapon.</text>
-					<remove name="AEA_SPELL_ITEM_03"/>
+					<remove name="AEA_SPELL_ITEM_12"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon thrums with power.</text>
 							<remove name="AEA_LASER_CULT"/>
-							<weapon name="AEA_LASER_CULT_03"/>
+							<weapon name="AEA_LASER_CULT_12"/>
 						</event>
 					</choice>
 				</event>
@@ -1820,13 +1820,13 @@
 				<text>Equip [Lockdown].</text>
 				<event>
 					<text>You are able to dissolve the spell into the weapon.].</text>
-					<remove name="AEA_SPELL_ITEM_03"/>
+					<remove name="AEA_SPELL_ITEM_13"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon thrums with power.</text>
 							<remove name="AEA_LASER_CULT"/>
-							<weapon name="AEA_LASER_CULT_03"/>
+							<weapon name="AEA_LASER_CULT_13"/>
 						</event>
 					</choice>
 				</event>
@@ -1835,13 +1835,13 @@
 				<text>Equip [Ally].</text>
 				<event>
 					<text>You are able to dissolve the spell into the weapon.].</text>
-					<remove name="AEA_SPELL_ITEM_03"/>
+					<remove name="AEA_SPELL_ITEM_14"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon thrums with power.</text>
 							<remove name="AEA_LASER_CULT"/>
-							<weapon name="AEA_LASER_CULT_03"/>
+							<weapon name="AEA_LASER_CULT_14"/>
 						</event>
 					</choice>
 				</event>
@@ -1850,13 +1850,13 @@
 				<text>Equip [Mind Bolt].</text>
 				<event>
 					<text>You are able to dissolve the spell into the weapon.].</text>
-					<remove name="AEA_SPELL_ITEM_03"/>
+					<remove name="AEA_SPELL_ITEM_15"/>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon thrums with power.</text>
 							<remove name="AEA_LASER_CULT"/>
-							<weapon name="AEA_LASER_CULT_03"/>
+							<weapon name="AEA_LASER_CULT_15"/>
 						</event>
 					</choice>
 				</event>
