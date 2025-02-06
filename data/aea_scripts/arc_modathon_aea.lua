@@ -1,4 +1,3 @@
-mods.amod = {}
 
 -----------------------
 -- UTILITY FUNCTIONS --
@@ -165,9 +164,9 @@ local function round(num, numDecimalPlaces)
   local mult = 10^(numDecimalPlaces or 0)
   return math.floor(num * mult + 0.5) / mult
 end
-local beamBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("AMOD_BEAM_MULTI")
+local beamBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("AEA_BEAM_MULTI")
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
-    if projectile.extend.name == "AMOD_BEAM_MULTI" and weapon.boostLevel > 0 then
+    if projectile.extend.name == "AEA_BEAM_MULTI" and weapon.boostLevel > 0 then
         --print("BOOST LEVEL:"..tostring(weapon.boostLevel))
         local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
         local target1 = projectile.target1
@@ -214,7 +213,7 @@ script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(ship)
     local cApp = Hyperspace.Global.GetInstance():GetCApp()
     local combatControl = cApp.gui.combatControl
     for weapon in vter(shipManager:GetWeaponList()) do
-        if weapon.blueprint.name == "AMOD_BEAM_MULTI" then
+        if weapon.blueprint.name == "AEA_BEAM_MULTI" then
             if weapon.targets:size() > 1 and weapon.boostLevel > 0 then
                 local left = false
                 local target1 = weapon.targets[0]
@@ -231,11 +230,11 @@ script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(ship)
 
                     local midPoint1 = midPoint(newBeam11, newBeam12)
                     local alpha1 = math.atan((newBeam11.y-newBeam12.y), (newBeam11.x-newBeam12.x)) * 180 / math.pi
-                    local beamString = "amod_beam.png"
+                    local beamString = "aea_beam.png"
                     if weapon.autoFiring then
-                        beamString = "amod_beam_yellow.png"
+                        beamString = "aea_beam_yellow.png"
                     else
-                        beamString = "amod_beam.png"
+                        beamString = "aea_beam.png"
                     end
                     local beam1 = Hyperspace.Resources:CreateImagePrimitiveString(beamString, -31, -9, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
                     beam1.textureAntialias = true
@@ -255,7 +254,7 @@ script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(ship)
     --[[
     if combatControl.weapControl.armedWeapon then
         local weapon = combatControl.weapControl.armedWeapon
-        if weapon.blueprint.name == "AMOD_BEAM_MULTI" then
+        if weapon.blueprint.name == "AEA_BEAM_MULTI" then
             if combatControl.aimingPoints:size() > 0 then
                 local target1 = combatControl.aimingPoints[0]
                 local target2 = combatControl.potentialAiming
@@ -275,7 +274,7 @@ script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(ship)
             end
         end
     end]]
-    if weaponName and weaponName == "AMOD_BEAM_MULTI" and weaponBoost > 0 then
+    if weaponName and weaponName == "AEA_BEAM_MULTI" and weaponBoost > 0 then
         --local weapon = weaponSet
         local target1 = Hyperspace.Pointf(lastMouseDown.x, lastMouseDown.y)
         if target1.x == -1 or target1.y == -1 then return end
@@ -294,11 +293,11 @@ script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(ship)
 
             local midPoint1 = midPoint(newBeam11, newBeam12)
             local alpha1 = math.atan((newBeam11.y-newBeam12.y), (newBeam11.x-newBeam12.x)) * 180 / math.pi
-            local beamString = "amod_beam.png"
+            local beamString = "aea_beam.png"
             if weaponAutofiring then
-                beamString = "amod_beam_yellow.png"
+                beamString = "aea_beam_yellow.png"
             else
-                beamString = "amod_beam.png"
+                beamString = "aea_beam.png"
             end
             local beam1 = Hyperspace.Resources:CreateImagePrimitiveString(beamString, -30, -9, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
             beam1.textureAntialias = true

@@ -4982,9 +4982,9 @@
 	<time>1</time>
 </anim>
 
-<animSheet name="beam_amod_long" w="1100" h="94" fw="55" fh="94">weapons_arc/beam_amod_long.png</animSheet>
-<weaponAnim name="beam_amod_long">
-	<sheet>beam_amod_long</sheet>
+<animSheet name="beam_aea_long" w="1100" h="94" fw="55" fh="94">weapons_arc/beam_aea_long.png</animSheet>
+<weaponAnim name="beam_aea_long">
+	<sheet>beam_aea_long</sheet>
 	<desc length="20" x="0" y="0" />
 	<chargedFrame>10</chargedFrame>
 	<fireFrame>11</fireFrame>
@@ -5042,5 +5042,18 @@
 	<firePoint x="16" y="39" />
 	<mountPoint x="16" y="52" />
 	<chargeImage>weapons_aea/artillery_broadside_mine_glow.png</chargeImage>
+</weaponAnim>
+</FTL>
+
+<FTL>
+<animSheet name="aea_combo_burst_focus_1_1" w="360" h="58" fw="30" fh="58">weapons_combo/aea_combo_burst_focus_1_1.png</animSheet>
+<weaponAnim name="aea_combo_burst_focus_1_1">
+	<sheet>aea_combo_burst_focus_1_1</sheet>
+	<desc length="12" x="0" y="0" />
+	<chargedFrame>5</chargedFrame>
+	<fireFrame>6</fireFrame>
+	<firePoint x="19" y="26" />
+	<mountPoint x="4" y="43" />
+	<chargeImage>weapons_combo/aea_combo_burst_focus_1_1_glow.png</chargeImage>
 </weaponAnim>
 </FTL>

@@ -542,10 +542,9 @@
 	<autoReward level="HIGH">standard</autoReward>
 </event>
 <textList name="TEXT_DEAD_CREW_AEA_CULT">
-	<text>"They... were right... the Coalition was the only thing that could save us... and now it's too late..."</text>
 	<text>The halls of the once lively vampweed vessel are now as silent as the living members of their Floral brethren. Perhaps there's something poetic to this, but you're here for scrap and not deeper meanings.</text>
 	<text>"I'm not a religious man, that's a greenleaf's thing... but when you're taking your last breath, it's a rather spiritual moment. God... I hope there isn't a hell..."</text>
-	<text>As you board the AEA_CULT vessel to scrap it, you find various propaganda and paraphernalia relating to the Coalition and the Confederacy. These guys were apparently radicals and nationalists, but in a court of law, you aren't sure that would hold as a defense on its own.</text>
+	<text>As you board the cultist vessel to scrap it, you find various propaganda and paraphernalia relating to the Coalition and the Confederacy. These guys were apparently radicals and nationalists, but in a court of law, you aren't sure that would hold as a defense on its own.</text>
 </textList>
 
 <event name="SURRENDER_AEA_CULT">

@@ -1122,7 +1122,7 @@ A Gi ship appears from over the top and begins an attack run on you. You scrambl
 
 <event name="AEA_BIRD_DELIVERY_QUEST" unique="true">
 	<text>Arriving at the beacon you discover a Gi transport ship adrift nearby, scans indicate that the reactor is blown and they have no power. It appears they're carrying a backup for the life support system and so the crew has survived so far.</text>
-	<ship load="SHIP_AEA_BIRD_TRANSPORT_LOOT" hostile="true"/>
+	<ship load="SHIP_AEA_BIRD_TRANSPORT_LOOT" hostile="false"/>
 	<status type="limit" target="enemy" system="reactor" amount="1" />
 	<choice hidden="true">
 		<text>Dock and contact the crew.</text>

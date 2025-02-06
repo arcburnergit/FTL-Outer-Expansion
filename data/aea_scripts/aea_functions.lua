@@ -44,6 +44,12 @@ local function get_point_local_offset(original, target, offsetForwards, offsetRi
 	return Hyperspace.Pointf(newX, newY)
 end
 
+local function offset_point_direction(oldX, oldY, angle, distance)
+	local newX = oldX + (distance * math.cos(math.rad(angle)))
+	local newY = oldY + (distance * math.sin(math.rad(angle)))
+	return Hyperspace.Pointf(newX, newY)
+end
+
 local function vter(cvec)
 	local i = -1
 	local n = cvec:size()
@@ -1131,6 +1137,9 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 		if crewTable.lastKill then
 			Hyperspace.playerVariables.aea_necro_ability_points = Hyperspace.playerVariables.aea_necro_ability_points - 5
 			local rCrew = crewTable.lastKill
+			if string.sub(rCrew, string.len(rCrew) - 5, string.len(rCrew)) == "_enemy" then
+				rCrew = string.sub(rCrew, 1, string.len(rCrew) - 6)
+			end
 			local crewShip = Hyperspace.ships(crewmem.currentShipId)
 			local intruder = false
 			if crewmem.intruder then
@@ -1139,6 +1148,8 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 			local slot = Hyperspace.ShipGraph.GetShipInfo(crewShip.iShipId):GetClosestSlot(crewmem:GetLocation(), crewShip.iShipId, intruder)
 			local zombie = crewShip:AddCrewMemberFromString(crewTable.lastKillName, rCrew, intruder, slot.roomId, true, true)
 			crewTable.lastKill = nil
+			crewTable.lastKillName = nil
+			crewTable.lastKillRace = nil
 		end
 	end
 end)
@@ -4201,4 +4212,5 @@ script.on_game_event("AEA_SHLEG_GAS_TIMER_START_LONG", false, function()
 end)
 script.on_game_event("AEA_SHLEG_GAS_TIMER_START_SHORT", false, function()
 	gasRooms("AEA_SHLEG_BOMB_FAKE_SHORT")
-end)
+end)	
+

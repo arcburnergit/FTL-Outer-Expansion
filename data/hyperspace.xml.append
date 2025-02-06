@@ -5,8 +5,9 @@
   <mod-append:script>data/aea_scripts/aea_functions.lua</mod-append:script>
   <!--mod-append:script>data/aea_scripts/aea_functions_test.lua</mod-append:script-->
   <mod-append:script>data/aea_scripts/aeaIcon.lua</mod-append:script>
-  <mod-append:script>data/arc_scripts/arc_modathon.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/arc_modathon_aea.lua</mod-append:script>
   <!--mod-append:script>data/aea_scripts/arc_test_light_nebula.lua</mod-append:script-->
+  <mod-append:script>data/aea_scripts/aea_combo.lua</mod-append:script>
 </mod:findLike>
 
 <mod:findLike type="ships" limit="1">
@@ -116,7 +117,7 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 
 
 		<mod-append:ship>PLAYER_SHIP_AEA_CULT_WHALE</mod-append:ship>
-		<mod-append:ship>PLAYER_SHIP_AMOD_LANIUS_BATTLE</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_LANIUS_BATTLE</mod-append:ship>
 		<mod-append:empty/>
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_HAMMER</mod-append:ship>
 			<!-- -->
@@ -379,13 +380,13 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
         </unlock>
 	</mod-append:ship>
 
-	<mod-append:ship name="PLAYER_SHIP_AMOD_LANIUS_BATTLE" b="false" c="false" secret="true">
+	<mod-append:ship name="PLAYER_SHIP_AEA_LANIUS_BATTLE" b="false" c="false" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
 	</mod-append:ship>
 
-	<mod-append:customShip name="PLAYER_SHIP_AMOD_LANIUS_BATTLE">
+	<mod-append:customShip name="PLAYER_SHIP_AEA_LANIUS_BATTLE">
 		<hiddenAug>SHIP_LANIUS</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
@@ -7161,6 +7162,25 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 		<name>aea_old_activated_cell</name>
 		<name>BLUELIST_PRECURSOR_TECH</name>
 	</req>
+
+	<req name="aea_craft_burst_focus_1_1" type="all">
+		<req type="any">
+			<name>LASER_BURST_2</name>
+		</req>
+		<req type="any">
+			<name>FOCUS_1</name>
+		</req>
+	</req>
+
+	<req name="aea_craft_burst_focus_1_1_prev" type="any">
+		<req type="any">
+			<name>LASER_BURST_2</name>
+		</req>
+		<req type="any">
+			<name>FOCUS_1</name>
+		</req>
+	</req>
+
 
   	<eventFile>special_aea_acid</eventFile>
   	<eventFile>sector_aea_acid</eventFile>

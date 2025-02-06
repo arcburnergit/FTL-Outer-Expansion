@@ -408,14 +408,14 @@
 		<text>Ask Jay about this.</text>
 		<event load="AEA_OLD_VICTORY_CREW_AEA_JAY" />
 	</choice>
-	<mod-append:choice hidden="true" req="aea_shleg_sickle">
+	<choice hidden="true" req="aea_shleg_sickle">
 		<text>Ask Sickle about this.</text>
 		<event load="AEA_OLD_VICTORY_CREW_AEA_SICKLE" />
-	</mod-append:choice>
-	<mod-append:choice hidden="true" req="aea_shleg_sorrow">
+	</choice>
+	<choice hidden="true" req="aea_shleg_sorrow">
 		<text>Ask Sorrow about this.</text>
 		<event load="AEA_OLD_VICTORY_CREW_AEA_SORROW" />
-	</mod-append:choice>
+	</choice>
 </event>
 
 <event name="AEA_OLD_VICTORY_CREW_DETECTIVE">
@@ -763,7 +763,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW_AEA_JAY">
-	<text>Tiny just looks at you, you wonder if it even knows what the paragon is.</text>
+	<text>"Well, if you don't end up detonating the bomb, can I atleast try and disassemble it? I want to know how it works."</text>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW4</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>

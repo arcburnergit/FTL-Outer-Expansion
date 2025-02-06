@@ -1031,7 +1031,6 @@
 		<artillery power="1" max="1" room="11" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" />
 		<battery power="1" max="1" room="1" start="true" />
 		<cloaking power="1" max="1" room="8" start="true" />
-		<clonebay power="2" max="2" room="6" start="true" />
 		<doors power="1" max="1" room="0" start="true" />
 		<engines power="1" max="2" room="3" start="true" />
 		<mind power="1" max="1" room="4" start="true" />
@@ -1187,7 +1186,6 @@
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<clonebay power="1" max="2" room="10" start="true" />
 		<doors power="2" max="2" room="2" start="true" />
 		<drones power="1" max="8" room="1" start="true" />
 		<engines power="1" max="2" room="11" start="true" />
@@ -1271,7 +1269,6 @@
 		<cloaking power="1" max="1" room="2" start="true" />
 		<doors power="2" max="3" room="7" start="true" />
 		<engines power="1" max="3" room="1" start="true" />
-		<hacking power="1" max="1" room="5" start="true" />
 		<oxygen power="1" max="2" room="6" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="10" room="3" start="true" />
@@ -1297,7 +1294,6 @@
 		<doors power="2" max="3" room="9" start="true" />
 		<drones power="2" max="8" room="8" start="true" />
 		<engines power="1" max="3" room="0" start="true" />
-		<hacking power="1" max="2" room="6" start="true" />
 		<mind power="1" max="1" room="7" start="true" />
 		<oxygen power="1" max="2" room="5" start="true" />
 		<pilot power="1" max="1" room="3" start="true" />
@@ -1351,7 +1347,6 @@
 		<doors power="2" max="3" room="9" start="true" />
 		<drones power="2" max="8" room="1" start="true" />
 		<engines power="1" max="3" room="6" start="true" />
-		<hacking power="1" max="2" room="4" start="true" />
 		<oxygen power="1" max="2" room="0" start="true" />
 		<pilot power="1" max="1" room="7" start="true" />
 		<shields power="2" max="10" room="8" start="true" />
@@ -1382,7 +1377,7 @@
 		<doors power="2" max="3" room="7" start="true" />
 		<drones power="2" max="7" room="3" start="true" />
 		<engines power="1" max="2" room="2" start="true" />
-		<hacking power="1" max="2" room="6" start="true" />
+		<mind power="1" max="1" room="6" start="true" />
 		<oxygen power="1" max="2" room="8" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="1" start="true" />
@@ -1404,11 +1399,10 @@
 	<minSector>4</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<cloaking power="1" max="1" room="12" start="true" />
-		<clonebay power="1" max="2" room="2" start="true" />
+		<hacking power="1" max="1" room="12" start="true" />
+		<clonebay power="1" max="1" room="2" start="true" />
 		<doors power="2" max="3" room="10" start="true" />
 		<engines power="1" max="2" room="7" start="true" />
-		<hacking power="1" max="1" room="11" start="true" />
 		<mind power="1" max="1" room="6" start="true" />
 		<oxygen power="1" max="2" room="9" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
@@ -1467,6 +1461,49 @@
 </blueprintList>
 
 <blueprintList name="LIST_CREW_ORGANIC_AEA_NECRO">
+	<name>aea_bird_avali</name>
+	<name>aea_bird_illuminant</name>
+	<name>aea_bird_unique</name>
+	<name>aea_cult_wizard</name>
+	<name>aea_cult_wizard_a01</name>
+	<name>aea_cult_wizard_a02</name>
+	<name>aea_cult_wizard_s03</name>
+	<name>aea_cult_wizard_s04</name>
+	<name>aea_cult_wizard_s05</name>
+	<name>aea_cult_wizard_s06</name>
+	<name>aea_cult_wizard_a07</name>
+	<name>aea_cult_wizard_s08</name>
+	<name>aea_cult_wizard_s09</name>
+	<name>aea_cult_wizard_a10</name>
+	<name>aea_cult_wizard_a11</name>
+	<name>aea_cult_wizard_s12</name>
+	<name>aea_cult_wizard_s13</name>
+	<name>aea_cult_wizard_s14</name>
+	<name>aea_cult_wizard_s15</name>
+	<name>aea_cult_priest_sup</name>
+	<name>aea_cult_priest_off</name>
+	<name>aea_cult_priest_bor</name>
+	<name>aea_cult_tiny</name>
+	<name>aea_cult_tiny_a01</name>
+	<name>aea_cult_tiny_a02</name>
+	<name>aea_cult_tiny_s03</name>
+	<name>aea_cult_tiny_s04</name>
+	<name>aea_cult_tiny_s05</name>
+	<name>aea_cult_tiny_s06</name>
+	<name>aea_cult_tiny_a07</name>
+	<name>aea_cult_tiny_s08</name>
+	<name>aea_cult_tiny_s09</name>
+	<name>aea_cult_tiny_a10</name>
+	<name>aea_cult_tiny_a11</name>
+	<name>aea_cult_tiny_s12</name>
+	<name>aea_cult_tiny_s13</name>
+	<name>aea_cult_tiny_s14</name>
+	<name>aea_cult_tiny_s15</name>
+	<name>aea_shleg_slug</name>
+	<name>aea_shleg_shell</name>
+	<name>aea_shleg_sorrow</name>
+	<name>aea_shleg_sickle</name>
+	
 	<name>human</name>
 	<name>human_medic</name>
 	<name>human_soldier</name>

@@ -10909,9 +10909,9 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 		<artillery power="2" room="1" start="false" weapon="ARTILLERY_REBEL_MISSILE" img="room_artillery_3" /-->
 		<!--artillery power="2" room="0" start="false" weapon="ARTILLERY_REBEL_BEAM" img="room_artillery_3" />
 		<artillery power="2" room="0" start="false" weapon="ARTILLERY_REBEL_MISSILE" img="room_artillery_3" /-->
-		<artillery power="1" max="3" room="2" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
-		<artillery power="1" max="3" room="1" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
 		<artillery power="1" max="3" room="0" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
+		<artillery power="1" max="3" room="1" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
+		<artillery power="1" max="3" room="2" start="true" weapon="ARTILLERY_BROADSIDE_PIERCE" img="room_artillery_3" />
 		<battery power="1" room="11" start="false" img="room_battery_2" />
 		<cloaking power="1" room="9" start="false" img="room_cloaking_13" />
 		<clonebay power="1" room="8" start="false">
@@ -11463,7 +11463,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<weaponArt>boss_4_mfk</weaponArt>
 </weaponBlueprint>
 
-<weaponBlueprint name="AMOD_BEAM_MULTI">
+<weaponBlueprint name="AEA_BEAM_MULTI">
 	<type>BEAM</type>
 	<tip>tip_adapter</tip>
     <title>'Hokoyari' Beam</title>
@@ -11521,11 +11521,11 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
     <launchSounds>
         <sound>beam2</sound>
     </launchSounds>
-	<weaponArt>beam_amod_long</weaponArt>
+	<weaponArt>beam_aea_long</weaponArt>
 	<iconImage>beam</iconImage>
 </weaponBlueprint>
 
-<shipBlueprint name="PLAYER_SHIP_AMOD_LANIUS_BATTLE" layout="amod_lanius_battle_a" img="amod_lanius_battle_a">
+<shipBlueprint name="PLAYER_SHIP_AEA_LANIUS_BATTLE" layout="aea_lanius_battle_a" img="aea_lanius_battle_a">
 	<class>Lanius Battle Cruiser</class>
 	<name>The Magpie</name>
 	<desc>This ship cuts up the enemy with it's powerful adaptive pinpoint that gains more beams as it chains.</desc>
@@ -11589,7 +11589,7 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="2" count="4">
-		<weapon name="AMOD_BEAM_MULTI" />
+		<weapon name="AEA_BEAM_MULTI" />
 		<weapon name="ION_CONSERVATIVE" />
 	</weaponList>
 	<droneList drones="3" count="2" />
@@ -11599,6 +11599,34 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 	<crewCount amount="1" class="lanius" />
 	<crewCount amount="1" class="phantom" />
 	<shieldImage>mup_orb3</shieldImage>
-	<mv-mapImage>map_icon_amod_lanius_a</mv-mapImage>
+	<mv-mapImage>map_icon_aea_lanius_a</mv-mapImage>
 </shipBlueprint>
+</FTL>
+
+<FTL>
+<weaponBlueprint name="AEA_COMBO_BURST_FOCUS_1_1">
+	<type>LASER</type>
+	<flavorType>Burst Pinpoint</flavorType>
+	<title>Burst Focus MK XI</title>
+	<short>Burst XI</short>
+	<tip>tip_aea_burst_laser</tip>
+	<desc>A combination of the standard burst laser alongside a low power pinpoint beam that enables the pinpoint to strike twice.</desc>
+	<tooltip>Burst Pinpoint; 2 damage, 2 shots. 11 second cooldown.</tooltip>
+	<damage>2</damage>
+	<shots>2</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>2</breachChance>
+	<cooldown>11</cooldown>
+	<power>2</power>
+	<cost>50</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>focus_weak</sound>
+	</launchSounds>
+	<weaponArt>aea_combo_burst_focus_1_1</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
 </FTL>

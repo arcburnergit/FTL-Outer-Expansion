@@ -433,7 +433,7 @@
 <event name="DEAD_CREW_AEA_NECRO_NECRO_DRONE">
 	<text>Now emptied of crew, you find one of the Heretic's drones on board. You take it back with you before scrapping the ship.</text>
 	<autoReward level="MED">standard_no_item</autoReward>
-	<weapon name="GIFTLIST_DRONES_NECRO" />
+	<drone name="GIFTLIST_DRONES_NECRO" />
 </event>
 
 <event name="ESCAPE_AEA_NECRO">
