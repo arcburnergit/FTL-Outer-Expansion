@@ -25,10 +25,6 @@
     <text>Cult Weapons.</text>
     <event load="STORAGE_CHECK_AEA_CULTIST_LASER" />
   </mod-append:choice>
-  <mod-append:choice hidden="true">
-	<text>Combo Weapons.</text>
-	<event load="AEA_COMBO_MAIN_MENU_LOAD"/>
-  </mod-append:choice>
 </mod:findName>
 
 <mod:findName type="event" name="STORAGE_CHECK_LAB_ORCHID">

@@ -5045,15 +5045,3 @@
 </weaponAnim>
 </FTL>
 
-<FTL>
-<animSheet name="aea_combo_burst_focus_1_1" w="360" h="58" fw="30" fh="58">weapons_combo/aea_combo_burst_focus_1_1.png</animSheet>
-<weaponAnim name="aea_combo_burst_focus_1_1">
-	<sheet>aea_combo_burst_focus_1_1</sheet>
-	<desc length="12" x="0" y="0" />
-	<chargedFrame>5</chargedFrame>
-	<fireFrame>6</fireFrame>
-	<firePoint x="19" y="26" />
-	<mountPoint x="4" y="43" />
-	<chargeImage>weapons_combo/aea_combo_burst_focus_1_1_glow.png</chargeImage>
-</weaponAnim>
-</FTL>

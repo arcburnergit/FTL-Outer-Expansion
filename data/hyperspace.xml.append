@@ -7,7 +7,6 @@
   <mod-append:script>data/aea_scripts/aeaIcon.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/arc_modathon_aea.lua</mod-append:script>
   <!--mod-append:script>data/aea_scripts/arc_test_light_nebula.lua</mod-append:script-->
-  <mod-append:script>data/aea_scripts/aea_combo.lua</mod-append:script>
 </mod:findLike>
 
 <mod:findLike type="ships" limit="1">
