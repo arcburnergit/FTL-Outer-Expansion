@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-<version>^1.15.0</version>
+<version>^1.18.0</version>
 <mod:findLike type="scripts">
   <mod-append:script>data/aea_scripts/aea_functions.lua</mod-append:script>
   <!--mod-append:script>data/aea_scripts/aea_functions_test.lua</mod-append:script-->
   <mod-append:script>data/aea_scripts/aeaIcon.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/arc_modathon_aea.lua</mod-append:script>
   <!--mod-append:script>data/aea_scripts/arc_test_light_nebula.lua</mod-append:script-->
+  <mod-append:script>data/aea_scripts/aea_main_menu.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_super_shields.lua</mod-append:script>
 </mod:findLike>
-
+<mod:findLike type="customSystems">
+    <mod-append:customSystem id="aea_super_shields"/>
+</mod:findLike>
 <mod:findLike type="ships" limit="1">
 	
 	<mod:findLike type="shipIcons">
@@ -107,7 +111,7 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 		<mod-append:empty/>
 		
 		<mod-append:empty/>
-		<mod-append:empty/>
+		<mod-append:ship>PLAYER_SHIP_AEA_SHARD_AUTO</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_SHARD_SCOUT</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_SHARD_BATTLE</mod-append:ship>
 		
@@ -363,6 +367,12 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 	</mod-append:ship>
 
 	<mod-append:ship name="PLAYER_SHIP_AEA_SHARD_SCOUT" b="false" c="false" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+	</mod-append:ship>
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_SHARD_AUTO" b="false" c="false" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
@@ -1148,6 +1158,12 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crewLimit>11</crewLimit>
+		<customReactor maxLevel="35" />
+		<systemLimit>10</systemLimit>
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_AUTO">
+		<hiddenAug>SHIP_PIRATE</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<customReactor maxLevel="35" />
 		<systemLimit>10</systemLimit>
 	</mod-append:customShip>
@@ -5859,6 +5875,28 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 
 <augments>
+	<aug name="AEA_SHARD_ARMOUR">
+		<function name="CRYSTAL_SHARDS" value="0" useForReqs="true" warning="false" />
+		<crystalShard weapon="CRYSTAL_ARMOR_PROJ" value="0.5" stackable="false" />
+		<function name="ENERGY_SHIELD" value="0" useForReqs="true" warning="false" />
+		<superShield>
+			<value>1</value>
+			<color r="255" g="255" b="255" a="1" />
+			<shieldImage>ship/aea_shield_base_bubble_white.png</shieldImage>
+		</superShield>
+		<locked />
+	</aug>
+	<aug name="AEA_SHARD_ARMOUR_ENEMY">
+		<function name="CRYSTAL_SHARDS" value="0" useForReqs="true" warning="false" />
+		<crystalShard weapon="CRYSTAL_ARMOR_PROJ" value="0.25" stackable="false" />
+		<function name="ENERGY_SHIELD" value="0" useForReqs="true" warning="false" />
+		<superShield>
+			<value>1</value>
+			<color r="255" g="255" b="255" a="1" />
+			<shieldImage>ship/aea_shield_base_bubble_white.png</shieldImage>
+		</superShield>
+		<locked />
+	</aug>
 	<aug name="AEA_SHLEG_GEL">
 		<function name="SLUG_GEL" value="1" useForReqs="true" warning="false" />
 		<statBoosts>

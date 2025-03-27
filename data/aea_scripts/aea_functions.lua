@@ -214,7 +214,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	if log_events then
 		--log("SHIP_LOOP 1")
 	end
-	if shipManager:HasAugmentation("AEA_ACID_O2SYS") > 0 and shipManager:HasSystem(2) then
+	if shipManager:HasAugmentation("AEA_ACID_O2SYS") > 0 and shipManager:HasSystem(2) and not Hyperspace.App.menu.shipBuilder.bOpen then
 		local oxygen = shipManager.oxygenSystem
 		local refill = oxygen:GetRefillSpeed()
 
@@ -234,7 +234,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 				end
 			end
 		end
-	elseif shipManager:HasAugmentation("AEA_ACID_O2SYS_ENEMY") > 0 and shipManager:HasSystem(2) then
+	elseif shipManager:HasAugmentation("AEA_ACID_O2SYS_ENEMY") > 0 and shipManager:HasSystem(2) and not Hyperspace.App.menu.shipBuilder.bOpen then
 		local oxygen = shipManager.oxygenSystem
 		local refill = oxygen:GetRefillSpeed()
 		--print("refill speed: "..tostring(refill))
@@ -3678,7 +3678,7 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 			enemyRoomsSlugEnemy[crewmem.iRoomId] = 30
 		end
 	elseif crewmem.type == "aea_shleg_sickle" then
-		print("sickle")
+		--print("sickle")
 		if crewmem.currentShipId == 0 and crewmem.iShipId == 0 then
 			playerRoomsSlugPlayer[crewmem.iRoomId] = 60
 		elseif crewmem.currentShipId == 0 and crewmem.iShipId == 1 then
@@ -3782,10 +3782,10 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
 			if crewmem.health.first < 1 then return end
 			shlegTable.amount = math.min(crewmem.health.first, shlegTable.amount + (Hyperspace.FPS.SpeedFactor/16 * 5))
 			if (crewmem.iShipId ~= crewmem.currentShipId and shipManager:HasAugmentation("LOCKED_AEA_SHLEG_MIND_GAS_PLUS") > 0) or
-				(crewmem.currentShipId == 0 and crewmem.iShipId == 0 and playerRoomsSlugEnemy[crewmem.iRoomId]) or
-				(crewmem.currentShipId == 0 and crewmem.iShipId == 1 and playerRoomsSlugPlayer[crewmem.iRoomId]) or
-				(crewmem.currentShipId == 1 and crewmem.iShipId == 0 and enemyRoomsSlugEnemy[crewmem.iRoomId]) or
-				(crewmem.currentShipId == 1 and crewmem.iShipId == 1 and enemyRoomsSlugPlayer[crewmem.iRoomId]) then
+				(crewmem.currentShipId == 0 and crewmem.iShipId == 0 and playerRoomsSlugEnemyUnique[crewmem.iRoomId]) or
+				(crewmem.currentShipId == 0 and crewmem.iShipId == 1 and playerRoomsSlugPlayerUnique[crewmem.iRoomId]) or
+				(crewmem.currentShipId == 1 and crewmem.iShipId == 0 and enemyRoomsSlugEnemyUnique[crewmem.iRoomId]) or
+				(crewmem.currentShipId == 1 and crewmem.iShipId == 1 and enemyRoomsSlugPlayerUnique[crewmem.iRoomId]) then
 				shlegTable.amount = math.min(crewmem.health.first, shlegTable.amount + (Hyperspace.FPS.SpeedFactor/16 * 5))
 			end
 			if shlegTable.amount >= crewmem.health.first then
@@ -4214,3 +4214,48 @@ script.on_game_event("AEA_SHLEG_GAS_TIMER_START_SHORT", false, function()
 	gasRooms("AEA_SHLEG_BOMB_FAKE_SHORT")
 end)	
 
+
+local resistRoomsPlayer = {}
+local resistRoomsEnemy = {}
+local resistRooms = {}
+resistRooms[0] = resistRoomsPlayer
+resistRooms[1] = resistRoomsEnemy
+
+local resistCrew = {}
+resistCrew["race_name_1"] = {hullResistSet = 100, sysResistSet = 100, timeSet = 5}
+resistCrew["race_name_1"] = {hullResistSet = 50, sysResistSet = 50, timeSet = 5}
+
+script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, shipManager)
+	local crewmem = power.crew
+	if resistCrew[crewmem.type] then 
+		for room in vter(shipManager.ship.vRoomList) do
+			if room.iRoomId == crewmem.iRoomId then
+				local hullRes = 0.0
+				local sysRes = 0.0
+				if room.extend.hullDamageResistChance then
+					hullRes = room.extend.hullDamageResistChance
+				end
+				if room.extend.sysDamageResistChance then
+					sysRes = room.extend.sysDamageResistChance
+				end
+				resistRooms[shipManager.iShipId][room.iRoomId] = {timer = resistCrew[crewmem.type].timeSet, hullResistOriginal = hullRes, sysResistOriginal = sysRes}
+				room.extend.hullDamageResistChance = resistCrew[crewmem.type].hullResistSet
+				room.extend.sysDamageResistChance = resistCrew[crewmem.type].sysResistSet
+			end
+		end
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	for roomId, roomTable in pairs(resistRooms[shipManager.iShipId]) do
+		roomTable.timer = roomTable.timer - Hyperspace.FPS.SpeedFactor/16
+		if roomTable.timer <= 0 then
+			for room in vter(shipManager.ship.vRoomList) do
+				if room.iRoomId == roomId then
+					room.extend.hullDamageResistChance = roomTable.hullResistOriginal
+					room.extend.sysDamageResistChance = roomTable.sysResistOriginal
+				end
+			end
+		end
+	end
+end)

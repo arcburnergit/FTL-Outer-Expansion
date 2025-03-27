@@ -4982,6 +4982,17 @@
 	<time>1</time>
 </anim>
 
+<animSheet name="aea_auto_shard_artillery" w="528" h="136" fw="66" fh="136">weapon_shard/aea_artillery.png</animSheet>
+<weaponAnim name="aea_auto_shard_artillery">
+	<sheet>aea_auto_shard_artillery</sheet>
+	<desc length="8" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="33" y="12" />
+	<mountPoint x="32" y="24" />
+	<chargeImage>weapon_shard/aea_artillery_glow.png</chargeImage>
+</weaponAnim>
+
 <animSheet name="beam_aea_long" w="1100" h="94" fw="55" fh="94">weapons_arc/beam_aea_long.png</animSheet>
 <weaponAnim name="beam_aea_long">
 	<sheet>beam_aea_long</sheet>
