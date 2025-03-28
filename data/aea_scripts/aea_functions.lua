@@ -4215,47 +4215,9 @@ script.on_game_event("AEA_SHLEG_GAS_TIMER_START_SHORT", false, function()
 end)	
 
 
-local resistRoomsPlayer = {}
-local resistRoomsEnemy = {}
-local resistRooms = {}
-resistRooms[0] = resistRoomsPlayer
-resistRooms[1] = resistRoomsEnemy
-
-local resistCrew = {}
-resistCrew["race_name_1"] = {hullResistSet = 100, sysResistSet = 100, timeSet = 5}
-resistCrew["race_name_1"] = {hullResistSet = 50, sysResistSet = 50, timeSet = 5}
-
-script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, shipManager)
-	local crewmem = power.crew
-	if resistCrew[crewmem.type] then 
-		for room in vter(shipManager.ship.vRoomList) do
-			if room.iRoomId == crewmem.iRoomId then
-				local hullRes = 0.0
-				local sysRes = 0.0
-				if room.extend.hullDamageResistChance then
-					hullRes = room.extend.hullDamageResistChance
-				end
-				if room.extend.sysDamageResistChance then
-					sysRes = room.extend.sysDamageResistChance
-				end
-				resistRooms[shipManager.iShipId][room.iRoomId] = {timer = resistCrew[crewmem.type].timeSet, hullResistOriginal = hullRes, sysResistOriginal = sysRes}
-				room.extend.hullDamageResistChance = resistCrew[crewmem.type].hullResistSet
-				room.extend.sysDamageResistChance = resistCrew[crewmem.type].sysResistSet
-			end
-		end
+script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
+	if projectile.extend.name == "ARTILLERY_SHARD_AUTO" and beamHitType == Defines.BeamHit.NEW_ROOM then
+		shipManager.ship:LockdownRoom(get_room_at_location(shipManager, location, true), location)		
 	end
-end)
-
-script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
-	for roomId, roomTable in pairs(resistRooms[shipManager.iShipId]) do
-		roomTable.timer = roomTable.timer - Hyperspace.FPS.SpeedFactor/16
-		if roomTable.timer <= 0 then
-			for room in vter(shipManager.ship.vRoomList) do
-				if room.iRoomId == roomId then
-					room.extend.hullDamageResistChance = roomTable.hullResistOriginal
-					room.extend.sysDamageResistChance = roomTable.sysResistOriginal
-				end
-			end
-		end
-	end
+	return Defines.Chain.CONTINUE, beamHitType
 end)

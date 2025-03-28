@@ -72,18 +72,24 @@ end)
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	if shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields")) then
 		local aea_super_shields_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields"))
+        local manningCrew = nil
         for crew in vter(shipManager.vCrewList) do
             if crew.bActiveManning and crew.currentSystem == aea_super_shields_system then
                 aea_super_shields_system.iActiveManned = crew:GetSkillLevel(0)
+                manningCrew = crew
             end
         end
 		local maxLayers = 2 + math.ceil(aea_super_shields_system:GetEffectivePower()/2)
         local multiplier =  0.75 + aea_super_shields_system:GetEffectivePower() / 4 + aea_super_shields_system.iActiveManned * 0.1
         if shipManager.shieldSystem.shields.power.super.first < maxLayers then
-            shieldTimer[shipManager.iShipId] = math.min(5, shieldTimer[shipManager.iShipId] + multiplier * Hyperspace.FPS.SpeedFactor/16)
-            if shieldTimer[shipManager.iShipId] == 5 then
+            shieldTimer[shipManager.iShipId] = math.min(5 + shipManager.shieldSystem.shields.power.super.first, shieldTimer[shipManager.iShipId] + multiplier * Hyperspace.FPS.SpeedFactor/16)
+            if shieldTimer[shipManager.iShipId] >= 5 + shipManager.shieldSystem.shields.power.super.first then
+                if manningCrew then
+                    manningCrew:IncreaseSkill(0)
+                end
                 shipManager.shieldSystem:AddSuperShield(shipManager.shieldSystem.superUpLoc)
                 shieldTimer[shipManager.iShipId] = 0
+                --shipManager.shieldSystem.shields.power.super.second = shipManager.shieldSystem.shields.power.super.first
             end
         else
             shieldTimer[shipManager.iShipId] = 0
@@ -94,7 +100,7 @@ end)
 script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, function()
     if Hyperspace.ships.player:HasSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields")) then
         Graphics.CSurface.GL_RenderPrimitive(shield_ui)
-        Graphics.CSurface.GL_DrawRect(25+7, 87+2, (shieldTimer[0]/5) * 94, 4, Graphics.GL_Color(1, 1, 1, 1));
+        Graphics.CSurface.GL_DrawRect(25+7, 87+2, (shieldTimer[0]/5 + shipManager.shieldSystem.shields.power.super.first) * 94, 4, Graphics.GL_Color(1, 1, 1, 1));
     end
 end)
 

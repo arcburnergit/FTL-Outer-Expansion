@@ -10,8 +10,17 @@
   <mod-append:script>data/aea_scripts/aea_main_menu.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_super_shields.lua</mod-append:script>
 </mod:findLike>
+<dualMedical enabled="true"/>
 <mod:findLike type="customSystems">
     <mod-append:customSystem id="aea_super_shields"/>
+	<mod-append:exclusivityGroup>
+        <medbay/>
+        <clonebay/>
+    </mod-append:exclusivityGroup>
+	<mod-append:exclusivityGroup>
+        <cloaking/>
+        <aea_super_shields/>
+    </mod-append:exclusivityGroup>
 </mod:findLike>
 <mod:findLike type="ships" limit="1">
 	
@@ -111,8 +120,9 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 		<mod-append:empty/>
 		
 		<mod-append:empty/>
+		<mod-append:empty/>
 		<mod-append:ship>PLAYER_SHIP_AEA_SHARD_AUTO</mod-append:ship>
-		<mod-append:ship>PLAYER_SHIP_AEA_SHARD_SCOUT</mod-append:ship>
+		<!--mod-append:ship>PLAYER_SHIP_AEA_SHARD_SCOUT</mod-append:ship-->
 		<mod-append:ship>PLAYER_SHIP_AEA_SHARD_BATTLE</mod-append:ship>
 		
 		<mod-append:ship>PLAYER_SHIP_AEA_CREW5</mod-append:ship>
@@ -360,19 +370,33 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
         </unlock>
 	</mod-append:ship>
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_SHARD_BATTLE" b="false" c="false" secret="true">
+	<mod-append:ship name="PLAYER_SHIP_AEA_SHARD_BATTLE" b="true" c="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_SHARD_BATTLE</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_SHARD_BATTLE_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_SHARD_BATTLE</shipReq>
+        </unlock>
 	</mod-append:ship>
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_SHARD_SCOUT" b="false" c="false" secret="true">
+	<!--mod-append:ship name="PLAYER_SHIP_AEA_SHARD_SCOUT" b="false" c="false">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
-	</mod-append:ship>
+	</mod-append:ship-->
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_SHARD_AUTO" b="false" c="false" secret="true">
+	<mod-append:ship name="PLAYER_SHIP_AEA_SHARD_AUTO" b="false" c="false">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
@@ -1154,13 +1178,28 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
-	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_SCOUT">
+	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_BATTLE_2">
+		<hiddenAug>SHIP_PIRATE</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<cloaking/>
+				<aea_super_shields/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_BATTLE_3">
+		<hiddenAug>SHIP_PIRATE</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<!--mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_SCOUT">
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crewLimit>11</crewLimit>
 		<customReactor maxLevel="35" />
 		<systemLimit>10</systemLimit>
-	</mod-append:customShip>
+	</mod-append:customShip-->
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_AUTO">
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
