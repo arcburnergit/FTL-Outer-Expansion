@@ -396,20 +396,43 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 		</unlock>
 	</mod-append:ship-->
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_SHARD_AUTO" b="false" c="false">
+	<mod-append:ship name="PLAYER_SHIP_AEA_SHARD_AUTO" b="true" c="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_SHARD_AUTO</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_SHARD_AUTO_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_SHARD_AUTO</shipReq>
+        </unlock>
 	</mod-append:ship>
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_BROADSIDE" b="true" c="false" secret="true">
-		<!--unlock variant="a" silent="false">
+	<mod-append:ship name="PLAYER_SHIP_AEA_BROADSIDE" b="true" c="true" secret="true">
+		<unlock variant="a" silent="false">
 			<type>4</type>
-		</unlock-->
+		</unlock>
 		<unlock variant="b" silent="false">
             <type>1</type>
             <shipReq>PLAYER_SHIP_AEA_BROADSIDE</shipReq>
             <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_BROADSIDE_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_BROADSIDE</shipReq>
         </unlock>
 	</mod-append:ship>
 
@@ -1203,8 +1226,26 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_AUTO">
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
-		<customReactor maxLevel="35" />
-		<systemLimit>10</systemLimit>
+		<systemLimit>9</systemLimit>
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_AUTO_2">
+		<hiddenAug>SHIP_PIRATE</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<medbay/>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<shields/>
+				<aea_super_shields/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_AUTO_3">
+		<hiddenAug>SHIP_PIRATE</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<autoShipForce>true</autoShipForce>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BROADSIDE">
@@ -1217,6 +1258,13 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BROADSIDE_2">
 		<hiddenAug>SHIP_REBEL</hiddenAug>
 		<hiddenAug>SHIP_AEA_BROADSIDE2</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<systemLimit>10</systemLimit>
+		<customReactor maxLevel="35" />
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_BROADSIDE_3">
+		<hiddenAug>SHIP_REBEL</hiddenAug>
+		<hiddenAug>SHIP_AEA_BROADSIDE3</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<systemLimit>10</systemLimit>
 		<customReactor maxLevel="35" />
@@ -5919,8 +5967,19 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 		<crystalShard weapon="CRYSTAL_ARMOR_PROJ" value="0.5" stackable="false" />
 		<function name="ENERGY_SHIELD" value="0" useForReqs="true" warning="false" />
 		<superShield>
-			<value>1</value>
+			<add>1</add>
 			<color r="255" g="255" b="255" a="1" />
+			<shieldImage>ship/aea_shield_base_bubble_white.png</shieldImage>
+		</superShield>
+		<locked />
+	</aug>
+	<aug name="AEA_SHARD_SHIELD">
+		<function name="CRYSTAL_SHARDS" value="0" useForReqs="true" warning="false" />
+		<crystalShard weapon="CRYSTAL_ARMOR_PROJ" value="1" stackable="false" />
+		<function name="ENERGY_SHIELD" value="0" useForReqs="true" warning="false" />
+		<superShield>
+			<value>8</value>
+			<color r="180" g="230" b="255" a="1"/>
 			<shieldImage>ship/aea_shield_base_bubble_white.png</shieldImage>
 		</superShield>
 		<locked />
@@ -5930,7 +5989,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 		<crystalShard weapon="CRYSTAL_ARMOR_PROJ" value="0.25" stackable="false" />
 		<function name="ENERGY_SHIELD" value="0" useForReqs="true" warning="false" />
 		<superShield>
-			<value>1</value>
+			<add>1</add>
 			<color r="255" g="255" b="255" a="1" />
 			<shieldImage>ship/aea_shield_base_bubble_white.png</shieldImage>
 		</superShield>
@@ -6479,10 +6538,17 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 <events>
 	<variable name="arc_test_light_nebula" op="set" val="0"/>
 
+	<variable name="aea_broadside_enemy_fought" op="set" val="0"/>
+
 	<variable name="aea_broadside_missile_chosen" op="set" val="0"/>
 	<variable name="aea_broadside_slot1" op="set" val="1"/>
 	<variable name="aea_broadside_slot2" op="set" val="1"/>
 	<variable name="aea_broadside_slot3" op="set" val="1"/>
+
+	<variable name="aea_broadside_c_has_weapon" op="set" val="0"/>
+	<variable name="aea_broadside_c_slot1" op="set" val="0"/>
+	<variable name="aea_broadside_c_slot2" op="set" val="0"/>
+	<variable name="aea_broadside_c_slot3" op="set" val="0"/>
 
 	<variable name="aea_acid_o2sys_en" op="set" val="0"/>
 	<variable name="aea_acid_friendly" op="set" val="0" />

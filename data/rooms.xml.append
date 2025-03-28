@@ -8,22 +8,22 @@
 	<computerGlow x="6" y="1" dir="UP" />
 </roomLayout>
 <roomLayout name="shields_aea_2">
-	<computerGlow x="8" y="1" dir="RIGHT" />
+	<computerGlow x="18" y="6" dir="RIGHT" />
 </roomLayout>
 <roomLayout name="shields_aea_3">
-	<computerGlow x="3" y="11" dir="DOWN" />
+	<computerGlow x="7" y="18" dir="DOWN" />
 </roomLayout>
 <roomLayout name="shields_aea_4">
-	<computerGlow x="6" y="3" dir="LEFT" />
+	<computerGlow x="1" y="7" dir="LEFT" />
 </roomLayout>
 <roomLayout name="shields_aea_5">
-	<computerGlow x="43" y="1" dir="RIGHT" />
+	<computerGlow x="53" y="6" dir="RIGHT" />
 </roomLayout>
 <roomLayout name="shields_aea_6">
-	<computerGlow x="78" y="1" dir="RIGHT" />
+	<computerGlow x="88" y="6" dir="RIGHT" />
 </roomLayout>
 <roomLayout name="shields_aea_7">
-	<computerGlow x="113" y="1" dir="RIGHT" />
+	<computerGlow x="123" y="6" dir="RIGHT" />
 </roomLayout>
 <roomLayout name="shields_aea_8">
 	<computerGlow x="7" y="53" dir="DOWN" />

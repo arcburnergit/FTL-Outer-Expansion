@@ -8,7 +8,7 @@ local function getRoomCount(file)
 end
 
 local systemsToAppend = {}
-systemsToAppend["aea_super_shields"] = {attributes = {power = 1, start = "true"}, manning = true, 
+systemsToAppend["aea_super_shields"] = {attributes = {power = 1, start = "false"}, manning = true, 
     image_list = {{room_image = "room_shields", w = 2, h = 2, top = "00", bottom = "11", left="10", right="01", manning_slot = 0, manning_direction = "left"},
         {room_image = "room_shields_aea_r", w = 2, h = 2, top = "01", bottom = "10", left="11", right="00", manning_slot = 1, manning_direction = "up"},
         {room_image = "room_shields_aea_rr", w = 2, h = 2, top = "11", bottom = "00", left="10", right="01", manning_slot = 3, manning_direction = "right"},
@@ -160,7 +160,7 @@ for blueprint in root:children() do
                         --takenRooms[attribute] = system.name
                     end
                 end
-                if room and (system.name ~= "artillery" or start == true) then
+                if room and (system.name ~= "artillery" or start == true) and system.name ~= "cloaking" then
                     takenRooms[room] = system.name
                 end
             end
@@ -266,7 +266,7 @@ for blueprint in root:children() do
                         slot:append(number)
                         newSystem:append(slot)
                     elseif sysInfo.manning == true then
-                        print("USED BACKUP MANNING IMAGE IN:"..shipName)
+                        --print("USED BACKUP MANNING IMAGE IN:"..shipName)
                         newSystem.attrs.img = "room_computer"
                         local slot = mod.xml.element("slot", {})
                         local direction = mod.xml.element("direction", {})

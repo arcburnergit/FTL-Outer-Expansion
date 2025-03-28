@@ -1,15 +1,23 @@
 <FTL>
+<mod:findName type="blueprintList" name="SHOP_ITEM_SYSTEMS_BONUS">
+    <mod-append:name>aea_super_shields</mod-append:name>
+</mod:findName>
+
 <mod:findName type="blueprintList" name="LIST_WEAPONS_ALL">
     <mod-append:name>AEA_LASER_ACID_1</mod-append:name>
     <mod-append:name>AEA_LASER_ACID_2</mod-append:name>
     <mod-append:name>AEA_LASER_ACID_3</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_SUPER</mod-append:name>
     <mod-append:name>AEA_BEAM_ACID_1</mod-append:name>
     <mod-append:name>AEA_ION_ACID_1</mod-append:name>
+    <mod-append:name>AEA_ION_ACID_1_LOOT</mod-append:name>
+
     <mod-append:name>AEA_LASER_NECRO_1</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_2</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_3</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_2_LOOT</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_CHARGE</mod-append:name>
+
 	<mod-append:name>AEA_LASER_CULT</mod-append:name>
 	<mod-append:name>AEA_LASER_CULT_03</mod-append:name>
 	<mod-append:name>AEA_LASER_CULT_04</mod-append:name>
@@ -30,6 +38,13 @@
 	<mod-append:name>AEA_LASER_OLDP_1</mod-append:name>
 	<mod-append:name>AEA_LASER_OLDP_2</mod-append:name>
 	<mod-append:name>AEA_LASER_OLDP_3</mod-append:name>
+	<mod-append:name>AEA_LASER_OLDP_3_LOOT</mod-append:name>
+
+	<mod-append:name>AEA_SHLEG_BOMB</mod-append:name>
+	<mod-append:name>AEA_SHLEG_MISSILES</mod-append:name>
+	<mod-append:name>AEA_SHLEG_MISSILES_LOOT</mod-append:name>
+
+	<mod-append:name>AEA_BEAM_MULTI</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_DRONES_ALL">
@@ -49,7 +64,6 @@
 	<mod-append:name>AEA_COMBAT_BIRD_BIO_1</mod-append:name>
 	<mod-append:name>AEA_COMBAT_BIRD_BIO_2</mod-append:name>
 	<mod-append:name>AEA_COMBAT_BIRD_BIO_3</mod-append:name>
-
 
 	<mod-append:name>AEA_COMBAT_BIRD_MULTI_1_LASER</mod-append:name>
 	<mod-append:name>AEA_COMBAT_BIRD_MULTI_1_BEAM</mod-append:name>
@@ -917,7 +931,6 @@
 	<name>AEA_ACID_ASSUALT</name>
 	<name>AEA_ACID_TRANSPORT</name>
 </blueprintList>
-
 <blueprintList name="LIST_SHIPS_AEA_ACID_FIGHT">
 	<name>AEA_ACID_SCOUT</name>
 	<name>AEA_ACID_OUTRIDER</name>
@@ -4577,10 +4590,14 @@ A CLASS
 <FTL>
 <blueprintList name="LIST_CREW_SHARD_ENEMY">
 	<name>crystal</name>
+	<name>crystal</name>
 	<name>crystal_sentinel</name>
-	<name>crystal_liberator</name>
-	<name>unique_ruwen</name>
-	<name>unique_dianesh</name>
+	<name>aea_shard_breaker</name>
+	<name>aea_shard_breaker</name>
+	<name>aea_shard_breaker</name>
+	<name>aea_shard_breaker</name>
+	<name>aea_shard_smasher</name>
+	<name>aea_shard_smasher</name>
 </blueprintList>
 
 <blueprintList name="LIST_WEAPONS_SHARD_ENEMY">  
@@ -4629,7 +4646,7 @@ A CLASS
 		<medbay power="1" max="3" room="4" start="false" />
 		<oxygen power="1" max="2" room="0" start="true" />
 		<pilot power="1" max="3" room="1" start="true" />
-		<shields power="2" max="8" room="5" start="true" />
+		<aea_super_shields power="2" max="8" room="5" start="true" />
 		<weapons power="2" max="7" room="2" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
@@ -4653,7 +4670,7 @@ A CLASS
 		<engines power="1" max="2" room="1" start="true" />
 		<oxygen power="1" max="2" room="0" start="true" />
 		<pilot power="2" max="3" room="3" start="true" />
-		<shields power="2" max="8" room="2" start="true" />
+		<aea_super_shields power="2" max="8" room="2" start="true" />
 		<teleporter power="1" max="1" room="7" start="true" />
 		<weapons power="2" max="6" room="5" start="true" />
 	</systemList>
@@ -4678,7 +4695,7 @@ A CLASS
 		<mind power="1" max="2" room="7" start="false" />
 		<oxygen power="1" max="2" room="3" start="true" />
 		<pilot power="1" max="3" room="5" start="true" />
-		<shields power="2" max="8" room="1" start="true" />
+		<aea_super_shields power="2" max="8" room="1" start="true" />
 		<teleporter power="1" max="3" room="6" start="true" />
 		<weapons power="2" max="8" room="4" start="true" />
 	</systemList>
@@ -4701,7 +4718,7 @@ A CLASS
 		<engines power="1" max="2" room="6" start="true" />
 		<mind power="1" max="3" room="7" start="false" />
 		<pilot power="1" max="3" room="3" start="true" />
-		<shields power="2" max="8" room="4" start="true" />
+		<aea_super_shields power="2" max="8" room="4" start="true" />
 		<teleporter power="1" max="2" room="0" start="true" />
 		<weapons power="2" max="7" room="2" start="true" />
 	</systemList>
@@ -4725,7 +4742,7 @@ A CLASS
 		<medbay power="1" max="3" room="0" start="false" />
 		<oxygen power="1" max="2" room="6" start="true" />
 		<pilot power="1" max="3" room="2" start="true" />
-		<shields power="2" max="10" room="4" start="true" />
+		<aea_super_shields power="2" max="10" room="4" start="true" />
 		<weapons power="2" max="10" room="7" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
@@ -4748,7 +4765,7 @@ A CLASS
 		<medbay power="1" max="2" room="5" start="false" />
 		<oxygen power="1" max="2" room="8" start="true" />
 		<pilot power="1" max="3" room="1" start="true" />
-		<shields power="2" max="10" room="3" start="true" />
+		<aea_super_shields power="2" max="10" room="3" start="true" />
 		<teleporter power="1" max="2" room="2" start="true" />
 		<weapons power="2" max="8" room="0" start="true" />
 	</systemList>
@@ -4773,7 +4790,7 @@ A CLASS
 		<medbay power="1" max="2" room="7" start="false" />
 		<oxygen power="1" max="2" room="4" start="true" />
 		<pilot power="1" max="3" room="5" start="true" />
-		<shields power="2" max="8" room="0" start="true" />
+		<aea_super_shields power="2" max="8" room="0" start="true" />
 		<teleporter power="1" max="3" room="6" start="true" />
 		<weapons power="2" max="7" room="2" start="true" />
 	</systemList>
@@ -4797,7 +4814,7 @@ A CLASS
 		<medbay power="1" max="3" room="2" start="false" />
 		<mind power="1" max="3" room="0" start="false" />
 		<oxygen power="1" max="2" room="1" start="true" />
-		<shields power="2" max="10" room="7" start="true" />
+		<aea_super_shields power="2" max="10" room="7" start="true" />
 		<teleporter power="1" max="3" room="4" start="true" />
 		<weapons power="2" max="8" room="8" start="true" />
 	</systemList>
@@ -4821,7 +4838,7 @@ A CLASS
 		<medbay power="1" max="2" room="5" start="false" />
 		<oxygen power="1" max="1" room="9" start="true" />
 		<pilot power="1" max="3" room="7" start="true" />
-		<shields power="2" max="8" room="6" start="true" />
+		<aea_super_shields power="2" max="8" room="6" start="true" />
 		<teleporter power="1" max="1" room="8" start="true" />
 		<weapons power="2" max="6" room="2" start="true" />
 	</systemList>
@@ -4846,7 +4863,7 @@ A CLASS
 		<mind power="1" max="2" room="10" start="false" />
 		<oxygen power="1" max="2" room="11" start="true" />
 		<pilot power="1" max="1" room="8" start="true" />
-		<shields power="2" max="8" room="5" start="true" />
+		<aea_super_shields power="2" max="8" room="5" start="true" />
 		<teleporter power="1" max="2" room="9" start="true" />
 		<weapons power="2" max="8" room="4" start="true" />
 	</systemList>

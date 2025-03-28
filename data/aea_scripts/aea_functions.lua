@@ -1225,25 +1225,30 @@ script.on_internal_event(Defines.InternalEvents.SHIELD_COLLISION, function(shipM
 		log("SHIELD_COLLISION 1")
 	end
 	local nData = nil
-	if pcall(function() nData = necro_lasers[Hyperspace.Get_Projectile_Extend(projectile).name] end) and nData and shipManager.shieldSystem.shields.power.super.first <= 0 then
+	if pcall(function() nData = necro_lasers[projectile.extend.name] end) and nData and shipManager.shieldSystem.shields.power.super.first <= 0 then
+
 		local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
-		local proj1 = spaceManager:CreateLaserBlast(
-			Hyperspace.Blueprints:GetWeaponBlueprint(nData),
-			projectile.position,
-			projectile.currentSpace,
-			projectile.ownerId,
-			get_random_point_in_radius(projectile.target, 25),
-			projectile.destinationSpace,
-			projectile.heading)
-		local proj2 = spaceManager:CreateLaserBlast(
-			Hyperspace.Blueprints:GetWeaponBlueprint(nData),
-			projectile.position,
-			projectile.currentSpace,
-			projectile.ownerId,
-			get_random_point_in_radius(projectile.target, 25),
-			projectile.destinationSpace,
-			projectile.heading)
-		if projectile.ownerId == 0 then
+		if projectile.ownerId == 0 and shipManager.shieldSystem.shields.power.first <= 3 then
+			local proj1 = spaceManager:CreateLaserBlast(
+				Hyperspace.Blueprints:GetWeaponBlueprint(nData),
+				projectile.position,
+				projectile.currentSpace,
+				projectile.ownerId,
+				get_random_point_in_radius(projectile.target, 25),
+				projectile.destinationSpace,
+				projectile.heading)
+		end
+		if shipManager.shieldSystem.shields.power.first <= 2 then
+			local proj2 = spaceManager:CreateLaserBlast(
+				Hyperspace.Blueprints:GetWeaponBlueprint(nData),
+				projectile.position,
+				projectile.currentSpace,
+				projectile.ownerId,
+				get_random_point_in_radius(projectile.target, 25),
+				projectile.destinationSpace,
+				projectile.heading)
+		end
+		if shipManager.shieldSystem.shields.power.first <= 1 then
 			local proj3 = spaceManager:CreateLaserBlast(
 				Hyperspace.Blueprints:GetWeaponBlueprint(nData),
 				projectile.position,
@@ -3621,6 +3626,7 @@ allMagicCrew["aea_cult_tiny_s15"] = true
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_PRE, function(projectile)
 	if projectile.bBroadcastTarget then return end
 	local shipManager = Hyperspace.ships(projectile.destinationSpace) 
+	if not shipManager then return end
 	local room = get_room_at_location(shipManager, projectile.target, true)
 	if projectile.ownerId ~= shipManager.iShipId then
 		for crewmem in vter(shipManager.vCrewList) do
@@ -3955,13 +3961,65 @@ end)]]
 local function setArtySlot(blueprintName, slot)
 	--print("FUNCTION SLOT:"..slot.." BLUEPRINT:"..blueprintName)
 	if Hyperspace.ships.player.artillerySystems[slot].projectileFactory.blueprint.name == blueprintName then return end
+	local shipManager = Hyperspace.ships.player
+	local weapons = {}
+	for weapon in vter(shipManager.weaponSystem.weapons) do
+		table.insert(weapons, weapon.blueprint.name)
+	end
+	for _, name in ipairs(weapons) do
+		--print("remove weapon:"..name)
+		shipManager.weaponSystem:RemoveWeapon(0)
+	end
 	--print("ACTUALLY SETTING")
 	local commandGui = Hyperspace.App.gui
 	local equipment = commandGui.equipScreen
 	local artyBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint(blueprintName)
-	local shipManager = Hyperspace.ships.player
 	equipment:AddWeapon(artyBlueprint, true, false)
 	local artilleryWeapon = shipManager.weaponSystem.weapons[0]
+	artilleryWeapon.iAmmo = 99
+	shipManager.artillerySystems[slot].projectileFactory = artilleryWeapon
+	shipManager.weaponSystem:RemoveWeapon(0)
+	for _, name in ipairs(weapons) do
+		--print("add weapon:"..name)
+		local blueprint = Hyperspace.Blueprints:GetWeaponBlueprint(name)
+		equipment:AddWeapon(blueprint, true, false)
+	end
+end
+local allWeapons = {}
+--[[for blueprint in vter(Hyperspace.Blueprints:GetBlueprintList("LIST_WEAPONS_ALL")) do
+	table.insert(allWeapons, blueprint)
+end]]
+local node_child_iter = mods.multiverse.node_child_iter
+for _, file in ipairs(mods.multiverse.blueprintFiles) do
+	local doc = RapidXML.xml_document(file)
+	for node in node_child_iter(doc:first_node("FTL") or doc) do
+		if node:name() == "weaponBlueprint" then
+			--print(node:first_attribute("name"):value())
+			table.insert(allWeapons, node:first_attribute("name"):value())
+		end
+	end
+	doc:clear()
+end
+
+local function setArtySlotFromWeapon(slot)
+	local shipManager = Hyperspace.ships.player
+	local commandGui = Hyperspace.App.gui
+	local equipment = commandGui.equipScreen
+	local weaponName = shipManager.weaponSystem.weapons[0].blueprint.name
+	--print("SETTING SLOT:"..slot.." string:".."aea_broadside_c_slot"..math.floor(slot+1))
+	for i, name in ipairs(allWeapons) do
+		if name == weaponName then
+			Hyperspace.playerVariables["aea_broadside_c_slot"..math.floor(slot+1)] = i
+			break
+		else
+			Hyperspace.playerVariables["aea_broadside_c_slot"..math.floor(slot+1)] = 0
+		end
+	end
+	if Hyperspace.playerVariables["aea_broadside_c_slot"..math.floor(slot+1)] == 0 then
+		print("COULD NOT SAVE WEAPON: "..weaponName..", WILL NOT BE RETURNED AFTER A SAVE AND QUIT")
+	end
+	local artilleryWeapon = shipManager.weaponSystem.weapons[0]
+	artilleryWeapon.iAmmo = 99
 	shipManager.artillerySystems[slot].projectileFactory = artilleryWeapon
 	shipManager.weaponSystem:RemoveWeapon(0)
 end
@@ -4056,6 +4114,38 @@ script.on_init(function()
 	needSetArty = true
 end)
 
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+	--print("weapon is artillery:"..tostring(weapon.isArtillery))
+	if weapon.isArtillery and Hyperspace.ships(weapon.iShipId):HasAugmentation("SHIP_AEA_BROADSIDE3") > 0 then
+		if weapon.blueprint.typeName == "BEAM" then
+			projectile.sub_end = Hyperspace.Pointf(projectile.position.x, projectile.position.y - 300)
+		elseif weapon.blueprint.typeName ~= "BOMB" then
+			projectile.heading = -90
+			projectile.position.x = projectile.position.x - 20
+		end
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+	if Hyperspace.ships.player and Hyperspace.ships.player.weaponSystem then
+		if Hyperspace.ships.player.weaponSystem.weapons:size() > 0 then
+			Hyperspace.playerVariables.aea_broadside_c_has_weapon = 1
+		else
+			Hyperspace.playerVariables.aea_broadside_c_has_weapon = 0
+		end
+	end
+end)
+
+script.on_game_event("AEA_BROADSIDE_C_SLOT1", false, function()
+	setArtySlotFromWeapon(0)
+end)
+script.on_game_event("AEA_BROADSIDE_C_SLOT2", false, function()
+	setArtySlotFromWeapon(1)
+end)
+script.on_game_event("AEA_BROADSIDE_C_SLOT3", false, function()
+	setArtySlotFromWeapon(2)
+end)
+
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	if Hyperspace.ships.player and needSetArty and shipManager:HasAugmentation("SHIP_AEA_BROADSIDE") > 0 and Hyperspace.playerVariables.aea_broadside_slot1 > 0 then
 		--print("SET slot1:"..Hyperspace.playerVariables.aea_broadside_slot1.. " slot2:"..Hyperspace.playerVariables.aea_broadside_slot2.." slot3:"..Hyperspace.playerVariables.aea_broadside_slot3)
@@ -4116,6 +4206,21 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 			setArtySlot("ARTILLERY_BROADSIDE2_MISSILE", 2)
 		elseif Hyperspace.playerVariables.aea_broadside_slot3 == 4 then
 			setArtySlot("ARTILLERY_BROADSIDE2_ION", 2)
+		end
+	elseif Hyperspace.ships.player and needSetArty and shipManager:HasAugmentation("SHIP_AEA_BROADSIDE3") > 0 and Hyperspace.playerVariables.aea_broadside_slot1 > 0 then
+		needSetArty = false
+		print("LOAD ARTILLERY C 1:"..Hyperspace.playerVariables.aea_broadside_c_slot1.." 2:"..Hyperspace.playerVariables.aea_broadside_c_slot2.." 3:"..Hyperspace.playerVariables.aea_broadside_c_slot3)
+		if Hyperspace.playerVariables.aea_broadside_c_slot1 > 0 then
+			print("LOAD SLOT 1")
+			setArtySlot(allWeapons[Hyperspace.playerVariables.aea_broadside_c_slot1], 0)
+		end
+		if Hyperspace.playerVariables.aea_broadside_c_slot2 > 0 then
+			print("LOAD SLOT 2")
+			setArtySlot(allWeapons[Hyperspace.playerVariables.aea_broadside_c_slot2], 1)
+		end
+		if Hyperspace.playerVariables.aea_broadside_c_slot3 > 0 then
+			print("LOAD SLOT 3")
+			setArtySlot(allWeapons[Hyperspace.playerVariables.aea_broadside_c_slot3], 2)
 		end
 	elseif Hyperspace.ships.player and needSetArty and shipManager.iShipId == 0 and Hyperspace.playerVariables.aea_broadside_slot1 > 0 then
 		--print("FAIL")
@@ -4220,4 +4325,55 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
 		shipManager.ship:LockdownRoom(get_room_at_location(shipManager, location, true), location)		
 	end
 	return Defines.Chain.CONTINUE, beamHitType
+end)
+
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
+	local map = Hyperspace.App.world.starMap
+	--print(map.worldLevel.. " World Level")
+	if map.worldLevel == 6 and Hyperspace.playerVariables.aea_broadside_enemy_fought == 0 then
+		local dangerCount = 0
+		local leftMost = nil
+		local leftMostX = nil
+		local broadsideFound = false
+		for location in vter(map.locations) do
+			--print("visited:"..location.visited)--.." known:"..location.known.." questLocation"..location.questLoc
+			if location.dangerZone then
+				dangerCount = dangerCount + 1
+				if ((not leftMost) or location.loc.x < leftMostX) and location.visited == 0 then
+					leftMost = location
+					leftMostX = location.loc.x
+				end
+			end
+			if location.event.eventName == "AEA_ENEMY_BROADSIDE_EVENT" then
+				broadsideFound = true
+				--print("BROADSIDE FOUND")
+			end
+		end
+
+		if dangerCount >= 5 and leftMost and not broadsideFound then
+			--print("CREATE BROADSIDE EVENT")
+			leftMost.event = Hyperspace.Event:CreateEvent("AEA_ENEMY_BROADSIDE_EVENT", 0, false)
+		end
+	end
+end)
+
+
+local shipImage = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aeap_broadside_enemy.png", -10, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
+shipImage.textureAntialias = true
+local angle = 0
+script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, function()
+	local map = Hyperspace.App.world.starMap
+	if map.bOpen and not map.bChoosingNewSector then
+		for location in vter(map.locations) do
+			if location.event.eventName == "AEA_ENEMY_BROADSIDE_EVENT" and location.visited == 0 then
+				angle = angle + Hyperspace.FPS.SpeedFactor/16 * 18
+				if angle > 360 then angle = angle - 360 end
+				Graphics.CSurface.GL_PushMatrix()
+	      Graphics.CSurface.GL_Translate(location.loc.x + 385,location.loc.y + 122,0)
+	      Graphics.CSurface.GL_Rotate(angle, 0, 0, 1)
+	      Graphics.CSurface.GL_RenderPrimitive(shipImage)
+	      Graphics.CSurface.GL_PopMatrix()
+			end
+		end
+	end
 end)

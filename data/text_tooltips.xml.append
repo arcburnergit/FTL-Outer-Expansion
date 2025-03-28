@@ -1,4 +1,4 @@
 <text name="tooltip_aea_shields">Shields: Absorbs Ion Damage from target system.</text>
 <text name="tooltip_aea_shields_enemy">Shields: Absorbs Ion Damage from other enemy systems.</text>
-<text name="tooltip_aea_super_shields">Auxillery Shields: Generates super shield layers capable of blocking all projectiles and beams.</text>
-<text name="tooltip_aea_super_shields_enemy">Auxillery Shields: Generates super shield layers capable of blocking all projectiles and beams.</text>
+<text name="tooltip_aea_super_shields">Auxiliary Shields: Generates super shield layers capable of blocking all projectiles and beams.</text>
+<text name="tooltip_aea_super_shields_enemy">Auxiliary Shields: Generates super shield layers capable of blocking all projectiles and beams.</text>

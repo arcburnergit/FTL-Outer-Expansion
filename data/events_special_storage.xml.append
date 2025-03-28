@@ -25,6 +25,10 @@
     <text>Cult Weapons.</text>
     <event load="STORAGE_CHECK_AEA_CULTIST_LASER" />
   </mod-append:choice>
+  <mod-append:choice req="SHIP_AEA_BROADSIDE3" blue="true" hidden="true">
+    <text>Broadside Artillery.</text>
+    <event load="AEA_BROADSIDE3_MAIN" />
+  </mod-append:choice>
 </mod:findName>
 
 <mod:findName type="event" name="STORAGE_CHECK_LAB_ORCHID">

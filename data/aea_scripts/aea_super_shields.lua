@@ -62,7 +62,7 @@ local shieldTimer = {}
 shieldTimer[0] = 0
 shieldTimer[1] = 0
 
-local shield_ui = Hyperspace.Resources:CreateImagePrimitiveString("statusUI/top_aea_aux_on.png", 25, 87, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+local shield_ui = Hyperspace.Resources:CreateImagePrimitiveString("statusUI/top_aea_aux_on.png", 25, 86, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function()
     shieldTimer[0] = 0
@@ -87,6 +87,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
                 if manningCrew then
                     manningCrew:IncreaseSkill(0)
                 end
+                if maxLayers > 5 then shipManager.shieldSystem.shields.power.super.second = maxLayers end
                 shipManager.shieldSystem:AddSuperShield(shipManager.shieldSystem.superUpLoc)
                 shieldTimer[shipManager.iShipId] = 0
                 --shipManager.shieldSystem.shields.power.super.second = shipManager.shieldSystem.shields.power.super.first
@@ -97,10 +98,14 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	end
 end)
 
-script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, function()
+script.on_render_event(Defines.RenderEvents.SPACE_STATUS, function() end, function()
     if Hyperspace.ships.player:HasSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields")) then
-        Graphics.CSurface.GL_RenderPrimitive(shield_ui)
-        Graphics.CSurface.GL_DrawRect(25+7, 87+2, (shieldTimer[0]/5 + shipManager.shieldSystem.shields.power.super.first) * 94, 4, Graphics.GL_Color(1, 1, 1, 1));
+        if Hyperspace.ships.player.shieldSystem.shields.power.second == 0 then
+            Graphics.CSurface.GL_RenderPrimitive(shield_ui)
+        else
+            Graphics.CSurface.GL_RenderPrimitive(shield_ui)
+        end
+        Graphics.CSurface.GL_DrawRect(25+7, 87+2, (shieldTimer[0]/(5 + Hyperspace.ships.player.shieldSystem.shields.power.super.first)) * 94, 4, Graphics.GL_Color(1, 1, 1, 1));
     end
 end)
 
@@ -129,6 +134,10 @@ local function render_icon(sysId, ship, sysInfo)
         local sysRoomShape = Hyperspace.ShipGraph.GetShipInfo(ship.iShipId):GetRoomShape(sysInfo[sysId].location[0])
         local iconRenderX = sysRoomShape.x + sysRoomShape.w//2 - 16
         local iconRenderY = sysRoomShape.y + sysRoomShape.h//2 - 16
+        if sysInfo:has_key(10) and sysInfo[sysId].location[0] == sysInfo[10].location[0] then
+            iconRenderY = iconRenderY + 18
+            skipBackground = true
+        end
         if not skipBackground then
             local outlineSize = 2
             Graphics.CSurface.GL_DrawRect(
