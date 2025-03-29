@@ -31,6 +31,67 @@
   </mod-append:choice>
 </mod:findName>
 
+<mod:findName type="event" name="STORAGE_CHECK_SYSTEM">
+	<mod-append:choice req="aea_super_shields" blue="true" hidden="true">
+	  <text>Auxiliary Shields.</text>
+	  <event load="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELDS" />
+	</mod-append:choice>
+</mod:findName>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELDS">
+    <text>What upgrade do you want to install?</text>
+    <choice req="UPG_AEA_SUPER_SHIELD_OVERCHARGER" lvl="1" max_group="0" blue="false" hidden="true">
+        <text>Shield Overcharger. [ALREADY INSTALLED]</text>
+        <event load="OPTION_INVALID" />
+    </choice>
+    <choice req="UPG_AEA_SUPER_SHIELD_OVERCHARGER" lvl="0" max_group="0" blue="false" hidden="true">
+        <text>Shield Overcharger. [Cost: 50~, 1{]</text>
+        <event load="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELD_OVERCHARGER" />
+    </choice>
+    <choice>
+        <text>Nevermind.</text>
+        <event load="STORAGE_CHECK_SYSTEM_LOAD" />
+    </choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELD_OVERCHARGER">
+	<text>You are about to install the Shield Overcharger upgrade.
+	[Effects: Grants all super shield layers that the system can generate on jump]</text>
+	<choice max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 50~, 1{]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="fuel" min="-1" max="-1" />
+				<item type="scrap" min="-50" max="-50" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_SUPER_SHIELD_OVERCHARGER" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="UPG_AEA_SUPER_SHIELD_OVERCHARGER_EX" max_group="1" blue="false" hidden="true">
+		<text>Install the External Augment internally.</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<remove name="UPG_AEA_SUPER_SHIELD_OVERCHARGER_EX" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_SUPER_SHIELD_OVERCHARGER" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_SUPER_SHIELD_OVERCHARGER">
+	<variable name="loc_internal_upgrades" op="add" val="1" />
+	<hiddenAug>UPG_AEA_SUPER_SHIELD_OVERCHARGER</hiddenAug>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
 <mod:findName type="event" name="STORAGE_CHECK_LAB_ORCHID">
 	<mod:findWithChildLike type="choice" child-type="text">
       <mod:selector>Go back.</mod:selector>

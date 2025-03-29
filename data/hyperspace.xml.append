@@ -85,6 +85,16 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 Breaches on this enemy will automatically be repaired even in the absence of crew. Also provides friendly crew with 3hp/s of healing and drains enemy crew at 3hp/s in empty rooms.
 Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
         </mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_shard_armour</name>
+            <tooltip>Shard-Forged Armour:
+Every time you deal hull damage to this enemy with your weapons, there is a 25% chance that a shard will break off and fly towards your ship. It will not pierce any shields, but will do 1 damage to a random room if it hits.</tooltip>
+        </mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_shard_shield</name>
+            <tooltip>Strong Auxiliary Shields:
+This enemy ship is equipped with a strong auxiliary shield generator, It starts out combat with 6 energy shield layers.</tooltip>
+        </mod-append:shipIcon>
 	</mod:findLike>
 
   	<mod:findLike type="shipOrder">
@@ -2587,6 +2597,19 @@ Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
 				</roomAnim>
 			</room>
 		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_SHARD_BOSS">
+		<noJump />
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+		</shipIcons>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_SHARD_AUTO">
+		<shipIcons>
+			<shipIcon>icon_auto</shipIcon>
+			<shipIcon>icon_no2</shipIcon>
+		</shipIcons>
+		<autoShipForce>true</autoShipForce>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="AEA_OLD_GUARD_BOSS">
@@ -5764,7 +5787,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 		  <repairSound>rockThud3</repairSound>
 		</repairSounds>
 		<powerEffect>
-			<cooldown>38</cooldown>
+			<cooldown>12</cooldown>
 			<jumpCooldown>full</jumpCooldown>
 			<req>
 				<minHealth>20</minHealth>
@@ -5778,20 +5801,20 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			</powerSounds>
 			<lockdown>true</lockdown>
 			<buttonText>BREAKDOWN</buttonText>
-			<tooltip>[COOLDOWN:38s  -25HP]
+			<tooltip>[COOLDOWN:12s  -25HP]
 				Locks down the occupied room for 12 seconds, preventing crew from moving in.
 				Enemy crew in the room take 5 damage per second.
 				Cannot attack enemy crew for the duration.
 			</tooltip>
 			<cooldownColor r="125" g="175" b="175" />
 			<effectAnim>explosion_crystal</effectAnim>
-			<powerCharges>2</powerCharges>
-			<initialCharges>2</initialCharges>
+			<powerCharges>1</powerCharges>
+			<initialCharges>1</initialCharges>
 			<chargesPerJump>1</chargesPerJump>
 			<selfHealth>-25</selfHealth>
 			<temporaryEffect>
 				<duration>12</duration>
-				<cooldownColor r="210" g="252" b="0188" />
+				<cooldownColor r="210" g="252" b="188" />
 				<canFight>false</canFight>
 			</temporaryEffect>
 			<roomStatBoosts>
@@ -5837,13 +5860,13 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 		<repairSound>rockThud3</repairSound>
 		</repairSounds>
 		<powerEffect>
-			<cooldown>38</cooldown>
+			<cooldown>6</cooldown>
 			<jumpCooldown>full</jumpCooldown>
 			<req>
-				<minHealth>20</minHealth>
+				<minHealth>30</minHealth>
 			</req>
 			<req type="enemy">
-				<maxHealth>115</maxHealth>
+				<maxHealth>140</maxHealth>
 			</req>
 			<powerSounds>
 				<powerSound>lockdown1</powerSound>
@@ -5851,20 +5874,20 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			</powerSounds>
 			<lockdown>true</lockdown>
 			<buttonText>BREAKDOWN</buttonText>
-			<tooltip>[COOLDOWN:38s  -7HP]
+			<tooltip>[COOLDOWN:6s  -25HP]
 				Locks down the occupied room for 12 seconds, preventing crew from moving in.
 				Enemy crew in the room take 5 damage per second.
 				Cannot attack enemy crew for the duration.
 			</tooltip>
 			<cooldownColor r="125" g="175" b="175" />
 			<effectAnim>explosion_crystal</effectAnim>
-			<powerCharges>2</powerCharges>
-			<initialCharges>2</initialCharges>
-			<chargesPerJump>1</chargesPerJump>
+			<powerCharges>3</powerCharges>
+			<initialCharges>3</initialCharges>
+			<chargesPerJump>3</chargesPerJump>
 			<selfHealth>-25</selfHealth>
 			<temporaryEffect>
 				<duration>12</duration>
-				<cooldownColor r="210" g="252" b="0188" />
+				<cooldownColor r="210" g="252" b="188" />
 				<canFight>false</canFight>
 			</temporaryEffect>
 			<roomStatBoosts>
@@ -5889,7 +5912,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<mod-append:race name="aea_shard_dawn">
 		<maxHealth>200</maxHealth>
 		<damageMultiplier>0.8</damageMultiplier>
-		<suffocationModifier>0.5</suffocationModifier>
+		<suffocationModifier>0.25</suffocationModifier>
 		<animBase>rock</animBase>
 		<deathSounds>
 			<deathSound>crystalDeath</deathSound>
@@ -5910,13 +5933,13 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 		<repairSound>rockThud3</repairSound>
 		</repairSounds>
 		<powerEffect>
-			<cooldown>38</cooldown>
+			<cooldown>6</cooldown>
 			<jumpCooldown>full</jumpCooldown>
 			<req>
-				<minHealth>20</minHealth>
+				<minHealth>30</minHealth>
 			</req>
 			<req type="enemy">
-				<maxHealth>115</maxHealth>
+				<maxHealth>190</maxHealth>
 			</req>
 			<powerSounds>
 				<powerSound>lockdown1</powerSound>
@@ -5924,30 +5947,30 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			</powerSounds>
 			<lockdown>true</lockdown>
 			<buttonText>BREAKDOWN</buttonText>
-			<tooltip>[COOLDOWN:38s  -7HP]
-				Locks down the occupied room for 12 seconds, preventing crew from moving in.
-				Enemy crew in the room take 5 damage per second.
+			<tooltip>[COOLDOWN:3s  -25HP]
+				Locks down the occupied room for 24 seconds, preventing crew from moving in.
+				Enemy crew in the room take 10 damage per second.
 				Cannot attack enemy crew for the duration.
 			</tooltip>
 			<cooldownColor r="125" g="175" b="175" />
 			<effectAnim>explosion_crystal</effectAnim>
-			<powerCharges>2</powerCharges>
-			<initialCharges>2</initialCharges>
-			<chargesPerJump>1</chargesPerJump>
+			<powerCharges>3</powerCharges>
+			<initialCharges>3</initialCharges>
+			<chargesPerJump>3</chargesPerJump>
 			<selfHealth>-25</selfHealth>
 			<temporaryEffect>
-				<duration>12</duration>
-				<cooldownColor r="210" g="252" b="0188" />
+				<duration>24</duration>
+				<cooldownColor r="210" g="252" b="188" />
 				<canFight>false</canFight>
 			</temporaryEffect>
 			<roomStatBoosts>
 				<statBoost name="trueHealAmount">
 					<boostType>FLAT</boostType>
-					<amount>-5</amount>
+					<amount>-10</amount>
 					<shipTarget>CURRENT_ROOM</shipTarget>
 					<crewTarget>ENEMIES</crewTarget>
 					<affectsSelf>false</affectsSelf>
-					<duration>12</duration>
+					<duration>24</duration>
 					<priority>999</priority>
 					<maxStacks id="aea_shard_floor">1</maxStacks>
 					<roomAnim renderLayer="0">
@@ -5962,6 +5985,17 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 
 <augments>
+	<aug name="BOON_AEA_SUPER_SHIELDS">
+		<function name="ENERGY_SHIELD" value="0" useForReqs="true" warning="false" />
+		<superShield>
+			<add>1</add>
+			<color r="255" g="255" b="255" a="1" />
+			<shieldImage>ship/aea_shield_base_bubble_white.png</shieldImage>
+		</superShield>
+	</aug>
+	<aug name="AEA_SHARD_COOLER">
+		<function name="AUTO_COOLDOWN" value="0.05" warning="false" />
+	</aug>
 	<aug name="AEA_SHARD_ARMOUR">
 		<function name="CRYSTAL_SHARDS" value="0" useForReqs="true" warning="false" />
 		<crystalShard weapon="CRYSTAL_ARMOR_PROJ" value="0.5" stackable="false" />
@@ -5985,15 +6019,19 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 		<locked />
 	</aug>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY">
-		<function name="CRYSTAL_SHARDS" value="0" useForReqs="true" warning="false" />
-		<crystalShard weapon="CRYSTAL_ARMOR_PROJ" value="0.25" stackable="false" />
+		<function name="CRYSTAL_SHARDS" value="0.25" useForReqs="true" warning="false" />
+		
+		<icon>icon_aea_shard_armour</icon>
+		<locked />
+	</aug>
+	<aug name="AEA_SHARD_SHIELD_ENEMY">
 		<function name="ENERGY_SHIELD" value="0" useForReqs="true" warning="false" />
 		<superShield>
-			<add>1</add>
+			<value>6</value>
 			<color r="255" g="255" b="255" a="1" />
 			<shieldImage>ship/aea_shield_base_bubble_white.png</shieldImage>
 		</superShield>
-		<locked />
+		<icon>icon_aea_shard_shield</icon>
 	</aug>
 	<aug name="AEA_SHLEG_GEL">
 		<function name="SLUG_GEL" value="1" useForReqs="true" warning="false" />
@@ -6599,6 +6637,13 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<variable name="ach_trans_aea_shleg" op="set" val="0" />
 	<variable name="aea_shleg_trading_station" op="set" val="0" />
 	<variable name="aea_shleg_radiant_dead" op="set" val="0" />
+
+	<metaVariable name="juke_aea_shard" op="set" val="0" />
+	<variable name="ach_trans_aea_shard" op="set" val="0" />
+	<variable name="prof_r_boon_aea_super_shields" op="set" val="0" />
+	<variable name="ach_boon_aea_super_shields" op="set" val="0" />
+	<variable name="aea_shard_quest_done" op="set" val="0" />
+	<variable name="aea_shard_quest_crewkill" op="set" val="0" />
 
 	<metaVariable name="juke_aea_old_1" op="set" val="0" />
 	<metaVariable name="juke_aea_old_2" op="set" val="0" />
@@ -7334,6 +7379,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
   	<eventFile>sector_aea_bird</eventFile>
   	<eventFile>special_aea_shleg</eventFile>
   	<eventFile>sector_aea_shleg</eventFile>
+  	<eventFile>special_aea_shard</eventFile>
+  	<eventFile>sector_aea_shard</eventFile>
 
   	<eventFile>special_aea_old</eventFile>
   	<eventFile>sector_aea_old_1</eventFile>
@@ -7410,6 +7457,9 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<bossShip yOffset="160">AEA_BIRD_TRANSPORT</bossShip>
 	<bossShip yOffset="160">AEA_BIRD_TRANSPORT_ELITE</bossShip>
 	<bossShip yOffset="140">AEA_BIRD_AUTO_BOSS</bossShip>
+
+	<bossShip>AEA_SHARD_BOSS</bossShip>
+	<bossShip>AEA_SHARD_AUTO</bossShip>
 </events>
 
 <mod:findLike type="victories"> <!-- adds the victory marker for lylmik ending -->
@@ -8122,6 +8172,13 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				<icon>ach_trans_aea_shleg</icon>
 				<header>Loot Acquired</header>
 			</mod-append:achievement>
+			<mod-append:achievement name="ACH_TRANS_AEA_SHARD">
+				<name>Shard-Forged Transport</name>
+				<secretDescription>Obtain the loot from the Shard-Forged loot transport.</secretDescription>
+				<description>Obtain the Elite Crystal Burst MK II from the Shard-Forged loot transport.</description>
+				<icon>ach_trans_aea_shard</icon>
+				<header>Loot Acquired</header>
+			</mod-append:achievement>
 			<mod-append:achievement name="ACH_TRANS_AEA_OLD_1">
 				<name>Lylmik Station</name>
 				<secretName>Secret Transport</secretName>
@@ -8133,5 +8190,18 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			</mod-append:achievement>
 		</mod:findLike>
 	</mod:findLike>
+	<mod-append:page>
+		<section text="Corby's Grants II" hidden="false">
+			<achievement name="ACH_BOON_AEA_SUPER_SHIELDS">
+				<name>Grant of Auxiliary Shielding</name>
+				<secretDescription>Receive the Grant of Auxiliary Shielding from Corby.</secretDescription>
+				<description>Show an upgraded Auxiliary Shields System to Corby. 
+				While in effect; Add 1 energy shield layer after jump.</description>
+				<header>Grant Received</header>
+				<icon>ach_boon_aea_super_shields</icon>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+		</section>
+	</mod-append:page>
 </mod:findLike>
 </FTL>

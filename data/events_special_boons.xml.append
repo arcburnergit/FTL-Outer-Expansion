@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>	
+
+<event name="BOON_SELECT_AEA_SUPER_SHIELD">
+	<text>From nowhere, you hear a voice speaking to you. "Grant of [Auxiliary Shielding] i-i-installed. Installed! Grant provides: A single layer of energy shields, stacks with other energy shields. If -you- witness p-p-previous challenger; provide thanks. I advise you -visit- me as well."</text>
+	<hiddenAug>BOON_AEA_SUPER_SHIELDS</hiddenAug>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<loadEvent>BOON_SELECT_CONTINUE</loadEvent>
+		</event>
+	</choice>
+</event>
+
+</FTL>

@@ -1,3 +1,495 @@
 <FTL>
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    AEA_SHARD
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+
+<textList name="TEXT_START_AEA_SHARD">
+    <text>You have arrived in Shard-Forged Space. As allies of the federation you'll have no trouble making friends. These pirates are usually friendly, just be sure not to get in the middle of a mutiny.</text>
+    <text>You have arrived in Shard-Forged Space. As allies of the federation you'll have no trouble making friends. These pirates are usually friendly, just be sure not to get in the middle of a mutiny.</text>
+    <text>You have arrived in Shard-Forged Space. As allies of the federation you'll have no trouble making friends. These pirates are usually friendly, just be sure not to get in the middle of a mutiny.</text>
+</textList>
+<event name="START_AEA_SHARD">
+    <metaVariable name="juke_aea_shard" op="set" val="1" />
+    <preventQuest />
+    <beaconType id="map_icon_start" global="false">
+        <color r="46" g="252" b="51" a="1" />
+    </beaconType>
+    <text load="TEXT_START_AEA_SHARD" />
+    <ship load="SHIP_GUARD_AEA_SHARD" hostile="false" />
+    <changeBackground>BACK_SECTOR_PIRATE</changeBackground>
+    <playSound>lightspeed</playSound>
+    <choice hidden="true" blue="false">
+        <text>Continue...</text>
+        <event load="GUARD_AEA_SHARD" />
+    </choice>
+</event>
+
+<event name="START_AEA_SHARD_UNIQUE">
+    <metaVariable name="juke_aea_shard" op="set" val="1" />
+    <preventQuest />
+    <beaconType id="map_icon_start" global="false">
+        <color r="46" g="252" b="51" a="1" />
+    </beaconType>
+    <text load="TEXT_START_AEA_SHARD" />
+    <ship load="SHIP_GUARD_AEA_SHARD" hostile="false" />
+    <changeBackground>BACK_SECTOR_PIRATE</changeBackground>
+    <playSound>lightspeed</playSound>
+    <choice hidden="true" blue="false">
+        <text>Continue...</text>
+        <event load="GUARD_AEA_SHARD" />
+    </choice>
+</event>
+
+<event name="GUARD_AEA_SHARD">
+    <text>With the recent war with the rebellion the Shard-Forged have deployed a guard to this beacon, but they don't seem interested in you.</text>
+    <choice>
+        <text>Ignore the guard.</text>
+        <event>
+            <text>You now have some time to do something on the ship.</text>
+            <choice>
+                <text>Do something onboard the ship.</text>
+                <event load="STORAGE_CHECK" />
+            </choice>
+            <choice>
+                <text>Do nothing.</text>
+                <event />
+            </choice>
+        </event>
+    </choice>
+    <choice hidden="true">
+        <text>Contact the guard.</text>
+        <event load="GUARD_AEA_SHARD_INTERACT" />
+    </choice>
+    <choice>
+        <text>Attack the guard.</text>
+        <event>
+            <text id="text_guard_attack" />
+            <ship hostile="true" />
+            <choice hidden="true">
+                <text>Continue...</text>
+                <event load="COMBAT_CHECK" />
+            </choice>
+        </event>
+    </choice>
+</event>
+
+<textList name="TEXT_GUARD_AEA_SHARD_CONTACT">
+    <text>A large crystal appears on your screen, you can see the distictive white mark across their shoulder indicating that they're a member of the Shard-Forged.</text>
+</textList>
+<event name="GUARD_AEA_SHARD_INTERACT">
+    <text load="TEXT_GUARD_AEA_SHARD_CONTACT" />
+    <choice hidden="true">
+        <text>Request supplies.</text>
+        <event load="GUARD_AEA_SHARD_REQUEST" />
+    </choice>
+    <choice hidden="true">
+        <text>Demand supplies.</text>
+        <event load="GUARD_AEA_SHARD_DEMAND" />
+    </choice>
+    <choice req="weapons" lvl="5" hidden="true">
+        <text>(Upg. Weapons) Threaten the guard.</text>
+        <event load="GUARD_AEA_SHARD_THREATEN" />
+    </choice>
+    <choice hidden="true">
+        <text>Change your mind and leave the guard alone.</text>
+        <event>
+            <text>You apologize and end comms. The guard makes no attempts to communicate further.</text>
+            <choice>
+                <text>Do something onboard the ship.</text>
+                <event load="STORAGE_CHECK" />
+            </choice>
+            <choice>
+                <text>Do nothing.</text>
+                <event />
+            </choice>
+        </event>
+    </choice>
+</event>
+
+<eventList name="GUARD_AEA_SHARD_REQUEST">
+    <event>
+        <text>"Though it's quite interesting to discover new people, I'm afraid we cannot spare any supplies."</text>
+    </event>
+    <event>
+        <text>"You wish for some supplies? Most certainly! It is not often I get the opportunity to make new friends!"</text>
+        <autoReward level="LOW">stuff</autoReward>
+    </event>
+</eventList>
+<eventList name="GUARD_AEA_SHARD_DEMAND">
+    <event>
+        <text>"You insult us with such a rude demand, you're lucky that you're with the federation." The crystal breaks contact with you but otherwise remains passive.</text>
+    </event>
+</eventList>
+<eventList name="GUARD_AEA_SHARD_THREATEN">
+    <event>
+        <text>The Crystals don't take well to your threats. Rather than complying, they raise their guns and attack.</text>
+        <ship hostile="true" />
+        <choice hidden="true">
+            <text>Continue...</text>
+            <event load="COMBAT_CHECK" />
+        </choice>
+    </event>
+</eventList>
+
+<ship name="SHIP_GUARD_AEA_SHARD" auto_blueprint="AEA_SHARD_GUARD">
+    <surrender min="7" max="8" load="GUARD_SIGNAL" />
+    <destroyed load="GUARD_AEA_SHARD_DESTROY" />
+    <deadCrew load="GUARD_AEA_SHARD_DEADCREW" />
+</ship>
+
+<event name="GUARD_AEA_SHARD_DESTROY">
+    <text>You have defeated the Shard-Forged guard. Whatever might have been in their cargo has for certain been destroyed, but you can at least salvage some supplies from the ship.</text>
+    <autoReward level="MED">standard</autoReward>
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event load="GUARD_AEA_SHARD_FOLLOWUP" />
+    </choice>
+</event>
+<event name="GUARD_AEA_SHARD_DEADCREW">
+    <text>You have defeated the Shard-Forged guard. Without crew on board to stop you, you can investigate their cargo. You find a weapon to bring back to the ship, and move on to scrap their hull.</text>
+    <autoReward level="MED">standard_no_item</autoReward>
+    <weapon name="GIFTLIST_AEA_SHARD" />
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event load="GUARD_AEA_SHARD_FOLLOWUP" />
+    </choice>
+</event>
+
+<ship name="SHIP_AEA_SHARD_REINFORCEMENTS" auto_blueprint="LIST_SHIPS_AEA_SHARD_FIGHT">
+    <destroyed load="DESTROYED_REINFORCEMENTS" />
+    <deadCrew load="DEADCREW_REINFORCEMENTS" />
+</ship>
+<event name="GUARD_AEA_SHARD_FOLLOWUP">
+    <noQuestText />
+    <removeHazards />
+    <clearCustomFleet />
+    <text>By killing the Shard-Forged guard, you have no doubt caused them to dispatch reinforcements to track you down. Watch your step as you explore the sector.</text>
+    <quest event="REINFORCEMENTS_AEA_SHARD">
+        <nebulaBeacon>true</nebulaBeacon>
+        <nextSector>false</nextSector>
+        <nebulaEvent>NEBULA_REINFORCEMENTS_AEA_SHARD</nebulaEvent>
+        <createNebula>false</createNebula>
+        <aggressive>2</aggressive>
+    </quest>
+    <choice>
+        <text>Do something onboard the ship.</text>
+        <event load="STORAGE_CHECK" />
+    </choice>
+    <choice>
+        <text>Do nothing.</text>
+        <event />
+    </choice>
+</event>
+<event name="REINFORCEMENTS_AEA_SHARD">
+    <preventQuest />
+    <beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
+        <color r="200" g="55" b="82" a="1" />
+        <unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+        <visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+        <undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+    </beaconType>
+    <text>"Outsiders, we knew you were barbaric, but when we migrated here we had no idea you would intrude our sector and threaten our ways with such violent acts! We will avenge our fallen brothers aboard the guard ship you so ruthlessly destroyed!"</text>
+    <ship load="SHIP_AEA_SHARD_REINFORCEMENTS" hostile="true" />
+    <environment type="PDS" target="player" />
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event load="COMBAT_CHECK" />
+    </choice>
+</event>
+<event name="NEBULA_REINFORCEMENTS_AEA_SHARD">
+    <preventQuest />
+    <beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
+        <color r="200" g="55" b="82" a="1" />
+        <unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+        <visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+        <undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+    </beaconType>
+    <text>"Outsiders, we knew you were barbaric, but when we migrated here we had no idea you would intrude our sector and threaten our ways with such violent acts! We will avenge our fallen brothers aboard the guard ship you so ruthlessly destroyed!"</text>
+    <ship load="SHIP_AEA_SHARD_REINFORCEMENTS" hostile="true" />
+    <img back="BACK_EVENT_LIGHTNEBULA" />
+    <status type="loss" target="player" system="sensors" amount="1" />
+    <environment type="PDS" target="player" />
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event load="COMBAT_CHECK" />
+    </choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    FED
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<eventList name="STORELIST_AEA_SHARD">
+    <event load="STOREEVENT_ALIENS" />
+    <event load="STOREEVENT_DAMAGED" />
+    
+    <event load="STOREEVENT_SEPARATIST_UNLOADING" />
+    <event load="STOREEVENT_SEPARATIST_CHECKPOINT" />
+
+    <event load="STOREEVENT_VAMPWEED_TERRAFORMER" />
+    
+    <event load="STOREEVENT_CRYSTAL_TRANSLATOR" />
+    
+    <event load="STOREEVENT_LOSTSUN_VOLCANO" />
+    <event load="STOREEVENT_LOSTSUN_ESCAPEES" />
+
+    <event load="STOREEVENT_MANTIS_WHALE" />
+    
+    <event load="STOREEVENT_PIRATE_ODDSHOP" />
+    <event load="STOREEVENT_PIRATE_AWKWARD" />
+    <event load="STOREEVENT_PIRATE_REFUELING" />
+    <event load="STOREEVENT_PIRATE_SECURITY" />
+    
+    <event load="STOREEVENT_LEECH_ASTEROIDS" />
+    <event load="STOREEVENT_LEECH_SCAVENGER" />
+    
+    <event load="STORE_HOSTILE_PIRATE" />
+    
+    <event load="STOREEVENT_TONY" />
+</eventList>
+
+
+<ship name="SHIP_AEA_SHARD_OUTPOST" auto_blueprint="MU_CRYSTAL_STATION">
+	<destroyed load="DESTROYED_AEA_SHARD" />
+	<deadCrew load="DEAD_CREW_AEA_SHARD" />
+</ship>
+<textList name="TEXT_OUTPOST_AEA_SHARD">
+	<text>"Aliens, how curious. Ycathine knowns what kind of mysterious tales you could tell!" The Crystal yawns. "Or that's what I used to think. Unfortunately, you all seem quite boring. That said, boring or not, I've pledged my duties to the Federation and I intend to uphold them. What do you need?"</text>
+	<text>The Crystalline station nearby locks all of its weapons onto you, threatening to open fire. "STOP RIGHT THERE! THIS IS IMPERIAL SPACE! GET LOST OR- oh crypt, you're a Renegade! Wow! My apologies. Feel free to dock, and I'll see to it my crew can provide whatever resources you're in need of."</text>
+</textList>
+<event name="OUTPOST_AEA_SHARD_SPAWNER">
+	<preventQuest />
+	<beaconType id="map_icon_outpost" global="true">
+		<color r="233" g="123" b="74" a="1.0" />
+		<unvisitedTooltip id="map_outpost_unvisited" />
+		<visitedTooltip id="map_outpost_visited" />
+	</beaconType>
+	<ship load="SHIP_AEA_SHARD_OUTPOST" hostile="false" />
+	<loadEventList seeded="false" first="true" generate="false" default="OUTPOST_AEA_SHARD">
+		<event name="OUTPOST_AEA_SHARD"/>
+	</loadEventList>
+</event> 
+<event name="OUTPOST_AEA_SHARD" unique="true">
+	<text load="TEXT_OUTPOST_AEA_SHARD" />
+	<choice req="challenge_level" lvl="0" max_lvl="0" blue="false">
+		<text>Request free repairs. [7$]</text>
+		<event>
+			<damage amount="-7" />
+		</event>
+	</choice>
+	<choice>
+		<text>Request fuel.</text>
+		<event>
+			<item_modify>
+				<item type="fuel" min="7" max="7" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice>
+		<text>Request ammunition.</text>
+		<event>
+			<item_modify>
+				<item type="missiles" min="4" max="4" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice>
+		<text>Request droneparts.</text>
+		<event>
+			<item_modify>
+				<item type="drones" min="3" max="3" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Attack the outpost!</text>
+		<event>
+			<text>You arm the weapons and engage the station!</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+</event>
+    
+<ship name="SHIP_AEA_SHARD_TRANSPORT_LOOT" auto_blueprint="AEA_SHARD_TRANSPORT">
+    <escape timer="40" min="999" max="999">
+        <text>They look like they don't want to fight. They are trying to escape.</text>
+        <ship hostile="true" />
+    </escape>
+    <destroyed load="TRANSPORT_DESTROYED" />
+    <deadCrew load="TRANSPORT_CAPTURE_AEA_SHARD" />
+</ship>
+    
+    
+<event name="TRANSPORT_AEA_SHARD_LOOT" unique="true">
+	<preventQuest />
+	<beaconType id="map_icon_transport" global="true" req="LOOT_COMPASS">
+		<color r="255" g="186" b="0" a="1" />
+		<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<text>This beacon hosts a Shard-Forged transport. It's safe to bet the ship is most likely carrying some special tech. If you can kill its crew, their cargo will be yours.</text>
+	<ship load="SHIP_AEA_SHARD_TRANSPORT_LOOT" hostile="false" />
+	<choice>
+		<text>Demand the surrender of their goods.</text>
+		<event>
+			<text>You prepare to secure their cargo by force.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+    <choice>
+        <text>Avoid the ship.</text>
+        <event>
+            <text>The ship stays outside your weapons range, and eventually jumps away.</text>
+            <choice hidden="true">
+                <text>Do something onboard the ship.</text>
+                <event load="STORAGE_CHECK" />
+            </choice>
+            <choice hidden="true">
+                <text>Do nothing.</text>
+                <event />
+            </choice>
+        </event>
+    </choice>
+</event>
+<event name="TRANSPORT_CAPTURE_AEA_SHARD" unique="true">
+    <text>The crew is dead, leaving you with the ship. Its cargo is yours for the taking. Aboard is the special tech you expected, which you bring back to your ship.</text>
+    <autoReward level="MED">standard_no_item</autoReward>
+    <weapon name="LIST_LOOT_AEA_SHARD" />
+    <variable name="ach_trans_aea_shard" op="set" val="1" />
+    <achievement>ACH_TRANS_AEA_SHARD</achievement>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    FED
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="DESTROYED_AEA_SHARD">
+    <text load="TEXT_DESTROYED_AEA_SHARD" />
+    <autoReward level="MED">standard</autoReward>
+</event>
+<textList name="TEXT_DESTROYED_AEA_SHARD">
+	<text>For all it's worth, the crystalline armor protecting their ship could not withstand the fire from your weapons.</text>
+	<text>Remarkably, the ruins of the Crystal ship could easily be mistaken as smaller Crystal ships. Glad you don't actually have more enemies to fight, you scrap your latest victim.</text>
+	<text>A few shards from the shattered armor almost hit your ship, but luckily you pilot out of the way just in time. You scrap what you can.</text>
+</textList>
+
+<event name="DEAD_CREW_AEA_SHARD">
+    <text load="TEXT_DEAD_CREW_AEA_SHARD" />
+    <autoReward level="HIGH">standard</autoReward>
+</event>
+<textList name="TEXT_DEAD_CREW_AEA_SHARD">
+	<text>With all their fancy abilities, the Crystals are still just as easy a kill for your crew as any other. You scrap the ship.</text>
+	<text>You wonder why the Rockmen worshipped the Crystals as gods when you can kill them with such ease.</text>
+	<text>The Crystal ship has been neutralized successfully. You scrap the remains.</text>
+</textList>
+
+<event name="ESCAPE_AEA_SHARD">
+    <text load="TEXT_ESCAPE_AEA_SHARD" />
+</event>
+<textList name="TEXT_ESCAPE_AEA_SHARD">
+    <text>It appears the Shard-Forged ship has reconsidered staying around to finish this fight. They're trying to escape!</text>
+</textList>
+
+<eventList name="GOTAWAY_AEA_SHARD">
+    <event load="GOTAWAY_AEA_SHARD_GENERIC" />
+    <event load="GOTAWAY_AEA_SHARD_GENERIC" />
+    
+    <event load="GOTAWAY_AEA_SHARD_REMAINS" />
+</eventList>
+<event name="GOTAWAY_AEA_SHARD_GENERIC">
+    <text load="TEXT_GOTAWAY_AEA_SHARD" />
+</event>
+<textList name="TEXT_GOTAWAY_AEA_SHARD">
+    <text>The Shard-Forged ship jumps away, leaving you behind at the beacon.</text>
+</textList>
+<event name="GOTAWAY_AEA_SHARD_REMAINS">
+    <text>The Shard-Forged ship jumps away. At first you're disappointed, but then you realise a portion of scrap matter has been left behind from the fight. It's not much, but it helps soften the blow of your failure.</text>
+    <autoReward level="LOW">scrap_only</autoReward>
+</event>
+
+<event name="SURRENDER_AEA_SHARD">
+    <text load="TEXT_SURRENDER_AEA_SHARD" />
+    <choice>
+        <text>Accept their surrender.</text>
+        <event load="SURRENDER_ACCEPT" />
+    </choice>
+    <choice>
+        <text load="GENERIC_SURRENDER_CHOICE_NOMERCY" />
+        <event />
+    </choice>
+</event>
+<textList name="TEXT_SURRENDER_AEA_SHARD">
+	<text>"We yield, aliens. We have no wish to die fighting you."</text>
+	<text>"You have bested us! I will no longer underestimate you foreigners. Please, let us leave in peace."</text>
+	<text>They appear to be transmitting the universal signals for surrender. Will you let them go?</text>
+	<text>They message you, "I see now there was a misunderstanding and there is no need for more bloodshed. Will you forgive our lack of discretion?"</text>
+	<text>"We cannot beat you; we surrender. Surely there is mercy wherever you come from."</text>
+	
+	<!--new MV-->
+	<text>The Crystal ship has stopped firing. It appears they are trying to surrender.</text>
+	<text>"Captain, I'm sure our differences can be settled over some scrap, yes? I have come to understand this is how things are done here."</text>
+	<text>"As much as I hate this, we are not in any condition to pretend we do not need to surrender. Will you allow us to live?"</text>
+</textList>
+
+<event name="SURRENDER_AEA_SHARD_ACCEPT">
+    <ship hostile="false" />
+    <autoReward level="RANDOM">droneparts</autoReward>
+</event>
+
+<event name="AEA_SHARD_TEST_FIGHT">
+    <text>TEST.</text>
+    <ship load="SHIP_AEA_SHARD_ALL" hostile="true"/>
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event load="COMBAT_CHECK"/>
+    </choice>
+</event>
+
+<ship name="SHIP_AEA_SHARD_ALL" auto_blueprint="LIST_SHIPS_AEA_SHARD_ALL">
+    <surrender chance="0.5" min="2" max="3" load="SURRENDER_AEA_SHARD" />
+    <escape chance="0.5" min="3" max="4" load="ESCAPE_AEA_SHARD" />
+    <gotaway load="GOTAWAY_AEA_SHARD" />
+    <destroyed load="DESTROYED_AEA_SHARD" />
+    <deadCrew load="DEAD_CREW_AEA_SHARD" />
+</ship>
+
+<ship name="SHIP_AEA_SHARD_GENERIC" auto_blueprint="LIST_SHIPS_AEA_SHARD_GENERIC">
+    <surrender chance="0.5" min="2" max="3" load="SURRENDER_AEA_SHARD" />
+    <escape chance="0.5" min="3" max="4" load="ESCAPE_AEA_SHARD" />
+    <gotaway load="GOTAWAY_AEA_SHARD" />
+    <destroyed load="DESTROYED_AEA_SHARD" />
+    <deadCrew load="DEAD_CREW_AEA_SHARD" />
+</ship>
+
+<ship name="SHIP_AEA_SHARD_FIGHT" auto_blueprint="LIST_SHIPS_AEA_SHARD_FIGHT">
+    <surrender chance="0.5" min="2" max="3" load="SURRENDER_AEA_SHARD" />
+    <escape chance="0.5" min="3" max="4" load="ESCAPE_AEA_SHARD" />
+    <gotaway load="GOTAWAY_AEA_SHARD" />
+    <destroyed load="DESTROYED_AEA_SHARD" />
+    <deadCrew load="DEAD_CREW_AEA_SHARD" />
+</ship>
 
 </FTL>

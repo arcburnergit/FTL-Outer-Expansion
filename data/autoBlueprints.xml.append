@@ -751,12 +751,17 @@
 	<name>AEA_SHLEG_MISSILES_LOOT</name>
 </blueprintList>
 
-
-<blueprintList name="GIFTLIST_WEAPONS_SHARD">
-    <name>AEA_LASER_NECRO_1</name>
+<blueprintList name="GIFTLIST_AEA_SHARD">
+	<name>CRYSTAL_BURST_1_RED</name>
+	<name>CRYSTAL_BURST_2</name>
+	<name>CRYSTAL_HEAVY_1</name>
+	<name>CRYSTAL_HEAVY_2</name>
+	<name>CRYSTAL_STUN_RED</name>
+	<name>CRYSTAL_CHARGEGUN</name>
+	<name>CRYSTAL_SHOTGUN</name>
 </blueprintList>
 <blueprintList name="LIST_LOOT_AEA_SHARD">
-	<name>AEA_LASER_NECRO_1</name>
+	<name>CRYSTAL_BURST_2_AEA_LOOT</name>
 </blueprintList>
 
 <blueprintList name="GIFTLIST_AEA_OLD">
@@ -4588,7 +4593,7 @@ A CLASS
 </FTL>
 
 <FTL>
-<blueprintList name="LIST_CREW_SHARD_ENEMY">
+<blueprintList name="LIST_CREW_AEA_SHARD_ENEMY">
 	<name>crystal</name>
 	<name>crystal</name>
 	<name>crystal_sentinel</name>
@@ -4600,142 +4605,203 @@ A CLASS
 	<name>aea_shard_smasher</name>
 </blueprintList>
 
-<blueprintList name="LIST_WEAPONS_SHARD_ENEMY">  
+<blueprintList name="LIST_WEAPONS_AEA_SHARD_ENEMY">  
 	<name>BOMB_LOCK_ENEMY</name> 
 	<name>CRYSTAL_BURST_1_ENEMY</name> 
 	<name>CRYSTAL_BURST_2_ENEMY</name> 
 	<name>CRYSTAL_HEAVY_1</name> 
 	<name>CRYSTAL_HEAVY_2_ENEMY</name> 
 	<name>CRYSTAL_CHARGEGUN_ENEMY</name>
-	<name>CRYSTAL_SHOTGUN</name>
-	<name>CRYSTAL_STUN_ENEMY</name>
+	<name>LASER_BURST_1</name>
+	<name>LASER_BURST_2_ENEMY</name>
+	<name>LASER_HEAVY_1</name>
+	<name>LASER_HULL_1_ENEMY</name>
+	<name>LASER_HULL_2</name>
+	<name>MISSILES_1_ENEMY</name>
+	<name>MISSILES_2_ENEMY</name>
+	<name>MISSILES_3_ENEMY</name>
+	<name>BEAM_1</name>
+	<name>BEAM_3</name>
+	<name>BOMB_BREACH_1_ENEMY</name>
 </blueprintList>
 
-<blueprintList name="LIST_SHIPS_SHARD_ALL">
-	<name>MU_SHARD_SCOUT</name>
-	<name>MU_SHARD_OUTRIDER</name>
-	<name>MU_SHARD_FIGHTER</name>
-	<name>MU_SHARD_ENFORCER</name>
-	<name>MU_SHARD_BOMBER</name>
-	<name>MU_SHARD_ASSAULT</name>
-	<name>MU_SHARD_TRANSPORT</name>
-	<name>MU_SHARD_GUARD</name>
+<shipBlueprint name="AEA_SHARD_BOSS" layout="aea_shard_boss" img="aea_shard_boss">
+	<class>Shard-Breaker Cruiser</class>
+	<systemList>
+		<aea_super_shields power="1" max="5" room="3" start="true" />
+		<doors power="1" max="1" room="11" start="true" />
+		<engines power="2" max="2" room="2" start="true" />
+		<medbay power="1" max="2" room="9" start="true" />
+		<oxygen power="2" max="2" room="17" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="2" max="8" room="1" start="true" />
+		<teleporter power="1" max="2" room="13" start="true" />
+		<weapons power="4" max="8" room="12" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="9" count="4" load="LIST_WEAPONS_AEA_SHARD_ENEMY" />
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="13" />
+	<crewCount amount="5" max="9" class="LIST_CREW_AEA_SHARD_ENEMY" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+</shipBlueprint>
+
+<shipBlueprint name="AEA_SHARD_AUTO" layout="aea_shard_auto" img="aea_shard_auto">
+	<class>Shard-Forged Auto-Cruiser</class>
+	<systemList>
+		<aea_super_shields power="4" max="8" room="1" start="true" />
+		<doors power="1" max="2" room="16" start="true" />
+		<drones power="2" max="8" room="12" start="true" />
+		<engines power="2" max="2" room="4" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="1" max="1" room="15" start="true" />
+		<weapons power="4" max="8" room="11" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_AEA_SHARD_ENEMY" />
+	<droneList drones="10" count="3" load="LIST_DRONES_AUTO" />
+	<health amount="12" />
+	<maxPower amount="12" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
+</shipBlueprint>
+
+<blueprintList name="LIST_SHIPS_AEA_SHARD_ALL">
+	<name>AEA_SHARD_SCOUT</name>
+	<name>AEA_SHARD_OUTRIDER</name>
+	<name>AEA_SHARD_FIGHTER</name>
+	<name>AEA_SHARD_ENFORCER</name>
+	<name>AEA_SHARD_BOMBER</name>
+	<name>AEA_SHARD_ASSAULT</name>
+	<name>AEA_SHARD_TRANSPORT</name>
+	<name>AEA_SHARD_GUARD</name>
 </blueprintList>
-<blueprintList name="LIST_SHIPS_SHARD_GENERIC">
-	<name>MU_SHARD_SCOUT</name>
-	<name>MU_SHARD_OUTRIDER</name>
-	<name>MU_SHARD_FIGHTER</name>
-	<name>MU_SHARD_ENFORCER</name>
-	<name>MU_SHARD_TRANSPORT</name>
+<blueprintList name="LIST_SHIPS_AEA_SHARD_GENERIC">
+	<name>AEA_SHARD_SCOUT</name>
+	<name>AEA_SHARD_OUTRIDER</name>
+	<name>AEA_SHARD_FIGHTER</name>
+	<name>AEA_SHARD_ENFORCER</name>
+	<name>AEA_SHARD_TRANSPORT</name>
 </blueprintList>
-<blueprintList name="LIST_SHIPS_SHARD_FIGHT">
-	<name>MU_SHARD_SCOUT</name>
-	<name>MU_SHARD_OUTRIDER</name>
-	<name>MU_SHARD_FIGHTER</name>
-	<name>MU_SHARD_ENFORCER</name>
-	<name>MU_SHARD_BOMBER</name>
-	<name>MU_SHARD_ASSAULT</name>
+<blueprintList name="LIST_SHIPS_AEA_SHARD_FIGHT">
+	<name>AEA_SHARD_SCOUT</name>
+	<name>AEA_SHARD_OUTRIDER</name>
+	<name>AEA_SHARD_FIGHTER</name>
+	<name>AEA_SHARD_ENFORCER</name>
+	<name>AEA_SHARD_BOMBER</name>
+	<name>AEA_SHARD_ASSAULT</name>
 </blueprintList>
 
 <!--SCOUT-->
 <shipBlueprint name="AEA_SHARD_SCOUT" layout="mu_crystal_scout_a" img="aea_shard_scout">
-	<class>Shard-Breaker Scout</class>
+	<class>Shard-Forged Scout</class>
 	<maxSector>4</maxSector>
 	<systemList>
 		<engines power="1" max="2" room="3" start="true" />
-		<medbay power="1" max="3" room="4" start="false" />
+		<shields power="1" max="4" room="4" start="true" />
 		<oxygen power="1" max="2" room="0" start="true" />
 		<pilot power="1" max="3" room="1" start="true" />
-		<aea_super_shields power="2" max="8" room="5" start="true" />
+		<aea_super_shields power="2" max="6" room="5" start="true" />
 		<weapons power="2" max="7" room="2" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
-	<weaponList missiles="10" count="4" load="LIST_WEAPONS_SHARD_ENEMY" />
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_AEA_SHARD_ENEMY" />
 	<droneList drones="0" count="2" />
 	<health amount="8" />
-	<maxPower amount="7" />
-	<crewCount amount="3" max="5" class="aea_shard_breaker" />
+	<maxPower amount="9" />
+	<crewCount amount="3" max="5" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="CRYSTAL_ARMOR_ENEMY" />
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
 </shipBlueprint>
 
 <!--OUTRIDER-->
 <shipBlueprint name="AEA_SHARD_OUTRIDER" layout="mu_crystal_outrider_a" img="aea_shard_outrider">
-	<class>Shard-Breaker Outrider</class>
+	<class>Shard-Forged Outrider</class>
 	<maxSector>4</maxSector>
 	<systemList>
 		<medbay power="1" max="2" room="6" start="false" />
-		<doors power="1" max="3" room="4" start="false" />
+		<shields power="1" max="4" room="4" start="true" />
 		<engines power="1" max="2" room="1" start="true" />
 		<oxygen power="1" max="2" room="0" start="true" />
 		<pilot power="2" max="3" room="3" start="true" />
-		<aea_super_shields power="2" max="8" room="2" start="true" />
+		<aea_super_shields power="2" max="6" room="2" start="true" />
 		<teleporter power="1" max="1" room="7" start="true" />
 		<weapons power="2" max="6" room="5" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="12" count="4" load="LIST_WEAPONS_SHARD_ENEMY" />
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_AEA_SHARD_ENEMY" />
 	<droneList drones="0" count="0" />
 	<health amount="8" />
-	<maxPower amount="7" />
-	<crewCount amount="3" max="8" class="aea_shard_breaker" />
+	<maxPower amount="9" />
+	<crewCount amount="3" max="8" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="CRYSTAL_ARMOR_ENEMY" />
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
 	<cloakImage>mu_crystal_outrider_a</cloakImage>
 </shipBlueprint>
 
 <!--FIGHTER-->
 <shipBlueprint name="AEA_SHARD_FIGHTER" layout="mu_crystal_fighter_a" img="aea_shard_fighter">
-	<class>Shard-Breaker Fighter</class>
+	<class>Shard-Forged Fighter</class>
 	<systemList>
 		<engines power="1" max="2" room="2" start="true" />
 		<medbay power="1" max="3" room="0" start="false" />
-		<mind power="1" max="2" room="7" start="false" />
+		<shields power="2" max="4" room="7" start="true" />
 		<oxygen power="1" max="2" room="3" start="true" />
 		<pilot power="1" max="3" room="5" start="true" />
-		<aea_super_shields power="2" max="8" room="1" start="true" />
+		<aea_super_shields power="2" max="6" room="1" start="true" />
 		<teleporter power="1" max="3" room="6" start="true" />
 		<weapons power="2" max="8" room="4" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="11" count="4" load="LIST_WEAPONS_SHARD_ENEMY" />
+	<weaponList missiles="11" count="4" load="LIST_WEAPONS_AEA_SHARD_ENEMY" />
 	<droneList drones="0" count="0" />
 	<health amount="9" />
-	<maxPower amount="9" />
-	<crewCount amount="4" max="8" class="aea_shard_breaker" />
+	<maxPower amount="11" />
+	<crewCount amount="4" max="8" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="CRYSTAL_ARMOR_ENEMY" />
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
 </shipBlueprint>
 
 <!--ENFORCER-->
 <shipBlueprint name="AEA_SHARD_ENFORCER" layout="mu_crystal_enforcer_a" img="aea_shard_enforcer">
-	<class>Shard-Breaker Enforcer</class>
+	<class>Shard-Forged Enforcer</class>
 	<systemList>
 		<oxygen power="1" max="2" room="5" start="true" />
 		<engines power="1" max="2" room="6" start="true" />
 		<mind power="1" max="3" room="7" start="false" />
 		<pilot power="1" max="3" room="3" start="true" />
-		<aea_super_shields power="2" max="8" room="4" start="true" />
+		<aea_super_shields power="2" max="6" room="4" start="true" />
+		<shields power="2" max="4" room="1" start="true" />
 		<teleporter power="1" max="2" room="0" start="true" />
 		<weapons power="2" max="7" room="2" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="10" count="4" load="LIST_WEAPONS_SHARD_ENEMY" />
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_AEA_SHARD_ENEMY" />
 	<droneList drones="0" count="0" />
 	<health amount="10" />
-	<maxPower amount="7" />
-	<crewCount amount="3" max="7" class="aea_shard_breaker" />
+	<maxPower amount="9" />
+	<crewCount amount="3" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="CRYSTAL_ARMOR_ENEMY" />
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
 </shipBlueprint>
 
 <!--BOMBER-->
 <shipBlueprint name="AEA_SHARD_BOMBER" layout="mu_crystal_bomber_a" img="aea_shard_bomber">
-	<class>Shard-Breaker Bomber</class>
+	<class>Shard-Forged Bomber</class>
 	<systemList>
 		<doors power="1" max="3" room="8" start="false" />
 		<engines power="1" max="2" room="5" start="true" />
@@ -4743,119 +4809,128 @@ A CLASS
 		<oxygen power="1" max="2" room="6" start="true" />
 		<pilot power="1" max="3" room="2" start="true" />
 		<aea_super_shields power="2" max="10" room="4" start="true" />
+		<shields power="2" max="4" room="1" start="true" />
 		<weapons power="2" max="10" room="7" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
-	<weaponList missiles="10" count="4" load="LIST_WEAPONS_SHARD_ENEMY" />
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_AEA_SHARD_ENEMY" />
 	<droneList drones="0" count="2" />
 	<health amount="12" />
-	<maxPower amount="7" />
-	<crewCount amount="3" max="7" class="aea_shard_breaker" />
+	<maxPower amount="9" />
+	<crewCount amount="3" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="CRYSTAL_ARMOR_ENEMY" />
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
 </shipBlueprint>
 
 <!--ASSAULT-->
 <shipBlueprint name="AEA_SHARD_ASSAULT" layout="mu_crystal_assault_a" img="aea_shard_assault">
-	<class>Shard-Breaker Assault</class>
+	<class>Shard-Forged Assault</class>
 	<systemList>
 		<doors power="1" max="3" room="7" start="false" />
 		<engines power="1" max="2" room="6" start="true" />
 		<medbay power="1" max="2" room="5" start="false" />
 		<oxygen power="1" max="2" room="8" start="true" />
 		<pilot power="1" max="3" room="1" start="true" />
-		<aea_super_shields power="2" max="10" room="3" start="true" />
+		<aea_super_shields power="2" max="6" room="3" start="true" />
+		<shields power="2" max="5" room="3" start="true" />
 		<teleporter power="1" max="2" room="2" start="true" />
 		<weapons power="2" max="8" room="0" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="7" count="4" load="LIST_WEAPONS_SHARD_ENEMY" />
+	<weaponList missiles="7" count="4" load="LIST_WEAPONS_AEA_SHARD_ENEMY" />
 	<droneList drones="0" count="0" />
 	<health amount="10" />
-	<maxPower amount="7" />
-	<crewCount amount="3" max="7" class="aea_shard_breaker" />
+	<maxPower amount="9" />
+	<crewCount amount="3" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="CRYSTAL_ARMOR_ENEMY" />
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
 </shipBlueprint>
 
 <!--TRANSPORT-->
 <shipBlueprint name="AEA_SHARD_TRANSPORT" layout="mu_crystal_transport_a" img="aea_shard_transport">
-	<class>Shard-Breaker Transport</class>
+	<class>Shard-Forged Transport</class>
 	<systemList>
-		<cloaking power="1" max="1" room="8" start="false" />
+		<shields power="2" max="5" room="8" start="true" />
 		<doors power="1" max="3" room="1" start="false" />
 		<engines power="1" max="2" room="3" start="true" />
 		<medbay power="1" max="2" room="7" start="false" />
 		<oxygen power="1" max="2" room="4" start="true" />
 		<pilot power="1" max="3" room="5" start="true" />
-		<aea_super_shields power="2" max="8" room="0" start="true" />
+		<aea_super_shields power="2" max="6" room="0" start="true" />
 		<teleporter power="1" max="3" room="6" start="true" />
 		<weapons power="2" max="7" room="2" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="9" count="4" load="LIST_WEAPONS_SHARD_ENEMY" />
+	<weaponList missiles="9" count="4" load="LIST_WEAPONS_AEA_SHARD_ENEMY" />
 	<droneList drones="0" count="0" />
 	<health amount="8" />
-	<maxPower amount="7" />
-	<crewCount amount="2" max="6" class="aea_shard_breaker" />
+	<maxPower amount="9" />
+	<crewCount amount="2" max="6" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="CRYSTAL_ARMOR_ENEMY" />
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
 	<cloakImage>mu_crystal_transport_a</cloakImage>
 </shipBlueprint>
 
 <!--STATION-->
 <shipBlueprint name="AEA_SHARD_STATION" layout="mu_crystal_station_a" img="aea_shard_station">
-	<class>Shard-Breaker Station</class>
+	<class>Shard-Forged Station</class>
 	<systemList>
 		<doors power="1" max="3" room="5" start="false" />
 		<medbay power="1" max="3" room="2" start="false" />
 		<mind power="1" max="3" room="0" start="false" />
 		<oxygen power="1" max="2" room="1" start="true" />
-		<aea_super_shields power="2" max="10" room="7" start="true" />
+		<aea_super_shields power="2" max="6" room="7" start="true" />
+		<shields power="2" max="6" room="9" start="true" />
 		<teleporter power="1" max="3" room="4" start="true" />
 		<weapons power="2" max="8" room="8" start="true" />
 	</systemList>
 	<weaponSlots>5</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="11" count="5" load="LIST_WEAPONS_SHARD_ENEMY" />
+	<weaponList missiles="11" count="5" load="LIST_WEAPONS_AEA_SHARD_ENEMY" />
 	<droneList drones="0" count="0" />
 	<health amount="12" />
 	<maxPower amount="7" />
-	<crewCount amount="4" max="7" class="aea_shard_breaker" />
+	<crewCount amount="4" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="CRYSTAL_ARMOR_ENEMY" />
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
 </shipBlueprint>
 
 <!--TRAPPER-->
 <shipBlueprint name="AEA_SHARD_TRAPPER" layout="mu_crystal_trapper_a" img="aea_shard_trapper">
-	<class>Shard-Breaker Trapper</class>
+	<class>Shard-Forged Trapper</class>
 	<systemList>
 		<doors power="1" max="3" room="4" start="false" />
 		<engines power="1" max="2" room="1" start="true" />
 		<medbay power="1" max="2" room="5" start="false" />
 		<oxygen power="1" max="1" room="9" start="true" />
 		<pilot power="1" max="3" room="7" start="true" />
-		<aea_super_shields power="2" max="8" room="6" start="true" />
+		<aea_super_shields power="2" max="6" room="6" start="true" />
+		<shields power="2" max="6" room="0" start="true" />
 		<teleporter power="1" max="1" room="8" start="true" />
 		<weapons power="2" max="6" room="2" start="true" />
 	</systemList>
 	<weaponSlots>2</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="10" count="4" load="LIST_WEAPONS_SHARD_ENEMY" />
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_AEA_SHARD_ENEMY" />
 	<droneList drones="0" count="0" />
 	<health amount="7" />
 	<maxPower amount="7" />
-	<crewCount amount="3" max="6" class="aea_shard_breaker" />
+	<crewCount amount="3" max="6" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="CRYSTAL_ARMOR_ENEMY" />
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
 </shipBlueprint>
 
 <!--GUARD-->
 <shipBlueprint name="AEA_SHARD_GUARD" layout="mu_crystal_guard_a" img="mu_crystal_guard_a">
-	<class>Shard-Breaker Guard</class>
+	<class>Shard-Forged Guard</class>
 	<systemList>
 		<doors power="1" max="3" room="1" start="false" />
 		<engines power="1" max="2" room="12" start="true" />
@@ -4863,19 +4938,21 @@ A CLASS
 		<mind power="1" max="2" room="10" start="false" />
 		<oxygen power="1" max="2" room="11" start="true" />
 		<pilot power="1" max="1" room="8" start="true" />
-		<aea_super_shields power="2" max="8" room="5" start="true" />
+		<aea_super_shields power="2" max="6" room="5" start="true" />
+		<shields power="2" max="6" room="2" start="true" />
 		<teleporter power="1" max="2" room="9" start="true" />
 		<weapons power="2" max="8" room="4" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="10" count="4" load="LIST_WEAPONS_SHARD_ENEMY" />
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_AEA_SHARD_ENEMY" />
 	<droneList drones="0" count="0" />
 	<health amount="8" />
 	<maxPower amount="8" />
-	<crewCount amount="3" max="7" class="aea_shard_breaker" />
+	<crewCount amount="3" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="CRYSTAL_ARMOR_ENEMY" />
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
 </shipBlueprint>
 </FTL>
 

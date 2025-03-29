@@ -14,6 +14,8 @@
 <text name="map_icon_aea_shleg_radiant">RADIANT BASE [!]</text>
 <text name="map_icon_aea_shleg_quest">QUEST [!]</text>
 <text name="map_icon_aea_broadside">SHIP [!]</text>
+<text name="map_icon_aea_shard_palace">PALACE [!]</text>
+<text name="map_icon_aea_shard_auto">AUTO [!]</text>
 
 <text name="map_icon_aea_old_gate">GATE [!]</text>
 <text name="map_icon_aea_old_cell">???</text>
@@ -55,6 +57,8 @@ Cannot equip spells
 +30 seconds of duration
 -2 hull damage
 -1 system damage</text>
+<text name="loot_aea_shard_1">SHARD-FORGED LOOT
+Health drain effect on room hit</text>
 
 <text name="tip_aea_old_unknown">Tip: A strange weapon? You wonder if it's related to that strange gate in Node 17...</text>
 <text name="tip_laser_old">Tip: Each laser shot will be blocked by two shield bubbles, regardless of the laser's damage.</text>
@@ -90,7 +94,7 @@ Locations of Interest: The Oneflower
 Although technically not part of the Confederacy, the cult has close ties with them, any actions against the cultists may still reflect poorly against you in the eyes of the confederacy. This sector is home to the Oneflower, the cult's god, many theorize that their god isn't actually a living creature, and instead some think it's an advanced AI intelligence. No one knows for sure, except probably the flower itself.</text>
 
 <text name="atlas_aea_bird">Name: Gi Nesting Grounds
-Type: Allied
+Type: Friendly
 Unique: True
 Dominant Faction: Gi Federation
 Rebel Threat Level: Medium (Neutral Fleet)
@@ -104,6 +108,14 @@ Dominant Faction: Shell and Slug Anarchists
 Rebel Threat Level: Medium (Auto Fleet)
 
 The Anarchists are a combined group of both shells and slugs who have formed together to fight back against their collective governments. Although not directly in conflict with the federation they aren't fans either, be careful.</text>
+<text name="atlas_aea_shleg">Name: Shard-Forged Palace
+Type: Friendly
+Unique: True
+Dominant Faction: Shard-Forged Pirates
+Rebel Threat Level: Low
+Locations of Interest: Dawn Palace
+
+The Shard-Forged, although known as pirates, are rather well liked by the federation and it's allies. The Shard-Forged have existed since the peak of the Crystalline Empire and have proven to be a reliable and worthy ally to those who can afford them. With the recent conflict between the Rebellion and the Federation the Shard-Forged have allied alongside the federation against the rebel plight.</text>
     
 <text name="ship_PLAYER_SHIP_AEA_ACID_BILL_unlock">Consult the advice of a certain Acidic outcast about a certain artifact to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_NECRO_KING_unlock">Consult the advice of a certain Heretic leader about a certain artifact to unlock this ship.</text>

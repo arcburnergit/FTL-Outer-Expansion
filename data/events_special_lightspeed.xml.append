@@ -40,6 +40,14 @@
 		<text>Proceed to the Anarchist Central Nebula.</text>
 		<event load="AEA_SHLEG_UNIQUE_WARP" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_SHARD" blue="false">
+		<text>Proceed to the Shard-Forged Sector.</text>
+		<event load="AEA_SHARD_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_SHARD_UNIQUE" blue="false">
+		<text>Proceed to the Shard-Forged Palace.</text>
+		<event load="AEA_SHARD_UNIQUE_WARP" />
+	</mod-append:choice>
 	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_2" blue="false">
 		<text>Proceed to the Lylmik Core.</text>
 		<event load="AEA_OLD_2_WARP" />
@@ -87,6 +95,10 @@
 		<text>Proceed to the Anarchist Central Nebula.</text>
 		<event load="AEA_SHLEG_UNIQUE_WARP" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_SHARD_UNIQUE" blue="false">
+		<text>Proceed to the Shard-Forged Palace.</text>
+		<event load="AEA_SHARD_UNIQUE_WARP" />
+	</mod-append:choice>
 	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_2" blue="false">
 		<text>Proceed to the Lylmik Core.</text>
 		<event load="AEA_OLD_2_WARP" />
@@ -127,6 +139,10 @@
 	<mod-append:choice hidden="true" blue="false">
 		<text>Proceed to the Anarchist Central Nebula.</text>
 		<event load="LIGHTSPEED_SECTOR_WARP_AEA_SHLEG_HAT" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_SHARD_UNIQUE" blue="false">
+		<text>Proceed to the Shard-Forged Palace.</text>
+		<event load="LIGHTSPEED_SECTOR_WARP_AEA_SHARD_HAT" />
 	</mod-append:choice>
 </mod:findName>
 
@@ -587,6 +603,89 @@ The Anarchists are a combined group of both shells and slugs who have formed tog
 
 <event name="JUMP_TO_AEA_SHLEG_CORE">
 	<secretSector>SECTOR_AEA_SHLEG_UNIQUE</secretSector>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					SHARD
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<event name="ENTER_AEA_SHARD">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event>
+<event name="AEA_SHARD_WARP">
+	<text>Name: Shard-Forged Controlled Sector
+Type: Friendly
+Unique: False
+Dominant Faction: Shard-Forged Pirates
+Rebel Threat Level: Medium-Low
+
+The Shard-Forged, although known as pirates, are rather well liked by the federation and it's allies. The Shard-Forged have existed since the peak of the Crystalline Empire and have proven to be a reliable and worthy ally to those who can afford them. With the recent conflict between the Rebellion and the Federation the Shard-Forged have allied alongside the federation against the rebel plight.</text>
+	<choice hidden="true">
+		<text>Exit hyperspeed.</text>
+		<event load="START_AEA_SHARD" />
+	</choice>
+	<choice hidden="true" req="COORDS" blue="false">
+		<text>Reroute.</text>
+		<event load="REROUTE_MENU" />
+	</choice>
+</event>
+
+<event name="ENTER_AEA_SHARD_UNIQUE">
+	<text load="TEXT_LIGHTSPEED" />
+	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
+	</choice>
+</event>
+<event name="AEA_SHARD_UNIQUE_WARP">
+	<text id="atlas_aea_shard" />
+    <choice hidden="true">
+        <text>Exit hyperspeed.</text>
+        <event load="START_AEA_SHARD_UNIQUE" />
+    </choice>
+    <choice hidden="true" req="COORDS" blue="false">
+		<text>Reroute.</text>
+		<event load="REROUTE_MENU" />
+	</choice>
+</event>
+
+<event name="LIGHTSPEED_SECTOR_WARP_AEA_SHARD_HAT">
+	<text id="atlas_aea_shard" />
+	<choice hidden="true">
+		<text>Continue with the jump.</text>
+		<event>
+			<text>You prepare to jump to the new co-ordinates, and change your flight path accordingly.</text>
+			<variable name="magical_hat_active" op="set" val="0" />
+			<variable name="loc_sector_count" op="add" val="-1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="JUMP_TO_AEA_SHARD_PALACE" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind.</text>
+		<event>
+			<loadEvent>ATLAS_MENU_NOEQUIPMENT</loadEvent>
+		</event>
+	</choice>
+</event>
+
+<event name="JUMP_TO_AEA_SHARD_PALACE">
+	<secretSector>SECTOR_AEA_SHARD_UNIQUE</secretSector>
 </event>
 
 <!--

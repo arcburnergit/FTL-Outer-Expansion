@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
+<mod:findName type="event" name="BOON_SELECT">
+	<mod:findLike type="loadEventList">
+		<mod-append:event name="BOON_SELECT_AEA_SUPER_SHIELD" req="prof_r_boon_aea_super_shields" />
+	</mod:findLike>
+</mod:findName>
 
 <mod:findName type="event" name="START_BEACON_REAL" limit="1">
   <mod:findLike type="eventButton">
@@ -545,7 +550,7 @@
         <event>
           <loadEvent seeded="false">RANDOM_LOAD</loadEvent>
         </event>
-      </event>
+      </choice>
       <choice>
         <text>END</text>
         <event/>

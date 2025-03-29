@@ -1,1 +1,1265 @@
+<FTL>
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					SHARD SECTOR
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					EXIT BEACON
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<event name="FINISH_BEACON_AEA_SHARD">
+	<text id="finish_beacon" />
+	<choice hidden="true">
+		<text>Explore.</text>
+		<event load="EXIT_FILLER_LIST" />
+	</choice>
+	<choice hidden="true">
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice hidden="true">
+		<text>Do nothing.</text>
+		<event />
+	</choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					ITEM EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<eventList name="ITEMS_AEA_SHARD">
+	<event load="SMUGGLER_PLAYER_WEPS" />
+	<event load="FILLER_ARGEONN_SALESMAN" />
+	
+	<event load="FILLER_FUEL_FOR_DRONE" />
+	<event load="FILLER_TAVERN_HIRE" />
+</eventList>
+
+
+<eventList name="ITEMS_AEA_SHARD_UNIQUE">
+	<event load="AEA_SHARD_CRYSTAL_KNICKNACKS"/>
+	<event load="AEA_SHARD_BAR" />
+	<event load="BLACKMARKET_SHEEPISH_FED" />
+	<event load="BLACKMARKET_VENGEFUL_ENGI" />
+	
+	<!--<event load="SMUGGLER_WONDERDRONE"/>-->
+	<event load="SMUGGLER_PLAYER_WEPS" />
+	
+	<!--<event load="FILLER_TRADER_CIV"/>-->
+	<event load="FILLER_ARGEONN_SALESMAN" />
+	<!--<event load="FILLER_UPGRADES"/>
+	<event load="FILLER_TAVERN_HIRE"/>-->
+</eventList>
+
+<event name="AEA_SHARD_CRYSTAL_KNICKNACKS" unique="true">
+	<text>A Crystalline market is established here, a rare sight. It appears to have drawn a large crowd, and is selling Crystal relics. There's also a ship outfitting store towards the back of the market.</text>
+	<choice hidden="true">
+        <text>Head inside the market.</text>
+        <event>
+            <text>You find a wide variety of items inside the market, from ancient crystal cutlery to rare crystalline weapons.</text>
+            <choice>
+                <text>Check out the merchant selling ancient household items.</text>
+                <event>
+                    <text>Most of the items are useless to you, but one item stands out to you. Towards the back sits a strange item, the merchant explains that it's an ancient cooling unit, its possible you could use it to enhance your weapons system.</text>
+                    <choice hidden="false">
+                        <text>Buy the cooling unit. [20~]</text>
+                        <event>
+                            <text>You install the cooling unit into your weapons system.</text>
+                            <item_modify>
+                                <item type="scrap" min="-20" max="-20" />
+                            </item_modify>
+                            <hiddenAug>AEA_SHARD_COOLER</hiddenAug>
+                            <choice hidden="false">
+                                <text>Continue...</text>
+                                <event load="STORE_LOAD_CRYSTAL"/>
+                            </choice>
+                        </event>
+                    </choice>
+                    <choice hidden="false">
+                        <text>Move onto the store.</text>
+                        <event load="STORE_LOAD_CRYSTAL"/>
+                    </choice>
+                </event>
+            </choice>
+            <choice>
+                <text>Check out the merchant selling rare crystal weapons.</text>
+                <event>
+                    <text>It appears the merchant has sold out of the most of the smaller weapons and so only a few ship based weapons remain.</text>
+                    <choice hidden="false">
+                        <text>Buy the Elite Crystal Burst MK I. [80~]</text>
+                        <event>
+                            <text>You pay the merchant and take the weapon back to your ship.</text>
+                            <item_modify>
+                                <item type="scrap" min="-80" max="-80" />
+                            </item_modify>
+                            <weapon name="CRYSTAL_BURST_1_RED"/>
+                            <choice hidden="false">
+                                <text>Continue...</text>
+                                <event load="STORE_LOAD_CRYSTAL"/>
+                            </choice>
+                        </event>
+                    </choice>
+                    <choice hidden="false">
+                        <text>Buy the Elite Neural Crystal. [80~]</text>
+                        <event>
+                            <text>You pay the merchant and take the weapon back to your ship.</text>
+                            <item_modify>
+                                <item type="scrap" min="-80" max="-80" />
+                            </item_modify>
+                            <weapon name="CRYSTAL_STUN_RED"/>
+                            <choice hidden="false">
+                                <text>Continue...</text>
+                                <event load="STORE_LOAD_CRYSTAL"/>
+                            </choice>
+                        </event>
+                    </choice>
+                    <choice hidden="false">
+                        <text>Move onto the store.</text>
+                        <event load="STORE_LOAD_CRYSTAL"/>
+                    </choice>
+                </event>
+            </choice>
+            <choice>
+                <text>Skip straight to the store.</text>
+                <event load="STORE_LOAD_CRYSTAL"/>
+            </choice>
+        </event>
+    </choice>
+    <choice hidden="true">
+        <text>Ignore the market.</text>
+        <event>
+			<text>You ignore the market.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+    </choice>
+</event>
+
+<event name="AEA_SHARD_BAR" unique="true">
+    <text>You've arrived at the beacon to discover a rowdy bar full of Shard-Forged Pirates.</text>
+    <choice hidden="true">
+        <text>Enter the bar.</text>
+        <event>
+            <text>As you enter the bar, you attract the attention of a pair of pirates sitting in the corner. You notice one of them talking to the other while pointing you out.
+Eventually you make your way over to them. "You're a captain right? working with the federation? We recently lost the rest of our crew when we were attacked by a rebel ship, we were wondering if you would be interested in taking us both on for a small fee."</text>
+            <choice hidden="false">
+                <text>Hire the pair. [70~]</text>
+                <event>
+                    <text>You welcome them onboard before getting ready to leave.</text>
+                    <item_modify>
+                        <item type="scrap" min="-70" max="-70" />
+                    </item_modify>
+                    <crewMember amount="2" class="aea_shard_breaker" />
+                </event>
+            </choice>
+            <choice>
+                <text>Politely decline the offer.</text>
+                <event>
+                    <text>You spend some time at the bar before returning to your ship, theres still some time to do something before you need to leave.</text>
+                    <choice>
+                        <text>Do something onboard the ship.</text>
+                        <event load="STORAGE_CHECK" />
+                    </choice>
+                    <choice>
+                        <text>Do nothing.</text>
+                        <event />
+                    </choice>
+                </event>
+            </choice>
+        </event>
+    </choice>
+    <choice hidden="true">
+        <text>Ignore the bar.</text>
+        <event>
+			<text>You ignore the bar.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+    </choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					NEUTRAL EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->	
+<eventList name="NEUTRAL_AEA_SHARD_MV">
+	<event load="REFUGEE_PIRATE_MV" />
+	<event load="ASTEROID_REBELOUTPOST" />
+	<event load="AEA_SHARD_DRUNK" />
+	<event load="PIRATE_NAME" />
+	
+	<event load="AEA_SHARD_TERRITORY" />
+	<event load="AEA_SHARD_ARGUMENT" />
+	
+	<event load="REBEL_AUTO_SPY" />
+	<event load="FILLER_EXPLORE" />
+
+	<!--<event load="FILLER_CROPS"/>
+	<event load="FILLER_EXPLODED"/>-->
+</eventList>
+
+<event name="AEA_SHARD_ARGUMENT" unique="true">
+    <text>You arrive at the beacon to immediately have your ears assaulted as your comms pickup an argument going down between two Shard-Forged captains.</text>
+    <choice>
+        <text>Listen in.</text>
+        <event>
+            <text>"Listen here, you had NO right to go telling that story when it was ME who found the space whales, NOT YOU!" "WE FOUND THOSE WHALES TOGETHER, We're BOTH allowed to tell the space whale stpry." The first captain, finally noticing you, responds. "Well, how about this renegade decide, was it MY story to tell becuase I found them, or should he get to tell the story just becuase he showed up late."</text>
+            <choice hidden="true">
+                <text>"It was the first guy's story to tell. Finders keepers."</text>
+                <event>
+                    <text>"Thank you, SEE, the renegade says I'm right." Responds the 1st captain. The 2nd captain grumbles some complaints before flying away. The 1st captain turns his attention back to you. "As a token of my appreciation for your support, have some of these supplies."</text>
+                    <autoReward level="LOW">standard</autoReward>
+                </event>
+            </choice>
+            <choice hidden="true">
+                <text>"Well, since you were both there you should both get to tell it."</text>
+                <event>
+                    <text>"Thank you, SEE, the renegade says I'm right." Responds the 2nd captain. The 1st captain grumbles some complaints before flying away. The 2nd captain turns his attention back to you. "As a token of my appreciation for your support, have some of these supplies."</text>
+                    <autoReward level="LOW">standard</autoReward>
+                </event>
+            </choice>
+            <choice hidden="true">
+                <text>"It should have been ONLY the second guy's story to tell."</text>
+                <event>
+                    <text>"What! He didn't even find the whales! Alright, Screw you!" The first captain, outraged at your response activates his weapons and turns them on you. The 2nd ship takes the opportunity to run away.</text>
+                    <ship load="SHIP_AEA_SHARD_FIGHT" hostile="true"/>
+                    <choice hidden="true">
+                        <text>Continue...</text>
+                        <event load="COMBAT_CHECK"/>
+                    </choice>
+                </event>
+            </choice>
+            <choice hidden="true">
+                <text>"I'm not really sure..."</text>
+                <event>
+                    <text>"Alright forget it." The first captain flies away, disinterested in continuing the argument.</text>
+                    <choice hidden="true">
+                        <text>Attack the remaining ship.</text>
+                        <event>
+                            <text>You activate your weapons and prepare to fight.</text>
+                            <ship load="SHIP_AEA_SHARD_FIGHT" hostile="true"/>
+                            <choice hidden="true">
+                                <text>Continue...</text>
+                                <event load="COMBAT_CHECK"/>
+                            </choice>
+                        </event>
+                    </choice>
+                    <choice hidden="true">
+                        <text>Prepare to leave.</text>
+                        <event>
+                            <text>You wait for the FTL drive to charge.</text>
+                            <choice>
+                                <text>Do something onboard the ship.</text>
+                                <event load="STORAGE_CHECK" />
+                            </choice>
+                            <choice>
+                                <text>Do nothing.</text>
+                                <event />
+                            </choice>
+                        </event>
+                    </choice>
+                </event>
+            </choice>
+        </event>
+    </choice>
+    <choice>
+        <text>Tune them out.</text>
+		<event>
+			<text>You cut off their comms frequency and wait for the FTL drive to charge.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+    </choice>
+</event>
+
+<event name="AEA_SHARD_DRUNK" unique="true">
+    <text>A Shard-Forged ship accosts you. "Hey! You... jerk!" The owner of the ship seems to be intoxicated. "This whooooole war thing. This is your fault! Yoooouuu... Renegade. None of this rebellion woulda happened if it wasn't for... you know... the Federation being dumb and slow. Now my business is slumping because yooooou and your multiversal war are getting in the way!"</text>
+    <ship load="SHIP_AEA_SHARD_FIGHT" hostile="false" />
+    <choice req="unique_nights" hidden="true">
+		<text>(Nights) "Your businesssss isss failing becausssse you SSSSUCK."</text>
+		<event>
+			<text>The drunk tries to respond, but before he can, Nights cuts him off. "Oh, you're jusssst failing becausssse the timessss are bad, it'ssss not your fault? Let me guessss, before the Rebelssss it wassss your wife. Or maybe your competitor did ssssomething unfair? Sssshut up, you're jusssst a failure. Own it."
+
+"But I... but you..." The man tries desperately to counter Nights, but he falters. The sound of stumbling footsteps can be heard as one of the other pirates on the ship tends to the comms. "Well, I think you did us all a favor for that. Why don't we just give you this and we'll both be on our way?"</text>
+			<weapon name="GIFTLIST_AEA_SHARD" />
+		</event>
+    </choice>
+    <choice>
+		<text>Engage him with a well reasoned debate.</text>
+		<event>
+			<text>You explain to him the importance of your mission, but he completely dismisses all of your well-formulated arguments with the standard variety of fallacies. You politely attempt to inform him of his fallacious reasoning, but for some strange and unknowable reason, this doesn't get through to the angry drunk pirate. You realise this is leading nowhere and leave the ship and its rants behind.</text>
+			<event />
+		</event>
+    </choice>
+    <choice>
+		<text>Hurl insults at him.</text>
+		<event>
+			<text>You engage in a tiring shouting match with the guy. Eventually, something that you say strikes a nerve. He attacks!</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+                <text>Continue...</text>
+                <event load="COMBAT_CHECK" />
+            </choice>
+		</event>
+    </choice>
+    <choice hidden="true">
+		<text>Threaten to blow his ship to pieces.</text>
+		<event load="AEA_SHARD_DRUNK_THREATEN" />
+    </choice>
+    <choice>
+		<text>Actually blow his ship to pieces.</text>
+		<event>
+			<text>"AND THERE IT IS! Look everyone, I'm being repressed!" The Shard-Forged ship returns fire!</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+    </choice>
+    <choice>
+		<text>Completely ignore him.</text>
+		<event>
+			<text>The ship continues to broadcast nasty words at you, but you pay it no mind.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+    </choice>
+</event>
+<eventList name="AEA_SHARD_DRUNK_THREATEN">
+	<event>
+		<text>"Whoa whoa, calm down man! I didn't mean nothing by it, we're all friends here! See, friends!" The Shard-Forged ship tosses a weapon out of the hold and keeps its distance from you.</text>
+		<weapon name="GIFTLIST_AEA_SHARD" />
+	</event>
+	<event>
+		<text>"Oh you wanna go? You wanna go? I can take you!" The Shard-Forged ship preempts you by attacking first!</text>
+		<ship hostile="true" />
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="COMBAT_CHECK" />
+		</choice>
+	</event>
+	<event>
+		<text>"Well uh... you know uh... I would totally kick your ass, but I have too much work to do. So there." The ship quickly disengages.</text>
+		<instantEscape />
+		<choice>
+			<text>Do something onboard the ship.</text>
+			<event load="STORAGE_CHECK" />
+		</choice>
+		<choice>
+			<text>Do nothing.</text>
+			<event />
+		</choice>
+	</event>
+</eventList>
+
+<event name="AEA_SHARD_TERRITORY" unique="true">
+    <text>As you arrive you're immediately greeted by a Shard-Forged ship, "Oi, This is our territory, you better clear off or we'll have some strong words for you."</text>
+    <ship load="SHIP_AEA_SHARD_FIGHT" hostile="false"/>
+    <choice>
+        <text>"Relax, I'm with the federation."</text>
+        <event>
+            <text>The Pirate seems confused for a moment before doubling down. "Yeah, Well we don't believe you, That's just what a rebel spy would say! Now clear off."</text>
+            <choice hidden="true">
+                <text>"No, we're not a rebel spy, look at our federation clearance."</text>
+                <event>
+                    <text>"That's exactly what a rebel spy would have! PREPARE TO DIE REBEL SCUM!"</text>
+                    <ship hostile="true"/>
+                    <choice>
+                        <text>Continue...</text>
+                        <event load="COMBAT_CHECK"/>
+                    </choice>
+                </event>
+            </choice>
+            <choice>
+                <text>Clear off as instructed.</text>
+                <event>
+                    <text>You move a safe distance away and wait for the FTL drive to charge.</text>
+                    <choice>
+                        <text>Do something onboard the ship.</text>
+                        <event load="STORAGE_CHECK" />
+                    </choice>
+                    <choice>
+                        <text>Do nothing.</text>
+                        <event />
+                    </choice>
+                </event>
+            </choice>
+        </event>
+    </choice>
+    <choice>
+        <text>Attack the ship.</text>
+        <event load="COMBAT_CHECK"/>
+    </choice>
+    <choice>
+        <text>Clear off as instructed.</text>
+        <event>
+            <text>You move a safe distance away and wait for the FTL drive to charge.</text>
+            <choice>
+                <text>Do something onboard the ship.</text>
+                <event load="STORAGE_CHECK" />
+            </choice>
+            <choice>
+                <text>Do nothing.</text>
+                <event />
+            </choice>
+        </event>
+    </choice>
+</event>
+
+
+<eventList name="NEUTRAL_AEA_SHARD_UNIQUE">
+	<event load="AEA_SHARD_TERRITORY" />
+	<event load="SLAVER_DRIFTER" />
+	<event load="SLAVER_DEAD_SLAVES" />
+
+	<event load="AEA_SHARD_BIG_PILE" />
+	<event load="AEA_SHARD_DRUNK" />
+	<event load="AEA_SHARD_ARGUMENT" />
+	
+	<event load="PIRATE_CIVILIAN_MV" />
+	<event load="PIRATE_BRIBER_MV" />
+	<!--<event load="FILLER_CROPS"/>-->
+</eventList>
+
+<event name="AEA_SHARD_BIG_PILE" unique="true">
+    <text>You arrive at the beacon and begin scanning the surroundings, theres a planet nearby with a strange structure on it, it appears to be a large pyramid of some sort, but you can't make out more than that.</text>
+    <img planet="PLANET_UNPOPULATED_SMALL" />
+    <choice hidden="true">
+        <text>Land near the structure.</text>
+        <event>
+            <text>You arrive at what you now realize is a massive pile of junk, and you are greeted by a strange old crystal. "Ah, traveller, welcome to the horde, please feel free to make a donation to the pile."</text>
+            <choice hidden="true">
+                <text>Donate 100~</text>
+                <event>
+                    <text>You throw your scrap onto the pile, watching it shift and stir as it settles into place. Just as you think it's finished, the pile shifts again and a weapon rises to the surface.
+You notice that there's still a large amount of scrap on the surface, you could just take it back, although that seems like it could anger whatever this is.</text>
+                    <item_modify>
+                        <item type="scrap" min="-100" max="-100" />
+                    </item_modify>
+                    <weapon name="CRYSTAL_SHOTGUN_RED"/>
+                    <choice hidden="true">
+                        <text>Steal back some of your scrap.</text>
+                        <event name="AEA_SHARD_PILE_PUNISH">
+                            <text>You begin scooping up the scrap and taking in back onboard your ship. Just as you think you're getting away with it the stolen scrap explodes, destroying any scrap near it. A moment later you detect a Shard-Forged ship reveal it self nearby. Prepare for a fight.</text>
+                            <item_modify steal="true">
+                                <item type="scrap" min="-20" max="-10" />
+                            </item_modify>
+                            <damage amount="2"/>
+                            <ship load="SHIP_AEA_SHARD_FIGHT" hostile="true"/>
+                            <choice>
+                                <text>Continue...</text>
+                                <event load="COMBAT_CHECK"/>
+                            </choice>
+                        </event>
+                    </choice>
+                    <choice hidden="true">
+                        <text>Ignore the temptation.</text>
+                        <event load="AEA_SHARD_PILE_IGNORE"/>
+                    </choice>
+                </event>    
+            </choice>
+            <choice hidden="true">
+                <text>Donate 90~</text>
+                <event>
+                    <text>You throw your scrap onto the pile, watching it shift and stir as it settles into place. Just as you think it's finished, the pile shifts again and a weapon rises to the surface.
+You notice that there's still a large amount of scrap on the surface, you could just take it back, although that seems like it could anger whatever this is.</text>
+                    <item_modify>
+                        <item type="scrap" min="-90" max="-90" />
+                    </item_modify>
+                    <weapon name="CRYSTAL_BURST_2_RED"/>
+                    <choice hidden="true">
+                        <text>Steal back some of your scrap.</text>
+                        <event load="AEA_SHARD_PILE_PUNISH"/>
+                    </choice>
+                    <choice hidden="true">
+                        <text>Ignore the temptation.</text>
+                        <event load="AEA_SHARD_PILE_IGNORE"/>
+                    </choice>
+                </event>    
+            </choice>
+            <choice hidden="true">
+                <text>Donate 80~</text>
+                <event>
+                    <text>You throw your scrap onto the pile, watching it shift and stir as it settles into place. Just as you think it's finished, the pile shifts again and a weapon rises to the surface.
+You notice that there's still a large amount of scrap on the surface, you could just take it back, although that seems like it could anger whatever this is.</text>
+                    <item_modify>
+                        <item type="scrap" min="-80" max="-80" />
+                    </item_modify>
+                    <weapon name="CRYSTAL_HEAVY_2_RED"/>
+                    <choice hidden="true">
+                        <text>Steal back some of your scrap.</text>
+                        <event load="AEA_SHARD_PILE_PUNISH"/>
+                    </choice>
+                    <choice hidden="true">
+                        <text>Ignore the temptation.</text>
+                        <event load="AEA_SHARD_PILE_IGNORE"/>
+                    </choice>
+                </event>    
+            </choice>
+            <choice hidden="true">
+                <text>Donate 70~</text>
+                <event>
+                    <text>You throw your scrap onto the pile, watching it shift and stir as it settles into place. Just as you think it's finished, the pile shifts again and a weapon rises to the surface.
+You notice that there's still a large amount of scrap on the surface, you could just take it back, although that seems like it could anger whatever this is.</text>
+                    <item_modify>
+                        <item type="scrap" min="-70" max="-70" />
+                    </item_modify>
+                    <weapon name="CRYSTAL_STUN_RED"/>
+                    <choice hidden="true">
+                        <text>Steal back some of your scrap.</text>
+                        <event load="AEA_SHARD_PILE_PUNISH"/>
+                    </choice>
+                    <choice hidden="true">
+                        <text>Ignore the temptation.</text>
+                        <event load="AEA_SHARD_PILE_IGNORE"/>
+                    </choice>
+                </event>    
+            </choice>
+            <choice hidden="true">
+                <text>Donate 60~</text>
+                <event>
+                    <text>You throw your scrap onto the pile, watching it shift and stir as it settles into place. Just as you think it's finished, the pile shifts again and a weapon rises to the surface.
+You notice that there's still a large amount of scrap on the surface, you could just take it back, although that seems like it could anger whatever this is.</text>
+                    <item_modify>
+                        <item type="scrap" min="-60" max="-60" />
+                    </item_modify>
+                    <weapon name="CRYSTAL_BURST_1"/>
+                    <choice hidden="true">
+                        <text>Steal back some of your scrap.</text>
+                        <event load="AEA_SHARD_PILE_PUNISH"/>
+                    </choice>
+                    <choice hidden="true">
+                        <text>Ignore the temptation.</text>
+                        <event load="AEA_SHARD_PILE_IGNORE"/>
+                    </choice>
+                </event>    
+            </choice>
+            <choice hidden="true">
+                <text>Donate 50~</text>
+                <event>
+                    <text>You throw your scrap onto the pile, watching it shift and stir as it settles into place. Just as you think it's finished, the pile shifts again and a weapon rises to the surface.
+You notice that there's still a large amount of scrap on the surface, you could just take it back, although that seems like it could anger whatever this is.</text>
+                    <item_modify>
+                        <item type="scrap" min="-50" max="-50" />
+                    </item_modify>
+                    <weapon name="CRYSTAL_STUN"/>
+                    <choice hidden="true">
+                        <text>Steal back some of your scrap.</text>
+                        <event load="AEA_SHARD_PILE_PUNISH"/>
+                    </choice>
+                    <choice hidden="true">
+                        <text>Ignore the temptation.</text>
+                        <event load="AEA_SHARD_PILE_IGNORE"/>
+                    </choice>
+                </event>    
+            </choice>
+            <choice hidden="true">
+                <text>Attempt to steal some of the scrap on the pile.</text>
+                <event load="AEA_SHARD_PILE_PUNISH"/>
+            </choice>
+            <choice hidden="true">
+                <text>Ignore the pile.</text>
+                <event load="AEA_SHARD_PILE_IGNORE"/>
+            </choice>
+        </event>
+    </choice>
+    <choice hidden="true">
+        <text>Ignore it.</text>
+        <event name="AEA_SHARD_PILE_IGNORE">
+            <text>You move a safe distance away and wait for the FTL drive to charge.</text>
+            <choice>
+                <text>Do something onboard the ship.</text>
+                <event load="STORAGE_CHECK" />
+            </choice>
+            <choice>
+                <text>Do nothing.</text>
+                <event />
+            </choice>
+        </event>
+    </choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					DISTRESS EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<eventList name="DISTRESS_AEA_SHARD">
+	<event load="DISTRESS_AEA_SHARD_SHUTTLE" />
+	<event load="DISTRESS_PIRATE_ARGEONN_TIIIKAKA" />
+
+	<event load="DISTRESS_AUTO_REPAIRS" />
+</eventList>
+
+<event name="DISTRESS_AEA_SHARD_SHUTTLE" unique="true">
+    <text>The origin of the distress call is a small Shard-Forged shuttle being chased by a slaver. They don't have many means to defend themselves.</text>
+    <ship load="SHIP_SLAVER_AEA_SHARD_CHASER" hostile="false" />
+    <distressBeacon />
+    <choice>
+        <text>Attack the slaver!</text>
+        <event>
+            <text>The slaver switches targets the moment you draw near. "Another juicy target! So be it!"</text>
+            <ship hostile="true" />
+            <choice hidden="true">
+                <text>Continue...</text>
+                <event load="REPUTATION_DECREASE_SLAVER_COMBAT" />
+            </choice>
+        </event>
+    </choice>
+    <choice>
+        <text>Wait for the slaver to catch their quarry.</text>
+        <event>
+            <text>You graciously wait for the slaver to conduct their business. Once they do, the slaver hails you. "You're a patient one. I take it you want to do business with us, then?"</text>
+            <choice>
+                <text>Buy a Shard-Forged slave.</text>
+                <event>
+                    <text>"A great purchase. May they serve you well, captain..."</text>
+                    <item_modify>
+                        <item type="scrap" min="-45" max="-35" />
+                    </item_modify>
+                    <crewMember amount="1" class="aea_shard_breaker" />
+                    <choice hidden="true">
+                        <text>Continue...</text>
+                        <event load="REPUTATION_UPDATE_SLAVER" />
+                    </choice>
+                </event>
+            </choice>
+            <choice>
+                <text>Buy a Crystal slave.</text>
+                <event>
+                    <text>"A great purchase. May they serve you well, captain..."</text>
+                    <item_modify>
+                        <item type="scrap" min="-40" max="-30" />
+                    </item_modify>
+                    <crewMember amount="1" class="crystal" />
+                    <choice hidden="true">
+                        <text>Continue...</text>
+                        <event load="REPUTATION_UPDATE_SLAVER" />
+                    </choice>
+                </event>
+            </choice>
+            <choice req="rep_slaver" lvl="1" blue="false">
+                <text>[Reputation: 1+] Buy a Shard-Forged Captain.</text>
+                <event>
+                    <text>"A great purchase. May they serve you well, captain..."</text>
+                    <item_modify>
+                        <item type="scrap" min="-55" max="-45" />
+                    </item_modify>
+                    <crewMember amount="1" class="aea_shard_smasher" />
+                    <choice hidden="true">
+                        <text>Continue...</text>
+                        <event load="REPUTATION_UPDATE_SLAVER" />
+                    </choice>
+                </event>
+            </choice>
+            <choice>
+                <text>No.</text>
+                <event>
+                    <text>"Okay then. If you say so...?" Weirded out, the Slaver leaves.</text>
+                </event>
+            </choice>
+        </event>
+    </choice>
+    <choice>
+        <text>Avoid the situation.</text>
+        <event>
+            <text>You don't bother getting mixed up in this situation. Your uninvolvement will ensure that nobody will think better or worse of you.</text>
+            <choice>
+                <text>Do something onboard the ship.</text>
+                <event load="STORAGE_CHECK" />
+            </choice>
+            <choice>
+                <text>Do nothing.</text>
+                <event />
+            </choice>
+        </event>
+    </choice>
+</event>
+
+<ship name="SHIP_SLAVER_AEA_SHARD_CHASER" auto_blueprint="MU_SLAVER_MANTIS_DROPSHIP">
+    <surrender chance="0.2" min="2" max="4">
+        <text>"We surrender! Take one of our slaves as tribute; if you destroy us they'll all die anyway!"</text>
+        <choice>
+            <text>Accept their offer.</text>
+            <event>
+                <crewMember amount="1" class="aea_shard_smasher" />
+                <ship hostile="false" />
+            </event>
+        </choice>
+        <choice>
+            <text>Surrender is not an option.</text>
+            <event />
+        </choice>
+    </surrender>
+    <destroyed>
+        <text>The slave ship is destroyed. They won't continue their evil trade, but many lives were probably lost on that ship.</text>
+        <autoReward level="MED">standard</autoReward>
+        <choice hidden="true">
+            <text>Check on the shuttle.</text>
+            <event>
+                <text>"We thought since it looked like a Mantis ship, they might be friendly... nope. Pirate ship. They even got some of us before you saved us. Well, here's a gratuity for saving us." </text>
+                <autoReward level="LOW">scrap_only</autoReward>
+            </event>
+        </choice>
+    </destroyed>
+    <deadCrew>
+        <text>Once the fighting stops, your attention is brought to the ship's brig - a Shard-Forged asks to go back.</text>
+        <autoReward level="HIGH">standard</autoReward>
+        <choice hidden="true">
+            <text>Bring them back to their ship.</text>
+            <event>
+                <text>"We thought since it looked like a Mantis ship, they might be friendly... nope. Pirate ship. Thanks for rescuing our crew member. We won't forget this." </text>
+                <autoReward level="LOW">scrap_only</autoReward>
+            </event>
+        </choice>
+    </deadCrew>
+</ship>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					QUEST EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<eventList name="QUESTS_AEA_SHARD">
+	<event load="AEA_SHARD_RIVAL_SHIP" />
+</eventList>
+
+<event name="AEA_SHARD_RIVAL_SHIP" unique="true">
+    <text>You arrive at the beacon and are greeted by a Shard-Forged ship. It appears to be hailing you.</text>
+    <ship load="SHIP_AEA_SHARD_GENERIC"/>
+    <choice>
+        <text>Pickup the hail.</text>
+        <event>
+            <text>"Renegade, we were wondering if we could temporarily hire you for a job. Theres a group of Tiiikaka slavers causing problems for us, they've already stolen one of our stations. We need you to go and hunt down their ship, aswell as deal with the stolen station, we'll pay extra if you get the station back without blowing it up."</text>
+            <choice hidden="true">
+                <text>Accept the Job.</text>
+                <event>
+                    <text>"Excellent, We'll send you the coordinates for both."</text>
+                    <quest event="AEA_SHARD_RIVAL_SHIP_QUEST"/>
+                    <variable name="aea_shard_quest_done" op="set" val="0" />
+                    <variable name="aea_shard_quest_crewkill" op="set" val="0" />
+                    <choice hidden="true">
+                        <text>Continue...</text>
+                        <event>
+                            <text>"And heres the coordinates for the station."</text>
+                            <quest event="AEA_SHARD_RIVAL_STATION_QUEST"/>
+                        </event>
+                    </choice>
+                </event>
+            </choice>
+            <choice hidden="true">
+                <text>Politely decline.</text>
+                <event>
+                    <text>You move a safe distance away and wait for the FTL drive to charge.</text>
+                    <choice>
+                        <text>Do something onboard the ship.</text>
+                        <event load="STORAGE_CHECK" />
+                    </choice>
+                    <choice>
+                        <text>Do nothing.</text>
+                        <event />
+                    </choice>
+                </event>
+            </choice>
+        </event>
+    </choice>
+    <choice>
+        <text>Attack the ship.</text>
+        <event>
+            <text>You activate your weapons and prepare to attack.</text>
+            <ship hostile="true"/>
+            <choice hidden="true">
+                <text>Continue...</text>
+                <event load="COMBAT_CHECK"/>
+            </choice>
+        </event>
+    </choice>
+    <choice hidden="true">
+        <text>Ignore it.</text>
+        <event>
+            <text>You move a safe distance away and wait for the FTL drive to charge.</text>
+            <choice>
+                <text>Do something onboard the ship.</text>
+                <event load="STORAGE_CHECK" />
+            </choice>
+            <choice>
+                <text>Do nothing.</text>
+                <event />
+            </choice>
+        </event>
+    </choice>
+</event>
+
+<event name="AEA_SHARD_RIVAL_SHIP_QUEST">
+	<preventQuest />
+	<beaconType id="map_icon_quest" global="true">
+		<color r="69" g="168" b="235" a="1" />
+		<unvisitedTooltip>The last known location of the Tiiikaka ship you've been hired to destroy.</unvisitedTooltip>
+	</beaconType>
+    <text>You arrive at the beacon to find the Tiiikaka ship. They notice you aswell and move in to attack.</text>
+    <ship name="AEA_SHARD_TIIIKAKA_QUEST" hostile="true"/>
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event load="COMBAT_CHECK"/>
+    </choice>
+</event>
+
+<ship name="AEA_SHARD_TIIIKAKA_QUEST" auto_blueprint="LIST_SHIPS_SLAVER_ALL">
+    <destroyed load="DESTROYED_AEA_SHARD_TIIIKAKA_QUEST" />
+    <deadCrew load="DEAD_CREW_AEA_SHARD_TIIIKAKA_QUEST" />
+</ship>
+
+<event name="DEAD_CREW_AEA_SHARD_TIIIKAKA_QUEST">
+	<text load="TEXT_DEAD_CREW_PIRATE" />
+	<autoReward level="HIGH">standard</autoReward>
+    <choice req="aea_shard_quest_done" lvl="1" blue="false">
+        <text>Continue...</text>
+        <event load="AEA_SHARD_TIIIKAKA_FINISHED"/>
+    </choice>
+    <choice req="aea_shard_quest_done" lvl="0" max_lvl="0" blue="false">
+        <text>Continue...</text>
+        <event load="AEA_SHARD_TIIIKAKA_NEXT"/>
+    </choice>
+</event>
+
+<event name="DESTROYED_AEA_SHARD_TIIIKAKA_QUEST">
+	<text load="TEXT_DESTROYED_PIRATE" />
+	<autoReward level="MED">standard</autoReward>
+    <choice req="aea_shard_quest_done" lvl="1" blue="false">
+        <text>Continue...</text>
+        <event load="AEA_SHARD_TIIIKAKA_FINISHED"/>
+    </choice>
+    <choice req="aea_shard_quest_done" lvl="0" max_lvl="0" blue="false">
+        <text>Continue...</text>
+        <event load="AEA_SHARD_TIIIKAKA_NEXT"/>
+    </choice>
+</event>
+
+<event name="AEA_SHARD_RIVAL_STATION_QUEST">
+	<preventQuest />
+	<beaconType id="map_icon_quest" global="true">
+		<color r="69" g="168" b="235" a="1" />
+		<unvisitedTooltip>The location of the stolen station you've been hired to clear, or atleast destroy.</unvisitedTooltip>
+	</beaconType>
+    <text>You arrive at the beacon to find the stolen station. They notice you aswell and activate their weapons in preparation of your attack.</text>
+    <ship name="AEA_SHARD_TIIIKAKA_STATION_QUEST" hostile="true"/>
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event load="COMBAT_CHECK"/>
+    </choice>
+</event>
+
+<ship name="AEA_SHARD_TIIIKAKA_STATION_QUEST" auto_blueprint="AEA_SHARD_STATION">
+    <destroyed load="DESTROYED_AEA_SHARD_TIIIKAKA_STATION_QUEST" />
+    <deadCrew load="DEAD_CREW_AEA_SHARD_TIIIKAKA_STATION_QUEST" />
+	<crew>
+		<crewMember type="mantis" prop="0.3" />
+		<crewMember type="mantis_free" prop="0.2" />
+		<crewMember type="human" prop="0.1" />
+		<crewMember type="human_medic" prop="0.1" />
+		<crewMember type="engi_separatist" prop="0.1" />
+		<crewMember type="rock_outcast" prop="0.1" />
+		<crewMember type="slug" prop="0.1" />
+	</crew>
+</ship>
+
+<event name="DESTROYED_AEA_SHARD_TIIIKAKA_STATION_QUEST">
+	<text load="TEXT_DESTROYED_PIRATE" />
+	<autoReward level="MED">standard</autoReward>
+    <choice req="aea_shard_quest_done" lvl="1" blue="false">
+        <text>Continue...</text>
+        <event load="AEA_SHARD_TIIIKAKA_FINISHED"/>
+    </choice>
+    <choice req="aea_shard_quest_done" lvl="0" max_lvl="0" blue="false">
+        <text>Continue...</text>
+        <event load="AEA_SHARD_TIIIKAKA_NEXT"/>
+    </choice>
+</event>
+
+<event name="DEAD_CREW_AEA_SHARD_TIIIKAKA_STATION_QUEST">
+	<text load="TEXT_DEAD_CREW_PIRATE" />
+	<autoReward level="HIGH">standard</autoReward>
+    <variable name="aea_shard_quest_crewkill" op="set" val="1" />
+    <choice req="aea_shard_quest_done" lvl="1" blue="false">
+        <text>Continue...</text>
+        <event load="AEA_SHARD_TIIIKAKA_FINISHED"/>
+    </choice>
+    <choice req="aea_shard_quest_done" lvl="0" max_lvl="0" blue="false">
+        <text>Continue...</text>
+        <event load="AEA_SHARD_TIIIKAKA_NEXT"/>
+    </choice>
+</event>
+
+<event name="AEA_SHARD_TIIIKAKA_NEXT">
+    <text>You'll need to head to the other location the pirates gave you to finish the job.</text>
+    <variable name="aea_shard_quest_done" op="set" val="1" />
+</event>
+
+<event name="AEA_SHARD_TIIIKAKA_FINISHED">
+    <text>Eventually the pirates that hired you show up. They hail you and thank you for getting the job done.</text>
+    <choice blue="false" hidden="true" req="aea_shard_quest_crewkill" lvl="1">
+        <text>Continue...</text>
+        <event>
+            <text>"We've increased your pay as you saved the station, good work." The ship transfered the payment before going off to recover the station.</text>
+            <item_modify>
+                <item type="scrap" min="80" max="80" />
+            </item_modify>
+        </event>
+    </choice>
+    <choice blue="false" hidden="true" req="aea_shard_quest_crewkill" lvl="0" max_lvl="0">
+        <text>Continue...</text>
+        <event>
+            <text>"It's unfortunate that you didn't save the way, regardless good work." The ship transfered the payment before going off to recover the remains of the station.</text>
+            <item_modify>
+                <item type="scrap" min="50" max="50" />
+            </item_modify>
+        </event>
+    </choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					HOSTILE EVENTS ()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<eventList name="HOSTILE_AEA_SHARD">
+	<event load="AEA_SHARD_HOSTILE_SHIP" />
+	<event load="ENCOUNTER_PIRATE" /> <!--in piracy-->
+	<event load="FLOATING_CARGO_AEA_SHARD" />
+</eventList>
+
+<!--
+		BOARDERS!!!
+	Events with boarder calls
+-->
+<event name="FLOATING_CARGO_AEA_SHARD" unique="true">
+	<text>Not too far from the beacon, you detect a destroyed cargo ship with its cargo scattered nearby, intact.</text>
+	<choice hidden="true">
+		<text>Bring it aboard.</text>
+		<event load="FLOATING_CARGO_MV_LIST" />
+	</choice>
+	<choice hidden="true">
+		<text>Leave it alone, this looks suspicious.</text>
+		<event>
+			<text>You leave the cargo alone and prepare to jump.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+	<choice req="sensors" lvl="2" hidden="true">
+		<text>(Upg. Sensors) Run an advanced scan on the boxes.</text>
+		<event load="FLOATING_CARGO_MV_SCAN_LIST" />
+	</choice>
+	<choice req="ADV_SCANNERS" hidden="true">
+		<text>(Long-Ranged Scanners) Run an advanced scan on the boxes.</text>
+		<event load="FLOATING_CARGO_MV_SCAN_LIST" />
+	</choice>
+	<choice req="LIST_CREW_SLUG" hidden="true">
+		<text>(Slug Crew) Have your Slug check the boxes.</text>
+		<event load="FLOATING_CARGO_MV_SCAN_LIST" />
+	</choice>
+	<choice req="BLUELIST_CREW_SNAIL" hidden="true">
+		<text>(Telepathic Shell) Have your Shell check the boxes.</text>
+		<event load="FLOATING_CARGO_MV_SCAN_LIST" />
+	</choice>
+</event>
+
+<eventList name="HOSTILE_AEA_SHARD_UNIQUE">
+	<event load="AEA_SHARD_HOSTILE_SHIP" />
+	<event load="BLACKMARKET_SMUGGLER" />
+	<event load="BLACKMARKET_REBEL" />
+	<event load="BLACKMARKET_FED_ANGERY" />
+	<event load="BLACKMARKET_FED_AUTO" />
+	<event load="ZOLTAN_LECTURE_MARKET" />
+
+	<event load="HAZARD_AEA_SHARD" />
+</eventList>
+
+<event name="AEA_SHARD_HOSTILE_SHIP" unique="true">
+	<text>Out of nowhere, a Shard-Forged ship jumps in, guns blazing. You don't know why they're attacking, but you have no choice but to engage.</text>
+	<ship load="SHIP_AEA_SHARD_FIGHT" hostile="true" /> 
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<!--
+		HAZARD!!!
+	Events that have environments
+-->
+<eventList name="HAZARD_AEA_SHARD">
+	<event load="AEA_SHARD_ASTEROID" />
+	<event load="BRIGADE_PULSAR" />
+	
+	<event load="ENCOUNTER_PIRATE_SUN" />
+</eventList>
+
+<event name="AEA_SHARD_ASTEROID" unique="true">
+	<text>The asteroid field here isn't the only hazard at this beacon. The Shard-Forged ship here trying to hide doesn't give you a chance and immediately attacks!</text>
+	<ship load="SHIP_AEA_SHARD_FIGHT" hostile="true" /> 
+	<environment type="asteroid" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					UNIQUE EVENTS
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+					SPECIAL EVENTS
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+<event name="AEA_SHARD_PALACE">
+	<preventQuest />
+	<preventFleet />
+	<beaconType id="map_icon_aea_shard_palace" global="true">
+		<color r="229" g="183" b="255" a="1"/>
+	</beaconType>
+	<text>You arrive at the beacon to discover a large force of Shard-Forged ships outside the palace, unusually they're not turned to face you, but the palace instead.</text>
+	<img back="BACK_EVENT_CRYSTALCONSTRUCTION" planet="PLANET_INVISIBLE" />
+	<choice hidden="true">
+		<text>Land at the palace.</text>
+		<event>
+            <text>You land nearby and walk over to the palace, there are a few Shard-Forged around, but none of them do more than glance at you, most seem more concerned with the ships overhead.</text>
+            <choice hidden="true">
+                <text>Continue...</text>
+                <event>
+                    <text>As you enter the palace you're once again met with no resistance, you make your way towards the center and eventually arrive in a large hall, you can make out a number of Shard-Forged around a table in the center of the room.</text>
+                    <choice hidden="true">
+                        <text>Continue...</text>
+                        <event>
+                            <text>A moment later the odd looking Shard-Forged at the head of the table notices you. "Who goes there?" His voice booms across the room. "Are you that federation renegade we've been hearing about?"</text>
+                            <choice hidden="true">
+                                <text>"Yes, that's me."</text>
+                                <event>
+                                    <text>"It is concerning that you got in here without being stopped, however you may have just arrived at the perfect time. You may have seen our problem outside, one of the stronger Shard-Forged clans has come to challenge my reign, they wish to take the dawnshard and take control of the Shard-Forged."</text>
+                                    <choice hidden="true">
+                                        <text>Continue...</text>
+                                        <event>
+                                            <text>"That means they must kill me and take it from my body, would you be willing to sneak me onboard your ship, I can join your crew and let my Generals sort out this situation? The various members of the clan above will be far less willing to go to war if capturing the dawnshard is out of the question."</text>
+                                            <choice hidden="true">
+                                                <text>Accept him onboard.</text>
+                                                <event>
+                                                    <text>"Excellent, I shall conceal myself in this large coat as we leave, hopefully the ships above won't trouble themselves with us." You head back outside towards your ship, you make it into your ship and it appears none of the ships above notice. It's only once you begin to take off that one of the large ships off to the side moves into block your path. It appears to be jamming your FTL drive, preventing you from leaving.</text>
+                                                    <ship load="AEA_SHARD_BOSS" hostile="true"/>
+                                                    <crewMember amount="1" all_skills="2" class="aea_shard_dawn">King Onyx</crewMember>
+                                                    <choice hidden="true">
+                                                        <text>Continue...</text>
+                                                        <event load="COMBAT_CHECK"/>
+                                                    </choice>
+                                                </event>
+                                            </choice>
+                                            <choice hidden="true">
+                                                <text>Politely decline.</text>
+                                                <event>
+                                                    <text>The King seems disapointed, but respects your decisions. As you're taking off from where you landed a smaller Shard-Forged ship moves out to block your path.</text>
+                                                    <ship load="SHIP_AEA_SHARD_FIGHT" hostile="true"/>
+                                                    <choice hidden="true">
+                                                        <text>Continue...</text>
+                                                        <event load="COMBAT_CHECK"/>
+                                                    </choice>
+                                                </event>
+                                            </choice>
+                                        </event>
+                                    </choice>
+                                </event>
+                            </choice>
+                        </event>
+                    </choice>
+                </event>
+            </choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>This isn't what we expected. Leave.</text>
+		<event>
+			<text>You ignore whatever is going down at the palace and prepare your FTL drive.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<ship name="AEA_SHARD_BOSS" auto_blueprint="AEA_SHARD_BOSS">
+    <destroyed load="DESTROYED_AEA_SHARD_BOSS" />
+    <deadCrew load="DESTROYED_AEA_SHARD_BOSS" />
+</ship>
+
+<event name="DESTROYED_AEA_SHARD_BOSS">
+    <text>The large Shard-Forged ship falls to your weapons and you regain the ability to jump. With the defeat of such a strong vessel the other Shard-Forged ships keep their distance, wary of you. You're able to scrap the remains.</text>
+    <autoReward level="HIGH">standard</autoReward>
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event>
+            <text>The King comes up to you. "Good work back there, I was meaning to give this to you, its the blueprints for a Shard-Forged Auto-Cruiser. You should send it onto the federation."</text>
+			<unlockCustomShip silent="false">PLAYER_SHIP_AEA_SHARD_AUTO</unlockCustomShip>
+        </event>
+    </choice>
+</event>
+
+<event name="AEA_SHARD_AUTO_START">
+    <preventQuest/>
+    <text>You've arrived in an asteroid field, the remains of a Shard-Forged cruiser sit nearby.</text>
+    <environment type="asteroid" />
+    <distressBeacon />
+    <choice hidden="true">
+        <text>Investigate the wreck.</text>
+        <event>
+            <text>You search the wreck of the ship but find no signs of life, you scrap the wreckage while you wait for your FTL drive to charge.</text>
+            <autoReward level="MED">standard</autoReward>
+            <choice>
+				<text>Do something onboard the ship.</text>
+				<event name="AEA_SHARD_AUTO_AMBUSH">
+                    <text>Just as you're about to leave a massive autoship appears from inside the asteroid field rushing towards you, you're only just able to get to the battlestations in time.</text>
+                    <ship load="AEA_SHARD_AUTO_ESCAPE" hostile="true"/>
+                    <choice hidden="true">
+                        <text>Continue...</text>
+                        <event load="COMBAT_CHECK"/>
+                    </choice>
+                </event>
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event load="AEA_SHARD_AUTO_AMBUSH"/>
+			</choice>
+        </event>
+    </choice>
+    <choice hidden="true">
+		<text>This isn't what we expected. Leave.</text>
+		<event>
+			<text>You back off to a safe distance and prepare your FTL drive.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<ship name="AEA_SHARD_AUTO_ESCAPE" auto_blueprint="AEA_SHARD_AUTO">
+    <surrender chance="0" min="5" max="5" load="ESCAPE_AEA_SHARD_AUTO" />
+    <destroyed load="DESTROYED_AEA_SHARD_AUTO" />
+</ship>
+
+<event name="ESCAPE_AEA_SHARD_AUTO">
+    <text>You see a crack form down the sides of one of the crystals on the auto ship. You see more and more form before the crystal parts of the ship explode clouding your sensors. By the time you can see again the ship has jumped away.
+Luckily whatever the ship used to cloud it's escape has left a visible trail in the direction the ship jumped, you're able to use this to telegraph the beacon it likely jumped to.</text>
+    <instantEscape/>
+    <quest event="AEA_SHARD_AUTO_QUEST"/>
+</event>
+
+<event name="AEA_SHARD_AUTO_QUEST">
+    <preventQuest/>
+	<preventFleet />
+	<beaconType id="map_icon_aea_shard_auto" global="true">
+		<color r="255" g="8" b="8" a="1"/>
+	</beaconType>
+    <text>This time there is no asteroid field, however it appears the auto-ship is still recovering from your fight. As it senses you it activates it's weapons again.</text>
+    <ship load="AEA_SHARD_AUTO" hostile="true"/>
+    <enemyDamage amount="2" system="aea_super_shields"/>
+    <enemyDamage amount="2" system="drones" damageHull="false"/>
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<ship name="AEA_SHARD_AUTO" auto_blueprint="AEA_SHARD_AUTO">
+    <destroyed load="DESTROYED_AEA_SHARD_AUTO" />
+</ship>
+
+<event name="DESTROYED_AEA_SHARD_AUTO">
+    <text>The Auto ship finally crumbles apart, massive chunks of crystal shattering in it's final explosions. You begin searching the remains of the ship. You find a lot of scrap, but more importantly you're able to access the mostly intact databanks of the ship.</text>
+    <autoReward level="HIGH">standard_no_item</autoReward>
+    <weapon name="GIFTLIST_AEA_SHARD"/>
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event>
+            <text>Inside the database you find the plans for a mutiny at the palace, it seems whoever was giving this ship orders is trying to kill the Dawnshard's bearer and take it for themselves. Alongside those plans you find a blueprint for a large Shard-Forged cruiser.</text>
+			<unlockCustomShip silent="false">PLAYER_SHIP_AEA_SHARD_BATTLE</unlockCustomShip>
+        </event>
+    </choice>
+</event>
+
+</FTL>
 

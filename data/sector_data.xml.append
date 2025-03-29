@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
 	
+<mod:findName type="sectorType" name="ZONE_SAFE">
+	<mod-append:sector>SECTOR_AEA_SHARD</mod-append:sector>
+</mod:findName>
+
 <mod:findName type="sectorType" name="SECTOR_LIST_ALLIED">
 	<mod-append:sector>SECTOR_AEA_ACID_NEBULA</mod-append:sector>
 	<mod-append:sector>SECTOR_AEA_CULT</mod-append:sector>
+	<mod-append:sector>SECTOR_AEA_SHARD</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorType" name="SECTOR_LIST_NEUTRAL">
@@ -18,12 +23,20 @@
 <mod:findName type="sectorType" name="SECTOR_LIST_UNIQUE_SAFE">
     <mod-append:sector>SECTOR_AEA_CULT_UNIQUE</mod-append:sector>
     <mod-append:sector>SECTOR_AEA_BIRD_UNIQUE</mod-append:sector>
+	<mod-append:sector>SECTOR_AEA_SHARD_UNIQUE</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorType" name="SECTOR_LIST_UNIQUE_DEADLY">
     <mod-append:sector>SECTOR_AEA_ACID_UNIQUE</mod-append:sector>
     <mod-append:sector>SECTOR_AEA_NECRO_UNIQUE</mod-append:sector>
     <mod-append:sector>SECTOR_AEA_SHLEG_UNIQUE</mod-append:sector>
+</mod:findName>
+
+<mod:findName type="sectorType" name="CIVILIAN">
+    <mod-append:sector>SECTOR_AEA_BIRD</mod-append:sector>
+    <mod-append:sector>SECTOR_AEA_BIRD_UNIQUE</mod-append:sector>
+	<mod-append:sector>SECTOR_AEA_SHARD</mod-append:sector>
+	<mod-append:sector>SECTOR_AEA_SHARD_UNIQUE</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorType" name="NEBULA">
@@ -36,11 +49,6 @@
 <mod:findName type="sectorType" name="HOSTILE">
     <mod-append:sector>SECTOR_AEA_NECRO</mod-append:sector>
     <mod-append:sector>SECTOR_AEA_NECRO_UNIQUE</mod-append:sector>
-</mod:findName>
-
-<mod:findName type="sectorType" name="CIVILIAN">
-    <mod-append:sector>SECTOR_AEA_BIRD</mod-append:sector>
-    <mod-append:sector>SECTOR_AEA_BIRD_UNIQUE</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorDescription" name="SECTOR_OUTCAST">
@@ -111,7 +119,8 @@
 		<mod-append:blueprint name="AEA_COMBAT_BIRD_SMART_1" rarity="0" />
 		<mod-append:blueprint name="AEA_COMBAT_BIRD_SMART_2" rarity="0" />
 
-	<mod-append:blueprint name="aea_cult_wizard" rarity="0" />
+		<mod-append:blueprint name="aea_cult_wizard" rarity="0" />
+		<mod-append:blueprint name="aea_shard_breaker" rarity="0" />
 	</mod:findLike>
 </mod:findName>
 
@@ -120,18 +129,32 @@
 		<mod-append:blueprint name="AEA_LASER_ACID_1" rarity="0" />
 		<mod-append:blueprint name="AEA_LASER_ACID_2" rarity="0" />
 		<mod-append:blueprint name="AEA_LASER_ACID_3" rarity="0" />
+		<mod-append:blueprint name="AEA_BEAM_ACID_1" rarity="0" />
 		<mod-append:blueprint name="AEA_ION_ACID_1" rarity="0" />
-		<mod-append:blueprint name="AEA_DEFENSE_NECRO_1_MISSILE" rarity="0" />
-		<mod-append:blueprint name="AEA_DEFENSE_NECRO_2_MISSILE" rarity="0" />
-		<mod-append:blueprint name="AEA_COMBAT_NECRO_1_LASER" rarity="0" />
-		<mod-append:blueprint name="AEA_COMBAT_NECRO_2_LASER" rarity="0" />
+
 		<mod-append:blueprint name="AEA_LASER_NECRO_1" rarity="0" />
 		<mod-append:blueprint name="AEA_LASER_NECRO_2" rarity="0" />
 		<mod-append:blueprint name="AEA_LASER_NECRO_3" rarity="0" />
 		<mod-append:blueprint name="AEA_LASER_NECRO_CHARGE" rarity="0" />
+
+		<mod-append:blueprint name="AEA_LASER_CULT" rarity="0" />
+
+		<mod-append:blueprint name="AEA_DEFENSE_NECRO_1_MISSILE" rarity="0" />
+		<mod-append:blueprint name="AEA_DEFENSE_NECRO_2_MISSILE" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_NECRO_1_LASER" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_NECRO_2_LASER" rarity="0" />
+
 		<mod-append:blueprint name="AEA_COMBAT_BIRD_BURST_1" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_BIO_1" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_BIO_2" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_BIO_3" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_MULTI_1_LASER" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_MULTI_2_LASER" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_SMART_1" rarity="0" />
+		<mod-append:blueprint name="AEA_COMBAT_BIRD_SMART_2" rarity="0" />
 
 		<mod-append:blueprint name="aea_cult_wizard" rarity="0" />
+		<mod-append:blueprint name="aea_shard_breaker" rarity="0" />
 	</mod:findLike>
 </mod:findName>
 
@@ -966,6 +989,184 @@ SHLEG SECTOR
 	<event name="PIRACY_LIST" min="1" max="2" />
 	<event name="FILLER_LIST" min="999" max="999" />
 </sectorDescription>
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+SHARD SECTOR
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<sectorDescription name="SECTOR_AEA_SHARD" unique="false">
+	<nameList>
+		<name>Shard-Forged Sector</name>
+		<name>Shard-Forged Space</name>
+		<name>Shard-Forged Frontier</name>
+		<name>Shard-Forged Territory</name>
+		<name>Shard-Forged Domain</name>
+		<name>Shard-Forged Rimworlds</name>
+		<name>Shard-Forged Regions</name>
+		<name>Shard-Forged Parts</name>
+		<name>Shard-Forged Dominion</name>
+		<name>Shard-Forged Turf</name>
+		<name>Shard-Forged Realm</name>
+		<name>Shard-Forged Outreaches</name>
+	</nameList>
+	<trackList>
+		<track>aea_shard</track>
+		<track>lostship</track>
+		<track>insurgence</track>
+		<track>hacking</track>
+	</trackList>
+	<rarityList>
+		<blueprint name="human" rarity="2" />
+		<blueprint name="human_medic" rarity="0" />
+		<blueprint name="human_engineer" rarity="0" />
+		<blueprint name="engi" rarity="0" />
+		<blueprint name="aea_necro_engi" rarity="3" />
+		<blueprint name="engi_separatist" rarity="4" />
+		<blueprint name="zoltan" rarity="0" />
+		<blueprint name="zoltan_monk" rarity="0" />
+		<blueprint name="zoltan_devotee" rarity="0" />
+		<blueprint name="rock" rarity="3" />
+		<blueprint name="rock_outcast" rarity="2" />
+		<blueprint name="rock_commando" rarity="0" />
+		<blueprint name="mantis" rarity="2" />
+		<blueprint name="mantis_free" rarity="3" />
+		<blueprint name="slug" rarity="4" />
+		<blueprint name="slug_clansman" rarity="5" />
+		<blueprint name="shell" rarity="0" />
+		<blueprint name="shell_scientist" rarity="0" />
+		<blueprint name="shell_mechanic" rarity="0" />
+		<blueprint name="shell_guardian" rarity="0" />
+		<blueprint name="crystal" rarity="1" />
+		<blueprint name="crystal_liberator" rarity="3" />
+		<blueprint name="aea_shard_breaker" rarity="1" />
+		<blueprint name="aea_shard_smasher" rarity="2" />
+		<blueprint name="orchid" rarity="0" />
+		<blueprint name="orchid_vampweed" rarity="3" />
+		<blueprint name="leech" rarity="4" />
+		<blueprint name="lanius" rarity="5" />
+		<blueprint name="phantom" rarity="4" />
+		<blueprint name="phantom_goul" rarity="5" />
+		<blueprint name="phantom_mare" rarity="5" />
+		<blueprint name="phantom_wraith" rarity="5" />
+	</rarityList>
+	<startEvent>ENTER_AEA_SHARD</startEvent>
+	<removeFirstBeaconNebula />
+	<exitBeacon event="FINISH_BEACON_AEA_SHARD" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ELITE" />
+	<rebelBeacon event="FLEET_THREAT_MLOW" nebulaEvent="FLEET_THREAT_MLOW_NEBULA" />
+	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
+	<event name="MV_TRAVELER" min="1" max="1" />
+	<event name="SYLVAN_CHANCE" min="0" max="1" />
+	
+	<event name="OUTPOST_AEA_SHARD_SPAWNER" min="0" max="1" />
+	<event name="STORELIST_AEA_SHARD" min="2" max="3" />
+	
+	<event name="ITEMS_AEA_SHARD" min="3" max="4" />
+	<event name="NEUTRAL_AEA_SHARD_MV" min="4" max="5" />
+	<event name="DISTRESS_AEA_SHARD" min="2" max="3" />
+	<event name="QUESTS_AEA_SHARD" min="1" max="1" />
+	
+	<event name="HOSTILE_AEA_SHARD" min="4" max="6" />
+	
+	<event name="PIRACY_LIST" min="1" max="2" />
+	<event name="FILLER_LIST" min="999" max="999" />
+</sectorDescription>
+<sectorDescription name="SECTOR_AEA_SHARD_UNIQUE" unique="true">
+	<nameList>
+		<name>Shard-Forged Palace [!]</name>
+	</nameList>
+	<trackList>
+		<track>aea_shard</track>
+		<track>lostship</track>
+		<track>insurgence</track>
+		<track>hacking</track>
+	</trackList>
+	<rarityList>
+		<blueprint name="human" rarity="2" />
+		<blueprint name="human_medic" rarity="0" />
+		<blueprint name="human_engineer" rarity="0" />
+		<blueprint name="engi" rarity="0" />
+		<blueprint name="aea_necro_engi" rarity="3" />
+		<blueprint name="engi_separatist" rarity="4" />
+		<blueprint name="zoltan" rarity="0" />
+		<blueprint name="zoltan_monk" rarity="0" />
+		<blueprint name="zoltan_devotee" rarity="0" />
+		<blueprint name="rock" rarity="3" />
+		<blueprint name="rock_outcast" rarity="2" />
+		<blueprint name="rock_commando" rarity="0" />
+		<blueprint name="mantis" rarity="2" />
+		<blueprint name="mantis_free" rarity="3" />
+		<blueprint name="slug" rarity="4" />
+		<blueprint name="slug_clansman" rarity="5" />
+		<blueprint name="shell" rarity="0" />
+		<blueprint name="shell_scientist" rarity="0" />
+		<blueprint name="shell_mechanic" rarity="0" />
+		<blueprint name="shell_guardian" rarity="0" />
+		<blueprint name="crystal" rarity="1" />
+		<blueprint name="crystal_liberator" rarity="3" />
+		<blueprint name="aea_shard_breaker" rarity="1" />
+		<blueprint name="aea_shard_smasher" rarity="2" />
+		<blueprint name="orchid" rarity="0" />
+		<blueprint name="orchid_vampweed" rarity="3" />
+		<blueprint name="leech" rarity="4" />
+		<blueprint name="lanius" rarity="5" />
+		<blueprint name="phantom" rarity="4" />
+		<blueprint name="phantom_goul" rarity="5" />
+		<blueprint name="phantom_mare" rarity="5" />
+		<blueprint name="phantom_wraith" rarity="5" />
+		
+		<blueprint name="BOMB_LOCK" rarity="3" />
+		<blueprint name="CRYSTAL_BURST_1" rarity="1" />
+		<blueprint name="CRYSTAL_BURST_1_RED" rarity="4" />
+		<blueprint name="CRYSTAL_BURST_2" rarity="3" />
+		<blueprint name="CRYSTAL_BURST_2_RED" rarity="5" />
+		<blueprint name="CRYSTAL_HEAVY_1" rarity="2" />
+		<blueprint name="CRYSTAL_HEAVY_2" rarity="4" />
+		<blueprint name="KERNEL_1" rarity="2" />
+		<blueprint name="KERNEL_2" rarity="2" />
+		<blueprint name="KERNEL_HEAVY" rarity="3" />
+		<blueprint name="KERNEL_CHAIN" rarity="4" />
+		<blueprint name="KERNEL_CHARGE" rarity="4" />
+		<blueprint name="SPORE_1" rarity="2" />
+		<blueprint name="SPORE_2" rarity="3" />
+		<blueprint name="SPORE_HEAVY" rarity="2" />
+		<blueprint name="SPORE_CHAIN" rarity="4" />
+		<blueprint name="SPORE_STUN" rarity="3" />
+		<blueprint name="GRAZIER_BATTLE" rarity="3" />
+		<blueprint name="PRODUCER" rarity="2" />
+		<blueprint name="CONSTRUCTOR" rarity="2" />
+		<blueprint name="SENTRY_NORMAL" rarity="2" />
+		<blueprint name="SENTRY_MIND" rarity="3" />
+		<blueprint name="SENTRY_HEAL" rarity="4" />
+		<blueprint name="SENTRY_FROST" rarity="3" />
+		<blueprint name="SENTRY_VAMP" rarity="4" />
+	</rarityList>
+	<startEvent>ENTER_AEA_SHARD_UNIQUE</startEvent>
+	<removeFirstBeaconNebula />
+	<exitBeacon event="FINISH_BEACON_AEA_SHARD" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ELITE" />
+	<rebelBeacon event="FLEET_THREAT_MLOW" nebulaEvent="FLEET_THREAT_MLOW" />
+	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
+	<event name="MV_TRAVELER" min="1" max="1" />
+	<event name="SYLVAN_CHANCE" min="0" max="1" />
+	
+	<event name="AEA_SHARD_PALACE" min="1" max="1" />
+	<event name="AEA_SHARD_AUTO_START" min="1" max="1" />
+	
+	<priorityEvent name="TRANSPORT_AEA_SHARD_LOOT" min="1" max="1" priority="1" />
+	<event name="STORELIST_AEA_SHARD" min="4" max="4" />
+	<event name="STORE_HOSTILE_PIRATE" min="0" max="1" />
+	
+	<event name="ITEMS_AEA_SHARD_UNIQUE" min="3" max="4" />
+	<event name="NEUTRAL_AEA_SHARD_UNIQUE" min="4" max="5" />
+	<event name="DISTRESS_AEA_SHARD" min="2" max="3" />
+	<!--event name="QUESTS_BLACKMARKET" min="1" max="1" /-->
+	
+	<event name="HOSTILE_AEA_SHARD_UNIQUE" min="3" max="7" />
+	
+	<event name="PIRACY_LIST" min="2" max="3" />
+	<event name="FILLER_LIST" min="999" max="999" />
+</sectorDescription>
+
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 OBELISK SECTOR

@@ -35,7 +35,7 @@
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice hidden="true" req="juke_aea_shleg">
+	<mod-append:choice hidden="true" req="juke_aea_shard">
 		<text>OE: Shard.</text>
 		<event>
 			<playMusic>aea_shard</playMusic>

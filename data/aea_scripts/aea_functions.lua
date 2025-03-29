@@ -811,7 +811,7 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
 	elseif crewmem.health.first > 0 and dead_crew[crewmem.extend.selfId] then
 		dead_crew[crewmem.extend.selfId] = nil
 	end
-	if zombieTable[crewmem.extend.selfId] then
+	--[[if zombieTable[crewmem.extend.selfId] then
 		local textString = Hyperspace.TextString()
 		textString.data = "ZOMBIE: "..tostring(math.floor(zombieTable[crewmem.extend.selfId]))
 		crewmem:SetName(textString, true)
@@ -822,7 +822,7 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
 			zombieTable[crewmem.extend.selfId] = nil
 			crewmem:Kill(true)
 		end
-	end
+	end]]
 end)
 
 local def0XCREWSLOT = Hyperspace.StatBoostDefinition()
@@ -985,7 +985,7 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
 			end
 		end
 		for i, crewmem in ipairs(get_ship_crew_point(shipManager, location.x, location.y)) do
-			if not crewmem:IsDrone() and (not zombieTable[crewmem.extend.selfId]) then
+			if not crewmem:IsDrone() and ((not crewmem.extend.deathTimer) or (not crewmem.extend.deathTimer.running)) then
 				local rCrew = crewmem.type
 				local crewShip = Hyperspace.ships(crewmem.currentShipId)
 				local intruder = true
@@ -999,7 +999,8 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHMHP), zombie)
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHDMP), zombie)
-				zombieTable[zombie.extend.selfId] = 15
+				zombie.extend.deathTimer = Hyperspace.TimerHelper(false)
+    		zombie.extend.deathTimer:Start(15)
 			end
 		end
 	end
@@ -1046,7 +1047,8 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 			--Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defRMHP), zombie)
 			Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
 			--Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defRDMP), zombie)
-			zombieTable[zombie.extend.selfId] = 90
+			zombie.extend.deathTimer = Hyperspace.TimerHelper(false)
+    	zombie.extend.deathTimer:Start(90)
 		end
 	elseif crew and power.powerCooldown.second == 20 and (not crewmem.bMindControlled) then
 		local rCrew = enemyResurrections:GetItem()
@@ -1062,7 +1064,8 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 		Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHMHP), zombie)
 		Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
 		Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHDMP), zombie)
-		zombieTable[zombie.extend.selfId] = 20
+		zombie.extend.deathTimer = Hyperspace.TimerHelper(false)
+		zombie.extend.deathTimer:Start(20)
 	end
 
 
@@ -1090,7 +1093,7 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 			end
 			for enemyCrew in vter(crewShip.vCrewList) do
 				--print(enemyCrew.type)
-				if enemyCrew.iShipId ~= crewmem.iShipId and enemyCrew.iRoomId == crewmem.iRoomId and (not zombieTable[enemyCrew.extend.selfId]) and (not crewmem:IsDrone()) then
+				if enemyCrew.iShipId ~= crewmem.iShipId and enemyCrew.iRoomId == crewmem.iRoomId and ((not enemyCrew.extend.deathTimer) or (not enemyCrew.extend.deathTimer.running)) and (not crewmem:IsDrone()) then
 					--print("REND LOOP CREW")
 					local rCrew = enemyCrew.type
 					local intruder = false
@@ -1105,14 +1108,15 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defRMHP), zombie)
 					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
 					Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defRDMP), zombie)
-					zombieTable[zombie.extend.selfId] = 30
+					zombie.extend.deathTimer = Hyperspace.TimerHelper(false)
+    			zombie.extend.deathTimer:Start(30)
 				end
 			end
 		end
 	elseif crew and power.powerCooldown.second == 30 and (not crewmem.bMindControlled) then
 		local crewShip = Hyperspace.ships(crewmem.currentShipId)
 		for enemyCrew in vter(crewShip.vCrewList) do
-			if enemyCrew.iShipId ~= crewmem.iShipId and enemyCrew.iRoomId == crewmem.iRoomId and (not zombieTable[enemyCrew.extend.selfId]) and not crewmem:IsDrone() then
+			if enemyCrew.iShipId ~= crewmem.iShipId and enemyCrew.iRoomId == crewmem.iRoomId and ((not enemyCrew.extend.deathTimer) or (not enemyCrew.extend.deathTimer.running)) and not crewmem:IsDrone() then
 				local rCrew = enemyCrew.type
 
 				local intruder = false
@@ -1126,7 +1130,8 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHMHP), zombie)
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHDMP), zombie)
-				zombieTable[zombie.extend.selfId] = 9
+				zombie.extend.deathTimer = Hyperspace.TimerHelper(false)
+    		zombie.extend.deathTimer:Start(9)
 			end
 		end
 	end
@@ -1228,7 +1233,7 @@ script.on_internal_event(Defines.InternalEvents.SHIELD_COLLISION, function(shipM
 	if pcall(function() nData = necro_lasers[projectile.extend.name] end) and nData and shipManager.shieldSystem.shields.power.super.first <= 0 then
 
 		local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
-		if projectile.ownerId == 0 and shipManager.shieldSystem.shields.power.first <= 3 then
+		if projectile.ownerId == 0 and shipManager.shieldSystem.shields.power.first <= 2 then
 			local proj1 = spaceManager:CreateLaserBlast(
 				Hyperspace.Blueprints:GetWeaponBlueprint(nData),
 				projectile.position,
@@ -1238,7 +1243,7 @@ script.on_internal_event(Defines.InternalEvents.SHIELD_COLLISION, function(shipM
 				projectile.destinationSpace,
 				projectile.heading)
 		end
-		if shipManager.shieldSystem.shields.power.first <= 2 then
+		if shipManager.shieldSystem.shields.power.first <= 1 then
 			local proj2 = spaceManager:CreateLaserBlast(
 				Hyperspace.Blueprints:GetWeaponBlueprint(nData),
 				projectile.position,
@@ -1248,7 +1253,7 @@ script.on_internal_event(Defines.InternalEvents.SHIELD_COLLISION, function(shipM
 				projectile.destinationSpace,
 				projectile.heading)
 		end
-		if shipManager.shieldSystem.shields.power.first <= 1 then
+		if shipManager.shieldSystem.shields.power.first <= 0 then
 			local proj3 = spaceManager:CreateLaserBlast(
 				Hyperspace.Blueprints:GetWeaponBlueprint(nData),
 				projectile.position,
@@ -1604,8 +1609,8 @@ script.on_internal_event(Defines.InternalEvents.GET_DODGE_FACTOR, function(shipM
 	end
 	if shipManager:HasSystem(1) then
 		local engine = shipManager:GetSystem(1)
-		if engine.powerState.first + engine.iBonusPower >= 9 then
-			local powerExtra = engine.powerState.first + engine.iBonusPower + engine.iBatteryPower - 8
+		if engine:GetEffectivePower() >= 9 then
+			local powerExtra = engine:GetEffectivePower() - 8
 			local pilot = shipManager:GetSystem(6)
 			if pilot.bManned then
 				value = value + 35 + (5 * powerExtra)
@@ -1620,6 +1625,16 @@ script.on_internal_event(Defines.InternalEvents.GET_DODGE_FACTOR, function(shipM
 	end
 	return Defines.Chain.CONTINUE, value
 end)
+--Handles tooltips and mousever descriptions per level
+local function get_level_description_aea_engines(systemId, level, tooltip)
+    if systemId == Hyperspace.ShipSystem.NameToSystemId("engines") then
+        if level > 8 then
+            return string.format("Evasion: %i / FTL: %sx", 45, tostring(1))
+        end
+    end
+end
+
+script.on_internal_event(Defines.InternalEvents.GET_LEVEL_DESCRIPTION, get_level_description_aea_engines)
 
 --[[script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	if shipManager:HasSystem(6) then
@@ -4373,6 +4388,28 @@ script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, funct
 	      Graphics.CSurface.GL_Rotate(angle, 0, 0, 1)
 	      Graphics.CSurface.GL_RenderPrimitive(shipImage)
 	      Graphics.CSurface.GL_PopMatrix()
+			end
+		end
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
+	if crewmem.type == "aea_shard_dawn" then
+		local shipManager = Hyperspace.ships(crewmem.currentShipId)
+		for power in vter(crewmem.extend.crewPowers) do
+			--print("enabled:"..tostring(power.enable).." active:"..tostring(power.temporaryPowerActive).." duration:"..power.temporaryPowerDuration.first)
+			if power.temporaryPowerActive then
+				local shardActive = false
+				for lockdownShard in vter(shipManager.ship.lockdowns) do
+					--print("arrive:"..tostring(lockdownShard.bArrived).." lockingRoom:"..lockdownShard.lockingRoom.." lifetime:"..lockdownShard.lifeTime.." crewRoom"..crewmem.iRoomId)
+					if lockdownShard.lockingRoom == crewmem.iRoomId then
+						shardActive = true
+					end
+				end
+				if not shardActive then
+					local crewPos = crewmem:GetPosition()
+					shipManager.ship:LockdownRoom(crewmem.iRoomId, Hyperspace.Pointf(crewPos.x, crewPos.y) )
+				end
 			end
 		end
 	end

@@ -10947,15 +10947,73 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 </FTL>
 
 <FTL>
+<weaponBlueprint name="CRYSTAL_BURST_2_AEA_LOOT">
+	<type>MISSILES</type>
+	<flavorType>Crystalline Tech</flavorType>
+	<title>Elite Crystal Burst MK II</title>
+	<short>€ Crystal II</short>
+	<desc>Modified projectile weapon that fires 3 shield piercing crystals. Elite variant that always applies lockdown and pierces 2 shields.</desc>
+	<tooltip>Pierces 1 shield; fires 3 crystals that deal 1 damage each.</tooltip>
+	<tip>loot_aea_shard_1</tip>
+	<damage>1</damage>
+	<shots>3</shots>
+	<sp>2</sp>
+	<lockdown>1</lockdown>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<stunChance>3</stunChance>
+	<roomStatBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-5</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<priority>999</priority>
+			<maxStacks id="aea_shard_floor">1</maxStacks>
+			<roomAnim renderLayer="0">
+				<anim animType="default">aea_invisible</anim>
+				<tileAnim>aea_crystal_spike</tileAnim>
+			</roomAnim>
+		</statBoost>
+    </roomStatBoosts>
+	<cooldown>16</cooldown>
+	<power>2</power>
+	<speed>50</speed>
+	<cost>90</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>crystal_shard2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>crystalExplosion_small</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<explosion>explosion_crystal_2</explosion>
+	<weaponArt>crystal_burst_2_aea_loot</weaponArt>
+	<iconImage>crystal</iconImage>
+</weaponBlueprint>
 <crewBlueprint name="aea_shard_breaker">
-    <desc>A band of pirates who only allow other crystals into their ranks.</desc>
-    <title>Shard-Breaker</title>
-    <short>Shard-Breaker</short>
+    <desc>An ancient group of pirates, The Shard-Forged are primarily crystals who split off from the crystilline empire long ago.</desc>
+    <title>Shard-Forged</title>
+    <short>Shard-Forged</short>
     <cost>50</cost>
     <bp>4</bp>
-    <rarity>0</rarity>
+    <rarity>5</rarity>
     <powerList>
-        <power>Active Ability (2 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
+        <power>Active Ability (1 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
         <power>Reduced suffocation damage</power>
         <power>Max Health is increased to 125</power>
         <power>Inflicts 0.8x damage in crew combat</power>
@@ -10976,14 +11034,14 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
     </colorList>
 </crewBlueprint>
 <crewBlueprint name="aea_shard_smasher">
-    <desc>A band of pirates who only allow other crystals into their ranks.</desc>
-    <title>Shard-Smasher</title>
-    <short>Shard-Smasher</short>
+    <desc>An ancient group of pirates, The Shard-Forged are primarily crystals who split off from the crystilline empire long ago.</desc>
+    <title>Shard-Forged Captain</title>
+    <short>Shard Captain</short>
     <cost>70</cost>
     <bp>4</bp>
     <rarity>0</rarity>
     <powerList>
-        <power>Active Ability (2 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
+        <power>Active Ability (3 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
         <power>Reduced suffocation damage</power>
         <power>Max Health is increased to 150</power>
         <power>Inflicts 0.8x damage in crew combat</power>
@@ -11004,17 +11062,17 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
     </colorList>
 </crewBlueprint>
 <crewBlueprint name="aea_shard_dawn">
-    <desc>A band of pirates who only allow other crystals into their ranks.</desc>
+    <desc>The Leader of the Shard-Forged through their possession of the Dawnshard. The Dawnshard grants them powerful abilities, but also puts a target on their back as the one who possesses the Dawnshard also possesses control of the Shard-Forged.</desc>
     <title>Dawnshard</title>
     <short>Dawnshard</short>
     <cost>100</cost>
     <bp>4</bp>
     <rarity>0</rarity>
     <powerList>
-        <power>Active Ability (2 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
-        <power>Reduced suffocation damage</power>
-        <power>Max Health is increased to 125</power>
-        <power>Inflicts 0.8x damage in crew combat</power>
+        <power>Active Ability (3 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
+        <power>Greatly reduced suffocation damage</power>
+        <power>Max Health is increased to 200</power>
+        <power>Inflicts 0.5x damage in crew combat</power>
     </powerList>
 </crewBlueprint>
 
@@ -11049,7 +11107,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 <systemBlueprint name="aea_super_shields">
 	<type>shields</type>
 	<title>Auxiliary Shields</title>
-	<desc>Generates super shield layers. Each layer already created increases required charge time by 1 second. Incompatible with cloaking. Uses manning levels in shields.</desc>
+	<desc>Generates super shield layers. Incompatible with cloaking. Uses manning levels in shields.</desc>
 	<startPower>1</startPower>
 	<maxPower>3</maxPower>
 	<rarity>1</rarity>
@@ -11073,6 +11131,27 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	</upgradeCost>
 	<cost>125</cost>
 </systemBlueprint>
+<augBlueprint name="UPG_AEA_SUPER_SHIELD_OVERCHARGER">
+	<title>Super shield overcharger</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="UPG_AEA_SUPER_SHIELD_OVERCHARGER_EX">
+	<title>Super shield overcharger</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="BOON_AEA_SUPER_SHIELDS">
+	<title>Super shield boon</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
 
 <weaponBlueprint name="ARTILLERY_SHARD_AUTO">
 	<type>BEAM</type>
@@ -11104,15 +11183,22 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<weaponArt>aea_auto_shard_artillery</weaponArt>
 </weaponBlueprint>
 
+<augBlueprint name="AEA_SHARD_COOLER">
+	<title>Shard-Forged Cooling Unit</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
 <augBlueprint name="AEA_SHARD_ARMOUR">
-	<title>Crystalline Armor</title>
+	<title>Shard-Forged Armor</title>
 	<desc>Every time your ship takes damage, there is a 50% chance to break off a shard that flies at your enemy. Creates a single super shield layer on jump, Stacks with other supershields.</desc>
 	<cost>0</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
 </augBlueprint>
 <augBlueprint name="AEA_SHARD_SHIELD">
-	<title>Crystalline Shielding</title>
+	<title>Shard-Forged Shielding</title>
 	<desc>Every time your ship takes damage, there is a 100% chance to break off a shard that flies at your enemy. Generates a 7 layer supershield on jump.</desc>
 	<cost>0</cost>
 	<rarity>0</rarity>
@@ -11120,15 +11206,22 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 </augBlueprint>
 
 <augBlueprint name="AEA_SHARD_ARMOUR_ENEMY">
-	<title>Crystalline Armor</title>
-	<desc>Every time your ship takes damage, there is a 25% chance to break off a shard that flies at your enemy. Creates a single super shield layer on jump</desc>
+	<title>Shard-Forged Armor</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="AEA_SHARD_SHIELD_ENEMY">
+	<title>Shard-Forged Shielding</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<cost>0</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
 </augBlueprint>
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_BATTLE" layout="aeap_shard_battle_a" img="aeap_shard_battle_a">
-	<class>Shard-Breaker Cruiser</class>
-	<name>The Dawnshard</name>
+	<class>Shard-Forged Cruiser</class>
+	<name>The Citrine</name>
 	<desc>This ship is completely devoid of any description whatsoever!</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_BATTLE_unlock" />
 	<systemList>
@@ -11211,7 +11304,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_BATTLE_2" layout="aeap_shard_battle_b" img="aeap_shard_battle_b">
-	<class>Shard-Breaker Cruiser</class>
+	<class>Shard-Forged Cruiser</class>
 	<name>The Highnoon</name>
 	<desc>This ship is completely devoid of any description whatsoever!</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_BATTLE_2_unlock" />
@@ -11293,7 +11386,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_BATTLE_3" layout="aeap_shard_battle_c" img="aeap_shard_battle_c">
-	<class>Shard-Breaker Cruiser</class>
+	<class>Shard-Forged Cruiser</class>
 	<name>Duskbringer</name>
 	<desc>This ship is completely devoid of any description whatsoever!</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_BATTLE_3_unlock" />
@@ -11694,8 +11787,6 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<maxPower amount="6" />
 	<crewCount amount="1" class="aea_shard_breaker" />
 	<crewCount amount="1" class="aea_shard_smasher" />
-	<crewCount amount="1" class="aea_shard_breaker" />
-	<crewCount amount="1" class="aea_bird_avali" />
 	<aug name="AEA_SHARD_ARMOUR" />
 	<shieldImage>mup_giant</shieldImage>
 	<mv-mapImage>map_icon_aeap_shard_auto</mv-mapImage>

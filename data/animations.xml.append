@@ -4850,20 +4850,20 @@
 *********************************************************************************************************
 -->
 
-<animSheet name="aea_shard_dawn" w="350" h="455" fw="35" fh="35">people/aea_shard_dawn_base.png</animSheet>
+<animSheet name="aea_shard_dawn" w="700" h="455" fw="35" fh="35">people/aea_shard_dawn_base.png</animSheet>
 <anim name="aea_shard_dawn_clone">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="6" x="0" y="2" />
+	<desc length="6" x="0" y="1" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_shard_dawn_death_right">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="6" x="3" y="0" />
+	<desc length="7" x="3" y="0" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_shard_dawn_death_left">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="6" x="0" y="2" />
+	<desc length="7" x="3" y="0" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_shard_dawn_walk_down">
@@ -4871,99 +4871,99 @@
 	<desc length="4" x="0" y="12" />
 	<time>1.0</time>
 </anim>
-<anim name="aea_shard_dawn_walk_right">
+<anim name="aea_shard_dawn_walk_up">
 	<sheet>aea_shard_dawn</sheet>
 	<desc length="4" x="4" y="12" />
 	<time>1.0</time>
 </anim>
-<anim name="aea_shard_dawn_walk_up">
-	<sheet>aea_shard_dawn</sheet>
-	<desc length="4" x="0" y="11" />
-	<time>1.0</time>
-</anim>
 <anim name="aea_shard_dawn_walk_left">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="4" x="4" y="11" />
+	<desc length="4" x="8" y="12" />
 	<time>1.0</time>
 </anim>
-<anim name="aea_shard_dawn_shoot_down">
+<anim name="aea_shard_dawn_walk_right">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="4" x="0" y="10" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_shard_dawn_shoot_right">
-	<sheet>aea_shard_dawn</sheet>
-	<desc length="4" x="4" y="10" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_shard_dawn_shoot_up">
-	<sheet>aea_shard_dawn</sheet>
-	<desc length="4" x="0" y="9" />
+	<desc length="4" x="12" y="12" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_shard_dawn_shoot_left">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="4" x="4" y="9" />
+	<desc length="20" x="0" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_shoot_right">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="20" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_shoot_down">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="20" x="0" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_shard_dawn_shoot_up">
+	<sheet>aea_shard_dawn</sheet>
+	<desc length="20" x="0" y="8" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_shard_dawn_fire_down">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="10" x="0" y="8" />
+	<desc length="14" x="0" y="4" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_shard_dawn_fire_right">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="10" x="0" y="8" />
+	<desc length="14" x="0" y="4" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_shard_dawn_fire_up">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="10" x="0" y="8" />
+	<desc length="14" x="0" y="4" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_shard_dawn_fire_left">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="10" x="0" y="8" />
+	<desc length="14" x="0" y="4" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_shard_dawn_repair">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="8" x="0" y="7" />
+	<desc length="8" x="0" y="3" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_shard_dawn_punch_up">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="6" x="3" y="1" />
+	<desc length="10" x="0" y="6" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_shard_dawn_punch_down">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="6" x="0" y="6" />
+	<desc length="10" x="0" y="7" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_shard_dawn_teleport">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="9" x="0" y="3" />
+	<desc length="7" x="0" y="2" />
 	<time>0.5</time>
 </anim>
-<anim name="aea_shard_dawn_type_right">
+<anim name="aea_shard_dawn_type_down">
 	<sheet>aea_shard_dawn</sheet>
 	<desc length="4" x="0" y="5" />
 	<time>1</time>
 </anim>
-<anim name="aea_shard_dawn_type_left">
+<anim name="aea_shard_dawn_type_up">
 	<sheet>aea_shard_dawn</sheet>
 	<desc length="4" x="4" y="5" />
 	<time>1</time>
 </anim>
-<anim name="aea_shard_dawn_type_up">
+<anim name="aea_shard_dawn_type_right">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="4" x="0" y="4" />
+	<desc length="4" x="8" y="5" />
 	<time>1</time>
 </anim>
-<anim name="aea_shard_dawn_type_down">
+<anim name="aea_shard_dawn_type_left">
 	<sheet>aea_shard_dawn</sheet>
-	<desc length="4" x="4" y="4" />
+	<desc length="4" x="12" y="5" />
 	<time>1</time>
 </anim>
 <anim name="aea_shard_dawn_portrait">
@@ -4991,6 +4991,16 @@
 	<firePoint x="33" y="12" />
 	<mountPoint x="32" y="24" />
 	<chargeImage>weapon_shard/aea_artillery_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="crystal_burst_2_aea_loot" w="420" h="61" fw="35" fh="61">weapon_shard/crystal_burst_2_aea_loot.png</animSheet>
+<weaponAnim name="crystal_burst_2_aea_loot">
+	<sheet>crystal_burst_2_aea_loot</sheet>
+	<desc length="12" x="0" y="0" />
+	<chargedFrame>5</chargedFrame>
+	<fireFrame>8</fireFrame>
+	<firePoint x="19" y="14" />
+	<mountPoint x="6" y="41" />
 </weaponAnim>
 
 <animSheet name="beam_aea_long" w="1100" h="94" fw="55" fh="94">weapons_arc/beam_aea_long.png</animSheet>
