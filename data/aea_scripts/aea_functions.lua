@@ -4224,17 +4224,17 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 		end
 	elseif Hyperspace.ships.player and needSetArty and shipManager:HasAugmentation("SHIP_AEA_BROADSIDE3") > 0 and Hyperspace.playerVariables.aea_broadside_slot1 > 0 then
 		needSetArty = false
-		print("LOAD ARTILLERY C 1:"..Hyperspace.playerVariables.aea_broadside_c_slot1.." 2:"..Hyperspace.playerVariables.aea_broadside_c_slot2.." 3:"..Hyperspace.playerVariables.aea_broadside_c_slot3)
+		--print("LOAD ARTILLERY C 1:"..Hyperspace.playerVariables.aea_broadside_c_slot1.." 2:"..Hyperspace.playerVariables.aea_broadside_c_slot2.." 3:"..Hyperspace.playerVariables.aea_broadside_c_slot3)
 		if Hyperspace.playerVariables.aea_broadside_c_slot1 > 0 then
-			print("LOAD SLOT 1")
+			--print("LOAD SLOT 1")
 			setArtySlot(allWeapons[Hyperspace.playerVariables.aea_broadside_c_slot1], 0)
 		end
 		if Hyperspace.playerVariables.aea_broadside_c_slot2 > 0 then
-			print("LOAD SLOT 2")
+			--print("LOAD SLOT 2")
 			setArtySlot(allWeapons[Hyperspace.playerVariables.aea_broadside_c_slot2], 1)
 		end
 		if Hyperspace.playerVariables.aea_broadside_c_slot3 > 0 then
-			print("LOAD SLOT 3")
+			--print("LOAD SLOT 3")
 			setArtySlot(allWeapons[Hyperspace.playerVariables.aea_broadside_c_slot3], 2)
 		end
 	elseif Hyperspace.ships.player and needSetArty and shipManager.iShipId == 0 and Hyperspace.playerVariables.aea_broadside_slot1 > 0 then

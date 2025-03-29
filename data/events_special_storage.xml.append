@@ -32,7 +32,7 @@
 </mod:findName>
 
 <mod:findName type="event" name="STORAGE_CHECK_SYSTEM">
-	<mod-append:choice req="aea_super_shields" blue="true" hidden="true">
+	<mod-append:choice req="aea_super_shields" blue="false" hidden="true">
 	  <text>Auxiliary Shields.</text>
 	  <event load="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELDS" />
 	</mod-append:choice>

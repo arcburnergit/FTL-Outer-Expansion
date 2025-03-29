@@ -11222,7 +11222,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_BATTLE" layout="aeap_shard_battle_a" img="aeap_shard_battle_a">
 	<class>Shard-Forged Cruiser</class>
 	<name>The Citrine</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>A boarding focussed ship, the crystal crew on board arc specialized for getting into the systems of the enemy and destroying them quickly.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_BATTLE_unlock" />
 	<systemList>
 		<aea_super_shields max="5" power="1" room="3" start="false" img="room_shields_7">
@@ -11306,7 +11306,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_BATTLE_2" layout="aeap_shard_battle_b" img="aeap_shard_battle_b">
 	<class>Shard-Forged Cruiser</class>
 	<name>The Highnoon</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>With both a medbay and a clonebay this ship makes an impressive boarding ship, however it's limited by a small teleporter and limited system capacity.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_BATTLE_2_unlock" />
 	<systemList>
 		<aea_super_shields max="5" power="1" room="3" start="false" img="room_shields_8" >
@@ -11361,8 +11361,8 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 				<number>2</number>
 			</slot>
 		</shields>
-		<teleporter power="1" room="5" start="false" />
-		<weapons power="2" max="8" room="1" start="true" img="room_weapons_9">
+		<teleporter power="1" room="5" start="true" />
+		<weapons power="3" max="8" room="1" start="true" img="room_weapons_9">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -11387,8 +11387,8 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_BATTLE_3" layout="aeap_shard_battle_c" img="aeap_shard_battle_c">
 	<class>Shard-Forged Cruiser</class>
-	<name>Duskbringer</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<name>Nightbringer</name>
+	<desc>With both a Shields system and an Auxiliary Shields system this ship possesses strong defensive capabilities.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_BATTLE_3_unlock" />
 	<systemList>
 		<aea_super_shields max="5" power="1" room="3" start="true" img="room_shields_7" >
@@ -11552,7 +11552,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_AUTO" layout="aeap_shard_auto_a" img="aeap_shard_auto_a">
 	<class>Shard-Forged Cruiser</class>
 	<name>The Glass Shard</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>Possessing a powerful Artillery Beam capable of locking down rooms this ship is formidable in both defense and offense.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_AUTO_unlock" />
 	<systemList>
 		<aea_super_shields max="5" power="1" room="3" start="true" img="room_shields">
@@ -11631,7 +11631,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_AUTO_2" layout="aeap_shard_auto_b" img="aeap_shard_auto_b">
 	<class>Shard-Forged Cruiser</class>
 	<name>Circuit Board</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>Unlike most ships this vessel can use its Auxiliary Shields system alongside it's Cloaking system providing excellent defense against certain ships, however it can't install a normal Shields system without losing the auxiliary one.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_AUTO_2_unlock" />
 	<systemList>
 		<aea_super_shields power="2" max="8" room="1" start="true" img="room_shields_3">
@@ -11712,7 +11712,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_AUTO_3" layout="aeap_shard_auto_c" img="aeap_shard_auto_c">
 	<class>Shard-Forged Cruiser</class>
 	<name>The Topaz</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>This auto ship has been outfitted to support boarding with it's crew, however with only an auxiliary shielding system and a drone it may struggle in defensive situations.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_AUTO_3_unlock" />
 	<systemList>
 		<aea_super_shields power="2" max="5" room="15" start="true" img="room_shields" >
@@ -11790,6 +11790,86 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<aug name="AEA_SHARD_ARMOUR" />
 	<shieldImage>mup_giant</shieldImage>
 	<mv-mapImage>map_icon_aeap_shard_auto</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_CREW6" layout="aeap_shard_uni" img="aeap_shard_uni">
+	<class>King Onyx's Crewser</class>
+	<name>The Iridescent</name>
+	<desc>With a powerful crew setup and strong defensive ships the dawnshard can be protected against any likely usurpers.</desc>
+	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_UNI_unlock" />
+	<systemList>
+		<aea_super_shields power="2" room="6" start="true" img="room_shields_7" >
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</aea_super_shields>
+		<battery power="1" max="2" room="22" start="false" img="room_battery_6" />
+		<cloaking power="1" room="14" start="false" img="room_cloaking_11" />
+		<clonebay power="1" room="8" start="true">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="20" start="false" img="room_doors_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="12" start="false" img="room_drones_15" />
+		<engines power="2" room="1" start="true" img="room_engines_5">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="11" start="false" img="room_hacking_2" />
+		<medbay power="1" room="8" start="false" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="19" start="false" img="room_mind_7" />
+		<oxygen power="1" room="10" start="true" img="room_oxygen_15" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="16" start="true" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="6" room="3" start="true" img="room_shields_5">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="7" start="false" />
+		<temporal power="1" room="9" start="false" />
+		<weapons power="2" max="8" room="18" start="true" img="room_weapons_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="0" count="4">
+		<weapon name="CRYSTAL_BURST_2_RED" />
+	</weaponList>
+	<droneList drones="0" count="2" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<aug name="AEA_SHARD_ARMOUR" />
+	<shieldImage>mup_disk</shieldImage>
+	<mv-mapImage>map_icon_aeap_shard_battle</mv-mapImage>
 </shipBlueprint>
 </FTL>
 

@@ -24,6 +24,10 @@
 		<text>Ask Sorrow about this.</text>
 		<event load="TRUE_VICTORY_CREW_AEA_SORROW" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="aea_shard_dawn">
+		<text>Ask King Onyx about this.</text>
+		<event load="TRUE_VICTORY_CREW_AEA_ONYX" />
+	</mod-append:choice>
 </mod:findName>
 
 <event name="TRUE_VICTORY_CREW_AEA_BILL">
@@ -69,6 +73,14 @@
 <event name="TRUE_VICTORY_CREW_AEA_SORROW">
 	<text>"Do it, it would be really cool."</text>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW5</unlockCustomShip>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="TRUE_VICTORY_LOAD" />
+	</choice>
+</event>
+<event name="TRUE_VICTORY_CREW_AEA_ONYX">
+	<text>"Personally I'd rather live to see the Shard-Forged go on, I fear that without the dawnshard the balance we have may shatter."</text>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW6</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="TRUE_VICTORY_LOAD" />

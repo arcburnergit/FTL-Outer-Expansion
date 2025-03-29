@@ -136,7 +136,7 @@ This enemy ship is equipped with a strong auxiliary shield generator, It starts 
 		<mod-append:ship>PLAYER_SHIP_AEA_SHARD_BATTLE</mod-append:ship>
 		
 		<mod-append:ship>PLAYER_SHIP_AEA_CREW5</mod-append:ship>
-		<mod-append:empty/>
+		<mod-append:ship>PLAYER_SHIP_AEA_CREW6</mod-append:ship>
 
 
 		<mod-append:ship>PLAYER_SHIP_AEA_CULT_WHALE</mod-append:ship>
@@ -191,17 +191,17 @@ This enemy ship is equipped with a strong auxiliary shield generator, It starts 
             <shipReq>PLAYER_SHIP_AEA_ACID_LONG</shipReq>
         </unlock>
 	</mod-append:ship>
-	<mod-append:ship name="PLAYER_SHIP_AEA_CREW1" b="false" c="false" >
+	<mod-append:ship name="PLAYER_SHIP_AEA_CREW1" b="false" c="false" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
 	</mod-append:ship>
-	<mod-append:ship name="PLAYER_SHIP_AEA_CREW3" b="false" c="false" >
+	<mod-append:ship name="PLAYER_SHIP_AEA_CREW3" b="false" c="false" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
 	</mod-append:ship>
-	<mod-append:ship name="PLAYER_SHIP_AEA_CREW5" b="false" c="false" >
+	<mod-append:ship name="PLAYER_SHIP_AEA_CREW5" b="false" c="false" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
@@ -249,12 +249,12 @@ This enemy ship is equipped with a strong auxiliary shield generator, It starts 
             <shipReq>PLAYER_SHIP_AEA_NECRO_SEPA</shipReq>
         </unlock>
 	</mod-append:ship>
-	<mod-append:ship name="PLAYER_SHIP_AEA_CREW2" b="false" c="false" >
+	<mod-append:ship name="PLAYER_SHIP_AEA_CREW2" b="false" c="false" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
 	</mod-append:ship>
-	<mod-append:ship name="PLAYER_SHIP_AEA_CREW4" b="false" c="false" >
+	<mod-append:ship name="PLAYER_SHIP_AEA_CREW4" b="false" c="false" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
@@ -398,6 +398,12 @@ This enemy ship is equipped with a strong auxiliary shield generator, It starts 
             <type>2</type>
             <shipReq>PLAYER_SHIP_AEA_SHARD_BATTLE</shipReq>
         </unlock>
+	</mod-append:ship>
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_CREW6" b="false" c="false" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
 	</mod-append:ship>
 
 	<!--mod-append:ship name="PLAYER_SHIP_AEA_SHARD_SCOUT" b="false" c="false">
@@ -1224,6 +1230,15 @@ This enemy ship is equipped with a strong auxiliary shield generator, It starts 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_BATTLE_3">
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_CREW6">
+		<hiddenAug>SHIP_PIRATE</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<aea_shard_dawn name="King Onyx" room="2"/>
+			<aea_shard_breaker room="0"/>
+			<aea_shard_smasher room="1"/>
+		</crew>
 	</mod-append:customShip>
 
 	<!--mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_SCOUT">
