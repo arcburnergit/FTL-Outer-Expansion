@@ -1653,7 +1653,7 @@ ROYAL OBELISK SECTOR
 		<name>Gate Passage</name>
 	</nameList>
 	<trackList>
-		<track>aea_lylmik_core</track>
+		<track>aea_lylmik_boss</track>
 	</trackList>
 	<rarityList>
 	</rarityList>

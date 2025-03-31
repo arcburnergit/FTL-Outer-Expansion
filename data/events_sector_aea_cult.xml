@@ -1327,6 +1327,7 @@ As you're watching you notice that one of the conspirator's room didn't lock pro
 	<text>The ship explodes, as it fragments it reveals the interior of the ship. It turns out the flower was actually an advanced autoship the conspirators had built.
 
 You're able to scrap the fragments of the ship and discover a weapon amongst the wreckage.</text>
+    <recallBoarders force="true" ship="enemy" />
 	<autoReward level="LOW">standard_no_item</autoReward>
 	<weapon name="AEA_LASER_CULT_RANDOM"/>
 	<choice hidden="true">

@@ -6000,6 +6000,26 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 
 <augments>
+	<aug name="EX_AEA_LAB_CRYSTAL_SABOTAGE">
+    	<statBoosts>
+			<statBoost name="moveSpeedMultiplier">
+				<boostType>MULT</boostType>
+				<amount>0.50</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<priority>999</priority>
+				<whiteList load="LIST_CREW_CRYSTAL" />
+			</statBoost>
+			<statBoost name="sabotageSpeedMultiplier">
+				<boostType>MULT</boostType>
+				<amount>1.75</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<priority>999</priority>
+				<whiteList load="LIST_CREW_CRYSTAL" />
+			</statBoost>
+		</statBoosts>
+    </aug>
 	<aug name="BOON_AEA_SUPER_SHIELDS">
 		<function name="ENERGY_SHIELD" value="0" useForReqs="true" warning="false" />
 		<superShield>
@@ -6591,6 +6611,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 <events>
 	<variable name="arc_test_light_nebula" op="set" val="0"/>
 
+	<metaVariable name="aea_super_shield_hotkey_enabled" op="set" val="0" />
+
 	<variable name="aea_broadside_enemy_fought" op="set" val="0"/>
 
 	<variable name="aea_broadside_missile_chosen" op="set" val="0"/>
@@ -6662,6 +6684,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 	<metaVariable name="juke_aea_old_1" op="set" val="0" />
 	<metaVariable name="juke_aea_old_2" op="set" val="0" />
+	<metaVariable name="juke_aea_old_3" op="set" val="0" />
 	<variable name="aea_old_has_cell" op="set" val="0" />
 	<variable name="aea_old_activated_cell" op="set" val="0" />
 	<variable name="aea_old_gate_guard_activated" op="set" val="0" />

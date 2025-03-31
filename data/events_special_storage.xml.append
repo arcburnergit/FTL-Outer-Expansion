@@ -38,23 +38,80 @@
 	</mod-append:choice>
 </mod:findName>
 
+<mod:findName type="event" name="STORAGE_CHECK_LAB_CRYSTAL_SABOTAGE">
+	<mod:findLike type="choice" limit="1">
+		<mod:setAttributes req="EX_AEA_LAB_CRYSTAL_SABOTAGE" lvl="0" blue="false" max_group="0"/>
+	</mod:findLike>
+	<mod-append:choice hidden="true" req="EX_AEA_LAB_CRYSTAL_SABOTAGE" lvl="1" blue="false" max_group="0">
+		<text>You cannot install this lab modification, as you still have the external version.</text>
+		<event load="OPTION_INVALID" />
+	</mod-append:choice>
+</mod:findName>
+
 <event name="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELDS">
     <text>What upgrade do you want to install?</text>
     <choice req="UPG_AEA_SUPER_SHIELD_OVERCHARGER" lvl="1" max_group="0" blue="false" hidden="true">
-        <text>Shield Overcharger. [ALREADY INSTALLED]</text>
+        <text>Auxiliary Overcharger. [ALREADY INSTALLED]</text>
         <event load="OPTION_INVALID" />
     </choice>
     <choice req="UPG_AEA_SUPER_SHIELD_OVERCHARGER" lvl="0" max_group="0" blue="false" hidden="true">
-        <text>Shield Overcharger. [Cost: 50~, 1{]</text>
+        <text>Auxiliary Overcharger. [Cost: 50~, 1{]</text>
         <event load="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELD_OVERCHARGER" />
+    </choice>
+    <choice req="UPG_AEA_SUPER_SHIELD_LINKER" lvl="1" max_group="1" blue="false" hidden="true">
+        <text>Computer Synchronisation. [ALREADY INSTALLED]</text>
+        <event load="OPTION_INVALID" />
+    </choice>
+    <choice req="UPG_AEA_SUPER_SHIELD_LINKER" lvl="0" max_group="1" blue="false" hidden="true">
+        <text>Computer Synchronisation. [Cost: 35~, 5|]</text>
+        <event load="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELD_LINKER" />
     </choice>
     <choice>
         <text>Nevermind.</text>
         <event load="STORAGE_CHECK_SYSTEM_LOAD" />
     </choice>
+</event>UPG_AEA_SUPER_SHIELD_LINKER
+<event name="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELD_LINKER">
+	<text>You are about to install the Computer Synchronisation upgrade.
+	[Effects: Manning in Auxiliary Shields also provides Shields with 50% of the bonus, Manning in Shields provides Auxiliary Shields with 50% of it's bonus.]</text>
+	<choice max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 35~, 5|]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="drones" min="-5" max="-5" />
+				<item type="scrap" min="-35" max="-35" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_SUPER_SHIELD_LINKER" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="EX_AEA_SUPER_SHIELD_LINKER" max_group="1" blue="false" hidden="true">
+		<text>Install the External Augment internally.</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<remove name="EX_AEA_SUPER_SHIELD_LINKER" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_SUPER_SHIELD_LINKER" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
 </event>
+<event name="INSTALL_AEA_SUPER_SHIELD_LINKER">
+	<variable name="loc_internal_upgrades" op="add" val="1" />
+	<hiddenAug>UPG_AEA_SUPER_SHIELD_LINKER</hiddenAug>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
 <event name="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELD_OVERCHARGER">
-	<text>You are about to install the Shield Overcharger upgrade.
+	<text>You are about to install the Auxiliary Overcharger upgrade.
 	[Effects: Grants all super shield layers that the system can generate on jump]</text>
 	<choice max_group="0" blue="false" hidden="true">
 		<text>Perform the upgrade. [Cost: 50~, 1{]</text>
@@ -70,11 +127,11 @@
 			</choice>
 		</event>
 	</choice> 
-	<choice req="UPG_AEA_SUPER_SHIELD_OVERCHARGER_EX" max_group="1" blue="false" hidden="true">
+	<choice req="EX_AEA_SUPER_SHIELD_OVERCHARGER" max_group="1" blue="false" hidden="true">
 		<text>Install the External Augment internally.</text>
 		<event>
 			<text>You install the upgrade.</text>
-			<remove name="UPG_AEA_SUPER_SHIELD_OVERCHARGER_EX" />
+			<remove name="EX_AEA_SUPER_SHIELD_OVERCHARGER" />
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="INSTALL_AEA_SUPER_SHIELD_OVERCHARGER" />

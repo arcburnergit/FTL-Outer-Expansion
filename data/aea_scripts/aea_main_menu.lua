@@ -1,4 +1,4 @@
-local image = Hyperspace.Resources:CreateImagePrimitiveString("aea_main_menu_image.png", 20, 190, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
+--[[local image = Hyperspace.Resources:CreateImagePrimitiveString("aea_main_menu_image.png", 20, 190, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
 
 script.on_render_event(Defines.RenderEvents.MAIN_MENU, function() end, function()
     local menu = Hyperspace.Global.GetInstance():GetCApp().menu
@@ -6,4 +6,4 @@ script.on_render_event(Defines.RenderEvents.MAIN_MENU, function() end, function(
         return
     end
     Graphics.CSurface.GL_RenderPrimitive(image)
-end)
+end)]]

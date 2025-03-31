@@ -40,6 +40,11 @@
 		<explore>aea_MUS_LylmikCoreExplore.ogg</explore>
 		<combat>aea_MUS_LylmikCoreBattle.ogg</combat>
 	</track>
+	<track>
+		<name>aea_lylmik_boss</name> <!--Music by lizzard-->
+		<explore>aea_MUS_LylmikCoreExplore.ogg</explore>
+		<combat>aea_MUS_LylmikBoss.ogg</combat>
+	</track>
 </music>
 
 <aea_laser_old_fire1 volume="7">weapons/launch_unused_1.ogg</aea_laser_old_fire1>

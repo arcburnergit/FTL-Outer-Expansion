@@ -512,6 +512,7 @@
     </choice>
 </event>
 <event name="TRANSPORT_CAPTURE_AEA_CULT" unique="true">
+    <recallBoarders force="true" ship="enemy" />
 	<text>The crew is dead, leaving you with the ship. Its cargo is yours for the taking. Aboard is the special tech you expected, which you bring back to your ship.</text>
 	<autoReward level="MED">standard_no_item</autoReward>
 	<achievement>ACH_TRANS_AEA_CULT</achievement>
@@ -527,6 +528,7 @@
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->	
 <event name="DESTROYED_AEA_CULT">
+    <recallBoarders force="true" ship="enemy" />
 	<text load="TEXT_DESTROYED_AEA_CULT" />
 	<autoReward level="MED">standard</autoReward>
 </event>
@@ -538,6 +540,7 @@
 </textList>
 
 <event name="DEAD_CREW_AEA_CULT">
+    <recallBoarders force="true" ship="enemy" />
 	<text load="TEXT_DEAD_CREW_AEA_CULT" />
 	<autoReward level="HIGH">standard</autoReward>
 </event>
@@ -600,10 +603,12 @@
 
 <ship name="SHIP_AEA_CULT_FACTORY" auto_blueprint="LIST_SHIPS_AEA_CULT_FIGHT">
 	<destroyed>
+		<recallBoarders force="true" ship="enemy" />
 		<text>You've destroyed the Cultist vessel and gain access to the factory, you quickly loot it before moving on.</text>
 		<autoReward level="HIGH">standard</autoReward>
 	</destroyed>
 	<deadCrew>
+		<recallBoarders force="true" ship="enemy" />
 		<text>You've cleared out the cultist and gain access to the factory, you quickly loot it before moving on.</text>
 		<autoReward level="HIGH">standard_no_item</autoReward>
 		<weapon name="RANDOM"/>
@@ -612,6 +617,7 @@
 
 <ship name="SHIP_AEA_CULT_WHALE" auto_blueprint="AEA_CULT_WHALE">
 	<destroyed>
+		<recallBoarders force="true" ship="enemy" />
 		<text>You've killed the whale.
 
 You monster!.</text>
@@ -633,6 +639,7 @@ You monster!.</text>
 <event name="DEFEAT_VAMPWEED_ELITE">
     <text>You've managed to take down an elite cultist ship, and now the remains are yours to scrap.</text>
     <autoReward level="HIGH">standard_no_item</autoReward>
+    <recallBoarders force="true" ship="enemy" />
     <choice hidden="true">
         <text>Continue...</text>
         <event>
@@ -644,6 +651,7 @@ You monster!.</text>
 
 <ship name="SHIP_AEA_CULT_WHALE_HUNTER" auto_blueprint="LIST_SHIPS_CLAN_LARGE">
 	<destroyed>
+		<recallBoarders force="true" ship="enemy" />
 		<text>You expected the Clansmen to surrender at least once, but they never did. Instead, your final blow rocks the ship, and you watch as it explodes...</text>
 		<autoReward level="MED">standard</autoReward>
 		<choice hidden="true">
@@ -652,6 +660,7 @@ You monster!.</text>
 		</choice>
 	</destroyed>
 	<deadCrew>
+		<recallBoarders force="true" ship="enemy" />
 		<text>You've successfully neutralised the Clan vessel, allowing you to board it to claim your spoils.</text>
 		<autoReward level="HIGH">standard</autoReward>
 		<choice hidden="true">

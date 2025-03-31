@@ -104,6 +104,7 @@
 
 
 <event name="AEA_OLD_SHOWDOWN_CASUAL">
+	<metaVariable name="juke_aea_old_3" op="set" val="1" />
 	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
 	<ship load="SHIP_AEA_OLD_FINAL_BOSS_CASUAL" hostile="false" />
 	<choice hidden="true">
@@ -119,6 +120,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_SHOWDOWN_NORMAL">
+	<metaVariable name="juke_aea_old_3" op="set" val="1" />
 	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
 	<ship load="SHIP_AEA_OLD_FINAL_BOSS_NORMAL" hostile="false" />
 	<choice hidden="true">
@@ -134,6 +136,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_SHOWDOWN_CHALLENGE">
+	<metaVariable name="juke_aea_old_3" op="set" val="1" />
 	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
 	<ship load="SHIP_AEA_OLD_FINAL_BOSS_CHALLENGE" hostile="false" />
 	<choice hidden="true">
@@ -149,6 +152,7 @@
 	</choice>
 </event>
 <event name="AEA_OLD_SHOWDOWN_EXTREME">
+	<metaVariable name="juke_aea_old_3" op="set" val="1" />
 	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
 	<ship load="SHIP_AEA_OLD_FINAL_BOSS_EXTREME" hostile="false" />
 	<choice hidden="true">

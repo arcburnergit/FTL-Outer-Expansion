@@ -95,6 +95,10 @@
 		<text>Proceed to the Anarchist Central Nebula.</text>
 		<event load="AEA_SHLEG_UNIQUE_WARP" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_SHARD" blue="false">
+		<text>Proceed to the Shard-Forged Sector.</text>
+		<event load="AEA_SHARD_WARP" />
+	</mod-append:choice>
 	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_SHARD_UNIQUE" blue="false">
 		<text>Proceed to the Shard-Forged Palace.</text>
 		<event load="AEA_SHARD_UNIQUE_WARP" />
@@ -140,7 +144,7 @@
 		<text>Proceed to the Anarchist Central Nebula.</text>
 		<event load="LIGHTSPEED_SECTOR_WARP_AEA_SHLEG_HAT" />
 	</mod-append:choice>
-	<mod-append:choice hidden="true" req="SEC SECTOR_AEA_SHARD_UNIQUE" blue="false">
+	<mod-append:choice hidden="true" blue="false">
 		<text>Proceed to the Shard-Forged Palace.</text>
 		<event load="LIGHTSPEED_SECTOR_WARP_AEA_SHARD_HAT" />
 	</mod-append:choice>

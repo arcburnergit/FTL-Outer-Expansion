@@ -44,19 +44,106 @@ local function is_aea_super_shields_enemy(systemBox)
     return systemName == "aea_super_shields" and not systemBox.bPlayerUI
 end
  
+local aea_super_shieldsButtonOffset_x = 37
+local aea_super_shieldsButtonOffset_y = -50
 --Handles initialization of custom system box
 local function aea_super_shields_construct_system_box(systemBox)
     if is_aea_super_shields(systemBox) then
-        systemBox.extend.xOffset = 36
+        systemBox.extend.xOffset = 54
+
+        local activateButton = Hyperspace.Button()
+        activateButton:OnInit("systemUI/button_cloaking2", Hyperspace.Point(aea_super_shieldsButtonOffset_x, aea_super_shieldsButtonOffset_y))
+        activateButton.hitbox.x = 11
+        activateButton.hitbox.y = 36
+        activateButton.hitbox.w = 20
+        activateButton.hitbox.h = 30
+        systemBox.table.activateButton = activateButton
     end
 end
 
 script.on_internal_event(Defines.InternalEvents.CONSTRUCT_SYSTEM_BOX, aea_super_shields_construct_system_box)
 
+--Handles mouse movement
+local function aea_super_shields_mouse_move(systemBox, x, y)
+    if is_aea_super_shields(systemBox) then
+        local activateButton = systemBox.table.activateButton
+        activateButton:MouseMove(x - aea_super_shieldsButtonOffset_x, y - aea_super_shieldsButtonOffset_y, false)
+        
+    end
+    return Defines.Chain.CONTINUE
+end
+script.on_internal_event(Defines.InternalEvents.SYSTEM_BOX_MOUSE_MOVE, aea_super_shields_mouse_move)
+
+local function aea_super_shields_click(systemBox, shift)
+    if is_aea_super_shields(systemBox) then
+        local activateButton = systemBox.table.activateButton
+        if activateButton.bHover and activateButton.bActive then
+            local shipManager = Hyperspace.ships.player
+            local aea_super_shields_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields"))
+            local layersLeft = 2 + math.ceil(aea_super_shields_system:GetEffectivePower()/2) - shipManager.shieldSystem.shields.power.super.first
+            if layersLeft > 0 then
+                for i = 1, layersLeft do
+                    shipManager.shieldSystem:AddSuperShield(shipManager.shieldSystem.superUpLoc)
+                end
+                aea_super_shields_system:LockSystem(5)
+            end
+        end
+    end
+    return Defines.Chain.CONTINUE
+end
+script.on_internal_event(Defines.InternalEvents.SYSTEM_BOX_MOUSE_CLICK, aea_super_shields_click)
+
+local lastKeyDown = nil
+script.on_internal_event(Defines.InternalEvents.SYSTEM_BOX_KEY_DOWN, function(systemBox, key, shift)
+    if Hyperspace.metaVariables.aea_super_shields_hotkey_enabled == 0 and key ~= lastKeyDown and is_aea_super_shields(systemBox) then
+        lastKeyDown = key
+        if key == 99 then
+            aea_super_shields_click(systemBox, shift)
+        elseif key == 104 and shift then
+            local aea_super_shields_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields"))
+            aea_super_shields_system:DecreasePower(false)
+        elseif key == 104 then
+            local aea_super_shields_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields"))
+            aea_super_shields_system:IncreasePower(1, false)
+        end
+    end
+end)
+
 --Utility function to see if the system is ready for use
 local function aea_super_shields_ready(shipSystem)
    return not shipSystem:GetLocked() and shipSystem:Functioning()
 end
+
+--Initializes primitive for UI elements
+local buttonBase
+script.on_init(function()
+    buttonBase = Hyperspace.Resources:CreateImagePrimitiveString("systemUI/button_cloaking2_base.png", aea_super_shieldsButtonOffset_x, aea_super_shieldsButtonOffset_y, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
+end)
+
+--Handles custom rendering
+local function aea_super_shields_render(systemBox, ignoreStatus)
+    if is_aea_super_shields(systemBox) then
+        local activateButton = systemBox.table.activateButton
+        local shipManager = Hyperspace.ships.player
+        local aea_super_shields_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields"))
+        local layersLeft = 2 + math.ceil(aea_super_shields_system:GetEffectivePower()/2) - shipManager.shieldSystem.shields.power.super.first
+        activateButton.bActive = aea_super_shields_ready(systemBox.pSystem) and layersLeft > 0
+
+        if activateButton.bHover then
+            if Hyperspace.metaVariables.aea_super_shields_hotkey_enabled == 0 and not Hyperspace.ships.player:HasSystem(10) then
+                Hyperspace.Mouse.tooltip = "Overclock the Auxiliary Shields system, instantly generate your super shields up to maxmimum, system becomes locked for 25 seconds.\nHotkey:C"
+            else
+                Hyperspace.Mouse.tooltip = "Overclock the Auxiliary Shields system, instantly generate your super shields up to maxmimum, system becomes locked for 25 seconds.\nHotkey:N/A"
+            end
+        end
+        Graphics.CSurface.GL_RenderPrimitive(buttonBase)
+        systemBox.table.activateButton:OnRender()
+    end
+end
+script.on_render_event(Defines.RenderEvents.SYSTEM_BOX, 
+function(systemBox, ignoreStatus) 
+    return Defines.Chain.CONTINUE
+end, aea_super_shields_render)
 
 local shieldTimer = {}
 shieldTimer[0] = 0
@@ -67,7 +154,7 @@ local shield_ui = Hyperspace.Resources:CreateImagePrimitiveString("statusUI/top_
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
     shieldTimer[0] = 0
     shieldTimer[1] = 0
-    if shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields")) and shipManager:HasAugmentation("UPG_AEA_SUPER_SHIELD_OVERCHARGER") > 0 then
+    if shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields")) and (shipManager:HasAugmentation("UPG_AEA_SUPER_SHIELD_OVERCHARGER") > 0 or shipManager:HasAugmentation("EX_AEA_SUPER_SHIELD_OVERCHARGER") > 0) then
         local aea_super_shields_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields"))
         local maxLayers = 2 + math.ceil(aea_super_shields_system:GetEffectivePower()/2) - shipManager.shieldSystem.shields.power.super.first
         if maxLayers > 0 then
@@ -94,7 +181,12 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
         end
 		local maxLayers = 2 + math.ceil(aea_super_shields_system:GetEffectivePower()/2)
         local multiplier =  0.75 + aea_super_shields_system:GetEffectivePower() / 4 + aea_super_shields_system.iActiveManned * 0.1
+
+        if shipManager:HasAugmentation("UPG_AEA_SUPER_SHIELD_LINKER") > 0 or shipManager:HasAugmentation("EX_AEA_SUPER_SHIELD_LINKER") > 0 then 
+            multiplier = multiplier + 0.05 * shipManager:GetSystem(0).iActiveManned 
+        end
         if shipManager.iShipId == 1 then multiplier = multiplier * 0.7 end
+
         if shipManager.shieldSystem.shields.power.super.first < maxLayers then
             shieldTimer[shipManager.iShipId] = math.min(5, shieldTimer[shipManager.iShipId] + multiplier * Hyperspace.FPS.SpeedFactor/16)
             if shieldTimer[shipManager.iShipId] >= 5 then
@@ -123,13 +215,13 @@ script.on_render_event(Defines.RenderEvents.SPACE_STATUS, function() end, functi
     end
 end)
 
---[[script.on_internal_event(Defines.InternalEvents.GET_AUGMENTATION_VALUE, function(shipManager, augName, augValue)
-	if shipManager and augName == "SHIELD_RECHARGE" and shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields")) then
+script.on_internal_event(Defines.InternalEvents.GET_AUGMENTATION_VALUE, function(shipManager, augName, augValue)
+	if shipManager and augName == "SHIELD_RECHARGE" and shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields")) and (shipManager:HasAugmentation("UPG_AEA_SUPER_SHIELD_LINKER") > 0 or shipManager:HasAugmentation("EX_AEA_SUPER_SHIELD_LINKER") > 0) then
 		local manning_level = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields")).iActiveManned
-		augValue = augValue + manning_level * 0.1
+		augValue = augValue + manning_level * 0.05
 	end
 	return Defines.Chain.CONTINUE, augValue
-end, -100)]]
+end, -100)
 
 local systemIcons = {}
 local function system_icon(name)

@@ -11107,7 +11107,9 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 <systemBlueprint name="aea_super_shields">
 	<type>shields</type>
 	<title>Auxiliary Shields</title>
-	<desc>Generates super shield layers. Incompatible with cloaking. Uses manning levels in shields.</desc>
+	<desc>Generates super shield layers. Incompatible with cloaking. Uses manning levels in shields.
+
+Can be overclocked to instantly generate shields up to it's maximum at the cost of becoming locked for 25 seconds.</desc>
 	<startPower>1</startPower>
 	<maxPower>3</maxPower>
 	<rarity>1</rarity>
@@ -11138,9 +11140,23 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
 </augBlueprint>
-<augBlueprint name="UPG_AEA_SUPER_SHIELD_OVERCHARGER_EX">
-	<title>Super shield overcharger</title>
+<augBlueprint name="EX_AEA_SUPER_SHIELD_OVERCHARGER">
+	<title>Auxiliary Overcharger</title>
 	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="UPG_AEA_SUPER_SHIELD_LINKER">
+	<title>Computer Synchronisation</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="EX_AEA_SUPER_SHIELD_LINKER">
+	<title>Computer Synchronisation</title>
+	<desc>Manning in Auxiliary Shields also provides Shields with 50% of the bonus, Manning in Shields provides Auxiliary Shields with 50% of it's bonus.</desc>
 	<cost>0</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
@@ -11219,10 +11235,19 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
 </augBlueprint>
+<augBlueprint name="EX_AEA_LAB_CRYSTAL_SABOTAGE">
+	<title>[L] Hardened Crystals</title>
+	<desc>Crystals gain 75% sabotage damage, but lose 50% of their move speed
+
+[L] - As an external lab upgrade, this augment will provide its normal effect but take up an augment slot. It cannot be converted into an actual lab upgrade, but will not consume your primary slot. Does not stack with itself.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_BATTLE" layout="aeap_shard_battle_a" img="aeap_shard_battle_a">
-	<class>Shard-Forged Cruiser</class>
+	<class>Shard-Shattered Cruiser</class>
 	<name>The Citrine</name>
-	<desc>A boarding focussed ship, the crystal crew on board arc specialized for getting into the systems of the enemy and destroying them quickly.</desc>
+	<desc>A boarding focused ship, the crystal crew onboard are able to quickly destroy systems while protected by a wall of crystal.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_BATTLE_unlock" />
 	<systemList>
 		<aea_super_shields max="5" power="1" room="3" start="false" img="room_shields_7">
@@ -11297,14 +11322,14 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<crewCount amount="1" class="aea_shard_smasher" />
 	<crewCount amount="1" class="aea_shard_breaker" />
 	<crewCount amount="1" class="engi_separatist" />
-	<aug name="LAB_CRYSTAL_SABOTAGE" />
+	<aug name="EX_AEA_LAB_CRYSTAL_SABOTAGE" />
 	<aug name="AEA_SHARD_ARMOUR"/>
 	<shieldImage>mup_disk</shieldImage>
 	<mv-mapImage>map_icon_aeap_shard_battle</mv-mapImage>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_BATTLE_2" layout="aeap_shard_battle_b" img="aeap_shard_battle_b">
-	<class>Shard-Forged Cruiser</class>
+	<class>Shard-Shattered Cruiser</class>
 	<name>The Highnoon</name>
 	<desc>With both a medbay and a clonebay this ship makes an impressive boarding ship, however it's limited by a small teleporter and limited system capacity.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_BATTLE_2_unlock" />
@@ -11386,7 +11411,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_BATTLE_3" layout="aeap_shard_battle_c" img="aeap_shard_battle_c">
-	<class>Shard-Forged Cruiser</class>
+	<class>Shard-Shattered Cruiser</class>
 	<name>Nightbringer</name>
 	<desc>With both a Shields system and an Auxiliary Shields system this ship possesses strong defensive capabilities.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_BATTLE_3_unlock" />
@@ -11550,7 +11575,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_AUTO" layout="aeap_shard_auto_a" img="aeap_shard_auto_a">
-	<class>Shard-Forged Cruiser</class>
+	<class>Shard-Forged Auto-Cruiser</class>
 	<name>The Glass Shard</name>
 	<desc>Possessing a powerful Artillery Beam capable of locking down rooms this ship is formidable in both defense and offense.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_AUTO_unlock" />
@@ -11629,7 +11654,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_AUTO_2" layout="aeap_shard_auto_b" img="aeap_shard_auto_b">
-	<class>Shard-Forged Cruiser</class>
+	<class>Shard-Forged Auto-Cruiser</class>
 	<name>Circuit Board</name>
 	<desc>Unlike most ships this vessel can use its Auxiliary Shields system alongside it's Cloaking system providing excellent defense against certain ships, however it can't install a normal Shields system without losing the auxiliary one.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_AUTO_2_unlock" />
@@ -11710,7 +11735,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_SHARD_AUTO_3" layout="aeap_shard_auto_c" img="aeap_shard_auto_c">
-	<class>Shard-Forged Cruiser</class>
+	<class>Shard-Forged Auto-Cruiser</class>
 	<name>The Topaz</name>
 	<desc>This auto ship has been outfitted to support boarding with it's crew, however with only an auxiliary shielding system and a drone it may struggle in defensive situations.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHARD_AUTO_3_unlock" />
@@ -12457,7 +12482,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<class>Rebel Broadsider</class>
 	<name>The Barrage</name>
 	<desc>A powerful ship designed around it's broadside mounted artillery. This ship's artillery mounts have been specifically designed to mount any sort of weapon.</desc>
-	<unlock id="ship_PLAYER_SHIP_AEA_BROADSIDE_2_unlock" />
+	<unlock id="ship_PLAYER_SHIP_AEA_BROADSIDE_3_unlock" />
 	<systemList>
 		<aea_super_shields power="1" room="6" start="false" img="room_shields_aea_4">
 			<slot>

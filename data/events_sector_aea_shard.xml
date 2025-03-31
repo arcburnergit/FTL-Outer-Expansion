@@ -1225,6 +1225,7 @@ You notice that there's still a large amount of scrap on the surface, you could 
 <event name="ESCAPE_AEA_SHARD_AUTO">
     <text>You see a crack form down the sides of one of the crystals on the auto ship. You see more and more form before the crystal parts of the ship explode clouding your sensors. By the time you can see again the ship has jumped away.
 Luckily whatever the ship used to cloud it's escape has left a visible trail in the direction the ship jumped, you're able to use this to telegraph the beacon it likely jumped to.</text>
+    <recallBoarders force="true" ship="enemy" />
     <instantEscape/>
     <quest event="AEA_SHARD_AUTO_QUEST"/>
 </event>

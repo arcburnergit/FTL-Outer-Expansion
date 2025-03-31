@@ -126,9 +126,12 @@
 <mod:findName type="blueprintList" name="LIST_CREW_ALL_CRAPBUCKET">
     <mod-append:name>aea_acid_soldier</mod-append:name>
     <mod-append:name>aea_acid_captain</mod-append:name>
+
     <mod-append:name>aea_necro_engi</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
+
     <mod-append:name>aea_old_1</mod-append:name>
+
     <mod-append:name>aea_cult_wizard</mod-append:name>
     <mod-append:name>aea_cult_wizard_a01</mod-append:name>
     <mod-append:name>aea_cult_wizard_a02</mod-append:name>
@@ -148,11 +151,15 @@
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
     <mod-append:name>aea_cult_priest_off</mod-append:name>
     <mod-append:name>aea_cult_priest_bor</mod-append:name>
+
     <mod-append:name>aea_bird_avali</mod-append:name>
     <mod-append:name>aea_bird_illuminant</mod-append:name>
 
     <mod-append:name>aea_shleg_shell</mod-append:name>
     <mod-append:name>aea_shleg_slug</mod-append:name>
+
+    <mod-append:name>aea_shard_breaker</mod-append:name>
+    <mod-append:name>aea_shard_smasher</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_UNIQUE_CRAPBUCKET">
@@ -164,23 +171,9 @@
     <mod-append:name>aea_old_unique_4</mod-append:name>
     <mod-append:name>aea_old_unique_5</mod-append:name>
     <mod-append:name>aea_cult_tiny</mod-append:name>
-    <mod-append:name>aea_cult_tiny_a01</mod-append:name>
-    <mod-append:name>aea_cult_tiny_a02</mod-append:name>
-    <mod-append:name>aea_cult_tiny_s03</mod-append:name>
-    <mod-append:name>aea_cult_tiny_s04</mod-append:name>
-    <mod-append:name>aea_cult_tiny_s05</mod-append:name>
-    <mod-append:name>aea_cult_tiny_s06</mod-append:name>
-    <mod-append:name>aea_cult_tiny_a07</mod-append:name>
-    <mod-append:name>aea_cult_tiny_s08</mod-append:name>
-    <mod-append:name>aea_cult_tiny_s09</mod-append:name>
-    <mod-append:name>aea_cult_tiny_a10</mod-append:name>
-    <mod-append:name>aea_cult_tiny_a11</mod-append:name>
-    <mod-append:name>aea_cult_tiny_s12</mod-append:name>
-    <mod-append:name>aea_cult_tiny_s13</mod-append:name>
-    <mod-append:name>aea_cult_tiny_s14</mod-append:name>
-    <mod-append:name>aea_cult_tiny_s15</mod-append:name>
     <mod-append:name>aea_shleg_sickle</mod-append:name>
     <mod-append:name>aea_shleg_sorrow</mod-append:name>
+    <mod-append:name>aea_shard_dawn</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ALIENS">
@@ -238,6 +231,9 @@
     <mod-append:name>aea_shleg_shell</mod-append:name>
     <mod-append:name>aea_shleg_sickle</mod-append:name>
     <mod-append:name>aea_shleg_sorrow</mod-append:name>
+    <mod-append:name>aea_shard_breaker</mod-append:name>
+    <mod-append:name>aea_shard_smasher</mod-append:name>
+    <mod-append:name>aea_shard_dawn</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ENGI">
@@ -273,6 +269,7 @@
     <mod-append:name>aea_bird_unique</mod-append:name>
     <mod-append:name>aea_shleg_sickle</mod-append:name>
     <mod-append:name>aea_shleg_sorrow</mod-append:name>
+    <mod-append:name>aea_shard_dawn</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_PARAGON_UNIQUE">
@@ -302,6 +299,7 @@
     <mod-append:name>aea_bird_unique</mod-append:name>
     <mod-append:name>aea_shleg_sickle</mod-append:name>
     <mod-append:name>aea_shleg_sorrow</mod-append:name>
+    <mod-append:name>aea_shard_dawn</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_GAS">
@@ -359,6 +357,7 @@
     <mod-append:name>aea_cult_priest_off</mod-append:name>
     <mod-append:name>aea_cult_priest_bor</mod-append:name>
     <mod-append:name>aea_bird_illuminant</mod-append:name>
+    <mod-append:name>aea_shard_smasher</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ELITE_FIRE">
@@ -368,6 +367,7 @@
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
     <mod-append:name>aea_cult_priest_off</mod-append:name>
     <mod-append:name>aea_cult_priest_bor</mod-append:name>
+    <mod-append:name>aea_shard_smasher</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ELITE_RHYME">
@@ -378,6 +378,7 @@
     <mod-append:name>aea_cult_priest_off</mod-append:name>
     <mod-append:name>aea_cult_priest_bor</mod-append:name>
     <mod-append:name>aea_bird_illuminant</mod-append:name>
+    <mod-append:name>aea_shard_smasher</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ORCHID">
@@ -467,6 +468,8 @@
 
 <mod:findName type="blueprintList" name="LIST_CREW_CRYSTAL">
     <mod-append:name>aea_shard_breaker</mod-append:name>
+    <mod-append:name>aea_shard_smasher</mod-append:name>
+    <mod-append:name>aea_shard_dawn</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_GATHERING_RANDOM">
@@ -495,7 +498,9 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="BLUELIST_WEAPONS_CRYSTAL">
+	<mod-append:name>CRYSTAL_BURST_2_AEA_LOOT</mod-append:name>
 </mod:findName>
+
 <blueprintList name="LIST_CREW_AEA_OLD">
     <name>aea_old_1</name>
     <name>aea_old_unique_1</name>
@@ -2675,33 +2680,27 @@
 	<minSector>1</minSector>
 	<systemList>
 		<doors power="1" max="1" room="16" start="true" />
-		<drones power="14" max="14" room="12" start="true" />
-		<engines power="2" max="3" room="3" start="true" />
-		<hacking power="2" max="2" room="13" start="true" />
+		<drones power="8" max="8" room="12" start="true" />
+		<engines power="1" max="1" room="3" start="true" />
+		<aea_super_shields power="2" max="2" room="13" start="true" />
 		<medbay power="3" max="3" room="19" start="true" />
 		<oxygen power="3" max="3" room="18" start="true" />
 		<pilot power="3" max="3" room="0" start="true" />
-		<shields power="14" max="14" room="6" start="true" />
-		<temporal power="3" max="3" room="15" start="true" />
-		<weapons power="14" max="14" room="11" start="true" />
+		<shields power="12" max="12" room="6" start="true" />
+		<temporal power="1" max="1" room="15" start="true" />
+		<weapons power="8" max="8" room="11" start="true" />
 	</systemList>
-	<weaponSlots>6</weaponSlots>
-	<droneSlots>6</droneSlots>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
 	<weaponList missiles="22" count="6">
 		<weapon name="LASER_FROST_2" />
 		<weapon name="LASER_FROST_2" />
-		<weapon name="BOMB_BREACH_1_ENEMY" />
-		<weapon name="KERNEL_FIRE_ENEMY" />
 		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
-		<weapon name="BEAM_2" />
+		<weapon name="KERNEL_FIRE_ENEMY" />
 	</weaponList>
 	<droneList drones="22" count="6">
-		<drone name="AEA_COMBAT_BIRD_BURST_2" />
-		<drone name="AEA_COMBAT_BIRD_BURST_2" />
-		<drone name="HELLRAISER_FIRE" />
-		<drone name="PEST_DEBUFF_ENEMY" />
-		<drone name="MENDER" />
-		<drone name="DEFENSE_2_ENEMY" />
+		<drone name="AEA_COMBAT_BIRD_BURST_2_ENEMY" />
+		<drone name="AEA_COMBAT_BIRD_BURST_2_ENEMY" />
 	</droneList>
 	<health amount="30" />
 	<maxPower amount="55" />
@@ -2724,7 +2723,7 @@
 		<doors power="3" max="3" room="23" start="true" />
 		<drones power="11" max="11" room="11" start="true" />
 		<engines power="2" max="2" room="14" start="true" />
-		<hacking power="2" max="2" room="24" start="true" />
+		<aea_super_shields power="2" max="2" room="24" start="true" />
 		<oxygen power="3" max="3" room="17" start="true" />
 		<pilot power="2" max="2" room="0" start="true" />
 		<shields power="14" max="14" room="6" start="true" />
@@ -2741,7 +2740,7 @@
 		<weapon name="AEA_LASER_OLDP_2" />
 	</weaponList>
 	<droneList drones="16" count="4">
-		<drone name="AEA_COMBAT_BIRD_BURST_1" />
+		<drone name="AEA_COMBAT_BIRD_BURST_1_ENEMY" />
 		<drone name="GUARDIAN_1_DRONE" />
 		<drone name="BATTLETOG_DEFEND" />
 		<drone name="HELLRAISER_FIRE" />
@@ -2765,13 +2764,13 @@
 		<doors power="3" max="3" room="23" start="true" />
 		<drones power="12" max="12" room="11" start="true" />
 		<engines power="2" max="2" room="14" start="true" />
-		<hacking power="2" max="2" room="24" start="true" />
+		<aea_super_shields power="2" max="2" room="24" start="true" />
 		<oxygen power="3" max="3" room="17" start="true" />
 		<pilot power="3" max="3" room="0" start="true" />
 		<shields power="14" max="14" room="6" start="true" />
 		<teleporter power="3" max="3" room="12" start="true" />
 		<temporal power="2" max="2" room="13" start="true" />
-		<weapons power="14" max="14" room="29" start="true" />
+		<weapons power="12" max="12" room="29" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>4</droneSlots>
@@ -2782,7 +2781,7 @@
 		<weapon name="AEA_LASER_OLDP_2" />
 	</weaponList>
 	<droneList drones="16" count="4">
-		<drone name="AEA_COMBAT_BIRD_BURST_2" />
+		<drone name="AEA_COMBAT_BIRD_BURST_2_ENEMY" />
 		<drone name="GUARDIAN_2_DRONE" />
 		<drone name="BATTLETOG_DEFEND" />
 		<drone name="HELLRAISER_FIRE" />
@@ -2804,15 +2803,15 @@
 		<battery power="2" max="2" room="20" start="true" />
 		<clonebay power="4" max="4" room="19" start="true" />
 		<doors power="3" max="3" room="23" start="true" />
-		<drones power="14" max="14" room="11" start="true" />
+		<drones power="12" max="12" room="11" start="true" />
 		<engines power="2" max="2" room="14" start="true" />
-		<hacking power="2" max="2" room="24" start="true" />
+		<aea_super_shields power="2" max="2" room="24" start="true" />
 		<oxygen power="3" max="3" room="17" start="true" />
 		<pilot power="3" max="3" room="0" start="true" />
 		<shields power="14" max="14" room="6" start="true" />
 		<teleporter power="3" max="3" room="12" start="true" />
 		<temporal power="2" max="2" room="13" start="true" />
-		<weapons power="14" max="14" room="29" start="true" />
+		<weapons power="12" max="12" room="29" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>4</droneSlots>
@@ -2823,8 +2822,8 @@
 		<weapon name="AEA_LASER_OLDP_2" />
 	</weaponList>
 	<droneList drones="16" count="4">
-		<drone name="AEA_COMBAT_BIRD_BURST_2" />
-		<drone name="AEA_COMBAT_BIRD_BURST_1" />
+		<drone name="AEA_COMBAT_BIRD_BURST_2_ENEMY" />
+		<drone name="AEA_COMBAT_BIRD_BURST_1_ENEMY" />
 		<drone name="BATTLETOG_DEFEND" />
 		<drone name="HELLRAISER_FIRE" />
 	</droneList>
@@ -2845,15 +2844,15 @@
 		<battery power="2" max="2" room="20" start="true" />
 		<clonebay power="4" max="4" room="19" start="true" />
 		<doors power="3" max="3" room="23" start="true" />
-		<drones power="16" max="16" room="11" start="true" />
+		<drones power="13" max="13" room="11" start="true" />
 		<engines power="2" max="2" room="14" start="true" />
-		<hacking power="2" max="2" room="24" start="true" />
+		<aea_super_shields power="2" max="2" room="24" start="true" />
 		<oxygen power="3" max="3" room="17" start="true" />
 		<pilot power="3" max="3" room="0" start="true" />
 		<shields power="16" max="16" room="6" start="true" />
 		<teleporter power="4" max="4" room="12" start="true" />
 		<temporal power="2" max="2" room="13" start="true" />
-		<weapons power="16" max="16" room="29" start="true" />
+		<weapons power="13" max="13" room="29" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>4</droneSlots>
@@ -2864,8 +2863,8 @@
 		<weapon name="AEA_LASER_OLDP_2" />
 	</weaponList>
 	<droneList drones="16" count="4">
-		<drone name="AEA_COMBAT_BIRD_BURST_2" />
-		<drone name="AEA_COMBAT_BIRD_BURST_2" />
+		<drone name="AEA_COMBAT_BIRD_BURST_2_ENEMY" />
+		<drone name="AEA_COMBAT_BIRD_BURST_2_ENEMY" />
 		<drone name="BATTLETOG_DEFEND" />
 		<drone name="HELLRAISER_FIRE" />
 	</droneList>
