@@ -8,7 +8,7 @@ local function getRoomCount(file)
 end
 
 local systemsToAppend = {}
-systemsToAppend["aea_super_shields"] = {attributes = {power = 1, start = "false"}, manning = true, 
+systemsToAppend["aea_super_shields"] = {attributes = {power = 1, start = "false"}, manning = true, replace_sys = "cloaking", 
     image_list = {{room_image = "room_shields", w = 2, h = 2, top = "00", bottom = "11", left="10", right="01", manning_slot = 0, manning_direction = "left"},
         {room_image = "room_shields_aea_r", w = 2, h = 2, top = "01", bottom = "10", left="11", right="00", manning_slot = 1, manning_direction = "up"},
         {room_image = "room_shields_aea_rr", w = 2, h = 2, top = "11", bottom = "00", left="10", right="01", manning_slot = 3, manning_direction = "right"},
@@ -29,6 +29,12 @@ systemsToAppend["aea_super_shields"] = {attributes = {power = 1, start = "false"
         {room_image = "room_shields_9", w = 2, h = 2, top = "01", bottom = "01", left="00", right="01", manning_slot = 1, manning_direction = "up"},
         {room_image = "room_shields_10", w = 2, h = 2, top = "01", bottom = "01", left="00", right="01", manning_slot = 3, manning_direction = "down"},
         {room_image = "room_shields_11", w = 2, h = 1, top = "00", bottom = "11", left="0", right="1", manning_slot = 1, manning_direction = "down"},
+        {room_image = "room_shields_aea_cloak", w = 2, h = 2, top = "01", bottom = "00", left="00", right="10", manning_slot = 1, manning_direction = "up"},
+        {room_image = "room_shields_aea_cloak_2", w = 2, h = 2, top = "00", bottom = "01", left="00", right="01", manning_slot = 3, manning_direction = "right"},
+        {room_image = "room_shields_aea_cloak_10", w = 2, h = 2, top = "10", bottom = "00", left="10", right="00", manning_slot = 0, manning_direction = "left"},
+        {room_image = "room_shields_aea_cloak_11", w = 2, h = 2, top = "00", bottom = "10", left="01", right="00", manning_slot = 1, manning_direction = "down"},
+        {room_image = "room_shields_aea_cloak_3", w = 2, h = 1, top = "11", bottom = "00", left="0", right="0", manning_slot = 0, manning_direction = "up"},
+        {room_image = "room_shields_aea_cloak_12", w = 2, h = 2, top = "00", bottom = "11", left="00", right="00", manning_slot = 3, manning_direction = "down"},
         {room_image = "room_shields_aea_11_r", w = 1, h = 2, top = "0", bottom = "1", left="11", right="00", manning_slot = 1, manning_direction = "left"},
         {room_image = "room_shields_aea_11_rr", w = 2, h = 1, top = "11", bottom = "00", left="1", right="0", manning_slot = 0, manning_direction = "up"},
         {room_image = "room_shields_aea_11_rrr", w = 1, h = 2, top = "1", bottom = "0", left="00", right="11", manning_slot = 0, manning_direction = "right"},
@@ -62,6 +68,9 @@ local function noDoorOverlap(rT, rB, rL, rR, iT, iB, iL, iR, shipName)
     end]]
     return roomNumber & imageNumber == 0
 end
+
+local usedFTLMAN = mod.xml.element("usedFTLman", {})
+root:append(usedFTLMAN)
 
 for blueprint in root:children() do
     if blueprint.name == "shipBlueprint" then
@@ -160,7 +169,7 @@ for blueprint in root:children() do
                         --takenRooms[attribute] = system.name
                     end
                 end
-                if room and (system.name ~= "artillery" or start == true) and system.name ~= "cloaking" then
+                if room and (system.name ~= "artillery" or start == true) then
                     takenRooms[room] = system.name
                 end
             end
@@ -169,17 +178,29 @@ for blueprint in root:children() do
                 local hasSystem = false
                 local targetRoom = nil
                 local targetRoomSize = nil
-                for room, roomTable in ipairs(roomList) do
-                    if not takenRooms[room-1] and not roomDoors[room-1].airlock then 
-                        if not targetRoom or not targetRoomSize then
+                if sysInfo.replace_sys then
+                    for room, roomTable in ipairs(roomList) do
+                        if takenRooms[room-1] == sysInfo.replace_sys then
                             targetRoom = room-1
                             targetRoomSize = roomTable.size
-                        elseif roomTable.size > targetRoomSize then
-                            targetRoom = room-1
-                            targetRoomSize = roomTable.size
+                        elseif takenRooms[room-1] == system then
+                            hasSystem = true
                         end
-                    elseif takenRooms[room-1] == system then
-                        hasSystem = true
+                    end
+                end
+                if not targetRoom then
+                    for room, roomTable in ipairs(roomList) do
+                        if not takenRooms[room-1] and not roomDoors[room-1].airlock then 
+                            if not targetRoom or not targetRoomSize then
+                                targetRoom = room-1
+                                targetRoomSize = roomTable.size
+                            elseif roomTable.size > targetRoomSize then
+                                targetRoom = room-1
+                                targetRoomSize = roomTable.size
+                            end
+                        elseif takenRooms[room-1] == system then
+                            hasSystem = true
+                        end
                     end
                 end
                 if not targetRoom then
@@ -192,8 +213,6 @@ for blueprint in root:children() do
                                 targetRoom = room-1
                                 targetRoomSize = roomTable.size
                             end
-                        elseif takenRooms[room-1] == system then
-                            hasSystem = true
                         end
                     end
                 end

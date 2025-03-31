@@ -95,18 +95,32 @@ script.on_internal_event(Defines.InternalEvents.SYSTEM_BOX_MOUSE_CLICK, aea_supe
 
 local lastKeyDown = nil
 script.on_internal_event(Defines.InternalEvents.SYSTEM_BOX_KEY_DOWN, function(systemBox, key, shift)
-    if Hyperspace.metaVariables.aea_super_shields_hotkey_enabled == 0 and key ~= lastKeyDown and is_aea_super_shields(systemBox) then
+    if Hyperspace.metaVariables.aea_super_shields_hotkey_enabled == 0 and ((not lastKeyDown) or lastKeyDown ~= key) and is_aea_super_shields(systemBox) then
         lastKeyDown = key
+        --print("press key:"..key.." shift:"..tostring(shift))
+        local shipManager = Hyperspace.ships.player
         if key == 99 then
-            aea_super_shields_click(systemBox, shift)
+            local shipManager = Hyperspace.ships.player
+            local aea_super_shields_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields"))
+            local layersLeft = 2 + math.ceil(aea_super_shields_system:GetEffectivePower()/2) - shipManager.shieldSystem.shields.power.super.first
+            if layersLeft > 0 then
+                for i = 1, layersLeft do
+                    shipManager.shieldSystem:AddSuperShield(shipManager.shieldSystem.superUpLoc)
+                end
+                aea_super_shields_system:LockSystem(5)
+            end
         elseif key == 104 and shift then
             local aea_super_shields_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields"))
-            aea_super_shields_system:DecreasePower(false)
+            aea_super_shields_system:DecreasePower(true)
         elseif key == 104 then
             local aea_super_shields_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields"))
             aea_super_shields_system:IncreasePower(1, false)
         end
     end
+end)
+
+script.on_internal_event(Defines.InternalEvents.ON_KEY_UP, function(key)
+    lastKeyDown = nil
 end)
 
 --Utility function to see if the system is ready for use

@@ -6609,6 +6609,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 </mod:findLike>
 
 <events>
+	<metaVariable name="aea_warning_message" op="set" val="0" />
 	<variable name="arc_test_light_nebula" op="set" val="0"/>
 
 	<metaVariable name="aea_super_shield_hotkey_enabled" op="set" val="0" />

@@ -82,10 +82,10 @@
 	<desc>Originating from the Acidic Growth, the vessel allowed the Growth to extend it's reach beyond the nebulas it formed in. So far only the orchids have brokered peace with the Acidic Growth. This ship has an upgraded oxygen system.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_ARTY_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="8" start="false" img="room_shields_11">
+		<aea_super_shields power="1" room="13" start="false" img="room_shields_aea_cloak_3">
 			<slot>
-				<direction>down</direction>
-				<number>1</number>
+				<direction>left</direction>
+				<number>0</number>
 			</slot>
 		</aea_super_shields>
 		<battery power="1" room="13" max="2" start="false" img="room_battery_16" />
@@ -161,10 +161,10 @@
 	<desc>This prototype design incorporates duel quick firing artillery beams to drill through enemy ships.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_ARTY_2_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="10" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="5" start="false" img="room_shields_aea_cloak_11">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>down</direction>
+				<number>2</number>
 			</slot>
 		</aea_super_shields>
 		<artillery power="1" max="3" room="1" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" img="room_artillery_4" />
@@ -242,10 +242,10 @@
 	<desc>A federation modification of the Acidic Cruiser, this vessel replaces the Acidic filtering system with a more traditional fire suppression system.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_ARTY_3_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="18" start="false" img="room_shields_11">
+		<aea_super_shields power="1" room="13" start="false" img="room_shields_aea_1">
 			<slot>
-				<direction>down</direction>
-				<number>1</number>
+				<direction>up</direction>
+				<number>0</number>
 			</slot>
 		</aea_super_shields>
 		<battery power="1" room="15" max="2" start="false" img="room_battery_9" />
@@ -325,9 +325,9 @@
 	<desc>A new line of Acidic Cruiser, these ships are specifically designed for high fire power, however this comes at the cost of a weaker shielding system.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_LONG_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="9" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="8" start="false" img="room_shields_aea_cloak_3">
 			<slot>
-				<direction>left</direction>
+				<direction>up</direction>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
@@ -405,6 +405,12 @@
 	<desc>This ship combines a strong weapon system with a boarding setup to create a powerful and dangerous ship.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_LONG_2_unlock" />
 	<systemList>
+		<aea_super_shields power="1" room="3" start="false" img="room_shields_aea_cloak_3">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</aea_super_shields>
 		<battery max="2" power="1" room="2" start="false" img="room_battery_13" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="9" start="false">
@@ -478,6 +484,12 @@
 	<desc>This vessel gets rid of the shield system entirely, focusing on using cloaking and it's more powerful weapon system capable of handling up to 5 weapons at once.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_LONG_3_unlock" />
 	<systemList>
+		<aea_super_shields power="1" room="8" start="false" img="room_shields_aea_cloak_3">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</aea_super_shields>
 		<battery max="2" power="1" room="13" start="false" img="room_battery_2" />
 		<cloaking power="2" room="8" start="true" img="room_cloaking_3" />
 		<clonebay power="1" room="11" start="false">
@@ -553,9 +565,9 @@
 	<desc>Bill has made a few friends on his adventures since becoming an Acidic Outcast.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_BILL_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="14" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="2" start="false" img="room_shields_aea_cloak_3">
 			<slot>
-				<direction>left</direction>
+				<direction>up</direction>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
@@ -1527,9 +1539,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>A vessel belonging to the Engi Heretics. Through use of its powerful shatter laser and capable crew this ship is effective at eliminating any crew on the enemy ship.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_ENGI_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="1" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="3" start="false" img="room_shields_aea_cloak_3">
 			<slot>
-				<direction>left</direction>
+				<direction>up</direction>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
@@ -1608,9 +1620,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>It appears some of the Engi Heretic's enemies have gotten their hands on this vessel. However the vessel is still equiped with the technology to turn Engis into Engi heretics.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_ENGI_2_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="11" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="13" start="false" img="room_shields_aea_2">
 			<slot>
-				<direction>left</direction>
+				<direction>right</direction>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
@@ -1691,9 +1703,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>Manned by only a single Engi Heretic elite, this vessel makes up for the lack of numbers with powerful systems and crew abilities.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_ENGI_3_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="16" start="false" img="room_shields_aea_2">
+		<aea_super_shields power="1" room="2" start="false" img="room_shields_aea_cloak_3">
 			<slot>
-				<direction>right</direction>
+				<direction>up</direction>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
@@ -1773,7 +1785,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>Manned by the Engi Heretic Elites, this vessel is a powerful boarding vessel, just make sure not to use up all those nanite swarms.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_SEPA_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="7" start="false" img="room_shields_aea_1">
+		<aea_super_shields power="1" room="13" start="false" img="room_shields_aea_1">
 			<slot>
 				<direction>up</direction>
 				<number>0</number>
@@ -1856,10 +1868,10 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>Another stolen Heretic vessel, pirates are able to make full use of this ships powerful systems, aswell as creating Engi Heretics to fight on their side.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_SEPA_2_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="1" start="false" img="room_shields_aea_1">
+		<aea_super_shields power="1" room="7" start="false" img="room_shields_aea_5">
 			<slot>
-				<direction>up</direction>
-				<number>0</number>
+				<direction>right</direction>
+				<number>1</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="12" start="false" img="room_battery_2" />
@@ -1939,10 +1951,10 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>Unlike other Heretic Vessels, this one is focussed on powerful weapons and drones, with no cloaking or boarding capabilities.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_SEPA_3_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="1" start="false" img="room_shields_aea_1">
+		<aea_super_shields power="1" room="6" start="false" img="room_shields_aea_cloak">
 			<slot>
 				<direction>up</direction>
-				<number>0</number>
+				<number>1</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="13" start="false" img="room_battery_14" />
@@ -2022,9 +2034,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<desc>The personal vessel of the Lich King, a powerful boarding vessel. Able to build up a capable crew quickly the Lich King  often heads off alone.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_KING_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="14" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="10" start="false" img="room_shields_aea_1">
 			<slot>
-				<direction>left</direction>
+				<direction>up</direction>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
@@ -2697,10 +2709,10 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<desc>This ship relies on it's heavy frontal armour to protect itself from a variety of different projectiles and missiles.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="17" start="false" img="room_shields_aea_1">
+		<aea_super_shields power="1" room="14" start="false" img="room_shields_aea_cloak">
 			<slot>
 				<direction>up</direction>
-				<number>0</number>
+				<number>1</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="29" start="false" img="room_battery_6" />
@@ -2780,10 +2792,10 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<desc>When an obelisk ship got pulled into Lylmik space they managed to take over a Lylmik cruiser and used it to escape.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_2_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="20" start="false" img="room_shields_11">
+		<aea_super_shields power="1" room="10" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>down</direction>
-				<number>1</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<artillery power="1" room="5" start="true" weapon="AEA_ANCIENT_DREAD_INVIS" img="room_artillery" />
@@ -2898,10 +2910,10 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<desc>Sylvan's capable crew managed to take over a Lylmik cruiser when they got trapped in Lylmik space. They removed the armour to enable the engines to be much more powerful than usual</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_ARMOUR_3_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="12" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="9" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="15" start="false" img="room_battery_5" />
@@ -2978,10 +2990,10 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<desc>An armoured ship capable of preventing frontal damage with it's powerful armour.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_HAMMER_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="25" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="7" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="21" start="false" img="room_battery_14" />
@@ -3061,9 +3073,9 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<desc>When the federation got their hands on this vessel they reconfigured the armour for ultimate protection of the shields room, unfortunetly it also made shields alot harder to repair.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_HAMMER_2_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="9" start="false" img="room_shields_aea_5">
+		<aea_super_shields power="1" room="24" start="false" img="room_shields_aea_cloak">
 			<slot>
-				<direction>right</direction>
+				<direction>up</direction>
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
@@ -3146,10 +3158,10 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<desc>This vessel incomporates an experimental allow that provides the entire ship with resistance to damage.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_HAMMER_3_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="10" start="false" img="room_shields_aea_8">
+		<aea_super_shields power="1" room="17" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>down</direction>
-				<number>1</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="9" start="false" img="room_battery_10" />
@@ -3229,10 +3241,10 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<desc>The personal ship of Atoning Unifex, a well armed ship that exploits the weaknesses exposed by the ability to board and hack the enemy's systems.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_UNI_1_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="5" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="18" start="false" img="room_shields_aea_5">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>right</direction>
+				<number>1</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="9" start="false" img="room_battery_8" />
@@ -3309,10 +3321,10 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<desc>The personal ship of Asymptotic Essence, a utility focussed ship, able to make the most of it's systems using their effective abilities.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_UNI_2_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="16" start="false" img="room_shields_4">
+		<aea_super_shields power="1" room="16" start="false" img="room_shields_aea_cloak_3">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>up</direction>
+				<number>1</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="7" start="false" img="room_battery" />
@@ -3390,10 +3402,10 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<desc>The personal ship of Eupathic Impulse, a boarding focused ship able to set the enemy alight with their dangerous abilities.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_UNI_3_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="17" start="false" img="room_shields_11">
+		<aea_super_shields power="1" room="16" start="false" img="room_shields_aea_3">
 			<slot>
 				<direction>down</direction>
-				<number>1</number>
+				<number>0</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="14" start="false" img="room_battery_5" />
@@ -3468,9 +3480,9 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<desc>The personal ship of Homologous Trend, a defensive ship able to heal back damage using their powerful abilities.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_UNI_4_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="15" start="false" img="room_shields_11">
+		<aea_super_shields power="1" room="14" start="false" img="room_shields_aea_cloak_3">
 			<slot>
-				<direction>down</direction>
+				<direction>up</direction>
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
@@ -3551,10 +3563,10 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<desc>The personal ship of Noetic Concordance, designed around making use of their ability to create super shield layers on demand.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_OLD_UNI_5_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="17" start="false" img="room_shields_11">
+		<aea_super_shields power="1" room="13" start="false" img="room_shields_aea_cloak_10">
 			<slot>
-				<direction>down</direction>
-				<number>1</number>
+				<direction>left</direction>
+				<number>0</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="9" start="false" img="room_battery_6" />
@@ -4206,9 +4218,9 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<desc>With no weapons system this ship has to rely on a single intel drone to take out the enemy systems.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_BIG_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="11" start="false" img="room_shields_5">
+		<aea_super_shields power="1" room="11" start="false" img="room_shields_aea_cloak_10">
 			<slot>
-				<direction>up</direction>
+				<direction>left</direction>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
@@ -4289,10 +4301,10 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<desc>The smart bio drone onboard this ship is capable of not only taking out crew but enemy systems too.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_BIG_2_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="22" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="15" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="16" start="false" img="room_battery_2" />
@@ -4373,10 +4385,10 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<desc>With both a bio drone and a intel drone this ship is quite capable of taking out any foe.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_BIG_3_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="2" start="false" img="room_shields_7">
+		<aea_super_shields power="1" room="2" start="false" img="room_shields_aea_cloak_11">
 			<slot>
-				<direction>up</direction>
-				<number>1</number>
+				<direction>down</direction>
+				<number>2</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="8" start="false" img="room_battery_2" />
@@ -4458,9 +4470,9 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<desc>With a weak weapons system this ship relies on it's burst drone to quickly destroy the enemy.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_TRAN_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="11" start="false" img="room_shields_10">
+		<aea_super_shields power="1" room="11" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>down</direction>
+				<direction>right</direction>
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
@@ -4542,9 +4554,9 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<desc>Lasers and Ions are a match made in heaven, well actually the Central Engineering Facility.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_TRAN_2_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="12" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="13" start="false" img="room_shields_aea_cloak_3">
 			<slot>
-				<direction>left</direction>
+				<direction>up</direction>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
@@ -4628,10 +4640,10 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<desc>This ship relies on the shield breaking of the drone in order to unleash it's weapons on the enemy ship.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_TRAN_3_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="12" start="false" img="room_shields_4">
+		<aea_super_shields power="1" room="12" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="19" start="false" img="room_battery_2" />
@@ -4713,10 +4725,10 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<desc>Although none of the crew can access the front of the ship, Jay and her drones are able to keep it online with ease.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_BIRD_JAY_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="8" start="false" img="room_shields_8">
+		<aea_super_shields power="1" room="8" start="false" img="room_shields_aea_cloak_11">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>down</direction>
+				<number>2</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="19" start="false" img="room_battery_13" />
@@ -8681,10 +8693,10 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<desc>Although the ship itself is nothing special, the crew are able to draw on the power of their god to destroy their enemies.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_CULT_BUD_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="15" start="false" img="room_shields_11">
+		<aea_super_shields power="1" room="12" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>down</direction>
-				<number>1</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="14" start="false" img="room_battery_3" />
@@ -8783,10 +8795,10 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<desc>The crew here are especially good at dealing with enemy crew by kidnapping them onto their own ship.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_CULT_BUD_2_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="4" start="false" img="room_shields_8">
+		<aea_super_shields power="1" room="4" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="10" start="false" img="room_battery_3" />
@@ -8865,10 +8877,10 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<desc>With no shield system the crew have learnt other ways of protecting the ship.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_CULT_BUD_3_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="3" start="false" img="room_shields_3">
+		<aea_super_shields power="1" room="3" start="false" img="room_shields_aea_cloak">
 			<slot>
-				<direction>left</direction>
-				<number>2</number>
+				<direction>up</direction>
+				<number>1</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="16" start="false" img="room_battery_2" />
@@ -8949,10 +8961,10 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<desc>This ship directly channels the power of the bud to launch spells at the enemy ship.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_CULT_BLOOM_unlock"/>
 	<systemList>
-		<aea_super_shields power="1" room="7" start="false" img="room_shields_11">
+		<aea_super_shields power="1" room="25" start="false" img="room_shields_aea_cloak_11">
 			<slot>
 				<direction>down</direction>
-				<number>1</number>
+				<number>2</number>
 			</slot>
 		</aea_super_shields>
 		<artillery max="4" power="1" room="11" start="true" weapon="AEA_LASER_SPELL_ARTILLERY" img="room_artillery" />
@@ -9031,10 +9043,10 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<desc>This ship protects itself with capable crew and a prototype generator that creates barriers on rooms each time you fire a weapon.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_CULT_BLOOM_2_unlock"/>
 	<systemList>
-		<aea_super_shields power="1" room="10" start="false" img="room_shields_7">
+		<aea_super_shields power="1" room="28" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>up</direction>
-				<number>1</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="17" start="false" img="room_battery_9" />
@@ -9131,9 +9143,9 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<desc>A powerful boarding ship with dangerous crew.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_CULT_BLOOM_3_unlock"/>
 	<systemList>
-		<aea_super_shields power="1" room="3" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="20" start="false" img="room_shields_aea_cloak_3">
 			<slot>
-				<direction>left</direction>
+				<direction>up</direction>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
@@ -9214,10 +9226,10 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<desc>A massive space whale which has aligned itself with the federation.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_CULT_WHALE_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="3" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="10" start="false" img="room_shields_aea_5">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>right</direction>
+				<number>1</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="11" start="false" img="room_battery_7" />
@@ -9307,10 +9319,10 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 	<desc>Tiny's big adventure involving friendship and magic.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_CULT_TINY_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="17" start="false" img="room_shields_aea_2">
+		<aea_super_shields power="1" room="3" start="false" img="room_shields_aea_cloak_2">
 			<slot>
 				<direction>right</direction>
-				<number>0</number>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="15" start="false" img="room_battery_15" />
@@ -10270,10 +10282,10 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<desc>This ship is equipped with a powerful artillery beam which damages systems and fills rooms with a mind control gas.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_LONG_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="3" start="false" img="room_shields_2">
+		<aea_super_shields power="1" room="3" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<artillery power="2" room="14" start="true" weapon="ARTILLERY_SHLEG_1" img="room_artillery" />
@@ -10354,7 +10366,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<desc>The crew of this ship use their abilities to board and destroy their enemies.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_LONG_2_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="2" start="false" img="room_shields_aea_3">
+		<aea_super_shields power="1" room="11" start="false" img="room_shields_aea_3">
 			<slot>
 				<direction>down</direction>
 				<number>0</number>
@@ -10437,10 +10449,10 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<desc>Originally constructed by the Slug Anarchists this ship has been reclaimed by the kleptocracy and now operates under their control.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_LONG_3_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="16" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="3" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
@@ -10519,9 +10531,9 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<desc>This ship protects itself from enemy boarders with a powerful gas that mind controls enemies.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_WIDE_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="15" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="9" start="false" img="room_shields_aea_3">
 			<slot>
-				<direction>left</direction>
+				<direction>down</direction>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
@@ -10603,7 +10615,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<desc>The crew on this ship are able to work together onboard the enemy ship to quickly cleanup enemy crew.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_WIDE_2_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="4" start="false" img="room_shields_2">
+		<aea_super_shields power="1" room="4" start="false" img="room_shields_aea_cloak_10">
 			<slot>
 				<direction>left</direction>
 				<number>0</number>
@@ -10686,10 +10698,10 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<desc>This ship has the kit to both take out the enemy crew or destroy the ship outright.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SLUG_WIDE_3_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="14" start="false" img="room_shields_aea_8">
+		<aea_super_shields power="1" room="16" start="false" img="room_shields_aea_4">
 			<slot>
-				<direction>down</direction>
-				<number>1</number>
+				<direction>left</direction>
+				<number>0</number>
 			</slot>
 		</aea_super_shields>
 		<battery power="1" max="2" room="2" start="false" img="room_battery_15" />
@@ -10773,10 +10785,10 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<desc>Together Sickle and Sorrow are incredibly capable against enemies vunerable to the gas, but may struggle to deal with those who are immune.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_SHLEG_UNI_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="1" start="false" img="room_shields_2">
+		<aea_super_shields power="1" room="1" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<battery power="1" room="11" start="false" img="room_battery_15" />
@@ -11257,7 +11269,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="17" start="false" img="room_battery_6" />
-		<cloaking power="1" room="14" start="false" img="room_cloaking_13" />
+		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="2" start="false">
 			<slot>
 				<number>0</number>
@@ -11341,7 +11353,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</aea_super_shields>
 		<battery power="1" max="2" room="6" start="false" img="room_battery_13" />
-		<cloaking power="1" room="12" start="false" img="room_cloaking_11" />
+		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
 		<clonebay max="2" power="1" room="2" start="true">
 			<slot>
 				<number>1</number>
@@ -11423,7 +11435,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</aea_super_shields>
 		<battery power="1" max="2" room="13" start="false" img="room_battery_15" />
-		<cloaking power="1" room="5" start="false" img="room_cloaking_11" />
+		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="10" start="true">
 			<slot>
 				<number>1</number>
@@ -11587,7 +11599,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</aea_super_shields>
 		<artillery power="1" max="4" room="0" start="true" weapon="ARTILLERY_SHARD_AUTO" img="room_artillery" />
-		<cloaking power="1" room="11" start="false" img="room_cloaking_11" />
+		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="12" start="false">
 			<slot>
 				<number>1</number>
@@ -11747,7 +11759,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</aea_super_shields>
 		<battery power="1" room="3" start="false" img="room_battery_6" />
-		<cloaking power="1" room="16" start="false" img="room_cloaking_3" />
+		<cloaking power="1" room="15" start="false" img="room_cloaking_10" />
 		<clonebay power="1" room="2" start="false">
 			<slot>
 				<number>3</number>
@@ -11830,7 +11842,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</aea_super_shields>
 		<battery power="1" max="2" room="22" start="false" img="room_battery_6" />
-		<cloaking power="1" room="14" start="false" img="room_cloaking_11" />
+		<cloaking power="1" room="6" start="false" img="room_cloaking_11" />
 		<clonebay power="1" room="8" start="true">
 			<slot>
 				<number>0</number>
@@ -12484,9 +12496,9 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	<desc>A powerful ship designed around it's broadside mounted artillery. This ship's artillery mounts have been specifically designed to mount any sort of weapon.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_BROADSIDE_3_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="6" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="12" start="false" img="room_shields_aea_1">
 			<slot>
-				<direction>left</direction>
+				<direction>up</direction>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
@@ -12629,10 +12641,10 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 	<desc>This ship cuts up the enemy with it's powerful adaptive pinpoint that gains more beams as it chains.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_LANIUS_BATTLE_unlock" />
 	<systemList>
-		<aea_super_shields power="1" room="19" start="false" img="room_shields_aea_4">
+		<aea_super_shields power="1" room="3" start="false" img="room_shields_aea_cloak_2">
 			<slot>
-				<direction>left</direction>
-				<number>0</number>
+				<direction>right</direction>
+				<number>3</number>
 			</slot>
 		</aea_super_shields>
 		<battery max="2" power="1" room="14" start="false" img="room_battery" />

@@ -1,0 +1,18 @@
+# Balance Changes
+- Implement Auxiliary Shield Overclocker.
+- Implement Auxiliary Shield Synchronised Internal Upgrade.
+- Nerf Sponser 1 quest fight.
+- Nerf Lylmik final boss.
+- Implement Lylmik final boss music.
+
+# Bug Fixes
+- Fix Shard-Forged not being appended to the correct crew lists.
+- Fix Shard-Forged Cruiser names.
+- Add recallBoarders to auto ship escape in Shard-Forged sector.
+- Add recallBoarders to vampweed cultist ship fights.
+- Fix Shard-Shattered A starting with internal lab upgrade instead of the new external varient.
+- Fix Broadside A unlock message.
+
+# Misc Changes
+- Remove Main Menu icon.
+- Added Warning message if slipstream is used to patch OE
