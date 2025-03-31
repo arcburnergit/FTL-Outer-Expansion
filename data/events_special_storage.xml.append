@@ -293,7 +293,7 @@
 </mod:findName>
 
 <mod:findName type="event" name="COMBAT_CHECK_TOGGLE">
-	<mod-append:choice req="aea_warning_message" lvl="0" max_lvl="0" blue="false">
+	<!--mod-append:choice req="aea_warning_message" lvl="0" max_lvl="0" blue="false">
 		<text>Disable the mod manager warning message.</text>
 		<event>
 			<variable name="aea_warning_message" op="set" val="1" />
@@ -306,7 +306,7 @@
 			<variable name="aea_warning_message" op="set" val="0" />
 			<loadEvent>COMBAT_CHECK_TOGGLE</loadEvent>
 	  	</event>
-  	</mod-append:choice>
+  	</mod-append:choice-->
 	<mod-append:choice req="aea_super_shields_hotkey_enabled" lvl="0" max_lvl="0" blue="false">
 		<text>Disable hotkeys for Auxiliary Shields system.</text>
 		<event>

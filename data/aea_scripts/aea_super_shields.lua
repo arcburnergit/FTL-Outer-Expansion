@@ -99,6 +99,7 @@ script.on_internal_event(Defines.InternalEvents.SYSTEM_BOX_KEY_DOWN, function(sy
         lastKeyDown = key
         --print("press key:"..key.." shift:"..tostring(shift))
         local shipManager = Hyperspace.ships.player
+        if Hyperspace.ships.player:HasSystem(10) then return end
         if key == 99 then
             local shipManager = Hyperspace.ships.player
             local aea_super_shields_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields"))

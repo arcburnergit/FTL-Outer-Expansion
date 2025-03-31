@@ -12,7 +12,9 @@
 - Add recallBoarders to vampweed cultist ship fights.
 - Fix Shard-Shattered A starting with internal lab upgrade instead of the new external varient.
 - Fix Broadside A unlock message.
+- Fix Auxiliary Shields not being placed in the cloaking rooms of various ships.
 
 # Misc Changes
 - Remove Main Menu icon.
 - Added Warning message if slipstream is used to patch OE
+- Added the abilty to disable Auxiliary Shields hotkeys in the toggle menu
