@@ -1663,7 +1663,11 @@ end)
 local function get_level_description_aea_engines(systemId, level, tooltip)
     if systemId == Hyperspace.ShipSystem.NameToSystemId("engines") then
         if level > 8 then
-            return string.format("Evasion: %i / FTL: %sx", 45, tostring(1))
+        	if level%4 == 1 then
+	            return string.format("Dodge: %i / FTL: %ix", 5*level - 5, math.floor(0.75 + level/4))
+	        else
+	            return string.format("Dodge: %i / FTL: %sx", 5*level - 5, tostring(0.75 + level/4))
+	        end
         end
     end
 end

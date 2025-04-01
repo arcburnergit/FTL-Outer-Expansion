@@ -238,6 +238,16 @@ script.on_internal_event(Defines.InternalEvents.GET_AUGMENTATION_VALUE, function
 	return Defines.Chain.CONTINUE, augValue
 end, -100)
 
+script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager)
+    if shipManager.iShipId == 0 and shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields")) then
+        local system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields"))
+        local gui = Hyperspace.App.gui
+        if system:GetLocked() and (gui.upgradeButton.bActive and not gui.event_pause) then
+            system:LockSystem(0)
+        end
+    end
+end)
+
 local systemIcons = {}
 local function system_icon(name)
     local tex = Hyperspace.Resources:GetImageId("icons/s_"..name.."_overlay.png")

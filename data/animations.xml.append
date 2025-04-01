@@ -5066,3 +5066,133 @@
 </weaponAnim>
 </FTL>
 
+<!--Dark Justicier-->
+<FTL>
+<!-- 
+*********************************************************************************************************
+                   DESSIUS
+*********************************************************************************************************
+-->
+
+<animSheet name="aea_dark_justicier" w="315" h="455" fw="35" fh="35">people/aea_dark_justicier_base.png</animSheet>
+<anim name="aea_dark_justicier_clone">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="6" x="0" y="2" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_dark_justicier_death_right">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="5" x="3" y="0" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_dark_justicier_death_left">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="5" x="0" y="2" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_dark_justicier_walk_down">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="4" x="0" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_walk_right">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="4" x="4" y="12" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_walk_up">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="4" x="0" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_walk_left">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="4" x="4" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_shoot_down">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="3" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_shoot_right">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="3" x="3" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_shoot_up">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="3" x="6" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_shoot_left">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="3" x="0" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_fire_down">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="4" x="0" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_fire_right">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="4" x="4" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_fire_up">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="4" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_fire_left">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="4" x="4" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_repair">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="9" x="0" y="7" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_punch_up">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="6" x="3" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_punch_down">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="6" x="0" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_dark_justicier_teleport">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="9" x="0" y="3" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_dark_justicier_type_right">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="4" x="0" y="5" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_dark_justicier_type_left">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="4" x="4" y="5" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_dark_justicier_type_up">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="4" x="0" y="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_dark_justicier_type_down">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="4" x="4" y="4" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_dark_justicier_portrait">
+	<sheet>aea_dark_justicier</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+</FTL>

@@ -9,13 +9,16 @@
   <!--mod-append:script>data/aea_scripts/arc_test_light_nebula.lua</mod-append:script-->
   <mod-append:script>data/aea_scripts/aea_main_menu.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_super_shields.lua</mod-append:script>
+  <!--mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script-->
 </mod:findLike>
 <dualMedical enabled="true"/>
 <mod:findLike type="customSystems">
     <mod-append:customSystem id="aea_super_shields"/>
+    <mod-append:customSystem id="aea_clone_crime"/>
 	<mod-append:exclusivityGroup>
         <medbay/>
         <clonebay/>
+        <aea_clone_crime/>
     </mod-append:exclusivityGroup>
 	<mod-append:exclusivityGroup>
         <cloaking/>
@@ -5995,6 +5998,86 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				</statBoost>
 			</roomStatBoosts>
 		</powerEffect>
+	</mod-append:race>
+
+
+	<mod-append:race name="aea_sac_human">
+		<animSheet>human</animSheet>
+		<suffocationModifier>0.83</suffocationModifier>
+		<fireDamageMultiplier>0.83</fireDamageMultiplier>
+		<maxHealth>75</maxHealth>
+		<animBase>human</animBase>
+		<deathSounds>
+			<deathSound>death1</deathSound>
+			<deathSound>death2</deathSound>
+		</deathSounds>
+		<skills>
+			<piloting req="13" />
+			<engines req="13" />
+			<shields req="50" />
+			<weapons req="58" />
+			<repair req="16" />
+			<combat req="7" />
+		</skills>
+	</mod-append:race>
+	<mod-append:race name="aea_sac_engi">
+		<animSheet>engi</animSheet>
+		<maxHealth>68</maxHealth>
+		<repairSpeed>2</repairSpeed>
+		<damageMultiplier>0.5</damageMultiplier>
+		<suffocationModifier>0.75</suffocationModifier>
+		<animBase>engi</animBase>
+		<deathSounds>
+			<deathSound>engiDeath</deathSound>
+		</deathSounds>
+	</mod-append:race>
+	<mod-append:race name="aea_sac_mantis">
+		<animSheet>mantis</animSheet>
+		<repairSpeed>0.5</repairSpeed>
+		<moveSpeedMultiplier>1.2</moveSpeedMultiplier>
+		<damageMultiplier>1.5</damageMultiplier>
+		<maxHealth>75</maxHealth>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>mantisDeath</deathSound>
+		</deathSounds>
+		<shootingSounds>
+			<shootingSound>mantisSpit1</shootingSound>
+			<shootingSound>mantisSpit2</shootingSound>
+			<shootingSound>mantisSpit3</shootingSound>
+		</shootingSounds>
+	</mod-append:race>
+	<mod-append:race name="aea_sac_slug">
+		<animSheet>slug</animSheet>
+		<maxHealth>75</maxHealth>
+		<detectsLifeforms>true</detectsLifeforms>
+		<isTelepathic>true</isTelepathic>
+		<resistsMindControl>true</resistsMindControl>
+		<animBase>slug</animBase>
+	</mod-append:race>
+	<mod-append:race name="aea_sac_rock">
+		<animSheet>rock</animSheet>
+		<lowHealthThreshold>2500.0</lowHealthThreshold>
+		<lowHealthThresholdPercentage>0.25</lowHealthThresholdPercentage>
+		<maxHealth>131</maxHealth>
+		<canBurn>false</canBurn>
+		<fireRepairMultiplier>1.67</fireRepairMultiplier>
+		<moveSpeedMultiplier>0.5</moveSpeedMultiplier>
+		<stunMultiplier>0.5</stunMultiplier>
+		<animBase>rock</animBase>
+		<deathSounds>
+			<deathSound>rockDeath</deathSound>
+		</deathSounds>
+		<shootingSounds>
+			<shootingSound>rockThrow1</shootingSound>
+			<shootingSound>rockThrow2</shootingSound>
+			<shootingSound>rockThrow3</shootingSound>
+		</shootingSounds>
+		<repairSounds animSoundFrame="5">
+		  <repairSound>rockThud1</repairSound>
+		  <repairSound>rockThud2</repairSound>
+		  <repairSound>rockThud3</repairSound>
+		</repairSounds>
 	</mod-append:race>
 </mod:findLike>
 

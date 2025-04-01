@@ -60,25 +60,19 @@ local function noDoorOverlap(rT, rB, rL, rR, iT, iB, iL, iR, shipName)
     local roomNumber = tonumber(room,2)
     local image = table.concat({iT,iB,iL,iR},"")
     local imageNumber = tonumber(image,2)
-    --[[if shipName == "PLAYER_SHIP_ANGEL" then
-        print(shipName)
-        --print("noDoorOverlap  ROOM:"..room.."  roomNumber:"..roomNumber.." topS:"..rT.." topB:"..tonumber(rT, 2).." bottomS:"..rB.." bottomB:"..tonumber(rB, 2).." leftS:"..rL.." leftB:"..tonumber(rL, 2).." rightS:"..rR.." rightB:"..tonumber(rR, 2))
-        --print("noDoorOverlap IMAGE:"..image.." imageNumber:"..imageNumber.." topS:"..iT.." topB:"..tonumber(iT, 2).." bottomS:"..iB.." bottomB:"..tonumber(iB, 2).." leftS:"..iL.." leftB:"..tonumber(iL, 2).." rightS:"..iR.." rightB:"..tonumber(iR, 2))
-        print("noDoorOverlap  ROOM:"..room.." topS:"..rT.." bottomS:"..rB.." leftS:"..rL.." rightS:"..rR)
-        print("noDoorOverlap IMAGE:"..image.." topS:"..iT.." bottomS:"..iB.." leftS:"..iL.." rightS:"..iR)
-        print("result:"..tostring(roomNumber & imageNumber == 0))
-    end]]
     return roomNumber & imageNumber == 0
 end
 
-local usedFTLMAN = mod.xml.element("usedFTLman", {})
-root:append(usedFTLMAN)
-
-local patchedOE = mod.xml.element("patchedOE", {})
-root:append(patchedOE)
+local patchedOE = false
+for child in root:children() do
+    if child.name == "patchedOE" then
+        patchedOE = true
+        print("OE was patched before OE patch last")
+    end
+end
 
 for blueprint in root:children() do
-    if blueprint.name == "shipBlueprint" then
+    if blueprint.name == "shipBlueprint" and patchedOE then
         local layoutString = blueprint.attrs.layout --find the layout so we can read the text file later
         local a = nil
         pcall(function() a = mod.vfs.pkg:read("/data/"..layoutString..".txt") end) 
@@ -166,6 +160,7 @@ for blueprint in root:children() do
             if not isEnemyShip then
                 local takenRooms = {}
                 for system in systemListElement:children() do
+                    --print("SYSTEM:"..system.name)
                     local start = true
                     local room = nil
                     for name, attribute in system:attrs() do
@@ -229,6 +224,7 @@ for blueprint in root:children() do
                         end
                     end
                     if targetRoom and not hasSystem then
+                        print("Applying to ship:"..shipName)
                         local newSystem = mod.xml.element(system, sysInfo.attributes)
                         newSystem.attrs.room = targetRoom
 
@@ -309,7 +305,6 @@ for blueprint in root:children() do
                 end
             end
         end
-
     end
 end
 
