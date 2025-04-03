@@ -1770,13 +1770,19 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 end)
 
 local attachedTimer = 0
-script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
-	if log_events then
-		log("DAMAGE_AREA_HIT 1")
-	end
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
 	if projectile then
 		if projectile.extend.name == "ARTILLERY_AEA_GRAPPLE" then
 			attachedTimer = 25
+		end
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.SHIELD_COLLISION, function(shipManager, projectile, damage, response)
+	if projectile then
+		if projectile.extend.name == "ARTILLERY_AEA_GRAPPLE" then
+			shipManager.shieldSystem.shields.power.super.first = 0
 		end
 	end
 end)

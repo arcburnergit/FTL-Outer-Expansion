@@ -54,32 +54,53 @@ local function is_aea_clone_crime_enemy(systemBox)
     return systemName == "aea_clone_crime" and not systemBox.bPlayerUI
 end
  
+local function fillSlot(systemName, shipManager)
+    local sysId = Hyperspace.ShipSystem.NameToSystemId(systemName)
+    if shipManager:HasSystem(sysId) then
+        local sysRoom = nil
+        local aea_clone_crime_system = shipManager:GetSystem(sysId)
+        for room in vter(shipManager.ship.vRoomList) do
+            if room.iRoomId == aea_clone_crime_system.roomId then
+                sysRoom = room
+            end
+        end
+        local slot = shipManager.myBlueprint.systemInfo[sysId].slot
+        if sysRoom and slot then
+            sysRoom:FillSlot(slot, false)
+            sysRoom:FillSlot(slot, true)
+        end
+    end
+end
+
 --Handles initialization of custom system box
 local function aea_clone_crime_construct_system_box(systemBox)
     if is_aea_clone_crime(systemBox) then
         systemBox.extend.xOffset = 36
 
         systemBox.pSystem.bBoostable = false -- make the system unmannable
-
-        local sysId = Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime")
-        local sysRoom = nil
-        local aea_clone_crime_system = Hyperspace.ships.player:GetSystem(sysId)
-        for room in vter(Hyperspace.ships.player.ship.vRoomList) do
-            if room.iRoomId == aea_clone_crime_system.roomId then
-                sysRoom = room
-            end
-        end
-        local slot = Hyperspace.ships.player.myBlueprint.systemInfo[sysId].slot
-        if sysRoom and slot then
-            --sysRoom:FillSlot(slot, false)
-            --sysRoom:FillSlot(slot, true)
-        end
     elseif is_aea_clone_crime_enemy(systemBox) then
         systemBox.pSystem.bBoostable = false
     end
 end
 
 script.on_internal_event(Defines.InternalEvents.CONSTRUCT_SYSTEM_BOX, aea_clone_crime_construct_system_box)
+
+local needsFillSlot = false
+script.on_internal_event(Defines.InternalEvents.CONSTRUCT_SHIP_SYSTEM, function(system)
+    if Hyperspace.ShipSystem.SystemIdToName(system.iSystemType) == "aea_clone_crime" then
+        --fillSlot("aea_clone_crime", Hyperspace.ships(system.iShipId))
+        needsFillSlot = true
+    end
+end)
+script.on_init(function()
+end)
+
+script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
+    if needsFillSlot then
+        fillSlot("aea_clone_crime", Hyperspace.ships.player)
+        needsFillSlot = false
+    end
+end)
 
 --Utility function to see if the system is ready for use
 local function aea_clone_crime_ready(shipSystem)
@@ -90,13 +111,16 @@ randomCloneCrew = RandomList:New {"aea_sac_human", "aea_sac_engi", "aea_sac_mant
 
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	if shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime")) then
+        --fillSlot("aea_clone_crime", shipManager)
 		local aea_clone_crime_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime"))
+        --aea_clone_crime_system.bNeedsManned = false
         if not aea_clone_crime_ready(aea_clone_crime_system) then 
             return 
         end
-        for crewmen in vter(shipManager.vCrewList) do
-            if crewmem and crewmem.extend.deathTimer and crewmem.extend.deathTimer.running and crewmem.iShipId == shipManager.iShipId then
-                crewmem.extend.deathTimer.currTime = crewmem.extend.deathTimer.currTime + Hyperspace.FPS.SpeedFactor/16
+        for crewmem in vter(shipManager.vCrewList) do
+            if crewmem.extend.deathTimer and crewmem.extend.deathTimer:Running() and crewmem.iShipId == shipManager.iShipId then
+                --print("INCREASE TIMER:"..tostring(crewmem.extend.deathTimer.currTime).." goal:"..tostring(crewmem.extend.deathTimer.currGoal))
+                crewmem.extend.deathTimer.currTime = crewmem.extend.deathTimer.currTime - Hyperspace.FPS.SpeedFactor/16
             end
         end
 	end
@@ -111,13 +135,14 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
         for i = 1, aea_clone_crime_system:GetEffectivePower() do
             local cloneCrewType = randomCloneCrew:GetItem()
             local clone = shipManager:AddCrewMemberFromString("Clone", cloneCrewType, false, aea_clone_crime_system.roomId, true, true)
-            local deathTimer = 20
-            clone.extend.deathTimer:Start(deathTimer)
+            local deathTime = 20
+            clone.extend.deathTimer = Hyperspace.TimerHelper(false)
+            clone.extend.deathTimer:Start(deathTime)
         end
     end
 end)
 
-local cloneImageBottom = Hyperspace.Resources:CreateImagePrimitiveString("ship/interior/clone_bottom.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+local cloneImageBottom = Hyperspace.Resources:CreateImagePrimitiveString("ship/interior/aea_clone_bottom.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 local cloneImageTop = Hyperspace.Resources:CreateImagePrimitiveString("ship/interior/clone_top.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 
 script.on_render_event(Defines.RenderEvents.SHIP_FLOOR, function() end, function()

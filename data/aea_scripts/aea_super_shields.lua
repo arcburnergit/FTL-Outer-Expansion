@@ -85,7 +85,7 @@ local function aea_super_shields_click(systemBox, shift)
                 for i = 1, layersLeft do
                     shipManager.shieldSystem:AddSuperShield(shipManager.shieldSystem.superUpLoc)
                 end
-                aea_super_shields_system:LockSystem(5)
+                aea_super_shields_system:LockSystem(3)
             end
         end
     end

@@ -110,8 +110,7 @@
 	<destroyed>
 		<text>You've destroyed the Mysterious cruiser, you begin salvaging the vessel.
 
-You wonder if perhaps something would have happened if you let it escape and take you with it.
-		.</text>
+You wonder if perhaps something would have happened if you let it escape and take you with it.</text>
 		<autoReward level="HIGH">standard_no_item</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>

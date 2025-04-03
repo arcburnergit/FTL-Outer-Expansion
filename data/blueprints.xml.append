@@ -3671,30 +3671,38 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<stackable>false</stackable>
 	<bp>0</bp>
 </augBlueprint>
-
 <weaponBlueprint name="ARTILLERY_AEA_GRAPPLE">
-	<type>BOMB</type>
+	<type>BEAM</type>
 	<flavorType>???</flavorType>
 	<title>???</title>
 	<short>???</short>
 	<tip>tip_beams</tip>
 	<desc>YOU SHOULD NEVER SEE THIS</desc>
-	<tooltip>.</tooltip>
+	<tooltip>???</tooltip>
 	<damage>0</damage>
 	<sysDamage>1</sysDamage>
 	<persDamage>0</persDamage>
 	<missiles>0</missiles>
 	<shots>1</shots>
-	<sp>0</sp>
-	<accuracyMod>200</accuracyMod>
+	<sp>16</sp>
 	<fireChance>0</fireChance>
 	<breachChance>10</breachChance>
 	<cooldown>10</cooldown>
-	<power>1</power>
+	<color>
+		<r>255</r>
+		<g>255</g>
+		<b>255</b>
+	</color>
+	<speed>1</speed>
+	<power>0</power>
 	<cost>45</cost>
 	<bp>4</bp>
 	<rarity>0</rarity>
+	<length>1</length>
 	<image>aea_invisible</image>
+	<launchSounds>
+		<sound>ancient_focus</sound>
+	</launchSounds>
 	<roomStatBoosts>
 		<statBoost name="trueHealAmount">
 			<boostType>FLAT</boostType>
@@ -3709,7 +3717,6 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 			</roomAnim>
 		</statBoost>
 	</roomStatBoosts>
-	<explosion>aea_invisible</explosion>
 	<weaponArt>aea_invisible_gun</weaponArt>
 	<iconImage>bomb</iconImage>
 </weaponBlueprint>

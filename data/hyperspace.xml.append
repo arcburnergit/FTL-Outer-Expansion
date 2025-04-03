@@ -9,7 +9,7 @@
   <!--mod-append:script>data/aea_scripts/arc_test_light_nebula.lua</mod-append:script-->
   <mod-append:script>data/aea_scripts/aea_main_menu.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_super_shields.lua</mod-append:script>
-  <!--mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script-->
+  <mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script>
 </mod:findLike>
 <dualMedical enabled="true"/>
 <mod:findLike type="customSystems">
@@ -5783,7 +5783,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 	<mod-append:race name="aea_shard_breaker">
 		<maxHealth>125</maxHealth>
-		<damageMultiplier>0.8</damageMultiplier>
+		<damageMultiplier>0.65</damageMultiplier>
 		<suffocationModifier>0.5</suffocationModifier>
 		<animBase>rock</animBase>
 		<deathSounds>
@@ -5821,7 +5821,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			<buttonText>BREAKDOWN</buttonText>
 			<tooltip>[COOLDOWN:12s  -25HP]
 				Locks down the occupied room for 12 seconds, preventing crew from moving in.
-				Enemy crew in the room take 5 damage per second.
+				Enemy crew in the room take 4 damage per second.
 				Cannot attack enemy crew for the duration.
 			</tooltip>
 			<cooldownColor r="125" g="175" b="175" />
@@ -5838,7 +5838,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			<roomStatBoosts>
 				<statBoost name="trueHealAmount">
 					<boostType>FLAT</boostType>
-					<amount>-5</amount>
+					<amount>-4</amount>
 					<shipTarget>CURRENT_ROOM</shipTarget>
 					<crewTarget>ENEMIES</crewTarget>
 					<affectsSelf>false</affectsSelf>
@@ -5856,7 +5856,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 	<mod-append:race name="aea_shard_smasher">
 		<maxHealth>150</maxHealth>
-		<damageMultiplier>0.8</damageMultiplier>
+		<damageMultiplier>0.5</damageMultiplier>
 		<suffocationModifier>0.5</suffocationModifier>
 		<animBase>rock</animBase>
 		<deathSounds>
@@ -5894,7 +5894,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			<buttonText>BREAKDOWN</buttonText>
 			<tooltip>[COOLDOWN:6s  -25HP]
 				Locks down the occupied room for 12 seconds, preventing crew from moving in.
-				Enemy crew in the room take 5 damage per second.
+				Enemy crew in the room take 4 damage per second.
 				Cannot attack enemy crew for the duration.
 			</tooltip>
 			<cooldownColor r="125" g="175" b="175" />
@@ -5911,7 +5911,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			<roomStatBoosts>
 				<statBoost name="trueHealAmount">
 					<boostType>FLAT</boostType>
-					<amount>-5</amount>
+					<amount>-4</amount>
 					<shipTarget>CURRENT_ROOM</shipTarget>
 					<crewTarget>ENEMIES</crewTarget>
 					<affectsSelf>false</affectsSelf>
@@ -5929,7 +5929,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 	<mod-append:race name="aea_shard_dawn">
 		<maxHealth>200</maxHealth>
-		<damageMultiplier>0.8</damageMultiplier>
+		<damageMultiplier>0.4</damageMultiplier>
 		<suffocationModifier>0.25</suffocationModifier>
 		<animBase>rock</animBase>
 		<deathSounds>
@@ -6000,9 +6000,29 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 		</powerEffect>
 	</mod-append:race>
 
-
+	<mod-append:race name="aea_dark_justicier">
+		<essential>1</essential>
+		<maxHealth>200</maxHealth>
+		<damageMultiplier>1.5</damageMultiplier>
+		<canBurn>false</canBurn>
+		<canSuffocate>false</canSuffocate>
+		<deathSounds>
+			<deathSound>ghostDeath</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<buttonText>RITUAL</buttonText>
+			<tooltip>Perform a dark ritual, sacrifice a number of crew to perform it.</tooltip>
+			<effectAnim>unique_dessius_health</effectAnim>
+			<cooldownColor r="210" g="160" b="225" />
+			<friendlyFire>false</friendlyFire>
+		</powerEffect>
+	</mod-append:race>
 	<mod-append:race name="aea_sac_human">
 		<animSheet>human</animSheet>
+		<canMan>false</canMan>
+		<noSlot>true</noSlot>
 		<suffocationModifier>0.83</suffocationModifier>
 		<fireDamageMultiplier>0.83</fireDamageMultiplier>
 		<maxHealth>75</maxHealth>
@@ -6022,6 +6042,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	</mod-append:race>
 	<mod-append:race name="aea_sac_engi">
 		<animSheet>engi</animSheet>
+		<canMan>false</canMan>
+		<noSlot>true</noSlot>
 		<maxHealth>68</maxHealth>
 		<repairSpeed>2</repairSpeed>
 		<damageMultiplier>0.5</damageMultiplier>
@@ -6033,6 +6055,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	</mod-append:race>
 	<mod-append:race name="aea_sac_mantis">
 		<animSheet>mantis</animSheet>
+		<canMan>false</canMan>
+		<noSlot>true</noSlot>
 		<repairSpeed>0.5</repairSpeed>
 		<moveSpeedMultiplier>1.2</moveSpeedMultiplier>
 		<damageMultiplier>1.5</damageMultiplier>
@@ -6049,6 +6073,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	</mod-append:race>
 	<mod-append:race name="aea_sac_slug">
 		<animSheet>slug</animSheet>
+		<canMan>false</canMan>
+		<noSlot>true</noSlot>
 		<maxHealth>75</maxHealth>
 		<detectsLifeforms>true</detectsLifeforms>
 		<isTelepathic>true</isTelepathic>
@@ -6057,6 +6083,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	</mod-append:race>
 	<mod-append:race name="aea_sac_rock">
 		<animSheet>rock</animSheet>
+		<canMan>false</canMan>
+		<noSlot>true</noSlot>
 		<lowHealthThreshold>2500.0</lowHealthThreshold>
 		<lowHealthThresholdPercentage>0.25</lowHealthThresholdPercentage>
 		<maxHealth>131</maxHealth>
