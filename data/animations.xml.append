@@ -1,4 +1,23 @@
 <FTL>
+<animSheet name="mouse_aea_ritual" w="32" h="32" fw="32" fh="32">mouse/mouse_aea_ritual.png</animSheet>
+<anim name="mouse_aea_ritual">
+	<sheet>mouse_aea_ritual</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+<animSheet name="mouse_aea_ritual_valid" w="32" h="32" fw="32" fh="32">mouse/mouse_aea_ritual_valid.png</animSheet>
+<anim name="mouse_aea_ritual_valid">
+	<sheet>mouse_aea_ritual_valid</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+<animSheet name="mouse_aea_ritual_valid2" w="32" h="32" fw="32" fh="32">mouse/mouse_aea_ritual_valid2.png</animSheet>
+<anim name="mouse_aea_ritual_valid2">
+	<sheet>mouse_aea_ritual_valid2</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
 <animSheet name="aea_invisible" w="35" h="35" fw="35" fh="35">effects/invisible.png</animSheet>
 <anim name="aea_invisible">
 	<sheet>aea_invisible</sheet>

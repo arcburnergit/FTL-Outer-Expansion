@@ -335,7 +335,7 @@
 		<cloaking power="1" room="8" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="11" start="false">
 			<slot>
-				<number>2</number>
+				<number>1</number>
 			</slot>
 		</clonebay>
 		<doors power="1" room="6" start="true" img="room_doors_2">
@@ -354,7 +354,7 @@
 		<hacking power="1" room="14" start="false" img="room_hacking_4" />
 		<medbay power="1" room="11" start="false" img="room_medbay_9">
 			<slot>
-				<number>-2</number>
+				<number>-5</number>
 			</slot>
 		</medbay>
 		<mind power="1" room="7" start="false" img="room_mind_1" />
@@ -12728,6 +12728,88 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 
 <!--Dark Justicier-->
 <FTL>
+<shipBlueprint name="PLAYER_SHIP_AEA_JUSTICE" layout="aeap_justice_a" img="aeap_justice_a">
+	<class>Justicier Cruiser</class>
+	<name>The Dark Prince</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<systemList>
+		<aea_clone_crime max="4" power="2" room="7" start="true">
+			<slot>
+				<number>1</number>
+			</slot>
+		</aea_clone_crime>
+		<aea_super_shields max="3" power="1" room="8" start="false" img="room_shields_aea_cloak_2">
+			<slot>
+				<direction>right</direction>
+				<number>3</number>
+			</slot>
+		</aea_super_shields>
+		<battery power="1" room="23" start="false" img="room_battery_6" />
+		<cloaking power="1" room="8" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="7" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="6" start="false" img="aea_room_doors_9">
+			<slot>
+				<direction>right</direction>
+				<number>2</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="12" start="false" img="room_drones_18" />
+		<engines power="1" room="9" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="5" start="false" img="room_hacking_2" />
+		<medbay power="1" room="7" start="false" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="19" start="false" img="room_mind_4" />
+		<oxygen power="1" room="2" start="true" img="room_oxygen_2" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="10" start="true" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="21" start="true" img="room_shields_3">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="11" start="false" />
+		<weapons power="3" room="1" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="0" count="4">
+		<weapon name="LASER_FIRE" />
+		<weapon name="BEAM_1" />
+	</weaponList>
+	<droneList drones="0" count="2" />
+	<health amount="30" />
+	<maxPower amount="8" />
+</shipBlueprint>
+
+	
 <crewBlueprint name="aea_dark_justicier">
     <desc> </desc>
     <title>Dark Justicier</title>

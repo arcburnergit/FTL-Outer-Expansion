@@ -10,6 +10,7 @@
   <mod-append:script>data/aea_scripts/aea_main_menu.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_super_shields.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_dark_justicier.lua</mod-append:script>
 </mod:findLike>
 <dualMedical enabled="true"/>
 <mod:findLike type="customSystems">
@@ -149,7 +150,7 @@ This enemy ship is equipped with a strong auxiliary shield generator, It starts 
 			<!-- -->
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_ARMOUR</mod-append:ship>
 		<mod-append:empty/>
-		<mod-append:empty/>
+		<mod-append:ship>PLAYER_SHIP_AEA_JUSTICE</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_BROADSIDE</mod-append:ship>
 
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_UNIA</mod-append:ship>
@@ -1281,21 +1282,34 @@ This enemy ship is equipped with a strong auxiliary shield generator, It starts 
 		<hiddenAug>SHIP_AEA_BROADSIDE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<systemLimit>10</systemLimit>
-		<customReactor maxLevel="35" />
+		<customReactor maxLevel="30" />
 	</mod-append:customShip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BROADSIDE_2">
 		<hiddenAug>SHIP_REBEL</hiddenAug>
 		<hiddenAug>SHIP_AEA_BROADSIDE2</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<systemLimit>10</systemLimit>
-		<customReactor maxLevel="35" />
+		<customReactor maxLevel="30" />
 	</mod-append:customShip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BROADSIDE_3">
 		<hiddenAug>SHIP_REBEL</hiddenAug>
 		<hiddenAug>SHIP_AEA_BROADSIDE3</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<systemLimit>10</systemLimit>
-		<customReactor maxLevel="35" />
+		<customReactor maxLevel="30" />
+	</mod-append:customShip>
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_JUSTICE" b="false" c="false" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+	</mod-append:ship>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_JUSTICE">
+		<hiddenAug>SHIP_PIRATE</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<aea_dark_justicier name="The Dark Justicier" room="0"/>
+		</crew>
 	</mod-append:customShip>
 
 	
@@ -5928,6 +5942,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	</mod-append:race>
 
 	<mod-append:race name="aea_shard_dawn">
+		<essential>1</essential>
 		<maxHealth>200</maxHealth>
 		<damageMultiplier>0.4</damageMultiplier>
 		<suffocationModifier>0.25</suffocationModifier>
@@ -6013,10 +6028,19 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			<cooldown>10</cooldown>
 			<jumpCooldown>full</jumpCooldown>
 			<buttonText>RITUAL</buttonText>
-			<tooltip>Perform a dark ritual, sacrifice a number of crew to perform it.</tooltip>
-			<effectAnim>unique_dessius_health</effectAnim>
-			<cooldownColor r="210" g="160" b="225" />
+			<tooltip>Perform a dark ritual, sacrifice a number of crew in specific positions to trigger different effects.
+Left click to select crew for sacrifice.
+Right click to attempt the ritual or cancel.
+			</tooltip>
+			<cooldownColor r="255" g="0" b="0" />
 			<friendlyFire>false</friendlyFire>
+			<temporaryEffect>
+				<duration>1</duration>
+				<cooldownColor r="200" g="0" b="0" />
+				<effectAnim>unique_dessius_health</effectAnim>
+				<canFight>false</canFight>
+				<canMove>false</canMove>
+			</temporaryEffect>
 		</powerEffect>
 	</mod-append:race>
 	<mod-append:race name="aea_sac_human">

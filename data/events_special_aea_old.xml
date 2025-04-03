@@ -6,6 +6,7 @@
 </event>
 
 <event name="AEA_OLD_POWER_CELL_GET">
+	<preventQuest/>
 	<beaconType id="map_icon_aea_old_cell" global="true">
 		<color r="120" g="99" b="84" a="1"/>
 		<unvisitedTooltip>???</unvisitedTooltip>

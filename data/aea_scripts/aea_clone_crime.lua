@@ -56,7 +56,7 @@ end
  
 local function fillSlot(systemName, shipManager)
     local sysId = Hyperspace.ShipSystem.NameToSystemId(systemName)
-    if shipManager:HasSystem(sysId) then
+    if shipManager and shipManager:HasSystem(sysId) then
         local sysRoom = nil
         local aea_clone_crime_system = shipManager:GetSystem(sysId)
         for room in vter(shipManager.ship.vRoomList) do
@@ -68,8 +68,10 @@ local function fillSlot(systemName, shipManager)
         if sysRoom and slot then
             sysRoom:FillSlot(slot, false)
             sysRoom:FillSlot(slot, true)
+            return true
         end
     end
+    return false
 end
 
 --Handles initialization of custom system box
@@ -92,13 +94,12 @@ script.on_internal_event(Defines.InternalEvents.CONSTRUCT_SHIP_SYSTEM, function(
         needsFillSlot = true
     end
 end)
-script.on_init(function()
-end)
 
 script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
     if needsFillSlot then
-        fillSlot("aea_clone_crime", Hyperspace.ships.player)
-        needsFillSlot = false
+        if fillSlot("aea_clone_crime", Hyperspace.ships.player) then
+            needsFillSlot = false
+        end
     end
 end)
 
@@ -139,6 +140,7 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
             clone.extend.deathTimer = Hyperspace.TimerHelper(false)
             clone.extend.deathTimer:Start(deathTime)
         end
+        system:LockSystem(aea_clone_crime_system:GetEffectivePower())
     end
 end)
 
