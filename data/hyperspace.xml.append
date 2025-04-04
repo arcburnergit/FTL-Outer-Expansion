@@ -6028,7 +6028,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			<cooldown>10</cooldown>
 			<jumpCooldown>full</jumpCooldown>
 			<buttonText>RITUAL</buttonText>
-			<tooltip>Perform a dark ritual, sacrifice a number of crew in specific positions to trigger different effects.
+			<tooltip>Perform a dark ritual, sacrifice a number of crew in specific positions to trigger different effects, Targetted crew take 150 damage.
 Left click to select crew for sacrifice.
 Right click to attempt the ritual or cancel.
 			</tooltip>
@@ -6169,7 +6169,6 @@ Right click to attempt the ritual or cancel.
 	<aug name="AEA_SHARD_ARMOUR">
 		<function name="CRYSTAL_SHARDS" value="0" useForReqs="true" warning="false" />
 		<crystalShard weapon="CRYSTAL_ARMOR_PROJ" value="0.5" stackable="false" />
-		<function name="ENERGY_SHIELD" value="0" useForReqs="true" warning="false" />
 		<superShield>
 			<add>1</add>
 			<color r="255" g="255" b="255" a="1" />
@@ -6829,6 +6828,20 @@ Right click to attempt the ritual or cancel.
 	<variable name="aea_old_completed_sponsor" op="set" val="0" />
 
 	<metaVariable name="aea_old_sponser_choice" op="set" val="0" />
+
+	<req name="AEA_REQ_MODIFY_CLONEBAY" type="all">
+		<name>aea_dark_justicier</name>
+		<name>clonebay</name>
+	</req>
+	<req name="AEA_REQ_MODIFY_CLONEBAY_NOCLONE" type="all">
+		<name>aea_dark_justicier</name>
+		<req lvl="0" max_lvl="0">
+			<name>clonebay</name>
+		</req>
+		<req lvl="0" max_lvl="0">
+			<name>aea_clone_crime</name>
+		</req>
+	</req>
 
 	<req name="AEA_CELL_SPAWN_CHECK">
 		<req lvl="0" max_lvl="0">

@@ -110,14 +110,36 @@ end
 
 randomCloneCrew = RandomList:New {"aea_sac_human", "aea_sac_engi", "aea_sac_mantis", "aea_sac_slug", "aea_sac_rock"}
 
+local healthBoost = Hyperspace.StatBoostDefinition()
+healthBoost.stat = Hyperspace.CrewStat.MAX_HEALTH
+healthBoost.amount = 0
+healthBoost.duration = -1
+healthBoost.maxStacks = 99
+healthBoost.cloneClear = true
+healthBoost.boostType = Hyperspace.StatBoostDefinition.BoostType.FLAT
+healthBoost.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
+healthBoost.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
+healthBoost.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
+--[[healthBoost.powerScaling:push_back(Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime"))
+healthBoost.powerScalingNoSys = 0
+healthBoost.powerScalingHackedSys = -1
+for i = 0, 4 do
+   healthBoost.powerScaling:push_back(i)
+end]]
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	if shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime")) then
         --fillSlot("aea_clone_crime", shipManager)
 		local aea_clone_crime_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime"))
         --aea_clone_crime_system.bNeedsManned = false
         if not aea_clone_crime_ready(aea_clone_crime_system) then 
+            if aea_clone_crime_system.iHackEffect > 0 then 
+                healthBoost.amount = -20
+            else
+                healthBoost.amount = 0
+            end
             return 
         end
+        healthBoost.amount = aea_clone_crime_system:GetEffectivePower() * 20
         for crewmem in vter(shipManager.vCrewList) do
             if crewmem.extend.deathTimer and crewmem.extend.deathTimer:Running() and crewmem.iShipId == shipManager.iShipId then
                 --print("INCREASE TIMER:"..tostring(crewmem.extend.deathTimer.currTime).." goal:"..tostring(crewmem.extend.deathTimer.currGoal))
@@ -136,24 +158,32 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
         for i = 1, aea_clone_crime_system:GetEffectivePower() do
             local cloneCrewType = randomCloneCrew:GetItem()
             local clone = shipManager:AddCrewMemberFromString("Clone", cloneCrewType, false, aea_clone_crime_system.roomId, true, true)
-            local deathTime = 20
+            local deathTime = 30
+            if shipManager:HasAugmentation("UPG_AEA_CLONE_CRIME_LIFETIME") > 0 or shipManager:HasAugmentation("EX_AEA_CLONE_CRIME_LIFETIME") > 0 then
+                --print(shipManager:GetAugmentationValue("UPG_AEA_CLONE_CRIME_LIFETIME"))
+                deathTime = 30 + 20 * (shipManager:GetAugmentationValue("UPG_AEA_CLONE_CRIME_LIFETIME") + shipManager:GetAugmentationValue("EX_AEA_CLONE_CRIME_LIFETIME"))
+            end
+            if shipManager:HasAugmentation("UPG_AEA_CLONE_CRIME_BUFF") > 0 or shipManager:HasAugmentation("EX_AEA_CLONE_CRIME_BUFF") > 0 then
+                --print("APPLY BUFF")
+                Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(healthBoost), clone)
+            end
             clone.extend.deathTimer = Hyperspace.TimerHelper(false)
             clone.extend.deathTimer:Start(deathTime)
         end
-        system:LockSystem(aea_clone_crime_system:GetEffectivePower())
+        aea_clone_crime_system:LockSystem(2)
     end
 end)
 
 local cloneImageBottom = Hyperspace.Resources:CreateImagePrimitiveString("ship/interior/aea_clone_bottom.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 local cloneImageTop = Hyperspace.Resources:CreateImagePrimitiveString("ship/interior/clone_top.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 
-script.on_render_event(Defines.RenderEvents.SHIP_FLOOR, function() end, function()
-    if Hyperspace.ships.player:HasSystem(Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime")) then
+script.on_render_event(Defines.RenderEvents.SHIP_FLOOR, function() end, function(ship)
+    local shipManager = Hyperspace.ships(ship.iShipId)
+    if shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime")) then
         local sysId = Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime")
-        local ship = Hyperspace.ships.player
-        local aea_clone_crime_system = ship:GetSystem(sysId)
-        local slot = ship.myBlueprint.systemInfo[sysId].slot
-        local roomShape = Hyperspace.ShipGraph.GetShipInfo(ship.iShipId):GetRoomShape(aea_clone_crime_system.roomId)
+        local aea_clone_crime_system = shipManager:GetSystem(sysId)
+        local slot = shipManager.myBlueprint.systemInfo[sysId].slot
+        local roomShape = Hyperspace.ShipGraph.GetShipInfo(shipManager.iShipId):GetRoomShape(aea_clone_crime_system.roomId)
         local w = roomShape.w/35
         local h = roomShape.h/35
         local x = roomShape.x + (35 * (slot%w))

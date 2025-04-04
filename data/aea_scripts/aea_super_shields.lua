@@ -205,7 +205,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
         if shipManager.shieldSystem.shields.power.super.first < maxLayers then
             shieldTimer[shipManager.iShipId] = math.min(5, shieldTimer[shipManager.iShipId] + multiplier * Hyperspace.FPS.SpeedFactor/16)
             if shieldTimer[shipManager.iShipId] >= 5 then
-                if manningCrew then
+                if manningCrew and Hyperspace.ships.enemy and Hyperspace.ships.enemy._targetable.hostile then
                     manningCrew:IncreaseSkill(2)
                 end
                 --if maxLayers > 5 then shipManager.shieldSystem.shields.power.super.second = maxLayers end

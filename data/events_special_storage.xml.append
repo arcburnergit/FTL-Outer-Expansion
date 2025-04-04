@@ -29,12 +29,51 @@
     <text>Broadside Artillery.</text>
     <event load="AEA_BROADSIDE3_MAIN" />
   </mod-append:choice>
+  <mod-append:choice req="AEA_REQ_MODIFY_CLONEBAY" blue="true" hidden="true">
+    <text>The Dark Justicier can modify your clone bay.</text>
+    <event load="AEA_MODIFY_CLONEBAY" />
+  </mod-append:choice>
+  <mod-append:choice req="AEA_REQ_MODIFY_CLONEBAY_NOCLONE" blue="true" hidden="true">
+    <text>The Dark Justicier can modify your clone bay.</text>
+    <event load="OPTION_INVALID" />
+  </mod-append:choice>
 </mod:findName>
+
+<event name="AEA_MODIFY_CLONEBAY">
+	<text>The Dark Justicier can illegally modify your clone bay.
+	[Effects: Clone bay no longer clones dead crew, on jump modified clone bay produces two random illegal clones who have a death timer of 30 seconds, modified clone bay prevents death timers from progressing while powered.]</text>
+	<choice hidden="true">
+		<text>Convert your clone bay. [Cost: 40~, 3|]</text>
+		<event>
+			<text>The existing clone bay is partially deconstructed in order to make way for the upgrades.</text>
+			<item_modify>
+				<item type="drones" min="-3" max="-3" />
+				<item type="scrap" min="-40" max="-40" />
+			</item_modify>
+			<removeSystem player="true">clonebay</removeSystem>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>The changes are made and you are left with a modifier clonebay.</text>
+					<system name="aea_clone_crime" />
+				</event>
+			</choice>
+		</event>
+	</choice>
+    <choice>
+        <text>Nevermind.</text>
+        <event load="STORAGE_CHECK_SYSTEM_LOAD" />
+    </choice>
+</event>
 
 <mod:findName type="event" name="STORAGE_CHECK_SYSTEM">
 	<mod-append:choice req="aea_super_shields" blue="false" hidden="true">
 	  <text>Auxiliary Shields.</text>
 	  <event load="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELDS" />
+	</mod-append:choice>
+	<mod-append:choice req="aea_clone_crime" blue="false" hidden="true">
+	  <text>Modified Clone Bay.</text>
+	  <event load="STORAGE_CHECK_SYSTEM_AEA_CLONE_CRIME" />
 	</mod-append:choice>
 </mod:findName>
 
@@ -70,7 +109,7 @@
         <text>Nevermind.</text>
         <event load="STORAGE_CHECK_SYSTEM_LOAD" />
     </choice>
-</event>UPG_AEA_SUPER_SHIELD_LINKER
+</event>
 <event name="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELD_LINKER">
 	<text>You are about to install the Computer Synchronisation upgrade.
 	[Effects: Manning in Auxiliary Shields also provides Shields with 50% of the bonus, Manning in Shields provides Auxiliary Shields with 50% of it's bonus.]</text>
@@ -112,7 +151,7 @@
 
 <event name="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELD_OVERCHARGER">
 	<text>You are about to install the Auxiliary Overcharger upgrade.
-	[Effects: Grants all super shield layers that the system can generate on jump]</text>
+	[Effects: Grants all super shield layers that the system can generate on jump.]</text>
 	<choice max_group="0" blue="false" hidden="true">
 		<text>Perform the upgrade. [Cost: 50~, 1{]</text>
 		<event>
@@ -146,6 +185,112 @@
 <event name="INSTALL_AEA_SUPER_SHIELD_OVERCHARGER">
 	<variable name="loc_internal_upgrades" op="add" val="1" />
 	<hiddenAug>UPG_AEA_SUPER_SHIELD_OVERCHARGER</hiddenAug>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_CLONE_CRIME">
+    <text>What upgrade do you want to install?</text>
+	<choice req="UPG_AEA_CLONE_CRIME_LIFETIME" lvl="2" max_group="0" blue="false" hidden="true">
+		<text>Reduced Decay. [UNAVAILABLE: You already have the max of this upgrade]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="UPG_AEA_CLONE_CRIME_LIFETIME" lvl="1" max_lvl="2" max_group="0" blue="false" hidden="true">
+		<text>Reduced Decay LvL 2. [Cost: 30~, 3{]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_CLONE_CRIME_LIFETIME" />
+	</choice>
+	<choice req="UPG_AEA_CLONE_CRIME_LIFETIME" lvl="0" max_lvl="2" max_group="0" blue="false" hidden="true">
+		<text>Reduced Decay LvL 1. [Cost: 30~, 3{]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_CLONE_CRIME_LIFETIME" />
+	</choice>
+    <choice req="UPG_AEA_CLONE_CRIME_BUFF" lvl="1" max_group="1" blue="false" hidden="true">
+        <text>Synthesized Muscle. [ALREADY INSTALLED]</text>
+        <event load="OPTION_INVALID" />
+    </choice>
+    <choice req="UPG_AEA_CLONE_CRIME_BUFF" lvl="0" max_group="1" blue="false" hidden="true">
+        <text>Synthesized Muscle. [Cost: 50~, 5{]</text>
+        <event load="STORAGE_CHECK_SYSTEM_AEA_CLONE_CRIME_BUFF" />
+    </choice>
+    <choice>
+        <text>Nevermind.</text>
+        <event load="STORAGE_CHECK_SYSTEM_LOAD" />
+    </choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_CLONE_CRIME_LIFETIME">
+	<text>You are about to install the Reduced Decay upgrade.
+	[Effects: Crew produced by the modified clone bay have their lifetime extended by 20 seconds.]</text>
+	<choice max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 30~, 3{]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="fuel" min="-3" max="-3" />
+				<item type="scrap" min="-30" max="-30" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_CLONE_CRIME_LIFETIME" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="EX_AEA_CLONE_CRIME_LIFETIME" max_group="1" blue="false" hidden="true">
+		<text>Install the External Augment internally.</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<remove name="EX_AEA_CLONE_CRIME_LIFETIME" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_CLONE_CRIME_LIFETIME" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_CLONE_CRIME_LIFETIME">
+	<variable name="loc_internal_upgrades" op="add" val="1" />
+	<hiddenAug>UPG_AEA_CLONE_CRIME_LIFETIME</hiddenAug>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_CLONE_CRIME_BUFF">
+	<text>You are about to install the Synthesized Muscle upgrade.
+	[Effects: Crew produced by the modified clone bay gain 20hp per power bar in the system.]</text>
+	<choice max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 50~, 5{]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="fuel" min="-5" max="-5" />
+				<item type="scrap" min="-50" max="-50" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_CLONE_CRIME_BUFF" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="EX_AEA_CLONE_CRIME_BUFF" max_group="1" blue="false" hidden="true">
+		<text>Install the External Augment internally.</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<remove name="EX_AEA_CLONE_CRIME_BUFF" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_CLONE_CRIME_BUFF" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_CLONE_CRIME_BUFF">
+	<variable name="loc_internal_upgrades" op="add" val="1" />
+	<hiddenAug>UPG_AEA_CLONE_CRIME_BUFF</hiddenAug>
 	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
 </event>
 
