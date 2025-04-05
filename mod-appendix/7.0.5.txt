@@ -1,0 +1,8 @@
+# Balance Changes
+- Shard-Forged combat damage significantly reduced.
+
+# Bug Fixes
+- Fixed Broadside B projectiles spawning off of the weapons
+
+# Misc Changes
+- N/A

@@ -5797,7 +5797,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 	<mod-append:race name="aea_shard_breaker">
 		<maxHealth>125</maxHealth>
-		<damageMultiplier>0.65</damageMultiplier>
+		<damageMultiplier>0.6</damageMultiplier>
 		<suffocationModifier>0.5</suffocationModifier>
 		<animBase>rock</animBase>
 		<deathSounds>
@@ -5870,7 +5870,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 	<mod-append:race name="aea_shard_smasher">
 		<maxHealth>150</maxHealth>
-		<damageMultiplier>0.5</damageMultiplier>
+		<damageMultiplier>0.4</damageMultiplier>
 		<suffocationModifier>0.5</suffocationModifier>
 		<animBase>rock</animBase>
 		<deathSounds>
@@ -5944,7 +5944,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<mod-append:race name="aea_shard_dawn">
 		<essential>1</essential>
 		<maxHealth>200</maxHealth>
-		<damageMultiplier>0.4</damageMultiplier>
+		<damageMultiplier>0.25</damageMultiplier>
 		<suffocationModifier>0.25</suffocationModifier>
 		<animBase>rock</animBase>
 		<deathSounds>

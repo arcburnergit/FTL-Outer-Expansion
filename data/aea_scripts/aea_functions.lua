@@ -4173,13 +4173,11 @@ script.on_init(function()
 end)
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
-	--print("weapon is artillery:"..tostring(weapon.isArtillery))
 	if weapon.isArtillery and Hyperspace.ships(weapon.iShipId):HasAugmentation("SHIP_AEA_BROADSIDE3") > 0 then
 		if weapon.blueprint.typeName == "BEAM" then
 			projectile.sub_end = Hyperspace.Pointf(projectile.position.x, projectile.position.y - 300)
 		elseif weapon.blueprint.typeName ~= "BOMB" then
 			projectile.heading = -90
-			projectile.position.x = projectile.position.x - 20
 		end
 	end
 end)

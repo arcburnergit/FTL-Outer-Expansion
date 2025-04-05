@@ -11035,7 +11035,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
         <power>Active Ability (1 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
         <power>Reduced suffocation damage</power>
         <power>Max Health is increased to 125</power>
-        <power>Inflicts 0.8x damage in crew combat</power>
+        <power>Inflicts 0.6x damage in crew combat</power>
     </powerList>
     <colorList>
         <layer>
@@ -11063,7 +11063,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
         <power>Active Ability (3 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
         <power>Reduced suffocation damage</power>
         <power>Max Health is increased to 150</power>
-        <power>Inflicts 0.8x damage in crew combat</power>
+        <power>Inflicts 0.4x damage in crew combat</power>
     </powerList>
     <colorList>
         <layer>
@@ -11091,7 +11091,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
         <power>Active Ability (3 charges): Locks down rooms damaging enemies but losing the ability to fight. Each cast costs 25 health.</power>
         <power>Greatly reduced suffocation damage</power>
         <power>Max Health is increased to 200</power>
-        <power>Inflicts 0.5x damage in crew combat</power>
+        <power>Inflicts 0.25x damage in crew combat</power>
     </powerList>
 </crewBlueprint>
 
