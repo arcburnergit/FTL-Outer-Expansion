@@ -120,6 +120,7 @@ healthBoost.boostType = Hyperspace.StatBoostDefinition.BoostType.FLAT
 healthBoost.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
 healthBoost.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
 healthBoost.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
+healthBoost:GiveId()
 --[[healthBoost.powerScaling:push_back(Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime"))
 healthBoost.powerScalingNoSys = 0
 healthBoost.powerScalingHackedSys = -1

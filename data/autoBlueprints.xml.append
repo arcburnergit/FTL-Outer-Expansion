@@ -476,6 +476,12 @@
     <mod-append:name>aea_shard_dawn</mod-append:name>
 </mod:findName>
 
+<blueprintList name="LIST_CREW_CRYSTAL_BASIC">
+	<name>crystal</name>
+	<name>crystal_liberator</name>
+	<name>aea_shard_breaker</name>
+</blueprintList>
+
 <mod:findName type="blueprintList" name="LIST_CREW_GATHERING_RANDOM">
     <mod-append:name>aea_acid_soldier</mod-append:name>
     <mod-append:name>aea_cult_wizard_a01</mod-append:name>

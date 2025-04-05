@@ -1,0 +1,9 @@
+# Balance Changes
+- Aux Shields ion damage is cleared if you jump while safe.
+
+# Bug Fixes
+- Fix blueprint appending failing on reading a ship without a layout file.
+- Fix system appending using the wrong image in some smaller room.
+
+# Misc Changes
+- N/A

@@ -10,7 +10,7 @@
   <mod-append:script>data/aea_scripts/aea_main_menu.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_super_shields.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script>
-  <mod-append:script>data/aea_scripts/aea_dark_justicier.lua</mod-append:script>
+  <!--mod-append:script>data/aea_scripts/aea_dark_justicier.lua</mod-append:script-->
 </mod:findLike>
 <dualMedical enabled="true"/>
 <mod:findLike type="customSystems">
@@ -6028,7 +6028,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			<cooldown>10</cooldown>
 			<jumpCooldown>full</jumpCooldown>
 			<buttonText>RITUAL</buttonText>
-			<tooltip>Perform a dark ritual, sacrifice a number of crew in specific positions to trigger different effects, Targetted crew take 150 damage.
+			<tooltip>Perform a dark ritual, sacrifice a number of crew in specific positions to trigger different effects. Crew who survive being apart of the ritual will be weakened and lose 50% of their health for 5 jumps.
 Left click to select crew for sacrifice.
 Right click to attempt the ritual or cancel.
 			</tooltip>
@@ -6691,10 +6691,12 @@ Right click to attempt the ritual or cancel.
 	<mod:findName name="BLUELIST_CREW_NO2">
 		<mod-append:name>LIST_CREW_AEA_OLD</mod-append:name>
 		<mod-append:name>LIST_CREW_AEA_ACID</mod-append:name>
+		<mod-append:name>aea_dark_justicier</mod-append:name>
 	</mod:findName>
 	<mod:findName name="BLUELIST_CREW_NOFIRE">
 		<mod-append:name>LIST_CREW_AEA_OLD</mod-append:name>
 		<mod-append:name>LIST_CREW_AEA_ACID</mod-append:name>
+		<mod-append:name>aea_dark_justicier</mod-append:name>
 	</mod:findName>
 	<mod:findName name="LIST_CHECK_TOGGLES_AND_AMPS">
 		<mod:findLike type="req" limit="1">
@@ -6726,6 +6728,14 @@ Right click to attempt the ritual or cancel.
 		<mod-append:name>LAB_ORCHID_AEA_COMMUNION</mod-append:name>
 		<mod-append:name>EX_LAB_ORCHID_AEA_COMMUNION</mod-append:name>
 	</mod:findName>
+	<mod:findName name="LIST_CHECK_ENERGY_SHIELD">
+		<mod-append:name>BOON_AEA_SUPER_SHIELDS</mod-append:name>
+		<mod-append:name>AEA_SHARD_ARMOUR</mod-append:name>
+		<mod-append:name>AEA_SHARD_SHIELD</mod-append:name>
+		<mod-append:name>AEA_SHARD_SHIELD_ENEMY</mod-append:name>
+		<mod-append:name>AEA_OLD_SHIELD</mod-append:name>
+		<mod-append:name>AEA_OLD_SHIELD_WEAK</mod-append:name>
+	</mod:findName>
 
 	<mod:findName name="COORDS">
 		<mod-append:name>coords_aea_bill</mod-append:name>
@@ -6744,6 +6754,7 @@ Right click to attempt the ritual or cancel.
 
 <events>
 	<metaVariable name="aea_warning_message" op="set" val="0" />
+	<variable name="aea_test_variable" op="set" val="0"/>
 	<variable name="arc_test_light_nebula" op="set" val="0"/>
 
 	<metaVariable name="aea_super_shield_hotkey_enabled" op="set" val="0" />
@@ -7555,6 +7566,7 @@ Right click to attempt the ritual or cancel.
 		</req>
 	</req>
 
+	<eventFile>special_aea_justicier</eventFile>
 
   	<eventFile>special_aea_acid</eventFile>
   	<eventFile>sector_aea_acid</eventFile>
@@ -8320,6 +8332,24 @@ Right click to attempt the ritual or cancel.
 		</category>
     </customStore>
 </store>
+
+<mod:findLike type="boss" limit="1">
+	<mod-append:surgeBarrage name="AEA_SURGE_DARK_FIRE">
+		<weapon name="BOMB_FIRE" count="3"/>
+	</mod-append:surgeBarrage>
+	<mod-append:surgeDrones name="AEA_SURGE_DARK_DRONE">
+		<drone name="COMBAT_1_BEAM" count="3"/>
+	</mod-append:surgeDrones>
+	<mod-append:surgeBarrage name="AEA_SURGE_DARK_LOCKDOWN">
+		<weapon name="CRYSTAL_BURST_1_RED" count="3"/>
+	</mod-append:surgeBarrage>
+	<mod-append:surgeBarrage name="AEA_SURGE_DARK_PARTICLE">
+		<weapon name="LASER_PARTICLE" count="3"/>
+	</mod-append:surgeBarrage>
+	<mod-append:surgeBarrage name="AEA_SURGE_DARK_BOARDING">
+		<weapon name="AEA_BOARDING_DRONE" count="3"/>
+	</mod-append:surgeBarrage>
+</mod:findLike>
 
 <mod:findLike type="achievements">
 	<mod:findLike type="page" start="2" limit="1">

@@ -1,0 +1,52 @@
+<FTL>
+<event name="AEA_MODIFY_CLONEBAY">
+	<text>The Dark Justicier can illegally modify your clone bay.
+	[Effects: Clone bay no longer clones dead crew, on jump modified clone bay produces two random illegal clones who have a death timer of 30 seconds, modified clone bay prevents death timers from progressing while powered.]</text>
+	<choice hidden="true">
+		<text>Convert your clone bay. [Cost: 40~, 3|]</text>
+		<event>
+			<text>The existing clone bay is partially deconstructed in order to make way for the upgrades.</text>
+			<item_modify>
+				<item type="drones" min="-3" max="-3" />
+				<item type="scrap" min="-40" max="-40" />
+			</item_modify>
+			<removeSystem player="true">clonebay</removeSystem>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>The changes are made and you are left with a modifier clonebay.</text>
+					<system name="aea_clone_crime" />
+				</event>
+			</choice>
+		</event>
+	</choice>
+    <choice>
+        <text>Nevermind.</text>
+        <event load="STORAGE_CHECK_SYSTEM_LOAD" />
+    </choice>
+</event>
+
+<event name="AEA_JUSTICIER_BOOK">
+</event>
+
+<event name="AEA_SURGE_FIRE">
+	<superBarrage player="true" name="AEA_SURGE_DARK_FIRE"/>
+</event>
+
+<event name="AEA_SURGE_DRONE">
+	<superDrones player="true" name="AEA_SURGE_DARK_DRONE"/>
+</event>
+
+<event name="AEA_SURGE_LOCKDOWN">
+	<superBarrage player="true" name="AEA_SURGE_DARK_LOCKDOWN"/>
+</event>
+
+<event name="AEA_SURGE_PARTICLE">
+	<superBarrage player="true" name="AEA_SURGE_DARK_PARTICLE"/>
+</event>
+
+<event name="AEA_SURGE_BOARDING">
+	<superBarrage player="true" name="AEA_SURGE_DARK_BOARDING"/>
+</event>
+
+</FTL>

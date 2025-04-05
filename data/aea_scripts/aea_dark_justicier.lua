@@ -27,6 +27,12 @@ local function worldToEnemyLocation(location)
 	return Hyperspace.Point(location.x - enemyShipOriginX, location.y - enemyShipOriginY)
 end
 
+-- Get a table for a userdata value by name
+local function userdata_table(userdata, tableName)
+	if not userdata.table[tableName] then userdata.table[tableName] = {} end
+	return userdata.table[tableName]
+end
+
 local cursorValid = Hyperspace.Resources:GetImageId("mouse/mouse_aea_ritual_valid.png")
 local cursorValid2 = Hyperspace.Resources:GetImageId("mouse/mouse_aea_ritual_valid2.png")
 local cursorRed = Hyperspace.Resources:GetImageId("mouse/mouse_aea_ritual_red.png")
@@ -34,6 +40,71 @@ local cursorRed = Hyperspace.Resources:GetImageId("mouse/mouse_aea_ritual_red.pn
 local cursorDefault = Hyperspace.Resources:GetImageId("mouse/pointerValid.png")
 local cursorDefault2 = Hyperspace.Resources:GetImageId("mouse/pointerInvalid.png")
 
+local weaknessBoost = Hyperspace.StatBoostDefinition()
+weaknessBoost.stat = Hyperspace.CrewStat.MAX_HEALTH
+weaknessBoost.amount = 0.5
+weaknessBoost.duration = -1
+weaknessBoost.maxStacks = 99
+weaknessBoost.jumpClear = true
+weaknessBoost.cloneClear = false
+weaknessBoost.boostType = Hyperspace.StatBoostDefinition.BoostType.MULT
+weaknessBoost.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
+weaknessBoost.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
+weaknessBoost.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
+weaknessBoost:GiveId()
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
+	if shipManager.iShipId == 0 then
+		for crewmem in vter(shipManager.vCrewList) do
+			local crewTable = userdata_table(crewmem, "mods.aea.dark_justicier")
+			if crewTable.weakened then
+				crewTable.weakened = crewTable.weakened - 1
+				Hyperspace.playerVariables["aea_crew_weak_"..tostring(crewmem.extend.selfId)] = crewTable.weakened
+				if crewTable.weakened <= 0 then
+					crewTable.weakened = nil
+				end
+				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(weaknessBoost), crewmem)
+			end
+		end
+	end
+end)
+local setCrew = false
+script.on_init(function()
+	setCrew = true
+end)
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+	if setCrew and Hyperspace.playerVariables.aea_test_variable == 1 then
+		--print("VARIABLE SET")
+		setCrew = false
+		for crewmem in vter(Hyperspace.ships.player.vCrewList) do
+			if Hyperspace.playerVariables["aea_crew_weak_"..tostring(crewmem.extend.selfId)] > 0 then
+				userdata_table(crewmem, "mods.aea.dark_justicier").weakened = Hyperspace.playerVariables["aea_crew_weak_"..tostring(crewmem.extend.selfId)]
+			end
+		end
+		if Hyperspace.ships.enemy then
+			for crewmem in vter(Hyperspace.ships.enemy.vCrewList) do
+				if Hyperspace.playerVariables["aea_crew_weak_"..tostring(crewmem.extend.selfId)] > 0 then
+					userdata_table(crewmem, "mods.aea.dark_justicier").weakened = Hyperspace.playerVariables["aea_crew_weak_"..tostring(crewmem.extend.selfId)]
+				end
+			end
+		end
+	elseif setCrew then
+		--print("VARIABLE NOT SET")
+	end
+end)
+local function applyWeakened(crewmem)
+	userdata_table(crewmem, "mods.aea.dark_justicier").weakened = 4
+	Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(weaknessBoost), crewmem)
+	Hyperspace.playerVariables["aea_crew_weak_"..tostring(crewmem.extend.selfId)] = 4
+end
+local function checkForValidCrew(crewmem)
+	local crewTable = userdata_table(crewmem, "mods.aea.dark_justicier")
+	if (crewmem.deathTimer and crewmem.deathTimer:Running()) or crewTable.weakened then
+		return false
+	end
+	return true
+end
+
+--Stat boosts
 
 local healBoost = Hyperspace.StatBoostDefinition()
 healBoost.stat = Hyperspace.CrewStat.ACTIVE_HEAL_AMOUNT
@@ -45,6 +116,7 @@ healBoost.boostType = Hyperspace.StatBoostDefinition.BoostType.FLAT
 healBoost.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
 healBoost.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
 healBoost.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
+healBoost:GiveId()
 local function healRoom(shipManager, crewTarget)
 	for crewmem in vter(shipManager.vCrewList) do
 		if crewmem.iRoomId == crewTarget.iRoomId and crewmem.iShipId == 0 then
@@ -62,6 +134,7 @@ healShipBoost.boostType = Hyperspace.StatBoostDefinition.BoostType.FLAT
 healShipBoost.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
 healShipBoost.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
 healShipBoost.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
+healShipBoost:GiveId()
 local function healShip(shipManager, crewTarget)
 	for crewmem in vter(shipManager.vCrewList) do
 		if crewmem.iShipId == 0 then
@@ -69,83 +142,40 @@ local function healShip(shipManager, crewTarget)
 		end
 	end
 end
-
-mods.aea.crewToElite = {}
-local crewToElite = mods.aea.crewToElite
-crewToElite["human"] = "human_soldier"
-crewToElite["human_engineer"] = "human_technician"
-crewToElite["human_soldier"] = "human_mfk"
-crewToElite["human_mfk"] = "human_legion"
-crewToElite["engi"] = "engi_defender"
-crewToElite["zoltan"] = "zoltan_peacekeeper"
-crewToElite["zoltan_devotee"] = "zoltan_martyr"
-crewToElite["mantis"] = "mantis_suzerain"
-crewToElite["mantis_suzerain"] = "mantis_bishop"
-crewToElite["mantis_free"] = "mantis_warlord"
-crewToElite["rock"] = "rock_crusader"
-crewToElite["rock_crusader"] = "rock_paladin"
-crewToElite["crystal"] = "crystal_sentinel"
-crewToElite["orchid"] = "orchid_praetor"
-crewToElite["orchid_vampweed"] = "orchid_cultivator"
-crewToElite["shell"] = "shell_radiant"
-crewToElite["shell_guardian"] = "shell_radiant"
-crewToElite["leech"] = "leech_ampere"
-crewToElite["slug"] = "slug_saboteur"
-crewToElite["slug_saboteur"] = "slug_knight"
-crewToElite["slug_clansman"] = "slug_ranger"
-crewToElite["lanius"] = "lanius_welder"
-crewToElite["cognitive"] = "cognitive_advanced"
-crewToElite["cognitive_automated"] = "cognitive_advanced_automated"
-crewToElite["obelisk"] = "obelisk_royal"
-crewToElite["phantom"] = "phantom_alpha"
-crewToElite["phantom_goul"] = "phantom_goul_alpha"
-crewToElite["phantom_mare"] = "phantom_mare_alpha"
-crewToElite["phantom_wraith"] = "phantom_wraith_alpha"
-crewToElite["spider_hatch"] = "spider"
-crewToElite["spider"] = "spider_weaver"
-crewToElite["pony"] = "ponyc"
-crewToElite["pony_tamed"] = "ponyc"
-crewToElite["beans"] = "sylvanrick"
-crewToElite["siren"] = "siren_harpy"
-crewToElite["aea_acid_soldier"] = "aea_acid_captain"
-crewToElite["aea_necro_engi"] = "aea_necro_lich"
-crewToElite["aea_bird_avali"] = "aea_bird_illuminant"
-crewToElite["aea_cult_wizard"] = "aea_cult_priest_off"
-crewToElite["aea_cult_wizard_a01"] = "aea_cult_priest_sup"
-crewToElite["aea_cult_wizard_a02"] = "aea_cult_priest_sup"
-crewToElite["aea_cult_wizard_s03"] = "aea_cult_priest_off"
-crewToElite["aea_cult_wizard_s04"] = "aea_cult_priest_off"
-crewToElite["aea_cult_wizard_s05"] = "aea_cult_priest_off"
-crewToElite["aea_cult_wizard_s06"] = "aea_cult_priest_off"
-crewToElite["aea_cult_wizard_a07"] = "aea_cult_priest_bor"
-crewToElite["aea_cult_wizard_s08"] = "aea_cult_priest_bor"
-crewToElite["aea_cult_wizard_s09"] = "aea_cult_priest_bor"
-crewToElite["aea_cult_wizard_a10"] = "aea_cult_priest_bor"
-crewToElite["aea_cult_wizard_a11"] = "aea_cult_priest_off"
-crewToElite["aea_cult_wizard_s12"] = "aea_cult_priest_sup"
-crewToElite["aea_cult_wizard_s13"] = "aea_cult_priest_off"
-crewToElite["aea_cult_wizard_s14"] = "aea_cult_priest_bor"
-function aeatest()
-	for crewTarget in vter(Hyperspace.ships.player.vCrewList) do
-		if crewToElite[crewTarget.type] then
-			local transformRace = Hyperspace.StatBoostDefinition()
-			transformRace.stat = Hyperspace.CrewStat.TRANSFORM_RACE
-			transformRace.stringValue = crewToElite[crewTarget.type]
-			transformRace.value = true
-			transformRace.cloneClear = false
-			transformRace.jumpClear = false
-			transformRace.boostType = Hyperspace.StatBoostDefinition.BoostType.SET
-			transformRace.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
-			transformRace.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
-			transformRace.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
-			Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(transformRace), crewTarget)
+local buffDamageBoost = Hyperspace.StatBoostDefinition()
+buffDamageBoost.stat = Hyperspace.CrewStat.DAMAGE_MULTIPLIER
+buffDamageBoost.amount = 1.5
+buffDamageBoost.duration = -1
+buffDamageBoost.maxStacks = 1
+buffDamageBoost.cloneClear = true
+buffDamageBoost.jumpClear = true
+buffDamageBoost.boostType = Hyperspace.StatBoostDefinition.BoostType.MULT
+buffDamageBoost.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
+buffDamageBoost.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
+buffDamageBoost.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
+buffDamageBoost:GiveId()
+local function buffDamage(shipManager, crewTarget)
+	for crewmem in vter(shipManager.vCrewList) do
+		if crewmem.iShipId == 0 then
+			Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(buffDamageBoost), crewmem)
+		end
+	end
+	if Hyperspace.ships(1 - shipManager.iShipId) then
+		for crewmem in vter(Hyperspace.ships(1 - shipManager.iShipId).vCrewList) do
+			if crewmem.iShipId == 0 then
+				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(buffDamageBoost), crewmem)
+			end
 		end
 	end
 end
-local function promoteCrew(shipManager, crewTarget)
+
+--Damage enemy
+
+--Transform Race
+local function transformStatBoost(eliteName)
 	local transformRace = Hyperspace.StatBoostDefinition()
 	transformRace.stat = Hyperspace.CrewStat.TRANSFORM_RACE
-	transformRace.stringValue = crewToElite[crewTarget.type]
+	transformRace.stringValue = eliteName
 	transformRace.value = true
 	transformRace.cloneClear = false
 	transformRace.jumpClear = false
@@ -153,25 +183,230 @@ local function promoteCrew(shipManager, crewTarget)
 	transformRace.boostSource = Hyperspace.StatBoostDefinition.BoostSource.AUGMENT
 	transformRace.shipTarget = Hyperspace.StatBoostDefinition.ShipTarget.ALL
 	transformRace.crewTarget = Hyperspace.StatBoostDefinition.CrewTarget.ALL
-	Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(transformRace), crewTarget)
+	transformRace:GiveId()
+	return transformRace
+end
+
+mods.aea.crewToElite = {}
+local crewToElite = mods.aea.crewToElite
+crewToElite["human"] = transformStatBoost("human_soldier")
+crewToElite["human_engineer"] = transformStatBoost("human_technician")
+crewToElite["human_soldier"] = transformStatBoost("human_mfk")
+crewToElite["human_mfk"] = transformStatBoost("human_legion")
+crewToElite["engi"] = transformStatBoost("engi_defender")
+crewToElite["zoltan"] = transformStatBoost("zoltan_peacekeeper")
+crewToElite["zoltan_devotee"] = transformStatBoost("zoltan_martyr")
+crewToElite["mantis"] = transformStatBoost("mantis_suzerain")
+crewToElite["mantis_suzerain"] = transformStatBoost("mantis_bishop")
+crewToElite["mantis_free"] = transformStatBoost("mantis_warlord")
+crewToElite["rock"] = transformStatBoost("rock_crusader")
+crewToElite["rock_crusader"] = transformStatBoost("rock_paladin")
+crewToElite["crystal"] = transformStatBoost("crystal_sentinel")
+crewToElite["orchid"] = transformStatBoost("orchid_praetor")
+crewToElite["orchid_vampweed"] = transformStatBoost("orchid_cultivator")
+crewToElite["shell"] = transformStatBoost("shell_radiant")
+crewToElite["shell_guardian"] = transformStatBoost("shell_radiant")
+crewToElite["leech"] = transformStatBoost("leech_ampere")
+crewToElite["slug"] = transformStatBoost("slug_saboteur")
+crewToElite["slug_saboteur"] = transformStatBoost("slug_knight")
+crewToElite["slug_clansman"] = transformStatBoost("slug_ranger")
+crewToElite["lanius"] = transformStatBoost("lanius_welder")
+crewToElite["cognitive"] = transformStatBoost("cognitive_advanced")
+crewToElite["cognitive_automated"] = transformStatBoost("cognitive_advanced_automated")
+crewToElite["obelisk"] = transformStatBoost("obelisk_royal")
+crewToElite["phantom"] = transformStatBoost("phantom_alpha")
+crewToElite["phantom_goul"] = transformStatBoost("phantom_goul_alpha")
+crewToElite["phantom_mare"] = transformStatBoost("phantom_mare_alpha")
+crewToElite["phantom_wraith"] = transformStatBoost("phantom_wraith_alpha")
+crewToElite["spider_hatch"] = transformStatBoost("spider")
+crewToElite["spider"] = transformStatBoost("spider_weaver")
+crewToElite["pony"] = transformStatBoost("ponyc")
+crewToElite["pony_tamed"] = transformStatBoost("ponyc")
+crewToElite["beans"] = transformStatBoost("sylvanrick")
+crewToElite["siren"] = transformStatBoost("siren_harpy")
+crewToElite["aea_acid_soldier"] = transformStatBoost("aea_acid_captain")
+crewToElite["aea_necro_engi"] = transformStatBoost("aea_necro_lich")
+crewToElite["aea_bird_avali"] = transformStatBoost("aea_bird_illuminant")
+crewToElite["aea_cult_wizard"] = transformStatBoost("aea_cult_priest_off")
+crewToElite["aea_cult_wizard_a01"] = transformStatBoost("aea_cult_priest_sup")
+crewToElite["aea_cult_wizard_a02"] = transformStatBoost("aea_cult_priest_sup")
+crewToElite["aea_cult_wizard_s03"] = transformStatBoost("aea_cult_priest_off")
+crewToElite["aea_cult_wizard_s04"] = transformStatBoost("aea_cult_priest_off")
+crewToElite["aea_cult_wizard_s05"] = transformStatBoost("aea_cult_priest_off")
+crewToElite["aea_cult_wizard_s06"] = transformStatBoost("aea_cult_priest_off")
+crewToElite["aea_cult_wizard_a07"] = transformStatBoost("aea_cult_priest_bor")
+crewToElite["aea_cult_wizard_s08"] = transformStatBoost("aea_cult_priest_bor")
+crewToElite["aea_cult_wizard_s09"] = transformStatBoost("aea_cult_priest_bor")
+crewToElite["aea_cult_wizard_a10"] = transformStatBoost("aea_cult_priest_bor")
+crewToElite["aea_cult_wizard_a11"] = transformStatBoost("aea_cult_priest_off")
+crewToElite["aea_cult_wizard_s12"] = transformStatBoost("aea_cult_priest_sup")
+crewToElite["aea_cult_wizard_s13"] = transformStatBoost("aea_cult_priest_off")
+crewToElite["aea_cult_wizard_s14"] = transformStatBoost("aea_cult_priest_bor")
+--[[function aeatest()
+	for crewTarget in vter(Hyperspace.ships.player.vCrewList) do
+		if crewToElite[crewTarget.type] then
+			Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(crewToElite[crewTarget.type]), crewTarget)
+		end
+	end
+end]]
+local function promoteCrew(shipManager, crewTarget)
+	Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(crewToElite[crewTarget.type]), crewTarget)
+	applyWeakened(crewTarget)
 end
 local function promoteCond(shipManager, crewTarget)
-	if crewToElite[crewTarget.type] and ((not crewTarget.extend.deathTimer) or not crewTarget.extend.deathTimer:Running()) then
+	if crewToElite[crewTarget.type] and checkForValidCrew(crewTarget) then
 		return true
 	end
 	return false
 end
-local function test1(shipManager, crewmem)
-	print("TEST 1")
+
+-- Give weapons
+local function giveWeapon(weapon)
+	local commandGui = Hyperspace.App.gui
+	local equipment = commandGui.equipScreen
+	local artyBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint(weapon)
+	equipment:AddWeapon(artyBlueprint, true, false)
 end
-local function test2(shipManager, crewmem)
-	print("TEST 2")
+local function constructCrewList(list)
+	local tab = {}
+	for blueprint in vter(Hyperspace.Blueprints:GetBlueprintList(list)) do
+		tab[blueprint] = true
+	end
+	return tab
+end
+local function constructWeaponList(list)
+	local tab = {}
+	for blueprint in vter(Hyperspace.Blueprints:GetBlueprintList(list)) do
+		table.insert(tab, blueprint)
+	end
+	return tab
+end
+local weaponTable = { 
+	{crewList = constructCrewList("LIST_CREW_CRYSTAL_BASIC"), weaponList = constructWeaponList("GIFTLIST_CRYSTAL"), excludeList = {} },
+	{crewList = constructCrewList("LIST_CREW_CRYSTAL"), weaponList = constructWeaponList("GIFTLIST_CRYSTAL_ELITE"), excludeList = constructCrewList("LIST_CREW_CRYSTAL_BASIC")},
+	{crewList = constructCrewList("LIST_CREW_ROCK"), weaponList = constructWeaponList("GIFTLIST_MISSILES"), excludeList = {} },
+	{crewList = constructCrewList("LIST_CREW_ORCHID"), weaponList = constructWeaponList("GIFTLIST_KERNEL"), excludeList = {} },
+	{crewList = constructCrewList("LIST_CREW_VAMPWEED"), weaponList = constructWeaponList("GIFTLIST_SPORE"), excludeList = {} },
+	{crewList = constructCrewList("LIST_CREW_GHOST"), weaponList = constructWeaponList("GIFTLIST_RUSTY"), excludeList = {} },
+	{crewList = constructCrewList("LIST_CREW_LEECH"), weaponList = constructWeaponList("GIFTLIST_FLAK"), excludeList = {} },
+	{crewList = constructCrewList("LIST_CREW_ANCIENT"), weaponList = constructWeaponList("GIFTLIST_ANCIENT"), excludeList = {} }
+}
+local function giveWeaponFunc(shipManager, crewTarget)
+	for i, tab in ipairs(weaponTable) do
+		--print("crew:"..crewTarget.type.." i:"..i.." list:"..tostring(tab.crewList[crewTarget.type]).." exclude:"..tostring(tab.excludeList[crewTarget.type]).." not exclude:"..tostring(not tab.excludeList[crewTarget.type]))
+		if tab.crewList[crewTarget.type] and (not tab.excludeList[crewTarget.type]) then
+			local randomSelect = math.random(1, #tab.weaponList)
+			giveWeapon(tab.weaponList[randomSelect])
+			applyWeakened(crewTarget)
+			return
+		end
+	end
+end
+local function giveWeaponCond(shipManager, crewTarget)
+	for _, tab in ipairs(weaponTable) do
+		if tab.crewList[crewTarget.type] and (not tab.excludeList[crewTarget.type]) then
+			return true
+		end
+	end
+	return false
+end
+
+local function buyItemCond(shipManager, crewTarget)
+	if Hyperspace.ships.player.currentScrap >= 10 then
+		return true
+	end
+	return false
+end
+local function buyFuelFunc(shipManager, crewTarget)
+	Hyperspace.ships.player.fuel_count = Hyperspace.ships.player.fuel_count + math.random(4, 5)
+	Hyperspace.ships.player:ModifyScrapCount(-10)
+end
+local function buyMissilesFunc(shipManager, crewTarget)
+	Hyperspace.ships.player:ModifyMissileCount(math.random(2,3))
+	Hyperspace.ships.player:ModifyScrapCount(-10)
+end
+local function buyDronesFunc(shipManager, crewTarget)
+	Hyperspace.ships.player:ModifyMissileCount(2)
+	Hyperspace.ships.player:ModifyScrapCount(-10)
+end
+
+local function fireBombFunc(shipManager, crewTarget)
+	local worldManager = Hyperspace.App.world
+	Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"AEA_SURGE_FIRE",false,-1)
+	Hyperspace.ships.player:ModifyMissileCount(-3)
+end
+local function fireBombCond(shipManager, crewTarget)
+	if Hyperspace.ships.player.tempMissileCount >= 3 and Hyperspace.ships.enemy and Hyperspace.ships.enemy._targetable.hostile then
+		return true
+	end
+	return false
+end
+
+local function spawnDroneFunc(shipManager, crewTarget)
+	local worldManager = Hyperspace.App.world
+	Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"AEA_SURGE_DRONE",false,-1)
+	Hyperspace.ships.player:ModifyDroneCount(-3)
+end
+local function spawnDroneCond(shipManager, crewTarget)
+	if Hyperspace.ships.player.tempDroneCount >= 3 and Hyperspace.ships.enemy and Hyperspace.ships.enemy._targetable.hostile then
+		return true
+	end
+	return false
+end
+
+local function lockdownFunc(shipManager, crewTarget)
+	local worldManager = Hyperspace.App.world
+	Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"AEA_SURGE_LOCKDOWN",false,-1)
+end
+local crystalLockdownList = constructCrewList("LIST_CREW_CRYSTAL")
+local function lockdownCond(shipManager, crewTarget)
+	if crystalLockdownList[crewTarget.type] and Hyperspace.ships.enemy and Hyperspace.ships.enemy._targetable.hostile then
+		return true
+	end
+	return false
+end
+
+local function particleFunc(shipManager, crewTarget)
+	local worldManager = Hyperspace.App.world
+	Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"AEA_SURGE_PARTICLE",false,-1)
+end
+local function particleCond(shipManager, crewTarget)
+	if Hyperspace.ships.enemy and Hyperspace.ships.enemy._targetable.hostile then
+		return true
+	end
+	return false
+end
+
+local function boardingFunc(shipManager, crewTarget)
+	local worldManager = Hyperspace.App.world
+	Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"AEA_SURGE_BOARDING",false,-1)
+	Hyperspace.ships.player:ModifyMissileCount(-1)
+	Hyperspace.ships.player:ModifyDroneCount(-1)
+end
+local function boardingCond(shipManager, crewTarget)
+	if Hyperspace.ships.player.tempMissileCount >= 1 and Hyperspace.ships.player.tempDroneCount >= 1 and Hyperspace.ships.enemy and Hyperspace.ships.enemy._targetable.hostile then
+		return true
+	end
+	return false
 end
 
 local spellList = {
 	heal_room = {func = healRoom, positionList = {} },
 	heal_ship = {func = healShip, positionList = {{x = 0, y = 2}, {x = 1, y = -1}} },
-	promote = {func = promoteCrew, excludeTarget = true, cond = promoteCond, positionList = {{x = 0, y = -2}, {x = 1, y = 4}, {x = -3, y = -3}, {x = 4, y = 0}, {x = -3, y = 3}} }
+	buff_damage = {func = buffDamage, positionList = {{x = 0, y = -2}, {x = -1, y = 1}} },
+
+	buy_fuel = {func = buyFuelFunc, cond = buyItemCond, positionList = {{x = 1, y = 0}} },
+	buy_missile = {func = buyMissilesFunc, cond = buyItemCond, positionList = {{x = 1, y = -1}} },
+	buy_drone = {func = buyDronesFunc, cond = buyItemCond, positionList = {{x = 1, y = 1}} },
+
+	fire_bomb = {func = fireBombFunc, cond = fireBombCond, positionList = {{x = -1, y = 1}, {x = 3, y = -1}, {x = -3, y = -1}} },
+	spawn_drone = {func = spawnDroneFunc, cond = spawnDroneCond, positionList = {{x = -1, y = -1}, {x = 3, y = 1}, {x = -3, y = 1}} },
+	lockdown = {func = lockdownFunc, excludeTarget = true, cond = lockdownCond, positionList = {{x = 3, y = 0}, {x = -1, y = 1}, {x = 0, y = -2}} },
+	particle = {func = particleFunc, cond = particleCond, positionList = {{x = 3, y = 0}, {x = -1, y = -1}, {x = 0, y = 2}} },
+	boarding = {func = boardingFunc, cond = boardingCond, positionList = {{x = 2, y = 0}, {x = 1, y = 1}, {x = 1, y = -1}} },
+
+	promote = {func = promoteCrew, excludeTarget = true, cond = promoteCond, positionList = {{x = 0, y = -2}, {x = 1, y = 4}, {x = -3, y = -3}, {x = 4, y = 0}, {x = -3, y = 3}} },
+	give_weapon = {func = giveWeaponFunc, excludeTarget = true, cond = giveWeaponCond, positionList = {{x = 1, y = 1}, {x = 0, y = 2}, {x = 3, y = 0}, {x = 0, y = -2}, {x = 1, y = -1}} }
 }
 
 
@@ -250,10 +485,13 @@ script.on_render_event(Defines.RenderEvents.SHIP_FLOOR, function() end, function
 end)
 
 local ritualStart = Hyperspace.Resources:CreateImagePrimitiveString("effects/aea_ritual_start.png", -17, -17, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
+local ritualStartCond = Hyperspace.Resources:CreateImagePrimitiveString("effects/aea_ritual_start_crew.png", -17, -17, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
 local ritual = Hyperspace.Resources:CreateImagePrimitiveString("effects/aea_ritual.png", -17, -17, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
 
 local lastValid = false
 local currentValidSpell = nil
+local shapeRight = false
+local crewCond = false
 script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(shipManager)
 	if activateCursor and shipManager.iShipId == targetShip then
 		local lastX = nil
@@ -275,15 +513,30 @@ script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(shipM
 				crewCount = crewCount + 1
 				local location = crewmem:GetLocation()
 				local colour = 0.5
-				if lastValid then colour = 1 end
+				local blue = 0
+				if lastValid then colour = 1 
+				elseif shapeRight then 
+					colour = 0.75 
+					blue = 1
+				end
 				if lastX and lastY then
-	   				Graphics.CSurface.GL_DrawLine(lastX+1, lastY+1, location.x+1, location.y+1, 5, Graphics.GL_Color(colour, 0, 0, 0.4))
-	   				Graphics.CSurface.GL_DrawLine(lastX+1, lastY+1, location.x+1, location.y+1, 3, Graphics.GL_Color(colour, 0, 0, 0.6))
+	   				Graphics.CSurface.GL_DrawLine(lastX+1, lastY+1, location.x+1, location.y+1, 5, Graphics.GL_Color(colour, 0, blue, 0.4))
+	   				Graphics.CSurface.GL_DrawLine(lastX+1, lastY+1, location.x+1, location.y+1, 3, Graphics.GL_Color(colour, 0, blue, 0.6))
 	   				Graphics.CSurface.GL_PushMatrix()
 					Graphics.CSurface.GL_Translate(location.x, location.y, 0)
-					Graphics.CSurface.GL_RenderPrimitiveWithColor(ritual, Graphics.GL_Color(colour, 0, 0, 0.8))
+					Graphics.CSurface.GL_RenderPrimitiveWithColor(ritual, Graphics.GL_Color(colour, 0, blue, 0.8))
 					Graphics.CSurface.GL_PopMatrix()
-	   			else
+		   			if crewCount == 2 then
+		   				Graphics.CSurface.GL_PushMatrix()
+						Graphics.CSurface.GL_Translate(lastX, lastY, 0)
+						if shapeRight and (not lastValid) and crewCond then 
+							Graphics.CSurface.GL_RenderPrimitiveWithColor(ritualStartCond, Graphics.GL_Color(colour, 0, blue, 0.8))
+						else
+							Graphics.CSurface.GL_RenderPrimitiveWithColor(ritualStart, Graphics.GL_Color(colour, 0, blue, 0.8))
+						end
+						Graphics.CSurface.GL_PopMatrix()
+		   			end
+		   		elseif crewCount == 1 and #orderList == 1 then
 	   				Graphics.CSurface.GL_PushMatrix()
 					Graphics.CSurface.GL_Translate(location.x, location.y, 0)
 					Graphics.CSurface.GL_RenderPrimitiveWithColor(ritualStart, Graphics.GL_Color(colour, 0, 0, 0.8))
@@ -317,7 +570,8 @@ script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(shipM
 		if removeI then
 			table.remove(orderList, removeI)
 		end
-
+		crewCond = false
+		shapeRight = false
 		local validSpell = nil
 		if crewCount > 0 then
 			for spell, spellTable in pairs(spellList) do
@@ -331,6 +585,10 @@ script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(shipM
 							validSpell = spell
 						else
 							--print("cond fail")
+							shapeRight = true
+							if spellTable.excludeTarget then
+								crewCond = true
+							end
 							validSpells[spell] = nil
 						end
 					else
@@ -390,7 +648,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 			if crewmem.type == "aea_dark_justicier" then
 				for power in vter(crewmem.extend.crewPowers) do
 					power:CancelPower(true)
-					power.powerCooldown.first = power.powerCooldown.second - 0.1
+					power.powerCooldown.first = power.powerCooldown.second - 0.01
 				end
 			end
 		end
@@ -403,14 +661,23 @@ script.on_internal_event(Defines.InternalEvents.ON_MOUSE_R_BUTTON_DOWN, function
 	    Hyperspace.Mouse.validPointer = cursorDefault
 	    Hyperspace.Mouse.invalidPointer = cursorDefault2
 	    if currentValidSpell and orderList[1] then
+	    	print("ATTEMPTING SPELL:"..currentValidSpell)
 	    	spellList[currentValidSpell].func(Hyperspace.ships(targetShip), orderList[1])
 	    	for i, crewmem in ipairs(orderList) do
 	    		if not spellList[currentValidSpell].excludeTarget or i > 1 then
-	    			crewmem:DirectModifyHealth(-150)
 	    			local x = crewmem.currentSlot.worldLocation.x + math.random(-17, 6)
 	    			local y = crewmem.currentSlot.worldLocation.y + math.random(-17, 6)
 	    			local random = math.random(1,4)
 	    			table.insert(bloodStainList[targetShip], {x = x, y = y, state = random})
+	    			x = crewmem.currentSlot.worldLocation.x + math.random(-17, 6)
+	    			y = crewmem.currentSlot.worldLocation.y + math.random(-17, 6)
+	    			random = math.random(1,4)
+	    			table.insert(bloodStainList[targetShip], {x = x, y = y, state = random})
+	    			crewmem:Kill(false)
+	    			if crewmem then
+	    				applyWeakened(crewmem)
+	    			end
+					Hyperspace.Sounds:PlaySoundMix("mantisSlash", -1, false)
 	    		end
 	    	end
 	    else
@@ -418,7 +685,7 @@ script.on_internal_event(Defines.InternalEvents.ON_MOUSE_R_BUTTON_DOWN, function
 				if crewmem.type == "aea_dark_justicier" then
 					for power in vter(crewmem.extend.crewPowers) do
 						power:CancelPower(true)
-						power.powerCooldown.first = power.powerCooldown.second - 0.1
+						power.powerCooldown.first = power.powerCooldown.second - 0.01
 					end
 				end
 			end

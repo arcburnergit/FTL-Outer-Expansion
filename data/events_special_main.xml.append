@@ -48,7 +48,12 @@
     <mod:removeTag/>
   </mod:findLike>
   <mod-append:triggeredEvent event="AEA_BROADSIDE_CHOOSE_ARTY" seeded="false" loops="1" minTime="0.013" maxTime="0.013" />
+  <mod-append:triggeredEvent event="AEA_SET_TEST_VALUE" seeded="false" loops="1" minTime="0.013" maxTime="0.013" />
 </mod:findName>
+
+<event name="AEA_SET_TEST_VALUE">
+	<variable name="aea_test_variable" op="set" val="1"/>
+</event>
 
 <event name="AEA_BROADSIDE_CHOOSE_ARTY">
   <loadEventList seeded="false" first="true" generate="false">
