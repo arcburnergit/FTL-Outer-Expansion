@@ -6156,7 +6156,6 @@ Right click to attempt the ritual or cancel.
 		</statBoosts>
     </aug>
 	<aug name="BOON_AEA_SUPER_SHIELDS">
-		<function name="ENERGY_SHIELD" value="0" useForReqs="true" warning="false" />
 		<superShield>
 			<add>1</add>
 			<color r="255" g="255" b="255" a="1" />

@@ -1,9 +1,11 @@
 # Balance Changes
 - Aux Shields ion damage is cleared if you jump while safe.
+- Buff Shard-Forged Auto-Cruiser artillery with +2 shield pierce, hullbust removed.
 
 # Bug Fixes
-- Fix blueprint appending failing on reading a ship without a layout file.
-- Fix system appending using the wrong image in some smaller room.
+- Fix super shields from crystals preventing recieving other super shields.
+- Crew recieving skills from Auxiliary Shields out of combat.
+- Fix Acid Destroyer A clone bay pod position.
 
 # Misc Changes
 - N/A
