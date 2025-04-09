@@ -5215,4 +5215,24 @@
 	<time>1</time>
 </anim>
 
+
+<animSheet name="aea_dark_buff_action" w="35" h="35" fw="35" fh="35">effects/aea_dark_buff_action.png</animSheet>
+<anim name="aea_dark_buff_action">
+	<sheet>aea_dark_buff_action</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+<animSheet name="aea_dark_buff_res" w="35" h="35" fw="35" fh="35">effects/aea_dark_buff_res.png</animSheet>
+<anim name="aea_dark_buff_res">
+	<sheet>aea_dark_buff_res</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+<animSheet name="aea_dark_buff_health" w="35" h="35" fw="35" fh="35">effects/aea_dark_buff_health.png</animSheet>
+<anim name="aea_dark_buff_health">
+	<sheet>aea_dark_buff_health</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
 </FTL>

@@ -506,11 +506,13 @@
 </ship>
 <event name="DESTROYED_AEA_BROADSIDE">
 	<text>The fiery red of the explosions complements the orange hull of the Rebel ship. Satisfied with your handiwork, you scrap the ship.</text>
+  <modifyPursuit amount="-2" />
   <unlockCustomShip silent="false">PLAYER_SHIP_AEA_BROADSIDE</unlockCustomShip>
 	<autoReward level="MED">standard</autoReward>
 </event>
 <event name="DEAD_CREW_AEA_BROADSIDE">
 	<text>With the Rebel vessel now clear of its crew, you are free to scrap the remains.</text>
+  <modifyPursuit amount="-2" />
   <unlockCustomShip silent="false">PLAYER_SHIP_AEA_BROADSIDE</unlockCustomShip>
   <!--unlockCustomShip silent="false">PLAYER_SHIP_AEA_BROADSIDE</unlockCustomShip-->
 	<autoReward level="HIGH">standard</autoReward>

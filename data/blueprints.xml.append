@@ -12859,11 +12859,11 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
-	<weaponList missiles="0" count="4">
+	<weaponList missiles="4" count="4">
 		<weapon name="LASER_FIRE" />
 		<weapon name="BEAM_1" />
 	</weaponList>
-	<droneList drones="0" count="2" />
+	<droneList drones="6" count="2" />
 	<health amount="30" />
 	<maxPower amount="8" />
 	<shieldImage>mup_giant</shieldImage>
@@ -13016,7 +13016,7 @@ Inherited cloning stats: 0.75x HP</desc>
 	<cost>60</cost>
 	<spawnCrew>
 		<number>1</number>
-		<race>drone_battle2</race>
+		<race>drone_battle</race>
 		<lifetime>60</lifetime>
 		<statBoosts>
 			<statBoost name="noClone">

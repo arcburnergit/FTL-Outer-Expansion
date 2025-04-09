@@ -10,7 +10,7 @@
   <mod-append:script>data/aea_scripts/aea_main_menu.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_super_shields.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script>
-  <!--mod-append:script>data/aea_scripts/aea_dark_justicier.lua</mod-append:script-->
+  <mod-append:script>data/aea_scripts/aea_dark_justicier.lua</mod-append:script>
 </mod:findLike>
 <dualMedical enabled="true"/>
 <mod:findLike type="customSystems">

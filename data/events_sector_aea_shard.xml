@@ -236,7 +236,7 @@ Eventually you make your way over to them. "You're a captain right? working with
     <choice>
         <text>Listen in.</text>
         <event>
-            <text>"Listen here, you had NO right to go telling that story when it was ME who found the space whales, NOT YOU!" "WE FOUND THOSE WHALES TOGETHER, We're BOTH allowed to tell the space whale stpry." The first captain, finally noticing you, responds. "Well, how about this renegade decide, was it MY story to tell becuase I found them, or should he get to tell the story just becuase he showed up late."</text>
+            <text>"Listen here, you had NO right to go telling that story when it was ME who found the space whales, NOT YOU!" "WE FOUND THOSE WHALES TOGETHER, We're BOTH allowed to tell the space whale story." The first captain, finally noticing you, responds. "Well, how about this renegade decide, was it MY story to tell becuase I found them, or should he get to tell the story just becuase he showed up late."</text>
             <choice hidden="true">
                 <text>"It was the first guy's story to tell. Finders keepers."</text>
                 <event>

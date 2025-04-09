@@ -22,12 +22,101 @@
 	</choice>
     <choice>
         <text>Nevermind.</text>
-        <event load="STORAGE_CHECK_SYSTEM_LOAD" />
+        <event load="STORAGE_CHECK" />
     </choice>
 </event>
 
-<event name="AEA_JUSTICIER_BOOK">
+<event name="AEA_JUSTICIER_BOOK_LOAD">
+    <loadEvent>AEA_JUSTICIER_BOOK</loadEvent>
 </event>
+
+<event name="AEA_JUSTICIER_BOOK">
+    <text>You open the book.</text>
+    <choice>
+        <text>Nevermind.</text>
+        <event load="STORAGE_CHECK" />
+    </choice>
+    <!--choice>
+        <text>Read the Rules of Ritual.</text>
+        <event load="AEA_JUSTICIER_BOOK_RULES" />
+    </choice-->
+    <choice>
+        <text>Read the section on Blood Rituals.</text>
+        <event load="AEA_JUSTICIER_BOOK_CREW" />
+    </choice>
+    <choice>
+        <text>Read the section on Contract Rituals.</text>
+        <event load="AEA_JUSTICIER_BOOK_TRADE" />
+    </choice>
+    <choice>
+        <text>Read the section on Offense Rituals.</text>
+        <event load="AEA_JUSTICIER_BOOK_ATTACK" />
+    </choice>
+</event>
+
+<event name="AEA_JUSTICIER_BOOK_RULES">
+    <text>You turn to the section of the book about the Rules of Ritual.</text>
+    <choice hidden="true">
+        <text>Go Back.</text>
+        <event load="AEA_JUSTICIER_BOOK_LOAD" />
+    </choice>
+</event>
+<event name="AEA_JUSTICIER_BOOK_CREW_LOAD">
+    <loadEvent>AEA_JUSTICIER_BOOK_CREW</loadEvent>
+</event>
+<event name="AEA_JUSTICIER_BOOK_CREW">
+    <text>You turn to the section of the book about Blood Rituals.</text>
+    <choice hidden="true">
+        <text>Go Back.</text>
+        <event load="AEA_JUSTICIER_BOOK_LOAD" />
+    </choice>
+</event>
+<event name="AEA_JUSTICIER_BOOK_TRADE_LOAD">
+    <loadEvent>AEA_JUSTICIER_BOOK_TRADE</loadEvent>
+</event>
+<event name="AEA_JUSTICIER_BOOK_TRADE">
+    <text>You turn to the section of the book about Contract Rituals.</text>
+    <choice hidden="true">
+        <text>Go Back.</text>
+        <event load="AEA_JUSTICIER_BOOK_LOAD" />
+    </choice>
+</event>
+<event name="AEA_JUSTICIER_BOOK_ATTACK_LOAD">
+    <loadEvent>AEA_JUSTICIER_BOOK_ATTACK</loadEvent>
+</event>
+<event name="AEA_JUSTICIER_BOOK_ATTACK">
+    <text>You turn to the section of the book about Offense Rituals.</text>
+    <choice hidden="true">
+        <text>Go Back.</text>
+        <event load="AEA_JUSTICIER_BOOK_LOAD" />
+    </choice>
+</event>
+
+<event name="AEA_JUSTICIER_BOOK_TEMPLATE_CREW">
+    <text>Test</text>
+    <choice hidden="true">
+        <text>Go Back.</text>
+        <event load="AEA_JUSTICIER_BOOK_CREW_LOAD" />
+    </choice>
+</event>
+
+<event name="AEA_JUSTICIER_BOOK_TEMPLATE_TRADE">
+    <text>Test</text>
+    <choice hidden="true">
+        <text>Go Back.</text>
+        <event load="AEA_JUSTICIER_BOOK_TRADE_LOAD" />
+    </choice>
+</event>
+
+<event name="AEA_JUSTICIER_BOOK_TEMPLATE_ATTACK">
+    <text>Test</text>
+    <choice hidden="true">
+        <text>Go Back.</text>
+        <event load="AEA_JUSTICIER_BOOK_ATTACK_LOAD" />
+    </choice>
+</event>
+
+<event name="AEA_JUSTICIER_EMPTY"/>
 
 <event name="AEA_SURGE_FIRE">
 	<superBarrage player="true" name="AEA_SURGE_DARK_FIRE"/>
