@@ -5781,7 +5781,7 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 </crewBlueprint>
 
 <crewBlueprint name="aea_necro_king">
-	<desc>Leader of the Engi Heretics and one of the first Engi to split off from the Harmony. Possesses fine control over Engi nanobots, giving it the ability to resurrect almost any life form.</desc>
+	<desc>Leader of the Engi Heretics and one of the first Engi to split off from the Harmony. Possesses fine control over Engi nanobots, giving it the ability to resurrect almost any lifeform.</desc>
 	<cost>100</cost>
 	<bp>2</bp>
 	<title>The Lich King</title>
