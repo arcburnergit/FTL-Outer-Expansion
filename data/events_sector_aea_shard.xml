@@ -70,7 +70,7 @@
 </eventList>
 
 <event name="AEA_SHARD_CRYSTAL_KNICKNACKS" unique="true">
-	<text>The Shard-Forged don't have a reputation for being traders, but nonetheless, a market has been established here. The Crystal relics on sale here appears to have drawn a sizable crowd. You also spot a chandlery towards the back of the market.</text>
+	<text>The Shard-Forged don't have a reputation for being traders, but nonetheless, a market has been established here. The Crystal relics on sale here appear to have drawn a sizable crowd. You also spot a chandlery towards the back of the market.</text>
 	<choice hidden="true">
         <text>Head inside the market.</text>
         <event>
@@ -780,7 +780,7 @@ You notice that there's still a large amount of scrap on the surface, you could 
     <choice>
         <text>Pick up the hail.</text>
         <event>
-            <text>"Renegade, we were wondering if we could temporarily hire you for a job. A group of Tiikaka slavers has been causing problems for us - we've even had one of our stations stolen. We need someone to hunt down their ship and deal with the stolen station. Extra pay if you can get the station back without blowing it up."</text>
+            <text>"Renegade, we were wondering if we could temporarily hire you for a job. A group of Tiiikaka slavers has been causing problems for us - we've even had one of our stations stolen. We need someone to hunt down their ship and deal with the stolen station. Extra pay if you can get the station back without blowing it up."</text>
             <choice hidden="true">
                 <text>Accept the Job.</text>
                 <event>
