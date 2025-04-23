@@ -2032,7 +2032,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<class>Lich King's Crewser</class>
 	<name>The Elder</name>
 	<desc>The personal vessel of the Lich King, a powerful boarding vessel. Able to build up a capable crew quickly the Lich King  often heads off alone.</desc>
-	<unlock id="ship_PLAYER_SHIP__unlock" />
+	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_KING_unlock" />
 	<systemList>
 		<aea_super_shields power="1" room="10" start="false" img="room_shields_aea_1">
 			<slot>
