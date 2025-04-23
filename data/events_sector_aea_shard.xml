@@ -791,7 +791,7 @@ You notice that there's still a large amount of scrap on the surface, you could 
                     <choice hidden="true">
                         <text>Continue...</text>
                         <event>
-                            <text>And here are the coordinates for the station.</text>
+                            <text>"And here are the coordinates for the station."</text>
                             <quest event="AEA_SHARD_RIVAL_STATION_QUEST"/>
                         </event>
                     </choice>
