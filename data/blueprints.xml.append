@@ -2032,7 +2032,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<class>Lich King's Crewser</class>
 	<name>The Elder</name>
 	<desc>The personal vessel of the Lich King, a powerful boarding vessel. Able to build up a capable crew quickly the Lich King  often heads off alone.</desc>
-	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_KING_unlock" />
+	<unlock id="ship_PLAYER_SHIP__unlock" />
 	<systemList>
 		<aea_super_shields power="1" room="10" start="false" img="room_shields_aea_1">
 			<slot>
@@ -5791,7 +5791,7 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 		<power>Active Ability: Permanently resurrects the last enemy killed in melee combat by this crewmember. Costs 5 Nanite Swarms</power>
 		<power>Active Ability: Resurrects the last enemy killed in melee combat by this crewmember. Costs 1 Nanite Swarm</power>
 		<power>Max Health is increased to 180</power>
-		<power>Enemies killed on the same ship as the Lich King generate 1 Nanite Swarm</power>
+		<power>Enemies killed on the same ship as this crewmember generate 1 Nanite Swarm</power>
 		<power>1.5x combat damage, 2x repair speed</power>
 		<power>Nanobots reduce healing of the target crew by 100%</power>
 		<power>Immune to suffocation damage</power>
