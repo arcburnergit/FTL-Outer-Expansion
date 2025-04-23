@@ -70,15 +70,15 @@
 </eventList>
 
 <event name="AEA_SHARD_CRYSTAL_KNICKNACKS" unique="true">
-	<text>A Crystalline market is established here, a rare sight. It appears to have drawn a large crowd, and is selling Crystal relics. There's also a ship outfitting store towards the back of the market.</text>
+	<text>The Shard-Forged don't have a reputation for being traders, but nonetheless, a market has been established here. The Crystal relics on sale here appears to have drawn a sizable crowd. You also spot a chandlery towards the back of the market.</text>
 	<choice hidden="true">
         <text>Head inside the market.</text>
         <event>
-            <text>You find a wide variety of items inside the market, from ancient crystal cutlery to rare crystalline weapons.</text>
+            <text>You find a wide variety of items inside the market, from ancient crystalline cutlery to rare crystalline weapons.</text>
             <choice>
                 <text>Check out the merchant selling ancient household items.</text>
                 <event>
-                    <text>Most of the items are useless to you, but one item stands out to you. Towards the back sits a strange item, the merchant explains that it's an ancient cooling unit, its possible you could use it to enhance your weapons system.</text>
+                    <text>Most of the items are useless to you, but a strange contraption sitting towards the back catches your eye. The merchant explains that it's an ancient cooling unit, which you could possibly use to enhance your weapons system.</text>
                     <choice hidden="false">
                         <text>Buy the cooling unit. [20~]</text>
                         <event>
@@ -102,7 +102,7 @@
             <choice>
                 <text>Check out the merchant selling rare crystal weapons.</text>
                 <event>
-                    <text>It appears the merchant has sold out of the most of the smaller weapons and so only a few ship based weapons remain.</text>
+                    <text>It appears most of the small arms have already been sold and only a few ship-grade weapons remain.</text>
                     <choice hidden="false">
                         <text>Buy the Elite Crystal Burst MK I. [80~]</text>
                         <event>
@@ -778,20 +778,20 @@ You notice that there's still a large amount of scrap on the surface, you could 
     <text>You arrive at the beacon and are greeted by a Shard-Forged ship. It appears to be hailing you.</text>
     <ship load="SHIP_AEA_SHARD_GENERIC"/>
     <choice>
-        <text>Pickup the hail.</text>
+        <text>Pick up the hail.</text>
         <event>
-            <text>"Renegade, we were wondering if we could temporarily hire you for a job. Theres a group of Tiiikaka slavers causing problems for us, they've already stolen one of our stations. We need you to go and hunt down their ship, aswell as deal with the stolen station, we'll pay extra if you get the station back without blowing it up."</text>
+            <text>"Renegade, we were wondering if we could temporarily hire you for a job. A group of Tiikaka slavers has been causing problems for us - we've even had one of our stations stolen. We need someone to hunt down their ship and deal with the stolen station. Extra pay if you can get the station back without blowing it up."</text>
             <choice hidden="true">
                 <text>Accept the Job.</text>
                 <event>
-                    <text>"Excellent, We'll send you the coordinates for both."</text>
+                    <text>"Excellent, we're sending you the coordinates for the ship."</text>
                     <quest event="AEA_SHARD_RIVAL_SHIP_QUEST"/>
                     <variable name="aea_shard_quest_done" op="set" val="0" />
                     <variable name="aea_shard_quest_crewkill" op="set" val="0" />
                     <choice hidden="true">
                         <text>Continue...</text>
                         <event>
-                            <text>"And heres the coordinates for the station."</text>
+                            <text>And here are the coordinates for the station.</text>
                             <quest event="AEA_SHARD_RIVAL_STATION_QUEST"/>
                         </event>
                     </choice>
