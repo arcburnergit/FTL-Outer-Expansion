@@ -25,7 +25,7 @@
 			<mod-append:choice hidden="true" max_group="1" req="SHIP_AEA_OLD" blue="false">
 				<text>Contact Federation command.</text>
 				<event>
-					<text>On the vidscreen appears several Federation and Engi officers, as well as Admiral Tully in the center. "What the fuck is that?"</text>
+					<text>On the vidscreen appears several Federation and Engi officers, as well as Admiral Tully in the center. "Where did you even get that ship from?"</text>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event load="LAST_STAND_START_2" />
@@ -35,7 +35,7 @@
 			<mod-append:choice hidden="true" max_group="1" req="SHIP_AEA_WHALE" blue="false">
 				<text>Contact Federation command.</text>
 				<event>
-					<text>On the vidscreen appears several Federation and Engi officers, as well as Admiral Tully in the center. "Is that a fucking whale?"</text>
+					<text>On the vidscreen appears several Federation and Engi officers, as well as Admiral Tully in the center. "Are you a whale?"</text>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event load="LAST_STAND_START_2" />
@@ -46,6 +46,16 @@
 				<text>Contact Federation command.</text>
 				<event>
 					<text>On the vidscreen appears several Federation and Engi officers, as well as Admiral Tully in the center. "Ah a Gi ship, those birds make some good drones, good luck soldier!"</text>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="LAST_STAND_START_2" />
+					</choice>
+				</event>
+			</mod-append:choice>
+			<mod-append:choice hidden="true" max_group="1" req="SHIP_AEA_JUSTICE" blue="false">
+				<text>Contact Federation command.</text>
+				<event>
+					<text>On the vidscreen appears several Federation and Engi officers, as well as Admiral Tully in the center. "What a strange ship, whats all that red stuff? Nevermind, good luck out there."</text>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event load="LAST_STAND_START_2" />

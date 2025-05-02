@@ -1,66 +1,11 @@
-local vter = mods.multiverse.vter
-
-local toggleEvent = false
-local removedDroneTimer = nil
-local droneTimers = {}
-local lastDroneTimers = {}
-local lastLastDroneTimers = {}
-
-script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
-    if not shipManager == 0 then return end
-    lastLastDroneTimers = lastDroneTimers
-    lastDroneTimers = droneTimers
-	droneTimers = {}
-	if Hyperspace.ships.player and Hyperspace.ships.player:HasSystem(4) then
-		for drone in vter(Hyperspace.ships.player.droneSystem.drones) do
-			droneTimers[drone.selfId] = drone.destroyedTimer
-		end
-	end
-	
-	-- Find the new drone and apply the old timer to it
-	if toggleEvent then
-		toggleEvent = false
-		local newDrone = nil
-		for droneId, _ in pairs(droneTimers) do
-			if not lastDroneTimers[droneId] then
-				newDrone = droneId
-				break
-			end
-		end
-		if newDrone then
-			if Hyperspace.ships.player:HasSystem(4) then
-				for drone in vter(Hyperspace.ships.player.droneSystem.drones) do
-					if drone.selfId == newDrone then
-						drone.destroyedTimer = removedDroneTimer
-					end
-				end
-			end
-		end
-		removedDroneTimer = nil
-	end
-end)
-
-script.on_game_event("COMBAT_CHECK_TOGGLE_LOAD", false, function() 
-	-- Get the timer from the old drone when removed
-
-	for droneId, deathTimer in pairs(lastLastDroneTimers) do
-		if not droneTimers[droneId] then
-			removedDroneTimer = deathTimer
-		end
-	end
-	if removedDroneTimer then
-		toggleEvent = true
-	end
-end)
-
-
-
---[[mods.aea = {}
-
 -----------------------
 -- UTILITY FUNCTIONS --
 -----------------------
 
+local log_events = false
+function AEAlogEvents()
+	log_events = not log_events
+end
 
 -- Get a table for a userdata value by name
 local function userdata_table(userdata, tableName)
@@ -76,10 +21,6 @@ end
 
 local function get_distance(point1, point2)
 	return math.sqrt(((point2.x - point1.x)^ 2)+((point2.y - point1.y) ^ 2))
-end
-
-local function midPoint(point1, point2)
-	return Hyperspace.Pointf((point1.x + point2.x)/2, (point1.y + point2.y)/2)
 end
 
 -- Check if a weapon's current shot is its first
@@ -98,6 +39,12 @@ local function get_point_local_offset(original, target, offsetForwards, offsetRi
 	--print(newX)
 	local newY = original.y - (offsetForwards * math.sin(alpha)) - (offsetRight * math.sin(alpha+math.rad(90)))
 	--print(newY)
+	return Hyperspace.Pointf(newX, newY)
+end
+
+local function offset_point_direction(oldX, oldY, angle, distance)
+	local newX = oldX + (distance * math.cos(math.rad(angle)))
+	local newY = oldY + (distance * math.sin(math.rad(angle)))
 	return Hyperspace.Pointf(newX, newY)
 end
 
@@ -149,25 +96,14 @@ local function convertMousePositionToEnemyShipPosition(mousePosition)
 	local targetPosition = combatControl.targetPosition
 	local enemyShipOriginX = position.x + targetPosition.x
 	local enemyShipOriginY = position.y + targetPosition.y
-	return Hyperspace.Pointf(mousePosition.x - enemyShipOriginX, mousePosition.y - enemyShipOriginY)
-end
-
--- written by kokoro
-local function enemyToGlobalSpace(pos)
-	local cApp = Hyperspace.Global.GetInstance():GetCApp()
-	local combatControl = cApp.gui.combatControl
-	local position = combatControl.position
-	local targetPosition = combatControl.targetPosition
-	local enemyShipOriginX = position.x + targetPosition.x
-	local enemyShipOriginY = position.y + targetPosition.y
-	return Hyperspace.Pointf(pos.x + enemyShipOriginX, pos.y + enemyShipOriginY)
+	return Hyperspace.Point(mousePosition.x - enemyShipOriginX, mousePosition.y - enemyShipOriginY)
 end
 
 local function convertMousePositionToPlayerShipPosition(mousePosition)
 	local cApp = Hyperspace.Global.GetInstance():GetCApp()
 	local combatControl = cApp.gui.combatControl
 	local playerPosition = combatControl.playerShipPosition
-	return Hyperspace.Pointf(mousePosition.x - playerPosition.x, mousePosition.y - playerPosition.y)
+	return Hyperspace.Point(mousePosition.x - playerPosition.x, mousePosition.y - playerPosition.y)
 end
 
 -- Returns a table where the indices are the IDs of all rooms adjacent to the given room
@@ -219,66 +155,35 @@ local function round(num, numDecimalPlaces)
   return math.floor(num * mult + 0.5) / mult
 end
 
+local spawn_temp_drone = mods.multiverse.spawn_temp_drone
 
-local toggleEvent = false
-local removedDroneTimer = nil
-local droneTimers = {}
-local lastDroneTimers = {}
+local node_child_iter = mods.multiverse.node_child_iter
 
-script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function()
-	for k, v in pairs(droneTimers) do
-		lastDroneTimers[k] = v
-	end 
-	droneTimers = {}
-	if Hyperspace.ships.player and Hyperspace.ships.player:HasSystem(4) then
-		for drone in vter(Hyperspace.ships.player.droneSystem.drones) do
-			print(drone.blueprint.typeName.." timer:"..tostring(drone.destroyedTimer).. " id:"..tostring(drone.selfId))
-			droneTimers[drone.selfId] = drone.destroyedTimer
-		end
+script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
+	if projectile.extend.name == "ARTILLERY_SHARD_AUTO" and beamHitType == Defines.BeamHit.NEW_ROOM then
+		shipManager.ship:LockdownRoom(get_room_at_location(shipManager, location, true), location)		
 	end
-	if toggleEvent then
-		print("toggle_event "..tostring(removedDroneTimer))
-		toggleEvent = false
-		local newDrone = nil
-		for k1, v1 in pairs(droneTimers) do
-			local droneNew = false
-			for k2, v2 in pairs(lastDroneTimers) do
-				if k1 == k2 then droneNew = true end
-			end
-			if not droneNew then
-				print("NEW DRONE timer:"..tostring(v1).. " id:"..tostring(k1))
-				newDrone = k1
-			end
-		end
-		if newDrone then
-			if Hyperspace.ships.player:HasSystem(4) then
-				for drone in vter(Hyperspace.ships.player.droneSystem.drones) do
-					if drone.selfId == newDrone then
-						print("SET TIMER "..drone.blueprint.typeName.." timer:"..tostring(drone.destroyedTimer).." new timer:"..tostring(removedDroneTimer).. " id:"..tostring(drone.selfId))
-						drone.destroyedTimer = removedDroneTimer
-						print("afterSet Timer:"..tostring(drone.destroyedTimer))
+	return Defines.Chain.CONTINUE, beamHitType
+end)
+
+script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
+	if crewmem.type == "aea_shard_dawn" then
+		local shipManager = Hyperspace.ships(crewmem.currentShipId)
+		for power in vter(crewmem.extend.crewPowers) do
+			--print("enabled:"..tostring(power.enable).." active:"..tostring(power.temporaryPowerActive).." duration:"..power.temporaryPowerDuration.first)
+			if power.temporaryPowerActive then
+				local shardActive = false
+				for lockdownShard in vter(shipManager.ship.lockdowns) do
+					--print("arrive:"..tostring(lockdownShard.bArrived).." lockingRoom:"..lockdownShard.lockingRoom.." lifetime:"..lockdownShard.lifeTime.." crewRoom"..crewmem.iRoomId)
+					if lockdownShard.lockingRoom == crewmem.iRoomId then
+						shardActive = true
 					end
+				end
+				if not shardActive then
+					local crewPos = crewmem:GetPosition()
+					shipManager.ship:LockdownRoom(crewmem.iRoomId, Hyperspace.Pointf(crewPos.x, crewPos.y) )
 				end
 			end
 		end
-		removedDroneTimer = nil
 	end
 end)
-
-
-script.on_game_event("COMBAT_CHECK_TOGGLE_LOAD", false, function() 
-	for k1, v1 in pairs(lastDroneTimers) do
-		local droneStillHere = false
-		for k2, v2 in pairs(droneTimers) do
-			if k1 == k2 then droneStillHere = true end
-		end
-		if not droneStillHere then
-			print("REMOVED DRONE timer:"..tostring(v1).. " id:"..tostring(k1))
-			removedDroneTimer = v1
-		end
-	end
-	if removedDroneTimer then
-		toggleEvent = true
-		print("set toggle event "..tostring(removedDroneTimer))
-	end
-end)]]

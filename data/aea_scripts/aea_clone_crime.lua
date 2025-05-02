@@ -58,14 +58,25 @@ local function fillSlot(systemName, shipManager)
     local sysId = Hyperspace.ShipSystem.NameToSystemId(systemName)
     if shipManager and shipManager:HasSystem(sysId) then
         local sysRoom = nil
+        local roomSize = nil
         local aea_clone_crime_system = shipManager:GetSystem(sysId)
         for room in vter(shipManager.ship.vRoomList) do
             if room.iRoomId == aea_clone_crime_system.roomId then
                 sysRoom = room
+                roomSize = (room.rect.w/35)*(room.rect.h/35)
             end
         end
         local slot = shipManager.myBlueprint.systemInfo[sysId].slot
-        if sysRoom and slot then
+        for crewmem in vter(shipManager.vCrewList) do
+            if crewmem.currentSlot.roomId == sysRoom.iRoomId and crewmem.currentSlot.slotId == slot then
+                local crewSlotSet = Hyperspace.ShipGraph.GetShipInfo(shipManager.iShipId):GetClosestSlot(crewmem:GetLocation(), crewmem.iShipId, crewmem:GetIntruder())
+                crewmem:SetRoomPath(crewSlotSet.slotId, crewSlotSet.roomId)
+                crewmem:MoveToRoom(crewSlotSet.roomId, crewSlotSet.slotId, true)
+            end
+        end
+
+        --print("fillslot:"..slot.." room:"..roomSize)
+        if sysRoom and slot and slot < roomSize then
             sysRoom:FillSlot(slot, false)
             sysRoom:FillSlot(slot, true)
             return true
@@ -95,7 +106,7 @@ script.on_internal_event(Defines.InternalEvents.CONSTRUCT_SHIP_SYSTEM, function(
     end
 end)
 
-script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
     if needsFillSlot then
         if fillSlot("aea_clone_crime", Hyperspace.ships.player) then
             needsFillSlot = false
@@ -105,7 +116,7 @@ end)
 
 --Utility function to see if the system is ready for use
 local function aea_clone_crime_ready(shipSystem)
-   return not shipSystem:GetLocked() and shipSystem:Functioning()
+   return not shipSystem:GetLocked() and shipSystem:Functioning() and shipSystem.iHackEffect <= 1
 end
 
 randomCloneCrew = RandomList:New {"aea_sac_human", "aea_sac_engi", "aea_sac_mantis", "aea_sac_slug", "aea_sac_rock"}
@@ -187,6 +198,8 @@ script.on_render_event(Defines.RenderEvents.SHIP_FLOOR, function() end, function
         local roomShape = Hyperspace.ShipGraph.GetShipInfo(shipManager.iShipId):GetRoomShape(aea_clone_crime_system.roomId)
         local w = roomShape.w/35
         local h = roomShape.h/35
+        --print("slot:"..slot.." room:"..tostring(w * h))
+        if slot >= w * h then return end
         local x = roomShape.x + (35 * (slot%w))
         local y = roomShape.y + (35 * math.floor(slot/h))
         Graphics.CSurface.GL_PushMatrix()
@@ -207,53 +220,3 @@ script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager
     end
 end)
 
-local systemIcons = {}
-local function system_icon(name)
-    local tex = Hyperspace.Resources:GetImageId("icons/s_"..name.."_overlay.png")
-    return Graphics.CSurface.GL_CreateImagePrimitive(tex, 0, 0, 32, 32, 0, Graphics.GL_Color(1, 1, 1, 0.5))
-end
-systemIcons[Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime")] = system_icon("aea_clone_crime")
-
--- Render icons
-local function render_icon(sysId, ship, sysInfo)
-    -- Special logic for medbay and clonebay
-    local skipBackground = false
-    
-    -- Render logic
-    if not ship:HasSystem(sysId) and sysInfo:has_key(sysId) then
-        local sysRoomShape = Hyperspace.ShipGraph.GetShipInfo(ship.iShipId):GetRoomShape(sysInfo[sysId].location[0])
-        local iconRenderX = sysRoomShape.x + sysRoomShape.w//2 - 16
-        local iconRenderY = sysRoomShape.y + sysRoomShape.h//2 - 16
-        if sysInfo:has_key(10) and sysInfo[sysId].location[0] == sysInfo[10].location[0] then
-            iconRenderY = iconRenderY + 18
-            skipBackground = true
-        end
-        if not skipBackground then
-            local outlineSize = 2
-            Graphics.CSurface.GL_DrawRect(
-                sysRoomShape.x,
-                sysRoomShape.y,
-                sysRoomShape.w,
-                sysRoomShape.h,
-                Graphics.GL_Color(0, 0, 0, 0.3))
-            Graphics.CSurface.GL_DrawRectOutline(
-                sysRoomShape.x + outlineSize,
-                sysRoomShape.y + outlineSize,
-                sysRoomShape.w - 2*outlineSize,
-                sysRoomShape.h - 2*outlineSize,
-                Graphics.GL_Color(0.8, 0, 0, 0.5), outlineSize)
-        end
-        Graphics.CSurface.GL_PushMatrix()
-        Graphics.CSurface.GL_Translate(iconRenderX, iconRenderY)
-        Graphics.CSurface.GL_RenderPrimitive(systemIcons[sysId])
-        Graphics.CSurface.GL_PopMatrix()
-    end
-end
-script.on_render_event(Defines.RenderEvents.SHIP_SPARKS, function() end, function(ship)
-    if not Hyperspace.App.world.bStartedGame then
-        local shipManager = Hyperspace.ships(ship.iShipId)
-        local sysInfo = shipManager.myBlueprint.systemInfo
-        render_icon(Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime"), shipManager, sysInfo)
-    end
-    return Defines.Chain.CONTINUE
-end)

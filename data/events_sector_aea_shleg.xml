@@ -922,6 +922,24 @@ Sorrow then continues, "We have one last proposition for you. We'd bothhh like t
 Alongside their offer they also give you the blueprints to a new ship and a nice amount of scrap.</text>
 			<autoReward level="MED">scrap_only</autoReward>
 			<unlockCustomShip silent="false">PLAYER_SHIP_AEA_SHLEG_GAS</unlockCustomShip>
+			<choice hidden="true" req="MORAL_SHLEG_ALL" blue="false">
+				<text>(Anarchist Crew + Good Reputation) Offer to send your own crewmember back instead.</text>
+				<event>
+					<text>"What an excellent idea captain, I do hope your crew doesn't mind."</text>
+					<crewMember amount="1" all_skills="2" class="aea_shleg_sickle">Sickle</crewMember>
+					<removeCrew class="LIST_CREW_AEA_SHLEG">
+						<clone>false</clone>
+						<text></text>
+					</removeCrew>
+					<choice hidden="false">
+						<text>Continue...</text>
+						<event>
+							<text>Sorrow steps onboard behind Sickle.</text>
+							<crewMember amount="1" all_skills="2" class="aea_shleg_sorrow">Sorrow</crewMember>
+						</event>
+					</choice>
+				</event>
+			</choice>
 			<choice hidden="false">
 				<text>Take Sickle.</text>
 				<event>
