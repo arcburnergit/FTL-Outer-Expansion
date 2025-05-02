@@ -635,7 +635,7 @@ Unique: False
 Dominant Faction: Shard-Forged Pirates
 Rebel Threat Level: Medium-Low
 
-The Shard-Forged, although known as pirates, are rather well liked by the federation and it's allies. The Shard-Forged have existed since the peak of the Crystalline Empire and have proven to be a reliable and worthy ally to those who can afford them. With the recent conflict between the Rebellion and the Federation the Shard-Forged have allied alongside the federation against the rebel plight.</text>
+The Shard-Forged, although known as pirates, are rather well liked by the Federation and its allies. The Shard-Forged have existed since the peak of the Crystalline Empire and have proven to be a reliable and worthy ally to those who can afford them. The recent conflict between the Rebellion and Federation has seen the Shard-Forged fighting alongside the Federation against the Rebel plight.</text>
 	<choice hidden="true">
 		<text>Exit hyperspeed.</text>
 		<event load="START_AEA_SHARD" />
