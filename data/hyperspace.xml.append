@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-<version>^1.18.0</version>
+<version>^1.19.0</version>
 <mod:findLike type="scripts">
   <mod-append:script>data/aea_scripts/aea_functions.lua</mod-append:script>
-  <!--mod-append:script>data/aea_scripts/aea_functions_test.lua</mod-append:script-->
   <mod-append:script>data/aea_scripts/aeaIcon.lua</mod-append:script>
+  <!--Race functionality scripts-->
+  <mod-append:script>data/aea_scripts/aea_race_acid.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_race_bird.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_race_cult.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_race_necro.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_race_old.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_race_shard.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_race_shleg.lua</mod-append:script>
+  <!--Misc functionality scripts-->
   <mod-append:script>data/aea_scripts/arc_modathon_aea.lua</mod-append:script>
-  <!--mod-append:script>data/aea_scripts/arc_test_light_nebula.lua</mod-append:script-->
+  <mod-append:script>data/aea_scripts/aea_minelauncher.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_main_menu.lua</mod-append:script>
+  <!--System functionality scripts-->
   <mod-append:script>data/aea_scripts/aea_super_shields.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script>
+  <!--Crew functionality scripts-->
   <mod-append:script>data/aea_scripts/aea_dark_justicier.lua</mod-append:script>
 </mod:findLike>
 <dualMedical enabled="true"/>
@@ -27,6 +37,11 @@
     </mod-append:exclusivityGroup>
 </mod:findLike>
 <mod:findLike type="ships" limit="1">
+	<mod:findName name="MU_BEAM_MASTER_DEFAULT" type="customShip">
+		<mod:findLike type="crew">
+			<mod-append:aea_dark_justicier_enemy room="1" name="Dark Justicier"/>
+		</mod:findLike>
+	</mod:findName>
 	
 	<mod:findLike type="shipIcons">
 		<mod-append:shipIcon>
@@ -1299,16 +1314,78 @@ This enemy ship is equipped with a strong auxiliary shield generator, It starts 
 		<customReactor maxLevel="30" />
 	</mod-append:customShip>
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_JUSTICE" b="false" c="false" secret="true">
+	<mod-append:ship name="PLAYER_SHIP_AEA_JUSTICE" b="true" c="true" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_JUSTICE</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_JUSTICE_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_JUSTICE</shipReq>
+        </unlock>
 	</mod-append:ship>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_JUSTICE">
-		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>SHIP_AEA_JUSTICE</hiddenAug>
 		<crew>
 			<aea_dark_justicier name="The Dark Justicier" room="0"/>
+			<crystal room="9"/>
+			<rock room="21"/>
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_JUSTICE_2">
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>SHIP_AEA_JUSTICE</hiddenAug>
+		<crew>
+			<aea_dark_justicier name="The Dark Justicier" room="0"/>
+			<aea_necro_lich room="1"/>
+			<aea_necro_engi room="10"/>
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_JUSTICE_3">
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>SHIP_AEA_JUSTICE</hiddenAug>
+		<crew>
+			<aea_dark_justicier name="The Dark Justicier" room="0"/>
+			<aea_shleg_slug room="1"/>
+			<aea_shleg_slug room="20"/>
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_JUSTICE_BATTLESHIP">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_dark_justicier_enemy name="The Dark Justicier"/>
+			<rock/>
+			<rock/>
+			<slug/>
+			<mantis/>
+			<mantis_free/>
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_JUSTICE_CRUISER">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_dark_justicier_enemy name="The Dark Justicier"/>
+			<aea_shleg_slug/>
+			<aea_shleg_slug/>
+			<rock_outcast/>
+			<rock/>
+			<engi/>
+			<mantis_free/>
+			<mantis/>
 		</crew>
 	</mod-append:customShip>
 
@@ -6017,27 +6094,65 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 
 	<mod-append:race name="aea_dark_justicier">
 		<essential>1</essential>
-		<maxHealth>200</maxHealth>
+		<maxHealth>100</maxHealth>
 		<damageMultiplier>1.5</damageMultiplier>
-		<canBurn>false</canBurn>
+		<canBurn>true</canBurn>
 		<canSuffocate>false</canSuffocate>
 		<deathSounds>
-			<deathSound>ghostDeath</deathSound>
+			<deathSound>leech_death</deathSound>
 		</deathSounds>
+		<passiveStatBoosts>  
+			<statBoost name="controllable">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+			</statBoost>
+		</passiveStatBoosts>
 		<powerEffect>
 			<cooldown>10</cooldown>
 			<jumpCooldown>full</jumpCooldown>
 			<buttonText>RITUAL</buttonText>
-			<tooltip>Perform a dark ritual, sacrifice a number of crew in specific positions to trigger different effects. Crew who survive being apart of the ritual will be weakened and lose 50% of their health for 5 jumps.
+			<tooltip>Perform a dark ritual, sacrifice a number of crew in specific positions to trigger different effects. Crew who survive being a part of the ritual will be weakened and lose 25% of their move speed for 5 jumps.
 Left click to select crew for sacrifice.
 Right click to attempt the ritual or cancel.
 			</tooltip>
 			<cooldownColor r="255" g="0" b="0" />
 			<friendlyFire>false</friendlyFire>
 			<temporaryEffect>
-				<duration>1</duration>
+				<duration>0.8</duration>
 				<cooldownColor r="200" g="0" b="0" />
-				<effectAnim>unique_dessius_health</effectAnim>
+				<canFight>false</canFight>
+				<canMove>false</canMove>
+				<canMan>false</canMan>
+			</temporaryEffect>
+		</powerEffect>
+	</mod-append:race>
+	<mod-append:race name="aea_dark_justicier_enemy">
+		<animSheet>aea_dark_justicier</animSheet>
+		<essential>1</essential>
+		<maxHealth>200</maxHealth>
+		<damageMultiplier>1.5</damageMultiplier>
+		<canBurn>true</canBurn>
+		<canSuffocate>false</canSuffocate>
+		<deathSounds>
+			<deathSound>leech_death</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10.4</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<req type="enemy">
+				<inCombat />
+			</req>
+			<buttonText>RITUAL</buttonText>
+			<tooltip>YOU SHOULD NEVER SEE THIS.</tooltip>
+			<cooldownColor r="255" g="0" b="0" />
+			<friendlyFire>false</friendlyFire>
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<temporaryEffect>
+				<duration>9.6</duration>
+				<cooldownColor r="200" g="0" b="0" />
 				<canFight>false</canFight>
 				<canMove>false</canMove>
 			</temporaryEffect>
@@ -6045,7 +6160,6 @@ Right click to attempt the ritual or cancel.
 	</mod-append:race>
 	<mod-append:race name="aea_sac_human">
 		<animSheet>human</animSheet>
-		<canMan>false</canMan>
 		<noSlot>true</noSlot>
 		<suffocationModifier>0.83</suffocationModifier>
 		<fireDamageMultiplier>0.83</fireDamageMultiplier>
@@ -6066,7 +6180,6 @@ Right click to attempt the ritual or cancel.
 	</mod-append:race>
 	<mod-append:race name="aea_sac_engi">
 		<animSheet>engi</animSheet>
-		<canMan>false</canMan>
 		<noSlot>true</noSlot>
 		<maxHealth>68</maxHealth>
 		<repairSpeed>2</repairSpeed>
@@ -6079,7 +6192,6 @@ Right click to attempt the ritual or cancel.
 	</mod-append:race>
 	<mod-append:race name="aea_sac_mantis">
 		<animSheet>mantis</animSheet>
-		<canMan>false</canMan>
 		<noSlot>true</noSlot>
 		<repairSpeed>0.5</repairSpeed>
 		<moveSpeedMultiplier>1.2</moveSpeedMultiplier>
@@ -6097,7 +6209,6 @@ Right click to attempt the ritual or cancel.
 	</mod-append:race>
 	<mod-append:race name="aea_sac_slug">
 		<animSheet>slug</animSheet>
-		<canMan>false</canMan>
 		<noSlot>true</noSlot>
 		<maxHealth>75</maxHealth>
 		<detectsLifeforms>true</detectsLifeforms>
@@ -6107,7 +6218,6 @@ Right click to attempt the ritual or cancel.
 	</mod-append:race>
 	<mod-append:race name="aea_sac_rock">
 		<animSheet>rock</animSheet>
-		<canMan>false</canMan>
 		<noSlot>true</noSlot>
 		<lowHealthThreshold>2500.0</lowHealthThreshold>
 		<lowHealthThresholdPercentage>0.25</lowHealthThresholdPercentage>
@@ -6819,6 +6929,12 @@ Right click to attempt the ritual or cancel.
 	<variable name="ach_trans_aea_shleg" op="set" val="0" />
 	<variable name="aea_shleg_trading_station" op="set" val="0" />
 	<variable name="aea_shleg_radiant_dead" op="set" val="0" />
+	<req name="MORAL_SHLEG_ALL" type="all">
+		<req type="any" load="LIST_CREW_AEA_SHLEG" />
+		<req lvl="-999" max_lvl="-1">
+			<name>req_comb_aea_shleg</name>
+		</req>
+	</req>
 
 	<metaVariable name="juke_aea_shard" op="set" val="0" />
 	<variable name="ach_trans_aea_shard" op="set" val="0" />
@@ -6826,6 +6942,17 @@ Right click to attempt the ritual or cancel.
 	<variable name="ach_boon_aea_super_shields" op="set" val="0" />
 	<variable name="aea_shard_quest_done" op="set" val="0" />
 	<variable name="aea_shard_quest_crewkill" op="set" val="0" />
+
+	<variable name="aea_justice_test" op="set" val="1"/>
+
+	<variable name="aea_justice_battleship" op="set" val="0"/>
+	<variable name="aea_justice_battleship_found" op="set" val="0"/>
+	<variable name="aea_justice_battleship_location" op="set" val="-1"/>
+	<variable name="aea_justice_battleship_jumping" op="set" val="0"/>
+	<variable name="aea_justice_cruiser_found" op="set" val="0"/>
+	<variable name="aea_justice_cruiser_location" op="set" val="-1"/>
+	<variable name="aea_justice_cruiser_jumping" op="set" val="0"/>
+	<metaVariable name="aea_justice_cruiser_unlock" op="set" val="0"/>
 
 	<metaVariable name="juke_aea_old_1" op="set" val="0" />
 	<metaVariable name="juke_aea_old_2" op="set" val="0" />
@@ -7632,6 +7759,19 @@ Right click to attempt the ritual or cancel.
         <numShips layer="1">4</numShips>
 		<numShips layer="0">6</numShips>
     </fleetDef>
+
+	<fleetDef name="CUSTOM_FLEET_AEA_REBEL_WRECK">
+        <ship layer="0">fleetrebel_2_small_wreck</ship>
+		<ship layer="0">fleetrebel_4_small_wreck</ship>
+		<ship layer="1">fleetrebel_1_med_wreck</ship>
+        <ship layer="1">fleetrebel_2_med_wreck</ship>
+		<ship layer="1">fleetrebel_4_med_wreck</ship>
+		<ship layer="2">fleetrebel_4_big_wreck</ship>
+        <bigShip>fleetrebel_4_big_wreck</bigShip>
+        <numShips layer="2">1</numShips>
+        <numShips layer="1">4</numShips>
+		<numShips layer="0">6</numShips>
+    </fleetDef>
 	
 	
 	<bossShip yOffset="180">AEA_ACID_BOSS</bossShip>
@@ -7658,6 +7798,8 @@ Right click to attempt the ritual or cancel.
 
 	<bossShip>AEA_SHARD_BOSS</bossShip>
 	<bossShip>AEA_SHARD_AUTO</bossShip>
+
+	<bossShip>AEA_JUSTICE_CRUISER</bossShip>
 </events>
 
 <mod:findLike type="victories"> <!-- adds the victory marker for lylmik ending -->
@@ -8336,17 +8478,32 @@ Right click to attempt the ritual or cancel.
 	<mod-append:surgeBarrage name="AEA_SURGE_DARK_FIRE">
 		<weapon name="BOMB_FIRE" count="3"/>
 	</mod-append:surgeBarrage>
+	<mod-append:surgeBarrage name="AEA_SURGE_DARK_FIRE_ENEMY">
+		<weapon name="BOMB_FIRE" count="1"/>
+	</mod-append:surgeBarrage>
 	<mod-append:surgeDrones name="AEA_SURGE_DARK_DRONE">
 		<drone name="COMBAT_1_BEAM" count="3"/>
+	</mod-append:surgeDrones>
+	<mod-append:surgeDrones name="AEA_SURGE_DARK_DRONE_ENEMY">
+		<drone name="COMBAT_1_BEAM" count="2"/>
 	</mod-append:surgeDrones>
 	<mod-append:surgeBarrage name="AEA_SURGE_DARK_LOCKDOWN">
 		<weapon name="CRYSTAL_BURST_1_RED" count="3"/>
 	</mod-append:surgeBarrage>
+	<mod-append:surgeBarrage name="AEA_SURGE_DARK_LOCKDOWN_ENEMY">
+		<weapon name="CRYSTAL_BURST_1_RED" count="1"/>
+	</mod-append:surgeBarrage>
 	<mod-append:surgeBarrage name="AEA_SURGE_DARK_PARTICLE">
 		<weapon name="LASER_PARTICLE" count="3"/>
 	</mod-append:surgeBarrage>
+	<mod-append:surgeBarrage name="AEA_SURGE_DARK_PARTICLE_ENEMY">
+		<weapon name="LASER_PARTICLE" count="2"/>
+	</mod-append:surgeBarrage>
 	<mod-append:surgeBarrage name="AEA_SURGE_DARK_BOARDING">
 		<weapon name="AEA_BOARDING_DRONE" count="3"/>
+	</mod-append:surgeBarrage>
+	<mod-append:surgeBarrage name="AEA_SURGE_DARK_BOARDING_ENEMY">
+		<weapon name="AEA_BOARDING_DRONE" count="1"/>
 	</mod-append:surgeBarrage>
 </mod:findLike>
 

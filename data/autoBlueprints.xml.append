@@ -4001,6 +4001,51 @@
 </shipBlueprint>
 
 
+<shipBlueprint name="AEA_JUSTICE_BATTLESHIP" layout="aea_justice_battleship" img="aea_justice_battleship">
+	<class>Justicier Battleship</class>
+	<systemList>
+		<clonebay power="2" max="2" room="8" start="true" />
+		<doors power="1" max="2" room="13" start="true" />
+		<engines power="2" max="2" room="5" start="true" />
+		<oxygen power="1" max="2" room="12" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
+		<shields power="2" max="8" room="3" start="true" />
+		<weapons power="2" max="8" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_ROCK" />
+	<droneList drones="0" count="0" />
+	<health amount="18" />
+	<maxPower amount="9" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_JUSTICE_CRUISER" layout="aea_justice_cruiser" img="aea_justice_cruiser">
+	<class>Justicier Cruiser</class>
+	<systemList>
+		<cloaking power="1" max="1" room="17" start="true" />
+		<clonebay power="2" max="2" room="3" start="true" />
+		<doors power="1" max="2" room="14" start="true" />
+		<engines power="2" max="2" room="1" start="true" />
+		<mind power="1" max="1" room="18" start="true" />
+		<oxygen power="1" max="2" room="15" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="8" start="true" />
+		<teleporter power="1" max="2" room="2" start="true" />
+		<weapons power="2" max="8" room="9" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="4" load="LIST_WEAPONS_ROCK_ELITE" />
+	<droneList drones="0" count="0" />
+	<health amount="24" />
+	<maxPower amount="12" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+</FTL>
+
+<FTL>
 <blueprintList name="LIST_CREW_AEA_SHLEG_ENEMY_GEL">
 	<name>aea_shleg_slug</name>
 	<name>aea_shleg_slug</name>

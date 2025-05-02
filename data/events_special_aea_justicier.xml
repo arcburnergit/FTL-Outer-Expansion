@@ -138,4 +138,141 @@
 	<superBarrage player="true" name="AEA_SURGE_DARK_BOARDING"/>
 </event>
 
+
+<event name="AEA_SURGE_FIRE_ENEMY">
+	<superBarrage player="false" name="AEA_SURGE_DARK_FIRE_ENEMY"/>
+</event>
+
+<event name="AEA_SURGE_DRONE_ENEMY">
+	<superDrones player="false" name="AEA_SURGE_DARK_DRONE_ENEMY"/>
+</event>
+
+<event name="AEA_SURGE_LOCKDOWN_ENEMY">
+	<superBarrage player="false" name="AEA_SURGE_DARK_LOCKDOWN_ENEMY"/>
+</event>
+
+<event name="AEA_SURGE_PARTICLE_ENEMY">
+	<superBarrage player="false" name="AEA_SURGE_DARK_PARTICLE_ENEMY"/>
+</event>
+
+<event name="AEA_SURGE_BOARDING_ENEMY">
+	<superBarrage player="false" name="AEA_SURGE_DARK_BOARDING_ENEMY"/>
+</event>
+
+
+<event name="AEA_JUSTICIER_FIGHT_ONE">
+	<preventQuest/>
+	<preventFleet/>
+	<revisitEvent>AEA_FLEET_WRECK_ELITE</revisitEvent>
+    <customFleet right="false" firing="false" autoDarkening="true">CUSTOM_FLEET_AEA_REBEL_WRECK</customFleet>
+    <text>You've arrived in the middle of what was the rebel fleet to discover it destroyed. A large red battleship unlike you've ever seen before sits in the middle of the debree field. Unfortunately it turns it's attention to you, weapons armed.</text>
+	<ship load="AEA_JUSTICE_BATTLESHIP" hostile="true" />
+	<variable name="aea_justice_battleship_found" op="set" val="1"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<ship name="AEA_JUSTICE_BATTLESHIP" auto_blueprint="AEA_JUSTICE_BATTLESHIP">
+	<destroyed load="DESTROYED_JUSTICE_BATTLESHIP" />
+	<deadCrew load="DEAD_CREW_JUSTICE_BATTLESHIP" />
+</ship>
+
+<event name="DESTROYED_JUSTICE_BATTLESHIP">
+    <text>The ship fragments and explodes, as it does you detect an energy pulse, resembling that from a teleportation system, from the vessel. You scrap the remains of the ship.</text>
+    <autoReward level="MED">standard</autoReward>
+	<variable name="aea_justice_battleship" op="set" val="1"/>
+</event> 
+<event name="DEAD_CREW_JUSTICE_BATTLESHIP">
+    <text>As the last of the crew fall dead, you recall that just before you were able to kill the mysterious captain of the vessel, they teleported away. You scrap the remains of the ship.</text>
+    <autoReward level="HIGH">standard</autoReward>
+	<variable name="aea_justice_battleship" op="set" val="1"/>
+</event> 
+
+<event name="AEA_JUSTICIER_FIGHT_TWO">
+	<preventQuest/>
+	<preventFleet/>
+	<revisitEvent>AEA_FLEET_WRECK_ELITE</revisitEvent>
+    <customFleet right="false" firing="false" autoDarkening="true">CUSTOM_FLEET_AEA_REBEL_WRECK</customFleet>
+    <text>Once again you've arrived in the middle of what was the rebel fleet to discover it destroyed. A large red battleship unlike you've ever seen before sits in the middle of the debree field. Unfortunately it turns it's attention to you, weapons armed.</text>
+	<ship load="AEA_JUSTICE_CRUISER" hostile="true" />
+	<variable name="aea_justice_cruiser_found" op="set" val="1"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+<ship name="AEA_JUSTICE_CRUISER" auto_blueprint="AEA_JUSTICE_CRUISER">
+	<destroyed load="DESTROYED_JUSTICE_CRUISER" />
+	<deadCrew load="DEAD_CREW_JUSTICE_CRUISER" />
+</ship>
+
+<event name="DESTROYED_JUSTICE_CRUISER">
+    <text>The ship fragments and explodes, A strange person teleports onboard your ship. "Renegade, you've proven yourself quite the capable combatant, however my god hungers for blood for which I cannot fulfill without a ship. Perhaps I can operate on board your vessel for a time?"</text>
+    <autoReward level="MED">standard</autoReward>
+	<metaVariable name="aea_justice_cruiser_unlock" op="set" val="1"/>
+    <unlockCustomShip silent="false">PLAYER_SHIP_AEA_JUSTICE</unlockCustomShip>
+    <choice hidden="false">
+        <text>Accept them onboard.</text>
+        <event>
+            <text>The dark justicier joins the crew.</text>
+            <crewMember amount="1" all_skills="1" class="aea_dark_justicier">The Dark Justicier</crewMember>
+        </event>
+    </choice>
+    <choice hidden="true">
+        <text>Decline.</text>
+        <event>
+            <text>They once again teleport away, where they went you're unsure.</text>
+        </event>
+    </choice>
+</event> 
+<event name="DEAD_CREW_JUSTICE_CRUISER">
+    <text>As the last of the crew fall dead, A strange person teleports onboard your ship. "Renegade, you've proven yourself quite the capable combatant, however my god hungers for blood for which I cannot fulfill without a ship. Perhaps I can operate on board your vessel for a time?"</text>
+    <autoReward level="HIGH">standard</autoReward>
+	<metaVariable name="aea_justice_cruiser_unlock" op="set" val="1"/>
+    <unlockCustomShip silent="false">PLAYER_SHIP_AEA_JUSTICE</unlockCustomShip>
+    <choice hidden="false">
+        <text>Accept them onboard.</text>
+        <event>
+            <text>The dark justicier joins the crew.</text>
+            <crewMember amount="1" all_skills="1" class="aea_dark_justicier">The Dark Justicier</crewMember>
+        </event>
+    </choice>
+    <choice hidden="true">
+        <text>Decline.</text>
+        <event>
+            <text>They once again teleport away, where they went you're unsure.</text>
+        </event>
+    </choice>
+</event> 
+
+
+<event name="AEA_FLEET_WRECK_ELITE">
+	<revisitEvent>AEA_FLEET_WRECK_ELITE</revisitEvent>
+    <customFleet right="true" firing="false" autoDarkening="true">CUSTOM_FLEET_AEA_REBEL_WRECK</customFleet>
+	<customFleet right="false" firing="true" autoDarkening="false">CUSTOM_FLEET_REBEL</customFleet>
+	<text>The remnants of a destroyed rebel fleet lie here, however you have no time to search it as reinforcements have arrived!</text>
+	<variable name="loc_dives" op="add" val="1" />
+	<ship load="SHIP_REBEL_FLEET" hostile="true" />
+	<fleet>rebel</fleet>
+	<environment type="PDS" target="player" />
+	<noASBPlanet />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+	<choice hidden="true" req="engines" lvl="6">
+		<text>(Adv. Engines) Try to escape the Elite.</text>
+		<event load="FLEET_ESCAPE" />
+	</choice>
+	<choice hidden="true" req="LIST_CREW_JERRY">
+		<text>(Jerry) "Hello!"</text>
+		<event>
+			<text load="TEXT_ENCOUNTER_REBEL_JERRY_HELLO" />
+			<ship hostile="false" /> 
+		</event>
+	</choice>
+</event>
+
 </FTL>

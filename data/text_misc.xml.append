@@ -11,6 +11,7 @@
 <text name="map_icon_aea_conspiracy">CONSPIRACY [!]</text>
 <text name="map_icon_aea_bird_engineer">ENGINEERING [!]</text>
 <text name="map_icon_aea_shleg_battle">DISTRESS [!]</text>
+<text name="map_icon_aea_distress">DISTRESS</text>
 <text name="map_icon_aea_shleg_radiant">RADIANT BASE [!]</text>
 <text name="map_icon_aea_shleg_quest">QUEST [!]</text>
 <text name="map_icon_aea_broadside">SHIP [!]</text>
@@ -194,6 +195,8 @@ The Shard-Forged, although known as pirates, are rather well liked by the federa
 <text name="ship_PLAYER_SHIP_AEA_BROADSIDE_3_unlock">Get to Sector 5 with The Type B or beat the game with The Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_LANIUS_BATTLE_unlock">Coming Soon.</text>
 <text name="ship_PLAYER_SHIP_AEA_JUSTICE_unlock">Coming Soon.</text>
+<text name="ship_PLAYER_SHIP_AEA_JUSTICE_2_unlock">Get to Sector 5 with The Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_AEA_JUSTICE_3_unlock">Get to Sector 5 with The Type B or beat the game with The Type A to unlock this ship.</text>
 
 <text name="credit_victory_aea_old">The Multiverse Flagship of this reality has been destroyed. The Rebel forces were weakened, and the Federation troops, along with reinforcements, successfully defeated the Rebel forces of this reality.</text>
 

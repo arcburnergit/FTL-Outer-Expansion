@@ -126,7 +126,7 @@ end)
 
 --Utility function to see if the system is ready for use
 local function aea_super_shields_ready(shipSystem)
-   return not shipSystem:GetLocked() and shipSystem:Functioning()
+    return not shipSystem:GetLocked() and shipSystem:Functioning() and shipSystem.iHackEffect <= 1
 end
 
 --Initializes primitive for UI elements

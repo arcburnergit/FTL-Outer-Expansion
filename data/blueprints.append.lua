@@ -54,20 +54,13 @@ systemsToAppend["aea_super_shields"] = {attributes = {power = 1, start = "false"
         {room_image = "room_shields_aea_10", w = 1, h = 4, top = "0", bottom = "1", left="0000", right="0000", manning_slot = 3, manning_direction = "down"},
     }
 }
+systemsToAppend["aea_clone_crime"] = {attributes = {power = 1, start = "false"}, manning = false, replace_sys = "clonebay", only_replace = true, copy_slot = true}
 
 local function noDoorOverlap(rT, rB, rL, rR, iT, iB, iL, iR, shipName)
     local room = table.concat({rT,rB,rL,rR},"")
     local roomNumber = tonumber(room,2)
     local image = table.concat({iT,iB,iL,iR},"")
     local imageNumber = tonumber(image,2)
-    --[[if shipName == "PLAYER_SHIP_ANGEL" then
-        print(shipName)
-        --print("noDoorOverlap  ROOM:"..room.."  roomNumber:"..roomNumber.." topS:"..rT.." topB:"..tonumber(rT, 2).." bottomS:"..rB.." bottomB:"..tonumber(rB, 2).." leftS:"..rL.." leftB:"..tonumber(rL, 2).." rightS:"..rR.." rightB:"..tonumber(rR, 2))
-        --print("noDoorOverlap IMAGE:"..image.." imageNumber:"..imageNumber.." topS:"..iT.." topB:"..tonumber(iT, 2).." bottomS:"..iB.." bottomB:"..tonumber(iB, 2).." leftS:"..iL.." leftB:"..tonumber(iL, 2).." rightS:"..iR.." rightB:"..tonumber(iR, 2))
-        print("noDoorOverlap  ROOM:"..room.." topS:"..rT.." bottomS:"..rB.." leftS:"..rL.." rightS:"..rR)
-        print("noDoorOverlap IMAGE:"..image.." topS:"..iT.." bottomS:"..iB.." leftS:"..iL.." rightS:"..iR)
-        print("result:"..tostring(roomNumber & imageNumber == 0))
-    end]]
     return roomNumber & imageNumber == 0
 end
 
@@ -180,7 +173,19 @@ for blueprint in root:children() do
                         if not takenRooms[room] then
                             takenRooms[room] = {}
                         end
-                        takenRooms[room][system.name] = true
+                        local slotCopy = nil
+                        for child in system:children() do
+                            for node in child:children() do
+                                if node.name == "number" then
+                                    slotCopy = node.textContent
+                                end
+                            end
+                        end
+                        if slotCopy then
+                            takenRooms[room][system.name] = slotCopy
+                        else
+                            takenRooms[room][system.name] = true
+                        end
                     end
                 end
                 -- append new systems
@@ -188,19 +193,23 @@ for blueprint in root:children() do
                 for system, sysInfo in pairs(systemsToAppend) do
                     local hasSystem = false
                     local targetRoom = nil
+                    local targetRoomSlot = nil
                     local targetRoomSize = nil
                     if sysInfo.replace_sys then
                         for room, roomTable in ipairs(roomList) do
                             if takenRooms[room-1] and takenRooms[room-1][sysInfo.replace_sys] then
                                 targetRoom = room-1
                                 targetRoomSize = roomTable.size
+                                if takenRooms[room-1][sysInfo.replace_sys] ~= true then
+                                    targetRoomSlot = takenRooms[room-1][sysInfo.replace_sys]
+                                end
                             end
                             if takenRooms[room-1] and takenRooms[room-1][system] then
                                 hasSystem = true
                             end
                         end
                     end
-                    if not targetRoom then
+                    if not targetRoom and not sysInfo.only_replace then
                         for room, roomTable in ipairs(roomList) do
                             if not takenRooms[room-1] and not roomDoors[room-1].airlock then 
                                 if not targetRoom or not targetRoomSize then
@@ -215,7 +224,7 @@ for blueprint in root:children() do
                             end
                         end
                     end
-                    if not targetRoom then
+                    if not targetRoom and not sysInfo.only_replace then
                         for room, roomTable in ipairs(roomList) do
                             if not takenRooms[room-1] then 
                                 if not targetRoom or not targetRoomSize  then
@@ -236,38 +245,40 @@ for blueprint in root:children() do
                         local roomImage = nil
                         local manningSlot = nil
                         local manningDirection = nil
-                        for idx, roomImageTable in ipairs(sysInfo.image_list) do
-                            if not (roomImage) and roomImageTable.w <= roomTable.w and roomImageTable.h <= roomTable.h then
-                                --print("check image")
-                                local roomTop = roomTable.top
-                                local roomBottom = roomTable.bottom
-                                local roomLeft = roomTable.left
-                                local roomRight = roomTable.right
-                                local longString = "1111111111111111111111111111111111111111111111111111111111111111"
-                                if roomImageTable.w < roomTable.w and roomImageTable.h == roomTable.h then
-                                    roomRight = string.sub(longString, 1, roomImageTable.h)
-                                    roomTop = string.sub(roomTable.top, 1, roomImageTable.w)
-                                    roomBottom = string.sub(roomTable.bottom, 1, roomImageTable.w)
-                                elseif roomImageTable.w == roomTable.w and roomImageTable.h < roomTable.h then
-                                    roomBottom = string.sub(longString, 1, roomImageTable.w)
-                                    roomLeft = string.sub(roomTable.left, 1, roomImageTable.h)
-                                    roomRight = string.sub(roomTable.right, 1, roomImageTable.h)
-                                elseif roomImageTable.w < roomTable.w and roomImageTable.h < roomTable.h then
-                                    roomRight = string.sub(longString, 1, roomImageTable.h)
-                                    roomBottom = string.sub(longString, 1, roomImageTable.w)
-                                    roomTop = string.sub(roomTable.top, 1, roomImageTable.w)
-                                    roomLeft = string.sub(roomTable.left, 1, roomImageTable.h)
-                                end
-                                if noDoorOverlap(roomTop, roomBottom, roomLeft, roomRight, roomImageTable.top, roomImageTable.bottom, roomImageTable.left, roomImageTable.right, shipName) then
-                                    roomImage = roomImageTable.room_image
-                                    --print("image safe")
-                                    if sysInfo.manning == true then
-                                        if roomImageTable.manning_slot >= roomImageTable.w then
-                                            manningSlot = roomImageTable.manning_slot + roomTable.w - roomImageTable.w
-                                        else
-                                            manningSlot = roomImageTable.manning_slot
+                        if sysInfo.image_list then
+                            for idx, roomImageTable in ipairs(sysInfo.image_list) do
+                                if not (roomImage) and roomImageTable.w <= roomTable.w and roomImageTable.h <= roomTable.h then
+                                    --print("check image")
+                                    local roomTop = roomTable.top
+                                    local roomBottom = roomTable.bottom
+                                    local roomLeft = roomTable.left
+                                    local roomRight = roomTable.right
+                                    local longString = "1111111111111111111111111111111111111111111111111111111111111111"
+                                    if roomImageTable.w < roomTable.w and roomImageTable.h == roomTable.h then
+                                        roomRight = string.sub(longString, 1, roomImageTable.h)
+                                        roomTop = string.sub(roomTable.top, 1, roomImageTable.w)
+                                        roomBottom = string.sub(roomTable.bottom, 1, roomImageTable.w)
+                                    elseif roomImageTable.w == roomTable.w and roomImageTable.h < roomTable.h then
+                                        roomBottom = string.sub(longString, 1, roomImageTable.w)
+                                        roomLeft = string.sub(roomTable.left, 1, roomImageTable.h)
+                                        roomRight = string.sub(roomTable.right, 1, roomImageTable.h)
+                                    elseif roomImageTable.w < roomTable.w and roomImageTable.h < roomTable.h then
+                                        roomRight = string.sub(longString, 1, roomImageTable.h)
+                                        roomBottom = string.sub(longString, 1, roomImageTable.w)
+                                        roomTop = string.sub(roomTable.top, 1, roomImageTable.w)
+                                        roomLeft = string.sub(roomTable.left, 1, roomImageTable.h)
+                                    end
+                                    if noDoorOverlap(roomTop, roomBottom, roomLeft, roomRight, roomImageTable.top, roomImageTable.bottom, roomImageTable.left, roomImageTable.right, shipName) then
+                                        roomImage = roomImageTable.room_image
+                                        --print("image safe")
+                                        if sysInfo.manning == true then
+                                            if roomImageTable.manning_slot >= roomImageTable.w then
+                                                manningSlot = roomImageTable.manning_slot + roomTable.w - roomImageTable.w
+                                            else
+                                                manningSlot = roomImageTable.manning_slot
+                                            end
+                                            manningDirection = roomImageTable.manning_direction
                                         end
-                                        manningDirection = roomImageTable.manning_direction
                                     end
                                 end
                             end
@@ -293,8 +304,18 @@ for blueprint in root:children() do
                             local number = mod.xml.element("number", {})
                             direction:append("up")
                             number:append("0")
-                            slot:append("up")
-                            slot:append("0")
+                            slot:append(direction)
+                            slot:append(number)
+                            newSystem:append(slot)
+                        elseif sysInfo.copy_slot == true then
+                            local slot = mod.xml.element("slot", {})
+                            local number = mod.xml.element("number", {})
+                            if targetRoomSlot then
+                                number:append(targetRoomSlot)
+                            else
+                                number:append("0")
+                            end
+                            slot:append(number)
                             newSystem:append(slot)
                         end
 
@@ -312,48 +333,3 @@ for blueprint in root:children() do
 
     end
 end
-
---print("systems appended")
-
-local function printSystemLists()
-    for blueprint in root:children() do
-        if blueprint.name == "shipBlueprint" then
-            for name, attribute in blueprint:attrs() do
-                if name == "name" then
-                    print("ship:"..attribute)
-                end
-            end
-
-            local isEnemyShip = true
-            -- find systemList
-            for systemList in blueprint:children() do
-                if systemList.name == "name" then
-                    isEnemyShip = false
-                elseif systemList.name == "systemList" and not isEnemyShip then
-                    for system in systemList:children() do
-                        mod.debug.pretty_print("  "..system.name)
-                        for name, attribute in system:attrs() do
-                            mod.debug.pretty_print("    "..name..":"..tostring(attribute))
-                        end
-                        for slot in system:children() do
-                            if slot.name == "slot" then
-                                local direction = "none"
-                                local number = -1
-                                for child in slot:children() do
-                                    if child.name == "direction" then
-                                        direction = child.textContent
-                                    elseif child.name == "number" then
-                                        number = tonumber(child.textContent)
-                                    end
-                                end
-                                mod.debug.pretty_print("      slot direction:"..direction.." number:"..number)
-                            end
-                        end
-                    end
-                end
-            end
-        end
-    end
-end
-
---printSystemLists()

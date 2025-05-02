@@ -5215,6 +5215,51 @@
 	<time>1</time>
 </anim>
 
+<animSheet name="aea_dark_ritual_start" w="2272" h="71" fw="71" fh="71">aea_dark/ritual_start.png</animSheet>
+<anim name="aea_dark_ritual_start">
+	<sheet>aea_dark_ritual_start</sheet>
+	<desc length="32" x="0" y="0" />
+	<time>6.4</time>
+</anim>
+<animSheet name="aea_dark_ritual_loop" w="852" h="71" fw="71" fh="71">aea_dark/ritual_loop.png</animSheet>
+<anim name="aea_dark_ritual_loop">
+	<sheet>aea_dark_ritual_loop</sheet>
+	<desc length="12" x="0" y="0" />
+	<time>2.4</time>
+</anim>
+<animSheet name="aea_dark_ritual_end" w="355" h="71" fw="71" fh="71">aea_dark/ritual_end.png</animSheet>
+<anim name="aea_dark_ritual_end">
+	<sheet>aea_dark_ritual_end</sheet>
+	<desc length="5" x="0" y="0" />
+	<time>0.8</time>
+</anim>
+
+<animSheet name="aea_dark_ritual_start_enemy" w="2272" h="71" fw="71" fh="71">aea_dark/ritual_start_enemy.png</animSheet>
+<anim name="aea_dark_ritual_start_enemy">
+	<sheet>aea_dark_ritual_start_enemy</sheet>
+	<desc length="32" x="0" y="0" />
+	<time>6.4</time>
+</anim>
+<animSheet name="aea_dark_ritual_loop_enemy" w="852" h="71" fw="71" fh="71">aea_dark/ritual_loop_enemy.png</animSheet>
+<anim name="aea_dark_ritual_loop_enemy">
+	<sheet>aea_dark_ritual_loop_enemy</sheet>
+	<desc length="12" x="0" y="0" />
+	<time>2.4</time>
+</anim>
+<animSheet name="aea_dark_ritual_end_enemy" w="355" h="71" fw="71" fh="71">aea_dark/ritual_end_enemy.png</animSheet>
+<anim name="aea_dark_ritual_end_enemy">
+	<sheet>aea_dark_ritual_end_enemy</sheet>
+	<desc length="5" x="0" y="0" />
+	<time>0.8</time>
+</anim>
+
+<animSheet name="aea_dark_explosion" w="105" h="35" fw="35" fh="35">aea_dark/faster_explosion2.png</animSheet>
+<anim name="aea_dark_explosion">
+	<sheet>aea_dark_explosion</sheet>
+	<desc length="3" x="0" y="0" />
+	<time>0.6</time>
+</anim>
+
 
 <animSheet name="aea_dark_buff_action" w="35" h="35" fw="35" fh="35">effects/aea_dark_buff_action.png</animSheet>
 <anim name="aea_dark_buff_action">
