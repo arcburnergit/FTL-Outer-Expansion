@@ -3,9 +3,11 @@
 - Introduced new secret crew with very in depth mechanics.
 - Introduced new system only available from secret crew.
 - Added Blue option to Anarchist Unique Crew event to aquire both crew by having high rep and losing one of your Anarchists.
+- Reduced cooldown on Aux Shields overclocking from 25 to 15 seconds.
 
 # Bug Fixes
 - Anarchist slug cruiser cloak images for A and B slot.
+- Typo and other text improvements by Reale-ly.
 
 # Misc Changes
 - Split main lua file into seperate lua files for each race.
