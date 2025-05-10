@@ -6422,3 +6422,749 @@ A CLASS
 </shipBlueprint>
 
 </FTL>
+
+<FTL>
+
+<shipBlueprint name="AEAT_BOSS_ACID_NORMAL" layout="aeat_boss_acid" img="aeat_boss_acid">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<clonebay power="2" max="2" room="12" start="true" />
+		<doors power="1" max="1" room="11" start="true" />
+		<engines power="2" max="2" room="4" start="true" />
+		<mind power="2" max="2" room="1" start="true" />
+		<oxygen power="1" max="1" room="5" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<weapons power="8" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>5</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="5">
+		<weapon name="AEA_LASER_ACID_2_ENEMY" />
+		<weapon name="AEA_LASER_ACID_2_ENEMY" />
+		<weapon name="LASER_BURST_1" />
+		<weapon name="LASER_BURST_1" />
+		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="17" />
+	<crewCount amount="8" max="8" class="aea_acid_captain" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+<shipBlueprint name="AEAT_BOSS_ACID_CHALLENGE" layout="aeat_boss_acid" img="aeat_boss_acid">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<clonebay power="2" max="2" room="12" start="true" />
+		<doors power="1" max="1" room="11" start="true" />
+		<engines power="2" max="2" room="4" start="true" />
+		<mind power="2" max="2" room="1" start="true" />
+		<oxygen power="1" max="1" room="5" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<weapons power="9" max="9" room="7" start="true" />
+	</systemList>
+	<weaponSlots>6</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="6">
+		<weapon name="AEA_LASER_ACID_2_ENEMY" />
+		<weapon name="AEA_LASER_ACID_1_ENEMY" />
+		<weapon name="LASER_BURST_1" />
+		<weapon name="LASER_BURST_1" />
+		<weapon name="AEA_ION_ACID_1_ENEMY" />
+		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="19" />
+	<crewCount amount="8" max="8" class="aea_acid_captain" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+<shipBlueprint name="AEAT_BOSS_ACID_EXTREME" layout="aeat_boss_acid" img="aeat_boss_acid">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<clonebay power="2" max="2" room="12" start="true" />
+		<doors power="1" max="1" room="11" start="true" />
+		<engines power="2" max="2" room="4" start="true" />
+		<cloaking power="1" max="1" room="1" start="true" />
+		<oxygen power="1" max="1" room="5" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<weapons power="10" max="10" room="7" start="true" />
+	</systemList>
+	<weaponSlots>6</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="6">
+		<weapon name="AEA_LASER_ACID_2_ENEMY" />
+		<weapon name="AEA_LASER_ACID_2_ENEMY" />
+		<weapon name="LASER_BURST_1" />
+		<weapon name="LASER_BURST_2" />
+		<weapon name="AEA_ION_ACID_1_ENEMY" />
+		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="20" />
+	<crewCount amount="8" max="8" class="aea_acid_captain" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_ACID_CHAOS" layout="aeat_boss_acid" img="aeat_boss_acid">
+	<class>Chaotic Renegade Cruiser</class>
+	<systemList>
+		<clonebay power="2" max="2" room="12" start="true" />
+		<doors power="1" max="1" room="11" start="true" />
+		<engines power="2" max="2" room="4" start="true" />
+		<cloaking power="1" max="1" room="1" start="true" />
+		<oxygen power="1" max="1" room="5" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<weapons power="10" max="10" room="7" start="true" />
+	</systemList>
+	<weaponSlots>6</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="6">
+		<weapon name="AEA_LASER_ACID_BOSS" />
+		<weapon name="AEA_LASER_ACID_BOSS" />
+		<weapon name="LASER_BURST_2" />
+		<weapon name="LASER_BURST_2" />
+		<weapon name="AEA_ION_ACID_1_ENEMY" />
+		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="20" />
+	<crewCount amount="8" max="8" class="aea_acid_captain" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_BIRD_NORMAL" layout="aeat_boss_bird" img="aeat_boss_bird">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<doors power="2" max="2" room="8" start="true" />
+		<drones power="8" max="8" room="15" start="true" />
+		<engines power="1" max="1" room="1" start="true" />
+		<medbay power="2" max="2" room="14" start="true" />
+		<oxygen power="2" max="2" room="10" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<sensors power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<weapons power="5" max="5" room="3" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="3">
+		<weapon name="ENERGY_2" />
+		<weapon name="ENERGY_2" />
+		<weapon name="LASER_BIO" />
+	</weaponList>
+	<droneList drones="14" count="4">
+		<drone name="AEA_COMBAT_BIRD_BIO_2" />
+		<drone name="AEA_COMBAT_BIRD_SMART_1_ENEMY" />
+		<drone name="BATTLETOG_DEFEND" />
+		<drone name="AEA_COMBAT_BIRD_SMART_1_ENEMY" />
+	</droneList>
+	<health amount="15" />
+	<maxPower amount="0" />
+	<crewCount amount="8" max="8" class="aea_bird_illuminant" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_BIRD_CHALLENGE" layout="aeat_boss_bird" img="aeat_boss_bird">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<doors power="2" max="2" room="8" start="true" />
+		<drones power="9" max="9" room="15" start="true" />
+		<engines power="1" max="1" room="1" start="true" />
+		<medbay power="2" max="2" room="14" start="true" />
+		<oxygen power="2" max="2" room="10" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<sensors power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<weapons power="5" max="5" room="3" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="3">
+		<weapon name="ENERGY_2" />
+		<weapon name="ENERGY_2" />
+		<weapon name="LASER_BIO" />
+	</weaponList>
+	<droneList drones="14" count="4">
+		<drone name="AEA_COMBAT_BIRD_BIO_2" />
+		<drone name="AEA_COMBAT_BIRD_SMART_2_ENEMY" />
+		<drone name="BATTLETOG_DEFEND" />
+		<drone name="AEA_COMBAT_BIRD_SMART_1_ENEMY" />
+	</droneList>
+	<health amount="15" />
+	<maxPower amount="0" />
+	<crewCount amount="8" max="8" class="aea_bird_illuminant" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_BIRD_EXTREME" layout="aeat_boss_bird" img="aeat_boss_bird">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<doors power="2" max="2" room="8" start="true" />
+		<drones power="10" max="10" room="15" start="true" />
+		<engines power="1" max="1" room="1" start="true" />
+		<medbay power="2" max="2" room="14" start="true" />
+		<oxygen power="2" max="2" room="10" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<sensors power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<weapons power="5" max="5" room="3" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>5</droneSlots>
+	<weaponList missiles="0" count="3">
+		<weapon name="ENERGY_2" />
+		<weapon name="ENERGY_2" />
+		<weapon name="LASER_BIO" />
+	</weaponList>
+	<droneList drones="14" count="5">
+		<drone name="AEA_COMBAT_BIRD_BIO_2" />
+		<drone name="AEA_COMBAT_BIRD_SMART_1_ENEMY" />
+		<drone name="BATTLETOG_DEFEND" />
+		<drone name="AEA_COMBAT_BIRD_SMART_1_ENEMY" />
+		<drone name="AEA_COMBAT_BIRD_SMART_1_ENEMY" />
+	</droneList>
+	<health amount="15" />
+	<maxPower amount="0" />
+	<crewCount amount="8" max="8" class="aea_bird_illuminant" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_BIRD_CHAOS" layout="aeat_boss_bird" img="aeat_boss_bird">
+	<class>Chaotic Renegade Cruiser</class>
+	<systemList>
+		<doors power="2" max="2" room="8" start="true" />
+		<drones power="10" max="10" room="15" start="true" />
+		<engines power="1" max="1" room="1" start="true" />
+		<medbay power="2" max="2" room="14" start="true" />
+		<oxygen power="2" max="2" room="10" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<sensors power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="2" start="true" />
+		<weapons power="5" max="5" room="3" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="0" count="3">
+		<weapon name="ENERGY_2" />
+		<weapon name="ENERGY_2" />
+		<weapon name="LASER_BIO" />
+	</weaponList>
+	<droneList drones="14" count="4">
+		<drone name="AEA_COMBAT_BIRD_BOSS" />
+		<drone name="AEA_COMBAT_BIRD_SMART_2_ENEMY" />
+		<drone name="BATTLETOG_DEFEND" />
+		<drone name="AEA_COMBAT_BIRD_SMART_2_ENEMY" />
+	</droneList>
+	<health amount="15" />
+	<maxPower amount="0" />
+	<crewCount amount="8" max="8" class="aea_bird_illuminant" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="UPG_MEDBAY_NANO" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_CULT_NORMAL" layout="aeat_boss_cult" img="aeat_boss_cult">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<doors power="1" max="1" room="2" start="true" />
+		<engines power="1" max="1" room="7" start="true" />
+		<hacking power="1" max="1" room="1" start="true" />
+		<medbay power="2" max="2" room="11" start="true" />
+		<oxygen power="1" max="1" room="10" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="5" start="true" />
+		<teleporter power="2" max="2" room="12" start="true" />
+		<weapons power="6" max="6" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4">
+		<weapon name="LASER_LIGHT_1" />
+		<weapon name="LASER_LIGHT_1" />
+		<weapon name="KERNEL_2_ENEMY" />
+		<weapon name="KERNEL_FIRE_ENEMY" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="15" />
+	<crewCount amount="6" max="6" class="aea_cult_wizard_s15" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_BARRIER_RELAY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_CULT_CHALLENGE" layout="aeat_boss_cult" img="aeat_boss_cult">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<doors power="1" max="1" room="2" start="true" />
+		<engines power="1" max="1" room="7" start="true" />
+		<hacking power="1" max="1" room="1" start="true" />
+		<medbay power="2" max="2" room="11" start="true" />
+		<oxygen power="1" max="1" room="10" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="5" start="true" />
+		<teleporter power="2" max="2" room="12" start="true" />
+		<weapons power="7" max="7" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4">
+		<weapon name="LASER_LIGHT_2" />
+		<weapon name="LASER_LIGHT_1" />
+		<weapon name="KERNEL_2_ENEMY" />
+		<weapon name="KERNEL_FIRE_ENEMY" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="16" />
+	<crewCount amount="7" max="7" class="aea_cult_wizard_s15" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_BARRIER_RELAY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_CULT_EXTREME" layout="aeat_boss_cult" img="aeat_boss_cult">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<doors power="1" max="1" room="2" start="true" />
+		<engines power="1" max="1" room="7" start="true" />
+		<hacking power="1" max="1" room="1" start="true" />
+		<medbay power="2" max="2" room="11" start="true" />
+		<oxygen power="1" max="1" room="10" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="5" start="true" />
+		<teleporter power="2" max="2" room="12" start="true" />
+		<weapons power="8" max="8" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4">
+		<weapon name="LASER_LIGHT_2" />
+		<weapon name="LASER_LIGHT_2" />
+		<weapon name="KERNEL_2_ENEMY" />
+		<weapon name="KERNEL_FIRE_ENEMY" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="17" />
+	<crewCount amount="8" max="8" class="aea_cult_wizard_s15" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_BARRIER_RELAY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_CULT_CHAOS" layout="aeat_boss_cult" img="aeat_boss_cult">
+	<class>Chaotic Renegade Cruiser</class>
+	<systemList>
+		<doors power="1" max="1" room="2" start="true" />
+		<engines power="1" max="1" room="7" start="true" />
+		<hacking power="2" max="2" room="1" start="true" />
+		<medbay power="2" max="2" room="11" start="true" />
+		<oxygen power="1" max="1" room="10" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="5" start="true" />
+		<teleporter power="2" max="2" room="12" start="true" />
+		<weapons power="8" max="8" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="4">
+		<weapon name="LASER_LIGHT_2" />
+		<weapon name="LASER_LIGHT_2" />
+		<weapon name="KERNEL_2_ENEMY" />
+		<weapon name="KERNEL_2_CHAIN_ENEMY" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="17" />
+	<crewCount amount="8" max="8" class="aea_cult_wizard_s15" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_BARRIER_RELAY_CHAOS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_NECRO_NORMAL" layout="aeat_boss_necro" img="aeat_boss_necro">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<clonebay power="1" max="1" room="8" start="true" />
+		<doors power="1" max="1" room="9" start="true" />
+		<drones power="8" max="8" room="1" start="true" />
+		<engines power="1" max="1" room="3" start="true" />
+		<mind power="1" max="1" room="5" start="true" />
+		<oxygen power="1" max="1" room="12" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="6" start="true" />
+		<weapons power="5" max="5" room="11" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="3" count="3">
+		<weapon name="AEA_LASER_NECRO_1" />
+		<weapon name="LASER_PIERCE_ENEMY" />
+		<weapon name="BOMB_BREACH_1_ENEMY" />
+	</weaponList>
+	<droneList drones="13" count="4">
+		<drone name="AEA_COMBAT_NECRO_1_LASER" />
+		<drone name="REPAIR" />
+		<drone name="AEA_COMBAT_NECRO_1_BEAM" />
+		<drone name="AEA_DEFENSE_NECRO_2_MISSILE" />
+	</droneList>
+	<health amount="16" />
+	<maxPower amount="18" />
+	<crewCount amount="5" max="5" class="aea_necro_lich" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_NECRO_SAVE_ENEMY_WEAK" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_NECRO_CHALLENGE" layout="aeat_boss_necro" img="aeat_boss_necro">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<clonebay power="1" max="1" room="8" start="true" />
+		<doors power="1" max="1" room="9" start="true" />
+		<drones power="8" max="8" room="1" start="true" />
+		<engines power="1" max="1" room="3" start="true" />
+		<mind power="2" max="2" room="5" start="true" />
+		<oxygen power="1" max="1" room="12" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="6" start="true" />
+		<weapons power="6" max="6" room="11" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="3" count="3">
+		<weapon name="AEA_LASER_NECRO_2" />
+		<weapon name="LASER_PIERCE_ENEMY" />
+		<weapon name="BOMB_BREACH_1_ENEMY" />
+	</weaponList>
+	<droneList drones="13" count="4">
+		<drone name="AEA_COMBAT_NECRO_1_LASER" />
+		<drone name="REPAIR" />
+		<drone name="AEA_COMBAT_NECRO_1_BEAM" />
+		<drone name="AEA_DEFENSE_NECRO_2_MISSILE" />
+	</droneList>
+	<health amount="16" />
+	<maxPower amount="20" />
+	<crewCount amount="5" max="5" class="aea_necro_lich" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_NECRO_SAVE_ENEMY_WEAK" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_NECRO_EXTREME" layout="aeat_boss_necro" img="aeat_boss_necro">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<clonebay power="1" max="1" room="8" start="true" />
+		<doors power="1" max="1" room="9" start="true" />
+		<drones power="9" max="9" room="1" start="true" />
+		<engines power="1" max="1" room="3" start="true" />
+		<mind power="2" max="2" room="5" start="true" />
+		<oxygen power="1" max="1" room="12" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="6" start="true" />
+		<weapons power="7" max="7" room="11" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="3" count="3">
+		<weapon name="AEA_LASER_NECRO_3" />
+		<weapon name="LASER_PIERCE_ENEMY" />
+		<weapon name="BOMB_BREACH_1_ENEMY" />
+	</weaponList>
+	<droneList drones="13" count="4">
+		<drone name="AEA_COMBAT_NECRO_2_LASER" />
+		<drone name="REPAIR" />
+		<drone name="AEA_COMBAT_NECRO_1_BEAM" />
+		<drone name="AEA_DEFENSE_NECRO_2_MISSILE" />
+	</droneList>
+	<health amount="16" />
+	<maxPower amount="21" />
+	<crewCount amount="5" max="5" class="aea_necro_lich" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_NECRO_SAVE_ENEMY_WEAK" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_NECRO_CHAOS" layout="aeat_boss_necro" img="aeat_boss_necro">
+	<class>Chaotic Renegade Cruiser</class>
+	<systemList>
+		<clonebay power="1" max="1" room="8" start="true" />
+		<doors power="1" max="1" room="9" start="true" />
+		<drones power="9" max="9" room="1" start="true" />
+		<engines power="1" max="1" room="3" start="true" />
+		<mind power="2" max="2" room="5" start="true" />
+		<oxygen power="1" max="1" room="12" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="6" start="true" />
+		<weapons power="8" max="8" room="11" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="3" count="3">
+		<weapon name="AEA_LASER_NECRO_3" />
+		<weapon name="LASER_PIERCE_2_ENEMY" />
+		<weapon name="BOMB_BREACH_1_ENEMY" />
+	</weaponList>
+	<droneList drones="13" count="4">
+		<drone name="AEA_COMBAT_NECRO_BOSS" />
+		<drone name="REPAIR" />
+		<drone name="AEA_COMBAT_NECRO_1_BEAM" />
+		<drone name="AEA_DEFENSE_NECRO_2_MISSILE" />
+	</droneList>
+	<health amount="16" />
+	<maxPower amount="22" />
+	<crewCount amount="6" max="6" class="aea_necro_lich" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_NECRO_SAVE_ENEMY_WEAK" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_SHARD_NORMAL" layout="aeat_boss_shard" img="aeat_boss_shard">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<aea_super_shields power="3" max="3" room="1" start="true" />
+		<doors power="3" max="3" room="16" start="true" />
+		<drones power="7" max="7" room="12" start="true" />
+		<engines power="2" max="2" room="4" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="15" start="true" />
+		<weapons power="8" max="8" room="11" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="10" count="4">
+		<weapon name="CRYSTAL_BURST_2_ENEMY" />
+		<weapon name="CRYSTAL_BURST_2_ENEMY" />
+		<weapon name="BEAM_PIERCE" />
+		<weapon name="BEAM_CHAIN" />
+	</weaponList>
+	<droneList drones="10" count="3">
+		<drone name="REPAIR" />
+		<drone name="GUARDIAN_2_DRONE" />
+		<drone name="SHIP_REPAIR_ENEMY" />
+	</droneList>
+	<health amount="18" />
+	<maxPower amount="22" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_SHARD_CHALLENGE" layout="aeat_boss_shard" img="aeat_boss_shard">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<aea_super_shields power="3" max="3" room="1" start="true" />
+		<doors power="3" max="3" room="16" start="true" />
+		<drones power="7" max="7" room="12" start="true" />
+		<engines power="2" max="2" room="4" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="15" start="true" />
+		<weapons power="8" max="8" room="11" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="10" count="4">
+		<weapon name="CRYSTAL_BURST_2_RED_ENEMY" />
+		<weapon name="CRYSTAL_BURST_2_RED_ENEMY" />
+		<weapon name="BEAM_PIERCE" />
+		<weapon name="BEAM_CHAIN" />
+	</weaponList>
+	<droneList drones="10" count="3">
+		<drone name="REPAIR" />
+		<drone name="GUARDIAN_2_DRONE" />
+		<drone name="SHIP_REPAIR_ENEMY" />
+	</droneList>
+	<health amount="18" />
+	<maxPower amount="23" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_SHARD_EXTREME" layout="aeat_boss_shard" img="aeat_boss_shard">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<aea_super_shields power="3" max="3" room="1" start="true" />
+		<doors power="3" max="3" room="16" start="true" />
+		<drones power="8" max="8" room="12" start="true" />
+		<engines power="2" max="2" room="4" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="15" start="true" />
+		<weapons power="9" max="9" room="11" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="10" count="4">
+		<weapon name="CRYSTAL_BURST_2_RED_ENEMY" />
+		<weapon name="CRYSTAL_BURST_2_RED_ENEMY" />
+		<weapon name="BEAM_3" />
+		<weapon name="BEAM_CHAIN" />
+	</weaponList>
+	<droneList drones="10" count="3">
+		<drone name="REPAIR" />
+		<drone name="REPAIR" />
+		<drone name="GUARDIAN_2_DRONE" />
+		<drone name="SHIP_REPAIR_ENEMY" />
+	</droneList>
+	<health amount="18" />
+	<maxPower amount="25" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_SHARD_CHAOS" layout="aeat_boss_shard" img="aeat_boss_shard">
+	<class>Chaotic Renegade Cruiser</class>
+	<systemList>
+		<aea_super_shields power="3" max="3" room="1" start="true" />
+		<doors power="3" max="3" room="16" start="true" />
+		<drones power="8" max="8" room="12" start="true" />
+		<engines power="2" max="2" room="4" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="15" start="true" />
+		<weapons power="9" max="9" room="11" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="10" count="4">
+		<weapon name="AEA_CRYSTAL_SHARD_BOSS" />
+		<weapon name="CRYSTAL_BURST_2_RED_ENEMY" />
+		<weapon name="CRYSTAL_BURST_2_RED_ENEMY" />
+		<weapon name="BEAM_CHAIN" />
+	</weaponList>
+	<droneList drones="10" count="3">
+		<drone name="REPAIR" />
+		<drone name="REPAIR" />
+		<drone name="GUARDIAN_2_DRONE" />
+		<drone name="SHIP_REPAIR_ENEMY" />
+	</droneList>
+	<health amount="18" />
+	<maxPower amount="25" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_SHLEG_NORMAL" layout="aeat_boss_shleg" img="aeat_boss_shleg">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<cloaking power="1" max="1" room="7" start="true" />
+		<doors power="1" max="1" room="2" start="true" />
+		<engines power="1" max="1" room="8" start="true" />
+		<hacking power="1" max="1" room="1" start="true" />
+		<medbay power="2" max="2" room="12" start="true" />
+		<oxygen power="2" max="2" room="11" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="5" start="true" />
+		<weapons power="7" max="7" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="18" count="4">
+		<weapon name="BEAM_SHELL" />
+		<weapon name="ION_CHARGEGUN_2" />
+		<weapon name="AEA_SHLEG_BOMB" />
+		<weapon name="AEA_SHLEG_BOMB" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="16" />
+	<crewCount amount="7" max="7" class="aea_shleg_shell" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_SHLEG_CHALLENGE" layout="aeat_boss_shleg" img="aeat_boss_shleg">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<cloaking power="1" max="1" room="7" start="true" />
+		<doors power="1" max="1" room="2" start="true" />
+		<engines power="1" max="1" room="8" start="true" />
+		<hacking power="1" max="1" room="1" start="true" />
+		<medbay power="2" max="2" room="12" start="true" />
+		<oxygen power="2" max="2" room="11" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="5" start="true" />
+		<weapons power="8" max="8" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="18" count="4">
+		<weapon name="BEAM_SHELL" />
+		<weapon name="ION_CHARGEGUN_2" />
+		<weapon name="AEA_SHLEG_MISSILES" />
+		<weapon name="AEA_SHLEG_BOMB" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="17" />
+	<crewCount amount="7" max="7" class="aea_shleg_shell" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+	<aug name="AEA_SHLEG_GEL" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_SHLEG_EXTREME" layout="aeat_boss_shleg" img="aeat_boss_shleg">
+	<class>Renegade Cruiser</class>
+	<systemList>
+		<cloaking power="2" max="2" room="7" start="true" />
+		<doors power="1" max="1" room="2" start="true" />
+		<engines power="1" max="1" room="8" start="true" />
+		<hacking power="1" max="1" room="1" start="true" />
+		<medbay power="2" max="2" room="12" start="true" />
+		<oxygen power="2" max="2" room="11" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="5" start="true" />
+		<weapons power="8" max="8" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="18" count="4">
+		<weapon name="BEAM_SHELL" />
+		<weapon name="ION_CHARGEGUN_2" />
+		<weapon name="AEA_SHLEG_MISSILES" />
+		<weapon name="AEA_SHLEG_BOMB" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="18" />
+	<crewCount amount="7" max="7" class="aea_shleg_shell" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+	<aug name="AEA_SHLEG_GEL" />
+</shipBlueprint>
+
+<shipBlueprint name="AEAT_BOSS_SHLEG_CHAOS" layout="aeat_boss_shleg" img="aeat_boss_shleg">
+	<class>Chaotic Renegade Cruiser</class>
+	<systemList>
+		<cloaking power="2" max="2" room="7" start="true" />
+		<doors power="1" max="1" room="2" start="true" />
+		<engines power="1" max="1" room="8" start="true" />
+		<hacking power="1" max="1" room="1" start="true" />
+		<medbay power="2" max="2" room="12" start="true" />
+		<oxygen power="2" max="2" room="11" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="8" room="5" start="true" />
+		<weapons power="9" max="9" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="18" count="4">
+		<weapon name="AEA_BEAM_SHLEG_BOSS" />
+		<weapon name="ION_CHARGEGUN_2" />
+		<weapon name="AEA_SHLEG_MISSILES" />
+		<weapon name="AEA_SHLEG_BOMB" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="15" />
+	<maxPower amount="20" />
+	<crewCount amount="7" max="7" class="aea_shleg_shell" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_SHLEG_MIND_GAS" />
+	<aug name="AEA_SHLEG_GEL" />
+</shipBlueprint>
+</FTL>

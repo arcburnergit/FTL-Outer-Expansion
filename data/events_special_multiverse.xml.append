@@ -22,3 +22,1254 @@
 </mod:findName>
 
 </FTL> 
+
+<FTL>
+<!--ACIDIC DESTROYER B-->
+<ship name="SHIP_AEAT_BOSS_ACID_NORMAL" auto_blueprint="AEAT_BOSS_ACID_NORMAL">
+	<destroyed load="AEAT_BOSS_ACID_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_ACID_DEADCREW" />
+</ship>
+<ship name="SHIP_AEAT_BOSS_ACID_CHALLENGE" auto_blueprint="AEAT_BOSS_ACID_CHALLENGE">
+	<destroyed load="AEAT_BOSS_ACID_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_ACID_DEADCREW" />
+</ship>
+<ship name="SHIP_AEAT_BOSS_ACID_EXTREME" auto_blueprint="AEAT_BOSS_ACID_EXTREME">
+	<destroyed load="AEAT_BOSS_ACID_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_ACID_DEADCREW" />
+</ship>
+<ship name="SSHIP_AEAT_BOSS_ACID_CHAOS" auto_blueprint="AEAT_BOSS_ACID_CHAOS">
+	<destroyed load="AEAT_BOSS_ACID_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_ACID_DEADCREW" />
+</ship>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_NORMAL">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_ACID_NORMAL"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_CHALLENGE">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_ACID_CHALLENGE"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_EXTREME">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_ACID_EXTREME"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_CHAOS">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_ACID_CHAOS"/>
+    </mod:findLike>
+</mod:findName>
+<event name="MV_TRAVELER_AEAT_BOSS_ACID_NORMAL">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Acidic design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_ACID_NORMAL" hostile="false" /> 
+	<choice hidden="true">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-35" max="-35" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_ACID_CHALLENGE">
+	<beaconType id="map_icon_quest" global="true">
+		<color r="25" g="205" b="150" a="1.0" />
+		<unvisitedTooltip>This is the location of abnormal energy signatures. [Acidic B]</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+	</beaconType>
+	<text>From out of the tunnel comes a massive cruiser vessel, of Acidic design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_ACID_CHALLENGE" hostile="false" /> 
+	<choice hidden="true">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-40" max="-40" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_ACID_EXTREME">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Acidic design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_ACID_EXTREME" hostile="false" /> 
+	<choice hidden="true" max_group="0">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice blue="false" req="loc_sector_count" lvl="0" max_lvl="4">
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-45" max="-45" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="loc_sector_count" lvl="5">
+		<text id="renegade_tribute_scrap_impossible" />
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_ACID_CHAOS">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Acidic design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_MTBOSS_DUSKBRINGER_B_CHAOS" hostile="false" /> 
+	<eventAlias jumpClear="false" name="AEAT_BOSS_ACID_DROP">AEAT_BOSS_ACID_DROP_CHAOS</eventAlias>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice blue="false" req="BRIBE_CHAOS" lvl="1">
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed_chaos" />
+			<playSound>gm_bribe</playSound>
+			<variable name="gnome_bribe" op="set" val="1" />
+			<item_modify>
+				<item type="scrap" min="-45" max="-45" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" blue="false" req="BRIBE_CHAOS" lvl="0" max_lvl="0">
+		<text>*%$##@*%!</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+
+<event name="AEAT_BOSS_ACID_DESTROYED">
+	<text id="renegade_destroyed" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<variable name="ach_mv_clan" op="set" val="1" />
+	<metaVariable name="prof_renegades_killed" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEAT_BOSS_ACID_DROP_CHANCE" />
+	</choice>
+</event>
+<eventList name="AEAT_BOSS_ACID_DROP_CHANCE">
+	<event>
+		<text id="renegade_drop_fail" />
+		<autoReward level="LOW">stuff</autoReward>
+	</event>
+	<event><loadEvent>AEAT_BOSS_ACID_DROP</loadEvent></event>
+</eventList>
+
+<event name="AEAT_BOSS_ACID_DEADCREW">
+	<text id="renegade_killed" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<variable name="ach_mv_clan" op="set" val="1" />
+	<metaVariable name="prof_renegades_killed" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event><loadEvent>AEAT_BOSS_ACID_DROP</loadEvent></event>
+	</choice>
+</event>
+
+<event name="AEAT_BOSS_ACID_DROP">
+	<text id="renegade_drop_yes" />
+	<achievement silent="false">ACH_AEA_REN_ACID</achievement>
+	<autoReward level="LOW">stuff</autoReward>
+	<weapon name="AEA_LASER_ACID_BOSS" />
+</event>
+<event name="AEAT_BOSS_ACID_DROP_CHAOS">
+	<text id="renegade_drop_yes" />
+	<achievement silent="false">ACH_AEA_REN_ACID</achievement>
+	<autoReward level="LOW">stuff</autoReward>
+	<weapon name="AEA_LASER_ACID_BOSS_CHAOS" />
+</event>
+
+<!--Wedge Tailed B-->
+<ship name="SHIP_AEAT_BOSS_BIRD_NORMAL" auto_blueprint="AEAT_BOSS_BIRD_NORMAL">
+	<destroyed load="AEAT_BOSS_BIRD_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_BIRD_DEADCREW" />
+</ship>
+<ship name="SHIP_AEAT_BOSS_BIRD_CHALLENGE" auto_blueprint="AEAT_BOSS_BIRD_CHALLENGE">
+	<destroyed load="AEAT_BOSS_BIRD_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_BIRD_DEADCREW" />
+</ship>
+<ship name="SHIP_AEAT_BOSS_BIRD_EXTREME" auto_blueprint="AEAT_BOSS_BIRD_EXTREME">
+	<destroyed load="AEAT_BOSS_BIRD_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_BIRD_DEADCREW" />
+</ship>
+<ship name="SSHIP_AEAT_BOSS_BIRD_CHAOS" auto_blueprint="AEAT_BOSS_BIRD_CHAOS">
+	<destroyed load="AEAT_BOSS_BIRD_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_BIRD_DEADCREW" />
+</ship>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_NORMAL">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_BIRD_NORMAL"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_CHALLENGE">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_BIRD_CHALLENGE"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_EXTREME">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_BIRD_EXTREME"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_CHAOS">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_BIRD_CHAOS"/>
+    </mod:findLike>
+</mod:findName>
+<event name="MV_TRAVELER_AEAT_BOSS_BIRD_NORMAL">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Gi design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_BIRD_NORMAL" hostile="false" /> 
+	<choice hidden="true">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-35" max="-35" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_BIRD_CHALLENGE">
+	<beaconType id="map_icon_quest" global="true">
+		<color r="25" g="205" b="150" a="1.0" />
+		<unvisitedTooltip>This is the location of abnormal energy signatures. [Wedge-Tailed B]</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+	</beaconType>
+	<text>From out of the tunnel comes a massive cruiser vessel, of Gi design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_BIRD_CHALLENGE" hostile="false" /> 
+	<choice hidden="true">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-40" max="-40" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_BIRD_EXTREME">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Gi design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_BIRD_EXTREME" hostile="false" /> 
+	<choice hidden="true" max_group="0">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice blue="false" req="loc_sector_count" lvl="0" max_lvl="4">
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-45" max="-45" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="loc_sector_count" lvl="5">
+		<text id="renegade_tribute_scrap_impossible" />
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_BIRD_CHAOS">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Gi design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_MTBOSS_DUSKBRINGER_B_CHAOS" hostile="false" /> 
+	<eventAlias jumpClear="false" name="AEAT_BOSS_BIRD_DROP">AEAT_BOSS_BIRD_DROP_CHAOS</eventAlias>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice blue="false" req="BRIBE_CHAOS" lvl="1">
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed_chaos" />
+			<playSound>gm_bribe</playSound>
+			<variable name="gnome_bribe" op="set" val="1" />
+			<item_modify>
+				<item type="scrap" min="-45" max="-45" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" blue="false" req="BRIBE_CHAOS" lvl="0" max_lvl="0">
+		<text>*%$##@*%!</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+
+<event name="AEAT_BOSS_BIRD_DESTROYED">
+	<text id="renegade_destroyed" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<variable name="ach_mv_clan" op="set" val="1" />
+	<metaVariable name="prof_renegades_killed" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEAT_BOSS_BIRD_DROP_CHANCE" />
+	</choice>
+</event>
+<eventList name="AEAT_BOSS_BIRD_DROP_CHANCE">
+	<event>
+		<text id="renegade_drop_fail" />
+		<autoReward level="LOW">stuff</autoReward>
+	</event>
+	<event><loadEvent>AEAT_BOSS_BIRD_DROP</loadEvent></event>
+</eventList>
+
+<event name="AEAT_BOSS_BIRD_DEADCREW">
+	<text id="renegade_killed" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<variable name="ach_mv_clan" op="set" val="1" />
+	<metaVariable name="prof_renegades_killed" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event><loadEvent>AEAT_BOSS_BIRD_DROP</loadEvent></event>
+	</choice>
+</event>
+
+<event name="AEAT_BOSS_BIRD_DROP">
+	<text id="renegade_drop_yes" />
+	<achievement silent="false">ACH_AEA_REN_BIRD</achievement>
+	<autoReward level="LOW">stuff</autoReward>
+	<drone name="AEA_COMBAT_BIRD_BOSS" />
+</event>
+<event name="AEAT_BOSS_BIRD_DROP_CHAOS">
+	<text id="renegade_drop_yes" />
+	<achievement silent="false">ACH_AEA_REN_BIRD</achievement>
+	<autoReward level="LOW">stuff</autoReward>
+	<drone name="AEA_COMBAT_BIRD_BOSS_CHAOS" />
+</event>
+
+
+<!--Wedge Tailed B-->
+<ship name="SHIP_AEAT_BOSS_CULT_NORMAL" auto_blueprint="AEAT_BOSS_CULT_NORMAL">
+	<destroyed load="AEAT_BOSS_CULT_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_CULT_DEADCREW" />
+</ship>
+<ship name="SHIP_AEAT_BOSS_CULT_CHALLENGE" auto_blueprint="AEAT_BOSS_CULT_CHALLENGE">
+	<destroyed load="AEAT_BOSS_CULT_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_CULT_DEADCREW" />
+</ship>
+<ship name="SHIP_AEAT_BOSS_CULT_EXTREME" auto_blueprint="AEAT_BOSS_CULT_EXTREME">
+	<destroyed load="AEAT_BOSS_CULT_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_CULT_DEADCREW" />
+</ship>
+<ship name="SSHIP_AEAT_BOSS_CULT_CHAOS" auto_blueprint="AEAT_BOSS_CULT_CHAOS">
+	<destroyed load="AEAT_BOSS_CULT_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_CULT_DEADCREW" />
+</ship>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_NORMAL">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_CULT_NORMAL"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_CHALLENGE">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_CULT_CHALLENGE"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_EXTREME">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_CULT_EXTREME"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_CHAOS">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_CULT_CHAOS"/>
+    </mod:findLike>
+</mod:findName>
+<event name="MV_TRAVELER_AEAT_BOSS_CULT_NORMAL">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Cultist design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_CULT_NORMAL" hostile="false" /> 
+	<choice hidden="true">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-35" max="-35" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_CULT_CHALLENGE">
+	<beaconType id="map_icon_quest" global="true">
+		<color r="25" g="205" b="150" a="1.0" />
+		<unvisitedTooltip>This is the location of abnormal energy signatures. [Wedge-Tailed C]</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+	</beaconType>
+	<text>From out of the tunnel comes a massive cruiser vessel, of Cultist design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_CULT_CHALLENGE" hostile="false" /> 
+	<choice hidden="true">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-40" max="-40" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_CULT_EXTREME">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Cultist design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_CULT_EXTREME" hostile="false" /> 
+	<choice hidden="true" max_group="0">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice blue="false" req="loc_sector_count" lvl="0" max_lvl="4">
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-45" max="-45" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="loc_sector_count" lvl="5">
+		<text id="renegade_tribute_scrap_impossible" />
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_CULT_CHAOS">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Cultist design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_MTBOSS_DUSKBRINGER_B_CHAOS" hostile="false" /> 
+	<eventAlias jumpClear="false" name="AEAT_BOSS_CULT_DROP">AEAT_BOSS_CULT_DROP_CHAOS</eventAlias>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice blue="false" req="BRIBE_CHAOS" lvl="1">
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed_chaos" />
+			<playSound>gm_bribe</playSound>
+			<variable name="gnome_bribe" op="set" val="1" />
+			<item_modify>
+				<item type="scrap" min="-45" max="-45" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" blue="false" req="BRIBE_CHAOS" lvl="0" max_lvl="0">
+		<text>*%$##@*%!</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+
+<event name="AEAT_BOSS_CULT_DESTROYED">
+	<text id="renegade_destroyed" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<variable name="ach_mv_clan" op="set" val="1" />
+	<metaVariable name="prof_renegades_killed" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEAT_BOSS_CULT_DROP_CHANCE" />
+	</choice>
+</event>
+<eventList name="AEAT_BOSS_CULT_DROP_CHANCE">
+	<event>
+		<text id="renegade_drop_fail" />
+		<autoReward level="LOW">stuff</autoReward>
+	</event>
+	<event><loadEvent>AEAT_BOSS_CULT_DROP</loadEvent></event>
+</eventList>
+
+<event name="AEAT_BOSS_CULT_DEADCREW">
+	<text id="renegade_killed" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<variable name="ach_mv_clan" op="set" val="1" />
+	<metaVariable name="prof_renegades_killed" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event><loadEvent>AEAT_BOSS_CULT_DROP</loadEvent></event>
+	</choice>
+</event>
+
+<event name="AEAT_BOSS_CULT_DROP">
+	<text id="renegade_drop_yes" />
+	<achievement silent="false">ACH_AEA_REN_CLAN</achievement>
+	<autoReward level="LOW">stuff</autoReward>
+	<drone name="AEA_COMBAT_CULT_BOSS" />
+</event>
+<event name="AEAT_BOSS_CULT_DROP_CHAOS">
+	<text id="renegade_drop_yes" />
+	<achievement silent="false">ACH_AEA_REN_CLAN</achievement>
+	<autoReward level="LOW">stuff</autoReward>
+	<drone name="AEA_COMBAT_CULT_BOSS_CHAOS" />
+</event>
+
+<!--Wedge Tailed B-->
+<ship name="SHIP_AEAT_BOSS_NECRO_NORMAL" auto_blueprint="AEAT_BOSS_NECRO_NORMAL">
+	<destroyed load="AEAT_BOSS_NECRO_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_NECRO_DEADCREW" />
+</ship>
+<ship name="SHIP_AEAT_BOSS_NECRO_CHALLENGE" auto_blueprint="AEAT_BOSS_NECRO_CHALLENGE">
+	<destroyed load="AEAT_BOSS_NECRO_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_NECRO_DEADCREW" />
+</ship>
+<ship name="SHIP_AEAT_BOSS_NECRO_EXTREME" auto_blueprint="AEAT_BOSS_NECRO_EXTREME">
+	<destroyed load="AEAT_BOSS_NECRO_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_NECRO_DEADCREW" />
+</ship>
+<ship name="SSHIP_AEAT_BOSS_NECRO_CHAOS" auto_blueprint="AEAT_BOSS_NECRO_CHAOS">
+	<destroyed load="AEAT_BOSS_NECRO_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_NECRO_DEADCREW" />
+</ship>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_NORMAL">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_NECRO_NORMAL"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_CHALLENGE">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_NECRO_CHALLENGE"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_EXTREME">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_NECRO_EXTREME"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_CHAOS">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_NECRO_CHAOS"/>
+    </mod:findLike>
+</mod:findName>
+<event name="MV_TRAVELER_AEAT_BOSS_NECRO_NORMAL">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Heretic design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_NECRO_NORMAL" hostile="false" /> 
+	<choice hidden="true">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-35" max="-35" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_NECRO_CHALLENGE">
+	<beaconType id="map_icon_quest" global="true">
+		<color r="25" g="205" b="150" a="1.0" />
+		<unvisitedTooltip>This is the location of abnormal energy signatures. [Blasphemy C]</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+	</beaconType>
+	<text>From out of the tunnel comes a massive cruiser vessel, of Heretic design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_NECRO_CHALLENGE" hostile="false" /> 
+	<choice hidden="true">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-40" max="-40" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_NECRO_EXTREME">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Heretic design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_NECRO_EXTREME" hostile="false" /> 
+	<choice hidden="true" max_group="0">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice blue="false" req="loc_sector_count" lvl="0" max_lvl="4">
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-45" max="-45" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="loc_sector_count" lvl="5">
+		<text id="renegade_tribute_scrap_impossible" />
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_NECRO_CHAOS">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Gi design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_MTBOSS_DUSKBRINGER_B_CHAOS" hostile="false" /> 
+	<eventAlias jumpClear="false" name="AEAT_BOSS_NECRO_DROP">AEAT_BOSS_NECRO_DROP_CHAOS</eventAlias>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice blue="false" req="BRIBE_CHAOS" lvl="1">
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed_chaos" />
+			<playSound>gm_bribe</playSound>
+			<variable name="gnome_bribe" op="set" val="1" />
+			<item_modify>
+				<item type="scrap" min="-45" max="-45" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" blue="false" req="BRIBE_CHAOS" lvl="0" max_lvl="0">
+		<text>*%$##@*%!</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+
+<event name="AEAT_BOSS_NECRO_DESTROYED">
+	<text id="renegade_destroyed" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<variable name="ach_mv_clan" op="set" val="1" />
+	<metaVariable name="prof_renegades_killed" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEAT_BOSS_NECRO_DROP_CHANCE" />
+	</choice>
+</event>
+<eventList name="AEAT_BOSS_NECRO_DROP_CHANCE">
+	<event>
+		<text id="renegade_drop_fail" />
+		<autoReward level="LOW">stuff</autoReward>
+	</event>
+	<event><loadEvent>AEAT_BOSS_NECRO_DROP</loadEvent></event>
+</eventList>
+
+<event name="AEAT_BOSS_NECRO_DEADCREW">
+	<text id="renegade_killed" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<variable name="ach_mv_clan" op="set" val="1" />
+	<metaVariable name="prof_renegades_killed" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event><loadEvent>AEAT_BOSS_NECRO_DROP</loadEvent></event>
+	</choice>
+</event>
+
+<event name="AEAT_BOSS_NECRO_DROP">
+	<text id="renegade_drop_yes" />
+	<achievement silent="false">ACH_AEA_REN_NECRO</achievement>
+	<autoReward level="LOW">stuff</autoReward>
+	<drone name="AEA_COMBAT_NECRO_BOSS" />
+</event>
+<event name="AEAT_BOSS_NECRO_DROP_CHAOS">
+	<text id="renegade_drop_yes" />
+	<achievement silent="false">ACH_AEA_REN_NECRO</achievement>
+	<autoReward level="LOW">stuff</autoReward>
+	<drone name="AEA_COMBAT_NECRO_BOSS_CHAOS" />
+</event>
+
+<!--Wedge Tailed B-->
+<ship name="SHIP_AEAT_BOSS_SHARD_NORMAL" auto_blueprint="AEAT_BOSS_SHARD_NORMAL">
+	<destroyed load="AEAT_BOSS_SHARD_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_SHARD_DEADCREW" />
+</ship>
+<ship name="SHIP_AEAT_BOSS_SHARD_CHALLENGE" auto_blueprint="AEAT_BOSS_SHARD_CHALLENGE">
+	<destroyed load="AEAT_BOSS_SHARD_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_SHARD_DEADCREW" />
+</ship>
+<ship name="SHIP_AEAT_BOSS_SHARD_EXTREME" auto_blueprint="AEAT_BOSS_SHARD_EXTREME">
+	<destroyed load="AEAT_BOSS_SHARD_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_SHARD_DEADCREW" />
+</ship>
+<ship name="SSHIP_AEAT_BOSS_SHARD_CHAOS" auto_blueprint="AEAT_BOSS_SHARD_CHAOS">
+	<destroyed load="AEAT_BOSS_SHARD_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_SHARD_DEADCREW" />
+</ship>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_NORMAL">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_SHARD_NORMAL"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_CHALLENGE">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_SHARD_CHALLENGE"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_EXTREME">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_SHARD_EXTREME"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_CHAOS">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_SHARD_CHAOS"/>
+    </mod:findLike>
+</mod:findName>
+<event name="MV_TRAVELER_AEAT_BOSS_SHARD_NORMAL">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Shard-Forged design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_SHARD_NORMAL" hostile="false" /> 
+	<choice hidden="true">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-35" max="-35" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_SHARD_CHALLENGE">
+	<beaconType id="map_icon_quest" global="true">
+		<color r="25" g="205" b="150" a="1.0" />
+		<unvisitedTooltip>This is the location of abnormal energy signatures. [Shard-Forged Auto C]</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+	</beaconType>
+	<text>From out of the tunnel comes a massive cruiser vessel, of Shard-Forged design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_SHARD_CHALLENGE" hostile="false" /> 
+	<choice hidden="true">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-40" max="-40" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_SHARD_EXTREME">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Shard-Forged design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_SHARD_EXTREME" hostile="false" /> 
+	<choice hidden="true" max_group="0">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice blue="false" req="loc_sector_count" lvl="0" max_lvl="4">
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-45" max="-45" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="loc_sector_count" lvl="5">
+		<text id="renegade_tribute_scrap_impossible" />
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_SHARD_CHAOS">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Shard-Forged design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_MTBOSS_DUSKBRINGER_B_CHAOS" hostile="false" /> 
+	<eventAlias jumpClear="false" name="AEAT_BOSS_SHARD_DROP">AEAT_BOSS_SHARD_DROP_CHAOS</eventAlias>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice blue="false" req="BRIBE_CHAOS" lvl="1">
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed_chaos" />
+			<playSound>gm_bribe</playSound>
+			<variable name="gnome_bribe" op="set" val="1" />
+			<item_modify>
+				<item type="scrap" min="-45" max="-45" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" blue="false" req="BRIBE_CHAOS" lvl="0" max_lvl="0">
+		<text>*%$##@*%!</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+
+<event name="AEAT_BOSS_SHARD_DESTROYED">
+	<text id="renegade_destroyed" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<variable name="ach_mv_clan" op="set" val="1" />
+	<metaVariable name="prof_renegades_killed" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEAT_BOSS_SHARD_DROP_CHANCE" />
+	</choice>
+</event>
+<eventList name="AEAT_BOSS_SHARD_DROP_CHANCE">
+	<event>
+		<text id="renegade_drop_fail" />
+		<autoReward level="LOW">stuff</autoReward>
+	</event>
+	<event><loadEvent>AEAT_BOSS_SHARD_DROP</loadEvent></event>
+</eventList>
+
+<event name="AEAT_BOSS_SHARD_DEADCREW">
+	<text id="renegade_killed" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<variable name="ach_mv_clan" op="set" val="1" />
+	<metaVariable name="prof_renegades_killed" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event><loadEvent>AEAT_BOSS_SHARD_DROP</loadEvent></event>
+	</choice>
+</event>
+
+<event name="AEAT_BOSS_SHARD_DROP">
+	<text id="renegade_drop_yes" />
+	<achievement silent="false">ACH_AEA_REN_SHARD</achievement>
+	<autoReward level="LOW">stuff</autoReward>
+	<drone name="AEA_COMBAT_SHARD_BOSS" />
+</event>
+<event name="AEAT_BOSS_SHARD_DROP_CHAOS">
+	<text id="renegade_drop_yes" />
+	<achievement silent="false">ACH_AEA_REN_SHARD</achievement>
+	<autoReward level="LOW">stuff</autoReward>
+	<drone name="AEA_COMBAT_SHARD_BOSS_CHAOS" />
+</event>
+
+<!--Wedge Tailed B-->
+<ship name="SHIP_AEAT_BOSS_SHLEG_NORMAL" auto_blueprint="AEAT_BOSS_SHLEG_NORMAL">
+	<destroyed load="AEAT_BOSS_SHLEG_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_SHLEG_DEADCREW" />
+</ship>
+<ship name="SHIP_AEAT_BOSS_SHLEG_CHALLENGE" auto_blueprint="AEAT_BOSS_SHLEG_CHALLENGE">
+	<destroyed load="AEAT_BOSS_SHLEG_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_SHLEG_DEADCREW" />
+</ship>
+<ship name="SHIP_AEAT_BOSS_SHLEG_EXTREME" auto_blueprint="AEAT_BOSS_SHLEG_EXTREME">
+	<destroyed load="AEAT_BOSS_SHLEG_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_SHLEG_DEADCREW" />
+</ship>
+<ship name="SSHIP_AEAT_BOSS_SHLEG_CHAOS" auto_blueprint="AEAT_BOSS_SHLEG_CHAOS">
+	<destroyed load="AEAT_BOSS_SHLEG_DESTROYED" />
+	<deadCrew load="AEAT_BOSS_SHLEG_DEADCREW" />
+</ship>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_NORMAL">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_SHLEG_NORMAL"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_CHALLENGE">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_SHLEG_CHALLENGE"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_EXTREME">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_SHLEG_EXTREME"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="MV_TRAVELER_GENERIC_CHAOS">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="MV_TRAVELER_AEAT_BOSS_SHLEG_CHAOS"/>
+    </mod:findLike>
+</mod:findName>
+<event name="MV_TRAVELER_AEAT_BOSS_SHLEG_NORMAL">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Anarchist design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_SHLEG_NORMAL" hostile="false" /> 
+	<choice hidden="true">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-35" max="-35" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_SHLEG_CHALLENGE">
+	<beaconType id="map_icon_quest" global="true">
+		<color r="25" g="205" b="150" a="1.0" />
+		<unvisitedTooltip>This is the location of abnormal energy signatures. [Disorder B]</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+	</beaconType>
+	<text>From out of the tunnel comes a massive cruiser vessel, of Anarchist design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_SHLEG_CHALLENGE" hostile="false" /> 
+	<choice hidden="true">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-40" max="-40" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_SHLEG_EXTREME">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Anarchist design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_AEAT_BOSS_SHLEG_EXTREME" hostile="false" /> 
+	<choice hidden="true" max_group="0">
+		<text>Prepare to fight!</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice blue="false" req="loc_sector_count" lvl="0" max_lvl="4">
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed" />
+			<item_modify>
+				<item type="scrap" min="-45" max="-45" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="loc_sector_count" lvl="5">
+		<text id="renegade_tribute_scrap_impossible" />
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+<event name="MV_TRAVELER_AEAT_BOSS_SHLEG_CHAOS">
+	<text>From out of the tunnel comes a massive cruiser vessel, of Anarchist design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
+	<ship load="SHIP_MTBOSS_DUSKBRINGER_B_CHAOS" hostile="false" /> 
+	<eventAlias jumpClear="false" name="AEAT_BOSS_SHLEG_DROP">AEAT_BOSS_SHLEG_DROP_CHAOS</eventAlias>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>The ship turns to engage you.</text>
+			<ship hostile="true" /> 
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice blue="false" req="BRIBE_CHAOS" lvl="1">
+		<text id="renegade_tribute_scrap" />
+		<event>
+			<text id="renegade_tributed_chaos" />
+			<playSound>gm_bribe</playSound>
+			<variable name="gnome_bribe" op="set" val="1" />
+			<item_modify>
+				<item type="scrap" min="-45" max="-45" />
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" blue="false" req="BRIBE_CHAOS" lvl="0" max_lvl="0">
+		<text>*%$##@*%!</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice hidden="true" req="JUDGE_BOON_RENEGADE">
+		<text>Use your blessing to avoid combat.</text>
+		<event load="MV_TRAVELER_BOON" />
+	</choice>
+</event>
+
+<event name="AEAT_BOSS_SHLEG_DESTROYED">
+	<text id="renegade_destroyed" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<variable name="ach_mv_clan" op="set" val="1" />
+	<metaVariable name="prof_renegades_killed" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEAT_BOSS_SHLEG_DROP_CHANCE" />
+	</choice>
+</event>
+<eventList name="AEAT_BOSS_SHLEG_DROP_CHANCE">
+	<event>
+		<text id="renegade_drop_fail" />
+		<autoReward level="LOW">stuff</autoReward>
+	</event>
+	<event><loadEvent>AEAT_BOSS_SHLEG_DROP</loadEvent></event>
+</eventList>
+
+<event name="AEAT_BOSS_SHLEG_DEADCREW">
+	<text id="renegade_killed" />
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<variable name="ach_mv_clan" op="set" val="1" />
+	<metaVariable name="prof_renegades_killed" op="add" val="1" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event><loadEvent>AEAT_BOSS_SHLEG_DROP</loadEvent></event>
+	</choice>
+</event>
+
+<event name="AEAT_BOSS_SHLEG_DROP">
+	<text id="renegade_drop_yes" />
+	<achievement silent="false">ACH_AEA_REN_SHLEG</achievement>
+	<autoReward level="LOW">stuff</autoReward>
+	<drone name="AEA_COMBAT_SHLEG_BOSS" />
+</event>
+<event name="AEAT_BOSS_SHLEG_DROP_CHAOS">
+	<text id="renegade_drop_yes" />
+	<achievement silent="false">ACH_AEA_REN_SHLEG</achievement>
+	<autoReward level="LOW">stuff</autoReward>
+	<drone name="AEA_COMBAT_SHLEG_BOSS_CHAOS" />
+</event>
+</FTL>

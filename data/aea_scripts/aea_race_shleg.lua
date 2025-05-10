@@ -230,6 +230,8 @@ gasWeapons["AEA_SHLEG_BOMB_FAKE_SHORT"] = 60
 gasWeapons["AEA_SHLEG_MISSILES"] = 30
 gasWeapons["AEA_SHLEG_MISSILES_LOOT"] = 60
 gasWeapons["ARTILLERY_SHLEG_1"] = 20
+gasWeapons["AEA_BEAM_SHLEG_BOSS"] = 30
+gasWeapons["AEA_BEAM_SHLEG_BOSS_CHAOS"] = 30
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
 	if projectile and gasWeapons[projectile.extend.name] then
@@ -278,6 +280,57 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
 	return Defines.Chain.CONTINUE, beamHitType
 end)
 
+mods.aea.gasWeaponsPlus = {}
+local gasWeaponsPlus = mods.aea.gasWeaponsPlus
+gasWeaponsPlus["AEA_BEAM_SHLEG_BOSS_CHAOS"] = 30
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+	if projectile and gasWeaponsPlus[projectile.extend.name] then
+		local roomAtLoc = get_room_at_location(shipManager, location, true)
+		if projectile.destinationSpace == 0 and projectile.ownerId == 0 then
+			if not playerRoomsSlugPlayerUnique[roomAtLoc] or playerRoomsSlugPlayerUnique[roomAtLoc] < gasWeaponsPlus[projectile.extend.name] then
+				playerRoomsSlugPlayerUnique[roomAtLoc] = gasWeaponsPlus[projectile.extend.name]
+			end
+		elseif projectile.destinationSpace == 0 and projectile.ownerId == 1 then
+			if not playerRoomsSlugEnemyUnique[roomAtLoc] or playerRoomsSlugEnemyUnique[roomAtLoc] < gasWeaponsPlus[projectile.extend.name] then
+				playerRoomsSlugEnemyUnique[roomAtLoc] = gasWeaponsPlus[projectile.extend.name]
+			end
+		elseif projectile.destinationSpace == 1 and projectile.ownerId == 0 then
+			if not enemyRoomsSlugPlayerUnique[roomAtLoc] or enemyRoomsSlugPlayerUnique[roomAtLoc] < gasWeaponsPlus[projectile.extend.name] then
+				enemyRoomsSlugPlayerUnique[roomAtLoc] = gasWeaponsPlus[projectile.extend.name]
+			end
+		elseif projectile.destinationSpace == 1 and projectile.ownerId == 1 then
+			if not enemyRoomsSlugEnemyUnique[roomAtLoc] or enemyRoomsSlugEnemyUnique[roomAtLoc] < gasWeaponsPlus[projectile.extend.name] then
+				enemyRoomsSlugEnemyUnique[roomAtLoc] = gasWeaponsPlus[projectile.extend.name]
+			end
+		end
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
+	if projectile and gasWeaponsPlus[projectile.extend.name] and beamHitType == Defines.BeamHit.NEW_ROOM then
+		local roomAtLoc = get_room_at_location(shipManager, location, true)
+		if projectile.destinationSpace == 0 and projectile.ownerId == 0 then
+			if not playerRoomsSlugPlayerUnique[roomAtLoc] or playerRoomsSlugPlayerUnique[roomAtLoc] < gasWeaponsPlus[projectile.extend.name] then
+				playerRoomsSlugPlayerUnique[roomAtLoc] = gasWeaponsPlus[projectile.extend.name]
+			end
+		elseif projectile.destinationSpace == 0 and projectile.ownerId == 1 then
+			if not playerRoomsSlugEnemyUnique[roomAtLoc] or playerRoomsSlugEnemyUnique[roomAtLoc] < gasWeaponsPlus[projectile.extend.name] then
+				playerRoomsSlugEnemyUnique[roomAtLoc] = gasWeaponsPlus[projectile.extend.name]
+			end
+		elseif projectile.destinationSpace == 1 and projectile.ownerId == 0 then
+			if not enemyRoomsSlugPlayerUnique[roomAtLoc] or enemyRoomsSlugPlayerUnique[roomAtLoc] < gasWeaponsPlus[projectile.extend.name] then
+				enemyRoomsSlugPlayerUnique[roomAtLoc] = gasWeaponsPlus[projectile.extend.name]
+			end
+		elseif projectile.destinationSpace == 1 and projectile.ownerId == 1 then
+			if not enemyRoomsSlugEnemyUnique[roomAtLoc] or enemyRoomsSlugEnemyUnique[roomAtLoc] < gasWeaponsPlus[projectile.extend.name] then
+				enemyRoomsSlugEnemyUnique[roomAtLoc] = gasWeaponsPlus[projectile.extend.name]
+			end
+		end
+	end
+	return Defines.Chain.CONTINUE, beamHitType
+end)
+
 local resists_mind_control = mods.multiverse.resists_mind_control
 local can_be_mind_controlled = mods.multiverse.can_be_mind_controlled
 
@@ -312,7 +365,7 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
 				shlegTable.amount = math.min(crewmem.health.first, shlegTable.amount + (Hyperspace.FPS.SpeedFactor/16 * 5))
 			end
 			if shlegTable.amount >= crewmem.health.first then
-				if can_be_mind_controlled(crewmem) then
+				if can_be_mind_controlled(crewmem) and not crewmem.bDead then
 					crewmem:SetMindControl(true)
 					local mcTable = userdata_table(crewmem, "mods.mv.crewStuff")
 					mcTable.mcTime = math.max((crewmem.health.first / 7.5), mcTable.mcTime or 0)

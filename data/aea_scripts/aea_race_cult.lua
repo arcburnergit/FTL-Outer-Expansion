@@ -155,6 +155,14 @@ local function round(num, numDecimalPlaces)
   return math.floor(num * mult + 0.5) / mult
 end
 
+local function is_first_shot(weapon, afterFirstShot)
+    local shots = weapon.numShots
+    if weapon.weaponVisual.iChargeLevels > 0 then shots = shots*(weapon.weaponVisual.boostLevel + 1) end
+    if weapon.blueprint.miniProjectiles:size() > 0 then shots = shots*weapon.blueprint.miniProjectiles:size() end
+    if afterFirstShot then shots = shots - 1 end
+    return shots == weapon.queuedProjectiles:size()
+end
+
 local spawn_temp_drone = mods.multiverse.spawn_temp_drone
 
 local node_child_iter = mods.multiverse.node_child_iter
@@ -1000,7 +1008,7 @@ end)]]
 local barrierImage = Hyperspace.Resources:CreateImagePrimitiveString("effects/aea_barrier.png", -53, -53, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 local barrierImage2 = Hyperspace.Resources:CreateImagePrimitiveString("effects/aea_barrier2.png", -53, -53, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 
-script.on_render_event(Defines.RenderEvents.SHIP_SPARKS, function() end, function(shipManager)
+script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(shipManager)
 	if shipManager.iShipId == 0 then
 		for room, health in pairs(barrierTablePlayer) do
 			local pos = shipManager:GetRoomCenter(room)
@@ -1183,19 +1191,19 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
 	if log_events then
 		log("PROJECTILE_FIRE 3")
 	end
-	if weapon then
+	if weapon and is_first_shot(weapon, true) then
 		local shipManager = Hyperspace.ships(weapon.iShipId)
-		if shipManager:HasAugmentation("AEA_BARRIER_RELAY") > 0 then
+		if shipManager:HasAugmentation("AEA_BARRIER_RELAY") > 0 or shipManager:HasAugmentation("AEA_BARRIER_RELAY_CHAOS") > 0 then
 			local room = get_room_at_location(shipManager, shipManager:GetRandomRoomCenter(), false)
 			if shipManager.iShipId == 0 then
 				if not barrierTablePlayer[room] then 
-					if barrierTablePlayerLen >= 8 then return end
+					if barrierTablePlayerLen >= 6 and shipManager:HasAugmentation("AEA_BARRIER_RELAY_CHAOS") == 0 then return end
 					barrierTablePlayerLen = barrierTablePlayerLen + 1 
 				end
 				barrierTablePlayer[room] = 2
 			else
 				if not barrierTableEnemy[room] then 
-					if barrierTableEnemyLen >= 8 then return end
+					if barrierTableEnemyLen >= 6 and shipManager:HasAugmentation("AEA_BARRIER_RELAY_CHAOS") == 0 then return end
 					barrierTableEnemyLen = barrierTableEnemyLen + 1 
 				end
 				barrierTableEnemy[room] = 2

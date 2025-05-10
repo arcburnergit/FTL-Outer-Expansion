@@ -300,6 +300,10 @@
 			<store>STORE_AEA_COMMUNION</store>
         </event>
     </mod-append:choice>
+	<mod-append:choice req="MVBOSS_SPAWNER">
+        <text>(Drive Hacker) Summon an Outer Expansion MV vessel.</text>
+        <event load="STORAGE_CHECK_AUG_AEA_BOSS_SPAWNER_LIST" />
+    </mod-append:choice>
 </mod:findName>
 
 
@@ -3029,6 +3033,91 @@
 	<choice hidden="true">
 		<text>Return to the toggle menu.</text>
 		<event load="COMBAT_CHECK_TOGGLE_LOAD" />
+	</choice>
+</event>
+
+
+<!--Renegades-->
+
+<event name="STORAGE_CHECK_AUG_AEA_BOSS_SPAWNER_LIST">
+	<loadEventList seeded="true" first="false" generate="true">
+		<event name="STORAGE_CHECK_AUG_AEA_BOSS_SPAWNER_1" />
+		<event name="STORAGE_CHECK_AUG_AEA_BOSSS_SPAWNER_2" />
+	</loadEventList>
+</event>
+
+<event name="STORAGE_CHECK_AUG_AEA_BOSS_SPAWNER_1">
+	<text>You check what ships are available to be summoned currently. Summoning an MV boss will take 7{.</text>
+	<choice hidden="true">
+		<text>Acidic Destroyer B - Drops Acid Splasher</text>
+		<event>
+			<text>You power up the machine to max and watch as a rift opens, shaking the ship until suddenly it powers off, and a flashing green light followed by a string of coordinates signifies that it has worked.</text>
+			<item_modify>
+				<item type="fuel" min="-7" max="-7" />
+			</item_modify>
+			<quest event="MV_TRAVELER_AEAT_BOSS_ACID_CHALLENGE" />
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Wedge-Tailed B - Drops Scourge Drone</text>
+		<event>
+			<text>You power up the machine to max and watch as a rift opens, shaking the ship until suddenly it powers off, and a flashing green light followed by a string of coordinates signifies that it has worked.</text>
+			<item_modify>
+				<item type="fuel" min="-7" max="-7" />
+			</item_modify>
+			<quest event="MV_TRAVELER_AEAT_BOSS_BIRD_CHALLENGE" />
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Bud C - Drops Barrier Generator</text>
+		<event>
+			<text>You power up the machine to max and watch as a rift opens, shaking the ship until suddenly it powers off, and a flashing green light followed by a string of coordinates signifies that it has worked.</text>
+			<item_modify>
+				<item type="fuel" min="-7" max="-7" />
+			</item_modify>
+			<quest event="MV_TRAVELER_AEAT_BOSS_CULT_CHALLENGE" />
+		</event>
+	</choice>
+	<choice>
+		<text>Nevermind, do something else.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+</event>
+<event name="STORAGE_CHECK_AUG_AEA_BOSS_SPAWNER_2">
+	<text>You check what ships are available to be summoned currently. Summoning an MV boss will take 7{.</text>
+	<choice hidden="true">
+		<text>Blasphemy C - Drops the Necromancer Drone</text>
+		<event>
+			<text>You power up the machine to max and watch as a rift opens, shaking the ship until suddenly it powers off, and a flashing green light followed by a string of coordinates signifies that it has worked.</text>
+			<item_modify>
+				<item type="fuel" min="-7" max="-7" />
+			</item_modify>
+			<quest event="MV_TRAVELER_AEAT_BOSS_NECRO_CHALLENGE" />
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Shard-Forged Auto C - Drops 'Naginata' Beam</text>
+		<event>
+			<text>You power up the machine to max and watch as a rift opens, shaking the ship until suddenly it powers off, and a flashing green light followed by a string of coordinates signifies that it has worked.</text>
+			<item_modify>
+				<item type="fuel" min="-7" max="-7" />
+			</item_modify>
+			<quest event="MV_TRAVELER_AEAT_BOSS_SHARD_CHALLENGE" />
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Disorder B - Drops Leviathan Beam</text>
+		<event>
+			<text>You power up the machine to max and watch as a rift opens, shaking the ship until suddenly it powers off, and a flashing green light followed by a string of coordinates signifies that it has worked.</text>
+			<item_modify>
+				<item type="fuel" min="-7" max="-7" />
+			</item_modify>
+			<quest event="MV_TRAVELER_AEAT_BOSS_SHLEG_CHALLENGE" />
+		</event>
+	</choice>
+	<choice>
+		<text>Nevermind, do something else.</text>
+		<event load="STORAGE_CHECK" />
 	</choice>
 </event>
 </FTL>

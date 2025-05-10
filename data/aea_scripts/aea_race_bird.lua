@@ -215,7 +215,6 @@ local bioDrones = mods.aea.bioDrones
 bioDrones["AEA_LASER_BIO_DRONE"] = true
 bioDrones["AEA_LASER_BIO_DRONE_3"] = true
 
-
 script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile, drone)
 	local bioAmount = bioDrones[projectile.extend.name]
 	if bioAmount then
@@ -239,6 +238,67 @@ script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile,
 	end
 	return Defines.Chain.CONTINUE
 end)
+
+mods.aea.bioBeamDrones = {}
+local bioBeamDrones = mods.aea.bioBeamDrones
+bioBeamDrones["AEA_BEAM_BIRD_COMBAT_BOSS"] = true
+bioBeamDrones["AEA_BEAM_BIRD_COMBAT_BOSS_CHAOS"] = true
+
+script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile, drone)
+	local bioAmount = bioBeamDrones[projectile.extend.name]
+	if bioAmount then
+		local random = math.random()
+		if drone.iShipId == 1 and random > 0.66 then return Defines.Chain.CONTINUE end
+		local shipManager = Hyperspace.ships(projectile.destinationSpace)
+		local crewList = shipManager.vCrewList
+		local crewListEnemy = {}
+		local crewListSize = 0
+		for crewmem in vter(crewList) do
+			if not crewmem.intruder then
+				crewListSize = crewListSize + 1
+				table.insert(crewListEnemy, crewmem)
+			end
+		end
+		if crewListSize > 0 then
+			local random = math.random(crewListSize)
+			local crew = crewListEnemy[random]
+			local crewPos = crew:GetLocation()
+			print("TARGET BEAM START:"..crew.type)
+			--drone.beamCurrentTarget = Hyperspace.Pointf(crew.x,crew.y)
+			drone.targetLocation = Hyperspace.Pointf(crewPos.x,crewPos.y)
+			if crewListSize > 1 then
+				table.remove(crewListEnemy, random)
+				local random2 = math.random(crewListSize - 1)
+				local crew2 = crewListEnemy[random2]
+				local crew2Pos = crew2:GetLocation()
+				print("TARGET BEAM FINAL:"..crew2.type)
+				drone.beamFinalTarget = get_point_local_offset(Hyperspace.Pointf(crewPos.x,crewPos.y), Hyperspace.Pointf(crew2Pos.x,crew2Pos.y), 300, 0)
+			else
+				drone.beamFinalTarget = get_point_local_offset(Hyperspace.Pointf(crewPos.x,crewPos.y), shipManager:GetRandomRoomCenter(), 300, 0)
+			end
+		end
+	end
+	return Defines.Chain.CONTINUE
+end)
+
+--[[local i = 0
+script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(ship)
+	local shipManager = Hyperspace.ships(ship.iShipId)
+	for crew in vter(shipManager.vCrewList) do
+		if i == 0 then
+			Graphics.CSurface.GL_DrawCircle(crew.x, crew.y, 9, Graphics.GL_Color(1, 0, 0, 0.5))
+		elseif i == 1 then
+			Graphics.CSurface.GL_DrawCircle(crew:GetLocation().x, crew:GetLocation().y, 9, Graphics.GL_Color(0, 1, 0, 0.5))
+		else
+			Graphics.CSurface.GL_DrawCircle(crew:GetPosition().x, crew:GetPosition().y, 9, Graphics.GL_Color(0, 0, 1, 0.5))
+		end
+	end
+end)
+
+function testi()
+	i = i + 1
+	if i > 2 then i = 0 end
+end]]
 
 
 mods.aea.sweepDrones = {}

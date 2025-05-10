@@ -194,7 +194,8 @@ The Shard-Forged, although known as pirates, are rather well liked by the federa
 <text name="ship_PLAYER_SHIP_AEA_BROADSIDE_2_unlock">Get to Sector 5 with The Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_BROADSIDE_3_unlock">Get to Sector 5 with The Type B or beat the game with The Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_LANIUS_BATTLE_unlock">Coming Soon.</text>
-<text name="ship_PLAYER_SHIP_AEA_JUSTICE_unlock">Coming Soon.</text>
+
+<text name="ship_PLAYER_SHIP_AEA_JUSTICE_unlock">Find and defeat a mysterious traveller in the rebel fleet.</text>
 <text name="ship_PLAYER_SHIP_AEA_JUSTICE_2_unlock">Get to Sector 5 with The Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_AEA_JUSTICE_3_unlock">Get to Sector 5 with The Type B or beat the game with The Type A to unlock this ship.</text>
 

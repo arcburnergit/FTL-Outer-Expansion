@@ -356,6 +356,34 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	end
 end)
 
+local tempDrones = {}
+script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile, drone)
+	if projectile.extend.name == "AEA_LASER_NECRO_COMBAT_BOSS" or projectile.extend.name == "AEA_LASER_NECRO_COMBAT_BOSS_CHAOS" then
+		local droneBlueprint = Hyperspace.Blueprints:GetDroneBlueprint("AEA_COMBAT_NECRO_BOSS_LASER_TEMP")
+		local ship = Hyperspace.ships(1- projectile.currentSpace)
+		local otherShip = Hyperspace.ships(projectile.currentSpace)
+		local drone2 = spawn_temp_drone(
+			droneBlueprint,
+			ship,
+			otherShip,
+			nil,
+			999,
+			drone.currentLocation)
+		userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
+		if projectile.extend.name == "AEA_LASER_NECRO_COMBAT_BOSS" then
+			if not tempDrones[drone.selfId] then
+				tempDrones[drone.selfId] = {}
+			end
+			table.insert(tempDrones[drone.selfId], drone2)
+			if #tempDrones[drone.selfId] > 3  then
+				tempDrones[drone.selfId][1]:BlowUp(true)
+			end
+		end
+		projectile:Kill()
+	end
+	return Defines.Chain.HALT
+end)
+
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
 	if log_events then
 		log("JUMP_ARRIVE 2")
@@ -588,7 +616,7 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
 		for i, crewmem in ipairs(get_ship_crew_point(shipManager, location.x, location.y)) do
 			if not crewmem:IsDrone() and ((not crewmem.extend.deathTimer) or (not crewmem.extend.deathTimer.running)) then
 				local rCrew = crewmem.type
-				if and string.sub(rCrew, string.len(rCrew) - 5, string.len(rCrew)) == "_enemy" then
+				if string.sub(rCrew, string.len(rCrew) - 5, string.len(rCrew)) == "_enemy" then
 					rCrew = string.sub(rCrew, 1, string.len(rCrew) - 6)
 				end
 				local crewShip = Hyperspace.ships(crewmem.currentShipId)

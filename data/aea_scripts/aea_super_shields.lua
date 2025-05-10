@@ -74,6 +74,9 @@ local function aea_super_shields_mouse_move(systemBox, x, y)
 end
 script.on_internal_event(Defines.InternalEvents.SYSTEM_BOX_MOUSE_MOVE, aea_super_shields_mouse_move)
 
+local cooldownValue = 4
+local cooldownString = "20"
+
 local function aea_super_shields_click(systemBox, shift)
     if is_aea_super_shields(systemBox) then
         local activateButton = systemBox.table.activateButton
@@ -85,7 +88,7 @@ local function aea_super_shields_click(systemBox, shift)
                 for i = 1, layersLeft do
                     shipManager.shieldSystem:AddSuperShield(shipManager.shieldSystem.superUpLoc)
                 end
-                aea_super_shields_system:LockSystem(3)
+                aea_super_shields_system:LockSystem(cooldownValue)
             end
         end
     end
@@ -108,7 +111,7 @@ script.on_internal_event(Defines.InternalEvents.SYSTEM_BOX_KEY_DOWN, function(sy
                 for i = 1, layersLeft do
                     shipManager.shieldSystem:AddSuperShield(shipManager.shieldSystem.superUpLoc)
                 end
-                aea_super_shields_system:LockSystem(3)
+                aea_super_shields_system:LockSystem(cooldownValue)
             end
         elseif key == 104 and shift then
             local aea_super_shields_system = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId("aea_super_shields"))
@@ -146,9 +149,9 @@ local function aea_super_shields_render(systemBox, ignoreStatus)
 
         if activateButton.bHover then
             if Hyperspace.metaVariables.aea_super_shields_hotkey_enabled == 0 and not Hyperspace.ships.player:HasSystem(10) then
-                Hyperspace.Mouse.tooltip = "Overclock the Auxiliary Shields system, instantly generate your super shields up to maxmimum, system becomes locked for 15 seconds.\nHotkey:C"
+                Hyperspace.Mouse.tooltip = "Overclock the Auxiliary Shields system, instantly generate your super shields up to maxmimum, system becomes locked for "..cooldownString.." seconds.\nHotkey:C"
             else
-                Hyperspace.Mouse.tooltip = "Overclock the Auxiliary Shields system, instantly generate your super shields up to maxmimum, system becomes locked for 15 seconds.\nHotkey:N/A"
+                Hyperspace.Mouse.tooltip = "Overclock the Auxiliary Shields system, instantly generate your super shields up to maxmimum, system becomes locked for "..cooldownString.." seconds.\nHotkey:N/A"
             end
         end
         Graphics.CSurface.GL_RenderPrimitive(buttonBase)

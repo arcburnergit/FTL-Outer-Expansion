@@ -2140,6 +2140,23 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</choice>
 </event>
 
+<event name="NEBULA_ACIDIC_TEST">
+	<beaconType id="map_icon_aea_acid_nebula" global="false">
+		<color r="138" g="237" b="31" a="1"/>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
+
+	<text>TEST.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
+
+
 <event name="NEBULA_ACIDIC_AEA_ACID_PIRATE" unique="true">
 	<beaconType id="map_icon_aea_acid_nebula" global="false">
 		<color r="138" g="237" b="31" a="1"/>

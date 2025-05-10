@@ -37,12 +37,6 @@
     </mod-append:exclusivityGroup>
 </mod:findLike>
 <mod:findLike type="ships" limit="1">
-	<mod:findName name="MU_BEAM_MASTER_DEFAULT" type="customShip">
-		<mod:findLike type="crew">
-			<mod-append:aea_dark_justicier_enemy room="1" name="Dark Justicier"/>
-		</mod:findLike>
-	</mod:findName>
-	
 	<mod:findLike type="shipIcons">
 		<mod-append:shipIcon>
             <name>icon_aea_acidic_filter</name>
@@ -113,6 +107,16 @@ Every time you deal hull damage to this enemy with your weapons, there is a 25% 
             <name>icon_aea_shard_shield</name>
             <tooltip>Strong Auxiliary Shields:
 This enemy ship is equipped with a strong auxiliary shield generator, It starts out combat with 6 energy shield layers.</tooltip>
+        </mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_barrier_relay</name>
+            <tooltip>Barrier Generator:
+This enemy ship is equipped with a barrier generator which will protect one random room on their ship each time they fire a weapon, maxes out at 6 barriers.</tooltip>
+        </mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_barrier_relay_chaos</name>
+            <tooltip>Chaotic Barrier Generator:
+This enemy ship is equipped with a barrier generator which will protect one random room on their ship each time they fire a weapon.</tooltip>
         </mod-append:shipIcon>
 	</mod:findLike>
 
@@ -3601,6 +3605,590 @@ This enemy ship is equipped with a strong auxiliary shield generator, It starts 
 		</rooms>
 	</mod-append:customShip>
 
+	<mod-append:customShip name="AEAT_BOSS_ACID_NORMAL">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_ACID_CHALLENGE">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_ACID_EXTREME">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_ACID_CHAOS">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_BIRD_NORMAL">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_BIRD_CHALLENGE">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_BIRD_EXTREME">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_BIRD_CHAOS">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_CULT_NORMAL">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_CULT_CHALLENGE">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_CULT_EXTREME">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_CULT_CHAOS">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_NECRO_NORMAL">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_NECRO_CHALLENGE">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_NECRO_EXTREME">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_NECRO_CHAOS">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_SHARD_NORMAL">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_SHARD_CHALLENGE">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_SHARD_EXTREME">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_SHARD_CHAOS">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_SHLEG_NORMAL">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_SHLEG_CHALLENGE">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_SHLEG_EXTREME">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEAT_BOSS_SHLEG_CHAOS">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+		</shipIcons>
+		<noFuelStalemate />
+		<rooms>
+			<room id="0">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="1">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="3">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="5">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="10">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="13">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="0">
+					<anim animType="default">aea_invisible</anim>
+					<tileAnim>aea_shleg_gas_tile</tileAnim>  
+				</roomAnim>
+			</room>
+		</rooms>
+	</mod-append:customShip>
 </mod:findLike>
 
 <mod:findLike type="crew" limit="1">
@@ -6245,6 +6833,12 @@ Right click to attempt the ritual or cancel.
 
 
 <augments>
+	<aug name="AEA_BARRIER_RELAY">
+		<icon>icon_aea_barrier_relay</icon>
+	</aug>
+	<aug name="AEA_BARRIER_RELAY_CHAOS">
+		<icon>icon_aea_barrier_relay_chaos</icon>
+	</aug>
 	<aug name="EX_AEA_LAB_CRYSTAL_SABOTAGE">
     	<statBoosts>
 			<statBoost name="moveSpeedMultiplier">
@@ -7800,6 +8394,36 @@ Right click to attempt the ritual or cancel.
 	<bossShip>AEA_SHARD_AUTO</bossShip>
 
 	<bossShip>AEA_JUSTICE_CRUISER</bossShip>
+
+	<bossShip>AEAT_BOSS_ACID_NORMAL</bossShip>
+	<bossShip>AEAT_BOSS_ACID_CHALLENGE</bossShip>
+	<bossShip>AEAT_BOSS_ACID_EXTREME</bossShip>
+	<bossShip>AEAT_BOSS_ACID_CHAOS</bossShip>
+
+	<bossShip>AEAT_BOSS_BIRD_NORMAL</bossShip>
+	<bossShip>AEAT_BOSS_BIRD_CHALLENGE</bossShip>
+	<bossShip>AEAT_BOSS_BIRD_EXTREME</bossShip>
+	<bossShip>AEAT_BOSS_BIRD_CHAOS</bossShip>
+	
+	<bossShip>AEAT_BOSS_CULT_NORMAL</bossShip>
+	<bossShip>AEAT_BOSS_CULT_CHALLENGE</bossShip>
+	<bossShip>AEAT_BOSS_CULT_EXTREME</bossShip>
+	<bossShip>AEAT_BOSS_CULT_CHAOS</bossShip>
+	
+	<bossShip>AEAT_BOSS_NECRO_NORMAL</bossShip>
+	<bossShip>AEAT_BOSS_NECRO_CHALLENGE</bossShip>
+	<bossShip>AEAT_BOSS_NECRO_EXTREME</bossShip>
+	<bossShip>AEAT_BOSS_NECRO_CHAOS</bossShip>
+	
+	<bossShip>AEAT_BOSS_SHARD_NORMAL</bossShip>
+	<bossShip>AEAT_BOSS_SHARD_CHALLENGE</bossShip>
+	<bossShip>AEAT_BOSS_SHARD_EXTREME</bossShip>
+	<bossShip>AEAT_BOSS_SHARD_CHAOS</bossShip>
+	
+	<bossShip>AEAT_BOSS_SHLEG_NORMAL</bossShip>
+	<bossShip>AEAT_BOSS_SHLEG_CHALLENGE</bossShip>
+	<bossShip>AEAT_BOSS_SHLEG_EXTREME</bossShip>
+	<bossShip>AEAT_BOSS_SHLEG_CHAOS</bossShip>
 </events>
 
 <mod:findLike type="victories"> <!-- adds the victory marker for lylmik ending -->
@@ -8507,7 +9131,7 @@ Right click to attempt the ritual or cancel.
 	</mod-append:surgeBarrage>
 </mod:findLike>
 
-<mod:findLike type="achievements">
+<mod:findLike type="achievements" limit="1">
 	<mod:findLike type="page" start="2" limit="1">
 		<mod:findLike type="section" limit="1">
 			<mod-append:achievement name="ACH_TRANS_AEA_ACID">
@@ -8573,6 +9197,44 @@ Right click to attempt the ritual or cancel.
 				<header>Grant Received</header>
 				<icon>ach_boon_aea_super_shields</icon>
 				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+		</section>
+		<section text="Renegade Cruisers (OE)" hidden="false">
+			<achievement name="ACH_AEA_REN_ACID">
+				<name>Professionals Have Standards</name>
+				<description>Defeat the Acidic Destroyer B Renegade and get the Acid Splasher.</description>
+				<icon>renegade_clan_b</icon>
+				<header>Renegade Defeated</header>
+			</achievement>
+			<achievement name="ACH_AEA_REN_BIRD">
+				<name>Professionals Have Standards</name>
+				<description>Defeat the Wedge-Tailed B Renegade and get the Scourge Drone.</description>
+				<icon>renegade_clan_b</icon>
+				<header>Renegade Defeated</header>
+			</achievement>
+			<achievement name="ACH_AEA_REN_CULT">
+				<name>Professionals Have Standards</name>
+				<description>Defeat the Bud C Renegade and get the Barrier Generator.</description>
+				<icon>renegade_clan_b</icon>
+				<header>Renegade Defeated</header>
+			</achievement>
+			<achievement name="ACH_AEA_REN_NECRO">
+				<name>Professionals Have Standards</name>
+				<description>Defeat the Blasphemy C Renegade and get the Necromancer Drone.</description>
+				<icon>renegade_clan_b</icon>
+				<header>Renegade Defeated</header>
+			</achievement>
+			<achievement name="ACH_AEA_REN_SHARD">
+				<name>Professionals Have Standards</name>
+				<description>Defeat the Shard-Forged Auto C Renegade and get the 'Naginata' beam.</description>
+				<icon>renegade_clan_b</icon>
+				<header>Renegade Defeated</header>
+			</achievement>
+			<achievement name="ACH_AEA_REN_SHLEG">
+				<name>Professionals Have Standards</name>
+				<description>Defeat the Disorder B Renegade and get the Leviathan Beam.</description>
+				<icon>renegade_clan_b</icon>
+				<header>Renegade Defeated</header>
 			</achievement>
 		</section>
 	</mod-append:page>

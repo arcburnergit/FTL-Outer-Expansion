@@ -160,7 +160,7 @@ local spawn_temp_drone = mods.multiverse.spawn_temp_drone
 local node_child_iter = mods.multiverse.node_child_iter
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
-	if projectile.extend.name == "ARTILLERY_SHARD_AUTO" and beamHitType == Defines.BeamHit.NEW_ROOM then
+	if (projectile.extend.name == "ARTILLERY_SHARD_AUTO" or projectile.extend.name == "AEA_CRYSTAL_SHARD_BOSS" or projectile.extend.name == "AEA_CRYSTAL_SHARD_BOSS_CHAOS") and beamHitType == Defines.BeamHit.NEW_ROOM then
 		shipManager.ship:LockdownRoom(get_room_at_location(shipManager, location, true), location)		
 	end
 	return Defines.Chain.CONTINUE, beamHitType

@@ -442,6 +442,7 @@
 
 </FTL>
 
+<!--Armour-->
 <FTL>
 
 <animSheet name="aea_resist_shield_ui" w="35" h="35" fw="35" fh="35">effects/aea_resist_shield_ui.png</animSheet>
@@ -580,6 +581,7 @@
 
 </FTL>
 
+<!--Acid crew old-->
 <FTL>
 
 <!-- 
@@ -954,6 +956,7 @@
 <-->
 </FTL>
 
+<!--spells-->
 <FTL>
 	
 <animSheet name="aea_spell_01" w="32" h="32" fw="32" fh="32">aea_spells/spell_01.png</animSheet>
@@ -1062,6 +1065,7 @@
 </anim>
 </FTL>
 
+<!--All crew-->
 <FTL>
 <!--
 *********************************************************************************************************
@@ -4009,6 +4013,7 @@
 
 </FTL>
 
+<!--Shleg-->
 <FTL>
 
 <animSheet name="aea_shleg_gas_tile" w="35" h="35" fw="35" fh="35">effects/aea_shleg_gas_tile.png</animSheet>
@@ -4605,6 +4610,7 @@
 
 </FTL>
 
+<!--Shard crew-->
 <FTL>
 <!-- 
 *********************************************************************************************************
@@ -4992,6 +4998,7 @@
 </anim>
 </FTL>
 
+<!--Shard+broadside-->
 <FTL>
 	
 <animSheet name="aea_crystal_spike" w="35" h="35" fw="35" fh="35">effects/aea_crystal_spike.png</animSheet>
@@ -5280,4 +5287,68 @@
 	<time>1</time>
 </anim>
 
+</FTL>
+
+<!--Renegades-->
+<FTL>
+<animSheet name="aea_laser_acid_boss" w="324" h="86" fw="36" fh="86">weapon_acid/aea_laser_acid_boss.png</animSheet>
+<weaponAnim name="aea_laser_acid_boss">
+	<sheet>aea_laser_acid_boss</sheet>
+	<desc length="9" x="0" y="0" />
+	<chargedFrame>4</chargedFrame>
+	<fireFrame>7</fireFrame>
+	<firePoint x="27" y="14" />
+	<mountPoint x="3" y="55" />
+</weaponAnim>
+<animSheet name="aea_laser_acid_boss_chaos" w="324" h="86" fw="36" fh="86">weapon_acid/aea_laser_acid_boss_chaos.png</animSheet>
+<weaponAnim name="aea_laser_acid_boss_chaos">
+	<sheet>aea_laser_acid_boss_chaos</sheet>
+	<desc length="9" x="0" y="0" />
+	<chargedFrame>4</chargedFrame>
+	<fireFrame>7</fireFrame>
+	<firePoint x="27" y="14" />
+	<mountPoint x="3" y="55" />
+</weaponAnim>
+
+<animSheet name="aea_crystal_shard_boss" w="287" h="74" fw="41" fh="74">weapon_shard/aea_crystal_shard_boss.png</animSheet>
+<weaponAnim name="aea_crystal_shard_boss">
+	<sheet>aea_crystal_shard_boss</sheet>
+	<desc length="7" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>6</fireFrame>
+	<firePoint x="21" y="32" />
+	<mountPoint x="7" y="45" />
+	<chargeImage>weapon_shard/aea_crystal_shard_boss_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_crystal_shard_boss_chaos" w="287" h="74" fw="41" fh="74">weapon_shard/aea_crystal_shard_boss_chaos.png</animSheet>
+<weaponAnim name="aea_crystal_shard_boss_chaos">
+	<sheet>aea_crystal_shard_boss_chaos</sheet>
+	<desc length="7" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>6</fireFrame>
+	<firePoint x="21" y="32" />
+	<mountPoint x="7" y="45" />
+	<chargeImage>weapon_shard/aea_crystal_shard_boss_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="aea_beam_shleg_boss" w="441" h="97" fw="49" fh="97">weapon_shleg/aea_beam_shleg_boss.png</animSheet>
+<weaponAnim name="aea_beam_shleg_boss">
+	<sheet>aea_beam_shleg_boss</sheet>
+	<desc length="9" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="26" y="34" />
+	<mountPoint x="4" y="69" />
+	<chargeImage>weapon_shleg/aea_beam_shleg_boss_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_beam_shleg_boss_chaos" w="441" h="97" fw="49" fh="97">weapon_shleg/aea_beam_shleg_boss_chaos.png</animSheet>
+<weaponAnim name="aea_beam_shleg_boss_chaos">
+	<sheet>aea_beam_shleg_boss_chaos</sheet>
+	<desc length="9" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="26" y="34" />
+	<mountPoint x="4" y="69" />
+	<chargeImage>weapon_shleg/aea_beam_shleg_boss_glow.png</chargeImage>
+</weaponAnim>
 </FTL>

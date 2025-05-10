@@ -884,9 +884,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<erosionChance>10</erosionChance>
 	<erosion>
 		<speed>0.4</speed>
-		<maxSpeed>0.8</maxSpeed>
+		<maxSpeed>1.2</maxSpeed>
 		<time>10.0</time>
-		<maxTime>20.0</maxTime>
+		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>0.75</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
 		<roomAnim renderLayer="1">                                                    
@@ -938,9 +938,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<erosionChance>10</erosionChance>
 	<erosion>
 		<speed>0.4</speed>
-		<maxSpeed>0.8</maxSpeed>
+		<maxSpeed>1.2</maxSpeed>
 		<time>10.0</time>
-		<maxTime>20.0</maxTime>
+		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>0.75</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
 		<roomAnim renderLayer="1">                                                    
@@ -992,9 +992,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<erosionChance>10</erosionChance>
 	<erosion>
 		<speed>0.4</speed>
-		<maxSpeed>0.8</maxSpeed>
+		<maxSpeed>1.2</maxSpeed>
 		<time>10.0</time>
-		<maxTime>20.0</maxTime>
+		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>0.75</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
 		<roomAnim renderLayer="1">                                                    
@@ -1046,9 +1046,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<erosionChance>10</erosionChance>
 	<erosion>
 		<speed>0.4</speed>
-		<maxSpeed>0.8</maxSpeed>
+		<maxSpeed>1.2</maxSpeed>
 		<time>10.0</time>
-		<maxTime>20.0</maxTime>
+		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>0.75</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
 		<roomAnim renderLayer="1">                                                    
@@ -1169,9 +1169,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<erosionChance>10</erosionChance>
 	<erosion>
 		<speed>0.4</speed>
-		<maxSpeed>0.8</maxSpeed>
+		<maxSpeed>1.2</maxSpeed>
 		<time>10.0</time>
-		<maxTime>20.0</maxTime>
+		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>0.75</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
 		<roomAnim renderLayer="1">                                                    
@@ -1331,9 +1331,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<erosionChance>10</erosionChance>
 	<erosion>
 		<speed>0.4</speed>
-		<maxSpeed>0.8</maxSpeed>
+		<maxSpeed>1.2</maxSpeed>
 		<time>10.0</time>
-		<maxTime>20.0</maxTime>
+		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
 		<roomAnim renderLayer="1">                                                    
@@ -1385,9 +1385,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<erosionChance>10</erosionChance>
 	<erosion>
 		<speed>0.4</speed>
-		<maxSpeed>0.8</maxSpeed>
+		<maxSpeed>1.2</maxSpeed>
 		<time>10.0</time>
-		<maxTime>20.0</maxTime>
+		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
 		<roomAnim renderLayer="1">                                                    
@@ -1439,9 +1439,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<erosionChance>10</erosionChance>
 	<erosion>
 		<speed>0.4</speed>
-		<maxSpeed>0.8</maxSpeed>
+		<maxSpeed>1.2</maxSpeed>
 		<time>10.0</time>
-		<maxTime>20.0</maxTime>
+		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
 		<roomAnim renderLayer="1">                                                    
@@ -1491,9 +1491,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<erosionChance>10</erosionChance>
 	<erosion>
 		<speed>0.4</speed>
-		<maxSpeed>0.8</maxSpeed>
+		<maxSpeed>1.2</maxSpeed>
 		<time>10.0</time>
-		<maxTime>20.0</maxTime>
+		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
 		<roomAnim renderLayer="1">                                                    
@@ -4101,9 +4101,9 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<erosionChance>10</erosionChance>
 	<erosion>
 		<speed>0.4</speed>
-		<maxSpeed>0.8</maxSpeed>
+		<maxSpeed>1.2</maxSpeed>
 		<time>10.0</time>
-		<maxTime>20.0</maxTime>
+		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>
 		<erodeShields>true</erodeShields>
 		<roomAnim renderLayer="1">                                                    
@@ -9322,13 +9322,6 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
     <mv-mapImage>map_icon_mup_cultivator_a</mv-mapImage>
 </shipBlueprint>
 
-<augBlueprint name="AEA_BARRIER_RELAY"> <!-- Inspired by void war-->
-	<title>Barrier Generator</title>
-	<desc>Generates a barrier each time you fire a weapon, can generate up to a maximum of 8 active barriers.</desc>
-	<cost>56</cost>
-	<rarity>0</rarity>
-	<stackable>false</stackable>
-</augBlueprint>
 <augBlueprint name="AEA_CULT_MAGIC_BOOST">
 	<title>MAGIC JUMP</title>
 	<desc>   </desc>
@@ -13092,7 +13085,7 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 <shipBlueprint name="PLAYER_SHIP_AEA_JUSTICE" layout="aeap_justice_a" img="aeap_justice_a">
 	<class>Justicier Cruiser</class>
 	<name>The Dark Prince</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>A powerful vessel belonging to a powerful vassal of a strange dark god. Perform blood rituals to empower ship and crew alike.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_JUSTICE_unlock" />
 	<systemList>
 		<aea_clone_crime max="4" power="2" room="7" start="true">
@@ -13543,6 +13536,8 @@ Inherited cloning stats: 0.75x HP</desc>
 </weaponBlueprint>
 
 </FTL>
+
+<FTL>
 <weaponBlueprint name="AEA_MINE_PROJ_BASE">
 	<type>MISSILE</type>
 	<tip>tip_mine</tip>
@@ -13611,6 +13606,604 @@ Inherited cloning stats: 0.75x HP</desc>
 	</launchSounds>
 	<weaponArt>minelauncher_1</weaponArt>
 	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+</FTL>
+
+<!--Renegades-->
+<FTL>
+<weaponBlueprint name="AEA_LASER_ACID_BOSS">
+	<type>BURST</type>
+	<drone_targetable>0</drone_targetable>
+	<flavorType>Acid Laser</flavorType>
+	<title>Acid Splasher</title>
+	<short>Splasher</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact. The impact of this weapon splashes nearby rooms applying erosion to them aswell.</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<shots>3</shots>
+	<radius>55</radius>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>1.2</maxSpeed>
+		<time>10.0</time>
+		<maxTime>30.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>17</cooldown>
+	<power>2</power>
+	<cost>100</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<projectiles>
+		<projectile count="1" fake="false">ase_proj_acid_big</projectile>
+	</projectiles>
+	<launchSounds>
+		<sound>ancient_laser</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_boss</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_LASER_ACID_BOSS_PROJ">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Acid Splasher</title>
+	<short>Acid Splasher</short>
+	<tip>tip_laser</tip>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>0</damage>
+	<shots>1</shots>
+	<speed>20</speed>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>1.2</maxSpeed>
+		<time>10.0</time>
+		<maxTime>30.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>90</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_big</image>
+	<launchSounds>
+		<sound>ancient_laser</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_boss</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_LASER_ACID_BOSS_CHAOS">
+	<type>BURST</type>
+	<drone_targetable>0</drone_targetable>
+	<flavorType>Acid Laser</flavorType>
+	<title>Chaotic Acid Splasher</title>
+	<short>Splasher™</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact. The impact of this weapon splashes nearby rooms applying erosion to them aswell.
+Chaotic variant does 1 splash damage on top of the erosion damage to adjacent rooms.</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<shots>3</shots>
+	<radius>55</radius>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>1.2</maxSpeed>
+		<time>10.0</time>
+		<maxTime>30.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>17</cooldown>
+	<power>2</power>
+	<cost>100</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<projectiles>
+		<projectile count="1" fake="false">ase_proj_acid_big</projectile>
+	</projectiles>
+	<launchSounds>
+		<sound>ancient_laser</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_boss_chaos</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_LASER_ACID_BOSS_CHAOS_PROJ">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Acid Splasher</title>
+	<short>Acid Splasher</short>
+	<tip>tip_laser</tip>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<shots>1</shots>
+	<speed>20</speed>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>0.4</speed>
+		<maxSpeed>1.2</maxSpeed>
+		<time>10.0</time>
+		<maxTime>30.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="1">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>90</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_big</image>
+	<launchSounds>
+		<sound>ancient_laser</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_boss</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_CRYSTAL_SHARD_BOSS">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>'Naginata' Beam</title>
+	<short>'Naginata'</short>
+	<desc>A strong beam capable of locking down enemy rooms on hit.</desc>
+	<tooltip>.</tooltip>
+	<damage>1</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>17</cooldown>
+	<color>
+		<r>133</r>
+		<g>231</g>
+		<b>237</b>
+	</color>
+	<power>2</power>
+	<cost>100</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<length>80</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_crystal_shard_boss</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_CRYSTAL_SHARD_BOSS_CHAOS">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>Chaotic 'Naginata' Beam</title>
+	<short>'Naginata'™</short>
+	<desc>A strong beam capable of locking down enemy rooms on hit.
+Chaotic variant damages crew trapped inside of the lockdown at 4hp/s and pierces 2 extra shield layers.</desc>
+	<tooltip>.</tooltip>
+	<damage>1</damage>
+	<sp>3</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>17</cooldown>
+	<color>
+		<r>133</r>
+		<g>231</g>
+		<b>237</b>
+	</color>
+	<roomStatBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-4</amount>
+			<shipTarget>CURRENT_ROOM</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<priority>999</priority>
+			<maxStacks id="aea_shard_floor">1</maxStacks>
+			<roomAnim renderLayer="0">
+				<anim animType="default">aea_invisible</anim>
+				<tileAnim>aea_crystal_spike</tileAnim>
+			</roomAnim>
+		</statBoost>
+	</roomStatBoosts>
+	<power>2</power>
+	<cost>100</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<length>80</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_crystal_shard_boss_chaos</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<augBlueprint name="AEA_BARRIER_RELAY"> <!-- Inspired by void war-->
+	<title>Barrier Generator</title>
+	<desc>Generates a barrier each time you fire a weapon, can generate up to a maximum of 6 active barriers.</desc>
+	<cost>100</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="AEA_BARRIER_RELAY_CHAOS">
+	<title>Chaotic Barrier Generator</title>
+	<desc>Generates a barrier each time you fire a weapon, can generate up to a maximum of 6 active barriers.
+Chaotic variant does not max out.</desc>
+	<cost>100</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
+<droneBlueprint name="AEA_COMBAT_NECRO_BOSS_LASER_TEMP">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Technomancy Drone Mk. I [Laser]</title>
+	<short>Techno I [L]</short>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<power>2</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>10</speed>
+	<cost>60</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_necro_comtemp_l</droneImage>
+	<weaponBlueprint>AEA_LASER_NECRO_COMBAT</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<weaponBlueprint name="AEA_LASER_NECRO_COMBAT_BOSS">
+	<type>LASER</type>
+	<title>Drone Laser</title>
+	<damage>0</damage>
+	<shots>1</shots>
+	<fireChance>1</fireChance>
+	<breachChance>0</breachChance>
+	<rarity>0</rarity>
+	<image>laser_light</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_burst_1</weaponArt>
+</weaponBlueprint>
+<droneBlueprint name="AEA_COMBAT_NECRO_BOSS">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Technomancer Drone</title>
+	<short>Technomancer</short>
+	<desc>A powerful drone which constantly spawns new drones, maxes out at 3 drones.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>10</speed>
+	<cost>100</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_necro_boss</droneImage>
+	<weaponBlueprint>AEA_LASER_NECRO_COMBAT_BOSS</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<weaponBlueprint name="AEA_LASER_NECRO_COMBAT_BOSS_CHAOS">
+	<type>LASER</type>
+	<title>Drone Laser</title>
+	<damage>0</damage>
+	<shots>1</shots>
+	<fireChance>1</fireChance>
+	<breachChance>0</breachChance>
+	<rarity>0</rarity>
+	<image>laser_light</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_burst_1</weaponArt>
+</weaponBlueprint>
+<droneBlueprint name="AEA_COMBAT_NECRO_BOSS_CHAOS">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Chaotic Technomancer Drone</title>
+	<short>Technomancer™</short>
+	<desc>A powerful drone which constantly spawns new drones, maxes out at 3 drones.
+Chaotic variant doesn't max out.</desc>
+	<power>3</power>
+	<cooldown>1000</cooldown>
+	<dodge>0</dodge>
+	<speed>10</speed>
+	<cost>100</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_necro_boss_chaos</droneImage>
+	<weaponBlueprint>AEA_LASER_NECRO_COMBAT_BOSS_CHAOS</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+<weaponBlueprint name="AEA_BEAM_BIRD_COMBAT_BOSS">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>Drone Beam</title>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>1</persDamage>
+	<sp>0</sp>
+	<fireChance>1</fireChance>
+	<breachChance>0</breachChance>
+	<statBoosts>
+		<statBoost name="deathEffect" load="AEA_BIO_DRONE_DEATHEFF" />
+	</statBoosts>
+	<speed>30</speed>
+	<rarity>0</rarity>
+	<image>beam_contact</image>
+	<length>300</length>
+	<launchSounds>
+		<sound>beam1</sound>
+		<sound>beam1_2</sound>
+	</launchSounds>
+	<weaponArt>beam_1</weaponArt>
+</weaponBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_BOSS">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Scourge Drone</title>
+	<short>Scourge</short>
+	<desc>A drone that specifically targets enemy crewmembers. Beam does 15 personal damage and inflicts enemy crew with a death effect that does 2 system damage and creates a fire, lasts for 20 seconds.</desc>
+	<power>2</power>
+	<cooldown>100</cooldown>
+	<dodge>0</dodge>
+	<speed>80</speed>
+	<cost>100</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_boss</droneImage>
+	<weaponBlueprint>AEA_BEAM_BIRD_COMBAT_BOSS</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+<weaponBlueprint name="AEA_BEAM_BIRD_COMBAT_BOSS_CHAOS">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>Drone Beam</title>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>1</persDamage>
+	<sp>16</sp>
+	<fireChance>1</fireChance>
+	<breachChance>0</breachChance>
+	<statBoosts>
+		<statBoost name="deathEffect" load="AEA_BIO_DRONE_DEATHEFF" />
+	</statBoosts>
+	<speed>30</speed>
+	<rarity>0</rarity>
+	<image>beam_contact</image>
+	<length>300</length>
+	<launchSounds>
+		<sound>beam1</sound>
+		<sound>beam1_2</sound>
+	</launchSounds>
+	<weaponArt>beam_1</weaponArt>
+</weaponBlueprint>
+<droneBlueprint name="AEA_COMBAT_BIRD_BOSS_CHAOS">
+	<type>COMBAT</type>
+	<tip>tip_toggle_combat</tip>
+	<title>Chaotic Scourge Drone</title>
+	<short>Scourge™</short>
+	<desc>A drone that specifically targets enemy crewmembers. Beam does 15 personal damage and inflicts enemy crew with a death effect that does 2 system damage and creates a fire, lasts for 20 seconds.
+Chaotic variant has full shield pierce.</desc>
+	<power>2</power>
+	<cooldown>100</cooldown>
+	<dodge>0</dodge>
+	<speed>80</speed>
+	<cost>100</cost>
+	<bp>3</bp>
+	<droneImage>drone_aea_bird_boss_chaos</droneImage>
+	<weaponBlueprint>AEA_BEAM_BIRD_COMBAT_BOSS_CHAOS</weaponBlueprint>
+	<rarity>0</rarity>
+	<iconImage>combat</iconImage>
+</droneBlueprint>
+
+
+<weaponBlueprint name="AEA_BEAM_SHLEG_BOSS">
+	<type>BEAM</type>
+	<tip>tip_aea_shleg</tip>
+	<title>Leviathan Beam</title>
+	<short>Leviathan</short>
+	<desc>Developed by an unknown anarchist shell scientist, this beam fires a concentrated beam of Inculcation gas that does 3hp/s and builds up mind control on enemy crew.</desc>
+	<tooltip>.</tooltip>
+	<damage>2</damage>
+	<persDamage>-1</persDamage>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>18</cooldown>
+	<roomStatBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-3</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<duration>30</duration>
+			<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
+			<priority>999</priority>
+			<blackList load="LIST_CREW_GAS" />
+			<roomAnim renderLayer="0">
+				<anim animType="default">aea_invisible</anim>
+				<tileAnim>aea_shleg_gas_tile</tileAnim>
+			</roomAnim>
+		</statBoost>
+    </roomStatBoosts>
+	<power>3</power>
+	<cost>100</cost>
+	<bp>7</bp>
+	<color>
+		<r>170</r>
+		<g>205</g>
+		<b>40</b>
+	</color>
+	<rarity>0</rarity>
+	<length>80</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_beam_shleg_boss</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_BEAM_SHLEG_BOSS_CHAOS">
+	<type>BEAM</type>
+	<tip>tip_aea_shleg</tip>
+	<title>Chaotic Leviathan Beam</title>
+	<short>Leviathan™</short>
+	<desc>Developed by an unknown anarchist shell scientist, this beam fires a concentrated beam of Inculcation gas that does 3hp/s and builds up mind control on enemy crew.
+Chaotic variant builds up status effect twice as fast and does twice as much damage to crew.</desc>
+	<tooltip>.</tooltip>
+	<damage>2</damage>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>18</cooldown>
+	<roomStatBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-6</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<duration>30</duration>
+			<maxStacks id="aea_shleg_mind_gas">1</maxStacks>
+			<priority>1000</priority>
+			<blackList load="LIST_CREW_GAS" />
+			<roomAnim renderLayer="0">
+				<anim animType="default">aea_invisible</anim>
+				<tileAnim>aea_shleg_gas_extreme_tile</tileAnim>
+			</roomAnim>
+		</statBoost>
+    </roomStatBoosts>
+	<power>3</power>
+	<cost>100</cost>
+	<bp>7</bp>
+	<color>
+		<r>170</r>
+		<g>205</g>
+		<b>40</b>
+	</color>
+	<rarity>0</rarity>
+	<length>80</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_beam_shleg_boss_chaos</weaponArt>
+	<iconImage>beam</iconImage>
 </weaponBlueprint>
 
 </FTL>

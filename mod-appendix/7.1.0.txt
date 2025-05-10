@@ -1,13 +1,15 @@
 # Balance Changes
 - Introduced a roaming boss in the rebel fleet in sector 4 followed by one in sector 6 if sector 4's is defeated.
 - Introduced new secret crew with very in depth mechanics.
+- Introduced a new renegade for each race.
+- Added blue option to drive hacker that allows you to summon specifically Outer Expansion renegades.
 - Introduced new system only available from secret crew.
-- Added Blue option to Anarchist Unique Crew event to aquire both crew by having high rep and losing one of your Anarchists.
-- Reduced cooldown on Aux Shields overclocking from 25 to 15 seconds.
+- Added Blue option to Anarchist Unique Crew event to acquire both crew by having high rep and losing one of your Anarchists.
+- Reduced cooldown on Aux Shields overclocking from 25 to 20 seconds.
 
 # Bug Fixes
 - Anarchist slug cruiser cloak images for A and B slot.
 - Typo and other text improvements by Reale-ly.
 
 # Misc Changes
-- Split main lua file into seperate lua files for each race.
+- Split main lua file into separate lua files for each race.
