@@ -15,10 +15,24 @@
             </choice>
         </event>
     </mod-append:choice>
+    <mod-append:choice req="aea_clone_crime" lvl="3" blue="false">
+        <text>Present your Illegally Modified Clonebay system.</text>
+        <event>
+			<text>"What have you done to your clonebay - that is ap-p-p-palling! You - you should be facing a jury, your vessel is ...a crime!.. against the galaxy! Your sh-ship should be [destroyed], however I will still give you the Grant of an Ill-Illegally Modified Clonebay! Grant of Illegally Modified Clonebay! Save it - for the future!"</text>
+            <achievement>ACH_BOON_AEA_SUPER_SHIELDS</achievement>
+            <metaVariable name="prof_r_boon_aea_clone_crime" op="set" val="1"/>
+            <variable name="ach_boon_aea_clone_crime" op="set" val="1"/>
+            <choice hidden="true">
+                <text>Continue...</text>
+                <event load="THE_JUDGES_ENGI_ADVICE"/>
+            </choice>
+        </event>
+    </mod-append:choice>
 </mod:findName>
 
 <mod:findName type="event" name="THE_JUDGES_VARIABLE_CLEAR">
     <mod-append:metaVariable name="prof_r_boon_aea_super_shields" op="set" val="0" />
+    <mod-append:metaVariable name="prof_r_boon_aea_clone_crime" op="set" val="0" />
 </mod:findName>
 
 </FTL> 

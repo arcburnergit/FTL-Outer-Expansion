@@ -85,6 +85,19 @@
 	</mod:findLike>
 </mod:findName>
 
+<mod:findName type="sectorDescription" name="SECRET_SYLVAN">
+	<mod:findLike type="rarityList">
+    	<mod-append:blueprint name="AEA_LASER_ACID_BOSS" rarity="2" />
+    	<mod-append:blueprint name="AEA_CRYSTAL_SHARD_BOSS" rarity="3" />
+    	<mod-append:blueprint name="AEA_BEAM_SHLEG_BOSS" rarity="2" />
+
+    	<mod-append:blueprint name="AEA_COMBAT_NECRO_BOSS" rarity="3" />
+    	<mod-append:blueprint name="AEA_COMBAT_BIRD_BOSS" rarity="2" />
+
+    	<mod-append:blueprint name="AEA_BARRIER_RELAY" rarity="3" />
+	</mod:findLike>
+</mod:findName>
+
 <mod:findName type="sectorDescription" name="FINAL">
 	<mod-append:priorityEvent name="AEA_OLD_GATE" min="1" max="1" priority="1"/>
 	<!--mod-append:priorityEvent name="AEA_ENEMY_BROADSIDE_EVENT" min="0" max="1" priority="1"/-->	
@@ -1578,6 +1591,15 @@ ROYAL OBELISK SECTOR
 		<blueprint name="SLOTGUN" rarity="5" />
 		<blueprint name="SHOTGUN_TOGGLE_FIRE" rarity="4" />
 		<blueprint name="SHELL_LAUNCHER" rarity="4" />
+
+    	<blueprint name="AEA_LASER_ACID_BOSS" rarity="2" />
+    	<blueprint name="AEA_CRYSTAL_SHARD_BOSS" rarity="3" />
+    	<blueprint name="AEA_BEAM_SHLEG_BOSS" rarity="2" />
+
+    	<blueprint name="AEA_COMBAT_NECRO_BOSS" rarity="3" />
+    	<blueprint name="AEA_COMBAT_BIRD_BOSS" rarity="2" />
+
+    	<blueprint name="AEA_BARRIER_RELAY" rarity="3" />
 
 		<!--no elite crystals/kernels/spores to avoid clutter-->
 		<blueprint name="LOOT_UNION_1" rarity="4" />

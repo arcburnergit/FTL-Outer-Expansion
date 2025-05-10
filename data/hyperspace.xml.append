@@ -7538,6 +7538,8 @@ Right click to attempt the ritual or cancel.
 	<variable name="aea_shard_quest_crewkill" op="set" val="0" />
 
 	<variable name="aea_justice_test" op="set" val="1"/>
+	<variable name="prof_r_boon_aea_clone_crime" op="set" val="0" />
+	<variable name="ach_boon_aea_clone_crime" op="set" val="0" />
 
 	<variable name="aea_justice_battleship" op="set" val="0"/>
 	<variable name="aea_justice_battleship_found" op="set" val="0"/>
@@ -9134,49 +9136,53 @@ Right click to attempt the ritual or cancel.
 <mod:findLike type="achievements" limit="1">
 	<mod:findLike type="page" start="2" limit="1">
 		<mod:findLike type="section" limit="1">
-			<mod-append:achievement name="ACH_TRANS_AEA_ACID">
+		</mod:findLike>
+	</mod:findLike>
+	<mod-append:page>
+		<section text="Loot Transports (OE)" hidden="false">
+			<achievement name="ACH_TRANS_AEA_ACID">
 				<name>Acidic Transport</name>
 				<secretDescription>Obtain the loot from the Acidic loot transport.</secretDescription>
 				<description>Obtain the Acidic Barrage from the Acidic loot transport.</description>
 				<icon>ach_trans_aea_acid</icon>
 				<header>Loot Acquired</header>
-			</mod-append:achievement>
-			<mod-append:achievement name="ACH_TRANS_AEA_NECRO">
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_NECRO">
 				<name>Heretic Transport</name>
 				<secretDescription>Obtain the loot from the Heretic loot transport.</secretDescription>
 				<description>Obtain the Shatter Laser II from the Heretic loot transport.</description>
 				<icon>ach_trans_aea_necro</icon>
 				<header>Loot Acquired</header>
-			</mod-append:achievement>
-			<mod-append:achievement name="ACH_TRANS_AEA_CULT">
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_CULT">
 				<name>Vampweed Cultist Transport</name>
 				<secretDescription>Obtain the loot from the Vampweed Cultist loot transport.</secretDescription>
 				<description>Obtain the Spellspore from the Vampweed Cultist loot transport.</description>
 				<icon>ach_trans_aea_cult</icon>
 				<header>Loot Acquired</header>
-			</mod-append:achievement>
-			<mod-append:achievement name="ACH_TRANS_AEA_BIRD">
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_BIRD">
 				<name>Gi Transport</name>
 				<secretDescription>Obtain the loot from the Gi loot transport.</secretDescription>
 				<description>Obtain the Twin Drone from the Gi loot transport.</description>
 				<icon>ach_trans_aea_bird</icon>
 				<header>Loot Acquired</header>
-			</mod-append:achievement>
-			<mod-append:achievement name="ACH_TRANS_AEA_SHLEG">
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_SHLEG">
 				<name>Anarchist Transport</name>
 				<secretDescription>Obtain the loot from the Anarchist loot transport.</secretDescription>
 				<description>Obtain the 'Hypnos' Missile from the Anarchist loot transport.</description>
 				<icon>ach_trans_aea_shleg</icon>
 				<header>Loot Acquired</header>
-			</mod-append:achievement>
-			<mod-append:achievement name="ACH_TRANS_AEA_SHARD">
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_SHARD">
 				<name>Shard-Forged Transport</name>
 				<secretDescription>Obtain the loot from the Shard-Forged loot transport.</secretDescription>
 				<description>Obtain the Elite Crystal Burst MK II from the Shard-Forged loot transport.</description>
 				<icon>ach_trans_aea_shard</icon>
 				<header>Loot Acquired</header>
-			</mod-append:achievement>
-			<mod-append:achievement name="ACH_TRANS_AEA_OLD_1">
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_OLD_1">
 				<name>Lylmik Station</name>
 				<secretName>Secret Transport</secretName>
 				<description>Obtain a Lylmik weapon from the Lylmik loot station.</description>
@@ -9184,11 +9190,9 @@ Right click to attempt the ritual or cancel.
 				<icon>ach_trans_aea_old_1</icon>
 				<lockImage>ach_locked</lockImage>
 				<header>Loot Acquired</header>
-			</mod-append:achievement>
-		</mod:findLike>
-	</mod:findLike>
-	<mod-append:page>
-		<section text="Corby's Grants II" hidden="false">
+			</achievement>
+		</section>
+		<section text="Corby's Grants (OE)" hidden="false">
 			<achievement name="ACH_BOON_AEA_SUPER_SHIELDS">
 				<name>Grant of Auxiliary Shielding</name>
 				<secretDescription>Receive the Grant of Auxiliary Shielding from Corby.</secretDescription>
@@ -9198,42 +9202,53 @@ Right click to attempt the ritual or cancel.
 				<icon>ach_boon_aea_super_shields</icon>
 				<multiDifficulty>false</multiDifficulty>
 			</achievement>
+			<achievement name="ACH_BOON_AEA_CLONE_CRIME">
+				<name>Grant of Illegally Modified Clonebay</name>
+				<secretName>Grant of ???</secretName>
+				<secretDescription>Receive the Grant of ??? from Corby.</secretDescription>
+				<description>Show an upgraded Modified Clonebay System to Corby. 
+				While in effect; Spawn a weak generic crewmember with a 20 second lifespan onboard your ship after every jump.</description>
+				<header>Grant Received</header>
+				<icon>ach_boon_aea_clone_crime</icon>
+				<lockImage>ach_locked</lockImage>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
 		</section>
 		<section text="Renegade Cruisers (OE)" hidden="false">
 			<achievement name="ACH_AEA_REN_ACID">
 				<name>Professionals Have Standards</name>
 				<description>Defeat the Acidic Destroyer B Renegade and get the Acid Splasher.</description>
-				<icon>renegade_clan_b</icon>
+				<icon>renegade_aea_acid</icon>
 				<header>Renegade Defeated</header>
 			</achievement>
 			<achievement name="ACH_AEA_REN_BIRD">
 				<name>Professionals Have Standards</name>
 				<description>Defeat the Wedge-Tailed B Renegade and get the Scourge Drone.</description>
-				<icon>renegade_clan_b</icon>
+				<icon>renegade_aea_bird</icon>
 				<header>Renegade Defeated</header>
 			</achievement>
 			<achievement name="ACH_AEA_REN_CULT">
 				<name>Professionals Have Standards</name>
 				<description>Defeat the Bud C Renegade and get the Barrier Generator.</description>
-				<icon>renegade_clan_b</icon>
+				<icon>renegade_aea_cult</icon>
 				<header>Renegade Defeated</header>
 			</achievement>
 			<achievement name="ACH_AEA_REN_NECRO">
 				<name>Professionals Have Standards</name>
 				<description>Defeat the Blasphemy C Renegade and get the Necromancer Drone.</description>
-				<icon>renegade_clan_b</icon>
+				<icon>renegade_aea_necro</icon>
 				<header>Renegade Defeated</header>
 			</achievement>
 			<achievement name="ACH_AEA_REN_SHARD">
 				<name>Professionals Have Standards</name>
 				<description>Defeat the Shard-Forged Auto C Renegade and get the 'Naginata' beam.</description>
-				<icon>renegade_clan_b</icon>
+				<icon>renegade_aea_shard</icon>
 				<header>Renegade Defeated</header>
 			</achievement>
 			<achievement name="ACH_AEA_REN_SHLEG">
 				<name>Professionals Have Standards</name>
 				<description>Defeat the Disorder B Renegade and get the Leviathan Beam.</description>
-				<icon>renegade_clan_b</icon>
+				<icon>renegade_aea_shleg</icon>
 				<header>Renegade Defeated</header>
 			</achievement>
 		</section>

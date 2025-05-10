@@ -13040,6 +13040,13 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 	</upgradeCost>
 	<cost>40</cost>
 </systemBlueprint>
+<augBlueprint name="BOON_AEA_CLONE_CRIME">
+	<title>Clone Crime boon</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
 <augBlueprint name="UPG_AEA_CLONE_CRIME_LIFETIME">
 	<title>Reduced Decay</title>
 	<desc>YOU SHOULD NEVER SEE THIS</desc>

@@ -184,6 +184,12 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
         end
         aea_clone_crime_system:LockSystem(2)
     end
+    if shipManager:HasAugmentation("BOON_AEA_CLONE_CRIME") > 0 then
+        local cloneCrewType = randomCloneCrew:GetItem()
+        local clone = shipManager:AddCrewMemberFromString("Boon of Illegality", cloneCrewType, false, 0, true, true)
+        clone.extend.deathTimer = Hyperspace.TimerHelper(false)
+        clone.extend.deathTimer:Start(20)
+    end
 end)
 
 local cloneImageBottom = Hyperspace.Resources:CreateImagePrimitiveString("ship/interior/aea_clone_bottom.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)

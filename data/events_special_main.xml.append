@@ -4,6 +4,9 @@
 	<mod:findLike type="loadEventList">
 		<mod-append:event name="BOON_SELECT_AEA_SUPER_SHIELD" req="prof_r_boon_aea_super_shields" />
 	</mod:findLike>
+	<mod:findLike type="loadEventList">
+		<mod-append:event name="BOON_SELECT_AEA_CLONE_CRIME" req="prof_r_boon_aea_clone_crime" />
+	</mod:findLike>
 </mod:findName>
 
 <mod:findName type="event" name="START_BEACON_REAL" limit="1">
