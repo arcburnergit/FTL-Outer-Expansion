@@ -31,6 +31,11 @@
 		<combat>aea_MUS_ShardBattle.ogg</combat>
 	</track>
 	<track>
+		<name>aea_justice</name> <!--Music by lizzard-->
+		<explore>aea_MUS_JusticeExplore.ogg</explore>
+		<combat>aea_MUS_JusticeBattle.ogg</combat>
+	</track>
+	<track>
 		<name>aea_lylmik</name> <!--Music by lizzard-->
 		<explore>aea_MUS_LylmikExplore.ogg</explore>
 		<combat>aea_MUS_LylmikBattle.ogg</combat>

@@ -1,0 +1,9 @@
+# Balance Changes
+- Made enemy intel and bio drones activate smart targetting 33% of the time (down from 66% of the time)
+- Dark justicier starts with a number of human crew equal to the number of other crew
+
+# Bug Fixes
+- Fixed Justicier B and C missing descriptions.
+
+# Misc Changes
+- Added music for Dark Justicier fights

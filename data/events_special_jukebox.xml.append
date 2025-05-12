@@ -42,8 +42,15 @@
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="juke_aea_justice">
+		<text>OE: Requiem.</text>
+		<event>
+			<playMusic>aea_justice</playMusic>
+			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
+		</event>
+	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_old_1">
-		<text>OE: Lylmik.</text>
+		<text>OE: Lylmik Outskirts.</text>
 		<event>
 			<playMusic>aea_lylmik</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
@@ -57,7 +64,7 @@
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_old_3">
-		<text>OE: Lylmik Boss.</text>
+		<text>OE: Lylmik Finale.</text>
 		<event>
 			<playMusic>aea_lylmik_boss</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>

@@ -13263,7 +13263,7 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 <shipBlueprint name="PLAYER_SHIP_AEA_JUSTICE_2" layout="aeap_justice_b" img="aeap_justice_b">
 	<class>Justicier Cruiser</class>
 	<name>The Iniquitous</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>Using the support of the two engi heretics the dark god's hunger can be satiated with undead crew.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_JUSTICE_2_unlock" />
 	<systemList>
 		<aea_clone_crime max="3" power="1" room="11" start="false">
@@ -13346,7 +13346,7 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 <shipBlueprint name="PLAYER_SHIP_AEA_JUSTICE_3" layout="aeap_justice_c" img="aeap_justice_c">
 	<class>Justicier Cruiser</class>
 	<name>The Disciplinary</name>
-	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<desc>With some powerful mindcontrol devices this ship is able to sacrifice the enemies rather than allies.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_JUSTICE_3_unlock" />
 	<systemList>
 		<aea_clone_crime max="3" power="1" room="5" start="false">

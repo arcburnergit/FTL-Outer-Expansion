@@ -1375,6 +1375,12 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 			<slug/>
 			<mantis/>
 			<mantis_free/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
 		</crew>
 	</mod-append:customShip>
 	<mod-append:customShip name="AEA_JUSTICE_CRUISER">
@@ -1387,9 +1393,19 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 			<aea_shleg_slug/>
 			<rock_outcast/>
 			<rock/>
+			<rock/>
 			<engi/>
 			<mantis_free/>
 			<mantis/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
 		</crew>
 	</mod-append:customShip>
 
@@ -9441,10 +9457,6 @@ Right click to attempt the ritual or cancel.
 </mod:findLike>
 
 <mod:findLike type="achievements" limit="1">
-	<mod:findLike type="page" start="2" limit="1">
-		<mod:findLike type="section" limit="1">
-		</mod:findLike>
-	</mod:findLike>
 	<mod-append:page>
 		<section text="Loot Transports (OE)" hidden="false">
 			<achievement name="ACH_TRANS_AEA_ACID">
@@ -9499,28 +9511,6 @@ Right click to attempt the ritual or cancel.
 				<header>Loot Acquired</header>
 			</achievement>
 		</section>
-		<section text="Corby's Grants (OE)" hidden="false">
-			<achievement name="ACH_BOON_AEA_SUPER_SHIELDS">
-				<name>Grant of Auxiliary Shielding</name>
-				<secretDescription>Receive the Grant of Auxiliary Shielding from Corby.</secretDescription>
-				<description>Show an upgraded Auxiliary Shields System to Corby. 
-				While in effect; Add 1 energy shield layer after jump.</description>
-				<header>Grant Received</header>
-				<icon>ach_boon_aea_super_shields</icon>
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-			<achievement name="ACH_BOON_AEA_CLONE_CRIME">
-				<name>Grant of Illegally Modified Clonebay</name>
-				<secretName>Grant of ???</secretName>
-				<secretDescription>Receive the Grant of ??? from Corby.</secretDescription>
-				<description>Show an upgraded Modified Clonebay System to Corby. 
-				While in effect; Spawn a weak generic crewmember with a 20 second lifespan onboard your ship after every jump.</description>
-				<header>Grant Received</header>
-				<icon>ach_boon_aea_clone_crime</icon>
-				<lockImage>ach_locked</lockImage>
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-		</section>
 		<section text="Renegade Cruisers (OE)" hidden="false">
 			<achievement name="ACH_AEA_REN_ACID">
 				<name>No Such Thing as Too Many Guns</name>
@@ -9557,6 +9547,125 @@ Right click to attempt the ritual or cancel.
 				<description>Defeat the Disorder B Renegade and get the Leviathan Beam.</description>
 				<icon>renegade_aea_shleg</icon>
 				<header>Renegade Defeated</header>
+			</achievement>
+		</section>
+	</mod-append:page>
+	<mod-append:page>
+		<section text="Music (OE)" hidden="false">
+			<achievement name="MUSIC_AEA_ACID">
+				<name>Acidic</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_acid" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_ACID">
+				<name>Heretic</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_necro" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_ACID">
+				<name>Cultist</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_cult" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_ACID">
+				<name>Gi</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_cult" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_ACID">
+				<name>Anarchy</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_shleg" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_ACID">
+				<name>Shard</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_shard" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_JUSTICE">
+				<name>Requiem</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_justice" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_OLD_1">
+				<name>Lylmik Outskirts</name>
+				<secretName>???</secretName>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_old_1" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_OLD_2">
+				<name>Lylmik Core</name>
+				<secretName>???</secretName>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_old_2" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_OLD_3">
+				<name>Lylmik Finale</name>
+				<secretName>???</secretName>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_old_3" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+		</section>
+		<section text="Corby's Grants (OE)" hidden="false">
+			<achievement name="ACH_BOON_AEA_SUPER_SHIELDS">
+				<name>Grant of Auxiliary Shielding</name>
+				<secretDescription>Receive the Grant of Auxiliary Shielding from Corby.</secretDescription>
+				<description>Show an upgraded Auxiliary Shields System to Corby. 
+				While in effect; Add 1 energy shield layer after jump.</description>
+				<header>Grant Received</header>
+				<icon>ach_boon_aea_super_shields</icon>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="ACH_BOON_AEA_CLONE_CRIME">
+				<name>Grant of Illegally Modified Clonebay</name>
+				<secretName>Grant of ???</secretName>
+				<secretDescription>Receive the Grant of ??? from Corby.</secretDescription>
+				<description>Show an upgraded Modified Clonebay System to Corby. 
+				While in effect; Spawn a weak generic crewmember with a 20 second lifespan onboard your ship after every jump.</description>
+				<header>Grant Received</header>
+				<icon>ach_boon_aea_clone_crime</icon>
+				<lockImage>ach_locked</lockImage>
+				<multiDifficulty>false</multiDifficulty>
 			</achievement>
 		</section>
 	</mod-append:page>

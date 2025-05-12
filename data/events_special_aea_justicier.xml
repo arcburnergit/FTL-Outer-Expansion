@@ -169,10 +169,17 @@ Some Rituals may have multiple requirements, in which case the lowest one on the
 </event>
 
 
+<event name="AEA_JUSTICIER_CLEAR_MUSIC">
+    <playMusic/>
+</event>
+
 <event name="AEA_JUSTICIER_FIGHT_ONE">
 	<preventQuest/>
 	<preventFleet/>
 	<revisitEvent>AEA_FLEET_WRECK_ELITE</revisitEvent>
+    <jumpEvent>AEA_JUSTICIER_CLEAR_MUSIC</jumpEvent>
+	<playMusic>aea_justice</playMusic>
+	<metaVariable name="juke_aea_justice" op="set" val="1" />
     <customFleet right="false" firing="false" autoDarkening="true">CUSTOM_FLEET_AEA_REBEL_WRECK</customFleet>
     <text>You've arrived in the middle of what was the rebel fleet to discover it destroyed. A large red battleship unlike you've ever seen before sits in the middle of the debree field. Unfortunately it turns it's attention to you, weapons armed.</text>
 	<ship load="AEA_JUSTICE_BATTLESHIP" hostile="true" />
@@ -203,6 +210,9 @@ Some Rituals may have multiple requirements, in which case the lowest one on the
 	<preventQuest/>
 	<preventFleet/>
 	<revisitEvent>AEA_FLEET_WRECK_ELITE</revisitEvent>
+    <jumpEvent>AEA_JUSTICIER_CLEAR_MUSIC</jumpEvent>
+	<playMusic>aea_justice</playMusic>
+	<metaVariable name="juke_aea_justice" op="set" val="1" />
     <customFleet right="false" firing="false" autoDarkening="true">CUSTOM_FLEET_AEA_REBEL_WRECK</customFleet>
     <text>Once again you've arrived in the middle of what was the rebel fleet to discover it destroyed. A large red battleship unlike you've ever seen before sits in the middle of the debree field. Unfortunately it turns it's attention to you, weapons armed.</text>
 	<ship load="AEA_JUSTICE_CRUISER" hostile="true" />
