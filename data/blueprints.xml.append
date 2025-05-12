@@ -2601,7 +2601,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<stunChance>3</stunChance>
 	<cooldown>12</cooldown>
 	<power>2</power>
-	<cost>50</cost>
+	<cost>60</cost>
 	<bp>6</bp>
 	<rarity>5</rarity>
 	<image>laser_heavy</image>
@@ -2643,7 +2643,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<stunChance>3</stunChance>
 	<cooldown>14</cooldown>
 	<power>3</power>
-	<cost>50</cost>
+	<cost>75</cost>
 	<bp>6</bp>
 	<rarity>5</rarity>
 	<image>laser_heavy</image>
@@ -5833,6 +5833,93 @@ This drone fires 4 shots.
 </FTL>
 
 <FTL>
+<augBlueprint name="LAB_AEA_ACID_INSTALLED">
+	<title>Acidic</title>
+	<desc>Acidic upgrade installed.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="LAB_AEA_ACID_REPAIR">
+	<title>Fracture Repair Procedures</title>
+	<desc>Acidic Crew heal 7.5hp/s if unharmed for 5 seconds, but only repair at 1x speed.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="LAB_AEA_ACID_SENSOR">
+	<title>Polarized Sensors</title>
+	<desc>Acidic Crew become immune to stun.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="LAB_AEA_ACID_COOLING">
+	<title>Cooling Vents</title>
+	<desc>Acidic crew do 2x ranged damage but lose 50% of their hp.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
+<augBlueprint name="LAB_AEA_BIRD_INSTALLED">
+	<title>Gi</title>
+	<desc>Gi upgrade installed.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="LAB_AEA_BIRD_ESCAPESPEED">
+	<title>Flight from Danger</title>
+	<desc>Gi Crew gain 4x move speed in the presence of enemy crew.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="LAB_AEA_BIRD_AUTODESTROY">
+	<title>Auto Disassembly</title>
+	<desc>Gi Crew damage enemy drones and metal crew at 5hp/s.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="LAB_AEA_BIRD_SOCIAL">
+	<title>Socialization</title>
+	<desc>Gi Crew gain 0.25x repair speed and 0.1x combat damage for each friendly crewmember in the same room.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
+<augBlueprint name="LAB_AEA_OLD_INSTALLED">
+	<title>Lylmik</title>
+	<desc>Lylmik upgrade installed.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="LAB_AEA_OLD_RESOLVE">
+	<title>Unyielding Resolve</title>
+	<desc>Lylmik crew will always retain their base stats of HP, damage, immunities, move speed, clone speed, skill loss and heal speed and these cannot be overridden by external forces.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="LAB_AEA_OLD_COMPROMISED">
+	<title>Compromised Subsystems</title>
+	<desc>Lylmik Crew lost their immunities but now clone at 2x speed and heal at 4x speed.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="LAB_AEA_OLD_ELITE">
+	<title>Elitism</title>
+	<desc>Lylmik Crew gain 25hp for each allied elite.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
 <crewBlueprint name="aea_acid_soldier">
 	<desc>A dangerous mech used by the acid growth to extend it's reach beyond the acid nebula. Hosts a fragment of the acidic growth that controls the mech.</desc>
 	<title>Acidic Soldier</title>
@@ -11364,7 +11451,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 	<title>Auxiliary Shields</title>
 	<desc>Generates super shield layers. Incompatible with cloaking. Uses manning levels in shields.
 
-Can be overclocked to instantly generate shields up to it's maximum at the cost of becoming locked for 25 seconds.</desc>
+Can be overclocked to instantly generate shields up to it's maximum at the cost of becoming locked for 20 seconds.</desc>
 	<startPower>1</startPower>
 	<maxPower>3</maxPower>
 	<rarity>1</rarity>
@@ -12064,7 +12151,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</medbay>
 		<mind power="1" room="11" start="false" img="room_mind_4" />
-		<oxygen power="1" room="4" start="true" img="room_oxygen_19" />
+		<oxygen power="1" room="4" start="false" img="room_oxygen_19" />
 		<pilot power="1" room="0" start="true" img="room_pilot_2">
 			<slot>
 				<direction>right</direction>
@@ -12104,6 +12191,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	<crewCount amount="1" class="aea_shard_breaker" />
 	<crewCount amount="1" class="aea_shard_smasher" />
 	<aug name="AEA_SHARD_ARMOUR" />
+	<aug name="EX_LAB_CRYSTAL_SUFFOCATION" />
 	<shieldImage>mup_giant</shieldImage>
 	<mv-mapImage>map_icon_aeap_shard_auto</mv-mapImage>
 </shipBlueprint>

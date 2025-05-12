@@ -6,6 +6,11 @@
 	<floor x="178" y="202" />
 	<cloak x="-16" y="0" />
 </offsets>
-<weaponMounts />
+<weaponMounts>
+	<mount x="322" y="109" rotate="false" mirror="false" gib="-1" slide="right" />
+	<mount x="140" y="65" rotate="false" mirror="true" gib="-1" slide="up" />
+	<mount x="9" y="235" rotate="false" mirror="true" gib="-1" slide="left" />
+	<mount x="337" y="281" rotate="false" mirror="false" gib="-1" slide="right" />
+</weaponMounts>
 <explosion />
 

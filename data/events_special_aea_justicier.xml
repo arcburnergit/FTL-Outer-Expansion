@@ -36,10 +36,10 @@
         <text>Nevermind.</text>
         <event load="STORAGE_CHECK" />
     </choice>
-    <!--choice>
+    <choice>
         <text>Read the Rules of Ritual.</text>
         <event load="AEA_JUSTICIER_BOOK_RULES" />
-    </choice-->
+    </choice>
     <choice>
         <text>Read the section on Blood Rituals.</text>
         <event load="AEA_JUSTICIER_BOOK_CREW" />
@@ -55,7 +55,16 @@
 </event>
 
 <event name="AEA_JUSTICIER_BOOK_RULES">
-    <text>You turn to the section of the book about the Rules of Ritual.</text>
+    <text>You turn to the section of the book about the Rules of Ritual.
+Some Rituals may have multiple requirements, in which case the lowest one on the list is used.
+
+
+
+
+
+
+        
+    </text>
     <choice hidden="true">
         <text>Go Back.</text>
         <event load="AEA_JUSTICIER_BOOK_LOAD" />

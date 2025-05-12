@@ -553,29 +553,29 @@ local spellList = {
 	heal_ship = {func = healShip, positionList = {{x = 0, y = 2}, {x = 1, y = -1}} },
 	buff_damage = {func = buffDamage, positionList = {{x = 0, y = -2}, {x = -1, y = 1}} },
 
-	buff_crew_health = {func = buffCrewHealth, excludeTarget = true, cond = buffCrewCond, positionList = {{x = 0, y = -2}, {x = 1, y = 2}, {x = -1, y = 2}, {x = -1, y = -2}} },
-	buff_crew_resistance = {func = buffCrewResistance, excludeTarget = true, cond = buffCrewCond, positionList = {{x = 0, y = 2}, {x = 1, y = 1}, {x = 1, y = -1}, {x = 0, y = -2}} },
-	buff_crew_actions = {func = buffCrewActions, excludeTarget = true, cond = buffCrewCond, positionList = {{x = 0, y = 4}, {x = 1, y = 0}, {x = 0, y = -1}, {x = -2, y = 0}} },
+	buff_crew_health = {func = buffCrewHealth, excludeTarget = true, cond = buffCrewCond, condColour = 2, positionList = {{x = 0, y = -2}, {x = 1, y = 2}, {x = -1, y = 2}, {x = -1, y = -2}} },
+	buff_crew_resistance = {func = buffCrewResistance, excludeTarget = true, cond = buffCrewCond, condColour = 2, positionList = {{x = 0, y = 2}, {x = 1, y = 1}, {x = 1, y = -1}, {x = 0, y = -2}} },
+	buff_crew_actions = {func = buffCrewActions, excludeTarget = true, cond = buffCrewCond, condColour = 2, positionList = {{x = 0, y = 4}, {x = 1, y = 0}, {x = 0, y = -1}, {x = -2, y = 0}} },
 
-	teleport_one = {func = teleportOne, excludeTarget = true, cond = teleportCond, positionList = {{x = 3, y = 0}} },
-	teleport_room = {func = teleportRoom, excludeTarget = true, cond = teleportCond, positionList = {{x = 2, y = 0}, {x = 1, y = 0}} },
-	retrieve_crew = {func = retrieveCrew, cond = retrieveCond, positionList = {{x = -3, y = 0}} },
+	teleport_one = {func = teleportOne, excludeTarget = true, cond = teleportCond, condColour = 1, positionList = {{x = 3, y = 0}} },
+	teleport_room = {func = teleportRoom, excludeTarget = true, cond = teleportCond, condColour = 1, positionList = {{x = 2, y = 0}, {x = 1, y = 0}} },
+	retrieve_crew = {func = retrieveCrew, cond = retrieveCond, condColour = 5, positionList = {{x = -3, y = 0}} },
 
-	buy_fuel = {func = buyFuelFunc, cond = buyItemCond, positionList = {{x = 1, y = 0}} },
-	buy_missile = {func = buyMissilesFunc, cond = buyItemCond, positionList = {{x = 1, y = -1}} },
-	buy_drone = {func = buyDronesFunc, cond = buyItemCond, positionList = {{x = 1, y = 1}} },
+	buy_fuel = {func = buyFuelFunc, cond = buyItemCond, condColour = 4, positionList = {{x = 1, y = 0}} },
+	buy_missile = {func = buyMissilesFunc, cond = buyItemCond, condColour = 4, positionList = {{x = 1, y = -1}} },
+	buy_drone = {func = buyDronesFunc, cond = buyItemCond, condColour = 4, positionList = {{x = 1, y = 1}} },
 
-	repair_system = {func = repairSystem, cond = repairSystemCond, positionList = {{x = -1, y = 0}} },
+	repair_system = {func = repairSystem, cond = repairSystemCond, condColour = 3, positionList = {{x = -1, y = 0}} },
 	repair_hull = {func = repairHull, positionList = {{x = -2, y = 0}, {x = 0, y = 2}, {x = 1, y = -1}} },
 
-	fire_bomb = {func = fireBombFunc, cond = fireBombCond, positionList = {{x = -1, y = 1}, {x = 3, y = -1}, {x = -3, y = -1}} },
-	spawn_drone = {func = spawnDroneFunc, cond = spawnDroneCond, positionList = {{x = -1, y = -1}, {x = 3, y = 1}, {x = -3, y = 1}} },
-	lockdown = {func = lockdownFunc, excludeTarget = true, cond = lockdownCond, positionList = {{x = 3, y = 0}, {x = -1, y = 1}, {x = 0, y = -2}} },
-	particle = {func = particleFunc, cond = particleCond, positionList = {{x = 3, y = 0}, {x = -1, y = -1}, {x = 0, y = 2}} },
-	boarding = {func = boardingFunc, cond = boardingCond, positionList = {{x = 2, y = 0}, {x = 1, y = 1}, {x = 1, y = -1}} },
+	fire_bomb = {func = fireBombFunc, cond = fireBombCond, condColour = 4, positionList = {{x = -1, y = 1}, {x = 3, y = -1}, {x = -3, y = -1}} },
+	spawn_drone = {func = spawnDroneFunc, cond = spawnDroneCond, condColour = 4, positionList = {{x = -1, y = -1}, {x = 3, y = 1}, {x = -3, y = 1}} },
+	lockdown = {func = lockdownFunc, excludeTarget = true, cond = lockdownCond, condColour = 2, positionList = {{x = 3, y = 0}, {x = -1, y = 1}, {x = 0, y = -2}} },
+	particle = {func = particleFunc, cond = particleCond, condColour = 1, positionList = {{x = 3, y = 0}, {x = -1, y = -1}, {x = 0, y = 2}} },
+	boarding = {func = boardingFunc, cond = boardingCond, condColour = 4, positionList = {{x = 2, y = 0}, {x = 1, y = 1}, {x = 1, y = -1}} },
 
-	promote = {func = promoteCrew, excludeTarget = true, cond = promoteCond, positionList = {{x = 0, y = -2}, {x = 1, y = 4}, {x = -3, y = -3}, {x = 4, y = 0}, {x = -3, y = 3}} },
-	give_weapon = {func = giveWeaponFunc, excludeTarget = true, cond = giveWeaponCond, positionList = {{x = 1, y = 1}, {x = 0, y = 2}, {x = 3, y = 0}, {x = 0, y = -2}, {x = 1, y = -1}} }
+	promote = {func = promoteCrew, excludeTarget = true, cond = promoteCond, condColour = 2, positionList = {{x = 0, y = -2}, {x = 1, y = 4}, {x = -3, y = -3}, {x = 4, y = 0}, {x = -3, y = 3}} },
+	give_weapon = {func = giveWeaponFunc, excludeTarget = true, cond = giveWeaponCond, condColour = 2, positionList = {{x = 1, y = 1}, {x = 0, y = 2}, {x = 3, y = 0}, {x = 0, y = -2}, {x = 1, y = -1}} }
 }
 
 local setCrew = false
@@ -736,33 +736,55 @@ script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(ship)
 				crewCount = crewCount + 1
 				local location = crewmem:GetLocation()
 				local colour = 0.5
+				local green = 0
 				local blue = 0
 				if lastValid then colour = 1 
-				elseif shapeRight then 
+				elseif shapeRight == 1 then 
 					colour = 0.75 
+					green = 0
 					blue = 1
+				elseif shapeRight == 2 then 
+					colour = 0.75 
+					green = 0.25
+					blue = 0.75
+				elseif shapeRight == 3 then 
+					colour = 0.75 
+					green = 0.5
+					blue = 0.5
+				elseif shapeRight == 4 then 
+					colour = 0.75 
+					green = 0.75
+					blue = 0.25
+				elseif shapeRight == 5 then 
+					colour = 0.75 
+					green = 1
+					blue = 0
+				elseif shapeRight == 6 then 
+					colour = 0.75 
+					green = 1
+					blue = 0
 				end
 				if lastX and lastY then
-	   				Graphics.CSurface.GL_DrawLine(lastX+1, lastY+1, location.x+1, location.y+1, 5, Graphics.GL_Color(colour, 0, blue, 0.4))
-	   				Graphics.CSurface.GL_DrawLine(lastX+1, lastY+1, location.x+1, location.y+1, 3, Graphics.GL_Color(colour, 0, blue, 0.6))
+	   				Graphics.CSurface.GL_DrawLine(lastX+1, lastY+1, location.x+1, location.y+1, 5, Graphics.GL_Color(colour, green, blue, 0.4))
+	   				Graphics.CSurface.GL_DrawLine(lastX+1, lastY+1, location.x+1, location.y+1, 3, Graphics.GL_Color(colour, green, blue, 0.6))
 	   				Graphics.CSurface.GL_PushMatrix()
 					Graphics.CSurface.GL_Translate(location.x, location.y, 0)
-					Graphics.CSurface.GL_RenderPrimitiveWithColor(ritual, Graphics.GL_Color(colour, 0, blue, 0.8))
+					Graphics.CSurface.GL_RenderPrimitiveWithColor(ritual, Graphics.GL_Color(colour, green, blue, 0.8))
 					Graphics.CSurface.GL_PopMatrix()
 		   			if crewCount == 2 then
 		   				Graphics.CSurface.GL_PushMatrix()
 						Graphics.CSurface.GL_Translate(lastX, lastY, 0)
 						if shapeRight and (not lastValid) and crewCond then 
-							Graphics.CSurface.GL_RenderPrimitiveWithColor(ritualStartCond, Graphics.GL_Color(colour, 0, blue, 0.8))
+							Graphics.CSurface.GL_RenderPrimitiveWithColor(ritualStartCond, Graphics.GL_Color(colour, green, blue, 0.8))
 						else
-							Graphics.CSurface.GL_RenderPrimitiveWithColor(ritualStart, Graphics.GL_Color(colour, 0, blue, 0.8))
+							Graphics.CSurface.GL_RenderPrimitiveWithColor(ritualStart, Graphics.GL_Color(colour, green, blue, 0.8))
 						end
 						Graphics.CSurface.GL_PopMatrix()
 		   			end
 		   		elseif crewCount == 1 and #orderList == 1 then
 	   				Graphics.CSurface.GL_PushMatrix()
 					Graphics.CSurface.GL_Translate(location.x, location.y, 0)
-					Graphics.CSurface.GL_RenderPrimitiveWithColor(ritualStart, Graphics.GL_Color(colour, 0, 0, 0.8))
+					Graphics.CSurface.GL_RenderPrimitiveWithColor(ritualStart, Graphics.GL_Color(colour, green, blue, 0.8))
 					Graphics.CSurface.GL_PopMatrix()
 	   			end
 	   			lastX = location.x
@@ -808,7 +830,7 @@ script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(ship)
 							validSpell = spell
 						else
 							--print("cond fail")
-							shapeRight = true
+							shapeRight = spellTable.condColour
 							if spellTable.excludeTarget then
 								crewCond = true
 							end
@@ -1029,9 +1051,9 @@ spellListPage1[1] = {id = "heal_room", name="Prope Sana", hint_amount = 0, descr
 spellListPage1[2] = {id = "heal_ship", name="Sana Navis", hint_amount = 1, description="Sacrifice a large offering to restore those on the vessel.", condition="None.", stat="150hp of healing over 10 seconds to allies on the same ship."}
 spellListPage1[3] = {id = "buff_damage", name="Damnum", hint_amount = 3, description="Grant allies a boon of damage, dispelled after leaving the location.", condition="None.", stat="1.5x combat damage until death or jump to all allies on either ship."}
 
-spellListPage1[4] = {id = "buff_crew_health", name="Salus", hint_amount = 12, description="Permanently grant the chosen a boon of health.", condition="Cannot target temporary, weakened or crew already buffed similarly.", stat="1.25x Health permanently to target crew."}
-spellListPage1[5] = {id = "buff_crew_resistance", name="Resistentia", hint_amount = 12, description="Permanently grant the chosen a boon of resistance to the void and flame.", condition="Cannot target temporary, weakened or crew already buffed similarly.", stat="0.5x Suffocation and Fire Damage permanently to target crew."}
-spellListPage1[6] = {id = "buff_crew_actions", name="Actio", hint_amount = 12, description="Permanently grant the chosen a boon of destruction and restoration.", condition="Cannot target temporary, weakened or crew already buffed similarly.", stat="1.25x Combat damage and 1.4x Repair speed permanently to target crew."}
+spellListPage1[4] = {id = "buff_crew_health", name="Salus", hint_amount = 12, description="Permanently grant the chosen a boon of health.", condition="Cannot target temporary, weakened or crew already buffed similarly.", stat="1.5x Max Health permanently to target crew."}
+spellListPage1[5] = {id = "buff_crew_resistance", name="Resistentia", hint_amount = 12, description="Permanently grant the chosen a boon of resistance to the void and flame.", condition="Cannot target temporary, weakened or crew already buffed similarly.", stat="Suffocation and Fire immunity and 2x heal speed to target crew."}
+spellListPage1[6] = {id = "buff_crew_actions", name="Actio", hint_amount = 12, description="Permanently grant the chosen a boon of destruction and restoration.", condition="Cannot target temporary, weakened or crew already buffed similarly.", stat="1.5x Combat damage and 2x Repair speed permanently to target crew."}
 
 spellListPage1[7] = {id = "teleport_one", name="Ianuae", hint_amount = 8, description="Translocate the chosen to a far away destination.", condition="Must be performed on player ship.", stat="Target is teleported onto enemy ship."}
 spellListPage1[8] = {id = "teleport_room", name="Ianuae Prope", hint_amount = 8, description="Translocate the chosen and their allies to a far away destination", condition="Must be performed on player ship.", stat="Target and allies in the same room are teleported onto enemy ship."}
@@ -1068,7 +1090,7 @@ local function createPage(id, name, description, hintAmount, event, condition, o
 		local pageEvent = eventManager:CreateEvent("AEA_JUSTICIER_BOOK_TEMPLATE"..eventFix, 0, false)
 		pageEvent.eventName = "AEA_JUSTICIER_BOOK_PAGE_"..id
 		local eventString = description.."\n\n\n\n\n\n\n\n\n"
-		if Hyperspace.metaVariables["aea_dark_spell_"..id] > 2 then 
+		if Hyperspace.metaVariables["aea_dark_spell_"..id] > 2 or Hyperspace.metaVariables["aea_dark_spell_all"] >= hintAmount + 5 then 
 			eventString = eventString.."\nRitual Requirement: "..condition
 		else
 			eventString = eventString.."\nThe Glyphs here are still too hard to make out, perhaps further experimentation could reveal them."
@@ -1088,7 +1110,12 @@ local function createPage(id, name, description, hintAmount, event, condition, o
 	elseif Hyperspace.metaVariables["aea_dark_spell_all"] >= hintAmount then
 		local pageEvent = eventManager:CreateEvent("AEA_JUSTICIER_BOOK_TEMPLATE"..eventFix, 0, false)
 		pageEvent.eventName = "AEA_JUSTICIER_BOOK_PAGE_"..id
-		local eventString = "The glyphs on the page are indecipherable to you, however you are able to make out some faint ritual markings.\n\n\n\n\n\n\n\n\n\n"
+		local eventString = "The glyphs on the page are indecipherable to you, however you are able to make out some faint ritual markings.\n\n\n\n\n\n\n\n\n"
+		if Hyperspace.metaVariables["aea_dark_spell_all"] >= hintAmount + 5 then 
+			eventString = eventString.."\nRitual Requirement: "..condition
+		else
+			eventString = eventString.."\n"
+		end
 		pageEvent.text.data = eventString
 		pageEvent.text.isLiteral = true
 		event:AddChoice(pageEvent, "A page with faint ritual markings.", blueReq, true)
@@ -1122,12 +1149,18 @@ script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(e
 end)
 
 local renderSpell = nil
+local renderRules = false
 script.on_internal_event(Defines.InternalEvents.POST_CREATE_CHOICEBOX, function(choiceBox, event)
 	--print(string.sub(event.eventName, 25, string.len(event.eventName)))
 	if spellList[string.sub(event.eventName, 25, string.len(event.eventName))] then
 		renderSpell = string.sub(event.eventName, 25, string.len(event.eventName))
 		Hyperspace.metaVariables["aea_dark_spell_seen_"..renderSpell] = 0
+		renderRules = false
+	elseif event.eventName == "AEA_JUSTICIER_BOOK_RULES" then
+		renderRules = true
+		renderSpell = nil
 	else
+		renderRules = false
 		renderSpell = nil
 	end
 	--local isSpellPage = false
@@ -1168,6 +1201,56 @@ script.on_render_event(Defines.RenderEvents.CHOICE_BOX, function() end, function
 			x = newX
 			y = newY
 		end
+	elseif commandGui.event_pause and renderRules then
+		local x = 635-274
+		local y = 288-70
+		local moveDistance = 26
+		Graphics.CSurface.GL_PushMatrix()
+		Graphics.CSurface.GL_Translate(x, y, 0)
+
+		Graphics.CSurface.GL_PushMatrix()
+		Graphics.CSurface.GL_Translate(0, moveDistance, 0)
+		Graphics.CSurface.GL_RenderPrimitiveWithColor(ritual, Graphics.GL_Color(1, 0, 0, 1))
+		Graphics.freetype.easy_print(1, 11, -6, "Valid Ritual.")
+		Graphics.CSurface.GL_PopMatrix()
+
+		Graphics.CSurface.GL_PushMatrix()
+		Graphics.CSurface.GL_Translate(0, moveDistance*2, 0)
+		Graphics.CSurface.GL_RenderPrimitiveWithColor(ritual, Graphics.GL_Color(0.5, 0, 0, 1))
+		Graphics.freetype.easy_print(1, 11, -6, "Invalid Ritual.")
+		Graphics.CSurface.GL_PopMatrix()
+
+		Graphics.CSurface.GL_PushMatrix()
+		Graphics.CSurface.GL_Translate(0, moveDistance*3, 0)
+		Graphics.CSurface.GL_RenderPrimitiveWithColor(ritual, Graphics.GL_Color(0.75, 0, 1, 1))
+		Graphics.freetype.easy_print(1, 11, -6, "Ritual requires an enemy ship present.")
+		Graphics.CSurface.GL_PopMatrix()
+
+		Graphics.CSurface.GL_PushMatrix()
+		Graphics.CSurface.GL_Translate(0, moveDistance*4, 0)
+		Graphics.CSurface.GL_RenderPrimitiveWithColor(ritual, Graphics.GL_Color(0.75, 0.25, 0.75, 1))
+		Graphics.freetype.easy_print(1, 11, -6, "Ritual requires a specific/different target crew type.")
+		Graphics.CSurface.GL_PopMatrix()
+
+		Graphics.CSurface.GL_PushMatrix()
+		Graphics.CSurface.GL_Translate(0, moveDistance*5, 0)
+		Graphics.CSurface.GL_RenderPrimitiveWithColor(ritual, Graphics.GL_Color(0.75, 0.5, 0.5, 1))
+		Graphics.freetype.easy_print(1, 11, -6, "Ritual requires a specific target room type.")
+		Graphics.CSurface.GL_PopMatrix()
+
+		Graphics.CSurface.GL_PushMatrix()
+		Graphics.CSurface.GL_Translate(0, moveDistance*6, 0)
+		Graphics.CSurface.GL_RenderPrimitiveWithColor(ritual, Graphics.GL_Color(0.75, 0.75, 0.25, 1))
+		Graphics.freetype.easy_print(1, 11, -6, "Ritual requires a specific resource.")
+		Graphics.CSurface.GL_PopMatrix()
+
+		Graphics.CSurface.GL_PushMatrix()
+		Graphics.CSurface.GL_Translate(0, moveDistance*7, 0)
+		Graphics.CSurface.GL_RenderPrimitiveWithColor(ritual, Graphics.GL_Color(0.75, 1, 0, 1))
+		Graphics.freetype.easy_print(1, 11, -6, "Ritual must be done while you have crew on the enemy ship.")
+		Graphics.CSurface.GL_PopMatrix()
+
+		Graphics.CSurface.GL_PopMatrix()
 	end
 end)
 

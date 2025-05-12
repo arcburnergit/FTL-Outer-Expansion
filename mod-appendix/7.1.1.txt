@@ -1,0 +1,9 @@
+# Balance Changes
+- Added 3 lab upgrades each for the Acidic, Gi, and Lylmik Crew
+- Added colour codes for rituals to give more feedback on why you can't perform the ritual
+- Made ritual requirements show up if you still haven't performed the ritual after unlocking it and doing 5 extra rituals.
+
+# Bug Fixes
+- Fixed some bugs around the new renegades
+
+# Misc Changes

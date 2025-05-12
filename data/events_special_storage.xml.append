@@ -3042,7 +3042,7 @@
 <event name="STORAGE_CHECK_AUG_AEA_BOSS_SPAWNER_LIST">
 	<loadEventList seeded="true" first="false" generate="true">
 		<event name="STORAGE_CHECK_AUG_AEA_BOSS_SPAWNER_1" />
-		<event name="STORAGE_CHECK_AUG_AEA_BOSSS_SPAWNER_2" />
+		<event name="STORAGE_CHECK_AUG_AEA_BOSS_SPAWNER_2" />
 	</loadEventList>
 </event>
 
@@ -3119,5 +3119,456 @@
 		<text>Nevermind, do something else.</text>
 		<event load="STORAGE_CHECK" />
 	</choice>
+</event>
+
+<!--LAB UPGRADES-->
+<mod:findName type="event" name="STORAGE_CHECK_LAB">
+	<mod-append:choice req="LIST_CREW_AEA_ACID" blue="false" hidden="true">
+	  <text>Acidic Growth.</text>
+	  <event load="STORAGE_CHECK_LAB_AEA_ACID" />
+	</mod-append:choice>
+	<mod-append:choice req="LIST_CREW_AEA_BIRD" blue="false" hidden="true">
+	  <text>Gi.</text>
+	  <event load="STORAGE_CHECK_LAB_AEA_BIRD" />
+	</mod-append:choice>
+
+	<mod-append:choice req="LIST_CREW_AEA_OLD" blue="false" hidden="true">
+	  <text>Lylmik.</text>
+	  <event load="STORAGE_CHECK_LAB_AEA_OLD" />
+	</mod-append:choice>
+</mod:findName>
+
+<event name="STORAGE_CHECK_LAB_AEA_ACID">
+	<text>You are viewing the lab menu for: [ACIDIC GROWTH]</text>
+	<choice req="LAB_AEA_ACID_REPAIR" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: Fracture Repair Procedures.
+		[Acidic Crew heal 7.5hp/s if unharmed for 5 seconds, but only repair at 1x speed]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_ACID_SENSOR" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: Polarized Sensors.
+		[Acidic Crew become immune to stun]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_ACID_WEAPON" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: Cooling Vents.
+		[Acidic Crew do 2x ranged damage but lose 50% of their hp]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="pilot" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: None</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_ACID_INSTALLED" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Pri: Fracture Repair Procedures. [An upgrade is already installed]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_ACID_INSTALLED" lvl="0" max_group="1" blue="false" hidden="true">
+		<text>Pri: Fracture Repair Procedures. [Cost: 5|]</text>
+		<event load="STORAGE_CHECK_LAB_AEA_ACID_REPAIR" />
+	</choice>
+	<choice req="LAB_AEA_ACID_INSTALLED" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Pri: Polarized Sensors. [An upgrade is already installed]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_ACID_INSTALLED" lvl="0" max_group="2" blue="false" hidden="true">
+		<text>Pri: Polarized Sensors. [Cost: 5{]</text>
+		<event load="STORAGE_CHECK_LAB_AEA_ACID_SENSOR" />
+	</choice>
+	<choice req="LAB_AEA_ACID_INSTALLED" lvl="1" max_group="3" blue="false" hidden="true">
+		<text>Pri: Cooling Vents. [An upgrade is already installed]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_ACID_INSTALLED" lvl="0" max_group="3" blue="false" hidden="true">
+		<text>Pri: Cooling Vents. [Cost: 20~ 3{]</text>
+		<event load="STORAGE_CHECK_LAB_AEA_ACID_COOLING" />
+	</choice>
+	<choice req="pilot" lvl="1" max_group="999" blue="false" hidden="true">
+		<text>Go back.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+
+
+<event name="STORAGE_CHECK_LAB_AEA_ACID_REPAIR">
+	<text>You are about to install the Fracture Repair Procedures modification.
+	[Effects: Acidic Crew heal 7.5hp/s if unharmed for 5 seconds, but only repair at 1x speed]
+	
+	[Warning: After installing this, you will not be able to install any more primary upgrades for Acidic crew. You will not be able to deactivate this mod either.]</text>
+	<choice hidden="true">
+		<text>Install the modification. [Cost: 5|]</text>
+		<event>
+			<text>You install the modification.</text>
+			<item_modify>
+				<item type="drones" min="-5" max="-5" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_LAB_AEA_ACID_REPAIR" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_LAB_AEA_ACID_REPAIR">
+	<variable name="loc_lab_upgrades" op="add" val="1" />
+	<hiddenAug>LAB_AEA_ACID_REPAIR</hiddenAug>
+	<hiddenAug>LAB_AEA_ACID_INSTALLED</hiddenAug>
+	<loadEvent>STORAGE_CHECK_LAB_AEA_ACID</loadEvent>
+</event>
+<event name="STORAGE_CHECK_LAB_AEA_ACID_SENSOR">
+	<text>You are about to install the Polarized Sensors modification.
+	[Effects: Acidic Crew become immune to stun]
+	
+	[Warning: After installing this, you will not be able to install any more primary upgrades for Acidic crew. You will not be able to deactivate this mod either.]</text>
+	<choice hidden="true">
+		<text>Install the modification. [Cost: 5{]</text>
+		<event>
+			<text>You install the modification.</text>
+			<item_modify>
+				<item type="fuel" min="-5" max="-5" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_LAB_AEA_ACID_SENSOR" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_LAB_AEA_ACID_SENSOR">
+	<variable name="loc_lab_upgrades" op="add" val="1" />
+	<hiddenAug>LAB_AEA_ACID_SENSOR</hiddenAug>
+	<hiddenAug>LAB_AEA_ACID_INSTALLED</hiddenAug>
+	<loadEvent>STORAGE_CHECK_LAB_AEA_ACID</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_LAB_AEA_ACID_COOLING">
+	<text>You are about to install the Cooling Vents modification.
+	[Effects: Acidic Crew do 2x ranged damage but lose 50% of their hp]
+	
+	[Warning: After installing this, you will not be able to install any more primary upgrades for Acidic crew. You will not be able to deactivate this mod either.]</text>
+	<choice hidden="true">
+		<text>Install the modification. [Cost: 20~ 3{]</text>
+		<event>
+			<text>You install the modification.</text>
+			<item_modify>
+				<item type="scrap" min="-20" max="-20" />
+				<item type="fuel" min="-3" max="-3" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_LAB_AEA_ACID_COOLING" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_LAB_AEA_ACID_COOLING">
+	<variable name="loc_lab_upgrades" op="add" val="1" />
+	<hiddenAug>LAB_AEA_ACID_COOLING</hiddenAug>
+	<hiddenAug>LAB_AEA_ACID_INSTALLED</hiddenAug>
+	<loadEvent>STORAGE_CHECK_LAB_AEA_ACID</loadEvent>
+</event>
+
+
+
+<event name="STORAGE_CHECK_LAB_AEA_BIRD">
+	<text>You are viewing the lab menu for: [GI]</text>
+	<choice req="LAB_AEA_BIRD_ESCAPESPEED" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: Flight from Danger.
+		[Gi Crew gain 4x move speed in the presence of enemy crew]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_BIRD_AUTODESTROY" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: Auto Disassembly.
+		[Gi Crew damage enemy drones and metal crew at 5hp/s]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_BIRD_SOCIAL" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: Socialization.
+		[Gi Crew gain 0.25x repair speed and 0.1x combat damage for each friendly crewmember in the same room]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="pilot" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: None</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_BIRD_INSTALLED" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Pri: Flight from Danger. [An upgrade is already installed]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_BIRD_INSTALLED" lvl="0" max_group="1" blue="false" hidden="true">
+		<text>Pri: Flight from Danger. [Cost: 20~]</text>
+		<event load="STORAGE_CHECK_LAB_AEA_BIRD_ESCAPESPEED" />
+	</choice>
+	<choice req="LAB_AEA_BIRD_INSTALLED" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Pri: Auto Disassembly. [An upgrade is already installed]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_BIRD_INSTALLED" lvl="0" max_group="2" blue="false" hidden="true">
+		<text>Pri: Auto Disassembly. [Cost: 15~ 3|]</text>
+		<event load="STORAGE_CHECK_LAB_AEA_BIRD_AUTODESTROY" />
+	</choice>
+	<choice req="LAB_AEA_BIRD_INSTALLED" lvl="1" max_group="3" blue="false" hidden="true">
+		<text>Pri: Socialization. [An upgrade is already installed]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_BIRD_INSTALLED" lvl="0" max_group="3" blue="false" hidden="true">
+		<text>Pri: Socialization. [Cost: 20~ 3{]</text>
+		<event load="STORAGE_CHECK_LAB_AEA_BIRD_SOCIAL" />
+	</choice>
+	<choice req="pilot" lvl="1" max_group="999" blue="false" hidden="true">
+		<text>Go back.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+
+
+<event name="STORAGE_CHECK_LAB_AEA_BIRD_ESCAPESPEED">
+	<text>You are about to install the Flight from Danger modification.
+	[Effects: Gi Crew gain 4x move speed in the presence of enemy crew]
+	
+	[Warning: After installing this, you will not be able to install any more primary upgrades for Gi crew. You will not be able to deactivate this mod either.]</text>
+	<choice hidden="true">
+		<text>Install the modification. [Cost: 20~]</text>
+		<event>
+			<text>You install the modification.</text>
+			<item_modify>
+				<item type="scrap" min="-20" max="-20" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_LAB_AEA_BIRD_ESCAPESPEED" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_LAB_AEA_BIRD_ESCAPESPEED">
+	<variable name="loc_lab_upgrades" op="add" val="1" />
+	<hiddenAug>LAB_AEA_BIRD_ESCAPESPEED</hiddenAug>
+	<hiddenAug>LAB_AEA_BIRD_INSTALLED</hiddenAug>
+	<loadEvent>STORAGE_CHECK_LAB_AEA_BIRD</loadEvent>
+</event>
+<event name="STORAGE_CHECK_LAB_AEA_BIRD_AUTODESTROY">
+	<text>You are about to install the Auto Disassembly modification.
+	[Effects: Gi Crew damage enemy drones and metal crew at 5hp/s]
+	
+	[Warning: After installing this, you will not be able to install any more primary upgrades for Gi crew. You will not be able to deactivate this mod either.]</text>
+	<choice hidden="true">
+		<text>Install the modification. [Cost: 15~ 3|]</text>
+		<event>
+			<text>You install the modification.</text>
+			<item_modify>
+				<item type="scrap" min="-15" max="-15" />
+				<item type="drones" min="-3" max="-3" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_LAB_AEA_BIRD_AUTODESTROY" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_LAB_AEA_BIRD_AUTODESTROY">
+	<variable name="loc_lab_upgrades" op="add" val="1" />
+	<hiddenAug>LAB_AEA_BIRD_AUTODESTROY</hiddenAug>
+	<hiddenAug>LAB_AEA_BIRD_INSTALLED</hiddenAug>
+	<loadEvent>STORAGE_CHECK_LAB_AEA_BIRD</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_LAB_AEA_BIRD_SOCIAL">
+	<text>You are about to install the Socialization modification.
+	[Effects: Gi Crew gain 0.25x repair speed and 0.1x combat damage for each friendly crewmember in the same room]
+	
+	[Warning: After installing this, you will not be able to install any more primary upgrades for Acidic crew. You will not be able to deactivate this mod either.]</text>
+	<choice hidden="true">
+		<text>Install the modification. [Cost: 20~ 3{]</text>
+		<event>
+			<text>You install the modification.</text>
+			<item_modify>
+				<item type="scrap" min="-20" max="-20" />
+				<item type="fuel" min="-3" max="-3" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_LAB_AEA_BIRD_SOCIAL" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_LAB_AEA_BIRD_SOCIAL">
+	<variable name="loc_lab_upgrades" op="add" val="1" />
+	<hiddenAug>LAB_AEA_BIRD_SOCIAL</hiddenAug>
+	<hiddenAug>LAB_AEA_BIRD_INSTALLED</hiddenAug>
+	<loadEvent>STORAGE_CHECK_LAB_AEA_BIRD</loadEvent>
+</event>
+
+
+
+<event name="STORAGE_CHECK_LAB_AEA_OLD">
+	<text>You are viewing the lab menu for: [GI]</text>
+	<choice req="LAB_AEA_OLD_RESOLVE" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: Unyielding Resolve.
+		[Lylmik crew will always retain their base stats of HP, damage, immunities, move speed, clone speed, skill loss and heal speed and these cannot be overridden by external forces]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_OLD_COMPROMISED" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: Compromised Subsystems.
+		[Lylmik Crew lost their immunities but now clone at 2x speed and heal at 4x speed]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_OLD_ELITE" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: Elitism.
+		[Lylmik Crew gain 25hp for each allied elite]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="pilot" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: None</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_OLD_INSTALLED" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Pri: Unyielding Resolve. [An upgrade is already installed]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_OLD_INSTALLED" lvl="0" max_group="1" blue="false" hidden="true">
+		<text>Pri: Unyielding Resolve. [Cost: 3~ 3{ 3} 3|]</text>
+		<event load="STORAGE_CHECK_LAB_AEA_OLD_RESOLVE" />
+	</choice>
+	<choice req="LAB_AEA_OLD_INSTALLED" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Pri: Compromised Subsystems. [An upgrade is already installed]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_OLD_INSTALLED" lvl="0" max_group="2" blue="false" hidden="true">
+		<text>Pri: Compromised Subsystems. [Cost: 8|]</text>
+		<event load="STORAGE_CHECK_LAB_AEA_OLD_COMPROMISED" />
+	</choice>
+	<choice req="LAB_AEA_OLD_INSTALLED" lvl="1" max_group="3" blue="false" hidden="true">
+		<text>Pri: Elitism. [An upgrade is already installed]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="LAB_AEA_OLD_INSTALLED" lvl="0" max_group="3" blue="false" hidden="true">
+		<text>Pri: Elitism. [Cost: 15~ 6}]</text>
+		<event load="STORAGE_CHECK_LAB_AEA_OLD_ELITE" />
+	</choice>
+	<choice req="pilot" lvl="1" max_group="999" blue="false" hidden="true">
+		<text>Go back.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+
+
+<event name="STORAGE_CHECK_LAB_AEA_OLD_RESOLVE">
+	<text>You are about to install the Unyielding Resolve modification.
+	[Effects: Lylmik crew will always retain their base stats of HP, damage, immunities, move speed, clone speed, skill loss and heal speed and these cannot be overridden by external forces]
+	
+	[Warning: After installing this, you will not be able to install any more primary upgrades for Lylmik crew. You will not be able to deactivate this mod either.]</text>
+	<choice hidden="true">
+		<text>Install the modification. [Cost: 3~ 3{ 3} 3|]</text>
+		<event>
+			<text>You install the modification.</text>
+			<item_modify>
+				<item type="scrap" min="-3" max="-3" />
+				<item type="fuel" min="-3" max="-3" />
+				<item type="missiles" min="-3" max="-3" />
+				<item type="drones" min="-3" max="-3" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_LAB_AEA_OLD_RESOLVE" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_LAB_AEA_OLD_RESOLVE">
+	<variable name="loc_lab_upgrades" op="add" val="1" />
+	<hiddenAug>LAB_AEA_OLD_RESOLVE</hiddenAug>
+	<hiddenAug>LAB_AEA_OLD_INSTALLED</hiddenAug>
+	<loadEvent>STORAGE_CHECK_LAB_AEA_OLD</loadEvent>
+</event>
+<event name="STORAGE_CHECK_LAB_AEA_OLD_COMPROMISED">
+	<text>You are about to install the Compromised Subsystems modification.
+	[Effects: Lylmik Crew lost their immunities but now clone at 2x speed and heal at 4x speed]
+	
+	[Warning: After installing this, you will not be able to install any more primary upgrades for Lylmik crew. You will not be able to deactivate this mod either.]</text>
+	<choice hidden="true">
+		<text>Install the modification. [Cost: 8|]</text>
+		<event>
+			<text>You install the modification.</text>
+			<item_modify>
+				<item type="drones" min="-8" max="-8" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_LAB_AEA_OLD_COMPROMISED" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_LAB_AEA_OLD_COMPROMISED">
+	<variable name="loc_lab_upgrades" op="add" val="1" />
+	<hiddenAug>LAB_AEA_OLD_COMPROMISED</hiddenAug>
+	<hiddenAug>LAB_AEA_OLD_INSTALLED</hiddenAug>
+	<loadEvent>STORAGE_CHECK_LAB_AEA_OLD</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_LAB_AEA_OLD_ELITE">
+	<text>You are about to install the Elitism modification.
+	[Effects: Lylmik Crew gain 25hp for each allied elite]
+	
+	[Warning: After installing this, you will not be able to install any more primary upgrades for Acidic crew. You will not be able to deactivate this mod either.]</text>
+	<choice hidden="true">
+		<text>Install the modification. [Cost: 15~ 6}]</text>
+		<event>
+			<text>You install the modification.</text>
+			<item_modify>
+				<item type="scrap" min="-15" max="-15" />
+				<item type="missiles" min="-6" max="-6" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_LAB_AEA_OLD_ELITE" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="1" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_LAB_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_LAB_AEA_OLD_ELITE">
+	<variable name="loc_lab_upgrades" op="add" val="1" />
+	<hiddenAug>LAB_AEA_OLD_ELITE</hiddenAug>
+	<hiddenAug>LAB_AEA_OLD_INSTALLED</hiddenAug>
+	<loadEvent>STORAGE_CHECK_LAB_AEA_OLD</loadEvent>
 </event>
 </FTL>

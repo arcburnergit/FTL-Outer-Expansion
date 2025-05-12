@@ -185,7 +185,7 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
 end)
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
-  if projectile.extend.name == "AEA_LASER_ACID_BOSS" or projectile.extend.name == "AEA_LASER_ACID_BOSS_CHAOS" then
+  if projectile and projectile.extend.name == "AEA_LASER_ACID_BOSS" or projectile.extend.name == "AEA_LASER_ACID_BOSS_CHAOS" then
 		local blueprint = Hyperspace.Blueprints:GetWeaponBlueprint(projectile.extend.name.."_PROJ")
     for roomId, roomPos in pairs(get_adjacent_rooms(shipManager.iShipId, get_room_at_location(shipManager, location, false), false)) do
       local spaceManager = Hyperspace.App.world.space

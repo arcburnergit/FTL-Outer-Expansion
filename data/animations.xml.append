@@ -5315,7 +5315,7 @@
 	<sheet>aea_crystal_shard_boss</sheet>
 	<desc length="7" x="0" y="0" />
 	<chargedFrame>1</chargedFrame>
-	<fireFrame>6</fireFrame>
+	<fireFrame>2</fireFrame>
 	<firePoint x="21" y="32" />
 	<mountPoint x="7" y="45" />
 	<chargeImage>weapon_shard/aea_crystal_shard_boss_glow.png</chargeImage>
@@ -5325,7 +5325,7 @@
 	<sheet>aea_crystal_shard_boss_chaos</sheet>
 	<desc length="7" x="0" y="0" />
 	<chargedFrame>1</chargedFrame>
-	<fireFrame>6</fireFrame>
+	<fireFrame>2</fireFrame>
 	<firePoint x="21" y="32" />
 	<mountPoint x="7" y="45" />
 	<chargeImage>weapon_shard/aea_crystal_shard_boss_glow.png</chargeImage>

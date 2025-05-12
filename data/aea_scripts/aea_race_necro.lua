@@ -358,7 +358,7 @@ end)
 
 local tempDrones = {}
 script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile, drone)
-	if projectile.extend.name == "AEA_LASER_NECRO_COMBAT_BOSS" or projectile.extend.name == "AEA_LASER_NECRO_COMBAT_BOSS_CHAOS" then
+	if projectile.extend.name == "AEA_LASER_NECRO_COMBAT_BOSS" or projectile.extend.name == "AEA_LASER_NECRO_COMBAT_BOSS_CHAOS" and #tempDrones[drone.selfId] <= 3 then
 		local droneBlueprint = Hyperspace.Blueprints:GetDroneBlueprint("AEA_COMBAT_NECRO_BOSS_LASER_TEMP")
 		local ship = Hyperspace.ships(1- projectile.currentSpace)
 		local otherShip = Hyperspace.ships(projectile.currentSpace)
@@ -377,6 +377,7 @@ script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile,
 			table.insert(tempDrones[drone.selfId], drone2)
 			if #tempDrones[drone.selfId] > 3  then
 				tempDrones[drone.selfId][1]:BlowUp(true)
+				table.remove(tempDrones[drone.selfId], 1)
 			end
 		end
 		projectile:Kill()
@@ -388,6 +389,7 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
 	if log_events then
 		log("JUMP_ARRIVE 2")
 	end
+	tempDrones = {}
 	droneTable = {}
 end)
 

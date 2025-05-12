@@ -51,7 +51,7 @@
 	<destroyed load="AEAT_BOSS_ACID_DESTROYED" />
 	<deadCrew load="AEAT_BOSS_ACID_DEADCREW" />
 </ship>
-<ship name="SSHIP_AEAT_BOSS_ACID_CHAOS" auto_blueprint="AEAT_BOSS_ACID_CHAOS">
+<ship name="SHIP_AEAT_BOSS_ACID_CHAOS" auto_blueprint="AEAT_BOSS_ACID_CHAOS">
 	<destroyed load="AEAT_BOSS_ACID_DESTROYED" />
 	<deadCrew load="AEAT_BOSS_ACID_DEADCREW" />
 </ship>
@@ -170,7 +170,7 @@
 </event>
 <event name="MV_TRAVELER_AEAT_BOSS_ACID_CHAOS">
 	<text>From out of the tunnel comes a massive cruiser vessel, of Acidic design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
-	<ship load="SHIP_MTBOSS_DUSKBRINGER_B_CHAOS" hostile="false" /> 
+	<ship load="SHIP_AEAT_BOSS_ACID_CHAOS" hostile="false" /> 
 	<eventAlias jumpClear="false" name="AEAT_BOSS_ACID_DROP">AEAT_BOSS_ACID_DROP_CHAOS</eventAlias>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -259,7 +259,7 @@
 	<destroyed load="AEAT_BOSS_BIRD_DESTROYED" />
 	<deadCrew load="AEAT_BOSS_BIRD_DEADCREW" />
 </ship>
-<ship name="SSHIP_AEAT_BOSS_BIRD_CHAOS" auto_blueprint="AEAT_BOSS_BIRD_CHAOS">
+<ship name="SHIP_AEAT_BOSS_BIRD_CHAOS" auto_blueprint="AEAT_BOSS_BIRD_CHAOS">
 	<destroyed load="AEAT_BOSS_BIRD_DESTROYED" />
 	<deadCrew load="AEAT_BOSS_BIRD_DEADCREW" />
 </ship>
@@ -378,7 +378,7 @@
 </event>
 <event name="MV_TRAVELER_AEAT_BOSS_BIRD_CHAOS">
 	<text>From out of the tunnel comes a massive cruiser vessel, of Gi design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
-	<ship load="SHIP_MTBOSS_DUSKBRINGER_B_CHAOS" hostile="false" /> 
+	<ship load="SHIP_AEAT_BOSS_BIRD_CHAOS" hostile="false" /> 
 	<eventAlias jumpClear="false" name="AEAT_BOSS_BIRD_DROP">AEAT_BOSS_BIRD_DROP_CHAOS</eventAlias>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -468,7 +468,7 @@
 	<destroyed load="AEAT_BOSS_CULT_DESTROYED" />
 	<deadCrew load="AEAT_BOSS_CULT_DEADCREW" />
 </ship>
-<ship name="SSHIP_AEAT_BOSS_CULT_CHAOS" auto_blueprint="AEAT_BOSS_CULT_CHAOS">
+<ship name="SHIP_AEAT_BOSS_CULT_CHAOS" auto_blueprint="AEAT_BOSS_CULT_CHAOS">
 	<destroyed load="AEAT_BOSS_CULT_DESTROYED" />
 	<deadCrew load="AEAT_BOSS_CULT_DEADCREW" />
 </ship>
@@ -587,7 +587,7 @@
 </event>
 <event name="MV_TRAVELER_AEAT_BOSS_CULT_CHAOS">
 	<text>From out of the tunnel comes a massive cruiser vessel, of Cultist design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
-	<ship load="SHIP_MTBOSS_DUSKBRINGER_B_CHAOS" hostile="false" /> 
+	<ship load="SHIP_AEAT_BOSS_CULT_CHAOS" hostile="false" /> 
 	<eventAlias jumpClear="false" name="AEAT_BOSS_CULT_DROP">AEAT_BOSS_CULT_DROP_CHAOS</eventAlias>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -676,7 +676,7 @@
 	<destroyed load="AEAT_BOSS_NECRO_DESTROYED" />
 	<deadCrew load="AEAT_BOSS_NECRO_DEADCREW" />
 </ship>
-<ship name="SSHIP_AEAT_BOSS_NECRO_CHAOS" auto_blueprint="AEAT_BOSS_NECRO_CHAOS">
+<ship name="SHIP_AEAT_BOSS_NECRO_CHAOS" auto_blueprint="AEAT_BOSS_NECRO_CHAOS">
 	<destroyed load="AEAT_BOSS_NECRO_DESTROYED" />
 	<deadCrew load="AEAT_BOSS_NECRO_DEADCREW" />
 </ship>
@@ -795,7 +795,7 @@
 </event>
 <event name="MV_TRAVELER_AEAT_BOSS_NECRO_CHAOS">
 	<text>From out of the tunnel comes a massive cruiser vessel, of Gi design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
-	<ship load="SHIP_MTBOSS_DUSKBRINGER_B_CHAOS" hostile="false" /> 
+	<ship load="SHIP_AEAT_BOSS_NECRO_CHAOS" hostile="false" /> 
 	<eventAlias jumpClear="false" name="AEAT_BOSS_NECRO_DROP">AEAT_BOSS_NECRO_DROP_CHAOS</eventAlias>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -884,7 +884,7 @@
 	<destroyed load="AEAT_BOSS_SHARD_DESTROYED" />
 	<deadCrew load="AEAT_BOSS_SHARD_DEADCREW" />
 </ship>
-<ship name="SSHIP_AEAT_BOSS_SHARD_CHAOS" auto_blueprint="AEAT_BOSS_SHARD_CHAOS">
+<ship name="SHIP_AEAT_BOSS_SHARD_CHAOS" auto_blueprint="AEAT_BOSS_SHARD_CHAOS">
 	<destroyed load="AEAT_BOSS_SHARD_DESTROYED" />
 	<deadCrew load="AEAT_BOSS_SHARD_DEADCREW" />
 </ship>
@@ -1003,7 +1003,7 @@
 </event>
 <event name="MV_TRAVELER_AEAT_BOSS_SHARD_CHAOS">
 	<text>From out of the tunnel comes a massive cruiser vessel, of Shard-Forged design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
-	<ship load="SHIP_MTBOSS_DUSKBRINGER_B_CHAOS" hostile="false" /> 
+	<ship load="SHIP_AEAT_BOSS_SHARD_CHAOS" hostile="false" /> 
 	<eventAlias jumpClear="false" name="AEAT_BOSS_SHARD_DROP">AEAT_BOSS_SHARD_DROP_CHAOS</eventAlias>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -1044,16 +1044,9 @@
 	<metaVariable name="prof_renegades_killed" op="add" val="1" />
 	<choice hidden="true">
 		<text>Continue...</text>
-		<event load="AEAT_BOSS_SHARD_DROP_CHANCE" />
+		<event><loadEvent>AEAT_BOSS_SHARD_DROP</loadEvent></event>
 	</choice>
 </event>
-<eventList name="AEAT_BOSS_SHARD_DROP_CHANCE">
-	<event>
-		<text id="renegade_drop_fail" />
-		<autoReward level="LOW">stuff</autoReward>
-	</event>
-	<event><loadEvent>AEAT_BOSS_SHARD_DROP</loadEvent></event>
-</eventList>
 
 <event name="AEAT_BOSS_SHARD_DEADCREW">
 	<text id="renegade_killed" />
@@ -1092,7 +1085,7 @@
 	<destroyed load="AEAT_BOSS_SHLEG_DESTROYED" />
 	<deadCrew load="AEAT_BOSS_SHLEG_DEADCREW" />
 </ship>
-<ship name="SSHIP_AEAT_BOSS_SHLEG_CHAOS" auto_blueprint="AEAT_BOSS_SHLEG_CHAOS">
+<ship name="SHIP_AEAT_BOSS_SHLEG_CHAOS" auto_blueprint="AEAT_BOSS_SHLEG_CHAOS">
 	<destroyed load="AEAT_BOSS_SHLEG_DESTROYED" />
 	<deadCrew load="AEAT_BOSS_SHLEG_DEADCREW" />
 </ship>
@@ -1211,7 +1204,7 @@
 </event>
 <event name="MV_TRAVELER_AEAT_BOSS_SHLEG_CHAOS">
 	<text>From out of the tunnel comes a massive cruiser vessel, of Anarchist design! This must be some rare exploration vessel, who's taken it upon themselves to travel the Multiverse!</text>
-	<ship load="SHIP_MTBOSS_DUSKBRINGER_B_CHAOS" hostile="false" /> 
+	<ship load="SHIP_AEAT_BOSS_SHLEG_CHAOS" hostile="false" /> 
 	<eventAlias jumpClear="false" name="AEAT_BOSS_SHLEG_DROP">AEAT_BOSS_SHLEG_DROP_CHAOS</eventAlias>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -1278,12 +1271,12 @@
 	<text id="renegade_drop_yes" />
 	<achievement silent="false">ACH_AEA_REN_SHLEG</achievement>
 	<autoReward level="LOW">stuff</autoReward>
-	<drone name="AEA_COMBAT_SHLEG_BOSS" />
+	<weapon name="AEA_BEAM_SHLEG_BOSS" />
 </event>
 <event name="AEAT_BOSS_SHLEG_DROP_CHAOS">
 	<text id="renegade_drop_yes" />
 	<achievement silent="false">ACH_AEA_REN_SHLEG</achievement>
 	<autoReward level="LOW">stuff</autoReward>
-	<drone name="AEA_COMBAT_SHLEG_BOSS_CHAOS" />
+	<weapon name="AEA_BEAM_SHLEG_BOSS_CHAOS" />
 </event>
 </FTL>

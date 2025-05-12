@@ -93,7 +93,7 @@ This enemy ship is filled with a deadly neurotoxin which will build up and event
 Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
         </mod-append:shipIcon>
 		<mod-append:shipIcon>
-            <name>icon_aea_shleg_mind_gas</name>
+            <name>icon_aea_shleg_gel</name>
             <tooltip>SLUG SHELL REPAIR GEL:
 Breaches on this enemy will automatically be repaired even in the absence of crew. Also provides friendly crew with 3hp/s of healing and drains enemy crew at 3hp/s in empty rooms.
 Drones, Shells, Vampweeds, Ghosts and Lanius are immune.</tooltip>
@@ -3721,6 +3721,7 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 		<shipIcons>
 			<shipIcon>icon_threat</shipIcon>
 			<shipIcon>icon_specialwep</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
 		</shipIcons>
 		<noFuelStalemate />
 	</mod-append:customShip>
@@ -3728,6 +3729,7 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 		<shipIcons>
 			<shipIcon>icon_threat</shipIcon>
 			<shipIcon>icon_specialwep</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
 		</shipIcons>
 		<noFuelStalemate />
 	</mod-append:customShip>
@@ -3735,6 +3737,7 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 		<shipIcons>
 			<shipIcon>icon_threat</shipIcon>
 			<shipIcon>icon_specialwep</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
 		</shipIcons>
 		<noFuelStalemate />
 	</mod-append:customShip>
@@ -3742,6 +3745,7 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 		<shipIcons>
 			<shipIcon>icon_threat</shipIcon>
 			<shipIcon>icon_specialwep</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
 		</shipIcons>
 		<noFuelStalemate />
 	</mod-append:customShip>
@@ -6831,8 +6835,311 @@ Right click to attempt the ritual or cancel.
 	</mod-append:race>
 </mod:findLike>
 
-
 <augments>
+	<aug name="LAB_AEA_OLD_RESOLVE">
+		<statBoost name="canSuffocate">
+			<boostType>SET</boostType>
+			<value>false</value>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>99999</priority>
+			<whiteList load="LIST_CREW_AEA_OLD" />
+		</statBoost>
+		<statBoost name="canBurn">
+			<boostType>SET</boostType>
+			<value>false</value>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>99999</priority>
+			<whiteList load="LIST_CREW_AEA_OLD" />
+		</statBoost>
+		<statBoost name="defaultSkillLevel">
+			<boostType>SET</boostType>
+			<amount>1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>99999</priority>
+			<whiteList load="LIST_CREW_AEA_OLD" />
+		</statBoost>
+		<statBoost name="cloneLoseSkills">
+			<boostType>SET</boostType>
+			<value>false</value>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>99999</priority>
+			<whiteList load="LIST_CREW_AEA_OLD" />
+		</statBoost>
+		<statBoost name="maxHealth">
+			<boostType>SET</boostType>
+			<amount>100</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>99999</priority>
+			<whiteList>
+				<aea_old_1/>
+			</whiteList>
+		</statBoost>
+		<statBoost name="maxHealth">
+			<boostType>SET</boostType>
+			<amount>200</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>99999</priority>
+			<whiteList>
+				<aea_old_unique_1/>
+				<aea_old_unique_2/>
+				<aea_old_unique_3/>
+				<aea_old_unique_4/>
+				<aea_old_unique_5/>
+			</whiteList>
+		</statBoost>
+		<statBoost name="damageMultiplier">
+			<boostType>SET</boostType>
+			<amount>1.75</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>99999</priority>
+			<whiteList>
+				<aea_old_1/>
+			</whiteList>
+		</statBoost>
+		<statBoost name="damageMultiplier">
+			<boostType>SET</boostType>
+			<amount>2</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>99999</priority>
+			<whiteList>
+				<aea_old_unique_1/>
+				<aea_old_unique_2/>
+				<aea_old_unique_3/>
+				<aea_old_unique_4/>
+				<aea_old_unique_5/>
+			</whiteList>
+		</statBoost>
+		<statBoost name="healSpeed">
+			<boostType>SET</boostType>
+			<amount>2</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>99999</priority>
+			<whiteList load="LIST_CREW_AEA_OLD" />
+		</statBoost>
+		<statBoost name="moveSpeedMultiplier">
+			<boostType>SET</boostType>
+			<amount>1.75</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>99999</priority>
+			<whiteList load="LIST_CREW_AEA_OLD" />
+		</statBoost>
+		<statBoost name="cloneSpeedMultiplier">
+			<boostType>SET</boostType>
+			<amount>0.5</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>99999</priority>
+			<whiteList load="LIST_CREW_AEA_OLD" />
+		</statBoost>
+	</aug>
+	<aug name="LAB_AEA_OLD_COMPROMISED">
+		<statBoost name="canSuffocate">
+			<boostType>SET</boostType>
+			<value>true</value>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>100</priority>
+			<whiteList load="LIST_CREW_AEA_OLD" />
+		</statBoost>
+		<statBoost name="canBurn">
+			<boostType>SET</boostType>
+			<value>true</value>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>100</priority>
+			<whiteList load="LIST_CREW_AEA_OLD" />
+		</statBoost>
+		<statBoost name="healSpeed">
+			<boostType>SET</boostType>
+			<amount>4</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>100</priority>
+			<whiteList load="LIST_CREW_AEA_OLD" />
+		</statBoost>
+		<statBoost name="cloneSpeedMultiplier">
+			<boostType>SET</boostType>
+			<amount>2</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<priority>100</priority>
+			<whiteList load="LIST_CREW_AEA_OLD" />
+		</statBoost>
+	</aug>
+	<aug name="LAB_AEA_OLD_ELITE">
+		<statBoost name="statBoost">
+			<statBoost name="maxHealth">
+				<boostType>FLAT</boostType>
+				<amount>25</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>999</priority>
+				<whiteList load="LIST_CREW_AEA_OLD" />
+			</statBoost>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<whiteList load="LIST_CREW_ELITE" />
+		</statBoost>
+	</aug>
+	<aug name="LAB_AEA_BIRD_ESCAPESPEED">
+		<statBoost name="statBoost">
+			<statBoost name="moveSpeedMultiplier">
+				<boostType>MULT</boostType>
+				<amount>4</amount>
+				<maxStacks>1</maxStacks>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>999</priority>
+				<whiteList load="LIST_CREW_AEA_BIRD" />
+			</statBoost>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+		</statBoost>
+	</aug>
+	<aug name="LAB_AEA_BIRD_AUTODESTROY">
+		<statBoost name="statBoost">
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>-5</amount>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>999</priority>
+				<whiteList load="LIST_CREW_METAL" />
+			</statBoost>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<whiteList load="LIST_CREW_AEA_BIRD" />
+		</statBoost>
+		<statBoost name="statBoost">
+			<statBoost name="trueHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>-5</amount>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>DRONES</droneTarget>
+				<priority>999</priority>
+			</statBoost>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<whiteList load="LIST_CREW_AEA_BIRD" />
+		</statBoost>
+	</aug>
+	<aug name="LAB_AEA_BIRD_SOCIAL">
+		<statBoost name="statBoost">
+			<statBoost name="repairSpeed">
+				<boostType>FLAT</boostType>
+				<amount>0.25</amount>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<affectsSelf>false</affectsSelf>
+				<priority>0</priority>
+				<whiteList load="LIST_CREW_AEA_BIRD" />
+			</statBoost>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+		</statBoost>
+		<statBoost name="statBoost">
+			<statBoost name="damageMultiplier">
+				<boostType>FLAT</boostType>
+				<amount>0.1</amount>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<affectsSelf>false</affectsSelf>
+				<priority>0</priority>
+				<whiteList load="LIST_CREW_AEA_BIRD" />
+			</statBoost>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+		</statBoost>
+	</aug>
+	<aug name="LAB_AEA_ACID_REPAIR">
+    	<statBoosts>
+			<statBoost name="passiveHealAmount">
+				<boostType>FLAT</boostType>
+				<amount>6.4</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<priority>999</priority>
+				<whiteList load="LIST_CREW_AEA_ACID" />
+			</statBoost>
+			<statBoost name="passiveHealDelay">
+				<boostType>SET</boostType>
+				<amount>5</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<priority>999</priority>
+				<whiteList load="LIST_CREW_AEA_ACID" />
+			</statBoost>
+			<statBoost name="repairSpeed">
+				<boostType>SET</boostType>
+				<amount>1</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<priority>999</priority>
+				<whiteList load="LIST_CREW_AEA_ACID" />
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="LAB_AEA_ACID_SENSOR">
+    	<statBoosts>
+			<statBoost name="stunMultiplier">
+				<boostType>SET</boostType>
+				<amount>0</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<priority>9999</priority>
+				<whiteList load="LIST_CREW_AEA_ACID" />
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="LAB_AEA_ACID_COOLING">
+    	<statBoosts>
+			<statBoost name="rangedDamageMultiplier">
+				<boostType>MULT</boostType>
+				<amount>2</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<priority>999</priority>
+				<whiteList load="LIST_CREW_AEA_ACID" />
+			</statBoost>
+			<statBoost name="maxHealth">
+				<boostType>MULT</boostType>
+				<amount>0.5</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<priority>999</priority>
+				<whiteList load="LIST_CREW_AEA_ACID" />
+			</statBoost>
+		</statBoosts>
+	</aug>
 	<aug name="AEA_BARRIER_RELAY">
 		<icon>icon_aea_barrier_relay</icon>
 	</aug>
@@ -9216,37 +9523,37 @@ Right click to attempt the ritual or cancel.
 		</section>
 		<section text="Renegade Cruisers (OE)" hidden="false">
 			<achievement name="ACH_AEA_REN_ACID">
-				<name>Professionals Have Standards</name>
+				<name>No Such Thing as Too Many Guns</name>
 				<description>Defeat the Acidic Destroyer B Renegade and get the Acid Splasher.</description>
 				<icon>renegade_aea_acid</icon>
 				<header>Renegade Defeated</header>
 			</achievement>
 			<achievement name="ACH_AEA_REN_BIRD">
-				<name>Professionals Have Standards</name>
+				<name>A Good Offense is a Good Offense</name>
 				<description>Defeat the Wedge-Tailed B Renegade and get the Scourge Drone.</description>
 				<icon>renegade_aea_bird</icon>
 				<header>Renegade Defeated</header>
 			</achievement>
 			<achievement name="ACH_AEA_REN_CULT">
-				<name>Professionals Have Standards</name>
+				<name>Barrier Relay</name>
 				<description>Defeat the Bud C Renegade and get the Barrier Generator.</description>
 				<icon>renegade_aea_cult</icon>
 				<header>Renegade Defeated</header>
 			</achievement>
 			<achievement name="ACH_AEA_REN_NECRO">
-				<name>Professionals Have Standards</name>
+				<name>Droneception</name>
 				<description>Defeat the Blasphemy C Renegade and get the Necromancer Drone.</description>
 				<icon>renegade_aea_necro</icon>
 				<header>Renegade Defeated</header>
 			</achievement>
 			<achievement name="ACH_AEA_REN_SHARD">
-				<name>Professionals Have Standards</name>
+				<name>Overused Gimmick</name>
 				<description>Defeat the Shard-Forged Auto C Renegade and get the 'Naginata' beam.</description>
 				<icon>renegade_aea_shard</icon>
 				<header>Renegade Defeated</header>
 			</achievement>
 			<achievement name="ACH_AEA_REN_SHLEG">
-				<name>Professionals Have Standards</name>
+				<name>Mind yourself</name>
 				<description>Defeat the Disorder B Renegade and get the Leviathan Beam.</description>
 				<icon>renegade_aea_shleg</icon>
 				<header>Renegade Defeated</header>

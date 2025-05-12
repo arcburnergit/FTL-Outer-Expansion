@@ -6551,7 +6551,6 @@ A CLASS
 		<medbay power="2" max="2" room="14" start="true" />
 		<oxygen power="2" max="2" room="10" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
-		<sensors power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="2" start="true" />
 		<weapons power="5" max="5" room="3" start="true" />
 	</systemList>
@@ -6569,7 +6568,7 @@ A CLASS
 		<drone name="AEA_COMBAT_BIRD_SMART_1_ENEMY" />
 	</droneList>
 	<health amount="15" />
-	<maxPower amount="0" />
+	<maxPower amount="20" />
 	<crewCount amount="8" max="8" class="aea_bird_illuminant" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="UPG_MEDBAY_NANO" />
@@ -6584,7 +6583,6 @@ A CLASS
 		<medbay power="2" max="2" room="14" start="true" />
 		<oxygen power="2" max="2" room="10" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
-		<sensors power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="2" start="true" />
 		<weapons power="5" max="5" room="3" start="true" />
 	</systemList>
@@ -6602,7 +6600,7 @@ A CLASS
 		<drone name="AEA_COMBAT_BIRD_SMART_1_ENEMY" />
 	</droneList>
 	<health amount="15" />
-	<maxPower amount="0" />
+	<maxPower amount="21" />
 	<crewCount amount="8" max="8" class="aea_bird_illuminant" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="UPG_MEDBAY_NANO" />
@@ -6617,7 +6615,6 @@ A CLASS
 		<medbay power="2" max="2" room="14" start="true" />
 		<oxygen power="2" max="2" room="10" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
-		<sensors power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="2" start="true" />
 		<weapons power="5" max="5" room="3" start="true" />
 	</systemList>
@@ -6636,7 +6633,7 @@ A CLASS
 		<drone name="AEA_COMBAT_BIRD_SMART_1_ENEMY" />
 	</droneList>
 	<health amount="15" />
-	<maxPower amount="0" />
+	<maxPower amount="22" />
 	<crewCount amount="8" max="8" class="aea_bird_illuminant" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="UPG_MEDBAY_NANO" />
@@ -6651,7 +6648,6 @@ A CLASS
 		<medbay power="2" max="2" room="14" start="true" />
 		<oxygen power="2" max="2" room="10" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
-		<sensors power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="2" start="true" />
 		<weapons power="5" max="5" room="3" start="true" />
 	</systemList>
@@ -6669,7 +6665,7 @@ A CLASS
 		<drone name="AEA_COMBAT_BIRD_SMART_2_ENEMY" />
 	</droneList>
 	<health amount="15" />
-	<maxPower amount="0" />
+	<maxPower amount="22" />
 	<crewCount amount="8" max="8" class="aea_bird_illuminant" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="UPG_MEDBAY_NANO" />
@@ -6685,21 +6681,20 @@ A CLASS
 		<oxygen power="1" max="1" room="10" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="5" start="true" />
-		<teleporter power="2" max="2" room="12" start="true" />
 		<weapons power="6" max="6" room="6" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="10" count="4">
-		<weapon name="LASER_LIGHT_1" />
-		<weapon name="LASER_LIGHT_1" />
+		<weapon name="LASER_LIGHT" />
+		<weapon name="LASER_LIGHT" />
 		<weapon name="KERNEL_2_ENEMY" />
 		<weapon name="KERNEL_FIRE_ENEMY" />
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="15" />
-	<crewCount amount="6" max="6" class="aea_cult_wizard_s15" />
+	<crewCount amount="4" max="4" class="aea_cult_wizard_s15" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_BARRIER_RELAY" />
 </shipBlueprint>
@@ -6714,21 +6709,20 @@ A CLASS
 		<oxygen power="1" max="1" room="10" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="5" start="true" />
-		<teleporter power="2" max="2" room="12" start="true" />
 		<weapons power="7" max="7" room="6" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="10" count="4">
 		<weapon name="LASER_LIGHT_2" />
-		<weapon name="LASER_LIGHT_1" />
+		<weapon name="LASER_LIGHT" />
 		<weapon name="KERNEL_2_ENEMY" />
 		<weapon name="KERNEL_FIRE_ENEMY" />
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="16" />
-	<crewCount amount="7" max="7" class="aea_cult_wizard_s15" />
+	<crewCount amount="5" max="5" class="aea_cult_wizard_s15" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_BARRIER_RELAY" />
 </shipBlueprint>
@@ -6743,7 +6737,6 @@ A CLASS
 		<oxygen power="1" max="1" room="10" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="5" start="true" />
-		<teleporter power="2" max="2" room="12" start="true" />
 		<weapons power="8" max="8" room="6" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
@@ -6757,7 +6750,7 @@ A CLASS
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="17" />
-	<crewCount amount="8" max="8" class="aea_cult_wizard_s15" />
+	<crewCount amount="6" max="6" class="aea_cult_wizard_s15" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_BARRIER_RELAY" />
 </shipBlueprint>
@@ -6772,7 +6765,6 @@ A CLASS
 		<oxygen power="1" max="1" room="10" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
 		<shields power="2" max="8" room="5" start="true" />
-		<teleporter power="2" max="2" room="12" start="true" />
 		<weapons power="8" max="8" room="6" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
@@ -6786,7 +6778,7 @@ A CLASS
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="17" />
-	<crewCount amount="8" max="8" class="aea_cult_wizard_s15" />
+	<crewCount amount="6" max="6" class="aea_cult_wizard_s15" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_BARRIER_RELAY_CHAOS" />
 </shipBlueprint>
