@@ -12,8 +12,89 @@
 	</choice>
 </event>
 <event name="BOON_SELECT_AEA_CLONE_CRIME">
-	<text>From nowhere, you hear a voice speaking to you. "Grant of [Auxiliary Shielding] i-i-installed. Installed! Grant provides: A single layer of energy shields, stacks with other energy shields. If -you- witness p-p-previous challenger; provide thanks. I advise you -visit- me as well."</text>
+	<text>From nowhere, you hear a voice speaking to you. "Grant of [Auxiliary Shielding] i-i-installed. Installed! Grant provides: Spawn a weak generic crewmember with a 20 second lifespan onboard your ship after every jump. If -you- witness p-p-previous challenger; provide thanks. I advise you -visit- me as well."</text>
 	<hiddenAug>BOON_AEA_CLONE_CRIME</hiddenAug>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<loadEvent>BOON_SELECT_CONTINUE</loadEvent>
+		</event>
+	</choice>
+</event>
+
+<event name="BOON_SELECT_AEA_ACID">
+	<text>From nowhere, you hear a voice speaking to you. "The Boon... of Growth. Your Acidic crew will... heal twice as fast and cannot be stunned. You may... thank the previous challenger. Or maybe you... do not? Who can say..."</text>
+	<hiddenAug>BOON_CREW_AEA_ACID</hiddenAug>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<loadEvent>BOON_SELECT_CONTINUE</loadEvent>
+		</event>
+	</choice>
+</event>
+<event name="BOON_SELECT_AEA_BIRD">
+	<text>From nowhere, you hear a voice speaking to you. "The Boon... of Feathers. Your Gi crew will... gain an additional 0.25x to their auto repair speed. You may... thank the previous challenger. Or maybe you... do not? Who can say..."</text>
+	<hiddenAug>BOON_CREW_AEA_BIRD</hiddenAug>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<loadEvent>BOON_SELECT_CONTINUE</loadEvent>
+		</event>
+	</choice>
+</event>
+<event name="BOON_SELECT_AEA_CULT">
+	<text>From nowhere, you hear a voice speaking to you. "The Boon... of Worship. Your Cultist crew will... do 25% more ranged damage. You may... thank the previous challenger. Or maybe you... do not? Who can say..."</text>
+	<hiddenAug>BOON_CREW_AEA_CULT</hiddenAug>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<loadEvent>BOON_SELECT_CONTINUE</loadEvent>
+		</event>
+	</choice>
+</event>
+<event name="BOON_SELECT_AEA_NECRO">
+	<text>From nowhere, you hear a voice speaking to you. "The Boon... of Resurrection. You will... Gain 1 Nanite Swarm each jump. You may... thank the previous challenger. Or maybe you... do not? Who can say..."</text>
+	<hiddenAug>BOON_CREW_AEA_NECRO</hiddenAug>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<loadEvent>BOON_SELECT_CONTINUE</loadEvent>
+		</event>
+	</choice>
+</event>
+<event name="BOON_SELECT_AEA_SHLEG">
+	<text>From nowhere, you hear a voice speaking to you. "The Boon... of Molluscs. Your Anarchist shell crew will... gain mind control immunity and Anarchist slug crew will... gain 10% damage resistance. You may... thank the previous challenger. Or maybe you... do not? Who can say..."</text>
+	<hiddenAug>BOON_CREW_AEA_SHLEG</hiddenAug>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<loadEvent>BOON_SELECT_CONTINUE</loadEvent>
+		</event>
+	</choice>
+</event>
+<event name="BOON_SELECT_AEA_SHARD">
+	<text>From nowhere, you hear a voice speaking to you. "The Boon... of Shattering. Your Shard-Forged crew will... do 25% additional sabotage damage. You may... thank the previous challenger. Or maybe you... do not? Who can say..."</text>
+	<hiddenAug>BOON_CREW_AEA_SHARD</hiddenAug>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<loadEvent>BOON_SELECT_CONTINUE</loadEvent>
+		</event>
+	</choice>
+</event>
+<event name="BOON_SELECT_AEA_JUSTICE">
+	<text>From nowhere, you hear a voice speaking to you. "The Boon... of Offerings. The Dark Justicier will... heal 5hp/s while performing a ritual. You may... thank the previous challenger. Or maybe you... do not? Who can say..."</text>
+	<hiddenAug>BOON_CREW_AEA_JUSTICE</hiddenAug>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<loadEvent>BOON_SELECT_CONTINUE</loadEvent>
+		</event>
+	</choice>
+</event>
+<event name="BOON_SELECT_AEA_OLD">
+	<text>From nowhere, you hear a voice speaking to you. "The Boon... of Coadunation. Your Lylmik crew will... gain 10% damage bonus per enemy crew. You may... thank the previous challenger. Or maybe you... do not? Who can say..."</text>
+	<hiddenAug>BOON_CREW_AEA_OLD</hiddenAug>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>

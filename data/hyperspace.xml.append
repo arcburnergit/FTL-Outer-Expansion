@@ -6763,6 +6763,7 @@ Right click to attempt the ritual or cancel.
 				<cooldownColor r="200" g="0" b="0" />
 				<canFight>false</canFight>
 				<canMove>false</canMove>
+				<healAmount>2</healAmount>
 			</temporaryEffect>
 		</powerEffect>
 	</mod-append:race>
@@ -6852,249 +6853,381 @@ Right click to attempt the ritual or cancel.
 </mod:findLike>
 
 <augments>
-	<aug name="LAB_AEA_OLD_RESOLVE">
-		<statBoost name="canSuffocate">
-			<boostType>SET</boostType>
-			<value>false</value>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>99999</priority>
-			<whiteList load="LIST_CREW_AEA_OLD" />
-		</statBoost>
-		<statBoost name="canBurn">
-			<boostType>SET</boostType>
-			<value>false</value>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>99999</priority>
-			<whiteList load="LIST_CREW_AEA_OLD" />
-		</statBoost>
-		<statBoost name="defaultSkillLevel">
-			<boostType>SET</boostType>
-			<amount>1</amount>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>99999</priority>
-			<whiteList load="LIST_CREW_AEA_OLD" />
-		</statBoost>
-		<statBoost name="cloneLoseSkills">
-			<boostType>SET</boostType>
-			<value>false</value>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>99999</priority>
-			<whiteList load="LIST_CREW_AEA_OLD" />
-		</statBoost>
-		<statBoost name="maxHealth">
-			<boostType>SET</boostType>
-			<amount>100</amount>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>99999</priority>
-			<whiteList>
-				<aea_old_1/>
-			</whiteList>
-		</statBoost>
-		<statBoost name="maxHealth">
-			<boostType>SET</boostType>
-			<amount>200</amount>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>99999</priority>
-			<whiteList>
-				<aea_old_unique_1/>
-				<aea_old_unique_2/>
-				<aea_old_unique_3/>
-				<aea_old_unique_4/>
-				<aea_old_unique_5/>
-			</whiteList>
-		</statBoost>
-		<statBoost name="damageMultiplier">
-			<boostType>SET</boostType>
-			<amount>1.75</amount>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>99999</priority>
-			<whiteList>
-				<aea_old_1/>
-			</whiteList>
-		</statBoost>
-		<statBoost name="damageMultiplier">
-			<boostType>SET</boostType>
-			<amount>2</amount>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>99999</priority>
-			<whiteList>
-				<aea_old_unique_1/>
-				<aea_old_unique_2/>
-				<aea_old_unique_3/>
-				<aea_old_unique_4/>
-				<aea_old_unique_5/>
-			</whiteList>
-		</statBoost>
-		<statBoost name="healSpeed">
-			<boostType>SET</boostType>
-			<amount>2</amount>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>99999</priority>
-			<whiteList load="LIST_CREW_AEA_OLD" />
-		</statBoost>
-		<statBoost name="moveSpeedMultiplier">
-			<boostType>SET</boostType>
-			<amount>1.75</amount>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>99999</priority>
-			<whiteList load="LIST_CREW_AEA_OLD" />
-		</statBoost>
-		<statBoost name="cloneSpeedMultiplier">
-			<boostType>SET</boostType>
-			<amount>0.5</amount>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>99999</priority>
-			<whiteList load="LIST_CREW_AEA_OLD" />
-		</statBoost>
-	</aug>
-	<aug name="LAB_AEA_OLD_COMPROMISED">
-		<statBoost name="canSuffocate">
-			<boostType>SET</boostType>
-			<value>true</value>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>100</priority>
-			<whiteList load="LIST_CREW_AEA_OLD" />
-		</statBoost>
-		<statBoost name="canBurn">
-			<boostType>SET</boostType>
-			<value>true</value>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>100</priority>
-			<whiteList load="LIST_CREW_AEA_OLD" />
-		</statBoost>
-		<statBoost name="healSpeed">
-			<boostType>SET</boostType>
-			<amount>4</amount>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>100</priority>
-			<whiteList load="LIST_CREW_AEA_OLD" />
-		</statBoost>
-		<statBoost name="cloneSpeedMultiplier">
-			<boostType>SET</boostType>
-			<amount>2</amount>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<droneTarget>CREW</droneTarget>
-			<priority>100</priority>
-			<whiteList load="LIST_CREW_AEA_OLD" />
-		</statBoost>
-	</aug>
-	<aug name="LAB_AEA_OLD_ELITE">
-		<statBoost name="statBoost">
-			<statBoost name="maxHealth">
-				<boostType>FLAT</boostType>
-				<amount>25</amount>
+	<aug name="BOON_CREW_AEA_ACID">
+    	<statBoosts>
+			<statBoost name="healSpeed">
+				<boostType>SET</boostType>
+				<amount>2</amount>
 				<shipTarget>ALL</shipTarget>
 				<crewTarget>ALLIES</crewTarget>
 				<droneTarget>CREW</droneTarget>
-				<priority>999</priority>
-				<whiteList load="LIST_CREW_AEA_OLD" />
+				<priority>99999</priority>
+				<whiteList load="LIST_CREW_AEA_ACID" />
 			</statBoost>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<whiteList load="LIST_CREW_ELITE" />
-		</statBoost>
-	</aug>
-	<aug name="LAB_AEA_BIRD_ESCAPESPEED">
-		<statBoost name="statBoost">
-			<statBoost name="moveSpeedMultiplier">
+			<statBoost name="stunMultiplier">
 				<boostType>MULT</boostType>
-				<amount>4</amount>
-				<maxStacks>1</maxStacks>
-				<shipTarget>CURRENT_ROOM</shipTarget>
-				<crewTarget>ENEMIES</crewTarget>
+				<amount>0</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
 				<droneTarget>CREW</droneTarget>
-				<priority>999</priority>
-				<whiteList load="LIST_CREW_AEA_BIRD" />
+				<priority>99999</priority>
+				<whiteList load="LIST_CREW_AEA_ACID" />
 			</statBoost>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ENEMIES</crewTarget>
-		</statBoost>
+		</statBoosts>
 	</aug>
-	<aug name="LAB_AEA_BIRD_AUTODESTROY">
-		<statBoost name="statBoost">
-			<statBoost name="trueHealAmount">
-				<boostType>FLAT</boostType>
-				<amount>-5</amount>
-				<shipTarget>CURRENT_ROOM</shipTarget>
-				<crewTarget>ENEMIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<priority>999</priority>
-				<whiteList load="LIST_CREW_METAL" />
-			</statBoost>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<whiteList load="LIST_CREW_AEA_BIRD" />
-		</statBoost>
-		<statBoost name="statBoost">
-			<statBoost name="trueHealAmount">
-				<boostType>FLAT</boostType>
-				<amount>-5</amount>
-				<shipTarget>CURRENT_ROOM</shipTarget>
-				<crewTarget>ENEMIES</crewTarget>
-				<droneTarget>DRONES</droneTarget>
-				<priority>999</priority>
-			</statBoost>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-			<whiteList load="LIST_CREW_AEA_BIRD" />
-		</statBoost>
-	</aug>
-	<aug name="LAB_AEA_BIRD_SOCIAL">
-		<statBoost name="statBoost">
-			<statBoost name="repairSpeed">
+	<aug name="BOON_CREW_AEA_CULT">
+		<statBoosts>
+			<statBoost name="rangedDamageMultiplier">
 				<boostType>FLAT</boostType>
 				<amount>0.25</amount>
-				<shipTarget>CURRENT_ROOM</shipTarget>
+				<shipTarget>ALL</shipTarget>
 				<crewTarget>ALLIES</crewTarget>
-				<affectsSelf>false</affectsSelf>
-				<priority>0</priority>
-				<whiteList load="LIST_CREW_AEA_BIRD" />
+				<priority>999</priority>
+				<whiteList load="LIST_CREW_AEA_CULT" />
 			</statBoost>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-		</statBoost>
-		<statBoost name="statBoost">
-			<statBoost name="damageMultiplier">
+		</statBoosts>
+	</aug>
+	<aug name="BOON_CREW_AEA_SHLEG">
+    	<statBoosts>
+			<statBoost name="damageTakenMultiplier">
 				<boostType>FLAT</boostType>
-				<amount>0.1</amount>
-				<shipTarget>CURRENT_ROOM</shipTarget>
+				<amount>-0.1</amount>
+				<shipTarget>ALL</shipTarget>
 				<crewTarget>ALLIES</crewTarget>
-				<affectsSelf>false</affectsSelf>
-				<priority>0</priority>
+				<priority>999</priority>
+				<whiteList>
+					<aea_shleg_slug />
+					<aea_shleg_sickle />
+				</whiteList>
+			</statBoost>
+			<statBoost name="resistsMindControl">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<priority>9999</priority>
+				<whiteList>
+					<aea_shleg_shell />
+					<aea_shleg_sorrow />
+				</whiteList>
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="BOON_CREW_AEA_SHARD">
+    	<statBoosts>
+			<statBoost name="sabotageSpeedMultiplier">
+				<boostType>FLAT</boostType>
+				<amount>0.25</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<priority>999</priority>
+				<whiteList load="LIST_CREW_AEA_CULT" />
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="BOON_CREW_AEA_JUSTICE">
+    	<statBoosts>
+			<statBoost name="powerEffect">
+				<boostType>SET</boostType>
+				<powerEffect>
+					<cooldown>10</cooldown>
+					<jumpCooldown>full</jumpCooldown>
+					<buttonText>RITUAL</buttonText>
+					<tooltip>Perform a dark ritual, sacrifice a number of crew in specific positions to trigger different effects. Crew who survive being a part of the ritual will be weakened and lose 25% of their move speed for 5 jumps.
+		Left click to select crew for sacrifice.
+		Right click to attempt the ritual or cancel.
+					</tooltip>
+					<cooldownColor r="255" g="0" b="0" />
+					<friendlyFire>false</friendlyFire>
+					<temporaryEffect>
+						<duration>0.8</duration>
+						<cooldownColor r="200" g="0" b="0" />
+						<canFight>false</canFight>
+						<canMove>false</canMove>
+						<canMan>false</canMan>
+						<healAmount>5</healAmount>
+					</temporaryEffect>
+				</powerEffect>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<whiteList>
+					<aea_dark_justicier />
+				</whiteList>
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="BOON_CREW_AEA_OLD">
+    	<statBoosts>
+			<statBoost name="statBoost">
+				<statBoost name="damageMultiplier">
+					<boostType>FLAT</boostType>
+					<amount>0.1</amount>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ENEMIES</crewTarget>
+					<droneTarget>CREW</droneTarget>
+					<priority>999</priority>
+					<whiteList load="LIST_CREW_AEA_OLD" />
+				</statBoost>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="LAB_AEA_OLD_RESOLVE">
+    	<statBoosts>
+			<statBoost name="canSuffocate">
+				<boostType>SET</boostType>
+				<value>false</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>99999</priority>
+				<whiteList load="LIST_CREW_AEA_OLD" />
+			</statBoost>
+			<statBoost name="canBurn">
+				<boostType>SET</boostType>
+				<value>false</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>99999</priority>
+				<whiteList load="LIST_CREW_AEA_OLD" />
+			</statBoost>
+			<statBoost name="defaultSkillLevel">
+				<boostType>SET</boostType>
+				<amount>1</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>99999</priority>
+				<whiteList load="LIST_CREW_AEA_OLD" />
+			</statBoost>
+			<statBoost name="cloneLoseSkills">
+				<boostType>SET</boostType>
+				<value>false</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>99999</priority>
+				<whiteList load="LIST_CREW_AEA_OLD" />
+			</statBoost>
+			<statBoost name="maxHealth">
+				<boostType>SET</boostType>
+				<amount>100</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>99999</priority>
+				<whiteList>
+					<aea_old_1/>
+				</whiteList>
+			</statBoost>
+			<statBoost name="maxHealth">
+				<boostType>SET</boostType>
+				<amount>200</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>99999</priority>
+				<whiteList>
+					<aea_old_unique_1/>
+					<aea_old_unique_2/>
+					<aea_old_unique_3/>
+					<aea_old_unique_4/>
+					<aea_old_unique_5/>
+				</whiteList>
+			</statBoost>
+			<statBoost name="damageMultiplier">
+				<boostType>SET</boostType>
+				<amount>1.75</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>99999</priority>
+				<whiteList>
+					<aea_old_1/>
+				</whiteList>
+			</statBoost>
+			<statBoost name="damageMultiplier">
+				<boostType>SET</boostType>
+				<amount>2</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>99999</priority>
+				<whiteList>
+					<aea_old_unique_1/>
+					<aea_old_unique_2/>
+					<aea_old_unique_3/>
+					<aea_old_unique_4/>
+					<aea_old_unique_5/>
+				</whiteList>
+			</statBoost>
+			<statBoost name="healSpeed">
+				<boostType>SET</boostType>
+				<amount>2</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>99999</priority>
+				<whiteList load="LIST_CREW_AEA_OLD" />
+			</statBoost>
+			<statBoost name="moveSpeedMultiplier">
+				<boostType>SET</boostType>
+				<amount>1.75</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>99999</priority>
+				<whiteList load="LIST_CREW_AEA_OLD" />
+			</statBoost>
+			<statBoost name="cloneSpeedMultiplier">
+				<boostType>SET</boostType>
+				<amount>0.5</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>99999</priority>
+				<whiteList load="LIST_CREW_AEA_OLD" />
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="LAB_AEA_OLD_COMPROMISED">
+    	<statBoosts>
+			<statBoost name="canSuffocate">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>100</priority>
+				<whiteList load="LIST_CREW_AEA_OLD" />
+			</statBoost>
+			<statBoost name="canBurn">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>100</priority>
+				<whiteList load="LIST_CREW_AEA_OLD" />
+			</statBoost>
+			<statBoost name="healSpeed">
+				<boostType>SET</boostType>
+				<amount>4</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>100</priority>
+				<whiteList load="LIST_CREW_AEA_OLD" />
+			</statBoost>
+			<statBoost name="cloneSpeedMultiplier">
+				<boostType>SET</boostType>
+				<amount>2</amount>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<priority>100</priority>
+				<whiteList load="LIST_CREW_AEA_OLD" />
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="LAB_AEA_OLD_ELITE">
+		<statBoosts>
+			<statBoost name="statBoost">
+				<statBoost name="maxHealth">
+					<boostType>FLAT</boostType>
+					<amount>25</amount>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ALLIES</crewTarget>
+					<droneTarget>CREW</droneTarget>
+					<priority>999</priority>
+					<whiteList load="LIST_CREW_AEA_OLD" />
+				</statBoost>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<whiteList load="LIST_CREW_ELITE" />
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="LAB_AEA_BIRD_ESCAPESPEED">
+    	<statBoosts>
+			<statBoost name="statBoost">
+				<statBoost name="moveSpeedMultiplier">
+					<boostType>MULT</boostType>
+					<amount>4</amount>
+					<maxStacks>1</maxStacks>
+					<shipTarget>CURRENT_ROOM</shipTarget>
+					<crewTarget>ENEMIES</crewTarget>
+					<droneTarget>CREW</droneTarget>
+					<priority>999</priority>
+					<whiteList load="LIST_CREW_AEA_BIRD" />
+				</statBoost>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="LAB_AEA_BIRD_AUTODESTROY">
+    	<statBoosts>
+			<statBoost name="statBoost">
+				<statBoost name="trueHealAmount">
+					<boostType>FLAT</boostType>
+					<amount>-5</amount>
+					<shipTarget>CURRENT_ROOM</shipTarget>
+					<crewTarget>ENEMIES</crewTarget>
+					<droneTarget>CREW</droneTarget>
+					<priority>999</priority>
+					<whiteList load="LIST_CREW_METAL" />
+				</statBoost>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
 				<whiteList load="LIST_CREW_AEA_BIRD" />
 			</statBoost>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALLIES</crewTarget>
-		</statBoost>
+			<statBoost name="statBoost">
+				<statBoost name="trueHealAmount">
+					<boostType>FLAT</boostType>
+					<amount>-5</amount>
+					<shipTarget>CURRENT_ROOM</shipTarget>
+					<crewTarget>ENEMIES</crewTarget>
+					<droneTarget>DRONES</droneTarget>
+					<priority>999</priority>
+				</statBoost>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<whiteList load="LIST_CREW_AEA_BIRD" />
+			</statBoost>
+		</statBoosts>
+	</aug>
+	<aug name="LAB_AEA_BIRD_SOCIAL">
+    	<statBoosts>
+			<statBoost name="statBoost">
+				<statBoost name="repairSpeed">
+					<boostType>FLAT</boostType>
+					<amount>0.25</amount>
+					<shipTarget>CURRENT_ROOM</shipTarget>
+					<crewTarget>ALLIES</crewTarget>
+					<affectsSelf>false</affectsSelf>
+					<priority>0</priority>
+					<whiteList load="LIST_CREW_AEA_BIRD" />
+				</statBoost>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+			</statBoost>
+			<statBoost name="statBoost">
+				<statBoost name="damageMultiplier">
+					<boostType>FLAT</boostType>
+					<amount>0.1</amount>
+					<shipTarget>CURRENT_ROOM</shipTarget>
+					<crewTarget>ALLIES</crewTarget>
+					<affectsSelf>false</affectsSelf>
+					<priority>0</priority>
+					<whiteList load="LIST_CREW_AEA_BIRD" />
+				</statBoost>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+			</statBoost>
+		</statBoosts>
 	</aug>
 	<aug name="LAB_AEA_ACID_REPAIR">
     	<statBoosts>
@@ -7714,6 +7847,30 @@ Right click to attempt the ritual or cancel.
 </augments>
 
 <mod:findLike type="events">
+	<mod:findName name="ANY_BOON">
+		<mod-append:name>prof_r_boon_aea_super_shields</mod-append:name>
+		<mod-append:name>prof_r_boon_aea_clone_crime</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_acid</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_bird</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_cult</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_necro</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_shard</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_shleg</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_justice</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_old</mod-append:name>
+	</mod:findName>
+	<mod:findName name="ALL_BOON">
+		<mod-append:name>prof_r_boon_aea_super_shields</mod-append:name>
+		<mod-append:name>prof_r_boon_aea_clone_crime</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_acid</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_bird</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_cult</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_necro</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_shard</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_shleg</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_justice</mod-append:name>
+		<mod-append:name>prof_z_boon_aea_old</mod-append:name>
+	</mod:findName>
 	<mod:findName name="BLUELIST_CREW_NO2">
 		<mod-append:name>LIST_CREW_AEA_OLD</mod-append:name>
 		<mod-append:name>LIST_CREW_AEA_ACID</mod-append:name>
@@ -7872,6 +8029,7 @@ Right click to attempt the ritual or cancel.
 	<variable name="aea_justice_cruiser_location" op="set" val="-1"/>
 	<variable name="aea_justice_cruiser_jumping" op="set" val="0"/>
 	<metaVariable name="aea_justice_cruiser_unlock" op="set" val="0"/>
+	<metaVariable name="juke_aea_justice" op="set" val="0" />
 
 	<metaVariable name="juke_aea_old_1" op="set" val="0" />
 	<metaVariable name="juke_aea_old_2" op="set" val="0" />
@@ -7884,6 +8042,15 @@ Right click to attempt the ritual or cancel.
 	<variable name="aea_old_completed_sponsor" op="set" val="0" />
 
 	<metaVariable name="aea_old_sponser_choice" op="set" val="0" />
+	
+	<metaVariable name="prof_z_boon_aea_acid" op="set" val="0" />
+	<metaVariable name="prof_z_boon_aea_bird" op="set" val="0" />
+	<metaVariable name="prof_z_boon_aea_cult" op="set" val="0" />
+	<metaVariable name="prof_z_boon_aea_necro" op="set" val="0" />
+	<metaVariable name="prof_z_boon_aea_shleg" op="set" val="0" />
+	<metaVariable name="prof_z_boon_aea_shard" op="set" val="0" />
+	<metaVariable name="prof_z_boon_aea_justice" op="set" val="0" />
+	<metaVariable name="prof_z_boon_aea_old" op="set" val="0" />
 
 	<req name="AEA_REQ_MODIFY_CLONEBAY" type="all">
 		<name>aea_dark_justicier</name>
@@ -9421,6 +9588,201 @@ Right click to attempt the ritual or cancel.
 			<chance>100</chance>
 		</category>
     </customStore>
+	<customStore id="STORE_SYLVAN_AEA_WEAPONS">
+        <itemPurchaseLimit>2</itemPurchaseLimit>
+		<category type="WEAPONS">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+		<category type="WEAPONS">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    			
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+    </customStore>
+	<customStore id="STORE_SYLVAN_AEA_DRONES">
+        <itemPurchaseLimit>2</itemPurchaseLimit>
+		<category type="DRONES">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_DRONES_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_DRONES_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_DRONES_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+		<category type="DRONES">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_DRONES_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>LIST_DRONES_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    			
+            <item>
+                <blueprint>LIST_DRONES_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+    </customStore>
+	<customStore id="STORE_SYLVAN_AEA_BOTH">
+        <itemPurchaseLimit>2</itemPurchaseLimit>
+		<category type="WEAPONS">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+		<category type="DRONES">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_DRONES_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>LIST_DRONES_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    			
+            <item>
+                <blueprint>LIST_DRONES_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+    </customStore>
+	<customStore id="STORE_SYLVAN_AEA_LYLMIK">
+        <itemPurchaseLimit>1</itemPurchaseLimit>
+		<category type="WEAPONS">
+			<customTitle>LYLMIK</customTitle>
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN_LYLMIK</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN_LYLMIK</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN_LYLMIK</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+		<category type="WEAPONS">
+			<customTitle>LYLMIK</customTitle>
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN_LYLMIK</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN_LYLMIK</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    			
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_SYLVAN_LYLMIK</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+    </customStore>
+	<customStore id="STORE_SYLVAN_AEA_LOOT">
+        <itemPurchaseLimit>1</itemPurchaseLimit>
+		<category type="WEAPONS">
+			<customTitle>LYLMIK</customTitle>
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_LOOT</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_LOOT</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_AEA_LOOT</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+		<category type="DRONES">
+			<customTitle>LYLMIK</customTitle>
+            <item>
+                <blueprint>LIST_DRONES_AEA_LOOT</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>LIST_DRONES_AEA_LOOT</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    			
+            <item>
+                <blueprint>LIST_DRONES_AEA_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+    </customStore>
 </store>
 
 <mod:findLike type="boss" limit="1">
@@ -9466,11 +9828,11 @@ Right click to attempt the ritual or cancel.
 				<icon>ach_trans_aea_acid</icon>
 				<header>Loot Acquired</header>
 			</achievement>
-			<achievement name="ACH_TRANS_AEA_NECRO">
-				<name>Heretic Transport</name>
-				<secretDescription>Obtain the loot from the Heretic loot transport.</secretDescription>
-				<description>Obtain the Shatter Laser II from the Heretic loot transport.</description>
-				<icon>ach_trans_aea_necro</icon>
+			<achievement name="ACH_TRANS_AEA_BIRD">
+				<name>Gi Transport</name>
+				<secretDescription>Obtain the loot from the Gi loot transport.</secretDescription>
+				<description>Obtain the Twin Drone from the Gi loot transport.</description>
+				<icon>ach_trans_aea_bird</icon>
 				<header>Loot Acquired</header>
 			</achievement>
 			<achievement name="ACH_TRANS_AEA_CULT">
@@ -9480,18 +9842,11 @@ Right click to attempt the ritual or cancel.
 				<icon>ach_trans_aea_cult</icon>
 				<header>Loot Acquired</header>
 			</achievement>
-			<achievement name="ACH_TRANS_AEA_BIRD">
-				<name>Gi Transport</name>
-				<secretDescription>Obtain the loot from the Gi loot transport.</secretDescription>
-				<description>Obtain the Twin Drone from the Gi loot transport.</description>
-				<icon>ach_trans_aea_bird</icon>
-				<header>Loot Acquired</header>
-			</achievement>
-			<achievement name="ACH_TRANS_AEA_SHLEG">
-				<name>Anarchist Transport</name>
-				<secretDescription>Obtain the loot from the Anarchist loot transport.</secretDescription>
-				<description>Obtain the 'Hypnos' Missile from the Anarchist loot transport.</description>
-				<icon>ach_trans_aea_shleg</icon>
+			<achievement name="ACH_TRANS_AEA_NECRO">
+				<name>Heretic Transport</name>
+				<secretDescription>Obtain the loot from the Heretic loot transport.</secretDescription>
+				<description>Obtain the Shatter Laser II from the Heretic loot transport.</description>
+				<icon>ach_trans_aea_necro</icon>
 				<header>Loot Acquired</header>
 			</achievement>
 			<achievement name="ACH_TRANS_AEA_SHARD">
@@ -9499,6 +9854,13 @@ Right click to attempt the ritual or cancel.
 				<secretDescription>Obtain the loot from the Shard-Forged loot transport.</secretDescription>
 				<description>Obtain the Elite Crystal Burst MK II from the Shard-Forged loot transport.</description>
 				<icon>ach_trans_aea_shard</icon>
+				<header>Loot Acquired</header>
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_SHLEG">
+				<name>Anarchist Transport</name>
+				<secretDescription>Obtain the loot from the Anarchist loot transport.</secretDescription>
+				<description>Obtain the 'Hypnos' Missile from the Anarchist loot transport.</description>
+				<icon>ach_trans_aea_shleg</icon>
 				<header>Loot Acquired</header>
 			</achievement>
 			<achievement name="ACH_TRANS_AEA_OLD_1">
@@ -9551,6 +9913,108 @@ Right click to attempt the ritual or cancel.
 		</section>
 	</mod-append:page>
 	<mod-append:page>
+		<section text="Thest's Boons (OE)" hidden="false">
+			<achievement name="ACH_BOON_AEA_ACID">
+				<name>Boon of Growth</name>
+				<secretDescription>Receive the Boon of Growth from Thest.</secretDescription>
+				<description>Show an elite or rare Acidic crew to Thest. 
+				While in effect; Acidic crew heal twice as fast and cannot be stunned.</description>
+				<header>Boon Received</header>
+				<icon>ach_boon_aea_acid</icon>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="ACH_BOON_AEA_BIRD">
+				<name>Boon of Feathers</name>
+				<secretDescription>Receive the Boon of Feathers from Thest.</secretDescription>
+				<description>Show an elite or rare Gi crew to Thest. 
+				While in effect; Gi crew gain an additional 0.25x to their auto repair speed.</description>
+				<header>Boon Received</header>
+				<icon>ach_boon_aea_bird</icon>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="ACH_BOON_AEA_CULT">
+				<name>Boon of Worship</name>
+				<secretDescription>Receive the Boon of Worship from Thest.</secretDescription>
+				<description>Show an elite or rare Cultist crew to Thest. 
+				While in effect; Vampweed Cultists do 25% more ranged damage.</description>
+				<header>Boon Received</header>
+				<icon>ach_boon_aea_cult</icon>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="ACH_BOON_AEA_NECRO">
+				<name>Boon of Resurrection</name>
+				<secretDescription>Receive the Boon of Resurrection from Thest.</secretDescription>
+				<description>Show an elite or rare Heretic crew to Thest. 
+				While in effect; Gain 1 Nanite Swarm each jump.</description>
+				<header>Boon Received</header>
+				<icon>ach_boon_aea_necro</icon>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="ACH_BOON_AEA_SHARD">
+				<name>Boon of Shattering</name>
+				<secretDescription>Receive the Boon of Shattering from Thest.</secretDescription>
+				<description>Show an elite or rare Shard-Forged crew to Thest. 
+				While in effect; Shard-Forged crew do 25% additional sabotage damage.</description>
+				<header>Boon Received</header>
+				<icon>ach_boon_aea_shard</icon>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="ACH_BOON_AEA_SHLEG">
+				<name>Boon of Molluscs</name>
+				<secretDescription>Receive the Boon of Molluscs from Thest.</secretDescription>
+				<description>Show an Anarchist crew to Thest. 
+				While in effect; Anarchist Shells gain mind control immunity and Anarchist slugs gain 10% damage resistance.</description>
+				<header>Boon Received</header>
+				<icon>ach_boon_aea_shleg</icon>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="ACH_BOON_AEA_JUSTICE">
+				<name>Boon of Offerings</name>
+				<secretName>Boon of ???</secretName>
+				<secretDescription>Receive the Boon of ??? from Thest.</secretDescription>
+				<description>Show the Dark Justicier to Thest. 
+				While in effect; The Dark Justicier heals 5hp/s while performing a ritual.</description>
+				<header>Boon Received</header>
+				<icon>ach_boon_aea_justice</icon>
+				<lockImage>ach_locked</lockImage>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="ACH_BOON_AEA_OLD">
+				<name>Boon of Coadunation</name>
+				<secretName>Boon of ???</secretName>
+				<secretDescription>Receive the Boon of ??? from Thest.</secretDescription>
+				<description>Show an elite or rare Lylmik crew to Thest. 
+				While in effect; Lylmik Crew gain 10% damage bonus per enemy crew.</description>
+				<header>Boon Received</header>
+				<icon>ach_boon_aea_old</icon>
+				<lockImage>ach_locked</lockImage>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+		</section>
+		<section text="Corby's Grants (OE)" hidden="false">
+			<achievement name="ACH_BOON_AEA_SUPER_SHIELDS">
+				<name>Grant of Auxiliary Shielding</name>
+				<secretDescription>Receive the Grant of Auxiliary Shielding from Corby.</secretDescription>
+				<description>Show an upgraded Auxiliary Shields System to Corby. 
+				While in effect; Add 1 energy shield layer after jump.</description>
+				<header>Grant Received</header>
+				<icon>ach_boon_aea_super_shields</icon>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="ACH_BOON_AEA_CLONE_CRIME">
+				<name>Grant of Illegally Modified Clonebay</name>
+				<secretName>Grant of ???</secretName>
+				<secretDescription>Receive the Grant of ??? from Corby.</secretDescription>
+				<description>Show an upgraded Modified Clonebay System to Corby. 
+				While in effect; Spawn a weak generic crewmember with a 20 second lifespan onboard your ship after every jump.</description>
+				<header>Grant Received</header>
+				<icon>ach_boon_aea_clone_crime</icon>
+				<lockImage>ach_locked</lockImage>
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+		</section>
+	</mod-append:page>
+	<mod-append:page>
 		<section text="Music (OE)" hidden="false">
 			<achievement name="MUSIC_AEA_ACID">
 				<name>Acidic</name>
@@ -9561,7 +10025,7 @@ Right click to attempt the ritual or cancel.
 				<variable name="juke_aea_acid" amount="1" />
 				<multiDifficulty>false</multiDifficulty>
 			</achievement>
-			<achievement name="MUSIC_AEA_ACID">
+			<achievement name="MUSIC_AEA_NECRO">
 				<name>Heretic</name>
 				<description id="jukebox_unlocked" />
 				<secretDescription id="jukebox_locked" />
@@ -9570,7 +10034,7 @@ Right click to attempt the ritual or cancel.
 				<variable name="juke_aea_necro" amount="1" />
 				<multiDifficulty>false</multiDifficulty>
 			</achievement>
-			<achievement name="MUSIC_AEA_ACID">
+			<achievement name="MUSIC_AEA_CULT">
 				<name>Cultist</name>
 				<description id="jukebox_unlocked" />
 				<secretDescription id="jukebox_locked" />
@@ -9579,7 +10043,7 @@ Right click to attempt the ritual or cancel.
 				<variable name="juke_aea_cult" amount="1" />
 				<multiDifficulty>false</multiDifficulty>
 			</achievement>
-			<achievement name="MUSIC_AEA_ACID">
+			<achievement name="MUSIC_AEA_BIRD">
 				<name>Gi</name>
 				<description id="jukebox_unlocked" />
 				<secretDescription id="jukebox_locked" />
@@ -9588,22 +10052,22 @@ Right click to attempt the ritual or cancel.
 				<variable name="juke_aea_cult" amount="1" />
 				<multiDifficulty>false</multiDifficulty>
 			</achievement>
-			<achievement name="MUSIC_AEA_ACID">
-				<name>Anarchy</name>
-				<description id="jukebox_unlocked" />
-				<secretDescription id="jukebox_locked" />
-				<header id="jukebox_header" />
-				<icon>music_unlocked</icon>
-				<variable name="juke_aea_shleg" amount="1" />
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-			<achievement name="MUSIC_AEA_ACID">
+			<achievement name="MUSIC_AEA_SHARD">
 				<name>Shard</name>
 				<description id="jukebox_unlocked" />
 				<secretDescription id="jukebox_locked" />
 				<header id="jukebox_header" />
 				<icon>music_unlocked</icon>
 				<variable name="juke_aea_shard" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_SHLEG">
+				<name>Anarchy</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_shleg" amount="1" />
 				<multiDifficulty>false</multiDifficulty>
 			</achievement>
 			<achievement name="MUSIC_AEA_JUSTICE">
@@ -9643,28 +10107,6 @@ Right click to attempt the ritual or cancel.
 				<header id="jukebox_header" />
 				<icon>music_unlocked</icon>
 				<variable name="juke_aea_old_3" amount="1" />
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-		</section>
-		<section text="Corby's Grants (OE)" hidden="false">
-			<achievement name="ACH_BOON_AEA_SUPER_SHIELDS">
-				<name>Grant of Auxiliary Shielding</name>
-				<secretDescription>Receive the Grant of Auxiliary Shielding from Corby.</secretDescription>
-				<description>Show an upgraded Auxiliary Shields System to Corby. 
-				While in effect; Add 1 energy shield layer after jump.</description>
-				<header>Grant Received</header>
-				<icon>ach_boon_aea_super_shields</icon>
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-			<achievement name="ACH_BOON_AEA_CLONE_CRIME">
-				<name>Grant of Illegally Modified Clonebay</name>
-				<secretName>Grant of ???</secretName>
-				<secretDescription>Receive the Grant of ??? from Corby.</secretDescription>
-				<description>Show an upgraded Modified Clonebay System to Corby. 
-				While in effect; Spawn a weak generic crewmember with a 20 second lifespan onboard your ship after every jump.</description>
-				<header>Grant Received</header>
-				<icon>ach_boon_aea_clone_crime</icon>
-				<lockImage>ach_locked</lockImage>
 				<multiDifficulty>false</multiDifficulty>
 			</achievement>
 		</section>

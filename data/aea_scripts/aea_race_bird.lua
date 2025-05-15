@@ -412,6 +412,9 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
 		local system = shipManager:GetSystemInRoom(crewmem.iRoomId)
 		if system then
 			local speed = birdCrew[crewmem.type]
+			if shipManager:HasAugmentation("BOON_CREW_AEA_BIRD") > 0 then
+				speed = speed + 0.25
+			end
 			if crewmem.iShipId == 1 then
 				speed = speed / 2
 			end

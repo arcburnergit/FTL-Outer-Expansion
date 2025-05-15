@@ -3,9 +3,16 @@
 <mod:findName type="event" name="BOON_SELECT">
 	<mod:findLike type="loadEventList">
 		<mod-append:event name="BOON_SELECT_AEA_SUPER_SHIELD" req="prof_r_boon_aea_super_shields" />
-	</mod:findLike>
-	<mod:findLike type="loadEventList">
 		<mod-append:event name="BOON_SELECT_AEA_CLONE_CRIME" req="prof_r_boon_aea_clone_crime" />
+    
+		<mod-append:event name="BOON_SELECT_AEA_ACID" req="prof_z_boon_aea_acid" />
+		<mod-append:event name="BOON_SELECT_AEA_BIRD" req="prof_z_boon_aea_bird" />
+		<mod-append:event name="BOON_SELECT_AEA_CULT" req="prof_z_boon_aea_cult" />
+		<mod-append:event name="BOON_SELECT_AEA_NECRO" req="prof_z_boon_aea_necro" />
+		<mod-append:event name="BOON_SELECT_AEA_SHLEG" req="prof_z_boon_aea_shleg" />
+		<mod-append:event name="BOON_SELECT_AEA_SHARD" req="prof_z_boon_aea_shard" />
+		<mod-append:event name="BOON_SELECT_AEA_JUSTICE" req="prof_z_boon_aea_justice" />
+		<mod-append:event name="BOON_SELECT_AEA_OLD" req="prof_z_boon_aea_old" />
 	</mod:findLike>
 </mod:findName>
 

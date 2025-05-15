@@ -804,6 +804,12 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 	end
 end)
 
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
+	if shipManager:HasAugmentation("BOON_CREW_AEA_NECRO") > 0 then
+		Hyperspace.playerVariables.aea_necro_ability_points = Hyperspace.playerVariables.aea_necro_ability_points + 1
+	end
+end)
+
 local xNPos = 122
 local yNPos = 75
 local xNText = xNPos + 51

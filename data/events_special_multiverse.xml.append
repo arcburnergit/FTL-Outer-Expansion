@@ -30,9 +30,105 @@
     </mod-append:choice>
 </mod:findName>
 
+<mod:findName type="event" name="THE_JUDGES_ZOLTAN">
+	<mod-append:choice hidden="true" req="LIST_CREW_AEA_ACID_ER" blue="false">
+		<text>Present an Elite Acidic Crew.</text>
+		<event>
+			<text>""</text>
+			<metaVariable name="prof_z_boon_aea_acid" op="set" val="1" />
+			<achievement silent="false">ACH_BOON_AEA_ACID</achievement>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="THE_JUDGES_ZOLTAN_ADVICE" />
+			</choice>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="LIST_CREW_AEA_BIRD_ER" blue="false">
+		<text>Present an Elite Gi Crew.</text>
+		<event>
+			<text>""</text>
+			<metaVariable name="prof_z_boon_aea_bird" op="set" val="1" />
+			<achievement silent="false">ACH_BOON_AEA_BIRD</achievement>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="THE_JUDGES_ZOLTAN_ADVICE" />
+			</choice>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="LIST_CREW_AEA_CULT_ER" blue="false">
+		<text>Present an Elite Cultist Crew.</text>
+		<event>
+			<text>""</text>
+			<metaVariable name="prof_z_boon_aea_cult" op="set" val="1" />
+			<achievement silent="false">ACH_BOON_AEA_CULT</achievement>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="THE_JUDGES_ZOLTAN_ADVICE" />
+			</choice>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="LIST_CREW_AEA_SHLEG_ER" blue="false">
+		<text>Present an Elite Anarchist Crew.</text>
+		<event>
+			<text>""</text>
+			<metaVariable name="prof_z_boon_aea_shleg" op="set" val="1" />
+			<achievement silent="false">ACH_BOON_AEA_SHLEG</achievement>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="THE_JUDGES_ZOLTAN_ADVICE" />
+			</choice>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="LIST_CREW_AEA_SHARD_ER" blue="false">
+		<text>Present an Elite Shard-Forged Crew.</text>
+		<event>
+			<text>""</text>
+			<metaVariable name="prof_z_boon_aea_shard" op="set" val="1" />
+			<achievement silent="false">ACH_BOON_AEA_SHARD</achievement>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="THE_JUDGES_ZOLTAN_ADVICE" />
+			</choice>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="aea_dark_justicier" blue="false">
+		<text>Present the Dark Justicier.</text>
+		<event>
+			<text>""</text>
+			<metaVariable name="prof_z_boon_aea_justice" op="set" val="1" />
+			<achievement silent="false">ACH_BOON_AEA_JUSTICE</achievement>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="THE_JUDGES_ZOLTAN_ADVICE" />
+			</choice>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="LIST_CREW_AEA_OLD" blue="false">
+		<text>Present a Lylmik Crew.</text>
+		<event>
+			<text>""</text>
+			<metaVariable name="prof_z_boon_aea_old" op="set" val="1" />
+			<achievement silent="false">ACH_BOON_AEA_OLD</achievement>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="THE_JUDGES_ZOLTAN_ADVICE" />
+			</choice>
+		</event>
+	</mod-append:choice>
+</mod:findName>
+
 <mod:findName type="event" name="THE_JUDGES_VARIABLE_CLEAR">
     <mod-append:metaVariable name="prof_r_boon_aea_super_shields" op="set" val="0" />
     <mod-append:metaVariable name="prof_r_boon_aea_clone_crime" op="set" val="0" />
+
+    <mod-append:metaVariable name="prof_z_boon_aea_acid" op="set" val="0" />
+    <mod-append:metaVariable name="prof_z_boon_aea_bird" op="set" val="0" />
+    <mod-append:metaVariable name="prof_z_boon_aea_cult" op="set" val="0" />
+    <mod-append:metaVariable name="prof_z_boon_aea_necro" op="set" val="0" />
+    <mod-append:metaVariable name="prof_z_boon_aea_shleg" op="set" val="0" />
+    <mod-append:metaVariable name="prof_z_boon_aea_shard" op="set" val="0" />
+    <mod-append:metaVariable name="prof_z_boon_aea_justice" op="set" val="0" />
+    <mod-append:metaVariable name="prof_z_boon_aea_old" op="set" val="0" />
 </mod:findName>
 
 </FTL> 
@@ -652,15 +748,15 @@
 
 <event name="AEAT_BOSS_CULT_DROP">
 	<text id="renegade_drop_yes" />
-	<achievement silent="false">ACH_AEA_REN_CLAN</achievement>
+	<achievement silent="false">ACH_AEA_REN_CULT</achievement>
 	<autoReward level="LOW">stuff</autoReward>
-	<drone name="AEA_COMBAT_CULT_BOSS" />
+	<aug name="AEA_BARRIER_RELAY" />
 </event>
 <event name="AEAT_BOSS_CULT_DROP_CHAOS">
 	<text id="renegade_drop_yes" />
-	<achievement silent="false">ACH_AEA_REN_CLAN</achievement>
+	<achievement silent="false">ACH_AEA_REN_CULT</achievement>
 	<autoReward level="LOW">stuff</autoReward>
-	<drone name="AEA_COMBAT_CULT_BOSS_CHAOS" />
+	<aug name="AEA_BARRIER_RELAY_CHAOS" />
 </event>
 
 <!--Wedge Tailed B-->
@@ -1063,13 +1159,13 @@
 	<text id="renegade_drop_yes" />
 	<achievement silent="false">ACH_AEA_REN_SHARD</achievement>
 	<autoReward level="LOW">stuff</autoReward>
-	<drone name="AEA_COMBAT_SHARD_BOSS" />
+	<weapon name="AEA_CRYSTAL_SHARD_BOSS" />
 </event>
 <event name="AEAT_BOSS_SHARD_DROP_CHAOS">
 	<text id="renegade_drop_yes" />
 	<achievement silent="false">ACH_AEA_REN_SHARD</achievement>
 	<autoReward level="LOW">stuff</autoReward>
-	<drone name="AEA_COMBAT_SHARD_BOSS_CHAOS" />
+	<weapon name="AEA_CRYSTAL_SHARD_BOSS_CHAOS" />
 </event>
 
 <!--Wedge Tailed B-->
@@ -1278,5 +1374,49 @@
 	<achievement silent="false">ACH_AEA_REN_SHLEG</achievement>
 	<autoReward level="LOW">stuff</autoReward>
 	<weapon name="AEA_BEAM_SHLEG_BOSS_CHAOS" />
+</event>
+
+<mod:findName type="event" name="SYLVAN_TRADES_DROPPOINT">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="SYLVAN_AEA_WEAPONS"/>
+        <mod-append:event name="SYLVAN_AEA_BOTH"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="SYLVAN_TRADES_LASTSTAND">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="SYLVAN_AEA_WEAPONS"/>
+        <mod-append:event name="SYLVAN_AEA_DRONES"/>
+        <mod-append:event name="SYLVAN_AEA_BOTH"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="SYLVAN_TRADES">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="SYLVAN_AEA_WEAPONS"/>
+        <mod-append:event name="SYLVAN_AEA_DRONES"/>
+        <mod-append:event name="SYLVAN_AEA_BOTH"/>
+        <mod-append:event name="SYLVAN_AEA_LYLMIK" req="loc_sector_count" lvl="3" />
+        <mod-append:event name="SYLVAN_AEA_LOOT" req="loc_sector_count" lvl="3" />
+    </mod:findLike>
+</mod:findName>
+
+<event name="SYLVAN_AEA_WEAPONS">
+	<text>"Aaaaah. Ssstranger ssstranger, any ssself ressspecting Renegade knowssss they need sssome gear if they're going to ssssurvive."</text>
+	<store>STORE_SYLVAN_AEA_WEAPONS</store>
+</event>
+<event name="SYLVAN_AEA_DRONES">
+	<text>"Aaaaah. Ssstranger ssstranger, I might normally sssell gunssss, but I've gathered quite the ssstock of dronesss lately. Maybe you could ussse one?"</text>
+	<store>STORE_SYLVAN_AEA_DRONES</store>
+</event>
+<event name="SYLVAN_AEA_BOTH">
+	<text>"Aaaaah. Ssstranger ssstranger, wasss to a few assorted sssectorsss reccently, picked up ssssome rare weaponssss that might interessst ya'."</text>
+	<store>STORE_SYLVAN_AEA_BOTH</store>
+</event>
+<event name="SYLVAN_AEA_LYLMIK">
+	<text>"Aaaaah. Ssstranger ssstranger, found this ssspooky ruin a while ago, and inssside found tech like you or I've never sssseen! Come, take a look."</text>
+	<store>STORE_SYLVAN_AEA_LYLMIK</store>
+</event>
+<event name="SYLVAN_AEA_LOOT">
+	<text>"Aaaaah. Ssstranger ssstranger, got sssome rare thingsss on sssale, ssstranger!"</text>
+	<store>STORE_SYLVAN_AEA_LOOT</store>
 </event>
 </FTL>

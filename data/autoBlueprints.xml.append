@@ -511,14 +511,6 @@
 	<mod-append:name>CRYSTAL_BURST_2_AEA_LOOT</mod-append:name>
 </mod:findName>
 
-<blueprintList name="LIST_CREW_AEA_OLD">
-    <name>aea_old_1</name>
-    <name>aea_old_unique_1</name>
-    <name>aea_old_unique_2</name>
-    <name>aea_old_unique_3</name>
-    <name>aea_old_unique_4</name>
-    <name>aea_old_unique_5</name>
-</blueprintList>
 <blueprintList name="LIST_CREW_AEA_ACID">
     <name>aea_acid_soldier</name>
     <name>aea_acid_captain</name>
@@ -529,7 +521,7 @@
     <name>aea_bird_illuminant</name>
     <name>aea_bird_unique</name>
 </blueprintList>
-<blueprintList name="AEA_CULTISTS_ALL">
+<blueprintList name="LIST_CREW_AEA_CULT">
 	<name>aea_cult_wizard</name>
 	<name>aea_cult_wizard_a01</name>
 	<name>aea_cult_wizard_a02</name>
@@ -566,11 +558,165 @@
 	<name>aea_cult_tiny_s14</name>
 	<name>aea_cult_tiny_s15</name>
 </blueprintList>
+<blueprintList name="LIST_CREW_AEA_NECRO">
+	<name>aea_necro_engi</name>
+	<name>aea_necro_lich</name>
+	<name>aea_necro_king</name>
+</blueprintList>
 <blueprintList name="LIST_CREW_AEA_SHLEG">
 	<name>aea_shleg_slug</name>
 	<name>aea_shleg_shell</name>
 	<name>aea_shleg_sorrow</name>
 	<name>aea_shleg_sickle</name>
+</blueprintList>
+<blueprintList name="LIST_CREW_AEA_SHARD">
+	<name>aea_shard_breaker</name>
+	<name>aea_shard_smasher</name>
+	<name>aea_shard_dawn</name>
+</blueprintList>
+<blueprintList name="LIST_CREW_AEA_OLD">
+    <name>aea_old_1</name>
+    <name>aea_old_unique_1</name>
+    <name>aea_old_unique_2</name>
+    <name>aea_old_unique_3</name>
+    <name>aea_old_unique_4</name>
+    <name>aea_old_unique_5</name>
+</blueprintList>
+
+<blueprintList name="LIST_CREW_AEA_ACID_ER">
+    <name>aea_acid_captain</name>
+    <name>aea_acid_bill</name>
+</blueprintList>
+<blueprintList name="LIST_CREW_AEA_BIRD_ER">
+    <name>aea_bird_illuminant</name>
+    <name>aea_bird_unique</name>
+</blueprintList>
+<blueprintList name="LIST_CREW_AEA_CULT_ER">
+	<name>aea_cult_priest_sup</name>
+	<name>aea_cult_priest_off</name>
+	<name>aea_cult_priest_bor</name>
+	<name>aea_cult_tiny</name>
+	<name>aea_cult_tiny_a01</name>
+	<name>aea_cult_tiny_a02</name>
+	<name>aea_cult_tiny_s03</name>
+	<name>aea_cult_tiny_s04</name>
+	<name>aea_cult_tiny_s05</name>
+	<name>aea_cult_tiny_s06</name>
+	<name>aea_cult_tiny_a07</name>
+	<name>aea_cult_tiny_s08</name>
+	<name>aea_cult_tiny_s09</name>
+	<name>aea_cult_tiny_a10</name>
+	<name>aea_cult_tiny_a11</name>
+	<name>aea_cult_tiny_s12</name>
+	<name>aea_cult_tiny_s13</name>
+	<name>aea_cult_tiny_s14</name>
+	<name>aea_cult_tiny_s15</name>
+</blueprintList>
+<blueprintList name="LIST_CREW_AEA_NECRO_ER">
+	<name>aea_necro_lich</name>
+	<name>aea_necro_king</name>
+</blueprintList>
+<blueprintList name="LIST_CREW_AEA_SHLEG_ER">
+	<name>aea_shleg_slug</name>
+	<name>aea_shleg_shell</name>
+	<name>aea_shleg_sorrow</name>
+	<name>aea_shleg_sickle</name>
+</blueprintList>
+<blueprintList name="LIST_CREW_AEA_SHARD_ER">
+	<name>aea_shard_breaker</name>
+	<name>aea_shard_smasher</name>
+	<name>aea_shard_dawn</name>
+</blueprintList>
+
+<blueprintList name="LIST_WEAPONS_AEA_LOOT">
+	<name>AEA_LASER_ACID_BOSS</name>
+	<name>AEA_CRYSTAL_SHARD_BOSS</name>
+	<name>AEA_BEAM_SHLEG_BOSS</name>
+	<name>AEA_ION_ACID_1_LOOT</name>
+	<name>AEA_LASER_NECRO_2_LOOT</name>
+	<name>AEA_LASER_OLDP_3_LOOT</name>
+	<name>AEA_LASER_CULT_LOOT</name>
+	<name>AEA_SHLEG_MISSILES_LOOT</name>
+	<name>CRYSTAL_BURST_2_AEA_LOOT</name>
+</blueprintList>
+<blueprintList name="LIST_DRONES_AEA_LOOT">
+	<name>AEA_COMBAT_NECRO_BOSS</name>
+	<name>AEA_COMBAT_BIRD_BOSS</name>
+	<name>AEA_COMBAT_BIRD_MULTI_2_LOOT_LASER</name>
+</blueprintList>
+<blueprintList name="LIST_WEAPONS_AEA_SYLVAN">
+	<name>AEA_LASER_ACID_1</name>
+	<name>AEA_LASER_ACID_2</name>
+	<name>AEA_LASER_ACID_3</name>
+	<name>AEA_BEAM_ACID_1</name>
+	<name>AEA_ION_ACID_1</name>
+	<name>AEA_LASER_NECRO_1</name>
+	<name>AEA_LASER_NECRO_2</name>
+	<name>AEA_LASER_NECRO_3</name>
+	<name>AEA_LASER_NECRO_CHARGE</name>
+	<name>AEA_SHLEG_BOMB</name>
+	<name>AEA_SHLEG_MISSILES</name>
+</blueprintList>
+<blueprintList name="LIST_DRONES_AEA_SYLVAN">
+	<name>AEA_DEFENSE_NECRO_1_MISSILE</name>
+	<name>AEA_DEFENSE_NECRO_2_MISSILE</name>
+	<name>AEA_COMBAT_NECRO_1_LASER</name>
+	<name>AEA_COMBAT_NECRO_2_LASER</name>
+	<name>AEA_COMBAT_BIRD_BURST_1</name>
+	<name>AEA_COMBAT_BIRD_BURST_2</name>
+	<name>AEA_COMBAT_BIRD_BIO_1</name>
+	<name>AEA_COMBAT_BIRD_BIO_2</name>
+	<name>AEA_COMBAT_BIRD_BIO_3</name>
+	<name>AEA_COMBAT_BIRD_MULTI_1_LASER</name>
+	<name>AEA_COMBAT_BIRD_MULTI_2_LASER</name>
+	<name>AEA_COMBAT_BIRD_SMART_1</name>
+	<name>AEA_COMBAT_BIRD_SMART_2</name>
+</blueprintList>
+<blueprintList name="LIST_WEAPONS_AEA_SYLVAN_LYLMIK">
+	<name>AEA_LASER_OLD_1</name>
+	<name>AEA_LASER_OLD_2</name>
+	<name>AEA_LASER_OLD_3</name>
+	<name>AEA_LASER_OLDP_1</name>
+	<name>AEA_LASER_OLDP_2</name>
+	<name>AEA_LASER_OLDP_3</name>
+</blueprintList>
+
+<blueprintList name="AEA_CULTISTS_ALL">
+	<name>aea_cult_wizard</name>
+	<name>aea_cult_wizard_a01</name>
+	<name>aea_cult_wizard_a02</name>
+	<name>aea_cult_wizard_s03</name>
+	<name>aea_cult_wizard_s04</name>
+	<name>aea_cult_wizard_s05</name>
+	<name>aea_cult_wizard_s06</name>
+	<name>aea_cult_wizard_a07</name>
+	<name>aea_cult_wizard_s08</name>
+	<name>aea_cult_wizard_s09</name>
+	<name>aea_cult_wizard_a10</name>
+	<name>aea_cult_wizard_a11</name>
+	<name>aea_cult_wizard_s12</name>
+	<name>aea_cult_wizard_s13</name>
+	<name>aea_cult_wizard_s14</name>
+	<name>aea_cult_wizard_s15</name>
+	<name>aea_cult_priest_sup</name>
+	<name>aea_cult_priest_off</name>
+	<name>aea_cult_priest_bor</name>
+	<name>aea_cult_tiny</name>
+	<name>aea_cult_tiny_a01</name>
+	<name>aea_cult_tiny_a02</name>
+	<name>aea_cult_tiny_s03</name>
+	<name>aea_cult_tiny_s04</name>
+	<name>aea_cult_tiny_s05</name>
+	<name>aea_cult_tiny_s06</name>
+	<name>aea_cult_tiny_a07</name>
+	<name>aea_cult_tiny_s08</name>
+	<name>aea_cult_tiny_s09</name>
+	<name>aea_cult_tiny_a10</name>
+	<name>aea_cult_tiny_a11</name>
+	<name>aea_cult_tiny_s12</name>
+	<name>aea_cult_tiny_s13</name>
+	<name>aea_cult_tiny_s14</name>
+	<name>aea_cult_tiny_s15</name>
 </blueprintList>
 
 <blueprintList name="AEA_CULTISTS">

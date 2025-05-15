@@ -1,0 +1,9 @@
+# Balance Changes
+- Added Boons for each race
+
+# Bug Fixes
+- Fixed lab upgrades sometimes not apply statboosts
+- Fixed lab upgrade event text refering to the wrong type of crew
+- Fixed renegades not giving out their loot sometimes
+
+# Misc Changes
