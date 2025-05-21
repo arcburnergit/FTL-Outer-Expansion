@@ -32,6 +32,7 @@
 
 <event name="TRUE_VICTORY_CREW_AEA_BILL">
 	<text>"You know, I had no idea what I even was at the start of this, I was still naive and clueless, What I am now is all thanks to you, I'll be with you no matter what you choose."</text>
+	<text-aea-alternative>"I'm glad we got out of there alive, it got pretty close at times."</text-aea-alternative>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW1</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -40,6 +41,7 @@
 </event>
 <event name="TRUE_VICTORY_CREW_AEA_KING">
 	<text>"This has the potential of ending the lives of hundreds of thousands of organics, you should use it."</text>
+	<text-aea-alternative>"In all my days that's got to be in atleast the top 5 times I've almost died."</text-aea-alternative>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -48,6 +50,7 @@
 </event>
 <event name="TRUE_VICTORY_CREW_AEA_TINY">
 	<text>Tiny just looks at you, you wonder if it even knows what the paragon is.</text>
+	<text-aea-alternative>Tiny just looks at you, you hope that it didn't realize how close you guys came to dying.</text-aea-alternative>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW3</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -56,6 +59,7 @@
 </event>
 <event name="TRUE_VICTORY_CREW_AEA_JAY">
 	<text>"Well, if you don't end up detonating the bomb, can I atleast try and disassemble it? I want to know how it works."</text>
+	<text-aea-alternative>"What I wouldn't give to get my hands and a good engineering bay on that wreck, ah well, we've got a rebel flagship to destroy."</text-aea-alternative>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW4</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -64,6 +68,7 @@
 </event>
 <event name="TRUE_VICTORY_CREW_AEA_SICKLE">
 	<text>"Do it, it would be really cool."</text>
+	<text-aea-alternative>"At the very least that would have been an epic way to go out."</text-aea-alternative>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW5</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -72,6 +77,7 @@
 </event>
 <event name="TRUE_VICTORY_CREW_AEA_SORROW">
 	<text>"Do it, it would be really cool."</text>
+	<text-aea-alternative>"At the very least that would have been an epic way to go out."</text-aea-alternative>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW5</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -80,6 +86,7 @@
 </event>
 <event name="TRUE_VICTORY_CREW_AEA_ONYX">
 	<text>"Personally I'd rather live to see the Shard-Forged go on, I fear that without the dawnshard the balance we have may shatter."</text>
+	<text-aea-alternative>"This experience has made me look forward to dealing with the comparatively simple problems of the Shard-Forged."</text-aea-alternative>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW6</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>

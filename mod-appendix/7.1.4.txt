@@ -1,0 +1,11 @@
+# Balance Changes
+- Changed Quarentine Ending to give the option to talk to any unique crew, not just unique crew in MV and OE. (Works with any addon that adds unique crew dialogue to the true ending.)
+
+# Bug Fixes
+- Fixed incorrect name upon recieving a boon for the modifier clonebay.
+- Fixed modified clonebay installation text.
+- Fixed Cultist Renegade not giving its reward.
+- Fixed a crash that could occur on linux when in Acidic Sectors.
+
+# Misc Changes
+- Added Hyperspace Version Checking

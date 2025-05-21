@@ -12,7 +12,7 @@
 	</choice>
 </event>
 <event name="BOON_SELECT_AEA_CLONE_CRIME">
-	<text>From nowhere, you hear a voice speaking to you. "Grant of [Auxiliary Shielding] i-i-installed. Installed! Grant provides: Spawn a weak generic crewmember with a 20 second lifespan onboard your ship after every jump. If -you- witness p-p-previous challenger; provide thanks. I advise you -visit- me as well."</text>
+	<text>From nowhere, you hear a voice speaking to you. "Grant of [Illegally Modified Clonebay] i-i-installed. Installed! Grant provides: Spawn a weak generic crewmember with a 20 second lifespan onboard your ship after every jump. If -you- witness p-p-previous challenger; provide thanks. I advise you -visit- me as well."</text>
 	<hiddenAug>BOON_AEA_CLONE_CRIME</hiddenAug>
 	<choice hidden="true">
 		<text>Continue...</text>

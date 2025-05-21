@@ -750,13 +750,13 @@
 	<text id="renegade_drop_yes" />
 	<achievement silent="false">ACH_AEA_REN_CULT</achievement>
 	<autoReward level="LOW">stuff</autoReward>
-	<aug name="AEA_BARRIER_RELAY" />
+	<augment name="AEA_BARRIER_RELAY" />
 </event>
 <event name="AEAT_BOSS_CULT_DROP_CHAOS">
 	<text id="renegade_drop_yes" />
 	<achievement silent="false">ACH_AEA_REN_CULT</achievement>
 	<autoReward level="LOW">stuff</autoReward>
-	<aug name="AEA_BARRIER_RELAY_CHAOS" />
+	<augment name="AEA_BARRIER_RELAY_CHAOS" />
 </event>
 
 <!--Wedge Tailed B-->

@@ -214,7 +214,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 			wipe_p = true
 		end
 		if refill > 0 then
-			for id = 0, shipGraph:RoomCount(), 1 do
+			for id = 0, shipGraph:RoomCount() - 1, 1 do
 				--local id = room.iRoomId
 				--print(id)
 				oxygen:ModifyRoomOxygen(id, (-1*refill) - (5*(Hyperspace.FPS.SpeedFactor/16)))
@@ -230,7 +230,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 		local shipGraph = Hyperspace.ShipGraph.GetShipInfo(shipManager.iShipId)
 		local wipe_e = false
 		if refill > 0 then
-			for id = 0, shipGraph:RoomCount(), 1 do
+			for id = 0, shipGraph:RoomCount() - 1, 1 do
 				--local id = room.iRoomId
 				--print(id)
 				oxygen:ModifyRoomOxygen(id, (-1*refill) - (2*(Hyperspace.FPS.SpeedFactor/16)))
