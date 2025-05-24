@@ -266,7 +266,7 @@ script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile,
 			--print("TARGET BEAM START:"..crew.type)
 			--drone.beamCurrentTarget = Hyperspace.Pointf(crew.x,crew.y)
 			drone.targetLocation = Hyperspace.Pointf(crewPos.x,crewPos.y)
-			if crewListSize > 1 then
+			--[[if crewListSize > 1 then
 				table.remove(crewListEnemy, random)
 				local random2 = math.random(crewListSize - 1)
 				local crew2 = crewListEnemy[random2]
@@ -275,7 +275,7 @@ script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile,
 				drone.beamFinalTarget = get_point_local_offset(Hyperspace.Pointf(crewPos.x,crewPos.y), Hyperspace.Pointf(crew2Pos.x,crew2Pos.y), 300, 0)
 			else
 				drone.beamFinalTarget = get_point_local_offset(Hyperspace.Pointf(crewPos.x,crewPos.y), shipManager:GetRandomRoomCenter(), 300, 0)
-			end
+			end]]
 		end
 	end
 	return Defines.Chain.CONTINUE

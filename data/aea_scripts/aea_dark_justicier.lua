@@ -1456,113 +1456,137 @@ script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager
 			local furthest_right = nil
 			local i = 0
 			for location in vter(map.locations) do
-				if (location.dangerZone or location.fleetChanging) and ((not furthest_right) or location.loc.x > furthest_right.loc.x) then
+				if location.dangerZone and ((not furthest_right) or location.loc.x > furthest_right.loc.x) then
 					furthest_right = location
 				end
 				i = i + 1
 			end
 			if furthest_right then
 				Hyperspace.playerVariables.aea_justice_battleship_location = i
-				location.event = Hyperspace.Event:CreateEvent(fightEvent, 0, false)
-				location.known = false
+				furthest_right.event = Hyperspace.Event:CreateEvent(fightEvent, 0, false)
+				--print("start s4 event")
+				furthest_right.known = false
 				Hyperspace.playerVariables.aea_justice_battleship_jumping = -1
+			end
+		else
+			if Hyperspace.playerVariables.aea_justice_battleship_jumping >= 0 then
+				for location in vter(map.locations) do
+					if location.event.eventName == fightEvent then
+						location.event = Hyperspace.Event:CreateEvent("AEA_FLEET_WRECK_ELITE", 0, false)
+					end
+				end
+				local i = 0
+				for location in vter(map.locations) do
+					if i == Hyperspace.playerVariables.aea_justice_battleship_jumping then
+						Hyperspace.playerVariables.aea_justice_battleship_location = i
+						location.event = Hyperspace.Event:CreateEvent(fightEvent, 0, false)
+						--print("set s4 event")
+						location.known = false
+						Hyperspace.playerVariables.aea_justice_battleship_jumping = -1
+					end
+					i = i + 1
+				end
+			else
+				local jumpLocation = nil
+				local i = 0
+				for location in vter(map.locations) do
+					if Hyperspace.playerVariables.aea_justice_battleship_location == i then
+						local furthest_right = nil
+						local jumpFound = false
+						for near in vter(location.connectedLocations) do
+							if near.dangerZone and ((not furthest_right) or near.loc.x > furthest_right.loc.x) then
+								furthest_right = near
+								jumpFound = true
+							end
+						end
+						if jumpFound then
+							jumpLocation = furthest_right
+						end
+						break
+					end
+					i = i + 1
+				end
+				if jumpLocation then
+					local i = 0
+					for location in vter(map.locations) do
+						if location.loc.x == jumpLocation.loc.x and location.loc.y == jumpLocation.loc.y then
+							Hyperspace.playerVariables.aea_justice_battleship_jumping = i
+							break					
+						end
+						i = i + 1
+					end
+				end
 			end
 		end
 
-		if Hyperspace.playerVariables.aea_justice_battleship_jumping >= 0 then
-			for location in vter(map.locations) do
-				if location.event.eventName == fightEvent then
-					location.event = Hyperspace.Event:CreateEvent("AEA_FLEET_WRECK_ELITE", 0, false)
-				end
-			end
-			local i = 0
-			for location in vter(map.locations) do
-				if i == Hyperspace.playerVariables.aea_justice_battleship_jumping then
-					Hyperspace.playerVariables.aea_justice_battleship_location = i
-					location.event = Hyperspace.Event:CreateEvent(fightEvent, 0, false)
-					location.known = false
-					Hyperspace.playerVariables.aea_justice_battleship_jumping = -1
-				end
-				i = i + 1
-			end
-		else
-			local jumpLocation = nil
-			local i = 0
-			for location in vter(map.locations) do
-				if Hyperspace.playerVariables.aea_justice_battleship_location == i then
-					local furthest_right = nil
-					local jumpFound = false
-					for near in vter(location.connectedLocations) do
-						if (near.dangerZone or near.fleetChanging) and ((not furthest_right) or near.loc.x > furthest_right.loc.x) then
-							furthest_right = near
-							jumpFound = true
-						end
-					end
-					if jumpFound then
-						jumpLocation = furthest_right
-					end
-					break
-				end
-				i = i + 1
-			end
-			if jumpLocation then
-				local i = 0
-				for location in vter(map.locations) do
-					if location.loc.x == jumpLocation.loc.x and location.loc.y == jumpLocation.loc.y then
-						Hyperspace.playerVariables.aea_justice_battleship_jumping = i
-						break					
-					end
-					i = i + 1
-				end
-			end
-		end
+		
 	elseif shipManager.iShipId == 0 and map.worldLevel == 5 and Hyperspace.playerVariables.aea_justice_battleship == 1 and Hyperspace.playerVariables.aea_justice_cruiser_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE") == 0 then
 		local fightEvent = "AEA_JUSTICIER_FIGHT_TWO"
 		
-		if Hyperspace.playerVariables.aea_justice_cruiser_jumping >= 0 then
-			for location in vter(map.locations) do
-				if location.event.eventName == fightEvent then
-					location.event = Hyperspace.Event:CreateEvent("AEA_FLEET_WRECK_ELITE", 0, false)
-				end
-			end
+		if Hyperspace.playerVariables.aea_justice_cruiser_location == -1 then
+			local furthest_right = nil
 			local i = 0
 			for location in vter(map.locations) do
-				if i == Hyperspace.playerVariables.aea_justice_cruiser_jumping then
-					Hyperspace.playerVariables.aea_justice_cruiser_location = i
-					location.event = Hyperspace.Event:CreateEvent(fightEvent, 0, false)
-					location.known = false
-					Hyperspace.playerVariables.aea_justice_cruiser_jumping = -1
+				if location.dangerZone and ((not furthest_right) or location.loc.x > furthest_right.loc.x) then
+					furthest_right = location
 				end
 				i = i + 1
+			end
+			if furthest_right then
+				Hyperspace.playerVariables.aea_justice_cruiser_location = i
+				furthest_right.event = Hyperspace.Event:CreateEvent(fightEvent, 0, false)
+				--print("start s6 event")
+				furthest_right.known = false
+				Hyperspace.playerVariables.aea_justice_battleship_jumping = -1
 			end
 		else
-			local jumpLocation = nil
-			local i = 0
-			for location in vter(map.locations) do
-				if Hyperspace.playerVariables.aea_justice_cruiser_location == i then
-					local furthest_right = nil
-					local jumpFound = false
-					for near in vter(location.connectedLocations) do
-						if (near.dangerZone or near.fleetChanging) and ((not furthest_right) or near.loc.x > furthest_right.loc.x) then
-							furthest_right = near
-							jumpFound = true
-						end
+
+			if Hyperspace.playerVariables.aea_justice_cruiser_jumping >= 0 then
+				for location in vter(map.locations) do
+					if location.event.eventName == fightEvent then
+						location.event = Hyperspace.Event:CreateEvent("AEA_FLEET_WRECK_ELITE", 0, false)
 					end
-					if jumpFound then
-						jumpLocation = furthest_right
-					end
-					break
 				end
-				i = i + 1
-			end
-			if jumpLocation then
 				local i = 0
 				for location in vter(map.locations) do
-					if location.loc.x == jumpLocation.loc.x and location.loc.y == jumpLocation.loc.y then
-						Hyperspace.playerVariables.aea_justice_cruiser_jumping = i
-						break					
+					if i == Hyperspace.playerVariables.aea_justice_cruiser_jumping then
+						Hyperspace.playerVariables.aea_justice_cruiser_location = i
+						location.event = Hyperspace.Event:CreateEvent(fightEvent, 0, false)
+						--print("set s6 event")
+						location.known = false
+						Hyperspace.playerVariables.aea_justice_cruiser_jumping = -1
 					end
 					i = i + 1
+				end
+			else
+				local jumpLocation = nil
+				local i = 0
+				for location in vter(map.locations) do
+					if Hyperspace.playerVariables.aea_justice_cruiser_location == i then
+						local furthest_right = nil
+						local jumpFound = false
+						for near in vter(location.connectedLocations) do
+							if near.dangerZone and ((not furthest_right) or near.loc.x > furthest_right.loc.x) then
+								furthest_right = near
+								jumpFound = true
+							end
+						end
+						if jumpFound then
+							jumpLocation = furthest_right
+						end
+						break
+					end
+					i = i + 1
+				end
+				if jumpLocation then
+					local i = 0
+					for location in vter(map.locations) do
+						if location.loc.x == jumpLocation.loc.x and location.loc.y == jumpLocation.loc.y then
+							Hyperspace.playerVariables.aea_justice_cruiser_jumping = i
+							break					
+						end
+						i = i + 1
+					end
 				end
 			end
 		end
@@ -1583,6 +1607,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 			for location in vter(map.locations) do
 				if  Hyperspace.playerVariables.aea_justice_battleship_location == i then
 					location.event = Hyperspace.Event:CreateEvent("AEA_JUSTICIER_FIGHT_ONE", 0, false)
+					print("load s4 event")
 					location.known = false
 				end
 				i = i + 1
@@ -1592,6 +1617,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 			for location in vter(map.locations) do
 				if  Hyperspace.playerVariables.aea_justice_cruiser_location == i then
 					location.event = Hyperspace.Event:CreateEvent("AEA_JUSTICIER_FIGHT_TWO", 0, false)
+					print("load s6 event")
 					location.known = false
 				end
 				i = i + 1
