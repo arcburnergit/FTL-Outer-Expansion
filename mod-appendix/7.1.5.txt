@@ -1,0 +1,8 @@
+# Balance Changes
+
+# Bug Fixes
+- Fix Onyx's Crewser's cloaking and aux shields location
+- Fixed Lylmik council members not being consultable
+- Fixed soft lock when pressing continue in the talk to your crew area at the end of the lylmik ending
+
+# Misc Changes

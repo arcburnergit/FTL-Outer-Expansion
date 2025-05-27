@@ -12276,14 +12276,14 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>0</number>
 			</slot>
 		</aea_clone_crime>
-		<aea_super_shields power="2" room="6" start="true" img="room_shields_7" >
+		<aea_super_shields power="2" room="2" start="true" img="room_shields_7" >
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
 		<battery power="1" max="2" room="22" start="false" img="room_battery_6" />
-		<cloaking power="1" room="6" start="false" img="room_cloaking_11" />
+		<cloaking power="1" room="2" start="false" img="room_cloaking_11" />
 		<clonebay power="1" room="8" start="true">
 			<slot>
 				<number>0</number>

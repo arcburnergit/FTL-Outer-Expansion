@@ -598,6 +598,7 @@ local hookedEvents = {}
 script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
 	local eventManager = Hyperspace.Event
 	if event.eventName == "AEA_OLD_VICTORY_CREW" then
+		event:RemoveChoice(0)
 		for _, crewId in ipairs(uniqueCrewIndex) do
 			local crewTable = uniqueCrewEnd[crewId]
 			local pageEvent = eventManager:CreateEvent("AEA_OLD_VICTORY_", 0, false)

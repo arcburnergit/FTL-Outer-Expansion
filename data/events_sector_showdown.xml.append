@@ -28,6 +28,26 @@
 		<text>Ask King Onyx about this.</text>
 		<event load="TRUE_VICTORY_CREW_AEA_ONYX" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="aea_old_unique_1">
+		<text>Ask Atoning Unifex about this.</text>
+		<event load="TRUE_VICTORY_CREW_AEA_OLD_UNIQUE_1" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="aea_old_unique_2">
+		<text>Ask Asymptotic Essence about this.</text>
+		<event load="TRUE_VICTORY_CREW_AEA_OLD_UNIQUE_2" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="aea_old_unique_3">
+		<text>Ask Eupathic Impulse about this.</text>
+		<event load="TRUE_VICTORY_CREW_AEA_OLD_UNIQUE_3" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="aea_old_unique_4">
+		<text>Ask Homologous Trend about this.</text>
+		<event load="TRUE_VICTORY_CREW_AEA_OLD_UNIQUE_4" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="aea_old_unique_5">
+		<text>Ask Noetic Concordance about this.</text>
+		<event load="TRUE_VICTORY_CREW_AEA_OLD_UNIQUE_5" />
+	</mod-append:choice>
 </mod:findName>
 
 <event name="TRUE_VICTORY_CREW_AEA_BILL">
@@ -88,6 +108,52 @@
 	<text>"Personally I'd rather live to see the Shard-Forged go on, I fear that without the dawnshard the balance we have may shatter."</text>
 	<text-aea-alternative>"This experience has made me look forward to dealing with the comparatively simple problems of the Shard-Forged."</text-aea-alternative>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_CREW6</unlockCustomShip>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="TRUE_VICTORY_LOAD" />
+	</choice>
+</event>
+
+<event name="TRUE_VICTORY_CREW_AEA_OLD_UNIQUE_1">
+	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text>
+	<text-aea-alternative>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text-aea-alternative>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_UNIA</unlockCustomShip>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="TRUE_VICTORY_LOAD" />
+	</choice>
+</event>
+<event name="TRUE_VICTORY_CREW_AEA_OLD_UNIQUE_2">
+	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text>
+	<text-aea-alternative>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text-aea-alternative>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_UNIA_2</unlockCustomShip>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="TRUE_VICTORY_LOAD" />
+	</choice>
+</event>
+<event name="TRUE_VICTORY_CREW_AEA_OLD_UNIQUE_3">
+	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text>
+	<text-aea-alternative>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text-aea-alternative>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_UNIA_3</unlockCustomShip>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="TRUE_VICTORY_LOAD" />
+	</choice>	
+</event>
+<event name="TRUE_VICTORY_CREW_AEA_OLD_UNIQUE_4">
+	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text>
+	<text-aea-alternative>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text-aea-alternative>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_UNIB</unlockCustomShip>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="TRUE_VICTORY_LOAD" />
+	</choice>
+</event>
+<event name="TRUE_VICTORY_CREW_AEA_OLD_UNIQUE_5">
+	<text>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text>
+	<text-aea-alternative>"This was certainly an adventure. Do not worry about me, when this body dies I'll return to a body back in Lylmik space."</text-aea-alternative>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_UNIB_2</unlockCustomShip>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="TRUE_VICTORY_LOAD" />
