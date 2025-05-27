@@ -176,7 +176,7 @@ Unique: False
 Dominant Faction: The Acidic Growth
 Rebel Threat Level: Low
 
-The Acidic Growth is a rather unknown faction, believed to be a form of hivemind or fungal growth, The Acidic Growth have managed to construct their own technology to expand their borders beyond the nebulas it formed in.</text>
+The Acidic Growth is a rather unknown faction - partly because of how protective they are of their space. Believed to be a form of hivemind or fungal growth, The Acidic Growth have managed to construct their own technology to expand their borders beyond the nebulas it formed in.</text>
 	<choice hidden="true">
 		<text>Exit hyperspeed.</text>
 		<event load="START_AEA_ACID" />

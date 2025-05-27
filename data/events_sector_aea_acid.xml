@@ -48,6 +48,7 @@
 <eventList name="CLEARING_AEA_ACID">
 	<event load="HOSTILE_AEA_ACID" />
 	<event load="DISTRESS_AEA_ACID" />
+	<event load="AEA_ACID_SCOUT_CLEARING" />
 </eventList>
 <eventList name="HOSTILE_AEA_ACID">
 	<event load="ENCOUNTER_AEA_ACID_CLEARING" />
@@ -57,13 +58,17 @@
 </eventList>
 
 <event name="ENCOUNTER_AEA_ACID_CLEARING" unique="true">
-	<text>Its unusual for the Acidic Growth to be found outside of their nebulae. However it appears to have decided you're a threat and is moving in to attack!.</text>
+	<text load="TEXT_AEA_ACID_CLEARING" />
 	<ship load="SHIP_AEA_ACID_FIGHT" hostile="true" />
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="COMBAT_CHECK" />
 	</choice>
 </event>
+<textList name="TEXT_AEA_ACID_CLEARING">
+	<text>Its unusual for the Acidic Growth to be found outside of their nebulae. However, it appears to have decided you're a threat and is moving in to attack!</text>
+	<text>The ship at this beacon is of Acidic Growth origin. It's unclear what they're doing outside a nebula: reconnaissance, or just lost? You don't get to ask them though, since their weapons are online and charging!</text>
+</textList>
 
 <event name="ENCOUNTER_AEA_ACID_PIRATE_CLEARING">
 	<text load="TEXT_AEA_ACID_PIRATE_CLEARING" />
@@ -88,13 +93,13 @@
 	</choice>
 </event>
 <textList name="TEXT_AEA_ACID_REBEL_CLEARING">
-	<text>As you arrive at the beacon, a hostile ship immediately registers on your scanners. You didn't expect to see Rebels extending their reach into the unknown regions of Acidic territory. Charge the weapons!.</text>
-	<text>You jump into empty space and are relieved to see your sensors blink back to life. However, you are less pleased to see them immediately register a Rebel ship on an approach vector!.</text>
+	<text>As you arrive at the beacon, a hostile ship immediately registers on your scanners. You didn't expect to see Rebels extending their reach into the unknown regions of Acidic territory. Charge the weapons!</text>
+	<text>You jump into empty space and are relieved to see your sensors blink back to life. However, you are less pleased to see them immediately register a Rebel ship on an approach vector!</text>
 	<text>You receive a message from a nearby ship, "Looks like our intelligence was correct! You can't escape us by traveling into unknown territory... No one can hide from the Rebellion!"</text>
 </textList>
 
 <event name="ENCOUNTER_AEA_ACID_ORCHID_CLEARING" unique="true">
-	<text>It appears the orchids are taking their duty as the Acidic Growth's only ally seriously, they move in to take you out.</text>
+	<text>It appears the orchids are taking their duty as the Acidic Growth's only ally seriously. They move in to take you out.</text>
 	<ship load="SHIP_ORCHID_FIGHT" hostile="true" />
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -191,9 +196,56 @@
 	</event>
 </eventList>
 
+<event name="AEA_ACID_SCOUT_CLEARING" unique="true">
+	<text>It seems like an Acidic Growth ship, likely a scout, is at this beacon. They don't seem hostile, despite noticing you the moment you jumped in. "You, outsider. Growth, expands. Sent, on a mission, to survey. Map data, you have?"</text>
+	<ship load="SHIP_AEA_ACID_FIGHT_SCOUT_CLEARING" hostile="false"/>
+	<choice hidden="true">
+		<text>Attack them!</text>
+		<event>
+			<text>The Acidic ship is confused, but not unprepared. It seems like they're trying to retreat back into the nebula!</text>
+			<ship hostile="true"/>
+			<choice>
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="sensors" lvl="3">
+		<text>(Advanced Sensors) Share the data you collected.</text>
+		<event load="AEA_ACID_SCOUT_CLEARING_REWARD" />
+	</choice>
+	<choice hidden="true" req="ADV_SCANNERS">
+		<text>(Long-Ranged Scanners) Share the data you collected.</text>
+		<event load="AEA_ACID_SCOUT_CLEARING_REWARD" />
+	</choice>
+	<choice hidden="true">
+		<text>We don't.</text>
+		<event>
+			<text>Acidic Growth ends comms and continues on. You have some time to yourself.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+<event name="AEA_ACID_SCOUT_CLEARING_REWARD">
+	<text>The Acidic vessel thanks you for the data and transports over some scrap as thanks.</text>
+	<autoReward level="MED">scrap_only</autoReward>
+    <choice hidden="true">
+        <text>Continue...</text>
+    	<event/>
+    </choice>
+</event>
+
 <eventList name="CLEARING_AEA_ACID_UNIQUE">
 	<event load="HOSTILE_AEA_ACID_UNIQUE_CLEARING" />
 	<event load="DISTRESS_AEA_ACID_UNIQUE_CLEARING" />
+	<event load="AEA_ACID_SCOUT_CLEARING" />
 </eventList>
 <eventList name="HOSTILE_AEA_ACID_UNIQUE_CLEARING">
 	<event load="ENCOUNTER_AEA_ACID_CLEARING" />
@@ -253,7 +305,7 @@
 		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Attack!.</text>
+		<text>Attack!</text>
 		<event>
 			<text>Instead of replying, you power your weapons and engage the ship.</text>
             <ship hostile="true"/>
@@ -319,7 +371,7 @@
 </eventList>
 
 <event name="NEBULA_AEA_ACID_GUN_UPGRADE" unique="true">   
-	<text>You're hailed by an Acidic ship, "We wish to test one of our new designs. However, we require a weapon to combine with our own technology. Please provide one for us, and we will return it to you after our tests."</text>
+	<text>You're hailed by an Acidic ship, "Outsider. Tests, we wish to perform. Weapon, can you donate? Combine technology, we will. Combined, we will return." You can probably get Acidic technology here, if you have the right weapon.</text>
 	<environment type="nebula" />
 	<choice hidden="true" req="LASER_BURST_1">
         <text>Hand over your Defense Laser.</text>
@@ -1080,12 +1132,12 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
     <choice>
         <text>Leave the orchid behind.</text>
         <event>
-            <text>You finish salvaging what you can and leave the orchid, hopefully the Acidic Growth will remember it has them onboard before they starves to death.</text>
+            <text>You finish salvaging what you can and leave the orchid behind. Hopefully, the Acidic Growth will remember it has them onboard before they starve to death.</text>
         </event>
     </choice>
 </event>
 <event name="NEBULA_ACID_AEA_ACID_ITEM_BOARD">
-    <text>While you were attempting to break into the Acidic vessel, the repair crew has broken into yours!.</text>
+    <text>While you were attempting to break into the Acidic vessel, the repair crew has broken into yours!</text>
     <boarders min="4" max="4" class="aea_acid_soldier" />
 </event>
 <event name="NEBULA_STORM_AEA_ACID_AUGITEM" unique="true">
@@ -1229,7 +1281,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 <eventList name="REFUGEE_HAIL_LIST_AEA_ACID">
 	<event load="REFUGEE_TRADER" />
 	<event>
-		<text>As you hail the refugee ship, a Slug ship jumps into the system... it was hunting the refugee ship for sport, and now they've found you instead!.</text>
+		<text>As you hail the refugee ship, a Slug ship jumps into the system... it was hunting the refugee ship for sport, and now they've found you instead!</text>
 		<ship load="SHIP_SLUG_REFUGEE" hostile="true" />
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -1249,7 +1301,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<status type="limit" target="player" system="sensors" amount="0" />
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
-	<text>Strangely, an Orchid captain hails you from an Acidic vessel. "Captain, you wouldn't happen to have any Acidic Growth with you? We'd offer a reward for you to turn over any of it to be destroyed""</text>
+	<text>Strangely, an Orchid captain hails you from an Acidic vessel. "Captain, you wouldn't happen to have any Acidic Growth with you? We'd offer a reward for you to turn over any of it to be destroyed."</text>
 	<ship load="SHIP_AEA_ACID_ORCHID_ONLY" hostile="false" />
 	<choice hidden="true" req="aea_acid_soldier">
 		<text>(Acidic Soldier) Take up their offer.</text>
@@ -1275,6 +1327,152 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</choice>
 </event>
 
+<event name="NEBULA_ACIDIC_AEA_ACID_PRAETOR_DIPLOMATIC" unique="true">
+	<beaconType id="map_icon_aea_acid_nebula" global="false">
+		<color r="138" g="237" b="31" a="1"/>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
+	<status type="limit" target="player" system="sensors" amount="0" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
+
+	<text>Acidic nebulae usually house their own ships, but this time it's a Praetor vessel. You knew the Gathering is a good ally to the Acidic Growth, but what could such high rank be doing here?</text>
+	<ship load="SHIP_AEA_ACID_PRAETOR_DIPLOMATIC" hostile="false" />
+	<choice hidden="true">
+		<text>Hail them.</text>
+		<event>
+			<text>They accept the hail, and an annoyed Praetor appears on your screen. "Federation? Didn't expect you here. Acidic space is dangerous for you... But i fear you don't care, considering you decided to stay at this beacon and let it devour you."</text>
+				<choice hidden="true">
+					<text>You're doing the same.</text>
+					<event>
+						<text>The orchid stutters, "We... we produce... Whatever, it doesn't matter. The difference is, we're on a mission. A mission that you distract us from. I suggest you move on. Your ship will thank you."</text>
+						<choice hidden="true">
+							<text>What is the mission? You don't seem to be doing anything.</text>
+							<event>
+								<text>Your question pisses him off even more, and he almost starts screaming - before a different orchid pushes him off screen. "Tar'Ek, calm down. Let me talk." You hear distant shouting, but both of you ignore it. "Renegade, yes? Please excuse him, we're all a little bit riled up. You see, we were sent on a diplomatic mission to further relationship between the Gathering and Acidic Growth. The coordinates led us here, and we believe they were correct... but we're just a little bit stuck."</text>
+								<choice hidden="true">
+									<text>Correct? There's nothing but the nebula.</text>
+									<event>
+										<text>"Yes, that is... the point. Acidic Growth is all around us, but we don't know how to communicate with it." The orchid scratches the back of his head. "I suppose, since you're still at this beacon, you could help us? We'd really appreciate it."</text>
+										<choice hidden="true">
+											<text>Try to catch the signal.</text>
+											<event>
+												<text>"This might work. Could you help us gather the data? We'll reward you if you do."</text>
+												<choice hidden="true" req="sensors" lvl="3">
+													<text>(Advanced Sensors) Catch the signal.</text>
+													<event>
+														<text>With your sensors at maximum power, you quickly find the correct channel and share your findings with orchid. "Thank you, this will be enough."</text>
+														<autoReward level="HIGH">standard</autoReward>
+														<choice hidden="true">
+															<text>Continue...</text>
+															<event />
+														</choice>
+													</event>
+												</choice>
+												<choice hidden="true">
+													<text>We can't.</text>
+													<event>
+														<text>"Oh... that's a shame, but we'll manage. Good luck on your mission, captain, and take this for taking your time to help us."</text>
+														<autoReward level="LOW">standard</autoReward>
+														<choice hidden="true">
+															<text>Continue...</text>
+															<event />
+														</choice>																
+													</event>
+												</choice>
+											</event>
+										</choice>
+										<choice hidden="true">
+											<text>Suggest interpreting temperature readings.</text>
+											<event>
+												<text>"This might work. We'll have to spend some time translating it, though... unless you have a solution?"</text>
+												<choice hidden="true" req="LIST_CREW_AEA_ACID">
+													<text>(Acidic crew) Augment their translator.</text>
+													<event>
+														<text>Your crew sends over the databanks and explains how to use them. "Thank you, this will be enough."</text>
+														<autoReward level="HIGH">standard</autoReward>
+														<choice hidden="true">
+															<text>Continue...</text>
+															<event />
+														</choice>	
+													</event>
+												</choice>
+												<choice hidden="true">
+													<text>We don't.</text>
+													<event>
+														<text>"Oh... that's a shame, but we'll manage. Good luck on your mission, captain, and take this for taking your time to help us."</text>
+														<autoReward level="LOW">standard</autoReward>
+														<choice hidden="true">
+															<text>Continue...</text>
+															<event />
+														</choice>																
+													</event>
+												</choice>
+											</event>
+										</choice>
+										<choice hidden="true">
+											<text>Scoop up a bit of nebula gases and hook them up to a console. It'll take some time.</text>
+											<event>
+												<text>Together with the Orchid vessel, you gather acidic gases and send them over for negotiation. "Strange... the results are not what we expected. It looks like in separation, it lost some of its cognitive ability and memories... We'll have to find another way to talk to it. We'll reward you for the help regardless, captain."</text>
+												<autoReward level="MED">standard</autoReward>
+												<modifyPursuit amount="1"/>
+												<choice hidden="true">
+													<text>Continue...</text>
+													<event />
+												</choice>
+											</event>
+										</choice>
+									</event>
+								</choice>
+							</event>
+						</choice>
+						<choice hidden="true">
+							<text>Move on, as suggested.</text>
+							<event> 
+								<text>You have time to do something onboard the ship.</text>
+								<choice>
+									<text>Do something onboard the ship.</text>
+									<event load="STORAGE_CHECK" />
+								</choice>
+								<choice>
+									<text>Do nothing.</text>
+									<event />
+								</choice>
+							</event>
+						</choice>
+					</event>
+				</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Attack!</text>
+		<event>
+			<text>You couldn't care less about their business. All you care about is scrap, and you regard senseless murder to be a valid way to get it.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="MORALITY_UPDATE_ORCHID_FIGHT" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Continue past.</text>
+		<event>
+			<text>You have time to do something onboard the ship</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
 
 <event name="NEBULA_ACIDIC_AEA_ACID_CHOOSE_DEATH" unique="true">
     <beaconType id="map_icon_aea_acid_nebula" global="false">
@@ -1287,11 +1485,11 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<status type="limit" target="player" system="sensors" amount="0" />
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
-	<text>You are immediately hailed by a dangerous-looking Acidic ship guarding a station. "You are not welcome here. Choose your punishment and prepare to die."</text>
+	<text>You are immediately hailed by a dangerous-looking Acidic ship guarding a station. "Outsider. Intruding, in our space. Punishment, you choose. Death follows."</text>
 	<choice req="shields" lvl="2" blue="false" max_group="0">
 		<text>Shields.</text>
 		<event>
-			<text>"Offer is acceptable." Your shield power suddenly drops and they charge.</text>
+			<text>"Offer, acceptable." Your shield power suddenly drops and they charge.</text>
 			<ship load="SHIP_AEA_ACID_STATUS_SHIELDS" hostile="true" />
 			<status type="divide" target="player" system="shields" amount="2" />
 			<choice hidden="true">
@@ -1318,7 +1516,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<choice req="weapons" lvl="2" blue="false" max_group="1">
 		<text>Weapons.</text>
 		<event>
-			<text>"An acceptable offering." Your weapons system registers a hacking module. You hardly have time to respond before they attack.</text>
+			<text>"Acceptable, offering." Your weapons system registers a hacking module. You hardly have time to respond before they attack.</text>
 			<ship load="SHIP_AEA_ACID_STATUS_WEAPONS" hostile="true" />
 			<status type="divide" target="player" system="weapons" amount="2" />
 			<choice>
@@ -1372,7 +1570,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<choice hidden="true" req="pilot" blue="false" max_group="3">
 		<text>Offer 35 scrap.</text>
 		<event>
-			<text>"An acceptable punishment." They take the scrap and leave.</text>
+			<text>"Offer, accepted. Punishment, will not follow." They take the scrap and leave.</text>
 			<item_modify>
 				<item type="scrap" min="-35" max="-35" />
 			</item_modify>
@@ -1381,7 +1579,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<choice hidden="true" req="hacking" max_group="4"> 
 		<text>(Hacking) Counter any hack attempt.</text>
 		<event>
-			<text>"It appears there will be no Punishment." They cut transmission and move in to attack.</text>
+			<text>"Escaping, punishment? This, won't do. Death, follows." They cut transmission and move in to attack.</text>
 			<ship load="SHIP_AEA_ACID_STATUS_HACKING" hostile="true" />
 			<status type="limit" target="player" system="hacking" amount="0" />
 			<choice hidden="true">
@@ -1472,7 +1670,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<environment type="nebula" />
 	<ship hostile="false" load="SHIP_ORCHID_SLAVES" />
 	<choice hidden="true">
-		<text>Piracy is despicable. Attack the slavers!.</text>
+		<text>Piracy is despicable. Attack the slavers!</text>
 		<event>
 			<text>You attack the slavers.</text>
 			<ship hostile="true" />
@@ -1544,7 +1742,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event name="NEBULA_AEA_ACID_SLAVER_CARETAKER_FAIL">
 		<text>The slavers watch your Orchid's signing in bored bemusement. "Yeah, yeah, that's great and all, but I missed the part where I was supposed to care. I'm not in this business because I give a damn about morals, if you didn't notice. If you're not going to buy something, get lost."</text>
 		<choice hidden="true">
-			<text>Attack the slavers!.</text>
+			<text>Attack the slavers.</text>
 			<event>
 				<text>If you can't convince these slavers to end their trade, then you'll forcefully end it yourself.</text>
 				<ship hostile="true" />
@@ -1589,7 +1787,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 </eventList>
 
 <event name="NEBULA_AEA_ACID_IMPORTANT_PRISONER" unique="true">
-	<text>An Acidic Elite appears to be protecting a small Orchid Jailer. You aren't certain why, but surely something important must be kept in there?.</text>
+	<text>An Acidic Elite appears to be protecting a small Orchid Jailer. You aren't certain why, but surely something important must be kept in there?</text>
 	<ship load="SHIP_AEA_ACID_PRISONER_ELITE" hostile="false" />
 	<environment type="nebula" />
 	<choice hidden="true">
@@ -1631,7 +1829,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
     <ship load="SHIP_SLUG_ELITE_FIGHT" hostile="false"/>
-    <text>You arrive at the scene to find a small Acidic vessel being chased down by an Elite Slug ship. "We will join crew, in exchange you destroy pursuers?"</text>
+    <text>You arrive at the scene to find a small Acidic vessel being chased down by an Elite Slug ship. "Outsider. Help, you have? Destroy pursuers, if you might. We will join crew."</text>
     <choice>
         <text>Welcome it aboard.</text>
         <event>
@@ -1647,7 +1845,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
     <choice>
         <text>Leave them be.</text>
         <event>
-            <text>You fly away, leaving the Acidic vessel to fend for itself. The Acidic growth can't really die anyway, right?.</text>
+            <text>You fly away, leaving the Acidic vessel to fend for itself. The Acidic growth can't really die anyway, right?</text>
             <choice hidden="true">
 				<text>Do something onboard the ship.</text>
 				<event load="STORAGE_CHECK" />
@@ -1706,7 +1904,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 
 <event name="NEBULA_AEA_ACID_DISTRESS_ROCK">
 	<distressBeacon />
-    <text>You arrive at the beacon to discover a rock ship adrift at the beacon. It's unusual to see the Rockment out this far, and even more unusually this one has ran out of fuel.</text>
+    <text>You arrive at the beacon to discover a Rock ship adrift at the beacon. It's unusual to see the Rockment out this far, and even more unusually this one has ran out of fuel.</text>
     <ship load="SHIP_ROCK_GENERIC" hostile="false"/>
 	<environment type="nebula" />
     <choice>
@@ -1733,7 +1931,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
     <choice hidden="true">
         <text>Ignore them.</text>
         <event>
-            <text>You fly away, leaving the Acidic ship to the cache.</text>
+            <text>You fly away, leaving the Rock ship to their fate.</text>
             <choice hidden="true">
 				<text>Do something onboard the ship.</text>
 				<event load="STORAGE_CHECK" />
@@ -1748,19 +1946,19 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 
 <event name="NEBULA_AEA_ACID_DISTRESS_TRICK">
     <distressBeacon />
-	<text>You find an Acidic vessel broadcasting the distress signal and contact them. "You should not be here, prepare to die." Apparently the Acidic Growth has unexpectedly setup a trap for trespassers here.</text>
+	<text>You find an Acidic vessel broadcasting the distress signal and contact them. "Outsider. This is our space. Protect, we must." Apparently the Acidic Growth has unexpectedly setup a trap for trespassers here.</text>
 	<ship load="SHIP_AEA_ACID_GENERIC" hostile="true" />
 	<environment type="nebula" />
     <choice hidden="true" req="aea_acid_friendly" lvl="1">
         <text>(Friendly) Explain that you're friendly with the Acidic Growth.</text>
         <event>
             <ship hostile="false"/>
-            <text>"We didn't realize. We are sorry for luring you here under false pretenses. We will compensate you."</text>
+            <text>"We didn't realize. Outsiders, not usually friends. Compensation, will be given."</text>
             <autoReward level="MED">scrap_only</autoReward>
         </event>
     </choice>
     <choice hidden="true">
-        <text>Prepare for Combat!.</text>
+        <text>Prepare for Combat!</text>
         <event load="COMBAT_CHECK"/>
     </choice>
 </event>
@@ -1780,7 +1978,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 		<choice hidden="true">
 			<text>Investigate.</text>
 			<event>
-				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead."</text>
+				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "Wrecks, can you tell the amount? We can't leave without confirmation of their death."</text>
 				<choice hidden="true">
 					<text>Two.</text>
 					<event load="AEA_ACID_DISTRESS_QUESTION_TRUE" />
@@ -1801,11 +1999,11 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 		</choice>
 	</event>
 	<event>
-		<text>The beacon's signal is deeper into the the nebula, as you track it you pass by 5 different wrecks, all with strange burns along the sides.</text>
+		<text>The beacon's signal is deeper into the the nebula, as you track it you pass by five different wrecks, all with strange burns along the sides.</text>
 		<choice hidden="true">
 			<text>Investigate.</text>
 			<event>
-				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead."</text>
+				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "Wrecks, can you tell the amount? We can't leave without confirmation of their death."</text>
 				<choice hidden="true">
 					<text>Two.</text>
 					<event load="AEA_ACID_DISTRESS_QUESTION_FALSE" />
@@ -1830,7 +2028,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 		<choice hidden="true">
 			<text>Investigate.</text>
 			<event>
-				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "How many wrecks were there? We're forbidden to leave until We have confirmation that they're all dead."</text>
+				<text>Finally you find the location of the distress beacon, theres a severely damage Acidic vessel. As you get closer you're hailed by the sole surviving occupant of the vessel. "Wrecks, can you tell the amount? We can't leave without confirmation of their death."</text>
 				<choice hidden="true">
 					<text>Two.</text>
 					<event load="AEA_ACID_DISTRESS_QUESTION_FALSE" />
@@ -1852,7 +2050,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</event>
 </eventList>
 <event name="AEA_ACID_DISTRESS_QUESTION_FALSE">
-	<text>"That is Unfortunate, we will have to take some of your supplies until the task is complete." The Acidic Soldier quickly beams aboard and takes some of your supplies before you can react.</text>
+	<text>"Unfortunate. Outsider, wrong. Supplies, we will take. Mission, we must complete." The Acidic Soldier quickly beams aboard and takes some of your supplies before you can react.</text>
 	<item_modify steal="true">
 		<item type="scrap" min="-25" max="-25" />
 		<item type="fuel" min="-4" max="-2" />
@@ -1860,11 +2058,11 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</item_modify>
 </event>
 <event name="AEA_ACID_DISTRESS_QUESTION_TRUE">   
-	<text>"We have accomplished our task then. We will join you on your journey." The Acidic Soldier beams aboard and joins your crew!.</text>
+	<text>"The mission, complete. Nowhere to go, there is. We will join you on your journey." The Acidic Soldier beams aboard and joins your crew!</text>
 	<crewMember amount="1" class="aea_acid_soldier" >Acidic Soldier</crewMember>  
 </event>
 <event name="AEA_ACID_DISTRESS_QUESTION_FAIL">
-    <text>"We... can not remember..." The communications cut out and you're unable to reaquire it, you decide to cut your losses and salvage some of the wrecks while your jump drive changes.</text>
+    <text>"We... can not remember..." The communications cut out and you're unable to reacquire it. You decide to cut your losses and salvage some of the wrecks while your jump drive charges.</text>
     <autoReward level="LOW">standard</autoReward>
 </event>
 
@@ -1891,7 +2089,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<status type="limit" target="player" system="sensors" amount="0" />
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
-    <text>You arrive at the beacon face to face with an Elite Acidic vessel, they don't appear to react to your arrival.</text>
+    <text>You arrive at the beacon face to face with an Elite Acidic vessel. They don't appear to react to your arrival.</text>
     <ship load="SHIP_AEA_ACID_ELITE_FIGHT" hostile="false" />
     <choice hidden="true">
         <text>Hail the vessel.</text>
@@ -1997,7 +2195,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</choice>
 </event>
 <event name="NEBULA_AEA_ACID_CIV_HUNT_WIN">   
-	<text>You jump as the Acidic ship comes out of its hiding place in the nebula before you can even contact them. "Efficient work, Here is the reward as promised."</text>
+	<text>You jump as the Acidic ship comes out of its hiding place in the nebula before you can even contact them. "Mission, complete. Outsider, praise. The reward, as promised."</text>
 	<autoReward level="MED">standard_no_item</autoReward>
 	<weapon name="RANDOM" />
 </event>
@@ -2099,15 +2297,15 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</choice>
 </event>
 <textList name="NEBULA_AEA_ACID_FIGHT">
-	<text>At home in the nebula, you barely have time to react when an Acidic vessel emerges from astern!.</text>
-	<text>A shiny new Acidic vessel appears in the nebula ahead of you, too bad you're here to scratch their paint.</text>
-	<text>A strange looking Acidic vessel appears in the nebula, you cautiously approach unsure of the ships armaments. Luckily the Acidic vessel clears the air when weapons spring up out of it's hull!.</text>
-	<text>You pickup an Acidic vessel approaching, it looks like this one isn't bothering with stealth and is just coming out swinging.</text>
-	<text>As you arrive at the beacon, one of the three circling acidic vessels breaks off to meet you, prepare for battle.</text>
+	<text>At home in the nebula, you barely have time to react when an Acidic vessel emerges from astern!</text>
+	<text>A shiny new Acidic vessel appears in the nebula ahead of you. Too bad you're about to scratch their paint.</text>
+	<text>A strange looking Acidic vessel appears in the nebula. You approach cautiously, unsure of the ship's armaments. Luckily, the Acidic vessel clears the air when weapons spring out of it's hull!</text>
+	<text>You pickup an Acidic vessel approaching. It looks like this one isn't bothering with stealth and is just coming out swinging.</text>
+	<text>As you arrive at the beacon, one of the three circling acidic vessels breaks off to meet you. Prepare for battle.</text>
 </textList>
 <event name="NEBULA_ENCOUNTER_AEA_ACID_STORM" unique="true">
 	<text load="STORM_AEA_ACID_FIGHT" />
-	<ship load="SHIP_AEA_ACID_FIGHT" hostile="true" />
+	<ship load="SHIP_AEA_ACID_FIGHT" hostile="true" /> 
 	<environment type="storm" />
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -2205,7 +2403,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<ship load="SHIP_AEA_ACID_INFECTOR" hostile="false" />
 	<environment type="nebula" />
 	<choice hidden="true">
-		<text>Attack them, they might have the antidote onboard!.</text>
+		<text>Attack them, they might have the antidote onboard!</text>
 		<event>
 			<text>You hurry to man the weapons and take the antidote from the Acidic vessel by force.</text>
 			<ship hostile="true" />

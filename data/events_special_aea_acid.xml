@@ -54,11 +54,11 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->	
 <textList name="TEXT_START_AEA_ACID">
-	<text>The Acidic Growth is a relatively unknown faction, however what isn't unknown is how dangerous it is.</text>
-	<text>This nebula is home to the Acidic Growth, it's still unknown whether it's a singular almost omnipresent entity or a hive mind of sorts, eitherway you probably don't wanna be on their bad side.</text>
-	<text>You're told the Acidic Growth has expanded into this nebula, Unfortunately only the orchids are welcome in Acidic space.</text>
-	<text>Not much is known about how the acidic growth lives and spends it's time, perhaps you'll find out, eitherway you'll be lucky to survive and tell the tale.</text>
-	<text>The Acidic Growth formed within a nebula like this, although able to survive naked in the nebula, the Acidic Growth has created it's own ships and technology in order to interact with the wider universe.</text>
+	<text>The Acidic Growth is a relatively unknown faction. However, what isn't unknown is how dangerous it is.</text>
+	<text>This nebula is home to the Acidic Growth. It's still unknown whether it's a singular almost omnipresent entity or a hive mind of sorts, but you probably don't wanna be on their bad side.</text>
+	<text>You're told the Acidic Growth has expanded into this nebula. Unfortunately, only the orchids are welcome in Acidic space.</text>
+	<text>Not much is known about how the Acidic Growth lives and spends its time. Perhaps you'll find out. Question is, if you'll be lucky enough to survive and tell the tale.</text>
+	<text>The Acidic Growth formed within a nebula like this. Although able to survive naked in the nebula, the Acidic Growth has created its own ships and technology in order to interact with the wider universe.</text>
 </textList>
 <event name="START_AEA_ACID">
 	<metaVariable name="juke_aea_acid" op="set" val="1" />
@@ -79,9 +79,9 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 </event>
 
 <event name="GUARD_AEA_ACID">
-	<text>You're hailed by an Acidic vessel. "We do not know you, we do not know your intentions, please leave."</text>
+	<text>You're hailed by an Acidic vessel. "You, outsider. Your intentions, we do not know. Potential threat to Acidic Growth. Proof, you're not? Otherwise, extermination."</text>
 	<choice hidden="true">
-		<text>Fight your way through!.</text>
+		<text>Fight your way through!</text>
 		<event>
 			<text>You mute the ship and prepare for combat.</text>
 			<ship hostile="true" />
@@ -104,49 +104,49 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<choice hidden="true" req="aea_acid_soldier">
 		<text>(Acidic Soldier) Enter Freely.</text>
 		<event>
-			<text>The Acidic Growth is welcoming of itself, you're free to enter.</text>
+			<text>The Acidic Growth is welcoming of itself. You're free to enter.</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
 		</event>
 	</choice>
 	<choice hidden="true" req="aea_acid_captain">
 		<text>(Acidic Leader) Enter Freely.</text>
 		<event>
-			<text>The Acidic Growth is welcoming of itself, you're free to enter.</text>
+			<text>The Acidic Growth is welcoming of itself. You're free to enter.</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
 		</event>
 	</choice>
     <choice hidden="true" req="orchid">
         <text>(Orchid Crew) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
         </event>
     </choice>
     <choice hidden="true" req="orchid_caretaker">
         <text>(Caretaker Crew) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
         </event>
     </choice>
     <choice hidden="true" req="orchid_praetor">
         <text>(Praetor Crew) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
         </event>
     </choice>
     <choice hidden="true" req="unique_mayeb">
         <text>(Mayeb) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
         </event>
     </choice>
     <choice hidden="true" req="unique_tyerel">
         <text>(Ty E'rel) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
         </event>
     </choice>
@@ -271,7 +271,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 </event>
 
 <event name="GUARD_AEA_ACIDHOME">
-	<text>The Elite guard here sends you a brief, to-the-point message. "You are not welcome here, please state your intentions or leave."</text>
+	<text>The Elite guard here sends you a brief, to-the-point message. "Outsider. Space here, is ours. State your intentions."</text>
 	<choice hidden="true" req="aea_acid_friendly" lvl="1">
 		<text>(Friendly) Make your identity known.</text>
 		<event>
@@ -307,49 +307,49 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<choice hidden="true" req="aea_acid_soldier">
 		<text>(Acidic Soldier) Enter Freely.</text>
 		<event>
-			<text>The Acidic Growth is welcoming of itself, you're free to enter.</text>
+			<text>The Acidic Growth is welcoming of itself. You're free to enter.</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
 		</event>
 	</choice>
 	<choice hidden="true" req="aea_acid_captain">
 		<text>(Acidic Leader) Enter Freely.</text>
 		<event>
-			<text>The Acidic Growth is welcoming of itself, you're free to enter.</text>
+			<text>The Acidic Growth is welcoming of itself. You're free to enter.</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
 		</event>
 	</choice>
     <choice hidden="true" req="orchid">
         <text>(Orchid Crew) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
         </event>
     </choice>
     <choice hidden="true" req="orchid_caretaker">
         <text>(Caretaker Crew) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
         </event>
     </choice>
     <choice hidden="true" req="orchid_praetor">
         <text>(Praetor Crew) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
         </event>
     </choice>
     <choice hidden="true" req="unique_mayeb">
         <text>(Mayeb) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
         </event>
     </choice>
     <choice hidden="true" req="unique_tyerel">
         <text>(Ty E'rel) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "Ah, one of the trusted, you are welcome into our space."</text>
+            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
         </event>
     </choice>
@@ -622,9 +622,9 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 <textList name="TEXT_DESTROYED_AEA_ACID">
 	<text>As the wreck drifts apart you can just about make out the drifting clouds of gas formally making up the Acidic Growth.</text>
 	<text>As the wreck breaks apart you wonder if the scattered fragments of the Acidic Growth will ever make it back to their nebulas.</text>
-	<text>You wonder how long it takes a formless cloud of gas to constuct a spaceship, if the Acidic Growth could be angry, it would probably be angry with you right now.</text>
+	<text>You wonder how long it takes a formless cloud of gas to constuct a spaceship. If the Acidic Growth could be angry, it would probably be angry with you right now.</text>
 	<text>Another Acidic vessel destroyed, and another piece of the Acidic Growth stranded.</text>
-	<text>Someday the Acidic Growth may reach out to form an alliance with the federation, you'll just have to hope it forgets about all the ships you've destroyed.</text>
+	<text>Someday the Acidic Growth may reach out to form an alliance with the Federation, you'll just have to hope it forgets about all the ships you've destroyed.</text>
 	<text>You can't help but feel sorry for those you've killed, even if they may or may not be alive.</text>
 </textList>
 <event name="DESTROYED_AEA_ACID_ACIDGUN">
@@ -646,8 +646,8 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<autoReward level="HIGH">standard</autoReward>
 </event>
 <textList name="TEXT_DEAD_CREW_AEA_ACID">
-	<text>You wonder if the Acidic Growth will know of the slaughter you've committed here, either way this wreck is still full of scrap.</text>
-	<text>Now the Acidic Growth's crew are but fragments diffused about the ship, get to scrapping.</text>
+	<text>You wonder if the Acidic Growth will know of the slaughter you've committed here. Either way, this wreck is still full of scrap.</text>
+	<text>Now that Acidic Growth's crew are but fragments diffused about the ship, you get to scrapping.</text>
 	<text>You thought you would become numb to the guilt after enough murders, but you have yet to experience this.</text>
 	<text>The Acidic ship has been rid of crew. The moral part of you hopes that killing an Acidic soldier doesn't count as murder.</text>
 	<text>You reassure yourself that the crew of this ship can feel neither pain nor fear as you strip their vessel of anything useful.</text>
@@ -662,7 +662,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<text load="TEXT_ESCAPE_AEA_ACID" />
 </event>
 <textList name="TEXT_ESCAPE_AEA_ACID">
-	<text>The Acidic ship powers up its engines and swerves away from you. It's trying to escape!.</text>
+	<text>The Acidic ship powers up its engines and swerves away from you. It's trying to escape!</text>
 	<text>You detect high spikes in engine power on the Acidic ship. It's trying to escape.</text>
 </textList>
 
@@ -707,7 +707,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<text>A monotone voice requests you to stop firing in return for some supplies.</text>
 	<text>The Acidic ship surrenders. They offer some supplies if you'll let it live.</text>
 	<text>"The offer is satisfactory. Please accept it."</text>
-	<text>"Stop firing, you will recieve reward." It appears the ship is surrendering.</text>
+	<text>"Stop firing. You will receive reward." It appears the ship is surrendering.</text>
 </textList>
 
 <event name="SURRENDER_AEA_ACID_ACCEPT">
@@ -751,6 +751,22 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<gotaway load="GOTAWAY_AEA_ACID" />
 	<destroyed load="DESTROYED_AEA_ACID" />
 	<deadCrew load="DEAD_CREW_AEA_ACID" />
+</ship>
+
+<ship name="SHIP_AEA_ACID_FIGHT_SCOUT_CLEARING" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
+	<escape timer="50" min="999" max="999" />
+	<gotaway load="GOTAWAY_AEA_ACID" />
+	<destroyed load="DESTROYED_AEA_ACID" />
+	<deadCrew load="DEAD_CREW_AEA_ACID" />
+</ship>
+
+<ship name="SHIP_AEA_ACID_PRAETOR_DIPLOMATIC" auto_blueprint="LIST_SHIPS_ORCHID_ELITE_FIGHT">
+	<destroyed load="DEFEAT_ORCHID_ELITE"/>
+	<deadCrew load="DEFEAT_ORCHID_ELITE"/>
+	<crew>
+		<crewMember type="orchid" prop="0.6"/>
+		<crewMember type="orchid_praetor" prop="0.4"/>
+	</crew>	
 </ship>
 
 <ship name="SHIP_AEA_ACID_REFUGEE" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
@@ -829,7 +845,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 </ship>
 
 <event name="DEFEAT_AEA_ACID_ELITE">
-	<text>You're still not sure killing Acidic Soldiers counts as murder, eitherway losing an elite vessel like that has to hurt the Acidic Growth.</text>
+	<text>You're still not sure if killing Acidic Soldiers counts as murder. Either way, losing an elite vessel like that has to hurt the Acidic Growth.</text>
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<choice hidden="true">
 		<text>Continue...</text>
