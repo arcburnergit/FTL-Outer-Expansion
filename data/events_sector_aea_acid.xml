@@ -1196,6 +1196,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event load="NEBULA_ACIDIC_AEA_ACID_CHOOSE_DEATH" />
 	<event load="NEBULA_AEA_ACID_REPAIR_YARD" />
 	<event load="NEBULA_AEA_ACID_ORCHID" />
+	<event load="NEBULA_ACIDIC_AEA_ACID_PRAETOR_DIPLOMATIC" />
 </eventList>
 
 <event name="NEBULA_AEA_ACID_EMPTY_WRECK" unique="true">
@@ -1784,6 +1785,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event load="NEBULA_ACIDIC_AEA_ACID_BADORCHID" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_CHOOSE_DEATH" />
 	<event load="NEBULA_AEA_ACID_REPAIR_YARD" />
+	<event load="NEBULA_ACIDIC_AEA_ACID_PRAETOR_DIPLOMATIC" />
 </eventList>
 
 <event name="NEBULA_AEA_ACID_IMPORTANT_PRISONER" unique="true">
