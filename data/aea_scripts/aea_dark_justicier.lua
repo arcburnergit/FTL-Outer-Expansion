@@ -1449,7 +1449,8 @@ local lastBeacon = -1
 
 script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager)
 	local map = Hyperspace.App.world.starMap
-	if shipManager.iShipId == 0 and map.worldLevel == 3 and Hyperspace.playerVariables.aea_justice_battleship_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE")== 0 then
+	local commandGui = Hyperspace.App.gui
+	if shipManager.iShipId == 0 and map.worldLevel == 3 and (not commandGui.secretSector) and Hyperspace.playerVariables.aea_justice_battleship_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE")== 0 then
 		local fightEvent = "AEA_JUSTICIER_FIGHT_ONE"
 		
 		if Hyperspace.playerVariables.aea_justice_battleship_location == -1 then
@@ -1520,7 +1521,7 @@ script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager
 		end
 
 		
-	elseif shipManager.iShipId == 0 and map.worldLevel == 5 and Hyperspace.playerVariables.aea_justice_battleship == 1 and Hyperspace.playerVariables.aea_justice_cruiser_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE") == 0 then
+	elseif shipManager.iShipId == 0 and map.worldLevel == 5 and (not commandGui.secretSector) and Hyperspace.playerVariables.aea_justice_battleship == 1 and Hyperspace.playerVariables.aea_justice_cruiser_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE") == 0 then
 		local fightEvent = "AEA_JUSTICIER_FIGHT_TWO"
 		
 		if Hyperspace.playerVariables.aea_justice_cruiser_location == -1 then
@@ -1600,9 +1601,10 @@ end)
 
 script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 	local map = Hyperspace.App.world.starMap
+	local commandGui = Hyperspace.App.gui
 	if map and map.locations and needSetBeacon and Hyperspace.playerVariables.aea_justice_test == 1 then
 		needSetBeacon = false
-		if map.worldLevel == 3 and Hyperspace.playerVariables.aea_justice_battleship_location >= 0 and Hyperspace.playerVariables.aea_justice_battleship_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE") == 0 then
+		if map.worldLevel == 3 and Hyperspace.playerVariables.aea_justice_battleship_location >= 0 and (not commandGui.secretSector) and Hyperspace.playerVariables.aea_justice_battleship_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE") == 0 then
 			local i = 0
 			for location in vter(map.locations) do
 				if  Hyperspace.playerVariables.aea_justice_battleship_location == i then
@@ -1612,7 +1614,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 				end
 				i = i + 1
 			end
-		elseif map.worldLevel == 5 and Hyperspace.playerVariables.aea_justice_battleship == 1 and Hyperspace.playerVariables.aea_justice_cruiser_location >= 0 and Hyperspace.playerVariables.aea_justice_cruiser_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE") == 0 then
+		elseif map.worldLevel == 5 and Hyperspace.playerVariables.aea_justice_battleship == 1 and (not commandGui.secretSector) and Hyperspace.playerVariables.aea_justice_cruiser_location >= 0 and Hyperspace.playerVariables.aea_justice_cruiser_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE") == 0 then
 			local i = 0
 			for location in vter(map.locations) do
 				if  Hyperspace.playerVariables.aea_justice_cruiser_location == i then

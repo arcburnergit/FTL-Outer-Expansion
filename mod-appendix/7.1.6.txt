@@ -1,0 +1,10 @@
+# Balance Changes
+
+# Bug Fixes
+- Fixed Heretic hacking station not restoring shields after 15 seconds.
+- Fixed Justicier showing up in secret sectors (nexus, ancient, ect)
+
+# Misc Changes
+- Switched to the new addon icon system.
+- Moved existing light nebula events to use the new MV light nebulas.
+- Updated Aux Shields to use new system icon system

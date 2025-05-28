@@ -26,15 +26,12 @@
 <mod:findLike type="customSystems">
     <mod-append:customSystem id="aea_super_shields"/>
     <mod-append:customSystem id="aea_clone_crime"/>
-	<mod-append:exclusivityGroup>
-        <medbay/>
-        <clonebay/>
-        <aea_clone_crime/>
-    </mod-append:exclusivityGroup>
-	<mod-append:exclusivityGroup>
-        <cloaking/>
+	<mod:findWithChildLike type="exclusivityGroup" child-type="cloaking">
         <aea_super_shields/>
-    </mod-append:exclusivityGroup>
+	</mod:findWithChildLike>
+	<mod:findWithChildLike type="exclusivityGroup" child-type="medbay">
+        <aea_clone_crime/>
+	</mod:findWithChildLike>
 </mod:findLike>
 <mod:findLike type="ships" limit="1">
 	<mod:findLike type="shipIcons">

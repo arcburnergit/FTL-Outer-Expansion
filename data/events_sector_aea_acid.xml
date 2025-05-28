@@ -2299,11 +2299,11 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 </event>
 
 
-<event name="NEBULA_DISTRESS_REROUTE_ACIDIC" unique="true">
+<event name="NEBULA_LIGHT_DISTRESS_REROUTE_ACIDIC" unique="true">
     <distressBeacon />
 	<preventQuest />
     <text>The distress beacon here appears to be broadcasting through a clearing in the nebula. Following it, you come across a rogue planet drifting through the abyss. Scans indicate that something has crashed on the surface.</text>
-    <img back="BACK_EVENT_LIGHTNEBULA" planet="PLANET_WATER" />
+    <img planet="PLANET_WATER" />
     <status type="loss" target="player" system="sensors" amount="1" />
     <choice req="loc_found_aea_acid_factory" lvl="0" hidden="true" max_group="0" blue="false">
         <text>Investigate.</text>
