@@ -263,7 +263,7 @@ local eventString = "NEBULA_ACIDIC"
 local playerVar = "aea_acidic_nebula"
 
 local warningString = "warnings/danger_aea_acidic.png"
-register_environment("aea_acidic_nebula", playerVar, warningString)
+mods.multiverse.register_environment("aea_acidic_nebula", playerVar, warningString)
 
 --[[local warningImage = Hyperspace.Resources:CreateImagePrimitiveString(warningString, 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
 local warningX = 660

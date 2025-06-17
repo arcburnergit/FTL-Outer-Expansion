@@ -589,3 +589,22 @@ script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, funct
 		end
 	end
 end)
+
+-- Remove OE blue options if you have FR's narrator augment
+script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
+  local ShipManager = Hyperspace.ships.player
+  if ShipManager and true then
+    local startEventOE = string.sub(event.eventName, 1, 4) == "AEA_" or string.match(event.eventName, "_AEA_")
+    Choices = event:GetChoices()
+    for choice in vter(Choices) do
+      local choiceEventOE = string.sub(choice.event.eventName, 1, 4) == "AEA_" or string.match(choice.event.eventName, "_AEA_")
+      if choice.requirement.blue or choice.requirement.object == "FR_NARRATIVE_SHIELD" and (startEventOE or choiceEventOE) then
+        choice.hiddenReward = true
+        choice.text.literal = true
+        choice.text.data = "Outer Expansion Blue Option removed."
+        choice.event.stuff.missiles = -999
+        choice.event.stuff.scrap = -9999
+      end
+    end
+  end
+end)

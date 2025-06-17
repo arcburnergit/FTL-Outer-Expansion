@@ -1,0 +1,10 @@
+# Balance Changes
+
+# Bug Fixes
+- Fixed Tyrant B cloaking room.
+- Fixed Shard Renegade doors.
+- Fixed System Boon granting the wrong achievement.
+
+# Misc Changes
+- Made systems append to MV's exclusivity groups instead of creating new ones.
+- Made acid nebulas use the new hazard system.
