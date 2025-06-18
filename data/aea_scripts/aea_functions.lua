@@ -590,7 +590,7 @@ script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, funct
 	end
 end)
 
--- Remove OE blue options if you have FR's narrator augment
+--[[ Remove OE blue options if you have FR's narrator augment
 script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
   local ShipManager = Hyperspace.ships.player
   if ShipManager and true then
@@ -607,4 +607,4 @@ script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(e
       end
     end
   end
-end)
+end)]]

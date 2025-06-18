@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <FTL>
-<text name="aea_acidic_nebula_tooltip">You're inside an Acidic nebula. Your sensors will not function and your empty rooms will be slowly breached at random by the Acidic clouds.</text>
 
 <text name="map_icon_aea_acid_nebula">ACIDIC</text>
 <text name="map_icon_aea_acid_nebula_core">ACIDIC CORE [!]</text>
