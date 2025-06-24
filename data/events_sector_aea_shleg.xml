@@ -818,7 +818,7 @@ With the ship now out of the way you're free to inspect the ruins.</text>
 				<text>Accept the mission.</text>
 				<event>
 					<text>"Alright, we've discovered a heavily defended Radiant research base nearby, we'll need you to distract them while we sneak onboard the station. You'll need to be careful though, We can't risk you killing the guard and putting the base on lockdown. Insead you'll need to just keep them in combat for a few minutes while we work on the research base. we'll send over the coordinates."</text>
-					<quest event="NEBULA_AEA_SHLEG_RADIANT_QUEST"/>
+					<quest event="NEBULA_LIGHT_AEA_SHLEG_RADIANT_QUEST"/>
 				</event>
 			</choice>
 			<choice hidden="true">
@@ -829,7 +829,7 @@ With the ship now out of the way you're free to inspect the ruins.</text>
 	</choice>
 </event>
 
-<event name="NEBULA_AEA_SHLEG_RADIANT_QUEST">
+<event name="NEBULA_LIGHT_AEA_SHLEG_RADIANT_QUEST">
 	<beaconType id="map_icon_aea_shleg_radiant" global="true">
         <color r="90" g="205" b="180" a="1"/>
         <unvisitedTooltip>Coordinates given by the two strange Anarchists.</unvisitedTooltip>
@@ -843,7 +843,7 @@ With the ship now out of the way you're free to inspect the ruins.</text>
 		<aggressive>2</aggressive>
 	</quest>
 	<text>Through a clearing in the nebula you find the research base the Anarchists promised, alongside a dangerous looking guard. You move back into the nebula to wait for the Anarchists to arrive.</text>
-	<img back="BACK_EVENT_LIGHTNEBULA" planet="NONE" />
+	<img planet="NONE" />
 	<status type="loss" target="player" system="sensors" amount="1" />
 	<environment type="asteroid" />
 	<ship load="AEA_SHLEG_RADIANT_QUESTSHIP" hostile="false"/>

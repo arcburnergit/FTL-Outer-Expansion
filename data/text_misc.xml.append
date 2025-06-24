@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <FTL>
+
 <text name="map_icon_aea_acid_nebula">ACIDIC</text>
 <text name="map_icon_aea_acid_nebula_core">ACIDIC CORE [!]</text>
 <text name="map_icon_aea_acid_nebula_shipyard">ACIDIC SHIPYARD</text>

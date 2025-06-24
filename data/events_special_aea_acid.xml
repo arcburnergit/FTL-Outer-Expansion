@@ -204,7 +204,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<quest event="REINFORCEMENTS_AEA_ACID">
 		<nebulaBeacon>true</nebulaBeacon>
 		<nextSector>false</nextSector>
-		<nebulaEvent>NEBULA_REINFORCEMENTS_AEA_ACID</nebulaEvent>
+		<nebulaEvent>NEBULA_LIGHT_REINFORCEMENTS_AEA_ACID</nebulaEvent>
 		<createNebula>false</createNebula>
 		<aggressive>2</aggressive>
 	</quest>
@@ -233,7 +233,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		<event load="COMBAT_CHECK" />
 	</choice>
 </event>
-<event name="NEBULA_REINFORCEMENTS_AEA_ACID">
+<event name="NEBULA_LIGHT_REINFORCEMENTS_AEA_ACID">
 	<preventQuest />
 	<beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
 		<color r="200" g="55" b="82" a="1" />
@@ -243,7 +243,6 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	</beaconType>
 	<text>The Acidic Growth has not taken your less than friendly entry to the sector well and it appears it has dispatched a ship specifically to stop you.</text>
 	<ship load="SHIP_AEA_ACID_REINFORCEMENTS" hostile="true" />
-	<img back="BACK_EVENT_LIGHTNEBULA" />
 	<status type="loss" target="player" system="sensors" amount="1" />
 	<environment type="PDS" target="player" />
 	<choice hidden="true">
@@ -469,7 +468,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<quest event="REINFORCEMENTS_AEA_ACIDHOME">
 		<nebulaBeacon>true</nebulaBeacon>
 		<nextSector>false</nextSector>
-		<nebulaEvent>NEBULA_REINFORCEMENTS_AEA_ACIDHOME</nebulaEvent>
+		<nebulaEvent>NEBULA_LIGHT_REINFORCEMENTS_AEA_ACIDHOME</nebulaEvent>
 		<createNebula>false</createNebula>
 		<aggressive>2</aggressive>
 	</quest>
@@ -498,7 +497,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		<event load="COMBAT_CHECK" />
 	</choice>
 </event>
-<event name="NEBULA_REINFORCEMENTS_AEA_ACIDHOME">
+<event name="NEBULA_LIGHT_REINFORCEMENTS_AEA_ACIDHOME">
 	<preventQuest />
 	<beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
 		<color r="200" g="55" b="82" a="1" />
@@ -508,7 +507,6 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	</beaconType>
 	<text>The Acidic Growth has not taken your less than friendly entry to the sector well and it appears it has dispatched a ship specifically to stop you.</text>
 	<ship load="SHIP_AEA_ACIDHOME_REINFORCEMENTS" hostile="true" />
-	<img back="BACK_EVENT_LIGHTNEBULA" />
 	<status type="loss" target="player" system="sensors" amount="1" />
 	<environment type="PDS" target="player" />
 	<choice hidden="true">

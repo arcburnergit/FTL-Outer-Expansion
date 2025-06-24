@@ -175,7 +175,7 @@
     <quest event="REINFORCEMENTS_AEA_SHARD">
         <nebulaBeacon>true</nebulaBeacon>
         <nextSector>false</nextSector>
-        <nebulaEvent>NEBULA_REINFORCEMENTS_AEA_SHARD</nebulaEvent>
+        <nebulaEvent>NEBULA_LIGHT_REINFORCEMENTS_AEA_SHARD</nebulaEvent>
         <createNebula>false</createNebula>
         <aggressive>2</aggressive>
     </quest>
@@ -204,7 +204,7 @@
         <event load="COMBAT_CHECK" />
     </choice>
 </event>
-<event name="NEBULA_REINFORCEMENTS_AEA_SHARD">
+<event name="NEBULA_LIGHT_REINFORCEMENTS_AEA_SHARD">
     <preventQuest />
     <beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
         <color r="200" g="55" b="82" a="1" />
@@ -214,7 +214,6 @@
     </beaconType>
     <text>"Outsiders, we knew you were barbaric, but when we migrated here we had no idea you would intrude our sector and threaten our ways with such violent acts! We will avenge our fallen brothers aboard the guard ship you so ruthlessly destroyed!"</text>
     <ship load="SHIP_AEA_SHARD_REINFORCEMENTS" hostile="true" />
-    <img back="BACK_EVENT_LIGHTNEBULA" />
     <status type="loss" target="player" system="sensors" amount="1" />
     <environment type="PDS" target="player" />
     <choice hidden="true">

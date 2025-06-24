@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FTL>
+<event name="ADDON_AEA">
+	<hover-text>The Outer Expansion 
+	Click to see more info.</hover-text>
+<text>FTL: The Outer Expansion
+Developed by: Arc
+Currently Enabled.
+        
+Currently one of the largest addon, adds many new races, crew, ships, sectors and more.
+        
+To enable The Outer Expansion, go to the Multiverse Forums and visit the addon section!.</text>
+</event>
+<event name="ADDON_RAD_DISABLED">
+	<hover-text>R&amp;D
+	Click to see more info.</hover-text>
+<text>R&amp;D
+Developed by: Arc
+Currently Disabled.
+
+An addon designed around the use of Lua to create fun and unique gimmicks, this includes a variety of ships, weapons, crew, drones, and quests, although not entirely balanced they all try to introduce and focus on a unique gimmick you wouldn't find in MV otherwise.
+
+To enable R&amp;D, go to the Multiverse Forums and visit the addon section!.</text>
+</event>
+<event name="ADDON_FISH_DISABLED">
+	<hover-text>FTL: FISHIER THAN LIGHT
+	Click to see more info.</hover-text>
+	<text>FTL: FISHIER THAN LIGHT
+Developed by: Arc
+Currently Disabled.
+      
+FTL Fishing, what more do I need to say. Over 60 fish, all with unique uses and effects.
+      
+To enable Fishier Than Light, go to the Multiverse Forums and visit the addon section!.</text>
+</event>
+<event name="ADDON_TRADE_DISABLED">
+	<hover-text>FTL: TRADING
+	Click to see more info.</hover-text>
+	<text>FTL: TRADING
+Developed by: Arc
+Currently Disabled.
+        
+Adds an in depth trading system that lets you make smart financial decisions and generate scrap in a less dangerous way.
+        
+To enable Trading, go to the Multiverse Forums and visit the addon section!.</text>
+</event>
+<event name="ADDON_GOF_DISABLED">
+	<hover-text>FTL: GALAXY ON FIRE
+	Click to see more info.</hover-text>
+	<text>FTL: GALAXY ON FIRE
+Developed by: Arc
+Currently Disabled.
+        
+Adds 3 ships, 40 new weapons, 2 new crew, and 1 new event based on the galaxy on fire franchise. All weapons function in completely new ways never seen before using brand new lua functions.
+        
+To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon section!.</text>
+</event>
+
+</FTL>

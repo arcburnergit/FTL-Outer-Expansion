@@ -1,0 +1,6 @@
+# Balance Changes
+
+# Bug Fixes
+- Fixed Acid Nebula tooltip
+
+# Misc Changes

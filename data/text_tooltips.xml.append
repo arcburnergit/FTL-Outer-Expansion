@@ -4,3 +4,5 @@
 <text name="tooltip_aea_super_shields_enemy">Auxiliary Shields: Generates super shield layers capable of blocking all projectiles and beams.</text>
 <text name="tooltip_aea_clone_crime">Modified Clone Bay: Generates pseudo clones on jump, prevents clones and other crew with death timers from dying from them.</text>
 <text name="tooltip_aea_clone_crime_enemy">Modified Clone Bay: Generates pseudo clones on jump, prevents clones and other crew with death timers from dying from them.</text>
+
+<text name="tooltip_aea_acidic_nebula">You're inside an Acidic nebula. Your sensors will not function and your empty rooms will be slowly breached at random by the Acidic clouds.</text>

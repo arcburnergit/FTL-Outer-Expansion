@@ -263,13 +263,15 @@ local eventString = "NEBULA_ACIDIC"
 local playerVar = "aea_acidic_nebula"
 
 local warningString = "warnings/danger_aea_acidic.png"
-local warningImage = Hyperspace.Resources:CreateImagePrimitiveString(warningString, 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
+mods.multiverse.register_environment("aea_acidic_nebula", playerVar, warningString)
+
+--[[local warningImage = Hyperspace.Resources:CreateImagePrimitiveString(warningString, 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
 local warningX = 660
 local warningY = 72
 local warningSizeX = 60
 local warningSizeY = 58
 local warningText = "You're inside an Acidic nebula. Your sensors will not function and your empty rooms will be slowly breached at random by the Acidic clouds."
-
+]]
 local initialPosX = (math.random() * 131072) % 131 - 65
 local initialPosY = (math.random() * 131072) % 81 - 40
 
@@ -357,7 +359,7 @@ script.on_render_event(Defines.RenderEvents.LAYER_FOREGROUND, function()
 	end
 end, function() end)
 
-script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
+--[[script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
 	local commandGui = Hyperspace.Global.GetInstance():GetCApp().gui
 	if Hyperspace.Global.GetInstance():GetCApp().world.bStartedGame and Hyperspace.playerVariables[playerVar] == 1 and not (commandGui.menu_pause or commandGui.event_pause) then
 		Graphics.CSurface.GL_PushMatrix()
@@ -369,7 +371,7 @@ script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
 			Hyperspace.Mouse.tooltip = warningText
 		end
 	end
-end, function() end)
+end, function() end)]]
 
 function createCloud(x, y)
 	local cloudTemp = {x = 0, y = 0, scale = 1.5, timerScale = 0, opacity = 1, revOp = 0, fade = 0, exists = 1}

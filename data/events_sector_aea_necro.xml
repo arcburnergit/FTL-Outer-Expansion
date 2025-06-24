@@ -1062,6 +1062,7 @@ You reach a crossroads in the hallway, there probably isn't enough to search all
 <event name="QUEST_AEA_NECRO_ELITE_CONTINUE">
 	<text>With your shield system restored you push on towards the pirate outpost. As you get closer you realize this isn't any normal station, instead it appears the pirates have gotten their hands on a specialized militia platform equipped with a large weapon. This isn't going to be an easy fight.</text>
 	<ship load="SHIP_AEA_NECRO_PIRATE_PLATFORM" hostile="true"/>
+	<status type="clear" target="player" system="shields" amount="100" />
 	<choice>
 		<text>Prepare to fight!.</text>
 		<event load="COMBAT_CHECK"/>
