@@ -628,6 +628,11 @@
 	<name>aea_shard_dawn</name>
 </blueprintList>
 
+<blueprintList name="LIST_AUG_AEA_ACID_FILTER">
+	<name>AEA_ACID_O2SYS</name>
+	<name>AEA_ACID_O2SYS_OFF</name>
+</blueprintList>
+
 <blueprintList name="LIST_WEAPONS_AEA_LOOT">
 	<name>AEA_LASER_ACID_BOSS</name>
 	<name>AEA_CRYSTAL_SHARD_BOSS</name>

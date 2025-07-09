@@ -1902,6 +1902,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event load="NEBULA_AEA_ACID_DISTRESS_ROCK" />
 	<event load="NEBULA_AEA_ACID_DISTRESS_TRICK" />
 	<event load="NEBULA_AEA_ACID_DISTRESS_QUESTION" />
+	<event load="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2" />
 </eventList>
 
 <event name="NEBULA_AEA_ACID_DISTRESS_ROCK">
@@ -2066,6 +2067,120 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 <event name="AEA_ACID_DISTRESS_QUESTION_FAIL">
     <text>"We... can not remember..." The communications cut out and you're unable to reacquire it. You decide to cut your losses and salvage some of the wrecks while your jump drive charges.</text>
     <autoReward level="LOW">standard</autoReward>
+</event>
+
+<event name="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2" unique="true">
+	<distressBeacon />
+	<text>You are surprised that the acidic ship, the origin of the distress signal, hails you first. "Outsider, we need help. Life support system, broken. Reward promised".</text>
+	<environment type="nebula" />
+	<choice hidden="true">
+		<text>Risk and send your crew over.</text>
+		<event load="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_CHOICE" />
+	</choice>
+	<choice hidden="true" req="BLUELIST_CREW_NO2">
+		<text>(Anaerobic Crew) Don't risk and send your anaerobic crew.</text>
+		<event load="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_CHOICE" />
+	</choice>	
+	<choice hidden="true">
+		<text>We can't help.</text>
+		<event> 
+			<text>You mute them and move on. It's not like Acidic Growth can die of lack of air anyway.</text>
+            <choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_CHOICE">
+	<text>Turns out, there was no risk involved: the ship is full of oxygen. You are confused, but that's when you remember Acidic Growth usually outfits its ships with life support system that spreads the growth throughout the ship instead of breathable air. Feeling stupid, you consider your options.</text>
+	<choice hidden="true">
+		<text>Try reconfiguring it.</text>
+		<event load="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_CHANCE" />
+	</choice>
+	<choice hidden="true" req="LIST_AUG_AEA_ACID_FILTER">
+		<text>(Acidic Filtering System) Suggest they copy yours.</text>
+		<event>
+			<text>If the Acidic Growth are grateful, they don't show it. While carrying over the changes, one of the Soldiers decides to stick with you, seeing your system functions perfectly. When the Growth is done, you receive your promised reward, too.</text>
+			<crewMember amount="1" class="aea_acid_soldier" >Acidic Soldier</crewMember>
+			<autoReward level="MED">standard_no_item</autoReward>			
+		</event>
+	</choice>
+	<choice hidden="true" req="LIST_CREW_AEA_ACID">
+		<text>(Acidic Growth) Send over your Acidic crew to reconfigure it.</text>
+		<event>
+			<text>Your crewmember, being of Acidic Growth origin themselves, is familiar with this tech, and reconfigures it swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
+			<autoReward level="MED">standard_no_item</autoReward>
+		</event>
+	</choice>
+	<choice hidden="true" req="LIST_CREW_ENGI">
+		<text>(Engi) Send your Engi to reconfigure it.</text>
+		<event>
+			<text>Your Engi knows just about everything there is to know about technology like this, and reconfigures it swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
+			<autoReward level="MED">standard_no_item</autoReward>
+		</event>
+	</choice>
+	<choice hidden="true" req="human_engineer">
+		<text>(Engineer) Send your Engineer to reconfigure it.</text>
+		<event>
+			<text>Your Engineer studied all forms of life support technology, and so reconfigures it swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
+			<autoReward level="MED">standard_no_item</autoReward>
+		</event>
+	</choice>
+	<choice hidden="true" req="human_technician">
+		<text>(Technician) Send your Technician to reconfigure it.</text>
+		<event>
+			<text>There's next to nothing a WI Technician can't fix when it comes to systems, and so they reconfigure it swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
+			<autoReward level="MED">standard_no_item</autoReward>
+		</event>
+	</choice>
+	<choice hidden="true" req="shell_mechanic">
+		<text>(Shell Mechanic) Send your Shell Mechanic to reconfigure it.</text>
+		<event>
+			<text>While Shell Mechanics are more known for their nanites, it doesn't mean they don't have a bunch of general knowledge. They reconfigure the life support swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
+			<autoReward level="MED">standard_no_item</autoReward>
+		</event>
+	</choice>
+	<choice hidden="true" req="LIST_CREW_AEA_BIRD">
+		<text>(Gi) Send your Gi to reconfigure it.</text>
+		<event>
+			<text>Gi know about all sorts of technology, not just drones. They reconfigure the life support swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
+			<autoReward level="MED">standard_no_item</autoReward>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Apologize and move on.</text>
+		<event>
+			<text>You decide to not mess with their life support system.</text>
+            <choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<eventList name="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_CHANCE">
+	<event load="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_SUCCESS" />
+	<event load="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_FAIL" />
+</eventList>
+
+<event name="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_SUCCESS">
+	<text>You and your crew mess with life support for a bit and somehow manage to make it work! If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+</event>
+
+<event name="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_FAIL">
+	<text>All your attempts to make life support spread the Growth end in failure, and you even manage to break it fully! Now with O2 levels dropping, you have no choice but abandon the task. The Acidic Growth doesn't seem mad, but you probably should jump away from this beacon while they still process this.</text>
 </event>
 
 <!--
