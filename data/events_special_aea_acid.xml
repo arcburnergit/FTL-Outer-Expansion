@@ -620,7 +620,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 <textList name="TEXT_DESTROYED_AEA_ACID">
 	<text>As the wreck drifts apart you can just about make out the drifting clouds of gas formally making up the Acidic Growth.</text>
 	<text>As the wreck breaks apart you wonder if the scattered fragments of the Acidic Growth will ever make it back to their nebulas.</text>
-	<text>You wonder how long it takes a formless cloud of gas to constuct a spaceship. If the Acidic Growth could be angry, it would probably be angry with you right now.</text>
+	<text>You wonder how long it takes a formless cloud of gas to construct a spaceship. If the Acidic Growth could be angry, it would probably be angry with you right now.</text>
 	<text>Another Acidic vessel destroyed, and another piece of the Acidic Growth stranded.</text>
 	<text>Someday the Acidic Growth may reach out to form an alliance with the Federation, you'll just have to hope it forgets about all the ships you've destroyed.</text>
 	<text>You can't help but feel sorry for those you've killed, even if they may or may not be alive.</text>
@@ -751,7 +751,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<deadCrew load="DEAD_CREW_AEA_ACID" />
 </ship>
 
-<ship name="SHIP_AEA_ACID_FIGHT_SCOUT_CLEARING" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
+<ship name="SHIP_AEA_ACID_FIGHT_SCOUT_CLEARING" auto_blueprint="AEA_ACID_SCOUT">
 	<escape timer="50" min="999" max="999" />
 	<gotaway load="GOTAWAY_AEA_ACID" />
 	<destroyed load="DESTROYED_AEA_ACID" />
@@ -765,6 +765,67 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		<crewMember type="orchid" prop="0.6"/>
 		<crewMember type="orchid_praetor" prop="0.4"/>
 	</crew>	
+</ship>
+
+<ship name="SHIP_AEA_ACID_ORCHID_RESEARCH_ACIDIC" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
+	<surrender chance="0.5" min="2" max="3" load="SURRENDER_AEA_ACID" />
+	<escape chance="0.5" min="3" max="4" load="ESCAPE_AEA_ACID" />
+	<gotaway load="GOTAWAY_AEA_ACID" />
+	<destroyed load="DESTROYED_AEA_ACID" />
+	<deadCrew load="DEAD_CREW_AEA_ACID" />
+	<crew>
+		<crewMember type="aea_acid_soldier" prop="1"/>
+		<crewMember type="orchid" prop="0"/>
+	</crew>	
+</ship>
+
+<ship name="SHIP_AEA_ACID_ORCHID_RESEARCH" auto_blueprint="MU_ORCHID_STATION">
+	<surrender chance="0" min="3" max="3">
+		<text>The station desperately hails you. "Alright, alright! We'll release the Growth. Just stop firing!"</text>
+		<choice hidden="true">
+			<text>Stop firing.</text>
+			<event>
+				<ship hostile="false" />
+				<text>The Orchid sighs. "Damn it all... Oh, demotion, here I go..."</text>
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event>
+						<text>While the Orchid station transports all the tanks of Growth back to the Acidic ship, the latter contacts you again. "Outsider, gratitude. Orchids - friends. You - friend. Future negotiation, with friends, possible. Accept this." Acidic Soldiers carry over a large amount of scrap.</text>
+						<autoReward level="HIGH">standard</autoReward>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>No second chances.</text>
+			<event>
+				<text>You continue firing on the station. The Growth will probably be fine, but those Orchids deserve it.</text>
+			</event>
+		</choice>
+	</surrender>
+	<destroyed>
+		<text>The station explodes, sending Acidic gases everywhere! You try to fly away, but still get caught up in it; thankfully, the damage is not severe.</text>
+		<damage amount="0" system="random" effect="breach"/>
+		<damage amount="0" system="random" effect="breach"/>
+		<damage amount="0" system="random" effect="breach"/>		
+		<choice hidden="true">
+			<text>Contact the Acidic Growth.</text>
+			<event>
+				<text>The Growth doesn't seem pleased - if not by tone, at least by words. "Outsider. Orchids, friends, gone? You, not a friend." They cut comms. At least you can salvage the station's wreck.</text>
+				<autoReward level="MED">standard</autoReward>
+			</event>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>The Orchids are dead, and the station is left empty - only containing tanks with Acidic Growth inside. You scrap what you can.</text>
+		<autoReward level="MED">standard</autoReward>
+		<choice hidden="true">
+			<text>Contact the Acidic Growth.</text>
+			<event>
+				<text>The Growth doesn't seem pleased - if not by tone, at least by words. "Outsider. Orchids, friends, gone? You, not a friend." They cut comms. Nothing to do but move on.</text>
+			</event>			
+		</choice>
+	</deadCrew>
 </ship>
 
 <ship name="SHIP_AEA_ACID_REFUGEE" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
@@ -804,7 +865,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<gotaway load="GOTAWAY_ORCHID" />
 	<destroyed load="DESTROYED_ORCHID" />
 	<deadCrew>
-        <text>With the crew dead you begin to salvage the ship, However you arrive in a strange room, it appears to be some kind of nursery... Are those Orchid Children?.</text>
+        <text>With the crew dead you begin to salvage the ship, However you arrive in a strange room, it appears to be some kind of nursery... Are those Orchid Children?</text>
         <choice>
             <text>Take them with you.</text>
             <event>
@@ -820,7 +881,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
         <choice>
             <text>Finish salvaging the ship and forget about the nursery.</text>
             <event>
-                <text>You ignore the room and salvage the rest of the vessel, those kids will be fine, Right?.</text>
+                <text>You ignore the room and salvage the rest of the vessel, those kids will be fine, right?</text>
                 <autoReward level="MED">standard</autoReward>
                 <choice hidden="true">
                     <text>Continue...</text>

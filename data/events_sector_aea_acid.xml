@@ -137,7 +137,7 @@
 <eventList name="REFUGEE_HAIL_LIST_AEA_ACID_MV">
 	<event load="REFUGEE_TRADER" />
 	<event>
-		<text>As you hail the refugee ship, an Acidic ship jumps into the system... it was hunting the refugee ship for sport, and now it has found you instead!.</text>
+		<text>As you hail the refugee ship, an Acidic ship jumps into the system... it was chasing it off its territory, and now it has found you instead!</text>
 		<ship load="SHIP_AEA_ACID_REFUGEE" hostile="true" />
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -362,7 +362,7 @@
 		</item_modify>
 	</event>
 	<event>
-		<text>Even though you paid the money to the Slugs, you're surprised when you find they have actually upgraded your reactor, without any tricks!.</text>
+		<text>Even though you paid the money to the Slugs, you're surprised when you find they have actually upgraded your reactor, without any tricks!</text>
 		<upgrade amount="1" system="reactor" />
 		<item_modify>
 			<item type="scrap" min="-15" max="-15" />
@@ -1197,6 +1197,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event load="NEBULA_AEA_ACID_REPAIR_YARD" />
 	<event load="NEBULA_AEA_ACID_ORCHID" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_PRAETOR_DIPLOMATIC" />
+	<event load="NEBULA_AEA_ACID_ORCHID_RESEARCH" />
 </eventList>
 
 <event name="NEBULA_AEA_ACID_EMPTY_WRECK" unique="true">
@@ -1786,6 +1787,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event load="NEBULA_ACIDIC_AEA_ACID_CHOOSE_DEATH" />
 	<event load="NEBULA_AEA_ACID_REPAIR_YARD" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_PRAETOR_DIPLOMATIC" />
+	<event load="NEBULA_AEA_ACID_ORCHID_RESEARCH" />
 </eventList>
 
 <event name="NEBULA_AEA_ACID_IMPORTANT_PRISONER" unique="true">
@@ -1890,6 +1892,97 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 			</choice>
         </event>
     </choice>
+</event>
+
+<event name="NEBULA_AEA_ACID_ORCHID_RESEARCH" unique="true">
+	<environment type="nebula" />
+	<text>An Orchid station is at this beacon, and you're being contacted - but not by them. "Outsider, finally. Hope, restored. Help?"</text>
+	<choice hidden="true">
+		<text>Respond to the Acidic ship.</text>
+		<event>
+			<text>You inquire on what "help" means. "Orchids, friends - but take us. Didn't ask. Negotiation, possible? We want us back." It seems like Orchids took a substantial mass of Acidic Growth and hold it at the station, but why?</text>
+			<choice hidden="true">
+				<text>Agree to help and contact the station.</text>
+				<event>
+					<ship load="SHIP_AEA_ACID_ORCHID_RESEARCH" hostile="false"/>
+					<text>"Federation? What are you doing here?" A disheveled Orchid asks. You can see several other Orchids walking behind this one, and the whole place seems rather sterile...</text>
+					<choice hidden="true">
+						<text>What are YOU doing here?</text>
+						<event>
+							<text>The Orchid is not amused. "This is a research station, sanctioned by the Council. Topic of research: Acidic Growth and its interaction with grown weapons and ships; fertilizer efficiency enhancement. Now that your curiosity is satisfied, I hope we can part ways?"</text>
+							<choice hidden="true">
+								<text>Demand they release the Growth.</text>
+								<event>
+									<text>"And why should we do that? Listen, even if the research wasn't objectively for the best of both the Gathering and the Growth, we can't go against higher-ups." It doesn't seem like they plan to give it up willingly.</text>
+									<choice hidden="true">
+										<text>Attack them.</text>
+										<event>
+											<ship hostile="true"/>
+											<text>You power up your weapons. The station responds, doing the same. Maybe if you make them surrender, they'll release the Growth?</text>
+											<choice hidden="true">
+												<text>Continue...</text>
+												<event load="COMBAT_CHECK" />
+											</choice>											
+										</event>
+									</choice>
+									<choice hidden="true" req="orchid_praetor">
+										<text>(Praetor Crew) We ARE the higher-ups.</text>
+										<event>
+											<text>The Orchid stutters. Now stuck between a rock and hard place, they decide it isn't worth the trouble holding onto Acidic Growth.</text>
+											<choice hidden="true">
+												<text>Continue...</text>
+												<event>
+													<text>While the Orchid station transports all the tanks of Growth back to the Acidic ship, the latter contacts you again. "Outsider, gratitude. Orchids - friends. You - friend. Future negotiation, with friends, possible. Accept this." Acidic Soldiers carry over a large amount of scrap.</text>
+													<autoReward level="HIGH">standard</autoReward>
+												</event>
+											</choice>
+										</event>
+									</choice>
+									<choice hidden="true">
+										<text>Back down.</text>
+										<event>
+											<text>You decide this isn't worth it. And, isn't it for the good of everyone?.. You get ready to jump.</text>
+										</event>
+									</choice>
+								</event>
+							</choice>
+							<choice hidden="true">
+								<text>Part ways, as suggested.</text>
+								<event>
+									<text>The last thing you want to do is piss off your allies. You get ready to jump.</text>
+								</event>
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Attack the Acidic ship instead.</text>
+				<event>
+					<text>You don't really know why Orchids would do something like this, but it must be justified. You decide to help them by getting rid of Acidic Growth pestering them.</text>
+					<ship load="SHIP_AEA_ACID_ORCHID_RESEARCH_ACIDIC" hostile="true"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK" />
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Close the comms and move on.</text>
+				<event>
+					<text>You don't really know why Orchids would do something like this, and don't really care. You can do something aboard the ship, as long as you keep your distance from both the Acidic ship and Orchid station.</text>
+					<choice hidden="true">
+						<text>Do something onboard the ship.</text>
+						<event load="STORAGE_CHECK" />
+					</choice>
+					<choice hidden="true">
+						<text>Do nothing.</text>
+						<event />
+					</choice>					
+				</event>
+			</choice>
+		</event>
+	</choice>
 </event>
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
