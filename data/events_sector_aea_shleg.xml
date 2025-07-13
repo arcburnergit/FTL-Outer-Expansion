@@ -130,9 +130,9 @@
 -->	
 <eventList name="NEBULA_ITEMS_AEA_SHLEG">
 	<event load="NEBULA_AEA_SHLEG_ARGUMENT" />
-	<event load="NEBULA_SHELL_FISHING" />
+	<event load="NEBULA_LIGHT_SHELL_FISHING" />
 	<event load="NEBULA_AEA_SHLEG_FUEL" />
-	<event load="NEBULA_LIGHT_SHELL_TOXINTEST" />
+	<event load="NEBULA_SHELL_TOXINTEST" />
 </eventList>
 
 <event name="NEBULA_AEA_SHLEG_ARGUMENT" unique="true">
