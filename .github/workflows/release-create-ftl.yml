@@ -14,7 +14,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Create zip archive and rename with tag
+    - name: Create Mod File and upload
       run: |
         # Extract the tag name from the GITHUB_REF (e.g., refs/tags/v1.0.0 -> v1.0.0)
         TAG_NAME="${GITHUB_REF#refs/tags/}"
@@ -23,7 +23,7 @@ jobs:
         NEW_FILENAME="FTL-Outer-Expansion-${TAG_NAME}.ftl" # <--- Changed prefix here
 
         # Check if the folders exist before zipping
-        for folder in audio data img mod-appendix; do
+        for folder in FTL-Outer-Expansion-Patch-Last audio data img mod-appendix; do
           if [ ! -d "$folder" ]; then
             echo "Warning: Folder '$folder' does not exist. It will be skipped."
           fi
@@ -41,10 +41,47 @@ jobs:
         # Set the NEW_FILENAME as an environment variable so it can be used by subsequent steps
         echo "NEW_FILENAME=$NEW_FILENAME" >> $GITHUB_ENV
 
+    - name: Create Patch Last file and upload
+      run: |
+        PATCH_DIR="FTL-Outer-Expansion-Patch-Last"
+        PATCH_FILENAME="FTL-Outer-Expansion-PATCH_AFTER_ALL_OTHER_ADDONS.ftl"
+
+        # Check if the patch directory exists
+        if [ ! -d "$PATCH_DIR" ]; then
+          echo "Error: Patch directory '$PATCH_DIR' not found. This step will fail."
+          exit 1 # Fail the step if the directory doesn't exist
+        fi
+
+        # Change to the patch directory
+        cd "$PATCH_DIR"
+
+        # Check if data and mod-appendix exist within the patch directory
+        for folder in data mod-appendix; do
+          if [ ! -d "$folder" ]; then
+            echo "Warning: Folder '$folder' not found in '$PATCH_DIR'. It will be skipped for the patch archive."
+          fi
+        done
+
+        zip -r temp_patch_archive.zip data mod-appendix
+
+        # Move and rename the zip file back to the root directory
+        mv temp_patch_archive.zip "../$PATCH_FILENAME"
+
+        # Change back to the root directory
+        cd ..
+
+        echo "Successfully created and renamed $PATCH_FILENAME"
+        ls -lh "$PATCH_FILENAME" # List the created file for verification
+
+        # Set the PATCH_FILENAME as an environment variable for subsequent steps
+        echo "PATCH_FILENAME=$PATCH_FILENAME" >> $GITHUB_ENV
+
     - name: Upload Release Asset
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/') # Ensure this only runs for tags (releases)
       with:
-        files: ${{ env.NEW_FILENAME }} # Use the dynamically set environment variable for the filename
+        files: 
+          ${{ env.NEW_FILENAME }}
+          ${{ env.PATCH_FILENAME }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub automatically provides this token
