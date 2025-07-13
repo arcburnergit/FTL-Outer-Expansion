@@ -81,7 +81,6 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/') # Ensure this only runs for tags (releases)
       with:
         files: 
-          ${{ env.NEW_FILENAME }}
-          ${{ env.PATCH_FILENAME }}
+          ${{ env.NEW_FILENAME }},${{ env.PATCH_FILENAME }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub automatically provides this token
