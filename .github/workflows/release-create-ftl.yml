@@ -1,0 +1,38 @@
+name: Zip and Attach to Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Create zip archive and rename
+      run: |
+        for folder in audio data img mod-appendix; do
+          if [ ! -d "$folder" ]; then
+            echo "Warning: Folder '$folder' does not exist. It will be skipped."
+          fi
+        done
+        
+        
+        zip -r FTL-Outer-Expansion-.zip audio data img mod-appendix -x "*.git/*"
+
+        # Rename the zip file to .ftl
+        mv FTL-Outer-Expansion-.zip FTL-Outer-Expansion-.ftl
+        
+        echo "Successfully created and renamed FTL-Outer-Expansion-.ftl"
+        ls -lh FTL-Outer-Expansion-.ftl # List the created file for verification
+
+    - name: Upload Release Asset
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/') # Ensure this only runs for tags (releases)
+      with:
+        files: FTL-Outer-Expansion-.ftl # The file to upload as a release asset
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub automatically provides this token
