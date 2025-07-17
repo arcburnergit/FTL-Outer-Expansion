@@ -623,9 +623,18 @@
 	<name>aea_shleg_sickle</name>
 </blueprintList>
 <blueprintList name="LIST_CREW_AEA_SHARD_ER">
-	<name>aea_shard_breaker</name>
 	<name>aea_shard_smasher</name>
 	<name>aea_shard_dawn</name>
+</blueprintList>
+
+<blueprintList name="LIST_CREW_AEA_COALITION_ELITE">
+	<name>slug_saboteur</name>
+	<name>mantis_suzerain</name>
+	<name>mantis_bishop</name>
+	<name>rock_crusader</name>
+	<name>rock_paladin</name>
+	<name>rock_elder</name>
+	<name>leech_ampere</name>
 </blueprintList>
 
 <blueprintList name="LIST_AUG_AEA_ACID_FILTER">

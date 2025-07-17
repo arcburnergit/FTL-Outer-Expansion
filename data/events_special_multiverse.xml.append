@@ -34,7 +34,7 @@
 	<mod-append:choice hidden="true" req="LIST_CREW_AEA_ACID_ER" blue="false">
 		<text>Present an Elite Acidic Crew.</text>
 		<event>
-			<text>""</text>
+			<text>"The Acidic Growth's finest constructs, valiantly protecting itself... and now you as well. Wary of outsiders, it is nothing short of... impressive you managed to recruit one to your cause. Yes, I am... impressed. Expect... rewards before your next journey."</text>
 			<metaVariable name="prof_z_boon_aea_acid" op="set" val="1" />
 			<achievement silent="false">ACH_BOON_AEA_ACID</achievement>
 			<choice hidden="true">
@@ -46,7 +46,7 @@
 	<mod-append:choice hidden="true" req="LIST_CREW_AEA_BIRD_ER" blue="false">
 		<text>Present an Elite Gi Crew.</text>
 		<event>
-			<text>""</text>
+			<text>"Engineers... Drone mechanics, each new model a marvel. Someone to keep drones... and ships, in top shape. Gi are... allied to Federation, but recruiting... one of the greatest of their Technicians is a grand achievement. Yes, I am... impressed. Expect... rewards before your next journey."</text>
 			<metaVariable name="prof_z_boon_aea_bird" op="set" val="1" />
 			<achievement silent="false">ACH_BOON_AEA_BIRD</achievement>
 			<choice hidden="true">
@@ -58,7 +58,7 @@
 	<mod-append:choice hidden="true" req="LIST_CREW_AEA_CULT_ER" blue="false">
 		<text>Present an Elite Cultist Crew.</text>
 		<event>
-			<text>""</text>
+			<text>"Oneflower... a strange entity, indeed. Unknown motives, yet, seemingly... not a threat. Still, to recruit one of its priests... is not a small feat. Yes, I am... impressed. Expect... rewards before your next journey."</text>
 			<metaVariable name="prof_z_boon_aea_cult" op="set" val="1" />
 			<achievement silent="false">ACH_BOON_AEA_CULT</achievement>
 			<choice hidden="true">
@@ -68,9 +68,9 @@
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="LIST_CREW_AEA_SHLEG_ER" blue="false">
-		<text>Present an Elite Anarchist Crew.</text>
+		<text>Present an Anarchist Crew.</text>
 		<event>
-			<text>""</text>
+			<text>"The Anarchists... a peculiar alliance. United in their... hatred, justified or not. Fighting... against the oppression, but where most wouldn't call it such. Cunning of one and insight of the other... To have at least one on your crew is impressive. Yes, I am... impressed. Expect... rewards before your next journey."</text>
 			<metaVariable name="prof_z_boon_aea_shleg" op="set" val="1" />
 			<achievement silent="false">ACH_BOON_AEA_SHLEG</achievement>
 			<choice hidden="true">
@@ -82,7 +82,7 @@
 	<mod-append:choice hidden="true" req="LIST_CREW_AEA_SHARD_ER" blue="false">
 		<text>Present an Elite Shard-Forged Crew.</text>
 		<event>
-			<text>""</text>
+			<text>"I... am not sure I can say much about this, for now. I'll have to... think about this. Return when... "updates" are done. What kind? Well... I don't know. Regardless, I am... impressed. Expect... rewards before your next journey."</text>
 			<metaVariable name="prof_z_boon_aea_shard" op="set" val="1" />
 			<achievement silent="false">ACH_BOON_AEA_SHARD</achievement>
 			<choice hidden="true">
@@ -94,7 +94,7 @@
 	<mod-append:choice hidden="true" req="aea_dark_justicier" blue="false">
 		<text>Present the Dark Justicier.</text>
 		<event>
-			<text>""</text>
+			<text>"I... am not sure I can say much about this, for now. I'll have to... think about this. Return when... "updates" are done. What kind? Well... I don't know. Regardless, I am... impressed. Expect... rewards before your next journey."</text>
 			<metaVariable name="prof_z_boon_aea_justice" op="set" val="1" />
 			<achievement silent="false">ACH_BOON_AEA_JUSTICE</achievement>
 			<choice hidden="true">
@@ -106,7 +106,7 @@
 	<mod-append:choice hidden="true" req="LIST_CREW_AEA_OLD" blue="false">
 		<text>Present a Lylmik Crew.</text>
 		<event>
-			<text>""</text>
+			<text>"I... am not sure I can say much about this, for now. I'll have to... think about this. Return when... "updates" are done. What kind? Well... I don't know. Regardless, I am... impressed. Expect... rewards before your next journey."</text>
 			<metaVariable name="prof_z_boon_aea_old" op="set" val="1" />
 			<achievement silent="false">ACH_BOON_AEA_OLD</achievement>
 			<choice hidden="true">
