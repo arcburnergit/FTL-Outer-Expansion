@@ -790,7 +790,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 				<choice hidden="true">
 					<text>Continue...</text>
 					<event>
-						<text>While the Orchid station transports all the tanks of Growth back to the Acidic ship, the latter contacts you again. "Outsider, gratitude. Orchids - friends. You - friend. Future negotiation, with friends, possible. Accept this." Acidic Soldiers carry over a large amount of scrap.</text>
+						<text>While the Orchid station transports all the tanks of Growth back to the Acidic ship, the latter contacts you again. "Outsider, gratitude. Orchids - allies. You - ally. Future negotiation, with allies, possible. Accept this." Acidic Soldiers carry over a large amount of scrap.</text>
 						<autoReward level="HIGH">standard</autoReward>
 					</event>
 				</choice>
@@ -811,7 +811,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		<choice hidden="true">
 			<text>Contact the Acidic Growth.</text>
 			<event>
-				<text>The Growth doesn't seem pleased - if not by tone, at least by words. "Outsider. Orchids, friends, gone? You, not a friend." They cut comms. At least you can salvage the station's wreck.</text>
+				<text>The Growth doesn't seem pleased - if not by tone, at least by words. "Outsider. Orchids, allies, gone? You, not an ally." They cut comms. At least you can salvage the station's wreck.</text>
 				<autoReward level="MED">standard</autoReward>
 			</event>
 		</choice>
@@ -822,8 +822,35 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		<choice hidden="true">
 			<text>Contact the Acidic Growth.</text>
 			<event>
-				<text>The Growth doesn't seem pleased - if not by tone, at least by words. "Outsider. Orchids, friends, gone? You, not a friend." They cut comms. Nothing to do but move on.</text>
+				<text>The Growth doesn't seem pleased - if not by tone, at least by words. "Outsider. Orchids, allies, gone? You, not an ally." They cut comms. Nothing to do but move on.</text>
 			</event>			
+		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_ACID_CEALAFORMER" auto_blueprint="LIST_SHIPS_AEA_ACID_FIGHT">
+	<surrender chance="0" min="3" max="4">
+		<text>You receive a hail from the Coalition ship amidst the battle. "Idiot! Do not dessstroy it!"</text>
+	</surrender>
+	<destroyed>
+		<text>Seeing as you destroyed your target, Acidic ships jump away, and the RUES captain is furious. "You moron! You cossst me my promotion! Do you even know how much paperwork I'll have to do? I hate paper! Why are we still using it?!" They jump away, too, leaving you with a wreck. Scrapping it is.</text>
+		<autoReward level="MED">standard</autoReward>
+	</destroyed>
+	<deadCrew>	
+		<text>Seeing as your target is neutralized, Acidic ships jump away, and the RUES captain is pleased."Great! Great. I'll contact othersss now to come collect. Your payment, of courssse... And, now that i think of it, could you take me with you? I'd hate doing paperwork after all that. Why do we even ussse paper? Ssstill? I hate paper."</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice>
+			<text>Accept them into your crew.</text>
+			<event>
+				<text>"Wonderfull. I hope thisss doesssn't count asss dessserting..." The black-clothed Slug comes aboard. You prepare to jump.</text>
+				<crewMember amount="1" class="slug_knight" />
+			</event>
+		</choice>
+		<choice>
+			<text>Decline.</text>
+			<event>
+				<text>"Ah damn. Well, sssee you never." You prepare to jump.</text>
+			</event>
 		</choice>
 	</deadCrew>
 </ship>

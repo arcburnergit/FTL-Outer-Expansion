@@ -1900,7 +1900,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<choice hidden="true">
 		<text>Respond to the Acidic ship.</text>
 		<event>
-			<text>You inquire on what "help" means. "Orchids, friends - but take us. Didn't ask. Negotiation, possible? We want us back." It seems like Orchids took a substantial mass of Acidic Growth and hold it at the station, but why?</text>
+			<text>You inquire on what "help" means. "Orchids, allies - but take us. Didn't ask. Negotiation, possible? We want us back." It seems like Orchids took a substantial mass of Acidic Growth and hold it at the station, but why?</text>
 			<choice hidden="true">
 				<text>Agree to help and contact the station.</text>
 				<event>
@@ -1932,7 +1932,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 											<choice hidden="true">
 												<text>Continue...</text>
 												<event>
-													<text>While the Orchid station transports all the tanks of Growth back to the Acidic ship, the latter contacts you again. "Outsider, gratitude. Orchids - friends. You - friend. Future negotiation, with friends, possible. Accept this." Acidic Soldiers carry over a large amount of scrap.</text>
+													<text>While the Orchid station transports all the tanks of Growth back to the Acidic ship, the latter contacts you again. "Outsider, gratitude. Orchids - allies. You - ally. Future negotiation, with allies, possible. Accept this." Acidic Soldiers carry over a large amount of scrap.</text>
 													<autoReward level="HIGH">standard</autoReward>
 												</event>
 											</choice>
@@ -2473,9 +2473,226 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 		</event>
 	</choice>
 </event>
+
+<event name="NEBULA_AEA_QUEST_ACID_COALITION">
+	<environment type="nebula" />
+	<ship load="SHIP_COALITION_ELITE_FIGHT" hostile="false" />
+	<text>A RUES ship is at this beacon. They don't show any signs of hostility.</text>
+	<choice hidden="true">
+		<text>Hail.</text>
+		<event>
+			<text>The Coalition ship responds, and you see a Slug wearing black clothes tapping away with a pen. "Oh, perfect. Fedsss, huh? You'll do. You'll do, right?"</text>
+			<choice hidden="true">
+				<text>We'll do... what?</text>
+				<event>
+					<text>The Slug looks at you for just enough time to make you uncomfortable. "Mercenary work, that'sss what. Acidic gasssesss are not part of Federation, or any sssane individual'sss definition of 'sssapient life'. Need to raid a convoy that passsesss through this sssector. The target is a ssship, that ssshould be captured without, erm, exploding. We'll dissstract the essscort in the meantime. Think you can manage?"</text>
+					<choice hidden="true">
+						<text>We'll manage alright.</text>
+						<event load="NEBULA_AEA_QUEST_ACID_COALITION_AGREED" />
+					</choice>
+					<choice hidden="true">
+						<text>What's important about that ship?</text>
+						<event load="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE" />
+					</choice>
+					<choice hidden="true">
+						<text>We've heard enough. Attack them.</text>
+						<event load="NEBULA_AEA_QUEST_ACID_COALITION_ATTACK" />
+					</choice>
+					<choice hidden="true">
+						<text>We'll pass.</text>
+						<event load="NEBULA_AEA_QUEST_ACID_COALITION_IGNORE" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Attack!</text>
+		<event>
+			<text>Any day you can take out one of Coalition's elite ships is a good one. You prepare for combat.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Pretend you didn't see it.</text>
+		<event>
+			<text>If you ignore the problem, it will just go away. Well, in this case it won't, you'll have to go away first. No, it's not running. It isn't.</text>
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_QUEST_ACID_COALITION_AGREED">
+	<text>"Good. Sssee you later." The Coalition ship transmits coordinates of the convoy and jumps away.</text>
+	<quest event="NEBULA_AEA_QUEST_ACID_COALITION_2" />
+	<instantEscape/>
+</event>
+
+<event name="NEBULA_AEA_QUEST_ACID_COALITION_IGNORE">
+	<text>"Predictable. We'll jussst wait for sssomeone who actually wantsss ssscrap, then." Now that you confirmed the ship's intentions do not include attacking you, you can do something aboard the ship.</text>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event />
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE">
+	<text>"Classsified. Jussst make sssure you can get rid of itsss crew. You'll get paid, don't worry."</text>
+	<choice hidden="true">
+		<text>We'll do it.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_AGREED" />
+	</choice>
+	<choice hidden="true">
+		<text>Pretty please?</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_LIST_BASIC" />
+	</choice>
+	<choice hidden="true" req="LIST_CREW_COALITION">
+		<text>(Coalition-aligned Crew) We're a Coalition ship, actually.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_LIST_CREW" />
+	</choice>
+	<choice hidden="true" req="LIST_CREW_AEA_COALITION_ELITE">
+		<text>(Elite Coalition-aligned Crew) We're a Coalition ship, actually.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_LIST_ELITE" />
+	</choice>
+	<choice hidden="true">
+		<text>We've heard enough. Attack them.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_ATTACK" />
+	</choice>
+	<choice hidden="true">
+		<text>We'll pass.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_IGNORE" />
+	</choice>
+</event>
+
+<eventList name="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_LIST_BASIC">
+	<event load="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_SUCCESS_BASIC" />
+
+	<event load="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_FAIL" />
+	<event load="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_FAIL" />
+</eventList>
+
+<eventList name="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_LIST_CREW">
+	<event load="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_SUCCESS_CREW" />
+	<event load="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_SUCCESS_CREW" />
+
+	<event load="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_FAIL" />
+</eventList>
+
+<eventList name="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_LIST_ELITE">
+	<event load="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_SUCCESS_ELITE" />
+</eventList>
+
+<event name="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_FAIL">
+	<text>"No. What will it be?"</text>
+	<choice hidden="true">
+		<text>We'll do it.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_AGREED" />
+	</choice>
+	<choice hidden="true">
+		<text>We've heard enough. Attack them.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_ATTACK" />
+	</choice>
+	<choice hidden="true">
+		<text>We'll pass.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_IGNORE" />
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_SUCCESS_BASIC">
+	<text>The Slug looks around, then starts tapping away with a pen again. "That's pathetic." Stops, and sighs. "Fine. I don't care. The vesssel intended for capture is a Cealaformer. If you're not familiar, it'sss a ssship that can ssspread nebula gasssesss on itsss own. Turnsss out, the ssspace mold has thossse too. To be able to sssettle anywhere it wantsss... Kind of dangerous for sssapient life, don't you think?"</text>
+	<choice hidden="true">
+		<text>We'll do it.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_AGREED" />
+	</choice>
+	<choice hidden="true">
+		<text>We've heard enough. Attack them.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_ATTACK" />
+	</choice>
+	<choice hidden="true">
+		<text>We'll pass.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_IGNORE" />
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_SUCCESS_CREW">
+	<text>The Slug looks around, then starts tapping away with a pen again. "You're not." Stops, and sighs. "Fine. I don't care. The vesssel intended for capture is a Cealaformer. If you're not familiar, it'sss a ssship that can ssspread nebula gasssesss on itsss own. Turnsss out, the ssspace mold has thossse too. To be able to sssettle anywhere it wantsss... Kind of dangerous for sssapient life, don't you think?"</text>
+	<choice hidden="true">
+		<text>We'll do it.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_AGREED" />
+	</choice>
+	<choice hidden="true">
+		<text>We've heard enough. Attack them.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_ATTACK" />
+	</choice>
+	<choice hidden="true">
+		<text>We'll pass.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_IGNORE" />
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_SUCCESS_ELITE">
+	<text>The Slug looks around, then starts tapping away with a pen again. "You actually might be..." Stops, and sighs. "Fine. I don't care. The vesssel intended for capture is a Cealaformer. If you're not familiar, it'sss a ssship that can ssspread nebula gasssesss on itsss own. Turnsss out, the ssspace mold has thossse too. To be able to sssettle anywhere it wantsss... Kind of dangerous for sssapient life, don't you think?"</text>
+	<choice hidden="true">
+		<text>We'll do it.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_AGREED" />
+	</choice>
+	<choice hidden="true">
+		<text>We've heard enough. Attack them.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_ATTACK" />
+	</choice>
+	<choice hidden="true">
+		<text>We'll pass.</text>
+		<event load="NEBULA_AEA_QUEST_ACID_COALITION_IGNORE" />
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_QUEST_ACID_COALITION_ATTACK">
+	<text>Now that you know their intentions, you can't let them go. "Aw ssshucks, didn't take you for one to fight for the sssake of sssome irrelevant mold. Charge the gunsss, boysss."</text>
+	<ship hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_QUEST_ACID_COALITION_2">
+	<environment type="nebula" />
+	<ship load="SHIP_AEA_ACID_CEALAFORMER" hostile="false" />
+	<beaconType id="map_icon_quest" global="true">
+		<color r="69" g="168" b="235" a="1" />
+		<unvisitedTooltip>The Acidic Growth convoy is passing through here.</unvisitedTooltip>
+	</beaconType>
+	<text>When you jump in, there's already a brawl. The RUES ship is trying to lead the escort away from a weird Acidic vessel, leaving it vulnerable to your attack. You remember that if you are to engage it, you must not destroy the ship.</text>
+	<choice hidden="true">
+		<text>Attack the ship.</text>
+		<event>
+			<ship hostile="true" />
+			<text>You prepare to secure the strange vessel.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>			
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Run away.</text>
+		<event>
+			<text>You decide to leave the Coalition ship here to handle all this mess on their own.</text>
+		</event>
+	</choice>
+</event>
+
 <eventList name="NEBULA_QUEST_AEA_ACID_UNIQUE">
 	<event load="NEBULA_ACIDIC_AEA_ACID_CIV" />
 	<event load="NEBULA_QUEST_AEA_ACID_PIRATE_TRAP" />
+	<event load="NEBULA_AEA_QUEST_ACID_COALITION" />
 </eventList>
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -2579,7 +2796,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<text>You're surprised to find a ship stranded all the way out here inside of the Acidic Growth, and move in to provide assistance. When you see the pirate insignia on the hull you quickly reconsider.</text>
 	<ship load="SHIP_PIRATE_ALL" hostile="false" />
 	<choice>
-		<text>Attack!.</text>
+		<text>Attack!</text>
 		<event>
 			<text>You prepare for combat.</text>
 			<ship hostile="true" />
