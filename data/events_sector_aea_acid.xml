@@ -2879,6 +2879,58 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</removeCrew>
 </event>
 
+<!--
+<event name="NEBULA_AEA_ACID_WEAPON_TEST">
+	<environment type="nebula" />
+	<text>This beacon houses a strange-looking Acidic vessel, equipped with some kind of weaponry you don't immediately recognize. Regardless, those guns are massive; hailing them could be risky.</text>
+	<choice hidden="true">
+		<text>Hail the ship.</text>
+		<event>
+			<text>The Acidic Growth answers, and they don't seem hostile. "Outsider? Could use, your help. New prototype, for testing. Endure, for reward?" The captain further explains that the test won't involve harming your crew or hull... at least, not directly. Apparently, those weapons use acidic gases to breach the enemy ships. A minute is all it will take.</text>
+			<choice hidden="true">
+				<text>Agree to the test.</text>
+				<event>
+					<text>"Gratitude." You prepare to withstand the onslaught of acidic gases.</text>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Decline.</text>
+				<event>
+					<text>"Unfortunate." The Acidic Growth is dejected, but shows no aggression. You can do something aboard the ship.</text>
+					<choice hidden="true">
+						<text>Do something onboard the ship.</text>
+						<event load="STORAGE_CHECK" />
+					</choice>
+					<choice hidden="true">
+						<text>Do nothing.</text>
+						<event />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Stay away.</text>
+		<event>
+			<text>You decide not to contact the Growth. You can now do something aboard the ship.</text>
+            <choice hidden="true">
+                <text>Do something onboard the ship.</text>
+                <event load="STORAGE_CHECK" />
+            </choice>
+            <choice hidden="true">
+                <text>Do nothing.</text>
+                <event />
+            </choice>
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_ACID_WEAPON_TEST_COMPLETE">
+	<text>The test has been complete. Captain of the Acidic vessel seems grateful. "Outsider, gratitude. Weaponry, efficient. Reward, accept."</text>
+	<autoReward level="HIGH">standard</autoReward>
+</event>
+-->
+
 <eventList name="NEBULA_HOSTILE_AEA_ACID_UNIQUE">
 	<event load="NEBULA_ENCOUNTER_AEA_ACID_HACKER" />
 	
