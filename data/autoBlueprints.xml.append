@@ -30,7 +30,6 @@
 	<mod-append:name>AEA_LASER_CULT_14</mod-append:name>
 	<mod-append:name>AEA_LASER_CULT_15</mod-append:name>
 
-	<mod-append:name>AEA_LASER_OLD_1_CELL</mod-append:name>
 	<mod-append:name>AEA_LASER_OLD_1</mod-append:name>
 	<mod-append:name>AEA_LASER_OLD_2</mod-append:name>
 	<mod-append:name>AEA_LASER_OLD_3</mod-append:name>
@@ -40,11 +39,22 @@
 	<mod-append:name>AEA_LASER_OLDP_3</mod-append:name>
 	<mod-append:name>AEA_LASER_OLDP_3_LOOT</mod-append:name>
 
+	<mod-append:name>AEA_FOCUS_OLD_1</mod-append:name>
+	<mod-append:name>AEA_FOCUS_OLD_2</mod-append:name>
+	<mod-append:name>AEA_FOCUS_OLD_3</mod-append:name>
+
 	<mod-append:name>AEA_SHLEG_BOMB</mod-append:name>
 	<mod-append:name>AEA_SHLEG_MISSILES</mod-append:name>
 	<mod-append:name>AEA_SHLEG_MISSILES_LOOT</mod-append:name>
 
 	<mod-append:name>AEA_BEAM_MULTI</mod-append:name>
+	
+	<mod-append:name>AEA_LASER_ACID_BOSS</mod-append:name>
+	<mod-append:name>AEA_CRYSTAL_SHARD_BOSS</mod-append:name>
+	<mod-append:name>AEA_BEAM_SHLEG_BOSS</mod-append:name>
+	<mod-append:name>AEA_LASER_ACID_BOSS_CHAOS</mod-append:name>
+	<mod-append:name>AEA_CRYSTAL_SHARD_BOSS_CHAOS</mod-append:name>
+	<mod-append:name>AEA_BEAM_SHLEG_BOSS_CHAOS</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_DRONES_ALL">
@@ -72,47 +82,79 @@
 
 	<mod-append:name>AEA_COMBAT_BIRD_SMART_1</mod-append:name>
 	<mod-append:name>AEA_COMBAT_BIRD_SMART_2</mod-append:name>
+
+	<mod-append:name>AEA_COMBAT_NECRO_BOSS</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_BOSS</mod-append:name>
+	<mod-append:name>AEA_COMBAT_NECRO_BOSS_CHAOS</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_BOSS_CHAOS</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_DRONES_ALL_CRAPBUCKET">
     <mod-append:name>AEA_DEFENSE_NECRO_1_DRONE</mod-append:name>
-    <mod-append:name>AEA_DEFENSE_NECRO_1_MISSILE</mod-append:name>
     <mod-append:name>AEA_DEFENSE_NECRO_2_DRONE</mod-append:name>
-    <mod-append:name>AEA_DEFENSE_NECRO_2_MISSILE</mod-append:name>
     <mod-append:name>AEA_COMBAT_NECRO_1_LASER</mod-append:name>
-    <mod-append:name>AEA_COMBAT_NECRO_1_BEAM</mod-append:name>
     <mod-append:name>AEA_COMBAT_NECRO_2_LASER</mod-append:name>
-    <mod-append:name>AEA_COMBAT_NECRO_2_BEAM</mod-append:name>
 
-	<mod-append:name>AEA_COMBAT_BIRD_BURST_1</mod-append:name>
 	<mod-append:name>AEA_COMBAT_BIRD_BURST_2</mod-append:name>
-	<mod-append:name>AEA_COMBAT_BIRD_BURST_3</mod-append:name>
 
 	<mod-append:name>AEA_COMBAT_BIRD_BIO_1</mod-append:name>
 	<mod-append:name>AEA_COMBAT_BIRD_BIO_2</mod-append:name>
 	<mod-append:name>AEA_COMBAT_BIRD_BIO_3</mod-append:name>
 
-
 	<mod-append:name>AEA_COMBAT_BIRD_MULTI_1_LASER</mod-append:name>
-	<mod-append:name>AEA_COMBAT_BIRD_MULTI_1_BEAM</mod-append:name>
 	<mod-append:name>AEA_COMBAT_BIRD_MULTI_2_LASER</mod-append:name>
-	<mod-append:name>AEA_COMBAT_BIRD_MULTI_2_BEAM</mod-append:name>
 
 	<mod-append:name>AEA_COMBAT_BIRD_SMART_1</mod-append:name>
 	<mod-append:name>AEA_COMBAT_BIRD_SMART_2</mod-append:name>
+
+	<mod-append:name>AEA_COMBAT_NECRO_BOSS</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_BOSS</mod-append:name>
+	<mod-append:name>AEA_COMBAT_NECRO_BOSS_CHAOS</mod-append:name>
+	<mod-append:name>AEA_COMBAT_BIRD_BOSS_CHAOS</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_WEAPONS_ALL_CRAPBUCKET">
     <mod-append:name>AEA_LASER_ACID_1</mod-append:name>
     <mod-append:name>AEA_LASER_ACID_2</mod-append:name>
     <mod-append:name>AEA_LASER_ACID_3</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_SUPER</mod-append:name>
     <mod-append:name>AEA_BEAM_ACID_1</mod-append:name>
     <mod-append:name>AEA_ION_ACID_1</mod-append:name>
+    <mod-append:name>AEA_ION_ACID_1_LOOT</mod-append:name>
+
     <mod-append:name>AEA_LASER_NECRO_1</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_2</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_3</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_2_LOOT</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_CHARGE</mod-append:name>
+
+	<mod-append:name>AEA_LASER_CULT</mod-append:name>
+
+	<mod-append:name>AEA_LASER_OLD_1</mod-append:name>
+	<mod-append:name>AEA_LASER_OLD_2</mod-append:name>
+	<mod-append:name>AEA_LASER_OLD_3</mod-append:name>
+
+	<mod-append:name>AEA_LASER_OLDP_1</mod-append:name>
+	<mod-append:name>AEA_LASER_OLDP_2</mod-append:name>
+	<mod-append:name>AEA_LASER_OLDP_3</mod-append:name>
+	<mod-append:name>AEA_LASER_OLDP_3_LOOT</mod-append:name>
+
+	<mod-append:name>AEA_FOCUS_OLD_1</mod-append:name>
+	<mod-append:name>AEA_FOCUS_OLD_2</mod-append:name>
+	<mod-append:name>AEA_FOCUS_OLD_3</mod-append:name>
+
+	<mod-append:name>AEA_SHLEG_BOMB</mod-append:name>
+	<mod-append:name>AEA_SHLEG_MISSILES</mod-append:name>
+	<mod-append:name>AEA_SHLEG_MISSILES_LOOT</mod-append:name>
+
+	<mod-append:name>AEA_BEAM_MULTI</mod-append:name>
+	
+	<mod-append:name>AEA_LASER_ACID_BOSS</mod-append:name>
+	<mod-append:name>AEA_CRYSTAL_SHARD_BOSS</mod-append:name>
+	<mod-append:name>AEA_BEAM_SHLEG_BOSS</mod-append:name>
+	<mod-append:name>AEA_LASER_ACID_BOSS_CHAOS</mod-append:name>
+	<mod-append:name>AEA_CRYSTAL_SHARD_BOSS_CHAOS</mod-append:name>
+	<mod-append:name>AEA_BEAM_SHLEG_BOSS_CHAOS</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="BLUELIST_WEAPONS_HEAVY">
@@ -679,6 +721,9 @@
 	<name>AEA_LASER_OLDP_1</name>
 	<name>AEA_LASER_OLDP_2</name>
 	<name>AEA_LASER_OLDP_3</name>
+	<name>AEA_FOCUS_OLD_1</name>
+	<name>AEA_FOCUS_OLD_2</name>
+	<name>AEA_FOCUS_OLD_3</name>
 </blueprintList>
 
 <blueprintList name="AEA_CULTISTS_ALL">
@@ -838,16 +883,6 @@
 
 
 
-<blueprintList name="BLUELIST_PRECURSOR_TECH">
-	<name>AEA_LASER_OLD_1_CELL</name>
-	<name>AEA_LASER_OLD_1</name>
-	<name>AEA_LASER_OLD_2</name>
-	<name>AEA_LASER_OLD_3</name>
-
-	<name>AEA_LASER_OLDP_1</name>
-	<name>AEA_LASER_OLDP_2</name>
-	<name>AEA_LASER_OLDP_3</name>
-</blueprintList>
 <blueprintList name="GIFTLIST_WEAPONS_ACIDIC">
     <name>AEA_LASER_ACID_1</name>
     <name>AEA_LASER_ACID_2</name>
@@ -931,6 +966,9 @@
 
 	<name>AEA_LASER_OLDP_1</name>
 	<name>AEA_LASER_OLDP_2</name>
+
+	<name>AEA_FOCUS_OLD_1</name>
+	<name>AEA_FOCUS_OLD_2</name>
 </blueprintList>
 
 <blueprintList name="LIST_CREW_AEA_REBEL_ELITE_RANDOM">
@@ -2332,10 +2370,15 @@
 	<name>cognitive_advanced</name>
 </blueprintList>
 
+<blueprintList name="FREE_WEAPONS_AEA_OLD">
+	<name>AEA_LASER_OLD_1</name>
+	<name>AEA_LASER_OLDP_1</name>
+	<name>AEA_FOCUS_OLD_1</name>
+</blueprintList>
+
 <blueprintList name="BLUELIST_PRECURSOR_TECH">
 	<name>AEA_COMPONENT_OLD</name>
 
-	<name>AEA_LASER_OLD_1_CELL</name>
 	<name>AEA_LASER_OLD_1</name>
 	<name>AEA_LASER_OLD_2</name>
 	<name>AEA_LASER_OLD_3</name>
@@ -2343,6 +2386,11 @@
 	<name>AEA_LASER_OLDP_1</name>
 	<name>AEA_LASER_OLDP_2</name>
 	<name>AEA_LASER_OLDP_3</name>
+	<name>AEA_LASER_OLDP_3_LOOT</name>
+
+	<name>AEA_FOCUS_OLD_1</name>
+	<name>AEA_FOCUS_OLD_2</name>
+	<name>AEA_FOCUS_OLD_3</name>
 </blueprintList>
 
 <blueprintList name="LIST_WEAPONS_AEA_OLD_1">
@@ -2358,6 +2406,12 @@
 	<name>AEA_LASER_OLDP_1</name>
 	<name>AEA_LASER_OLDP_2</name>
 	<name>AEA_LASER_OLDP_3</name>
+	<name>AEA_FOCUS_OLD_1</name>
+	<name>AEA_FOCUS_OLD_2</name>
+	<name>AEA_FOCUS_OLD_3</name>
+	<name>AEA_FOCUS_OLD_1</name>
+	<name>AEA_FOCUS_OLD_2</name>
+	<name>AEA_FOCUS_OLD_3</name>
 
 	<name>LASER_BURST_2</name>
 	<name>LASER_BURST_3</name>
@@ -2408,6 +2462,12 @@
 	<name>AEA_LASER_OLDP_1</name>
 	<name>AEA_LASER_OLDP_2</name>
 	<name>AEA_LASER_OLDP_3</name>
+	<name>AEA_FOCUS_OLD_1</name>
+	<name>AEA_FOCUS_OLD_2</name>
+	<name>AEA_FOCUS_OLD_3</name>
+	<name>AEA_FOCUS_OLD_1</name>
+	<name>AEA_FOCUS_OLD_2</name>
+	<name>AEA_FOCUS_OLD_3</name>
 
 	<name>LASER_BURST_2</name>
 	<name>LASER_BURST_3</name>
@@ -2493,6 +2553,9 @@
 	<name>AEA_LASER_OLDP_1</name>
 	<name>AEA_LASER_OLDP_2</name>
 	<name>AEA_LASER_OLDP_3</name>
+	<name>AEA_FOCUS_OLD_1</name>
+	<name>AEA_FOCUS_OLD_2</name>
+	<name>AEA_FOCUS_OLD_3</name>
 </blueprintList>
 
 <blueprintList name="LIST_SHIPS_AEA_OLD_ALL">

@@ -314,27 +314,6 @@
 
 
 
-<animSheet name="aea_laser_old_1" w="340" h="55" fw="34" fh="55">weapon_old/aea_laser_old_1.png</animSheet>
-<weaponAnim name="aea_laser_old_1">
-	<sheet>aea_laser_old_1</sheet>
-	<desc length="10" x="0" y="0" />
-	<chargedFrame>6</chargedFrame>
-	<fireFrame>7</fireFrame>
-	<firePoint x="21" y="33" />
-	<mountPoint x="5" y="38" />
-</weaponAnim>
-
-<animSheet name="aea_laser_old_2" w="640" h="79" fw="64" fh="79">weapon_old/aea_laser_old_2.png</animSheet>
-<weaponAnim name="aea_laser_old_2">
-	<sheet>aea_laser_old_2</sheet>
-	<desc length="10" x="0" y="0" />
-	<chargedFrame>6</chargedFrame>
-	<fireFrame>7</fireFrame>
-	<firePoint x="37" y="42" />
-	<mountPoint x="5" y="55" />
-</weaponAnim>
-
-
 
 <animSheet name="aea_laser_old_1_new" w="273" h="97" fw="39" fh="97">weapon_old/aea_laser_old_1_new.png</animSheet>
 <weaponAnim name="aea_laser_old_1_new">
@@ -418,27 +397,69 @@
 	<mountPoint x="4" y="89" />
 </weaponAnim>
 
-
-
-<animSheet name="aea_laser_oldp_2" w="560" h="78" fw="56" fh="78">weapon_old/aea_laser_oldp_2.png</animSheet>
-<weaponAnim name="aea_laser_oldp_2">
-	<sheet>aea_laser_oldp_2</sheet>
-	<desc length="10" x="0" y="0" />
-	<chargedFrame>6</chargedFrame>
-	<fireFrame>7</fireFrame>
-	<firePoint x="34" y="42" />
-	<mountPoint x="5" y="54" />
+<animSheet name="aea_pin_old_1" w="407" h="105" fw="37" fh="105">weapon_old/aea_pin_old_1.png</animSheet>
+<weaponAnim name="aea_pin_old_1">
+	<sheet>aea_pin_old_1</sheet>
+	<desc length="11" x="0" y="0" />
+	<chargedFrame>3</chargedFrame>
+	<fireFrame>4</fireFrame>
+	<firePoint x="23" y="42" />
+	<mountPoint x="4" y="73" />
+	<chargeImage>weapon_old/aea_pin_old_1_glow.png</chargeImage>
 </weaponAnim>
 
-<animSheet name="aea_laser_oldp_3" w="560" h="100" fw="56" fh="100">weapon_old/aea_laser_oldp_3.png</animSheet>
-<weaponAnim name="aea_laser_oldp_3">
-	<sheet>aea_laser_oldp_3</sheet>
-	<desc length="10" x="0" y="0" />
+<animSheet name="aea_pin_old_2" w="504" h="118" fw="42" fh="118">weapon_old/aea_pin_old_2.png</animSheet>
+<weaponAnim name="aea_pin_old_2">
+	<sheet>aea_pin_old_2</sheet>
+	<desc length="12" x="0" y="0" />
+	<chargedFrame>4</chargedFrame>
+	<fireFrame>5</fireFrame>
+	<firePoint x="25" y="53" />
+	<mountPoint x="4" y="86" />
+	<chargeImage>weapon_old/aea_pin_old_2_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="aea_pin_old_3" w="812" h="157" fw="58" fh="157">weapon_old/aea_pin_old_3.png</animSheet>
+<weaponAnim name="aea_pin_old_3">
+	<sheet>aea_pin_old_3</sheet>
+	<desc length="14" x="0" y="0" />
 	<chargedFrame>6</chargedFrame>
 	<fireFrame>7</fireFrame>
-	<firePoint x="35" y="50" />
-	<mountPoint x="5" y="56" />
+	<firePoint x="37" y="64" />
+	<mountPoint x="4" y="112" />
+	<chargeImage>weapon_old/aea_pin_old_3_glow.png</chargeImage>
 </weaponAnim>
+
+<animSheet name="aea_missile_old_1" w="1330" h="130" fw="70" fh="130">weapon_old/aea_missile_old_1.png</animSheet>
+<weaponAnim name="aea_missile_old_1">
+	<sheet>aea_missile_old_1</sheet>
+	<desc length="19" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>7</fireFrame>
+	<firePoint x="30" y="70" />
+	<mountPoint x="4" y="79" />
+	<chargeImage>weapon_old/aea_missile_old_1_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="aea_missile_old_proj" w="256" h="48" fw="32" fh="48">weapon_old/aea_missile_old_proj.png</animSheet>
+<anim name="aea_missile_old_proj">
+	<sheet>aea_missile_old_proj</sheet>
+	<desc length="8" x="0" y="0" />
+	<time>0.8</time>
+</anim>
+
+<animSheet name="aea_missile_old_1_flash" w="1330" h="130" fw="70" fh="130">weapon_old/aea_missile_old_1_flash.png</animSheet>
+<anim name="aea_missile_old_1_flash">
+	<sheet>aea_missile_old_1_flash</sheet>
+	<desc length="19" x="0" y="0" />
+	<time>2</time>
+</anim>
+<animSheet name="aea_missile_old_1_test" w="1330" h="130" fw="70" fh="130">weapon_old/aea_missile_old_1_test.png</animSheet>
+<anim name="aea_missile_old_1_test">
+	<sheet>aea_missile_old_1_test</sheet>
+	<desc length="19" x="0" y="0" />
+	<time>2</time>
+</anim>
 
 </FTL>
 

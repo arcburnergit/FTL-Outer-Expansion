@@ -282,6 +282,64 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
 	reducedProjectiles = {}
 end)
 
+mods.aea.systemIds = {
+    [0] = "shields",
+    [1] = "engines",
+    [2] = "oxygen",
+    [3] = "weapons",
+    [4] = "drones",
+    [5] = "medbay",
+    [9] = "teleporter",
+    [10] = "cloaking",
+    [12] = "battery",
+    [13] = "clonebay",
+    [14] = "mind",
+    [20] = "temporal",
+    [Hyperspace.ShipSystem.NameToSystemId("aea_super_shields")] = "aea_super_shields",
+    [Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime")] = "aea_clone_crime"
+}
+-- system blueprints not being exposed smh!
+local maxLevels = {
+	shields = 16,
+	engines = 8,
+	oxygen = 3,
+	weapons = 8,
+	drones = 15,
+	medbay = 3,
+	teleporter = 3,
+	cloaking = 3,
+	battery = 2,
+	clonebay = 3,
+	mind = 3,
+	temporal = 3,
+	aea_super_shields = 3,
+	aea_clone_crime = 3
+}
+local maxUpgrades = {
+	shields = 2,
+	engines = 4,
+	weapons = 3,
+	drones = 3,
+}
+
+local systemBlueprintList = {}
+local node_child_iter = mods.multiverse.node_child_iter
+for _, file in ipairs(mods.multiverse.blueprintFiles) do
+	local doc = RapidXML.xml_document(file)
+	for node in node_child_iter(doc:first_node("FTL") or doc) do
+		if node:name() == "systemBlueprint" then
+			systemBlueprintList[node:first_attribute("name"):value()] = {}
+			for systemNode in node_child_iter(node) do
+				if systemNode:name() == "type" then
+					systemBlueprintList[node:first_attribute("name"):value()].shortTitle = systemNode:value()
+				elseif systemNode:name() == "title" then
+					systemBlueprintList[node:first_attribute("name"):value()].title = systemNode:value()
+				end
+			end
+		end
+	end
+	doc:clear()
+end
 
 local setSystemMaxVars = false
 script.on_init(function() setSystemMaxVars = true end)
@@ -292,28 +350,10 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 	if not (setSystemMaxVars and Hyperspace.ships.player) then return end
 	local sysInfo = Hyperspace.ships.player.myBlueprint.systemInfo
 	--print("SYSTEM LOOP START")
-	for id, sys in pairs(mods.multiverse.systemIds) do
+	for id, sys in pairs(mods.aea.systemIds) do
 		local currValue = Hyperspace.playerVariables[sys.."_cap"]
 		if currValue < 0 then
-			if sys == "weapons" then Hyperspace.playerVariables[sys.."_cap_aea"] = 8 end
-			if sys == "shields" then Hyperspace.playerVariables[sys.."_cap_aea"] = 16 end
-			if sys == "engines" then Hyperspace.playerVariables[sys.."_cap_aea"] = 8 end
-			if sys == "oxygen" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
-			if sys == "teleporter" then Hyperspace.playerVariables[sys.."_cap_aea"] = 4 end
-			if sys == "medbay" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
-			if sys == "clonebay" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
-
-			if sys == "drones" then Hyperspace.playerVariables[sys.."_cap_aea"] = 15 end
-			if sys == "cloaking" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
-			if sys == "hacking" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
-			if sys == "mind" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
-			if sys == "artillery" then Hyperspace.playerVariables[sys.."_cap_aea"] = 5 end
-			if sys == "temporal" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
-
-			if sys == "piloting" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
-			if sys == "sensors" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
-			if sys == "doors" then Hyperspace.playerVariables[sys.."_cap_aea"] = 3 end
-			if sys == "battery" then Hyperspace.playerVariables[sys.."_cap_aea"] = 2 end
+			Hyperspace.playerVariables[sys.."_cap_aea"] = maxLevels[sys]
 		else
 			Hyperspace.playerVariables[sys.."_cap_aea"] = Hyperspace.playerVariables[sys.."_cap"]
 		end
@@ -330,38 +370,6 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 	if reactorPower >= Hyperspace.playerVariables.reactor_cap_aea then
 		Hyperspace.playerVariables.aea_can_upgrade_reactor = 1
 	end
-end)
-
-script.on_game_event("INSTALL_AEA_OLD_SHIELDS", false, function()
-	Hyperspace.ships.player:GetSystem(0):UpgradeSystem(1)
-end)
-script.on_game_event("INSTALL_AEA_OLD_ENGINES", false, function()
-	Hyperspace.ships.player:GetSystem(1):UpgradeSystem(1)
-end)
-script.on_game_event("INSTALL_AEA_OLD_WEAPONS", false, function()
-	Hyperspace.ships.player:GetSystem(3):UpgradeSystem(1)
-end)
-script.on_game_event("INSTALL_AEA_OLD_DRONES", false, function()
-	Hyperspace.ships.player:GetSystem(4):UpgradeSystem(1)
-end)
-script.on_game_event("INSTALL_AEA_OLD_CLOAKING", false, function()
-	Hyperspace.ships.player:GetSystem(10):UpgradeSystem(1)
-end)
-script.on_game_event("INSTALL_AEA_OLD_MIND", false, function()
-	Hyperspace.ships.player:GetSystem(14):UpgradeSystem(1)
-end)
-script.on_game_event("INSTALL_AEA_OLD_HACKING", false, function()
-	Hyperspace.ships.player:GetSystem(15):UpgradeSystem(1)
-end)
-script.on_game_event("INSTALL_AEA_OLD_MEDBAY", false, function()
-	Hyperspace.ships.player:GetSystem(5):UpgradeSystem(1)
-end)
-script.on_game_event("INSTALL_AEA_OLD_CLONEBAY", false, function()
-	Hyperspace.ships.player:GetSystem(13):UpgradeSystem(1)
-end)
-script.on_game_event("INSTALL_AEA_OLD_REACTOR", false, function()
-	local powerManager = Hyperspace.PowerManager.GetPowerManager(0)
-	powerManager.currentPower.second = powerManager.currentPower.second + 1
 end)
 
 script.on_internal_event(Defines.InternalEvents.GET_DODGE_FACTOR, function(shipManager, value)
@@ -630,4 +638,346 @@ script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(e
 			event:AddChoice(pageEvent, crewTable.text, blueReq, true)
 		end
 	end
+end)
+
+local function createBeam(projectile, weapon)
+    local spaceManager = Hyperspace.App.world.space
+    local beam = spaceManager:CreateBeam(
+        weapon.blueprint,
+        projectile.position,
+        projectile.currentSpace,
+        projectile.ownerId,
+        projectile.target1,
+        projectile.target2,
+        projectile.destinationSpace,
+        projectile.length,
+        projectile.heading)
+    spaceManager.projectiles:pop_back()
+    beam.sub_start = projectile.sub_start
+    beam.weapAnimation = projectile.weapAnimation
+    return beam
+end
+
+mods.aea.burstBeams = {}
+local burstBeams = mods.aea.burstBeams
+burstBeams["AEA_FOCUS_OLD_1"] = 2
+burstBeams["AEA_FOCUS_OLD_2"] = 3
+burstBeams["AEA_FOCUS_OLD_3"] = 5
+
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+	local burstData = burstBeams[projectile and projectile.extend and projectile.extend.name]
+	if burstData and not userdata_table(projectile, "mods.aea.burstBeam").wasDuplicated then
+		print("start loop")
+		local projectileNew = createBeam(projectile, weapon)
+		if projectileNew then
+            userdata_table(projectileNew, "mods.aea.burstBeam").wasDuplicated = 2
+            weapon.queuedProjectiles:push_back(projectileNew)
+        end
+	elseif burstData and userdata_table(projectile, "mods.aea.burstBeam").wasDuplicated < burstData then
+		print("loop "..tostring(userdata_table(projectile, "mods.aea.burstBeam").wasDuplicated))
+		local projectileNew = createBeam(projectile, weapon)
+		if projectileNew then
+            userdata_table(projectileNew, "mods.aea.burstBeam").wasDuplicated = userdata_table(projectile, "mods.aea.burstBeam").wasDuplicated + 1
+            weapon.queuedProjectiles:push_back(projectileNew)
+        end
+	end
+end)
+
+mods.aea.popPinpoints = {}
+local popPinpoints = mods.aea.popPinpoints
+popPinpoints["AEA_FOCUS_OLD_1"] = {endDamage = {count = 1, countSuper = 1}}
+popPinpoints["AEA_FOCUS_OLD_2"] = {endDamage = {count = 1, countSuper = 1}}
+popPinpoints["AEA_FOCUS_OLD_3"] = {endDamage = {count = 1, countSuper = 1}}
+-- Pop shield bubbles
+local shieldsTouching = {}
+local shieldsTouchingLast = {}
+
+script.on_internal_event(Defines.InternalEvents.SHIELD_COLLISION, function(shipManager, projectile, damage, response)
+    local shieldPower = shipManager.shieldSystem.shields.power
+    local popData = popPinpoints[projectile and projectile.extend and projectile.extend.name]
+    if popData and popData.startDamage and not userdata_table(projectile, "mods.aea.popBeams").startDamage then
+    	local popDataStart = popData.startDamage
+        if shieldPower.super.first > 0 then
+            if popDataStart.countSuper > 0 then
+                shipManager.shieldSystem:CollisionReal(projectile.shield_end.x, projectile.shield_end.y, Hyperspace.Damage(), true)
+                shieldPower.super.first = math.max(0, shieldPower.super.first - popDataStart.countSuper)
+            end
+        else
+            shipManager.shieldSystem:CollisionReal(projectile.shield_end.x, projectile.shield_end.y, Hyperspace.Damage(), true)
+            shieldPower.first = math.max(0, shieldPower.first - popDataStart.count)
+        end
+        userdata_table(projectile, "mods.aea.popBeams").startDamage = true
+    end
+    if popData and popData.endDamage then
+    	local popDataEnd = popData.endDamage
+    	shieldsTouching[projectile.selfId] = {ship = shipManager.iShipId, count = popDataEnd.count, countSuper = popDataEnd.countSuper, position = {x=projectile.shield_end.x, y=projectile.shield_end.y}}
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+	for id, tab in pairs(shieldsTouchingLast) do
+		if not shieldsTouching[id] then
+			local shipManager = Hyperspace.ships(tab.ship)
+    		local shieldPower = shipManager.shieldSystem.shields.power
+    		if shieldPower.super.first > 0 then
+	            if tab.countSuper > 0 then
+	                shipManager.shieldSystem:CollisionReal(tab.position.x, tab.position.y, Hyperspace.Damage(), true)
+	                shieldPower.super.first = math.max(0, shieldPower.super.first - tab.countSuper)
+	            end
+	        else
+	            shipManager.shieldSystem:CollisionReal(tab.position.x, tab.position.y, Hyperspace.Damage(), true)
+	            shieldPower.first = math.max(0, shieldPower.first - tab.count)
+	        end
+		end
+	end
+	shieldsTouchingLast = {}
+	for id, tab in pairs(shieldsTouching) do
+		shieldsTouchingLast[id] = tab
+	end
+	shieldsTouching = {}
+end)
+
+local precursorList = {}
+for blueprint in vter(Hyperspace.Blueprints:GetBlueprintList("BLUELIST_PRECURSOR_TECH")) do
+	local weaponDesc = Hyperspace.Blueprints:GetWeaponBlueprint(blueprint).desc
+	precursorList[blueprint] = {long = weaponDesc.title.data, short = weaponDesc.shortTitle.data, desc = weaponDesc.description.data, tip = weaponDesc.tip}
+end
+
+local function setPrecursorNames(original)
+	for blueprint, blueTable in pairs(precursorList) do
+		if original then
+			local weaponDesc = Hyperspace.Blueprints:GetWeaponBlueprint(blueprint).desc
+			weaponDesc.title.data = blueTable.long
+			weaponDesc.shortTitle.data = blueTable.short
+			weaponDesc.description.data = blueTable.desc
+			weaponDesc.tip = blueTable.tip
+		else
+			local weaponDesc = Hyperspace.Blueprints:GetWeaponBlueprint(blueprint).desc
+			weaponDesc.title.data = "???"
+			weaponDesc.shortTitle.data = "???"
+			weaponDesc.description.data = "???"
+			weaponDesc.tip = "tip_aea_old_unknown"
+		end
+	end
+end
+
+local loadName = false
+script.on_init(function(newGame)
+    if newGame then
+        setPrecursorNames(false)
+    else
+        loadName = true
+    end
+end)
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+    if loadName and Hyperspace.playerVariables.aea_test_variable == 1 then
+        loadName = false
+    	setPrecursorNames(Hyperspace.playerVariables.aea_old_activated_cell == 1)
+    end
+end)
+
+script.on_game_event("AEA_GATE_NAME_SET", false, function()
+	setPrecursorNames(true)
+end)
+
+local emptyReq = Hyperspace.ChoiceReq()
+local blueReq = Hyperspace.ChoiceReq()
+blueReq.object = "pilot"
+blueReq.blue = true
+blueReq.max_level = mods.multiverse.INT_MAX
+blueReq.max_group = -1
+
+local hookedUpgradeEvents = {}
+script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
+	if event.eventName == "STORAGE_CHECK_SYSTEM_AEA_OLD" then
+		local player = Hyperspace.ships.player
+		local eventManager = Hyperspace.Event
+		for id, sys in pairs(mods.aea.systemIds) do
+			local blueprint = systemBlueprintList[sys]
+			local baseText = "Upgrade " .. blueprint.title .. "."
+			if player:HasSystem(id) then
+				local maxLevel = maxUpgrades[sys] or 1
+				if Hyperspace.playerVariables["aea_old_"..sys.."_upgrades"] >= maxLevel or player:GetSystem(id):GetMaxPower() - (Hyperspace.playerVariables["aea_old_"..sys.."_upgrades"] or 0) > math.min(maxLevels[sys], Hyperspace.playerVariables[sys.."_cap_aea"]) then
+					local tempEvent = eventManager:CreateEvent("OPTION_INVALID", 0, false)
+					event:AddChoice(tempEvent, baseText.." [MAXED]", emptyReq, true)
+				elseif Hyperspace.playerVariables.aea_old_activated_cell == 0 then
+					local tempEvent = eventManager:CreateEvent("OPTION_INVALID", 0, false)
+					event:AddChoice(tempEvent, baseText.." [TECH INACTIVE]", emptyReq, true)
+				else
+					local tempEvent = eventManager:CreateEvent("STORAGE_CHECK_SYSTEM_AEA_OLD_TEMPLATE", 0, false)
+					tempEvent:RemoveChoice(0)
+					tempEvent.eventName = "STORAGE_CHECK_SYSTEM_AEA_OLD_"..sys
+					tempEvent.text.data = "You are about to install a "..blueprint.title.." system upgrade.\n[Effects: Upgrades "..blueprint.shortTitle.." beyond it's maximum level, cannot be done more than "..tostring(maxLevel).." times]."
+					
+					if player:GetSystem(id):GetMaxPower() >= Hyperspace.playerVariables[sys.."_cap_aea"] and player:HasEquipment("AEA_COMPONENT_OLD", true) > 0 then
+						local upgradeEvent = eventManager:CreateEvent("STORAGE_CHECK_SYSTEM_AEA_OLD_TEMPLATE_UPGRADE", 0, false)
+						upgradeEvent.eventName = "STORAGE_CHECK_SYSTEM_AEA_OLD_"..sys.."UPGRADE"
+						upgradeEvent:RemoveChoice(0)
+
+						local installEvent = eventManager:CreateEvent("INSTALL_AEA_OLD_TEMPLATE", 0, false)
+						installEvent.eventName = "INSTALL_AEA_OLD_"..sys
+						if not hookedUpgradeEvents[installEvent.eventName] then
+							hookedUpgradeEvents[installEvent.eventName] = true
+							script.on_game_event(installEvent.eventName, false, function()
+								Hyperspace.playerVariables["aea_old_"..sys.."_upgrades"] = Hyperspace.playerVariables["aea_old_"..sys.."_upgrades"] + 1
+								Hyperspace.ships.player:GetSystem(id):UpgradeSystem(1)
+							end)
+						end
+
+						upgradeEvent:AddChoice(installEvent, "Continue...", emptyReq, true)
+						tempEvent:AddChoice(upgradeEvent, "Perform the upgrade. [Cost: 120~, High Tech Component]", emptyReq, true)
+					elseif player:GetSystem(id):GetMaxPower() >= Hyperspace.playerVariables[sys.."_cap_aea"] then
+						local invalidEvent = eventManager:CreateEvent("OPTION_INVALID", 0, false)
+						tempEvent:AddChoice(invalidEvent, "Perform the upgrade. [Cost: 120~, High Tech Component]", emptyReq, true)
+					else
+						local invalidEvent = eventManager:CreateEvent("OPTION_INVALID", 0, false)
+						tempEvent:AddChoice(invalidEvent, "This upgrade is unavailable. You need to upgrade your "..blueprint.shortTitle.." to it's natural maximum.", emptyReq, true)
+					end
+
+					local neverEvent = eventManager:CreateEvent("STORAGE_CHECK_SYSTEM_LOAD", 0, false)
+					tempEvent:AddChoice(neverEvent, "Nevermind", emptyReq, true)
+					event:AddChoice(tempEvent, baseText.." [Cost: 120~, High Tech Component]", emptyReq, true)
+				end
+			elseif sys ~= "aea_clone_crime" then
+				local tempEvent = eventManager:CreateEvent("OPTION_INVALID", 0, false)
+				event:AddChoice(tempEvent, baseText.." [NO SYSTEM]", emptyReq, true)
+			end
+		end
+	end
+end)
+
+script.on_game_event("INSTALL_AEA_OLD_REACTOR", false, function()
+	local powerManager = Hyperspace.PowerManager.GetPowerManager(0)
+	powerManager.currentPower.second = powerManager.currentPower.second + 1
+end)
+
+--[[local missileOld1Images = {
+	Hyperspace.Resources:GetImageId("weapon_old/aea_missile_old_1_1.png"),
+	Hyperspace.Resources:GetImageId("weapon_old/aea_missile_old_1_2.png"),
+	Hyperspace.Resources:GetImageId("weapon_old/aea_missile_old_1_3.png"),
+	Hyperspace.Resources:GetImageId("weapon_old/aea_missile_old_1_4.png"),
+	Hyperspace.Resources:GetImageId("weapon_old/aea_missile_old_1_5.png")
+}
+
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
+	local shipManager = Hyperspace.ships(ship.iShipId)
+	if shipManager and shipManager:HasSystem(3) then
+		for weapon in vter(shipManager.weaponSystem.weapons) do
+			if weapon.blueprint.name == "AEA_MISSILE_OLD_1" and weapon:IsChargedGoal() then
+				print("animSet")
+				local tab = userdata_table(weapon, "mods.aea.oldMissile")
+				if tab.animTimer then
+					tab.animTimer = tab.animTimer + Hyperspace.FPS.SpeedFactor/2
+					if tab.animTimer >= 5 then tab.animTimer = tab.animTimer - 5 end
+				else
+					userdata_table(weapon, "mods.aea.oldMissile").animTimer = 0
+				end
+				local frame = math.floor(userdata_table(weapon, "mods.aea.oldMissile").animTimer) + 1
+				print(tostring(userdata_table(weapon, "mods.aea.oldMissile").animTimer).." f:"..tostring(frame))
+				weapon.weaponVisual.anim.animationStrip = missileOld1Images[frame]
+			elseif weapon.blueprint.name == "AEA_MISSILE_OLD_1" and userdata_table(weapon, "mods.aea.oldMissile").animTimer then
+				print("reset")
+				userdata_table(weapon, "mods.aea.oldMissile").animTimer = nil
+			end
+		end
+	end
+end)]]
+
+mods.aea.afterDamage = {}
+local afterDamage = mods.aea.afterDamage
+afterDamage["AEA_MISSILE_OLD_1"] = Hyperspace.Damage()
+afterDamage["AEA_MISSILE_OLD_1"].iDamage = 4
+afterDamage["AEA_MISSILE_OLD_1"].breachChance = 10
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+    if projectile and projectile.extend.name and afterDamage[projectile.extend.name] and not userdata_table(projectile, "mods.aea.afterDamage").damaged then
+    	userdata_table(projectile, "mods.aea.afterDamage").damaged = true
+    	shipManager:DamageArea(location, afterDamage[projectile.extend.name], true)
+    end
+end)
+
+mods.aea.afterDamageRepeats = {}
+local afterDamageRepeats = mods.aea.afterDamageRepeats
+afterDamageRepeats["AEA_MISSILE_OLD_1"] = {damage = Hyperspace.Damage(), times = 4}
+afterDamageRepeats["AEA_MISSILE_OLD_1"].damage.breachChance = 10
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+    if projectile and projectile.extend.name and afterDamageRepeats[projectile.extend.name] and (userdata_table(projectile, "mods.aea.afterDamageRepeats").damaged or 0) < afterDamageRepeats[projectile.extend.name].times then
+    	userdata_table(projectile, "mods.aea.afterDamageRepeats").damaged = (userdata_table(projectile, "mods.aea.afterDamageRepeats").damaged or 0) + 1
+    	shipManager:DamageArea(location, afterDamageRepeats[projectile.extend.name].damage, true)
+    end
+end)
+
+local is_first_shot = mods.multiverse.is_first_shot
+
+mods.aea.fuelAmmoCost = {}
+local fuelAmmoCost = mods.aea.fuelAmmoCost
+fuelAmmoCost["AEA_MISSILE_OLD_1"] = 1
+
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+	if fuelAmmoCost[weapon.blueprint.name] and is_first_shot(weapon, true) and shipManager.iShipId == 0 and not weapon.isArtillery then
+		local shipManager = Hyperspace.ships(weapon.iShipId)
+		shipManager.fuel_count = shipManager.fuel_count - 1
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
+	local shipManager = Hyperspace.ships(ship.iShipId)
+	if shipManager and shipManager:HasSystem(3) and shipManager.iShipId == 0 then
+		for weapon in vter(shipManager.weaponSystem.weapons) do
+			if fuelAmmoCost[weapon.blueprint.name] and shipManager.fuel_count - fuelAmmoCost[weapon.blueprint.name] < 0 and weapon.powered then
+				--weapon.powered = false
+				--shipManager.weaponSystem:RawDecreasePower()
+				--shipManager.weaponSystem.powerState.first = shipManager.weaponSystem.powerState.first - weapon.requiredPower
+				weapon.cooldown.first = 0
+			end
+		end
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.WEAPON_RENDERBOX, function(weapon, cooldown, maxCooldown, firstLine, secondLine, thirdLine)
+	local shipManager = Hyperspace.ships(weapon.iShipId)
+	if fuelAmmoCost[weapon.blueprint.name] and shipManager.fuel_count - fuelAmmoCost[weapon.blueprint.name] < 0 and shipManager.iShipId == 0 then
+		--print("1st:\""..firstLine.."\"\n2nd:\""..secondLine.."\"\n3rd:\""..thirdLine.."\"")
+		firstLine = "Out of Fuel"
+	end
+	return Defines.Chain.HALT, firstLine, secondLine, thirdLine
+end)
+
+mods.aea.customFiringSound = {}
+local customFiringSound = mods.aea.customFiringSound
+customFiringSound["AEA_MISSILE_OLD_1"] = "aea_halo_railgun"
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
+	local shipManager = Hyperspace.ships(ship.iShipId)
+	if shipManager and shipManager:HasSystem(3) and shipManager.iShipId == 0 then
+		for weapon in vter(shipManager.weaponSystem.weapons) do
+			if customFiringSound[weapon.blueprint.name] and weapon.weaponVisual.bFiring and not userdata_table(weapon, "mods.aea.customFiringSound").fired then
+				userdata_table(weapon, "mods.aea.customFiringSound").fired = true
+				Hyperspace.Sounds:PlaySoundMix(customFiringSound[weapon.blueprint.name], -1, false)
+			elseif customFiringSound[weapon.blueprint.name] and userdata_table(weapon, "mods.aea.customFiringSound").fired and not weapon.weaponVisual.bFiring then
+				userdata_table(weapon, "mods.aea.customFiringSound").fired = nil
+			end
+		end
+	end
+end)
+
+mods.aea.doorSmash = {}
+local doorSmash = mods.aea.doorSmash
+doorSmash["AEA_MISSILE_OLD_1"] = true
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+    if projectile and projectile.extend.name and doorSmash[projectile.extend.name] and not userdata_table(projectile, "mods.aea.doorSmash").smashed then
+    	userdata_table(projectile, "mods.aea.doorSmash").smashed = true
+    	local roomId = get_room_at_location(shipManager, location, false)
+    	for door in vter(shipManager.ship.vDoorList) do
+			if door.iRoom1 == roomId or door.iRoom2 == roomId then
+				--print("door h:"..door.baseHealth.." c:"..door.health)
+				--door:ApplyDamage(door.baseHealth)
+				print("door time:"..door.forcedOpen.time.." current_time"..door.forcedOpen.current_time.." done"..tostring(door.forcedOpen.done).." running"..tostring(door.forcedOpen.running))
+				door.forcedOpen:Start(0)
+			end
+		end
+    end
 end)

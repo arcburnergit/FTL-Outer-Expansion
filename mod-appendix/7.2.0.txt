@@ -1,0 +1,8 @@
+# Balance Changes
+- Added Lylmik Burst Pinpoints MK 1-3
+- Changed ??? weapon to be any possible basic lylmik weapon.
+- Implemented Zeus Rail Cannon
+
+# Bug Fixes
+
+# Misc Changes

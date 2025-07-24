@@ -21,6 +21,8 @@
   <mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script>
   <!--Crew functionality scripts-->
   <mod-append:script>data/aea_scripts/aea_dark_justicier.lua</mod-append:script>
+
+  <mod-append:script>data/aea_scripts/mvtest_custom_weapon_animations.lua</mod-append:script>
 </mod:findLike>
 <dualMedical enabled="true"/>
 <mod:findLike type="customSystems">
@@ -8642,6 +8644,44 @@ Right click to attempt the ritual or cancel.
 		<name>mind</name>
 	</req>
 
+	<req name="aea_can_upgrade_teleporter" type="any">
+		<req type="all">
+			<req lvl="3" max_lvl="3">
+				<name>teleporter</name>
+			</req>
+			<req lvl="3" max_lvl="3">
+				<name>teleporter_cap_aea</name>
+			</req>
+			<name>AEA_COMPONENT_OLD</name>
+		</req>
+		<req type="all">
+			<req lvl="2" max_lvl="2">
+				<name>teleporter</name>
+			</req>
+			<req lvl="2" max_lvl="2">
+				<name>teleporter_cap_aea</name>
+			</req>
+			<name>AEA_COMPONENT_OLD</name>
+		</req>
+		<req type="all">
+			<req lvl="1" max_lvl="1">
+				<name>teleporter</name>
+			</req>
+			<req lvl="1" max_lvl="1">
+				<name>teleporter_cap_aea</name>
+			</req>
+			<name>AEA_COMPONENT_OLD</name>
+		</req>
+	</req>
+	<variable name="aea_old_teleporter_upgrades" op="set" val="0"/>
+	<req name="aea_show_upgrade_teleporter" type="all">
+		<name>aea_old_activated_cell</name>
+		<req type="all" lvl="0" max_lvl="1">
+			<name>aea_old_teleporter_upgrades</name>
+		</req>
+		<name>teleporter</name>
+	</req>
+
 	
 	<req name="aea_can_upgrade_hacking" type="any">
 		<req type="all">
@@ -8924,6 +8964,30 @@ Right click to attempt the ritual or cancel.
 		<secretDescription>Escape the clutches of a powerful race aboard any layout of the \1</secretDescription>
 		<secretIcon>S_secret</secretIcon>
 	</mod-append:aea_old_win>
+	<mod-append:aea_exile_win>	
+		<name>\1 Exile Ending</name>
+		<description>Destroy the Lylmik Gate aboard any layout of the \1</description>
+		<icon>S_AEA_EXILE_WIN</icon>
+		<secretName>\1 ????? Ending</secretName>
+		<secretDescription>Keep the universe safe from an exiled race aboard any layout of the \1</secretDescription>
+		<secretIcon>S_secret</secretIcon>
+	</mod-append:aea_exile_win>
+	<mod-append:aea_destruction_win>	
+		<name>\1 Destruction Ending</name>
+		<description>Destroy Antithesis or Complimentary aboard any layout of the \1</description>
+		<icon>S_AEA_DESTRUCTION_WIN</icon>
+		<secretName>\1 ????? Ending</secretName>
+		<secretDescription>Bring about the destruction of contrast aboard any layout of the \1</secretDescription>
+		<secretIcon>S_secret</secretIcon>
+	</mod-append:aea_destruction_win>
+	<mod-append:aea_immortal_win>	
+		<name>\1 Immortal Ending</name>
+		<description>Bring Balance back to the multiverse aboard any layout of the \1</description>
+		<icon>S_AEA_IMMORTAL_WIN</icon>
+		<secretName>\1 ????? Ending</secretName>
+		<secretDescription>Bring Balance back to the multiverse aboard any layout of the \1</secretDescription>
+		<secretIcon>S_secret</secretIcon>
+	</mod-append:aea_immortal_win>
 </mod:findLike>
 
 <mod:findLike type="store">
@@ -9816,6 +9880,10 @@ Right click to attempt the ritual or cancel.
 </mod:findLike>
 
 <mod:findLike type="achievements" limit="1">
+	<mod-append:page>
+		<section text="Outer Expansion Achievements" hidden="false">
+		</section>
+	</mod-append:page>
 	<mod-append:page>
 		<section text="Loot Transports (OE)" hidden="false">
 			<achievement name="ACH_TRANS_AEA_ACID">

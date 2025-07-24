@@ -581,10 +581,10 @@ script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, funct
 				angle = angle + Hyperspace.FPS.SpeedFactor/16 * 18
 				if angle > 360 then angle = angle - 360 end
 				Graphics.CSurface.GL_PushMatrix()
-	      Graphics.CSurface.GL_Translate(location.loc.x + 385,location.loc.y + 122,0)
-	      Graphics.CSurface.GL_Rotate(angle, 0, 0, 1)
-	      Graphics.CSurface.GL_RenderPrimitive(shipImage)
-	      Graphics.CSurface.GL_PopMatrix()
+		        Graphics.CSurface.GL_Translate(location.loc.x + 385,location.loc.y + 122,0)
+		        Graphics.CSurface.GL_Rotate(angle, 0, 0, 1)
+		        Graphics.CSurface.GL_RenderPrimitive(shipImage)
+		        Graphics.CSurface.GL_PopMatrix()
 			end
 		end
 	end

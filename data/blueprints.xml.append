@@ -3980,47 +3980,6 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<iconReplace>aea_old_scrap</iconReplace>
 </weaponBlueprint>
 
-<weaponBlueprint name="AEA_LASER_OLD_1_CELL">
-	<type>LASER</type>
-	<title>???</title>
-	<short>???</short>
-	<tip>tip_aea_old_unknown</tip>
-	<desc>???</desc>
-	<tooltip>???</tooltip>
-	<damage>2</damage>
-	<shots>1</shots>
-	<sp>0</sp>
-	<mv-pop>
-		<count>1</count>
-		<countSuper>1</countSuper>
-	</mv-pop>
-	<fireChance>3</fireChance>
-	<breachChance>4</breachChance>
-	<stunChance>2</stunChance>
-	<cooldown>12</cooldown>
-	<power>2</power>
-	<cost>68</cost>
-	<bp>10</bp>
-	<rarity>0</rarity>
-	<image>laser_heavy1</image>
-	<launchSounds>
-		<sound>aea_laser_old_fire2</sound>
-	</launchSounds>
-	<hitShipSounds>
-		<sound>hitHull1</sound>
-	</hitShipSounds>
-	<hitShieldSounds>
-		<sound>hitShield1</sound>
-		<sound>hitShield2</sound>
-		<sound>hitShield3</sound>
-	</hitShieldSounds>
-	<missSounds>
-		<sound>miss</sound>
-	</missSounds>
-	<weaponArt>aea_laser_old_1_new</weaponArt>
-	<iconImage>heavyL</iconImage>
-</weaponBlueprint>
-
 <weaponBlueprint name="AEA_LASER_OLD_1">
 	<type>LASER</type>
 	<title>'Mace' Heavy Laser</title>
@@ -4142,6 +4101,151 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	</missSounds>
 	<weaponArt>aea_laser_old_3_new</weaponArt> <!--FIXME: REPLACE IMAGE WHEN IMAGE EXISTS-->
 	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_FOCUS_OLD_1">
+    <type>BEAM</type>
+    <flavorType>Burst Pinpoint</flavorType>
+	<title>'Flail' Burst Pinpoint</title>
+	<short>'Flail'</short>
+	<tip>tip_aea_burst_pin</tip>
+	<desc>A powerful pinpoint beam that fires multiple times in a burst and is capable of taking down shields. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip> </tooltip>
+	<damage>1</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<cooldown>8</cooldown>
+	<power>1</power>
+	<cost>50</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+    <image>beam_contact</image>
+    <length>1</length>
+	<speed>1</speed>
+    <launchSounds>
+        <sound>focus_weak</sound>
+    </launchSounds>
+	<weaponArt>aea_pin_old_1</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_FOCUS_OLD_2">
+    <type>BEAM</type>
+    <flavorType>Burst Pinpoint</flavorType>
+	<title>'Flail' Burst Pinpoint</title>
+	<short>'Flail'</short>
+	<tip>tip_aea_burst_pin</tip>
+	<desc>A powerful pinpoint beam that fires multiple times in a burst and is capable of taking down shields. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip> </tooltip>
+	<damage>1</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<cooldown>10</cooldown>
+	<power>2</power>
+	<cost>60</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+    <image>beam_contact</image>
+    <length>1</length>
+	<speed>1</speed>
+    <launchSounds>
+        <sound>focus_weak</sound>
+    </launchSounds>
+	<weaponArt>aea_pin_old_2</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_FOCUS_OLD_3">
+    <type>BEAM</type>
+    <flavorType>Burst Pinpoint</flavorType>
+	<title>'Flail' Burst Pinpoint</title>
+	<short>'Flail'</short>
+	<tip>tip_aea_burst_pin</tip>
+	<desc>A powerful pinpoint beam that fires multiple times in a burst and is capable of taking down shields. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip> </tooltip>
+	<damage>1</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<cooldown>13</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+    <image>beam_contact</image>
+    <length>1</length>
+	<speed>1</speed>
+    <launchSounds>
+        <sound>focus_weak</sound>
+    </launchSounds>
+	<weaponArt>aea_pin_old_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_MISSILE_OLD_1">
+	<type>MISSILES</type>
+	<flavorType>Rail Cannon</flavorType>
+	<tip>tip_missiles</tip>
+	<title>'Zeus' Rail Cannon</title>
+	<short>'Zeus'</short>
+	<desc>A weapon which even the gods are scared of.</desc>
+	<tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
+	<descriptionOverride>A weapon which even the gods are scared of.
+	
+Stats:
+Required Power: 3
+Charge Time: 16 seconds
+Fuel Consumption: 1
+Missile Consumption: 1
+Accuracy Bonus: +30%
+
+Shots Per Charge: 1
+
+Base Hull Damage: 4
+Total System Damage: 4
+Total Crew Damage: 90
+Shield Piercing: 10
+Pierces Super Shields
+
+Breach Chance: 500%
+Forces doors open on hit for 5 seconds
+Stun Chance: 100% (3 seconds long)
+
+Default Price: 100~   -   Selling Price: 50~
+</descriptionOverride>
+	<mv-customAnimations>
+		<aea_missile_old_1_flash charging="true" charged="true" /> <!--looping defaults to true and the others default to false-->
+	</mv-customAnimations>
+	<fireTime>1.7</fireTime>
+	<accuracyMod>30</accuracyMod>
+	<damage>0</damage>
+	<missiles>1</missiles>
+	<shots>1</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>10</stunChance>
+	<cooldown>16</cooldown>
+	<speed>100</speed>
+	<power>3</power>
+	<cost>100</cost>
+	<rarity>0</rarity>
+	<image>aea_missile_old_proj</image>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_missile_old_1</weaponArt>
+	<iconImage>missile</iconImage>
 </weaponBlueprint>
 
 <weaponBlueprint name="ARTILLER_AEA_OLD_BEAM">
