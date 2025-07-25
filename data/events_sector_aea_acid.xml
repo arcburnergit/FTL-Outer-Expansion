@@ -2276,6 +2276,50 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<text>All your attempts to make life support spread the Growth end in failure, and you even manage to break it fully! Now with O2 levels dropping, you have no choice but abandon the task. The Acidic Growth doesn't seem mad, but you probably should jump away from this beacon while they still process this.</text>
 </event>
 
+<event name="AEA_ACID_DISTRESS_VAMPWEED">
+	<distressBeacon />
+	<text>The origin of distress signal here is an Acidic Vessel in perfect condition. Acidic Growth usually sticks to their nebulae, so one of them staying at a clear beacon for prolonged period of time is indeed weird.</text>
+	<choice hidden="true">
+		<text>Hail them.</text>
+		<event>
+			<text>Acidic Growth responds. "Hello. Outsider."</text>
+			<choice hidden="true">
+				<text>Why the distress beacon?</text>
+				<event>
+					<text>"Oh. We are not in distress. It is." An Acidic Soldier brings a shaking Vampweed on screen. "Rescued, that one. Strange ally, orchid with teeth. Please accept. We don't want it."</text>
+					<choice hidden="false">
+						<text>We'll take them.</text>
+						<event>
+							<text>"Gratitude." The moment the Vampweed steps onto your ship, they finally stop shaking, slumping from relief. "Thankyouthankyouthankyou! I was so scared they were gonna figure out I'm not a greenleaf. No idea what would happen to me! I'm glad you found me when you did."</text>
+							<crewMember amount="1" class="orchid_vampweed" />
+						</event>
+					</choice>
+					<choice hidden="true">
+						<text>We don't want it either.</text>
+						<event>
+							<text>The Acidic captain isn't surprised. "Not equipped, to quell distress? Understandable. We'll wait, for another ship."</text>
+						</event>
+					</choice>
+				</event>
+			</choice>				
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Not your problem.</text>
+		<event>
+			<text>You decide to move on. Someone else will help them.</text>
+            <choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
+</event>
+
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
