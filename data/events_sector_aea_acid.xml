@@ -2320,6 +2320,91 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</choice>
 </event>
 
+<event name="NEBULA_ACIDIC_AEA_ACID_ORCHID_DISTRESS_PRESSURE">
+	<distressBeacon />
+	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
+	<status type="limit" target="player" system="sensors" amount="0" />
+	<text>The distress beacon here leads you to a roughed-up Orchid vessel. Orchids are the first and, so far, only race that is allied with Acidic Growth. Still, they prefer to communicate with contained Growth, not the acidic clouds themselves.</text>
+	<choice hidden="true">
+		<text>Hail them.</text>
+		<event>
+			<text>You try to hail them several times, but they stay silent; maybe their communications are broken? You could try docking with the ship's cargo hold and proceed from there.</text>
+			<choice hidden="true">
+				<text>Dock.</text>
+				<event>
+					<text>When you dock, you realize the damage Orchid ship sustained is vastly above what you imagined; acidic gases couldn't have done it on their own. The ship is basically dissolving, creaking under pressure. You'll have to be fast if you want to save anyone - if there's anyone left.</text>
+					<choice hidden="true">
+						<text>Try using shipwide comms.</text>
+						<event>
+							<text>No matter what you try, comms don't seem to work. That's when you hear banging from one of the crates.</text>
+							<choice hidden="true">
+								<text>Open the crate.</text>
+								<event>
+									<text>A tattered Orchid falls out. Before you can suggest medical help, she starts signing frantically. "Please, please, help - I hid in the crate in hopes of surviving should the ship get destroyed. But everyone else, they - they are on the bridge, and the hallway to it is rid with holes, which get bigger and bigger. Their oxygen rate can't compete with it. Please, save them."</text>
+									<choice hidden="true">
+										<text>Sending your breathing crew to the bridge would be straight up killing them.</text>
+										<event load="OPTION_INVALID" />
+									</choice>
+									<choice hidden="true" req="BLUELIST_CREW_NO2">
+										<text>(Anaerobic Crew) Send your anaerobic crew to try repair breaches.</text>
+										<event load="AEA_ACID_ORCHID_PRESSURE_ANAEROBIC" />
+									</choice>
+									<choice hidden="true" req="BLUELIST_DRONES_REPAIR_CREW">
+										<text>(Maintenance Drone) Send your drone to repair breaches.</text>
+										<event>
+											<text>The drone speeds past you into the hallway, repairing breaches as fast as it can. While acidic gases keep eating away at the hull, it gets patched up enough for Orchids to traverse from the bridge to the cargo hold. You get to evacuate everyone before moving away from the doomed vessel, as you see it buckle under pressure. You promise to drop off everyone at the closest station, but the Orchid you first met volunteers to serve on your ship out of gratitude.</text>
+											<crewMember amount="1" class="orchid_caretaker" />
+										</event>
+									</choice>
+									<choice hidden="true" req="LIST_UPG_SEALANT" lvl="1">
+										<text>(Breach Sealant) Release nano-bots into the ship to repair breaches.</text>
+										<event>
+											<text>The nano-bots fill up the hallway, repairing breaches as fast as they can. While acidic gases keep eating away at the hull, it gets patched up enough for Orchids to traverse from the bridge to the cargo hold. You get to evacuate everyone before moving away from the doomed vessel, as you see it buckle under pressure. You promise to drop off everyone at the closest station, but the Orchid you first met volunteers to serve on your ship out of gratitude.</text>
+											<crewMember amount="1" class="orchid_caretaker" />
+										</event>
+									</choice>
+									<choice hidden="true">
+										<text>We can't help.</text>
+										<event>
+											<text>The Orchid, dejected, follows you onboard. Just as you move away from the vessel, it buckles under pressure, the bridge exploding into countless pieces of glass and metal, sending the remaining crew flying into space. It's terrific, but you can't do anything. You promise to drop the Orchid off at the closest station.</text>
+										</event>
+									</choice>
+								</event>
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Too risky. Move on.</text>
+				<event>
+					<text>You decide to move on before you meet the same fate.</text>
+				</event>				
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore them.</text>
+		<event>
+			<text>You decide to move on before you meet the same fate.</text>
+		</event>
+	</choice>
+</event>
+
+<eventList name="AEA_ACID_ORCHID_PRESSURE_ANAEROBIC">
+	<event load="AEA_ACID_ORCHID_PRESSURE_ANAEROBIC_SUCCESS" />
+	<event load="AEA_ACID_ORCHID_PRESSURE_ANAEROBIC_FAILURE" />
+</eventList>
+
+<event name="AEA_ACID_ORCHID_PRESSURE_ANAEROBIC_SUCCESS">
+	<text>Your anaerobic crewmember works fast, and, miraculously, manages to sustain the oxygen in the hallway enough for Orchids to evacuate! Everyone gets on your ship and you move away from the doomed vessel, seeing it buckle under pressure. You promise to drop off everyone at the closest station, but the Orchid you first met volunteers to serve on your ship out of gratitude.</text>
+	<crewMember amount="1" class="orchid_caretaker" />
+</event>
+
+<event name="AEA_ACID_ORCHID_PRESSURE_ANAEROBIC_FAILURE">
+	<text>Your anaerobic crewmember tries as they might, but, in the middle of patching up the hull, the vessel buckles under pressure, the bridge exploding into countless pieces of glass and metal, sending the remaining crew flying into space. You manage to save the Orchid you met and your stranded crewmember, but everyone else has been lost. You promise to drop the Orchid off at the closest station.</text>
+</event>
+
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
