@@ -3078,6 +3078,212 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</choice>
 </event>
 
+<event name="NEBULA_ACIDIC_AEA_ACID_HIDEANDSEEK" unique="true">
+	<beaconType id="map_icon_aea_acid_nebula" global="false">
+		<color r="138" g="237" b="31" a="1"/>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
+	<status type="limit" target="player" system="sensors" amount="0" />
+	<text>The nebula is thick here, but you still see hull of an elite Acidic vessel passing nearby. It's likely it's protecting this beacon, and the fight might be inevitable; you can only get advantage on it.</text>
+	<choice hidden="true">
+		<text>Try to follow it.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LIST_1" />
+	</choice>
+	<choice hidden="true" req="cloaking" lvl="1">
+		<text>(Cloaking) Hide using your cloak.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_CLOAK" />
+	</choice>
+	<choice hidden="true">
+		<text>Try to hide.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_WAIT_LIST" />
+	</choice>
+</event>
+
+<eventList name="AEA_ACID_HIDEANDSEEK_LIST_1">
+	<event load="AEA_ACID_HIDEANDSEEK_LIST_1_1" />
+	<event load="AEA_ACID_HIDEANDSEEK_LIST_1_2" />
+</eventList>
+
+<event name="AEA_ACID_HIDEANDSEEK_LIST_1_1">
+	<text>The elite vessel turns right.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LIST_1_1_CHOICE" />
+	</choice>
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_LIST_1_2">
+	<text>The elite vessel turns left.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LIST_1_2_CHOICE" />
+	</choice>
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_LIST_1_1_CHOICE">
+	<text>Where do you follow?</text>
+	<choice hidden="true">
+		<text>Right.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LIST_2" />
+	</choice>
+	<choice hidden="true">
+		<text>Left.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LOST" />
+	</choice>
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_LIST_1_2_CHOICE">
+	<text>Where do you follow?</text>
+	<choice hidden="true">
+		<text>Right.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LOST" />
+	</choice>
+	<choice hidden="true">
+		<text>Left.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LIST_2" />
+	</choice>
+</event>
+
+<eventList name="AEA_ACID_HIDEANDSEEK_LIST_2">
+	<event load="AEA_ACID_HIDEANDSEEK_LIST_2_1" />
+	<event load="AEA_ACID_HIDEANDSEEK_LIST_2_2" />
+</eventList>
+
+<event name="AEA_ACID_HIDEANDSEEK_LIST_2_1">
+	<text>The elite vessel turns right.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LIST_2_1_CHOICE" />
+	</choice>
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_LIST_2_2">
+	<text>The elite vessel turns left.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LIST_2_2_CHOICE" />
+	</choice>
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_LIST_2_1_CHOICE">
+	<text>Where do you follow?</text>
+	<choice hidden="true">
+		<text>Right.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LIST_3" />
+	</choice>
+	<choice hidden="true">
+		<text>Left.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LOST" />
+	</choice>
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_LIST_2_2_CHOICE">
+	<text>Where do you follow?</text>
+	<choice hidden="true">
+		<text>Right.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LOST" />
+	</choice>
+	<choice hidden="true">
+		<text>Left.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LIST_3" />
+	</choice>
+</event>
+
+<eventList name="AEA_ACID_HIDEANDSEEK_LIST_3">
+	<event load="AEA_ACID_HIDEANDSEEK_LIST_3_1" />
+	<event load="AEA_ACID_HIDEANDSEEK_LIST_3_2" />
+</eventList>
+
+<event name="AEA_ACID_HIDEANDSEEK_LIST_3_1">
+	<text>The elite vessel turns right.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LIST_3_1_CHOICE" />
+	</choice>
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_LIST_3_2">
+	<text>The elite vessel turns left.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LIST_3_2_CHOICE" />
+	</choice>
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_LIST_3_1_CHOICE">
+	<text>Where do you follow?</text>
+	<choice hidden="true">
+		<text>Right.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_ADVANTAGE" />
+	</choice>
+	<choice hidden="true">
+		<text>Left.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LOST" />
+	</choice>
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_LIST_3_2_CHOICE">
+	<text>Where do you follow?</text>
+	<choice hidden="true">
+		<text>Right.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_LOST" />
+	</choice>
+	<choice hidden="true">
+		<text>Left.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_ADVANTAGE" />
+	</choice>
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_LOST">
+	<text>It seems like you have gotten lost. Nothing to do but wait.</text>
+	<choice hidden="true" req="cloaking" lvl="1">
+		<text>(Cloaking) Hide using your cloak.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_CLOAK" />
+	</choice>
+	<choice hidden="true">
+		<text>Wait.</text>
+		<event load="AEA_ACID_HIDEANDSEEK_WAIT_LIST" />
+	</choice>
+</event>
+
+<eventList name="AEA_ACID_HIDEANDSEEK_WAIT_LIST">
+	<event load="AEA_ACID_HIDEANDSEEK_NOTFOUND" />
+
+	<event load="AEA_ACID_HIDEANDSEEK_FOUND" />	
+	<event load="AEA_ACID_HIDEANDSEEK_FOUND" />	
+</eventList>
+
+<event name="AEA_ACID_HIDEANDSEEK_NOTFOUND">
+	<text>Due to some sort of miracle, you haven't been found. You should jump away from this beacon, and fast.</text>
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_CLOAK">
+	<text>Your cloaking system proves effective, and you manage to stay hidden long enough to charge FTL drive. Nevertheless, you should jump away from this beacon, and fast.</text>
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_FOUND">
+	<text>A powerful shot pierces your hull, leaving marks of erosion behind. You've been found.</text>
+	<ship load="SHIP_AEA_ACID_ELITE_FIGHT_NOSURRENDER" hostile="true" />
+	<damage amount="3" system="engines" effect="breach"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>	
+</event>
+
+<event name="AEA_ACID_HIDEANDSEEK_ADVANTAGE">
+	<text>You followed the elite vessel perfectly, and gained an advantage! You fire a shot through its defenses before it can notice you. They have been weakened, but there's still battle ahead.</text>
+	<ship load="SHIP_AEA_ACID_ELITE_FIGHT_NOSURRENDER" hostile="true" />
+	<enemyDamage amount="3" system="engines" effect="breach"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>	
+</event>
+
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
