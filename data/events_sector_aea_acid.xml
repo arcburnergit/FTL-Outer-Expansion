@@ -964,7 +964,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 <eventList name="NEBULA_AEA_ACID_WRECK_LIST">
 	<event name="NEBULA_AEA_ACID_WRECK_RWEAP">
         <text>You dock with the wreck and find it completely devoid of life. There is, however, an undamaged weapon cache in the cargo hold. You bring it back and find a pristine weapon inside.</text>
-        <weapon name="LIST_WEAPONS_ALL_CRAPBUCKET"/>
+        <weapon name="RANDOM"/>
     </event>
     <event load="NEBULA_AEA_ACID_WRECK_RWEAP"/>
     <event>

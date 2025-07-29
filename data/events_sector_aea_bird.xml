@@ -1334,7 +1334,7 @@ Somehow you didn't notice that the federation ship was full of rebels.</text>
 	<choice hidden="true">
 		<text>Trap them on the station by blowing up the shuttles.</text>
 		<event>
-			<text>It takes a few volleys but you manage to detonate all of the shuttles docked to the station. However as you destroy the last shuttle a hanger you thought empty opens, revealing a Gi Transport, this transport appears to be upgraded and quite dangerous. You wonder if this is why the military base was so secret, however you're cut off by the transport leave the hanger flying straight at your own ship.</text>
+			<text>It takes a few volleys but you manage to detonate all of the shuttles docked to the station. However as you destroy the last shuttle a hangar you thought empty opens, revealing a Gi Transport, this transport appears to be upgraded and quite dangerous. You wonder if this is why the military base was so secret, however you're cut off by the transport leave the hangar flying straight at your own ship.</text>
 			<ship load="SHIP_AEA_BIRD_REBEL_TRANSPORT" hostile="true"/>
 			<choice hidden="true">
 				<text>Continue...</text>

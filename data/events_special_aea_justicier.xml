@@ -1,6 +1,6 @@
 <FTL>
 <event name="AEA_MODIFY_CLONEBAY">
-	<text>The Dark Justicier can illegally modify your clone bay.
+	<text>You can illegally modify your clone bay.
 	[Effects: Clone bay no longer clones dead crew, on jump modified clone bay produces two random illegal clones who have a death timer of 30 seconds, modified clone bay prevents death timers from progressing while powered.]</text>
 	<choice hidden="true">
 		<text>Convert your clone bay. [Cost: 40~, 3|]</text>
@@ -14,7 +14,7 @@
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event>
-					<text>The changes are made and you are left with a modifier clonebay.</text>
+					<text>The changes are made.</text>
 					<system name="aea_clone_crime" />
 				</event>
 			</choice>
@@ -27,6 +27,7 @@
 </event>
 
 <event name="AEA_JUSTICIER_BOOK_LOAD">
+    <playSound>aea_page_turn</playSound>
     <loadEvent>AEA_JUSTICIER_BOOK</loadEvent>
 </event>
 
@@ -52,18 +53,24 @@
         <text>Read the section on Offense Rituals.</text>
         <event load="AEA_JUSTICIER_BOOK_ATTACK" />
     </choice>
+    <choice req="AEA_JUSTICIER_BOOK_TAKE" blue="false">
+        <text>Stare into the [style[color:FF0000]]Book[[/style]].</text>
+        <event load="AEA_JUSTICIER_BOOK_STARE" />
+    </choice>
 </event>
 
 <event name="AEA_JUSTICIER_BOOK_RULES">
+    <playSound>aea_page_turn</playSound>
     <text>You turn to the section of the book about the Rules of Ritual.
 Some Rituals may have multiple requirements, in which case the lowest one on the list is used.
-
+Crew sacrificed by a ritual can be cloned but will be weakened for 3 jumps.
 
 
 
 
 
         
+
     </text>
     <choice hidden="true">
         <text>Go Back.</text>
@@ -74,6 +81,7 @@ Some Rituals may have multiple requirements, in which case the lowest one on the
     <loadEvent>AEA_JUSTICIER_BOOK_CREW</loadEvent>
 </event>
 <event name="AEA_JUSTICIER_BOOK_CREW">
+    <playSound>aea_page_turn</playSound>
     <text>You turn to the section of the book about Blood Rituals.</text>
     <choice hidden="true">
         <text>Go Back.</text>
@@ -84,6 +92,7 @@ Some Rituals may have multiple requirements, in which case the lowest one on the
     <loadEvent>AEA_JUSTICIER_BOOK_TRADE</loadEvent>
 </event>
 <event name="AEA_JUSTICIER_BOOK_TRADE">
+    <playSound>aea_page_turn</playSound>
     <text>You turn to the section of the book about Contract Rituals.</text>
     <choice hidden="true">
         <text>Go Back.</text>
@@ -94,6 +103,7 @@ Some Rituals may have multiple requirements, in which case the lowest one on the
     <loadEvent>AEA_JUSTICIER_BOOK_ATTACK</loadEvent>
 </event>
 <event name="AEA_JUSTICIER_BOOK_ATTACK">
+    <playSound>aea_page_turn</playSound>
     <text>You turn to the section of the book about Offense Rituals.</text>
     <choice hidden="true">
         <text>Go Back.</text>
@@ -102,6 +112,7 @@ Some Rituals may have multiple requirements, in which case the lowest one on the
 </event>
 
 <event name="AEA_JUSTICIER_BOOK_TEMPLATE_CREW">
+    <playSound>aea_page_turn</playSound>
     <text>Test</text>
     <choice hidden="true">
         <text>Go Back.</text>
@@ -110,6 +121,7 @@ Some Rituals may have multiple requirements, in which case the lowest one on the
 </event>
 
 <event name="AEA_JUSTICIER_BOOK_TEMPLATE_TRADE">
+    <playSound>aea_page_turn</playSound>
     <text>Test</text>
     <choice hidden="true">
         <text>Go Back.</text>
@@ -118,6 +130,7 @@ Some Rituals may have multiple requirements, in which case the lowest one on the
 </event>
 
 <event name="AEA_JUSTICIER_BOOK_TEMPLATE_ATTACK">
+    <playSound>aea_page_turn</playSound>
     <text>Test</text>
     <choice hidden="true">
         <text>Go Back.</text>
@@ -125,7 +138,75 @@ Some Rituals may have multiple requirements, in which case the lowest one on the
     </choice>
 </event>
 
+<event name="AEA_EVENT_EMPTY">
+  <text>test</text>
+  <choice hidden="true">
+    <text>test</text>
+    <event name="AEA_EVENT_EMPTY_LOAD">
+      <loadEvent>AEA_EVENT_EMPTY</loadEvent>
+    </event>
+  </choice>
+</event>
+
+<event name="AEA_EVENT_EXIT"/>
+
 <event name="AEA_JUSTICIER_EMPTY"/>
+
+<event name="AEA_JUSTICIER_BOOK_LOAD_UNLOCK">
+    <achievement>ACH_AEA_BOOK_UNLOCK</achievement>
+    <loadEvent>AEA_JUSTICIER_BOOK</loadEvent>
+</event>
+
+<event name="AEA_JUSTICIER_BOOK_UNLOCK">
+    <text>YOU SHOULD NOT BE SEEING THIS, IF YOU ARE CHECK TO MAKE SURE YOUR HYPERSPACE IS UP TO DATE.</text>
+	<metaVariable name="aea_dark_book_unlock" op="set" val="1" />
+	<variable name="aea_dark_book_taken" op="set" val="1" />
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event load="AEA_JUSTICIER_BOOK_LOAD"/>
+    </choice>
+</event>
+
+<event name="AEA_JUSTICIER_BOOK_STARE">
+    <text>YOU SHOULD NOT BE SEEING THIS, IF YOU ARE CHECK TO MAKE SURE YOUR HYPERSPACE IS UP TO DATE.</text>
+	<variable name="aea_dark_book_taken" op="set" val="1" />
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event load="AEA_JUSTICIER_BOOK_LOAD"/>
+    </choice>
+</event>
+
+<event name="AEA_JUSTICIER_BOOK_SELECT">
+    <text>The [style[color:FF0000]]Book[[/style]] appears to stare at you, compelling you to reach out and take it for yourself.</text>
+    <choice>
+        <text>Take the [style[color:FF0000]]Book[[/style]]...</text>
+        <event>
+            <text>As you take the [style[color:FF0000]]Book[[/style]] you feel a tingle down your spine as if being watched or [style[color:FFC800]]hunted[[/style]].</text>
+	        <variable name="aea_dark_book_taken" op="set" val="1" />
+            <eventButton name="UI_AEA_BOOK_BUTTON">
+                <event load="AEA_JUSTICIER_BOOK_ACTIVATE"/>
+                <image border="12">statusUI/top_aea_book</image>
+                <customLocation x="105" y="200"/>
+				<req lvl="1">aea_dark_book_ready</req>
+                <tooltip>Perform a ritual sacrifice. Cannot target mind controlled crew.</tooltip>
+                <inactiveTooltip>Active or on cooldown. (20 seconds)</inactiveTooltip>
+                <jumpClear>false</jumpClear>
+                <noDanger>false</noDanger>
+            </eventButton>
+        </event>
+    </choice>
+</event>
+
+<event name="AEA_JUSTICIER_BOOK_COOLDOWN_START">
+    <variable name="aea_dark_book_ready" op="set" val="0" />
+    <triggeredEvent event="AEA_JUSTICIER_BOOK_COOLDOWN_END" seeded="false" loops="1" minTime="20" maxTime="20" />
+</event>
+
+<event name="AEA_JUSTICIER_BOOK_COOLDOWN_END">
+    <variable name="aea_dark_book_ready" op="set" val="1" />
+</event>
+
+<event name="AEA_JUSTICIER_BOOK_ACTIVATE"/>
 
 <event name="AEA_SURGE_FIRE">
 	<superBarrage player="true" name="AEA_SURGE_DARK_FIRE"/>
@@ -198,12 +279,12 @@ Some Rituals may have multiple requirements, in which case the lowest one on the
 <event name="DESTROYED_JUSTICE_BATTLESHIP">
     <text>The ship fragments and explodes, as it does you detect an energy pulse, resembling that from a teleportation system, from the vessel. You scrap the remains of the ship.</text>
     <autoReward level="MED">standard</autoReward>
-	<variable name="aea_justice_battleship" op="set" val="1"/>
+	<variable name="aea_justicier_roamer_one_killed" op="set" val="1"/>
 </event> 
 <event name="DEAD_CREW_JUSTICE_BATTLESHIP">
     <text>As the last of the crew fall dead, you recall that just before you were able to kill the mysterious captain of the vessel, they teleported away. You scrap the remains of the ship.</text>
     <autoReward level="HIGH">standard</autoReward>
-	<variable name="aea_justice_battleship" op="set" val="1"/>
+	<variable name="aea_justicier_roamer_one_killed" op="set" val="1"/>
 </event> 
 
 <event name="AEA_JUSTICIER_FIGHT_TWO">

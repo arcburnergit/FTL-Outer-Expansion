@@ -228,7 +228,7 @@
 <shipBlueprint name="PLAYER_SHIP_AEA_ACID_ARTY_2" layout="aeap_acid_arty_b" img="aeap_acid_arty_b">
 	<class>Acidic Cruiser</class>
 	<name>The Caustic</name>
-	<desc>This prototype design incorporates duel quick firing artillery beams to drill through enemy ships.</desc>
+	<desc>This prototype design incorporates dual quick firing artillery beams to drill through enemy ships.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_ACID_ARTY_2_unlock" />
 	<systemList>
 		<aea_clone_crime max="3" power="1" room="13" start="false">
@@ -257,7 +257,7 @@
 				<number>1</number>
 			</slot>
 		</doors>
-		<drones power="2" max="8" room="3" start="true" img="room_drones_15" />
+		<drones power="3" max="8" room="3" start="true" img="room_drones_15" />
 		<engines power="2" room="15" start="true" img="room_engines_7">
 			<slot>
 				<direction>right</direction>
@@ -303,6 +303,7 @@
 	<weaponList missiles="4" count="2" />
 	<droneList drones="4" count="3">
 		<drone name="PEST_DEBUFF" />
+		<drone name="COMBAT_1_LASER" />
 	</droneList>
 	<health amount="30" />
 	<maxPower amount="8" />
@@ -349,7 +350,7 @@
 			</slot>
 		</engines>
 		<hacking power="1" room="10" start="false" img="room_hacking_12" />
-		<medbay power="1" room="17" start="true" img="room_medbay_8">
+		<medbay power="2" room="17" start="true" img="room_medbay_8">
 			<slot>
 				<number>-2</number>
 			</slot>
@@ -547,7 +548,7 @@
 				<number>0</number>
 			</slot>
 		</shields>
-		<teleporter power="1" room="12" start="true" />
+		<teleporter power="2" room="12" start="true" />
 		<weapons power="2" max="9" room="0" start="true" img="room_weapons_12">
 			<slot>
 				<direction>right</direction>
@@ -563,7 +564,7 @@
 	</weaponList>
 	<droneList drones="1" count="3" />
 	<health amount="24" />
-	<maxPower amount="6" />
+	<maxPower amount="7" />
 	<shieldImage>mup_small_long2</shieldImage>
     <mv-mapImage>map_icon_aeap_acid_long_a</mv-mapImage>
 </shipBlueprint>
@@ -599,7 +600,7 @@
 			</slot>
 		</doors>
 		<drones power="2" max="8" room="16" start="false" img="room_drones_15" />
-		<engines power="1" room="0" start="true" img="room_engines_10">
+		<engines power="3" room="0" start="true" img="room_engines_10">
 			<slot>
 				<direction>left</direction>
 				<number>0</number>
@@ -951,7 +952,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<wallAnim>aea_acid_wall</wallAnim>  
 		</roomAnim>
 	</erosion>
-	<cooldown>14</cooldown>
+	<cooldown>13</cooldown>
 	<power>1</power>
 	<cost>40</cost>
 	<bp>7</bp>
@@ -1059,7 +1060,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<wallAnim>aea_acid_wall</wallAnim>  
 		</roomAnim>
 	</erosion>
-	<cooldown>14</cooldown>
+	<cooldown>16</cooldown>
 	<power>3</power>
 	<cost>70</cost>
 	<bp>7</bp>
@@ -1113,7 +1114,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<wallAnim>aea_acid_wall</wallAnim>  
 		</roomAnim>
 	</erosion>
-	<cooldown>14</cooldown>
+	<cooldown>18</cooldown>
 	<power>4</power>
 	<cost>120</cost>
 	<bp>7</bp>
@@ -1165,7 +1166,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<wallAnim>aea_acid_wall</wallAnim>  
 		</roomAnim>
 	</erosion>
-	<cooldown>20</cooldown>
+	<cooldown>22</cooldown>
 	<power>4</power>
 	<cost>120</cost>
 	<bp>7</bp>
@@ -1671,7 +1672,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 			</slot>
 		</engines>
 		<hacking power="1" room="8" start="false" img="room_hacking_9" />
-		<medbay power="1" room="13" start="true" img="room_medbay_10">
+		<medbay power="2" room="13" start="true" img="room_medbay_10">
 			<slot>
 				<number>-2</number>
 			</slot>
@@ -1697,7 +1698,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 			</slot>
 		</shields>
 		<teleporter power="2" room="5" start="true" />
-		<weapons power="1" max="8" room="9" start="true" img="room_weapons_5">
+		<weapons power="2" max="8" room="9" start="true" img="room_weapons_5">
 			<slot>
 				<direction>right</direction>
 				<number>1</number>
@@ -1708,10 +1709,11 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<droneSlots>3</droneSlots>
 	<weaponList missiles="4" count="3">
 		<weapon name="AEA_LASER_NECRO_1" />
+		<weapon name="AEA_LASER_NECRO_1" />
 	</weaponList>
 	<droneList drones="4" count="3" />
 	<health amount="30" />
-	<maxPower amount="7" />
+	<maxPower amount="8" />
 	<crewCount amount="1" class="aea_necro_engi" />
 	<crewCount amount="1" class="aea_necro_engi" />
 	<crewCount amount="1" class="aea_necro_engi" />
@@ -1794,7 +1796,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="4" count="4">
 		<weapon name="AEA_LASER_NECRO_1" />
-		<weapon name="ION_2" />
+		<weapon name="LASER_BURST_2" />
 	</weaponList>
 	<droneList drones="5" count="2" />
 	<health amount="30" />
@@ -1925,7 +1927,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 			</slot>
 		</doors>
 		<drones power="2" max="8" room="11" start="true" img="room_drones_12" />
-		<engines power="1" room="8" start="true" img="room_engines_9">
+		<engines power="2" room="8" start="true" img="room_engines_9">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -1957,7 +1959,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<number>1</number>
 			</slot>
 		</shields>
-		<teleporter power="1" room="5" start="true" />
+		<teleporter power="2" room="5" start="true" />
 		<weapons power="2" max="8" room="10" start="false" img="room_weapons_12">
 			<slot>
 				<direction>right</direction>
@@ -1973,7 +1975,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 		<drone name="DOCTOR_DEFENSE"/>
 	</droneList>
 	<health amount="30" />
-	<maxPower amount="7" />
+	<maxPower amount="9" />
 	<crewCount amount="1" class="engi" />
 	<crewCount amount="1" class="aea_necro_lich" />
 	<crewCount amount="1" class="aea_necro_lich" />
@@ -2145,6 +2147,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<droneSlots>3</droneSlots>
 	<weaponList missiles="2" count="3">
 		<weapon name="AEA_LASER_NECRO_2" />
+		<weapon name="LASER_CONSERVATIVE" />
 	</weaponList>
 	<droneList drones="12" count="3">
 		<drone name="AEA_COMBAT_NECRO_1_BEAM" />
@@ -2233,6 +2236,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<droneSlots>3</droneSlots>
 	<weaponList missiles="5" count="3">
 		<weapon name="AEA_LASER_NECRO_CHARGE" />
+		<weapon name="BEAM_CONSERVATIVE" />
 	</weaponList>
 	<droneList drones="5" count="3" />
 	<health amount="30" />
@@ -2608,7 +2612,7 @@ Shatters into 3 fragments on 1 shield layer, 2 on 2 layers, 1 on 3 layers, 0 oth
 Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage reduction effect to enemy crew.</desc>
 	<tooltip>Heavy laser; 2 damage, 1 shot. 9 second cooldown.</tooltip>
 	<damage>2</damage>
-	<persDamage>-1</persDamage>
+	<sysDamage>-1</sysDamage>
 	<shots>1</shots>
 	<sp>0</sp>
 	<fireChance>0</fireChance>
@@ -2650,7 +2654,7 @@ Shatters into 3 fragments on 1 shield layer, 2 on 2 layers, 1 on 3 layers, 0 oth
 Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage reduction effect to enemy crew.</desc>
 	<tooltip>Heavy laser; 2 damage, 1 shot. 9 second cooldown.</tooltip>
 	<damage>2</damage>
-	<persDamage>-1</persDamage>
+	<sysDamage>-1</sysDamage>
 	<shots>2</shots>
 	<sp>0</sp>
 	<fireChance>0</fireChance>
@@ -2692,7 +2696,7 @@ Shatters into 3 fragments on 1 shield layer, 2 on 2 layers, 1 on 3 layers, 0 oth
 Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage reduction effect to enemy crew.</desc>
 	<tooltip>Heavy laser; 2 damage, 1 shot. 9 second cooldown.</tooltip>
 	<damage>2</damage>
-	<persDamage>-1</persDamage>
+	<sysDamage>-1</sysDamage>
 	<shots>3</shots>
 	<sp>0</sp>
 	<fireChance>0</fireChance>
@@ -2734,7 +2738,6 @@ Shatters into 3 fragments on 1 shield layer, 2 on 2 layers, 1 on 3 layers, 0 oth
 Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage reduction effect to enemy crew.</desc>
 	<tooltip>Heavy laser; 2 damage, 1 shot. 9 second cooldown.</tooltip>
 	<damage>1</damage>
-	<persDamage>-1</persDamage>
 	<shots>4</shots>
 	<sp>0</sp>
 	<fireChance>0</fireChance>
@@ -2776,7 +2779,7 @@ Shatters into 3 fragments on 1 shield layer, 2 on 2 layers, 1 on 3 layers, 0 oth
 Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage reduction effect to enemy crew.</desc>
 	<tooltip>Heavy laser; 2 damage, 1 shot. 9 second cooldown.</tooltip>
 	<damage>2</damage>
-	<persDamage>-1</persDamage>
+	<sysDamage>-1</sysDamage>
 	<shots>1</shots>
 	<sp>0</sp>
 	<fireChance>0</fireChance>
@@ -3208,7 +3211,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="6" count="4">
-		<weapon name="LASER_HEAVY_1" />
+		<weapon name="AEA_FOCUS_OLD_1" />
 		<weapon name="LASER_LIGHT" />
 	</weaponList>
 	<droneList drones="3" count="2" />
@@ -3385,8 +3388,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	</systemList>
 	<weaponSlots>3</weaponSlots>
 	<droneSlots>3</droneSlots>
-	<weaponList missiles="9" count="3">
-		<weapon name="BEAM_FIRE" />
+	<weaponList missiles="7" count="3">
+		<weapon name="AEA_MISSILE_OLD_3" />
 		<weapon name="ENERGY_1" />
 	</weaponList>
 	<droneList drones="1" count="3" />
@@ -3729,7 +3732,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<weaponSlots>2</weaponSlots>
 	<droneSlots>4</droneSlots>
 	<weaponList missiles="3" count="2">
-		<weapon name="LASER_HULL_2" />
+		<weapon name="AEA_MISSILE_OLD_2" />
 	</weaponList>
 	<droneList drones="6" count="4">
 		<drone name="REPAIR" />
@@ -3817,7 +3820,7 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="4" count="4">
-		<weapon name="AEA_LASER_ACID_1" />
+		<weapon name="AEA_LASER_ACID_2" />
 		<weapon name="AEA_LASER_NECRO_1" />
 	</weaponList>
 	<droneList drones="4" count="2" />
@@ -4187,7 +4190,163 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 <weaponBlueprint name="AEA_MISSILE_OLD_1">
 	<type>MISSILES</type>
 	<flavorType>Rail Cannon</flavorType>
-	<tip>tip_missiles</tip>
+	<tip>tip_aea_rail_cannon</tip>
+	<title>'Athena' Rail Cannon</title>
+	<short>'Athena'</short>
+	<desc>A weapon which even the gods are scared of.</desc>
+	<tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
+	<descriptionOverride>A weapon which even the gods are scared of.
+	
+Stats:
+Required Power: 1
+Required Fuel to Power: 1
+Charge Time: 12 seconds
+Accuracy Bonus: +30%
+
+Shots Per Charge: 1
+
+Base Hull Damage: 2
+Total System Damage: 2
+Total Crew Damage: 30
+Shield Piercing: 10
+Pierces Super Shields
+
+Breach Chance: 50%
+
+Default Price: 70~   -   Selling Price: 35~
+</descriptionOverride>
+<tooltipOverride>Required Power: 1
+Required Fuel to Power: 1
+Charge Time: 12 seconds
+Accuracy Bonus: +30%
+
+Shots Per Charge: 1
+
+Base Hull Damage: 2
+Total System Damage: 2
+Total Crew Damage: 30
+Shield Piercing: 10
+Pierces Super Shields
+
+Breach Chance: 50%</tooltipOverride>
+	<mv-customAnimations> <!-- Goes top to bottom in rendering order, so _start will render over the top and hide _wave when turned on.-->
+		<aea_missile_old_3_wave charging="true" charged="true" />
+		<aea_missile_old_3_start looping="false" charging="true"/>
+	</mv-customAnimations>
+	<fireTime>1.8</fireTime>
+	<accuracyMod>30</accuracyMod>
+	<damage>0</damage>
+	<shots>1</shots>
+	<missiles>0</missiles>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>5</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>12</cooldown>
+	<speed>100</speed>
+	<power>1</power>
+	<cost>70</cost>
+	<rarity>0</rarity>
+	<image>aea_missile_old_proj_2</image>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_missile_old_3</weaponArt>
+    <iconReplace>aea_missile_old_3_icon</iconReplace>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_MISSILE_OLD_2">
+	<type>MISSILES</type>
+	<flavorType>Rail Cannon</flavorType>
+	<tip>tip_aea_rail_cannon</tip>
+	<title>'Poseidon' Rail Cannon</title>
+	<short>'Poseidon'</short>
+	<desc>A weapon which even the gods are scared of.</desc>
+	<tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
+	<descriptionOverride>A weapon which even the gods are scared of.
+	
+Stats:
+Required Power: 2
+Required Fuel to Power: 1
+Charge Time: 14 seconds
+Accuracy Bonus: +30%
+
+Shots Per Charge: 1
+
+Base Hull Damage: 3
+Total System Damage: 3
+Total Crew Damage: 45
+Shield Piercing: 10
+Pierces Super Shields
+
+Breach Chance: 100%
+
+Default Price: 80~   -   Selling Price: 40~
+</descriptionOverride>
+<tooltipOverride>Required Power: 2
+Required Fuel to Power: 1
+Charge Time: 14 seconds
+Accuracy Bonus: +30%
+
+Shots Per Charge: 1
+
+Base Hull Damage: 3
+Total System Damage: 3
+Total Crew Damage: 45
+Shield Piercing: 10
+Pierces Super Shields
+
+Breach Chance: 100%</tooltipOverride>
+	<mv-customAnimations>
+		<aea_missile_old_2_barrels_slow depowered="true"/>
+		<aea_missile_old_2_barrels charging="true" />
+		<aea_missile_old_2_barrels_fast charged="true" />
+		<aea_missile_old_2_barrels_fire2 looping="false" firing="true" />
+	</mv-customAnimations>
+	<fireTime>1.8</fireTime>
+	<accuracyMod>30</accuracyMod>
+	<damage>0</damage>
+	<shots>1</shots>
+	<missiles>0</missiles>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>14</cooldown>
+	<speed>100</speed>
+	<power>2</power>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<image>aea_missile_old_proj_2</image>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_missile_old_2</weaponArt>
+    <iconReplace>aea_missile_old_2_icon</iconReplace>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_MISSILE_OLD_3">
+	<type>MISSILES</type>
+	<flavorType>Rail Cannon</flavorType>
+	<tip>tip_aea_rail_cannon</tip>
 	<title>'Zeus' Rail Cannon</title>
 	<short>'Zeus'</short>
 	<desc>A weapon which even the gods are scared of.</desc>
@@ -4196,9 +4355,8 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	
 Stats:
 Required Power: 3
+Required Fuel to Power: 1
 Charge Time: 16 seconds
-Fuel Consumption: 1
-Missile Consumption: 1
 Accuracy Bonus: +30%
 
 Shots Per Charge: 1
@@ -4215,13 +4373,29 @@ Stun Chance: 100% (3 seconds long)
 
 Default Price: 100~   -   Selling Price: 50~
 </descriptionOverride>
+<tooltipOverride>Required Power: 3
+Required Fuel to Power: 1
+Charge Time: 16 seconds
+Accuracy Bonus: +30%
+
+Shots Per Charge: 1
+
+Base Hull Damage: 4
+Total System Damage: 4
+Total Crew Damage: 90
+Shield Piercing: 10
+Pierces Super Shields
+
+Breach Chance: 500%
+Forces doors open on hit for 5 seconds
+Stun Chance: 100% (3 seconds long)</tooltipOverride>
 	<mv-customAnimations>
 		<aea_missile_old_1_flash charging="true" charged="true" /> <!--looping defaults to true and the others default to false-->
 	</mv-customAnimations>
-	<fireTime>1.7</fireTime>
+	<fireTime>1.8</fireTime>
 	<accuracyMod>30</accuracyMod>
 	<damage>0</damage>
-	<missiles>1</missiles>
+	<missiles>0</missiles>
 	<shots>1</shots>
 	<sp>10</sp>
 	<fireChance>0</fireChance>
@@ -4245,6 +4419,137 @@ Default Price: 100~   -   Selling Price: 50~
 		<sound>miss</sound>
 	</missSounds>
 	<weaponArt>aea_missile_old_1</weaponArt>
+    <iconReplace>aea_missile_old_1_icon</iconReplace>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_MISSILE_OLD_1_ENEMY">
+	<type>MISSILES</type>
+	<flavorType>Rail Cannon</flavorType>
+	<tip>tip_aea_rail_cannon</tip>
+	<title>'Athena' Rail Cannon</title>
+	<short>'Athena'</short>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
+	<mv-customAnimations> <!-- Goes top to bottom in rendering order, so _start will render over the top and hide _wave when turned on.-->
+		<aea_missile_old_3_wave charging="true" charged="true" />
+		<aea_missile_old_3_start looping="false" charging="true"/>
+	</mv-customAnimations>
+	<fireTime>1.8</fireTime>
+	<accuracyMod>30</accuracyMod>
+	<damage>0</damage>
+	<shots>1</shots>
+	<missiles>0</missiles>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>5</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>16</cooldown>
+	<speed>100</speed>
+	<power>1</power>
+	<cost>70</cost>
+	<rarity>0</rarity>
+	<image>aea_missile_old_proj_2</image>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_missile_old_3</weaponArt>
+    <iconReplace>aea_missile_old_3_icon</iconReplace>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_MISSILE_OLD_2_ENEMY">
+	<type>MISSILES</type>
+	<flavorType>Rail Cannon</flavorType>
+	<tip>tip_aea_rail_cannon</tip>
+	<title>'Poseidon' Rail Cannon</title>
+	<short>'Poseidon'</short>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
+	<mv-customAnimations>
+		<aea_missile_old_2_barrels_slow depowered="true"/>
+		<aea_missile_old_2_barrels charging="true" />
+		<aea_missile_old_2_barrels_fast charged="true" />
+		<aea_missile_old_2_barrels_fire2 looping="false" firing="true" />
+	</mv-customAnimations>
+	<fireTime>1.8</fireTime>
+	<accuracyMod>30</accuracyMod>
+	<damage>0</damage>
+	<shots>1</shots>
+	<missiles>0</missiles>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>18</cooldown>
+	<speed>100</speed>
+	<power>2</power>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<image>aea_missile_old_proj_2</image>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_missile_old_2</weaponArt>
+    <iconReplace>aea_missile_old_2_icon</iconReplace>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_MISSILE_OLD_3_ENEMY">
+	<type>MISSILES</type>
+	<flavorType>Rail Cannon</flavorType>
+	<tip>tip_aea_rail_cannon</tip>
+	<title>'Zeus' Rail Cannon</title>
+	<short>'Zeus'</short>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
+	<mv-customAnimations>
+		<aea_missile_old_1_flash charging="true" charged="true" /> <!--looping defaults to true and the others default to false-->
+	</mv-customAnimations>
+	<fireTime>1.8</fireTime>
+	<accuracyMod>30</accuracyMod>
+	<damage>0</damage>
+	<missiles>0</missiles>
+	<shots>1</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>20</cooldown>
+	<speed>100</speed>
+	<power>3</power>
+	<cost>100</cost>
+	<rarity>0</rarity>
+	<image>aea_missile_old_proj</image>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_missile_old_1</weaponArt>
+    <iconReplace>aea_missile_old_1_icon</iconReplace>
 	<iconImage>missile</iconImage>
 </weaponBlueprint>
 
@@ -4589,7 +4894,7 @@ Default Price: 100~   -   Selling Price: 50~
 	<weaponList missiles="2" count="2" />
 	<droneList drones="8" count="4">
 		<drone name="AEA_COMBAT_BIRD_SMART_1" />
-		<drone name="PEST_RAD" />
+		<drone name="COMBAT_CONSERVATIVE_LASER" />
 	</droneList>
 	<health amount="30" />
 	<maxPower amount="8" />
@@ -4597,6 +4902,7 @@ Default Price: 100~   -   Selling Price: 50~
 	<crewCount amount="1" class="aea_bird_avali" />
 	<crewCount amount="1" class="aea_bird_avali" />
 	<aug name="COMBAT_CLOAKING_JAMMER" />
+	<aug name="DRONE_RECOVERY" />
 	<shieldImage>mup_standard2</shieldImage>
 	<mv-mapImage>map_icon_aeap_bird_big</mv-mapImage>
 </shipBlueprint>
@@ -4665,7 +4971,7 @@ Default Price: 100~   -   Selling Price: 50~
 			</slot>
 		</shields>
 		<teleporter power="1" room="17" start="false" />
-		<weapons max="8" power="2" room="11" start="true" img="room_weapons">
+		<weapons max="8" power="3" room="11" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -4676,6 +4982,7 @@ Default Price: 100~   -   Selling Price: 50~
 	<droneSlots>3</droneSlots>
 	<weaponList missiles="2" count="3">
 		<weapon name="ENERGY_2" />
+		<weapon name="LASER_BURST_2" />
 	</weaponList>
 	<droneList drones="8" count="3">
 		<drone name="AEA_COMBAT_BIRD_BIO_2" />
@@ -4767,7 +5074,7 @@ Default Price: 100~   -   Selling Price: 50~
 	<weaponList missiles="2" count="2" />
 	<droneList drones="8" count="4">
 		<drone name="AEA_COMBAT_BIRD_SMART_2" />
-		<drone name="AEA_COMBAT_BIRD_BIO_1" />
+		<drone name="AEA_COMBAT_BIRD_BIO_2" />
 	</droneList>
 	<health amount="30" />
 	<maxPower amount="8" />
@@ -4811,7 +5118,7 @@ Default Price: 100~   -   Selling Price: 50~
 			</slot>
 		</doors>
 		<drones max="8" power="3" room="12" start="true" img="room_drones" />
-		<engines power="1" room="8" start="true" img="room_engines_aea_1">
+		<engines power="2" room="8" start="true" img="room_engines_aea_1">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -4854,7 +5161,7 @@ Default Price: 100~   -   Selling Price: 50~
 	<weaponSlots>2</weaponSlots>
 	<droneSlots>4</droneSlots>
 	<weaponList missiles="2" count="2" >
-		<weapon name="ION_1" />
+		<weapon name="ION_2" />
 	</weaponList>
 	<droneList drones="6" count="4">
 		<drone name="AEA_COMBAT_BIRD_BURST_2" />
@@ -4899,7 +5206,7 @@ Default Price: 100~   -   Selling Price: 50~
 				<number>1</number>
 			</slot>
 		</doors>
-		<drones max="8" power="3" room="5" start="true" img="room_drones" />
+		<drones max="8" power="2	" room="5" start="true" img="room_drones" />
 		<engines power="1" room="14" start="true" img="room_engines_8">
 			<slot>
 				<direction>left</direction>
@@ -4934,7 +5241,7 @@ Default Price: 100~   -   Selling Price: 50~
 		</shields>
 		<teleporter power="1" room="20" start="false" />
 		<temporal power="1" room="19" start="false" />
-		<weapons max="8" power="1" room="6" start="true" img="room_weapons">
+		<weapons max="8" power="2" room="6" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -4991,7 +5298,7 @@ Default Price: 100~   -   Selling Price: 50~
 			</slot>
 		</doors>
 		<drones max="8" power="3" room="4" start="true" img="room_drones" />
-		<engines power="2" room="1" start="true" img="room_engines_aea_1">
+		<engines power="3" room="1" start="true" img="room_engines_aea_1">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -5080,7 +5387,7 @@ Default Price: 100~   -   Selling Price: 50~
 				<number>1</number>
 			</slot>
 		</doors>
-		<drones max="8" power="2" room="17" start="true" img="room_drones_12" />
+		<drones max="8" power="3" room="17" start="true" img="room_drones_12" />
 		<engines power="3" room="2" start="true" img="room_engines_2">
 			<slot>
 				<direction>down</direction>
@@ -5928,7 +6235,7 @@ This drone fires 4 shots.
 	<title>Intel Drone Mk. I</title>
 	<short>Intel I</short>
 	<desc>A combat drone equiped with a pair of lasers. This specialist drone has a targetting computer onboard that enables the drone to only target enemy systems, and is weighted towards the more important systems.</desc>
-	<power>2</power>
+	<power>3</power>
 	<cooldown>1000</cooldown>
 	<dodge>5</dodge>
 	<speed>9</speed>
@@ -5945,7 +6252,7 @@ This drone fires 4 shots.
 	<title>Intel Drone Mk. II</title>
 	<short>Intel II</short>
 	<desc>A combat drone equiped with a pair of lasers. This specialist drone has a targetting computer onboard that enables the drone to only target enemy systems, and is weighted towards the more important systems.</desc>
-	<power>3</power>
+	<power>4</power>
 	<cooldown>1000</cooldown>
 	<dodge>5</dodge>
 	<speed>18</speed>
@@ -5963,7 +6270,7 @@ This drone fires 4 shots.
 	<title>Intel Drone Mk. I</title>
 	<short>Intel I</short>
 	<desc>YOU SHOULD NEVER SEE THIS</desc>
-	<power>2</power>
+	<power>3</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
 	<speed>6</speed>
@@ -5980,7 +6287,7 @@ This drone fires 4 shots.
 	<title>Intel Drone Mk. II</title>
 	<short>Intel II</short>
 	<desc>YOU SHOULD NEVER SEE THIS</desc>
-	<power>3</power>
+	<power>4</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
 	<speed>12</speed>
@@ -11823,7 +12130,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>2</number>
 			</slot>
 		</shields>
-		<teleporter power="1" room="20" start="true" />
+		<teleporter power="2" room="20" start="true" />
 		<temporal power="1" room="6" start="false" img="room_temporal_4" />
 		<weapons max="8" power="1" room="7" start="true" img="room_weapons">
 			<slot>
@@ -11836,6 +12143,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	<droneSlots>3</droneSlots>
 	<weaponList missiles="0" count="3">
 		<weapon name="BOMB_LOCK" />
+		<weapon name="LASER_BURST_2" />
 	</weaponList>
 	<droneList drones="0" count="3" />
 	<health amount="30" />
@@ -12190,6 +12498,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	<health amount="30" />
 	<maxPower amount="6" />
 	<aug name="AEA_SHARD_ARMOUR"/>
+	<aug name="NO_GHOST_PLAYER" />
 	<shieldImage>mup_giant</shieldImage>
 	<mv-mapImage>map_icon_aeap_shard_auto</mv-mapImage>
 </shipBlueprint>
@@ -12212,7 +12521,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</aea_super_shields>
 		<battery power="1" room="2" start="false" img="room_battery_6" />
-		<cloaking power="1" room="5" start="true" img="room_cloaking_12" />
+		<cloaking power="2" room="5" start="true" img="room_cloaking_12" />
 		<clonebay power="1" room="11" start="false">
 			<slot>
 				<number>1</number>
@@ -12274,7 +12583,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	</weaponList>
 	<droneList drones="3" count="2" />
 	<health amount="30" />
-	<maxPower amount="7" />
+	<maxPower amount="8" />
 	<aug name="AEA_SHARD_SHIELD" />
 	<shieldImage>mup_giant</shieldImage>
 	<mv-mapImage>map_icon_aeap_shard_auto</mv-mapImage>
@@ -13321,7 +13630,7 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 	<desc>Crew produced by the modified clone bay have their lifetime extended by 20 seconds.
     
 	[X] - As an external system upgrade, this augment will provide its normal effect but take up an augment slot. Can be converted for free to the internal version under the internal upgrade menu if you have the Modified Clone Bay system.</desc>
-	<cost>0</cost>
+	<cost>40</cost>
 	<rarity>0</rarity>
 	<stackable>true</stackable>
 	<value>1</value>
@@ -13338,7 +13647,23 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 	<desc>Crew produced by the modified clone bay gain 20hp per power bar in the system.
     
 	[X] - As an external system upgrade, this augment will provide its normal effect but take up an augment slot. Can be converted for free to the internal version under the internal upgrade menu if you have the Modified Clone Bay system.</desc>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="UPG_AEA_CLONE_CRIME_ENEMY">
+	<title>Enhanced Transmitter</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="EX_AEA_CLONE_CRIME_ENEMY">
+	<title>Enhanced Transmitter [X]</title>
+	<desc>Your death timers no longer decay on the enemy ship.
+    
+	[X] - As an external system upgrade, this augment will provide its normal effect but take up an augment slot. Can be converted for free to the internal version under the internal upgrade menu if you have the Modified Clone Bay system.</desc>
+	<cost>40</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
 </augBlueprint>
@@ -13601,7 +13926,7 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 </shipBlueprint>
 	
 <crewBlueprint name="aea_dark_justicier">
-    <desc>A mysterious figure who worships a strange dark god.</desc>
+    <desc>A mysterious figure who worships a strange bloodthirsty god.</desc>
     <title>Dark Justicier</title>
     <short>Dark Justicier</short>
     <cost>100</cost>
@@ -13616,7 +13941,7 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 </crewBlueprint>
 	
 <crewBlueprint name="aea_dark_justicier_enemy">
-    <desc>A mysterious figure who worships a strange dark god.</desc>
+    <desc>A mysterious figure who worships a strange bloodthirsty god.</desc>
     <title>Dark Justicier</title>
     <short>Dark Justicier</short>
     <cost>100</cost>

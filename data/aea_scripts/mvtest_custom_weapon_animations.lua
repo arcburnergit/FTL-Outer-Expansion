@@ -44,6 +44,15 @@ script.on_load(function()
 		end
 		doc:clear()
 	end
+	--[[for weapon, weaponTable in pairs(customWeaponAnims) do
+		for _, animTable in ipairs(weaponTable) do
+			local str = tostring(weapon)
+			for key, value in pairs(animTable) do
+				str = str .." "..tostring(key)..":"..tostring(value)
+			end
+			print(str)
+		end
+	end]]
 end)
 
 
@@ -55,7 +64,6 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
 				local tab = userdata_table(weapon, "mods.mvtest.customWeaponAnimations")
 				for _, animTable in ipairs(customWeaponAnims[weapon.blueprint.name]) do
 					if tab[animTable.name] then
-						--print("updating anim:"..animTable.name)
 						tab[animTable.name]:Update()
 					end
 				end
@@ -64,32 +72,33 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
 	end
 end)
 
--- for some reason the mount position is offset from the actual mount location
-local mountOffset = {x = -20, y = -12}
-
 script.on_render_event(Defines.RenderEvents.SHIP_HULL, function(ship) 
 	local shipManager = Hyperspace.ships(ship.iShipId)
+	local shipGraph = Hyperspace.ShipGraph.GetShipInfo(shipManager.iShipId)
+	local shipCorner = {x = shipManager.ship.shipImage.x + shipGraph.shipBox.x, y = shipManager.ship.shipImage.y + shipGraph.shipBox.y}
 	if shipManager and shipManager:HasSystem(3) then
 		for weapon in vter(shipManager.weaponSystem.weapons) do
 			if customWeaponAnims[weapon.blueprint.name] then
 				local tab = userdata_table(weapon, "mods.mvtest.customWeaponAnimations")
 				for _, animTable in ipairs(customWeaponAnims[weapon.blueprint.name]) do
 					local name = animTable.name
+					local depoweredMet = animTable.depowered and not weapon.weaponVisual.bPowered
 					local chargingMet = animTable.charging and weapon.weaponVisual.bPowered and not (weapon:IsChargedGoal() or weapon.weaponVisual.bFiring)
 					local chargedMet = animTable.charged and weapon:IsChargedGoal()
 					local firingMet = animTable.firing and weapon.weaponVisual.bFiring
-					if weapon.weaponVisual.slideTracker.done and (chargingMet or chargedMet or firingMet) then
+					if depoweredMet or chargingMet or chargedMet or firingMet then
 						if not tab[name] then
 							tab[name] = Hyperspace.Animations:GetAnimation(name)
 							tab[name].position.x = (weapon.mount.mirror and - weapon.weaponVisual.anim.info.frameWidth + weapon.weaponVisual.mountPoint.x) or -weapon.weaponVisual.mountPoint.x
 							tab[name].position.y = -weapon.weaponVisual.mountPoint.y
-							tab[name].tracker.loop = animTable.looping or true
+							tab[name].tracker.loop = (animTable.looping == nil and true) or animTable.looping
 							tab[name]:Start(true)
 						elseif tab[name].tracker.running then
 							tab[name].position.x = (weapon.mount.mirror and -(weapon.weaponVisual.anim.info.frameWidth - weapon.weaponVisual.mountPoint.x)) or -weapon.weaponVisual.mountPoint.x
 							tab[name].position.y = -weapon.weaponVisual.mountPoint.y
+							local slideOffset = weapon.weaponVisual:GetSlide()
 							Graphics.CSurface.GL_PushMatrix()
-		      				Graphics.CSurface.GL_Translate(weapon.mount.position.x + mountOffset.x, weapon.mount.position.y + mountOffset.y)
+		      				Graphics.CSurface.GL_Translate(weapon.weaponVisual.renderPoint.x + shipCorner.x + slideOffset.x, weapon.weaponVisual.renderPoint.y + shipCorner.y + slideOffset.y)
 							if weapon.mount.rotate then
 								Graphics.CSurface.GL_Rotate(90, 0, 0)
 							end

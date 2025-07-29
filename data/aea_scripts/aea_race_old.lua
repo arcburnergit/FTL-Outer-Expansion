@@ -750,13 +750,13 @@ local function setPrecursorNames(original)
 			weaponDesc.title.data = blueTable.long
 			weaponDesc.shortTitle.data = blueTable.short
 			weaponDesc.description.data = blueTable.desc
-			weaponDesc.tip = blueTable.tip
+			--weaponDesc.tip = blueTable.tip
 		else
 			local weaponDesc = Hyperspace.Blueprints:GetWeaponBlueprint(blueprint).desc
 			weaponDesc.title.data = "???"
 			weaponDesc.shortTitle.data = "???"
 			weaponDesc.description.data = "???"
-			weaponDesc.tip = "tip_aea_old_unknown"
+			--weaponDesc.tip = "tip_aea_old_unknown"
 		end
 	end
 end
@@ -851,44 +851,22 @@ script.on_game_event("INSTALL_AEA_OLD_REACTOR", false, function()
 	powerManager.currentPower.second = powerManager.currentPower.second + 1
 end)
 
---[[local missileOld1Images = {
-	Hyperspace.Resources:GetImageId("weapon_old/aea_missile_old_1_1.png"),
-	Hyperspace.Resources:GetImageId("weapon_old/aea_missile_old_1_2.png"),
-	Hyperspace.Resources:GetImageId("weapon_old/aea_missile_old_1_3.png"),
-	Hyperspace.Resources:GetImageId("weapon_old/aea_missile_old_1_4.png"),
-	Hyperspace.Resources:GetImageId("weapon_old/aea_missile_old_1_5.png")
-}
-
-
-script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
-	local shipManager = Hyperspace.ships(ship.iShipId)
-	if shipManager and shipManager:HasSystem(3) then
-		for weapon in vter(shipManager.weaponSystem.weapons) do
-			if weapon.blueprint.name == "AEA_MISSILE_OLD_1" and weapon:IsChargedGoal() then
-				print("animSet")
-				local tab = userdata_table(weapon, "mods.aea.oldMissile")
-				if tab.animTimer then
-					tab.animTimer = tab.animTimer + Hyperspace.FPS.SpeedFactor/2
-					if tab.animTimer >= 5 then tab.animTimer = tab.animTimer - 5 end
-				else
-					userdata_table(weapon, "mods.aea.oldMissile").animTimer = 0
-				end
-				local frame = math.floor(userdata_table(weapon, "mods.aea.oldMissile").animTimer) + 1
-				print(tostring(userdata_table(weapon, "mods.aea.oldMissile").animTimer).." f:"..tostring(frame))
-				weapon.weaponVisual.anim.animationStrip = missileOld1Images[frame]
-			elseif weapon.blueprint.name == "AEA_MISSILE_OLD_1" and userdata_table(weapon, "mods.aea.oldMissile").animTimer then
-				print("reset")
-				userdata_table(weapon, "mods.aea.oldMissile").animTimer = nil
-			end
-		end
-	end
-end)]]
-
 mods.aea.afterDamage = {}
 local afterDamage = mods.aea.afterDamage
 afterDamage["AEA_MISSILE_OLD_1"] = Hyperspace.Damage()
 afterDamage["AEA_MISSILE_OLD_1"].iDamage = 4
 afterDamage["AEA_MISSILE_OLD_1"].breachChance = 10
+afterDamage["AEA_MISSILE_OLD_2"] = Hyperspace.Damage()
+afterDamage["AEA_MISSILE_OLD_2"].iDamage = 3
+afterDamage["AEA_MISSILE_OLD_3"] = Hyperspace.Damage()
+afterDamage["AEA_MISSILE_OLD_3"].iDamage = 2
+
+afterDamage["AEA_MISSILE_OLD_1_ENEMY"] = Hyperspace.Damage()
+afterDamage["AEA_MISSILE_OLD_1_ENEMY"].iDamage = 3
+afterDamage["AEA_MISSILE_OLD_2_ENEMY"] = Hyperspace.Damage()
+afterDamage["AEA_MISSILE_OLD_2_ENEMY"].iDamage = 2
+afterDamage["AEA_MISSILE_OLD_3_ENEMY"] = Hyperspace.Damage()
+afterDamage["AEA_MISSILE_OLD_3_ENEMY"].iDamage = 1
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
     if projectile and projectile.extend.name and afterDamage[projectile.extend.name] and not userdata_table(projectile, "mods.aea.afterDamage").damaged then
@@ -911,9 +889,90 @@ end)
 
 local is_first_shot = mods.multiverse.is_first_shot
 
+mods.aea.fuelPowerCost = {}
+local fuelPowerCost = mods.aea.fuelPowerCost
+fuelPowerCost["AEA_MISSILE_OLD_1"] = 1
+fuelPowerCost["AEA_MISSILE_OLD_2"] = 1
+fuelPowerCost["AEA_MISSILE_OLD_3"] = 1
+
+local function depowerWeapon(weapon, shipManager, powerManager)
+	local shouldSetPower = true
+	local weaponSystem = shipManager.weaponSystem
+	for i = 1, weapon.requiredPower - weapon.iBonusPower do
+		local required = weaponSystem.iRequiredPowewr
+		--TODO: Lua needs to add an INOUT typemap for pass-by-pointer vars
+		local powerState = weaponSystem.powerState
+
+		local ret = true --powerManager:DecreasePower(powerState, weaponSystem.iBatteryPower, weaponSystem.requiredPower)
+
+		local batteryPower = weaponSystem.iBatteryPower
+		if powerState.first < 1 and batteryPower < 1 then 
+			ret = false 
+		elseif batteryPower < 1 then
+			powerState.first = powerState.first - 1
+			powerManager.currentPower.first = powerManager.currentPower.first - 1
+		else
+			if 0 < powerManager.batteryPower.first then
+				powerManager.batteryPower.first = powerManager.batteryPower.first - 1
+			end
+			weaponSystem.iBatteryPower = weaponSystem.iBatteryPower - 1
+		end
+
+		weaponSystem.powerState = powerState
+		if not ret then
+			error("Failed to depower weapon")
+		    shouldSetPower = false
+		    break
+		end
+	end
+
+	if shouldSetPower then
+	  	weapon.powered = false
+	end
+end
+
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
+	local shipManager = Hyperspace.ships(ship.iShipId)
+	local powerManager = Hyperspace.PowerManager.GetPowerManager(ship.iShipId)
+	if shipManager and shipManager:HasSystem(3) and shipManager.iShipId == 0 then
+		for weapon in vter(shipManager.weaponSystem.weapons) do
+			if fuelPowerCost[weapon.blueprint.name] and weapon.powered and not userdata_table(weapon, "mods.aea.fuelPowerCost").fueled then
+				if shipManager.fuel_count - fuelPowerCost[weapon.blueprint.name] < 0 then
+					depowerWeapon(weapon, shipManager, powerManager)
+					userdata_table(weapon, "mods.aea.fuelPowerCost").warningMessage = 3
+				else
+					shipManager.fuel_count = shipManager.fuel_count - fuelPowerCost[weapon.blueprint.name]
+					userdata_table(weapon, "mods.aea.fuelPowerCost").fueled = true
+				end
+			elseif fuelPowerCost[weapon.blueprint.name] and userdata_table(weapon, "mods.aea.fuelPowerCost").fueled and not weapon.powered then
+				userdata_table(weapon, "mods.aea.fuelPowerCost").fueled = nil
+			end
+		end
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.WEAPON_RENDERBOX, function(weapon, cooldown, maxCooldown, firstLine, secondLine, thirdLine)
+	local shipManager = Hyperspace.ships(weapon.iShipId)
+	if fuelPowerCost[weapon.blueprint.name] and userdata_table(weapon, "mods.aea.fuelPowerCost").fueled then
+		secondLine = "Fueled"
+	elseif fuelPowerCost[weapon.blueprint.name] then
+		secondLine = "Unfueled"
+	end
+	if fuelPowerCost[weapon.blueprint.name] and userdata_table(weapon, "mods.aea.fuelPowerCost").warningMessage then
+		local powerTable = userdata_table(weapon, "mods.aea.fuelPowerCost")
+		powerTable.warningMessage = powerTable.warningMessage - Hyperspace.FPS.SpeedFactor/16
+		thirdLine = "No Fuel!"
+		if powerTable.warningMessage <= 0 then
+			userdata_table(weapon, "mods.aea.fuelPowerCost").warningMessage = nil
+		end
+	end
+
+	return Defines.Chain.HALT, firstLine, secondLine, thirdLine
+end)
+
 mods.aea.fuelAmmoCost = {}
 local fuelAmmoCost = mods.aea.fuelAmmoCost
-fuelAmmoCost["AEA_MISSILE_OLD_1"] = 1
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
 	if fuelAmmoCost[weapon.blueprint.name] and is_first_shot(weapon, true) and shipManager.iShipId == 0 and not weapon.isArtillery then
@@ -924,13 +983,11 @@ end)
 
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
 	local shipManager = Hyperspace.ships(ship.iShipId)
+	local powerManager = Hyperspace.PowerManager.GetPowerManager(ship.iShipId)
 	if shipManager and shipManager:HasSystem(3) and shipManager.iShipId == 0 then
 		for weapon in vter(shipManager.weaponSystem.weapons) do
 			if fuelAmmoCost[weapon.blueprint.name] and shipManager.fuel_count - fuelAmmoCost[weapon.blueprint.name] < 0 and weapon.powered then
-				--weapon.powered = false
-				--shipManager.weaponSystem:RawDecreasePower()
-				--shipManager.weaponSystem.powerState.first = shipManager.weaponSystem.powerState.first - weapon.requiredPower
-				weapon.cooldown.first = 0
+				depowerWeapon(weapon, shipManager, powerManager)
 			end
 		end
 	end
@@ -939,8 +996,7 @@ end)
 script.on_internal_event(Defines.InternalEvents.WEAPON_RENDERBOX, function(weapon, cooldown, maxCooldown, firstLine, secondLine, thirdLine)
 	local shipManager = Hyperspace.ships(weapon.iShipId)
 	if fuelAmmoCost[weapon.blueprint.name] and shipManager.fuel_count - fuelAmmoCost[weapon.blueprint.name] < 0 and shipManager.iShipId == 0 then
-		--print("1st:\""..firstLine.."\"\n2nd:\""..secondLine.."\"\n3rd:\""..thirdLine.."\"")
-		firstLine = "Out of Fuel"
+		secondLine = "Out of Fuel"
 	end
 	return Defines.Chain.HALT, firstLine, secondLine, thirdLine
 end)
@@ -948,10 +1004,15 @@ end)
 mods.aea.customFiringSound = {}
 local customFiringSound = mods.aea.customFiringSound
 customFiringSound["AEA_MISSILE_OLD_1"] = "aea_halo_railgun"
+customFiringSound["AEA_MISSILE_OLD_2"] = "aea_halo_railgun"
+customFiringSound["AEA_MISSILE_OLD_3"] = "aea_halo_railgun"
+customFiringSound["AEA_MISSILE_OLD_1_ENEMY"] = "aea_halo_railgun"
+customFiringSound["AEA_MISSILE_OLD_2_ENEMY"] = "aea_halo_railgun"
+customFiringSound["AEA_MISSILE_OLD_3_ENEMY"] = "aea_halo_railgun"
 
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
 	local shipManager = Hyperspace.ships(ship.iShipId)
-	if shipManager and shipManager:HasSystem(3) and shipManager.iShipId == 0 then
+	if shipManager and shipManager:HasSystem(3) then
 		for weapon in vter(shipManager.weaponSystem.weapons) do
 			if customFiringSound[weapon.blueprint.name] and weapon.weaponVisual.bFiring and not userdata_table(weapon, "mods.aea.customFiringSound").fired then
 				userdata_table(weapon, "mods.aea.customFiringSound").fired = true
@@ -966,18 +1027,65 @@ end)
 mods.aea.doorSmash = {}
 local doorSmash = mods.aea.doorSmash
 doorSmash["AEA_MISSILE_OLD_1"] = true
+doorSmash["AEA_MISSILE_OLD_1_ENEMY"] = true
+
+local smashedRooms = {[0] = {}, [1] = {}}
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
     if projectile and projectile.extend.name and doorSmash[projectile.extend.name] and not userdata_table(projectile, "mods.aea.doorSmash").smashed then
     	userdata_table(projectile, "mods.aea.doorSmash").smashed = true
     	local roomId = get_room_at_location(shipManager, location, false)
+    	smashedRooms[shipManager.iShipId][roomId] = {time = 7}
+    	local animationsTable = {}
     	for door in vter(shipManager.ship.vDoorList) do
 			if door.iRoom1 == roomId or door.iRoom2 == roomId then
-				--print("door h:"..door.baseHealth.." c:"..door.health)
-				--door:ApplyDamage(door.baseHealth)
-				print("door time:"..door.forcedOpen.time.." current_time"..door.forcedOpen.current_time.." done"..tostring(door.forcedOpen.done).." running"..tostring(door.forcedOpen.running))
 				door.forcedOpen:Start(0)
+
+				local name = "aea_door_sparks_hor"
+				if door.bVertical then name = "aea_door_sparks_ver" end
+
+				local anim = Hyperspace.Animations:GetAnimation(name)
+				anim.position.x = door.x - anim.info.frameWidth/2
+				anim.position.y = door.y - anim.info.frameHeight/2
+				anim.tracker.loop = true
+				anim:Start(true)
+				local randomFrame = math.random(15)
+				anim:SetCurrentFrame(randomFrame)
+				table.insert(animationsTable, anim)
 			end
 		end
+		smashedRooms[shipManager.iShipId][roomId].animations = animationsTable
     end
 end)
+
+script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function()
+	smashedRooms[1] = {}
+end)
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	local smRooms = smashedRooms[shipManager.iShipId]
+	for room in vter(shipManager.ship.vRoomList) do
+		if smRooms[room.iRoomId] then
+			for _, anim in ipairs(smRooms[room.iRoomId].animations) do
+				anim:Update()
+			end
+			smRooms[room.iRoomId].time = smRooms[room.iRoomId].time - Hyperspace.FPS.SpeedFactor/16
+			if smRooms[room.iRoomId].time <= 0 then
+				smRooms[room.iRoomId] = nil
+			end
+		end
+	end
+end)
+
+
+script.on_render_event(Defines.RenderEvents.SHIP_SPARKS, function(ship) 
+	local shipManager = Hyperspace.ships(ship.iShipId)
+	local smRooms = smashedRooms[shipManager.iShipId]
+	for room in vter(shipManager.ship.vRoomList) do
+		if smRooms[room.iRoomId] then
+			for _, anim in ipairs(smRooms[room.iRoomId].animations) do
+				anim:OnRender(1, Graphics.GL_Color(1, 1, 1, 1), false)
+			end
+		end
+	end
+end, function(ship) end)

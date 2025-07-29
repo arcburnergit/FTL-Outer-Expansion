@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
 	
+<!-- SPAWNING -->
 <mod:findName type="sectorType" name="ZONE_SAFE">
-	<mod-append:sector>SECTOR_AEA_SHARD</mod-append:sector>
+	<mod-append:sector>SECTOR_AEA_BIRD</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorType" name="SECTOR_LIST_ALLIED">
 	<mod-append:sector>SECTOR_AEA_ACID_NEBULA</mod-append:sector>
+	<mod-append:sector>SECTOR_AEA_BIRD</mod-append:sector>
 	<mod-append:sector>SECTOR_AEA_CULT</mod-append:sector>
 	<mod-append:sector>SECTOR_AEA_SHARD</mod-append:sector>
 </mod:findName>
@@ -32,6 +34,7 @@
     <mod-append:sector>SECTOR_AEA_SHLEG_UNIQUE</mod-append:sector>
 </mod:findName>
 
+<!-- COLOURS -->
 <mod:findName type="sectorType" name="CIVILIAN">
     <mod-append:sector>SECTOR_AEA_BIRD</mod-append:sector>
     <mod-append:sector>SECTOR_AEA_BIRD_UNIQUE</mod-append:sector>
@@ -44,6 +47,11 @@
     <mod-append:sector>SECTOR_AEA_ACID_UNIQUE</mod-append:sector>
     <mod-append:sector>SECTOR_AEA_SHLEG</mod-append:sector>
     <mod-append:sector>SECTOR_AEA_SHLEG_UNIQUE</mod-append:sector>
+</mod:findName>
+
+<mod:findName type="sectorType" name="NEUTRAL">
+    <mod-append:sector>SECTOR_AEA_CULT</mod-append:sector>
+    <mod-append:sector>SECTOR_AEA_CULT_UNIQUE</mod-append:sector>
 </mod:findName>
 
 <mod:findName type="sectorType" name="HOSTILE">
@@ -99,7 +107,7 @@
 </mod:findName>
 
 <mod:findName type="sectorDescription" name="FINAL">
-	<mod-append:priorityEvent name="AEA_OLD_GATE" min="1" max="1" priority="1"/>
+	<!--mod-append:priorityEvent name="AEA_OLD_GATE" min="1" max="1" priority="1"/>
 	<!--mod-append:priorityEvent name="AEA_ENEMY_BROADSIDE_EVENT" min="0" max="1" priority="1"/-->	
 </mod:findName>
 
@@ -745,13 +753,13 @@ Bird SECTOR
 	<startEvent>ENTER_AEA_BIRD</startEvent>
 	<removeFirstBeaconNebula />
 	<exitBeacon event="FINISH_BEACON_AEA_BIRD" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ELITE_FEDERATION" />
-	<rebelBeacon event="FLEET_THREAT_MEDIUM_FEDERATION" nebulaEvent="FLEET_THREAT_MEDIUM_NEBULA" />
+	<rebelBeacon event="FLEET_THREAT_MEDIUM_FEDERATION" nebulaEvent="NEBULA_LIGHT_FLEET_THREAT_MEDIUM" />
 	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
 	<event name="MV_TRAVELER" min="1" max="1" />
 	<event name="SYLVAN_CHANCE" min="0" max="1" />
 	
 	<priorityEvent name="AEA_OLD_POWER_CELL_GET" min="1" max="1" priority="1" req="AEA_CELL_SPAWN_CHECK" lvl="1" />
-	<event name="OUTPOST_FEDERATION_SPAWNER" min="0" max="1" />
+	<event name="OUTPOST_FEDERATION_SPAWNER" min="0" max="1"/>
 	<event name="STORELIST_AEA_BIRD" min="2" max="3" />
 	
 	<event name="ITEMS_AEA_BIRD" min="3" max="4" />
@@ -1205,6 +1213,21 @@ OBELISK SECTOR
 		<blueprint name="AEA_LASER_OLDP_1" rarity="3" />
 		<blueprint name="AEA_LASER_OLDP_2" rarity="2" />
 		<blueprint name="AEA_LASER_OLDP_3" rarity="2" />
+		<blueprint name="AEA_FOCUS_OLD_1" rarity="2" />
+		<blueprint name="AEA_FOCUS_OLD_2" rarity="1" />
+		<blueprint name="AEA_FOCUS_OLD_3" rarity="1" />
+		<blueprint name="AEA_MISSILE_OLD_1" rarity="2" />
+		<blueprint name="AEA_MISSILE_OLD_2" rarity="2" />
+		<blueprint name="AEA_MISSILE_OLD_3" rarity="2" />
+
+    	<blueprint name="AEA_LASER_ACID_BOSS" rarity="2" />
+    	<blueprint name="AEA_CRYSTAL_SHARD_BOSS" rarity="3" />
+    	<blueprint name="AEA_BEAM_SHLEG_BOSS" rarity="2" />
+
+    	<blueprint name="AEA_COMBAT_NECRO_BOSS" rarity="3" />
+    	<blueprint name="AEA_COMBAT_BIRD_BOSS" rarity="2" />
+
+    	<blueprint name="AEA_BARRIER_RELAY" rarity="3" />
 
 
 		
@@ -1409,8 +1432,9 @@ OBELISK SECTOR
 	<noExit />
 	<startEvent>ENTER_AEA_OLD_1</startEvent>
 	<exitBeacon event="AEA_OLD_1_BARON" rebelEvent="AEA_OLD_1_BARON" />
-	<rebelBeacon event="FLEET_THREAT_CRITICAL" nebulaEvent="FLEET_THREAT_CRITICAL_NEBULA" />
+	<rebelBeacon event="FLEET_AEA_OLD_OUTSKIRTS" nebulaEvent="FLEET_AEA_OLD_OUTSKIRTS" />
 	<removeFirstBeaconNebula />
+	<event name="AEA_OLD_OUTPOST" min="1" max="1" />
 	<event name="STORE_HOSTILE_AEA_OLD" min="1" max="1" />
 	<event name="STORELIST_AEA_OLD_GENERIC" min="1" max="1" />
 	<event name="TRANSPORT_AEA_OLD_1_LOOT" min="1" max="1" />
@@ -1443,7 +1467,21 @@ ROYAL OBELISK SECTOR
 		<blueprint name="AEA_LASER_OLDP_1" rarity="2" />
 		<blueprint name="AEA_LASER_OLDP_2" rarity="1" />
 		<blueprint name="AEA_LASER_OLDP_3" rarity="1" />
+		<blueprint name="AEA_FOCUS_OLD_1" rarity="2" />
+		<blueprint name="AEA_FOCUS_OLD_2" rarity="1" />
+		<blueprint name="AEA_FOCUS_OLD_3" rarity="1" />
+		<blueprint name="AEA_MISSILE_OLD_1" rarity="2" />
+		<blueprint name="AEA_MISSILE_OLD_2" rarity="2" />
+		<blueprint name="AEA_MISSILE_OLD_3" rarity="2" />
 
+    	<blueprint name="AEA_LASER_ACID_BOSS" rarity="2" />
+    	<blueprint name="AEA_CRYSTAL_SHARD_BOSS" rarity="3" />
+    	<blueprint name="AEA_BEAM_SHLEG_BOSS" rarity="2" />
+
+    	<blueprint name="AEA_COMBAT_NECRO_BOSS" rarity="3" />
+    	<blueprint name="AEA_COMBAT_BIRD_BOSS" rarity="2" />
+
+    	<blueprint name="AEA_BARRIER_RELAY" rarity="3" />
 
 		
 		<!--
@@ -1656,12 +1694,12 @@ ROYAL OBELISK SECTOR
 	<noExit />
 	<startEvent>ENTER_AEA_OLD_2</startEvent>
 	<exitBeacon event="AEA_OLD_2_COUNCIL" rebelEvent="AEA_OLD_2_COUNCIL" />
-	<rebelBeacon event="FLEET_ROYAL_SELITE" />
+	<rebelBeacon event="FLEET_AEA_OLD_CAPITAL" />
 	<removeFirstBeaconNebula />
 	<!--event name="ROYAL_SUPERFISH" min="1" max="1" /-->
 	<!--event name="ROYAL_ROOMBA" min="1" max="1" /-->
 	<event name="SYLVAN" min="1" max="1" />
-	<event name="STORE_HOSTILE_AEA_OLD" min="1" max="1" />
+	<event name="STORE_HOSTILE_AEA_OLD" min="2" max="2" />
 	<event name="STORELIST_AEA_OLD_GENERIC" min="1" max="1" />
 	<event name="ITEMS_AEA_OLD_2" min="6" max="6" />
 	<event name="EMPTY_AEA_OLD" min="1" max="1" />
@@ -1682,7 +1720,7 @@ ROYAL OBELISK SECTOR
 	<noExit />
 	<startEvent>ENTER_AEA_OLD_3</startEvent>
 	<exitBeacon event="AEA_OLD_VICTORY" rebelEvent="AEA_OLD_VICTORY" />
-	<rebelBeacon event="FLEET_ROYAL_SELITE" />
+	<rebelBeacon event="FLEET_AEA_OLD_CAPITAL" />
 	<removeFirstBeaconNebula />
 	<event name="AEA_OLD_3_BOSS" min="1" max="1" />
 	<event name="EMPTY_AEA_OLD" min="999" max="999" />

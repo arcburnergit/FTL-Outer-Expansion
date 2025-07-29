@@ -1090,7 +1090,7 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 </event>
 
 <event name="AEA_CULT_CONSPIRACY_COMPOUND">
-	<text>You're able to makeout a few different locations around the compound. There's a workshop with visable ship components inside. A storage yard with a few shipping containers spread about. A generator building that appears to be powerering the rest of the facility. An old hanger off to one side, you can't see inside of it. Finally theres the main command facility, your sensors indicate this is where the conspirators are, it appears they're all currently asleep.</text>
+	<text>You're able to makeout a few different locations around the compound. There's a workshop with visable ship components inside. A storage yard with a few shipping containers spread about. A generator building that appears to be powerering the rest of the facility. An old hangar off to one side, you can't see inside of it. Finally theres the main command facility, your sensors indicate this is where the conspirators are, it appears they're all currently asleep.</text>
 	<choice hidden="true">
 		<text>Search the workshop.</text>
 		<event load="AEA_CULT_CON_WORKSHOP"/>
@@ -1104,8 +1104,8 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 		<event load="AEA_CULT_CON_GENERATOR"/>
 	</choice>
 	<choice hidden="true">
-		<text>Search the hanger.</text>
-		<event load="AEA_CULT_CON_HANGER"/>
+		<text>Search the hangar.</text>
+		<event load="AEA_CULT_CON_hangar"/>
 	</choice>
 	<choice hidden="true">
 		<text>Search the compound.</text>
@@ -1195,10 +1195,10 @@ You're unable to find anything in the room, however you notice a sticky note thr
 	</choice>
 </event>
 
-<event name="AEA_CULT_CON_HANGER">
-	<text>You arrive at the hanger, you search the perimeter but can't find any way in, all of the doors are locked shut or sealed up.</text>
+<event name="AEA_CULT_CON_hangar">
+	<text>You arrive at the hangar, you search the perimeter but can't find any way in, all of the doors are locked shut or sealed up.</text>
 	<choice hidden="true">
-		<text>You cannot search the hanger as you cannot find a way inside.</text>
+		<text>You cannot search the hangar as you cannot find a way inside.</text>
 		<event load="OPTION_INVALID"/>
 	</choice>
 	<choice hidden="true">
@@ -1307,7 +1307,7 @@ You're unable to find anything in the room, however you notice a sticky note thr
 		<event>
 			<text>You manage to secure the conspirators and you alert the cultist police forces.
 
-As you're watching you notice that one of the conspirator's room didn't lock properly, and what's more you're unable to find them, rewinding the footage you see them escape towards the hanger.</text>
+As you're watching you notice that one of the conspirator's room didn't lock properly, and what's more you're unable to find them, rewinding the footage you see them escape towards the hangar.</text>
 			<choice hidden="true">
 				<text>After them!.</text>
 				<event>

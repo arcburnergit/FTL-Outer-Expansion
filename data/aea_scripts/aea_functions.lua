@@ -538,58 +538,6 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
 	end
 end)
 
-
-script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
-	local map = Hyperspace.App.world.starMap
-	--print(map.worldLevel.. " World Level")
-	if map.worldLevel == 6 and Hyperspace.playerVariables.aea_broadside_enemy_fought == 0 then
-		local dangerCount = 0
-		local leftMost = nil
-		local leftMostX = nil
-		local broadsideFound = false
-		for location in vter(map.locations) do
-			--print("visited:"..location.visited)--.." known:"..location.known.." questLocation"..location.questLoc
-			if location.dangerZone then
-				dangerCount = dangerCount + 1
-				if ((not leftMost) or location.loc.x < leftMostX) and location.visited == 0 then
-					leftMost = location
-					leftMostX = location.loc.x
-				end
-			end
-			if location.event.eventName == "AEA_ENEMY_BROADSIDE_EVENT" then
-				broadsideFound = true
-				--print("BROADSIDE FOUND")
-			end
-		end
-
-		if dangerCount >= 5 and leftMost and not broadsideFound then
-			--print("CREATE BROADSIDE EVENT")
-			leftMost.event = Hyperspace.Event:CreateEvent("AEA_ENEMY_BROADSIDE_EVENT", 0, false)
-		end
-	end
-end)
-
-
-local shipImage = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aeap_broadside_enemy.png", -10, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
-shipImage.textureAntialias = true
-local angle = 0
-script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, function()
-	local map = Hyperspace.App.world.starMap
-	if map.bOpen and not map.bChoosingNewSector then
-		for location in vter(map.locations) do
-			if location.event.eventName == "AEA_ENEMY_BROADSIDE_EVENT" and location.visited == 0 then
-				angle = angle + Hyperspace.FPS.SpeedFactor/16 * 18
-				if angle > 360 then angle = angle - 360 end
-				Graphics.CSurface.GL_PushMatrix()
-		        Graphics.CSurface.GL_Translate(location.loc.x + 385,location.loc.y + 122,0)
-		        Graphics.CSurface.GL_Rotate(angle, 0, 0, 1)
-		        Graphics.CSurface.GL_RenderPrimitive(shipImage)
-		        Graphics.CSurface.GL_PopMatrix()
-			end
-		end
-	end
-end)
-
 --[[ Remove OE blue options if you have FR's narrator augment
 script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
   local ShipManager = Hyperspace.ships.player

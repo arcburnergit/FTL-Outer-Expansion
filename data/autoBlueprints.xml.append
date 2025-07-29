@@ -43,6 +43,10 @@
 	<mod-append:name>AEA_FOCUS_OLD_2</mod-append:name>
 	<mod-append:name>AEA_FOCUS_OLD_3</mod-append:name>
 
+	<mod-append:name>AEA_MISSILE_OLD_1</mod-append:name>
+	<mod-append:name>AEA_MISSILE_OLD_2</mod-append:name>
+	<mod-append:name>AEA_MISSILE_OLD_3</mod-append:name>
+
 	<mod-append:name>AEA_SHLEG_BOMB</mod-append:name>
 	<mod-append:name>AEA_SHLEG_MISSILES</mod-append:name>
 	<mod-append:name>AEA_SHLEG_MISSILES_LOOT</mod-append:name>
@@ -142,6 +146,10 @@
 	<mod-append:name>AEA_FOCUS_OLD_1</mod-append:name>
 	<mod-append:name>AEA_FOCUS_OLD_2</mod-append:name>
 	<mod-append:name>AEA_FOCUS_OLD_3</mod-append:name>
+	
+	<mod-append:name>AEA_MISSILE_OLD_1</mod-append:name>
+	<mod-append:name>AEA_MISSILE_OLD_2</mod-append:name>
+	<mod-append:name>AEA_MISSILE_OLD_3</mod-append:name>
 
 	<mod-append:name>AEA_SHLEG_BOMB</mod-append:name>
 	<mod-append:name>AEA_SHLEG_MISSILES</mod-append:name>
@@ -724,6 +732,9 @@
 	<name>AEA_FOCUS_OLD_1</name>
 	<name>AEA_FOCUS_OLD_2</name>
 	<name>AEA_FOCUS_OLD_3</name>
+	<name>AEA_MISSILE_OLD_1</name>
+	<name>AEA_MISSILE_OLD_2</name>
+	<name>AEA_MISSILE_OLD_3</name>
 </blueprintList>
 
 <blueprintList name="AEA_CULTISTS_ALL">
@@ -969,6 +980,9 @@
 
 	<name>AEA_FOCUS_OLD_1</name>
 	<name>AEA_FOCUS_OLD_2</name>
+
+	<name>AEA_MISSILE_OLD_1</name>
+	<name>AEA_MISSILE_OLD_2</name>
 </blueprintList>
 
 <blueprintList name="LIST_CREW_AEA_REBEL_ELITE_RANDOM">
@@ -1122,7 +1136,7 @@
 	<name>AEA_ACID_FIGHTER</name>
 	<name>AEA_ACID_INSTIGATOR</name>
 	<name>AEA_ACID_BOMBER</name>
-	<name>AEA_ACID_ASSUALT</name>
+	<name>AEA_ACID_ASSAULT</name>
 	<name>AEA_ACID_TRANSPORT</name>
 	<name>AEA_ACID_GUARD</name>
 </blueprintList>
@@ -1132,7 +1146,7 @@
 	<name>AEA_ACID_FIGHTER</name>
 	<name>AEA_ACID_INSTIGATOR</name>
 	<name>AEA_ACID_BOMBER</name>
-	<name>AEA_ACID_ASSUALT</name>
+	<name>AEA_ACID_ASSAULT</name>
 	<name>AEA_ACID_TRANSPORT</name>
 </blueprintList>
 <blueprintList name="LIST_SHIPS_AEA_ACID_FIGHT">
@@ -1141,7 +1155,7 @@
 	<name>AEA_ACID_FIGHTER</name>
 	<name>AEA_ACID_INSTIGATOR</name>
 	<name>AEA_ACID_BOMBER</name>
-	<name>AEA_ACID_ASSUALT</name>
+	<name>AEA_ACID_ASSAULT</name>
 </blueprintList>
 
 <blueprintList name="LIST_SHIPS_AEA_ACID_ELITE_ALL">
@@ -1150,7 +1164,7 @@
 	<name>AEA_ACID_FIGHTER_ELITE</name>
 	<name>AEA_ACID_INSTIGATOR_ELITE</name>
 	<name>AEA_ACID_BOMBER_ELITE</name>
-	<!--<name>MU_ORCHID_ASSAULT</name>-->
+	<name>AEA_ACID_ASSAULT_ELITE</name>
 	<name>AEA_ACID_TRANSPORT_ELITE</name>
 	<name>AEA_ACID_GUARD_ELITE</name>
 </blueprintList>
@@ -1160,7 +1174,7 @@
 	<name>AEA_ACID_FIGHTER_ELITE</name>
 	<name>AEA_ACID_INSTIGATOR_ELITE</name>
 	<name>AEA_ACID_BOMBER_ELITE</name>
-	<!--<name>MU_ORCHID_ASSAULT</name>-->
+	<name>AEA_ACID_ASSAULT_ELITE</name>
 	<name>AEA_ACID_TRANSPORT_ELITE</name>
 </blueprintList>
 
@@ -1170,7 +1184,7 @@
 	<name>AEA_ACID_FIGHTER_ELITE</name>
 	<name>AEA_ACID_INSTIGATOR_ELITE</name>
 	<name>AEA_ACID_BOMBER_ELITE</name>
-	<!--<name>MU_ORCHID_ASSAULT</name>-->
+	<name>AEA_ACID_ASSAULT_ELITE</name>
 </blueprintList>
 
 <blueprintList name="LIST_SHIPS_AEA_BIRD_ALL">
@@ -1398,8 +1412,8 @@
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
 
-<shipBlueprint name="AEA_ACID_ASSUALT" layout="aea_acid_assualt" img="aea_acid_assualt">
-	<class>Acidic Assualt</class>
+<shipBlueprint name="AEA_ACID_ASSAULT" layout="aea_acid_assault" img="aea_acid_assault">
+	<class>Acidic Assault</class>
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
@@ -1605,8 +1619,35 @@
 	<weaponList missiles="9" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
 	<droneList drones="7" count="3" load="LIST_DRONES_ACIDIC" />
 	<health amount="15" />
-	<maxPower amount="6" />
+	<maxPower amount="8" />
 	<crewCount amount="1" max="4" class="orchid" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_ACID_ASSAULT_ELITE" layout="aea_acid_assault" img="aea_acid_assault">
+	<class>Elite Acidic Assault</class>
+	<minSector>1</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="1" room="7" start="true" />
+		<doors power="2" max="2" room="2" start="true" />
+		<drones power="2" max="8" room="1" start="true" />
+		<engines power="1" max="2" room="11" start="true" />
+		<mind power="1" max="1" room="6" start="true" />
+		<oxygen power="1" max="2" room="9" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="10" room="3" start="true" />
+		<teleporter power="1" max="1" room="5" start="true" />
+		<weapons power="2" max="10" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="8" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
+	<droneList drones="8" count="4" load="LIST_DRONES_ACIDIC" />
+	<health amount="12" />
+	<maxPower amount="10" />
+	<crewCount amount="2" max="5" class="orchid" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
@@ -2374,6 +2415,7 @@
 	<name>AEA_LASER_OLD_1</name>
 	<name>AEA_LASER_OLDP_1</name>
 	<name>AEA_FOCUS_OLD_1</name>
+	<name>AEA_MISSILE_OLD_1</name>
 </blueprintList>
 
 <blueprintList name="BLUELIST_PRECURSOR_TECH">
@@ -2391,27 +2433,34 @@
 	<name>AEA_FOCUS_OLD_1</name>
 	<name>AEA_FOCUS_OLD_2</name>
 	<name>AEA_FOCUS_OLD_3</name>
+
+	<name>AEA_MISSILE_OLD_1</name>
+	<name>AEA_MISSILE_OLD_2</name>
+	<name>AEA_MISSILE_OLD_3</name>
 </blueprintList>
 
 <blueprintList name="LIST_WEAPONS_AEA_OLD_1">
 	<name>AEA_LASER_OLD_1</name>
 	<name>AEA_LASER_OLD_2</name>
 	<name>AEA_LASER_OLD_3</name>
-	<name>AEA_LASER_OLDP_1</name>
-	<name>AEA_LASER_OLDP_2</name>
-	<name>AEA_LASER_OLDP_3</name>
 	<name>AEA_LASER_OLD_1</name>
 	<name>AEA_LASER_OLD_2</name>
 	<name>AEA_LASER_OLD_3</name>
 	<name>AEA_LASER_OLDP_1</name>
 	<name>AEA_LASER_OLDP_2</name>
 	<name>AEA_LASER_OLDP_3</name>
+	<name>AEA_LASER_OLDP_1</name>
+	<name>AEA_LASER_OLDP_2</name>
+	<name>AEA_LASER_OLDP_3</name>
 	<name>AEA_FOCUS_OLD_1</name>
 	<name>AEA_FOCUS_OLD_2</name>
 	<name>AEA_FOCUS_OLD_3</name>
 	<name>AEA_FOCUS_OLD_1</name>
 	<name>AEA_FOCUS_OLD_2</name>
 	<name>AEA_FOCUS_OLD_3</name>
+	<name>AEA_MISSILE_OLD_1_ENEMY</name>
+	<name>AEA_MISSILE_OLD_2_ENEMY</name>
+	<name>AEA_MISSILE_OLD_3_ENEMY</name>
 
 	<name>LASER_BURST_2</name>
 	<name>LASER_BURST_3</name>
@@ -2453,21 +2502,24 @@
 	<name>AEA_LASER_OLD_1</name>
 	<name>AEA_LASER_OLD_2</name>
 	<name>AEA_LASER_OLD_3</name>
-	<name>AEA_LASER_OLDP_1</name>
-	<name>AEA_LASER_OLDP_2</name>
-	<name>AEA_LASER_OLDP_3</name>
 	<name>AEA_LASER_OLD_1</name>
 	<name>AEA_LASER_OLD_2</name>
 	<name>AEA_LASER_OLD_3</name>
 	<name>AEA_LASER_OLDP_1</name>
 	<name>AEA_LASER_OLDP_2</name>
 	<name>AEA_LASER_OLDP_3</name>
+	<name>AEA_LASER_OLDP_1</name>
+	<name>AEA_LASER_OLDP_2</name>
+	<name>AEA_LASER_OLDP_3</name>
 	<name>AEA_FOCUS_OLD_1</name>
 	<name>AEA_FOCUS_OLD_2</name>
 	<name>AEA_FOCUS_OLD_3</name>
 	<name>AEA_FOCUS_OLD_1</name>
 	<name>AEA_FOCUS_OLD_2</name>
 	<name>AEA_FOCUS_OLD_3</name>
+	<name>AEA_MISSILE_OLD_1_ENEMY</name>
+	<name>AEA_MISSILE_OLD_2_ENEMY</name>
+	<name>AEA_MISSILE_OLD_3_ENEMY</name>
 
 	<name>LASER_BURST_2</name>
 	<name>LASER_BURST_3</name>
@@ -2556,6 +2608,9 @@
 	<name>AEA_FOCUS_OLD_1</name>
 	<name>AEA_FOCUS_OLD_2</name>
 	<name>AEA_FOCUS_OLD_3</name>
+	<name>AEA_MISSILE_OLD_1</name>
+	<name>AEA_MISSILE_OLD_2</name>
+	<name>AEA_MISSILE_OLD_3</name>
 </blueprintList>
 
 <blueprintList name="LIST_SHIPS_AEA_OLD_ALL">

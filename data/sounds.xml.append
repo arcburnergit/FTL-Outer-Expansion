@@ -55,4 +55,5 @@
 <aea_laser_old_fire1 volume="7">weapons/launch_unused_1.ogg</aea_laser_old_fire1>
 <aea_laser_old_fire2 volume="8">weapons/launch_unused_2.ogg</aea_laser_old_fire2>
 <aea_halo_railgun volume="8">weapons/aea_halo_railgun.ogg</aea_halo_railgun>
+<aea_page_turn volume="8">weapons/aea_page_turn.ogg</aea_page_turn>
 </FTL>

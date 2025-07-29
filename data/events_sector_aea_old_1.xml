@@ -19,7 +19,7 @@
 	<metaVariable name="juke_aea_old_1" op="set" val="1" />
 	<text>You pull yourself off the floor, in a daze. The ship cameras show most of the other crew doing the same, waking from their slumber. You remember the conflict you were just in with that strange vessel, but you find you're no longer under attack. Additionally you're being hailed by an unknown contact.</text>
 	<variable name="loc_unique_sectors" op="add" val="1" />
-	<modifyPursuit amount="-999" />
+	<modifyPursuit amount="-8" />
 	<ship load="SHIP_AEA_OLD_1_GUARD" hostile="false" />
 	<changeBackground>BACK_EVENT_AEA_OLD_1_START</changeBackground>
 	<playSound>lightspeed</playSound>
@@ -319,6 +319,59 @@ A strange species appears on screen. "Welcome to the Expanse, Unfortunately you 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->	
 
+<event name="AEA_OLD_OUTPOST" unique="true">
+	<preventQuest/>
+	<beaconType id="map_icon_outpost" global="true">
+		<color r="233" g="123" b="74" a="1.0"/>
+		<unvisitedTooltip id="map_outpost_unvisited"/>
+		<visitedTooltip id="map_outpost_visited"/>
+	</beaconType>
+	<ship load="SHIP_FEDERATION_OUTPOST" hostile="false"/>
+	<text>You find a Federation outpost at this beacon, broadcasting on a public channel. As you arrive the Federation commander onboard the station hails you. "A Federation Renegade eh, Haven't seen one of you around here in a long time. Either way, Welcome to our humble outpost, we serve the fragments of the federation fleet who get trapped here. Speaking of, we recently discovered a field of Lylmik tech, it must have been hit pretty hard for it fragmented into many many pieces. We've collected the pieces but have been unable to find anything useful amongst them, perhaps you'd be interested?"</text>
+	<weapon name="AEA_COMPONENT_OLD"/>
+	<choice req="challenge_level" lvl="0" max_lvl="0" blue="false">
+		<text>Request free repairs. [7$]</text>
+		<event>
+			<damage amount="-7"/>
+		</event>
+	</choice>
+	<choice>
+		<text>Request fuel.</text>
+		<event>
+			<item_modify>
+				<item type="fuel" min="7" max="7"/>
+			</item_modify>
+		</event>
+	</choice>
+	<choice>
+		<text>Request ammunition.</text>
+		<event>
+			<item_modify>
+				<item type="missiles" min="4" max="4"/>
+			</item_modify>
+		</event>
+	</choice>
+	<choice>
+		<text>Request droneparts.</text>
+		<event>
+			<item_modify>
+				<item type="drones" min="3" max="3"/>
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Attack the outpost!</text>
+		<event>
+			<text>You arm the weapons and engage the station!</text>
+			<ship hostile="true"/>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
 <event name="STORE_HOSTILE_AEA_OLD">
 	<preventQuest />
 	<beaconType id="map_icon_hostilestore" global="false">
@@ -427,7 +480,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 				<item type="scrap" min="-30" max="-30" />
 			</item_modify>
 			<text>You gain access to the station, and discover its basically just one big store.</text>
-			<store>STORE_AEA_OLD_EXCLUSIVE</store>
+			<store>STORE_EVERYTHING</store>
 		</event>
 	</choice>
 	<choice hidden="false">

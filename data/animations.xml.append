@@ -440,10 +440,23 @@
 	<mountPoint x="4" y="79" />
 	<chargeImage>weapon_old/aea_missile_old_1_glow.png</chargeImage>
 </weaponAnim>
+<animSheet name="aea_missile_old_1_icon" w="121" h="62" fw="121" fh="62">weapon_old/aea_missile_old_1_icon.png</animSheet>
+<anim name="aea_missile_old_1_icon">
+	<sheet>aea_missile_old_1_icon</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
 
 <animSheet name="aea_missile_old_proj" w="256" h="48" fw="32" fh="48">weapon_old/aea_missile_old_proj.png</animSheet>
 <anim name="aea_missile_old_proj">
 	<sheet>aea_missile_old_proj</sheet>
+	<desc length="8" x="0" y="0" />
+	<time>0.8</time>
+</anim>
+
+<animSheet name="aea_missile_old_proj_2" w="256" h="48" fw="32" fh="48">weapon_old/aea_missile_old_proj_2.png</animSheet>
+<anim name="aea_missile_old_proj_2">
+	<sheet>aea_missile_old_proj_2</sheet>
 	<desc length="8" x="0" y="0" />
 	<time>0.8</time>
 </anim>
@@ -461,6 +474,95 @@
 	<time>2</time>
 </anim>
 
+<animSheet name="aea_missile_old_2" w="988" h="125" fw="52" fh="125">weapon_old/aea_missile_old_2.png</animSheet>
+<weaponAnim name="aea_missile_old_2">
+	<sheet>aea_missile_old_2</sheet>
+	<desc length="19" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>7</fireFrame>
+	<firePoint x="32" y="50" />
+	<mountPoint x="4" y="77" />
+	<chargeImage>weapon_old/aea_missile_old_2_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_missile_old_2_icon" w="105" h="52" fw="105" fh="52">weapon_old/aea_missile_old_2_icon.png</animSheet>
+<anim name="aea_missile_old_2_icon">
+	<sheet>aea_missile_old_2_icon</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_missile_old_2_barrels" w="312" h="125" fw="52" fh="125">weapon_old/aea_missile_old_2_barrels.png</animSheet>
+<anim name="aea_missile_old_2_barrels_slow">
+	<sheet>aea_missile_old_2_barrels</sheet>
+	<desc length="6" x="0" y="0" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_missile_old_2_barrels">
+	<sheet>aea_missile_old_2_barrels</sheet>
+	<desc length="6" x="0" y="0" />
+	<time>0.25</time>
+</anim>
+<anim name="aea_missile_old_2_barrels_fast">
+	<sheet>aea_missile_old_2_barrels</sheet>
+	<desc length="6" x="0" y="0" />
+	<time>0.1</time>
+</anim>
+
+<animSheet name="aea_missile_old_2_barrels_fire" w="5304" h="125" fw="52" fh="125">weapon_old/aea_missile_old_2_barrels_fire.png</animSheet>
+<anim name="aea_missile_old_2_barrels_fire">
+	<sheet>aea_missile_old_2_barrels_fire</sheet>
+	<desc length="102" x="0" y="0" />
+	<time>1.7</time>
+</anim>
+<animSheet name="aea_missile_old_2_barrels_fire2" w="5616" h="125" fw="52" fh="125">weapon_old/aea_missile_old_2_barrels_fire2.png</animSheet>
+<anim name="aea_missile_old_2_barrels_fire2">
+	<sheet>aea_missile_old_2_barrels_fire2</sheet>
+	<desc length="108" x="0" y="0" />
+	<time>1.8</time>
+</anim>
+
+<animSheet name="aea_missile_old_3" w="1026" h="128" fw="54" fh="128">weapon_old/aea_missile_old_3.png</animSheet>
+<weaponAnim name="aea_missile_old_3">
+	<sheet>aea_missile_old_3</sheet>
+	<desc length="19" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>7</fireFrame>
+	<firePoint x="33" y="53" />
+	<mountPoint x="4" y="80" />
+	<chargeImage>weapon_old/aea_missile_old_3_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_missile_old_3_icon" w="115" h="52" fw="115" fh="52">weapon_old/aea_missile_old_3_icon.png</animSheet>
+<anim name="aea_missile_old_3_icon">
+	<sheet>aea_missile_old_3_icon</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_missile_old_3_start" w="864" h="128" fw="54" fh="128">weapon_old/aea_missile_old_3_start.png</animSheet>
+<anim name="aea_missile_old_3_start">
+	<sheet>aea_missile_old_3_start</sheet>
+	<desc length="16" x="0" y="0" />
+	<time>1.6</time>
+</anim>
+<animSheet name="aea_missile_old_3_wave" w="540" h="128" fw="54" fh="128">weapon_old/aea_missile_old_3_wave.png</animSheet>
+<anim name="aea_missile_old_3_wave">
+	<sheet>aea_missile_old_3_wave</sheet>
+	<desc length="10" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_door_sparks_hor" w="525" h="35" fw="35" fh="35">effects/aea_door_sparks_hor.png</animSheet>
+<anim name="aea_door_sparks_hor">
+	<sheet>aea_door_sparks_hor</sheet>
+	<desc length="15" x="0" y="0" />
+	<time>1.5</time>
+</anim>
+<animSheet name="aea_door_sparks_ver" w="525" h="35" fw="35" fh="35">effects/aea_door_sparks_ver.png</animSheet>
+<anim name="aea_door_sparks_ver">
+	<sheet>aea_door_sparks_ver</sheet>
+	<desc length="15" x="0" y="0" />
+	<time>1.5</time>
+</anim>
 </FTL>
 
 <!--Armour-->
@@ -5120,6 +5222,75 @@
                    DESSIUS
 *********************************************************************************************************
 -->
+
+<animSheet name="aea_dark_book_object" w="11" h="16" fw="11" fh="16">decor/aea_dark_book.png</animSheet>
+<anim name="aea_dark_book_object">
+	<sheet>aea_dark_book_object</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<animSheet name="aea_dark_book_object_hover" w="11" h="16" fw="11" fh="16">decor/aea_dark_book_hover.png</animSheet>
+<anim name="aea_dark_book_object_hover">
+	<sheet>aea_dark_book_object_hover</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_statue" w="210" h="70" fw="35" fh="35">people/aea_statue_base.png</animSheet>
+<anim name="aea_statue_portrait">
+	<sheet>aea_statue</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>1</time>
+</anim>
+<anim name="aea_statue_death_right">
+	<sheet>aea_statue</sheet>
+	<desc length="6" x="0" y="0" />
+	<time>0.6</time>
+</anim>
+<anim name="aea_statue_death_left">
+	<sheet>aea_statue</sheet>
+	<desc length="6" x="0" y="0" />
+	<time>0.6</time>
+</anim>
+
+<animSheet name="aea_statue_hostile_inactive" w="210" h="70" fw="35" fh="35">people/aea_statue_hostile_inactive_base.png</animSheet>
+<anim name="aea_statue_hostile_inactive_portrait">
+	<sheet>aea_statue_hostile_inactive</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+<anim name="aea_statue_hostile_inactive_death_right">
+	<sheet>aea_statue_hostile_inactive</sheet>
+	<desc length="6" x="0" y="0" />
+	<time>0.6</time>
+</anim>
+<anim name="aea_statue_hostile_inactive_death_left">
+	<sheet>aea_statue_hostile_inactive</sheet>
+	<desc length="6" x="0" y="0" />
+	<time>0.6</time>
+</anim>
+
+<animSheet name="aea_statue_hostile" w="210" h="140" fw="35" fh="35">people/aea_statue_hostile_base.png</animSheet>
+<anim name="aea_statue_hostile_portrait">
+	<sheet>aea_statue_hostile</sheet>
+	<desc length="1" x="0" y="3" />
+	<time>1</time>
+</anim>
+<anim name="aea_statue_hostile_punch_up">
+	<sheet>aea_statue_hostile</sheet>
+	<desc length="6" x="0" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_statue_hostile_punch_down">
+	<sheet>aea_statue_hostile</sheet>
+	<desc length="6" x="0" y="2" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_statue_hostile_death_left">
+	<sheet>aea_statue_hostile</sheet>
+	<desc length="6" x="0" y="0" />
+	<time>0.6</time>
+</anim>
 
 <animSheet name="aea_dark_justicier" w="315" h="455" fw="35" fh="35">people/aea_dark_justicier_base.png</animSheet>
 <anim name="aea_dark_justicier_clone">
