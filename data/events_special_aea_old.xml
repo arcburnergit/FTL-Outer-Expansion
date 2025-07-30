@@ -1,7 +1,7 @@
 <FTL>
 <event name="AEA_OLD_POWER_CELL_CONTINUE">
 	<text> TEST TEST .</text>
-	<weapon name="AEA_LASER_OLD_1_CELL"/>
+	<weapon name="FREE_WEAPONS_AEA_OLD"/>
 	<variable name="aea_old_has_cell" op="set" val="1" />
 </event>
 
@@ -12,14 +12,22 @@
 		<unvisitedTooltip>???</unvisitedTooltip>
 		<visitedTooltip>???</visitedTooltip>
 	</beaconType>
-	<text>There's a strange weapon wreck at this beacon. Almost none of it is salvagable. You manage to recover a strange weapon from the wreckage.</text>
-	<weapon name="AEA_LASER_OLD_1_CELL"/>
+	<text>There's a strange wreck at this beacon, almost none of it is salvagable. You only manage to recover a single strange weapon from the wreckage.</text>
+	<weapon name="FREE_WEAPONS_AEA_OLD"/>
 	<variable name="aea_old_has_cell" op="set" val="1" />
 	<choice hidden="true">
 		<text>Continue...</text>
-		<event/>
+		<event name="AEA_POWER_CELL_SPEAK">
+			<text>YOU SHOULD NOT BE SEEING THIS, IF YOU ARE CHECK TO MAKE SURE YOUR HYPERSPACE IS UP TO DATE.</text>
+			<metaVariable name="aea_dark_book_unlock" op="set" val="1" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
 	</choice>
 </event>
+
 
 <event name="AEA_OLD_GATE">
 	<preventQuest />
@@ -31,34 +39,27 @@
 		<visitedTooltip>This is the location of a large structure.</visitedTooltip>
 	</beaconType>
 	<text>A massive ring sits in orbit nearby the beacon, an imposing structure with no apparent use. Apparently having been put here long ago, the use of the ring remains a mystery to this day.</text>
-	<choice hidden="true" req="AEA_LASER_OLD_1_CELL" blue="false">
+	<choice hidden="true" req="BLUELIST_PRECURSOR_TECH" blue="false">
 		<text>Continue...</text>
 		<event>
 			<text>The strange weapon you collected earlier in your travels begins to glow as you near the structure.</text>
-			<choice hidden="true" req="AEA_LASER_OLD_1_CELL">
+			<choice hidden="true" req="BLUELIST_PRECURSOR_TECH">
 				<text>(??? Weapon) Insert the weapon into the gate.</text>
-				<event>
-					<text>The gate begins to glow, a moment later a rift opens in the middle, and a large cruiser immerges.</text>
-					<ship load="AEA_OLD_GATE_GUARD_BOSS" hostile="true"/>
-					<remove name="AEA_LASER_OLD_1_CELL"/>
+				<event name="AEA_GATE_NAME_SET">
+					<text>The gate begins to glow, your sensors light up and detect a massive discharge of energy directed at the centre of the gate.</text>
 					<variable name="aea_old_activated_cell" op="set" val="1" />
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
 							<text>The weapon you put into the gate is spat out once again, it appears to have pulled part of the gate out with it.</text>
-							<weapon name="AEA_LASER_OLD_1"/>
+							<weapon name="AEA_COMPONENT_OLD"/>
 							<choice hidden="true">
 								<text>Continue...</text>
-								<event>
-									<text>As you collect the scrap from the gate you notice the large cruiser is now bearing down on your, you notice two weapons charging, however the rest of it's impressive arsenal is still offline.</text>
-									<weapon name="AEA_COMPONENT_OLD"/>
-									<status type="limit" target="enemy" system="weapons" amount="0" />
-									<status type="limit" target="enemy" system="drones" amount="0" />
-									<status type="limit" target="enemy" system="teleporter" amount="0" />
-									<status type="limit" target="enemy" system="temporal" amount="0" />
-									<choice>
+								<event name="AEA_OLD_GATE_SPEAK">
+									<text>YOU SHOULD NOT BE SEEING THIS, IF YOU ARE CHECK TO MAKE SURE YOUR HYPERSPACE IS UP TO DATE.</text>
+									<choice hidden="true">
 										<text>Continue...</text>
-										<event load="COMBAT_CHECK"/>
+										<event/>
 									</choice>
 								</event>
 							</choice>
@@ -82,7 +83,7 @@
 			</choice>
 		</event>
 	</choice>
-	<choice hidden="true" req="AEA_LASER_OLD_1_CELL" lvl="0" max_lvl="0" blue="false">
+	<choice hidden="true" req="BLUELIST_PRECURSOR_TECH" lvl="0" max_lvl="0" blue="false">
 		<text>Continue...</text>
 		<event>
 			<text>You admire the structure while your FTL drive changes.</text>
@@ -94,6 +95,19 @@
 				<text>Do nothing.</text>
 				<event />
 			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_OLD_GATE_WARP">
+	<text>[MESSAGE FROM THE DEVS]
+The main story beyond this point is currently being rewritten. However most of those changes will not be in yet, keep an eye out for updates in the future..
+If you do see any bugs it's still worth reporting them.</text>
+	<choice>
+		<text>Continue...</text>
+		<event>
+			<secretSectorWarp>SECRET_AEA_OLD_1</secretSectorWarp>
+			<secretSector />
 		</event>
 	</choice>
 </event>
@@ -198,7 +212,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 </eventList>
 <event name="DESTROYED_AEA_OLD_MV_GENERIC">
 	<text load="TEXT_DESTROYED_AEA_OLD_MV" />
-	<autoReward level="MED">standard</autoReward>
+	<autoReward level="HIGH">standard</autoReward>
 </event>
 <textList name="TEXT_DESTROYED_AEA_OLD_MV">
 	<text>The wreck breaks apart into thousands of pieces of scrap metal, Unfortunately not all of those are actually useful bits of scrap.</text>
@@ -208,7 +222,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 </textList>
 <event name="DESTROYED_AEA_OLD_MV_GUN">
 	<text>To your surprise, a weapon managed to survive the explosion. It's a little crisp from the explosion but with a few touch ups you can salvage it.</text>
-	<autoReward level="MED">standard_no_item</autoReward>
+	<autoReward level="HIGH">standard_no_item</autoReward>
 	<weapon name="RANDOM" />
 </event>
 
@@ -231,7 +245,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 </textList>
 <event name="DEAD_CREW_AEA_OLD_MV_GUN">
 	<text>Now emptied of crew, you find one of their weapons on board. You take it back with you before scrapping the ship.</text>
-	<autoReward level="MED">standard_no_item</autoReward>
+	<autoReward level="HIGH">standard_no_item</autoReward>
 	<weapon name="RANDOM" />
 </event>
 
@@ -321,7 +335,7 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 </event>
 <event name="TRANSPORT_CAPTURE_AEA_OLD" unique="true">
 	<text>The crew is dead, leaving you with the station. Its cargo is yours for the taking. Aboard is the special tech you expected, which you bring back to your ship.</text>
-	<autoReward level="MED">standard_no_item</autoReward>
+	<autoReward level="HIGH">standard_no_item</autoReward>
 	<weapon name="AEA_LASER_OLDP_3_LOOT" />
 	<variable name="ach_trans_aea_old_1" op="set" val="1" />
 	<achievement>ACH_TRANS_AEA_OLD_1</achievement>
@@ -343,7 +357,8 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 
 <event name="DEAD_CREW_AEA_OLD">
 	<text load="TEXT_DEAD_CREW_AEA_OLD" />
-	<autoReward level="HIGH">standard</autoReward>
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<weapon name="RANDOM"/>
 </event>
 <textList name="TEXT_DEAD_CREW_AEA_OLD">
 	<text>As the last Lylmik collapses, it lets out two last words. "Screw... you..."</text>
@@ -452,6 +467,293 @@ It's artillery appear to be some kind of hooks which grab hold of your ship and 
 		<crewMember type="aea_old_1" prop="0.7" />
 		<crewMember type="BLUELIST_AEA_OLD_ELITE_FILL_IN" prop="0.3" />
 	</crew>
+</ship>
+
+
+<event name="FLEET_AEA_OLD_OUTSKIRTS">
+	<revisitEvent>FLEET_AEA_OLD_OUTSKIRTS</revisitEvent>
+	<loadEventList seeded="true" first="true">
+		<event name="FLEET_AEA_OLD_ELITE" req="aea_old_dives" lvl="0" max_lvl="3"/>
+		<event name="FLEET_AEA_OLD_ELITE_ASB" req="aea_old_dives" lvl="3" max_lvl="5"/>
+		<event name="FLEET_AEA_OLD_LYLMIK_OUT"/>
+	</loadEventList>
+</event>
+
+<event name="FLEET_AEA_OLD_ELITE">
+	<customFleet right="false" firing="true" autoDarkening="false">CUSTOM_FLEET_AEA_OLD_MESS</customFleet>
+	<customFleet right="true" firing="true" autoDarkening="false">CUSTOM_FLEET_AEA_OLD_MESS</customFleet>
+	<text>A large scale battle has broken out in the sector. The ship that approaches is no regular outcast, but rather an Elite! With the chaos around you, you won't get very long to attack the ship uninterupted.</text>
+	<variable name="loc_dives" op="add" val="1"/>
+	<variable name="aea_old_dives" op="add" val="1"/>
+	<ship load="SHIP_AEA_OLD_MU_ALL" hostile="true"/>
+	<noASBPlanet/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+	<choice hidden="true" req="engines" lvl="6">
+		<text>(Adv. Engines) Try to escape the Elite.</text>
+		<event load="FLEET_ESCAPE"/>
+	</choice>
+</event>
+
+<event name="FLEET_AEA_OLD_ELITE_ASB">
+	<customFleet right="false" firing="true" autoDarkening="false">CUSTOM_FLEET_AEA_OLD_MESS</customFleet>
+	<customFleet right="true" firing="true" autoDarkening="false">CUSTOM_FLEET_AEA_OLD_MESS</customFleet>
+	<text>A large scale battle has broken out in the sector. The ship that approaches is no regular outcast, but rather an Elite! You'll need to be careful as there are several ships around you joining taking pot shots at you and your opponent.</text>
+	<variable name="loc_dives" op="add" val="1"/>
+	<variable name="aea_old_dives" op="add" val="1"/>
+	<ship load="SHIP_AEA_OLD_MU_ALL" hostile="true"/>
+	<environment type="PDS" target="all"/>
+	<noASBPlanet/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+	<choice hidden="true" req="engines" lvl="6">
+		<text>(Adv. Engines) Try to escape the Elite.</text>
+		<event load="FLEET_ESCAPE"/>
+	</choice>
+</event>
+
+<event name="FLEET_AEA_OLD_LYLMIK_OUT">
+	<customFleet right="false" firing="true" autoDarkening="false">CUSTOM_FLEET_AEA_OLD</customFleet>
+	<customFleet right="true" firing="true" autoDarkening="false">CUSTOM_FLEET_AEA_OLD_MESS</customFleet>
+	<text>The lylmik fleet has appeared to break up the conflict, a powerful Lylmik vessel approaches you, clearly intent on breaking you up in hundreds of pieces.</text>
+	<variable name="loc_dives" op="add" val="1"/>
+	<variable name="aea_old_dives" op="add" val="1"/>
+	<ship load="SHIP_AEA_OLD_FLEET_OUT" hostile="true"/>
+	<environment type="PDS" target="player"/>
+	<noASBPlanet/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+	<choice hidden="true" req="engines" lvl="6">
+		<text>(Adv. Engines) Try to escape the ship.</text>
+		<event load="FLEET_ESCAPE"/>
+	</choice>
+</event>
+
+<event name="FLEET_AEA_OLD_CAPITAL">
+	<revisitEvent>FLEET_AEA_OLD_CAPITAL</revisitEvent>
+	<loadEventList seeded="true" first="true">
+		<event name="FLEET_AEA_OLD_LYLMIK_NOASB" req="aea_old_cap_dives" lvl="0" max_lvl="3"/>
+		<event name="FLEET_AEA_OLD_LYLMIK" req="aea_old_cap_dives" lvl="3" max_lvl="5"/>
+		<event name="FLEET_AEA_OLD_LYLMIK_ELITE"/>
+	</loadEventList>
+</event>
+
+<event name="FLEET_AEA_OLD_LYLMIK_NOASB">
+	<customFleet right="false" firing="false" autoDarkening="false">CUSTOM_FLEET_AEA_OLD</customFleet>
+	<text>The Lylmik fleet has arrived to your beacon on their way to the gate, A Lylmik ship approaches you with it's weapons out. Not seeing you as a threat, the rest of the fleet ignores you.</text>
+	<variable name="loc_dives" op="add" val="1"/>
+	<variable name="aea_old_cap_dives" op="add" val="1"/>
+	<ship load="SHIP_AEA_OLD_FLEET_NOASB" hostile="true"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+	<choice hidden="true" req="engines" lvl="6">
+		<text>(Adv. Engines) Try to escape the ship.</text>
+		<event load="FLEET_ESCAPE"/>
+	</choice>
+</event>
+
+<event name="FLEET_AEA_OLD_LYLMIK">
+	<customFleet right="false" firing="true" autoDarkening="false">CUSTOM_FLEET_AEA_OLD</customFleet>
+	<text>The Lylmik fleet has arrived to your beacon on their way to the gate, A Lylmik ship approaches you with it's weapons out.</text>
+	<variable name="loc_dives" op="add" val="1"/>
+	<variable name="aea_old_cap_dives" op="add" val="1"/>
+	<ship load="SHIP_AEA_OLD_FLEET" hostile="true"/>
+	<environment type="PDS" target="player"/>
+	<noASBPlanet/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+	<choice hidden="true" req="engines" lvl="6">
+		<text>(Adv. Engines) Try to escape the ship.</text>
+		<event load="FLEET_ESCAPE"/>
+	</choice>
+</event>
+
+<event name="FLEET_AEA_OLD_LYLMIK_ELITE">
+	<customFleet right="false" firing="true" autoDarkening="false">CUSTOM_FLEET_AEA_OLD</customFleet>
+	<text>The Lylmik fleet has arrived to your beacon on their way to the gate, and a nearby ship turns to engage. The ship that approaches is no regular Lylmik, but rather an Elite!</text>
+	<variable name="loc_dives" op="add" val="1"/>
+	<variable name="aea_old_cap_dives" op="add" val="1"/>
+	<ship load="SHIP_AEA_OLD_FLEET_ELITE" hostile="true"/>
+	<environment type="PDS" target="player"/>
+	<noASBPlanet/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+	<choice hidden="true" req="engines" lvl="6">
+		<text>(Adv. Engines) Try to escape the Elite.</text>
+		<event load="FLEET_ESCAPE"/>
+	</choice>
+</event>
+
+<ship name="SHIP_AEA_OLD_FLEET_OUT" auto_blueprint="LIST_SHIPS_AEA_OLD_FIGHT">
+	<destroyed>
+		<text>You've managed to defeat the Lylmik ship, but you hardly have enough time to salvage more than a few resources.</text>
+		<item_modify>
+			<item type="fuel" min="3" max="3"/>
+			<item type="missiles" min="1" max="1"/>
+			<item type="drones" min="1" max="1"/>
+		</item_modify>
+		<!--<modifyPursuit amount="-1"/>-->
+		<choice req="MAGNET_ARM">
+			<text>(Magnet Arm) Salvage the wreck further.</text>
+			<event>
+				<autoReward level="MED">standard</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>You've managed to defeat the Lylmik ship, but you hardly have enough time to salvage more than a few resources.</text>
+		<item_modify>
+			<item type="fuel" min="3" max="3"/>
+			<item type="missiles" min="1" max="1"/>
+			<item type="drones" min="1" max="1"/>
+		</item_modify>
+		<!--<modifyPursuit amount="-1"/>-->
+		<choice req="MAGNET_ARM">
+			<text>(Magnet Arm) Salvage the wreck further.</text>
+			<event>
+				<autoReward level="MED">standard</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_OLD_FLEET_NOASB" auto_blueprint="LIST_SHIPS_AEA_OLD_FIGHT">
+	<destroyed>
+		<text>You've managed to defeat the Lylmik ship, realising their mistake in ignoring you, the fleet begins to fire on you. You're still able to salvage the wreck.</text>
+		<autoReward level="MED">standard</autoReward>
+		<customFleet right="false" firing="true" autoDarkening="true">CUSTOM_FLEET_AEA_OLD</customFleet>
+		<environment type="PDS" target="player"/>
+		<noASBPlanet/>
+		<choice req="MAGNET_ARM">
+			<text>(Magnet Arm) Salvage the wreck further.</text>
+			<event>
+				<autoReward level="LOW">standard_no_item</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>You've managed to defeat the Lylmik ship, realising their mistake in ignoring you, the fleet begins to fire on you. You're still able to salvage the wreck.</text>
+		<autoReward level="MED">standard</autoReward>
+		<customFleet right="false" firing="true" autoDarkening="true">CUSTOM_FLEET_AEA_OLD</customFleet>
+		<environment type="PDS" target="player"/>
+		<noASBPlanet/>
+		<choice req="MAGNET_ARM">
+			<text>(Magnet Arm) Salvage the wreck further.</text>
+			<event>
+				<autoReward level="LOW">standard_no_item</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_OLD_FLEET" auto_blueprint="LIST_SHIPS_AEA_OLD_FIGHT">
+	<destroyed>
+		<text>You've managed to defeat the Lylmik ship, but you hardly have enough time to salvage more than a few resources.</text>
+		<autoReward level="MED">standard</autoReward>
+		<item_modify>
+			<item type="fuel" min="3" max="3"/>
+			<item type="missiles" min="1" max="1"/>
+			<item type="drones" min="1" max="1"/>
+		</item_modify>
+		<choice req="MAGNET_ARM">
+			<text>(Magnet Arm) Salvage the wreck further.</text>
+			<event>
+				<autoReward level="MED">standard</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>You've managed to defeat the Lylmik ship, but you hardly have enough time to salvage more than a few resources.</text>
+		<autoReward level="MED">standard</autoReward>
+		<item_modify>
+			<item type="fuel" min="3" max="3"/>
+			<item type="missiles" min="1" max="1"/>
+			<item type="drones" min="1" max="1"/>
+		</item_modify>
+		<choice req="MAGNET_ARM">
+			<text>(Magnet Arm) Salvage the wreck further.</text>
+			<event>
+				<autoReward level="MED">standard</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_OLD_FLEET_ELITE" auto_blueprint="LIST_SHIPS_AEA_OLD_ELITE_FIGHT">
+	<destroyed>
+		<text>You've managed to defeat the Lylmik Elite, but you hardly have enough time to salvage more than a few resources.</text>
+		<autoReward level="MED">standard</autoReward>
+		<item_modify>
+			<item type="fuel" min="3" max="3"/>
+			<item type="missiles" min="1" max="1"/>
+			<item type="drones" min="1" max="1"/>
+		</item_modify>
+		<choice req="MAGNET_ARM">
+			<text>(Magnet Arm) Salvage the wreck further.</text>
+			<event>
+				<autoReward level="MED">standard</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</destroyed>
+	<deadCrew>
+		<text>You've managed to defeat the Lylmik Elite, but you hardly have enough time to salvage more than a few resources.</text>
+		<autoReward level="MED">standard</autoReward>
+		<item_modify>
+			<item type="fuel" min="3" max="3"/>
+			<item type="missiles" min="1" max="1"/>
+			<item type="drones" min="1" max="1"/>
+		</item_modify>
+		<choice req="MAGNET_ARM">
+			<text>(Magnet Arm) Salvage the wreck further.</text>
+			<event>
+				<autoReward level="MED">standard</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</deadCrew>
 </ship>
 
 </FTL>

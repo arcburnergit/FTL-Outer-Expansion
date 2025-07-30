@@ -158,6 +158,14 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
                 crewmem.extend.deathTimer.currTime = crewmem.extend.deathTimer.currTime - Hyperspace.FPS.SpeedFactor/16
             end
         end
+        if shipManager:HasAugmentation("UPG_AEA_CLONE_CRIME_ENEMY") > 0 or shipManager:HasAugmentation("UPG_AEA_CLONE_CRIME_ENEMY") > 0 then
+            local enemyManager = Hyperspace.ships(1 - shipManager.iShipId)
+            for crewmem in vter(enemyManager.vCrewList) do
+                if crewmem.extend.deathTimer and crewmem.extend.deathTimer:Running() and crewmem.iShipId == shipManager.iShipId then
+                    crewmem.extend.deathTimer.currTime = crewmem.extend.deathTimer.currTime - Hyperspace.FPS.SpeedFactor/16
+                end
+            end
+        end
 	end
 end)
 

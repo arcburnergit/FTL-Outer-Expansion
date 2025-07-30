@@ -81,9 +81,9 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
 end)
 
 local function applyWeakened(crewmem)
-	userdata_table(crewmem, "mods.aea.dark_justicier").weakened = 4
+	userdata_table(crewmem, "mods.aea.dark_justicier").weakened = 2
 	Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(weaknessBoost), crewmem)
-	Hyperspace.playerVariables["aea_crew_weak_"..tostring(crewmem.extend.selfId)] = 4
+	Hyperspace.playerVariables["aea_crew_weak_"..tostring(crewmem.extend.selfId)] = 2
 end
 local function checkForValidCrew(crewmem)
 	local crewTable = userdata_table(crewmem, "mods.aea.dark_justicier")
@@ -605,7 +605,20 @@ local sacList = {}
 local orderList = {}
 local targetShip = 0
 local activateCursor = false
+local bookCursor = false
 local startAnimStarted = false
+
+script.on_game_event("AEA_JUSTICIER_BOOK_ACTIVATE", false, function()
+	activateCursor = true
+	bookCursor = true
+	Hyperspace.playerVariables.aea_dark_book_ready = 0
+	Hyperspace.Mouse.validPointer = cursorValid
+    Hyperspace.Mouse.invalidPointer = cursorValid2
+    local commandGui = Hyperspace.App.gui
+    local crewControl = commandGui.crewControl
+    crewControl.selectedCrew:clear()
+    crewControl.potentialSelectedCrew:clear()
+end)
 
 script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, shipManager)
 	local crewmem = power.crew
@@ -648,7 +661,7 @@ script.on_internal_event(Defines.InternalEvents.ON_MOUSE_L_BUTTON_DOWN, function
         		mousePosRelative = worldToEnemyLocation(mousePos)
         	end
         	--print("mouse x:"..mousePosRelative.x.." y:"..mousePosRelative.y.." crew "..crewmem.type.." x:"..location.x.." y:"..location.y)
-        	if (crewmem.iShipId == 0 or crewmem.bMindControlled) and get_distance(mousePosRelative, location) <= 17 and crewmem:AtGoal() and not sacList[crewmem.extend.selfId] and checkForValidCrew(crewmem) then
+        	if (crewmem.iShipId == 0 or (crewmem.bMindControlled and not bookCursor)) and get_distance(mousePosRelative, location) <= 17 and crewmem:AtGoal() and not sacList[crewmem.extend.selfId] and checkForValidCrew(crewmem) then
         		local slotX = math.floor((crewmem.currentSlot.worldLocation.x - 17)/35)
         		local slotY = math.floor((crewmem.currentSlot.worldLocation.y - 17)/35)
 	            --print("slot x:"..slotX.." y:"..slotY)
@@ -962,7 +975,7 @@ script.on_render_event(Defines.RenderEvents.CREW_MEMBER_HEALTH, function(crewmem
 end, function() end)
 
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
-	if activateCursor then
+	if activateCursor and not bookCursor then
 		for crewmem in vter(shipManager.vCrewList) do
 			if crewmem.type == "aea_dark_justicier" then
 				for power in vter(crewmem.extend.crewPowers) do
@@ -978,24 +991,29 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 	local commandGui = Hyperspace.App.gui
 	if activateCursor and (commandGui.event_pause or commandGui.menu_pause) then
 		activateCursor = false
+		Hyperspace.playerVariables.aea_dark_book_ready = 1
 	    Hyperspace.Mouse.validPointer = cursorDefault
 	    Hyperspace.Mouse.invalidPointer = cursorDefault2
 	    sacList = {}
 	    orderList = {}
-	    for crewmem in vter(Hyperspace.ships.player.vCrewList) do
-			if crewmem.type == "aea_dark_justicier" then
-				for power in vter(crewmem.extend.crewPowers) do
-					power:CancelPower(true)
-					power.powerCooldown.first = power.powerCooldown.second - 0.01
+	    if not bookCursor then
+		    for crewmem in vter(Hyperspace.ships.player.vCrewList) do
+				if crewmem.type == "aea_dark_justicier" then
+					for power in vter(crewmem.extend.crewPowers) do
+						power:CancelPower(true)
+						power.powerCooldown.first = power.powerCooldown.second - 0.01
+					end
 				end
 			end
 		end
+	    bookCursor = false
 	end
 end)
 
 script.on_internal_event(Defines.InternalEvents.ON_MOUSE_R_BUTTON_DOWN, function(x,y) 
 	if activateCursor then
 		activateCursor = false
+		Hyperspace.playerVariables.aea_dark_book_ready = 1
 	    Hyperspace.Mouse.validPointer = cursorDefault
 	    Hyperspace.Mouse.invalidPointer = cursorDefault2
 	    if currentValidSpell and orderList[1] then
@@ -1031,7 +1049,10 @@ script.on_internal_event(Defines.InternalEvents.ON_MOUSE_R_BUTTON_DOWN, function
 				Hyperspace.metaVariables["aea_dark_spell_seen_"..currentValidSpell] = 1
 			end
 			Hyperspace.metaVariables["aea_dark_spell_all"] = Hyperspace.metaVariables["aea_dark_spell_all"] + 1
-	    else
+
+			local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
+			Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager, "AEA_JUSTICIER_BOOK_COOLDOWN_START", false,-1)
+	    elseif not bookCursor then
 	    	for crewmem in vter(Hyperspace.ships.player.vCrewList) do
 				if crewmem.type == "aea_dark_justicier" then
 					for power in vter(crewmem.extend.crewPowers) do
@@ -1043,6 +1064,7 @@ script.on_internal_event(Defines.InternalEvents.ON_MOUSE_R_BUTTON_DOWN, function
 	    end
 	    sacList = {}
 	    orderList = {}
+	    bookCursor = false
 	end
 end)
 
@@ -1084,18 +1106,20 @@ blueReq.blue = true
 blueReq.max_level = mods.multiverse.INT_MAX
 blueReq.max_group = -1
 
+local threshholds = {see = 1, condition_self = 3, condition_all = 5, outcome = 5}
+
 local function createPage(id, name, description, hintAmount, event, condition, outcome, eventFix)
 	local eventManager = Hyperspace.Event
-	if Hyperspace.metaVariables["aea_dark_spell_"..id] > 0 then
+	if Hyperspace.metaVariables["aea_dark_spell_"..id] >= threshholds.see then
 		local pageEvent = eventManager:CreateEvent("AEA_JUSTICIER_BOOK_TEMPLATE"..eventFix, 0, false)
 		pageEvent.eventName = "AEA_JUSTICIER_BOOK_PAGE_"..id
 		local eventString = description.."\n\n\n\n\n\n\n\n\n"
-		if Hyperspace.metaVariables["aea_dark_spell_"..id] > 2 or Hyperspace.metaVariables["aea_dark_spell_all"] >= hintAmount + 5 then 
+		if Hyperspace.metaVariables["aea_dark_spell_"..id] >= threshholds.condition_self or Hyperspace.metaVariables["aea_dark_spell_all"] >= hintAmount + threshholds.condition_all then 
 			eventString = eventString.."\nRitual Requirement: "..condition
 		else
 			eventString = eventString.."\nThe Glyphs here are still too hard to make out, perhaps further experimentation could reveal them."
 		end
-		if Hyperspace.metaVariables["aea_dark_spell_"..id] > 4 then 
+		if Hyperspace.metaVariables["aea_dark_spell_"..id] >= threshholds.outcome then 
 			eventString = eventString.."\nRitual Outcome: "..outcome
 		else
 			eventString = eventString.."\nThe Glyphs here are still too hard to make out, perhaps further experimentation could reveal them."
@@ -1111,7 +1135,7 @@ local function createPage(id, name, description, hintAmount, event, condition, o
 		local pageEvent = eventManager:CreateEvent("AEA_JUSTICIER_BOOK_TEMPLATE"..eventFix, 0, false)
 		pageEvent.eventName = "AEA_JUSTICIER_BOOK_PAGE_"..id
 		local eventString = "The glyphs on the page are indecipherable to you, however you are able to make out some faint ritual markings.\n\n\n\n\n\n\n\n\n"
-		if Hyperspace.metaVariables["aea_dark_spell_all"] >= hintAmount + 5 then 
+		if Hyperspace.metaVariables["aea_dark_spell_all"] >= hintAmount + threshholds.condition_all then 
 			eventString = eventString.."\nRitual Requirement: "..condition
 		else
 			eventString = eventString.."\n"
@@ -1125,9 +1149,49 @@ local function createPage(id, name, description, hintAmount, event, condition, o
 	end
 end
 
+local function countProgress(spellTable, progress)
+	local id = spellTable.id
+	local uses = Hyperspace.metaVariables["aea_dark_spell_"..id]
+	local see = uses >= threshholds.see
+	local cond = uses >= threshholds.condition_self or Hyperspace.metaVariables["aea_dark_spell_all"] >= spellTable.hint_amount + threshholds.condition_all
+	local out = uses >= threshholds.outcome
+	local unlocked = Hyperspace.metaVariables["aea_dark_spell_all"] >= spellTable.hint_amount
+	local spellProgress = {see, cond, out, unlocked}
+	for _, value in ipairs(spellProgress) do
+		if value then
+			progress.current = progress.current + 1
+		end
+	end
+	progress.total = progress.total + #spellProgress
+end
+
+local bookUnlock = 50
 script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
 	local eventManager = Hyperspace.Event
-	if event.eventName == "AEA_JUSTICIER_BOOK_CREW" then
+	if event.eventName == "AEA_JUSTICIER_BOOK" then
+		local progress = {total = 0, current = 0}
+		for _, spellTable in ipairs(spellListPage1) do
+			countProgress(spellTable, progress)
+		end
+		for _, spellTable in ipairs(spellListPage2) do
+			countProgress(spellTable, progress)
+		end
+		for _, spellTable in ipairs(spellListPage3) do
+			countProgress(spellTable, progress)
+		end
+		local progressString = "\nCurrent Progress:"..tostring(progress.current).."/"..tostring(progress.total)
+		event.text.data = event.text.data .. progressString
+		if progress.current >= progress.total then
+			Hyperspace.CustomAchievementTracker.instance:SetAchievement("ACH_AEA_BOOK_COMPLETE", false)
+		end
+		if progress.current <= bookUnlock and Hyperspace.metaVariables["aea_dark_book_unlock"] == 0 then
+			local invalidEvent = eventManager:CreateEvent("OPTION_INVALID", 0, false)
+			event:AddChoice(invalidEvent, "[style[color:800000]]"..tostring(progress.current).."/"..tostring(bookUnlock).."[[/style]]", emptyReq, true)
+		elseif Hyperspace.metaVariables["aea_dark_book_unlock"] >= 0 then -- should be ==
+			local unlockEvent = eventManager:CreateEvent("AEA_JUSTICIER_BOOK_UNLOCK", 0, false)
+			event:AddChoice(unlockEvent, "You feel a [style[color:FF0000]]pull[[/style]], you want to stare into the [style[color:FF0000]]Book[[/style]].", emptyReq, true)
+		end
+	elseif event.eventName == "AEA_JUSTICIER_BOOK_CREW" then
 		for _, spellTable in ipairs(spellListPage1) do
 			createPage(spellTable.id, spellTable.name, spellTable.description, spellTable.hint_amount, event, spellTable.condition, spellTable.stat, "_CREW")
 		end
@@ -1183,6 +1247,9 @@ script.on_render_event(Defines.RenderEvents.CHOICE_BOX, function() end, function
 	if commandGui.event_pause and renderSpell then
 		local spellTable = spellList[renderSpell]
 		local x = 635
+		if Hyperspace.ships.enemy and Hyperspace.ships.enemy.ship.hullIntegrity.first > 0 then
+			x = x - 150
+		end
 		local y = 288
 		local moveDistance = 22
 		Graphics.CSurface.GL_PushMatrix()
@@ -1203,7 +1270,10 @@ script.on_render_event(Defines.RenderEvents.CHOICE_BOX, function() end, function
 		end
 	elseif commandGui.event_pause and renderRules then
 		local x = 635-274
-		local y = 288-70
+		if Hyperspace.ships.enemy and Hyperspace.ships.enemy.ship.hullIntegrity.first > 0 then
+			x = x - 150
+		end
+		local y = 288-70+42
 		local moveDistance = 26
 		Graphics.CSurface.GL_PushMatrix()
 		Graphics.CSurface.GL_Translate(x, y, 0)
@@ -1445,237 +1515,3 @@ script.on_render_event(Defines.RenderEvents.CREW_MEMBER_HEALTH, function(crewmem
 	end
 end, function() end)
 
-local lastBeacon = -1
-
-script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager)
-	local map = Hyperspace.App.world.starMap
-	local commandGui = Hyperspace.App.gui
-	if shipManager.iShipId == 0 and map.worldLevel == 3 and (not commandGui.secretSector) and Hyperspace.playerVariables.aea_justice_battleship_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE")== 0 then
-		local fightEvent = "AEA_JUSTICIER_FIGHT_ONE"
-		
-		if Hyperspace.playerVariables.aea_justice_battleship_location == -1 then
-			local furthest_right = nil
-			local i = 0
-			for location in vter(map.locations) do
-				if location.dangerZone and ((not furthest_right) or location.loc.x > furthest_right.loc.x) then
-					furthest_right = location
-				end
-				i = i + 1
-			end
-			if furthest_right then
-				Hyperspace.playerVariables.aea_justice_battleship_location = i
-				furthest_right.event = Hyperspace.Event:CreateEvent(fightEvent, 0, false)
-				--print("start s4 event")
-				furthest_right.known = false
-				Hyperspace.playerVariables.aea_justice_battleship_jumping = -1
-			end
-		else
-			if Hyperspace.playerVariables.aea_justice_battleship_jumping >= 0 then
-				for location in vter(map.locations) do
-					if location.event.eventName == fightEvent then
-						location.event = Hyperspace.Event:CreateEvent("AEA_FLEET_WRECK_ELITE", 0, false)
-					end
-				end
-				local i = 0
-				for location in vter(map.locations) do
-					if i == Hyperspace.playerVariables.aea_justice_battleship_jumping then
-						Hyperspace.playerVariables.aea_justice_battleship_location = i
-						location.event = Hyperspace.Event:CreateEvent(fightEvent, 0, false)
-						--print("set s4 event")
-						location.known = false
-						Hyperspace.playerVariables.aea_justice_battleship_jumping = -1
-					end
-					i = i + 1
-				end
-			else
-				local jumpLocation = nil
-				local i = 0
-				for location in vter(map.locations) do
-					if Hyperspace.playerVariables.aea_justice_battleship_location == i then
-						local furthest_right = nil
-						local jumpFound = false
-						for near in vter(location.connectedLocations) do
-							if near.dangerZone and ((not furthest_right) or near.loc.x > furthest_right.loc.x) then
-								furthest_right = near
-								jumpFound = true
-							end
-						end
-						if jumpFound then
-							jumpLocation = furthest_right
-						end
-						break
-					end
-					i = i + 1
-				end
-				if jumpLocation then
-					local i = 0
-					for location in vter(map.locations) do
-						if location.loc.x == jumpLocation.loc.x and location.loc.y == jumpLocation.loc.y then
-							Hyperspace.playerVariables.aea_justice_battleship_jumping = i
-							break					
-						end
-						i = i + 1
-					end
-				end
-			end
-		end
-
-		
-	elseif shipManager.iShipId == 0 and map.worldLevel == 5 and (not commandGui.secretSector) and Hyperspace.playerVariables.aea_justice_battleship == 1 and Hyperspace.playerVariables.aea_justice_cruiser_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE") == 0 then
-		local fightEvent = "AEA_JUSTICIER_FIGHT_TWO"
-		
-		if Hyperspace.playerVariables.aea_justice_cruiser_location == -1 then
-			local furthest_right = nil
-			local i = 0
-			for location in vter(map.locations) do
-				if location.dangerZone and ((not furthest_right) or location.loc.x > furthest_right.loc.x) then
-					furthest_right = location
-				end
-				i = i + 1
-			end
-			if furthest_right then
-				Hyperspace.playerVariables.aea_justice_cruiser_location = i
-				furthest_right.event = Hyperspace.Event:CreateEvent(fightEvent, 0, false)
-				--print("start s6 event")
-				furthest_right.known = false
-				Hyperspace.playerVariables.aea_justice_battleship_jumping = -1
-			end
-		else
-
-			if Hyperspace.playerVariables.aea_justice_cruiser_jumping >= 0 then
-				for location in vter(map.locations) do
-					if location.event.eventName == fightEvent then
-						location.event = Hyperspace.Event:CreateEvent("AEA_FLEET_WRECK_ELITE", 0, false)
-					end
-				end
-				local i = 0
-				for location in vter(map.locations) do
-					if i == Hyperspace.playerVariables.aea_justice_cruiser_jumping then
-						Hyperspace.playerVariables.aea_justice_cruiser_location = i
-						location.event = Hyperspace.Event:CreateEvent(fightEvent, 0, false)
-						--print("set s6 event")
-						location.known = false
-						Hyperspace.playerVariables.aea_justice_cruiser_jumping = -1
-					end
-					i = i + 1
-				end
-			else
-				local jumpLocation = nil
-				local i = 0
-				for location in vter(map.locations) do
-					if Hyperspace.playerVariables.aea_justice_cruiser_location == i then
-						local furthest_right = nil
-						local jumpFound = false
-						for near in vter(location.connectedLocations) do
-							if near.dangerZone and ((not furthest_right) or near.loc.x > furthest_right.loc.x) then
-								furthest_right = near
-								jumpFound = true
-							end
-						end
-						if jumpFound then
-							jumpLocation = furthest_right
-						end
-						break
-					end
-					i = i + 1
-				end
-				if jumpLocation then
-					local i = 0
-					for location in vter(map.locations) do
-						if location.loc.x == jumpLocation.loc.x and location.loc.y == jumpLocation.loc.y then
-							Hyperspace.playerVariables.aea_justice_cruiser_jumping = i
-							break					
-						end
-						i = i + 1
-					end
-				end
-			end
-		end
-	end
-end)
-
-local needSetBeacon = false
-script.on_init(function()
-	needSetBeacon = true
-end)
-
-script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
-	local map = Hyperspace.App.world.starMap
-	local commandGui = Hyperspace.App.gui
-	if map and map.locations and needSetBeacon and Hyperspace.playerVariables.aea_justice_test == 1 then
-		needSetBeacon = false
-		if map.worldLevel == 3 and Hyperspace.playerVariables.aea_justice_battleship_location >= 0 and (not commandGui.secretSector) and Hyperspace.playerVariables.aea_justice_battleship_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE") == 0 then
-			local i = 0
-			for location in vter(map.locations) do
-				if  Hyperspace.playerVariables.aea_justice_battleship_location == i then
-					location.event = Hyperspace.Event:CreateEvent("AEA_JUSTICIER_FIGHT_ONE", 0, false)
-					print("load s4 event")
-					location.known = false
-				end
-				i = i + 1
-			end
-		elseif map.worldLevel == 5 and Hyperspace.playerVariables.aea_justice_battleship == 1 and (not commandGui.secretSector) and Hyperspace.playerVariables.aea_justice_cruiser_location >= 0 and Hyperspace.playerVariables.aea_justice_cruiser_found == 0 and Hyperspace.ships.player:HasAugmentation("SHIP_AEA_JUSTICE") == 0 then
-			local i = 0
-			for location in vter(map.locations) do
-				if  Hyperspace.playerVariables.aea_justice_cruiser_location == i then
-					location.event = Hyperspace.Event:CreateEvent("AEA_JUSTICIER_FIGHT_TWO", 0, false)
-					print("load s6 event")
-					location.known = false
-				end
-				i = i + 1
-			end
-		end
-	end
-end)
-
-local shipImage = {AEA_JUSTICIER_FIGHT_ONE = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aea_justice_battleship.png", -10, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false),
-	AEA_JUSTICIER_FIGHT_TWO = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aea_justice_cruiser.png", -10, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
-}
-local shipImageMoving = {AEA_JUSTICIER_FIGHT_ONE = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aea_justice_battleship.png", -32, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false),
-	AEA_JUSTICIER_FIGHT_TWO = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aea_justice_cruiser.png", -32, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
-}
-shipImage["AEA_JUSTICIER_FIGHT_ONE"].textureAntialias = true
-shipImage["AEA_JUSTICIER_FIGHT_TWO"].textureAntialias = true
-shipImageMoving["AEA_JUSTICIER_FIGHT_ONE"].textureAntialias = true
-shipImageMoving["AEA_JUSTICIER_FIGHT_TWO"].textureAntialias = true
-
-local angle = 0
-script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, function()
-	local map = Hyperspace.App.world.starMap
-	if map.bOpen and not map.bChoosingNewSector then
-		local destinationLoc = nil
-		local i = 0
-		for location in vter(map.locations) do
-			if (i == Hyperspace.playerVariables.aea_justice_battleship_jumping and map.worldLevel == 3) or (i == Hyperspace.playerVariables.aea_justice_cruiser_jumping and map.worldLevel == 5) then
-				destinationLoc = location
-				break
-			end
-			i = i + 1
-		end
-
-		for location in vter(map.locations) do
-			if (location.event.eventName == "AEA_JUSTICIER_FIGHT_ONE" and Hyperspace.playerVariables.aea_justice_battleship_found == 1) or (location.event.eventName == "AEA_JUSTICIER_FIGHT_TWO" and Hyperspace.playerVariables.aea_justice_cruiser_found == 1) then return end
-			if (location.event.eventName == "AEA_JUSTICIER_FIGHT_ONE" or location.event.eventName == "AEA_JUSTICIER_FIGHT_TWO") and destinationLoc then
-				angle = angle + Hyperspace.FPS.SpeedFactor/16 * 40
-				local distance = get_distance(location.loc, destinationLoc.loc)
-				if angle > 100 then angle = angle - 100 end
-				local point = get_point_local_offset(location.loc, destinationLoc.loc, (angle/100)*(distance - 10), 0)
-				local alpha = math.atan((location.loc.y-destinationLoc.loc.y), (location.loc.x-destinationLoc.loc.x))
-				local pointAngle = math.deg(alpha) + 90
-				Graphics.CSurface.GL_PushMatrix()
-				Graphics.CSurface.GL_Translate(point.x + 385,point.y + 122,0)
-				Graphics.CSurface.GL_Rotate(pointAngle, 0, 0, 1)
-				Graphics.CSurface.GL_RenderPrimitive(shipImageMoving[location.event.eventName])
-				Graphics.CSurface.GL_PopMatrix()
-			elseif location.event.eventName == "AEA_JUSTICIER_FIGHT_ONE" or location.event.eventName == "AEA_JUSTICIER_FIGHT_TWO" then
-				angle = angle + Hyperspace.FPS.SpeedFactor/16 * 18
-				if angle > 360 then angle = angle - 360 end
-				Graphics.CSurface.GL_PushMatrix()
-				Graphics.CSurface.GL_Translate(location.loc.x + 385,location.loc.y + 122,0)
-				Graphics.CSurface.GL_Rotate(angle, 0, 0, 1)
-				Graphics.CSurface.GL_RenderPrimitive(shipImage[location.event.eventName])
-				Graphics.CSurface.GL_PopMatrix()
-			end
-		end
-	end
-end)

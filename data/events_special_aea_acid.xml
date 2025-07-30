@@ -1291,7 +1291,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	</deadCrew>
 </ship>
 
-<ship name="SHIP_AEA_ACID_BILL_MEET" auto_blueprint="AEA_ACID_ASSUALT">
+<ship name="SHIP_AEA_ACID_BILL_MEET" auto_blueprint="AEA_ACID_ASSAULT">
 	<destroyed>
 		<text>You've destroyed the Acidic ship, As you're looting the remains of both the Acidic vessel and the Strange ship destroyed at the start of the fight, you discover an Acidic Soldier alive in the wreck.</text>
 		<autoReward level="MED">standard</autoReward>

@@ -1,5 +1,6 @@
 <FTL>
 <mod:findName type="event" name="TRUE_LAST_STAND_START">
+  	<mod-append:queueEvent>AEA_GATE_SPAWN_TRIGGER</mod-append:queueEvent>
 	<mod:findLike type="choice" limit="1">
 		<mod:findLike type="event">
 			<mod-append:choice hidden="true" max_group="1" req="SHIP_AEA_ACIDIC" blue="false">
@@ -66,5 +67,9 @@
 	</mod:findLike>
 </mod:findName>
 
+<event name="AEA_GATE_SPAWN_TRIGGER">
+	<text>TEST GATE</text>
+	<quest event="AEA_OLD_GATE" />
+</event>
 
 </FTL>

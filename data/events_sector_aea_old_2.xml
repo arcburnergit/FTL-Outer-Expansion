@@ -19,6 +19,7 @@
 	<metaVariable name="juke_aea_old_2" op="set" val="1" />
 	<text>You've arrived in the Lylmik core, a heavily populated zone full of both Lylmik and Rich or Powerful Captains. Now that you're here you'll need to contact the council and in order to contact the council you'll need a sponsor.</text>
 	<variable name="loc_unique_sectors" op="add" val="1" />
+	<modifyPursuit amount="-5" />
 	<changeBackground>BACK_EVENT_AEA_OLD_2_START</changeBackground>
 	<playSound>lightspeed</playSound>
 	<choice hidden="true">

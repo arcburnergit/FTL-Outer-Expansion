@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
 <version>^1.19.0</version>
+<customTextStyle enabled="true" />
 <mod:findLike type="scripts">
   <mod-append:script>data/aea_scripts/aea_functions.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aeaIcon.lua</mod-append:script>
@@ -21,6 +22,10 @@
   <mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script>
   <!--Crew functionality scripts-->
   <mod-append:script>data/aea_scripts/aea_dark_justicier.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_gods_communicate.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_roamers.lua</mod-append:script>
+
+  <mod-append:script>data/aea_scripts/mvtest_custom_weapon_animations.lua</mod-append:script>
 </mod:findLike>
 <dualMedical enabled="true"/>
 <mod:findLike type="customSystems">
@@ -3225,7 +3230,7 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 		</crew>
 	</mod-append:customShip>
 
-	<mod-append:customShip name="AEA_ACID_ASSUALT">
+	<mod-append:customShip name="AEA_ACID_ASSAULT">
 		<shipIcons>
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
@@ -7939,7 +7944,10 @@ Right click to attempt the ritual or cancel.
 
 	<metaVariable name="aea_super_shield_hotkey_enabled" op="set" val="0" />
 
-	<variable name="aea_broadside_enemy_fought" op="set" val="0"/>
+	<variable name="aea_broadside_roamer_beacon_x" op="set" val="0"/>
+	<variable name="aea_broadside_roamer_beacon_y" op="set" val="0"/>
+	<variable name="aea_broadside_roamer_jumping" op="set" val="0"/>
+	<variable name="aea_broadside_roamer_killed" op="set" val="0"/>
 
 	<variable name="aea_broadside_missile_chosen" op="set" val="0"/>
 	<variable name="aea_broadside_slot1" op="set" val="1"/>
@@ -8018,15 +8026,21 @@ Right click to attempt the ritual or cancel.
 	<variable name="prof_r_boon_aea_clone_crime" op="set" val="0" />
 	<variable name="ach_boon_aea_clone_crime" op="set" val="0" />
 
-	<variable name="aea_justice_battleship" op="set" val="0"/>
-	<variable name="aea_justice_battleship_found" op="set" val="0"/>
-	<variable name="aea_justice_battleship_location" op="set" val="-1"/>
-	<variable name="aea_justice_battleship_jumping" op="set" val="0"/>
-	<variable name="aea_justice_cruiser_found" op="set" val="0"/>
-	<variable name="aea_justice_cruiser_location" op="set" val="-1"/>
-	<variable name="aea_justice_cruiser_jumping" op="set" val="0"/>
+	<variable name="aea_justicier_roamer_one_beacon_x" op="set" val="0"/>
+	<variable name="aea_justicier_roamer_one_beacon_y" op="set" val="0"/>
+	<variable name="aea_justicier_roamer_one_jumping" op="set" val="0"/>
+	<variable name="aea_justicier_roamer_one_killed" op="set" val="0"/>
+
+	<variable name="aea_justicier_roamer_two_beacon_x" op="set" val="0"/>
+	<variable name="aea_justicier_roamer_two_beacon_y" op="set" val="0"/>
+	<variable name="aea_justicier_roamer_two_jumping" op="set" val="0"/>
+	<variable name="aea_justicier_roamer_two_killed" op="set" val="0"/>
+
 	<metaVariable name="aea_justice_cruiser_unlock" op="set" val="0"/>
 	<metaVariable name="juke_aea_justice" op="set" val="0" />
+	<metaVariable name="aea_dark_book_unlock" op="set" val="0" />
+	<variable name="aea_dark_book_taken" op="set" val="0" />
+	<variable name="aea_dark_book_ready" op="set" val="1" />
 
 	<metaVariable name="juke_aea_old_1" op="set" val="0" />
 	<metaVariable name="juke_aea_old_2" op="set" val="0" />
@@ -8037,6 +8051,8 @@ Right click to attempt the ritual or cancel.
 	<variable name="aea_old_gate_guard_attached" op="set" val="0" />
 	<variable name="ach_trans_aea_old_1" op="set" val="0" />
 	<variable name="aea_old_completed_sponsor" op="set" val="0" />
+	<variable name="aea_old_dives" op="set" val="0" />
+	<variable name="aea_old_cap_dives" op="set" val="0" />
 
 	<metaVariable name="aea_old_sponser_choice" op="set" val="0" />
 	
@@ -8049,12 +8065,28 @@ Right click to attempt the ritual or cancel.
 	<metaVariable name="prof_z_boon_aea_justice" op="set" val="0" />
 	<metaVariable name="prof_z_boon_aea_old" op="set" val="0" />
 
-	<req name="AEA_REQ_MODIFY_CLONEBAY" type="all">
+	<req name="AEA_JUSTICIER_BOOK_ACCESSIBLE" type="any">
 		<name>aea_dark_justicier</name>
+		<name>aea_dark_book_taken</name>
+	</req>
+	<req name="AEA_JUSTICIER_BOOK_TAKE" type="all">
+		<name>aea_dark_book_unlock</name>
+		<req lvl="0" max_lvl="0">
+			<name>aea_dark_book_taken</name>
+		</req>
+	</req>
+	<req name="AEA_REQ_MODIFY_CLONEBAY" type="all">
+		<req type="any">
+			<name>aea_dark_book_taken</name>
+			<name>aea_dark_justicier</name>
+		</req>
 		<name>clonebay</name>
 	</req>
 	<req name="AEA_REQ_MODIFY_CLONEBAY_NOCLONE" type="all">
-		<name>aea_dark_justicier</name>
+		<req type="any">
+			<name>aea_dark_book_taken</name>
+			<name>aea_dark_justicier</name>
+		</req>
 		<req lvl="0" max_lvl="0">
 			<name>clonebay</name>
 		</req>
@@ -8136,621 +8168,6 @@ Right click to attempt the ritual or cancel.
 			<name>aea_old_reactor_upgrades</name>
 		</req>
 	</req>
-
-	<req name="aea_can_upgrade_shields" type="any">
-		<req type="all">
-			<req lvl="10" max_lvl="11">
-				<name>shields</name>
-			</req>
-			<req lvl="10" max_lvl="10">
-				<name>shields_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="9" max_lvl="10">
-				<name>shields</name>
-			</req>
-			<req lvl="9" max_lvl="9">
-				<name>shields_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="8" max_lvl="9">
-				<name>shields</name>
-			</req>
-			<req lvl="8" max_lvl="8">
-				<name>shields_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="7" max_lvl="8">
-				<name>shields</name>
-			</req>
-			<req lvl="7" max_lvl="7">
-				<name>shields_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="6" max_lvl="7">
-				<name>shields</name>
-			</req>
-			<req lvl="6" max_lvl="6">
-				<name>shields_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="5" max_lvl="6">
-				<name>shields</name>
-			</req>
-			<req lvl="5" max_lvl="5">
-				<name>shields_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="4" max_lvl="5">
-				<name>shields</name>
-			</req>
-			<req lvl="4" max_lvl="4">
-				<name>shields_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="3" max_lvl="4">
-				<name>shields</name>
-			</req>
-			<req lvl="3" max_lvl="3">
-				<name>shields_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="2" max_lvl="3">
-				<name>shields</name>
-			</req>
-			<req lvl="2" max_lvl="2">
-				<name>shields_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="1" max_lvl="2">
-				<name>shields</name>
-			</req>
-			<req lvl="1" max_lvl="1">
-				<name>shields_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-	</req>
-	<variable name="aea_old_shields_upgrades" op="set" val="0"/>
-	<req name="aea_show_upgrade_shields" type="all">
-		<name>aea_old_activated_cell</name>
-		<req type="all" lvl="0" max_lvl="1">
-			<name>aea_old_shields_upgrades</name>
-		</req>
-		<name>shields</name>
-	</req>
-
-	<req name="aea_can_upgrade_engines" type="any">
-		<req type="all">
-			<req lvl="8" max_lvl="9">
-				<name>engines</name>
-			</req>
-			<req lvl="-1" max_lvl="-1">
-				<name>engines_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="10" max_lvl="11">
-				<name>engines</name>
-			</req>
-			<req lvl="10" max_lvl="10">
-				<name>engines_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="9" max_lvl="10">
-				<name>engines</name>
-			</req>
-			<req lvl="9" max_lvl="9">
-				<name>engines_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="8" max_lvl="9">
-				<name>engines</name>
-			</req>
-			<req lvl="8" max_lvl="8">
-				<name>engines_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="7" max_lvl="8">
-				<name>engines</name>
-			</req>
-			<req lvl="7" max_lvl="7">
-				<name>engines_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="6" max_lvl="7">
-				<name>engines</name>
-			</req>
-			<req lvl="6" max_lvl="6">
-				<name>engines_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="5" max_lvl="6">
-				<name>engines</name>
-			</req>
-			<req lvl="5" max_lvl="5">
-				<name>engines_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="4" max_lvl="5">
-				<name>engines</name>
-			</req>
-			<req lvl="4" max_lvl="4">
-				<name>engines_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="3" max_lvl="4">
-				<name>engines</name>
-			</req>
-			<req lvl="3" max_lvl="3">
-				<name>engines_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="2" max_lvl="3">
-				<name>engines</name>
-			</req>
-			<req lvl="2" max_lvl="2">
-				<name>engines_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="1" max_lvl="2">
-				<name>engines</name>
-			</req>
-			<req lvl="1" max_lvl="1">
-				<name>engines_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-	</req>
-	<variable name="aea_old_engines_upgrades" op="set" val="0"/>
-	<req name="aea_show_upgrade_engines" type="all">
-		<name>aea_old_activated_cell</name>
-		<req type="all" lvl="0" max_lvl="4">
-			<name>aea_old_engines_upgrades</name>
-		</req>
-		<name>engines</name>
-	</req>
-
-	<req name="aea_can_upgrade_weapons" type="any">
-		<req type="all">
-			<req lvl="10" max_lvl="11">
-				<name>weapons</name>
-			</req>
-			<req lvl="10" max_lvl="10">
-				<name>weapons_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="9" max_lvl="10">
-				<name>weapons</name>
-			</req>
-			<req lvl="9" max_lvl="9">
-				<name>weapons_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="8" max_lvl="9">
-				<name>weapons</name>
-			</req>
-			<req lvl="8" max_lvl="8">
-				<name>weapons_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="7" max_lvl="8">
-				<name>weapons</name>
-			</req>
-			<req lvl="7" max_lvl="7">
-				<name>weapons_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="6" max_lvl="7">
-				<name>weapons</name>
-			</req>
-			<req lvl="6" max_lvl="6">
-				<name>weapons_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="5" max_lvl="6">
-				<name>weapons</name>
-			</req>
-			<req lvl="5" max_lvl="5">
-				<name>weapons_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="4" max_lvl="5">
-				<name>weapons</name>
-			</req>
-			<req lvl="4" max_lvl="4">
-				<name>weapons_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="3" max_lvl="4">
-				<name>weapons</name>
-			</req>
-			<req lvl="3" max_lvl="3">
-				<name>weapons_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="2" max_lvl="3">
-				<name>weapons</name>
-			</req>
-			<req lvl="2" max_lvl="2">
-				<name>weapons_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="1" max_lvl="2">
-				<name>weapons</name>
-			</req>
-			<req lvl="1" max_lvl="1">
-				<name>weapons_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-	</req>
-	<variable name="aea_old_weapons_upgrades" op="set" val="0"/>
-	<req name="aea_show_upgrade_weapons" type="all">
-		<name>aea_old_activated_cell</name>
-		<req type="all" lvl="0" max_lvl="1">
-			<name>aea_old_weapons_upgrades</name>
-		</req>
-		<name>weapons</name>
-	</req>
-
-	<req name="aea_can_upgrade_drones" type="any">
-		<req type="all">
-			<req lvl="8" max_lvl="9">
-				<name>drones</name>
-			</req>
-			<req lvl="-1" max_lvl="-1">
-				<name>drones_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="10" max_lvl="11">
-				<name>drones</name>
-			</req>
-			<req lvl="10" max_lvl="10">
-				<name>drones_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="9" max_lvl="10">
-				<name>drones</name>
-			</req>
-			<req lvl="9" max_lvl="9">
-				<name>drones_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="8" max_lvl="9">
-				<name>drones</name>
-			</req>
-			<req lvl="8" max_lvl="8">
-				<name>drones_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="7" max_lvl="8">
-				<name>drones</name>
-			</req>
-			<req lvl="7" max_lvl="7">
-				<name>drones_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="6" max_lvl="7">
-				<name>drones</name>
-			</req>
-			<req lvl="6" max_lvl="6">
-				<name>drones_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="5" max_lvl="6">
-				<name>drones</name>
-			</req>
-			<req lvl="5" max_lvl="5">
-				<name>drones_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="4" max_lvl="5">
-				<name>drones</name>
-			</req>
-			<req lvl="4" max_lvl="4">
-				<name>drones_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="3" max_lvl="4">
-				<name>drones</name>
-			</req>
-			<req lvl="3" max_lvl="3">
-				<name>drones_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="2" max_lvl="3">
-				<name>drones</name>
-			</req>
-			<req lvl="2" max_lvl="2">
-				<name>drones_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="1" max_lvl="2">
-				<name>drones</name>
-			</req>
-			<req lvl="1" max_lvl="1">
-				<name>drones_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-	</req>
-	<variable name="aea_old_drones_upgrades" op="set" val="0"/>
-	<req name="aea_show_upgrade_drones" type="all">
-		<name>aea_old_activated_cell</name>
-		<req type="all" lvl="0" max_lvl="1">
-			<name>aea_old_drones_upgrades</name>
-		</req>
-		<name>drones</name>
-	</req>
-
-	<req name="aea_can_upgrade_cloaking" type="any">
-		<req type="all">
-			<req lvl="3" max_lvl="3">
-				<name>cloaking</name>
-			</req>
-			<req lvl="3" max_lvl="3">
-				<name>cloaking_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="2" max_lvl="2">
-				<name>cloaking</name>
-			</req>
-			<req lvl="2" max_lvl="2">
-				<name>cloaking_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="1" max_lvl="1">
-				<name>cloaking</name>
-			</req>
-			<req lvl="1" max_lvl="1">
-				<name>cloaking_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="2" max_lvl="2">
-				<name>cloaking</name>
-			</req>
-			<name>UPG_CLOAK_FIRE</name>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-	</req>
-	<variable name="aea_old_cloaking_upgrades" op="set" val="0"/>
-	<req name="aea_show_upgrade_cloaking" type="all">
-		<name>aea_old_activated_cell</name>
-		<req type="all" lvl="0" max_lvl="1">
-			<name>aea_old_cloaking_upgrades</name>
-		</req>
-		<name>cloaking</name>
-	</req>
-
-	<req name="aea_can_upgrade_mind" type="any">
-		<req type="all">
-			<req lvl="3" max_lvl="3">
-				<name>mind</name>
-			</req>
-			<req lvl="3" max_lvl="3">
-				<name>mind_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="2" max_lvl="2">
-				<name>mind</name>
-			</req>
-			<req lvl="2" max_lvl="2">
-				<name>mind_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="1" max_lvl="1">
-				<name>mind</name>
-			</req>
-			<req lvl="1" max_lvl="1">
-				<name>mind_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-	</req>
-	<variable name="aea_old_mind_upgrades" op="set" val="0"/>
-	<req name="aea_show_upgrade_mind" type="all">
-		<name>aea_old_activated_cell</name>
-		<req type="all" lvl="0" max_lvl="1">
-			<name>aea_old_mind_upgrades</name>
-		</req>
-		<name>mind</name>
-	</req>
-
-	
-	<req name="aea_can_upgrade_hacking" type="any">
-		<req type="all">
-			<req lvl="2" max_lvl="2">
-				<name>hacking</name>
-			</req>
-			<req lvl="2" max_lvl="2">
-				<name>hacking_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="1" max_lvl="1">
-				<name>hacking</name>
-			</req>
-			<req lvl="1" max_lvl="1">
-				<name>hacking_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-	</req>
-	<variable name="aea_old_hacking_upgrades" op="set" val="0"/>
-	<req name="aea_show_upgrade_hacking" type="all">
-		<name>aea_old_activated_cell</name>
-		<req type="all" lvl="0" max_lvl="1">
-			<name>aea_old_hacking_upgrades</name>
-		</req>
-		<name>hacking</name>
-	</req>
-
-	
-	<req name="aea_can_upgrade_medbay" type="any">
-		<req type="all">
-			<req lvl="3" max_lvl="3">
-				<name>medbay</name>
-			</req>
-			<req lvl="3" max_lvl="3">
-				<name>medbay_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="2" max_lvl="2">
-				<name>medbay</name>
-			</req>
-			<req lvl="2" max_lvl="2">
-				<name>medbay_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="1" max_lvl="1">
-				<name>medbay</name>
-			</req>
-			<req lvl="1" max_lvl="1">
-				<name>medbay_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-	</req>
-	<variable name="aea_old_medbay_upgrades" op="set" val="0"/>
-	<req name="aea_show_upgrade_medbay" type="all">
-		<name>aea_old_activated_cell</name>
-		<req type="all" lvl="0" max_lvl="1">
-			<name>aea_old_medbay_upgrades</name>
-		</req>
-		<name>medbay</name>
-	</req>
-
-	
-	<req name="aea_can_upgrade_clonebay" type="any">
-		<req type="all">
-			<req lvl="3" max_lvl="3">
-				<name>clonebay</name>
-			</req>
-			<req lvl="3" max_lvl="3">
-				<name>clonebay_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="2" max_lvl="2">
-				<name>clonebay</name>
-			</req>
-			<req lvl="2" max_lvl="2">
-				<name>clonebay_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-		<req type="all">
-			<req lvl="1" max_lvl="1">
-				<name>clonebay</name>
-			</req>
-			<req lvl="1" max_lvl="1">
-				<name>clonebay_cap_aea</name>
-			</req>
-			<name>AEA_COMPONENT_OLD</name>
-		</req>
-	</req>
-	<variable name="aea_old_clonebay_upgrades" op="set" val="0"/>
-	<req name="aea_show_upgrade_clonebay" type="all">
-		<name>aea_old_activated_cell</name>
-		<req type="all" lvl="0" max_lvl="1">
-			<name>aea_old_clonebay_upgrades</name>
-		</req>
-		<name>clonebay</name>
-	</req>
-
-
 
 	<req name="aea_can_precursor_tech" type="all">
 		<name>aea_old_activated_cell</name>
@@ -8856,9 +8273,121 @@ Right click to attempt the ritual or cancel.
 		<numShips layer="0">6</numShips>
     </fleetDef>
 	
+	<fleetDef name="CUSTOM_FLEET_AEA_OLD">
+        <ship layer="0">fleetaea_old_1_small</ship>
+		<ship layer="0">fleetaea_old_2_small</ship>
+		<ship layer="0">fleetaea_old_3_small</ship>
+		<ship layer="1">fleetaea_old_1_med</ship>
+		<ship layer="1">fleetaea_old_2_med</ship>
+		<ship layer="1">fleetaea_old_3_med</ship>
+        <ship layer="2">fleetaea_old_1_big</ship>
+		<ship layer="2">fleetaea_old_3_big</ship>
+        <bigShip>fleetaea_old_1_big</bigShip>
+        <numShips layer="2">1</numShips>
+        <numShips layer="1">4</numShips>
+		<numShips layer="0">6</numShips>
+    </fleetDef>
+	
+	<fleetDef name="CUSTOM_FLEET_AEA_OLD_MESS">
+        <ship layer="0">fleetcivilian_1_small</ship>
+		<ship layer="0">fleetcivilian_2_small</ship>
+		<ship layer="0">fleetcivilian_3_small</ship>
+		<ship layer="0">fleetcivilian_4_small</ship>
+		<ship layer="0">fleetcivilian_5_small</ship>
+		<ship layer="1">fleetcivilian_1_med</ship>
+		<ship layer="1">fleetcivilian_2_med</ship>
+		<ship layer="1">fleetcivilian_3_med</ship>
+		<ship layer="1">fleetcivilian_4_med</ship>
+		<ship layer="1">fleetcivilian_5_med</ship>
+        <ship layer="0">fleetfed_1_small</ship>
+        <ship layer="0">fleetfed_2_small</ship>
+		<ship layer="0">fleetfed_3_small</ship>
+		<ship layer="0">fleetfed_4_small</ship>
+		<ship layer="1">fleetfed_1_med</ship>
+        <ship layer="1">fleetfed_2_med</ship>
+		<ship layer="1">fleetfed_3_med</ship>
+		<ship layer="1">fleetfed_4_med</ship>
+        <ship layer="2">fleetfed_1_big</ship>
+        <ship layer="2">fleetfed_2_big</ship>
+		<ship layer="2">fleetfed_3_big</ship>
+		<ship layer="2">fleetfed_4_big</ship>
+        <ship layer="0">fleetlostsun_1_small</ship>
+		<ship layer="0">fleetlostsun_2_small</ship>
+		<ship layer="1">fleetlostsun_1_med</ship>
+		<ship layer="1">fleetlostsun_2_med</ship>
+        <ship layer="2">fleetlostsun_1_big</ship>
+		<ship layer="2">fleetlostsun_2_big</ship>
+        <ship layer="0">fleetshell_1_small</ship>
+		<ship layer="0">fleetshell_2_small</ship>
+		<ship layer="0">fleetshell_3_small</ship>
+		<ship layer="1">fleetshell_1_med</ship>
+		<ship layer="1">fleetshell_2_med</ship>
+		<ship layer="1">fleetshell_3_med</ship>
+        <ship layer="2">fleetshell_1_big</ship>
+		<ship layer="2">fleetshell_2_big</ship>
+		<ship layer="2">fleetshell_3_big</ship>
+        <ship layer="0">fleetalkram_1_small</ship>
+		<ship layer="0">fleetalkram_2_small</ship>
+		<ship layer="0">fleetalkram_3_small</ship>
+		<ship layer="1">fleetalkram_1_med</ship>
+		<ship layer="1">fleetalkram_2_med</ship>
+		<ship layer="1">fleetalkram_3_med</ship>
+        <ship layer="2">fleetalkram_1_big</ship>
+		<ship layer="2">fleetalkram_2_big</ship>
+		<ship layer="2">fleetalkram_3_big</ship>
+        <ship layer="0">fleetdusk_1_small</ship>
+        <ship layer="0">fleetdusk_2_small</ship>
+		<ship layer="1">fleetdusk_1_med</ship>
+        <ship layer="1">fleetdusk_2_med</ship>
+        <ship layer="2">fleetdusk_1_big</ship>
+		<ship layer="2">fleetdusk_2_big</ship>
+        <ship layer="0">fleetcoal_1_small</ship>
+        <ship layer="0">fleetcoal_2_small</ship>
+		<ship layer="1">fleetcoal_1_med</ship>
+        <ship layer="1">fleetcoal_2_med</ship>
+		<ship layer="1">fleetcoal_3_med</ship>
+        <ship layer="2">fleetcoal_1_big</ship>
+        <ship layer="2">fleetcoal_2_big</ship>
+		<ship layer="2">fleetcoal_3_big</ship>
+        <ship layer="0">fleetdynasty_1_small</ship>
+        <ship layer="0">fleetdynasty_2_small</ship>
+		<ship layer="0">fleetdynasty_3_small</ship>
+		<ship layer="1">fleetdynasty_1_med</ship>
+        <ship layer="1">fleetdynasty_2_med</ship>
+		<ship layer="1">fleetdynasty_3_med</ship>
+        <ship layer="2">fleetdynasty_1_large</ship>
+        <ship layer="2">fleetdynasty_2_large</ship>
+		<ship layer="2">fleetdynasty_3_large</ship>
+        <ship layer="0">fleetlanius_1_small</ship>
+		<ship layer="0">fleetlanius_2_small</ship>
+		<ship layer="1">fleetlanius_1_med</ship>
+		<ship layer="1">fleetlanius_2_med</ship>
+        <ship layer="2">fleetlanius_1_big</ship>
+		<ship layer="2">fleetlanius_2_big</ship>
+        <ship layer="0">mfk_1_small</ship>
+        <ship layer="0">mfk_2_small</ship>
+		<ship layer="0">mfk_3_small</ship>
+		<ship layer="0">mfk_4_small</ship>
+		<ship layer="1">mfk_1_med</ship>
+        <ship layer="1">mfk_2_med</ship>
+		<ship layer="1">mfk_3_med</ship>
+		<ship layer="1">mfk_4_med</ship>
+        <ship layer="2">mfk_1_large</ship>
+		<ship layer="2">mfk_2_large</ship>
+		<ship layer="2">mfk_3_large</ship>
+		<ship layer="2">mfk_4_large</ship>
+		<ship layer="2">mfk_1_large</ship>
+		<ship layer="2">mfk_2_large</ship>
+		<ship layer="2">mfk_3_large</ship>
+		<ship layer="2">mfk_4_large</ship>
+        <bigShip>fleetfed_3_big</bigShip>
+        <numShips layer="2">2</numShips>
+        <numShips layer="1">5</numShips>
+		<numShips layer="0">8</numShips>
+    </fleetDef>
 	
 	<bossShip yOffset="180">AEA_ACID_BOSS</bossShip>
-	<bossShip yOffset="180">AEA_ACID_ASSUALT</bossShip>
+	<bossShip yOffset="180">AEA_ACID_ASSAULT</bossShip>
 	<bossShip yOffset="100">AEA_OLD_GUARD_BOSS</bossShip>
 	<bossShip yOffset="180">AEA_OLD_LEECH_BATTLESHIP_ELITE</bossShip>
 	
@@ -8924,6 +8453,31 @@ Right click to attempt the ritual or cancel.
 		<secretDescription>Escape the clutches of a powerful race aboard any layout of the \1</secretDescription>
 		<secretIcon>S_secret</secretIcon>
 	</mod-append:aea_old_win>
+	<mod-append:aea_exile_win>	
+		<name>\1 Exile Ending</name>
+		<description>Destroy the Lylmik Gate aboard any layout of the \1</description>
+		<icon>S_AEA_EXILE_WIN</icon>
+		<secretName>\1 ????? Ending</secretName>
+		<secretDescription>Keep the universe safe from an exiled race aboard any layout of the \1</secretDescription>
+		<secretIcon>S_secret</secretIcon>
+	</mod-append:aea_exile_win>
+	<mod-append:aea_destruction_win>	
+		<name>\1 Destruction Ending</name>
+		<description>Destroy Antithesis or Complimentary aboard any layout of the \1</description>
+		<icon>S_AEA_DESTRUCTION_WIN</icon>
+		<secretName>\1 ????? Ending</secretName>
+		<secretDescription>Bring about the destruction of contrast aboard any layout of the \1</secretDescription>
+		<secretIcon>S_secret</secretIcon>
+		<filter/>
+	</mod-append:aea_destruction_win>
+	<mod-append:aea_immortal_win>	
+		<name>\1 Immortal Ending</name>
+		<description>Bring Balance back to the multiverse aboard any layout of the \1</description>
+		<icon>S_AEA_IMMORTAL_WIN</icon>
+		<secretName>\1 ????? Ending</secretName>
+		<secretDescription>Bring Balance back to the multiverse aboard any layout of the \1</secretDescription>
+		<secretIcon>S_secret</secretIcon>
+	</mod-append:aea_immortal_win>
 </mod:findLike>
 
 <mod:findLike type="store">
@@ -9817,6 +9371,174 @@ Right click to attempt the ritual or cancel.
 
 <mod:findLike type="achievements" limit="1">
 	<mod-append:page>
+		<section text="The Outer Cluster" hidden="false">
+			<achievement name="ACH_AEA_BOOK_UNLOCK">
+				<name>Disciple of the Bloodthirsty</name>
+				<secretDescription>???</secretDescription>
+				<description>Unlock the [style[color:FF0000]]Book of Death[[/style]] in the hangar.</description>
+				<header>Book Received</header>
+				<icon>ach_aea_book_unlock</icon>
+				<lockImage>ach_locked</lockImage>
+				<multiDifficulty>false</multiDifficulty>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_BOOK_COMPLETE">
+				<name>Dark Apostle</name>
+				<secretDescription>???</secretDescription>
+				<description>Complete the [style[color:FF0000]]Book of Death[[/style]].</description>
+				<header>Book Completed</header>
+				<icon>ach_aea_book_complete</icon>
+				<lockImage>ach_locked</lockImage>
+				<multiDifficulty>false</multiDifficulty>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_STATUE_DESTROY">
+				<name>Sledge Hammer</name>
+				<secretDescription>???</secretDescription>
+				<description>Destroy a Marble Statue.</description>
+				<icon>ach_aea_statue_destroy</icon>
+				<lockImage>ach_locked</lockImage>
+				<multiDifficulty>false</multiDifficulty>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_STATUE_SACRIFICE">
+				<name>Heresy</name>
+				<secretDescription>???</secretDescription>
+				<description>Sacrifice a Marble Statue.</description>
+				<icon>ach_aea_statue_sacrifice</icon>
+				<lockImage>ach_locked</lockImage>
+				<multiDifficulty>false</multiDifficulty>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_WIN_EXILE">
+				<name>Exiled Again</name>
+				<secretDescription>???</secretDescription>
+				<description>Destroy the Lylmik Gate and prevent another universe falling into the Lylmik's hands.</description>
+				<icon>ach_aea_exile_win</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_WIN_DESTRUCTION_DARK">
+				<name>Fall From Grace</name>
+				<secretDescription>???</secretDescription>
+				<description>Destroy Contradiction and let dark reign supreme.</description>
+				<icon>ach_aea_destructiondark_win</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_WIN_DESTRUCTION_LIGHT">
+				<name>Original Sin</name>
+				<secretDescription>???</secretDescription>
+				<description>Destroy Antithesis and let light reign supreme.</description>
+				<icon>ach_aea_destructionlight_win</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_WIN_IMMORTAL">
+				<name>Original Sin</name>
+				<secretDescription>???</secretDescription>
+				<description>Rescue Balance from the Lylmiks, keeping both light and dark at bay.</description>
+				<icon>ach_aea_immortal_win</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+		</section><section text="Music (OE)" hidden="false">
+			<achievement name="MUSIC_AEA_ACID">
+				<name>Acidic</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_acid" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_NECRO">
+				<name>Heretic</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_necro" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_CULT">
+				<name>Cultist</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_cult" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_BIRD">
+				<name>Gi</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_cult" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_SHARD">
+				<name>Shard</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_shard" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_SHLEG">
+				<name>Anarchy</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_shleg" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_JUSTICE">
+				<name>Requiem</name>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_justice" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_OLD_1">
+				<name>Lylmik Outskirts</name>
+				<secretName>???</secretName>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_old_1" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_OLD_2">
+				<name>Lylmik Core</name>
+				<secretName>???</secretName>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_old_2" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+			<achievement name="MUSIC_AEA_OLD_3">
+				<name>Lylmik Finale</name>
+				<secretName>???</secretName>
+				<description id="jukebox_unlocked" />
+				<secretDescription id="jukebox_locked" />
+				<header id="jukebox_header" />
+				<icon>music_unlocked</icon>
+				<variable name="juke_aea_old_3" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+			</achievement>
+		</section>
+	</mod-append:page>
+	<mod-append:page>
 		<section text="Loot Transports (OE)" hidden="false">
 			<achievement name="ACH_TRANS_AEA_ACID">
 				<name>Acidic Transport</name>
@@ -10007,103 +9729,6 @@ Right click to attempt the ritual or cancel.
 				<header>Grant Received</header>
 				<icon>ach_boon_aea_clone_crime</icon>
 				<lockImage>ach_locked</lockImage>
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-		</section>
-	</mod-append:page>
-	<mod-append:page>
-		<section text="Music (OE)" hidden="false">
-			<achievement name="MUSIC_AEA_ACID">
-				<name>Acidic</name>
-				<description id="jukebox_unlocked" />
-				<secretDescription id="jukebox_locked" />
-				<header id="jukebox_header" />
-				<icon>music_unlocked</icon>
-				<variable name="juke_aea_acid" amount="1" />
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-			<achievement name="MUSIC_AEA_NECRO">
-				<name>Heretic</name>
-				<description id="jukebox_unlocked" />
-				<secretDescription id="jukebox_locked" />
-				<header id="jukebox_header" />
-				<icon>music_unlocked</icon>
-				<variable name="juke_aea_necro" amount="1" />
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-			<achievement name="MUSIC_AEA_CULT">
-				<name>Cultist</name>
-				<description id="jukebox_unlocked" />
-				<secretDescription id="jukebox_locked" />
-				<header id="jukebox_header" />
-				<icon>music_unlocked</icon>
-				<variable name="juke_aea_cult" amount="1" />
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-			<achievement name="MUSIC_AEA_BIRD">
-				<name>Gi</name>
-				<description id="jukebox_unlocked" />
-				<secretDescription id="jukebox_locked" />
-				<header id="jukebox_header" />
-				<icon>music_unlocked</icon>
-				<variable name="juke_aea_cult" amount="1" />
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-			<achievement name="MUSIC_AEA_SHARD">
-				<name>Shard</name>
-				<description id="jukebox_unlocked" />
-				<secretDescription id="jukebox_locked" />
-				<header id="jukebox_header" />
-				<icon>music_unlocked</icon>
-				<variable name="juke_aea_shard" amount="1" />
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-			<achievement name="MUSIC_AEA_SHLEG">
-				<name>Anarchy</name>
-				<description id="jukebox_unlocked" />
-				<secretDescription id="jukebox_locked" />
-				<header id="jukebox_header" />
-				<icon>music_unlocked</icon>
-				<variable name="juke_aea_shleg" amount="1" />
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-			<achievement name="MUSIC_AEA_JUSTICE">
-				<name>Requiem</name>
-				<description id="jukebox_unlocked" />
-				<secretDescription id="jukebox_locked" />
-				<header id="jukebox_header" />
-				<icon>music_unlocked</icon>
-				<variable name="juke_aea_justice" amount="1" />
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-			<achievement name="MUSIC_AEA_OLD_1">
-				<name>Lylmik Outskirts</name>
-				<secretName>???</secretName>
-				<description id="jukebox_unlocked" />
-				<secretDescription id="jukebox_locked" />
-				<header id="jukebox_header" />
-				<icon>music_unlocked</icon>
-				<variable name="juke_aea_old_1" amount="1" />
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-			<achievement name="MUSIC_AEA_OLD_2">
-				<name>Lylmik Core</name>
-				<secretName>???</secretName>
-				<description id="jukebox_unlocked" />
-				<secretDescription id="jukebox_locked" />
-				<header id="jukebox_header" />
-				<icon>music_unlocked</icon>
-				<variable name="juke_aea_old_2" amount="1" />
-				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-			<achievement name="MUSIC_AEA_OLD_3">
-				<name>Lylmik Finale</name>
-				<secretName>???</secretName>
-				<description id="jukebox_unlocked" />
-				<secretDescription id="jukebox_locked" />
-				<header id="jukebox_header" />
-				<icon>music_unlocked</icon>
-				<variable name="juke_aea_old_3" amount="1" />
 				<multiDifficulty>false</multiDifficulty>
 			</achievement>
 		</section>

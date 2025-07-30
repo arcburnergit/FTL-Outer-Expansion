@@ -17,48 +17,24 @@
 </mod:findName>
 
 <mod:findName type="event" name="START_BEACON_REAL" limit="1">
-  <mod:findLike type="eventButton">
-    <mod:selector name="ADDON_FMCORE"/>
-    <mod:removeTag/>
-  </mod:findLike>
-  <mod:findLike type="eventButton">
-    <mod:selector name="ADDON_FORGEMASTER"/>
-    <mod:removeTag/>
-  </mod:findLike>
-  <mod:findLike type="eventButton">
-    <mod:selector name="ADDON_GB"/>
-    <mod:removeTag/>
-  </mod:findLike>
-  <mod:findLike type="eventButton">
-    <mod:selector name="ADDON_CNC"/>
-    <mod:removeTag/>
-  </mod:findLike>
-  <mod:findLike type="eventButton">
-    <mod:selector name="ADDON_FR"/>
-    <mod:removeTag/>
-  </mod:findLike>
-  <mod:findLike type="eventButton">
-    <mod:selector name="ADDON_BAG"/>
-    <mod:removeTag/>
-  </mod:findLike>
-  <mod:findLike type="eventButton">
-    <mod:selector name="ADDON_AA"/>
-    <mod:removeTag/>
-  </mod:findLike>
-  <mod:findLike type="eventButton">
-    <mod:selector name="ADDON_PIP"/>
-    <mod:removeTag/>
-  </mod:findLike>
-  <mod:findLike type="eventButton">
-    <mod:selector name="ADDON_TCC"/>
-    <mod:removeTag/>
-  </mod:findLike>
-  <mod:findLike type="eventButton">
-    <mod:selector name="ADDON_RAD"/>
-    <mod:removeTag/>
-  </mod:findLike>
-  <mod-append:triggeredEvent event="AEA_BROADSIDE_CHOOSE_ARTY" seeded="false" loops="1" minTime="0.013" maxTime="0.013" />
-  <mod-append:triggeredEvent event="AEA_SET_TEST_VALUE" seeded="false" loops="1" minTime="0.013" maxTime="0.013" />
+  <mod-append:queueEvent>AEA_BROADSIDE_CHOOSE_ARTY</mod-append:queueEvent>
+  <mod-append:queueEvent>AEA_SET_TEST_VALUE</mod-append:queueEvent>
+</mod:findName>
+
+<mod:findName type="event" name="START_BEACON_PREP_LOAD" limit="1">
+	<mod-append:backgroundObject name="AEA_DARK_BOOK">
+		<layer z="0">background</layer>
+		<spawnArea x="1124" y="572" w="0" h="0" center="true"/>
+		<req lvl="1">aea_dark_book_unlock</req>
+		<anim>aea_dark_book_object</anim>
+		<hoverAnim>aea_dark_book_object_hover</hoverAnim>
+		<inactiveAnim hide="true"/>
+		<tooltip>A [style[color:FF0000]]book[[/style]].</tooltip>
+		<clickAction>
+			<event load="AEA_JUSTICIER_BOOK_SELECT"/>
+			<destroy/>
+		</clickAction>
+	</mod-append:backgroundObject>
 </mod:findName>
 
 <event name="AEA_SET_TEST_VALUE">
@@ -501,7 +477,7 @@
 	<preventFleet />
   <preventBossFleet />
 	<preventQuest />
-  <variable name="aea_broadside_enemy_fought" op="set" val="1"/>
+  <variable name="aea_broadside_roamer_killed" op="set" val="1"/>
   <text>You arrive at the beacon face to face with a strange rebel ship, it's unlike any design you've seen before. You don't have time to ponder as it turns it's weapons on you.</text>
   <ship load="AEA_BROADSIDE_ENEMY" hostile="true"/>
   <choice hidden="true">

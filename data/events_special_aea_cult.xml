@@ -371,7 +371,7 @@
 
 <event name="STOREEVENT_AEA_CULT_SPELLS" unique="true">
 	<preventQuest />
-	<beaconType id="map_icon_store_orchid" global="true">
+	<beaconType id="map_icon_store_orchid" global="false">
 		<color r="200" g="100" b="200" a="1" />
 	</beaconType>
 	<text>This beacon is an outpost and trade hub for the Cult of the bud. Theres a varied collection of spells here, you'll probably need to pickup a few cultists if you want to use them.</text>
