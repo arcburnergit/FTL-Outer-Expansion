@@ -1192,12 +1192,15 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 <eventList name="NEBULA_NEUTRAL_AEA_ACID">
 	<event load="NEBULA_AEA_ACID_EMPTY_WRECK" />
 	<event load="NEBULA_REFUGEE_AEA_ACID" />
-	<event load="NEBULA_ACIDIC_AEA_ACID_BADORCHID" />
-	<event load="NEBULA_ACIDIC_AEA_ACID_CHOOSE_DEATH" />
 	<event load="NEBULA_AEA_ACID_REPAIR_YARD" />
+<!--
+	<event load="NEBULA_ACIDIC_AEA_ACID_BADORCHID" />
 	<event load="NEBULA_AEA_ACID_ORCHID" />
+	<event load="NEBULA_ACIDIC_AEA_ACID_CHOOSE_DEATH" />
+-->
 	<event load="NEBULA_ACIDIC_AEA_ACID_PRAETOR_DIPLOMATIC" />
 	<event load="NEBULA_AEA_ACID_ORCHID_RESEARCH" />
+	<event load="NEBULA_AEA_ACID_WARNING" />
 </eventList>
 
 <event name="NEBULA_AEA_ACID_EMPTY_WRECK" unique="true">
@@ -1292,6 +1295,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</event>
 </eventList>
 
+<!--EVENT UP FOR DELETION-->
 <event name="NEBULA_ACIDIC_AEA_ACID_BADORCHID" unique="true">
 	<beaconType id="map_icon_aea_acid_nebula" global="false">
 		<color r="138" g="237" b="31" a="1"/>
@@ -1475,7 +1479,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</choice>
 </event>
 
-
+<!--EVENT UP FOR DELETION-->
 <event name="NEBULA_ACIDIC_AEA_ACID_CHOOSE_DEATH" unique="true">
     <beaconType id="map_icon_aea_acid_nebula" global="false">
 		<color r="138" g="237" b="31" a="1"/>
@@ -1667,6 +1671,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
     </event>
 </eventList>
 
+<!--EVENT UP FOR DELETION-->
 <event name="NEBULA_AEA_ACID_ORCHID" unique="true">
 	<text>A rogue ship awaits you at the beacon. "Laborers for cheap! We have oxygen emitters and those advanced Acidic droids, come take a look!"</text>
 	<environment type="nebula" />
@@ -1783,11 +1788,14 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	
 	<event load="NEBULA_AEA_ACID_EMPTY_WRECK" />
 	<event load="NEBULA_REFUGEE_AEA_ACID" />
+<!--
 	<event load="NEBULA_ACIDIC_AEA_ACID_BADORCHID" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_CHOOSE_DEATH" />
+-->
 	<event load="NEBULA_AEA_ACID_REPAIR_YARD" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_PRAETOR_DIPLOMATIC" />
 	<event load="NEBULA_AEA_ACID_ORCHID_RESEARCH" />
+	<event load="NEBULA_AEA_ACID_WARNING" />
 </eventList>
 
 <event name="NEBULA_AEA_ACID_IMPORTANT_PRISONER" unique="true">
@@ -1984,6 +1992,25 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 		</event>
 	</choice>
 </event>
+
+<event name="NEBULA_AEA_ACID_WARNING">
+	<environment type="nebula" />
+	<ship load="SHIP_AEA_ACID_FIGHT" hostile="false" />
+	<text>As you jump to the beacon, an Acidic ship greets you with its weapons online! However, instead of immediately attacking, the Growth hails you, "Outsider. Our territory. Leave, now."</text>
+	<choice hidden="true">
+		<text>Attack.</text>
+		<event>
+			<text>Who do they think they are? Yes, maybe it's "their" space, but they can't order you like that! You prepare to deal with them.</text>
+			<ship hostile="true" />
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Leave as suggested.</text>
+		<event>
+			<text>You decide to not upset the Growth.</text>
+		</event>
+	</choice>
+</event>
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1996,11 +2023,13 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event load="NEBULA_AEA_ACID_DISTRESS_TRICK" />
 	<event load="NEBULA_AEA_ACID_DISTRESS_QUESTION" />
 	<event load="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2" />
+	<event load="AEA_ACID_DISTRESS_VAMPWEED" />
+	<event load="NEBULA_ACIDIC_AEA_ACID_ORCHID_DISTRESS_PRESSURE" />
 </eventList>
 
 <event name="NEBULA_AEA_ACID_DISTRESS_ROCK">
 	<distressBeacon />
-    <text>You arrive at the beacon to discover a Rock ship adrift at the beacon. It's unusual to see the Rockment out this far, and even more unusually this one has ran out of fuel.</text>
+    <text>You arrive at the beacon to discover a Rock ship adrift at the beacon. It's unusual to see the Rockmen out this far, and even more unusually this one has ran out of fuel.</text>
     <ship load="SHIP_ROCK_GENERIC" hostile="false"/>
 	<environment type="nebula" />
     <choice>
@@ -2321,6 +2350,12 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 </event>
 
 <event name="NEBULA_ACIDIC_AEA_ACID_ORCHID_DISTRESS_PRESSURE">
+	<beaconType id="map_icon_aea_acid_nebula_distress" global="false">
+		<color r="138" g="237" b="31" a="1"/>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
 	<distressBeacon />
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
@@ -2354,6 +2389,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 										<event>
 											<text>The drone speeds past you into the hallway, repairing breaches as fast as it can. While acidic gases keep eating away at the hull, it gets patched up enough for Orchids to traverse from the bridge to the cargo hold. You get to evacuate everyone before moving away from the doomed vessel, as you see it buckle under pressure. You promise to drop off everyone at the closest station, but the Orchid you first met volunteers to serve on your ship out of gratitude.</text>
 											<crewMember amount="1" class="orchid_caretaker" />
+											<queueEvent>MORALITY_REMOVE_ORCHID</queueEvent>
 										</event>
 									</choice>
 									<choice hidden="true" req="LIST_UPG_SEALANT" lvl="1">
@@ -2361,12 +2397,13 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 										<event>
 											<text>The nano-bots fill up the hallway, repairing breaches as fast as they can. While acidic gases keep eating away at the hull, it gets patched up enough for Orchids to traverse from the bridge to the cargo hold. You get to evacuate everyone before moving away from the doomed vessel, as you see it buckle under pressure. You promise to drop off everyone at the closest station, but the Orchid you first met volunteers to serve on your ship out of gratitude.</text>
 											<crewMember amount="1" class="orchid_caretaker" />
+											<queueEvent>MORALITY_REMOVE_ORCHID</queueEvent>
 										</event>
 									</choice>
 									<choice hidden="true">
 										<text>We can't help.</text>
 										<event>
-											<text>The Orchid, dejected, follows you onboard. Just as you move away from the vessel, it buckles under pressure, the bridge exploding into countless pieces of glass and metal, sending the remaining crew flying into space. It's terrific, but you can't do anything. You promise to drop the Orchid off at the closest station.</text>
+											<text>The Orchid, dejected, follows you onboard. Just as you move away from the vessel, it buckles under pressure, the bridge exploding into countless pieces of glass and titanwood, sending the remaining crew flying into space. It's terrific, but you can't do anything. You promise to drop the Orchid off at the closest station.</text>
 										</event>
 									</choice>
 								</event>
@@ -2399,10 +2436,11 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 <event name="AEA_ACID_ORCHID_PRESSURE_ANAEROBIC_SUCCESS">
 	<text>Your anaerobic crewmember works fast, and, miraculously, manages to sustain the oxygen in the hallway enough for Orchids to evacuate! Everyone gets on your ship and you move away from the doomed vessel, seeing it buckle under pressure. You promise to drop off everyone at the closest station, but the Orchid you first met volunteers to serve on your ship out of gratitude.</text>
 	<crewMember amount="1" class="orchid_caretaker" />
+	<queueEvent>MORALITY_REMOVE_ORCHID</queueEvent>
 </event>
 
 <event name="AEA_ACID_ORCHID_PRESSURE_ANAEROBIC_FAILURE">
-	<text>Your anaerobic crewmember tries as they might, but, in the middle of patching up the hull, the vessel buckles under pressure, the bridge exploding into countless pieces of glass and metal, sending the remaining crew flying into space. You manage to save the Orchid you met and your stranded crewmember, but everyone else has been lost. You promise to drop the Orchid off at the closest station.</text>
+	<text>Your anaerobic crewmember tries as they might, but, in the middle of patching up the hull, the vessel buckles under pressure, the bridge exploding into countless pieces of glass and titanwood, sending the remaining crew flying into space. You manage to save the Orchid you met and your stranded crewmember, but everyone else has been lost. You promise to drop the Orchid off at the closest station.</text>
 </event>
 
 <!--
@@ -2735,7 +2773,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 </event>
 
 <event name="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_SUCCESS_BASIC">
-	<text>The Slug looks around, then starts tapping away with a pen again. "That's pathetic." Stops, and sighs. "Fine. I don't care. The vesssel intended for capture is a Cealaformer. If you're not familiar, it'sss a ssship that can ssspread nebula gasssesss on itsss own. Turnsss out, the ssspace mold has thossse too. To be able to sssettle anywhere it wantsss... Kind of dangerous for sssapient life, don't you think?"</text>
+	<text>The Slug briefly looks around, before beginning to tap away with their pen again. "That'sss pathetic." With a sigh, they stop their fidgeting, "Fine. I don't care. The vesssel intended for capture isss a Cealaformer. If you're not familiar, it'sss a ssship that can ssspread nebula gasssesss on itsss own. Turnsss out, the ssspace mold has thossse too. To be able to sssettle anywhere it wantsss... Kind of dangerousss for sssapient life, don't you think?"</text>
 	<choice hidden="true">
 		<text>We'll do it.</text>
 		<event load="NEBULA_AEA_QUEST_ACID_COALITION_AGREED" />
@@ -2751,7 +2789,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 </event>
 
 <event name="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_SUCCESS_CREW">
-	<text>The Slug looks around, then starts tapping away with a pen again. "You're not." Stops, and sighs. "Fine. I don't care. The vesssel intended for capture is a Cealaformer. If you're not familiar, it'sss a ssship that can ssspread nebula gasssesss on itsss own. Turnsss out, the ssspace mold has thossse too. To be able to sssettle anywhere it wantsss... Kind of dangerous for sssapient life, don't you think?"</text>
+	<text>The Slug briefly looks around, before beginning to tap away with their pen again. "You're not." With a sigh, they stop their fidgeting, "Fine. I don't care. The vesssel intended for capture isss a Cealaformer. If you're not familiar, it'sss a ssship that can ssspread nebula gasssesss on itsss own. Turnsss out, the ssspace mold has thossse too. To be able to sssettle anywhere it wantsss... Kind of dangerousss for sssapient life, don't you think?"</text>
 	<choice hidden="true">
 		<text>We'll do it.</text>
 		<event load="NEBULA_AEA_QUEST_ACID_COALITION_AGREED" />
@@ -2767,7 +2805,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 </event>
 
 <event name="NEBULA_AEA_QUEST_ACID_COALITION_ELABORATE_SUCCESS_ELITE">
-	<text>The Slug looks around, then starts tapping away with a pen again. "You actually might be..." Stops, and sighs. "Fine. I don't care. The vesssel intended for capture is a Cealaformer. If you're not familiar, it'sss a ssship that can ssspread nebula gasssesss on itsss own. Turnsss out, the ssspace mold has thossse too. To be able to sssettle anywhere it wantsss... Kind of dangerous for sssapient life, don't you think?"</text>
+	<text>The Slug briefly looks around, before beginning to tap away with their pen again. "Are you... undercover?.." With a sigh, they stop their fidgeting, "Fine. I don't care. The vesssel intended for capture is a Cealaformer. If you're not familiar, it'sss a ssship that can ssspread nebula gasssesss on itsss own. Turnsss out, the ssspace mold has thossse too. To be able to sssettle anywhere it wantsss... Kind of dangerousss for sssapient life, don't you think?"</text>
 	<choice hidden="true">
 		<text>We'll do it.</text>
 		<event load="NEBULA_AEA_QUEST_ACID_COALITION_AGREED" />
@@ -2834,7 +2872,6 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event load="NEBULA_ENCOUNTER_AEA_ACID" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_FIGHT" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_PIRATE" />
-	<event load="NEBULA_AEA_ACID_POISON" />
 </eventList>
 
 <event name="NEBULA_ENCOUNTER_AEA_ACID">
@@ -2941,6 +2978,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</choice>
 </event>
 
+<!-- DEPRECATED EVENT, DELETE LATER
 <event name="NEBULA_AEA_ACID_POISON" unique="true">
 	<loadEventList seeded="false" first="false" generate="false">
 		<event name="NEBULA_ENCOUNTER_AEA_ACID_REGULAR" req="LIST_CHECK_ANY_CREW" lvl="0" max_lvl="0" />
@@ -3007,8 +3045,9 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 		<text>Luckily you crew is cloned alive and well. Perhaps you should have waiting around to let the Acidic vessel know of the results.</text>
 	</removeCrew>
 </event>
+-->
 
-<!--
+<!-- LACKING EVENT MECHANICS: ACIDIC CLOUDS APPEAR ON YOUR SHIP FOR 1 MINUTE
 <event name="NEBULA_AEA_ACID_WEAPON_TEST">
 	<environment type="nebula" />
 	<text>This beacon houses a strange-looking Acidic vessel, equipped with some kind of weaponry you don't immediately recognize. Regardless, those guns are massive; hailing them could be risky.</text>
@@ -3065,7 +3104,8 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	
 	<event load="NEBULA_ENCOUNTER_AEA_ACID" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_FIGHT" />
-	<event load="NEBULA_AEA_ACID_POISON" />
+
+	<event load="NEBULA_ACIDIC_AEA_ACID_HIDEANDSEEK" />
 </eventList>
 
 <event name="NEBULA_ENCOUNTER_AEA_ACID_HACKER" unique="true">

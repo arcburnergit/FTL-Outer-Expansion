@@ -385,7 +385,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 			</event>
 		</choice>
 		<choice hidden="true">
-			<text>Then we'll just fight our way through!.</text>
+			<text>Then we'll just fight our way through!</text>
 			<event>
 				<text>You silence communications and prepare to attack.</text>
 				<ship hostile="true" />
