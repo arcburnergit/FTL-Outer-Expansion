@@ -1722,7 +1722,7 @@ ROYAL OBELISK SECTOR
 	<exitBeacon event="AEA_OLD_VICTORY" rebelEvent="AEA_OLD_VICTORY" />
 	<rebelBeacon event="FLEET_AEA_OLD_CAPITAL" />
 	<removeFirstBeaconNebula />
-	<event name="AEA_OLD_3_BOSS" min="1" max="1" />
+	<event name="EMPTY_AEA_OLD" min="999" max="999" />
 	<event name="EMPTY_AEA_OLD" min="999" max="999" />
 </sectorDescription>
 

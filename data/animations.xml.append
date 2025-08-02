@@ -563,6 +563,45 @@
 	<desc length="15" x="0" y="0" />
 	<time>1.5</time>
 </anim>
+
+<animSheet name="aea_boss_missile" w="396" h="76" fw="33" fh="76">weapon_old/aea_boss_missile.png</animSheet>
+<weaponAnim name="aea_boss_missile">
+    <sheet>aea_boss_missile</sheet>
+    <desc length="12" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>6</fireFrame>
+    <firePoint  x="16" y="40"/>
+    <mountPoint x="0" y="11"/>
+    <chargeImage>weapon_old/aea_boss_missile_glow.png</chargeImage>
+</weaponAnim>
+<animSheet name="aea_boss_laser_heavy" w="363" h="76" fw="33" fh="76">weapon_old/aea_boss_laser_heavy.png</animSheet>
+<weaponAnim name="aea_boss_laser_heavy">
+    <sheet>aea_boss_laser_heavy</sheet>
+    <desc length="11" x="0" y="0"/>
+    <chargedFrame>4</chargedFrame>
+    <fireFrame>7</fireFrame>
+    <firePoint  x="16" y="16"/>
+    <mountPoint x="0" y="11"/>
+</weaponAnim>
+<animSheet name="aea_boss_laser_burst" w="363" h="76" fw="33" fh="76">weapon_old/aea_boss_laser_burst.png</animSheet>
+<weaponAnim name="aea_boss_laser_burst">
+    <sheet>aea_boss_laser_burst</sheet>
+    <desc length="11" x="0" y="0"/>
+    <chargedFrame>5</chargedFrame>
+    <fireFrame>8</fireFrame>
+    <firePoint  x="16" y="16"/>
+    <mountPoint x="0" y="11"/>
+</weaponAnim>
+<animSheet name="aea_boss_beam" w="198" h="76" fw="33" fh="76">weapon_old/aea_boss_beam.png</animSheet>
+<weaponAnim name="aea_boss_beam">
+    <sheet>aea_boss_beam</sheet>
+    <desc length="5" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint  x="16" y="20"/>
+    <mountPoint x="0" y="11"/>
+    <chargeImage>weapon_old/aea_boss_beam_glow.png</chargeImage>
+</weaponAnim>
 </FTL>
 
 <!--Armour-->
@@ -5236,11 +5275,48 @@
 	<time>1</time>
 </anim>
 
+<animSheet name="aea_statue_cover" w="35" h="35" fw="35" fh="35">effects/aea_statue_cover.png</animSheet>
+<anim name="aea_statue_cover">
+	<sheet>aea_statue_cover</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
 <animSheet name="aea_statue" w="210" h="70" fw="35" fh="35">people/aea_statue_base.png</animSheet>
 <anim name="aea_statue_portrait">
 	<sheet>aea_statue</sheet>
 	<desc length="1" x="0" y="1" />
 	<time>1</time>
+</anim>
+<anim name="aea_statue_walk_down">
+	<sheet>aea_statue</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>1</time>
+</anim>
+<anim name="aea_statue_walk_right">
+	<sheet>aea_statue</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>1</time>
+</anim>
+<anim name="aea_statue_walk_up">
+	<sheet>aea_statue</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>1</time>
+</anim>
+<anim name="aea_statue_walk_left">
+	<sheet>aea_statue</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>1</time>
+</anim>
+<anim name="aea_statue_punch_up">
+	<sheet>aea_statue</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_statue_punch_down">
+	<sheet>aea_statue</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>1.0</time>
 </anim>
 <anim name="aea_statue_death_right">
 	<sheet>aea_statue</sheet>
@@ -5256,8 +5332,38 @@
 <animSheet name="aea_statue_hostile_inactive" w="210" h="70" fw="35" fh="35">people/aea_statue_hostile_inactive_base.png</animSheet>
 <anim name="aea_statue_hostile_inactive_portrait">
 	<sheet>aea_statue_hostile_inactive</sheet>
-	<desc length="1" x="0" y="0" />
+	<desc length="1" x="0" y="1" />
 	<time>1</time>
+</anim>
+<anim name="aea_statue_hostile_inactive_walk_down">
+	<sheet>aea_statue_hostile_inactive</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>0.1</time>
+</anim>
+<anim name="aea_statue_hostile_inactive_walk_right">
+	<sheet>aea_statue_hostile_inactive</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>0.1</time>
+</anim>
+<anim name="aea_statue_hostile_inactive_walk_up">
+	<sheet>aea_statue_hostile_inactive</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>0.1</time>
+</anim>
+<anim name="aea_statue_hostile_inactive_walk_left">
+	<sheet>aea_statue_hostile_inactive</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>0.1</time>
+</anim>
+<anim name="aea_statue_hostile_inactive_punch_up">
+	<sheet>aea_statue_hostile_inactive</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_statue_hostile_inactive_punch_down">
+	<sheet>aea_statue_hostile_inactive</sheet>
+	<desc length="1" x="0" y="1" />
+	<time>1.0</time>
 </anim>
 <anim name="aea_statue_hostile_inactive_death_right">
 	<sheet>aea_statue_hostile_inactive</sheet>
@@ -5276,6 +5382,31 @@
 	<desc length="1" x="0" y="3" />
 	<time>1</time>
 </anim>
+<anim name="aea_statue_hostile_walk_down">
+	<sheet>aea_statue_hostile</sheet>
+	<desc length="1" x="0" y="3" />
+	<time>1</time>
+</anim>
+<anim name="aea_statue_hostile_walk_right">
+	<sheet>aea_statue_hostile</sheet>
+	<desc length="1" x="0" y="3" />
+	<time>1</time>
+</anim>
+<anim name="aea_statue_hostile_walk_up">
+	<sheet>aea_statue_hostile</sheet>
+	<desc length="1" x="0" y="3" />
+	<time>1</time>
+</anim>
+<anim name="aea_statue_hostile_walk_left">
+	<sheet>aea_statue_hostile</sheet>
+	<desc length="1" x="0" y="3" />
+	<time>1</time>
+</anim>
+<anim name="aea_statue_hostile_teleport">
+	<sheet>aea_statue_hostile</sheet>
+	<desc length="1" x="0" y="3" />
+	<time>0.1</time>
+</anim>
 <anim name="aea_statue_hostile_punch_up">
 	<sheet>aea_statue_hostile</sheet>
 	<desc length="6" x="0" y="1" />
@@ -5285,6 +5416,11 @@
 	<sheet>aea_statue_hostile</sheet>
 	<desc length="6" x="0" y="2" />
 	<time>1.0</time>
+</anim>
+<anim name="aea_statue_hostile_death_right">
+	<sheet>aea_statue_hostile_inactive</sheet>
+	<desc length="6" x="0" y="0" />
+	<time>0.6</time>
 </anim>
 <anim name="aea_statue_hostile_death_left">
 	<sheet>aea_statue_hostile</sheet>

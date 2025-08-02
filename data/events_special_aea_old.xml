@@ -15,11 +15,11 @@
 	<text>There's a strange wreck at this beacon, almost none of it is salvagable. You only manage to recover a single strange weapon from the wreckage.</text>
 	<weapon name="FREE_WEAPONS_AEA_OLD"/>
 	<variable name="aea_old_has_cell" op="set" val="1" />
+	<achievement silent="false">ACH_AEA_OLD_TECH</achievement>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event name="AEA_POWER_CELL_SPEAK">
 			<text>YOU SHOULD NOT BE SEEING THIS, IF YOU ARE CHECK TO MAKE SURE YOUR HYPERSPACE IS UP TO DATE.</text>
-			<metaVariable name="aea_dark_book_unlock" op="set" val="1" />
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event/>
@@ -106,6 +106,7 @@ If you do see any bugs it's still worth reporting them.</text>
 	<choice>
 		<text>Continue...</text>
 		<event>
+			<achievement silent="false">ACH_AEA_OLD_SECTOR</achievement>
 			<secretSectorWarp>SECRET_AEA_OLD_1</secretSectorWarp>
 			<secretSector />
 		</event>

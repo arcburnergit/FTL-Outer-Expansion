@@ -1440,7 +1440,7 @@
 
 <shipBlueprint name="AEA_ACID_TRANSPORT" layout="aea_acid_transport" img="aea_acid_transport">
 	<class>Acidic Transport</class>
-	<minSector>4</minSector>
+	<minSector>3</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
 		<clonebay power="1" max="2" room="2" start="true" />
@@ -1457,7 +1457,7 @@
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC" />
 	<droneList drones="0" count="0" />
-	<health amount="19" />
+	<health amount="13" />
 	<maxPower amount="10" />
 	<crewCount amount="2" max="5" class="orchid" />
 	<boardingAI>invasion</boardingAI>
@@ -1488,6 +1488,29 @@
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
 
+<shipBlueprint name="AEA_ACID_STATION" layout="aea_acid_station" img="aea_acid_station">
+	<class>Acidic Station</class>
+	<minSector>2</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="2" room="29" start="true" />
+		<doors power="1" max="1" room="18" start="true" />
+		<drones power="2" max="6" room="10" start="true" />
+		<medbay power="1" max="2" room="8" start="true" />
+		<mind power="1" max="2" room="19" start="false" />
+		<oxygen power="2" max="2" room="9" start="true" />
+		<shields power="2" max="10" room="26" start="true" />
+		<weapons power="3" max="8" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC" />
+	<droneList drones="10" count="2" load="LIST_DRONES_ENGI_DROPSHIP" />
+	<health amount="15" />
+	<maxPower amount="12" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY_WEAK" />
+</shipBlueprint>
 
 
 
@@ -1672,7 +1695,7 @@
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
 	<droneList drones="0" count="0" />
-	<health amount="19" />
+	<health amount="15" />
 	<maxPower amount="10" />
 	<crewCount amount="2" max="5" class="orchid" />
 	<boardingAI>invasion</boardingAI>
@@ -1703,6 +1726,29 @@
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
 
+<shipBlueprint name="AEA_ACID_STATION_ELITE" layout="aea_acid_station" img="aea_acid_station_elite">
+	<class>Acidic Station</class>
+	<minSector>2</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="2" max="3" room="29" start="true" />
+		<doors power="1" max="1" room="18" start="true" />
+		<drones power="2" max="6" room="10" start="true" />
+		<medbay power="1" max="2" room="8" start="true" />
+		<mind power="1" max="2" room="19" start="false" />
+		<oxygen power="2" max="2" room="9" start="true" />
+		<shields power="2" max="10" room="26" start="true" />
+		<weapons power="3" max="8" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
+	<droneList drones="10" count="2" load="LIST_DRONES_ENGI_DROPSHIP" />
+	<health amount="15" />
+	<maxPower amount="12" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY_WEAK" />
+</shipBlueprint>
 </FTL>
 <FTL>
 
@@ -2985,10 +3031,346 @@
 
 
 
-
-
-<shipBlueprint name="AEA_OLD_FINAL_BOSS_CASUAL" layout="aea_old_flagship" img="aea_old_flagship">
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_CASUAL" layout="aea_old_flagship_one" img="aea_old_flagship_one">
 	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="3" max="3" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<artillery power="3" max="3" room="5" start="true" weapon="ARTILLERY_AEA_FOCUS_OLD" />
+		<clonebay power="1" max="1" room="7" start="true" />
+		<engines power="2" max="2" room="10" start="true" />
+		<medbay power="2" max="2" room="15" start="true" />
+		<oxygen power="1" max="1" room="3" start="true" />
+		<pilot power="2" max="2" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<teleporter power="1" max="1" room="24" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="35" /> <!--29-->
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_NORMAL" layout="aea_old_flagship_one" img="aea_old_flagship_one">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="3" max="3" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<artillery power="3" max="3" room="5" start="true" weapon="ARTILLERY_AEA_FOCUS_OLD" />
+		<clonebay power="1" max="1" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<oxygen power="1" max="1" room="3" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<teleporter power="2" max="2" room="24" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_CHALLENGE" layout="aea_old_flagship_one" img="aea_old_flagship_one">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="3" max="3" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<artillery power="3" max="3" room="5" start="true" weapon="ARTILLERY_AEA_FOCUS_OLD" />
+		<clonebay power="1" max="1" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<oxygen power="1" max="1" room="3" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<teleporter power="2" max="2" room="24" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="40" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_EXTREME" layout="aea_old_flagship_one" img="aea_old_flagship_one">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="4" max="4" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="4" max="4" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="4" max="4" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<artillery power="4" max="4" room="5" start="true" weapon="ARTILLERY_AEA_FOCUS_OLD" />
+		<clonebay power="2" max="2" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<oxygen power="1" max="1" room="3" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="12" max="12" room="18" start="true" />
+		<teleporter power="2" max="2" room="24" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="45" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD_WEAK" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_TWO_CASUAL" layout="aea_old_flagship_two" img="aea_old_flagship_two">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="3" max="3" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<drones power="6" max="6" room="7" start="true" />
+		<engines power="2" max="2" room="10" start="true" />
+		<medbay power="2" max="2" room="15" start="true" />
+		<pilot power="2" max="2" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<hacking power="2" max="2" room="24" start="true" />
+		<mind power="2" max="2" room="22" start="true" />
+		<doors power="2" max="2" room="26" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" >
+		<drone name="GUARDIAN_1_DRONE" />
+		<drone name="BATTLETOG_BOARDER" />
+		<drone name="COMBAT_1_BEAM" />
+	</droneList>
+	<health amount="20" />
+	<maxPower amount="35" /> <!--29-->
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD_WEAK" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_TWO_NORMAL" layout="aea_old_flagship_two" img="aea_old_flagship_two">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="3" max="3" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<drones power="8" max="8" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<hacking power="1" max="1" room="24" start="true" />
+		<mind power="2" max="2" room="22" start="true" />
+		<doors power="2" max="2" room="26" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" >
+		<drone name="GUARDIAN_1_DRONE" />
+		<drone name="BATTLETOG_BOARDER" />
+		<drone name="BATTLETOG_BOARDER" />
+		<drone name="COMBAT_1_BEAM" />
+	</droneList>
+	<health amount="20" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD_WEAK" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_TWO_CHALLENGE" layout="aea_old_flagship_two" img="aea_old_flagship_two">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="3" max="3" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<drones power="10" max="10" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<hacking power="1" max="1" room="24" start="true" />
+		<mind power="2" max="2" room="22" start="true" />
+		<doors power="2" max="2" room="26" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" >
+		<drone name="GUARDIAN_2_DRONE" />
+		<drone name="BATTLETOG2_BOARDER" />
+		<drone name="BATTLETOG_BOARDER" />
+		<drone name="COMBAT_1_BEAM" />
+	</droneList>
+	<health amount="20" />
+	<maxPower amount="40" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD_WEAK" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_TWO_EXTREME" layout="aea_old_flagship_two" img="aea_old_flagship_two">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="4" max="4" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="4" max="4" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="4" max="4" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<drones power="11" max="11" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="12" max="12" room="18" start="true" />
+		<hacking power="2" max="2" room="24" start="true" />
+		<mind power="2" max="2" room="22" start="true" />
+		<doors power="2" max="2" room="26" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" >
+		<drone name="GUARDIAN_2_DRONE" />
+		<drone name="BATTLETOG2_BOARDER" />
+		<drone name="BATTLETOG2_BOARDER" />
+		<drone name="COMBAT_1_BEAM" />
+	</droneList>
+	<health amount="20" />
+	<maxPower amount="45" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD_WEAK" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_THREE_CASUAL" layout="aea_old_flagship_three" img="aea_old_flagship_three">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<weapons power="4" max="4" room="7" start="true" />
+		<engines power="2" max="2" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<pilot power="2" max="2" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<cloaking power="1" max="1" room="24" start="true" />
+		<aea_super_shields power="2" max="2" room="17" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" >
+		<weapon name="AEA_LASER_OLD_2" />
+		<weapon name="AEA_MISSILE_OLD_1_ENEMY" />
+	</weaponList>
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="35" /> <!--29-->
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_THREE_NORMAL" layout="aea_old_flagship_three" img="aea_old_flagship_three">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<weapons power="5" max="5" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<cloaking power="2" max="2" room="24" start="true" />
+		<aea_super_shields power="3" max="3" room="17" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" >
+		<weapon name="AEA_LASER_OLD_2" />
+		<weapon name="AEA_MISSILE_OLD_2_ENEMY" />
+	</weaponList>
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_THREE_CHALLENGE" layout="aea_old_flagship_three" img="aea_old_flagship_three">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<weapons power="6" max="6" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="4" max="4" room="15" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<cloaking power="2" max="2" room="24" start="true" />
+		<aea_super_shields power="4" max="4" room="17" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" >
+		<weapon name="AEA_LASER_OLD_2" />
+		<weapon name="AEA_MISSILE_OLD_2_ENEMY" />
+		<weapon name="AEA_LASER_OLDP_1" />
+	</weaponList>
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="40" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_THREE_EXTREME" layout="aea_old_flagship_three" img="aea_old_flagship_three">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="4" max="4" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="4" max="4" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<weapons power="7" max="7" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="4" max="4" room="15" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="12" max="12" room="18" start="true" />
+		<cloaking power="2" max="2" room="24" start="true" />
+		<aea_super_shields power="5" max="5" room="17" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" >
+		<weapon name="AEA_LASER_OLD_2" />
+		<weapon name="AEA_MISSILE_OLD_2_ENEMY" />
+		<weapon name="AEA_LASER_OLDP_1" />
+		<weapon name="AEA_FOCUS_OLD_1" />
+	</weaponList>
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="45" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+
+<!--shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_CASUAL" layout="aea_old_dreadnaught" img="aea_old_dreadnaught">
+	<class>Lylmik Dreadnaught</class>
 	<systemList>
 		<artillery power="3" max="3" room="8" start="true" weapon="ARTILLER_AEA_OLD_BEAM" />
 		<artillery power="3" max="3" room="7" start="true" weapon="ARTILLER_AEA_OLD_BEAM" />
@@ -3028,8 +3410,8 @@
 	<aug name="UPG_TECH_SEALANT" />
 </shipBlueprint>
 
-<shipBlueprint name="AEA_OLD_FINAL_BOSS_NORMAL" layout="aea_old_flagship" img="aea_old_flagship">
-	<class>Lylmik Flagship</class>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_NORMAL" layout="aea_old_dreadnaught" img="aea_old_dreadnaught">
+	<class>Lylmik Dreadnaught</class>
 	<systemList>
 		<artillery power="4" max="4" room="8" start="true" weapon="ARTILLER_AEA_OLD_BEAM" />
 		<artillery power="4" max="4" room="7" start="true" weapon="ARTILLER_AEA_OLD_BEAM" />
@@ -3069,8 +3451,8 @@
 	<aug name="UPG_TECH_SEALANT" />
 </shipBlueprint>
 
-<shipBlueprint name="AEA_OLD_FINAL_BOSS_CHALLENGE" layout="aea_old_flagship" img="aea_old_flagship">
-	<class>Lylmik Flagship</class>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_CHALLENGE" layout="aea_old_dreadnaught" img="aea_old_dreadnaught">
+	<class>Lylmik Dreadnaught</class>
 	<systemList>
 		<artillery power="4" max="4" room="8" start="true" weapon="ARTILLER_AEA_OLD_BEAM_HARD" />
 		<artillery power="4" max="4" room="7" start="true" weapon="ARTILLER_AEA_OLD_BEAM_HARD" />
@@ -3110,8 +3492,8 @@
 	<aug name="UPG_TECH_SEALANT" />
 </shipBlueprint>
 
-<shipBlueprint name="AEA_OLD_FINAL_BOSS_EXTREME" layout="aea_old_flagship" img="aea_old_flagship">
-	<class>Lylmik Flagship</class>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_EXTREME" layout="aea_old_dreadnaught" img="aea_old_dreadnaught">
+	<class>Lylmik Dreadnaught</class>
 	<systemList>
 		<artillery power="4" max="4" room="8" start="true" weapon="ARTILLER_AEA_OLD_BEAM_HARD" />
 		<artillery power="4" max="4" room="7" start="true" weapon="ARTILLER_AEA_OLD_BEAM_HARD" />
@@ -3149,7 +3531,7 @@
 	<aug name="AEA_OLD_EVASION_ENEMY" />
 	<aug name="AEA_OLD_SHIELD" />
 	<aug name="UPG_TECH_SEALANT" />
-</shipBlueprint>
+</shipBlueprint-->
 </FTL>
 
 <FTL>

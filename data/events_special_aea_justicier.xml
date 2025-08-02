@@ -57,6 +57,26 @@
         <text>Stare into the [style[color:FF0000]]Book[[/style]].</text>
         <event load="AEA_JUSTICIER_BOOK_STARE" />
     </choice>
+    <choice req="aea_justicier_statue_sacs" lvl="1" max_lvl="4" blue="false" hidden="true">
+        <text>Something is off about the book, different, changed, you can't tell what.</text>
+        <event load="OPTION_INVALID" />
+    </choice>
+    <choice req="aea_justicier_statue_sacs" lvl="5" max_lvl="9" blue="false" hidden="true">
+        <text>A new completely blank page has appeared in the book.</text>
+        <event load="OPTION_INVALID" />
+    </choice>
+    <choice req="aea_justicier_statue_sacs" lvl="10" max_lvl="14" blue="false" hidden="true">
+        <text>You can make out some minor details on the new page.</text>
+        <event load="OPTION_INVALID" />
+    </choice>
+    <choice req="aea_justicier_statue_sacs" lvl="15" max_lvl="19" blue="false" hidden="true">
+        <text>The page is much more visible but you still can't make any of the symbols out.</text>
+        <event load="OPTION_INVALID" />
+    </choice>
+    <choice req="aea_justicier_statue_sacs" lvl="20" blue="false">
+        <text>Read the page on a [style[color:FFC800]]strange[[/style]] Ritual.</text>
+        <event load="AEA_JUSTICIER_BOOK_STATUE_RITUAL" />
+    </choice>
 </event>
 
 <event name="AEA_JUSTICIER_BOOK_RULES">
@@ -138,6 +158,15 @@ Crew sacrificed by a ritual can be cloned but will be weakened for 3 jumps.
     </choice>
 </event>
 
+<event name="AEA_JUSTICIER_BOOK_STATUE_RITUAL">
+    <playSound>aea_page_turn</playSound>
+    <text>Test</text>
+    <choice hidden="true">
+        <text>Go Back.</text>
+        <event load="AEA_JUSTICIER_BOOK_ATTACK_LOAD" />
+    </choice>
+</event>
+
 <event name="AEA_EVENT_EMPTY">
   <text>test</text>
   <choice hidden="true">
@@ -146,6 +175,14 @@ Crew sacrificed by a ritual can be cloned but will be weakened for 3 jumps.
       <loadEvent>AEA_EVENT_EMPTY</loadEvent>
     </event>
   </choice>
+</event>
+
+<event name="AEA_STATUE_TEST">
+    <boarders min="2" max="2" class="aea_statue_hostile_inactive" />
+</event>
+
+<event name="AEA_RITUAL_REALM_TELEPORT">
+    <text>TEST</text>
 </event>
 
 <event name="AEA_EVENT_EXIT"/>
@@ -188,7 +225,7 @@ Crew sacrificed by a ritual can be cloned but will be weakened for 3 jumps.
                 <image border="12">statusUI/top_aea_book</image>
                 <customLocation x="105" y="200"/>
 				<req lvl="1">aea_dark_book_ready</req>
-                <tooltip>Perform a ritual sacrifice. Cannot target mind controlled crew.</tooltip>
+                <tooltip>Perform a ritual sacrifice. Cannot target non [style[color:FFC800]]statue[[/style]] mind controlled crew.</tooltip>
                 <inactiveTooltip>Active or on cooldown. (20 seconds)</inactiveTooltip>
                 <jumpClear>false</jumpClear>
                 <noDanger>false</noDanger>

@@ -68,7 +68,6 @@
 </mod:findName>
 
 <event name="AEA_GATE_SPAWN_TRIGGER">
-	<text>TEST GATE</text>
 	<quest event="AEA_OLD_GATE" />
 </event>
 

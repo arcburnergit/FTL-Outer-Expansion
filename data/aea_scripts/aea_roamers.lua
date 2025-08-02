@@ -85,7 +85,7 @@ roamers["AEA_JUSTICIER_FIGHT_TWO"] = {
 roamers["AEA_JUSTICIER_FIGHT_TWO"].image.textureAntialias = true
 
 roamers["AEA_ENEMY_BROADSIDE_EVENT"] = {
-	image = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aeap_broadside_enemy.png", -32, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false),
+	image = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aea_broadside.png", -32, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false),
 	fleet = true,
 	angle = 0,
 	target = targets_enum.player,
@@ -101,6 +101,91 @@ roamers["AEA_ENEMY_BROADSIDE_EVENT"] = {
 	next = nil
 }
 roamers["AEA_ENEMY_BROADSIDE_EVENT"].image.textureAntialias = true
+
+roamers["AEA_OLD_SHOWDOWN_CASUAL"] = {
+	image = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aea_old_showdown.png", -32, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false),
+	spawn_var = "challenge_level",
+	spawn_lvl = 0,
+	skip_exit = true,
+	angle = 0,
+	target = targets_enum.player,
+	sector_count = -1,
+	sector = "SECRET_AEA_OLD_3",
+	rotation = 0,
+	beacon = nil,
+	beacon_var = "aea_old_showdown_roamer_beacon",
+	jumping = 0,
+	jumping_var = "aea_old_showdown_roamer_jumping",
+	jumping_cooldown = 1,
+	killed_var = "aea_old_showdown_roamer_killed",
+	stages = 3,
+	start_left = false,
+	next = nil
+}
+roamers["AEA_OLD_SHOWDOWN_NORMAL"] = {
+	image = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aea_old_showdown.png", -32, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false),
+	spawn_var = "challenge_level",
+	spawn_lvl = 1,
+	skip_exit = true,
+	angle = 0,
+	target = targets_enum.player,
+	sector_count = -1,
+	sector = "SECRET_AEA_OLD_3",
+	rotation = 0,
+	beacon = nil,
+	beacon_var = "aea_old_showdown_roamer_beacon",
+	jumping = 0,
+	jumping_var = "aea_old_showdown_roamer_jumping",
+	jumping_cooldown = 1,
+	killed_var = "aea_old_showdown_roamer_killed",
+	stages = 3,
+	start_left = false,
+	next = nil
+}
+roamers["AEA_OLD_SHOWDOWN_CHALLENGE"] = {
+	image = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aea_old_showdown.png", -32, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false),
+	spawn_var = "challenge_level",
+	spawn_lvl = 2,
+	skip_exit = true,
+	angle = 0,
+	target = targets_enum.player,
+	sector_count = -1,
+	sector = "SECRET_AEA_OLD_3",
+	rotation = 0,
+	beacon = nil,
+	beacon_var = "aea_old_showdown_roamer_beacon",
+	jumping = 0,
+	jumping_var = "aea_old_showdown_roamer_jumping",
+	jumping_cooldown = 1,
+	killed_var = "aea_old_showdown_roamer_killed",
+	stages = 3,
+	start_left = false,
+	next = nil
+}
+roamers["AEA_OLD_SHOWDOWN_EXTREME"] = {
+	image = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aea_old_showdown.png", -32, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false),
+	spawn_var = "challenge_level",
+	spawn_lvl = 3,
+	skip_exit = true,
+	angle = 0,
+	target = targets_enum.player,
+	sector_count = -1,
+	sector = "SECRET_AEA_OLD_3",
+	rotation = 0,
+	beacon = nil,
+	beacon_var = "aea_old_showdown_roamer_beacon",
+	jumping = 0,
+	jumping_var = "aea_old_showdown_roamer_jumping",
+	jumping_cooldown = 1,
+	killed_var = "aea_old_showdown_roamer_killed",
+	stages = 3,
+	start_left = false,
+	next = nil
+}
+roamers["AEA_OLD_SHOWDOWN_CASUAL"].image.textureAntialias = true
+roamers["AEA_OLD_SHOWDOWN_NORMAL"].image.textureAntialias = true
+roamers["AEA_OLD_SHOWDOWN_CHALLENGE"].image.textureAntialias = true
+roamers["AEA_OLD_SHOWDOWN_EXTREME"].image.textureAntialias = true
 
 local function findClosestBeacon(x, y)
 	local map = Hyperspace.App.world.starMap
@@ -135,7 +220,7 @@ local function dijkstra(map, source, finish)
 				cur = locTable
 			end
 		end
-		if cur.beacon == finish then
+		if cur and tostring(cur.beacon) == tostring(finish) then
 			local path = {cur.beacon}
 			local last = cur.last
 			while last and last.beacon ~= source do
@@ -149,7 +234,7 @@ local function dijkstra(map, source, finish)
 			for loc in vter(cur.beacon.connectedLocations) do
 				local locTable = nil
 				for i, findTable in ipairs(info) do
-					if findTable.beacon == loc then
+					if tostring(findTable.beacon) == tostring(loc) then
 						locTable = findTable
 					end
 				end
@@ -168,10 +253,17 @@ local function dijkstra(map, source, finish)
 	return nil
 end
 
-local function roamer_should_spawn(roamer, map, newSector)
-	local killed = Hyperspace.playerVariables[roamer.killed_var] == 0
+local function roamer_should_spawn_print(event, roamer, map, newSector)
+	local killed = Hyperspace.playerVariables[roamer.killed_var] < (roamer.stages or 1)
 	local sector = (newSector and 1 or 0) + Hyperspace.playerVariables.loc_sector_count == roamer.sector_count or map.currentSector.description.type == roamer.sector
-	local var = not roamer.spawn_var or Hyperspace.playerVariables[roamer.spawn_var] >= 1
+	local var = not roamer.spawn_var or (roamer.spawn_lvl and Hyperspace.playerVariables[roamer.spawn_var] == roamer.spawn_lvl) or ((not roamer.spawn_lvl) and Hyperspace.playerVariables[roamer.spawn_var] >= 1)
+	print(event.." k:"..tostring(killed).." s:"..tostring(sector).." v:"..tostring(var).." r.s:"..tostring(roamer.sector).." m:"..tostring(map.currentSector.description.type).." e:"..tostring(map.currentSector.description.type == roamer.sector))
+end
+
+local function roamer_should_spawn(roamer, map, newSector)
+	local killed = Hyperspace.playerVariables[roamer.killed_var] < (roamer.stages or 1)
+	local sector = (newSector and 1 or 0) + Hyperspace.playerVariables.loc_sector_count == roamer.sector_count or map.currentSector.description.type == roamer.sector
+	local var = not roamer.spawn_var or (roamer.spawn_lvl and Hyperspace.playerVariables[roamer.spawn_var] == roamer.spawn_lvl) or ((not roamer.spawn_lvl) and Hyperspace.playerVariables[roamer.spawn_var] >= 1)
 	return killed and sector and var
 end
 
@@ -201,7 +293,10 @@ script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager
 	local commandGui = Hyperspace.App.gui
 	local eventManager = Hyperspace.Event
 	for event, roamer in pairs(roamers) do
+		--roamer_should_spawn_print(event, roamer, map, last_choose_new_sector)
 		if roamer_should_spawn(roamer, map, last_choose_new_sector) then
+			roamer_should_spawn_print(event, roamer, map, last_choose_new_sector)
+			--print("JUMP LEAVE ROAMER SHOULD SPAWN:"..event)
 			if not (roamer.beacon and roamer.beacon.loc) then
 				roamer.beacon = nil
 				local selectBeacon = nil
@@ -218,13 +313,31 @@ script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager
 					Hyperspace.playerVariables[roamer.beacon_var.."_y"] = selectBeacon.loc.y
 				end
 			end
-			if roamer.beacon and roamer.jumping == 0 then
+			if roamer.beacon and tostring(roamer.beacon.loc) == tostring(map.currentLoc) and roamer.beacon.loc.connectedLocations:size() > 0 then
+				--print("RUNNING AWAY")
+				local next = roamer.beacon.loc.connectedLocations[0]
+				roamer.beacon = {x = next.loc.x, y = next.loc.y, loc = next}
+				Hyperspace.playerVariables[roamer.beacon_var.."_x"] = next.loc.x
+				Hyperspace.playerVariables[roamer.beacon_var.."_y"] = next.loc.y
+
+				roamer.jumping = roamer.jumping_cooldown
+				Hyperspace.playerVariables[roamer.jumping_var] = roamer.jumping
+
+			elseif roamer.beacon and roamer.jumping == 0 then
+				--print("MOVING TO TARGET")
 				local target = roamer_find_target(roamer, map)
 				local next = table.remove(dijkstra(map, roamer.beacon.loc, target))
-
-				if (not next == target) and (next.fleetChanging or next.dangerZone or not roamer.fleet) then
-					if next == map.currentLoc then
-						next.event = eventManager:CreateEvent(event, 0, false)
+				--print("n"..tostring(next).." b:"..tostring(roamer.beacon.loc).." a:"..tostring(tostring(next)==tostring(roamer.beacon.loc)).."1:"..tostring(not (next == roamer.beacon.loc)).." 2:"..tostring(next.fleetChanging or next.dangerZone or not roamer.fleet))
+				if not (tostring(next) == tostring(roamer.beacon.loc)) and (next.fleetChanging or next.dangerZone or not roamer.fleet) then
+					--print("VALID MOVE")
+					if not (next.beacon and roamer.skip_exit) then
+						if tostring(next) == tostring(map.currentLoc) and ((not roamer.stages) or Hyperspace.playerVariables[roamer.killed_var] == 0) then
+							next.event = eventManager:CreateEvent(event, 0, false)
+						elseif tostring(next) == tostring(map.currentLoc) and Hyperspace.playerVariables[roamer.killed_var] == 1 then
+							next.event = eventManager:CreateEvent(event.."_TWO", 0, false)
+						elseif tostring(next) == tostring(map.currentLoc) and Hyperspace.playerVariables[roamer.killed_var] == 2 then
+							next.event = eventManager:CreateEvent(event.."_THREE", 0, false)
+						end
 					end
 					roamer.beacon = {x = next.loc.x, y = next.loc.y, loc = next}
 					Hyperspace.playerVariables[roamer.beacon_var.."_x"] = next.loc.x
@@ -234,8 +347,15 @@ script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager
 					Hyperspace.playerVariables[roamer.jumping_var] = roamer.jumping
 				end
 			elseif roamer.beacon then
-				if roamer.beacon.loc == map.currentLoc then
-					roamer.beacon.loc.event = eventManager:CreateEvent(event, 0, false)
+				--print("STAYING STILL")
+				if not (roamer.beacon.loc.beacon and roamer.skip_exit) then
+					if tostring(roamer.beacon.loc) == tostring(map.currentLoc) and (not roamer.stages or Hyperspace.playerVariables[roamer.killed_var] == 0) then
+						roamer.beacon.loc.event = eventManager:CreateEvent(event, 0, false)
+					elseif tostring(roamer.beacon.loc) == tostring(map.currentLoc) and (not roamer.stages or Hyperspace.playerVariables[roamer.killed_var] == 1) then
+						roamer.beacon.loc.event = eventManager:CreateEvent(event.."_TWO", 0, false)
+					elseif tostring(roamer.beacon.loc) == tostring(map.currentLoc) and (not roamer.stages or Hyperspace.playerVariables[roamer.killed_var] == 2) then
+						roamer.beacon.loc.event = eventManager:CreateEvent(event.."_THREE", 0, false)
+					end
 				end
 				roamer.jumping = roamer.jumping - 1
 				Hyperspace.playerVariables[roamer.jumping_var] = roamer.jumping
@@ -249,7 +369,7 @@ script.on_internal_event(Defines.InternalEvents.ON_MOUSE_R_BUTTON_DOWN, function
 	local map = Hyperspace.App.world.starMap
 	if map.bOpen then
 		local h = map.hoverLoc
-		print("bChoosingNewSector:"..tostring(map.bChoosingNewSector).." beacon:"..tostring(h.beacon).." known:"..tostring(h.known).." visited:"..tostring(h.visited).." dangerZone:"..tostring(h.dangerZone).." newSector:"..tostring(h.newSector).." nebula:"..tostring(h.nebula).." boss:"..tostring(h.boss).." eventName:"..tostring(h.event.eventName).." questLoc:"..tostring(h.questLoc).." fleetChanging:"..tostring(h.fleetChanging))
+		--print("bChoosingNewSector:"..tostring(map.bChoosingNewSector).." beacon:"..tostring(h.beacon).." known:"..tostring(h.known).." visited:"..tostring(h.visited).." dangerZone:"..tostring(h.dangerZone).." newSector:"..tostring(h.newSector).." nebula:"..tostring(h.nebula).." boss:"..tostring(h.boss).." eventName:"..tostring(h.event.eventName).." questLoc:"..tostring(h.questLoc).." fleetChanging:"..tostring(h.fleetChanging))
 	end
 	return Defines.Chain.CONTINUE
 end)
@@ -265,9 +385,11 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 	local map = Hyperspace.App.world.starMap
 	local commandGui = Hyperspace.App.gui
 	if loadRoamers and Hyperspace.playerVariables.aea_test_variable == 1 then
+		--print("loading roamers")
 		loadRoamers = false
 		for event, roamer in pairs(roamers) do
 			if roamer_should_spawn(roamer, map, false) then
+				print(event.." roamer loading")
 				roamer.jumping = Hyperspace.playerVariables[roamer.jumping_var]
 				local closestLoc = findClosestBeacon(Hyperspace.playerVariables[roamer.beacon_var.."_x"], Hyperspace.playerVariables[roamer.beacon_var.."_y"])
 				if closestLoc then 
@@ -292,10 +414,14 @@ script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, funct
 			if roamer_should_spawn(roamer, map, false) then
 
 				if roamer.beacon then
-					if timer > check_time then
+					if roamer.beacon and tostring(roamer.beacon.loc) == tostring(map.currentLoc) and roamer.beacon.loc.connectedLocations:size() > 0 then
+						--print("RUNNING AWAY")
+						local next = roamer.beacon.loc.connectedLocations[0]
+						roamer.next = {x = next.loc.x, y = next.loc.y, loc = next}
+					elseif timer > check_time then
 						local target = roamer_find_target(roamer, map)
 						local next = table.remove(dijkstra(map, roamer.beacon.loc, target))
-						if (not next == target) and (next.fleetChanging or next.dangerZone or not roamer.fleet) then
+						if not (tostring(next) == tostring(roamer.beacon.loc)) and (next.fleetChanging or next.dangerZone or not roamer.fleet) then
 							roamer.next = {x = next.loc.x, y = next.loc.y, loc = next}
 						end
 					end
@@ -309,7 +435,7 @@ script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, funct
 
 						local alpha = math.atan((roamer.beacon.y-roamer.next.y), (roamer.beacon.x-roamer.next.x))
 
-						local pointAngle = math.deg(alpha) + 90
+						local pointAngle = math.deg(alpha) - 90
 
 						local fade = math.min(1, (30 - roamer.angle)/10)
 						Graphics.CSurface.GL_PushMatrix()
@@ -323,7 +449,7 @@ script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, funct
 						if roamer.angle > 360 then roamer.angle = roamer.angle - 360 end
 						Graphics.CSurface.GL_PushMatrix()
 						Graphics.CSurface.GL_Translate(roamer.beacon.x + 385, roamer.beacon.y + 122, 0)
-						Graphics.CSurface.GL_Rotate(roamer.angle, 0, 0, 1)
+						Graphics.CSurface.GL_Rotate(360-roamer.angle, 0, 0, 1)
 						Graphics.CSurface.GL_Translate(22, 0, 0)
 						Graphics.CSurface.GL_RenderPrimitive(roamer.image)
 						Graphics.CSurface.GL_PopMatrix()

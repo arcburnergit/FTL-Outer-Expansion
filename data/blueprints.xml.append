@@ -4195,7 +4195,7 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<short>'Athena'</short>
 	<desc>A weapon which even the gods are scared of.</desc>
 	<tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
-	<descriptionOverride>A weapon which even the gods are scared of.
+	<descriptionOverride>A powerful weapon which launchers heavy metal rods that pierce straight through all shielding and deal heavy damage to the system below. Cannot pierce through Lylmik armour.
 	
 Stats:
 Required Power: 1
@@ -4272,7 +4272,7 @@ Breach Chance: 50%</tooltipOverride>
 	<short>'Poseidon'</short>
 	<desc>A weapon which even the gods are scared of.</desc>
 	<tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
-	<descriptionOverride>A weapon which even the gods are scared of.
+	<descriptionOverride>A powerful weapon which launchers heavy metal rods that pierce straight through all shielding and deal heavy damage to the system below. Cannot pierce through Lylmik armour.
 	
 Stats:
 Required Power: 2
@@ -4351,7 +4351,7 @@ Breach Chance: 100%</tooltipOverride>
 	<short>'Zeus'</short>
 	<desc>A weapon which even the gods are scared of.</desc>
 	<tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
-	<descriptionOverride>A weapon which even the gods are scared of.
+	<descriptionOverride>A powerful weapon which launchers heavy metal rods that pierce straight through all shielding and deal heavy damage to the system below. Cannot pierce through Lylmik armour.
 	
 Stats:
 Required Power: 3
@@ -4436,7 +4436,6 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 		<aea_missile_old_3_start looping="false" charging="true"/>
 	</mv-customAnimations>
 	<fireTime>1.8</fireTime>
-	<accuracyMod>30</accuracyMod>
 	<damage>0</damage>
 	<shots>1</shots>
 	<missiles>0</missiles>
@@ -4481,7 +4480,6 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 		<aea_missile_old_2_barrels_fire2 looping="false" firing="true" />
 	</mv-customAnimations>
 	<fireTime>1.8</fireTime>
-	<accuracyMod>30</accuracyMod>
 	<damage>0</damage>
 	<shots>1</shots>
 	<missiles>0</missiles>
@@ -4523,7 +4521,6 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 		<aea_missile_old_1_flash charging="true" charged="true" /> <!--looping defaults to true and the others default to false-->
 	</mv-customAnimations>
 	<fireTime>1.8</fireTime>
-	<accuracyMod>30</accuracyMod>
 	<damage>0</damage>
 	<missiles>0</missiles>
 	<shots>1</shots>
@@ -4552,6 +4549,167 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
     <iconReplace>aea_missile_old_1_icon</iconReplace>
 	<iconImage>missile</iconImage>
 </weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_AEA_MISSILE_OLD">
+	<type>MISSILES</type>
+	<flavorType>Rail Cannon</flavorType>
+	<tip>tip_aea_rail_cannon</tip>
+	<title>'Zeus' Rail Cannon</title>
+	<short>'Zeus'</short>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
+	<fireTime>1.3</fireTime>
+	<damage>0</damage>
+	<missiles>0</missiles>
+	<shots>1</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>25</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>3</amount>
+		<count>2</count>
+	</boost>
+	<speed>100</speed>
+	<power>1</power>
+	<cost>100</cost>
+	<rarity>0</rarity>
+	<image>aea_missile_old_proj</image>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_boss_missile</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="ARTILLERY_AEA_LASER_HEAVY_OLD">
+	<type>LASER</type>
+	<title>'Sali' Heavy Laser</title>
+	<short>'Sali'</short>
+	<tip>tip_laser_old</tip>
+	<desc>A powerful laser that breaks two shield layers with each hit. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip> </tooltip>
+	<damage>2</damage>
+	<shots>3</shots>
+	<sp>0</sp>
+	<mv-pop>
+		<count>1</count>
+		<countSuper>1</countSuper>
+	</mv-pop>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>10</stunChance>
+	<cooldown>20</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>3</amount>
+		<count>2</count>
+	</boost>
+	<power>1</power>
+	<cost>75</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_heavy1</image>
+	<launchSounds>
+		<sound>aea_laser_old_fire1</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_boss_laser_heavy</weaponArt>
+	<iconImage>heavyL</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="ARTILLERY_AEA_LASER_BURST_OLD">
+	<type>LASER</type>
+	<title>'Shotel' Burst Laser</title>
+	<short>'Shotel'</short>
+	<tip>tip_laser_oldp</tip>
+	<desc>A powerful laser that breaks shields but do not do any hull damage. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip> </tooltip>
+	<damage>0</damage>
+	<sysDamage>1</sysDamage>
+	<shots>4</shots>
+	<sp>0</sp>
+	<mv-pop>
+		<count>1</count>
+		<countSuper>1</countSuper>
+	</mv-pop>
+	<fireChance>10</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>16</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>2</amount>
+		<count>2</count>
+	</boost>
+	<power>1</power>
+	<cost>70</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_boss_laser_burst</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="ARTILLERY_AEA_FOCUS_OLD">
+	<type>BEAM</type>
+    <flavorType>Burst Pinpoint</flavorType>
+	<title>'Flail' Burst Pinpoint</title>
+	<short>'Flail'</short>
+	<tip>tip_aea_burst_pin</tip>
+	<desc>A powerful pinpoint beam that fires multiple times in a burst and is capable of taking down shields. Built by a powerful race that have hidden themselves from the rest of the multiverse.</desc>
+	<tooltip>Beam weapon, 2 damage per room with small breach chance.</tooltip>
+	<damage>1</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<cooldown>26</cooldown>
+	<power>1</power>
+	<cost>70</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<length>1</length>
+	<speed>1</speed>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>focus_weak</sound>
+	</launchSounds>
+	<weaponArt>aea_boss_beam</weaponArt>
+</weaponBlueprint>
+
 
 <weaponBlueprint name="ARTILLER_AEA_OLD_BEAM">
 	<type>BEAM</type>
@@ -6528,6 +6686,7 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 	<short>Lylmik</short>
 	<rarity>0</rarity>
 	<powerList>
+		<power>Revives at the end of combat and when jumping away</power>
 		<power>Does not lose skills when cloned, cloning takes twice as long</power>
 		<power>Moves at 1.75x speed</power>
 		<power>Heals at 2x speed and does 1.75x damage in crew combat</power>
@@ -6727,7 +6886,7 @@ The Engi Liches use their Nano bots to take control of the enemies they kill, ho
 	<powerList>
 		<power>Max Health is incresed to 140</power>
 		<power>Autorepairs the entire ship at 1x repair speed</power>
-		<power>Autorepairs the current system at 1.5x repair speed</power>
+		<power>Autorepairs the current system at an additional 0.5x repair speed</power>
 		<power>Friendly Drones in the current room heal at 3hp/s</power>
 		<power>Move speed increased to 2x when there are not hostile crew in the room</power>
 	</powerList>
@@ -13952,6 +14111,52 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 		<power>Immune to suffocation</power>
 		<power>Max Health is increased to 200</power>
         <power>Inflicts 1.5x damage in crew combat</power>
+    </powerList>
+</crewBlueprint>
+
+<crewBlueprint name="aea_statue">
+    <desc>A statue of a figure with wings, their facial expression is hidden behind cold stone hands.</desc>
+    <title>Statue</title>
+    <short>Statue</short>
+    <cost>1000</cost>
+    <bp>4</bp>
+    <rarity>0</rarity>
+    <powerList>
+        <power>Immune to burning and suffocation.</power>
+		<power>Cannot move or take any actions</power>
+		<power>Max Health increased to 1000</power>
+        <power>Takes 20x Crew Combat damage</power>
+        <power>Cannot be targetted by enemy crew while there are allies in the room</power>
+    </powerList>
+</crewBlueprint>
+<crewBlueprint name="aea_statue_hostile_inactive">
+    <desc>A statue of a figure with wings, their facial expression is hidden behind cold stone hands.</desc>
+    <title>Statue</title>
+    <short>Statue</short>
+    <cost>1000</cost>
+    <bp>4</bp>
+    <rarity>0</rarity>
+    <powerList>
+        <power>Immune to burning and suffocation.</power>
+		<power>Cannot move or take any actions</power>
+		<power>Max Health increased to 1000</power>
+        <power>Takes 20x Crew Combat damage</power>
+        <power>Cannot be targetted by enemy crew while there are allies in the room</power>
+    </powerList>
+</crewBlueprint>
+<crewBlueprint name="aea_statue_hostile">
+    <desc>A statue of a figure with wings, their facial expression is hidden behind cold stone hands.</desc>
+    <title>Statue</title>
+    <short>Statue</short>
+    <cost>1000</cost>
+    <bp>4</bp>
+    <rarity>0</rarity>
+    <powerList>
+        <power>Immune to burning and suffocation.</power>
+		<power>Cannot move or take any actions</power>
+		<power>Max Health increased to 1000</power>
+        <power>Takes 20x Crew Combat damage</power>
+        <power>Cannot be targetted by enemy crew while there are allies in the room</power>
     </powerList>
 </crewBlueprint>
 

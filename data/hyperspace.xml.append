@@ -3025,7 +3025,220 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 
 
 	
-	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_CASUAL">
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_ONE_CASUAL">
+		<shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto_boss</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+		<rooms>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">aea_armour_rig_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_1 room="21" /> <!--piloting-->
+			<aea_old_1 room="1" /> <!--right arty-->
+			<aea_old_1 room="0" /> <!--left arty-->
+			<aea_old_1 room="6" /> <!--out right arty-->
+			<aea_old_1 room="5" /> <!--out left arty-->
+			<aea_old_1 room="10" /> <!--engines-->
+			<aea_old_1 room="18" /> <!--shields-->
+			<human_soldier room="24" /> <!--teleporter-->
+			<human_soldier room="24" /> <!--teleporter-->
+		</crew>
+		<noJump />
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_ONE_NORMAL">
+		<shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto_boss</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+		<rooms>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">aea_armour_rig_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_1 room="21" /> <!--piloting-->
+			<aea_old_1 room="1" /> <!--right arty-->
+			<aea_old_1 room="0" /> <!--left arty-->
+			<aea_old_1 room="6" /> <!--out right arty-->
+			<aea_old_1 room="5" /> <!--out left arty-->
+			<aea_old_1 room="10" /> <!--engines-->
+			<aea_old_1 room="18" /> <!--shields-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+			<human_soldier room="24" /> <!--teleporter-->
+			<human_soldier room="24" /> <!--teleporter-->
+		</crew>
+		<noJump />
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_ONE_CHALLENGE">
+		<shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto_boss</shipIcon>
+			<shipIcon>icon_invasion</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+		<rooms>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">aea_armour_rig_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_1 room="21" /> <!--piloting-->
+			<aea_old_1 room="1" /> <!--right arty-->
+			<aea_old_1 room="0" /> <!--left arty-->
+			<aea_old_1 room="6" /> <!--out right arty-->
+			<aea_old_1 room="5" /> <!--out left arty-->
+			<aea_old_1 room="10" /> <!--engines-->
+			<aea_old_1 room="18" /> <!--shields-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+			<human_soldier room="24" /> <!--teleporter-->
+			<human_soldier room="24" /> <!--teleporter-->
+		</crew>
+		<noJump />
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_ONE_EXTREME">
+		<shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto_boss</shipIcon>
+			<shipIcon>icon_invasion</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+		<rooms>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="0">aea_armour_rig_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_1 room="21" /> <!--piloting-->
+			<aea_old_1 room="1" /> <!--right arty-->
+			<aea_old_1 room="0" /> <!--left arty-->
+			<aea_old_1 room="6" /> <!--out right arty-->
+			<aea_old_1 room="5" /> <!--out left arty-->
+			<aea_old_1 room="10" /> <!--engines-->
+			<aea_old_1 room="18" /> <!--shields-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+			<human_soldier room="24" /> <!--teleporter-->
+			<human_soldier room="24" /> <!--teleporter-->
+		</crew>
+		<noJump />
+		<noFuelStalemate />
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_TWO_CASUAL">
 		<shipIcons>
             <shipIcon>icon_threat</shipIcon>
 			<shipIcon>icon_auto_boss</shipIcon>
@@ -3033,32 +3246,35 @@ This enemy ship is equipped with a barrier generator which will protect one rand
         </shipIcons>
 		<autoShipForce>false</autoShipForce>
 		<rooms>
-			<room id="2">
-				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
 				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
-			<room id="3">
-				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
 				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
 		<crew>
-			<aea_old_1 room="0" /> <!--piloting-->
-			<aea_old_1 room="7" /> <!--right arty-->
-			<aea_old_1 room="8" /> <!--left arty-->
-			<aea_old_1 room="29" /> <!--weapons-->
-			<aea_old_1 room="11" /> <!--drones-->
-			<aea_old_1 room="14" /> <!--engines-->
-			<aea_old_1 room="6" /> <!--shields-->
-			<aea_old_1 room="13" /> <!--temporal-->
-			<aea_old_1 room="12" /> <!--teleporter-->
+			<aea_old_1 room="21" /> <!--piloting-->
+			<aea_old_1 room="1" /> <!--right arty-->
+			<aea_old_1 room="0" /> <!--left arty-->
+			<aea_old_1 room="6" /> <!--out right arty-->
+			<aea_old_1 room="5" /> <!--out left arty-->
+			<aea_old_1 room="10" /> <!--engines-->
+			<aea_old_1 room="18" /> <!--shields-->
 		</crew>
 		<noJump />
 		<noFuelStalemate />
 	</mod-append:customShip>
-	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_NORMAL">
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_TWO_NORMAL">
 		<shipIcons>
             <shipIcon>icon_threat</shipIcon>
 			<shipIcon>icon_auto_boss</shipIcon>
@@ -3066,33 +3282,37 @@ This enemy ship is equipped with a barrier generator which will protect one rand
         </shipIcons>
 		<autoShipForce>false</autoShipForce>
 		<rooms>
-			<room id="2">
-				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
 				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
-			<room id="3">
-				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
 				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
 		<crew>
-			<aea_old_1 room="0" /> <!--piloting-->
-			<aea_old_1 room="7" /> <!--right arty-->
-			<aea_old_1 room="8" /> <!--left arty-->
-			<aea_old_1 room="29" /> <!--weapons-->
-			<aea_old_1 room="11" /> <!--drones-->
-			<aea_old_1 room="14" /> <!--engines-->
-			<aea_old_1 room="6" /> <!--shields-->
-			<aea_old_1 room="13" /> <!--temporal-->
-			<aea_old_1 room="12" /> <!--teleporter-->
-			<aea_old_1 room="12" /> <!--teleporter-->
+			<aea_old_1 room="21" /> <!--piloting-->
+			<aea_old_1 room="1" /> <!--right arty-->
+			<aea_old_1 room="0" /> <!--left arty-->
+			<aea_old_1 room="6" /> <!--out right arty-->
+			<aea_old_1 room="5" /> <!--out left arty-->
+			<aea_old_1 room="10" /> <!--engines-->
+			<aea_old_1 room="18" /> <!--shields-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+			<aea_old_1 room="24" /> <!--teleporter-->
 		</crew>
 		<noJump />
 		<noFuelStalemate />
 	</mod-append:customShip>
-	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_CHALLENGE">
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_TWO_CHALLENGE">
 		<shipIcons>
             <shipIcon>icon_threat</shipIcon>
 			<shipIcon>icon_auto_boss</shipIcon>
@@ -3101,33 +3321,37 @@ This enemy ship is equipped with a barrier generator which will protect one rand
         </shipIcons>
 		<autoShipForce>false</autoShipForce>
 		<rooms>
-			<room id="2">
-				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
 				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
-			<room id="3">
-				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
 				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
 		<crew>
-			<aea_old_1 room="0" /> <!--piloting-->
-			<aea_old_1 room="7" /> <!--right arty-->
-			<aea_old_1 room="8" /> <!--left arty-->
-			<aea_old_1 room="29" /> <!--weapons-->
-			<aea_old_1 room="11" /> <!--drones-->
-			<aea_old_1 room="14" /> <!--engines-->
-			<aea_old_1 room="6" /> <!--shields-->
-			<aea_old_1 room="13" /> <!--temporal-->
-			<aea_old_1 room="12" /> <!--teleporter-->
-			<aea_old_1 room="12" /> <!--teleporter-->
+			<aea_old_1 room="21" /> <!--piloting-->
+			<aea_old_1 room="1" /> <!--right arty-->
+			<aea_old_1 room="0" /> <!--left arty-->
+			<aea_old_1 room="6" /> <!--out right arty-->
+			<aea_old_1 room="5" /> <!--out left arty-->
+			<aea_old_1 room="10" /> <!--engines-->
+			<aea_old_1 room="18" /> <!--shields-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+			<aea_old_1 room="24" /> <!--teleporter-->
 		</crew>
 		<noJump />
 		<noFuelStalemate />
 	</mod-append:customShip>
-	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_EXTREME">
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_TWO_EXTREME">
 		<shipIcons>
             <shipIcon>icon_threat</shipIcon>
 			<shipIcon>icon_auto_boss</shipIcon>
@@ -3136,28 +3360,197 @@ This enemy ship is equipped with a barrier generator which will protect one rand
         </shipIcons>
 		<autoShipForce>false</autoShipForce>
 		<rooms>
-			<room id="2">
-				<roomAnim renderLayer="0">aea_armour_lef_4x1</roomAnim>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
 				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
-			<room id="3">
-				<roomAnim renderLayer="0">aea_armour_rig_4x1</roomAnim>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="0">aea_armour_lef_2x1</roomAnim>
 				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
 				<hullDamageResistChance>100</hullDamageResistChance>
 			</room>
 		</rooms>
 		<crew>
-			<aea_old_1 room="0" /> <!--piloting-->
-			<aea_old_1 room="7" /> <!--right arty-->
-			<aea_old_1 room="8" /> <!--left arty-->
-			<aea_old_1 room="29" /> <!--weapons-->
-			<aea_old_1 room="11" /> <!--drones-->
-			<aea_old_1 room="14" /> <!--engines-->
-			<aea_old_1 room="6" /> <!--shields-->
-			<aea_old_1 room="13" /> <!--temporal-->
-			<aea_old_1 room="12" /> <!--teleporter-->
-			<aea_old_1 room="12" /> <!--teleporter-->
+			<aea_old_1 room="21" /> <!--piloting-->
+			<aea_old_1 room="1" /> <!--right arty-->
+			<aea_old_1 room="0" /> <!--left arty-->
+			<aea_old_1 room="6" /> <!--out right arty-->
+			<aea_old_1 room="5" /> <!--out left arty-->
+			<aea_old_1 room="10" /> <!--engines-->
+			<aea_old_1 room="18" /> <!--shields-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+		</crew>
+		<noJump />
+		<noFuelStalemate />
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_THREE_CASUAL">
+		<shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto_boss</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<cloaking/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<aea_super_shields/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+		<rooms>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_1 room="21" /> <!--piloting-->
+			<aea_old_1 room="1" /> <!--right arty-->
+			<aea_old_1 room="0" /> <!--left arty-->
+			<aea_old_1 room="6" /> <!--out right arty-->
+			<aea_old_1 room="5" /> <!--out left arty-->
+			<aea_old_1 room="10" /> <!--engines-->
+			<aea_old_1 room="18" /> <!--shields-->
+		</crew>
+		<noJump />
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_THREE_NORMAL">
+		<shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto_boss</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<cloaking/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<aea_super_shields/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+		<rooms>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_1 room="21" /> <!--piloting-->
+			<aea_old_1 room="1" /> <!--right arty-->
+			<aea_old_1 room="0" /> <!--left arty-->
+			<aea_old_1 room="6" /> <!--out right arty-->
+			<aea_old_1 room="5" /> <!--out left arty-->
+			<aea_old_1 room="10" /> <!--engines-->
+			<aea_old_1 room="18" /> <!--shields-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+		</crew>
+		<noJump />
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_THREE_CHALLENGE">
+		<shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto_boss</shipIcon>
+			<shipIcon>icon_invasion</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<cloaking/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<aea_super_shields/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+		<rooms>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_1 room="21" /> <!--piloting-->
+			<aea_old_1 room="1" /> <!--right arty-->
+			<aea_old_1 room="0" /> <!--left arty-->
+			<aea_old_1 room="6" /> <!--out right arty-->
+			<aea_old_1 room="5" /> <!--out left arty-->
+			<aea_old_1 room="10" /> <!--engines-->
+			<aea_old_1 room="18" /> <!--shields-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+		</crew>
+		<noJump />
+		<noFuelStalemate />
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_OLD_FINAL_BOSS_THREE_EXTREME">
+		<shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto_boss</shipIcon>
+			<shipIcon>icon_invasion</shipIcon>
+			<shipIcon>icon_aea_old_armour</shipIcon>
+        </shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<cloaking/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<aea_super_shields/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+		<rooms>
+			<room id="13">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+		<crew>
+			<aea_old_1 room="21" /> <!--piloting-->
+			<aea_old_1 room="1" /> <!--right arty-->
+			<aea_old_1 room="0" /> <!--left arty-->
+			<aea_old_1 room="6" /> <!--out right arty-->
+			<aea_old_1 room="5" /> <!--out left arty-->
+			<aea_old_1 room="10" /> <!--engines-->
+			<aea_old_1 room="18" /> <!--shields-->
+			<aea_old_1 room="24" /> <!--teleporter-->
+			<aea_old_1 room="24" /> <!--teleporter-->
 		</crew>
 		<noJump />
 		<noFuelStalemate />
@@ -6769,6 +7162,160 @@ Right click to attempt the ritual or cancel.
 			</temporaryEffect>
 		</powerEffect>
 	</mod-append:race>
+
+	<mod-append:race name="aea_statue">
+		<essential>-1</essential>
+		<crewSlots>0</crewSlots>
+		<maxHealth>1000</maxHealth>
+		<canBurn>false</canBurn>
+		<canSuffocate>false</canSuffocate>
+		<damageTakenMultiplier>20</damageTakenMultiplier>
+		<noClone>true</noClone>
+		<canRepair>false</canRepair>
+		<canFight>false</canFight>
+		<canSabotage>false</canSabotage>
+		<canMan>false</canMan>
+		<canBurn>false</canBurn>
+		<canMove>false</canMove>
+		<canSuffocate>false</canSuffocate>
+		<moveSpeedMultiplier>0.25</moveSpeedMultiplier>
+		<validTarget>true</validTarget>
+		<canTeleport>false</canTeleport>
+		<deathSounds>
+			<deathSound>rockDeath</deathSound>
+		</deathSounds>
+		<passiveStatBoosts>
+			<statBoost name="statBoost">
+				<statBoost name="validTarget">
+                    <boostType>SET</boostType>
+                    <value>false</value>
+                    <shipTarget>CURRENT_ROOM</shipTarget>
+                    <crewTarget>ALLIED</crewTarget>
+                    <priority>0</priority>
+					<whiteList>
+						<aea_statue/>
+					</whiteList>
+                </statBoost>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+                <crewTarget>ALLIED</crewTarget>
+				<blackList>
+					<aea_statue/>
+					<aea_statue_hostile_inactive/>
+					<aea_statue_hostile/>
+				</blackList>
+				<affectsSelf>false</affectsSelf>
+			</statBoost>
+		</passiveStatBoosts>
+	</mod-append:race>
+	<mod-append:race name="aea_statue_hostile_inactive">
+		<essential>-1</essential>
+		<crewSlots>0</crewSlots>
+		<maxHealth>1000</maxHealth>
+		<canBurn>false</canBurn>
+		<canSuffocate>false</canSuffocate>
+		<damageTakenMultiplier>20</damageTakenMultiplier>
+		<noClone>true</noClone>
+		<canRepair>false</canRepair>
+		<canFight>false</canFight>
+		<canSabotage>false</canSabotage>
+		<canMan>false</canMan>
+		<canBurn>false</canBurn>
+		<canMove>false</canMove>
+		<canSuffocate>false</canSuffocate>
+		<moveSpeedMultiplier>0.25</moveSpeedMultiplier>
+		<validTarget>true</validTarget>
+		<canTeleport>false</canTeleport>
+		<deathSounds>
+			<deathSound>rockDeath</deathSound>
+		</deathSounds>
+		<passiveStatBoosts>
+			<statBoost name="statBoost">
+				<statBoost name="validTarget">
+                    <boostType>SET</boostType>
+                    <value>false</value>
+                    <shipTarget>CURRENT_ROOM</shipTarget>
+                    <crewTarget>ALLIED</crewTarget>
+                    <priority>0</priority>
+					<whiteList>
+						<aea_statue_hostile_inactive/>
+					</whiteList>
+                </statBoost>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+                <crewTarget>ALLIED</crewTarget>
+				<blackList>
+					<aea_statue/>
+					<aea_statue_hostile_inactive/>
+					<aea_statue_hostile/>
+				</blackList>
+				<affectsSelf>false</affectsSelf>
+			</statBoost>
+		</passiveStatBoosts>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>reset</jumpCooldown>
+			<buttonText>ACTIVATE</buttonText>
+			<tooltip> </tooltip>
+			<cooldownColor r="225" g="225" b="210"/>
+			<transformRace>aea_statue_hostile</transformRace>
+			<activateWhenReady>true</activateWhenReady>
+		</powerEffect>
+	</mod-append:race>
+	<mod-append:race name="aea_statue_hostile">
+		<essential>-1</essential>
+		<crewSlots>0</crewSlots>
+		<maxHealth>1000</maxHealth>
+		<canBurn>false</canBurn>
+		<canSuffocate>false</canSuffocate>
+		<damageMultiplier>2</damageMultiplier>
+		<damageTakenMultiplier>20</damageTakenMultiplier>
+		<noClone>true</noClone>
+		<canRepair>false</canRepair>
+		<canFight>true</canFight>
+		<canShoot>false</canShoot>
+		<canSabotage>false</canSabotage>
+		<canMan>false</canMan>
+		<canBurn>false</canBurn>
+		<canMove>true</canMove>
+		<canSuffocate>false</canSuffocate>
+		<moveSpeedMultiplier>10</moveSpeedMultiplier>
+		<validTarget>true</validTarget>
+		<canTeleport>true</canTeleport>
+		<teleportMove>true</teleportMove>
+		<canPhaseThroughDoors>true</canPhaseThroughDoors>
+		<deathSounds>
+			<deathSound>rockDeath</deathSound>
+		</deathSounds>
+		<passiveStatBoosts>
+			<statBoost name="moveSpeedMultiplier">
+				<boostType>MULT</boostType>
+				<amount>0.75</amount>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<priority>0</priority>
+			</statBoost>
+			<statBoost name="detectsLifeforms">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<priority>0</priority>
+			</statBoost>
+		</passiveStatBoosts>
+		<powerEffect>
+			<cooldown>8</cooldown>
+			<jumpCooldown>reset</jumpCooldown>
+			<buttonText>ACTIVATE</buttonText>
+			<tooltip> </tooltip>
+			<cooldownColor r="225" g="225" b="210"/>
+			<transformRace>aea_statue_hostile_inactive</transformRace>
+			<activateWhenReady>true</activateWhenReady>
+		</powerEffect>
+	</mod-append:race>
+
 	<mod-append:race name="aea_sac_human">
 		<animSheet>human</animSheet>
 		<noSlot>true</noSlot>
@@ -8036,6 +8583,10 @@ Right click to attempt the ritual or cancel.
 	<variable name="aea_justicier_roamer_two_jumping" op="set" val="0"/>
 	<variable name="aea_justicier_roamer_two_killed" op="set" val="0"/>
 
+	<variable name="aea_justicier_sacs_this_run" op="set" val="0"/>
+	<variable name="aea_justicier_statue_active" op="set" val="0"/>
+	<variable name="aea_justicier_statue_destroy" op="set" val="0"/>
+	<metaVariable name="aea_justicier_statue_sacs" op="set" val="0"/>
 	<metaVariable name="aea_justice_cruiser_unlock" op="set" val="0"/>
 	<metaVariable name="juke_aea_justice" op="set" val="0" />
 	<metaVariable name="aea_dark_book_unlock" op="set" val="0" />
@@ -8053,6 +8604,11 @@ Right click to attempt the ritual or cancel.
 	<variable name="aea_old_completed_sponsor" op="set" val="0" />
 	<variable name="aea_old_dives" op="set" val="0" />
 	<variable name="aea_old_cap_dives" op="set" val="0" />
+
+	<variable name="aea_old_showdown_roamer_beacon_x" op="set" val="0"/>
+	<variable name="aea_old_showdown_roamer_beacon_y" op="set" val="0"/>
+	<variable name="aea_old_showdown_roamer_jumping" op="set" val="0"/>
+	<variable name="aea_old_showdown_roamer_killed" op="set" val="0"/>
 
 	<metaVariable name="aea_old_sponser_choice" op="set" val="0" />
 	
@@ -8388,15 +8944,28 @@ Right click to attempt the ritual or cancel.
 	
 	<bossShip yOffset="180">AEA_ACID_BOSS</bossShip>
 	<bossShip yOffset="180">AEA_ACID_ASSAULT</bossShip>
+	<bossShip yOffset="180">AEA_ACID_ASSAULT_ELITE</bossShip>
+	<bossShip>AEA_ACID_STATION</bossShip>
+	<bossShip>AEA_ACID_STATION_ELITE</bossShip>
 	<bossShip yOffset="100">AEA_OLD_GUARD_BOSS</bossShip>
 	<bossShip yOffset="180">AEA_OLD_LEECH_BATTLESHIP_ELITE</bossShip>
 	
 	<bossShip>AEA_OLD_BATTLESHIP</bossShip>
 	<bossShip>AEA_OLD_SPONSOR_1_BOUNTY</bossShip>
-	<bossShip>AEA_OLD_FINAL_BOSS_CASUAL</bossShip>
-	<bossShip>AEA_OLD_FINAL_BOSS_NORMAL</bossShip>
-	<bossShip>AEA_OLD_FINAL_BOSS_CHALLENGE</bossShip>
-	<bossShip>AEA_OLD_FINAL_BOSS_EXTREME</bossShip>
+	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_ONE_CASUAL</bossShip>
+	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_ONE_NORMAL</bossShip>
+	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_ONE_CHALLENGE</bossShip>
+	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_ONE_EXTREME</bossShip>
+
+	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_TWO_CASUAL</bossShip>
+	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_TWO_NORMAL</bossShip>
+	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_TWO_CHALLENGE</bossShip>
+	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_TWO_EXTREME</bossShip>
+
+	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_THREE_CASUAL</bossShip>
+	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_THREE_NORMAL</bossShip>
+	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_THREE_CHALLENGE</bossShip>
+	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_THREE_EXTREME</bossShip>
 
 	<bossShip yOffset="140">AEA_CULT_STATION</bossShip>
 	<bossShip yOffset="180">AEA_CULT_BOSS_FLOWER</bossShip>
@@ -8445,14 +9014,14 @@ Right click to attempt the ritual or cancel.
 </events>
 
 <mod:findLike type="victories"> <!-- adds the victory marker for lylmik ending -->
-	<mod-append:aea_old_win>	
+	<!--mod-append:aea_old_win>	
 		<name>\1 Quarantine Ending</name>
 		<description>Escape Lylmik Quarantine aboard any layout of the \1</description>
 		<icon>S_AEA_OLD_WIN</icon>
 		<secretName>\1 ????? Ending</secretName>
 		<secretDescription>Escape the clutches of a powerful race aboard any layout of the \1</secretDescription>
 		<secretIcon>S_secret</secretIcon>
-	</mod-append:aea_old_win>
+	</mod-append:aea_old_win-->
 	<mod-append:aea_exile_win>	
 		<name>\1 Exile Ending</name>
 		<description>Destroy the Lylmik Gate aboard any layout of the \1</description>
@@ -9367,6 +9936,27 @@ Right click to attempt the ritual or cancel.
 	<mod-append:surgeBarrage name="AEA_SURGE_DARK_BOARDING_ENEMY">
 		<weapon name="AEA_BOARDING_DRONE" count="1"/>
 	</mod-append:surgeBarrage>
+
+	<mod-append:surgeBarrage name="AEA_OLD_SUPER_TWO">
+		<!--EASY-->
+		<drone difficulty="0" name="COMBAT_1_BEAM" count="1"/>
+		<!--MEDIUM-->
+		<drone difficulty="1" name="COMBAT_1_BEAM" count="2"/>
+		<!--HARD-->
+		<drone difficulty="2" name="COMBAT_1_BEAM" count="2"/>
+		<drone difficulty="2" name="COMBAT_2_BEAM" count="1"/>
+	</mod-append:surgeBarrage>
+
+	<mod-append:surgeBarrage name="AEA_OLD_SUPER_THREE">
+		<!--EASY-->
+		<weapon difficulty="0" name="BARRAGE_FLAK" count="4"/>
+		<!--MEDIUM-->
+		<weapon difficulty="1" name="BARRAGE_FLAK" count="4"/>
+		<weapon difficulty="1" name="BARRAGE_LASER" count="2"/>
+		<!--HARD-->
+		<weapon difficulty="2" name="BARRAGE_FLAK" count="4"/>
+		<weapon difficulty="2" name="BARRAGE_LASER" count="3"/>
+	</mod-append:surgeBarrage>
 </mod:findLike>
 
 <mod:findLike type="achievements" limit="1">
@@ -9395,7 +9985,7 @@ Right click to attempt the ritual or cancel.
 			<achievement name="ACH_AEA_STATUE_DESTROY">
 				<name>Sledge Hammer</name>
 				<secretDescription>???</secretDescription>
-				<description>Destroy a Marble Statue.</description>
+				<description>Destroy a Marble [style[color:FFC800]]Statue[[/style]].</description>
 				<icon>ach_aea_statue_destroy</icon>
 				<lockImage>ach_locked</lockImage>
 				<multiDifficulty>false</multiDifficulty>
@@ -9404,14 +9994,46 @@ Right click to attempt the ritual or cancel.
 			<achievement name="ACH_AEA_STATUE_SACRIFICE">
 				<name>Heresy</name>
 				<secretDescription>???</secretDescription>
-				<description>Sacrifice a Marble Statue.</description>
+				<description>Sacrifice a Marble [style[color:FFC800]]Statue[[/style]].</description>
 				<icon>ach_aea_statue_sacrifice</icon>
 				<lockImage>ach_locked</lockImage>
 				<multiDifficulty>false</multiDifficulty>
 				<sound>achievement</sound>
 			</achievement>
+			<achievement name="ACH_AEA_REALM_OF_GODS">
+				<name>Olympus</name>
+				<secretDescription>???</secretDescription>
+				<description>Reach the Realm of Gods.</description>
+				<icon>ach_aea_realm_of_gods</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_OLD_TECH">
+				<name>Antikythera Mechanism</name>
+				<secretDescription>???</secretDescription>
+				<description>Find the technology of a long lost race.</description>
+				<icon>ach_aea_old_tech</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_OLD_SECTOR">
+				<name>Exile</name>
+				<secretDescription>???</secretDescription>
+				<description>Become trapped in an exiled universe.</description>
+				<icon>ach_aea_old_sector</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_OLD_CAP">
+				<name>Metropolis</name>
+				<secretDescription>???</secretDescription>
+				<description>Make it to the Lylmik Capital.</description>
+				<icon>ach_aea_old_cap</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
 			<achievement name="ACH_AEA_WIN_EXILE">
-				<name>Exiled Again</name>
+				<name>Saga of the Exiled</name>
 				<secretDescription>???</secretDescription>
 				<description>Destroy the Lylmik Gate and prevent another universe falling into the Lylmik's hands.</description>
 				<icon>ach_aea_exile_win</icon>
@@ -9435,14 +10057,173 @@ Right click to attempt the ritual or cancel.
 				<sound>achievement</sound>
 			</achievement>
 			<achievement name="ACH_AEA_WIN_IMMORTAL">
-				<name>Original Sin</name>
+				<name>As All Things Should Be</name>
 				<secretDescription>???</secretDescription>
 				<description>Rescue Balance from the Lylmiks, keeping both light and dark at bay.</description>
 				<icon>ach_aea_immortal_win</icon>
 				<lockImage>ach_locked</lockImage>
 				<sound>achievement</sound>
 			</achievement>
-		</section><section text="Music (OE)" hidden="false">
+		</section>
+		<section text="Unique Crew (OE)" hidden="false">
+			<achievement name="ACH_AEA_CREW_BILL">
+				<name>Bill</name>
+				<secretDescription>Attempt to reunite a lost limb with their "body."</secretDescription>
+				<description>Attempt to reunite Bill with the Acidic Growth.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_bill</icon>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_CREW_JAY">
+				<name>Repair Arms</name>
+				<secretDescription>Help a master engineer with her auto-ship problem.</secretDescription>
+				<description>Dismantle a large rebel auto-ship and recruit Jay.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_jay</icon>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_CREW_TINY">
+				<name>Smol</name>
+				<secretDescription>Deliver a giant seed to it's new home.</secretDescription>
+				<description>Recruit Tiny after delivering the one flower's seed.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_tiny</icon>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_CREW_KING">
+				<name>Necromancer</name>
+				<secretDescription>Impress the Lich King and deal with their rebel threat.</secretDescription>
+				<description>Impress L-0031 in battle and complete their task of destroying the Angel.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_king</icon>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_CREW_ONYX">
+				<name>Shardbearer</name>
+				<secretDescription>Rescue the Shardbearer to prevent a coup.</secretDescription>
+				<description>Rescue and recruit King Onyx to avoid the Shard-Forged being forced into civil war.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_onyx</icon>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_CREW_SICKLE">
+				<name>Bonny and</name>
+				<secretDescription>Prove yourself a worthy ally and aid in a heist to recruit a powerful duo.</secretDescription>
+				<description>Recruit Sickle after stalling the guard long enough for her and Sorrow to heist the research base.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_sickle</icon>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_CREW_SORROW">
+				<name>Bonny</name>
+				<secretDescription>Prove yourself a worthy ally and aid in a heist to recruit a powerful duo.</secretDescription>
+				<description>Recruit Sorrow after stalling the guard long enough for her and Sickle to heist the research base.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_sorrow</icon>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_CREW_JUSTICIER">
+				<name>Nihil</name>
+				<secretDescription>???</secretDescription>
+				<description>Recruit the Dark Justicier after defeating both of their ships.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_justicier</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+		</section>
+		<section text="Loot Transports (OE)" hidden="false">
+			<achievement name="ACH_TRANS_AEA_ACID">
+				<name>Acidic Transport</name>
+				<secretDescription>Obtain the loot from the Acidic loot transport.</secretDescription>
+				<description>Obtain the Acidic Barrage from the Acidic loot transport.</description>
+				<icon>ach_trans_aea_acid</icon>
+				<header>Loot Acquired</header>
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_BIRD">
+				<name>Gi Transport</name>
+				<secretDescription>Obtain the loot from the Gi loot transport.</secretDescription>
+				<description>Obtain the Twin Drone from the Gi loot transport.</description>
+				<icon>ach_trans_aea_bird</icon>
+				<header>Loot Acquired</header>
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_CULT">
+				<name>Vampweed Cultist Transport</name>
+				<secretDescription>Obtain the loot from the Vampweed Cultist loot transport.</secretDescription>
+				<description>Obtain the Spellspore from the Vampweed Cultist loot transport.</description>
+				<icon>ach_trans_aea_cult</icon>
+				<header>Loot Acquired</header>
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_NECRO">
+				<name>Heretic Transport</name>
+				<secretDescription>Obtain the loot from the Heretic loot transport.</secretDescription>
+				<description>Obtain the Shatter Laser II from the Heretic loot transport.</description>
+				<icon>ach_trans_aea_necro</icon>
+				<header>Loot Acquired</header>
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_SHARD">
+				<name>Shard-Forged Transport</name>
+				<secretDescription>Obtain the loot from the Shard-Forged loot transport.</secretDescription>
+				<description>Obtain the Elite Crystal Burst MK II from the Shard-Forged loot transport.</description>
+				<icon>ach_trans_aea_shard</icon>
+				<header>Loot Acquired</header>
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_SHLEG">
+				<name>Anarchist Transport</name>
+				<secretDescription>Obtain the loot from the Anarchist loot transport.</secretDescription>
+				<description>Obtain the 'Hypnos' Missile from the Anarchist loot transport.</description>
+				<icon>ach_trans_aea_shleg</icon>
+				<header>Loot Acquired</header>
+			</achievement>
+			<achievement name="ACH_TRANS_AEA_OLD_1">
+				<name>Lylmik Station</name>
+				<secretName>Secret Transport</secretName>
+				<description>Obtain a Lylmik weapon from the Lylmik loot station.</description>
+				<secretDescription>Obtain the loot from the ??? loot transport.</secretDescription>
+				<icon>ach_trans_aea_old_1</icon>
+				<lockImage>ach_locked</lockImage>
+				<header>Loot Acquired</header>
+			</achievement>
+		</section>
+		<section text="Renegade Cruisers (OE)" hidden="false">
+			<achievement name="ACH_AEA_REN_ACID">
+				<name>No Such Thing as Too Many Guns</name>
+				<description>Defeat the Acidic Destroyer B Renegade and get the Acid Splasher.</description>
+				<icon>renegade_aea_acid</icon>
+				<header>Renegade Defeated</header>
+			</achievement>
+			<achievement name="ACH_AEA_REN_BIRD">
+				<name>A Good Offense is a Good Offense</name>
+				<description>Defeat the Wedge-Tailed B Renegade and get the Scourge Drone.</description>
+				<icon>renegade_aea_bird</icon>
+				<header>Renegade Defeated</header>
+			</achievement>
+			<achievement name="ACH_AEA_REN_CULT">
+				<name>Barrier Relay</name>
+				<description>Defeat the Bud C Renegade and get the Barrier Generator.</description>
+				<icon>renegade_aea_cult</icon>
+				<header>Renegade Defeated</header>
+			</achievement>
+			<achievement name="ACH_AEA_REN_NECRO">
+				<name>Droneception</name>
+				<description>Defeat the Blasphemy C Renegade and get the Necromancer Drone.</description>
+				<icon>renegade_aea_necro</icon>
+				<header>Renegade Defeated</header>
+			</achievement>
+			<achievement name="ACH_AEA_REN_SHARD">
+				<name>Overused Gimmick</name>
+				<description>Defeat the Shard-Forged Auto C Renegade and get the 'Naginata' beam.</description>
+				<icon>renegade_aea_shard</icon>
+				<header>Renegade Defeated</header>
+			</achievement>
+			<achievement name="ACH_AEA_REN_SHLEG">
+				<name>Mind yourself</name>
+				<description>Defeat the Disorder B Renegade and get the Leviathan Beam.</description>
+				<icon>renegade_aea_shleg</icon>
+				<header>Renegade Defeated</header>
+			</achievement>
+		</section>
+		<section text="Music (OE)" hidden="false">
 			<achievement name="MUSIC_AEA_ACID">
 				<name>Acidic</name>
 				<description id="jukebox_unlocked" />
@@ -9535,99 +10316,6 @@ Right click to attempt the ritual or cancel.
 				<icon>music_unlocked</icon>
 				<variable name="juke_aea_old_3" amount="1" />
 				<multiDifficulty>false</multiDifficulty>
-			</achievement>
-		</section>
-	</mod-append:page>
-	<mod-append:page>
-		<section text="Loot Transports (OE)" hidden="false">
-			<achievement name="ACH_TRANS_AEA_ACID">
-				<name>Acidic Transport</name>
-				<secretDescription>Obtain the loot from the Acidic loot transport.</secretDescription>
-				<description>Obtain the Acidic Barrage from the Acidic loot transport.</description>
-				<icon>ach_trans_aea_acid</icon>
-				<header>Loot Acquired</header>
-			</achievement>
-			<achievement name="ACH_TRANS_AEA_BIRD">
-				<name>Gi Transport</name>
-				<secretDescription>Obtain the loot from the Gi loot transport.</secretDescription>
-				<description>Obtain the Twin Drone from the Gi loot transport.</description>
-				<icon>ach_trans_aea_bird</icon>
-				<header>Loot Acquired</header>
-			</achievement>
-			<achievement name="ACH_TRANS_AEA_CULT">
-				<name>Vampweed Cultist Transport</name>
-				<secretDescription>Obtain the loot from the Vampweed Cultist loot transport.</secretDescription>
-				<description>Obtain the Spellspore from the Vampweed Cultist loot transport.</description>
-				<icon>ach_trans_aea_cult</icon>
-				<header>Loot Acquired</header>
-			</achievement>
-			<achievement name="ACH_TRANS_AEA_NECRO">
-				<name>Heretic Transport</name>
-				<secretDescription>Obtain the loot from the Heretic loot transport.</secretDescription>
-				<description>Obtain the Shatter Laser II from the Heretic loot transport.</description>
-				<icon>ach_trans_aea_necro</icon>
-				<header>Loot Acquired</header>
-			</achievement>
-			<achievement name="ACH_TRANS_AEA_SHARD">
-				<name>Shard-Forged Transport</name>
-				<secretDescription>Obtain the loot from the Shard-Forged loot transport.</secretDescription>
-				<description>Obtain the Elite Crystal Burst MK II from the Shard-Forged loot transport.</description>
-				<icon>ach_trans_aea_shard</icon>
-				<header>Loot Acquired</header>
-			</achievement>
-			<achievement name="ACH_TRANS_AEA_SHLEG">
-				<name>Anarchist Transport</name>
-				<secretDescription>Obtain the loot from the Anarchist loot transport.</secretDescription>
-				<description>Obtain the 'Hypnos' Missile from the Anarchist loot transport.</description>
-				<icon>ach_trans_aea_shleg</icon>
-				<header>Loot Acquired</header>
-			</achievement>
-			<achievement name="ACH_TRANS_AEA_OLD_1">
-				<name>Lylmik Station</name>
-				<secretName>Secret Transport</secretName>
-				<description>Obtain a Lylmik weapon from the Lylmik loot station.</description>
-				<secretDescription>Obtain the loot from the ??? loot transport.</secretDescription>
-				<icon>ach_trans_aea_old_1</icon>
-				<lockImage>ach_locked</lockImage>
-				<header>Loot Acquired</header>
-			</achievement>
-		</section>
-		<section text="Renegade Cruisers (OE)" hidden="false">
-			<achievement name="ACH_AEA_REN_ACID">
-				<name>No Such Thing as Too Many Guns</name>
-				<description>Defeat the Acidic Destroyer B Renegade and get the Acid Splasher.</description>
-				<icon>renegade_aea_acid</icon>
-				<header>Renegade Defeated</header>
-			</achievement>
-			<achievement name="ACH_AEA_REN_BIRD">
-				<name>A Good Offense is a Good Offense</name>
-				<description>Defeat the Wedge-Tailed B Renegade and get the Scourge Drone.</description>
-				<icon>renegade_aea_bird</icon>
-				<header>Renegade Defeated</header>
-			</achievement>
-			<achievement name="ACH_AEA_REN_CULT">
-				<name>Barrier Relay</name>
-				<description>Defeat the Bud C Renegade and get the Barrier Generator.</description>
-				<icon>renegade_aea_cult</icon>
-				<header>Renegade Defeated</header>
-			</achievement>
-			<achievement name="ACH_AEA_REN_NECRO">
-				<name>Droneception</name>
-				<description>Defeat the Blasphemy C Renegade and get the Necromancer Drone.</description>
-				<icon>renegade_aea_necro</icon>
-				<header>Renegade Defeated</header>
-			</achievement>
-			<achievement name="ACH_AEA_REN_SHARD">
-				<name>Overused Gimmick</name>
-				<description>Defeat the Shard-Forged Auto C Renegade and get the 'Naginata' beam.</description>
-				<icon>renegade_aea_shard</icon>
-				<header>Renegade Defeated</header>
-			</achievement>
-			<achievement name="ACH_AEA_REN_SHLEG">
-				<name>Mind yourself</name>
-				<description>Defeat the Disorder B Renegade and get the Leviathan Beam.</description>
-				<icon>renegade_aea_shleg</icon>
-				<header>Renegade Defeated</header>
 			</achievement>
 		</section>
 	</mod-append:page>

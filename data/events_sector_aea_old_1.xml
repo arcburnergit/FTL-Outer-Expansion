@@ -19,6 +19,7 @@
 	<metaVariable name="juke_aea_old_1" op="set" val="1" />
 	<text>You pull yourself off the floor, in a daze. The ship cameras show most of the other crew doing the same, waking from their slumber. You remember the conflict you were just in with that strange vessel, but you find you're no longer under attack. Additionally you're being hailed by an unknown contact.</text>
 	<variable name="loc_unique_sectors" op="add" val="1" />
+	<variable name="loc_sector_count" op="add" val="1"/>
 	<modifyPursuit amount="-8" />
 	<ship load="SHIP_AEA_OLD_1_GUARD" hostile="false" />
 	<changeBackground>BACK_EVENT_AEA_OLD_1_START</changeBackground>
@@ -569,7 +570,7 @@ You then get a popup telling you membership is ONLY 29.99~.
 -->	
 
 <event name="EMPTY_AEA_OLD">
-	<text load="EMPTY_AEA_OLD" />
+	<text>An Empty Beacon...</text>
 	<choice>
 		<text>Do something onboard the ship.</text>
 		<event load="STORAGE_CHECK" />
@@ -579,10 +580,6 @@ You then get a popup telling you membership is ONLY 29.99~.
 		<event />
 	</choice>
 </event>
-<textList name="EMPTY_AEA_OLD">
-	<text planet="PLANET_ANCIENT_TRIO">Three artificial planets, heavily damaged, float in the distance. They are void of a star to orbit, and some day they will crash into each other, but for now this beacon is safe.</text>
-	<text planet="PLANET_ANCIENT">You must admit, you've grown used to the pollution caused by frequent ship battles outside of this sector. The clean space around you puts you at ease, and you figure it's okay to do something aboard the ship.</text>
-</textList>
 
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

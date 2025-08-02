@@ -548,6 +548,22 @@ local function retrieveCond(shipManager, crewTarget)
 	return false
 end
 
+local statueCrew = {}
+statueCrew["aea_statue"] = true
+statueCrew["aea_statue_hostile_inactive"] = true
+statueCrew["aea_statue_hostile"] = true
+
+local function realmPortalFunc(shipManager, crewTarget)
+	local worldManager = Hyperspace.App.world
+	Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager, "AEA_RITUAL_REALM_TELEPORT", false,-1)
+end
+local function realmPortalCond(shipManager, crewTarget)
+	if statueCrew[crewTarget.type] then
+		return true
+	end
+	return false
+end
+
 local spellList = {
 	heal_room = {func = healRoom, positionList = {} },
 	heal_ship = {func = healShip, positionList = {{x = 0, y = 2}, {x = 1, y = -1}} },
@@ -575,7 +591,9 @@ local spellList = {
 	boarding = {func = boardingFunc, cond = boardingCond, condColour = 4, positionList = {{x = 2, y = 0}, {x = 1, y = 1}, {x = 1, y = -1}} },
 
 	promote = {func = promoteCrew, excludeTarget = true, cond = promoteCond, condColour = 2, positionList = {{x = 0, y = -2}, {x = 1, y = 4}, {x = -3, y = -3}, {x = 4, y = 0}, {x = -3, y = 3}} },
-	give_weapon = {func = giveWeaponFunc, excludeTarget = true, cond = giveWeaponCond, condColour = 2, positionList = {{x = 1, y = 1}, {x = 0, y = 2}, {x = 3, y = 0}, {x = 0, y = -2}, {x = 1, y = -1}} }
+	give_weapon = {func = giveWeaponFunc, excludeTarget = true, cond = giveWeaponCond, condColour = 2, positionList = {{x = 1, y = 1}, {x = 0, y = 2}, {x = 3, y = 0}, {x = 0, y = -2}, {x = 1, y = -1}} },
+
+	realm_portal = {func = realmPortalFunc, cond = realmPortalCond, condColour = 7, positionList = {{x = -1, y = -1}, {x = 1, y = -1}, {x = 1, y = 1}, {x = -1, y = 1}} }
 }
 
 local setCrew = false
@@ -661,7 +679,7 @@ script.on_internal_event(Defines.InternalEvents.ON_MOUSE_L_BUTTON_DOWN, function
         		mousePosRelative = worldToEnemyLocation(mousePos)
         	end
         	--print("mouse x:"..mousePosRelative.x.." y:"..mousePosRelative.y.." crew "..crewmem.type.." x:"..location.x.." y:"..location.y)
-        	if (crewmem.iShipId == 0 or (crewmem.bMindControlled and not bookCursor)) and get_distance(mousePosRelative, location) <= 17 and crewmem:AtGoal() and not sacList[crewmem.extend.selfId] and checkForValidCrew(crewmem) then
+        	if (crewmem.iShipId == 0 or (crewmem.bMindControlled and (statueCrew[crewmem.type] or not bookCursor))) and get_distance(mousePosRelative, location) <= 17 and crewmem:AtGoal() and not sacList[crewmem.extend.selfId] and checkForValidCrew(crewmem) then
         		local slotX = math.floor((crewmem.currentSlot.worldLocation.x - 17)/35)
         		local slotY = math.floor((crewmem.currentSlot.worldLocation.y - 17)/35)
 	            --print("slot x:"..slotX.." y:"..slotY)
@@ -775,6 +793,10 @@ script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(ship)
 				elseif shapeRight == 6 then 
 					colour = 0.75 
 					green = 1
+					blue = 0
+				elseif shapeRight == 7 then 
+					colour = 0.5 
+					green = 0
 					blue = 0
 				end
 				if lastX and lastY then
@@ -1035,12 +1057,17 @@ script.on_internal_event(Defines.InternalEvents.ON_MOUSE_R_BUTTON_DOWN, function
 					newAnim.tracker.loop = false
 					newAnim:Start(true)
 	    			table.insert(crewExplosions, {ship = targetShip, anim = newAnim})
+	    			if statueCrew[crewmem.type] then
+	    				Hyperspace.playerVariables.aea_justicier_statue_active = 1
+	    				Hyperspace.metaVariables.aea_justicier_statue_sacs = Hyperspace.metaVariables.aea_justicier_statue_sacs + 1
+						Hyperspace.CustomAchievementTracker.instance:SetAchievement("ACH_AEA_STATUE_SACRIFICE", false)
+	    			end
 	    			crewmem:Kill(false)
 	    			if crewmem then
 	    				applyWeakened(crewmem)
 	    			end
 					Hyperspace.Sounds:PlaySoundMix("shell_death", -1, false)
-					
+					Hyperspace.playerVariables.aea_justicier_sacs_this_run = Hyperspace.playerVariables.aea_justicier_sacs_this_run + 1
 	    		end
 	    	end
 	    	Hyperspace.metaVariables["aea_dark_spell_"..currentValidSpell] = Hyperspace.metaVariables["aea_dark_spell_"..currentValidSpell] + 1
@@ -1098,6 +1125,8 @@ spellListPage3[2] = {id = "spawn_drone", name="Fucus", hint_amount = 16, descrip
 spellListPage3[3] = {id = "lockdown", name="Cincinno", hint_amount = 22, description="Sacrifice an offering of blood and channel the power of a chosen to freeze one's foe.", condition="Target must be a crystal crew, Target cannot be weakened by a ritual.", stat="Launches 3 crystal shards that damage and lockdown rooms at the enemy ship."}
 spellListPage3[4] = {id = "particle", name="Particula", hint_amount = 10, description="Sacrifice an offering of blood to bring destruction to one's foe.", condition="Requires an enemy ship.", stat="Fires 3 particle lasers at the enemy ship."}
 spellListPage3[5] = {id = "boarding", name="Conscensis", hint_amount = 16, description="Sacrifice an offering of blood to summon mechanical warriors against one's foe.", condition="Requires 1 drone part and 1 missile and an enemy ship.", stat="Launches 3 boarding drones at the enemy ship."}
+
+local statueSpell = {id = "realm_portal", name="regnum deorum", description="Sacrifice one of [style[color:FFC800]]#############[[/style]]'s stone disciples."}
 
 local emptyReq = Hyperspace.ChoiceReq()
 local blueReq = Hyperspace.ChoiceReq()
@@ -1187,7 +1216,7 @@ script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(e
 		if progress.current <= bookUnlock and Hyperspace.metaVariables["aea_dark_book_unlock"] == 0 then
 			local invalidEvent = eventManager:CreateEvent("OPTION_INVALID", 0, false)
 			event:AddChoice(invalidEvent, "[style[color:800000]]"..tostring(progress.current).."/"..tostring(bookUnlock).."[[/style]]", emptyReq, true)
-		elseif Hyperspace.metaVariables["aea_dark_book_unlock"] >= 0 then -- should be ==
+		elseif Hyperspace.metaVariables["aea_dark_book_unlock"] == 0 then -- should be ==
 			local unlockEvent = eventManager:CreateEvent("AEA_JUSTICIER_BOOK_UNLOCK", 0, false)
 			event:AddChoice(unlockEvent, "You feel a [style[color:FF0000]]pull[[/style]], you want to stare into the [style[color:FF0000]]Book[[/style]].", emptyReq, true)
 		end
@@ -1209,6 +1238,9 @@ script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(e
 		end
 		local closeEvent = eventManager:CreateEvent("AEA_JUSTICIER_EMPTY", 0, false)
 		event:AddChoice(closeEvent, "Close the book.", emptyReq, true)
+	elseif event.eventName == "AEA_JUSTICIER_BOOK_STATUE_RITUAL" then
+		event.text.data = statueSpell.description.."\n\n\n\n\n\n\n\n\n\n\n"
+		event.text.isLiteral = true
 	end
 end)
 
@@ -1220,6 +1252,9 @@ script.on_internal_event(Defines.InternalEvents.POST_CREATE_CHOICEBOX, function(
 		renderSpell = string.sub(event.eventName, 25, string.len(event.eventName))
 		Hyperspace.metaVariables["aea_dark_spell_seen_"..renderSpell] = 0
 		renderRules = false
+	elseif event.eventName == "AEA_JUSTICIER_BOOK_STATUE_RITUAL" then
+		renderSpell = statueSpell.id
+		renderRules = false
 	elseif event.eventName == "AEA_JUSTICIER_BOOK_RULES" then
 		renderRules = true
 		renderSpell = nil
@@ -1227,16 +1262,6 @@ script.on_internal_event(Defines.InternalEvents.POST_CREATE_CHOICEBOX, function(
 		renderRules = false
 		renderSpell = nil
 	end
-	--local isSpellPage = false
-	--[[for id, spellTable in pairs(spellList) do --26+
-		if event.eventName == "AEA_JUSTICIER_BOOK_PAGE_"..id then
-			renderSpell = id
-			isSpellPage = true
-		end
-	end
-	if not isSpellPage then
-		renderSpell = nil
-	end]]
 end)
 
 local ritualPage = Hyperspace.Resources:CreateImagePrimitiveString("effects/aea_ritual_book.png", -17, -17, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
@@ -1515,3 +1540,91 @@ script.on_render_event(Defines.RenderEvents.CREW_MEMBER_HEALTH, function(crewmem
 	end
 end, function() end)
 
+local statuesThisBeacon = false 
+local statueStats = {
+	min_sacs = 15,
+	min_chance = 5,
+	max_sacs = 50,
+	max_chance = 33,
+	spawn_time_min = 5,
+	spawn_time_max = 20,
+	spawn_max = 10,
+	hostile_chance = 25,
+	hostile_max = 2,
+}
+local function statue_should_spawn()
+	local sacs = Hyperspace.playerVariables.aea_justicier_sacs_this_run > statueStats.min_sacs
+	local book = Hyperspace.playerVariables.aea_dark_book_taken
+	local destroy = Hyperspace.playerVariables.aea_justicier_statue_destroy == 0
+	local active = Hyperspace.playerVariables.aea_justicier_statue_active >= 1
+	return sacs and book and (destroy or active)
+end
+
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(ship) 
+	if statue_should_spawn() then
+		local scale = (math.min(statueStats.max_sacs, Hyperspace.playerVariables.aea_justicier_sacs_this_run) - statueStats.min_sacs)/(statueStats.max_sacs - statueStats.min_sacs)
+		local chance = math.random() * 100 
+		if chance < statueStats.min_chance + scale * (statueStats.max_chance - statueStats.min_chance) * ((Hyperspace.playerVariables.aea_justicier_statue_active >= 1 and 2) or 1) then
+			statuesThisBeacon = true
+			--print("STATUE BEACON")
+		end
+	end
+end)
+
+local currentStatueTime = 0
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	if shipManager.iShipId == 0 and statuesThisBeacon then
+		currentStatueTime = currentStatueTime - Hyperspace.FPS.SpeedFactor/16
+		if currentStatueTime <= 0 then
+			currentStatueTime = math.random(statueStats.spawn_time_min, statueStats.spawn_time_max)
+			local hostileCount = 0
+			local statueCount = 0
+			for crewmem in vter(shipManager.vCrewList) do
+				if crewmem.type == "aea_statue_hostile" then
+					hostileCount = hostileCount + 1
+				elseif statueCrew[crewmem.type] then
+					statueCount = statueCount + 1
+				end
+			end
+			if Hyperspace.playerVariables.aea_justicier_statue_active >= 1 and math.random() * 100 < statueStats.hostile_chance and hostileCount < statueStats.hostile_max then
+				local randomRoom = get_room_at_location(shipManager, shipManager:GetRandomRoomCenter(), false)
+				local statue = shipManager:AddCrewMemberFromString("[style[color:FFC800]]Statue[[/style]]", "aea_statue_hostile_inactive", true, randomRoom, true, false)
+			elseif statueCount < statueStats.spawn_max then
+				local randomRoom = get_room_at_location(shipManager, shipManager:GetRandomRoomCenter(), false)
+				local statue = shipManager:AddCrewMemberFromString("[style[color:FFC800]]Statue[[/style]]", "aea_statue", true, randomRoom, true, false)
+			end
+		end
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(ship)
+	if ship.iShipId == 0 then
+		for crew in vter(ship.vCrewList) do
+			if statueCrew[crew.type] then
+				crew:Kill(true)
+			end
+		end
+	end
+	Hyperspace.playerVariables.aea_justicier_statue_destroy = 0
+end)
+
+script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crew)
+	if crew.type == "aea_statue_hostile" then
+		--[[if crew.bFighting then
+			for power in vter(crew.extend.crewPowers) do
+				power.powerCooldown.first = math.max(0.025, power.powerCooldown.first)
+			end
+		end]]
+		local shipManager = Hyperspace.ships(crew.currentShipId)
+		for room in vter(shipManager.ship.vRoomList) do
+			if room.iRoomId == crew.iRoomId then
+				room.bBlackedOut = false
+			end
+		end
+	end
+	if statueCrew[crew.type] and crew.health.first <= 0 and not userdata_table(crew, "mods.aea.statue").died then
+		userdata_table(crew, "mods.aea.statue").died = true
+		Hyperspace.playerVariables.aea_justicier_statue_destroy = Hyperspace.playerVariables.aea_justicier_statue_destroy + 1
+		Hyperspace.CustomAchievementTracker.instance:SetAchievement("ACH_AEA_STATUE_DESTROY", false)
+	end
+end)

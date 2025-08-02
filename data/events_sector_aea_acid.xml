@@ -2555,6 +2555,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
                                         <event>
                                             <text>"That sounds fun, whats our first mission captain?" Exasperated, you gesture at the rapidly approaching Acidic vessel, you wonder if bringing bill on is such a good idea afterall.</text>
                                             <crewMember amount="1" all_skills="1" class="aea_acid_bill">Bill</crewMember>
+											<achievement silent="false">ACH_AEA_CREW_BILL</achievement>
                                             <choice hidden="true">
                                                 <text>Continue...</text>
                                                 <event load="COMBAT_CHECK" />

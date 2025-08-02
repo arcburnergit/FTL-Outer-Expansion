@@ -56,45 +56,114 @@
 	</loadEventList>
 </event>
 
-<ship name="SHIP_AEA_OLD_FINAL_BOSS_CASUAL" auto_blueprint="AEA_OLD_FINAL_BOSS_CASUAL">
+<ship name="SHIP_AEA_OLD_FINAL_BOSS_ONE_CASUAL" auto_blueprint="AEA_OLD_FINAL_BOSS_ONE_CASUAL">
 	<deadCrewAuto />
-	<destroyed load="AEA_OLD_SHOWDOWN_WIN" />
+	<triggeredEvent event="POWER_SURGE_AEA_OLD_1" seeded="false" loops="999999999" thisFight="true" minTime="45.0" maxTime="60.0">
+		<warningMessage id="warning_power_surge" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true" />
+	</triggeredEvent>
+	<destroyed load="AEA_OLD_SHOWDOWN_WIN_ONE" />
 	<deadCrew load="AEA_OLD_SHOWDOWN_AUTO" />
-	<deadCrewAuto />
 </ship>
-<ship name="SHIP_AEA_OLD_FINAL_BOSS_NORMAL" auto_blueprint="AEA_OLD_FINAL_BOSS_NORMAL">
+<ship name="SHIP_AEA_OLD_FINAL_BOSS_ONE_NORMAL" auto_blueprint="AEA_OLD_FINAL_BOSS_ONE_NORMAL">
+	<deadCrewAuto />
+	<triggeredEvent event="POWER_SURGE_AEA_OLD_1" seeded="false" loops="999999999" thisFight="true" minTime="30.0" maxTime="50.0">
+		<warningMessage id="warning_power_surge" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true" />
+	</triggeredEvent>
+	<destroyed load="AEA_OLD_SHOWDOWN_WIN_ONE" />
+	<deadCrew load="AEA_OLD_SHOWDOWN_AUTO" />
+</ship>
+<ship name="SHIP_AEA_OLD_FINAL_BOSS_ONE_CHALLENGE" auto_blueprint="AEA_OLD_FINAL_BOSS_ONE_CHALLENGE">
+	<deadCrewAuto />
+	<triggeredEvent event="POWER_SURGE_AEA_OLD_1" seeded="false" loops="999999999" thisFight="true" minTime="30.0" maxTime="40.0">
+		<warningMessage id="warning_power_surge" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true" />
+	</triggeredEvent>
+	<destroyed load="AEA_OLD_SHOWDOWN_WIN_ONE" />
+	<deadCrew load="AEA_OLD_SHOWDOWN_AUTO" />
+</ship>
+<ship name="SHIP_AEA_OLD_FINAL_BOSS_ONE_EXTREME" auto_blueprint="AEA_OLD_FINAL_BOSS_ONE_EXTREME">
+	<deadCrewAuto />
+	<triggeredEvent event="POWER_SURGE_AEA_OLD_1" seeded="false" loops="999999999" thisFight="true" minTime="20.0" maxTime="35.0">
+		<warningMessage id="warning_power_surge" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true" />
+	</triggeredEvent>
+	<destroyed load="AEA_OLD_SHOWDOWN_WIN_ONE" />
+	<deadCrew load="AEA_OLD_SHOWDOWN_AUTO" />
+</ship>
 
+<ship name="SHIP_AEA_OLD_FINAL_BOSS_TWO_CASUAL" auto_blueprint="AEA_OLD_FINAL_BOSS_TWO_CASUAL">
+	<deadCrewAuto />
+	<triggeredEvent event="POWER_SURGE_AEA_OLD_2" seeded="false" loops="999999999" thisFight="true" minTime="45.0" maxTime="60.0">
+		<warningMessage id="warning_power_surge" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true" />
+	</triggeredEvent>
+	<destroyed load="AEA_OLD_SHOWDOWN_WIN_TWO" />
+	<deadCrew load="AEA_OLD_SHOWDOWN_AUTO" />
+</ship>
+<ship name="SHIP_AEA_OLD_FINAL_BOSS_TWO_NORMAL" auto_blueprint="AEA_OLD_FINAL_BOSS_TWO_NORMAL">
+	<deadCrewAuto />
+	<triggeredEvent event="POWER_SURGE_AEA_OLD_2" seeded="false" loops="999999999" thisFight="true" minTime="30.0" maxTime="50.0">
+		<warningMessage id="warning_power_surge" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true" />
+	</triggeredEvent>
+	<destroyed load="AEA_OLD_SHOWDOWN_WIN_TWO" />
+	<deadCrew load="AEA_OLD_SHOWDOWN_AUTO" />
+</ship>
+<ship name="SHIP_AEA_OLD_FINAL_BOSS_TWO_CHALLENGE" auto_blueprint="AEA_OLD_FINAL_BOSS_TWO_CHALLENGE">
+	<deadCrewAuto />
+	<triggeredEvent event="POWER_SURGE_AEA_OLD_2" seeded="false" loops="999999999" thisFight="true" minTime="30.0" maxTime="40.0">
+		<warningMessage id="warning_power_surge" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true" />
+	</triggeredEvent>
+	<destroyed load="AEA_OLD_SHOWDOWN_WIN_TWO" />
+	<deadCrew load="AEA_OLD_SHOWDOWN_AUTO" />
+</ship>
+<ship name="SHIP_AEA_OLD_FINAL_BOSS_TWO_EXTREME" auto_blueprint="AEA_OLD_FINAL_BOSS_TWO_EXTREME">
+	<deadCrewAuto />
+	<triggeredEvent event="POWER_SURGE_AEA_OLD_2" seeded="false" loops="999999999" thisFight="true" minTime="20.0" maxTime="35.0">
+		<warningMessage id="warning_power_surge" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true" />
+	</triggeredEvent>
+	<destroyed load="AEA_OLD_SHOWDOWN_WIN_TWO" />
+	<deadCrew load="AEA_OLD_SHOWDOWN_AUTO" />
+</ship>
+
+<ship name="SHIP_AEA_OLD_FINAL_BOSS_THREE_CASUAL" auto_blueprint="AEA_OLD_FINAL_BOSS_THREE_CASUAL">
+	<deadCrewAuto />
+	<triggeredEvent event="POWER_SURGE_AEA_OLD_3" seeded="false" loops="999999999" thisFight="true" minTime="45.0" maxTime="60.0">
+		<warningMessage id="warning_power_surge" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true" />
+	</triggeredEvent>
+	<destroyed load="AEA_OLD_SHOWDOWN_WIN_THREE" />
+	<deadCrew load="AEA_OLD_SHOWDOWN_AUTO" />
+</ship>
+<ship name="SHIP_AEA_OLD_FINAL_BOSS_THREE_NORMAL" auto_blueprint="AEA_OLD_FINAL_BOSS_THREE_NORMAL">
 	<deadCrewAuto />
 	<triggeredEvent event="POWER_SURGE_AEA_OLD_3" seeded="false" loops="999999999" thisFight="true" minTime="30.0" maxTime="50.0">
 		<warningMessage id="warning_power_surge" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true" />
 	</triggeredEvent>
-	<destroyed load="AEA_OLD_SHOWDOWN_WIN" />
+	<destroyed load="AEA_OLD_SHOWDOWN_WIN_THREE" />
 	<deadCrew load="AEA_OLD_SHOWDOWN_AUTO" />
-	<deadCrewAuto />
 </ship>
-<ship name="SHIP_AEA_OLD_FINAL_BOSS_CHALLENGE" auto_blueprint="AEA_OLD_FINAL_BOSS_CHALLENGE">
-
+<ship name="SHIP_AEA_OLD_FINAL_BOSS_THREE_CHALLENGE" auto_blueprint="AEA_OLD_FINAL_BOSS_THREE_CHALLENGE">
 	<deadCrewAuto />
 	<triggeredEvent event="POWER_SURGE_AEA_OLD_3" seeded="false" loops="999999999" thisFight="true" minTime="30.0" maxTime="40.0">
 		<warningMessage id="warning_power_surge" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true" />
 	</triggeredEvent>
-	<destroyed load="AEA_OLD_SHOWDOWN_WIN" />
+	<destroyed load="AEA_OLD_SHOWDOWN_WIN_THREE" />
 	<deadCrew load="AEA_OLD_SHOWDOWN_AUTO" />
-	<deadCrewAuto />
 </ship>
-<ship name="SHIP_AEA_OLD_FINAL_BOSS_EXTREME" auto_blueprint="AEA_OLD_FINAL_BOSS_EXTREME">
-
+<ship name="SHIP_AEA_OLD_FINAL_BOSS_THREE_EXTREME" auto_blueprint="AEA_OLD_FINAL_BOSS_THREE_EXTREME">
 	<deadCrewAuto />
 	<triggeredEvent event="POWER_SURGE_AEA_OLD_3" seeded="false" loops="999999999" thisFight="true" minTime="20.0" maxTime="35.0">
 		<warningMessage id="warning_power_surge" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true" />
 	</triggeredEvent>
-	<destroyed load="AEA_OLD_SHOWDOWN_WIN" />
+	<destroyed load="AEA_OLD_SHOWDOWN_WIN_THREE" />
 	<deadCrew load="AEA_OLD_SHOWDOWN_AUTO" />
-	<deadCrewAuto />
 </ship>
 
+<event name="POWER_SURGE_AEA_OLD_1">
+	<playSound>teleport</playSound>
+	<boarders min="2" max="2" class="human_soldier"/>
+</event>
+<event name="POWER_SURGE_AEA_OLD_2">
+	<superBarrage player="false" name="AEA_OLD_SUPER_TWO" />
+</event>
 <event name="POWER_SURGE_AEA_OLD_3">
-	<superBarrage player="false" name="MFK_LASER_SURGE" />
+	<superBarrage player="false" name="AEA_OLD_SUPER_THREE" />
 </event>
 <event name="AEA_OLD_SHOWDOWN_AUTO">
 	<text>It appears this ship is also equipped with an advanced AI system. Now that the crew is dead, it has taken control! You sense oxygen levels dropping on the Flagship as well...</text>
@@ -106,7 +175,7 @@
 <event name="AEA_OLD_SHOWDOWN_CASUAL">
 	<metaVariable name="juke_aea_old_3" op="set" val="1" />
 	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
-	<ship load="SHIP_AEA_OLD_FINAL_BOSS_CASUAL" hostile="false" />
+	<ship load="SHIP_AEA_OLD_FINAL_BOSS_ONE_CASUAL" hostile="false" />
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -119,10 +188,43 @@
 		</event>
 	</choice>
 </event>
+<event name="AEA_OLD_SHOWDOWN_CASUAL_TWO">
+	<metaVariable name="juke_aea_old_3" op="set" val="1" />
+	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
+	<ship load="SHIP_AEA_OLD_FINAL_BOSS_TWO_CASUAL" hostile="false" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>You didn't come this far to give up now. There's nothing left to do but destroy this ship if you want to escape. You lylmik sponsor has clearly given up on trying to get them to stand down.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+</event>
+<event name="AEA_OLD_SHOWDOWN_CASUAL_THREE">
+	<metaVariable name="juke_aea_old_3" op="set" val="1" />
+	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
+	<ship load="SHIP_AEA_OLD_FINAL_BOSS_THREE_CASUAL" hostile="false" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>You didn't come this far to give up now. There's nothing left to do but destroy this ship if you want to escape. You lylmik sponsor has clearly given up on trying to get them to stand down.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+</event>
+
 <event name="AEA_OLD_SHOWDOWN_NORMAL">
 	<metaVariable name="juke_aea_old_3" op="set" val="1" />
 	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
-	<ship load="SHIP_AEA_OLD_FINAL_BOSS_NORMAL" hostile="false" />
+	<ship load="SHIP_AEA_OLD_FINAL_BOSS_ONE_NORMAL" hostile="false" />
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -135,10 +237,43 @@
 		</event>
 	</choice>
 </event>
+<event name="AEA_OLD_SHOWDOWN_NORMAL_TWO">
+	<metaVariable name="juke_aea_old_3" op="set" val="1" />
+	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
+	<ship load="SHIP_AEA_OLD_FINAL_BOSS_TWO_NORMAL" hostile="false" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>You didn't come this far to give up now. There's nothing left to do but destroy this ship if you want to escape. You lylmik sponsor has clearly given up on trying to get them to stand down.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+</event>
+<event name="AEA_OLD_SHOWDOWN_NORMAL_THREE">
+	<metaVariable name="juke_aea_old_3" op="set" val="1" />
+	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
+	<ship load="SHIP_AEA_OLD_FINAL_BOSS_THREE_NORMAL" hostile="false" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>You didn't come this far to give up now. There's nothing left to do but destroy this ship if you want to escape. You lylmik sponsor has clearly given up on trying to get them to stand down.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+</event>
+
 <event name="AEA_OLD_SHOWDOWN_CHALLENGE">
 	<metaVariable name="juke_aea_old_3" op="set" val="1" />
 	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
-	<ship load="SHIP_AEA_OLD_FINAL_BOSS_CHALLENGE" hostile="false" />
+	<ship load="SHIP_AEA_OLD_FINAL_BOSS_ONE_CHALLENGE" hostile="false" />
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -151,10 +286,75 @@
 		</event>
 	</choice>
 </event>
+<event name="AEA_OLD_SHOWDOWN_CHALLENGE_TWO">
+	<metaVariable name="juke_aea_old_3" op="set" val="1" />
+	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
+	<ship load="SHIP_AEA_OLD_FINAL_BOSS_TWO_CHALLENGE" hostile="false" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>You didn't come this far to give up now. There's nothing left to do but destroy this ship if you want to escape. You lylmik sponsor has clearly given up on trying to get them to stand down.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+</event>
+<event name="AEA_OLD_SHOWDOWN_CHALLENGE_THREE">
+	<metaVariable name="juke_aea_old_3" op="set" val="1" />
+	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
+	<ship load="SHIP_AEA_OLD_FINAL_BOSS_THREE_CHALLENGE" hostile="false" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>You didn't come this far to give up now. There's nothing left to do but destroy this ship if you want to escape. You lylmik sponsor has clearly given up on trying to get them to stand down.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+</event>
+
 <event name="AEA_OLD_SHOWDOWN_EXTREME">
 	<metaVariable name="juke_aea_old_3" op="set" val="1" />
 	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
-	<ship load="SHIP_AEA_OLD_FINAL_BOSS_EXTREME" hostile="false" />
+	<ship load="SHIP_AEA_OLD_FINAL_BOSS_ONE_EXTREME" hostile="false" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>You didn't come this far to give up now. There's nothing left to do but destroy this ship if you want to escape. You lylmik sponsor has clearly given up on trying to get them to stand down.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+</event>
+<event name="AEA_OLD_SHOWDOWN_EXTREME_TWO">
+	<metaVariable name="juke_aea_old_3" op="set" val="1" />
+	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
+	<ship load="SHIP_AEA_OLD_FINAL_BOSS_TWO_EXTREME" hostile="false" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>You didn't come this far to give up now. There's nothing left to do but destroy this ship if you want to escape. You lylmik sponsor has clearly given up on trying to get them to stand down.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+</event>
+<event name="AEA_OLD_SHOWDOWN_EXTREME_THREE">
+	<metaVariable name="juke_aea_old_3" op="set" val="1" />
+	<text>You arrive at the beacon to discover a massive vessel blocking your path. Your sponsor appears concerned, although its hard to tell with Lylmiks. "This shouldn't be here, I'll try to reach out to them." It doesn't take you long to realize they aren't here for a chat.</text>
+	<ship load="SHIP_AEA_OLD_FINAL_BOSS_THREE_EXTREME" hostile="false" />
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -170,8 +370,41 @@
 
 
 
+<event name="AEA_OLD_SHOWDOWN_WIN_ONE">
+	<playSound>lightspeed</playSound>
+	<text>One wing of the flagship explodes in a fiery explosion, ripping it from the hull. The flagship powers up it's jump drive and jumps away, it looks like they're attempting to make some emergency repairs.</text>
+	<variable name="aea_old_showdown_roamer_killed" op="set" val="1"/>
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<clearSuperDrones player="false" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
 
+<event name="AEA_OLD_SHOWDOWN_WIN_TWO">
+	<playSound>lightspeed</playSound>
+	<text>A second wing of the flagship is ripped from the hull. The flagship again powers up it's jump drive and jumps away.</text>
+	<variable name="aea_old_showdown_roamer_killed" op="set" val="2"/>
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<clearSuperDrones player="false" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
 
+<event name="AEA_OLD_SHOWDOWN_WIN_THREE">
+	<text>Finally the flagship explodes, with the flagship destroyed you'll finally be able to destroy the gate.</text>
+	<variable name="aea_old_showdown_roamer_killed" op="set" val="3"/>
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_ARMOUR</unlockCustomShip>
+	<clearSuperDrones player="false" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
 
 <event name="AEA_OLD_SHOWDOWN_WIN">
 	<text>You watch in triumphant jubilation as the Flagship explodes. You've won this battle!.</text>
@@ -195,29 +428,46 @@
 		<unvisitedTooltip>This is the location of a large structure.</unvisitedTooltip>
 		<visitedTooltip>This is the location of a large structure.</visitedTooltip>
 	</beaconType>
-	<text>You've finally made it to the gate, only a moment away from being able to return to the multiverse and kill the flagship.</text>
+	<text>You've finally made it to the gate, you need to destroy it to prevent the lylmiks being released into your last universe.</text>
 	<!--metaVariable name="juke_showdown" op="set" val="1" /-->
-	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_ARMOUR</unlockCustomShip>
-	<choice hidden="true">
-		<text>Enter the gate.</text>
+	<choice req="aea_old_showdown_roamer_killed" lvl="3" hidden="true">
+		<text>Destroy the gate.</text>
 		<event>
-			<text>You pilot your ship through the gate, its unlikely anyone will ever believe you about this place.</text>
+			<text>You fire one last barrage at the outer structure of the gate and a series of exposions cascade across the circumference. The wormhole at the center of the gate had almost opened but as you watch it starts to fold in on itself and shrink.</text>
 			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<secretSectorWarp>AEA_OLD_FLAGSHIP_END</secretSectorWarp>
-					<secretSector />
+				<text>You feel a pull towards the collapsing wormhole, you have a few moments before you'll be pulled in.</text>
+				<event load="OPTION_INVALID"/>
+			</choice>
+			<choice hidden="true">
+				<text>Fly into the wormhole.</text>
+				<event name="AEA_OLD_VICTORY_SPEAK">
+					<text>YOU SHOULD NOT BE SEEING THIS, IF YOU ARE CHECK TO MAKE SURE YOUR HYPERSPACE IS UP TO DATE. 
+To continue type: "EVENT AEA_OLD_VICTORY_WIN" into your console.</text>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event/>
+					</choice>
 				</event>
+			</choice>
+			<choice blue="false" hidden="true" req="LIST_CREW_PARAGON_UNIQUE">
+				<text>Talk with your crew.</text>
+				<event load="AEA_OLD_VICTORY_CREW" />
 			</choice>
 		</event>
 	</choice>
-	<choice hidden="true" req="LIST_CREW_PARAGON_UNIQUE">
-		<text>Talk with your crew.</text>
-		<event load="AEA_OLD_VICTORY_CREW" />
+	<choice req="aea_old_showdown_roamer_killed" lvl="0" max_lvl="2" hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>Unfortunately the gate is protected by a massive energy shield, your sensors indicate that it's power source is somewhere else.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
 	</choice>
 </event>
 <event name="AEA_OLD_VICTORY_CREW">
-	<text>You look around at your crew, who are standing, waiting for your verdict.</text>
+	<text>You look around at your crew, who are standing, waiting for you.</text>
 	<checkCargo />
 </event>
 <event name="AEA_OLD_VICTORY_">
@@ -229,6 +479,10 @@
 	</choice>
 </event>
 
+<event name="AEA_OLD_VICTORY_WIN">
+	<achievement silent="false">ACH_AEA_WIN_EXILE</achievement>
+	<win ach="aea_exile_win" music="paragon" creditsText="credit_victory_aea_exile" text="You've saved this universe from certain enslavement." creditsBackground="BACKGROUND_LIGHTSPEED" />
+</event>
 
 <event name="AEA_OLD_ENDING_START">
 	<text>You've arrived in Node 17 just in time, the Rebel flagship is damaged but also close to being able to take over the federation base.</text>
@@ -246,7 +500,7 @@
 	<finalBoss ach="aea_old_win" creditsText="credit_victory_aea_old_mutual" text="This is not the victory you hoped for, but it's one nonetheless." creditsBackground="VICTORY_DEFAULT" music="paragon" />
 </ship>
 <event name="AEA_OLD_ENDBOSS_WIN">
-	<win ach="aea_old_win" music="paragon" creditsText="credit_victory_aea_old" text="Your victory over the flagship was overshadowed by your escape from the Lylmiks" creditsBackground="VICTORY_DEFAULT" />
+	<win ach="aea_old_win" music="paragon" creditsText="credit_victory_aea_old" text="Your victory over the dreadnaught was overshadowed by your escape from the Lylmiks" creditsBackground="VICTORY_DEFAULT" />
 </event>
 
 </FTL>

@@ -1743,6 +1743,7 @@ Unfortunately you were unable to answer all the questions correctly.</text>
 				<text>Accept her into the crew</text>
 				<event>
 					<text>Welcome aboard!</text>
+					<achievement silent="false">ACH_AEA_CREW_JAY</achievement>
 					<crewMember amount="1" all_skills="2" class="aea_bird_unique">Jay</crewMember>
 				</event>
 			</choice>

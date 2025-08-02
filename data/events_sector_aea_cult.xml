@@ -1039,6 +1039,7 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 						<event>
 							<text>Eventually it leads you to a supply stash, it helps you load it up into the ship and then gets onboard with you, it seems like this tiny orchid is a new crewMember.</text>
 							<crewMember amount="1" all_skills="2" class="aea_cult_tiny">Tiny</crewMember>
+							<achievement silent="false">ACH_AEA_CREW_TINY</achievement>
 							<item_modify>
 								<item type="scrap" min="35" max="35"/>
 								<item type="drones" min="5" max="5"/>
