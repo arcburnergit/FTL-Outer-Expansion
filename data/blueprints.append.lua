@@ -9,7 +9,8 @@ end
 
 local systemsToAppend = {}
 systemsToAppend["aea_super_shields"] = {attributes = {power = 1, start = "false"}, manning = true, replace_sys = "cloaking", 
-    image_list = {{room_image = "room_shields", w = 2, h = 2, top = "00", bottom = "11", left="10", right="01", manning_slot = 0, manning_direction = "left"},
+    image_list = {
+        {room_image = "room_shields", w = 2, h = 2, top = "00", bottom = "11", left="10", right="01", manning_slot = 0, manning_direction = "left"},
         {room_image = "room_shields_aea_r", w = 2, h = 2, top = "01", bottom = "10", left="11", right="00", manning_slot = 1, manning_direction = "up"},
         {room_image = "room_shields_aea_rr", w = 2, h = 2, top = "11", bottom = "00", left="10", right="01", manning_slot = 3, manning_direction = "right"},
         {room_image = "room_shields_aea_rrr", w = 2, h = 2, top = "01", bottom = "10", left="00", right="11", manning_slot = 2, manning_direction = "down"},
@@ -55,6 +56,23 @@ systemsToAppend["aea_super_shields"] = {attributes = {power = 1, start = "false"
     }
 }
 systemsToAppend["aea_clone_crime"] = {attributes = {power = 1, start = "false"}, manning = false, replace_sys = "clonebay", only_replace = true, copy_slot = true}
+systemsToAppend["aea_freeze"] = {attributes = {power = 1, start = "false"}, manning = false, replace_sys = "mind",
+    image_list = {
+        {room_image = "room_aea_freeze", w = 2, h = 2, top = "00", bottom = "11", left="00", right="01"},
+        {room_image = "room_aea_freeze_1", w = 2, h = 1, top = "00", bottom = "11", left="0", right="1"},
+        {room_image = "room_aea_freeze_2", w = 1, h = 2, top = "0", bottom = "0", left="01", right="00"},
+        {room_image = "room_aea_freeze_3", w = 2, h = 1, top = "00", bottom = "11", left="0", right="0"},
+        {room_image = "room_aea_freeze_4", w = 2, h = 2, top = "00", bottom = "00", left="11", right="00"},
+        {room_image = "room_aea_freeze_5", w = 2, h = 1, top = "11", bottom = "00", left="0", right="0"},
+        {room_image = "room_aea_freeze_6", w = 1, h = 2, top = "1", bottom = "1", left="00", right="00"},
+        {room_image = "room_aea_freeze_7", w = 2, h = 1, top = "01", bottom = "01", left="0", right="0"},
+        {room_image = "room_aea_freeze_8", w = 2, h = 1, top = "10", bottom = "01", left="1", right="1"},
+        {room_image = "room_aea_freeze_9", w = 2, h = 1, top = "00", bottom = "00", left="0", right="0"},
+        {room_image = "room_aea_freeze_10", w = 2, h = 2, top = "10", bottom = "10", left="01", right="10"},
+        {room_image = "room_aea_freeze_11", w = 2, h = 2, top = "00", bottom = "11", left="00", right="00"},
+        {room_image = "room_aea_freeze_12", w = 1, h = 2, top = "0", bottom = "0", left="10", right="10"}
+    }
+}
 
 local function noDoorOverlap(rT, rB, rL, rR, iT, iB, iL, iR, shipName)
     local room = table.concat({rT,rB,rL,rR},"")

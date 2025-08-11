@@ -7,10 +7,30 @@
 - Acidic Super Weapon cd 14 -> 18 seconds.
 - Intel Drone MK1 Power 2 -> 3.
 - Intel Drone MK2 Power 3 -> 4.
-- Removed Shard Forged sector from the safe zone
-- Added Gi sector to the safe zone
+- Removed Shard Forged sector from the safe zone.
+- Added Gi sector to the safe zone.
+- Added Internal upgrade to Modified Clone Bay that prevents deathtimers progressing on the enemy ship.
+- Removed crap bucket reward from acidic sector event.
+- Added the fleet to both Lylmik Sectors.
+- Slightly increased reward scrap in lylmik sectors.
+- Added federation outpost in Lylmik outskirts that gives you Lylmik Tech.
+- Changed Exclusive Lylmik store to sell all possible store options instead of just lylmik weapons.
+- Added text to the rules of ritual detailing that sacrificed crew can be revived.
+- Lylmik crew now revive themselves after combat or when jumping away.
 
 # Bug Fixes
-- Fixed normal Gi sector not showing up
+- Fixed normal Gi sector not showing up.
+- Fixed acidic assault being named "assualt" and missing an elite varient.
+- Fixed Lylmik Gate showing up too much in Sector 8 under some circumstances.
+- Fixed Cultist store showing globally.
+- Fixed Heretic Boon not being obtainable.
 
 # Misc Changes
+- Reworked roamers to use one unified lua system.
+- Implemented new Lylmik Flagship with 3 stages.
+- Implemented #######.
+- Added progression tracker to the book of death, Achievement for completing the book added.
+- Added the book of death as a hanger item unlocked after a certain amount of progression.
+- Implemented Unique Crew achievements.
+- Improve fleet images.
+- Added Various Achievements for the Lylmik storyline.

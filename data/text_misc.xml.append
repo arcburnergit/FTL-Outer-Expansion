@@ -203,9 +203,11 @@ The Shard-Forged, although known as pirates, are rather well liked by the federa
 <text name="credit_victory_aea_old">The Multiverse Flagship of this reality has been destroyed. The Rebel forces were weakened, and the Federation troops, along with reinforcements, successfully defeated the Rebel forces of this reality.</text>
 
 <text name="tip_aea_burst_pin">Tip: Burst Pinpoints are able to fire multiple times in quick succession.</text>
-<text name="tip_aea_rail_cannon">Tip: Rail Cannons don't consume any ammo to fire, but do require fuel to be powered on. If the weapon is depowered or loses power it will require more fuel to be started up again.</text>
+<text name="tip_aea_rail_cannon">Tip: Rail Cannons don't consume any ammo to fire, but do require fuel to be powered on the first time, fuel lasts until next jump.</text>
 
 <text name="aea_super_shields">Auxiliary Shields</text>
 <text name="aea_super_shields_installed">Auxiliary Shields System installed</text>
+<text name="aea_freeze">Medusa's Gaze</text>
+<text name="aea_freeze_installed">Medusa's Gaze System installed</text>
 <text name="aea_clone_crime_installed">Modified Clone Bay installed</text>
 </FTL>

@@ -1,0 +1,581 @@
+<FTL>
+
+<event name="AEA_INSTALL_FREEZE">
+	<text>You can replace your Mind Control system with a Medusa's Gaze System.
+	[Effects: Freeze's a system in it's current state, preventing it from taking damage and from any effects of the system starting or ending, takes up the same room as mind control if it is present.]</text>
+	<choice hidden="true">
+		<text>Replace your mind control system. [Cost: 55~]</text>
+		<event>
+			<text>You tear out the existing mind control system to make way for the new system.</text>
+			<item_modify>
+				<item type="scrap" min="-55" max="-55" />
+			</item_modify>
+			<removeSystem player="true">mind</removeSystem>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>The new system is installed.</text>
+					<system name="aea_freeze" />
+				</event>
+			</choice>
+		</event>
+	</choice>
+    <choice>
+        <text>Nevermind.</text>
+        <event load="STORAGE_CHECK" />
+    </choice>
+</event>
+<event name="AEA_INSTALL_FREEZE_NOMIND">
+	<text>You can install a Medusa's Gaze System.
+	[Effects: Freeze's a system in it's current state, preventing it from taking damage and from any effects of the system starting or ending, takes up the same room as mind control if it is present.]</text>
+	<choice hidden="true">
+		<text>Install the system. [Cost: 55~]</text>
+		<event>
+			<text>The new system is installed.</text>
+			<item_modify>
+				<item type="scrap" min="-55" max="-55" />
+			</item_modify>
+			<system name="aea_freeze" />
+		</event>
+	</choice>
+    <choice>
+        <text>Nevermind.</text>
+        <event load="STORAGE_CHECK" />
+    </choice>
+</event>
+
+
+<event name="ENTER_AEA_GODS">
+	<metaVariable name="juke_aea_gods" op="set" val="1" />
+	<text>You've arrive at a strange beacon, all around is darkness.</text>
+	<variable name="loc_sector_count" op="add" val="1"/>
+	<achievement silent="false">ACH_AEA_REALM_OF_GODS</achievement>
+	<img planet="NONE"/>
+	<revisitEvent>AEA_GODS_BEACON_BRIGHT_0</revisitEvent>
+	<changeBackground>BACK_AEA_DARKNESS</changeBackground>
+	<modifyPursuit amount="-999"/>
+	<playSound>lightspeed</playSound>
+	<choice>
+		<text>Continue...</text>
+		<event load="AEA_GODS_BEACON_BRIGHT_0"/>
+	</choice>
+</event>
+
+<event name="AEA_GODS_EMPTY">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<revisitEvent>AEA_GODS_EMPTY</revisitEvent>
+	<text>The beacon signal here appears to originate from no where, all around you is complete darkness.</text>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK"/>
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event/>
+	</choice>
+</event>
+
+<event name="AEA_GODS_BEACON_SECRET">
+	<variable name="aea_gods_light_active" op="set" val="0"/>
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<revisitEvent>AEA_GODS_BEACON_SECRET</revisitEvent>
+	<text>The beacon signal here appears to originate from nothing, all around you is complete darkness.</text>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK"/>
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event/>
+	</choice>
+</event>
+<event name="AEA_GODS_GRAY_CLEANSE">
+	<text>You're now apparently almost on top of the hole, you're still not able to make anything out about it.</text>
+	<choice hidden="true">
+		<text>Get Closer.</text>
+		<event name="AEA_GODS_CLEAR_3">
+			<text>The darkness envelops your ship, blinding everyone and everything onboard. One of your crew cries in relief as they are freed from the stone, a moment later the darkness is gone.</text>
+			<variable name="aea_gods_light_active" op="set" val="2"/>
+			<revisitEvent>AEA_GODS_EMPTY</revisitEvent>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Leave.</text>
+		<event/>
+	</choice>
+</event>
+
+
+<ship name="AEA_GODS_BEACON_FIGHT_EASY" auto_blueprint="SHIPS_AEA_GODS_EASY">
+	<destroyed>
+		<variable name="aea_gods_light_active" op="set" val="1"/>
+		<text>The ship implodes, collapsing in on itself and releasing a cloud of scrap and metal, you're able to recover a weapon from the wreckage.
+With the ship no longer blocking your way you're able to access the beacon here.</text>
+		<autoReward level="MED">standard_no_item</autoReward>
+		<weapon name="RANDOM" />
+	</destroyed>
+</ship>
+<ship name="AEA_GODS_BEACON_FIGHT_HARD" auto_blueprint="SHIPS_AEA_GODS_HARD">
+	<destroyed>
+		<variable name="aea_gods_light_active" op="set" val="1"/>
+		<text>The ship implodes, collapsing in on itself and releasing a cloud of scrap and metal, you're able to recover a weapon from the wreckage.
+With the ship no longer blocking your way you're able to access the beacon here.</text>
+		<autoReward level="HIGH">standard_no_item</autoReward>
+		<weapon name="RANDOM" />
+	</destroyed>
+</ship>
+<event name="AEA_GODS_BEACON_BRIGHT_BOSS">
+	<variable name="aea_gods_light_active" op="set" val="0"/>
+	<text>The beacon here blazes with power, your sensors are able to detect a faint stream of energy travelling off in the direction of the ship hunting you.</text>
+	<choice>
+		<text>Extinguish the beacon.</text>
+		<event name="AEA_GODS_CLEAR_BOSS_1">
+			<variable name="aea_gods_light_active" op="set" val="2"/>
+			<variable name="aea_gods_snuff_light" op="add" val="1"/>
+			<text>You snuff out the beacon and all goes dark, the ship chasing you has been weakened.</text>
+		</event>
+	</choice>
+</event>
+<event name="AEA_GODS_BEACON_BRIGHT_EMPTY">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<text>The beacon signal here appears to originate from no where, all around you is complete darkness.</text>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK"/>
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event/>
+	</choice>
+</event>
+<event name="AEA_GODS_BEACON_BRIGHT_ONE">
+	<text>You discover the beacon's source is a blindingly bright light source, your sensors can't detect anything behind the light as they're immediately overwelmed.</text>
+	<variable name="aea_gods_light_active" op="set" val="1"/>
+</event>
+<event name="AEA_GODS_BEACON_BRIGHT_TWO">
+	<text>You discover the beacon's source is a blindingly bright light source, your sensors can't detect anything behind the light as they're immediately overwelmed.</text>
+	<variable name="aea_gods_light_active" op="set" val="0"/>
+	<ship load="AEA_GODS_BEACON_FIGHT_EASY" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BEACON_BRIGHT_THREE">
+	<text>You discover the beacon's source is a blindingly bright light source, your sensors can't detect anything behind the light as they're immediately overwelmed.</text>
+	<variable name="aea_gods_light_active" op="set" val="0"/>
+	<ship load="AEA_GODS_BEACON_FIGHT_HARD" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BEACON_BRIGHT_FOUR">
+	<text>You discover the beacon's source is a blindingly bright light source, your sensors can't detect anything behind the light as they're immediately overwelmed.</text>
+	<variable name="aea_gods_light_active" op="set" val="0"/>
+	<ship load="AEA_GODS_BEACON_FIGHT_HARD" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BEACON_BRIGHT_0">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<loadEventList seeded="false" first="true">
+		<event name="AEA_GODS_BEACON_BRIGHT_BOSS" req="AEA_GODS_BOSS_SPAWN_LIGHT" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_EMPTY" req="AEA_GODS_BOSS_SPAWN_DARK" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_EMPTY" req="aea_gods_beacon_bright_0_consumed" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_ONE" req="aea_gods_cleanse_light" lvl="0" max_lvl="0"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_TWO" req="aea_gods_cleanse_light" lvl="1" max_lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_THREE" req="aea_gods_cleanse_light" lvl="2" max_lvl="2"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_FOUR"/>
+	</loadEventList>
+</event>
+<event name="AEA_GODS_BEACON_BRIGHT_1">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<revisitEvent>AEA_GODS_BEACON_BRIGHT_1</revisitEvent>
+	<loadEventList seeded="false" first="true">
+		<event name="AEA_GODS_BEACON_BRIGHT_BOSS" req="AEA_GODS_BOSS_SPAWN_LIGHT" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_EMPTY" req="AEA_GODS_BOSS_SPAWN_DARK" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_EMPTY" req="aea_gods_beacon_bright_1_consumed" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_ONE" req="aea_gods_cleanse_light" lvl="0" max_lvl="0"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_TWO" req="aea_gods_cleanse_light" lvl="1" max_lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_THREE" req="aea_gods_cleanse_light" lvl="2" max_lvl="2"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_FOUR"/>
+	</loadEventList>
+</event>
+<event name="AEA_GODS_BEACON_BRIGHT_2">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<revisitEvent>AEA_GODS_BEACON_BRIGHT_1</revisitEvent>
+	<loadEventList seeded="false" first="true">
+		<event name="AEA_GODS_BEACON_BRIGHT_BOSS" req="AEA_GODS_BOSS_SPAWN_LIGHT" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_EMPTY" req="AEA_GODS_BOSS_SPAWN_DARK" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_EMPTY" req="aea_gods_beacon_bright_2_consumed" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_ONE" req="aea_gods_cleanse_light" lvl="0" max_lvl="0"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_TWO" req="aea_gods_cleanse_light" lvl="1" max_lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_THREE" req="aea_gods_cleanse_light" lvl="2" max_lvl="2"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_FOUR"/>
+	</loadEventList>
+</event>
+<event name="AEA_GODS_BEACON_BRIGHT_3">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<revisitEvent>AEA_GODS_BEACON_BRIGHT_1</revisitEvent>
+	<loadEventList seeded="false" first="true">
+		<event name="AEA_GODS_BEACON_BRIGHT_BOSS" req="AEA_GODS_BOSS_SPAWN_LIGHT" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_EMPTY" req="AEA_GODS_BOSS_SPAWN_DARK" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_EMPTY" req="aea_gods_beacon_bright_3_consumed" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_ONE" req="aea_gods_cleanse_light" lvl="0" max_lvl="0"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_TWO" req="aea_gods_cleanse_light" lvl="1" max_lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_THREE" req="aea_gods_cleanse_light" lvl="2" max_lvl="2"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_FOUR"/>
+	</loadEventList>
+</event>
+<event name="AEA_GODS_BEACON_BRIGHT_4">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<revisitEvent>AEA_GODS_BEACON_BRIGHT_1</revisitEvent>
+	<loadEventList seeded="false" first="true">
+		<event name="AEA_GODS_BEACON_BRIGHT_BOSS" req="AEA_GODS_BOSS_SPAWN_LIGHT" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_EMPTY" req="AEA_GODS_BOSS_SPAWN_DARK" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_EMPTY" req="aea_gods_beacon_bright_4_consumed" lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_ONE" req="aea_gods_cleanse_light" lvl="0" max_lvl="0"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_TWO" req="aea_gods_cleanse_light" lvl="1" max_lvl="1"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_THREE" req="aea_gods_cleanse_light" lvl="2" max_lvl="2"/>
+		<event name="AEA_GODS_BEACON_BRIGHT_FOUR"/>
+	</loadEventList>
+</event>
+<event name="AEA_GODS_BRIGHT_CLEANSE">
+	<text>You're now apparently almost on top of the light source, however you're still not able to make anything out about it.</text>
+	<choice hidden="true">
+		<text>Get Closer.</text>
+		<event name="AEA_GODS_CLEAR_1">
+			<text>The light envelops your ship, blinding everyone and everything onboard. One of your crew cries in relief as they are freed from the stone, a moment later the light is gone.</text>
+			<variable name="aea_gods_light_active" op="set" val="2"/>
+			<variable name="aea_gods_cleanse_light" op="add" val="1"/>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Leave.</text>
+		<event/>
+	</choice>
+</event>
+
+<ship name="AEA_JUSTICE_BEACON_FIGHT_EASY" auto_blueprint="SHIPS_AEA_JUSTICE_EASY">
+	<destroyed>
+		<variable name="aea_gods_light_active" op="set" val="1"/>
+		<text>The ship implodes, collapsing in on itself and releasing a cloud of scrap and metal, you're able to recover a weapon from the wreckage.
+With the ship no longer blocking your way you're able to access the beacon here.</text>
+		<autoReward level="MED">standard_no_item</autoReward>
+		<weapon name="RANDOM" />
+	</destroyed>
+</ship>
+<ship name="AEA_JUSTICE_BEACON_FIGHT_HARD" auto_blueprint="SHIPS_AEA_JUSTICE_HARD">
+	<destroyed>
+		<variable name="aea_gods_light_active" op="set" val="1"/>
+		<text>The ship implodes, collapsing in on itself and releasing a cloud of scrap and metal, you're able to recover a weapon from the wreckage.
+With the ship no longer blocking your way you're able to access the beacon here.</text>
+		<autoReward level="HIGH">standard_no_item</autoReward>
+		<weapon name="RANDOM" />
+	</destroyed>
+</ship>
+<event name="AEA_GODS_BEACON_DARK_EMPTY">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<text>The beacon signal here appears to originate from no where, all around you is complete darkness.</text>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK"/>
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event/>
+	</choice>
+</event>
+<event name="AEA_GODS_BEACON_DARK_ONE">
+	<text>You discover the beacon's source is a blindingly bright dark source, your sensors can't detect anything behind the dark as they're immediately overwelmed.</text>
+	<variable name="aea_gods_light_active" op="set" val="1"/>
+</event>
+<event name="AEA_GODS_BEACON_DARK_TWO">
+	<text>You discover the beacon's source is a blindingly bright dark source, your sensors can't detect anything behind the dark as they're immediately overwelmed.</text>
+	<variable name="aea_gods_light_active" op="set" val="0"/>
+	<ship load="AEA_JUSTICE_BEACON_FIGHT_EASY" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BEACON_DARK_THREE">
+	<text>You discover the beacon's source is a blindingly bright dark source, your sensors can't detect anything behind the dark as they're immediately overwelmed.</text>
+	<variable name="aea_gods_light_active" op="set" val="0"/>
+	<ship load="AEA_JUSTICE_BEACON_FIGHT_HARD" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BEACON_DARK_FOUR">
+	<text>You discover the beacon's source is a blindingly bright dark source, your sensors can't detect anything behind the dark as they're immediately overwelmed.</text>
+	<variable name="aea_gods_light_active" op="set" val="0"/>
+	<ship load="AEA_JUSTICE_BEACON_FIGHT_HARD" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BEACON_DARK_1">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<revisitEvent>AEA_GODS_BEACON_DARK_1</revisitEvent>
+	<loadEventList seeded="false" first="true">
+		<event name="AEA_GODS_BEACON_DARK_BOSS" req="AEA_GODS_BOSS_SPAWN_DARK" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_EMPTY" req="AEA_GODS_BOSS_SPAWN_LIGHT" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_EMPTY" req="aea_gods_beacon_dark_1_consumed" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_ONE" req="aea_gods_cleanse_light" lvl="0" max_lvl="0"/>
+		<event name="AEA_GODS_BEACON_DARK_TWO" req="aea_gods_cleanse_light" lvl="1" max_lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_THREE" req="aea_gods_cleanse_light" lvl="2" max_lvl="2"/>
+		<event name="AEA_GODS_BEACON_DARK_FOUR"/>
+	</loadEventList>
+</event>
+<event name="AEA_GODS_BEACON_DARK_2">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<revisitEvent>AEA_GODS_BEACON_DARK_1</revisitEvent>
+	<loadEventList seeded="false" first="true">
+		<event name="AEA_GODS_BEACON_DARK_BOSS" req="AEA_GODS_BOSS_SPAWN_DARK" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_EMPTY" req="AEA_GODS_BOSS_SPAWN_LIGHT" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_EMPTY" req="aea_gods_beacon_dark_2_consumed" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_ONE" req="aea_gods_cleanse_light" lvl="0" max_lvl="0"/>
+		<event name="AEA_GODS_BEACON_DARK_TWO" req="aea_gods_cleanse_light" lvl="1" max_lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_THREE" req="aea_gods_cleanse_light" lvl="2" max_lvl="2"/>
+		<event name="AEA_GODS_BEACON_DARK_FOUR"/>
+	</loadEventList>
+</event>
+<event name="AEA_GODS_BEACON_DARK_3">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<revisitEvent>AEA_GODS_BEACON_DARK_1</revisitEvent>
+	<loadEventList seeded="false" first="true">
+		<event name="AEA_GODS_BEACON_DARK_BOSS" req="AEA_GODS_BOSS_SPAWN_DARK" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_EMPTY" req="AEA_GODS_BOSS_SPAWN_LIGHT" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_EMPTY" req="aea_gods_beacon_dark_3_consumed" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_ONE" req="aea_gods_cleanse_light" lvl="0" max_lvl="0"/>
+		<event name="AEA_GODS_BEACON_DARK_TWO" req="aea_gods_cleanse_light" lvl="1" max_lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_THREE" req="aea_gods_cleanse_light" lvl="2" max_lvl="2"/>
+		<event name="AEA_GODS_BEACON_DARK_FOUR"/>
+	</loadEventList>
+</event>
+<event name="AEA_GODS_BEACON_DARK_4">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<revisitEvent>AEA_GODS_BEACON_DARK_1</revisitEvent>
+	<loadEventList seeded="false" first="true">
+		<event name="AEA_GODS_BEACON_DARK_BOSS" req="AEA_GODS_BOSS_SPAWN_DARK" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_EMPTY" req="AEA_GODS_BOSS_SPAWN_LIGHT" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_EMPTY" req="aea_gods_beacon_dark_4_consumed" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_ONE" req="aea_gods_cleanse_light" lvl="0" max_lvl="0"/>
+		<event name="AEA_GODS_BEACON_DARK_TWO" req="aea_gods_cleanse_light" lvl="1" max_lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_THREE" req="aea_gods_cleanse_light" lvl="2" max_lvl="2"/>
+		<event name="AEA_GODS_BEACON_DARK_FOUR"/>
+	</loadEventList>
+</event>
+<event name="AEA_GODS_BEACON_DARK_5">
+	<variable name="aea_gods_light_active" op="set" val="2"/>
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<revisitEvent>AEA_GODS_BEACON_DARK_1</revisitEvent>
+	<loadEventList seeded="false" first="true">
+		<event name="AEA_GODS_BEACON_DARK_BOSS" req="AEA_GODS_BOSS_SPAWN_DARK" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_EMPTY" req="AEA_GODS_BOSS_SPAWN_LIGHT" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_EMPTY" req="aea_gods_beacon_dark_5_consumed" lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_ONE" req="aea_gods_cleanse_light" lvl="0" max_lvl="0"/>
+		<event name="AEA_GODS_BEACON_DARK_TWO" req="aea_gods_cleanse_light" lvl="1" max_lvl="1"/>
+		<event name="AEA_GODS_BEACON_DARK_THREE" req="aea_gods_cleanse_light" lvl="2" max_lvl="2"/>
+		<event name="AEA_GODS_BEACON_DARK_FOUR"/>
+	</loadEventList>
+</event>
+<event name="AEA_GODS_DARK_CLEANSE">
+	<text>You're now apparently almost on top of the hole, you're still not able to make anything out about it.</text>
+	<choice hidden="true">
+		<text>Get Closer.</text>
+		<event name="AEA_GODS_CLEAR_2">
+			<text>The darkness envelops your ship, blinding everyone and everything onboard. One of your crew cries in relief as they are freed from the stone, a moment later the darkness is gone.</text>
+			<variable name="aea_gods_light_active" op="set" val="2"/>
+			<variable name="aea_gods_cleanse_dark" op="add" val="1"/>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Leave.</text>
+		<event/>
+	</choice>
+</event>
+<event name="AEA_GODS_BEACON_DARK_ONE">
+	<text>You discover the beacon's source is a dark hole in space, it looks as if it is sucking the light in, your sensors go haywire trying to pick anything up in there.</text>
+	<variable name="aea_gods_light_active" op="set" val="1"/>
+</event>
+<event name="AEA_GODS_BEACON_DARK_TWO">
+	<text>You discover the beacon's source is a dark hole in space, it looks as if it is sucking the light in, your sensors go haywire trying to pick anything up in there.</text>
+	<variable name="aea_gods_light_active" op="set" val="1"/>
+</event>
+<event name="AEA_GODS_BEACON_DARK_THREE">
+	<text>You discover the beacon's source is a dark hole in space, it looks as if it is sucking the light in, your sensors go haywire trying to pick anything up in there.</text>
+	<variable name="aea_gods_light_active" op="set" val="1"/>
+</event>
+<event name="AEA_GODS_BEACON_DARK_FOUR">
+	<text>You discover the beacon's source is a dark hole in space, it looks as if it is sucking the light in, your sensors go haywire trying to pick anything up in there.</text>
+	<variable name="aea_gods_light_active" op="set" val="1"/>
+</event>
+<event name="AEA_GODS_BEACON_DARK_FIVE">
+	<text>You discover the beacon's source is a dark hole in space, it looks as if it is sucking the light in, your sensors go haywire trying to pick anything up in there.</text>
+	<variable name="aea_gods_light_active" op="set" val="1"/>
+</event>
+
+<eventList name="AEA_GODS_CULTISTS">
+	<event load="AEA_GODS_CULTIST_WRECK"/>
+	<event load="AEA_GODS_CULTIST_STATION"/>
+</eventList>
+<event name="AEA_GODS_CULTIST_WRECK">
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<text>You arrive at the beacon to discover a large wreck, at first you don't recognise who it belongs to but a moment later you're able to make out the Cultist design. You're not sure how a cultist vessel got here, but you collect what scrap there is.</text>
+	<revisitEvent>AEA_GODS_EMPTY</revisitEvent>
+	<autoReward level="MED">standard</autoReward>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK"/>
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event/>
+	</choice>
+</event>
+<event name="AEA_GODS_CULTIST_STATION">
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<ship load="SHIP_AEA_CULT_STATION" hostile="false"/>
+	<text>A large station occupies this "beacon." You recognise the cultist design but don't recieve any responces to any of your hails. Upon closer inspection you discover the station is entirely empty, towards the center of the station there's a large symbol drawn on the ground surrounded by runes but whoever drew this is long gone by now.</text>
+	<revisitEvent>AEA_GODS_EMPTY</revisitEvent>
+	<autoReward level="HIGH">standard</autoReward>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK"/>
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event/>
+	</choice>
+</event>
+
+<event name="AEA_GODS_BLOOD">
+</event>
+
+<event name="AEA_GODS_MEDUSA_UNLOCK">
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<ship load="SHIPS_AEA_GODS_HARD" hostile="false"/>
+	<revisitEvent>AEA_GODS_EMPTY</revisitEvent>
+	<text>A partially wrecked statue ship sits at the beacon here, floating nearby. Scans indicate that it's reactor detonated, rendering the ship defenseless.</text>
+	<choice hidden="true">
+		<text>Board and investigate.</text>
+		<event>
+			<text>You board the ship and find it empty of life, there's a large hole where the reactor should be, but the rest of the ship appears unharmed.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>You've come to a strange room on the enemy ship, the walls appear to be covered in live moving snakes, theres a console attached to one wall which you're able to power on with an external power source. The system is very foreign and alien, but you're able to download what appears to be the blueprints for the room you're in.</text>
+	                <metaVariable name="aea_gods_freeze_unlock" op="set" val="1" />
+                    <achievement>ACH_AEA_FREEZE_UNLOCK</achievement>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>You've cleared the ship and are on the way back to your own when one of your crew yells in surprise as they see the massive stone figure appear infront of them. You don't have time to fight and order a quick retreat back to your own ship. Unfortunately you find a pair of the statues waiting onboard.</text>
+							<boarders min="2" max="2" class="aea_statue_hostile_perma" />
+						</event>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore it</text>
+		<event>
+			<text>The void remains impressively dark, you have time to do something on your ship.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_GODS_RUINS_LOAD">
+	<loadEvent>AEA_GODS_RUINS</loadEvent>
+</event>
+
+<event name="AEA_GODS_RUINS">
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<revisitEvent>AEA_GODS_RUINS</revisitEvent>
+	<text>You've arrived at a vast network of ruins, towards the center lies a massive chamber and in the middle a large raised plinth. A massive stone statue sits at the center of the plinth, as you approach it speaks directly into your head. 
+"WHAT DO YOU BRING?" 
+A series of images flash into your head.
+First is the blood of one of your crew, spilt across the plinth in front of the statue, you notice that although weakened your crewmember is still alive. 
+The next shows a weapon smashed down onto the plinth.
+The third and final is a pile of scrap, slowly disintegrating into the plinth.</text>
+	<choice hidden="true">
+		<text>Spill the blood of one of your crew.</text>
+		<event name="AEA_GODS_RUINS_CREW">
+			<text>Who will you spill the blood of and weaken for 3 jumps?</text>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Destroy one of your weapons.</text>
+		<event name="AEA_GODS_RUINS_WEAPON">
+			<text>Which weapon do you want to destroy?</text>
+		</event>
+	</choice>
+	<choice hidden="false">
+		<text>Sacrifice some of your scrap.</text>
+		<event load="AEA_GODS_RUINS_STORE_SCRAP"/>
+	</choice>
+	<choice>
+		<text>Ignore it.</text>
+		<event>
+			<text>You have time to kill.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
+<event name="AEA_GODS_RUINS_STORE_CREW">
+	<text>"WHAT DO YOU DESIRE?" again, a stream of images is shown to you, each detailing an item you can gain.</text>
+	<store>STORE_AEA_GODS_RUIN_CREW</store>
+</event>
+<event name="AEA_GODS_RUINS_STORE_WEAPON">
+	<text>"WHAT DO YOU DESIRE?" again, a stream of images is shown to you, each detailing an item you can gain.</text>
+	<store>STORE_AEA_GODS_RUIN_WEAPON</store>
+</event>
+<event name="AEA_GODS_RUINS_STORE_SCRAP">
+	<text>"WHAT DO YOU DESIRE?" again, a stream of images is shown to you, each detailing an item you can gain.</text>
+	<item_modify>
+		<item type="scrap" min="-10" max="-10"/>
+	</item_modify>
+	<store>STORE_AEA_GODS_RUIN_SCRAP</store>
+</event>
+
+<eventList name="AEA_GODS_ITEMS">
+	<event load="AEA_GODS_EMPTY" />
+</eventList>
+<eventList name="AEA_GODS_HOSTILE">
+	<event load="AEA_GODS_EMPTY" />
+</eventList>
+
+</FTL>

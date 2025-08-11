@@ -38,6 +38,7 @@
 		<unvisitedTooltip>This is the location of a large structure.</unvisitedTooltip>
 		<visitedTooltip>This is the location of a large structure.</visitedTooltip>
 	</beaconType>
+	<revisitEvent>AEA_OLD_GATE</revisitEvent>
 	<text>A massive ring sits in orbit nearby the beacon, an imposing structure with no apparent use. Apparently having been put here long ago, the use of the ring remains a mystery to this day.</text>
 	<choice hidden="true" req="BLUELIST_PRECURSOR_TECH" blue="false">
 		<text>Continue...</text>

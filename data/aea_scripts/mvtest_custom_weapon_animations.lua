@@ -100,7 +100,7 @@ script.on_render_event(Defines.RenderEvents.SHIP_HULL, function(ship)
 							Graphics.CSurface.GL_PushMatrix()
 		      				Graphics.CSurface.GL_Translate(weapon.weaponVisual.renderPoint.x + shipCorner.x + slideOffset.x, weapon.weaponVisual.renderPoint.y + shipCorner.y + slideOffset.y)
 							if weapon.mount.rotate then
-								Graphics.CSurface.GL_Rotate(90, 0, 0)
+								Graphics.CSurface.GL_Rotate(90, 0, 0, 1)
 							end
 							tab[name]:OnRender(1, Graphics.GL_Color(1, 1, 1, 1), weapon.mount.mirror)
 							Graphics.CSurface.GL_PopMatrix()

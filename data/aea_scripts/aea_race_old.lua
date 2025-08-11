@@ -208,6 +208,10 @@ armouredShips["PLAYER_SHIP_AEA_OLD_UNIA_3"] = {r17 = true, r18 = true}
 
 armouredShips["PLAYER_SHIP_AEA_OLD_UNIB_2"] = {r21 = true}
 
+armouredShips["PLAYER_SHIP_AEA_OLD_FLAGSHIP"] = {r5 = true, r6 = true, r7 = true, r8 = true}
+armouredShips["PLAYER_SHIP_AEA_OLD_FLAGSHIP"] = {r5 = true, r6 = true, r7 = true}
+armouredShips["PLAYER_SHIP_AEA_OLD_FLAGSHIP"] = {r5 = true, r6 = true}
+
 --[[armouredShips["AEA_OLD_GUARD_BOSS"] = {r2 = true, r3 = true, r28 = true, r30 = true}
 armouredShips["AEA_OLD_FINAL_BOSS_ONE_CASUAL"] = {r2 = true, r3 = true}
 armouredShips["AEA_OLD_FINAL_BOSS_ONE_NORMAL"] = {r2 = true, r3 = true}
@@ -438,6 +442,20 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 		end
 	end
 end)
+
+-- https://gist.github.com/jaredallard/ddb152179831dd23b230
+function string:split(delimiter)
+  local result = { }
+  local from  = 1
+  local delim_from, delim_to = string.find( self, delimiter, from  )
+  while delim_from do
+    table.insert( result, string.sub( self, from , delim_from-1 ) )
+    from  = delim_to + 1
+    delim_from, delim_to = string.find( self, delimiter, from  )
+  end
+  table.insert( result, string.sub( self, from  ) )
+  return result
+end
 
 local hackingBombBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("AEA_OLD_HACK_BOMB")
 local fireBombBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("BOMB_FIRE")
@@ -684,14 +702,14 @@ burstBeams["ARTILLERY_AEA_FOCUS_OLD"] = 3
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
 	local burstData = burstBeams[projectile and projectile.extend and projectile.extend.name]
 	if burstData and not userdata_table(projectile, "mods.aea.burstBeam").wasDuplicated then
-		print("start loop")
+		--print("start loop")
 		local projectileNew = createBeam(projectile, weapon)
 		if projectileNew then
             userdata_table(projectileNew, "mods.aea.burstBeam").wasDuplicated = 2
             weapon.queuedProjectiles:push_back(projectileNew)
         end
 	elseif burstData and userdata_table(projectile, "mods.aea.burstBeam").wasDuplicated < burstData then
-		print("loop "..tostring(userdata_table(projectile, "mods.aea.burstBeam").wasDuplicated))
+		--print("loop "..tostring(userdata_table(projectile, "mods.aea.burstBeam").wasDuplicated))
 		local projectileNew = createBeam(projectile, weapon)
 		if projectileNew then
             userdata_table(projectileNew, "mods.aea.burstBeam").wasDuplicated = userdata_table(projectile, "mods.aea.burstBeam").wasDuplicated + 1
@@ -699,6 +717,25 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
         end
 	end
 end)
+
+local function update_burstBeam_text(blueprint, desc)
+	if burstBeams[blueprint.name] then
+		local descTable = desc:split("\n")
+		local line = "Shots Per Charge: "..tostring(burstBeams[blueprint.name])
+		desc = ""
+		for s in ipairs(descTable) do
+			desc = desc..s.."\n"
+			if string.sub(s, 1, 11) == "Beam Speed:" then
+				desc = desc..line.."\n"
+			end
+		end
+	end
+	return desc
+end
+
+script.on_internal_event(Defines.InternalEvents.WEAPON_DESCBOX, update_burstBeam_text)
+
+script.on_internal_event(Defines.InternalEvents.WEAPON_STATBOX, update_burstBeam_text)
 
 mods.aea.popPinpoints = {}
 local popPinpoints = mods.aea.popPinpoints
@@ -920,6 +957,10 @@ fuelPowerCost["AEA_MISSILE_OLD_3"] = 1
 local function depowerWeapon(weapon, shipManager, powerManager)
 	local shouldSetPower = true
 	local weaponSystem = shipManager.weaponSystem
+	if not powerManager then
+		print("NO POWER MANAGER")
+		return
+	end
 	for i = 1, weapon.requiredPower - weapon.iBonusPower do
 		local required = weaponSystem.iRequiredPowewr
 		--TODO: Lua needs to add an INOUT typemap for pass-by-pointer vars
@@ -957,7 +998,7 @@ end
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
 	local shipManager = Hyperspace.ships(ship.iShipId)
 	local powerManager = Hyperspace.PowerManager.GetPowerManager(ship.iShipId)
-	if shipManager and shipManager:HasSystem(3) and shipManager.iShipId == 0 then
+	if shipManager and powerManager and shipManager:HasSystem(3) and shipManager.iShipId == 0 then
 		for weapon in vter(shipManager.weaponSystem.weapons) do
 			if fuelPowerCost[weapon.blueprint.name] and weapon.powered and not userdata_table(weapon, "mods.aea.fuelPowerCost").fueled then
 				if shipManager.fuel_count - fuelPowerCost[weapon.blueprint.name] < 0 then
@@ -967,8 +1008,6 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
 					shipManager.fuel_count = shipManager.fuel_count - fuelPowerCost[weapon.blueprint.name]
 					userdata_table(weapon, "mods.aea.fuelPowerCost").fueled = true
 				end
-			elseif fuelPowerCost[weapon.blueprint.name] and userdata_table(weapon, "mods.aea.fuelPowerCost").fueled and not weapon.powered then
-				userdata_table(weapon, "mods.aea.fuelPowerCost").fueled = nil
 			end
 		end
 	end
@@ -991,6 +1030,16 @@ script.on_internal_event(Defines.InternalEvents.WEAPON_RENDERBOX, function(weapo
 	end
 
 	return Defines.Chain.HALT, firstLine, secondLine, thirdLine
+end)
+
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
+	if shipManager and shipManager:HasSystem(3) and shipManager.iShipId == 0 then
+		for weapon in vter(shipManager.weaponSystem.weapons) do
+			if userdata_table(weapon, "mods.aea.fuelPowerCost").fueled then
+				userdata_table(weapon, "mods.aea.fuelPowerCost").fueled = nil
+			end
+		end
+	end
 end)
 
 mods.aea.fuelAmmoCost = {}
@@ -1148,7 +1197,7 @@ script.on_render_event(Defines.RenderEvents.SHIP_FLOOR, function() end, function
             if crew.iShipId == ship.iShipId and not crew:IsDrone() and lylmik_crew[crew.type] then
                 if (crew.bOutOfGame or crew.crewAnim.status == 3) and not crew.clone_ready then
                     local userTable = userdata_table(crew, "mods.aea.lylmik_revive")
-                    if userTable.revive_loc then
+                    if userTable.revive_loc and not userTable.once_this_beacon then
                     	Graphics.CSurface.GL_PushMatrix()
 						Graphics.CSurface.GL_Translate(userTable.revive_loc.x,userTable.revive_loc.y,0)
 						Graphics.CSurface.GL_RenderPrimitiveWithAlpha(offline, 0.5)
@@ -1163,8 +1212,14 @@ end)
 local function revive(shipManager)
     if shipManager.iShipId == 0 then
         for crew in vter(Hyperspace.CrewFactory.crewMembers) do
-            if crew.iShipId == shipManager.iShipId and not crew:IsDrone() and lylmik_crew[crew.type] then
+            if crew.iShipId == shipManager.iShipId and not crew:IsDrone() and lylmik_crew[crew.type] and not userdata_table(crew, "mods.aea.lylmik_revive").dismissed then
+                
+
                 if (crew.bOutOfGame or crew.crewAnim.status == 3) and not crew.clone_ready then
+                	if userdata_table(crew, "mods.aea.lylmik_revive").once_this_beacon then
+                		userdata_table(crew, "mods.aea.lylmik_revive").dismissed = true
+                		return
+                	end
                     if crew.bOutOfGame then
                         crew:SetCurrentShip(shipManager.iShipId)
                         crew.ship = shipManager.ship
@@ -1182,6 +1237,7 @@ local function revive(shipManager)
                     		crew:SetRoom(roomSpawn)
                     	end
                     end
+                    userdata_table(crew, "mods.aea.lylmik_revive").once_this_beacon = true
                 end
             end
         end
@@ -1195,3 +1251,36 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 end)
 script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, revive)
 script.on_internal_event(Defines.InternalEvents.ON_WAIT, revive)
+
+local function revive_reset(shipManager)
+	if shipManager.iShipId == 0 then
+		for crewmem in vter(shipManager.vCrewList) do
+			if userdata_table(crewmem, "mods.aea.lylmik_revive").once_this_beacon then
+				userdata_table(crewmem, "mods.aea.lylmik_revive").once_this_beacon = false
+			end
+		end
+	end
+end
+script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, revive_reset)
+script.on_internal_event(Defines.InternalEvents.ON_WAIT, revive_reset)
+
+local gate_image = Hyperspace.Resources:CreateImagePrimitiveString("map/map_icon_aea_old_gate.png", -32, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
+gate_image.textureAntialias = true
+
+local gateEvents = {}
+gateEvents["AEA_OLD_VICTORY"] = true
+gateEvents["AEA_OLD_GATE"] = true
+
+script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, function()
+	local map = Hyperspace.App.world.starMap
+	if map.bOpen and not map.bChoosingNewSector then
+		for beacon in vter(map.locations) do
+			if gateEvents[beacon.event.eventName] then
+				Graphics.CSurface.GL_PushMatrix()
+				Graphics.CSurface.GL_Translate(beacon.loc.x + 385 + 9, beacon.loc.y + 123 + 9, 0)
+				Graphics.CSurface.GL_RenderPrimitive(gate_image)
+				Graphics.CSurface.GL_PopMatrix()
+			end
+		end
+	end
+end)

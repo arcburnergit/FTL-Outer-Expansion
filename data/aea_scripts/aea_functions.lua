@@ -175,6 +175,40 @@ for _, file in ipairs(mods.multiverse.blueprintFiles) do
 	end
 	doc:clear()
 end
+
+local crewShipsAch = {
+	{ship = "PLAYER_SHIP_AEA_CREW1", slot = 1, ach = {"ACH_AEA_CREW_BILL"}},
+	{ship = "PLAYER_SHIP_AEA_CREW2", slot = 1, ach = {"ACH_AEA_CREW_KING"}},
+	{ship = "PLAYER_SHIP_AEA_CREW3", slot = 1, ach = {"ACH_AEA_CREW_TINY"}},
+	{ship = "PLAYER_SHIP_AEA_CREW4", slot = 1, ach = {"ACH_AEA_CREW_JAY"}},
+	{ship = "PLAYER_SHIP_AEA_CREW5", slot = 1, ach = {"ACH_AEA_CREW_SICKLE", "ACH_AEA_CREW_SORROW"}},
+	{ship = "PLAYER_SHIP_AEA_CREW6", slot = 1, ach = {"ACH_AEA_CREW_ONYX"}},
+	{ship = "PLAYER_SHIP_AEA_JUSTICE", slot = 1, ach = {"ACH_AEA_CREW_JUSTICIER"}},
+	{ship = "PLAYER_SHIP_AEA_OLD_UNIA", slot = 1, ach = {"ACH_AEA_CREW_OLD_1"}},
+	{ship = "PLAYER_SHIP_AEA_OLD_UNIA", slot = 2, ach = {"ACH_AEA_CREW_OLD_2"}},
+	{ship = "PLAYER_SHIP_AEA_OLD_UNIA", slot = 3, ach = {"ACH_AEA_CREW_OLD_3"}},
+	{ship = "PLAYER_SHIP_AEA_OLD_UNIB", slot = 1, ach = {"ACH_AEA_CREW_OLD_4"}},
+	{ship = "PLAYER_SHIP_AEA_OLD_UNIB", slot = 2, ach = {"ACH_AEA_CREW_OLD_5"}}
+} 
+local function check_crew_achs()
+	for _, tab in ipairs(crewShipsAch) do
+		if Hyperspace.CustomShipUnlocks.instance:GetCustomShipUnlocked(tab.ship, tab.slot) then
+			for _, ach in ipairs(tab.ach) do
+				Hyperspace.CustomAchievementTracker.instance:SetAchievement(ach, false)
+			end
+		end
+	end
+end
+script.on_init(check_crew_achs)
+
+local shipBuilderCheck = true
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+	if shipBuilderCheck and Hyperspace.App.menu.shipBuilder.bOpen then
+		shipBuilderCheck = false
+		check_crew_achs()
+	end
+end)
+
 --[[print("FTLman used for patching:"..tostring(usedFTLman))
 script.on_init(function() 
 	if not usedFTLman and Hyperspace.metaVariables.aea_warning_message == 2 then
@@ -556,3 +590,15 @@ script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(e
     end
   end
 end)]]
+
+local inCombatReq = {}
+for crew in vter(Hyperspace.Blueprints:GetBlueprintList("LIST_CREW_AEA_CULT")) do
+    inCombatReq[crew] = true
+end
+
+script.on_internal_event(Defines.InternalEvents.POWER_READY, function(power, powerState)
+	if inCombatReq[power.crew.type] and power.crew.iShipId == 1 and Hyperspace.ships.enemy and Hyperspace.ships.enemy._targetable.hostile then
+		return Defines.Chain.CONTINUE, Hyperspace.PowerReadyState.POWER_NOT_READY_OUT_OF_COMBAT
+	end
+	return Defines.Chain.CONTINUE, powerState
+end)

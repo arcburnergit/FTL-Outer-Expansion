@@ -16,6 +16,8 @@
 				<event>
 					<text>The changes are made.</text>
 					<system name="aea_clone_crime" />
+	                <metaVariable name="aea_clone_crime_unlock" op="set" val="1" />
+                    <achievement>ACH_AEA_CLONE_CRIME_UNLOCK</achievement>
 				</event>
 			</choice>
 		</event>
@@ -57,23 +59,23 @@
         <text>Stare into the [style[color:FF0000]]Book[[/style]].</text>
         <event load="AEA_JUSTICIER_BOOK_STARE" />
     </choice>
-    <choice req="aea_justicier_statue_sacs" lvl="1" max_lvl="4" blue="false" hidden="true">
+    <choice req="aea_justicier_statue_sacs" lvl="1" max_lvl="3" blue="false" hidden="true">
         <text>Something is off about the book, different, changed, you can't tell what.</text>
         <event load="OPTION_INVALID" />
     </choice>
-    <choice req="aea_justicier_statue_sacs" lvl="5" max_lvl="9" blue="false" hidden="true">
+    <choice req="aea_justicier_statue_sacs" lvl="4" max_lvl="7" blue="false" hidden="true">
         <text>A new completely blank page has appeared in the book.</text>
         <event load="OPTION_INVALID" />
     </choice>
-    <choice req="aea_justicier_statue_sacs" lvl="10" max_lvl="14" blue="false" hidden="true">
+    <choice req="aea_justicier_statue_sacs" lvl="8" max_lvl="11" blue="false" hidden="true">
         <text>You can make out some minor details on the new page.</text>
         <event load="OPTION_INVALID" />
     </choice>
-    <choice req="aea_justicier_statue_sacs" lvl="15" max_lvl="19" blue="false" hidden="true">
+    <choice req="aea_justicier_statue_sacs" lvl="12" max_lvl="15" blue="false" hidden="true">
         <text>The page is much more visible but you still can't make any of the symbols out.</text>
         <event load="OPTION_INVALID" />
     </choice>
-    <choice req="aea_justicier_statue_sacs" lvl="20" blue="false">
+    <choice req="aea_justicier_statue_sacs" lvl="16" blue="false">
         <text>Read the page on a [style[color:FFC800]]strange[[/style]] Ritual.</text>
         <event load="AEA_JUSTICIER_BOOK_STATUE_RITUAL" />
     </choice>
@@ -163,7 +165,7 @@ Crew sacrificed by a ritual can be cloned but will be weakened for 3 jumps.
     <text>Test</text>
     <choice hidden="true">
         <text>Go Back.</text>
-        <event load="AEA_JUSTICIER_BOOK_ATTACK_LOAD" />
+        <event load="AEA_JUSTICIER_BOOK_LOAD" />
     </choice>
 </event>
 
@@ -181,8 +183,17 @@ Crew sacrificed by a ritual can be cloned but will be weakened for 3 jumps.
     <boarders min="2" max="2" class="aea_statue_hostile_inactive" />
 </event>
 
+<event name="AEA_RITUAL_REALM_TELEPORT_SPEAK">
+    <text>YOU SHOULD NOT BE SEEING THIS, IF YOU ARE CHECK TO MAKE SURE YOUR HYPERSPACE IS UP TO DATE.</text>
+    <choice hidden="true">
+        <text>Continue...</text>
+        <event/>
+    </choice>
+</event>
+
 <event name="AEA_RITUAL_REALM_TELEPORT">
-    <text>TEST</text>
+    <secretSectorWarp>SECRET_AEA_OLD_1</secretSectorWarp>
+    <secretSector />
 </event>
 
 <event name="AEA_EVENT_EXIT"/>

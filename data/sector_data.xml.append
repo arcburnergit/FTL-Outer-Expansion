@@ -921,7 +921,7 @@ SHLEG SECTOR
 	<removeFirstBeaconNebula />
 	<nebulaSector>true</nebulaSector>
 	<exitBeacon event="FINISH_BEACON_AEA_SHLEG" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_AUTO" />
-	<rebelBeacon event="FLEET_AUTO" nebulaEvent="FLEET_AUTO_NEBULA" />
+	<rebelBeacon event="FLEET_AUTO" nebulaEvent="NEBULA_LIGHT_FLEET_AUTO" />
 	<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1" />
 	<event name="NEBULA_SYLVAN_CHANCE" min="0" max="1" />
 	
@@ -987,7 +987,7 @@ SHLEG SECTOR
 	<removeFirstBeaconNebula />
 	<nebulaSector>true</nebulaSector>
 	<exitBeacon event="FINISH_BEACON_AEA_SHLEG" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_AUTO" />
-	<rebelBeacon event="FLEET_AUTO" nebulaEvent="FLEET_AUTO_NEBULA" />
+	<rebelBeacon event="FLEET_AUTO" nebulaEvent="NEBULA_LIGHT_FLEET_AUTO" />
 	<!--<priorityEvent name="ANOMALY_SPAWNER" min="1" max="1" priority="1" req="ANOMALY_SPAWN_CHECK" lvl="1"/>-->
 	<event name="NEBULA_SYLVAN_CHANCE" min="0" max="1" />
 	
@@ -1716,14 +1716,281 @@ ROYAL OBELISK SECTOR
 		<track>aea_lylmik_boss</track>
 	</trackList>
 	<rarityList>
+		<!--findable-->
+		<blueprint name="aea_old_1" rarity="1" />
+		
+		<blueprint name="AEA_LASER_OLD_1" rarity="2" />
+		<blueprint name="AEA_LASER_OLD_2" rarity="1" />
+		<blueprint name="AEA_LASER_OLD_3" rarity="1" />
+		<blueprint name="AEA_LASER_OLDP_1" rarity="2" />
+		<blueprint name="AEA_LASER_OLDP_2" rarity="1" />
+		<blueprint name="AEA_LASER_OLDP_3" rarity="1" />
+		<blueprint name="AEA_FOCUS_OLD_1" rarity="2" />
+		<blueprint name="AEA_FOCUS_OLD_2" rarity="1" />
+		<blueprint name="AEA_FOCUS_OLD_3" rarity="1" />
+		<blueprint name="AEA_MISSILE_OLD_1" rarity="2" />
+		<blueprint name="AEA_MISSILE_OLD_2" rarity="2" />
+		<blueprint name="AEA_MISSILE_OLD_3" rarity="2" />
+
+    	<blueprint name="AEA_LASER_ACID_BOSS" rarity="2" />
+    	<blueprint name="AEA_CRYSTAL_SHARD_BOSS" rarity="3" />
+    	<blueprint name="AEA_BEAM_SHLEG_BOSS" rarity="2" />
+
+    	<blueprint name="AEA_COMBAT_NECRO_BOSS" rarity="3" />
+    	<blueprint name="AEA_COMBAT_BIRD_BOSS" rarity="2" />
+
+    	<blueprint name="AEA_BARRIER_RELAY" rarity="3" />
+
+		
+		<!--
+		\\\\\\\\\\\
+		   CREW
+		\\\\\\\\\\\
+		-->
+		<blueprint name="human" rarity="1" />
+		<blueprint name="engi" rarity="1" />
+		<blueprint name="zoltan" rarity="1" />
+		<blueprint name="rock" rarity="1" />
+		<blueprint name="mantis" rarity="1" />
+		<blueprint name="mantis_free" rarity="1" />
+		<blueprint name="shell" rarity="1" />
+		<blueprint name="slug" rarity="1" />
+		<blueprint name="orchid" rarity="1" />
+		<blueprint name="orchid_vampweed" rarity="1" />
+		<blueprint name="crystal" rarity="1" />
+		<blueprint name="lanius" rarity="1" />
+		<blueprint name="phantom" rarity="1" />
+		<blueprint name="leech" rarity="2" />
+		<blueprint name="siren" rarity="2" />
+		<blueprint name="pony" rarity="2" />
+		<blueprint name="spider" rarity="2" />
+		<blueprint name="spider_weaver" rarity="2" />
+		<blueprint name="leech" rarity="1" />
+		
+		<blueprint name="human_medic" rarity="2" />
+		<blueprint name="human_engineer" rarity="2" />
+		<blueprint name="engi_separatist" rarity="2" />
+		<blueprint name="zoltan_devotee" rarity="2" />
+		<blueprint name="zoltan_monk" rarity="2" />
+		<blueprint name="orchid_caretaker" rarity="2" />
+		<blueprint name="rock_outcast" rarity="2" />
+		<blueprint name="rock_commando" rarity="2" />
+		<blueprint name="rock_cultist" rarity="2" />
+		<blueprint name="crystal_liberator" rarity="2" />
+		<blueprint name="shell_mechanic" rarity="2" />
+		<blueprint name="shell_scientist" rarity="2" />
+		<blueprint name="shell_guardian" rarity="2" />
+		<blueprint name="blob" rarity="2" />
+		<blueprint name="techno" rarity="2" />
+		<blueprint name="slug_clansman" rarity="2" />
+		<blueprint name="phantom_goul" rarity="2" />
+		<blueprint name="phantom_wraith" rarity="2" />
+		<blueprint name="phantom_mare" rarity="2" />
+		
+		<blueprint name="human_soldier" rarity="3" />
+		<blueprint name="human_technician" rarity="3" />
+		<blueprint name="engi_defender" rarity="3" />
+		<blueprint name="zoltan_peacekeeper" rarity="3" />
+		<blueprint name="zoltan_martyr" rarity="3" />
+		<blueprint name="orchid_praetor" rarity="3" />
+		<blueprint name="orchid_cultivator" rarity="3" />
+		<blueprint name="mantis_warlord" rarity="3" />
+		<blueprint name="mantis_suzerain" rarity="3" />
+		<blueprint name="rock_crusader" rarity="3" />
+		<blueprint name="crystal_sentinel" rarity="3" />
+		<blueprint name="slug_saboteur" rarity="3" />
+		<blueprint name="slug_ranger" rarity="3" />
+		<blueprint name="shell_radiant" rarity="3" />
+		<blueprint name="lanius_welder" rarity="3" />
+		<blueprint name="phantom_alpha" rarity="3" />
+		<blueprint name="phantom_goul_alpha" rarity="3" />
+		<blueprint name="phantom_mare_alpha" rarity="3" />
+		<blueprint name="phantom_wraith_alpha" rarity="3" />
+		
+		<blueprint name="human_mfk" rarity="5" />
+		<blueprint name="human_angel" rarity="5" />
+		<blueprint name="mantis_bishop" rarity="5" />
+		<blueprint name="rock_paladin" rarity="5" />
+		<blueprint name="slug_knight" rarity="5" />
+		
+		<blueprint name="lanius_augmented" rarity="4" />
+		<blueprint name="cognitive" rarity="4" />
+		<blueprint name="cognitive_advanced" rarity="4" />
+		<!--
+		\\\\\\\\\\\
+		 AUGMENTS
+		\\\\\\\\\\\
+		-->
+		<blueprint name="UNION_JACKETS" rarity="3" />
+		<blueprint name="SLUG_GEL" rarity="3" />
+		<blueprint name="CREW_STIMS" rarity="3" />
+		<blueprint name="SUPER_CREW_STIMS" rarity="4" />
+		<blueprint name="SUZERAIN_CREW_STIMS" rarity="5" />
+		<blueprint name="ENERGY_SHIELD" rarity="5" />
+		<blueprint name="ROCK_ARMOR" rarity="3" />
+		<blueprint name="PALADIN_ARMOR" rarity="5" />
+		<blueprint name="SYSTEM_CASING_NEW" rarity="4" />
+		<blueprint name="NANOBOT_DEFENSE_SYSTEM" rarity="4" />
+		<blueprint name="CRYSTAL_ARMOR" rarity="4" />
+		<blueprint name="TOXIC_GAS" rarity="4" />
+		
+		<blueprint name="SCRAP_COLLECTOR" rarity="4" />
+		<blueprint name="MAGNET_ARM" rarity="4" />
+		<blueprint name="DRONE_RECOVERY" rarity="4" />
+		<blueprint name="REPAIR_ARM" rarity="4" />
+		<blueprint name="EX_AUTO_COOLDOWN" rarity="4" />
+		<blueprint name="EX_SHIELD_RECHARGE" rarity="4" />
+		<blueprint name="EX_CLOAK_FIRE" rarity="4" />
+		<blueprint name="EX_TELEPORT_HEAL" rarity="4" />
+		<blueprint name="EX_DRONE_SPEED" rarity="4" />
+		
+		<blueprint name="GHOST_DUPLICATOR" rarity="5" />
+		<blueprint name="GAMBLING_MACHINE" rarity="5" />
+		<blueprint name="CURA_SURGES_DRONES" rarity="5" />
+		
+		<blueprint name="ANCIENT_REPLICATOR" rarity="5" />
+		<blueprint name="ANCIENT_COMBAT_ASB" rarity="5" />
+		
+		<blueprint name="ADV_SCANNERS" rarity="0" />
+		<blueprint name="FUEL_CONSERVER" rarity="0" />
+		<blueprint name="PRE_SCANNER" rarity="0" />
+		<blueprint name="DISTRACTION_BUOY" rarity="0" />
+		<blueprint name="RECYCLER" rarity="0" />
+		<blueprint name="CREW_OXYGEN" rarity="0" />
+		
+		<!--
+		\\\\\\\\\\\
+		 WEAPONS
+		\\\\\\\\\\\
+		-->
+		<blueprint name="FROST_CHARGEGUN" rarity="3" />
+		<blueprint name="SNIPER" rarity="5" />
+		<blueprint name="LASER_LIGHT_CHARGEGUN" rarity="3" />
+		<blueprint name="CRYSTAL_BURST_FIRE" rarity="5" />
+
+		<blueprint name="ION_CHAIN_CHARGEGUN" rarity="4" />
+
+		<blueprint name="BEAM_BATTERY" rarity="4" />
+		<blueprint name="BEAM_ADAPT_3" rarity="5" />
+		<blueprint name="BIG_ION" rarity="5" />
+		<blueprint name="GASTER_BLASTER" rarity="5" />
+
+		<blueprint name="MISSILES_OBSIDIAN" rarity="5" />
+		<blueprint name="UNSPOOLER" rarity="5" />
+		<blueprint name="MINELAUNCHER_GIANT" rarity="5" />
+		<blueprint name="STRAWBERRY" rarity="5" />
+		<blueprint name="BOMB_CONSERVRECYCLER" rarity="3" />
+		<blueprint name="BOMB_DRAIN" rarity="4" />
+		<blueprint name="BOMB_ELITE" rarity="4" />
+		
+		<blueprint name="SHOTGUN_STEEL" rarity="4" />
+		<blueprint name="SLOTGUN" rarity="5" />
+		<blueprint name="SHOTGUN_TOGGLE_FIRE" rarity="4" />
+		<blueprint name="SHELL_LAUNCHER" rarity="4" />
+
+    	<blueprint name="AEA_LASER_ACID_BOSS" rarity="2" />
+    	<blueprint name="AEA_CRYSTAL_SHARD_BOSS" rarity="3" />
+    	<blueprint name="AEA_BEAM_SHLEG_BOSS" rarity="2" />
+
+    	<blueprint name="AEA_COMBAT_NECRO_BOSS" rarity="3" />
+    	<blueprint name="AEA_COMBAT_BIRD_BOSS" rarity="2" />
+
+    	<blueprint name="AEA_BARRIER_RELAY" rarity="3" />
+
+		<!--no elite crystals/kernels/spores to avoid clutter-->
+		<blueprint name="LOOT_UNION_1" rarity="4" />
+		<blueprint name="LOOT_MILITIA_1" rarity="4" />
+		<blueprint name="LOOT_FEDERATION_1" rarity="4" />
+		<blueprint name="LOOT_COALITION_1" rarity="4" />
+		<blueprint name="LOOT_DUSKBRINGER_1" rarity="4" />
+		<blueprint name="LOOT_FREEMANTIS_1" rarity="4" />
+		<blueprint name="LOOT_LOSTSUN_1" rarity="4" />
+		<blueprint name="LOOT_LOSTSUN_2" rarity="4" />
+		<blueprint name="LOOT_MANTIS_1" rarity="4" />
+		<blueprint name="LOOT_MANTIS_2" rarity="4" />
+		<blueprint name="LOOT_REBEL_1" rarity="4" />
+		<blueprint name="LOOT_ROCK_1" rarity="4" />
+		<blueprint name="LOOT_ZOLTAN_1" rarity="4" />
+		<blueprint name="LOOT_ZOLTAN_2" rarity="4" />
+		<blueprint name="LOOT_SLUG_1" rarity="4" />
+		<blueprint name="LOOT_CLAN_1" rarity="4" />
+		<blueprint name="LOOT_KNIGHT_1" rarity="4" />
+		<blueprint name="LOOT_SHELL_1" rarity="4" />
+		<blueprint name="LOOT_LANIUS_1" rarity="4" />
+		<blueprint name="LOOT_LEECH_1" rarity="4" />
+		<blueprint name="LOOT_CULTIST_1" rarity="4" />
+		<blueprint name="LOOT_DYNASTY_1" rarity="4" />
+		<blueprint name="LOOT_MATH_1" rarity="5" />
+		<blueprint name="LOOT_MATH_2" rarity="5" />
+		<blueprint name="LOOT_MATH_3" rarity="5" />
+		<blueprint name="LOOT_MATH_4" rarity="5" />
+		<blueprint name="LOOT_MATH_5" rarity="5" />
+		<blueprint name="LOOT_MATH_6" rarity="5" />
+		<blueprint name="LOOT_MATH_7" rarity="5" />
+		
+		<blueprint name="CLONE_CANNON" rarity="5" />
+		
+		<!--
+		\\\\\\\\\\\
+		 DRONES
+		\\\\\\\\\\\
+		-->
+		<blueprint name="DEFENSE_TRINITY_PROJECTILE" rarity="4" />
+		<blueprint name="YINYANG_BOARDER" rarity="4" />
+		<blueprint name="SURGEON_BATTLE" rarity="3" />
+		<blueprint name="SALT_MINER" rarity="4" />
+		<blueprint name="HOLODRONE_BATTLE" rarity="5" />
+		
+		<blueprint name="LOOT_AUTO_1_LASER" rarity="4" />
+		<blueprint name="LOOT_ENGI_1" rarity="4" />
+		<blueprint name="LOOT_ENGI_2" rarity="4" />
+		<blueprint name="LOOT_SEPARATIST_1_DEFEND" rarity="4" />
+		<blueprint name="LOOT_ESTATE_1_COMBAT" rarity="4" />
+		<blueprint name="LOOT_AUG_1_AMP2" rarity="4" />
+		
 	</rarityList>
 	<noExit />
 	<startEvent>ENTER_AEA_OLD_3</startEvent>
 	<exitBeacon event="AEA_OLD_VICTORY" rebelEvent="AEA_OLD_VICTORY" />
 	<rebelBeacon event="FLEET_AEA_OLD_CAPITAL" />
 	<removeFirstBeaconNebula />
+	<event name="STORE_HOSTILE_AEA_OLD_FINAL" min="4" max="4" />
+	<event name="ITEMS_AEA_OLD_2" min="3" max="3" />
+	<event name="HOSTILE_AEA_OLD_2" min="5" max="5" />
 	<event name="EMPTY_AEA_OLD" min="999" max="999" />
-	<event name="EMPTY_AEA_OLD" min="999" max="999" />
+</sectorDescription>
+
+<sectorDescription name="SECRET_AEA_GODS" unique="true">
+	<nameList>
+		<name>Realm of the Gods</name>
+	</nameList>
+	<trackList>
+		<track>aea_lylmik_boss</track>
+	</trackList>
+	<rarityList>
+	</rarityList>
+	<noExit />
+	<startEvent>ENTER_AEA_GODS</startEvent>
+	<exitBeacon event="AEA_GODS_BEACON_SECRET" rebelEvent="AEA_GODS_BEACON_SECRET" />
+	<rebelBeacon event="AEA_GODS_EMPTY" />
+	<removeFirstBeaconNebula />
+	<!--event name="AEA_GODS_BEACON_SECRET" min="5" max="5" /-->
+	<event name="AEA_GODS_BEACON_BRIGHT_1" min="1" max="1" />
+	<event name="AEA_GODS_BEACON_BRIGHT_2" min="1" max="1" />
+	<event name="AEA_GODS_BEACON_BRIGHT_3" min="1" max="1" />
+	<event name="AEA_GODS_BEACON_BRIGHT_4" min="1" max="1" />
+	<event name="AEA_GODS_BEACON_DARK_1" min="1" max="1" />
+	<event name="AEA_GODS_BEACON_DARK_2" min="1" max="1" />
+	<event name="AEA_GODS_BEACON_DARK_3" min="1" max="1" />
+	<event name="AEA_GODS_BEACON_DARK_4" min="1" max="1" />
+	<event name="AEA_GODS_BEACON_DARK_5" min="1" max="1" />
+	<event name="AEA_GODS_MEDUSA_UNLOCK" min="1" max="1" />
+	<event name="AEA_GODS_CULTISTS" min="2" max="2" />
+	<event name="AEA_GODS_BLOOD" min="1" max="1" />
+	<event name="AEA_GODS_RUINS" min="3" max="3" />
+	<event name="AEA_GODS_ITEMS" min="2" max="2" />
+	<event name="AEA_GODS_HOSTILE" min="7" max="7" />
+	<event name="AEA_GODS_EMPTY" min="999" max="999" />
 </sectorDescription>
 
 <sectorDescription name="AEA_OLD_FLAGSHIP_END" unique="true">   

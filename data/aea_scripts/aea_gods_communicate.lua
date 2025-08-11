@@ -168,6 +168,60 @@ godEvents["AEA_OLD_VICTORY_SPEAK"] = {
 	},
 	finish = "AEA_OLD_VICTORY_WIN"
 }
+godEvents["AEA_RITUAL_REALM_TELEPORT_SPEAK"] = {
+	varient = 1,
+	event = {
+		text="You are ready, In a moment, if you accept my task, I will transport you to the space where I and my siblings manifest our physical forms.\nThis is where we are weakest, but do not underestimate the danger there.", 
+		choices={
+			{
+				text="What do you want me to do?", 
+				event={
+					text="I need you to kill my sibling, Contradiction.\nI cannot touch them myself, even in the absence of our other sibling their power still prevents direct conflict.\nYou will need to attract Contradiction's attention somehow to cause them to reveal their physical form.\nOnce that it done you can destroy them for me.",
+					choices={
+						{
+							text="I'll do it.", 
+							event={
+								text="I will take you there now then, be careful and good luck.",
+								choices={
+									{
+										text="Continue...", 
+										finish=true
+									}
+								}
+							}
+						},
+						{
+							text="I'm not ready for this right now.", 
+							event={
+								text="If that it the decision you have made, so be it.\nIf you change your mind, repeat this ritual and I will ask again.",
+								choices={
+									{
+										text="Continue...", 
+										finish2=true
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			{
+				text="I want no part in this.", 
+				event={
+					text="If that it the decision you have made, so be it.\nIf you change your mind, repeat this ritual and I will ask again.",
+					choices={
+						{
+							text="Continue...", 
+							finish2=true
+						}
+					}
+				}
+			}
+		}
+	},
+	finish = "AEA_RITUAL_REALM_TELEPORT",
+	finish2 = "AEA_EVENT_EXIT"
+}
 
 script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
 	local eventManager = Hyperspace.Event
@@ -237,6 +291,11 @@ script.on_render_event(Defines.RenderEvents.CHOICE_BOX, function() end, function
 				varient = 0
 				local worldManager = Hyperspace.App.world
 				Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager, godEvents[renderEvent].finish, false,-1)
+				renderEvent = nil
+			elseif chosenChoice.finish2 then
+				varient = 0
+				local worldManager = Hyperspace.App.world
+				Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager, godEvents[renderEvent].finish2, false,-1)
 				renderEvent = nil
 			else
 				source = chosenChoice.event
@@ -428,6 +487,7 @@ script.on_internal_event(Defines.InternalEvents.ON_MOUSE_L_BUTTON_UP, function(x
 	end
 	return Defines.Chain.CONTINUE
 end)
+
 
 
 --[[Graphics.CSurface.GL_PushStencilMode()

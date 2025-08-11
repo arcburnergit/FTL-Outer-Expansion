@@ -1106,7 +1106,7 @@ An inorganic voice speaks to you. "Ah, a renegade, I don't see your kind here of
 	</choice>
 	<choice hidden="true">
 		<text>Search the hangar.</text>
-		<event load="AEA_CULT_CON_hangar"/>
+		<event load="AEA_CULT_CON_HANGAR"/>
 	</choice>
 	<choice hidden="true">
 		<text>Search the compound.</text>
@@ -1196,7 +1196,7 @@ You're unable to find anything in the room, however you notice a sticky note thr
 	</choice>
 </event>
 
-<event name="AEA_CULT_CON_hangar">
+<event name="AEA_CULT_CON_HANGAR">
 	<text>You arrive at the hangar, you search the perimeter but can't find any way in, all of the doors are locked shut or sealed up.</text>
 	<choice hidden="true">
 		<text>You cannot search the hangar as you cannot find a way inside.</text>

@@ -1750,6 +1750,7 @@
 	<aug name="AEA_ACID_O2SYS_ENEMY_WEAK" />
 </shipBlueprint>
 </FTL>
+
 <FTL>
 
 <blueprintList name="LIST_CREW_AEA_NECRO">
@@ -4614,9 +4615,10 @@
 	<droneSlots>3</droneSlots>
 	<weaponList missiles="6" count="6" load="LIST_WEAPONS_AUTO" />
 	<droneList drones="8" count="3" load="LIST_DRONES_AUTO" />
-	<health amount="14" />
+	<health amount="15" />
 	<maxPower amount="9" />
 	<boardingAI>sabotage</boardingAI>
+	<aug name="NO_GHOST" />
 </shipBlueprint>
 </FTL>
 
@@ -7804,5 +7806,628 @@ A CLASS
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHLEG_MIND_GAS" />
 	<aug name="AEA_SHLEG_GEL" />
+</shipBlueprint>
+</FTL>
+
+<!--REALM OF GODS-->
+<FTL>
+<blueprintList name="SHIPS_AEA_GODS_EASY">
+	<name>AEA_GODS_FIGHTER_EASY</name>
+	<name>AEA_GODS_BOMBER_EASY</name>
+	<name>AEA_GODS_SCOUT_EASY</name>
+</blueprintList>
+<blueprintList name="SHIPS_AEA_GODS_HARD">
+	<name>AEA_GODS_FIGHTER_HARD</name>
+	<name>AEA_GODS_BOMBER_HARD</name>
+	<name>AEA_GODS_SCOUT_HARD</name>
+</blueprintList>
+<blueprintList name="SHIPS_AEA_JUSTICE_EASY">
+	<name>AEA_JUSTICE_BATTLESHIP_EASY</name>
+	<name>AEA_JUSTICE_DROPSHIP_EASY</name>
+	<name>AEA_JUSTICE_MOTHERSHIP_EASY</name>
+	<name>AEA_JUSTICE_GUARD_EASY</name>
+</blueprintList>
+<blueprintList name="SHIPS_AEA_JUSTICE_HARD">
+	<name>AEA_JUSTICE_BATTLESHIP_HARD</name>
+	<name>AEA_JUSTICE_DROPSHIP_HARD</name>
+	<name>AEA_JUSTICE_MOTHERSHIP_HARD</name>
+	<name>AEA_JUSTICE_GUARD_HARD</name>
+</blueprintList>
+<blueprintList name="LIST_WEAPONS_AEA_GODS">
+	<name>LASER_BURST_1</name>
+	<name>LASER_BURST_2_ENEMY</name>
+	<name>LASER_BURST_3</name>
+	<name>LASER_BURST_5</name>
+	<name>LASER_HEAVY_1</name>
+	<name>LASER_HEAVY_2</name>
+	<name>MISSILES_1_ENEMY</name>
+	<name>MISSILES_2_ENEMY</name>
+	<name>MISSILES_3_ENEMY</name>
+	<name>BEAM_1</name>
+	<name>BEAM_2</name>
+	<name>BEAM_FIRE</name>
+	<name>BOMB_1_ENEMY</name>
+	<name>ION_1</name>
+	<name>ION_2</name>
+	<name>ION_3</name>
+	
+	<name>LASER_CHAINGUN_ENEMY</name>
+	<name>ION_CHARGEGUN</name>
+	
+	<name>LASER_CHAINGUN_DAMAGE</name>
+	<name>LASER_STUN</name>
+	<name>LASER_FROST_1</name>
+	<name>LASER_FROST_2</name>
+	<name>BEAM_PARTICLE</name>
+	<name>BEAM_BREACH</name>
+	<name>BEAM_SCYTHE</name>
+	<name>BEAM_CHAIN</name>
+	<name>ION_TRI</name>
+	<name>ION_HEAVY</name>
+	<name>ION_FIRE</name>
+	<name>ION_STUN_HEAVY</name>
+	<name>ION_STUN_CHARGEGUN</name>
+	<name>LASER_HEAVY_PIERCE</name>
+</blueprintList>
+<blueprintList name="LIST_DRONES_AEA_GODS">
+	<name>GUARDIAN_1_MISSILE</name>
+	<name>GUARDIAN_1_DRONE</name>
+	<name>GUARDIAN_2_MISSILE</name>
+	<name>GUARDIAN_2_DRONE</name>
+	
+	<name>COMBAT_1_LASER</name>
+	<name>COMBAT_1_BEAM</name>
+	<name>COMBAT_2_LASER</name>
+	<name>COMBAT_2_BEAM</name>
+	<name>HELLRAISER_HULL</name>
+	<name>HELLRAISER_FIRE</name>
+	<name>ION_1_AMP2_ENEMY</name>
+	<name>ENERGY_1_AMP2_ENEMY</name>
+	<name>AMPHI_DEFENSE</name>
+	<name>AMPHI_COMBAT</name>
+
+	<name>BATTLETOG_BOARDER</name>
+	<name>BATTLETOG2_BOARDER</name>
+</blueprintList>
+
+<shipBlueprint name="AEA_GODS_FIGHTER_EASY" layout="aea_gods_fighter" img="aea_gods_fighter">
+	<class>Bone Chill</class>
+	<systemList>
+		<cloaking power="1" max="1" room="2" start="true" />
+		<clonebay power="1" max="1" room="11" start="true" />
+		<drones power="2" max="6" room="8" start="true" />
+		<engines power="1" max="2" room="4" start="true" />
+		<medbay power="1" max="1" room="9" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="6" room="3" start="true" />
+		<aea_freeze power="1" max="1" room="1" start="true" />
+		<weapons power="2" max="6" room="5" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="2" load="LIST_WEAPONS_AEA_GODS" />
+	<droneList drones="10" count="2" load="LIST_DRONES_AEA_GODS" />
+	<health amount="7" />
+	<maxPower amount="11" />
+	<crewCount amount="2" max="2" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_FIGHTER_HARD" layout="aea_gods_fighter" img="aea_gods_fighter">
+	<class>Bone Chill</class>
+	<systemList>
+		<cloaking power="2" max="2" room="2" start="true" />
+		<clonebay power="2" max="2" room="11" start="true" />
+		<drones power="8" max="8" room="8" start="true" />
+		<engines power="3" max="3" room="4" start="true" />
+		<medbay power="2" max="2" room="9" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="8" max="8" room="3" start="true" />
+		<aea_freeze power="2" max="2" room="1" start="true" />
+		<weapons power="8" max="8" room="5" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_AEA_GODS" />
+	<droneList drones="10" count="4" load="LIST_DRONES_AEA_GODS" />
+	<health amount="13" />
+	<maxPower amount="35" />
+	<crewCount amount="6" max="6" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_BOMBER_EASY" layout="aea_gods_bomber" img="aea_gods_bomber">
+	<class>Skull Merchant</class>
+	<systemList>
+		<cloaking power="1" max="1" room="1" start="true" />
+		<clonebay power="1" max="1" room="6" start="true" />
+		<aea_freeze power="1" max="1" room="12" start="true" />
+		<drones power="2" max="6" room="0" start="true" />
+		<engines power="1" max="2" room="8" start="true" />
+		<medbay power="1" max="1" room="10" start="true" />
+		<pilot power="1" max="1" room="2" start="true" />
+		<shields power="2" max="6" room="9" start="true" />
+		<weapons power="2" max="6" room="5" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>1</droneSlots>
+	<weaponList missiles="9" count="3" load="LIST_WEAPONS_AEA_GODS" />
+	<droneList drones="5" count="1" load="LIST_DRONES_AEA_GODS" />
+	<health amount="9" />
+	<maxPower amount="11" />
+	<crewCount amount="2" max="2" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_BOMBER_HARD" layout="aea_gods_bomber" img="aea_gods_bomber">
+	<class>Skull Merchant</class>
+	<systemList>
+		<cloaking power="2" max="2" room="1" start="true" />
+		<clonebay power="2" max="2" room="6" start="true" />
+		<aea_freeze power="2" max="2" room="12" start="true" />
+		<drones power="8" max="8" room="0" start="true" />
+		<engines power="3" max="3" room="8" start="true" />
+		<medbay power="2" max="2" room="10" start="true" />
+		<pilot power="2" max="2" room="2" start="true" />
+		<shields power="8" max="8" room="9" start="true" />
+		<weapons power="8" max="8" room="5" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="18" count="4" load="LIST_WEAPONS_AEA_GODS" />
+	<droneList drones="12" count="4" load="LIST_DRONES_AEA_GODS" />
+	<health amount="15" />
+	<maxPower amount="35" />
+	<crewCount amount="4" max="4" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_SCOUT_EASY" layout="aea_gods_scout" img="aea_gods_scout">
+	<class>Spine Warden</class>
+	<systemList>
+		<cloaking power="1" max="1" room="3" start="true" />
+		<clonebay power="1" max="1" room="6" start="true" />
+		<aea_freeze power="1" max="1" room="1" start="true" />
+		<engines power="1" max="2" room="4" start="true" />
+		<medbay power="1" max="1" room="7" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="6" room="5" start="true" />
+		<weapons power="2" max="6" room="2" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="8" count="2" load="LIST_WEAPONS_AEA_GODS" />
+	<droneList drones="8" count="2" load="LIST_DRONES_AEA_GODS" />
+	<health amount="5" />
+	<maxPower amount="10" />
+	<crewCount amount="2" max="2" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_SCOUT_HARD" layout="aea_gods_scout" img="aea_gods_scout">
+	<class>Spine Warden</class>
+	<systemList>
+		<cloaking power="2" max="2" room="3" start="true" />
+		<clonebay power="2" max="2" room="6" start="true" />
+		<aea_freeze power="3" max="3" room="1" start="true" />
+		<engines power="3" max="3" room="4" start="true" />
+		<medbay power="2" max="2" room="7" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="8" max="8" room="5" start="true" />
+		<weapons power="8" max="8" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="16" count="4" load="LIST_WEAPONS_AEA_GODS" />
+	<droneList drones="14" count="3" load="LIST_DRONES_AEA_GODS" />
+	<health amount="11" />
+	<maxPower amount="29" />
+	<crewCount amount="5" max="5" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_BOSS_LIGHT_CASUAL" layout="aea_gods_boss_light" img="aea_gods_boss_light">
+	<class>Visage of Death</class>
+	<systemList>
+		<artillery power="3" max="3" room="2" start="true" weapon="ARTILLERY_AEA_GODS_BEAM" />
+		<artillery power="2" max="2" room="3" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<artillery power="2" max="2" room="4" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<cloaking power="2" max="2" room="16" start="true" />
+		<clonebay power="2" max="2" room="5" start="true" />
+		<engines power="2" max="2" room="12" start="true" />
+		<medbay power="2" max="2" room="6" start="true" />
+		<pilot power="3" max="3" room="11" start="true" />
+		<shields power="8" max="8" room="0" start="true" />
+		<aea_freeze power="2" max="2" room="13" start="true" />
+		<weapons power="4" max="4" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="LASER_BURST_3" />
+		<weapon name="SPORE_2" />
+	</weaponList>
+	<droneList drones="20" count="0" />
+	<health amount="20" />
+	<maxPower amount="42" />
+	<crewCount amount="6" max="6" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_BOSS_LIGHT_NORMAL" layout="aea_gods_boss_light" img="aea_gods_boss_light">
+	<class>Visage of Death</class>
+	<systemList>
+		<artillery power="3" max="3" room="2" start="true" weapon="ARTILLERY_AEA_GODS_BEAM" />
+		<artillery power="3" max="3" room="3" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<artillery power="3" max="3" room="4" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<cloaking power="2" max="2" room="16" start="true" />
+		<clonebay power="3" max="3" room="5" start="true" />
+		<engines power="2" max="2" room="12" start="true" />
+		<medbay power="3" max="3" room="6" start="true" />
+		<pilot power="3" max="3" room="11" start="true" />
+		<shields power="10" max="10" room="0" start="true" />
+		<aea_freeze power="2" max="2" room="13" start="true" />
+		<weapons power="4" max="4" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="LASER_BURST_3" />
+		<weapon name="SPORE_2" />
+	</weaponList>
+	<droneList drones="20" count="0" />
+	<health amount="20" />
+	<maxPower amount="42" />
+	<crewCount amount="7" max="7" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_BOSS_LIGHT_CHALLENGE" layout="aea_gods_boss_light" img="aea_gods_boss_light">
+	<class>Visage of Death</class>
+	<systemList>
+		<artillery power="4" max="4" room="2" start="true" weapon="ARTILLERY_AEA_GODS_BEAM" />
+		<artillery power="3" max="3" room="3" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<artillery power="3" max="3" room="4" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<cloaking power="2" max="2" room="16" start="true" />
+		<clonebay power="3" max="3" room="5" start="true" />
+		<engines power="2" max="2" room="12" start="true" />
+		<medbay power="3" max="3" room="6" start="true" />
+		<pilot power="3" max="3" room="11" start="true" />
+		<shields power="10" max="10" room="0" start="true" />
+		<aea_freeze power="2" max="2" room="13" start="true" />
+		<weapons power="4" max="4" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="LASER_BURST_3" />
+		<weapon name="SPORE_2" />
+	</weaponList>
+	<droneList drones="20" count="0" />
+	<health amount="20" />
+	<maxPower amount="42" />
+	<crewCount amount="8" max="8" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_BOSS_LIGHT_EXTREME" layout="aea_gods_boss_light" img="aea_gods_boss_light">
+	<class>Visage of Death</class>
+	<systemList>
+		<artillery power="4" max="4" room="2" start="true" weapon="ARTILLERY_AEA_GODS_BEAM" />
+		<artillery power="4" max="4" room="3" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<artillery power="4" max="4" room="4" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<cloaking power="2" max="2" room="16" start="true" />
+		<clonebay power="3" max="3" room="5" start="true" />
+		<engines power="2" max="2" room="12" start="true" />
+		<medbay power="3" max="3" room="6" start="true" />
+		<pilot power="3" max="3" room="11" start="true" />
+		<shields power="10" max="10" room="0" start="true" />
+		<aea_freeze power="2" max="2" room="13" start="true" />
+		<weapons power="4" max="4" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="LASER_BURST_3" />
+		<weapon name="SPORE_2" />
+	</weaponList>
+	<droneList drones="20" count="0" />
+	<health amount="20" />
+	<maxPower amount="42" />
+	<crewCount amount="8" max="8" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+</FTL>
+
+<FTL>
+<shipBlueprint name="AEA_JUSTICE_BATTLESHIP_EASY" layout="aea_justice_battleship" img="aea_justice_battleship">
+	<class>Justicier Battleship</class>
+	<systemList>
+		<clonebay power="2" max="2" room="8" start="true" />
+		<doors power="1" max="1" room="13" start="true" />
+		<engines power="2" max="2" room="5" start="true" />
+		<oxygen power="1" max="1" room="12" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="2" max="6" room="3" start="true" />
+		<weapons power="2" max="6" room="4" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="3" load="LIST_WEAPONS_ROCK" />
+	<droneList drones="0" count="0" />
+	<health amount="13" />
+	<maxPower amount="9" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_BATTLESHIP_HARD" layout="aea_justice_battleship" img="aea_justice_battleship">
+	<class>Justicier Battleship</class>
+	<systemList>
+		<clonebay power="4" max="4" room="8" start="true" />
+		<doors power="2" max="2" room="13" start="true" />
+		<engines power="2" max="2" room="5" start="true" />
+		<oxygen power="2" max="2" room="12" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="10" max="10" room="3" start="true" />
+		<weapons power="8" max="8" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="0" count="0" />
+	<health amount="18" />
+	<maxPower amount="28" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_DROPSHIP_EASY" layout="mu_lostsun_dropship" img="aea_justice_dropship">
+	<class>Justicier Dropship</class>
+	<systemList>
+		<clonebay power="2" max="2" room="2" start="true" />
+		<drones power="2" max="6" room="6" start="true" />
+		<engines power="1" max="1" room="5" start="true" />
+		<!--medbay power="1" max="3" room="2" start="false" /-->
+		<oxygen power="2" max="2" room="9" start="true" />
+		<pilot power="2" max="2" room="13" start="true" />
+		<shields power="2" max="6" room="8" start="true" />
+		<teleporter power="2" max="2" room="1" start="true" />
+		<weapons power="1" max="6" room="7" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="6" count="2" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="5" count="3" load="LIST_DRONES_LOSTSUN" />
+	<health amount="11" />
+	<maxPower amount="12" />
+	<droneList drones="0" count="0" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_DROPSHIP_HARD" layout="mu_lostsun_dropship" img="aea_justice_dropship">
+	<class>Justicier Dropship</class>
+	<systemList>
+		<clonebay power="4" max="4" room="2" start="true" />
+		<drones power="8" max="8" room="6" start="true" />
+		<engines power="2" max="2" room="5" start="true" />
+		<!--medbay power="1" max="3" room="2" start="false" /-->
+		<oxygen power="2" max="2" room="9" start="true" />
+		<pilot power="2" max="2" room="13" start="true" />
+		<shields power="8" max="8" room="8" start="true" />
+		<teleporter power="2" max="2" room="1" start="true" />
+		<weapons power="8" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="6" count="3" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="5" count="4" load="LIST_DRONES_LOSTSUN" />
+	<health amount="18" />
+	<maxPower amount="30" />
+	<droneList drones="0" count="0" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_MOTHERSHIP_EASY" layout="mu_lostsun_mothership" img="aea_justice_mothership">
+	<class>Justicier Mothership</class>
+	<systemList>
+		<clonebay power="2" max="2" room="4" start="true" />
+		<drones power="2" max="6" room="5" start="true" />
+		<engines power="2" max="2" room="7" start="true" />
+		<!--medbay power="1" max="3" room="4" start="false" /-->
+		<oxygen power="2" max="2" room="3" start="true" />
+		<pilot power="2" max="2" room="1" start="true" />
+		<shields power="2" max="8" room="9" start="true" />
+		<weapons power="2" max="6" room="8" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="15" count="2" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="20" count="3" load="LIST_DRONES_LOSTSUN" />
+	<health amount="12" />
+	<maxPower amount="12" />
+	<droneList drones="0" count="0" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_MOTHERSHIP_HARD" layout="mu_lostsun_mothership" img="aea_justice_mothership">
+	<class>Justicier Mothership</class>
+	<systemList>
+		<clonebay power="4" max="4" room="4" start="true" />
+		<drones power="8" max="8" room="5" start="true" />
+		<engines power="2" max="2" room="7" start="true" />
+		<!--medbay power="1" max="3" room="4" start="false" /-->
+		<oxygen power="2" max="2" room="3" start="true" />
+		<pilot power="2" max="2" room="1" start="true" />
+		<shields power="8" max="8" room="9" start="true" />
+		<weapons power="8" max="8" room="8" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="15" count="4" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="20" count="4" load="LIST_DRONES_LOSTSUN" />
+	<health amount="17" />
+	<maxPower amount="32" />
+	<droneList drones="0" count="0" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_GUARD_EASY" layout="mu_lostsun_guard" img="aea_justice_guard">
+	<class>Justicier Guard</class>
+	<systemList>
+		<clonebay power="2" max="2" room="5" start="true" />
+		<doors power="1" max="1" room="4" start="true" />
+		<engines power="2" max="2" room="1" start="true" />
+		<!--medbay power="1" max="3" room="5" start="false" /-->
+		<oxygen power="2" max="2" room="6" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="2" max="6" room="3" start="true" />
+		<teleporter power="2" max="2" room="8" start="true" />
+		<weapons power="2" max="6" room="7" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="3" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="5" count="0" />
+	<health amount="11" />
+	<maxPower amount="12" />
+	<droneList drones="0" count="0" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_GUARD_HARD" layout="mu_lostsun_guard" img="aea_justice_guard">
+	<class>Justicier Guard</class>
+	<systemList>
+		<clonebay power="4" max="4" room="5" start="true" />
+		<doors power="2" max="2" room="4" start="true" />
+		<engines power="2" max="2" room="1" start="true" />
+		<!--medbay power="1" max="3" room="5" start="false" /-->
+		<oxygen power="2" max="2" room="6" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="10" max="10" room="3" start="true" />
+		<teleporter power="3" max="3" room="8" start="true" />
+		<weapons power="8" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="5" count="0" />
+	<health amount="16" />
+	<maxPower amount="29" />
+	<droneList drones="0" count="0" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_JUSTICE_BOSS_DARK_CASUAL" layout="aea_justice_boss_dark" img="aea_justice_boss_dark">
+	<class>Blood Throne</class>
+	<systemList>
+		<artillery power="2" max="2" room="1" start="true" weapon="ARTILLERY_AEA_JUSTICE_RAILGUN" />
+		<artillery power="3" max="3" room="3" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER" />
+		<artillery power="3" max="3" room="2" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER_OFFSET" />
+		<cloaking power="2" max="2" room="9" start="true" />
+		<clonebay power="3" max="3" room="8" start="true" />
+		<doors power="2" max="2" room="20" start="true" />
+		<engines power="2" max="2" room="7" start="true" />
+		<mind power="2" max="2" room="21" start="true" />
+		<oxygen power="2" max="2" room="10" start="true" />
+		<pilot power="3" max="3" room="0" start="true" />
+		<shields power="8" max="8" room="5" start="true" />
+		<teleporter power="1" max="1" room="6" start="true" />
+		<weapons power="5" max="5" room="4" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="MISSILES_2_ENEMY" />
+		<weapon name="BEAM_CHAIN" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="40" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_BOSS_DARK_NORMAL" layout="aea_justice_boss_dark" img="aea_justice_boss_dark">
+	<class>Blood Throne</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_JUSTICE_RAILGUN" />
+		<artillery power="3" max="3" room="3" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER" />
+		<artillery power="3" max="3" room="2" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER_OFFSET" />
+		<cloaking power="2" max="2" room="9" start="true" />
+		<clonebay power="4" max="4" room="8" start="true" />
+		<doors power="2" max="2" room="20" start="true" />
+		<engines power="2" max="2" room="7" start="true" />
+		<mind power="2" max="2" room="21" start="true" />
+		<oxygen power="2" max="2" room="10" start="true" />
+		<pilot power="3" max="3" room="0" start="true" />
+		<shields power="8" max="8" room="5" start="true" />
+		<teleporter power="1" max="1" room="6" start="true" />
+		<weapons power="5" max="5" room="4" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="MISSILES_2_ENEMY" />
+		<weapon name="BEAM_CHAIN" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="40" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_BOSS_DARK_CHALLENGE" layout="aea_justice_boss_dark" img="aea_justice_boss_dark">
+	<class>Blood Throne</class>
+	<systemList>
+		<artillery power="4" max="4" room="1" start="true" weapon="ARTILLERY_AEA_JUSTICE_RAILGUN" />
+		<artillery power="3" max="3" room="3" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER" />
+		<artillery power="3" max="3" room="2" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER_OFFSET" />
+		<cloaking power="2" max="2" room="9" start="true" />
+		<clonebay power="4" max="4" room="8" start="true" />
+		<doors power="2" max="2" room="20" start="true" />
+		<engines power="2" max="2" room="7" start="true" />
+		<mind power="2" max="2" room="21" start="true" />
+		<oxygen power="2" max="2" room="10" start="true" />
+		<pilot power="3" max="3" room="0" start="true" />
+		<shields power="8" max="8" room="5" start="true" />
+		<teleporter power="2" max="2" room="6" start="true" />
+		<weapons power="6" max="6" room="4" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="MISSILES_3_ENEMY" />
+		<weapon name="BEAM_CHAIN" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="40" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_BOSS_DARK_EXTREME" layout="aea_justice_boss_dark" img="aea_justice_boss_dark">
+	<class>Blood Throne</class>
+	<systemList>
+		<artillery power="4" max="4" room="1" start="true" weapon="ARTILLERY_AEA_JUSTICE_RAILGUN" />
+		<artillery power="3" max="3" room="3" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER" />
+		<artillery power="3" max="3" room="2" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER_OFFSET" />
+		<cloaking power="2" max="2" room="9" start="true" />
+		<clonebay power="4" max="4" room="8" start="true" />
+		<doors power="2" max="2" room="20" start="true" />
+		<engines power="2" max="2" room="7" start="true" />
+		<mind power="2" max="2" room="21" start="true" />
+		<oxygen power="2" max="2" room="10" start="true" />
+		<pilot power="3" max="3" room="0" start="true" />
+		<shields power="8" max="8" room="5" start="true" />
+		<teleporter power="2" max="2" room="6" start="true" />
+		<weapons power="6" max="6" room="4" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="MISSILES_3_ENEMY" />
+		<weapon name="BEAM_CHAIN" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="40" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
 </shipBlueprint>
 </FTL>

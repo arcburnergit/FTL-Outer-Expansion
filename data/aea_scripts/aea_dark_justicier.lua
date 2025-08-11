@@ -555,7 +555,7 @@ statueCrew["aea_statue_hostile"] = true
 
 local function realmPortalFunc(shipManager, crewTarget)
 	local worldManager = Hyperspace.App.world
-	Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager, "AEA_RITUAL_REALM_TELEPORT", false,-1)
+	Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager, "AEA_RITUAL_REALM_TELEPORT_SPEAK", false,-1)
 end
 local function realmPortalCond(shipManager, crewTarget)
 	if statueCrew[crewTarget.type] then
@@ -593,7 +593,7 @@ local spellList = {
 	promote = {func = promoteCrew, excludeTarget = true, cond = promoteCond, condColour = 2, positionList = {{x = 0, y = -2}, {x = 1, y = 4}, {x = -3, y = -3}, {x = 4, y = 0}, {x = -3, y = 3}} },
 	give_weapon = {func = giveWeaponFunc, excludeTarget = true, cond = giveWeaponCond, condColour = 2, positionList = {{x = 1, y = 1}, {x = 0, y = 2}, {x = 3, y = 0}, {x = 0, y = -2}, {x = 1, y = -1}} },
 
-	realm_portal = {func = realmPortalFunc, cond = realmPortalCond, condColour = 7, positionList = {{x = -1, y = -1}, {x = 1, y = -1}, {x = 1, y = 1}, {x = -1, y = 1}} }
+	realm_portal = {func = realmPortalFunc, cond = realmPortalCond, condColour = 7, positionList = {{x = -1, y = -1}, {x = 2, y = 0}, {x = 0, y = 2}, {x = -2, y = 0}} }
 }
 
 local setCrew = false
@@ -1625,6 +1625,149 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crew)
 	if statueCrew[crew.type] and crew.health.first <= 0 and not userdata_table(crew, "mods.aea.statue").died then
 		userdata_table(crew, "mods.aea.statue").died = true
 		Hyperspace.playerVariables.aea_justicier_statue_destroy = Hyperspace.playerVariables.aea_justicier_statue_destroy + 1
+		if Hyperspace.playerVariables.aea_justicier_statue_active == 0 then
+			Hyperspace.playerVariables.aea_justicier_sacs_this_run = statueStats.min_sacs
+		end
 		Hyperspace.CustomAchievementTracker.instance:SetAchievement("ACH_AEA_STATUE_DESTROY", false)
+	end
+end)
+
+local ruinsEvents = {}
+script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
+	local shipManager = Hyperspace.ships.player
+	local eventManager = Hyperspace.Event
+	if event.eventName == "AEA_GODS_RUINS_CREW" then
+		event:RemoveChoice(0)
+		for crew in vter(shipManager.vCrewList) do
+			local crewEvent = eventManager:CreateEvent("AEA_GODS_RUINS_STORE_CREW", 0, false)
+			crewEvent.eventName = "AEA_GODS_RUINS_"..tostring(crew)
+			if not ruinsEvents[crewEvent.eventName] then
+				ruinsEvents[crewEvent.eventName] = true
+				script.on_game_event(crewEvent.eventName, false, function()
+					applyWeakened(crew)
+					crew.health.first = crew.health.first / 4
+					Hyperspace.Sounds:PlaySoundMix("shell_death", -1, false)
+				end)
+			end
+			local crewString = crew:GetLongName().." ("..crew.blueprint.desc.title.data..")"
+			event:AddChoice(crewEvent, "Wound "..crewString, emptyReq, true)
+		end
+		local backEvent = eventManager:CreateEvent("AEA_GODS_RUINS_LOAD", 0, false)
+		event:AddChoice(backEvent, "Nevermind.", emptyReq, true)
+	elseif event.eventName == "AEA_GODS_RUINS_WEAPON" then
+		event:RemoveChoice(0)
+		for weapon in vter(shipManager.weaponSystem.weapons) do
+			local weaponEvent = eventManager:CreateEvent("AEA_GODS_RUINS_STORE_WEAPON", 0, false)
+			weaponEvent.eventName = "AEA_GODS_RUINS_STORE_WEAPON"..weapon.blueprint.name
+			weaponEvent.stuff.removeItem = weapon.blueprint.name
+			local weaponString = weapon.blueprint.desc.title.data
+			event:AddChoice(weaponEvent, "Destroy "..weaponString, emptyReq, true)
+		end
+		local backEvent = eventManager:CreateEvent("AEA_GODS_RUINS_LOAD", 0, false)
+		event:AddChoice(backEvent, "Nevermind.", emptyReq, true)
+	end
+end)
+
+local function choose_random_crew(shipId)
+	--print("choose random crew:"..tostring(shipId))
+	local shipManager = Hyperspace.ships(shipId)
+	local crewlist = {}
+	if shipManager then
+		for crewmem in vter(shipManager.vCrewList) do
+			if crewmem.iShipId == shipId then
+				table.insert(crewlist, crewmem)
+			end
+		end
+		if #crewlist > 0 then
+			local random = math.random(#crewlist)
+			return crewlist[random]
+		end
+	end
+	return nil
+end
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	if shipManager:HasSystem(11) then
+		for artillery in vter(shipManager.artillerySystems) do
+			local weapon = artillery.projectileFactory
+			if weapon.blueprint.name == "ARTILLERY_AEA_JUSTICE_RAILGUN" and weapon.weaponVisual.bPowered then
+				local weaponTable = userdata_table(weapon, "mods.aea.justice")
+				if weaponTable.targetCrew then
+					local otherManager = Hyperspace.ships(1 - shipManager.iShipId)
+					for crewmem in vter(otherManager.vCrewList) do
+						if crewmem.extend.selfId == weaponTable.targetCrew then
+							return
+						end
+					end
+					local targetCrew = choose_random_crew(1 - shipManager.iShipId)
+					if targetCrew then
+						userdata_table(weapon, "mods.aea.justice").targetCrew = targetCrew.extend.selfId
+					end
+				else
+					local targetCrew = choose_random_crew(1 - shipManager.iShipId)
+					if targetCrew then
+						userdata_table(weapon, "mods.aea.justice").targetCrew = targetCrew.extend.selfId
+					end
+				end
+			end
+		end
+	end
+end)
+
+local reticle = Hyperspace.Resources:CreateImagePrimitiveString("misc/crosshairs_placed_aea_artillery.png", -27, -27, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
+
+script.on_render_event(Defines.RenderEvents.SHIP, function(ship) end, function(ship)
+	local shipManager = Hyperspace.ships(1 - ship.iShipId)
+	if shipManager:HasSystem(11) then
+		for artillery in vter(shipManager.artillerySystems) do
+			local weapon = artillery.projectileFactory
+			if weapon.blueprint.name == "ARTILLERY_AEA_JUSTICE_RAILGUN" and weapon.weaponVisual.bPowered then
+				local weaponTable = userdata_table(weapon, "mods.aea.justice")
+				if weaponTable.targetCrew then
+					local targetCrew = nil
+					local otherManager = Hyperspace.ships(1 - shipManager.iShipId)
+					for crewmem in vter(otherManager.vCrewList) do
+						if crewmem.extend.selfId == weaponTable.targetCrew then
+							targetCrew = crewmem
+						end
+					end
+					if targetCrew then
+						--print("render")
+						local position = targetCrew:GetPosition()
+						Graphics.CSurface.GL_PushMatrix()
+						Graphics.CSurface.GL_Translate(position.x, position.y, 0)
+						--Graphics.CSurface.GL_DrawLine(position.x, position.y, position.x, position.y + 5, 10, Graphics.GL_Color(1,1,1,1))
+						Graphics.CSurface.GL_RenderPrimitive(reticle)
+						Graphics.CSurface.GL_PopMatrix()
+					end
+				end
+			end
+		end
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+	if weapon.blueprint.name == "ARTILLERY_AEA_JUSTICE_RAILGUN" then
+		local weaponTable = userdata_table(weapon, "mods.aea.justice")
+		if weaponTable.targetCrew then
+			local shipManager = Hyperspace.ships(1 - weapon.iShipId)
+			for crewmem in vter(shipManager.vCrewList) do
+				if crewmem.extend.selfId == weaponTable.targetCrew then
+					targetCrew = crewmem
+				end
+			end
+			if targetCrew then
+				local pos = targetCrew:GetPosition()
+				projectile.target = Hyperspace.Pointf(pos.x, pos.y)
+				userdata_table(weapon, "mods.aea.justice").targetCrew = nil
+			end
+		else
+			print("fire random")
+			local targetCrew = choose_random_crew(1 - weapon.iShipId)
+			if targetCrew then
+				local pos = targetCrew:GetPosition()
+				projectile.target = Hyperspace.Pointf(pos.x, pos.y)
+			end
+		end
 	end
 end)

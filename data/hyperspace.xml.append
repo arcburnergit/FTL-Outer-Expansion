@@ -13,6 +13,7 @@
   <mod-append:script>data/aea_scripts/aea_race_old.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_race_shard.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_race_shleg.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_race_gods.lua</mod-append:script>
   <!--Misc functionality scripts-->
   <mod-append:script>data/aea_scripts/arc_modathon_aea.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_minelauncher.lua</mod-append:script>
@@ -20,6 +21,7 @@
   <!--System functionality scripts-->
   <mod-append:script>data/aea_scripts/aea_super_shields.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_freeze.lua</mod-append:script>
   <!--Crew functionality scripts-->
   <mod-append:script>data/aea_scripts/aea_dark_justicier.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_gods_communicate.lua</mod-append:script>
@@ -31,8 +33,12 @@
 <mod:findLike type="customSystems">
     <mod-append:customSystem id="aea_super_shields"/>
     <mod-append:customSystem id="aea_clone_crime"/>
+    <mod-append:customSystem id="aea_freeze"/>
 	<mod:findWithChildLike type="exclusivityGroup" child-type="cloaking">
         <mod-append:aea_super_shields/>
+	</mod:findWithChildLike>
+	<mod:findWithChildLike type="exclusivityGroup" child-type="mind">
+        <mod-append:aea_freeze/>
 	</mod:findWithChildLike>
 	<mod:findWithChildLike type="exclusivityGroup" child-type="medbay">
         <mod-append:aea_clone_crime/>
@@ -120,6 +126,16 @@ This enemy ship is equipped with a barrier generator which will protect one rand
             <tooltip>Chaotic Barrier Generator:
 This enemy ship is equipped with a barrier generator which will protect one random room on their ship each time they fire a weapon.</tooltip>
         </mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_gods_heal</name>
+            <tooltip>Violent Regrowth:
+This enemy will heal back any damage dealt to them after 10 seconds, with the timer increasing by 1 second per damage stacked. Damage not dealt by weapons will not be healed back.</tooltip>
+        </mod-append:shipIcon>
+		<mod-append:shipIcon>
+            <name>icon_aea_gods_shield</name>
+            <tooltip>Immortal Being:
+This enemy possesses an immortal energy shield that is kept alive by the beacons scattered throughout the sector, destroy the beacons to weaken the shield.</tooltip>
+        </mod-append:shipIcon>
 	</mod:findLike>
 
   	<mod:findLike type="shipOrder">
@@ -164,18 +180,32 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 		<mod-append:ship>PLAYER_SHIP_AEA_CREW6</mod-append:ship>
 
 
-		<mod-append:ship>PLAYER_SHIP_AEA_CULT_WHALE</mod-append:ship>
-		<mod-append:ship>PLAYER_SHIP_AEA_LANIUS_BATTLE</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_JUSTICE</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_JUSTICE_BOSS</mod-append:ship>
 		<mod-append:empty/>
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_HAMMER</mod-append:ship>
 			<!-- -->
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_ARMOUR</mod-append:ship>
 		<mod-append:empty/>
-		<mod-append:ship>PLAYER_SHIP_AEA_JUSTICE</mod-append:ship>
-		<mod-append:ship>PLAYER_SHIP_AEA_BROADSIDE</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_OLD_FLAGSHIP</mod-append:ship>
+		<mod-append:empty/>
 
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_UNIA</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_UNIB</mod-append:ship>
+
+
+		<mod-append:ship>PLAYER_SHIP_AEA_CULT_WHALE</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_AEA_LANIUS_BATTLE</mod-append:ship>
+		<mod-append:empty/>
+		<mod-append:empty/>
+			<!-- -->
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:ship>PLAYER_SHIP_AEA_BROADSIDE</mod-append:ship>
+
+		<mod-append:empty/>
+		<mod-append:empty/>
 	</mod:findLike>
 
 	<mod-append:ship name="PLAYER_SHIP_AEA_ACID_ARTY" b="true" c="true" >
@@ -506,6 +536,26 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 		<unlock variant="c" silent="false">
             <type>2</type>
             <shipReq>PLAYER_SHIP_AEA_OLD_ARMOUR</shipReq>
+        </unlock>
+	</mod-append:ship>
+	
+	<mod-append:ship name="PLAYER_SHIP_AEA_OLD_FLAGSHIP" b="true" c="true" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_OLD_FLAGSHIP</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_OLD_FLAGSHIP_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_OLD_FLAGSHIP</shipReq>
         </unlock>
 	</mod-append:ship>
 
@@ -1366,6 +1416,56 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 			<aea_shleg_slug room="20"/>
 		</crew>
 	</mod-append:customShip>
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_JUSTICE_BOSS" b="false" c="false" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_JUSTICE_BOSS</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_JUSTICE_BOSS_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_JUSTICE_BOSS</shipReq>
+        </unlock>
+	</mod-append:ship>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_JUSTICE_BOSS">
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>SHIP_AEA_JUSTICE</hiddenAug>
+		<systemLimit>11</systemLimit>
+		<crew>
+			<aea_dark_justicier name="The Dark Justicier" room="0"/>
+			<crystal room="8"/>
+			<rock room="7"/>
+		</crew>
+	</mod-append:customShip>
+	<!--mod-append:customShip name="PLAYER_SHIP_AEA_JUSTICE_BOSS_2">
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>SHIP_AEA_JUSTICE</hiddenAug>
+		<crew>
+			<aea_dark_justicier name="The Dark Justicier" room="0"/>
+			<aea_necro_lich room="1"/>
+			<aea_necro_engi room="10"/>
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_JUSTICE_BOSS_3">
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>SHIP_AEA_JUSTICE</hiddenAug>
+		<crew>
+			<aea_dark_justicier name="The Dark Justicier" room="0"/>
+			<aea_shleg_slug room="1"/>
+			<aea_shleg_slug room="20"/>
+		</crew>
+	</mod-append:customShip-->
+
+
 	<mod-append:customShip name="AEA_JUSTICE_BATTLESHIP">
 		<shipIcons>
 			<shipIcon>icon_threat</shipIcon>
@@ -1449,6 +1549,88 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 			<slug_saboteur room="6" />  <!--engines-->
 			<slug room="1" /> <!--weapons-->
 		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_FLAGSHIP">
+		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+		<rooms>
+			<room id="5">
+				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">aea_armour_rig_1x2</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="0">aea_armour_lef_1x2</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_FLAGSHIP_2">
+		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<rooms>
+			<room id="5">
+				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="0">aea_armour_rig_1x2</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_FLAGSHIP_3">
+		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<cloaking/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<aea_super_shields/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+		<rooms>
+			<room id="5">
+				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+			<room id="6">
+				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
+				<roomAnim renderLayer="3">aea_resist_shield_ui</roomAnim>
+				<hullDamageResistChance>100</hullDamageResistChance>
+			</room>
+		</rooms>
 	</mod-append:customShip>
 
 
@@ -4604,6 +4786,253 @@ This enemy ship is equipped with a barrier generator which will protect one rand
 			</room>
 		</rooms>
 	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_GODS_FIGHTER_EASY">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
+		</shipIcons>
+		<autoShipForce>true</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_GODS_FIGHTER_HARD">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
+		</shipIcons>
+		<autoShipForce>true</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_GODS_BOMBER_EASY">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
+		</shipIcons>
+		<autoShipForce>true</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_GODS_BOMBER_HARD">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
+		</shipIcons>
+		<autoShipForce>true</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_GODS_SCOUT_EASY">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
+		</shipIcons>
+		<autoShipForce>true</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_GODS_SCOUT_HARD">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
+		</shipIcons>
+		<autoShipForce>true</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_GODS_BOSS_LIGHT_CASUAL">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
+		</shipIcons>
+		<autoShipForce>true</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_GODS_BOSS_LIGHT_NORMAL">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
+		</shipIcons>
+		<autoShipForce>true</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_GODS_BOSS_LIGHT_CHALLENGE">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
+		</shipIcons>
+		<autoShipForce>true</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_GODS_BOSS_LIGHT_EXTREME">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_auto</shipIcon>
+		</shipIcons>
+		<autoShipForce>true</autoShipForce>
+		<exclusivityOverride>
+			<exclusivityGroup>
+				<clonebay/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<medbay/>
+			</exclusivityGroup>
+		</exclusivityOverride>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="AEA_JUSTICE_BOSS_DARK_CASUAL">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+		</shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<crew>
+			<aea_dark_justicier_enemy name="The Dark Justicier"/>
+			<aea_shleg_slug/>
+			<aea_shleg_slug/>
+			<rock_outcast/>
+			<rock/>
+			<rock/>
+			<engi/>
+			<mantis_free/>
+			<mantis/>
+			<human/>
+			<human/>
+			<human/>
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_JUSTICE_BOSS_DARK_NORMAL">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+		</shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<crew>
+			<aea_dark_justicier_enemy name="The Dark Justicier"/>
+			<aea_shleg_slug/>
+			<aea_shleg_slug/>
+			<rock_outcast/>
+			<rock/>
+			<rock/>
+			<engi/>
+			<mantis_free/>
+			<mantis/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_JUSTICE_BOSS_DARK_CHALLENGE">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+		</shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<crew>
+			<aea_dark_justicier_enemy name="The Dark Justicier"/>
+			<aea_shleg_slug/>
+			<aea_shleg_slug/>
+			<rock_outcast/>
+			<rock/>
+			<rock/>
+			<engi/>
+			<mantis_free/>
+			<mantis/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name="AEA_JUSTICE_BOSS_DARK_EXTREME">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+		</shipIcons>
+		<autoShipForce>false</autoShipForce>
+		<crew>
+			<aea_dark_justicier_enemy name="The Dark Justicier"/>
+			<aea_shleg_slug/>
+			<aea_shleg_slug/>
+			<rock_outcast/>
+			<rock/>
+			<rock/>
+			<engi/>
+			<mantis_free/>
+			<mantis/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+			<human/>
+		</crew>
+	</mod-append:customShip>
 </mod:findLike>
 
 <mod:findLike type="crew" limit="1">
@@ -7315,6 +7744,52 @@ Right click to attempt the ritual or cancel.
 			<activateWhenReady>true</activateWhenReady>
 		</powerEffect>
 	</mod-append:race>
+	<mod-append:race name="aea_statue_hostile_perma">
+		<essential>-1</essential>
+		<crewSlots>0</crewSlots>
+		<maxHealth>1000</maxHealth>
+		<canBurn>false</canBurn>
+		<canSuffocate>false</canSuffocate>
+		<damageMultiplier>2</damageMultiplier>
+		<damageTakenMultiplier>20</damageTakenMultiplier>
+		<noClone>true</noClone>
+		<canRepair>false</canRepair>
+		<canFight>true</canFight>
+		<canShoot>false</canShoot>
+		<canSabotage>false</canSabotage>
+		<canMan>false</canMan>
+		<canBurn>false</canBurn>
+		<canMove>true</canMove>
+		<canSuffocate>false</canSuffocate>
+		<moveSpeedMultiplier>10</moveSpeedMultiplier>
+		<validTarget>true</validTarget>
+		<canTeleport>true</canTeleport>
+		<teleportMove>true</teleportMove>
+		<canPhaseThroughDoors>true</canPhaseThroughDoors>
+		<deathSounds>
+			<deathSound>rockDeath</deathSound>
+		</deathSounds>
+		<passiveStatBoosts>
+			<statBoost name="moveSpeedMultiplier">
+				<boostType>MULT</boostType>
+				<amount>0.75</amount>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<priority>0</priority>
+			</statBoost>
+			<statBoost name="detectsLifeforms">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>CURRENT_ROOM</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<affectsSelf>false</affectsSelf>
+				<priority>0</priority>
+			</statBoost>
+		</passiveStatBoosts>
+	</mod-append:race>
 
 	<mod-append:race name="aea_sac_human">
 		<animSheet>human</animSheet>
@@ -7402,6 +7877,22 @@ Right click to attempt the ritual or cancel.
 </mod:findLike>
 
 <augments>
+	<aug name="AEA_GODS_IMMORTAL_SHIELD">
+		<function name="ENERGY_SHIELD" value="0" useForReqs="true" warning="false" />
+		<superShield>
+			<value>10</value>
+			<color r="255" g="255" b="255" a="1"/>
+			<shieldImage>ship/aea_shield_base_bubble_white.png</shieldImage>
+		</superShield>
+		<locked />
+		<icon>icon_aea_gods_shield</icon>
+	</aug>
+	<aug name="AEA_GODS_HEAL">
+		<icon>icon_aea_gods_heal</icon>
+	</aug>
+	<aug name="AEA_GODS_HEAL_LOCKED">
+		<function name="AEA_GODS_HEAL" value="10" useForReqs="true" warning="false" />
+	</aug>
 	<aug name="BOON_CREW_AEA_ACID">
     	<statBoosts>
 			<statBoost name="healSpeed">
@@ -8487,6 +8978,11 @@ Right click to attempt the ritual or cancel.
 <events>
 	<metaVariable name="aea_warning_message" op="set" val="0" />
 	<variable name="aea_test_variable" op="set" val="0"/>
+
+	<variable name="freeze_targetRoom" op="set" val="-1"/>
+	<variable name="freeze_targetShip" op="set" val="-1"/>
+	<variable name="freeze_targetRoomEnemy" op="set" val="-1"/>
+
 	<variable name="arc_test_light_nebula" op="set" val="0"/>
 
 	<metaVariable name="aea_super_shield_hotkey_enabled" op="set" val="0" />
@@ -8583,6 +9079,77 @@ Right click to attempt the ritual or cancel.
 	<variable name="aea_justicier_roamer_two_jumping" op="set" val="0"/>
 	<variable name="aea_justicier_roamer_two_killed" op="set" val="0"/>
 
+	<variable name="aea_gods_cleanse_light" op="set" val="0"/>
+	<variable name="aea_gods_cleanse_dark" op="set" val="0"/>
+	<variable name="aea_gods_light_active" op="set" val="0"/>
+	<variable name="aea_gods_snuff_light" op="set" val="0"/>
+	<variable name="aea_gods_snuff_dark" op="set" val="0"/>
+
+	<req name="AEA_GODS_CLEANSE_TOTAL" type="sum">
+		<name>aea_gods_cleanse_light</name>
+		<name>aea_gods_cleanse_dark</name>
+	</req>
+	<req name="AEA_GODS_BOSS_SPAWN_LIGHT" type="all">
+		<req lvl="5">
+			<name>aea_gods_cleanse_light</name>
+		</req>
+		<req lvl="7">
+			<name>AEA_GODS_CLEANSE_TOTAL</name>
+		</req>
+	</req>
+	<req name="AEA_GODS_BOSS_SPAWN_DARK" type="all">
+		<req lvl="5">
+			<name>aea_gods_cleanse_dark</name>
+		</req>
+		<req lvl="7">
+			<name>AEA_GODS_CLEANSE_TOTAL</name>
+		</req>
+	</req>
+
+	<metaVariable name="aea_clone_crime_unlock" op="set" val="0" />
+	<variable name="aea_store_active" op="set" val="0" />
+	<metaVariable name="aea_gods_freeze_unlock" op="set" val="0" />
+	<req name="AEA_GODS_FREEZE_MAKE_NOMIND_NOSTORE" type="all">
+		<name>aea_gods_freeze_unlock</name>
+		<req lvl="0" max_lvl="0">
+			<name>aea_store_active</name>
+		</req>
+		<req lvl="0" max_lvl="0">
+			<name>mind</name>
+		</req>
+		<req lvl="0" max_lvl="0">
+			<name>aea_freeze</name>
+		</req>
+	</req>
+	<req name="AEA_GODS_FREEZE_MAKE_NOSTORE" type="all">
+		<name>aea_gods_freeze_unlock</name>
+		<req lvl="0" max_lvl="0">
+			<name>aea_store_active</name>
+		</req>
+		<name>mind</name>
+		<req lvl="0" max_lvl="0">
+			<name>aea_freeze</name>
+		</req>
+	</req>
+	<req name="AEA_GODS_FREEZE_MAKE_NOMIND" type="all">
+		<name>aea_gods_freeze_unlock</name>
+		<name>aea_store_active</name>
+		<req lvl="0" max_lvl="0">
+			<name>mind</name>
+		</req>
+		<req lvl="0" max_lvl="0">
+			<name>aea_freeze</name>
+		</req>
+	</req>
+	<req name="AEA_GODS_FREEZE_MAKE" type="all">
+		<name>aea_gods_freeze_unlock</name>
+		<name>aea_store_active</name>
+		<name>mind</name>
+		<req lvl="0" max_lvl="0">
+			<name>aea_freeze</name>
+		</req>
+	</req>
+
 	<variable name="aea_justicier_sacs_this_run" op="set" val="0"/>
 	<variable name="aea_justicier_statue_active" op="set" val="0"/>
 	<variable name="aea_justicier_statue_destroy" op="set" val="0"/>
@@ -8590,6 +9157,7 @@ Right click to attempt the ritual or cancel.
 	<metaVariable name="aea_justice_cruiser_unlock" op="set" val="0"/>
 	<metaVariable name="juke_aea_justice" op="set" val="0" />
 	<metaVariable name="aea_dark_book_unlock" op="set" val="0" />
+	<metaVariable name="aea_clone_crime_unlocked" op="set" val="0" />
 	<variable name="aea_dark_book_taken" op="set" val="0" />
 	<variable name="aea_dark_book_ready" op="set" val="1" />
 
@@ -8720,7 +9288,7 @@ Right click to attempt the ritual or cancel.
 	<variable name="aea_old_reactor_upgrades" op="set" val="0"/>
 	<req name="aea_show_upgrade_reactor" type="all">
 		<name>aea_old_activated_cell</name>
-		<req type="all" lvl="0" max_lvl="4">
+		<req type="all" lvl="0" max_lvl="9">
 			<name>aea_old_reactor_upgrades</name>
 		</req>
 	</req>
@@ -8768,6 +9336,9 @@ Right click to attempt the ritual or cancel.
   	<eventFile>sector_aea_old_2</eventFile>
   	<eventFile>sector_aea_old_3</eventFile>
 	
+  	<eventFile>sector_aea_gods</eventFile>
+  	<eventFile>special_aea_gods</eventFile>
+
 	<fleetDef name="CUSTOM_FLEET_AEA_ACID">
         <ship layer="0">fleetaea_acid_1_small</ship>
         <ship layer="0">fleetaea_acid_2_small</ship>
@@ -8950,6 +9521,14 @@ Right click to attempt the ritual or cancel.
 	<bossShip yOffset="100">AEA_OLD_GUARD_BOSS</bossShip>
 	<bossShip yOffset="180">AEA_OLD_LEECH_BATTLESHIP_ELITE</bossShip>
 	
+	<bossShip>AEA_GODS_BOSS_LIGHT_CASUAL</bossShip>
+	<bossShip>AEA_GODS_BOSS_LIGHT_NORMAL</bossShip>
+	<bossShip>AEA_GODS_BOSS_LIGHT_CHALLENGE</bossShip>
+	<bossShip>AEA_GODS_BOSS_LIGHT_EXTREME</bossShip>
+	<bossShip>AEA_JUSTICE_BOSS_DARK_CASUAL</bossShip>
+	<bossShip>AEA_JUSTICE_BOSS_DARK_NORMAL</bossShip>
+	<bossShip>AEA_JUSTICE_BOSS_DARK_CHALLENGE</bossShip>
+	<bossShip>AEA_JUSTICE_BOSS_DARK_EXTREME</bossShip>
 	<bossShip>AEA_OLD_BATTLESHIP</bossShip>
 	<bossShip>AEA_OLD_SPONSOR_1_BOUNTY</bossShip>
 	<bossShip yOffset="155">AEA_OLD_FINAL_BOSS_ONE_CASUAL</bossShip>
@@ -9044,7 +9623,7 @@ Right click to attempt the ritual or cancel.
 		<description>Bring Balance back to the multiverse aboard any layout of the \1</description>
 		<icon>S_AEA_IMMORTAL_WIN</icon>
 		<secretName>\1 ????? Ending</secretName>
-		<secretDescription>Bring Balance back to the multiverse aboard any layout of the \1</secretDescription>
+		<secretDescription>(COMING SOON) Bring Balance back to the multiverse aboard any layout of the \1</secretDescription>
 		<secretIcon>S_secret</secretIcon>
 	</mod-append:aea_immortal_win>
 </mod:findLike>
@@ -9668,6 +10247,180 @@ Right click to attempt the ritual or cancel.
         </category>
     </customStore>
 
+	<customStore id="STORE_AEA_GODS_RUIN_CREW">
+		<hullRepair>
+			<price min="2" max="2" />
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="5" max="5" />
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="5" max="5" />
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="5" max="5" />
+		</resource>
+		<category type="CREW">
+			<customTitle>???</customTitle>
+            <item>
+				<blueprint>LIST_CREW_ALL_CRAPBUCKET</blueprint>
+                <modifier min="0.75" max="0.75" flat="false"/>
+				<price>-1</price>
+            </item>
+            <item>
+                <modifier min="0.5" max="0.5" flat="false"/>
+				<price>-1</price>
+            </item>
+            <item>
+                <modifier min="0.5" max="0.5" flat="false"/>
+				<price>-1</price>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="CREW">
+			<customTitle>???</customTitle>
+            <item>
+				<blueprint>LIST_CREW_ALL_CRAPBUCKET</blueprint>
+                <modifier min="0.75" max="0.75" flat="false"/>
+				<price>-1</price>
+            </item>
+            <item>
+                <modifier min="0.5" max="0.5" flat="false"/>
+				<price>-1</price>
+            </item>
+            <item>
+                <modifier min="0.5" max="0.5" flat="false"/>
+				<price>-1</price>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+            <customTitle>???</customTitle>
+			<guaranteedSystems>
+                <weapons />
+				<shields />
+				<oxygen />
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+    </customStore>
+	<customStore id="STORE_AEA_GODS_RUIN_WEAPON">
+		<hullRepair>
+			<price min="2" max="2" />
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="5" max="5" />
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="5" max="5" />
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="5" max="5" />
+		</resource>
+		<category type="WEAPONS">
+			<customTitle>???</customTitle>
+            <item>
+				<blueprint>LIST_WEAPONS_ALL_CRAPBUCKET</blueprint>
+                <modifier min="0.75" max="0.75" flat="false"/>
+				<price>-1</price>
+            </item>
+            <item>
+                <modifier min="0.5" max="0.5" flat="false"/>
+				<price>-1</price>
+            </item>
+            <item>
+                <modifier min="0.5" max="0.5" flat="false"/>
+				<price>-1</price>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="WEAPONS">
+			<customTitle>???</customTitle>
+            <item>
+				<blueprint>LIST_WEAPONS_ALL_CRAPBUCKET</blueprint>
+                <modifier min="0.75" max="0.75" flat="false"/>
+				<price>-1</price>
+            </item>
+            <item>
+                <modifier min="0.5" max="0.5" flat="false"/>
+				<price>-1</price>
+            </item>
+            <item>
+                <modifier min="0.5" max="0.5" flat="false"/>
+				<price>-1</price>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="DRONES">
+			<customTitle>???</customTitle>
+            <item>
+				<blueprint>LIST_DRONES_ALL_CRAPBUCKET</blueprint>
+                <modifier min="0.75" max="0.75" flat="false"/>
+				<price>-1</price>
+            </item>
+            <item>
+                <modifier min="0.5" max="0.5" flat="false"/>
+				<price>-1</price>
+            </item>
+            <item>
+                <modifier min="0.5" max="0.5" flat="false"/>
+				<price>-1</price>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>???</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+    </customStore>
+	<customStore id="STORE_AEA_GODS_RUIN_SCRAP">
+		<hullRepair>
+			<price min="2" max="2" />
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="5" max="5" />
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="5" max="5" />
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="5" max="5" />
+		</resource>
+		<category type="AUGMENTS">
+            <item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+    </customStore>
+
 	<customStore id="STORE_AEA_COMMUNION">
 		<category type="WEAPONS">
             <customTitle>SPELLS</customTitle>
@@ -9962,6 +10715,15 @@ Right click to attempt the ritual or cancel.
 <mod:findLike type="achievements" limit="1">
 	<mod-append:page>
 		<section text="The Outer Cluster" hidden="false">
+			<achievement name="ACH_AEA_CLONE_CRIME_UNLOCK">
+				<name>Hotwired</name>
+				<secretDescription>???</secretDescription>
+				<description>Illegally modify your Clone Bay for the first time.</description>
+				<icon>ach_aea_clone_crime_unlock</icon>
+				<lockImage>ach_locked</lockImage>
+				<multiDifficulty>false</multiDifficulty>
+				<sound>achievement</sound>
+			</achievement>
 			<achievement name="ACH_AEA_BOOK_UNLOCK">
 				<name>Disciple of the Bloodthirsty</name>
 				<secretDescription>???</secretDescription>
@@ -10006,6 +10768,15 @@ Right click to attempt the ritual or cancel.
 				<description>Reach the Realm of Gods.</description>
 				<icon>ach_aea_realm_of_gods</icon>
 				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_FREEZE_UNLOCK">
+				<name>Crown of Snakes</name>
+				<secretDescription>???</secretDescription>
+				<description>Unlock the Medusa's Gaze system.</description>
+				<icon>ach_aea_freeze_unlock</icon>
+				<lockImage>ach_locked</lockImage>
+				<multiDifficulty>false</multiDifficulty>
 				<sound>achievement</sound>
 			</achievement>
 			<achievement name="ACH_AEA_OLD_TECH">
@@ -10057,7 +10828,7 @@ Right click to attempt the ritual or cancel.
 				<sound>achievement</sound>
 			</achievement>
 			<achievement name="ACH_AEA_WIN_IMMORTAL">
-				<name>As All Things Should Be</name>
+				<name>As All Things Should Be (COMING SOON)</name>
 				<secretDescription>???</secretDescription>
 				<description>Rescue Balance from the Lylmiks, keeping both light and dark at bay.</description>
 				<icon>ach_aea_immortal_win</icon>
@@ -10128,6 +10899,51 @@ Right click to attempt the ritual or cancel.
 				<description>Recruit the Dark Justicier after defeating both of their ships.</description>
 				<header>Character Recruited</header>
 				<icon>ach_aea_crew_justicier</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_CREW_OLD_1">
+				<name>Remorse</name>
+				<secretDescription>???</secretDescription>
+				<description>Recruit the Lylmik Council Member, Atoning Unifex, to your side and rescue them, if temporarily, from exile.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_old_1</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_CREW_OLD_2">
+				<name>Aspect</name>
+				<secretDescription>???</secretDescription>
+				<description>Recruit the Lylmik Council Member, Asymptotic Essence, to your side and rescue them, if temporarily, from exile.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_old_2</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_CREW_OLD_3">
+				<name>Motive</name>
+				<secretDescription>???</secretDescription>
+				<description>Recruit the Lylmik Council Member, Eupathic Impulse, to your side and rescue them, if temporarily, from exile.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_old_3</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_CREW_OLD_4">
+				<name>Tendency</name>
+				<secretDescription>???</secretDescription>
+				<description>Recruit the Lylmik Council Member, Homologous Trend, to your side and rescue them, if temporarily, from exile.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_old_4</icon>
+				<lockImage>ach_locked</lockImage>
+				<sound>achievement</sound>
+			</achievement>
+			<achievement name="ACH_AEA_CREW_OLD_5">
+				<name>Harmony</name>
+				<secretDescription>???</secretDescription>
+				<description>Recruit the Lylmik Council Member, Noetic Concordance, to your side and rescue them, if temporarily, from exile.</description>
+				<header>Character Recruited</header>
+				<icon>ach_aea_crew_old_5</icon>
 				<lockImage>ach_locked</lockImage>
 				<sound>achievement</sound>
 			</achievement>

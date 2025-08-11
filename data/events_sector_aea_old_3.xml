@@ -15,7 +15,8 @@
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
 <event name="START_BEACON_AEA_OLD_3">
-	<text>You've arrived near the gate out of the quarantine.</text>
+	<text>You've arrived near the Lylmik Gate.</text>
+	<variable name="loc_sector_count" op="add" val="1"/>
 	<changeBackground>BACK_SECTOR_AEA_NECRO</changeBackground>
 	<playSound>lightspeed</playSound>
 	<choice>
@@ -43,6 +44,30 @@
 	<choice>
 		<text>Do nothing.</text>
 		<event />
+	</choice>
+</event>
+
+<event name="STORE_HOSTILE_AEA_OLD_FINAL">
+	<preventQuest />
+	<beaconType id="map_icon_store" global="true">
+		<color r="120" g="99" b="84" a="1"/>
+	</beaconType>
+	<text>A greedy Lylmik merchant has setup here in advance of the fleet. They don't care who they're selling to, just that they're selling.</text>
+	<ship load="SHIP_AEA_OLD_GENERIC" hostile="false" />
+	<choice hidden="true">
+		<text>Shop.</text>
+		<event load="STORE_LOAD_GENERIC"/>
+	</choice>
+	<choice hidden="true">
+		<text>Attack the merchant!</text>
+		<event>
+			<text>The merchant was ready for this and activates their weapons in turn.</text>
+			<ship hostile="true"/>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
 	</choice>
 </event>
 
@@ -372,8 +397,12 @@
 
 <event name="AEA_OLD_SHOWDOWN_WIN_ONE">
 	<playSound>lightspeed</playSound>
-	<text>One wing of the flagship explodes in a fiery explosion, ripping it from the hull. The flagship powers up it's jump drive and jumps away, it looks like they're attempting to make some emergency repairs.</text>
+	<text>One wing of the flagship explodes in a fiery explosion, ripping it from the hull. The flagship powers up it's jump drive and jumps away, it looks like they're attempting to make some emergency repairs.
+
+You collect the scrap and components left from the explosion and make some emergency repairs yourself.
+	</text>
 	<variable name="aea_old_showdown_roamer_killed" op="set" val="1"/>
+	<damage amount="-5"/>
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<clearSuperDrones player="false" />
 	<choice hidden="true">
@@ -384,8 +413,12 @@
 
 <event name="AEA_OLD_SHOWDOWN_WIN_TWO">
 	<playSound>lightspeed</playSound>
-	<text>A second wing of the flagship is ripped from the hull. The flagship again powers up it's jump drive and jumps away.</text>
+	<text>A second wing of the flagship is ripped from the hull. The flagship again powers up it's jump drive and jumps away.
+		
+You collect the scrap and components left from the explosion and make some emergency repairs yourself.
+	</text>
 	<variable name="aea_old_showdown_roamer_killed" op="set" val="2"/>
+	<damage amount="-5"/>
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<clearSuperDrones player="false" />
 	<choice hidden="true">
@@ -395,8 +428,13 @@
 </event>
 
 <event name="AEA_OLD_SHOWDOWN_WIN_THREE">
-	<text>Finally the flagship explodes, with the flagship destroyed you'll finally be able to destroy the gate.</text>
+	<text>Finally the flagship explodes, with the flagship destroyed you'll finally be able to destroy the gate.
+
+You collect the scrap and components left from the explosion and make some emergency repairs.
+	</text>
+	<modifyPursuit amount="-10"/>
 	<variable name="aea_old_showdown_roamer_killed" op="set" val="3"/>
+	<damage amount="-15"/>
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<unlockCustomShip silent="false">PLAYER_SHIP_AEA_OLD_ARMOUR</unlockCustomShip>
 	<clearSuperDrones player="false" />
@@ -428,6 +466,7 @@
 		<unvisitedTooltip>This is the location of a large structure.</unvisitedTooltip>
 		<visitedTooltip>This is the location of a large structure.</visitedTooltip>
 	</beaconType>
+	<revisitEvent>AEA_OLD_VICTORY</revisitEvent>
 	<text>You've finally made it to the gate, you need to destroy it to prevent the lylmiks being released into your last universe.</text>
 	<!--metaVariable name="juke_showdown" op="set" val="1" /-->
 	<choice req="aea_old_showdown_roamer_killed" lvl="3" hidden="true">

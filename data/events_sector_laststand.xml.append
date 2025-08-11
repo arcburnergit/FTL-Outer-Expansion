@@ -69,6 +69,7 @@
 
 <event name="AEA_GATE_SPAWN_TRIGGER">
 	<quest event="AEA_OLD_GATE" />
+	<loadEvent>AEA_EVENT_EXIT</loadEvent>
 </event>
 
 </FTL>
