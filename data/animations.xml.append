@@ -5306,6 +5306,25 @@
     <mountPoint x="35" y="138"/>
     <chargeImage>weapons_aea/aea_justice_railgun_glow.png</chargeImage>
 </weaponAnim>
+<animSheet name="aea_justice_laser_fed" w="297" h="55" fw="33" fh="55">weapons_aea/aea_justice_laser_fed.png</animSheet>
+<weaponAnim name="aea_justice_laser_fed">
+    <sheet>aea_justice_laser_fed</sheet>
+    <desc length="9" x="0" y="0"/>
+    <chargedFrame>4</chargedFrame>
+    <fireFrame>6</fireFrame>
+    <firePoint  x="16" y="21"/>
+    <mountPoint x="16" y="50"/>
+</weaponAnim>
+<animSheet name="aea_justice_beam_fed" w="360" h="145" fw="72" fh="145">weapons_aea/aea_justice_beam_fed.png</animSheet>
+<weaponAnim name="aea_justice_beam_fed">
+    <sheet>aea_justice_beam_fed</sheet>
+    <desc length="5" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint  x="35" y="180"/>
+    <mountPoint x="35" y="138"/>
+    <chargeImage>weapons_aea/aea_justice_beam_fed_glow.png</chargeImage>
+</weaponAnim>
 
 <animSheet name="aea_dark_book_object" w="11" h="16" fw="11" fh="16">decor/aea_dark_book.png</animSheet>
 <anim name="aea_dark_book_object">

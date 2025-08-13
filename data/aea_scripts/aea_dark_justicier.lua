@@ -1718,7 +1718,7 @@ local reticle = Hyperspace.Resources:CreateImagePrimitiveString("misc/crosshairs
 
 script.on_render_event(Defines.RenderEvents.SHIP, function(ship) end, function(ship)
 	local shipManager = Hyperspace.ships(1 - ship.iShipId)
-	if shipManager:HasSystem(11) then
+	if shipManager and shipManager:HasSystem(11) then
 		for artillery in vter(shipManager.artillerySystems) do
 			local weapon = artillery.projectileFactory
 			if weapon.blueprint.name == "ARTILLERY_AEA_JUSTICE_RAILGUN" and weapon.weaponVisual.bPowered then

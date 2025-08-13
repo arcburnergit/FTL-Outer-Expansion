@@ -114,6 +114,14 @@
 	<stackable>false</stackable>
 	<bp>0</bp>
 </augBlueprint>
+<augBlueprint name="SHIP_AEA_GODS">
+	<title>Statue Cruiser</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
 
 <augBlueprint name="SHIP_AEA_BROADSIDE">
 	<title>Broadside Cruiser</title>
@@ -2905,7 +2913,6 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 			</slot>
 		</shields>
 		<teleporter power="1" room="19" start="false" />
-		<temporal power="1" room="22" start="false" img="room_temporal_4" />
 		<weapons max="8" power="3" room="7" start="true" img="room_weapons_10">
 			<slot>
 				<direction>up</direction>
@@ -2994,7 +3001,6 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 			</slot>
 		</shields>
 		<teleporter power="1" room="13" start="false" />
-		<temporal power="1" room="1" start="false" />
 		<weapons max="8" power="2" room="8" start="true" img="room_weapons_10">
 			<slot>
 				<direction>up</direction>
@@ -3116,7 +3122,6 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 			</slot>
 		</shields>
 		<teleporter power="1" room="23" start="false" />
-		<temporal power="1" room="16" start="false" />
 		<weapons max="8" power="3" room="1" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
@@ -3288,8 +3293,6 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>0</number>
 			</slot>
 		</shields>
-		<teleporter power="1" room="21" start="false" />
-		<temporal power="1" room="13" start="false" img="room_temporal_4" />
 		<weapons max="8" power="3" room="6" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
@@ -3467,7 +3470,6 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 			</slot>
 		</shields>
 		<teleporter power="2" room="20" start="false" />
-		<temporal power="1" room="6" start="false" />
 		<weapons max="8" power="2" room="14" start="true" img="room_weapons_5">
 			<slot>
 				<direction>right</direction>
@@ -3552,7 +3554,6 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 			</slot>
 		</shields>
 		<teleporter power="1" room="1" start="false" />
-		<temporal power="1" room="5" start="false" />
 		<weapons max="8" power="3" room="4" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
@@ -3638,7 +3639,6 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 			</slot>
 		</shields>
 		<teleporter power="2" room="2" start="true" />
-		<temporal power="1" room="8" start="false" />
 		<weapons max="8" power="2" room="7" start="false" img="room_weapons_5">
 			<slot>
 				<direction>right</direction>
@@ -3809,7 +3809,6 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 			</slot>
 		</shields>
 		<teleporter power="1" room="6" start="false" />
-		<temporal power="1" room="10" start="false" />
 		<weapons max="8" power="3" room="2" start="true" img="room_weapons_5">
 			<slot>
 				<direction>right</direction>
@@ -5427,7 +5426,6 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 			</slot>
 		</shields>
 		<teleporter power="1" room="16" start="false" />
-		<temporal power="1" room="9" start="false" img="room_temporal_4" />
 		<weapons max="8" power="2" room="3" start="false" img="room_weapons_4">
 			<slot>
 				<direction>up</direction>
@@ -5606,7 +5604,6 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 			</slot>
 		</shields>
 		<teleporter power="1" room="20" start="false" />
-		<temporal power="1" room="19" start="false" />
 		<weapons max="8" power="2" room="6" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
@@ -5697,7 +5694,6 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 			</slot>
 		</shields>
 		<teleporter power="1" room="11" start="false" />
-		<temporal power="1" room="15" start="false" />
 		<weapons max="8" power="1" room="5" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
@@ -5787,7 +5783,6 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 			</slot>
 		</shields>
 		<teleporter power="1" room="7" start="false" />
-		<temporal power="1" room="4" start="false" />
 		<weapons max="8" power="2" room="16" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
@@ -9860,7 +9855,6 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			</slot>
 		</shields>
 		<teleporter power="1" room="10" start="false" />
-		<temporal power="1" room="9" start="false" />
 		<weapons max="8" power="1" room="8" start="true" img="room_weapons_4">
 			<slot>
 				<direction>up</direction>
@@ -10054,7 +10048,6 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			</slot>
 		</shields>
 		<teleporter power="1" room="17" start="false" />
-		<temporal power="1" room="15" start="false" />
 		<weapons max="8" power="3" room="1" start="true" img="room_weapons_4">
 			<slot>
 				<direction>up</direction>
@@ -10144,7 +10137,6 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			</slot>
 		</shields>
 		<teleporter power="1" room="28" start="false" />
-		<temporal power="1" room="19" start="false" />
 		<weapons max="8" power="2" room="4" start="false" img="room_weapons_5">
 			<slot>
 				<direction>right</direction>
@@ -10230,7 +10222,6 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			</slot>
 		</shields>
 		<teleporter power="1" room="31" start="false" />
-		<temporal power="1" room="3" start="false" />
 		<weapons max="8" power="3" room="2" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
@@ -10328,7 +10319,6 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			</slot>
 		</shields>
 		<teleporter power="1" room="1" start="true" />
-		<temporal power="1" room="7" start="false" />
 		<weapons max="8" power="2" room="17" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
@@ -10514,7 +10504,6 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 			</slot>
 		</shields>
 		<teleporter power="1" room="7" start="false" />
-		<temporal power="1" room="14" start="false" />
 		<weapons max="8" power="4" room="1" start="true" img="room_weapons_3">
 			<slot>
 				<direction>up</direction>
@@ -11483,7 +11472,6 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 			</slot>
 		</shields>
 		<teleporter power="1" room="11" start="false" />
-		<temporal power="1" room="1" start="false" />
 		<weapons max="8" power="1" room="5" start="true" img="room_weapons_6">
 			<slot>
 				<direction>up</direction>
@@ -11571,7 +11559,6 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 			</slot>
 		</shields>
 		<teleporter power="2" room="17" start="true" />
-		<temporal power="1" room="10" start="false" />
 		<weapons power="2" max="8" room="8" start="true" img="room_weapons_6">
 			<slot>
 				<direction>up</direction>
@@ -11746,7 +11733,6 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 			</slot>
 		</shields>
 		<teleporter power="1" room="8" start="false" />
-		<temporal power="1" room="14" start="false" img="room_temporal_4" />
 		<weapons max="8" power="3" room="4" start="true" img="room_weapons_4">
 			<slot>
 				<direction>up</direction>
@@ -11923,7 +11909,6 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 			</slot>
 		</shields>
 		<teleporter power="1" room="13" start="false" />
-		<temporal power="1" room="1" start="false" />
 		<weapons power="2" max="8" room="8" start="true" img="room_weapons_4">
 			<slot>
 				<direction>up</direction>
@@ -12015,7 +12000,6 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 			</slot>
 		</shields>
 		<teleporter power="1" room="13" start="true" />
-		<temporal power="1" room="12" start="false" />
 		<weapons power="2" room="14" start="true" img="room_weapons_12">
 			<slot>
 				<direction>right</direction>
@@ -12498,7 +12482,6 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</shields>
 		<teleporter power="2" room="20" start="true" />
-		<temporal power="1" room="6" start="false" img="room_temporal_4" />
 		<weapons max="8" power="1" room="7" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
@@ -12761,7 +12744,6 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</aea_super_shields>
 		<teleporter power="1" room="8" start="false" />
-		<temporal power="1" room="16" start="false" />
 		<weapons power="2" max="8" room="9" start="true" img="room_weapons_5">
 			<slot>
 				<direction>right</direction>
@@ -12934,7 +12916,6 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</shields>
 		<teleporter power="1" room="18" start="false" />
-		<temporal power="1" room="4" start="false" img="room_temporal_3" />
 		<weapons power="2" max="8" room="3" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
@@ -13109,7 +13090,6 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</shields>
 		<teleporter power="1" room="7" start="false" />
-		<temporal power="1" room="9" start="false" />
 		<weapons power="2" max="8" room="18" start="true" img="room_weapons_5">
 			<slot>
 				<direction>right</direction>
@@ -13206,7 +13186,6 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</shields>
 		<teleporter power="1" room="10" start="false" />
-		<temporal power="1" room="15" start="false" />
 		<weapons power="2" room="18" start="true" img="room_weapons_12">
 			<slot>
 				<direction>right</direction>
@@ -13535,7 +13514,6 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</shields>
 		<teleporter power="1" room="17" start="false" />
-		<temporal power="1" room="11" start="false" />
 		<weapons power="2" room="15" start="true" img="room_weapons_12">
 			<slot>
 				<direction>right</direction>
@@ -13935,7 +13913,6 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 			</slot>
 		</shields>
 		<teleporter power="1" room="22" start="false" />
-		<temporal power="1" room="17" start="false" />
 		<weapons max="8" power="3" room="11" start="true" img="room_weapons_6">
 			<slot>
 				<direction>up</direction>
@@ -15498,6 +15475,74 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<weaponArt>aea_justice_railgun</weaponArt>
 </weaponBlueprint>
 
+<weaponBlueprint name="ARTILLERY_AEA_JUSTICE_LASER_FED">
+	<type>BURST</type>
+	<flavorType>Artillery</flavorType>
+	<title>Laser Artillery</title>
+	<short>Artillery</short>
+	<desc>[Base cooldown: 30] Fires a barrage of 3 heavy lasers with low breach chance over an area.</desc>
+	<tooltip>Artillery: Fires a barrage of 3 heavy lasers with low breach chance over an area.</tooltip>
+	<radius>45</radius>
+	<damage>2</damage>
+	<spin>0</spin>
+	<shots>3</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>2</breachChance>
+	<cooldown>30</cooldown>
+	<power>0</power>
+	<cost>75</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<projectiles>
+		<projectile count="1" fake="false">laser_heavy</projectile>
+	</projectiles>
+	<launchSounds>
+		<sound>heavyLaser1</sound>
+		<sound>heavyLaser2</sound>
+		<sound>heavyLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_justice_laser_fed</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="ARTILLERY_AEA_JUSTICE_BEAM_FED">
+    <type>BEAM</type>
+	<title>Elite Beam Artillery</title>
+	<short>Artillery</short>
+	<desc>[Base cooldown: 40] Powers a massive beam that does 2 damage per room hit, and pierces all shields.</desc>
+	<tooltip>Artillery: Powers a massive beam that does 2 damage per room hit, and pierces all shields.</tooltip>
+	<damage>2</damage>
+	<color>
+		<r>255</r>
+		<g>200</g>
+		<b>0</b>
+	</color>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<speed>15</speed>
+	<cooldown>40</cooldown>
+	<rarity>0</rarity>
+	<image>beam_contact</image>
+	<length>500</length>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_justice_beam_fed</weaponArt>
+</weaponBlueprint>
+
 <shipBlueprint name="PLAYER_SHIP_AEA_JUSTICE_BOSS" layout="aeap_justice_boss_a" img="aeap_justice_boss_a">
 	<class>The Blood Throne</class>
 	<name>Throne of Knives</name>
@@ -15571,6 +15616,77 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<maxPower amount="10" />
 	<shieldImage>mup_wide2</shieldImage>
 	<mv-mapImage>map_icon_aeap_justice_boss</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_AEA_JUSTICE_BOSS_2" layout="aeap_justice_boss_b" img="aeap_justice_boss_b">
+	<class>The Blood Throne</class>
+	<name>Throne of Knives</name>
+	<desc>This ship is completely devoid of any description whatsoever!</desc>
+	<systemList>
+		<artillery power="2" max="4" room="1" start="true" weapon="ARTILLERY_AEA_JUSTICE_BEAM_FED" img="room_artillery_4" />
+		<artillery power="1" max="4" room="3" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER_FED" img="room_artillery_4" />
+		<artillery power="1" max="4" room="2" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER_FED" img="room_artillery" />
+		<battery power="1" room="24" start="false" img="room_battery_13" />
+		<cloaking power="1" room="12" start="true" img="room_cloaking_11" />
+		<clonebay power="1" room="20" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="2" room="26" start="true" img="room_doors_5">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="13" start="true" img="room_drones_7" />
+		<engines power="2" room="16" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="17" start="false" img="room_hacking_13" />
+		<medbay power="1" room="20" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="21" start="false" img="room_mind_7" />
+		<oxygen power="1" room="19" start="true" img="room_oxygen_9" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="23" start="true" img="room_sensors_6">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="22" start="false" img="room_shields">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="18" start="false" />
+	</systemList>
+	<weaponSlots>0</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="3" count="0" />
+	<droneList drones="14" count="4">
+		<drone name="AEA_COMBAT_BIRD_BURST_1" />
+		<drone name="GUARDIAN_1_DRONE" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="10" />
+	<crewCount amount="1" class="human_soldier" />
+	<crewCount amount="1" class="human_soldier" />
+	<crewCount amount="1" class="human_engineer" />
+	<aug name="CREW_FIREARMS" />
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_AEA_GODS_BOSS" layout="aeap_gods_boss_a" img="aeap_gods_boss_a">

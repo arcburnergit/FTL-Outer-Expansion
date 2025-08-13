@@ -188,7 +188,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_ARMOUR</mod-append:ship>
 		<mod-append:empty/>
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_FLAGSHIP</mod-append:ship>
-		<mod-append:empty/>
+		<mod-append:ship>PLAYER_SHIP_AEA_GODS_BOSS</mod-append:ship>
 
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_UNIA</mod-append:ship>
 		<mod-append:ship>PLAYER_SHIP_AEA_OLD_UNIB</mod-append:ship>
@@ -1417,7 +1417,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 		</crew>
 	</mod-append:customShip>
 
-	<mod-append:ship name="PLAYER_SHIP_AEA_JUSTICE_BOSS" b="false" c="false" secret="true">
+	<mod-append:ship name="PLAYER_SHIP_AEA_JUSTICE_BOSS" b="true" c="false" secret="true">
 		<unlock variant="a" silent="false">
 			<type>4</type>
 		</unlock>
@@ -1446,16 +1446,11 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<rock room="7"/>
 		</crew>
 	</mod-append:customShip>
-	<!--mod-append:customShip name="PLAYER_SHIP_AEA_JUSTICE_BOSS_2">
+	<mod-append:customShip name="PLAYER_SHIP_AEA_JUSTICE_BOSS_2">
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<hiddenAug>SHIP_AEA_JUSTICE</hiddenAug>
-		<crew>
-			<aea_dark_justicier name="The Dark Justicier" room="0"/>
-			<aea_necro_lich room="1"/>
-			<aea_necro_engi room="10"/>
-		</crew>
 	</mod-append:customShip>
-	<mod-append:customShip name="PLAYER_SHIP_AEA_JUSTICE_BOSS_3">
+	<!--mod-append:customShip name="PLAYER_SHIP_AEA_JUSTICE_BOSS_3">
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<hiddenAug>SHIP_AEA_JUSTICE</hiddenAug>
 		<crew>
@@ -1464,6 +1459,31 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<aea_shleg_slug room="20"/>
 		</crew>
 	</mod-append:customShip-->
+
+	<mod-append:ship name="PLAYER_SHIP_AEA_GODS_BOSS" b="false" c="false" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_GODS_BOSS</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_AEA_GODS_BOSS_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_AEA_GODS_BOSS</shipReq>
+        </unlock>
+	</mod-append:ship>
+	<mod-append:customShip name="PLAYER_SHIP_AEA_GODS_BOSS">
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>SHIP_AEA_JUSTICE</hiddenAug>
+		<systemLimit>11</systemLimit>
+	</mod-append:customShip>
 
 
 	<mod-append:customShip name="AEA_JUSTICE_BATTLESHIP">

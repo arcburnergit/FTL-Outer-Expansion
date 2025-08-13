@@ -3552,7 +3552,7 @@
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="12" count="4" load="LIST_LOOT_ORCHID" />
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_VAMPWEED_ELITE" />
 	<droneList drones="0" count="0" />
 	<health amount="20" />
 	<maxPower amount="15" />
@@ -3575,7 +3575,7 @@
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="12" count="4" load="LIST_LOOT_ORCHID" />
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_VAMPWEED_ELITE" />
 	<droneList drones="0" count="0" />
 	<health amount="20" />
 	<crewCount amount="1" max="1" class="aea_cult_priest_off" />
