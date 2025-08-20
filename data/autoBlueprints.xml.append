@@ -10,7 +10,12 @@
     <mod-append:name>AEA_LASER_ACID_SUPER</mod-append:name>
     <mod-append:name>AEA_BEAM_ACID_1</mod-append:name>
     <mod-append:name>AEA_ION_ACID_1</mod-append:name>
-    <mod-append:name>AEA_ION_ACID_1_LOOT</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_1_ELITE</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_2_ELITE</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_3_ELITE</mod-append:name>
+    <mod-append:name>AEA_BEAM_ACID_1_ELITE</mod-append:name>
+    <mod-append:name>AEA_ION_ACID_1_ELITE</mod-append:name>
+    <mod-append:name>AEA_ION_ACID_1_ELITE</mod-append:name>
 
     <mod-append:name>AEA_LASER_NECRO_1</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_2</mod-append:name>
@@ -124,7 +129,12 @@
     <mod-append:name>AEA_LASER_ACID_SUPER</mod-append:name>
     <mod-append:name>AEA_BEAM_ACID_1</mod-append:name>
     <mod-append:name>AEA_ION_ACID_1</mod-append:name>
-    <mod-append:name>AEA_ION_ACID_1_LOOT</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_1_ELITE</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_2_ELITE</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_3_ELITE</mod-append:name>
+    <mod-append:name>AEA_BEAM_ACID_1_ELITE</mod-append:name>
+    <mod-append:name>AEA_ION_ACID_1_ELITE</mod-append:name>
+    <mod-append:name>AEA_ION_ACID_1_ELITE</mod-append:name>
 
     <mod-append:name>AEA_LASER_NECRO_1</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_2</mod-append:name>
@@ -174,8 +184,8 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ALL_CRAPBUCKET">
+    <mod-append:name>aea_acid_worker</mod-append:name>
     <mod-append:name>aea_acid_soldier</mod-append:name>
-    <mod-append:name>aea_acid_captain</mod-append:name>
 
     <mod-append:name>aea_necro_engi</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
@@ -228,8 +238,8 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ALIENS">
+    <mod-append:name>aea_acid_worker</mod-append:name>
     <mod-append:name>aea_acid_soldier</mod-append:name>
-    <mod-append:name>aea_acid_captain</mod-append:name>
     <mod-append:name>aea_acid_bill</mod-append:name>
     <mod-append:name>aea_necro_engi</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
@@ -356,8 +366,8 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_GAS">
+	<mod-append:name>aea_acid_worker</mod-append:name>
 	<mod-append:name>aea_acid_soldier</mod-append:name>
-	<mod-append:name>aea_acid_captain</mod-append:name>
 	<mod-append:name>aea_acid_bill</mod-append:name>
     <mod-append:name>aea_old_1</mod-append:name>
     <mod-append:name>aea_old_unique_1</mod-append:name>
@@ -389,8 +399,8 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_METAL">
+    <mod-append:name>aea_acid_worker</mod-append:name>
     <mod-append:name>aea_acid_soldier</mod-append:name>
-    <mod-append:name>aea_acid_captain</mod-append:name>
     <mod-append:name>aea_acid_bill</mod-append:name>
     <mod-append:name>aea_necro_engi</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
@@ -404,7 +414,7 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ELITE">
-    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_acid_soldier</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
     <mod-append:name>aea_old_1</mod-append:name>
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
@@ -415,7 +425,7 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ELITE_FIRE">
-    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_acid_soldier</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
     <mod-append:name>aea_old_1</mod-append:name>
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
@@ -425,7 +435,7 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ELITE_RHYME">
-    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_acid_soldier</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
     <mod-append:name>aea_old_1</mod-append:name>
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
@@ -533,13 +543,13 @@
 </blueprintList>
 
 <mod:findName type="blueprintList" name="LIST_CREW_GATHERING_RANDOM">
-    <mod-append:name>aea_acid_soldier</mod-append:name>
+    <mod-append:name>aea_acid_worker</mod-append:name>
     <mod-append:name>aea_cult_wizard_a01</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_METAL">
+    <mod-append:name>aea_acid_worker</mod-append:name>
     <mod-append:name>aea_acid_soldier</mod-append:name>
-    <mod-append:name>aea_acid_captain</mod-append:name>
     <mod-append:name>aea_acid_bill</mod-append:name>
     <mod-append:name>aea_necro_engi</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
@@ -562,8 +572,8 @@
 </mod:findName>
 
 <blueprintList name="LIST_CREW_AEA_ACID">
+    <name>aea_acid_worker</name>
     <name>aea_acid_soldier</name>
-    <name>aea_acid_captain</name>
     <name>aea_acid_bill</name>
 </blueprintList>
 <blueprintList name="LIST_CREW_AEA_BIRD">
@@ -634,7 +644,7 @@
 </blueprintList>
 
 <blueprintList name="LIST_CREW_AEA_ACID_ER">
-    <name>aea_acid_captain</name>
+    <name>aea_acid_soldier</name>
     <name>aea_acid_bill</name>
 </blueprintList>
 <blueprintList name="LIST_CREW_AEA_BIRD_ER">
@@ -682,7 +692,7 @@
 	<name>AEA_LASER_ACID_BOSS</name>
 	<name>AEA_CRYSTAL_SHARD_BOSS</name>
 	<name>AEA_BEAM_SHLEG_BOSS</name>
-	<name>AEA_ION_ACID_1_LOOT</name>
+	<name>AEA_LASER_ACID_3_ELITE</name>
 	<name>AEA_LASER_NECRO_2_LOOT</name>
 	<name>AEA_LASER_OLDP_3_LOOT</name>
 	<name>AEA_LASER_CULT_LOOT</name>
@@ -700,6 +710,11 @@
 	<name>AEA_LASER_ACID_3</name>
 	<name>AEA_BEAM_ACID_1</name>
 	<name>AEA_ION_ACID_1</name>
+	<name>AEA_LASER_ACID_1_ELITE</name>
+	<name>AEA_LASER_ACID_2_ELITE</name>
+	<name>AEA_LASER_ACID_3_ELITE</name>
+	<name>AEA_BEAM_ACID_1_ELITE</name>
+	<name>AEA_ION_ACID_1_ELITE</name>
 	<name>AEA_LASER_NECRO_1</name>
 	<name>AEA_LASER_NECRO_2</name>
 	<name>AEA_LASER_NECRO_3</name>
@@ -994,7 +1009,12 @@
 </blueprintList>
 
 <blueprintList name="LIST_LOOT_AEA_ACID">
-	<name>AEA_ION_ACID_1_LOOT</name>
+    <name>AEA_LASER_ACID_1_ELITE</name>
+    <name>AEA_LASER_ACID_2_ELITE</name>
+    <name>AEA_LASER_ACID_3_ELITE</name>
+    <name>AEA_BEAM_ACID_1_ELITE</name>
+    <name>AEA_ION_ACID_1_ELITE</name>
+    <name>AEA_ION_ACID_1_ELITE</name>
 </blueprintList>
 
 <blueprintList name="LIST_LOOT_AEA_NECRO">
@@ -1002,16 +1022,16 @@
 </blueprintList>
 
 <blueprintList name="LIST_WEAPONS_ACIDIC">
-    <name>AEA_LASER_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_2_ENEMY</name>
-    <name>AEA_LASER_ACID_3_ENEMY</name>
-    <name>AEA_BEAM_ACID_1_ENEMY</name>
-    <name>AEA_ION_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_2_ENEMY</name>
-    <name>AEA_LASER_ACID_3_ENEMY</name>
-    <name>AEA_BEAM_ACID_1_ENEMY</name>
-    <name>AEA_ION_ACID_1_ENEMY</name>
+    <name>AEA_LASER_ACID_1</name>
+    <name>AEA_LASER_ACID_2</name>
+    <name>AEA_LASER_ACID_3</name>
+    <name>AEA_BEAM_ACID_1</name>
+    <name>AEA_ION_ACID_1</name>
+    <name>AEA_LASER_ACID_1</name>
+    <name>AEA_LASER_ACID_2</name>
+    <name>AEA_LASER_ACID_3</name>
+    <name>AEA_BEAM_ACID_1</name>
+    <name>AEA_ION_ACID_1</name>
     
     <name>LASER_HEAVY_1</name>
 	<name>LASER_HULL_1_ENEMY</name>
@@ -1035,16 +1055,16 @@
 	<name>ENERGY_HULL</name>
 </blueprintList>
 <blueprintList name="LIST_WEAPONS_ACIDIC_ELITE">
-    <name>AEA_LASER_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_2_ENEMY</name>
-    <name>AEA_LASER_ACID_3_ENEMY</name>
-    <name>AEA_BEAM_ACID_1_ENEMY</name>
-    <name>AEA_ION_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_2_ENEMY</name>
-    <name>AEA_LASER_ACID_3_ENEMY</name>
-    <name>AEA_BEAM_ACID_1_ENEMY</name>
-    <name>AEA_ION_ACID_1_ENEMY</name>
+    <name>AEA_LASER_ACID_1</name>
+    <name>AEA_LASER_ACID_2</name>
+    <name>AEA_LASER_ACID_3</name>
+    <name>AEA_BEAM_ACID_1</name>
+    <name>AEA_ION_ACID_1</name>
+    <name>AEA_LASER_ACID_1_ELITE</name>
+    <name>AEA_LASER_ACID_2_ELITE</name>
+    <name>AEA_LASER_ACID_3_ELITE</name>
+    <name>AEA_BEAM_ACID_1_ELITE</name>
+    <name>AEA_ION_ACID_1_ELITE</name>
     
     <name>LASER_HEAVY_1</name>
 	<name>LASER_HULL_1_ENEMY</name>
@@ -7088,16 +7108,16 @@ A CLASS
 	<weaponSlots>5</weaponSlots>
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="12" count="5">
-		<weapon name="AEA_LASER_ACID_2_ENEMY" />
-		<weapon name="AEA_LASER_ACID_2_ENEMY" />
+		<weapon name="AEA_LASER_ACID_2" />
+		<weapon name="AEA_LASER_ACID_2" />
 		<weapon name="LASER_BURST_1" />
 		<weapon name="LASER_BURST_1" />
-		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
+		<weapon name="AEA_BEAM_ACID_1" />
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="17" />
-	<crewCount amount="8" max="8" class="aea_acid_captain" />
+	<crewCount amount="8" max="8" class="aea_acid_soldier" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
@@ -7116,17 +7136,17 @@ A CLASS
 	<weaponSlots>6</weaponSlots>
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="12" count="6">
-		<weapon name="AEA_LASER_ACID_2_ENEMY" />
-		<weapon name="AEA_LASER_ACID_1_ENEMY" />
+		<weapon name="AEA_LASER_ACID_2" />
+		<weapon name="AEA_LASER_ACID_1" />
 		<weapon name="LASER_BURST_1" />
 		<weapon name="LASER_BURST_1" />
-		<weapon name="AEA_ION_ACID_1_ENEMY" />
-		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
+		<weapon name="AEA_ION_ACID_1" />
+		<weapon name="AEA_BEAM_ACID_1" />
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="19" />
-	<crewCount amount="8" max="8" class="aea_acid_captain" />
+	<crewCount amount="8" max="8" class="aea_acid_soldier" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
@@ -7145,17 +7165,17 @@ A CLASS
 	<weaponSlots>6</weaponSlots>
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="12" count="6">
-		<weapon name="AEA_LASER_ACID_2_ENEMY" />
-		<weapon name="AEA_LASER_ACID_2_ENEMY" />
+		<weapon name="AEA_LASER_ACID_2" />
+		<weapon name="AEA_LASER_ACID_2" />
 		<weapon name="LASER_BURST_1" />
 		<weapon name="LASER_BURST_2" />
-		<weapon name="AEA_ION_ACID_1_ENEMY" />
-		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
+		<weapon name="AEA_ION_ACID_1" />
+		<weapon name="AEA_BEAM_ACID_1" />
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="20" />
-	<crewCount amount="8" max="8" class="aea_acid_captain" />
+	<crewCount amount="8" max="8" class="aea_acid_soldier" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
@@ -7179,13 +7199,13 @@ A CLASS
 		<weapon name="AEA_LASER_ACID_BOSS" />
 		<weapon name="LASER_BURST_2" />
 		<weapon name="LASER_BURST_2" />
-		<weapon name="AEA_ION_ACID_1_ENEMY" />
-		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
+		<weapon name="AEA_ION_ACID_1" />
+		<weapon name="AEA_BEAM_ACID_1" />
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="20" />
-	<crewCount amount="8" max="8" class="aea_acid_captain" />
+	<crewCount amount="8" max="8" class="aea_acid_soldier" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>

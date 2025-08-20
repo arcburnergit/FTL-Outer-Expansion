@@ -229,11 +229,16 @@
 		<blueprint name="phantom_goul" rarity="0" />
 		<blueprint name="phantom_mare" rarity="0" />
 		<blueprint name="phantom_wraith" rarity="0" />
+
         <blueprint name="AEA_LASER_ACID_1" rarity="3" />
         <blueprint name="AEA_LASER_ACID_2" rarity="2" />
         <blueprint name="AEA_LASER_ACID_3" rarity="3" />
         <blueprint name="AEA_BEAM_ACID_1" rarity="3" />
         <blueprint name="AEA_ION_ACID_1" rarity="2" />
+		
+        <blueprint name="AEA_LASER_ACID_1_ELITE" rarity="5" />
+        <blueprint name="AEA_LASER_ACID_2_ELITE" rarity="5" />
+        <blueprint name="AEA_ION_ACID_1_ELITE" rarity="5" />
 	</rarityList>
 	<startEvent>ENTER_AEA_ACID</startEvent>
 	<removeFirstBeaconNebula />
@@ -304,6 +309,12 @@
         <blueprint name="AEA_LASER_ACID_3" rarity="2" />
         <blueprint name="AEA_BEAM_ACID_1" rarity="2" />
         <blueprint name="AEA_ION_ACID_1" rarity="2" />
+		
+        <blueprint name="AEA_LASER_ACID_1_ELITE" rarity="5" />
+        <blueprint name="AEA_LASER_ACID_2_ELITE" rarity="5" />
+        <blueprint name="AEA_LASER_ACID_3_ELITE" rarity="5" />
+        <blueprint name="AEA_BEAM_ACID_1_ELITE" rarity="5" />
+        <blueprint name="AEA_ION_ACID_1_ELITE" rarity="5" />
 	</rarityList>
 	<startEvent>ENTER_AEA_ACID_UNIQUE</startEvent>
 	<removeFirstBeaconNebula />

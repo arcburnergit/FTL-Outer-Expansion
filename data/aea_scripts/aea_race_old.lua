@@ -1113,7 +1113,8 @@ doorSmash["AEA_MISSILE_OLD_3"] = true
 doorSmash["AEA_MISSILE_OLD_3_ENEMY"] = true
 doorSmash["ARTILLERY_AEA_MISSILE_OLD"] = true
 
-local smashedRooms = {[0] = {}, [1] = {}}
+mods.aea.smashedRooms = {[0] = {}, [1] = {}}
+local smashedRooms = mods.aea.smashedRooms
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
     if projectile and projectile.extend.name and doorSmash[projectile.extend.name] and not userdata_table(projectile, "mods.aea.doorSmash").smashed then

@@ -467,7 +467,7 @@ statueCrewImage["obelisk"] = {base = Hyperspace.Resources:GetImageId("people/aea
 
 mods.aea.crewToStatue = {}
 local crewToStatue = mods.aea.crewToStatue
-crewToStatue["human"] = statueCrewImage["human"]
+crewToStatue["human"] = statueCrewImage.human
 crewToStatue["human_medic"] = statueCrewImage.human
 crewToStatue["human_engineer"] = statueCrewImage.human
 crewToStatue["human_rebel"] = statueCrewImage.human
@@ -717,5 +717,17 @@ end)
 script.on_game_event("AEA_GODS_CLEAR_3", false, function()
 	for crewmem in vter(Hyperspace.ships.player.vCrewList) do
 		statue_remove_crew(crewmem)
+	end
+end)
+
+local counter = 0
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+	if weapon.blueprint.name == "ARTILLERY_AEA_JUSTICE_LASER_FED" then
+		if counter == 1 then
+			projectile.position.y = projectile.position.y + 10
+		elseif counter == 2 then
+			projectile.position.y = projectile.position.y - 10
+		end
+		counter = (counter + 1)%3
 	end
 end)

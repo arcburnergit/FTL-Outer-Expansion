@@ -28,6 +28,7 @@
   <mod-append:script>data/aea_scripts/aea_roamers.lua</mod-append:script>
 
   <mod-append:script>data/aea_scripts/mvtest_custom_weapon_animations.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/better_jukebox.lua</mod-append:script>
 </mod:findLike>
 <dualMedical enabled="true"/>
 <mod:findLike type="customSystems">
@@ -606,7 +607,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crew>
-			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
 			<orchid room="1"/>
 			<orchid room="7"/>
 		</crew>
@@ -616,9 +617,9 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crew>
-			<aea_acid_soldier room="15" name="Acidic Soldier" />
-			<aea_acid_soldier room="2" name="Acidic Soldier" />
-			<aea_acid_soldier room="6" name="Acidic Soldier" />
+			<aea_acid_worker room="15" name="Acidic Worker" />
+			<aea_acid_worker room="2" name="Acidic Worker" />
+			<aea_acid_worker room="6" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 		
@@ -631,7 +632,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crew>
-			<aea_acid_captain room="0" name="Acidic Leader" />
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
 			<orchid_caretaker room="1"/>
 			<orchid room="4"/>
 		</crew>
@@ -641,9 +642,9 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crew>
-			<aea_acid_captain room="8" name="Acidic Leader" />
-			<aea_acid_soldier room="4" name="Acidic Soldier" />
-			<aea_acid_soldier room="15" name="Acidic Soldier" />
+			<aea_acid_soldier room="8" name="Acidic Soldier" />
+			<aea_acid_worker room="4" name="Acidic Worker" />
+			<aea_acid_worker room="15" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 		
@@ -651,10 +652,10 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crew>
-			<aea_acid_captain room="0" name="Acidic Leader" />
-			<aea_acid_captain room="4" name="Acidic Leader" />
-			<aea_acid_soldier room="3" name="Acidic Soldier" />
-			<aea_acid_soldier room="2" name="Acidic Soldier" />
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_soldier room="4" name="Acidic Soldier" />
+			<aea_acid_worker room="3" name="Acidic Worker" />
+			<aea_acid_worker room="2" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 		
@@ -1759,7 +1760,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 		</rooms>
 		<crew>
 			<aea_old_unique_2 name="Asymptotic Essence" room="20"/>
-			<aea_acid_soldier name="Acidic Soldier" room="0"/>
+			<aea_acid_worker name="Acidic Worker" room="0"/>
 			<orchid_caretaker room="4"/>
 		</crew>
 	</mod-append:customShip>
@@ -3765,10 +3766,10 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_threat</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_soldier room="0" name="Acidic Soldier" />
-			<aea_acid_captain room="1" name="Acidic Leader" />
-			<aea_acid_soldier room="0" name="Acidic Soldier" />
-			<aea_acid_soldier room="3" name="Acidic Soldier" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
+			<aea_acid_soldier room="1" name="Acidic Soldier" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
+			<aea_acid_worker room="3" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3777,8 +3778,8 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_soldier room="0" name="Acidic Soldier" />
-			<aea_acid_soldier room="3" name="Acidic Soldier" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
+			<aea_acid_worker room="3" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3787,9 +3788,9 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_soldier room="3" name="Acidic Soldier" />
-			<aea_acid_soldier room="9" name="Acidic Soldier" />
-			<aea_acid_soldier room="2" name="Acidic Soldier" />
+			<aea_acid_worker room="3" name="Acidic Worker" />
+			<aea_acid_worker room="9" name="Acidic Worker" />
+			<aea_acid_worker room="2" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3798,8 +3799,8 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_soldier room="2" name="Acidic Soldier" />
-			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_worker room="2" name="Acidic Worker" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3808,9 +3809,9 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_soldier room="6" name="Acidic Soldier" />
-			<aea_acid_soldier room="7" name="Acidic Soldier" />
-			<aea_acid_soldier room="8" name="Acidic Soldier" />
+			<aea_acid_worker room="6" name="Acidic Worker" />
+			<aea_acid_worker room="7" name="Acidic Worker" />
+			<aea_acid_worker room="8" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3819,9 +3820,9 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_soldier room="0" name="Acidic Soldier" />
-			<aea_acid_soldier room="4" name="Acidic Soldier" />
-			<aea_acid_soldier room="7" name="Acidic Soldier" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
+			<aea_acid_worker room="4" name="Acidic Worker" />
+			<aea_acid_worker room="7" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3830,9 +3831,9 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_soldier room="0" name="Acidic Soldier" />
-			<aea_acid_soldier room="4" name="Acidic Soldier" />
-			<aea_acid_soldier room="7" name="Acidic Soldier" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
+			<aea_acid_worker room="4" name="Acidic Worker" />
+			<aea_acid_worker room="7" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3842,11 +3843,11 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
             <shipIcon>icon_invasion</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_soldier room="0" name="Acidic Soldier" />
-			<aea_acid_captain room="1" name="Acidic Leader" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
 			<aea_acid_soldier room="1" name="Acidic Soldier" />
-			<aea_acid_soldier room="1" name="Acidic Soldier" />
-			<aea_acid_soldier room="4" name="Acidic Soldier" />
+			<aea_acid_worker room="1" name="Acidic Worker" />
+			<aea_acid_worker room="1" name="Acidic Worker" />
+			<aea_acid_worker room="4" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3855,10 +3856,10 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_captain room="0" name="Acidic Leader" />
-			<aea_acid_soldier room="3" name="Acidic Soldier" />
-			<aea_acid_soldier room="5" name="Acidic Soldier" />
-			<aea_acid_soldier room="2" name="Acidic Soldier" />
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_worker room="3" name="Acidic Worker" />
+			<aea_acid_worker room="5" name="Acidic Worker" />
+			<aea_acid_worker room="2" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3868,9 +3869,9 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_captain room="0" name="Acidic Leader" />
 			<aea_acid_soldier room="0" name="Acidic Soldier" />
-			<aea_acid_soldier room="3" name="Acidic Soldier" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
+			<aea_acid_worker room="3" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3879,10 +3880,10 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_captain room="0" name="Acidic Leader" />
-			<aea_acid_soldier room="3" name="Acidic Soldier" />
-			<aea_acid_soldier room="9" name="Acidic Soldier" />
-			<aea_acid_soldier room="2" name="Acidic Soldier" />
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_worker room="3" name="Acidic Worker" />
+			<aea_acid_worker room="9" name="Acidic Worker" />
+			<aea_acid_worker room="2" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3891,9 +3892,9 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_captain room="0" name="Acidic Leader" />
-			<aea_acid_soldier room="2" name="Acidic Soldier" />
 			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_worker room="2" name="Acidic Worker" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3902,10 +3903,10 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_captain room="0" name="Acidic Leader" />
-			<aea_acid_soldier room="6" name="Acidic Soldier" />
-			<aea_acid_soldier room="7" name="Acidic Soldier" />
-			<aea_acid_soldier room="8" name="Acidic Soldier" />
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_worker room="6" name="Acidic Worker" />
+			<aea_acid_worker room="7" name="Acidic Worker" />
+			<aea_acid_worker room="8" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3914,10 +3915,10 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_captain room="0" name="Acidic Leader" />
 			<aea_acid_soldier room="0" name="Acidic Soldier" />
-			<aea_acid_soldier room="4" name="Acidic Soldier" />
-			<aea_acid_soldier room="7" name="Acidic Soldier" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
+			<aea_acid_worker room="4" name="Acidic Worker" />
+			<aea_acid_worker room="7" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3927,11 +3928,11 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
             <shipIcon>icon_invasion</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_soldier room="0" name="Acidic Soldier" />
-			<aea_acid_captain room="1" name="Acidic Leader" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
 			<aea_acid_soldier room="1" name="Acidic Soldier" />
-			<aea_acid_soldier room="1" name="Acidic Soldier" />
-			<aea_acid_soldier room="4" name="Acidic Soldier" />
+			<aea_acid_worker room="1" name="Acidic Worker" />
+			<aea_acid_worker room="1" name="Acidic Worker" />
+			<aea_acid_worker room="4" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -3940,10 +3941,10 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
         </shipIcons>
 		<crew>
-			<aea_acid_captain room="0" name="Acidic Leader" />
-			<aea_acid_soldier room="3" name="Acidic Soldier" />
-			<aea_acid_soldier room="5" name="Acidic Soldier" />
-			<aea_acid_soldier room="2" name="Acidic Soldier" />
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_worker room="3" name="Acidic Worker" />
+			<aea_acid_worker room="5" name="Acidic Worker" />
+			<aea_acid_worker room="2" name="Acidic Worker" />
 		</crew>
 	</mod-append:customShip>
 
@@ -5056,127 +5057,80 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 </mod:findLike>
 
 <mod:findLike type="crew" limit="1">
-	<mod-append:race name="aea_acid_soldier">
-		<canFight>true</canFight>
-		<canPunch>false</canPunch>
-		<canShoot>true</canShoot>
-		<canSabotage>true</canSabotage>
-		<lowHealthThreshold>2500.0</lowHealthThreshold>
+	<mod-append:race name="aea_acid_worker">
 		<resistsMindControl>true</resistsMindControl>
-		<lowHealthThresholdPercentage>0.25</lowHealthThresholdPercentage>
-		<maxHealth>150</maxHealth>
-		<canBurn>true</canBurn>
+		<maxHealth>100</maxHealth>
 		<canSuffocate>false</canSuffocate>
-		<fireRepairMultiplier>1</fireRepairMultiplier>
-		<repairSpeed>1.25</repairSpeed>
-		<moveSpeedMultiplier>0.75</moveSpeedMultiplier>
-		<stunMultiplier>0.75</stunMultiplier>
-		<skills>
-			<combat req="5" />
-		</skills>
-		<deathSounds>
-			<deathSound>rockDeath</deathSound>
-		</deathSounds>
-		<shootingSounds>
-			<shootingSound>crewLaser1</shootingSound>
-			<shootingSound>crewLaser2</shootingSound>
-			<shootingSound>crewLaser3</shootingSound>
-		</shootingSounds>
-	</mod-append:race>
-	<mod-append:race name="aea_acid_captain">
-		<canFight>true</canFight>
-		<canPunch>false</canPunch>
-		<canShoot>true</canShoot>
-		<canSabotage>true</canSabotage>
-		<lowHealthThreshold>2500.0</lowHealthThreshold>
-		<resistsMindControl>true</resistsMindControl>
-		<lowHealthThresholdPercentage>0.25</lowHealthThresholdPercentage>
-		<maxHealth>200</maxHealth>
-		<canBurn>true</canBurn>
-		<canSuffocate>false</canSuffocate>
-		<fireRepairMultiplier>1</fireRepairMultiplier>
+		<damageMultiplier>0.75</damageMultiplier>
 		<repairSpeed>1.5</repairSpeed>
-		<moveSpeedMultiplier>0.5</moveSpeedMultiplier>
-		<stunMultiplier>0.75</stunMultiplier>
-		<skills>
-			<combat req="5" />
-		</skills>
+		<moveSpeedMultiplier>1.5</moveSpeedMultiplier>
 		<deathSounds>
-			<deathSound>rockDeath</deathSound>
+			<deathSound>sysExplosion</deathSound>
 		</deathSounds>
-		<shootingSounds>
-			<shootingSound>crewLaser1</shootingSound>
-			<shootingSound>crewLaser2</shootingSound>
-			<shootingSound>crewLaser3</shootingSound>
-		</shootingSounds>
-		<passiveStatBoosts>  
-			<statBoost name="healAmount">
-				<boostType>FLAT</boostType>
-				<shipTarget>CURRENT_ROOM</shipTarget>
-				<crewTarget>ALLIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<amount>1.6</amount>
-				<priority>0</priority>
-				<maxStacks>1</maxStacks>
-				<whiteList>
-					<aea_acid_soldier />
-				</whiteList>
-			</statBoost>
-		</passiveStatBoosts>
-	</mod-append:race>
-	<mod-append:race name="aea_acid_bill">
-		<essential>1</essential>
-		<canFight>true</canFight>
-		<canPunch>false</canPunch>
-		<canShoot>true</canShoot>
-		<canSabotage>true</canSabotage>
-		<lowHealthThreshold>2500.0</lowHealthThreshold>
-		<resistsMindControl>true</resistsMindControl>
-		<lowHealthThresholdPercentage>0.25</lowHealthThresholdPercentage>
-		<maxHealth>250</maxHealth>
-		<canBurn>true</canBurn>
-		<canSuffocate>false</canSuffocate>
-		<fireRepairMultiplier>1</fireRepairMultiplier>
-		<repairSpeed>2</repairSpeed>
-		<moveSpeedMultiplier>0.5</moveSpeedMultiplier>
-		<stunMultiplier>0.75</stunMultiplier>
-		<skills>
-			<combat req="5" />
-		</skills>
-		<deathSounds>
-			<deathSound>rockDeath</deathSound>
-		</deathSounds>
-		<shootingSounds>
-			<shootingSound>crewLaser1</shootingSound>
-			<shootingSound>crewLaser2</shootingSound>
-			<shootingSound>crewLaser3</shootingSound>
-		</shootingSounds>
-		<passiveStatBoosts>  
-			<statBoost name="healAmount">
-				<boostType>FLAT</boostType>
-				<shipTarget>CURRENT_ROOM</shipTarget>
-				<crewTarget>ALLIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<amount>1.2</amount>
-				<priority>0</priority>
-				<maxStacks>1</maxStacks>
-				<blackList>
-					<aea_acid_bill />
-				</blackList>
-			</statBoost>
-		</passiveStatBoosts>
-
 		<powerEffect>
 			<cooldown>30</cooldown>
 			<jumpCooldown>full</jumpCooldown>
 			<powerSounds>
-				<powerSound>siren_death</powerSound>
+				<powerSound>cultivatorSpore</powerSound>
 			</powerSounds>
-			<buttonText>EXTERMINATE</buttonText>
-			<tooltip>Ready: immediately kill all enemy crew below 35hp</tooltip>
-			<cooldownColor r="138" g="237" b="31"/>
+			<buttonText>GAS</buttonText>
+			<tooltip>[COOLDOWN:30s]
+Release Acidic Gas into the current room, which lasts 10 seconds.
+- Gas causes a hull breach every 5 seconds.
+- Gas Damages connected doors, causing them to break open temporarily.
+			</tooltip>
+			<cooldownColor r="50" g="166" b="31"/>
 		</powerEffect>
 	</mod-append:race>
+	<mod-append:race name="aea_acid_soldier">
+		<resistsMindControl>true</resistsMindControl>
+		<maxHealth>150</maxHealth>
+		<canSuffocate>false</canSuffocate>
+		<damageMultiplier>1.25</damageMultiplier>
+		<repairSpeed>1</repairSpeed>
+		<deathSounds>
+			<deathSound>sysExplosion</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>20</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<buttonText>GAS</buttonText>
+			<tooltip>[COOLDOWN:20s]
+Release Acidic Gas into the current room, which lasts 10 seconds.
+- Gas causes a hull breach every 5 seconds.
+- Gas Damages connected doors, causing them to break open temporarily.
+			</tooltip>
+			<cooldownColor r="50" g="166" b="31"/>
+		</powerEffect>
+	</mod-append:race>
+	<mod-append:race name="aea_acid_bill">
+		<resistsMindControl>true</resistsMindControl>
+		<maxHealth>150</maxHealth>
+		<canSuffocate>false</canSuffocate>
+		<damageMultiplier>1.5</damageMultiplier>
+		<repairSpeed>1.5</repairSpeed>
+		<deathSounds>
+			<deathSound>sysExplosion</deathSound>
+		</deathSounds>
+		<powerEffect>
+			<cooldown>10</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>cultivatorSpore</powerSound>
+			</powerSounds>
+			<buttonText>GAS</buttonText>
+			<tooltip>[COOLDOWN:10s]
+Release Acidic Gas into the current room, which lasts 10 seconds.
+- Gas causes a hull breach every 5 seconds.
+- Gas Damages connected doors, causing them to break open temporarily.
+			</tooltip>
+			<cooldownColor r="50" g="166" b="31"/>
+		</powerEffect>
+	</mod-append:race>
+
 	<mod-append:race name="aea_necro_engi">
 		<repairSpeed>1.75</repairSpeed>
 		<damageMultiplier>0.75</damageMultiplier>
@@ -8996,6 +8950,7 @@ Right click to attempt the ritual or cancel.
 </mod:findLike>
 
 <events>
+	<metaVariable name="better_juke_enabled" op="set" val="0" />
 	<metaVariable name="aea_warning_message" op="set" val="0" />
 	<variable name="aea_test_variable" op="set" val="0"/>
 

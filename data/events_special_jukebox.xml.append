@@ -1,74 +1,94 @@
 <FTL>
 <mod:findName type="event" name="STORAGE_CHECK_JUKEBOX">
 	<mod-append:choice hidden="true" req="juke_aea_acid">
-		<text>OE: Acidic.</text>
+		<text>[style[color:A47DAB]]OE: Acidic[[/style]]
+Composed by: Lizzard</text>
 		<event>
 			<playMusic>aea_acidic</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_necro">
-		<text>OE: Heretic.</text>
+		<text>[style[color:A47DAB]]OE: Heretic[[/style]]
+Composed by: Lizzard</text>
 		<event>
 			<playMusic>aea_heretic</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_cult">
-		<text>OE: Cultist.</text>
+		<text>[style[color:A47DAB]]OE: Cultist[[/style]]
+Composed by: Lizzard</text>
 		<event>
 			<playMusic>aea_cultist</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_bird">
-		<text>OE: Gi.</text>
+		<text>[style[color:A47DAB]]OE: Gi[[/style]]
+Composed by: Lizzard</text>
 		<event>
 			<playMusic>aea_bird</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_shleg">
-		<text>OE: Anarchy.</text>
+		<text>[style[color:A47DAB]]OE: Anarchy[[/style]]
+Composed by: Lizzard</text>
 		<event>
 			<playMusic>aea_shleg</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_shard">
-		<text>OE: Shard.</text>
+		<text>[style[color:A47DAB]]OE: Shard[[/style]]
+Composed by: Lizzard</text>
 		<event>
 			<playMusic>aea_shard</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_justice">
-		<text>OE: Requiem.</text>
+		<text>[style[color:A47DAB]]OE: Requiem[[/style]]
+Composed by: Lizzard</text>
 		<event>
 			<playMusic>aea_justice</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_old_1">
-		<text>OE: Lylmik Outskirts.</text>
+		<text>[style[color:A47DAB]]OE: Lylmik Outskirts[[/style]]
+Composed by: Lizzard</text>
 		<event>
 			<playMusic>aea_lylmik</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_old_2">
-		<text>OE: Lylmik Core.</text>
+		<text>[style[color:A47DAB]]OE: Lylmik Core[[/style]]
+Composed by: Lizzard</text>
 		<event>
 			<playMusic>aea_lylmik_core</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 	<mod-append:choice hidden="true" req="juke_aea_old_3">
-		<text>OE: Lylmik Finale.</text>
+		<text>[style[color:A47DAB]]OE: Lylmik Finale[[/style]]
+Composed by: Lizzard</text>
 		<event>
 			<playMusic>aea_lylmik_boss</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 </mod:findName>
+
+<event name="STORAGE_CHECK_JUKEBOX_EMPTY">
+	<text>test</text>
+	<choice hidden="true">
+		<text>  </text>
+		<event name="STORAGE_CHECK_JUKEBOX_EMPTY_LOAD">
+			<loadEvent>STORAGE_CHECK_JUKEBOX_EMPTY</loadEvent>
+		</event>
+	</choice>
+</event>
 </FTL>

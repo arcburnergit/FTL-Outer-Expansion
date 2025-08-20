@@ -939,7 +939,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<title>Acid Laser MK I</title>
 	<short>Acid I</short>
 	<tip>tip_laser</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact.</desc>
 	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
 	<damage>1</damage>
 	<shots>2</shots>
@@ -947,19 +947,6 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<fireChance>0</fireChance>
 	<stunChance>0</stunChance>
 	<breachChance>0</breachChance>
-	<erosionChance>10</erosionChance>
-	<erosion>
-		<speed>0.4</speed>
-		<maxSpeed>1.2</maxSpeed>
-		<time>10.0</time>
-		<maxTime>30.0</maxTime>
-		<systemRepairMultiplier>0.75</systemRepairMultiplier>
-		<erodeShields>false</erodeShields>
-		<roomAnim renderLayer="1">                                                    
-			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
-				<wallAnim>aea_acid_wall</wallAnim>  
-		</roomAnim>
-	</erosion>
 	<cooldown>13</cooldown>
 	<power>1</power>
 	<cost>40</cost>
@@ -986,6 +973,60 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<weaponArt>aea_laser_acid_1</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
+<weaponBlueprint name="AEA_LASER_ACID_1_ELITE">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Elite Acid Laser MK I</title>
+	<short>€ Acid I</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact. Powerful Elite version does erosion damage instead of system damage.</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<sysDamage>-1</sysDamage>
+	<shots>2</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>1</speed>
+		<maxSpeed>1</maxSpeed>
+		<time>10.0</time>
+		<maxTime>60.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="2">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>12</cooldown>
+	<power>1</power>
+	<cost>55</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_laser</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_1_elite</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
 
 <weaponBlueprint name="AEA_LASER_ACID_2">
 	<type>LASER</type>
@@ -993,7 +1034,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<title>Acid Laser MK II</title>
 	<short>Acid II</short>
 	<tip>tip_laser</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact.</desc>
 	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
 	<damage>1</damage>
 	<shots>3</shots>
@@ -1001,19 +1042,6 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<fireChance>0</fireChance>
 	<stunChance>0</stunChance>
 	<breachChance>0</breachChance>
-	<erosionChance>10</erosionChance>
-	<erosion>
-		<speed>0.4</speed>
-		<maxSpeed>1.2</maxSpeed>
-		<time>10.0</time>
-		<maxTime>30.0</maxTime>
-		<systemRepairMultiplier>0.75</systemRepairMultiplier>
-		<erodeShields>false</erodeShields>
-		<roomAnim renderLayer="1">                                                    
-			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
-				<wallAnim>aea_acid_wall</wallAnim>  
-		</roomAnim>
-	</erosion>
 	<cooldown>14</cooldown>
 	<power>2</power>
 	<cost>52</cost>
@@ -1040,6 +1068,60 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<weaponArt>aea_laser_acid_2</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
+<weaponBlueprint name="AEA_LASER_ACID_2_ELITE">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Elite Acid Laser MK II</title>
+	<short>€ Acid II</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact. Powerful Elite version does erosion damage instead of system damage.</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<sysDamage>-1</sysDamage>
+	<shots>3</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>1</speed>
+		<maxSpeed>1</maxSpeed>
+		<time>10.0</time>
+		<maxTime>60.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="2">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>13</cooldown>
+	<power>2</power>
+	<cost>67</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_laser</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_2_elite</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
 
 <weaponBlueprint name="AEA_LASER_ACID_3">
 	<type>LASER</type>
@@ -1047,7 +1129,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<title>Acid Laser MK III</title>
 	<short>Acid III</short>
 	<tip>tip_laser</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact.</desc>
 	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
 	<damage>1</damage>
 	<shots>4</shots>
@@ -1055,19 +1137,6 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<fireChance>0</fireChance>
 	<stunChance>0</stunChance>
 	<breachChance>0</breachChance>
-	<erosionChance>10</erosionChance>
-	<erosion>
-		<speed>0.4</speed>
-		<maxSpeed>1.2</maxSpeed>
-		<time>10.0</time>
-		<maxTime>30.0</maxTime>
-		<systemRepairMultiplier>0.75</systemRepairMultiplier>
-		<erodeShields>false</erodeShields>
-		<roomAnim renderLayer="1">                                                    
-			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
-				<wallAnim>aea_acid_wall</wallAnim>  
-		</roomAnim>
-	</erosion>
 	<cooldown>16</cooldown>
 	<power>3</power>
 	<cost>70</cost>
@@ -1094,6 +1163,230 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<weaponArt>aea_laser_acid_3</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
+<weaponBlueprint name="AEA_LASER_ACID_3_ELITE">
+	<type>LASER</type>
+	<flavorType>Acid Laser</flavorType>
+	<title>Elite Acid Laser MK III</title>
+	<short>€ Acid III</short>
+	<tip>tip_laser</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact. Powerful Elite version does erosion damage instead of system damage.</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<sysDamage>-1</sysDamage>
+	<shots>4</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<stunChance>0</stunChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>1</speed>
+		<maxSpeed>1</maxSpeed>
+		<time>10.0</time>
+		<maxTime>60.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="2">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>85</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_laser</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_laser_acid_3_elite</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_BEAM_ACID_1">
+	<type>BEAM</type>
+	<flavorType>Acid Beam</flavorType>
+	<title>'Trident' Beam</title>
+	<short>'Trident'</short>
+	<tip>tip_beams</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact.</desc>
+	<tooltip>.</tooltip>
+	<damage>1</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>17</cooldown>
+	<power>2</power>
+	<cost>68</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<length>50</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_beam_acid_1</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_BEAM_ACID_1_ELITE">
+	<type>BEAM</type>
+	<flavorType>Acid Beam</flavorType>
+	<title>Elite 'Trident' Beam</title>
+	<short>€ 'Trident'</short>
+	<tip>tip_beams</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact. Powerful Elite version does erosion damage instead of system damage.</desc>
+	<tooltip>.</tooltip>
+	<damage>1</damage>
+	<sysDamage>-1</sysDamage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>1</speed>
+		<maxSpeed>1</maxSpeed>
+		<time>10.0</time>
+		<maxTime>60.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>false</erodeShields>
+		<roomAnim renderLayer="2">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>17</cooldown>
+	<power>2</power>
+	<cost>68</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<length>50</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>aea_beam_acid_1_elite</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_ION_ACID_1">
+	<type>LASER</type>
+	<flavorType>Acidic Ion</flavorType>
+	<title>Elite Acidic Barrage</title>
+	<short>€ Acidic B.</short>
+	<tip>tip_ion</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact.</desc>
+	<tooltip>Fires a single blast that does 1 ion damage and recharges very quickly. Can hit and disable shields as well as systems.</tooltip>
+	<damage>0</damage>
+	<spin>720</spin>
+	<ion>1</ion>
+	<speed>30</speed>
+	<shots>2</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>8</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>6</bp>
+	<rarity>5</rarity>
+	<image>ase_proj_acid_ion</image>
+	<explosion>explosion_small_ion</explosion>
+	<launchSounds>
+		<sound>ionShoot1</sound>
+		<sound>ionShoot2</sound>
+		<sound>ionShoot3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>ionHit1</sound>
+		<sound>ionHit2</sound>
+		<sound>ionHit3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>ionShields1</sound>
+		<sound>ionShields2</sound>
+		<sound>ionShields3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_ion_acid_1</weaponArt>
+	<iconImage>ion</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_ION_ACID_1_ELITE">
+	<type>LASER</type>
+	<flavorType>Acidic Ion</flavorType>
+	<title>Acidic Barrage</title>
+	<short>Acidic B.</short>
+	<tip>tip_ion</tip>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact. Powerful Elite version does erosion damage instead of system damage.</desc>
+	<tooltip>Fires a single blast that does 1 ion damage and recharges very quickly. Can hit and disable shields as well as systems.</tooltip>
+	<damage>0</damage>
+	<spin>720</spin>
+	<ion>1</ion>
+	<speed>30</speed>
+	<shots>2</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<erosionChance>10</erosionChance>
+	<erosion>
+		<speed>1.5</speed>
+		<maxSpeed>1.5</maxSpeed>
+		<time>5.0</time>
+		<maxTime>60.0</maxTime>
+		<systemRepairMultiplier>1</systemRepairMultiplier>
+		<erodeShields>true</erodeShields>
+		<roomAnim renderLayer="2">                                                    
+			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+				<wallAnim>aea_acid_wall</wallAnim>  
+		</roomAnim>
+	</erosion>
+	<cooldown>7</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>ase_proj_acid_ion</image>
+	<explosion>explosion_small_ion</explosion>
+	<launchSounds>
+		<sound>ionShoot1</sound>
+		<sound>ionShoot2</sound>
+		<sound>ionShoot3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>ionHit1</sound>
+		<sound>ionHit2</sound>
+		<sound>ionHit3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>ionShields1</sound>
+		<sound>ionShields2</sound>
+		<sound>ionShields3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_ion_acid_1_elite</weaponArt>
+	<iconImage>ion</iconImage>
+</weaponBlueprint>
+
 
 <weaponBlueprint name="AEA_LASER_ACID_SUPER">
 	<type>LASER</type>
@@ -1110,18 +1403,6 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<stunChance>0</stunChance>
 	<breachChance>0</breachChance>
 	<erosionChance>10</erosionChance>
-	<erosion>
-		<speed>0.4</speed>
-		<maxSpeed>1.2</maxSpeed>
-		<time>10.0</time>
-		<maxTime>30.0</maxTime>
-		<systemRepairMultiplier>0.75</systemRepairMultiplier>
-		<erodeShields>false</erodeShields>
-		<roomAnim renderLayer="1">                                                    
-			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
-				<wallAnim>aea_acid_wall</wallAnim>  
-		</roomAnim>
-	</erosion>
 	<cooldown>18</cooldown>
 	<power>4</power>
 	<cost>120</cost>
@@ -1162,18 +1443,6 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<stunChance>0</stunChance>
 	<breachChance>0</breachChance>
 	<erosionChance>5</erosionChance>
-	<erosion>
-		<speed>0.4</speed>
-		<maxSpeed>0.8</maxSpeed>
-		<time>5.0</time>
-		<maxTime>20.0</maxTime>
-		<systemRepairMultiplier>0.75</systemRepairMultiplier>
-		<erodeShields>false</erodeShields>
-		<roomAnim renderLayer="1">                                                    
-			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
-				<wallAnim>aea_acid_wall</wallAnim>  
-		</roomAnim>
-	</erosion>
 	<cooldown>22</cooldown>
 	<power>4</power>
 	<cost>120</cost>
@@ -1220,166 +1489,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
     <iconReplace>aea_laser_acid_super_base</iconReplace>
 </weaponBlueprint>
 
-<weaponBlueprint name="AEA_BEAM_ACID_1">
-	<type>BEAM</type>
-	<flavorType>Acid Beam</flavorType>
-	<title>'Trident' Beam</title>
-	<short>'Trident'</short>
-	<tip>tip_beams</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
-	<tooltip>.</tooltip>
-	<damage>1</damage>
-	<sp>1</sp>
-	<fireChance>0</fireChance>
-	<breachChance>0</breachChance>
-	<erosionChance>10</erosionChance>
-	<erosion>
-		<speed>0.4</speed>
-		<maxSpeed>1.2</maxSpeed>
-		<time>10.0</time>
-		<maxTime>30.0</maxTime>
-		<systemRepairMultiplier>0.75</systemRepairMultiplier>
-		<erodeShields>false</erodeShields>
-		<roomAnim renderLayer="1">                                                    
-			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
-				<wallAnim>aea_acid_wall</wallAnim>  
-		</roomAnim>
-	</erosion>
-	<cooldown>17</cooldown>
-	<power>2</power>
-	<cost>68</cost>
-	<bp>7</bp>
-	<rarity>0</rarity>
-	<length>50</length>
-	<image>beam_contact</image>
-	<launchSounds>
-		<sound>beam2</sound>
-	</launchSounds>
-	<weaponArt>aea_beam_acid_1</weaponArt>
-	<iconImage>beam</iconImage>
-</weaponBlueprint>
-
-<weaponBlueprint name="AEA_ION_ACID_1">
-	<type>LASER</type>
-	<flavorType>Acidic Ion</flavorType>
-	<title>Acidic Barrage</title>
-	<short>Acidic B.</short>
-	<tip>tip_ion</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
-	<tooltip>Fires a single blast that does 1 ion damage and recharges very quickly. Can hit and disable shields as well as systems.</tooltip>
-	<damage>0</damage>
-	<spin>720</spin>
-	<ion>1</ion>
-	<speed>30</speed>
-	<shots>2</shots>
-	<sp>0</sp>
-	<fireChance>0</fireChance>
-	<breachChance>0</breachChance>
-	<stunChance>0</stunChance>
-	<erosionChance>10</erosionChance>
-	<erosion>
-		<speed>0.3</speed>
-		<maxSpeed>0.8</maxSpeed>
-		<time>10.0</time>
-		<maxTime>20.0</maxTime>
-		<systemRepairMultiplier>0.75</systemRepairMultiplier>
-		<erodeShields>true</erodeShields>
-		<roomAnim renderLayer="1">                                                    
-			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
-				<wallAnim>aea_acid_wall</wallAnim>  
-		</roomAnim>
-	</erosion>
-	<cooldown>8</cooldown>
-	<power>2</power>
-	<cost>80</cost>
-	<bp>6</bp>
-	<rarity>5</rarity>
-	<image>ase_proj_acid_ion</image>
-	<explosion>explosion_small_ion</explosion>
-	<launchSounds>
-		<sound>ionShoot1</sound>
-		<sound>ionShoot2</sound>
-		<sound>ionShoot3</sound>
-	</launchSounds>
-	<hitShipSounds>
-		<sound>ionHit1</sound>
-		<sound>ionHit2</sound>
-		<sound>ionHit3</sound>
-	</hitShipSounds>
-	<hitShieldSounds>
-		<sound>ionShields1</sound>
-		<sound>ionShields2</sound>
-		<sound>ionShields3</sound>
-	</hitShieldSounds>
-	<missSounds>
-		<sound>miss</sound>
-	</missSounds>
-	<weaponArt>aea_ion_acid_1</weaponArt>
-	<iconImage>ion</iconImage>
-</weaponBlueprint>
-
-<weaponBlueprint name="AEA_ION_ACID_1_LOOT">
-	<type>LASER</type>
-	<flavorType>Acidic Ion</flavorType>
-	<title>Acidic Barrage</title>
-	<short>Acidic B.</short>
-	<tip>loot_aea_acid_1</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy system after impact.</desc>
-	<tooltip>Fires a single blast that does 1 ion damage and recharges very quickly. Can hit and disable shields as well as systems.</tooltip>
-	<damage>0</damage>
-	<spin>720</spin>
-	<ion>0</ion>
-	<speed>30</speed>
-	<shots>2</shots>
-	<sp>0</sp>
-	<fireChance>0</fireChance>
-	<breachChance>0</breachChance>
-	<stunChance>0</stunChance>
-	<erosionChance>10</erosionChance>
-	<erosion>
-		<speed>0.9</speed>
-		<maxSpeed>1.8</maxSpeed>
-		<time>20.0</time>
-		<maxTime>50.0</maxTime>
-		<systemRepairMultiplier>0.75</systemRepairMultiplier>
-		<erodeShields>true</erodeShields>
-		<roomAnim renderLayer="1">                                                    
-			<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
-				<wallAnim>aea_acid_wall</wallAnim>  
-		</roomAnim>
-	</erosion>
-	<cooldown>8</cooldown>
-	<power>2</power>
-	<cost>80</cost>
-	<bp>6</bp>
-	<rarity>0</rarity>
-	<image>ase_proj_acid_ion</image>
-	<explosion>explosion_small_ion</explosion>
-	<launchSounds>
-		<sound>ionShoot1</sound>
-		<sound>ionShoot2</sound>
-		<sound>ionShoot3</sound>
-	</launchSounds>
-	<hitShipSounds>
-		<sound>ionHit1</sound>
-		<sound>ionHit2</sound>
-		<sound>ionHit3</sound>
-	</hitShipSounds>
-	<hitShieldSounds>
-		<sound>ionShields1</sound>
-		<sound>ionShields2</sound>
-		<sound>ionShields3</sound>
-	</hitShieldSounds>
-	<missSounds>
-		<sound>miss</sound>
-	</missSounds>
-	<weaponArt>aea_ion_acid_1_loot</weaponArt>
-	<iconImage>ion</iconImage>
-</weaponBlueprint>
-
-
-
-
+<!--
 <weaponBlueprint name="AEA_LASER_ACID_1_ENEMY">
 	<type>LASER</type>
 	<flavorType>Acid Laser</flavorType>
@@ -1638,7 +1748,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	</missSounds>
 	<weaponArt>aea_ion_acid_1</weaponArt>
 	<iconImage>ion</iconImage>
-</weaponBlueprint>
+</weaponBlueprint>-->
 </FTL>
 
 <FTL>
@@ -2323,6 +2433,81 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<weaponArt>laser_burst_1</weaponArt>
 </weaponBlueprint>
 
+<weaponBlueprint name="AEA_LASER_NECRO_DEFENSE_DRONE">
+	<type>BURST</type>
+	<title>Omni-Burst</title>
+	<damage>0</damage>
+	<radius>30</radius>
+	<damage>1</damage>
+	<speed>80</speed>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<rarity>0</rarity>
+	<projectiles>
+		<projectile count="4" fake="false">laser_light</projectile>
+	</projectiles>
+	<launchSounds>
+		<sound>laser_light</sound>
+		<sound>laser_light</sound>
+		<sound>laser_light</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>laser_light</weaponArt>
+</weaponBlueprint>
+
+<droneBlueprint name="AEA_DEFENSE_NECRO_1">
+	<type>DEFENSE</type>
+	<target>ALL</target>
+	<tip>tip_defense</tip>
+	<title>Heretic Defense Drone MK I</title>
+	<short>Heretic I [M]</short>
+	<desc>Multipurpose drone used be the Engi Heretics, capable of resurrecting everything it hits, launching it back at the enemy ship.
+	Reload: 3000 MS</desc>
+	<power>2</power>
+	<cooldown>3000</cooldown>
+	<dodge>0</dodge>
+	<speed>10</speed>
+	<cost>60</cost>
+	<bp>2</bp>
+	<droneImage>drone_aea_necro_def1</droneImage>
+	<weaponBlueprint>AEA_LASER_NECRO_DEFENSE_DRONE</weaponBlueprint>
+	<iconImage>defense</iconImage>
+	<rarity>0</rarity>
+</droneBlueprint>
+
+<droneBlueprint name="AEA_DEFENSE_NECRO_2">
+	<type>DEFENSE</type>
+	<target>ALL</target>
+	<tip>tip_defense</tip>
+	<title>Heretic Defense Drone MK II</title>
+	<short>Heretic II [M]</short>
+	<desc>Multipurpose drone used be the Engi Heretics, capable of resurrecting everything it hits, launching it back at the enemy ship.
+	Reload: 1500 MS</desc>
+	<power>2</power>
+	<cooldown>1500</cooldown>
+	<dodge>0</dodge>
+	<speed>15</speed>
+	<cost>60</cost>
+	<bp>2</bp>
+	<droneImage>drone_aea_necro_def1</droneImage>
+	<weaponBlueprint>AEA_LASER_NECRO_DEFENSE_DRONE</weaponBlueprint>
+	<iconImage>defense</iconImage>
+	<rarity>0</rarity>
+</droneBlueprint>
+
 <droneBlueprint name="AEA_DEFENSE_NECRO_1_MISSILE">
 	<type>DEFENSE</type>
 	<target>MISSILES</target>
@@ -2340,7 +2525,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<droneImage>drone_aea_necro_def1</droneImage>
 	<weaponBlueprint>AEA_LASER_NECRO_DRONE</weaponBlueprint>
 	<iconImage>defense</iconImage>
-	<rarity>5</rarity>
+	<rarity>0</rarity>
 </droneBlueprint>
 
 <droneBlueprint name="AEA_DEFENSE_NECRO_1_DRONE">
@@ -2381,7 +2566,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<droneImage>drone_aea_necro_def2</droneImage>
 	<weaponBlueprint>AEA_LASER_NECRO_DRONE</weaponBlueprint>
 	<iconImage>defense</iconImage>
-	<rarity>5</rarity>
+	<rarity>0</rarity>
 </droneBlueprint>
 
 <droneBlueprint name="AEA_DEFENSE_NECRO_2_DRONE">
@@ -6749,35 +6934,34 @@ This drone fires 4 shots.
 	<stackable>false</stackable>
 </augBlueprint>
 
-<crewBlueprint name="aea_acid_soldier">
+<crewBlueprint name="aea_acid_worker">
 	<desc>A dangerous mech used by the acid growth to extend it's reach beyond the acid nebula. Hosts a fragment of the acidic growth that controls the mech.</desc>
-	<title>Acidic Soldier</title>
-	<short>Acid Soldier</short>
-	<cost>60</cost>
+	<title>Acidic Worker</title>
+	<short>Acid Worker</short>
+	<cost>50</cost>
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Max Health is increased to 150</power>
-		<power>Learns combat 25% faster</power>
-		<power>Repairs at 1.25x speed</power>
-		<power>Moves at 0.75x speed</power>
+		<power>Active Ability: Deploy Acidic Gas in the current room</power>
+		<power>Repairs 2x faster and heals for 3.2hp/s in Acidic Gas</power>
+		<power>0.75x combat damage, Repairs at 1.5x speed</power>
+		<power>Moves at 1.5x speed</power>
 		<power>Cannot suffocate, Immune to Mind Control</power>
 	</powerList>
 </crewBlueprint>
 
-<crewBlueprint name="aea_acid_captain">
+<crewBlueprint name="aea_acid_soldier">
 	<desc>A dangerous mech used by the acid growth to extend it's reach beyond the acid nebula. Hosts a fragment of the acidic growth that controls the mech.</desc>
-	<title>Acidic Leader</title>
-	<short>Acid Leader</short>
-	<cost>80</cost>
+	<title>Acidic Soldier</title>
+	<short>Acid Soldier</short>
+	<cost>70</cost>
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Max Health is increased to 200</power>
-		<power>Learns combat 25% faster</power>
-		<power>Heals nearby Acidic Soldiers</power>
-		<power>Repairs at 1.5x speed</power>
-		<power>Moves at 0.5x speed</power>
+		<power>Active Ability: Deploy Acidic Gas in the current room</power>
+		<power>Repairs 2x faster and heals for 3.2hp/s in Acidic Gas</power>
+		<power>1.25x combat damage</power>
+		<power>Max Health is increased to 150</power>
 		<power>Cannot suffocate, Immune to Mind Control</power>
 	</powerList>
 </crewBlueprint>
@@ -6786,16 +6970,14 @@ This drone fires 4 shots.
 	<desc>A dangerous mech used by the acid growth to extend it's reach beyond the acid nebula. Hosts a fragment of the acidic growth that controls the mech. The fragments of Acidic Growth in this machine have become disconnected from the rest of the Acidic Growth and now consider themselves their own entity.</desc>
 	<title>Acidic Outcast</title>
 	<short>Acid Outcast</short>
-	<cost>80</cost>
+	<cost>100</cost>
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Active Ability: immediately kills all enemy crew that are below 35 hp</power>
-		<power>Max Health is increased to 250</power>
-		<power>Learns combat 25% faster</power>
-		<power>Heals nearby Allies</power>
-		<power>Repairs at 2x speed</power>
-		<power>Moves at 0.5x speed</power>
+		<power>Active Ability: Deploy Acidic Gas in the current room</power>
+		<power>Repairs 2x faster and heals for 6.4hp/s in Acidic Gas</power>
+		<power>1.5x combat damage, Repairs at 1.5x speed</power>
+		<power>Max Health is increased to 150</power>
 		<power>Cannot suffocate, Immune to Mind Control</power>
 	</powerList>
 </crewBlueprint>
@@ -10150,7 +10332,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<droneList drones="4" count="2" />
 	<health amount="30" />
 	<maxPower amount="6" />
-	<crewCount amount="1" class="aea_acid_soldier" />
+	<crewCount amount="1" class="aea_acid_worker" />
 	<crewCount amount="1" class="aea_cult_wizard_s04" />
 	<crewCount amount="1" class="aea_cult_priest_off" />
 	<crewCount amount="1" class="aea_cult_priest_off" />
@@ -10334,7 +10516,7 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 	<droneList drones="1" count="4" />
 	<health amount="30" />
 	<maxPower amount="6" />
-	<crewCount amount="1" class="aea_acid_soldier" />
+	<crewCount amount="1" class="aea_acid_worker" />
 	<crewCount amount="1" class="orchid_cultivator" />
 	<crewCount amount="1" class="aea_cult_priest_bor" />
 	<crewCount amount="1" class="aea_cult_priest_bor" />
@@ -12587,7 +12769,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	<health amount="30" />
 	<maxPower amount="8" />
 	<crewCount amount="1" class="aea_shard_breaker" />
-	<crewCount amount="1" class="aea_acid_soldier" />
+	<crewCount amount="1" class="aea_acid_worker" />
 	<crewCount amount="1" class="slug_ranger" />
 	<aug name="AEA_SHARD_ARMOUR" />
 	<shieldImage>mup_disk</shieldImage>
@@ -15485,7 +15667,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<radius>45</radius>
 	<damage>2</damage>
 	<spin>0</spin>
-	<shots>3</shots>
+	<shots>1</shots>
 	<sp>0</sp>
 	<fireChance>0</fireChance>
 	<breachChance>2</breachChance>
@@ -15495,7 +15677,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<bp>10</bp>
 	<rarity>0</rarity>
 	<projectiles>
-		<projectile count="1" fake="false">laser_heavy</projectile>
+		<projectile count="3" fake="false">laser_heavy</projectile>
 	</projectiles>
 	<launchSounds>
 		<sound>heavyLaser1</sound>

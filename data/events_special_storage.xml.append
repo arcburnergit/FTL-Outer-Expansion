@@ -662,7 +662,31 @@
 	  	</event>
   	</mod-append:choice>
 
-  	<mod-append:choice req="AEA_DEFENSE_NECRO_1_MISSILE" blue="false">
+	
+	<mod:findWithChildLike type="choice" child-type="text">
+		<mod:selector>Disable Better Jukebox.</mod:selector>
+		<mod:removeTag />
+	</mod:findWithChildLike>
+	<mod:findWithChildLike type="choice" child-type="text">
+		<mod:selector>Enable Better Jukebox.</mod:selector>
+		<mod:removeTag />
+	</mod:findWithChildLike>
+
+	<mod-append:choice req="better_juke_enabled" lvl="0" max_lvl="0" blue="false">
+		<text>Disable Better Jukebox.</text>
+		<event>
+			<metaVariable name="better_juke_enabled" op="set" val="1" />
+			<loadEvent>COMBAT_CHECK_TOGGLE</loadEvent>
+		</event>
+  	</mod-append:choice>
+	<mod-append:choice req="better_juke_enabled" lvl="1" blue="false">
+	  	<text>Enable Better Jukebox.</text>
+	  	<event>
+			<metaVariable name="better_juke_enabled" op="set" val="0" />
+			<loadEvent>COMBAT_CHECK_TOGGLE</loadEvent>
+	  	</event>
+  	</mod-append:choice>
+  	<!--mod-append:choice req="AEA_DEFENSE_NECRO_1_MISSILE" blue="false">
 		<text>(Heretic Defense Drone I) Set the state of the drone. [Current mode: Anti-Missile].</text>
 		<event load="COMBAT_CHECK_AEA_DEFENSE_NECRO_MISSILE" />
 	</mod-append:choice>
@@ -671,14 +695,14 @@
 		<event load="COMBAT_CHECK_AEA_DEFENSE_NECRO_DRONE" />
 	</mod-append:choice>
 
-  <mod-append:choice req="AEA_DEFENSE_NECRO_2_MISSILE" blue="false">
+  	<mod-append:choice req="AEA_DEFENSE_NECRO_2_MISSILE" blue="false">
 		<text>(Heretic Defense Drone II) Set the state of the drone. [Current mode: Anti-Missile].</text>
 		<event load="COMBAT_CHECK_AEA_DEFENSE_NECRO2_MISSILE" />
 	</mod-append:choice>
 	<mod-append:choice req="AEA_DEFENSE_NECRO_2_DRONE" blue="false">
 		<text>(Heretic Defense Drone II) Set the state of the drone. [Current mode: Anti-Drone].</text>
 		<event load="COMBAT_CHECK_AEA_DEFENSE_NECRO2_DRONE" />
-	</mod-append:choice>
+	</mod-append:choice-->
 
 	<mod-append:choice req="AEA_COMBAT_NECRO_1_LASER" blue="false">
 		  <text>(Technomancy Drone I) Set the state of the drone. [Current mode: Laser].</text>

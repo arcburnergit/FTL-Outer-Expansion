@@ -159,12 +159,21 @@ local spawn_temp_drone = mods.multiverse.spawn_temp_drone
 
 local node_child_iter = mods.multiverse.node_child_iter
 
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
+    if Hyperspace.ships.enemy and Hyperspace.ships.enemy.bDestroyed then
+        for drone in vter(ship.spaceDrones) do
+            if userdata_table(drone, "mods.aea.droneStuff").clearOnEnemy then
+                drone:SetDestroyed(true, false)
+            end
+        end
+    end
+end)
 
 script.on_internal_event(Defines.InternalEvents.DRONE_COLLISION, function(drone, projectile, damage, response)
 	if log_events then
 		log("DRONE_COLLISION 1")
 	end
-	if projectile.extend.name == "AEA_LASER_NECRO_DRONE" then
+	if projectile.extend.name == "AEA_LASER_NECRO_DRONE" or projectile.extend.name == "AEA_LASER_NECRO_DEFENSE_DRONE" then
 		local ship = Hyperspace.ships(projectile.ownerId)
 		local otherShip = Hyperspace.ships(1 - projectile.ownerId)
 		if ship and otherShip then
@@ -176,28 +185,81 @@ script.on_internal_event(Defines.InternalEvents.DRONE_COLLISION, function(drone,
 				3,
 				projectile.position)
 			userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
+			userdata_table(drone2, "mods.aea.droneStuff").clearOnEnemy = true
 		end
 	end
 end)
+
+local function createLaserBlast(projectile, blueprint, ownerId)
+    local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
+    local newProj = spaceManager:CreateLaserBlast(
+        blueprint,
+        projectile.position,
+        projectile.currentSpace,
+        ownerId,
+        projectile.target,
+        projectile.destinationSpace,
+        projectile.heading)
+    newProj.entryAngle = projectile.entryAngle
+    return newProj
+end
+local function createLaserBurst(projectile, blueprint, ownerId)
+    local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
+    local fake = true
+    if projectile.damage.iDamage > 0 or projectile.damage.iSystemDamage > 0 or projectile.damage.iIonDamage > 0 or projectile.damage.iPersDamage > 0 or
+    projectile.damage.fireChance > 0 or projectile.damage.breachChance > 0 or projectile.damage.stunChance > 0 then fake = false end
+    local newProj = spaceManager:CreateBurstProjectile(
+        blueprint,
+        projectile.flight_animation.animName,
+        fake,
+        projectile.position,
+        projectile.currentSpace,
+        ownerId,
+        projectile.target,
+        projectile.destinationSpace,
+        projectile.heading)
+    newProj.entryAngle = projectile.entryAngle
+    return newProj
+end
+local function createMissile(projectile, blueprint, ownerId)
+    local spaceManager = Hyperspace.App.world.space
+    local missile = spaceManager:CreateMissile(
+        blueprint,
+        projectile.position,
+        projectile.currentSpace,
+        ownerId,
+        projectile.target,
+        projectile.destinationSpace,
+        projectile.heading)
+    missile.entryAngle = projectile.entryAngle
+    return missile
+end
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_COLLISION, function(thisProjectile, projectile, damage, response)
 	if log_events then
 		log("PROJECTILE_COLLISION 1")
 	end
-	if projectile.extend.name == "AEA_LASER_NECRO_DRONE" then
+	if projectile.extend.name == "AEA_LASER_NECRO_DRONE" or projectile.extend.name == "AEA_LASER_NECRO_DEFENSE_DRONE" then
 		local blueprint = Hyperspace.Blueprints:GetWeaponBlueprint(thisProjectile.extend.name)
 		local returnShip = Hyperspace.ships(thisProjectile.ownerId)
 		local pType = blueprint.typeName
-		if pType == "MISSILES" and returnShip then 
-			local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
-			local missile = spaceManager:CreateMissile(
-				blueprint,
-				thisProjectile.position,
-				thisProjectile.currentSpace,
-				(1 - thisProjectile.ownerId),
-				returnShip:GetRandomRoomCenter(),
-				thisProjectile.ownerId,
-				thisProjectile.heading)
+		if pType == "BURST" and returnShip then
+			createLaserBlast(thisProjectile, blueprint, (1 - thisProjectile.ownerId))
+		elseif pType == "BURST" and returnShip then
+			createLaserBurst	(thisProjectile, blueprint, (1 - thisProjectile.ownerId))
+		elseif pType == "MISSILES" and returnShip then 
+			createMissile(thisProjectile, blueprint, (1 - thisProjectile.ownerId))
+		end
+	elseif thisProjectile.extend.name == "AEA_LASER_NECRO_DRONE" or thisProjectile.extend.name == "AEA_LASER_NECRO_DEFENSE_DRONE" then
+		local blueprint = Hyperspace.Blueprints:GetWeaponBlueprint(projectile.extend.name)
+		local returnShip = Hyperspace.ships(projectile.ownerId)
+		local pType = blueprint.typeName
+		if pType == "BURST" and returnShip then
+			createLaserBlast(projectile, blueprint, (1 - projectile.ownerId))
+		elseif pType == "BURST" and returnShip then
+			createLaserBurst	(projectile, blueprint, (1 - projectile.ownerId))
+		elseif pType == "MISSILES" and returnShip then 
+			createMissile(projectile, blueprint, (1 - projectile.ownerId))
 		end
 	end
 end)
@@ -220,6 +282,7 @@ script.on_internal_event(Defines.InternalEvents.DRONE_COLLISION, function(drone,
 				3,
 				drone.currentLocation)
 			userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
+			userdata_table(drone2, "mods.aea.droneStuff").clearOnEnemy = true
 			if drone.iShipId == 0 then
 				local drone3 = spawn_temp_drone(
 					droneBlueprint,
@@ -229,6 +292,7 @@ script.on_internal_event(Defines.InternalEvents.DRONE_COLLISION, function(drone,
 					3,
 					drone.currentLocation)
 				userdata_table(drone3, "mods.mv.droneStuff").clearOnJump = true
+				userdata_table(drone3, "mods.aea.droneStuff").clearOnEnemy = true
 			end
 			droneTable[drone.selfId] = true
 			drone:BlowUp(false)
@@ -251,6 +315,7 @@ script.on_internal_event(Defines.InternalEvents.DRONE_COLLISION, function(drone,
 				3,
 				drone.currentLocation)
 			userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
+			userdata_table(drone2, "mods.aea.droneStuff").clearOnEnemy = true
 			local drone3 = spawn_temp_drone(
 				droneBlueprint,
 				ship,
@@ -259,6 +324,7 @@ script.on_internal_event(Defines.InternalEvents.DRONE_COLLISION, function(drone,
 				3,
 				drone.currentLocation)
 			userdata_table(drone3, "mods.mv.droneStuff").clearOnJump = true
+			userdata_table(drone3, "mods.aea.droneStuff").clearOnEnemy = true
 			if drone.iShipId == 0 then
 				local drone4 = spawn_temp_drone(
 					droneBlueprint,
@@ -268,6 +334,7 @@ script.on_internal_event(Defines.InternalEvents.DRONE_COLLISION, function(drone,
 					3,
 					drone.currentLocation)
 				userdata_table(drone4, "mods.mv.droneStuff").clearOnJump = true
+				userdata_table(drone4, "mods.aea.droneStuff").clearOnEnemy = true
 			end
 			droneTable[drone.selfId] = true
 			drone:BlowUp(false)
@@ -294,6 +361,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 						3,
 						drone.currentLocation)
 					userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
+					userdata_table(drone2, "mods.aea.droneStuff").clearOnEnemy = true
 					if drone.iShipId == 0 then
 						local drone3 = spawn_temp_drone(
 							droneBlueprint,
@@ -303,6 +371,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 							3,
 							drone.currentLocation)
 						userdata_table(drone3, "mods.mv.droneStuff").clearOnJump = true
+						userdata_table(drone3, "mods.aea.droneStuff").clearOnEnemy = true
 					end
 					--print("kill")
 					drone:BlowUp(false)
@@ -328,6 +397,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 						3,
 						drone.currentLocation)
 					userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
+					userdata_table(drone2, "mods.aea.droneStuff").clearOnEnemy = true
 					local drone3 = spawn_temp_drone(
 						droneBlueprint,
 						ship,
@@ -336,6 +406,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 						3,
 						drone.currentLocation)
 					userdata_table(drone3, "mods.mv.droneStuff").clearOnJump = true
+					userdata_table(drone3, "mods.aea.droneStuff").clearOnEnemy = true
 					local drone4 = spawn_temp_drone(
 						droneBlueprint,
 						ship,
@@ -344,6 +415,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 						3,
 						drone.currentLocation)
 					userdata_table(drone4, "mods.mv.droneStuff").clearOnJump = true
+					userdata_table(drone4, "mods.aea.droneStuff").clearOnEnemy = true
 					--print("kill")
 					drone:BlowUp(false)
 					droneTable[drone.selfId] = true
@@ -370,6 +442,7 @@ script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile,
 			999,
 			drone.currentLocation)
 		userdata_table(drone2, "mods.mv.droneStuff").clearOnJump = true
+		userdata_table(drone2, "mods.aea.droneStuff").clearOnEnemy = true
 		if projectile.extend.name == "AEA_LASER_NECRO_COMBAT_BOSS" then
 			if not tempDrones[drone.selfId] then
 				tempDrones[drone.selfId] = {}

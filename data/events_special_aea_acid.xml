@@ -101,15 +101,15 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 			</item_modify>
 		</event>
 	</choice>
-	<choice hidden="true" req="aea_acid_soldier">
-		<text>(Acidic Soldier) Enter Freely.</text>
+	<choice hidden="true" req="aea_acid_worker">
+		<text>(Acidic Worker) Enter Freely.</text>
 		<event>
 			<text>The Acidic Growth is welcoming of itself, you're free to enter.</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
 		</event>
 	</choice>
-	<choice hidden="true" req="aea_acid_captain">
-		<text>(Acidic Leader) Enter Freely.</text>
+	<choice hidden="true" req="aea_acid_soldier">
+		<text>(Acidic Soldier) Enter Freely.</text>
 		<event>
 			<text>The Acidic Growth is welcoming of itself, you're free to enter.</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
@@ -303,15 +303,15 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 			</choice>
 		</event>
 	</choice>
-	<choice hidden="true" req="aea_acid_soldier">
-		<text>(Acidic Soldier) Enter Freely.</text>
+	<choice hidden="true" req="aea_acid_worker">
+		<text>(Acidic Worker) Enter Freely.</text>
 		<event>
 			<text>The Acidic Growth is welcoming of itself, you're free to enter.</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
 		</event>
 	</choice>
-	<choice hidden="true" req="aea_acid_captain">
-		<text>(Acidic Leader) Enter Freely.</text>
+	<choice hidden="true" req="aea_acid_soldier">
+		<text>(Acidic Soldier) Enter Freely.</text>
 		<event>
 			<text>The Acidic Growth is welcoming of itself, you're free to enter.</text>
             <variable name="aea_acid_friendly" op="set" val="1" />
@@ -689,8 +689,8 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		<text>Accept its surrender.</text>
 		<event load="SURRENDER_AEA_ACID_ACCEPT" />
 	</choice>
-	<choice req="aea_acid_soldier">
-		<text>(Acidic Soldier) Negotiate a different deal.</text>
+	<choice req="aea_acid_worker">
+		<text>(Acidic Worker) Negotiate a different deal.</text>
 		<event name="SURRENDER_AEA_ACID_STONKS">
 			<ship hostile="false" />
 			<autoReward level="RANDOM">stuff</autoReward>
@@ -827,7 +827,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 </ship>
 
 <event name="DEFEAT_AEA_ACID_ELITE">
-	<text>You're still not sure killing Acidic Soldiers counts as murder, eitherway losing an elite vessel like that has to hurt the Acidic Growth.</text>
+	<text>You're still not sure killing Acidic Workers counts as murder, eitherway losing an elite vessel like that has to hurt the Acidic Growth.</text>
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -1189,7 +1189,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 
 <ship name="SHIP_AEA_ACID_BILL_MEET" auto_blueprint="AEA_ACID_ASSAULT">
 	<destroyed>
-		<text>You've destroyed the Acidic ship, As you're looting the remains of both the Acidic vessel and the Strange ship destroyed at the start of the fight, you discover an Acidic Soldier alive in the wreck.</text>
+		<text>You've destroyed the Acidic ship, As you're looting the remains of both the Acidic vessel and the Strange ship destroyed at the start of the fight, you discover an Acidic Worker alive in the wreck.</text>
 		<autoReward level="MED">standard</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -1197,7 +1197,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		</choice>
 	</destroyed>
 	<deadCrew>
-		<text>You've neutralized the Acidic ship and emptied it of all crew. As you're looting the remains of both the Acidic vessel and the Strange ship destroyed at the start of the fight, you discover an Acidic Soldier alive in the wreck.</text>
+		<text>You've neutralized the Acidic ship and emptied it of all crew. As you're looting the remains of both the Acidic vessel and the Strange ship destroyed at the start of the fight, you discover an Acidic Worker alive in the wreck.</text>
 		<autoReward level="HIGH">standard</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>

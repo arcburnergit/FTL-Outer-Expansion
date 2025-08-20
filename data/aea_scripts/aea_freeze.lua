@@ -77,7 +77,7 @@ script.on_internal_event(Defines.InternalEvents.CALCULATE_STAT_POST, function(cr
 			value = petrifyStats[stat].value
 		end
 	end
-	if stat == Hyperspace.CrewStat.ACTIVE_HEAL_AMOUNT and Hyperspace.ships(crewmem.iShipId):HasAugmentation("UPG_AEA_FREEZE_CREW") > 0 and not crewTable.petrified then
+	if stat == Hyperspace.CrewStat.ACTIVE_HEAL_AMOUNT and Hyperspace.ships(crewmem.iShipId) and Hyperspace.ships(crewmem.iShipId):HasAugmentation("UPG_AEA_FREEZE_CREW") > 0 and not crewTable.petrified then
 		for shipCrew in vter(Hyperspace.ships(crewmem.currentShipId).vCrewList) do
 			if userdata_table(shipCrew, "mods.aea.freeze").petrified then
 				amount = amount + 5

@@ -77,7 +77,7 @@
 	</choice>
 	<choice hidden="true" req="mind">
 		<text>(Mind Control) Convince the guard to leave you alone.</text>
-		<event load="GUARD_CLOAK" />
+		<event load="GUARD_MIND" />
 	</choice>
 	<choice hidden="true" req="cloaking">
 		<text>(Cloaking) Cloak and try to escape.</text>

@@ -185,10 +185,10 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
 end)
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
-  if (not projectile == nil) and projectile.extend and projectile.extend.name == "AEA_LASER_ACID_BOSS" or projectile.extend.name == "AEA_LASER_ACID_BOSS_CHAOS" then
+	if projectile and (projectile.extend.name == "AEA_LASER_ACID_BOSS" or projectile.extend.name == "AEA_LASER_ACID_BOSS_CHAOS") then
 		local blueprint = Hyperspace.Blueprints:GetWeaponBlueprint(projectile.extend.name.."_PROJ")
-    for roomId, roomPos in pairs(get_adjacent_rooms(shipManager.iShipId, get_room_at_location(shipManager, location, false), false)) do
-      local spaceManager = Hyperspace.App.world.space
+		for roomId, roomPos in pairs(get_adjacent_rooms(shipManager.iShipId, get_room_at_location(shipManager, location, false), false)) do
+			local spaceManager = Hyperspace.App.world.space
 			local laser = spaceManager:CreateLaserBlast(
 				blueprint,
 				projectile.position,
@@ -197,8 +197,8 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipMa
 				roomPos,
 				projectile.destinationSpace,
 				projectile.heading)
-    end
-  end
+		end
+	end
 end)
 
 
@@ -406,45 +406,157 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER,  function(power,
 	end
 end)
 
-local acidBombPrint = Hyperspace.Blueprints:GetWeaponBlueprint("AEA_BOMB_INVIS_ACID_1")
-function acidTrigger()
-	if Hyperspace.ships.player then
-		local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
-		local shipManager = Hyperspace.ships.player
+local acidTileAnim = Hyperspace.Animations:GetAnimation("aea_acid_tile2_anim")
+acidTileAnim.position.x = -acidTileAnim.info.frameWidth/2
+acidTileAnim.position.y = -acidTileAnim.info.frameHeight/2
+acidTileAnim.tracker.loop = true
+acidTileAnim:Start(true)
+local acidWallAnim = Hyperspace.Animations:GetAnimation("aea_acid_wall_anim")
+acidWallAnim.position.x = -acidWallAnim.info.frameWidth/2
+acidWallAnim.position.y = -acidWallAnim.info.frameHeight/2
+acidWallAnim.tracker.loop = true
+acidWallAnim:Start(true)
 
-		local empty_rooms = {}
-		local has_empty_rooms = false
-		local empty_rooms_size = 0
-		for room in vter(shipManager.ship.vRoomList) do
-			local id = room.iRoomId
-			if shipManager:GetSystemInRoom(id) == nil then
-				has_empty_rooms = true
-				empty_rooms_size = empty_rooms_size + 1
-				table.insert(empty_rooms, id)
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	if shipManager.iShipId == 0 then
+		acidTileAnim:Update()
+		acidWallAnim:Update()
+	end
+end)
+
+local acidBreachTimerMax = 5
+local acidDoorTimerMax = 1
+local acidStatus = {[0] = {}, [1] = {}}
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	local acidShip = acidStatus[shipManager.iShipId]
+	local doorsDamage = {}
+	for room in vter(shipManager.ship.vRoomList) do
+		if acidShip[room.iRoomId] then
+			local acidRoom = acidShip[room.iRoomId]
+			--print("ACID ACTIVE: timer:"..acidRoom.timer.." breachTimer:"..acidRoom.breachTimer)
+			acidRoom.timer = acidRoom.timer - Hyperspace.FPS.SpeedFactor/16
+			acidRoom.doorTimer = acidRoom.doorTimer - Hyperspace.FPS.SpeedFactor/16
+			acidRoom.breachTimer = acidRoom.breachTimer - Hyperspace.FPS.SpeedFactor/16
+			if acidRoom.breachTimer <= 0 then
+				shipManager.ship:BreachRandomHull(room.iRoomId)
+				acidRoom.breachTimer = acidBreachTimerMax
 			end
-		end
-		if has_empty_rooms then
-			local acidBombInvis = spaceManager:CreateBomb(
-				acidBombPrint,
-				math.abs(shipManager.iShipId-1),
-				shipManager:GetRoomCenter(empty_rooms[math.random(empty_rooms_size)]),
-				shipManager.iShipId)
+			if acidRoom.doorTimer <= 0 then
+				doorsDamage[room.iRoomId] = true
+				acidRoom.doorTimer = acidDoorTimerMax
+			end
+			if acidRoom.timer <= 0 then
+				acidStatus[shipManager.iShipId][room.iRoomId] = nil
+			end
 		end
 	end
-	if Hyperspace.ships.enemy then
-		local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
-		local shipManager = Hyperspace.ships.enemy
-		for room in vter(shipManager.ship.vRoomList) do
-			local id = room.iRoomId
-			if shipManager:GetSystemInRoom(id) == nil then
-				local acidBombInvis = spaceManager:CreateBomb(
-					acidBombPrint,
-					math.abs(shipManager.iShipId-1),
-					shipManager:GetRoomCenter(id),
-					shipManager.iShipId)
-				break
+	if #doorsDamage > 0 then
+		for door in vter(shipManager.ship.vDoorList) do
+			if (doorsDamage[door.iRoom1] or doorsDamage[door.iRoom2]) and not door.bOpen then
+				--print("damage door:"..door.iDoorId)
+				door:ApplyDamage(1)
 			end
 		end
+	end
+end)
+
+local function startAcid(shipId, roomId, time)
+	--print("startAcid")
+	if not acidStatus[shipId][roomId] then
+		--print("inactive")
+		acidStatus[shipId][roomId] = {timer = time, breachTimer = acidBreachTimerMax - 0.1, doorTimer = acidDoorTimerMax - 0.1}
+	else
+		print("active increase:"..acidStatus[shipId][roomId].timer)
+		acidStatus[shipId][roomId].timer = acidStatus[shipId][roomId].timer + math.max(1, time/acidStatus[shipId][roomId].timer) * time
+		print("active increase after:"..acidStatus[shipId][roomId].timer)
+	end
+end
+
+script.on_render_event(Defines.RenderEvents.SHIP_BREACHES, function() end, function(ship) 
+	local shipManager = Hyperspace.ships(ship.iShipId)
+	local acidShip = acidStatus[shipManager.iShipId]
+	for room in vter(shipManager.ship.vRoomList) do
+		if acidShip[room.iRoomId] then
+			local acidRoom = acidShip[room.iRoomId]
+			local x = room.rect.x
+			local y = room.rect.y
+			local w = math.floor(room.rect.w/35)
+			local h = math.floor(room.rect.h/35)
+			local size = w * h
+			--print("room:"..room.iRoomId.." gasLevel:"..gasLevel.." w:"..w.." h:"..h.." size:"..size)
+			for i = 0, size - 1 do
+				local xOff = x + (i%w) * 35
+				local yOff = y + math.floor(i/w) * 35
+				Graphics.CSurface.GL_PushMatrix()
+				Graphics.CSurface.GL_Translate(xOff+17, yOff+17, 0)
+				acidTileAnim:OnRender(1, Graphics.GL_Color(1, 1, 1, 1), false)
+				Graphics.CSurface.GL_PopMatrix()
+			end
+			local opacity = 0.5 + ((acidBreachTimerMax - acidRoom.breachTimer)/(acidBreachTimerMax*2))
+			-- top and bottom edge
+			for i = 0, w - 1 do
+				local xOff = x + i * 35
+				Graphics.CSurface.GL_PushMatrix()
+				Graphics.CSurface.GL_Translate(xOff+17, y+17, 0)
+				acidWallAnim:OnRender(opacity, Graphics.GL_Color(1, 1, 1, 1), false)
+				Graphics.CSurface.GL_PopMatrix()
+
+				local yOff = y + (h-1) * 35
+				Graphics.CSurface.GL_PushMatrix()
+				Graphics.CSurface.GL_Translate(xOff+17, yOff+17, 0)
+				Graphics.CSurface.GL_Rotate(180, 0, 0, 1)
+				acidWallAnim:OnRender(opacity, Graphics.GL_Color(1, 1, 1, 1), false)
+				Graphics.CSurface.GL_PopMatrix()
+			end
+
+			-- left and right edge
+			for i = 0, h - 1 do
+				local yOff = y + i * 35
+				Graphics.CSurface.GL_PushMatrix()
+				Graphics.CSurface.GL_Translate(x+17, yOff+17, 0)
+				Graphics.CSurface.GL_Rotate(270, 0, 0, 1)
+				acidWallAnim:OnRender(opacity, Graphics.GL_Color(1, 1, 1, 1), false)
+				Graphics.CSurface.GL_PopMatrix()
+
+				local xOff = x + (w-1) * 35
+				Graphics.CSurface.GL_PushMatrix()
+				Graphics.CSurface.GL_Translate(xOff+17, yOff+17, 0)
+				Graphics.CSurface.GL_Rotate(90, 0, 0, 1)
+				acidWallAnim:OnRender(opacity, Graphics.GL_Color(1, 1, 1, 1), false)
+				Graphics.CSurface.GL_PopMatrix()
+			end
+
+		end
+	end
+end)
+
+mods.aea.acidCrewPower = {}
+local acidCrewPower = mods.aea.acidCrewPower
+acidCrewPower["aea_acid_worker"] = true
+acidCrewPower["aea_acid_soldier"] = true
+acidCrewPower["aea_acid_bill"] = true
+
+script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, shipManager)
+	local crewmem = power.crew
+	if acidCrewPower[crewmem.type] and power.def.buttonLabel:GetText() == "GAS" then
+		local ship = crewmem.currentShipId
+		local room = crewmem.iRoomId
+		startAcid(ship, room, 10)
+	end
+	return Defines.Chain.CONTINUE
+end)
+
+
+function acidTrigger()
+	if Hyperspace.ships.player then
+		Hyperspace.Sounds:PlaySoundMix("cultivatorSpore", -1, false)
+		local room = Hyperspace.ships.player:GetRandomRoomCenter()
+		startAcid(0, room, 10)
+	end
+	if Hyperspace.ships.enemy then
+		Hyperspace.Sounds:PlaySoundMix("cultivatorSpore", -1, false)
+		local room = Hyperspace.ships.enemy:GetRandomRoomCenter()
+		startAcid(1, room, 10)
 	end
 end
 
@@ -457,6 +569,56 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 			acidTimer = (math.random() * 3) + 4
 			acidTrigger()
 		end
+	end
+end)
+
+mods.aea.acidicCrewStats = {}
+local acidicCrewStats = mods.aea.acidicCrewStats
+acidicCrewStats["aea_acid_worker"] = {[Hyperspace.CrewStat.REPAIR_SPEED_MULTIPLIER] = {mult = 2}, [Hyperspace.CrewStat.ACTIVE_HEAL_AMOUNT] = {add = 3.2}}
+acidicCrewStats["aea_acid_soldier"] = {[Hyperspace.CrewStat.REPAIR_SPEED_MULTIPLIER] = {mult = 2}, [Hyperspace.CrewStat.ACTIVE_HEAL_AMOUNT] = {add = 3.2}}
+acidicCrewStats["aea_acid_bill"] = {[Hyperspace.CrewStat.REPAIR_SPEED_MULTIPLIER] = {mult = 2}, [Hyperspace.CrewStat.ACTIVE_HEAL_AMOUNT] = {add = 6.4}}
+
+script.on_internal_event(Defines.InternalEvents.CALCULATE_STAT_POST, function(crewmem, stat, def, amount, value)
+	if not (crewmem and crewmem.currentShipId and crewmem.iRoomId) then return Defines.Chain.CONTINUE, amount, value end
+	if acidStatus[crewmem.currentShipId][crewmem.iRoomId] then
+		local crewStat = acidicCrewStats[crewmem.type]
+		if crewStat[stat] then
+			if crewStat[stat].mult then
+				amount = amount * crewStat[stat].mult
+			elseif crewStat[stat].add then
+				amount = amount + crewStat[stat].add
+			end
+		end
+	end
+	return Defines.Chain.CONTINUE, amount, value
+end)
+
+mods.aea.acidWeapons = {}
+local acidWeapons = mods.aea.acidWeapons
+acidWeapons["AEA_LASER_ACID_1"] = 5
+acidWeapons["AEA_LASER_ACID_1_ELITE"] = 5
+acidWeapons["AEA_LASER_ACID_2"] = 5
+acidWeapons["AEA_LASER_ACID_2_ELITE"] = 5
+acidWeapons["AEA_LASER_ACID_3"] = 5
+acidWeapons["AEA_LASER_ACID_3_ELITE"] = 5
+acidWeapons["AEA_BEAM_ACID_1"] = 5
+acidWeapons["AEA_BEAM_ACID_1_ELITE"] = 5
+acidWeapons["AEA_ION_ACID_1"] = 5
+acidWeapons["AEA_ION_ACID_1_ELITE"] = 5
+acidWeapons["AEA_LASER_ACID_SUPER"] = 5
+acidWeapons["AEA_LASER_ACID_SUPER_ENEMY"] = 5
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+	if projectile and acidWeapons[projectile.extend.name] then
+		local room = get_room_at_location(shipManager, location, true)
+		startAcid(shipManager.iShipId, room, acidWeapons[projectile.extend.name])
+	end
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
+	if projectile and acidWeapons[projectile.extend.name] and beamHitType == Defines.BeamHit.NEW_ROOM then
+		local room = get_room_at_location(shipManager, location, true)
+		startAcid(shipManager.iShipId, room, acidWeapons[projectile.extend.name])
 	end
 end)
 
@@ -535,35 +697,35 @@ end)
 
 -- Add oxygen instead of removing
 script.on_internal_event(Defines.InternalEvents.CALCULATE_LEAK_MODIFIER, function(ship, mod)
-    if Hyperspace.playerVariables[playerVar] == 1 then
-        return Defines.Chain.CONTINUE, -mod
-    end
+	if Hyperspace.playerVariables[playerVar] == 1 then
+		return Defines.Chain.CONTINUE, -mod
+	end
 end)
 
 local roomAcidGasImage = Hyperspace.Resources:CreateImagePrimitiveString("effects/acid_effect_tile.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
 script.on_render_event(Defines.RenderEvents.SHIP_FLOOR, function() end, function(ship)
   local shipManager = Hyperspace.ships(ship.iShipId)
- 	for room in vter(shipManager.ship.vRoomList) do
- 		local gasLevel = Hyperspace.playerVariables["aea_acid_ship"..shipManager.iShipId.."_room"..room.iRoomId]
- 		
- 		if gasLevel > 0 then
- 			local opacity = gasLevel/100
- 			local x = room.rect.x
- 			local y = room.rect.y
- 			local w = math.floor(room.rect.w/35)
- 			local h = math.floor(room.rect.h/35)
- 			local size = w * h
- 			--print("room:"..room.iRoomId.." gasLevel:"..gasLevel.." w:"..w.." h:"..h.." size:"..size)
- 			for i = 0, size - 1 do
- 				local xOff = x + (i%w) * 35
- 				local yOff = y + math.floor(i/w) * 35
+	 for room in vter(shipManager.ship.vRoomList) do
+		 local gasLevel = Hyperspace.playerVariables["aea_acid_ship"..shipManager.iShipId.."_room"..room.iRoomId]
+		 
+		 if gasLevel > 0 then
+			 local opacity = gasLevel/100
+			 local x = room.rect.x
+			 local y = room.rect.y
+			 local w = math.floor(room.rect.w/35)
+			 local h = math.floor(room.rect.h/35)
+			 local size = w * h
+			 --print("room:"..room.iRoomId.." gasLevel:"..gasLevel.." w:"..w.." h:"..h.." size:"..size)
+			 for i = 0, size - 1 do
+				 local xOff = x + (i%w) * 35
+				 local yOff = y + math.floor(i/w) * 35
 				Graphics.CSurface.GL_PushMatrix()
 				Graphics.CSurface.GL_Translate(xOff, yOff, 0)
 				Graphics.CSurface.GL_RenderPrimitiveWithAlpha(roomAcidGasImage, opacity)
 				Graphics.CSurface.GL_PopMatrix()
- 			end
- 		end
- 	end
+			 end
+		 end
+	 end
 end)]]
 
 
@@ -574,7 +736,7 @@ local function initializeGas(name, breachLevels, airlockLevels, fire, passive, d
 end
 
 script.on_internal_event(Defines.InternalEvents.CALCULATE_LEAK_MODIFIER, function(ship, mod)
-    return Defines.Chain.CONTINUE, -mod
+	return Defines.Chain.CONTINUE, -mod
 end)
 
 -- -1 = open doors
@@ -777,13 +939,13 @@ end)
 
 script.on_render_event(Defines.RenderEvents.SHIP, function() end, function(ship)
   local shipManager = Hyperspace.ships(ship.iShipId)
- 	for room in vter(shipManager.ship.vRoomList) do
- 		for name, data in pairs(gases) do
+	 for room in vter(shipManager.ship.vRoomList) do
+		 for name, data in pairs(gases) do
 			Graphics.CSurface.GL_SetColor(Graphics.GL_Color(1, 0, 0, 1))
- 			Graphics.freetype.easy_print(1, room.rect.x+3, room.rect.y+3, math.floor(getGasInRoom(shipManager, data, room.iRoomId)) )
+			 Graphics.freetype.easy_print(1, room.rect.x+3, room.rect.y+3, math.floor(getGasInRoom(shipManager, data, room.iRoomId)) )
 			Graphics.CSurface.GL_SetColor(Graphics.GL_Color(1, 1, 1, 1))
- 		end
- 	end
+		 end
+	 end
 end)
 
 local needsSetRooms = {[0] = false, [1] = false}

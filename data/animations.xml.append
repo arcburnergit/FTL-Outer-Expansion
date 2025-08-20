@@ -87,6 +87,25 @@
 	<time>0.2</time>
 </anim>
 
+<animSheet name="aea_acid_tile_anim" w="140" h="35" fw="35" fh="35">effects/aea_acid_tile_anim.png</animSheet>
+<anim name="aea_acid_tile_anim">
+	<sheet>aea_acid_tile_anim</sheet>
+	<desc length="4" x="0" y="0" />
+	<time>1</time>
+</anim>
+<animSheet name="aea_acid_tile2_anim" w="140" h="35" fw="35" fh="35">effects/aea_acid_tile2_anim.png</animSheet>
+<anim name="aea_acid_tile2_anim">
+	<sheet>aea_acid_tile2_anim</sheet>
+	<desc length="4" x="0" y="0" />
+	<time>1</time>
+</anim>
+<animSheet name="aea_acid_wall_anim" w="140" h="35" fw="35" fh="35">effects/aea_acid_wall_anim.png</animSheet>
+<anim name="aea_acid_wall_anim">
+	<sheet>aea_acid_wall_anim</sheet>
+	<desc length="4" x="0" y="0" />
+	<time>1</time>
+</anim>
+
 <animSheet name="ase_proj_acid_laser" w="200" h="20" fw="50" fh="20">projectiles/ase_proj_acid_laser.png</animSheet>
 
 <anim name="ase_proj_acid_laser">
@@ -150,6 +169,15 @@
 	<firePoint x="13" y="4" />
 	<mountPoint x="4" y="36" />
 </weaponAnim>
+<animSheet name="aea_laser_acid_1_elite" w="210" h="52" fw="21" fh="52">weapon_acid/aea_laser_acid_1_elite.png</animSheet>
+<weaponAnim name="aea_laser_acid_1_elite">
+	<sheet>aea_laser_acid_1_elite</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>6</chargedFrame>
+	<fireFrame>8</fireFrame>
+	<firePoint x="13" y="4" />
+	<mountPoint x="4" y="36" />
+</weaponAnim>
 
 <animSheet name="aea_laser_acid_2" w="280" h="60" fw="28" fh="60">weapon_acid/aea_laser_acid_2.png</animSheet>
 <weaponAnim name="aea_laser_acid_2">
@@ -160,10 +188,28 @@
 	<firePoint x="19" y="6" />
 	<mountPoint x="4" y="45" />
 </weaponAnim>
+<animSheet name="aea_laser_acid_2_elite" w="280" h="60" fw="28" fh="60">weapon_acid/aea_laser_acid_2_elite.png</animSheet>
+<weaponAnim name="aea_laser_acid_2_elite">
+	<sheet>aea_laser_acid_2_elite</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>6</chargedFrame>
+	<fireFrame>8</fireFrame>
+	<firePoint x="19" y="6" />
+	<mountPoint x="4" y="45" />
+</weaponAnim>
 
 <animSheet name="aea_laser_acid_3" w="396" h="77" fw="33" fh="77">weapon_acid/aea_laser_acid_3.png</animSheet>
 <weaponAnim name="aea_laser_acid_3">
 	<sheet>aea_laser_acid_3</sheet>
+	<desc length="12" x="0" y="0" />
+	<chargedFrame>7</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="20" y="6" />
+	<mountPoint x="4" y="55" />
+</weaponAnim>
+<animSheet name="aea_laser_acid_3_elite" w="396" h="77" fw="33" fh="77">weapon_acid/aea_laser_acid_3_elite.png</animSheet>
+<weaponAnim name="aea_laser_acid_3_elite">
+	<sheet>aea_laser_acid_3_elite</sheet>
 	<desc length="12" x="0" y="0" />
 	<chargedFrame>7</chargedFrame>
 	<fireFrame>9</fireFrame>
@@ -198,6 +244,16 @@
 	<mountPoint x="4" y="47" />
 	<chargeImage>weapon_acid/aea_beam_acid_1_glow.png</chargeImage>
 </weaponAnim>
+<animSheet name="aea_beam_acid_1_elite" w="350" h="60" fw="35" fh="60">weapon_acid/aea_beam_acid_1_elite.png</animSheet>
+<weaponAnim name="aea_beam_acid_1_elite">
+	<sheet>aea_beam_acid_1_elite</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>4</chargedFrame>
+	<fireFrame>5</fireFrame>
+	<firePoint x="21" y="30" />
+	<mountPoint x="4" y="47" />
+	<chargeImage>weapon_acid/aea_beam_acid_1_glow.png</chargeImage>
+</weaponAnim>
 
 <animSheet name="aea_ion_acid_1" w="320" h="56" fw="32" fh="56">weapon_acid/aea_ion_acid_1.png</animSheet>
 <weaponAnim name="aea_ion_acid_1">
@@ -210,9 +266,9 @@
 	<chargeImage>weapon_acid/aea_ion_acid_1_glow.png</chargeImage>
 </weaponAnim>
 
-<animSheet name="aea_ion_acid_1_loot" w="320" h="56" fw="32" fh="56">weapon_acid/aea_ion_acid_1_loot.png</animSheet>
-<weaponAnim name="aea_ion_acid_1_loot">
-	<sheet>aea_ion_acid_1_loot</sheet>
+<animSheet name="aea_ion_acid_1_elite" w="320" h="56" fw="32" fh="56">weapon_acid/aea_ion_acid_1_elite.png</animSheet>
+<weaponAnim name="aea_ion_acid_1_elite">
+	<sheet>aea_ion_acid_1_elite</sheet>
 	<desc length="10" x="0" y="0" />
 	<chargedFrame>4</chargedFrame>
 	<fireFrame>7</fireFrame>
@@ -755,380 +811,6 @@
 
 </FTL>
 
-<!--Acid crew old-->
-<FTL>
-
-<!-- 
-<animSheet name="aea_acid_soldier" w="350" h="455" fw="35" fh="35">people/aea_acid_soldier_base.png</animSheet>
-<anim name="aea_acid_soldier_clone">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="7" x="0" y="2" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_death_right">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="5" x="3" y="0" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_death_left">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="5" x="3" y="0" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_walk_down">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="0" y="12" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_walk_right">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="4" y="12" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_walk_up">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="0" y="11" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_walk_left">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="4" y="11" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_shoot_down">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="0" y="10" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_shoot_right">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="4" y="10" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_shoot_up">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_shoot_left">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="4" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_fire_down">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="9" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_fire_right">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="9" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_fire_up">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="9" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_fire_left">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="9" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_repair">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="8" x="0" y="7" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_punch_up">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="3" y="1" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_punch_down">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="0" y="6" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_teleport">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="7" x="0" y="3" />
-	<time>0.5</time>
-</anim>
-<anim name="aea_acid_soldier_type_right">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="0" y="5" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_soldier_type_left">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="4" y="5" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_soldier_type_up">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="0" y="4" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_soldier_type_down">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="4" y="4" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_soldier_portrait">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="1" x="0" y="0" />
-	<time>1</time>
-</anim>
-
-
-<animSheet name="aea_acid_captain" w="350" h="455" fw="35" fh="35">people/aea_acid_captain_base.png</animSheet>
-<anim name="aea_acid_captain_clone">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="7" x="0" y="2" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_death_right">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="5" x="3" y="0" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_death_left">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="5" x="3" y="0" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_walk_down">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="0" y="12" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_walk_right">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="4" y="12" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_walk_up">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="0" y="11" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_walk_left">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="4" y="11" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_shoot_down">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="0" y="10" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_shoot_right">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="4" y="10" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_shoot_up">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_shoot_left">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="4" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_fire_down">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="9" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_fire_right">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="9" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_fire_up">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="9" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_fire_left">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="9" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_repair">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="8" x="0" y="7" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_punch_up">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="3" y="1" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_punch_down">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="0" y="6" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_teleport">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="7" x="0" y="3" />
-	<time>0.5</time>
-</anim>
-<anim name="aea_acid_captain_type_right">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="0" y="5" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_captain_type_left">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="4" y="5" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_captain_type_up">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="0" y="4" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_captain_type_down">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="4" y="4" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_captain_portrait">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="1" x="0" y="0" />
-	<time>1</time>
-</anim>
-
-<animSheet name="aea_acid_bill" w="350" h="455" fw="35" fh="35">people/aea_acid_bill_base.png</animSheet>
-<anim name="aea_acid_bill_clone">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="7" x="0" y="2" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_death_right">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="5" x="3" y="0" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_death_left">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="5" x="3" y="0" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_walk_down">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="0" y="12" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_walk_right">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="4" y="12" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_walk_up">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="0" y="11" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_walk_left">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="4" y="11" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_shoot_down">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="0" y="10" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_shoot_right">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="4" y="10" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_shoot_up">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_shoot_left">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="4" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_fire_down">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="9" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_fire_right">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="9" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_fire_up">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="9" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_fire_left">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="9" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_repair">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="8" x="0" y="7" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_punch_up">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="3" y="1" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_punch_down">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="0" y="6" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_teleport">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="7" x="0" y="3" />
-	<time>0.5</time>
-</anim>
-<anim name="aea_acid_bill_type_right">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="0" y="5" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_bill_type_left">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="4" y="5" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_bill_type_up">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="0" y="4" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_bill_type_down">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="4" y="4" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_bill_portrait">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="1" x="0" y="0" />
-	<time>1</time>
-</anim>
-
-
-<-->
-</FTL>
 
 <!--spells-->
 <FTL>
@@ -1240,86 +922,246 @@
 </FTL>
 
 <!--All crew-->
-<FTL>
+<FTL><animSheet name="aea_acid_worker" w="490" h="420" fw="35" fh="35">people/aea_acid_worker_base.png</animSheet>
+<anim name="aea_acid_worker_clone">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="5" x="0" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_death_right">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="6" x="0" y="2" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_acid_worker_death_left">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="6" x="0" y="2" />
+	<time>0.75</time>
+</anim>
+<anim name="aea_acid_worker_walk_down">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="4" x="0" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_walk_right">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="4" x="4" y="11" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_walk_up">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="4" x="0" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_walk_left">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="4" x="4" y="10" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_shoot_down">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="3" x="0" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_shoot_right">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="3" x="3" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_shoot_up">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="3" x="9" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_shoot_left">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="3" x="6" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_fire_down">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="4" x="0" y="7" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_worker_fire_right">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="4" x="4" y="6" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_worker_fire_up">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="4" x="0" y="6" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_worker_fire_left">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="4" x="4" y="7" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_worker_repair">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="9" x="5" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_punch_up">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="6" x="0" y="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_punch_down">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="6" x="0" y="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_type_right">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="4" x="4" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_type_left">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="4" x="4" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_type_up">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="4" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_type_down">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="4" x="0" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_worker_teleport">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="6" x="2" y="0" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_worker_portrait">
+	<sheet>aea_acid_worker</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
 <!--
 *********************************************************************************************************
                    BATTLE MK 1
 *********************************************************************************************************
 -->
-<animSheet name="aea_acid_soldier" w="350" h="350" fw="35" fh="35">people/aea_acid_soldier_base.png</animSheet>
+<animSheet name="aea_acid_soldier" w="490" h="420" fw="35" fh="35">people/aea_acid_soldier_base.png</animSheet>
+<anim name="aea_acid_soldier_clone">
+	<sheet>aea_acid_soldier</sheet>
+	<desc length="5" x="0" y="1" />
+	<time>1.0</time>
+</anim>
 <anim name="aea_acid_soldier_death_right">
 	<sheet>aea_acid_soldier</sheet>
-	<desc length="5" x="0" y="2" />
-	<time>1.0</time>
+	<desc length="6" x="0" y="2" />
+	<time>0.75</time>
 </anim>
 <anim name="aea_acid_soldier_death_left">
 	<sheet>aea_acid_soldier</sheet>
-	<desc length="5" x="0" y="2" />
-	<time>1.0</time>
+	<desc length="6" x="0" y="2" />
+	<time>0.75</time>
 </anim>
 <anim name="aea_acid_soldier_walk_down">
 	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="0" y="5" />
+	<desc length="4" x="0" y="11" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_soldier_walk_right">
 	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="4" y="5" />
+	<desc length="4" x="4" y="11" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_soldier_walk_up">
 	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="0" y="4" />
+	<desc length="4" x="0" y="10" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_soldier_walk_left">
 	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="4" y="4" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_punch_down">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="0" y="3" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_punch_right">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="3" y="3" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_punch_up">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="2" y="0" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_punch_left">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="5" y="0" />
+	<desc length="4" x="4" y="10" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_soldier_shoot_down">
 	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="0" y="3" />
+	<desc length="3" x="0" y="5" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_soldier_shoot_right">
 	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="3" y="3" />
+	<desc length="3" x="3" y="5" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_soldier_shoot_up">
 	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="2" y="0" />
+	<desc length="3" x="9" y="5" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_soldier_shoot_left">
 	<sheet>aea_acid_soldier</sheet>
-	<desc length="3" x="5" y="0" />
+	<desc length="3" x="6" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_soldier_fire_down">
+	<sheet>aea_acid_soldier</sheet>
+	<desc length="4" x="0" y="7" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_soldier_fire_right">
+	<sheet>aea_acid_soldier</sheet>
+	<desc length="4" x="4" y="6" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_soldier_fire_up">
+	<sheet>aea_acid_soldier</sheet>
+	<desc length="4" x="0" y="6" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_soldier_fire_left">
+	<sheet>aea_acid_soldier</sheet>
+	<desc length="4" x="4" y="7" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_soldier_repair">
+	<sheet>aea_acid_soldier</sheet>
+	<desc length="9" x="5" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_soldier_punch_up">
+	<sheet>aea_acid_soldier</sheet>
+	<desc length="6" x="0" y="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_soldier_punch_down">
+	<sheet>aea_acid_soldier</sheet>
+	<desc length="6" x="0" y="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_soldier_type_right">
+	<sheet>aea_acid_soldier</sheet>
+	<desc length="4" x="4" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_soldier_type_left">
+	<sheet>aea_acid_soldier</sheet>
+	<desc length="4" x="4" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_soldier_type_up">
+	<sheet>aea_acid_soldier</sheet>
+	<desc length="4" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_soldier_type_down">
+	<sheet>aea_acid_soldier</sheet>
+	<desc length="4" x="0" y="9" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_soldier_teleport">
 	<sheet>aea_acid_soldier</sheet>
-	<desc length="7" x="0" y="2" />
+	<desc length="6" x="2" y="0" />
 	<time>0.5</time>
 </anim>
 <anim name="aea_acid_soldier_portrait">
@@ -1327,51 +1169,6 @@
 	<desc length="1" x="0" y="0" />
 	<time>1</time>
 </anim>
-<anim name="aea_acid_soldier_type_right">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="0" y="7" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_soldier_type_left">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="4" y="7" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_soldier_type_up">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="0" y="6" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_soldier_type_down">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="4" x="4" y="6" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_soldier_fire_down">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="9" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_fire_right">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="9" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_fire_up">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="9" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_fire_left">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="9" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_soldier_repair">
-	<sheet>aea_acid_soldier</sheet>
-	<desc length="8" x="0" y="8" />
-	<time>1.0</time>
-</anim>
 
 
 <!-- 
@@ -1380,264 +1177,132 @@
 *********************************************************************************************************
 -->
 
-<animSheet name="aea_acid_captain" w="350" h="350" fw="35" fh="35">people/aea_acid_captain_base.png</animSheet>
-<anim name="aea_acid_captain_death_right">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="5" x="0" y="2" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_death_left">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="5" x="0" y="2" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_walk_down">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="0" y="5" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_walk_right">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="4" y="5" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_walk_up">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="0" y="4" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_walk_left">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="4" y="4" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_punch_down">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="0" y="3" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_punch_right">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="3" y="3" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_punch_up">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="2" y="0" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_punch_left">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="5" y="0" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_shoot_down">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="0" y="3" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_shoot_right">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="3" y="3" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_shoot_up">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="2" y="0" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_shoot_left">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="3" x="5" y="0" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_teleport">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="7" x="0" y="2" />
-	<time>0.5</time>
-</anim>
-<anim name="aea_acid_captain_portrait">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="1" x="0" y="0" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_captain_type_right">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="0" y="7" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_captain_type_left">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="4" y="7" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_captain_type_up">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="0" y="6" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_captain_type_down">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="4" x="4" y="6" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_captain_fire_down">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="9" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_fire_right">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="9" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_fire_up">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="9" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_fire_left">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="9" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_captain_repair">
-	<sheet>aea_acid_captain</sheet>
-	<desc length="8" x="0" y="8" />
-	<time>1.0</time>
-</anim>
-
 <!-- 
 *********************************************************************************************************
                    BATTLE MK 2
 *********************************************************************************************************
 -->
 
-<animSheet name="aea_acid_bill" w="350" h="350" fw="35" fh="35">people/aea_acid_bill_base.png</animSheet>
+<animSheet name="aea_acid_bill" w="490" h="420" fw="35" fh="35">people/aea_acid_bill_base.png</animSheet>
+<anim name="aea_acid_bill_clone">
+	<sheet>aea_acid_bill</sheet>
+	<desc length="5" x="0" y="1" />
+	<time>1.0</time>
+</anim>
 <anim name="aea_acid_bill_death_right">
 	<sheet>aea_acid_bill</sheet>
-	<desc length="5" x="0" y="2" />
-	<time>1.0</time>
+	<desc length="6" x="0" y="2" />
+	<time>0.75</time>
 </anim>
 <anim name="aea_acid_bill_death_left">
 	<sheet>aea_acid_bill</sheet>
-	<desc length="5" x="0" y="2" />
-	<time>1.0</time>
+	<desc length="6" x="0" y="2" />
+	<time>0.75</time>
 </anim>
 <anim name="aea_acid_bill_walk_down">
 	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="0" y="5" />
+	<desc length="4" x="0" y="11" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_bill_walk_right">
 	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="4" y="5" />
+	<desc length="4" x="4" y="11" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_bill_walk_up">
 	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="0" y="4" />
+	<desc length="4" x="0" y="10" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_bill_walk_left">
 	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="4" y="4" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_punch_down">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="0" y="3" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_punch_right">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="3" y="3" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_punch_up">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="2" y="0" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_punch_left">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="5" y="0" />
+	<desc length="4" x="4" y="10" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_bill_shoot_down">
 	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="0" y="3" />
+	<desc length="3" x="0" y="5" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_bill_shoot_right">
 	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="3" y="3" />
+	<desc length="3" x="3" y="5" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_bill_shoot_up">
 	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="2" y="0" />
+	<desc length="3" x="9" y="5" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_bill_shoot_left">
 	<sheet>aea_acid_bill</sheet>
-	<desc length="3" x="5" y="0" />
+	<desc length="3" x="6" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_bill_fire_down">
+	<sheet>aea_acid_bill</sheet>
+	<desc length="4" x="0" y="7" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_bill_fire_right">
+	<sheet>aea_acid_bill</sheet>
+	<desc length="4" x="4" y="6" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_bill_fire_up">
+	<sheet>aea_acid_bill</sheet>
+	<desc length="4" x="0" y="6" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_bill_fire_left">
+	<sheet>aea_acid_bill</sheet>
+	<desc length="4" x="4" y="7" />
+	<time>0.5</time>
+</anim>
+<anim name="aea_acid_bill_repair">
+	<sheet>aea_acid_bill</sheet>
+	<desc length="9" x="5" y="1" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_bill_punch_up">
+	<sheet>aea_acid_bill</sheet>
+	<desc length="6" x="0" y="3" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_bill_punch_down">
+	<sheet>aea_acid_bill</sheet>
+	<desc length="6" x="0" y="4" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_bill_type_right">
+	<sheet>aea_acid_bill</sheet>
+	<desc length="4" x="4" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_bill_type_left">
+	<sheet>aea_acid_bill</sheet>
+	<desc length="4" x="4" y="9" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_bill_type_up">
+	<sheet>aea_acid_bill</sheet>
+	<desc length="4" x="0" y="8" />
+	<time>1.0</time>
+</anim>
+<anim name="aea_acid_bill_type_down">
+	<sheet>aea_acid_bill</sheet>
+	<desc length="4" x="0" y="9" />
 	<time>1.0</time>
 </anim>
 <anim name="aea_acid_bill_teleport">
 	<sheet>aea_acid_bill</sheet>
-	<desc length="7" x="0" y="2" />
+	<desc length="6" x="2" y="0" />
 	<time>0.5</time>
 </anim>
 <anim name="aea_acid_bill_portrait">
 	<sheet>aea_acid_bill</sheet>
 	<desc length="1" x="0" y="0" />
 	<time>1</time>
-</anim>
-<anim name="aea_acid_bill_type_right">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="0" y="7" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_bill_type_left">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="4" y="7" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_bill_type_up">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="0" y="6" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_bill_type_down">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="4" x="4" y="6" />
-	<time>1</time>
-</anim>
-<anim name="aea_acid_bill_fire_down">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="9" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_fire_right">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="9" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_fire_up">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="9" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_fire_left">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="9" x="0" y="9" />
-	<time>1.0</time>
-</anim>
-<anim name="aea_acid_bill_repair">
-	<sheet>aea_acid_bill</sheet>
-	<desc length="8" x="0" y="8" />
-	<time>1.0</time>
 </anim>
 
 <!-- 

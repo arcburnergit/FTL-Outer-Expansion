@@ -231,7 +231,7 @@
             <item_modify>
                 <item type="scrap" min="-60" max="-60"/>
             </item_modify>
-            <crewMember amount="1" class="aea_acid_soldier">Acidic Soldier</crewMember>
+            <crewMember amount="1" class="aea_acid_worker">Acidic Worker</crewMember>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event/>
@@ -245,7 +245,7 @@
 			<item_modify>
 				<item type="scrap" min="-40" max="-40" />
 			</item_modify>
-            <crewMember amount="1" class="aea_acid_soldier">Acidic Soldier</crewMember>
+            <crewMember amount="1" class="aea_acid_worker">Acidic Worker</crewMember>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event/>
@@ -1086,7 +1086,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 </event>
 <event name="NEBULA_ACID_AEA_ACID_ITEM_BOARD">
     <text>While you were attempting to break into the Acidic vessel, the repair crew has broken into yours!.</text>
-    <boarders min="4" max="4" class="aea_acid_soldier" />
+    <boarders min="4" max="4" class="aea_acid_worker" />
 </event>
 <event name="NEBULA_STORM_AEA_ACID_AUGITEM" unique="true">
 	<text>Right in the middle of an ion storm, you find a strange shipyard. It appears to be operated by the Acidic Growth. However, they aren't hostile. Perhaps you'll be able to make a deal with them.</text>
@@ -1251,10 +1251,10 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 
 	<text>Strangely, an Orchid captain hails you from an Acidic vessel. "Captain, you wouldn't happen to have any Acidic Growth with you? We'd offer a reward for you to turn over any of it to be destroyed""</text>
 	<ship load="SHIP_AEA_ACID_ORCHID_ONLY" hostile="false" />
-	<choice hidden="true" req="aea_acid_soldier">
-		<text>(Acidic Soldier) Take up their offer.</text>
+	<choice hidden="true" req="aea_acid_worker">
+		<text>(Acidic Worker) Take up their offer.</text>
 		<event>
-            <text>You send over your Acidic Soldier, the orchids make true to their promise and exterminate the Acidic Growth inside. The Orchids send over the reward as promised.</text>
+            <text>You send over your Acidic Worker, the orchids make true to their promise and exterminate the Acidic Growth inside. The Orchids send over the reward as promised.</text>
             <autoReward level="MED">standard</autoReward>
             <removeCrew>
                 <clone>true</clone>
@@ -1519,7 +1519,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</event>
 	<event>
 		<text>"Thanks for your purchase! May this robot thing help you in whatever you're doing out here!"</text>
-		<crewMember amount="1" class="aea_acid_soldier">Acidic Soldier</crewMember>
+		<crewMember amount="1" class="aea_acid_worker">Acidic Worker</crewMember>
 		<item_modify>
 			<item max="-20" min="-30" type="scrap" />
 		</item_modify>
@@ -1572,7 +1572,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</event>
 	<event>
 		<text>To your surprise, your Orchid's message seems to touch the pirates. Or maybe not... seems they're just annoyed. "Jeez, okay! I get it, you're people too, bla bla bla. I know the gist. If I'm rude you'll just kill me. I've met Renegades before. Just take this damn robot and leave me alone." The slavers deliver one of the Acidic soldier to your.</text>
-		<crewMember amount="1" class="aea_acid_soldier" />
+		<crewMember amount="1" class="aea_acid_worker" />
 	</event>
 </eventList>
 
@@ -1635,8 +1635,8 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
     <choice>
         <text>Welcome it aboard.</text>
         <event>
-            <text>You pickup the Acidic Leader and turn to face the Elite Slug vessel.</text>
-            <crewMember amount="1" all_skills="1" class="aea_acid_captain" >Acidic Leader</crewMember>
+            <text>You pickup the Acidic Soldier and turn to face the Elite Slug vessel.</text>
+            <crewMember amount="1" all_skills="1" class="aea_acid_soldier" >Acidic Soldier</crewMember>
             <ship hostile="true" />
 			<choice hidden="true">
 				<text>Continue...</text>
@@ -1852,7 +1852,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</event>
 </eventList>
 <event name="AEA_ACID_DISTRESS_QUESTION_FALSE">
-	<text>"That is Unfortunate, we will have to take some of your supplies until the task is complete." The Acidic Soldier quickly beams aboard and takes some of your supplies before you can react.</text>
+	<text>"That is Unfortunate, we will have to take some of your supplies until the task is complete." The Acidic Worker quickly beams aboard and takes some of your supplies before you can react.</text>
 	<item_modify steal="true">
 		<item type="scrap" min="-25" max="-25" />
 		<item type="fuel" min="-4" max="-2" />
@@ -1860,8 +1860,8 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</item_modify>
 </event>
 <event name="AEA_ACID_DISTRESS_QUESTION_TRUE">   
-	<text>"We have accomplished our task then. We will join you on your journey." The Acidic Soldier beams aboard and joins your crew!.</text>
-	<crewMember amount="1" class="aea_acid_soldier" >Acidic Soldier</crewMember>  
+	<text>"We have accomplished our task then. We will join you on your journey." The Acidic Worker beams aboard and joins your crew!.</text>
+	<crewMember amount="1" class="aea_acid_worker" >Acidic Worker</crewMember>  
 </event>
 <event name="AEA_ACID_DISTRESS_QUESTION_FAIL">
     <text>"We... can not remember..." The communications cut out and you're unable to reaquire it, you decide to cut your losses and salvage some of the wrecks while your jump drive changes.</text>
@@ -2386,15 +2386,15 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</choice>
 </event>
 <event name="AEA_ACIDIC_LEADER_FIND">
-	<text>Eventually you arrive in a control room of sorts, and in the middle of it you find a single surviving Acidic Soldier, however there's something off about this soldier, the normally green acidic growth has turned purple, you're not sure what this means but you go over to make contact.</text>
+	<text>Eventually you arrive in a control room of sorts, and in the middle of it you find a single surviving Acidic Worker, however there's something off about this soldier, the normally green acidic growth has turned purple, you're not sure what this means but you go over to make contact.</text>
 	<choice hidden="true">
 		<text>Hello?.</text>
 		<event>
-			<text>"Oh jeez, I hope you're not here to kill me, I swear im not like the others, I'm not here to kill any more miners." It appears there's something wrong with this Acidic Soldier, if you had to guess you'd think it wasn't part of the Acidic Growth.</text>
+			<text>"Oh jeez, I hope you're not here to kill me, I swear im not like the others, I'm not here to kill any more miners." It appears there's something wrong with this Acidic Worker, if you had to guess you'd think it wasn't part of the Acidic Growth.</text>
 			<choice hidden="true">
 				<text>"What are you?"</text>
 				<event>
-					<text>"I'm not entirely sure... I'm quite confident I was the Acidic Growth at some point, but everything is weird now, there's no more of me out there, its just me, in this robot, alone..." The Acidic Soldier trails off for a moment. "Hang on, do you guys think you can help me, if you guys can spare me a bit of scrap I can repair one of the ships and head back to try and recombine with myself."</text>
+					<text>"I'm not entirely sure... I'm quite confident I was the Acidic Growth at some point, but everything is weird now, there's no more of me out there, its just me, in this robot, alone..." The Acidic Worker trails off for a moment. "Hang on, do you guys think you can help me, if you guys can spare me a bit of scrap I can repair one of the ships and head back to try and recombine with myself."</text>
 					<choice hidden="false">
                         <text>"Sure, What should we call you anyway?"</text>
                         <event>
@@ -2481,9 +2481,9 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 </event>
 
 <event name="NEBULA_AEA_ACID_BILL_JOIN1">
-    <text>You move in the scoop up the Acidic Soldier, as you're doing so you notice that the normally green Acidic Growth is a shade of purple.</text>
+    <text>You move in the scoop up the Acidic Worker, as you're doing so you notice that the normally green Acidic Growth is a shade of purple.</text>
     <choice hidden="true" req="aea_acid_bill" lvl="1" blue="false">
-        <text>You recognise the Acidic Soldier as Bill.</text>
+        <text>You recognise the Acidic Worker as Bill.</text>
         <event name="NEBULA_AEA_ACID_BILL_HELP">
             <text>"Well I'm trying to get to the Acidic core, Hopefully I'll be able to reintergrate with the Acidic Growth once im there. The only problem is that I don't have a ship anymore, do you think you can take me there?"</text>
             <choice hidden="true">
@@ -2506,7 +2506,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
     <choice hidden="true" req="aea_acid_bill" lvl="0" max_lvl="0" blue="false">
         <text>Continue...</text>
         <event>
-            <text>Strangely the Acidic Soldier begins to tell you it's story, apparently it's become seperated from the Acidic Growth somehow and has been trying to rejoin it.</text>
+            <text>Strangely the Acidic Worker begins to tell you it's story, apparently it's become seperated from the Acidic Growth somehow and has been trying to rejoin it.</text>
             <choice hidden="true">
                 <text>"What should we call you then?"</text>
                 <event>
@@ -2628,8 +2628,8 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
                     </choice>
                 </event>
             </choice>
-            <choice hidden="true" req="aea_acid_soldier">
-                <text>(Acidic Soldier) Have your Acidic Soldier pose as captain.</text>
+            <choice hidden="true" req="aea_acid_worker">
+                <text>(Acidic Worker) Have your Acidic Worker pose as captain.</text>
                 <event>
                     <text>The orchid seems a bit suspicious but doesn't push it, you're able to continue moving through the shipyard.</text>
                     <choice hidden="true">
@@ -2638,8 +2638,8 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
                     </choice>
                 </event>
             </choice>
-            <choice hidden="true" req="aea_acid_captain">
-                <text>(Acidic Leader) Have your Acidic Soldier pose as captain.</text>
+            <choice hidden="true" req="aea_acid_soldier">
+                <text>(Acidic Soldier) Have your Acidic Worker pose as captain.</text>
                 <event>
                     <text>The orchid seems a bit suspicious but doesn't push it, you're able to continue moving through the shipyard.</text>
                     <choice hidden="true">
@@ -2745,7 +2745,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
     <choice hidden="true" req="aea_acid_eng_visited" blue="false" lvl="0" max_lvl="0">
         <text>Head to the engineering bays.</text>
         <event>
-            <text>You enter the engineering bays and find several ships being worked on by Acidic Soldiers, you're able to sneak your way around the edge of the room and access a small storage area, Unfortunately the only thing in storage is an Acidic upgrade package.</text>
+            <text>You enter the engineering bays and find several ships being worked on by Acidic Workers, you're able to sneak your way around the edge of the room and access a small storage area, Unfortunately the only thing in storage is an Acidic upgrade package.</text>
             <variable name="aea_acid_eng_visited" op="set" val="1" />
             <choice>
                 <text>Take the upgrade kit.</text>
