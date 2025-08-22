@@ -279,7 +279,7 @@
 			</slot>
 		</medbay>
 		<mind power="1" room="8" start="false" img="room_mind_9" />
-		<oxygen power="1" room="17" start="true" img="room_oxygen_12" />
+		<oxygen power="1" room="17" start="false" img="room_oxygen_12" />
 		<pilot power="1" room="2" start="true" img="room_pilot_4">
 			<slot>
 				<direction>right</direction>
@@ -298,7 +298,7 @@
 				<number>0</number>
 			</slot>
 		</shields>
-		<teleporter power="1" max="3" room="16" start="false" />
+		<teleporter power="2" max="3" room="16" start="true" />
 		<weapons power="2" max="8" room="4" start="false" img="room_weapons_8">
 			<slot>
 				<direction>up</direction>
@@ -315,7 +315,6 @@
 	</droneList>
 	<health amount="30" />
 	<maxPower amount="8" />
-	<aug name="AEA_ACID_O2SYS" />
 	<shieldImage>mup_orb2</shieldImage>
     <mv-mapImage>map_icon_aeap_acid_arty_a</mv-mapImage>
 </shipBlueprint>
@@ -394,7 +393,7 @@
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="2" count="4">
-		<weapon name="AEA_LASER_ACID_1" />
+		<weapon name="AEA_LASER_ACID_1_ELITE" />
 		<weapon name="LASER_CHAINGUN" />
 	</weaponList>
 	<droneList drones="7" count="2" />
@@ -482,7 +481,7 @@
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="5" count="4">
-		<weapon name="AEA_BEAM_ACID_1" />
+		<weapon name="AEA_BEAM_ACID_1_ELITE" />
 		<weapon name="AEA_LASER_ACID_1" />
 	</weaponList>
 	<droneList drones="3" count="2" />
@@ -512,7 +511,7 @@
 		</aea_super_shields>
 		<battery max="2" power="1" room="2" start="false" img="room_battery_13" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_3" />
-		<clonebay power="1" room="9" start="false">
+		<clonebay power="1" room="9" start="true">
 			<slot>
 				<number>1</number>
 			</slot>
@@ -531,7 +530,7 @@
 			</slot>
 		</engines>
 		<hacking power="1" room="1" start="false" img="room_hacking_10" />
-		<medbay power="1" room="9" start="true" img="room_medbay">
+		<medbay power="1" room="9" start="false" img="room_medbay">
 			<slot>
 				<number>1</number>
 			</slot>
@@ -1338,7 +1337,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<tooltip>Fires a single blast that does 1 ion damage and recharges very quickly. Can hit and disable shields as well as systems.</tooltip>
 	<damage>0</damage>
 	<spin>720</spin>
-	<ion>1</ion>
+	<ion>0</ion>
 	<speed>30</speed>
 	<shots>2</shots>
 	<sp>0</sp>
@@ -6856,7 +6855,7 @@ This drone fires 4 shots.
 </augBlueprint>
 <augBlueprint name="LAB_AEA_ACID_REPAIR">
 	<title>Fracture Repair Procedures</title>
-	<desc>Acidic Crew heal 7.5hp/s if unharmed for 5 seconds, but only repair at 1x speed.</desc>
+	<desc>Acidic Crew heal 6.4hp/s if unharmed for 5 seconds.</desc>
 	<cost>0</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
@@ -6869,8 +6868,8 @@ This drone fires 4 shots.
 	<stackable>false</stackable>
 </augBlueprint>
 <augBlueprint name="LAB_AEA_ACID_COOLING">
-	<title>Cooling Vents</title>
-	<desc>Acidic crew do 2x ranged damage but lose 50% of their hp.</desc>
+	<title>Obscuring Gas</title>
+	<desc>All non-Acidic crew in Acidic Gas do 0.5x Combat Damage.</desc>
 	<cost>0</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
@@ -6943,7 +6942,7 @@ This drone fires 4 shots.
 	<rarity>0</rarity>
 	<powerList>
 		<power>Active Ability: Deploy Acidic Gas in the current room</power>
-		<power>Repairs 2x faster and heals for 3.2hp/s in Acidic Gas</power>
+		<power>Repairs 2x faster and heals for 2.4hp/s in Acidic Gas</power>
 		<power>0.75x combat damage, Repairs at 1.5x speed</power>
 		<power>Moves at 1.5x speed</power>
 		<power>Cannot suffocate, Immune to Mind Control</power>
@@ -6959,7 +6958,7 @@ This drone fires 4 shots.
 	<rarity>0</rarity>
 	<powerList>
 		<power>Active Ability: Deploy Acidic Gas in the current room</power>
-		<power>Repairs 2x faster and heals for 3.2hp/s in Acidic Gas</power>
+		<power>Repairs 2x faster and heals for 2.4hp/s in Acidic Gas</power>
 		<power>1.25x combat damage</power>
 		<power>Max Health is increased to 150</power>
 		<power>Cannot suffocate, Immune to Mind Control</power>
@@ -6975,7 +6974,7 @@ This drone fires 4 shots.
 	<rarity>0</rarity>
 	<powerList>
 		<power>Active Ability: Deploy Acidic Gas in the current room</power>
-		<power>Repairs 2x faster and heals for 6.4hp/s in Acidic Gas</power>
+		<power>Repairs 2x faster and heals for 4.8hp/s in Acidic Gas</power>
 		<power>1.5x combat damage, Repairs at 1.5x speed</power>
 		<power>Max Health is increased to 150</power>
 		<power>Cannot suffocate, Immune to Mind Control</power>
@@ -9690,7 +9689,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Bolt]</title>
 		<short>[Bolt]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellsport Weapon!!
+		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all normal shields at a target room dealing 1 damage.
 	Cast Delay: 8 seconds
 	Charge Time: 20 seconds
@@ -9714,7 +9713,7 @@ Cast a spell that pierces all normal shields at a target room dealing 1 damage.
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Bolt Burst]</title>
 		<short>[Bolt Burst]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellsport Weapon!!
+		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast 3 spells that pierces all normal shields at a target room dealing 1 damage.
 	Cast Delay: 20 seconds
 	Charge Time: 20 seconds
@@ -9738,7 +9737,7 @@ Cast 3 spells that pierces all normal shields at a target room dealing 1 damage.
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Hull Bolt]</title>
 		<short>[Hull Bolt]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellsport Weapon!!
+		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all normal shields at a target room dealing 3 hull damage but no system or crew damage.
 	Cast Delay: 10 seconds
 	Charge Time: 20 seconds
@@ -9762,7 +9761,7 @@ Cast a spell that pierces all normal shields at a target room dealing 3 hull dam
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Warp]</title>
 		<short>[Warp]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellsport Weapon!!
+		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell in the current room that warps all crew in the current room to a random room on the opposite ship.
 	Cast Delay: 6 seconds
 	Charge Time: 20 seconds
@@ -9785,7 +9784,7 @@ Cast a spell in the current room that warps all crew in the current room to a ra
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Warp Bolt]</title>
 		<short>[Warp Bolt]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellsport Weapon!!
+		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all shields at a target room that warps all crew in the room to a random room on the opposite ship.
 	Cast Delay: 8 seconds
 	Charge Time: 20 seconds
@@ -9808,7 +9807,7 @@ Cast a spell that pierces all shields at a target room that warps all crew in th
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Heal Bolt]</title>
 		<short>[Heal Bolt]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellsport Weapon!!
+		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all shields at a target room that heals all friendly crew for 75hp.
 	Cast Delay: 2 seconds
 	Charge Time: 20 seconds
@@ -9832,7 +9831,7 @@ Cast a spell that pierces all shields at a target room that heals all friendly c
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Heal Aura]</title>
 		<short>[Heal Aura]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellsport Weapon!!
+		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell in the current room that heals all friendly crew in the room for 45 hp.
 	Cast Delay: 5 seconds
 	Charge Time: 20 seconds
@@ -9855,7 +9854,7 @@ Cast a spell in the current room that heals all friendly crew in the room for 45
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Drone]</title>
 		<short>[Drone]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellsport Weapon!!
+		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Spawn a conservative combat drone around the enemy ship.
 	Cast Delay: 10 seconds
 	Charge Time: 20 seconds
@@ -9879,7 +9878,7 @@ Spawn a conservative combat drone around the enemy ship.
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Barrier]</title>
 		<short>[Barrier]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellsport Weapon!!
+		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all normal shields at a target room that spawns a barrier capable of blocking 2 projectiles. Cannot have more than 8 barrier active at once
 	Cast Delay: 2 second
 	Charge Time: 20 seconds
@@ -9903,7 +9902,7 @@ Cast a spell that pierces all normal shields at a target room that spawns a barr
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Lockdown]</title>
 		<short>[Lockdown]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellsport Weapon!!
+		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all normal shields at a target room that applies a lockdown effect.
 	Cast Delay: 4 second
 	Charge Time: 20 seconds
@@ -9927,7 +9926,7 @@ Cast a spell that pierces all normal shields at a target room that applies a loc
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Ally]</title>
 		<short>[Ally]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellsport Weapon!!
+		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all normal shields at a target room that spawns a random ally.
 	Cast Delay: 7 second
 	Charge Time: 20 seconds
@@ -9951,7 +9950,7 @@ Cast a spell that pierces all normal shields at a target room that spawns a rand
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Mind Bolt]</title>
 		<short>[Mind Bolt]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellsport Weapon!!
+		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all normal shields at a target room that mind controls the enemy for 20 seconds.
 	Cast Delay: 8 second
 	Charge Time: 20 seconds

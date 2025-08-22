@@ -466,9 +466,9 @@ local function startAcid(shipId, roomId, time)
 		--print("inactive")
 		acidStatus[shipId][roomId] = {timer = time, breachTimer = acidBreachTimerMax - 0.1, doorTimer = acidDoorTimerMax - 0.1}
 	else
-		print("active increase:"..acidStatus[shipId][roomId].timer)
+		--print("active increase:"..acidStatus[shipId][roomId].timer)
 		acidStatus[shipId][roomId].timer = acidStatus[shipId][roomId].timer + math.max(1, time/acidStatus[shipId][roomId].timer) * time
-		print("active increase after:"..acidStatus[shipId][roomId].timer)
+		--print("active increase after:"..acidStatus[shipId][roomId].timer)
 	end
 end
 
@@ -489,7 +489,7 @@ script.on_render_event(Defines.RenderEvents.SHIP_BREACHES, function() end, funct
 				local yOff = y + math.floor(i/w) * 35
 				Graphics.CSurface.GL_PushMatrix()
 				Graphics.CSurface.GL_Translate(xOff+17, yOff+17, 0)
-				acidTileAnim:OnRender(1, Graphics.GL_Color(1, 1, 1, 1), false)
+				acidTileAnim:OnRender(0.5, Graphics.GL_Color(1, 1, 1, 1), false)
 				Graphics.CSurface.GL_PopMatrix()
 			end
 			local opacity = 0.5 + ((acidBreachTimerMax - acidRoom.breachTimer)/(acidBreachTimerMax*2))
@@ -574,22 +574,24 @@ end)
 
 mods.aea.acidicCrewStats = {}
 local acidicCrewStats = mods.aea.acidicCrewStats
-acidicCrewStats["aea_acid_worker"] = {[Hyperspace.CrewStat.REPAIR_SPEED_MULTIPLIER] = {mult = 2}, [Hyperspace.CrewStat.ACTIVE_HEAL_AMOUNT] = {add = 3.2}}
-acidicCrewStats["aea_acid_soldier"] = {[Hyperspace.CrewStat.REPAIR_SPEED_MULTIPLIER] = {mult = 2}, [Hyperspace.CrewStat.ACTIVE_HEAL_AMOUNT] = {add = 3.2}}
-acidicCrewStats["aea_acid_bill"] = {[Hyperspace.CrewStat.REPAIR_SPEED_MULTIPLIER] = {mult = 2}, [Hyperspace.CrewStat.ACTIVE_HEAL_AMOUNT] = {add = 6.4}}
+acidicCrewStats["aea_acid_worker"] = {[Hyperspace.CrewStat.REPAIR_SPEED_MULTIPLIER] = {mult = 2}, [Hyperspace.CrewStat.ACTIVE_HEAL_AMOUNT] = {add = 2.4}}
+acidicCrewStats["aea_acid_soldier"] = {[Hyperspace.CrewStat.REPAIR_SPEED_MULTIPLIER] = {mult = 2}, [Hyperspace.CrewStat.ACTIVE_HEAL_AMOUNT] = {add = 2.4}}
+acidicCrewStats["aea_acid_bill"] = {[Hyperspace.CrewStat.REPAIR_SPEED_MULTIPLIER] = {mult = 2}, [Hyperspace.CrewStat.ACTIVE_HEAL_AMOUNT] = {add = 4.8}}
 
 script.on_internal_event(Defines.InternalEvents.CALCULATE_STAT_POST, function(crewmem, stat, def, amount, value)
 	if not (crewmem and crewmem.currentShipId and crewmem.iRoomId) then return Defines.Chain.CONTINUE, amount, value end
-	if acidStatus[crewmem.currentShipId][crewmem.iRoomId] then
+	if acidStatus[crewmem.currentShipId] and acidStatus[crewmem.currentShipId][crewmem.iRoomId] then
 		local crewStat = acidicCrewStats[crewmem.type]
-		if crewStat[stat] then
+		if crewStat and crewStat[stat] then
 			if crewStat[stat].mult then
 				amount = amount * crewStat[stat].mult
 			elseif crewStat[stat].add then
 				amount = amount + crewStat[stat].add
 			end
+		elseif stat == Hyperspace.CrewStat.DAMAGE_MULTIPLIER and Hyperspace.ships.player:HasAugmentation("LAB_AEA_ACID_COOLING") > 0 then
+			amount = amount * 0.5
 		end
-	end
+	end	
 	return Defines.Chain.CONTINUE, amount, value
 end)
 

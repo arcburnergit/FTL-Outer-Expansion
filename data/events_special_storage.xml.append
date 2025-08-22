@@ -59,6 +59,13 @@
   </mod-append:choice>
 </mod:findName>
 
+<mod:findName type="event" name="STORAGE_CHECK_SYSTEM_TELEPORTER_HEAL">
+	<mod:findWithChildLike type="choice" child-type="text">
+		<mod:selector>Perform the upgrade. [Cost: 60~, 3{]</mod:selector>
+		<mod:removeAttributes max_lvl="" />
+	</mod:findWithChildLike>
+</mod:findName>
+
 <mod:findName type="event" name="STORAGE_CHECK_SYSTEM">
 	<mod-append:choice req="aea_super_shields" blue="false" hidden="true">
 	  <text>Auxiliary Shields.</text>
@@ -2912,7 +2919,7 @@
 	<text>You are viewing the lab menu for: [ACIDIC GROWTH]</text>
 	<choice req="LAB_AEA_ACID_REPAIR" lvl="1" max_group="0" blue="false" hidden="true">
 		<text>Currently Installed: Fracture Repair Procedures.
-		[Acidic Crew heal 7.5hp/s if unharmed for 5 seconds, but only repair at 1x speed]</text>
+		[Acidic Crew heal 6.4hp/s if unharmed for 5 seconds]</text>
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="LAB_AEA_ACID_SENSOR" lvl="1" max_group="0" blue="false" hidden="true">
@@ -2920,9 +2927,9 @@
 		[Acidic Crew become immune to stun]</text>
 		<event load="OPTION_INVALID" />
 	</choice>
-	<choice req="LAB_AEA_ACID_WEAPON" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Currently Installed: Cooling Vents.
-		[Acidic Crew do 2x ranged damage but lose 50% of their hp]</text>
+	<choice req="LAB_AEA_ACID_COOLING" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: Obscuring Gas.
+		[All non-Acidic crew in Acidic Gas do 0.5x Combat Damage]</text>
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="pilot" lvl="1" max_group="0" blue="false" hidden="true">
@@ -2946,11 +2953,11 @@
 		<event load="STORAGE_CHECK_LAB_AEA_ACID_SENSOR" />
 	</choice>
 	<choice req="LAB_AEA_ACID_INSTALLED" lvl="1" max_group="3" blue="false" hidden="true">
-		<text>Pri: Cooling Vents. [An upgrade is already installed]</text>
+		<text>Pri: Obscuring Gas. [An upgrade is already installed]</text>
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="LAB_AEA_ACID_INSTALLED" lvl="0" max_group="3" blue="false" hidden="true">
-		<text>Pri: Cooling Vents. [Cost: 20~ 3{]</text>
+		<text>Pri: Obscuring Gas. [Cost: 40~ 3{]</text>
 		<event load="STORAGE_CHECK_LAB_AEA_ACID_COOLING" />
 	</choice>
 	<choice req="pilot" lvl="1" max_group="999" blue="false" hidden="true">
@@ -2962,7 +2969,7 @@
 
 <event name="STORAGE_CHECK_LAB_AEA_ACID_REPAIR">
 	<text>You are about to install the Fracture Repair Procedures modification.
-	[Effects: Acidic Crew heal 7.5hp/s if unharmed for 5 seconds, but only repair at 1x speed]
+	[Effects: Acidic Crew heal 6.4hp/s if unharmed for 5 seconds]
 	
 	[Warning: After installing this, you will not be able to install any more primary upgrades for Acidic crew. You will not be able to deactivate this mod either.]</text>
 	<choice hidden="true">
@@ -3021,15 +3028,15 @@
 
 <event name="STORAGE_CHECK_LAB_AEA_ACID_COOLING">
 	<text>You are about to install the Cooling Vents modification.
-	[Effects: Acidic Crew do 2x ranged damage but lose 50% of their hp]
+	[Effects: All non-Acidic crew in Acidic Gas do 0.5x Combat Damage]
 	
 	[Warning: After installing this, you will not be able to install any more primary upgrades for Acidic crew. You will not be able to deactivate this mod either.]</text>
 	<choice hidden="true">
-		<text>Install the modification. [Cost: 20~ 3{]</text>
+		<text>Install the modification. [Cost: 40~ 3{]</text>
 		<event>
 			<text>You install the modification.</text>
 			<item_modify>
-				<item type="scrap" min="-20" max="-20" />
+				<item type="scrap" min="-40" max="-40" />
 				<item type="fuel" min="-3" max="-3" />
 			</item_modify>
 			<choice hidden="true">

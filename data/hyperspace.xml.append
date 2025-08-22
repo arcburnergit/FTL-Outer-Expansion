@@ -30,6 +30,7 @@
   <mod-append:script>data/aea_scripts/mvtest_custom_weapon_animations.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/better_jukebox.lua</mod-append:script>
 </mod:findLike>
+<shieldWithoutSystem enabled="true"/>
 <dualMedical enabled="true"/>
 <mod:findLike type="customSystems">
     <mod-append:customSystem id="aea_super_shields"/>
@@ -5073,6 +5074,14 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<powerSounds>
 				<powerSound>cultivatorSpore</powerSound>
 			</powerSounds>
+			<req type="enemy">
+				<inCombat/>
+				<extraConditions type="or" textId="power_not_ready_teleporting_or_stunned">
+					<repairingSystem>true</repairingSystem>
+					<fighting>true</fighting> 
+					<sabotaging>true</sabotaging>
+				</extraConditions>
+			</req>
 			<buttonText>GAS</buttonText>
 			<tooltip>[COOLDOWN:30s]
 Release Acidic Gas into the current room, which lasts 10 seconds.
@@ -5080,6 +5089,7 @@ Release Acidic Gas into the current room, which lasts 10 seconds.
 - Gas Damages connected doors, causing them to break open temporarily.
 			</tooltip>
 			<cooldownColor r="50" g="166" b="31"/>
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
 		</powerEffect>
 	</mod-append:race>
 	<mod-append:race name="aea_acid_soldier">
@@ -5097,6 +5107,14 @@ Release Acidic Gas into the current room, which lasts 10 seconds.
 			<powerSounds>
 				<powerSound>cultivatorSpore</powerSound>
 			</powerSounds>
+			<req type="enemy">
+				<inCombat/>
+				<extraConditions type="or" textId="power_not_ready_teleporting_or_stunned">
+					<repairingSystem>true</repairingSystem>
+					<fighting>true</fighting> 
+					<sabotaging>true</sabotaging>
+				</extraConditions>
+			</req>
 			<buttonText>GAS</buttonText>
 			<tooltip>[COOLDOWN:20s]
 Release Acidic Gas into the current room, which lasts 10 seconds.
@@ -5104,6 +5122,7 @@ Release Acidic Gas into the current room, which lasts 10 seconds.
 - Gas Damages connected doors, causing them to break open temporarily.
 			</tooltip>
 			<cooldownColor r="50" g="166" b="31"/>
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
 		</powerEffect>
 	</mod-append:race>
 	<mod-append:race name="aea_acid_bill">
@@ -5121,6 +5140,14 @@ Release Acidic Gas into the current room, which lasts 10 seconds.
 			<powerSounds>
 				<powerSound>cultivatorSpore</powerSound>
 			</powerSounds>
+			<req type="enemy">
+				<inCombat/>
+				<extraConditions type="or" textId="power_not_ready_teleporting_or_stunned">
+					<repairingSystem>true</repairingSystem>
+					<fighting>true</fighting> 
+					<sabotaging>true</sabotaging>
+				</extraConditions>
+			</req>
 			<buttonText>GAS</buttonText>
 			<tooltip>[COOLDOWN:10s]
 Release Acidic Gas into the current room, which lasts 10 seconds.
@@ -5128,6 +5155,7 @@ Release Acidic Gas into the current room, which lasts 10 seconds.
 - Gas Damages connected doors, causing them to break open temporarily.
 			</tooltip>
 			<cooldownColor r="50" g="166" b="31"/>
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
 		</powerEffect>
 	</mod-append:race>
 
@@ -8256,14 +8284,6 @@ Right click to attempt the ritual or cancel.
 			<statBoost name="passiveHealDelay">
 				<boostType>SET</boostType>
 				<amount>5</amount>
-				<shipTarget>ALL</shipTarget>
-				<crewTarget>ALLIES</crewTarget>
-				<priority>999</priority>
-				<whiteList load="LIST_CREW_AEA_ACID" />
-			</statBoost>
-			<statBoost name="repairSpeed">
-				<boostType>SET</boostType>
-				<amount>1</amount>
 				<shipTarget>ALL</shipTarget>
 				<crewTarget>ALLIES</crewTarget>
 				<priority>999</priority>

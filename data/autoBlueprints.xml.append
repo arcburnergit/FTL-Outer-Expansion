@@ -71,6 +71,8 @@
     <mod-append:name>AEA_DEFENSE_NECRO_1_MISSILE</mod-append:name>
     <mod-append:name>AEA_DEFENSE_NECRO_2_DRONE</mod-append:name>
     <mod-append:name>AEA_DEFENSE_NECRO_2_MISSILE</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_1</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_2</mod-append:name>
     <mod-append:name>AEA_COMBAT_NECRO_1_LASER</mod-append:name>
     <mod-append:name>AEA_COMBAT_NECRO_1_BEAM</mod-append:name>
     <mod-append:name>AEA_COMBAT_NECRO_2_LASER</mod-append:name>
@@ -99,8 +101,8 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_DRONES_ALL_CRAPBUCKET">
-    <mod-append:name>AEA_DEFENSE_NECRO_1_DRONE</mod-append:name>
-    <mod-append:name>AEA_DEFENSE_NECRO_2_DRONE</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_1</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_2</mod-append:name>
     <mod-append:name>AEA_COMBAT_NECRO_1_LASER</mod-append:name>
     <mod-append:name>AEA_COMBAT_NECRO_2_LASER</mod-append:name>
 
@@ -723,8 +725,8 @@
 	<name>AEA_SHLEG_MISSILES</name>
 </blueprintList>
 <blueprintList name="LIST_DRONES_AEA_SYLVAN">
-	<name>AEA_DEFENSE_NECRO_1_MISSILE</name>
-	<name>AEA_DEFENSE_NECRO_2_MISSILE</name>
+	<name>AEA_DEFENSE_NECRO_1</name>
+	<name>AEA_DEFENSE_NECRO_2</name>
 	<name>AEA_COMBAT_NECRO_1_LASER</name>
 	<name>AEA_COMBAT_NECRO_2_LASER</name>
 	<name>AEA_COMBAT_BIRD_BURST_1</name>
@@ -925,10 +927,8 @@
 </blueprintList>
 
 <blueprintList name="GIFTLIST_DRONES_NECRO">
-    <name>AEA_DEFENSE_NECRO_1_DRONE</name>
-    <name>AEA_DEFENSE_NECRO_1_MISSILE</name>
-    <name>AEA_DEFENSE_NECRO_2_DRONE</name>
-    <name>AEA_DEFENSE_NECRO_2_MISSILE</name>
+    <name>AEA_DEFENSE_NECRO_1</name>
+    <name>AEA_DEFENSE_NECRO_2</name>
     <name>AEA_COMBAT_NECRO_1_LASER</name>
     <name>AEA_COMBAT_NECRO_1_BEAM</name>
     <name>AEA_COMBAT_NECRO_2_LASER</name>
@@ -1135,10 +1135,8 @@
 </blueprintList>
 
 <blueprintList name="LIST_DRONES_NECRO">
-	<name>AEA_DEFENSE_NECRO_1_DRONE</name>
-	<name>AEA_DEFENSE_NECRO_1_MISSILE</name>
-	<name>AEA_DEFENSE_NECRO_2_DRONE</name>
-	<name>AEA_DEFENSE_NECRO_2_MISSILE</name>
+	<name>AEA_DEFENSE_NECRO_1</name>
+	<name>AEA_DEFENSE_NECRO_2</name>
 	<name>AEA_COMBAT_NECRO_1_LASER</name>
 	<name>AEA_COMBAT_NECRO_1_BEAM</name>
 	<name>AMPHI_DEFENSE</name>
@@ -2635,10 +2633,8 @@
 	<name>AEA_COMBAT_NECRO_1_BEAM</name>
 	<name>AEA_COMBAT_NECRO_2_LASER</name>
 	<name>AEA_COMBAT_NECRO_2_BEAM</name>
-	<name>AEA_DEFENSE_NECRO_1_DRONE</name>
-	<bane>AEA_DEFENSE_NECRO_1_MISSILE</bane>
-	<name>AEA_DEFENSE_NECRO_2_DRONE</name>
-	<bane>AEA_DEFENSE_NECRO_2_MISSILE</bane>
+	<name>AEA_DEFENSE_NECRO_1</name>
+	<name>AEA_DEFENSE_NECRO_2</name>
 
 	<name>DEFENSE_1_ENEMY</name>
 	<name>DEFENSE_2_ENEMY</name>
@@ -5380,7 +5376,7 @@ A CLASS
 		<drones power="2" max="8" room="12" start="true" />
 		<engines power="2" max="2" room="4" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
-		<shields power="1" max="1" room="15" start="true" />
+		<hacking power="1" max="1" room="15" start="true" />
 		<weapons power="4" max="8" room="11" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
@@ -5426,7 +5422,7 @@ A CLASS
 	<maxSector>4</maxSector>
 	<systemList>
 		<engines power="1" max="2" room="3" start="true" />
-		<shields power="1" max="4" room="4" start="true" />
+		<hacking power="1" max="2" room="4" start="true" />
 		<oxygen power="1" max="2" room="0" start="true" />
 		<pilot power="1" max="3" room="1" start="true" />
 		<aea_super_shields power="2" max="6" room="5" start="true" />
@@ -5441,7 +5437,7 @@ A CLASS
 	<crewCount amount="3" max="5" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--OUTRIDER-->
@@ -5450,7 +5446,7 @@ A CLASS
 	<maxSector>4</maxSector>
 	<systemList>
 		<medbay power="1" max="2" room="6" start="false" />
-		<shields power="1" max="4" room="4" start="true" />
+		<hacking power="1" max="2" room="4" start="true" />
 		<engines power="1" max="2" room="1" start="true" />
 		<oxygen power="1" max="2" room="0" start="true" />
 		<pilot power="2" max="3" room="3" start="true" />
@@ -5467,7 +5463,7 @@ A CLASS
 	<crewCount amount="3" max="8" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 	<cloakImage>mu_crystal_outrider_a</cloakImage>
 </shipBlueprint>
 
@@ -5477,10 +5473,10 @@ A CLASS
 	<systemList>
 		<engines power="1" max="2" room="2" start="true" />
 		<medbay power="1" max="3" room="0" start="false" />
-		<shields power="2" max="4" room="7" start="true" />
+		<hacking power="1" max="2" room="7" start="true" />
 		<oxygen power="1" max="2" room="3" start="true" />
 		<pilot power="1" max="3" room="5" start="true" />
-		<aea_super_shields power="2" max="6" room="1" start="true" />
+		<aea_super_shields power="2" max="8" room="1" start="true" />
 		<teleporter power="1" max="3" room="6" start="true" />
 		<weapons power="2" max="8" room="4" start="true" />
 	</systemList>
@@ -5493,7 +5489,7 @@ A CLASS
 	<crewCount amount="4" max="8" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--ENFORCER-->
@@ -5504,8 +5500,8 @@ A CLASS
 		<engines power="1" max="2" room="6" start="true" />
 		<mind power="1" max="3" room="7" start="false" />
 		<pilot power="1" max="3" room="3" start="true" />
-		<aea_super_shields power="2" max="6" room="4" start="true" />
-		<shields power="2" max="4" room="1" start="true" />
+		<aea_super_shields power="2" max="8" room="4" start="true" />
+		<hacking power="1" max="2" room="1" start="true" />
 		<teleporter power="1" max="2" room="0" start="true" />
 		<weapons power="2" max="7" room="2" start="true" />
 	</systemList>
@@ -5518,7 +5514,7 @@ A CLASS
 	<crewCount amount="3" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--BOMBER-->
@@ -5531,7 +5527,7 @@ A CLASS
 		<oxygen power="1" max="2" room="6" start="true" />
 		<pilot power="1" max="3" room="2" start="true" />
 		<aea_super_shields power="2" max="10" room="4" start="true" />
-		<shields power="2" max="4" room="1" start="true" />
+		<hacking power="1" max="2" room="1" start="true" />
 		<weapons power="2" max="10" room="7" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
@@ -5543,7 +5539,7 @@ A CLASS
 	<crewCount amount="3" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--ASSAULT-->
@@ -5555,8 +5551,8 @@ A CLASS
 		<medbay power="1" max="2" room="5" start="false" />
 		<oxygen power="1" max="2" room="8" start="true" />
 		<pilot power="1" max="3" room="1" start="true" />
-		<aea_super_shields power="2" max="6" room="3" start="true" />
-		<shields power="2" max="5" room="3" start="true" />
+		<aea_super_shields power="2" max="8" room="3" start="true" />
+		<hacking power="1" max="2" room="3" start="true" />
 		<teleporter power="1" max="2" room="2" start="true" />
 		<weapons power="2" max="8" room="0" start="true" />
 	</systemList>
@@ -5569,20 +5565,20 @@ A CLASS
 	<crewCount amount="3" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--TRANSPORT-->
 <shipBlueprint name="AEA_SHARD_TRANSPORT" layout="mu_crystal_transport_a" img="aea_shard_transport">
 	<class>Shard-Forged Transport</class>
 	<systemList>
-		<shields power="2" max="5" room="8" start="true" />
+		<hacking power="1" max="2" room="8" start="true" />
 		<doors power="1" max="3" room="1" start="false" />
 		<engines power="1" max="2" room="3" start="true" />
 		<medbay power="1" max="2" room="7" start="false" />
 		<oxygen power="1" max="2" room="4" start="true" />
 		<pilot power="1" max="3" room="5" start="true" />
-		<aea_super_shields power="2" max="6" room="0" start="true" />
+		<aea_super_shields power="2" max="8" room="0" start="true" />
 		<teleporter power="1" max="3" room="6" start="true" />
 		<weapons power="2" max="7" room="2" start="true" />
 	</systemList>
@@ -5595,7 +5591,7 @@ A CLASS
 	<crewCount amount="2" max="6" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 	<cloakImage>mu_crystal_transport_a</cloakImage>
 </shipBlueprint>
 
@@ -5621,7 +5617,7 @@ A CLASS
 	<crewCount amount="4" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--TRAPPER-->
@@ -5633,8 +5629,8 @@ A CLASS
 		<medbay power="1" max="2" room="5" start="false" />
 		<oxygen power="1" max="1" room="9" start="true" />
 		<pilot power="1" max="3" room="7" start="true" />
-		<aea_super_shields power="2" max="6" room="6" start="true" />
-		<shields power="2" max="6" room="0" start="true" />
+		<aea_super_shields power="2" max="8" room="6" start="true" />
+		<hacking power="1" max="2" room="0" start="true" />
 		<teleporter power="1" max="1" room="8" start="true" />
 		<weapons power="2" max="6" room="2" start="true" />
 	</systemList>
@@ -5647,11 +5643,11 @@ A CLASS
 	<crewCount amount="3" max="6" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--GUARD-->
-<shipBlueprint name="AEA_SHARD_GUARD" layout="mu_crystal_guard_a" img="mu_crystal_guard_a">
+<shipBlueprint name="AEA_SHARD_GUARD" layout="mu_crystal_guard_a" img="aea_shard_guard">
 	<class>Shard-Forged Guard</class>
 	<systemList>
 		<doors power="1" max="3" room="1" start="false" />
@@ -5660,8 +5656,8 @@ A CLASS
 		<mind power="1" max="2" room="10" start="false" />
 		<oxygen power="1" max="2" room="11" start="true" />
 		<pilot power="1" max="1" room="8" start="true" />
-		<aea_super_shields power="2" max="6" room="5" start="true" />
-		<shields power="2" max="6" room="2" start="true" />
+		<aea_super_shields power="2" max="10" room="5" start="true" />
+		<hacking power="2" max="2" room="2" start="true" />
 		<teleporter power="1" max="2" room="9" start="true" />
 		<weapons power="2" max="8" room="4" start="true" />
 	</systemList>
@@ -5674,7 +5670,7 @@ A CLASS
 	<crewCount amount="3" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 </FTL>
 

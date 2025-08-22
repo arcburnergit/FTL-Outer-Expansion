@@ -296,15 +296,15 @@ systemFunctions["shields"] = {
 }
 systemFunctions["engines"] = {
 	start = function(system)
-		local shipManager = Hyperspace.ships(system._shipObj.iShipId)
-		userdata_table(system, "mods.aea.freeze").jump_timer = shipManager.jump_timer.first
+		--local shipManager = Hyperspace.ships(system._shipObj.iShipId)
+		--userdata_table(system, "mods.aea.freeze").jump_timer = shipManager.jump_timer.first
 	end,
 	loop = function(system)
-		local shipManager = Hyperspace.ships(system._shipObj.iShipId)
-		shipManager.jump_timer.first = userdata_table(system, "mods.aea.freeze").jump_timer
+		--local shipManager = Hyperspace.ships(system._shipObj.iShipId)
+		--shipManager.jump_timer.first = userdata_table(system, "mods.aea.freeze").jump_timer
 	end,
 	finish = function(system)
-		userdata_table(system, "mods.aea.freeze").jump_timer = nil
+		--userdata_table(system, "mods.aea.freeze").jump_timer = nil
 	end
 }
 systemFunctions["oxygen"] = {
@@ -379,15 +379,15 @@ systemFunctions["medbay"] = {
 }
 systemFunctions["pilot"] = {
 	start = function(system)
-		local shipManager = Hyperspace.ships(system._shipObj.iShipId)
-		userdata_table(system, "mods.aea.freeze").jump_timer = shipManager.jump_timer
+		--local shipManager = Hyperspace.ships(system._shipObj.iShipId)
+		--userdata_table(system, "mods.aea.freeze").jump_timer = shipManager.jump_timer
 	end,
 	loop = function(system)
-		local shipManager = Hyperspace.ships(system._shipObj.iShipId)
-		shipManager.jump_timer = userdata_table(system, "mods.aea.freeze").jump_timer
+		--local shipManager = Hyperspace.ships(system._shipObj.iShipId)
+		--shipManager.jump_timer = userdata_table(system, "mods.aea.freeze").jump_timer
 	end,
 	finish = function(system)
-		userdata_table(system, "mods.aea.freeze").jump_timer = nil
+		--userdata_table(system, "mods.aea.freeze").jump_timer = nil
 	end
 }
 systemFunctions["sensors"] = {
