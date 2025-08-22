@@ -1114,6 +1114,7 @@ You notice that there's still a large amount of scrap on the surface, you could 
                                                     <text>"Excellent, I shall conceal myself in this large coat as we leave, hopefully the ships above won't trouble themselves with us." You head back outside towards your ship, you make it into your ship and it appears none of the ships above notice. It's only once you begin to take off that one of the large ships off to the side moves into block your path. It appears to be jamming your FTL drive, preventing you from leaving.</text>
                                                     <ship load="AEA_SHARD_BOSS" hostile="true"/>
                                                     <crewMember amount="1" all_skills="2" class="aea_shard_dawn">King Onyx</crewMember>
+											        <achievement silent="false">ACH_AEA_CREW_ONYX</achievement>
                                                     <choice hidden="true">
                                                         <text>Continue...</text>
                                                         <event load="COMBAT_CHECK"/>

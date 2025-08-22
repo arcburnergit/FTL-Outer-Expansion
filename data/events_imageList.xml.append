@@ -58,4 +58,15 @@
 <imageList name="BACK_EVENT_AEA_BIRDDD">
 	<img w="1280" h="720">stars_bird/bg_bird_moon.png</img>
 </imageList>
+
+<imageList name="BACK_AEA_DARKNESS">
+	<img w="1280" h="720">stars_hazard/darkness.png</img>
+</imageList>
+
+<imageList name="PLANET_AEA_STAR">
+	<img w="414" h="690">stars_old/planet_aea_star.png</img>
+</imageList>
+<imageList name="PLANET_AEA_HOLE">
+	<img w="414" h="690">stars_old/planet_aea_hole.png</img>
+</imageList>
 </FTL>

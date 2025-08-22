@@ -1434,6 +1434,7 @@ A moment later the general is alive again, however this time something is differ
 				<event>
 					<text>The engi comes onboard your ship, if you had to guess L-0031 has been around since the beginning of the Engi, perhaps even one of the first to seperate from the harmony.</text>
 					<crewMember amount="1" all_skills="2" class="aea_necro_king">L-0031</crewMember>
+					<achievement silent="false">ACH_AEA_CREW_KING</achievement>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event/>

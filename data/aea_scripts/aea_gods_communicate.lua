@@ -122,7 +122,106 @@ godEvents["AEA_OLD_GATE_SPEAK"] = {
 	},
 	finish = "AEA_OLD_GATE_WARP"
 }
-
+godEvents["AEA_OLD_VICTORY_SPEAK"] = {
+	varient = 2,
+	event = {
+		text="The gate is destroyed, I will save you and your crew and send you home, you've done more than you can imagine here today.\nI will answer ONE of your questions before releasing you.", 
+		choices={
+			{
+				text="Who are you?", 
+				event={
+					text="You can call me Balance.\nI keep my two siblings in check, both are far more powerful than me, but without me inbetween they will destroy each other,\nand perhaps even the multiverse.\nGood luck on your adventures, Captain.",
+					choices={
+						{
+							text="Continue...", 
+							finish=true
+						}
+					}
+				}
+			},
+			{
+				text="What are you?", 
+				event={
+					text="I am one of three, although from what I've sensed on you there are more like us out there.\nWe came from a far away cluster, however I have been trapped here with the Lylmik's, they keep me here and feed off my power, but in retribution I trap them in the few universes they have control over.\nGood luck on your adventures, Captain.",
+					choices={
+						{
+							text="Continue...", 
+							finish=true
+						}
+					}
+				}
+			},
+			{
+				text="Who is the one with the red book?", 
+				req="aea_dark_book_unlock",
+				event={
+					text="That would be my sibling, Antithesis, they are locked in an eternal struggle with my other Sibling, Contradiction. If you have met either of them you must not listen to their plans, no good will come from it.\nGood luck on your adventures, Captain.",
+					choices={
+						{
+							text="Continue...", 
+							finish=true
+						}
+					}
+				}
+			}
+		}
+	},
+	finish = "AEA_OLD_VICTORY_WIN"
+}
+godEvents["AEA_RITUAL_REALM_TELEPORT_SPEAK"] = {
+	varient = 1,
+	event = {
+		text="You are ready, In a moment, if you accept my task, I will transport you to the space where I and my siblings manifest our physical forms.\nThis is where we are weakest, but do not underestimate the danger there.", 
+		choices={
+			{
+				text="What do you want me to do?", 
+				event={
+					text="I need you to kill my sibling, Contradiction.\nI cannot touch them myself, even in the absence of our other sibling their power still prevents direct conflict.\nYou will need to attract Contradiction's attention somehow to cause them to reveal their physical form.\nOnce that it done you can destroy them for me.",
+					choices={
+						{
+							text="I'll do it.", 
+							event={
+								text="I will take you there now then, be careful and good luck.",
+								choices={
+									{
+										text="Continue...", 
+										finish=true
+									}
+								}
+							}
+						},
+						{
+							text="I'm not ready for this right now.", 
+							event={
+								text="If that it the decision you have made, so be it.\nIf you change your mind, repeat this ritual and I will ask again.",
+								choices={
+									{
+										text="Continue...", 
+										finish2=true
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			{
+				text="I want no part in this.", 
+				event={
+					text="If that it the decision you have made, so be it.\nIf you change your mind, repeat this ritual and I will ask again.",
+					choices={
+						{
+							text="Continue...", 
+							finish2=true
+						}
+					}
+				}
+			}
+		}
+	},
+	finish = "AEA_RITUAL_REALM_TELEPORT",
+	finish2 = "AEA_EVENT_EXIT"
+}
 
 script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
 	local eventManager = Hyperspace.Event
@@ -192,6 +291,11 @@ script.on_render_event(Defines.RenderEvents.CHOICE_BOX, function() end, function
 				varient = 0
 				local worldManager = Hyperspace.App.world
 				Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager, godEvents[renderEvent].finish, false,-1)
+				renderEvent = nil
+			elseif chosenChoice.finish2 then
+				varient = 0
+				local worldManager = Hyperspace.App.world
+				Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager, godEvents[renderEvent].finish2, false,-1)
 				renderEvent = nil
 			else
 				source = chosenChoice.event
@@ -327,19 +431,21 @@ script.on_render_event(Defines.RenderEvents.CHOICE_BOX, function() end, function
     		textY = 720/2 + 200
     		if currentCharacter > string.len(source.text) then
 	    		for i, choice in ipairs(source.choices) do
-	    			textY = 720/2 + 50 * i
-	    			local choiceText = choice.text
-	    			--print(choice.text)
-					local hitbox = Graphics.freetype.easy_measurePrintLines(13, 0, 0, 1140, choiceText)
-					--local originalColour = Graphics.GL_GetColorTint()
-		    		if mousePos.x >= textX - (hitbox.x/2) - padding.x and mousePos.x <= textX + (hitbox.x/2) + padding.x and mousePos.y >= textY - (hitbox.y/2) - padding.y and mousePos.y <= textY + (hitbox.y/2) + padding.y then
-		    			hoveredChoice = i
-	    				Graphics.CSurface.GL_SetColorTint(Graphics.GL_Color(textColourSelect.r, textColourSelect.g, textColourSelect.b, fade))
-	    			else
-	    				Graphics.CSurface.GL_SetColorTint(Graphics.GL_Color(textColourDefault.r, textColourDefault.g, textColourDefault.b, fade))
+	    			if not choice.req or Hyperspace.metaVariables[choice.req] >= 1 then
+		    			textY = 720/2 + 50 * i
+		    			local choiceText = choice.text
+		    			--print(choice.text)
+						local hitbox = Graphics.freetype.easy_measurePrintLines(13, 0, 0, 1140, choiceText)
+						--local originalColour = Graphics.GL_GetColorTint()
+			    		if mousePos.x >= textX - (hitbox.x/2) - padding.x and mousePos.x <= textX + (hitbox.x/2) + padding.x and mousePos.y >= textY - (hitbox.y/2) - padding.y and mousePos.y <= textY + (hitbox.y/2) + padding.y then
+			    			hoveredChoice = i
+		    				Graphics.CSurface.GL_SetColorTint(Graphics.GL_Color(textColourSelect.r, textColourSelect.g, textColourSelect.b, fade))
+		    			else
+		    				Graphics.CSurface.GL_SetColorTint(Graphics.GL_Color(textColourDefault.r, textColourDefault.g, textColourDefault.b, fade))
+			    		end
+			    		Graphics.freetype.easy_printNewlinesCentered(13, textX, textY, 1140, choiceText)
+		    			Graphics.CSurface.GL_RemoveColorTint()
 		    		end
-		    		Graphics.freetype.easy_printNewlinesCentered(13, textX, textY, 1140, choiceText)
-	    			Graphics.CSurface.GL_RemoveColorTint()
 		    	end
 		    end
 		end
@@ -381,6 +487,7 @@ script.on_internal_event(Defines.InternalEvents.ON_MOUSE_L_BUTTON_UP, function(x
 	end
 	return Defines.Chain.CONTINUE
 end)
+
 
 
 --[[Graphics.CSurface.GL_PushStencilMode()

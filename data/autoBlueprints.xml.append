@@ -10,7 +10,12 @@
     <mod-append:name>AEA_LASER_ACID_SUPER</mod-append:name>
     <mod-append:name>AEA_BEAM_ACID_1</mod-append:name>
     <mod-append:name>AEA_ION_ACID_1</mod-append:name>
-    <mod-append:name>AEA_ION_ACID_1_LOOT</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_1_ELITE</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_2_ELITE</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_3_ELITE</mod-append:name>
+    <mod-append:name>AEA_BEAM_ACID_1_ELITE</mod-append:name>
+    <mod-append:name>AEA_ION_ACID_1_ELITE</mod-append:name>
+    <mod-append:name>AEA_ION_ACID_1_ELITE</mod-append:name>
 
     <mod-append:name>AEA_LASER_NECRO_1</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_2</mod-append:name>
@@ -66,6 +71,8 @@
     <mod-append:name>AEA_DEFENSE_NECRO_1_MISSILE</mod-append:name>
     <mod-append:name>AEA_DEFENSE_NECRO_2_DRONE</mod-append:name>
     <mod-append:name>AEA_DEFENSE_NECRO_2_MISSILE</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_1</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_2</mod-append:name>
     <mod-append:name>AEA_COMBAT_NECRO_1_LASER</mod-append:name>
     <mod-append:name>AEA_COMBAT_NECRO_1_BEAM</mod-append:name>
     <mod-append:name>AEA_COMBAT_NECRO_2_LASER</mod-append:name>
@@ -94,8 +101,8 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_DRONES_ALL_CRAPBUCKET">
-    <mod-append:name>AEA_DEFENSE_NECRO_1_DRONE</mod-append:name>
-    <mod-append:name>AEA_DEFENSE_NECRO_2_DRONE</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_1</mod-append:name>
+    <mod-append:name>AEA_DEFENSE_NECRO_2</mod-append:name>
     <mod-append:name>AEA_COMBAT_NECRO_1_LASER</mod-append:name>
     <mod-append:name>AEA_COMBAT_NECRO_2_LASER</mod-append:name>
 
@@ -124,7 +131,12 @@
     <mod-append:name>AEA_LASER_ACID_SUPER</mod-append:name>
     <mod-append:name>AEA_BEAM_ACID_1</mod-append:name>
     <mod-append:name>AEA_ION_ACID_1</mod-append:name>
-    <mod-append:name>AEA_ION_ACID_1_LOOT</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_1_ELITE</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_2_ELITE</mod-append:name>
+    <mod-append:name>AEA_LASER_ACID_3_ELITE</mod-append:name>
+    <mod-append:name>AEA_BEAM_ACID_1_ELITE</mod-append:name>
+    <mod-append:name>AEA_ION_ACID_1_ELITE</mod-append:name>
+    <mod-append:name>AEA_ION_ACID_1_ELITE</mod-append:name>
 
     <mod-append:name>AEA_LASER_NECRO_1</mod-append:name>
     <mod-append:name>AEA_LASER_NECRO_2</mod-append:name>
@@ -174,8 +186,8 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ALL_CRAPBUCKET">
+    <mod-append:name>aea_acid_worker</mod-append:name>
     <mod-append:name>aea_acid_soldier</mod-append:name>
-    <mod-append:name>aea_acid_captain</mod-append:name>
 
     <mod-append:name>aea_necro_engi</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
@@ -228,8 +240,8 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ALIENS">
+    <mod-append:name>aea_acid_worker</mod-append:name>
     <mod-append:name>aea_acid_soldier</mod-append:name>
-    <mod-append:name>aea_acid_captain</mod-append:name>
     <mod-append:name>aea_acid_bill</mod-append:name>
     <mod-append:name>aea_necro_engi</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
@@ -356,8 +368,8 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_GAS">
+	<mod-append:name>aea_acid_worker</mod-append:name>
 	<mod-append:name>aea_acid_soldier</mod-append:name>
-	<mod-append:name>aea_acid_captain</mod-append:name>
 	<mod-append:name>aea_acid_bill</mod-append:name>
     <mod-append:name>aea_old_1</mod-append:name>
     <mod-append:name>aea_old_unique_1</mod-append:name>
@@ -389,8 +401,8 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_METAL">
+    <mod-append:name>aea_acid_worker</mod-append:name>
     <mod-append:name>aea_acid_soldier</mod-append:name>
-    <mod-append:name>aea_acid_captain</mod-append:name>
     <mod-append:name>aea_acid_bill</mod-append:name>
     <mod-append:name>aea_necro_engi</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
@@ -404,7 +416,7 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ELITE">
-    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_acid_soldier</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
     <mod-append:name>aea_old_1</mod-append:name>
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
@@ -415,7 +427,7 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ELITE_FIRE">
-    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_acid_soldier</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
     <mod-append:name>aea_old_1</mod-append:name>
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
@@ -425,7 +437,7 @@
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_ELITE_RHYME">
-    <mod-append:name>aea_acid_captain</mod-append:name>
+    <mod-append:name>aea_acid_soldier</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
     <mod-append:name>aea_old_1</mod-append:name>
     <mod-append:name>aea_cult_priest_sup</mod-append:name>
@@ -533,13 +545,13 @@
 </blueprintList>
 
 <mod:findName type="blueprintList" name="LIST_CREW_GATHERING_RANDOM">
-    <mod-append:name>aea_acid_soldier</mod-append:name>
+    <mod-append:name>aea_acid_worker</mod-append:name>
     <mod-append:name>aea_cult_wizard_a01</mod-append:name>
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CREW_METAL">
+    <mod-append:name>aea_acid_worker</mod-append:name>
     <mod-append:name>aea_acid_soldier</mod-append:name>
-    <mod-append:name>aea_acid_captain</mod-append:name>
     <mod-append:name>aea_acid_bill</mod-append:name>
     <mod-append:name>aea_necro_engi</mod-append:name>
     <mod-append:name>aea_necro_lich</mod-append:name>
@@ -562,8 +574,8 @@
 </mod:findName>
 
 <blueprintList name="LIST_CREW_AEA_ACID">
+    <name>aea_acid_worker</name>
     <name>aea_acid_soldier</name>
-    <name>aea_acid_captain</name>
     <name>aea_acid_bill</name>
 </blueprintList>
 <blueprintList name="LIST_CREW_AEA_BIRD">
@@ -634,7 +646,7 @@
 </blueprintList>
 
 <blueprintList name="LIST_CREW_AEA_ACID_ER">
-    <name>aea_acid_captain</name>
+    <name>aea_acid_soldier</name>
     <name>aea_acid_bill</name>
 </blueprintList>
 <blueprintList name="LIST_CREW_AEA_BIRD_ER">
@@ -696,7 +708,7 @@
 	<name>AEA_LASER_ACID_BOSS</name>
 	<name>AEA_CRYSTAL_SHARD_BOSS</name>
 	<name>AEA_BEAM_SHLEG_BOSS</name>
-	<name>AEA_ION_ACID_1_LOOT</name>
+	<name>AEA_LASER_ACID_3_ELITE</name>
 	<name>AEA_LASER_NECRO_2_LOOT</name>
 	<name>AEA_LASER_OLDP_3_LOOT</name>
 	<name>AEA_LASER_CULT_LOOT</name>
@@ -714,6 +726,11 @@
 	<name>AEA_LASER_ACID_3</name>
 	<name>AEA_BEAM_ACID_1</name>
 	<name>AEA_ION_ACID_1</name>
+	<name>AEA_LASER_ACID_1_ELITE</name>
+	<name>AEA_LASER_ACID_2_ELITE</name>
+	<name>AEA_LASER_ACID_3_ELITE</name>
+	<name>AEA_BEAM_ACID_1_ELITE</name>
+	<name>AEA_ION_ACID_1_ELITE</name>
 	<name>AEA_LASER_NECRO_1</name>
 	<name>AEA_LASER_NECRO_2</name>
 	<name>AEA_LASER_NECRO_3</name>
@@ -722,8 +739,8 @@
 	<name>AEA_SHLEG_MISSILES</name>
 </blueprintList>
 <blueprintList name="LIST_DRONES_AEA_SYLVAN">
-	<name>AEA_DEFENSE_NECRO_1_MISSILE</name>
-	<name>AEA_DEFENSE_NECRO_2_MISSILE</name>
+	<name>AEA_DEFENSE_NECRO_1</name>
+	<name>AEA_DEFENSE_NECRO_2</name>
 	<name>AEA_COMBAT_NECRO_1_LASER</name>
 	<name>AEA_COMBAT_NECRO_2_LASER</name>
 	<name>AEA_COMBAT_BIRD_BURST_1</name>
@@ -924,10 +941,8 @@
 </blueprintList>
 
 <blueprintList name="GIFTLIST_DRONES_NECRO">
-    <name>AEA_DEFENSE_NECRO_1_DRONE</name>
-    <name>AEA_DEFENSE_NECRO_1_MISSILE</name>
-    <name>AEA_DEFENSE_NECRO_2_DRONE</name>
-    <name>AEA_DEFENSE_NECRO_2_MISSILE</name>
+    <name>AEA_DEFENSE_NECRO_1</name>
+    <name>AEA_DEFENSE_NECRO_2</name>
     <name>AEA_COMBAT_NECRO_1_LASER</name>
     <name>AEA_COMBAT_NECRO_1_BEAM</name>
     <name>AEA_COMBAT_NECRO_2_LASER</name>
@@ -1008,7 +1023,12 @@
 </blueprintList>
 
 <blueprintList name="LIST_LOOT_AEA_ACID">
-	<name>AEA_ION_ACID_1_LOOT</name>
+    <name>AEA_LASER_ACID_1_ELITE</name>
+    <name>AEA_LASER_ACID_2_ELITE</name>
+    <name>AEA_LASER_ACID_3_ELITE</name>
+    <name>AEA_BEAM_ACID_1_ELITE</name>
+    <name>AEA_ION_ACID_1_ELITE</name>
+    <name>AEA_ION_ACID_1_ELITE</name>
 </blueprintList>
 
 <blueprintList name="LIST_LOOT_AEA_NECRO">
@@ -1016,16 +1036,16 @@
 </blueprintList>
 
 <blueprintList name="LIST_WEAPONS_ACIDIC">
-    <name>AEA_LASER_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_2_ENEMY</name>
-    <name>AEA_LASER_ACID_3_ENEMY</name>
-    <name>AEA_BEAM_ACID_1_ENEMY</name>
-    <name>AEA_ION_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_2_ENEMY</name>
-    <name>AEA_LASER_ACID_3_ENEMY</name>
-    <name>AEA_BEAM_ACID_1_ENEMY</name>
-    <name>AEA_ION_ACID_1_ENEMY</name>
+    <name>AEA_LASER_ACID_1</name>
+    <name>AEA_LASER_ACID_2</name>
+    <name>AEA_LASER_ACID_3</name>
+    <name>AEA_BEAM_ACID_1</name>
+    <name>AEA_ION_ACID_1</name>
+    <name>AEA_LASER_ACID_1</name>
+    <name>AEA_LASER_ACID_2</name>
+    <name>AEA_LASER_ACID_3</name>
+    <name>AEA_BEAM_ACID_1</name>
+    <name>AEA_ION_ACID_1</name>
     
     <name>LASER_HEAVY_1</name>
 	<name>LASER_HULL_1_ENEMY</name>
@@ -1049,16 +1069,16 @@
 	<name>ENERGY_HULL</name>
 </blueprintList>
 <blueprintList name="LIST_WEAPONS_ACIDIC_ELITE">
-    <name>AEA_LASER_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_2_ENEMY</name>
-    <name>AEA_LASER_ACID_3_ENEMY</name>
-    <name>AEA_BEAM_ACID_1_ENEMY</name>
-    <name>AEA_ION_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_1_ENEMY</name>
-    <name>AEA_LASER_ACID_2_ENEMY</name>
-    <name>AEA_LASER_ACID_3_ENEMY</name>
-    <name>AEA_BEAM_ACID_1_ENEMY</name>
-    <name>AEA_ION_ACID_1_ENEMY</name>
+    <name>AEA_LASER_ACID_1</name>
+    <name>AEA_LASER_ACID_2</name>
+    <name>AEA_LASER_ACID_3</name>
+    <name>AEA_BEAM_ACID_1</name>
+    <name>AEA_ION_ACID_1</name>
+    <name>AEA_LASER_ACID_1_ELITE</name>
+    <name>AEA_LASER_ACID_2_ELITE</name>
+    <name>AEA_LASER_ACID_3_ELITE</name>
+    <name>AEA_BEAM_ACID_1_ELITE</name>
+    <name>AEA_ION_ACID_1_ELITE</name>
     
     <name>LASER_HEAVY_1</name>
 	<name>LASER_HULL_1_ENEMY</name>
@@ -1129,10 +1149,8 @@
 </blueprintList>
 
 <blueprintList name="LIST_DRONES_NECRO">
-	<name>AEA_DEFENSE_NECRO_1_DRONE</name>
-	<name>AEA_DEFENSE_NECRO_1_MISSILE</name>
-	<name>AEA_DEFENSE_NECRO_2_DRONE</name>
-	<name>AEA_DEFENSE_NECRO_2_MISSILE</name>
+	<name>AEA_DEFENSE_NECRO_1</name>
+	<name>AEA_DEFENSE_NECRO_2</name>
 	<name>AEA_COMBAT_NECRO_1_LASER</name>
 	<name>AEA_COMBAT_NECRO_1_BEAM</name>
 	<name>AMPHI_DEFENSE</name>
@@ -1454,7 +1472,7 @@
 
 <shipBlueprint name="AEA_ACID_TRANSPORT" layout="aea_acid_transport" img="aea_acid_transport">
 	<class>Acidic Transport</class>
-	<minSector>4</minSector>
+	<minSector>3</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
 		<clonebay power="1" max="2" room="2" start="true" />
@@ -1471,7 +1489,7 @@
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC" />
 	<droneList drones="0" count="0" />
-	<health amount="19" />
+	<health amount="13" />
 	<maxPower amount="10" />
 	<crewCount amount="2" max="5" class="orchid" />
 	<boardingAI>invasion</boardingAI>
@@ -1502,6 +1520,29 @@
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
 
+<shipBlueprint name="AEA_ACID_STATION" layout="aea_acid_station" img="aea_acid_station">
+	<class>Acidic Station</class>
+	<minSector>2</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="1" max="2" room="29" start="true" />
+		<doors power="1" max="1" room="18" start="true" />
+		<drones power="2" max="6" room="10" start="true" />
+		<medbay power="1" max="2" room="8" start="true" />
+		<mind power="1" max="2" room="19" start="false" />
+		<oxygen power="2" max="2" room="9" start="true" />
+		<shields power="2" max="10" room="26" start="true" />
+		<weapons power="3" max="8" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC" />
+	<droneList drones="10" count="2" load="LIST_DRONES_ENGI_DROPSHIP" />
+	<health amount="15" />
+	<maxPower amount="12" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY_WEAK" />
+</shipBlueprint>
 
 
 
@@ -1686,7 +1727,7 @@
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
 	<droneList drones="0" count="0" />
-	<health amount="19" />
+	<health amount="15" />
 	<maxPower amount="10" />
 	<crewCount amount="2" max="5" class="orchid" />
 	<boardingAI>invasion</boardingAI>
@@ -1717,7 +1758,31 @@
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
 
+<shipBlueprint name="AEA_ACID_STATION_ELITE" layout="aea_acid_station" img="aea_acid_station_elite">
+	<class>Acidic Station</class>
+	<minSector>2</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<cloaking power="2" max="3" room="29" start="true" />
+		<doors power="1" max="1" room="18" start="true" />
+		<drones power="2" max="6" room="10" start="true" />
+		<medbay power="1" max="2" room="8" start="true" />
+		<mind power="1" max="2" room="19" start="false" />
+		<oxygen power="2" max="2" room="9" start="true" />
+		<shields power="2" max="10" room="26" start="true" />
+		<weapons power="3" max="8" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_ACIDIC_ELITE" />
+	<droneList drones="10" count="2" load="LIST_DRONES_ENGI_DROPSHIP" />
+	<health amount="15" />
+	<maxPower amount="12" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_ACID_O2SYS_ENEMY_WEAK" />
+</shipBlueprint>
 </FTL>
+
 <FTL>
 
 <blueprintList name="LIST_CREW_AEA_NECRO">
@@ -2582,10 +2647,8 @@
 	<name>AEA_COMBAT_NECRO_1_BEAM</name>
 	<name>AEA_COMBAT_NECRO_2_LASER</name>
 	<name>AEA_COMBAT_NECRO_2_BEAM</name>
-	<name>AEA_DEFENSE_NECRO_1_DRONE</name>
-	<bane>AEA_DEFENSE_NECRO_1_MISSILE</bane>
-	<name>AEA_DEFENSE_NECRO_2_DRONE</name>
-	<bane>AEA_DEFENSE_NECRO_2_MISSILE</bane>
+	<name>AEA_DEFENSE_NECRO_1</name>
+	<name>AEA_DEFENSE_NECRO_2</name>
 
 	<name>DEFENSE_1_ENEMY</name>
 	<name>DEFENSE_2_ENEMY</name>
@@ -2999,10 +3062,346 @@
 
 
 
-
-
-<shipBlueprint name="AEA_OLD_FINAL_BOSS_CASUAL" layout="aea_old_flagship" img="aea_old_flagship">
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_CASUAL" layout="aea_old_flagship_one" img="aea_old_flagship_one">
 	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="3" max="3" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<artillery power="3" max="3" room="5" start="true" weapon="ARTILLERY_AEA_FOCUS_OLD" />
+		<clonebay power="1" max="1" room="7" start="true" />
+		<engines power="2" max="2" room="10" start="true" />
+		<medbay power="2" max="2" room="15" start="true" />
+		<oxygen power="1" max="1" room="3" start="true" />
+		<pilot power="2" max="2" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<teleporter power="1" max="1" room="24" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="35" /> <!--29-->
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_NORMAL" layout="aea_old_flagship_one" img="aea_old_flagship_one">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="3" max="3" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<artillery power="3" max="3" room="5" start="true" weapon="ARTILLERY_AEA_FOCUS_OLD" />
+		<clonebay power="1" max="1" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<oxygen power="1" max="1" room="3" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<teleporter power="2" max="2" room="24" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_CHALLENGE" layout="aea_old_flagship_one" img="aea_old_flagship_one">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="3" max="3" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<artillery power="3" max="3" room="5" start="true" weapon="ARTILLERY_AEA_FOCUS_OLD" />
+		<clonebay power="1" max="1" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<oxygen power="1" max="1" room="3" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<teleporter power="2" max="2" room="24" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="40" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_EXTREME" layout="aea_old_flagship_one" img="aea_old_flagship_one">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="4" max="4" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="4" max="4" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="4" max="4" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<artillery power="4" max="4" room="5" start="true" weapon="ARTILLERY_AEA_FOCUS_OLD" />
+		<clonebay power="2" max="2" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<oxygen power="1" max="1" room="3" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="12" max="12" room="18" start="true" />
+		<teleporter power="2" max="2" room="24" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="45" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD_WEAK" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_TWO_CASUAL" layout="aea_old_flagship_two" img="aea_old_flagship_two">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="3" max="3" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<drones power="6" max="6" room="7" start="true" />
+		<engines power="2" max="2" room="10" start="true" />
+		<medbay power="2" max="2" room="15" start="true" />
+		<pilot power="2" max="2" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<hacking power="2" max="2" room="24" start="true" />
+		<mind power="2" max="2" room="22" start="true" />
+		<doors power="2" max="2" room="26" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" >
+		<drone name="GUARDIAN_1_DRONE" />
+		<drone name="BATTLETOG_BOARDER" />
+		<drone name="COMBAT_1_BEAM" />
+	</droneList>
+	<health amount="20" />
+	<maxPower amount="35" /> <!--29-->
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD_WEAK" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_TWO_NORMAL" layout="aea_old_flagship_two" img="aea_old_flagship_two">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="3" max="3" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<drones power="8" max="8" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<hacking power="1" max="1" room="24" start="true" />
+		<mind power="2" max="2" room="22" start="true" />
+		<doors power="2" max="2" room="26" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" >
+		<drone name="GUARDIAN_1_DRONE" />
+		<drone name="BATTLETOG_BOARDER" />
+		<drone name="BATTLETOG_BOARDER" />
+		<drone name="COMBAT_1_BEAM" />
+	</droneList>
+	<health amount="20" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD_WEAK" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_TWO_CHALLENGE" layout="aea_old_flagship_two" img="aea_old_flagship_two">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="3" max="3" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<drones power="10" max="10" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<hacking power="1" max="1" room="24" start="true" />
+		<mind power="2" max="2" room="22" start="true" />
+		<doors power="2" max="2" room="26" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" >
+		<drone name="GUARDIAN_2_DRONE" />
+		<drone name="BATTLETOG2_BOARDER" />
+		<drone name="BATTLETOG_BOARDER" />
+		<drone name="COMBAT_1_BEAM" />
+	</droneList>
+	<health amount="20" />
+	<maxPower amount="40" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD_WEAK" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_TWO_EXTREME" layout="aea_old_flagship_two" img="aea_old_flagship_two">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="4" max="4" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="4" max="4" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<artillery power="4" max="4" room="6" start="true" weapon="ARTILLERY_AEA_LASER_BURST_OLD" />
+		<drones power="11" max="11" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="12" max="12" room="18" start="true" />
+		<hacking power="2" max="2" room="24" start="true" />
+		<mind power="2" max="2" room="22" start="true" />
+		<doors power="2" max="2" room="26" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" />
+	<droneList drones="20" count="4" >
+		<drone name="GUARDIAN_2_DRONE" />
+		<drone name="BATTLETOG2_BOARDER" />
+		<drone name="BATTLETOG2_BOARDER" />
+		<drone name="COMBAT_1_BEAM" />
+	</droneList>
+	<health amount="20" />
+	<maxPower amount="45" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD_WEAK" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_THREE_CASUAL" layout="aea_old_flagship_three" img="aea_old_flagship_three">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<weapons power="4" max="4" room="7" start="true" />
+		<engines power="2" max="2" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<pilot power="2" max="2" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<cloaking power="1" max="1" room="24" start="true" />
+		<aea_super_shields power="2" max="2" room="17" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" >
+		<weapon name="AEA_LASER_OLD_2" />
+		<weapon name="AEA_MISSILE_OLD_1_ENEMY" />
+	</weaponList>
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="35" /> <!--29-->
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_THREE_NORMAL" layout="aea_old_flagship_three" img="aea_old_flagship_three">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<weapons power="5" max="5" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="3" max="3" room="15" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<cloaking power="2" max="2" room="24" start="true" />
+		<aea_super_shields power="3" max="3" room="17" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" >
+		<weapon name="AEA_LASER_OLD_2" />
+		<weapon name="AEA_MISSILE_OLD_2_ENEMY" />
+	</weaponList>
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_THREE_CHALLENGE" layout="aea_old_flagship_three" img="aea_old_flagship_three">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="3" max="3" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<weapons power="6" max="6" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="4" max="4" room="15" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="10" max="10" room="18" start="true" />
+		<cloaking power="2" max="2" room="24" start="true" />
+		<aea_super_shields power="4" max="4" room="17" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" >
+		<weapon name="AEA_LASER_OLD_2" />
+		<weapon name="AEA_MISSILE_OLD_2_ENEMY" />
+		<weapon name="AEA_LASER_OLDP_1" />
+	</weaponList>
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="40" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_THREE_EXTREME" layout="aea_old_flagship_three" img="aea_old_flagship_three">
+	<class>Lylmik Flagship</class>
+	<systemList>
+		<artillery power="4" max="4" room="1" start="true" weapon="ARTILLERY_AEA_MISSILE_OLD" />
+		<artillery power="4" max="4" room="0" start="true" weapon="ARTILLERY_AEA_LASER_HEAVY_OLD" />
+		<weapons power="7" max="7" room="7" start="true" />
+		<engines power="3" max="3" room="10" start="true" />
+		<medbay power="4" max="4" room="15" start="true" />
+		<pilot power="3" max="3" room="21" start="true" />
+		<shields power="12" max="12" room="18" start="true" />
+		<cloaking power="2" max="2" room="24" start="true" />
+		<aea_super_shields power="5" max="5" room="17" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="20" count="4" >
+		<weapon name="AEA_LASER_OLD_2" />
+		<weapon name="AEA_MISSILE_OLD_2_ENEMY" />
+		<weapon name="AEA_LASER_OLDP_1" />
+		<weapon name="AEA_FOCUS_OLD_1" />
+	</weaponList>
+	<droneList drones="20" count="4" />
+	<health amount="20" />
+	<maxPower amount="45" />
+	<boardingAI>invasion</boardingAI>
+	<aug name="AEA_OLD_EVASION_ENEMY" />
+	<aug name="AEA_OLD_SHIELD" />
+	<aug name="UPG_TECH_SEALANT" />
+</shipBlueprint>
+
+<!--shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_CASUAL" layout="aea_old_dreadnaught" img="aea_old_dreadnaught">
+	<class>Lylmik Dreadnaught</class>
 	<systemList>
 		<artillery power="3" max="3" room="8" start="true" weapon="ARTILLER_AEA_OLD_BEAM" />
 		<artillery power="3" max="3" room="7" start="true" weapon="ARTILLER_AEA_OLD_BEAM" />
@@ -3042,8 +3441,8 @@
 	<aug name="UPG_TECH_SEALANT" />
 </shipBlueprint>
 
-<shipBlueprint name="AEA_OLD_FINAL_BOSS_NORMAL" layout="aea_old_flagship" img="aea_old_flagship">
-	<class>Lylmik Flagship</class>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_NORMAL" layout="aea_old_dreadnaught" img="aea_old_dreadnaught">
+	<class>Lylmik Dreadnaught</class>
 	<systemList>
 		<artillery power="4" max="4" room="8" start="true" weapon="ARTILLER_AEA_OLD_BEAM" />
 		<artillery power="4" max="4" room="7" start="true" weapon="ARTILLER_AEA_OLD_BEAM" />
@@ -3083,8 +3482,8 @@
 	<aug name="UPG_TECH_SEALANT" />
 </shipBlueprint>
 
-<shipBlueprint name="AEA_OLD_FINAL_BOSS_CHALLENGE" layout="aea_old_flagship" img="aea_old_flagship">
-	<class>Lylmik Flagship</class>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_CHALLENGE" layout="aea_old_dreadnaught" img="aea_old_dreadnaught">
+	<class>Lylmik Dreadnaught</class>
 	<systemList>
 		<artillery power="4" max="4" room="8" start="true" weapon="ARTILLER_AEA_OLD_BEAM_HARD" />
 		<artillery power="4" max="4" room="7" start="true" weapon="ARTILLER_AEA_OLD_BEAM_HARD" />
@@ -3124,8 +3523,8 @@
 	<aug name="UPG_TECH_SEALANT" />
 </shipBlueprint>
 
-<shipBlueprint name="AEA_OLD_FINAL_BOSS_EXTREME" layout="aea_old_flagship" img="aea_old_flagship">
-	<class>Lylmik Flagship</class>
+<shipBlueprint name="AEA_OLD_FINAL_BOSS_ONE_EXTREME" layout="aea_old_dreadnaught" img="aea_old_dreadnaught">
+	<class>Lylmik Dreadnaught</class>
 	<systemList>
 		<artillery power="4" max="4" room="8" start="true" weapon="ARTILLER_AEA_OLD_BEAM_HARD" />
 		<artillery power="4" max="4" room="7" start="true" weapon="ARTILLER_AEA_OLD_BEAM_HARD" />
@@ -3163,7 +3562,7 @@
 	<aug name="AEA_OLD_EVASION_ENEMY" />
 	<aug name="AEA_OLD_SHIELD" />
 	<aug name="UPG_TECH_SEALANT" />
-</shipBlueprint>
+</shipBlueprint-->
 </FTL>
 
 <FTL>
@@ -3183,7 +3582,7 @@
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="12" count="4" load="LIST_LOOT_ORCHID" />
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_VAMPWEED_ELITE" />
 	<droneList drones="0" count="0" />
 	<health amount="20" />
 	<maxPower amount="15" />
@@ -3206,7 +3605,7 @@
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="12" count="4" load="LIST_LOOT_ORCHID" />
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_VAMPWEED_ELITE" />
 	<droneList drones="0" count="0" />
 	<health amount="20" />
 	<crewCount amount="1" max="1" class="aea_cult_priest_off" />
@@ -4246,9 +4645,10 @@
 	<droneSlots>3</droneSlots>
 	<weaponList missiles="6" count="6" load="LIST_WEAPONS_AUTO" />
 	<droneList drones="8" count="3" load="LIST_DRONES_AUTO" />
-	<health amount="14" />
+	<health amount="15" />
 	<maxPower amount="9" />
 	<boardingAI>sabotage</boardingAI>
+	<aug name="NO_GHOST" />
 </shipBlueprint>
 </FTL>
 
@@ -4990,7 +5390,7 @@ A CLASS
 		<drones power="2" max="8" room="12" start="true" />
 		<engines power="2" max="2" room="4" start="true" />
 		<pilot power="1" max="1" room="0" start="true" />
-		<shields power="1" max="1" room="15" start="true" />
+		<hacking power="1" max="1" room="15" start="true" />
 		<weapons power="4" max="8" room="11" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
@@ -5036,7 +5436,7 @@ A CLASS
 	<maxSector>4</maxSector>
 	<systemList>
 		<engines power="1" max="2" room="3" start="true" />
-		<shields power="1" max="4" room="4" start="true" />
+		<hacking power="1" max="2" room="4" start="true" />
 		<oxygen power="1" max="2" room="0" start="true" />
 		<pilot power="1" max="3" room="1" start="true" />
 		<aea_super_shields power="2" max="6" room="5" start="true" />
@@ -5051,7 +5451,7 @@ A CLASS
 	<crewCount amount="3" max="5" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--OUTRIDER-->
@@ -5060,7 +5460,7 @@ A CLASS
 	<maxSector>4</maxSector>
 	<systemList>
 		<medbay power="1" max="2" room="6" start="false" />
-		<shields power="1" max="4" room="4" start="true" />
+		<hacking power="1" max="2" room="4" start="true" />
 		<engines power="1" max="2" room="1" start="true" />
 		<oxygen power="1" max="2" room="0" start="true" />
 		<pilot power="2" max="3" room="3" start="true" />
@@ -5077,7 +5477,7 @@ A CLASS
 	<crewCount amount="3" max="8" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 	<cloakImage>mu_crystal_outrider_a</cloakImage>
 </shipBlueprint>
 
@@ -5087,10 +5487,10 @@ A CLASS
 	<systemList>
 		<engines power="1" max="2" room="2" start="true" />
 		<medbay power="1" max="3" room="0" start="false" />
-		<shields power="2" max="4" room="7" start="true" />
+		<hacking power="1" max="2" room="7" start="true" />
 		<oxygen power="1" max="2" room="3" start="true" />
 		<pilot power="1" max="3" room="5" start="true" />
-		<aea_super_shields power="2" max="6" room="1" start="true" />
+		<aea_super_shields power="2" max="8" room="1" start="true" />
 		<teleporter power="1" max="3" room="6" start="true" />
 		<weapons power="2" max="8" room="4" start="true" />
 	</systemList>
@@ -5103,7 +5503,7 @@ A CLASS
 	<crewCount amount="4" max="8" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--ENFORCER-->
@@ -5114,8 +5514,8 @@ A CLASS
 		<engines power="1" max="2" room="6" start="true" />
 		<mind power="1" max="3" room="7" start="false" />
 		<pilot power="1" max="3" room="3" start="true" />
-		<aea_super_shields power="2" max="6" room="4" start="true" />
-		<shields power="2" max="4" room="1" start="true" />
+		<aea_super_shields power="2" max="8" room="4" start="true" />
+		<hacking power="1" max="2" room="1" start="true" />
 		<teleporter power="1" max="2" room="0" start="true" />
 		<weapons power="2" max="7" room="2" start="true" />
 	</systemList>
@@ -5128,7 +5528,7 @@ A CLASS
 	<crewCount amount="3" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--BOMBER-->
@@ -5141,7 +5541,7 @@ A CLASS
 		<oxygen power="1" max="2" room="6" start="true" />
 		<pilot power="1" max="3" room="2" start="true" />
 		<aea_super_shields power="2" max="10" room="4" start="true" />
-		<shields power="2" max="4" room="1" start="true" />
+		<hacking power="1" max="2" room="1" start="true" />
 		<weapons power="2" max="10" room="7" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
@@ -5153,7 +5553,7 @@ A CLASS
 	<crewCount amount="3" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--ASSAULT-->
@@ -5165,8 +5565,8 @@ A CLASS
 		<medbay power="1" max="2" room="5" start="false" />
 		<oxygen power="1" max="2" room="8" start="true" />
 		<pilot power="1" max="3" room="1" start="true" />
-		<aea_super_shields power="2" max="6" room="3" start="true" />
-		<shields power="2" max="5" room="3" start="true" />
+		<aea_super_shields power="2" max="8" room="3" start="true" />
+		<hacking power="1" max="2" room="3" start="true" />
 		<teleporter power="1" max="2" room="2" start="true" />
 		<weapons power="2" max="8" room="0" start="true" />
 	</systemList>
@@ -5179,20 +5579,20 @@ A CLASS
 	<crewCount amount="3" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--TRANSPORT-->
 <shipBlueprint name="AEA_SHARD_TRANSPORT" layout="mu_crystal_transport_a" img="aea_shard_transport">
 	<class>Shard-Forged Transport</class>
 	<systemList>
-		<shields power="2" max="5" room="8" start="true" />
+		<hacking power="1" max="2" room="8" start="true" />
 		<doors power="1" max="3" room="1" start="false" />
 		<engines power="1" max="2" room="3" start="true" />
 		<medbay power="1" max="2" room="7" start="false" />
 		<oxygen power="1" max="2" room="4" start="true" />
 		<pilot power="1" max="3" room="5" start="true" />
-		<aea_super_shields power="2" max="6" room="0" start="true" />
+		<aea_super_shields power="2" max="8" room="0" start="true" />
 		<teleporter power="1" max="3" room="6" start="true" />
 		<weapons power="2" max="7" room="2" start="true" />
 	</systemList>
@@ -5205,7 +5605,7 @@ A CLASS
 	<crewCount amount="2" max="6" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 	<cloakImage>mu_crystal_transport_a</cloakImage>
 </shipBlueprint>
 
@@ -5231,7 +5631,7 @@ A CLASS
 	<crewCount amount="4" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--TRAPPER-->
@@ -5243,8 +5643,8 @@ A CLASS
 		<medbay power="1" max="2" room="5" start="false" />
 		<oxygen power="1" max="1" room="9" start="true" />
 		<pilot power="1" max="3" room="7" start="true" />
-		<aea_super_shields power="2" max="6" room="6" start="true" />
-		<shields power="2" max="6" room="0" start="true" />
+		<aea_super_shields power="2" max="8" room="6" start="true" />
+		<hacking power="1" max="2" room="0" start="true" />
 		<teleporter power="1" max="1" room="8" start="true" />
 		<weapons power="2" max="6" room="2" start="true" />
 	</systemList>
@@ -5257,11 +5657,11 @@ A CLASS
 	<crewCount amount="3" max="6" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 
 <!--GUARD-->
-<shipBlueprint name="AEA_SHARD_GUARD" layout="mu_crystal_guard_a" img="mu_crystal_guard_a">
+<shipBlueprint name="AEA_SHARD_GUARD" layout="mu_crystal_guard_a" img="aea_shard_guard">
 	<class>Shard-Forged Guard</class>
 	<systemList>
 		<doors power="1" max="3" room="1" start="false" />
@@ -5270,8 +5670,8 @@ A CLASS
 		<mind power="1" max="2" room="10" start="false" />
 		<oxygen power="1" max="2" room="11" start="true" />
 		<pilot power="1" max="1" room="8" start="true" />
-		<aea_super_shields power="2" max="6" room="5" start="true" />
-		<shields power="2" max="6" room="2" start="true" />
+		<aea_super_shields power="2" max="10" room="5" start="true" />
+		<hacking power="2" max="2" room="2" start="true" />
 		<teleporter power="1" max="2" room="9" start="true" />
 		<weapons power="2" max="8" room="4" start="true" />
 	</systemList>
@@ -5284,7 +5684,7 @@ A CLASS
 	<crewCount amount="3" max="7" class="LIST_CREW_AEA_SHARD_ENEMY" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHARD_ARMOUR_ENEMY" />
-	<!--aug name="AEA_SHARD_SHIELD_ENEMY" /-->
+	<aug name="AEA_SHARD_SHIELD_ENEMY" />
 </shipBlueprint>
 </FTL>
 
@@ -6718,16 +7118,16 @@ A CLASS
 	<weaponSlots>5</weaponSlots>
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="12" count="5">
-		<weapon name="AEA_LASER_ACID_2_ENEMY" />
-		<weapon name="AEA_LASER_ACID_2_ENEMY" />
+		<weapon name="AEA_LASER_ACID_2" />
+		<weapon name="AEA_LASER_ACID_2" />
 		<weapon name="LASER_BURST_1" />
 		<weapon name="LASER_BURST_1" />
-		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
+		<weapon name="AEA_BEAM_ACID_1" />
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="17" />
-	<crewCount amount="8" max="8" class="aea_acid_captain" />
+	<crewCount amount="8" max="8" class="aea_acid_soldier" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
@@ -6746,17 +7146,17 @@ A CLASS
 	<weaponSlots>6</weaponSlots>
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="12" count="6">
-		<weapon name="AEA_LASER_ACID_2_ENEMY" />
-		<weapon name="AEA_LASER_ACID_1_ENEMY" />
+		<weapon name="AEA_LASER_ACID_2" />
+		<weapon name="AEA_LASER_ACID_1" />
 		<weapon name="LASER_BURST_1" />
 		<weapon name="LASER_BURST_1" />
-		<weapon name="AEA_ION_ACID_1_ENEMY" />
-		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
+		<weapon name="AEA_ION_ACID_1" />
+		<weapon name="AEA_BEAM_ACID_1" />
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="19" />
-	<crewCount amount="8" max="8" class="aea_acid_captain" />
+	<crewCount amount="8" max="8" class="aea_acid_soldier" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
@@ -6775,17 +7175,17 @@ A CLASS
 	<weaponSlots>6</weaponSlots>
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="12" count="6">
-		<weapon name="AEA_LASER_ACID_2_ENEMY" />
-		<weapon name="AEA_LASER_ACID_2_ENEMY" />
+		<weapon name="AEA_LASER_ACID_2" />
+		<weapon name="AEA_LASER_ACID_2" />
 		<weapon name="LASER_BURST_1" />
 		<weapon name="LASER_BURST_2" />
-		<weapon name="AEA_ION_ACID_1_ENEMY" />
-		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
+		<weapon name="AEA_ION_ACID_1" />
+		<weapon name="AEA_BEAM_ACID_1" />
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="20" />
-	<crewCount amount="8" max="8" class="aea_acid_captain" />
+	<crewCount amount="8" max="8" class="aea_acid_soldier" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
@@ -6809,13 +7209,13 @@ A CLASS
 		<weapon name="AEA_LASER_ACID_BOSS" />
 		<weapon name="LASER_BURST_2" />
 		<weapon name="LASER_BURST_2" />
-		<weapon name="AEA_ION_ACID_1_ENEMY" />
-		<weapon name="AEA_BEAM_ACID_1_ENEMY" />
+		<weapon name="AEA_ION_ACID_1" />
+		<weapon name="AEA_BEAM_ACID_1" />
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="15" />
 	<maxPower amount="20" />
-	<crewCount amount="8" max="8" class="aea_acid_captain" />
+	<crewCount amount="8" max="8" class="aea_acid_soldier" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
@@ -7436,5 +7836,628 @@ A CLASS
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AEA_SHLEG_MIND_GAS" />
 	<aug name="AEA_SHLEG_GEL" />
+</shipBlueprint>
+</FTL>
+
+<!--REALM OF GODS-->
+<FTL>
+<blueprintList name="SHIPS_AEA_GODS_EASY">
+	<name>AEA_GODS_FIGHTER_EASY</name>
+	<name>AEA_GODS_BOMBER_EASY</name>
+	<name>AEA_GODS_SCOUT_EASY</name>
+</blueprintList>
+<blueprintList name="SHIPS_AEA_GODS_HARD">
+	<name>AEA_GODS_FIGHTER_HARD</name>
+	<name>AEA_GODS_BOMBER_HARD</name>
+	<name>AEA_GODS_SCOUT_HARD</name>
+</blueprintList>
+<blueprintList name="SHIPS_AEA_JUSTICE_EASY">
+	<name>AEA_JUSTICE_BATTLESHIP_EASY</name>
+	<name>AEA_JUSTICE_DROPSHIP_EASY</name>
+	<name>AEA_JUSTICE_MOTHERSHIP_EASY</name>
+	<name>AEA_JUSTICE_GUARD_EASY</name>
+</blueprintList>
+<blueprintList name="SHIPS_AEA_JUSTICE_HARD">
+	<name>AEA_JUSTICE_BATTLESHIP_HARD</name>
+	<name>AEA_JUSTICE_DROPSHIP_HARD</name>
+	<name>AEA_JUSTICE_MOTHERSHIP_HARD</name>
+	<name>AEA_JUSTICE_GUARD_HARD</name>
+</blueprintList>
+<blueprintList name="LIST_WEAPONS_AEA_GODS">
+	<name>LASER_BURST_1</name>
+	<name>LASER_BURST_2_ENEMY</name>
+	<name>LASER_BURST_3</name>
+	<name>LASER_BURST_5</name>
+	<name>LASER_HEAVY_1</name>
+	<name>LASER_HEAVY_2</name>
+	<name>MISSILES_1_ENEMY</name>
+	<name>MISSILES_2_ENEMY</name>
+	<name>MISSILES_3_ENEMY</name>
+	<name>BEAM_1</name>
+	<name>BEAM_2</name>
+	<name>BEAM_FIRE</name>
+	<name>BOMB_1_ENEMY</name>
+	<name>ION_1</name>
+	<name>ION_2</name>
+	<name>ION_3</name>
+	
+	<name>LASER_CHAINGUN_ENEMY</name>
+	<name>ION_CHARGEGUN</name>
+	
+	<name>LASER_CHAINGUN_DAMAGE</name>
+	<name>LASER_STUN</name>
+	<name>LASER_FROST_1</name>
+	<name>LASER_FROST_2</name>
+	<name>BEAM_PARTICLE</name>
+	<name>BEAM_BREACH</name>
+	<name>BEAM_SCYTHE</name>
+	<name>BEAM_CHAIN</name>
+	<name>ION_TRI</name>
+	<name>ION_HEAVY</name>
+	<name>ION_FIRE</name>
+	<name>ION_STUN_HEAVY</name>
+	<name>ION_STUN_CHARGEGUN</name>
+	<name>LASER_HEAVY_PIERCE</name>
+</blueprintList>
+<blueprintList name="LIST_DRONES_AEA_GODS">
+	<name>GUARDIAN_1_MISSILE</name>
+	<name>GUARDIAN_1_DRONE</name>
+	<name>GUARDIAN_2_MISSILE</name>
+	<name>GUARDIAN_2_DRONE</name>
+	
+	<name>COMBAT_1_LASER</name>
+	<name>COMBAT_1_BEAM</name>
+	<name>COMBAT_2_LASER</name>
+	<name>COMBAT_2_BEAM</name>
+	<name>HELLRAISER_HULL</name>
+	<name>HELLRAISER_FIRE</name>
+	<name>ION_1_AMP2_ENEMY</name>
+	<name>ENERGY_1_AMP2_ENEMY</name>
+	<name>AMPHI_DEFENSE</name>
+	<name>AMPHI_COMBAT</name>
+
+	<name>BATTLETOG_BOARDER</name>
+	<name>BATTLETOG2_BOARDER</name>
+</blueprintList>
+
+<shipBlueprint name="AEA_GODS_FIGHTER_EASY" layout="aea_gods_fighter" img="aea_gods_fighter">
+	<class>Bone Chill</class>
+	<systemList>
+		<cloaking power="1" max="1" room="2" start="true" />
+		<clonebay power="1" max="1" room="11" start="true" />
+		<drones power="2" max="6" room="8" start="true" />
+		<engines power="1" max="2" room="4" start="true" />
+		<medbay power="1" max="1" room="9" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="6" room="3" start="true" />
+		<aea_freeze power="1" max="1" room="1" start="true" />
+		<weapons power="2" max="6" room="5" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="2" load="LIST_WEAPONS_AEA_GODS" />
+	<droneList drones="10" count="2" load="LIST_DRONES_AEA_GODS" />
+	<health amount="7" />
+	<maxPower amount="11" />
+	<crewCount amount="2" max="2" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_FIGHTER_HARD" layout="aea_gods_fighter" img="aea_gods_fighter">
+	<class>Bone Chill</class>
+	<systemList>
+		<cloaking power="2" max="2" room="2" start="true" />
+		<clonebay power="2" max="2" room="11" start="true" />
+		<drones power="8" max="8" room="8" start="true" />
+		<engines power="3" max="3" room="4" start="true" />
+		<medbay power="2" max="2" room="9" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="8" max="8" room="3" start="true" />
+		<aea_freeze power="2" max="2" room="1" start="true" />
+		<weapons power="8" max="8" room="5" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="10" count="4" load="LIST_WEAPONS_AEA_GODS" />
+	<droneList drones="10" count="4" load="LIST_DRONES_AEA_GODS" />
+	<health amount="13" />
+	<maxPower amount="35" />
+	<crewCount amount="6" max="6" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_BOMBER_EASY" layout="aea_gods_bomber" img="aea_gods_bomber">
+	<class>Skull Merchant</class>
+	<systemList>
+		<cloaking power="1" max="1" room="1" start="true" />
+		<clonebay power="1" max="1" room="6" start="true" />
+		<aea_freeze power="1" max="1" room="12" start="true" />
+		<drones power="2" max="6" room="0" start="true" />
+		<engines power="1" max="2" room="8" start="true" />
+		<medbay power="1" max="1" room="10" start="true" />
+		<pilot power="1" max="1" room="2" start="true" />
+		<shields power="2" max="6" room="9" start="true" />
+		<weapons power="2" max="6" room="5" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>1</droneSlots>
+	<weaponList missiles="9" count="3" load="LIST_WEAPONS_AEA_GODS" />
+	<droneList drones="5" count="1" load="LIST_DRONES_AEA_GODS" />
+	<health amount="9" />
+	<maxPower amount="11" />
+	<crewCount amount="2" max="2" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_BOMBER_HARD" layout="aea_gods_bomber" img="aea_gods_bomber">
+	<class>Skull Merchant</class>
+	<systemList>
+		<cloaking power="2" max="2" room="1" start="true" />
+		<clonebay power="2" max="2" room="6" start="true" />
+		<aea_freeze power="2" max="2" room="12" start="true" />
+		<drones power="8" max="8" room="0" start="true" />
+		<engines power="3" max="3" room="8" start="true" />
+		<medbay power="2" max="2" room="10" start="true" />
+		<pilot power="2" max="2" room="2" start="true" />
+		<shields power="8" max="8" room="9" start="true" />
+		<weapons power="8" max="8" room="5" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="18" count="4" load="LIST_WEAPONS_AEA_GODS" />
+	<droneList drones="12" count="4" load="LIST_DRONES_AEA_GODS" />
+	<health amount="15" />
+	<maxPower amount="35" />
+	<crewCount amount="4" max="4" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_SCOUT_EASY" layout="aea_gods_scout" img="aea_gods_scout">
+	<class>Spine Warden</class>
+	<systemList>
+		<cloaking power="1" max="1" room="3" start="true" />
+		<clonebay power="1" max="1" room="6" start="true" />
+		<aea_freeze power="1" max="1" room="1" start="true" />
+		<engines power="1" max="2" room="4" start="true" />
+		<medbay power="1" max="1" room="7" start="true" />
+		<pilot power="1" max="1" room="0" start="true" />
+		<shields power="2" max="6" room="5" start="true" />
+		<weapons power="2" max="6" room="2" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="8" count="2" load="LIST_WEAPONS_AEA_GODS" />
+	<droneList drones="8" count="2" load="LIST_DRONES_AEA_GODS" />
+	<health amount="5" />
+	<maxPower amount="10" />
+	<crewCount amount="2" max="2" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_SCOUT_HARD" layout="aea_gods_scout" img="aea_gods_scout">
+	<class>Spine Warden</class>
+	<systemList>
+		<cloaking power="2" max="2" room="3" start="true" />
+		<clonebay power="2" max="2" room="6" start="true" />
+		<aea_freeze power="3" max="3" room="1" start="true" />
+		<engines power="3" max="3" room="4" start="true" />
+		<medbay power="2" max="2" room="7" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="8" max="8" room="5" start="true" />
+		<weapons power="8" max="8" room="2" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="16" count="4" load="LIST_WEAPONS_AEA_GODS" />
+	<droneList drones="14" count="3" load="LIST_DRONES_AEA_GODS" />
+	<health amount="11" />
+	<maxPower amount="29" />
+	<crewCount amount="5" max="5" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_BOSS_LIGHT_CASUAL" layout="aea_gods_boss_light" img="aea_gods_boss_light">
+	<class>Visage of Death</class>
+	<systemList>
+		<artillery power="3" max="3" room="2" start="true" weapon="ARTILLERY_AEA_GODS_BEAM" />
+		<artillery power="2" max="2" room="3" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<artillery power="2" max="2" room="4" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<cloaking power="2" max="2" room="16" start="true" />
+		<clonebay power="2" max="2" room="5" start="true" />
+		<engines power="2" max="2" room="12" start="true" />
+		<medbay power="2" max="2" room="6" start="true" />
+		<pilot power="3" max="3" room="11" start="true" />
+		<shields power="8" max="8" room="0" start="true" />
+		<aea_freeze power="2" max="2" room="13" start="true" />
+		<weapons power="4" max="4" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="LASER_BURST_3" />
+		<weapon name="SPORE_2" />
+	</weaponList>
+	<droneList drones="20" count="0" />
+	<health amount="20" />
+	<maxPower amount="42" />
+	<crewCount amount="6" max="6" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_BOSS_LIGHT_NORMAL" layout="aea_gods_boss_light" img="aea_gods_boss_light">
+	<class>Visage of Death</class>
+	<systemList>
+		<artillery power="3" max="3" room="2" start="true" weapon="ARTILLERY_AEA_GODS_BEAM" />
+		<artillery power="3" max="3" room="3" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<artillery power="3" max="3" room="4" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<cloaking power="2" max="2" room="16" start="true" />
+		<clonebay power="3" max="3" room="5" start="true" />
+		<engines power="2" max="2" room="12" start="true" />
+		<medbay power="3" max="3" room="6" start="true" />
+		<pilot power="3" max="3" room="11" start="true" />
+		<shields power="10" max="10" room="0" start="true" />
+		<aea_freeze power="2" max="2" room="13" start="true" />
+		<weapons power="4" max="4" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="LASER_BURST_3" />
+		<weapon name="SPORE_2" />
+	</weaponList>
+	<droneList drones="20" count="0" />
+	<health amount="20" />
+	<maxPower amount="42" />
+	<crewCount amount="7" max="7" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_BOSS_LIGHT_CHALLENGE" layout="aea_gods_boss_light" img="aea_gods_boss_light">
+	<class>Visage of Death</class>
+	<systemList>
+		<artillery power="4" max="4" room="2" start="true" weapon="ARTILLERY_AEA_GODS_BEAM" />
+		<artillery power="3" max="3" room="3" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<artillery power="3" max="3" room="4" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<cloaking power="2" max="2" room="16" start="true" />
+		<clonebay power="3" max="3" room="5" start="true" />
+		<engines power="2" max="2" room="12" start="true" />
+		<medbay power="3" max="3" room="6" start="true" />
+		<pilot power="3" max="3" room="11" start="true" />
+		<shields power="10" max="10" room="0" start="true" />
+		<aea_freeze power="2" max="2" room="13" start="true" />
+		<weapons power="4" max="4" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="LASER_BURST_3" />
+		<weapon name="SPORE_2" />
+	</weaponList>
+	<droneList drones="20" count="0" />
+	<health amount="20" />
+	<maxPower amount="42" />
+	<crewCount amount="8" max="8" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+<shipBlueprint name="AEA_GODS_BOSS_LIGHT_EXTREME" layout="aea_gods_boss_light" img="aea_gods_boss_light">
+	<class>Visage of Death</class>
+	<systemList>
+		<artillery power="4" max="4" room="2" start="true" weapon="ARTILLERY_AEA_GODS_BEAM" />
+		<artillery power="4" max="4" room="3" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<artillery power="4" max="4" room="4" start="true" weapon="ARTILLERY_AEA_GODS_CYCLE" />
+		<cloaking power="2" max="2" room="16" start="true" />
+		<clonebay power="3" max="3" room="5" start="true" />
+		<engines power="2" max="2" room="12" start="true" />
+		<medbay power="3" max="3" room="6" start="true" />
+		<pilot power="3" max="3" room="11" start="true" />
+		<shields power="10" max="10" room="0" start="true" />
+		<aea_freeze power="2" max="2" room="13" start="true" />
+		<weapons power="4" max="4" room="1" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="LASER_BURST_3" />
+		<weapon name="SPORE_2" />
+	</weaponList>
+	<droneList drones="20" count="0" />
+	<health amount="20" />
+	<maxPower amount="42" />
+	<crewCount amount="8" max="8" class="aea_statue_hostile_perma" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_HEAL" />
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+</FTL>
+
+<FTL>
+<shipBlueprint name="AEA_JUSTICE_BATTLESHIP_EASY" layout="aea_justice_battleship" img="aea_justice_battleship">
+	<class>Justicier Battleship</class>
+	<systemList>
+		<clonebay power="2" max="2" room="8" start="true" />
+		<doors power="1" max="1" room="13" start="true" />
+		<engines power="2" max="2" room="5" start="true" />
+		<oxygen power="1" max="1" room="12" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="2" max="6" room="3" start="true" />
+		<weapons power="2" max="6" room="4" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="3" load="LIST_WEAPONS_ROCK" />
+	<droneList drones="0" count="0" />
+	<health amount="13" />
+	<maxPower amount="9" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_BATTLESHIP_HARD" layout="aea_justice_battleship" img="aea_justice_battleship">
+	<class>Justicier Battleship</class>
+	<systemList>
+		<clonebay power="4" max="4" room="8" start="true" />
+		<doors power="2" max="2" room="13" start="true" />
+		<engines power="2" max="2" room="5" start="true" />
+		<oxygen power="2" max="2" room="12" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="10" max="10" room="3" start="true" />
+		<weapons power="8" max="8" room="4" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="0" count="0" />
+	<health amount="18" />
+	<maxPower amount="28" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_DROPSHIP_EASY" layout="mu_lostsun_dropship" img="aea_justice_dropship">
+	<class>Justicier Dropship</class>
+	<systemList>
+		<clonebay power="2" max="2" room="2" start="true" />
+		<drones power="2" max="6" room="6" start="true" />
+		<engines power="1" max="1" room="5" start="true" />
+		<!--medbay power="1" max="3" room="2" start="false" /-->
+		<oxygen power="2" max="2" room="9" start="true" />
+		<pilot power="2" max="2" room="13" start="true" />
+		<shields power="2" max="6" room="8" start="true" />
+		<teleporter power="2" max="2" room="1" start="true" />
+		<weapons power="1" max="6" room="7" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="6" count="2" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="5" count="3" load="LIST_DRONES_LOSTSUN" />
+	<health amount="11" />
+	<maxPower amount="12" />
+	<droneList drones="0" count="0" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_DROPSHIP_HARD" layout="mu_lostsun_dropship" img="aea_justice_dropship">
+	<class>Justicier Dropship</class>
+	<systemList>
+		<clonebay power="4" max="4" room="2" start="true" />
+		<drones power="8" max="8" room="6" start="true" />
+		<engines power="2" max="2" room="5" start="true" />
+		<!--medbay power="1" max="3" room="2" start="false" /-->
+		<oxygen power="2" max="2" room="9" start="true" />
+		<pilot power="2" max="2" room="13" start="true" />
+		<shields power="8" max="8" room="8" start="true" />
+		<teleporter power="2" max="2" room="1" start="true" />
+		<weapons power="8" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="6" count="3" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="5" count="4" load="LIST_DRONES_LOSTSUN" />
+	<health amount="18" />
+	<maxPower amount="30" />
+	<droneList drones="0" count="0" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_MOTHERSHIP_EASY" layout="mu_lostsun_mothership" img="aea_justice_mothership">
+	<class>Justicier Mothership</class>
+	<systemList>
+		<clonebay power="2" max="2" room="4" start="true" />
+		<drones power="2" max="6" room="5" start="true" />
+		<engines power="2" max="2" room="7" start="true" />
+		<!--medbay power="1" max="3" room="4" start="false" /-->
+		<oxygen power="2" max="2" room="3" start="true" />
+		<pilot power="2" max="2" room="1" start="true" />
+		<shields power="2" max="8" room="9" start="true" />
+		<weapons power="2" max="6" room="8" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="15" count="2" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="20" count="3" load="LIST_DRONES_LOSTSUN" />
+	<health amount="12" />
+	<maxPower amount="12" />
+	<droneList drones="0" count="0" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_MOTHERSHIP_HARD" layout="mu_lostsun_mothership" img="aea_justice_mothership">
+	<class>Justicier Mothership</class>
+	<systemList>
+		<clonebay power="4" max="4" room="4" start="true" />
+		<drones power="8" max="8" room="5" start="true" />
+		<engines power="2" max="2" room="7" start="true" />
+		<!--medbay power="1" max="3" room="4" start="false" /-->
+		<oxygen power="2" max="2" room="3" start="true" />
+		<pilot power="2" max="2" room="1" start="true" />
+		<shields power="8" max="8" room="9" start="true" />
+		<weapons power="8" max="8" room="8" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="15" count="4" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="20" count="4" load="LIST_DRONES_LOSTSUN" />
+	<health amount="17" />
+	<maxPower amount="32" />
+	<droneList drones="0" count="0" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_GUARD_EASY" layout="mu_lostsun_guard" img="aea_justice_guard">
+	<class>Justicier Guard</class>
+	<systemList>
+		<clonebay power="2" max="2" room="5" start="true" />
+		<doors power="1" max="1" room="4" start="true" />
+		<engines power="2" max="2" room="1" start="true" />
+		<!--medbay power="1" max="3" room="5" start="false" /-->
+		<oxygen power="2" max="2" room="6" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="2" max="6" room="3" start="true" />
+		<teleporter power="2" max="2" room="8" start="true" />
+		<weapons power="2" max="6" room="7" start="true" />
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="3" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="5" count="0" />
+	<health amount="11" />
+	<maxPower amount="12" />
+	<droneList drones="0" count="0" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_GUARD_HARD" layout="mu_lostsun_guard" img="aea_justice_guard">
+	<class>Justicier Guard</class>
+	<systemList>
+		<clonebay power="4" max="4" room="5" start="true" />
+		<doors power="2" max="2" room="4" start="true" />
+		<engines power="2" max="2" room="1" start="true" />
+		<!--medbay power="1" max="3" room="5" start="false" /-->
+		<oxygen power="2" max="2" room="6" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="10" max="10" room="3" start="true" />
+		<teleporter power="3" max="3" room="8" start="true" />
+		<weapons power="8" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="12" count="4" load="LIST_WEAPONS_LOSTSUN" />
+	<droneList drones="5" count="0" />
+	<health amount="16" />
+	<maxPower amount="29" />
+	<droneList drones="0" count="0" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+<shipBlueprint name="AEA_JUSTICE_BOSS_DARK_CASUAL" layout="aea_justice_boss_dark" img="aea_justice_boss_dark">
+	<class>Blood Throne</class>
+	<systemList>
+		<artillery power="2" max="2" room="1" start="true" weapon="ARTILLERY_AEA_JUSTICE_RAILGUN" />
+		<artillery power="3" max="3" room="3" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER" />
+		<artillery power="3" max="3" room="2" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER_OFFSET" />
+		<cloaking power="2" max="2" room="9" start="true" />
+		<clonebay power="3" max="3" room="8" start="true" />
+		<doors power="2" max="2" room="20" start="true" />
+		<engines power="2" max="2" room="7" start="true" />
+		<mind power="2" max="2" room="21" start="true" />
+		<oxygen power="2" max="2" room="10" start="true" />
+		<pilot power="3" max="3" room="0" start="true" />
+		<shields power="8" max="8" room="5" start="true" />
+		<teleporter power="1" max="1" room="6" start="true" />
+		<weapons power="5" max="5" room="4" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="MISSILES_2_ENEMY" />
+		<weapon name="BEAM_CHAIN" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="40" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_BOSS_DARK_NORMAL" layout="aea_justice_boss_dark" img="aea_justice_boss_dark">
+	<class>Blood Throne</class>
+	<systemList>
+		<artillery power="3" max="3" room="1" start="true" weapon="ARTILLERY_AEA_JUSTICE_RAILGUN" />
+		<artillery power="3" max="3" room="3" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER" />
+		<artillery power="3" max="3" room="2" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER_OFFSET" />
+		<cloaking power="2" max="2" room="9" start="true" />
+		<clonebay power="4" max="4" room="8" start="true" />
+		<doors power="2" max="2" room="20" start="true" />
+		<engines power="2" max="2" room="7" start="true" />
+		<mind power="2" max="2" room="21" start="true" />
+		<oxygen power="2" max="2" room="10" start="true" />
+		<pilot power="3" max="3" room="0" start="true" />
+		<shields power="8" max="8" room="5" start="true" />
+		<teleporter power="1" max="1" room="6" start="true" />
+		<weapons power="5" max="5" room="4" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="MISSILES_2_ENEMY" />
+		<weapon name="BEAM_CHAIN" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="40" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_BOSS_DARK_CHALLENGE" layout="aea_justice_boss_dark" img="aea_justice_boss_dark">
+	<class>Blood Throne</class>
+	<systemList>
+		<artillery power="4" max="4" room="1" start="true" weapon="ARTILLERY_AEA_JUSTICE_RAILGUN" />
+		<artillery power="3" max="3" room="3" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER" />
+		<artillery power="3" max="3" room="2" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER_OFFSET" />
+		<cloaking power="2" max="2" room="9" start="true" />
+		<clonebay power="4" max="4" room="8" start="true" />
+		<doors power="2" max="2" room="20" start="true" />
+		<engines power="2" max="2" room="7" start="true" />
+		<mind power="2" max="2" room="21" start="true" />
+		<oxygen power="2" max="2" room="10" start="true" />
+		<pilot power="3" max="3" room="0" start="true" />
+		<shields power="8" max="8" room="5" start="true" />
+		<teleporter power="2" max="2" room="6" start="true" />
+		<weapons power="6" max="6" room="4" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="MISSILES_3_ENEMY" />
+		<weapon name="BEAM_CHAIN" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="40" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
+</shipBlueprint>
+<shipBlueprint name="AEA_JUSTICE_BOSS_DARK_EXTREME" layout="aea_justice_boss_dark" img="aea_justice_boss_dark">
+	<class>Blood Throne</class>
+	<systemList>
+		<artillery power="4" max="4" room="1" start="true" weapon="ARTILLERY_AEA_JUSTICE_RAILGUN" />
+		<artillery power="3" max="3" room="3" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER" />
+		<artillery power="3" max="3" room="2" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER_OFFSET" />
+		<cloaking power="2" max="2" room="9" start="true" />
+		<clonebay power="4" max="4" room="8" start="true" />
+		<doors power="2" max="2" room="20" start="true" />
+		<engines power="2" max="2" room="7" start="true" />
+		<mind power="2" max="2" room="21" start="true" />
+		<oxygen power="2" max="2" room="10" start="true" />
+		<pilot power="3" max="3" room="0" start="true" />
+		<shields power="8" max="8" room="5" start="true" />
+		<teleporter power="2" max="2" room="6" start="true" />
+		<weapons power="6" max="6" room="4" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="20" count="2">
+		<weapon name="MISSILES_3_ENEMY" />
+		<weapon name="BEAM_CHAIN" />
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="40" />
+	<maxPower amount="40" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AEA_GODS_IMMORTAL_SHIELD" />
 </shipBlueprint>
 </FTL>

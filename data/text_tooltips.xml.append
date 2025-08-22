@@ -2,6 +2,8 @@
 <text name="tooltip_aea_shields_enemy">Shields: Absorbs Ion Damage from other enemy systems.</text>
 <text name="tooltip_aea_super_shields">Auxiliary Shields: Generates super shield layers capable of blocking all projectiles and beams.</text>
 <text name="tooltip_aea_super_shields_enemy">Auxiliary Shields: Generates super shield layers capable of blocking all projectiles and beams.</text>
+<text name="tooltip_aea_freeze">Medusa's Gaze: Freezes the target room, preventing it from functioning or taking damage.</text>
+<text name="tooltip_aea_freeze_enemy">Medusa's Gaze: Freezes the target room, preventing it from functioning or taking damage.</text>
 <text name="tooltip_aea_clone_crime">Modified Clone Bay: Generates pseudo clones on jump, prevents clones and other crew with death timers from dying from them.</text>
 <text name="tooltip_aea_clone_crime_enemy">Modified Clone Bay: Generates pseudo clones on jump, prevents clones and other crew with death timers from dying from them.</text>
 

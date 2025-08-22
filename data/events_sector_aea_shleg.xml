@@ -927,6 +927,7 @@ Alongside their offer they also give you the blueprints to a new ship and a nice
 				<event>
 					<text>"What an excellent idea captain, I do hope your crew doesn't mind."</text>
 					<crewMember amount="1" all_skills="2" class="aea_shleg_sickle">Sickle</crewMember>
+					<achievement silent="false">ACH_AEA_CREW_SICKLE</achievement>
 					<removeCrew class="LIST_CREW_AEA_SHLEG">
 						<clone>false</clone>
 						<text></text>
@@ -936,6 +937,7 @@ Alongside their offer they also give you the blueprints to a new ship and a nice
 						<event>
 							<text>Sorrow steps onboard behind Sickle.</text>
 							<crewMember amount="1" all_skills="2" class="aea_shleg_sorrow">Sorrow</crewMember>
+							<achievement silent="false">ACH_AEA_CREW_SORROW</achievement>
 						</event>
 					</choice>
 				</event>
@@ -945,6 +947,7 @@ Alongside their offer they also give you the blueprints to a new ship and a nice
 				<event>
 					<text>"It'ss my pleasure to ssserve along ssside you Captain." Sickle turns to Sorrow and says her good byes.</text>
 					<crewMember amount="1" all_skills="2" class="aea_shleg_sickle">Sickle</crewMember>
+					<achievement silent="false">ACH_AEA_CREW_SICKLE</achievement>
 				</event>
 			</choice>
 			<choice hidden="false">
@@ -952,6 +955,7 @@ Alongside their offer they also give you the blueprints to a new ship and a nice
 				<event>
 					<text>"Thhhis will be a nice change of pace." Sorrow turns to Sickle and says her good byes.</text>
 					<crewMember amount="1" all_skills="2" class="aea_shleg_sorrow">Sorrow</crewMember>
+					<achievement silent="false">ACH_AEA_CREW_SORROW</achievement>
 				</event>
 			</choice>
 			<choice hidden="false">

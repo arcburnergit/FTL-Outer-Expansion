@@ -41,12 +41,39 @@
     <text>The [style[color:600000]]Book[[/style]] can modify your clone bay.</text>
     <event load="OPTION_INVALID" />
   </mod-append:choice>
+  <mod-append:choice req="AEA_GODS_FREEZE_MAKE" blue="true" hidden="true">
+    <text>You can replace your Mind Control system with a [style[color:FFC800]]Medusa's Gaze[[/style]] System at the store here.</text>
+    <event load="AEA_INSTALL_FREEZE" />
+  </mod-append:choice>
+  <mod-append:choice req="AEA_GODS_FREEZE_MAKE_NOMIND" blue="true" hidden="true">
+    <text>You can install a [style[color:FFC800]]Medusa's Gaze[[/style]] System at the store here.</text>
+    <event load="AEA_INSTALL_FREEZE_NOMIND" />
+  </mod-append:choice>
+  <mod-append:choice req="AEA_GODS_FREEZE_MAKE_NOSTORE" blue="true" hidden="true">
+    <text>You can replace your Mind Control system with a [style[color:FFC800]]Medusa's Gaze[[/style]] System, Requires a store.</text>
+    <event load="OPTION_INVALID" />
+  </mod-append:choice>
+  <mod-append:choice req="AEA_GODS_FREEZE_MAKE_NOMIND_NOSTORE" blue="true" hidden="true">
+    <text>You can install a [style[color:FFC800]]Medusa's Gaze[[/style]] System, Requires a store.</text>
+    <event load="OPTION_INVALID" />
+  </mod-append:choice>
+</mod:findName>
+
+<mod:findName type="event" name="STORAGE_CHECK_SYSTEM_TELEPORTER_HEAL">
+	<mod:findWithChildLike type="choice" child-type="text">
+		<mod:selector>Perform the upgrade. [Cost: 60~, 3{]</mod:selector>
+		<mod:removeAttributes max_lvl="" />
+	</mod:findWithChildLike>
 </mod:findName>
 
 <mod:findName type="event" name="STORAGE_CHECK_SYSTEM">
 	<mod-append:choice req="aea_super_shields" blue="false" hidden="true">
 	  <text>Auxiliary Shields.</text>
 	  <event load="STORAGE_CHECK_SYSTEM_AEA_SUPER_SHIELDS" />
+	</mod-append:choice>
+	<mod-append:choice req="aea_freeze" blue="false" hidden="true">
+	  <text>Medusa's Gaze.</text>
+	  <event load="STORAGE_CHECK_SYSTEM_AEA_FREEZE" />
 	</mod-append:choice>
 	<mod-append:choice req="aea_clone_crime" blue="false" hidden="true">
 	  <text>Modified Clone Bay.</text>
@@ -165,6 +192,153 @@
 	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
 </event>
 
+<event name="STORAGE_CHECK_SYSTEM_AEA_FREEZE">
+    <text>What upgrade do you want to install?</text>
+	<choice req="UPG_AEA_FREEZE_COOLDOWN" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Regenerative Matrices. [ALREADY INSTALLED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="UPG_AEA_FREEZE_COOLDOWN" lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Regenerative Matrices. [Cost: 30~, 3{]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_FREEZE_COOLDOWN" />
+	</choice>
+    <choice req="UPG_AEA_FREEZE_HEALTH" lvl="1" max_group="1" blue="false" hidden="true">
+        <text>Healing Aura. [ALREADY INSTALLED]</text>
+        <event load="OPTION_INVALID" />
+    </choice>
+    <choice req="UPG_AEA_FREEZE_HEALTH" lvl="0" max_group="1" blue="false" hidden="true">
+        <text>Healing Aura. [Cost: 50~, 5{]</text>
+        <event load="STORAGE_CHECK_SYSTEM_AEA_FREEZE_HEALTH" />
+    </choice>
+    <choice req="UPG_AEA_FREEZE_CREW" lvl="1" max_group="2" blue="false" hidden="true">
+        <text>Cellular Exploitation. [ALREADY INSTALLED]</text>
+        <event load="OPTION_INVALID" />
+    </choice>
+    <choice req="UPG_AEA_FREEZE_CREW" lvl="0" max_group="2" blue="false" hidden="true">
+        <text>Cellular Exploitation. [Cost: 30~, 5|]</text>
+        <event load="STORAGE_CHECK_SYSTEM_AEA_FREEZE_CREW" />
+    </choice>
+    <choice>
+        <text>Nevermind.</text>
+        <event load="STORAGE_CHECK_SYSTEM_LOAD" />
+    </choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_FREEZE_COOLDOWN">
+	<text>You are about to install the Regenerative Matrices upgrade.
+	[Effects: The system comes off cooldown 5 seconds faster.]</text>
+	<choice max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 30~, 3{]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="fuel" min="-3" max="-3" />
+				<item type="scrap" min="-30" max="-30" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_FREEZE_COOLDOWN" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="EX_AEA_FREEZE_COOLDOWN" max_group="1" blue="false" hidden="true">
+		<text>Install the External Augment internally.</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<remove name="EX_AEA_FREEZE_COOLDOWN" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_FREEZE_COOLDOWN" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_FREEZE_COOLDOWN">
+	<variable name="loc_internal_upgrades" op="add" val="1" />
+	<hiddenAug>UPG_AEA_FREEZE_COOLDOWN</hiddenAug>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_FREEZE_HEALTH">
+	<text>You are about to install the Healing Aura upgrade.
+	[Effects: Petrified crew heal crew in the same room who belong to the same ship as this system for 5 hp/s.]</text>
+	<choice max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 50~, 5{]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="fuel" min="-5" max="-5" />
+				<item type="scrap" min="-50" max="-50" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_FREEZE_HEALTH" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="EX_AEA_FREEZE_HEALTH" max_group="1" blue="false" hidden="true">
+		<text>Install the External Augment internally.</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<remove name="EX_AEA_FREEZE_HEALTH" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_FREEZE_HEALTH" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_FREEZE_HEALTH">
+	<variable name="loc_internal_upgrades" op="add" val="1" />
+	<hiddenAug>UPG_AEA_FREEZE_HEALTH</hiddenAug>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_FREEZE_CREW">
+	<text>You are about to install the Cellular Exploitation upgrade.
+	[Effects: Crew remain petrified for twice as long.]</text>
+	<choice max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 30~, 5|]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="drones" min="-5" max="-5" />
+				<item type="scrap" min="-30" max="-30" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_FREEZE_CREW" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="EX_AEA_FREEZE_CREW" max_group="1" blue="false" hidden="true">
+		<text>Install the External Augment internally.</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<remove name="EX_AEA_FREEZE_CREW" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_FREEZE_CREW" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_FREEZE_CREW">
+	<variable name="loc_internal_upgrades" op="add" val="1" />
+	<hiddenAug>UPG_AEA_FREEZE_CREW</hiddenAug>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
 
 <event name="STORAGE_CHECK_SYSTEM_AEA_CLONE_CRIME">
     <text>What upgrade do you want to install?</text>
@@ -495,7 +669,31 @@
 	  	</event>
   	</mod-append:choice>
 
-  	<mod-append:choice req="AEA_DEFENSE_NECRO_1_MISSILE" blue="false">
+	
+	<mod:findWithChildLike type="choice" child-type="text">
+		<mod:selector>Disable Better Jukebox.</mod:selector>
+		<mod:removeTag />
+	</mod:findWithChildLike>
+	<mod:findWithChildLike type="choice" child-type="text">
+		<mod:selector>Enable Better Jukebox.</mod:selector>
+		<mod:removeTag />
+	</mod:findWithChildLike>
+
+	<mod-append:choice req="better_juke_enabled" lvl="0" max_lvl="0" blue="false">
+		<text>Disable Better Jukebox.</text>
+		<event>
+			<metaVariable name="better_juke_enabled" op="set" val="1" />
+			<loadEvent>COMBAT_CHECK_TOGGLE</loadEvent>
+		</event>
+  	</mod-append:choice>
+	<mod-append:choice req="better_juke_enabled" lvl="1" blue="false">
+	  	<text>Enable Better Jukebox.</text>
+	  	<event>
+			<metaVariable name="better_juke_enabled" op="set" val="0" />
+			<loadEvent>COMBAT_CHECK_TOGGLE</loadEvent>
+	  	</event>
+  	</mod-append:choice>
+  	<!--mod-append:choice req="AEA_DEFENSE_NECRO_1_MISSILE" blue="false">
 		<text>(Heretic Defense Drone I) Set the state of the drone. [Current mode: Anti-Missile].</text>
 		<event load="COMBAT_CHECK_AEA_DEFENSE_NECRO_MISSILE" />
 	</mod-append:choice>
@@ -504,14 +702,14 @@
 		<event load="COMBAT_CHECK_AEA_DEFENSE_NECRO_DRONE" />
 	</mod-append:choice>
 
-  <mod-append:choice req="AEA_DEFENSE_NECRO_2_MISSILE" blue="false">
+  	<mod-append:choice req="AEA_DEFENSE_NECRO_2_MISSILE" blue="false">
 		<text>(Heretic Defense Drone II) Set the state of the drone. [Current mode: Anti-Missile].</text>
 		<event load="COMBAT_CHECK_AEA_DEFENSE_NECRO2_MISSILE" />
 	</mod-append:choice>
 	<mod-append:choice req="AEA_DEFENSE_NECRO_2_DRONE" blue="false">
 		<text>(Heretic Defense Drone II) Set the state of the drone. [Current mode: Anti-Drone].</text>
 		<event load="COMBAT_CHECK_AEA_DEFENSE_NECRO2_DRONE" />
-	</mod-append:choice>
+	</mod-append:choice-->
 
 	<mod-append:choice req="AEA_COMBAT_NECRO_1_LASER" blue="false">
 		  <text>(Technomancy Drone I) Set the state of the drone. [Current mode: Laser].</text>
@@ -967,7 +1165,7 @@
 
 <event name="STORAGE_CHECK_SYSTEM_AEA_OLD_REACTOR">
 	<text>You are about to install a reactor upgrade.
-	[Effects: Upgrades the reactor beyond it's maximum level, cannot be done more than 5 times].</text>
+	[Effects: Upgrades the reactor beyond it's maximum level, cannot be done more than 10 times].</text>
 	<choice req="aea_can_upgrade_reactor" lvl="1" max_group="0" blue="false" hidden="true">
 		<text>Perform the upgrade. [Cost: 50~].</text>
 		<event>
@@ -2721,7 +2919,7 @@
 	<text>You are viewing the lab menu for: [ACIDIC GROWTH]</text>
 	<choice req="LAB_AEA_ACID_REPAIR" lvl="1" max_group="0" blue="false" hidden="true">
 		<text>Currently Installed: Fracture Repair Procedures.
-		[Acidic Crew heal 7.5hp/s if unharmed for 5 seconds, but only repair at 1x speed]</text>
+		[Acidic Crew heal 6.4hp/s if unharmed for 5 seconds]</text>
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="LAB_AEA_ACID_SENSOR" lvl="1" max_group="0" blue="false" hidden="true">
@@ -2729,9 +2927,9 @@
 		[Acidic Crew become immune to stun]</text>
 		<event load="OPTION_INVALID" />
 	</choice>
-	<choice req="LAB_AEA_ACID_WEAPON" lvl="1" max_group="0" blue="false" hidden="true">
-		<text>Currently Installed: Cooling Vents.
-		[Acidic Crew do 2x ranged damage but lose 50% of their hp]</text>
+	<choice req="LAB_AEA_ACID_COOLING" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Currently Installed: Obscuring Gas.
+		[All non-Acidic crew in Acidic Gas do 0.5x Combat Damage]</text>
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="pilot" lvl="1" max_group="0" blue="false" hidden="true">
@@ -2755,11 +2953,11 @@
 		<event load="STORAGE_CHECK_LAB_AEA_ACID_SENSOR" />
 	</choice>
 	<choice req="LAB_AEA_ACID_INSTALLED" lvl="1" max_group="3" blue="false" hidden="true">
-		<text>Pri: Cooling Vents. [An upgrade is already installed]</text>
+		<text>Pri: Obscuring Gas. [An upgrade is already installed]</text>
 		<event load="OPTION_INVALID" />
 	</choice>
 	<choice req="LAB_AEA_ACID_INSTALLED" lvl="0" max_group="3" blue="false" hidden="true">
-		<text>Pri: Cooling Vents. [Cost: 20~ 3{]</text>
+		<text>Pri: Obscuring Gas. [Cost: 40~ 3{]</text>
 		<event load="STORAGE_CHECK_LAB_AEA_ACID_COOLING" />
 	</choice>
 	<choice req="pilot" lvl="1" max_group="999" blue="false" hidden="true">
@@ -2771,7 +2969,7 @@
 
 <event name="STORAGE_CHECK_LAB_AEA_ACID_REPAIR">
 	<text>You are about to install the Fracture Repair Procedures modification.
-	[Effects: Acidic Crew heal 7.5hp/s if unharmed for 5 seconds, but only repair at 1x speed]
+	[Effects: Acidic Crew heal 6.4hp/s if unharmed for 5 seconds]
 	
 	[Warning: After installing this, you will not be able to install any more primary upgrades for Acidic crew. You will not be able to deactivate this mod either.]</text>
 	<choice hidden="true">
@@ -2830,15 +3028,15 @@
 
 <event name="STORAGE_CHECK_LAB_AEA_ACID_COOLING">
 	<text>You are about to install the Cooling Vents modification.
-	[Effects: Acidic Crew do 2x ranged damage but lose 50% of their hp]
+	[Effects: All non-Acidic crew in Acidic Gas do 0.5x Combat Damage]
 	
 	[Warning: After installing this, you will not be able to install any more primary upgrades for Acidic crew. You will not be able to deactivate this mod either.]</text>
 	<choice hidden="true">
-		<text>Install the modification. [Cost: 20~ 3{]</text>
+		<text>Install the modification. [Cost: 40~ 3{]</text>
 		<event>
 			<text>You install the modification.</text>
 			<item_modify>
-				<item type="scrap" min="-20" max="-20" />
+				<item type="scrap" min="-40" max="-40" />
 				<item type="fuel" min="-3" max="-3" />
 			</item_modify>
 			<choice hidden="true">

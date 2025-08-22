@@ -1,0 +1,122 @@
+<FTL>
+<event name="AEA_GODS_BOSS_BRIGHT_DESTROYED">
+	<variable name="aea_gods_light_active" op="set" val="1"/>
+	<text>The ship implodes, collapsing in on itself and releasing a cloud of scrap and metal, you're able to recover a weapon from the wreckage.
+With the ship no longer blocking your way you're able to access the beacon here.</text>
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<weapon name="RANDOM" />
+</event>
+<ship name="AEA_GODS_BOSS_BRIGHT_CASUAL" auto_blueprint="AEA_GODS_BOSS_LIGHT_CASUAL">
+	<destroyed load="AEA_GODS_BOSS_BRIGHT_DESTROYED"/>
+</ship>
+<ship name="AEA_GODS_BOSS_BRIGHT_NORMAL" auto_blueprint="AEA_GODS_BOSS_LIGHT_NORMAL">
+	<destroyed load="AEA_GODS_BOSS_BRIGHT_DESTROYED"/>
+</ship>
+<ship name="AEA_GODS_BOSS_BRIGHT_CHALLENGE" auto_blueprint="AEA_GODS_BOSS_LIGHT_CHALLENGE">
+	<destroyed load="AEA_GODS_BOSS_BRIGHT_DESTROYED"/>
+</ship>
+<ship name="AEA_GODS_BOSS_BRIGHT_EXTREME" auto_blueprint="AEA_GODS_BOSS_LIGHT_EXTREME">
+	<destroyed load="AEA_GODS_BOSS_BRIGHT_DESTROYED"/>
+</ship>
+<event name="AEA_GODS_BOSS_LIGHT">
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<loadEventList seeded="false" first="true" generate="false">
+		<event name="AEA_GODS_BOSS_LIGHT_CASUAL" req="challenge_level" lvl="0" max_lvl="0"/>
+		<event name="AEA_GODS_BOSS_LIGHT_NORMAL" req="challenge_level" lvl="1" max_lvl="1"/>
+		<event name="AEA_GODS_BOSS_LIGHT_CHALLENGE" req="challenge_level" lvl="2" max_lvl="2"/>
+		<event name="AEA_GODS_BOSS_LIGHT_EXTREME" req="challenge_level" lvl="3" max_lvl="3"/>
+	</loadEventList>
+</event>
+<event name="AEA_GODS_BOSS_LIGHT_CASUAL">
+	<text>TEST</text>
+	<ship load="AEA_GODS_BOSS_BRIGHT_CASUAL" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BOSS_LIGHT_NORMAL">
+	<text>TEST</text>
+	<ship load="AEA_GODS_BOSS_BRIGHT_NORMAL" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BOSS_LIGHT_CHALLENGE">
+	<text>TEST</text>
+	<ship load="AEA_GODS_BOSS_BRIGHT_CHALLENGE" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BOSS_LIGHT_EXTREME">
+	<text>TEST</text>
+	<ship load="AEA_GODS_BOSS_BRIGHT_EXTREME" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BOSS_DARK_DESTROYED">
+	<variable name="aea_gods_light_active" op="set" val="1"/>
+	<text>The ship implodes, collapsing in on itself and releasing a cloud of scrap and metal, you're able to recover a weapon from the wreckage.
+With the ship no longer blocking your way you're able to access the beacon here.</text>
+	<autoReward level="HIGH">standard_no_item</autoReward>
+	<weapon name="RANDOM" />
+</event>
+<ship name="AEA_GODS_BOSS_DARK_CASUAL" auto_blueprint="AEA_JUSTICE_BOSS_DARK_CASUAL">
+	<destroyed load="AEA_GODS_BOSS_DARK_DESTROYED"/>
+</ship>
+<ship name="AEA_GODS_BOSS_DARK_NORMAL" auto_blueprint="AEA_JUSTICE_BOSS_DARK_NORMAL">
+	<destroyed load="AEA_GODS_BOSS_DARK_DESTROYED"/>
+</ship>
+<ship name="AEA_GODS_BOSS_DARK_CHALLENGE" auto_blueprint="AEA_JUSTICE_BOSS_DARK_CHALLENGE">
+	<destroyed load="AEA_GODS_BOSS_DARK_DESTROYED"/>
+</ship>
+<ship name="AEA_GODS_BOSS_DARK_EXTREME" auto_blueprint="AEA_JUSTICE_BOSS_DARK_EXTREME">
+	<destroyed load="AEA_GODS_BOSS_DARK_DESTROYED"/>
+</ship>
+<event name="AEA_GODS_BOSS_DARK">
+	<img back="BACK_AEA_DARKNESS" planet="NONE"/>
+	<loadEventList seeded="false" first="true" generate="false">
+		<event name="AEA_GODS_BOSS_DARK_CASUAL" req="challenge_level" lvl="0" max_lvl="0"/>
+		<event name="AEA_GODS_BOSS_DARK_NORMAL" req="challenge_level" lvl="1" max_lvl="1"/>
+		<event name="AEA_GODS_BOSS_DARK_CHALLENGE" req="challenge_level" lvl="2" max_lvl="2"/>
+		<event name="AEA_GODS_BOSS_DARK_EXTREME" req="challenge_level" lvl="3" max_lvl="3"/>
+	</loadEventList>
+</event>
+<event name="AEA_GODS_BOSS_DARK_CASUAL">
+	<text>TEST</text>
+	<ship load="AEA_GODS_BOSS_DARK_CASUAL" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BOSS_DARK_NORMAL">
+	<text>TEST</text>
+	<ship load="AEA_GODS_BOSS_DARK_NORMAL" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BOSS_DARK_CHALLENGE">
+	<text>TEST</text>
+	<ship load="AEA_GODS_BOSS_DARK_CHALLENGE" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<event name="AEA_GODS_BOSS_DARK_EXTREME">
+	<text>TEST</text>
+	<ship load="AEA_GODS_BOSS_DARK_EXTREME" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+</FTL>

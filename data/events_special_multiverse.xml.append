@@ -67,6 +67,18 @@
 			</choice>
 		</event>
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="LIST_CREW_AEA_NECRO_ER" blue="false">
+		<text>Present an Elite Heretic Crew.</text>
+		<event>
+			<text>""</text>
+			<metaVariable name="prof_z_boon_aea_necro" op="set" val="1" />
+			<achievement silent="false">ACH_BOON_AEA_NECRO</achievement>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="THE_JUDGES_ZOLTAN_ADVICE" />
+			</choice>
+		</event>
+	</mod-append:choice>
 	<mod-append:choice hidden="true" req="LIST_CREW_AEA_SHLEG_ER" blue="false">
 		<text>Present an Anarchist Crew.</text>
 		<event>

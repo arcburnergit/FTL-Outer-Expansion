@@ -234,3 +234,14 @@ script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager
     end
 end)
 
+mods.multiverse.systemIcons[Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime")] = Hyperspace.metaVariables.aea_clone_crime_unlock == 1 and mods.multiverse.register_system_icon("aea_clone_crime") or mods.multiverse.register_system_icon("aea_hidden")
+
+local shipBuilderCheck = false
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+    if not shipBuilderCheck and Hyperspace.App.menu.shipBuilder.bOpen then
+        shipBuilderCheck = true
+        mods.multiverse.systemIcons[Hyperspace.ShipSystem.NameToSystemId("aea_clone_crime")] = Hyperspace.metaVariables.aea_clone_crime_unlock == 1 and mods.multiverse.register_system_icon("aea_clone_crime") or mods.multiverse.register_system_icon("aea_hidden")
+    else
+        shipBuilderCheck = false
+    end
+end)

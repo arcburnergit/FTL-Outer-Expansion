@@ -386,7 +386,7 @@ script.on_internal_event(Defines.InternalEvents.SHIELD_COLLISION, function(shipM
 	if projectile and projectile.extend.name == "AEA_DRONE_WION_COMBAT_MULTI" then
 		if shipManager:HasSystem(0) then
 			local shieldSystem = shipManager.shieldSystem
-			print(shieldSystem.shields.power.super.first)
+			--print(shieldSystem.shields.power.super.first)
 			if shieldSystem.shields.power.super.first >= 1 then return end
 			local roomPos = shipManager:GetRoomCenter(shieldSystem.roomId)
 			shipManager:DamageArea(roomPos, weakIonDamage, true)
@@ -452,7 +452,6 @@ systemTargetWeapons.AEA_DRONE_LASER_COMBAT_SMART = sysWeights
 mods.aea.intelDrones = {}
 local intelDrones = mods.aea.intelDrones
 intelDrones["AEA_DRONE_LASER_COMBAT_SMART"] = true
-
 
 local combatLaserBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("DRONE_LASER_COMBAT")
 
