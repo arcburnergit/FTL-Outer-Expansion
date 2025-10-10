@@ -1201,6 +1201,8 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event load="NEBULA_ACIDIC_AEA_ACID_PRAETOR_DIPLOMATIC" />
 	<event load="NEBULA_AEA_ACID_ORCHID_RESEARCH" />
 	<event load="NEBULA_AEA_ACID_WARNING" />
+
+	<event load="NEBULA_AEA_ACID_ARREST" />
 </eventList>
 
 <event name="NEBULA_AEA_ACID_EMPTY_WRECK" unique="true">
@@ -1361,7 +1363,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 								<choice hidden="true">
 									<text>Correct? There's nothing but the nebula.</text>
 									<event>
-										<text>"Yes, that is... the point. Acidic Growth is all around us, but we don't know how to communicate with it." The orchid scratches the back of his head. "I suppose, since you're still at this beacon, you could help us? We'd really appreciate it."</text>
+										<text>"Yes, that is... the point. Acidic Growth is all around us, but we don't know how to communicate with it... even though we have special equipment." The orchid scratches the back of his head. "I suppose, since you're still at this beacon, you could help us? We'd really appreciate it."</text>
 										<choice hidden="true">
 											<text>Try to catch the signal.</text>
 											<event>
@@ -2011,6 +2013,130 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 		</event>
 	</choice>
 </event>
+
+<event name="NEBULA_AEA_ACID_ARREST" unique="true">
+	<environment type="nebula" />
+	<text>This beacon hosts an unusual sight: a Federation ship on one side, Orchid and Growth on the other, and a Smuggler vessel between them. There seems to be active chatter on the comms.</text>
+	<choice hidden="true">
+		<text>Tap in.</text>
+		<event>
+			<text>"No, these guys are ours. They are registered in a nearby Federation-controlled sector - we've got their IDs and everything."
+
+"Federation, as per our alliance, I won't chase you away. However, this is Acidic Growth space. You're not an authority here."
+
+"Why are you even speaking on their behalf? They can talk, right? Let them express themselves!"</text>
+			<choice hidden="true">
+				<text>What is going on here?</text>
+				<event>
+					<text>The Federation captain doesn't take long to respond. "Oh, sorry... didn't notice you were here. We've been tracking these Smugglers for a while, but had failed to really apprehend them until just now. According to this Orchid, though, there's some problem with us doing our jobs in Acidic space. My question is... why does it matter WHERE we catch these guys? Is the Growth in the business of harboring criminals?"
+
+He looks over at another screen for any semblance of an explanation from the Growth ship, but the Acidic soldier present doesn't so much as shift. With a roll of his eyes, the captain looks back at you, "Honestly, I'm not even sure that this stuff is sentient."</text>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>An uncharacteristic anger coats the Orchid's words, as they snap back at the other captain, "Do you even hear yourself right now? If you weren't flying Federation colors, I would be sure that I was talking to a Rebel. Yes, the Growth is sentient... and NO, they are not harboring criminals! As I've tried to explain, this simply isn't Federation space. It's not your job to handle any illicit dealings here!"
+
+Tired with the conversation himself, the Federation captain merely gives the Orchid an unamused look. "Trust me, I'm hearing myself just fine. Who I'd like to hear from, though, is the Growth - not some temperamental interpreter."</text>
+							<choice hidden="true">
+								<text>We can resolve this.</text>
+								<event>
+									<text>"You can?" The Federation captain scrutinizes you, seemingly forgetting about the Growth. "You don't look like one to care about the law... But you're a neutral party, and, frankly, the faster we move on from this, the better." His eyes move to a screen with the Orchid. "Do you agree?" 
+
+The Orchid huffs with annoyance, "If that means I never have to talk to you again, then sure. Renegade, what do you have to say?"</text>
+									<choice hidden="true">
+										<text>The Federation captain is right; they should apprehend the criminal.</text>
+										<event>
+											<text>When the Orchid captain hears you, they close comms and jump away. The Federation captain sighs, "Well, good thing they decided to move their temper tantrum elsewhere. I thank you for choosing reason; we'll arrest the Smugglers immediately. I know that it's not exactly legal, but I want you to have a weapon from their stores, as a gesture of gratitude. It's Acidic-made, I think. They might be barely sentient by most standards, but if there's something I could give these guys, it's that they're really good at making weapons."</text>
+											<autoReward level="MED">scrap_only</autoReward>
+											<weapon name="GIFTLIST_WEAPONS_ACIDIC"/>
+										</event>
+									</choice>
+									<choice hidden="true">
+										<text>The Orchid captain is right; Acidic Growth should decide by themselves.</text>
+										<event>
+											<jumpEvent>NEBULA_AEA_ACID_ARREST_GROWTH</jumpEvent>
+											<text>The Orchid captain is relieved, "Yes! Yes! I'm glad at least SOME Federation personnel still hasn't tumbled down into a pit of xenophobia. You, captain, should know; you just witnessed how Federation rots from the inside, becoming not unli-" He is interrupted by a grumbling voice, "Fine, fine. I concede. The Growth shall now do whatever it wants with them, and we're leaving." The Federation ship jumps away. 
+
+Orchids are delighted and gift you a little bit of scrap for standing with them. After a minute or so of Orchids talking to Growth on a private channel, they leave too.</text>
+											<autoReward level="LOW">scrap_only</autoReward> 
+											<queueEvent>MORALITY_REMOVE_ORCHID</queueEvent>
+										</event>
+									</choice>
+									<choice hidden="true">
+										<text>Silently blow up the criminals' ship.</text>
+										<event>
+											<text>Deciding not to say anything, you fire on the Smuggler vessel - obliterating it in mere seconds. The captains of both ships are flabbergasted.
+
+"What? But... you said... actually, you know what? I don't care - I'm done here." The Federation vessel jumps away.
+
+The Orchid captain, having been at a loss for words, then briefly says "Yeah, alright. Sure." and leaves the beacon as well - the Acidic Growth following close behind them.
+
+You are now, finally, left alone... well, better than that, even: you've been left with a wreck to salvage!</text>
+											<autoReward level="MED">standard</autoReward>
+										</event>
+									</choice>
+								</event>
+							</choice>
+							<choice hidden="true">
+								<text>Leave while the Growth has all of the attention.</text>
+								<event>
+									<text>This situation sure is crazy, but you can't stay here for long because of the constant danger of the approaching fleet. Besides, it's not like you're knowledgeable on matters of law - if you were, maybe you wouldn't be breaking them so often.</text>
+								</event>
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Not getting involved.</text>
+		<event>
+			<text>You decide it isn't worth your time.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event />
+			</choice>	
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_ACID_ARREST_GROWTH">
+	<text>...You get contacted. "Resolver, yes? This, criminals? We don't know what to do with them." It's Acidic Growth.</text>	
+		<choice hidden="true">
+			<text>You don't know? What was that whole show about then?</text>
+			<event>
+				<text>"Orchids, allies. Didn't ask. Kept insisting. We didn't know what to say." The Soldier on screen keeps standing still. You should probably come up with the pirates' fate, because waiting for Growth will only make the Rebel fleet closer.</text>
+				<choice hidden="true">
+					<text>Arrest them.</text>
+					<event>
+						<text>"You suggest, workers? Crew? Gratitude. Accept, one of them."</text>
+						<crewMember amount="1" class="LIST_CREW_FEDERATION" />
+					</event>
+				</choice>
+				<choice hidden="true">
+					<text>Explode them.</text>
+					<event>
+						<text>"You suggest, scrap? Resources? Gratitude. Accept, this part."</text>
+						<autoReward level="LOW">standard</autoReward>
+					</event>
+				</choice>
+				<choice hidden="true">
+					<text>Let them go.</text>
+					<event>
+						<text>"You suggest, leave them? Gratitude." The Acidic ship jumps away, and the Smugglers contact you, "Can't believe we're out of this! Thanks, whoever you are. We were trying to sell Acidic weapons over at Federation market, but got caught. You can have one of those. We will make ourselves sparse, now."</text>
+						<weapon name="GIFTLIST_WEAPONS_ACIDIC"/>
+						<queueEvent>REPUTATION_UPDATE_SMUGGLING_FREE</queueEvent>
+					</event>
+				</choice>
+			</event>
+		</choice>
+</event>
+
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -2434,7 +2560,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 </eventList>
 
 <event name="AEA_ACID_ORCHID_PRESSURE_ANAEROBIC_SUCCESS">
-	<text>Your anaerobic crewmember works fast, and, miraculously, manages to sustain the oxygen in the hallway enough for Orchids to evacuate! Everyone gets on your ship and you move away from the doomed vessel, seeing it buckle under pressure. You promise to drop off everyone at the closest station, but the Orchid you first met volunteers to serve on your ship out of gratitude.</text>
+	<text>Your anaerobic crewmember works fast, and, miraculously, manages to sustain the oxygen in the hallway enough for Orchids to evacuate! Everyone gets on your ship and you move away from the doomed vessel, seeing it buckle under pressure. You promise to drop everyone off at the closest station, but the Orchid you first met volunteers to serve on your ship out of gratitude.</text>
 	<crewMember amount="1" class="orchid_caretaker" />
 	<queueEvent>MORALITY_REMOVE_ORCHID</queueEvent>
 </event>
