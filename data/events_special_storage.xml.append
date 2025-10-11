@@ -75,6 +75,10 @@
 	  <text>Medusa's Gaze.</text>
 	  <event load="STORAGE_CHECK_SYSTEM_AEA_FREEZE" />
 	</mod-append:choice>
+	<mod-append:choice req="aea_grease" blue="false" hidden="true">
+	  <text>Weapons Amplifier.</text>
+	  <event load="STORAGE_CHECK_SYSTEM_AEA_GREASE" />
+	</mod-append:choice>
 	<mod-append:choice req="aea_clone_crime" blue="false" hidden="true">
 	  <text>Modified Clone Bay.</text>
 	  <event load="STORAGE_CHECK_SYSTEM_AEA_CLONE_CRIME" />
@@ -489,6 +493,322 @@
 <event name="INSTALL_AEA_CLONE_CRIME_ENEMY">
 	<variable name="loc_internal_upgrades" op="add" val="1" />
 	<hiddenAug>UPG_AEA_CLONE_CRIME_ENEMY</hiddenAug>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE">
+    <text>What upgrade do you want to install?</text>
+	<choice req="UPG_AEA_GREASE_IGNITER" lvl="1" max_group="0" blue="false" hidden="true">
+		<text>Pre-Ignited Canisters. [ALREADY INSTALLED]</text>
+		<event load="OPTION_INVALID" />
+	</choice>
+	<choice req="UPG_AEA_GREASE_IGNITER" lvl="0" max_group="0" blue="false" hidden="true">
+		<text>Pre-Ignited Canisters. [Cost: 60~]</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_IGNITER" />
+	</choice>
+    <choice req="UPG_AEA_GREASE_SWITCH" lvl="1" max_group="1" blue="false" hidden="true">
+        <text>Fluid Recycler. [ALREADY INSTALLED]</text>
+        <event load="OPTION_INVALID" />
+    </choice>
+    <choice req="UPG_AEA_GREASE_SWITCH" lvl="0" max_group="1" blue="false" hidden="true">
+        <text>Fluid Recycler. [Cost: 20~, 5{]</text>
+        <event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_SWITCH" />
+    </choice>
+	<choice req="pilot" max_group="2" blue="false" hidden="true">
+		<text>Fire Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="pilot" max_group="3" blue="false" hidden="true">
+		<text>Frost Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="pilot" max_group="4" blue="false" hidden="true">
+		<text>Breach Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_EFFECT_SHOCK" lvl="1" max_group="5" blue="false" hidden="true">
+		<text>Shock Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_REQ_EFFECT_SHOCK" lvl="1" max_group="5" blue="true" hidden="true">
+		<text>Shock Amplification.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_SHOCK"/>
+	</choice>
+	<choice req="AEA_GREASE_EFFECT_SHATTER" lvl="1" max_group="6" blue="false" hidden="true">
+		<text>Shatter Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_REQ_EFFECT_SHATTER" lvl="1" max_group="6" blue="true" hidden="true">
+		<text>Shatter Amplification.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_SHATTER"/>
+	</choice>
+	<choice req="AEA_GREASE_EFFECT_ACID" lvl="1" max_group="7" blue="false" hidden="true">
+		<text>Acidic Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_REQ_EFFECT_ACID" lvl="1" max_group="7" blue="true" hidden="true">
+		<text>Acidic Amplification.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_ACID"/>
+	</choice>
+	<choice req="AEA_GREASE_EFFECT_SHLEG" lvl="1" max_group="8" blue="false" hidden="true">
+		<text>Inculcation Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_REQ_EFFECT_SHLEG" lvl="1" max_group="8" blue="true" hidden="true">
+		<text>Inculcation Amplification.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_SHLEG"/>
+	</choice>
+	<choice req="AEA_GREASE_EFFECT_BIRD" lvl="1" max_group="9" blue="false" hidden="true">
+		<text>Mark Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_REQ_EFFECT_BIRD" lvl="1" max_group="9" blue="true" hidden="true">
+		<text>Mark Amplification.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_BIRD"/>
+	</choice>
+	<choice req="AEA_GREASE_EFFECT_NECRO" lvl="1" max_group="10" blue="false" hidden="true">
+		<text>Resurrection Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_REQ_EFFECT_NECRO" lvl="1" max_group="10" blue="true" hidden="true">
+		<text>Resurrection Amplification.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_NECRO"/>
+	</choice>
+	<choice req="AEA_GREASE_EFFECT_CASCADE" lvl="1" max_group="11" blue="false" hidden="true">
+		<text>Cascade Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_REQ_EFFECT_CASCADE" lvl="1" max_group="11" blue="true" hidden="true">
+		<text>Cascade Amplification.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_CASCADE"/>
+	</choice>
+    <choice>
+        <text>Nevermind.</text>
+        <event load="STORAGE_CHECK_SYSTEM_LOAD" />
+    </choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_SHOCK">
+	<text>You have tech on your ship which can be scanned by your Weapons Amplifier.
+[Shock Enhancement: Causes the last projectile in the volley to break and stun all doors in the room.]
+It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
+	<choice hidden="true">
+		<text>Proceed.</text>
+		<event>
+			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
+			<modifyPursuit amount="1"/>
+			<hiddenAug>AEA_GREASE_EFFECT_SHOCK</hiddenAug>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_SHATTER">
+	<text>You have tech on your ship which can be scanned by your Weapons Amplifier.
+[Shatter Enhancement: Causes the last projectile in the volley to create an extremely weak lockdown, the next hit to this room while the lockdown is active will do 2x damage.]
+It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
+	<choice hidden="true">
+		<text>Proceed.</text>
+		<event>
+			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
+			<modifyPursuit amount="1"/>
+			<hiddenAug>AEA_GREASE_EFFECT_SHATTER</hiddenAug>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_ACID">
+	<text>You have tech on your ship which can be scanned by your Weapons Amplifier.
+[Acidic Enhancement: Causes the last projectile in the volley to create acidic that erodes the system on hit.]
+It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
+	<choice hidden="true">
+		<text>Proceed.</text>
+		<event>
+			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
+			<modifyPursuit amount="1"/>
+			<hiddenAug>AEA_GREASE_EFFECT_ACID</hiddenAug>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_SHLEG">
+	<text>You have tech on your ship which can be scanned by your Weapons Amplifier.
+[Inculcation Enhancement: Causes the last projectile in the volley to create inculcation gas on hit.]
+It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
+	<choice hidden="true">
+		<text>Proceed.</text>
+		<event>
+			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
+			<modifyPursuit amount="1"/>
+			<hiddenAug>AEA_GREASE_EFFECT_SHLEG</hiddenAug>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_BIRD">
+	<text>You have tech on your ship which can be scanned by your Weapons Amplifier.
+[Marked Enhancement: Causes the last projectile in the volley to target all friendly drones on hit.]
+It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
+	<choice hidden="true">
+		<text>Proceed.</text>
+		<event>
+			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
+			<modifyPursuit amount="1"/>
+			<hiddenAug>AEA_GREASE_EFFECT_BIRD</hiddenAug>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_NECRO">
+	<text>You have tech on your ship which can be scanned by your Weapons Amplifier.
+[Resurrection Enhancement: When a projectile kills a crewmember, temporarily resurrect that crewmember on your side.]
+It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
+	<choice hidden="true">
+		<text>Proceed.</text>
+		<event>
+			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
+			<modifyPursuit amount="1"/>
+			<hiddenAug>AEA_GREASE_EFFECT_NECRO</hiddenAug>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_CASCADE">
+	<text>You have tech on your ship which can be scanned by your Weapons Amplifier.
+[Cascade Enhancement: When a projectile full breaks a system, deal system damage to an adjacent room.]
+It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
+	<choice hidden="true">
+		<text>Proceed.</text>
+		<event>
+			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
+			<modifyPursuit amount="1"/>
+			<hiddenAug>AEA_GREASE_EFFECT_CASCADE</hiddenAug>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_IGNITER">
+	<text>You are about to install the Pre-Ignited Canisters upgrade.
+	[Effects: System charges are refilled with each jump.]</text>
+	<choice max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 60~]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="scrap" min="-60" max="-60" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_GREASE_IGNITER" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="EX_AEA_GREASE_IGNITER" max_group="1" blue="false" hidden="true">
+		<text>Install the External Augment internally.</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<remove name="EX_AEA_GREASE_IGNITER" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_GREASE_IGNITER" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_GREASE_IGNITER">
+	<variable name="loc_internal_upgrades" op="add" val="1" />
+	<hiddenAug>UPG_AEA_GREASE_IGNITER</hiddenAug>
+	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_SWITCH">
+	<text>You are about to install the Fluid Recycler upgrade.
+	[Effects: Switching enhancements no longer resets system charges.]</text>
+	<choice max_group="0" blue="false" hidden="true">
+		<text>Perform the upgrade. [Cost: 20~, 5{]</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<item_modify>
+				<item type="fuel" min="-5" max="-5" />
+				<item type="scrap" min="-20" max="-20" />
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_GREASE_SWITCH" />
+			</choice>
+		</event>
+	</choice> 
+	<choice req="EX_AEA_GREASE_SWITCH" max_group="1" blue="false" hidden="true">
+		<text>Install the External Augment internally.</text>
+		<event>
+			<text>You install the upgrade.</text>
+			<remove name="EX_AEA_GREASE_SWITCH" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="INSTALL_AEA_GREASE_SWITCH" />
+			</choice>
+		</event>
+	</choice>
+	<choice req="pilot" lvl="1" max_group="2" blue="false" hidden="true">
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="INSTALL_AEA_GREASE_SWITCH">
+	<variable name="loc_internal_upgrades" op="add" val="1" />
+	<hiddenAug>UPG_AEA_GREASE_SWITCH</hiddenAug>
 	<loadEvent>STORAGE_CHECK_SYSTEM</loadEvent>
 </event>
 

@@ -736,7 +736,8 @@
 	<weaponSlots>3</weaponSlots>
 	<droneSlots>3</droneSlots>
 	<weaponList missiles="5" count="3">
-		<weapon name="MODULAR_ION_FIRE_BIO" />
+		<weapon name="AEA_ION_ACID_1_ELITE" />
+		<weapon name="ENERGY_CONSERVATIVE" />
 	</weaponList>
 	<droneList drones="3" count="3" />
 	<health amount="24" />
@@ -989,9 +990,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<breachChance>0</breachChance>
 	<erosionChance>10</erosionChance>
 	<erosion>
-		<speed>1</speed>
-		<maxSpeed>1</maxSpeed>
-		<time>10.0</time>
+		<speed>2</speed>
+		<maxSpeed>2</maxSpeed>
+		<time>5.0</time>
 		<maxTime>60.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
@@ -1084,9 +1085,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<breachChance>0</breachChance>
 	<erosionChance>10</erosionChance>
 	<erosion>
-		<speed>1</speed>
-		<maxSpeed>1</maxSpeed>
-		<time>10.0</time>
+		<speed>2</speed>
+		<maxSpeed>2</maxSpeed>
+		<time>5.0</time>
 		<maxTime>60.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
@@ -1179,9 +1180,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<breachChance>0</breachChance>
 	<erosionChance>10</erosionChance>
 	<erosion>
-		<speed>1</speed>
-		<maxSpeed>1</maxSpeed>
-		<time>10.0</time>
+		<speed>2</speed>
+		<maxSpeed>2</maxSpeed>
+		<time>5.0</time>
 		<maxTime>60.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
@@ -1257,9 +1258,9 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<breachChance>0</breachChance>
 	<erosionChance>10</erosionChance>
 	<erosion>
-		<speed>1</speed>
-		<maxSpeed>1</maxSpeed>
-		<time>10.0</time>
+		<speed>2</speed>
+		<maxSpeed>2</maxSpeed>
+		<time>5.0</time>
 		<maxTime>60.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>
 		<erodeShields>false</erodeShields>
@@ -1346,8 +1347,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<stunChance>0</stunChance>
 	<erosionChance>10</erosionChance>
 	<erosion>
-		<speed>1.5</speed>
-		<maxSpeed>1.5</maxSpeed>
+		<speed>2</speed>
+		<maxSpeed>2</maxSpeed>
 		<time>5.0</time>
 		<maxTime>60.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>
@@ -2088,7 +2089,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<droneSlots>4</droneSlots>
 	<weaponList missiles="2" count="2" />
 	<droneList drones="12" count="4">
-		<drone name="AEA_DEFENSE_NECRO_1_DRONE"/>
+		<drone name="AEA_DEFENSE_NECRO_1"/>
 		<drone name="DOCTOR_DEFENSE"/>
 	</droneList>
 	<health amount="30" />
@@ -2472,14 +2473,14 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<target>ALL</target>
 	<tip>tip_defense</tip>
 	<title>Heretic Defense Drone MK I</title>
-	<short>Heretic I [M]</short>
+	<short>Heretic I</short>
 	<desc>Multipurpose drone used be the Engi Heretics, capable of resurrecting everything it hits, launching it back at the enemy ship.
 	Reload: 3000 MS</desc>
 	<power>2</power>
 	<cooldown>3000</cooldown>
 	<dodge>0</dodge>
 	<speed>10</speed>
-	<cost>60</cost>
+	<cost>65</cost>
 	<bp>2</bp>
 	<droneImage>drone_aea_necro_def1</droneImage>
 	<weaponBlueprint>AEA_LASER_NECRO_DEFENSE_DRONE</weaponBlueprint>
@@ -2492,16 +2493,16 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<target>ALL</target>
 	<tip>tip_defense</tip>
 	<title>Heretic Defense Drone MK II</title>
-	<short>Heretic II [M]</short>
+	<short>Heretic II</short>
 	<desc>Multipurpose drone used be the Engi Heretics, capable of resurrecting everything it hits, launching it back at the enemy ship.
 	Reload: 1500 MS</desc>
-	<power>2</power>
+	<power>3</power>
 	<cooldown>1500</cooldown>
 	<dodge>0</dodge>
-	<speed>15</speed>
-	<cost>60</cost>
+	<speed>10</speed>
+	<cost>85</cost>
 	<bp>2</bp>
-	<droneImage>drone_aea_necro_def1</droneImage>
+	<droneImage>drone_aea_necro_def2</droneImage>
 	<weaponBlueprint>AEA_LASER_NECRO_DEFENSE_DRONE</weaponBlueprint>
 	<iconImage>defense</iconImage>
 	<rarity>0</rarity>
@@ -6973,8 +6974,8 @@ This drone fires 4 shots.
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<powerList>
-		<power>Active Ability: Deploy Acidic Gas in the current room</power>
-		<power>Repairs 2x faster and heals for 4.8hp/s in Acidic Gas</power>
+		<power>Active Ability: Deploy a unique form of Acidic Gas in the current room</power>
+		<power>Repairs 2x faster and heals for 4.8hp/s in regular Acidic Gas</power>
 		<power>1.5x combat damage, Repairs at 1.5x speed</power>
 		<power>Max Health is increased to 150</power>
 		<power>Cannot suffocate, Immune to Mind Control</power>
@@ -12762,7 +12763,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="0" count="4">
-		<weapon name="AEA_LASER_ACID_3" />
+		<weapon name="AEA_LASER_ACID_3_ELITE" />
 	</weaponList>
 	<droneList drones="0" count="2" />
 	<health amount="30" />
@@ -15946,4 +15947,120 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<mv-mapImage>map_icon_aeap_gods_boss</mv-mapImage>
 </shipBlueprint>
 
+</FTL>
+
+<FTL>
+
+<systemBlueprint name="aea_grease">
+	<type>aea_grease</type>
+	<title>Weapons Amplifier</title>
+	<desc>Builds up charges which enhance your weapons, can be equiped with different enhancements depending on your equipment and crew.</desc>
+	<startPower>1</startPower>
+	<maxPower>2</maxPower>
+	<rarity>0</rarity>
+	<upgradeCost>
+		<level>55</level> <!--level 2-->
+		<level>75</level> <!--level 3-->
+	</upgradeCost>
+	<cost>45</cost>
+</systemBlueprint>
+
+<augBlueprint name="AEA_GREASE_EFFECT_SHOCK">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="AEA_GREASE_EFFECT_SHATTER">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="AEA_GREASE_EFFECT_ACID">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="AEA_GREASE_EFFECT_SHLEG">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="AEA_GREASE_EFFECT_BIRD">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="AEA_GREASE_EFFECT_NECRO">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="AEA_GREASE_EFFECT_CASCADE">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+
+<augBlueprint name="UPG_AEA_GREASE_IGNITER">
+	<title>Pre-Ignited Canisters</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="EX_AEA_GREASE_IGNITER">
+	<title>Pre-Ignited Canisters [X]</title>
+	<desc>System charges are refilled with each jump.
+    
+	[X] - As an external system upgrade, this augment will provide its normal effect but take up an augment slot. Can be converted for free to the internal version under the internal upgrade menu if you have the Modified Clone Bay system.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="UPG_AEA_GREASE_SWITCH">
+	<title>Fluid Recycler</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="EX_AEA_GREASE_SWITCH">
+	<title>Fluid Recycler [X]</title>
+	<desc>Switching enhancements no longer resets system charges.
+    
+	[X] - As an external system upgrade, this augment will provide its normal effect but take up an augment slot. Can be converted for free to the internal version under the internal upgrade menu if you have the Modified Clone Bay system.</desc>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+<augBlueprint name="BOON_AEA_GREASE">
+	<title>Weapons Amplifier</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
 </FTL>

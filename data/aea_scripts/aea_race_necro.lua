@@ -669,6 +669,26 @@ end)
 
 enemyResurrections = RandomList:New {"human", "rebel", "rock", "zoltan", "orchid", "mantis", "engi"}
 
+function mods.aea.resurrectCrew(crewmem)
+	local rCrew = crewmem.type
+	if string.sub(rCrew, string.len(rCrew) - 5, string.len(rCrew)) == "_enemy" then
+		rCrew = string.sub(rCrew, 1, string.len(rCrew) - 6)
+	end
+	local crewShip = Hyperspace.ships(crewmem.currentShipId)
+	local intruder = not crewmem.intruder
+
+	local slot = Hyperspace.ShipGraph.GetShipInfo(crewShip.iShipId):GetClosestSlot(crewmem:GetLocation(), crewShip.iShipId, intruder)
+	local zombie = crewShip:AddCrewMemberFromString("Zombie", rCrew, intruder, slot.roomId, true, true)
+	Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOCLONE), zombie)
+	Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOSLOT), zombie)
+	Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHMHP), zombie)
+	Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
+	Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHDMP), zombie)
+	zombie.extend.deathTimer = Hyperspace.TimerHelper(false)
+	zombie.extend.deathTimer:Start(15)
+end
+local resurrectCrew = mods.aea.resurrectCrew
+
 script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
 	if log_events then
 		log("DAMAGE_BEAM 1")
@@ -707,7 +727,7 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defNOWARNING), zombie)
 				Hyperspace.StatBoostManager.GetInstance():CreateTimedAugmentBoost(Hyperspace.StatBoost(defHDMP), zombie)
 				zombie.extend.deathTimer = Hyperspace.TimerHelper(false)
-    		zombie.extend.deathTimer:Start(15)
+    			zombie.extend.deathTimer:Start(15)
 			end
 		end
 	end

@@ -1,0 +1,38 @@
+<FTL>
+<mod:findLike type="ships" limit="1">
+	<mod:findLike type="customShip">
+		<mod:findLike type="exclusivityOverride">
+			<mod:findWithChildLike type="exclusivityGroup" child-type="cloaking">
+				<mod-append:aea_super_shields/>
+			</mod:findWithChildLike>
+			<mod:findWithChildLike type="exclusivityGroup" child-type="mind">
+				<mod-append:aea_freeze/>
+			</mod:findWithChildLike>
+			<mod:findWithChildLike type="exclusivityGroup" child-type="clonebay">
+				<mod-append:aea_clone_crime/>
+			</mod:findWithChildLike>
+			<mod-append:exclusivityGroup>
+				<cloaking/>
+				<aea_super_shields/>
+			</mod-append:exclusivityGroup>
+			<mod-append:exclusivityGroup>
+				<mind/>
+				<aea_freeze/>
+			</mod-append:exclusivityGroup>
+			<mod-append:exclusivityGroup>
+				<clonebay/>
+				<aea_clone_crime/>
+			</mod-append:exclusivityGroup>
+			<mod:findWithChildLike type="exclusivityGroup" child-type="cloaking" start="1">
+				<mod:removeTag />
+			</mod:findWithChildLike>
+			<mod:findWithChildLike type="exclusivityGroup" child-type="mind" start="1">
+				<mod:removeTag />
+			</mod:findWithChildLike>
+			<mod:findWithChildLike type="exclusivityGroup" child-type="clonebay" start="1">
+				<mod:removeTag />
+			</mod:findWithChildLike>
+		</mod:findLike>
+	</mod:findLike>
+</mod:findLike>
+</FTL>

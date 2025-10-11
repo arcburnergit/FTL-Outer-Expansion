@@ -1,7 +1,8 @@
 <FTL>
-<mod:findName type="blueprintList" name="SHOP_ITEM_SYSTEMS_BONUS">
-    <mod-append:name>aea_super_shields</mod-append:name>
-</mod:findName>
+<blueprintList name="AEA_SHOP_ITEM_SYSTEMS_EXTRA">
+	<name>aea_super_shields</name>
+	<name>aea_grease</name>
+</blueprintList>
 
 <mod:findName type="blueprintList" name="LIST_WEAPONS_ALL">
     <mod-append:name>AEA_LASER_ACID_1</mod-append:name>

@@ -460,7 +460,11 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	end
 end)
 
-local function startAcid(shipId, roomId, time)
+script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager)
+	acidStatus[1] = {}
+end)
+
+function mods.aea.startAcid(shipId, roomId, time)
 	--print("startAcid")
 	if not acidStatus[shipId][roomId] then
 		--print("inactive")
@@ -471,6 +475,7 @@ local function startAcid(shipId, roomId, time)
 		--print("active increase after:"..acidStatus[shipId][roomId].timer)
 	end
 end
+local startAcid = mods.aea.startAcid
 
 script.on_render_event(Defines.RenderEvents.SHIP_BREACHES, function() end, function(ship) 
 	local shipManager = Hyperspace.ships(ship.iShipId)
@@ -488,7 +493,7 @@ script.on_render_event(Defines.RenderEvents.SHIP_BREACHES, function() end, funct
 				local xOff = x + (i%w) * 35
 				local yOff = y + math.floor(i/w) * 35
 				Graphics.CSurface.GL_PushMatrix()
-				Graphics.CSurface.GL_Translate(xOff+17, yOff+17, 0)
+				Graphics.CSurface.GL_Translate(xOff+18, yOff+18, 0)
 				acidTileAnim:OnRender(0.5, Graphics.GL_Color(1, 1, 1, 1), false)
 				Graphics.CSurface.GL_PopMatrix()
 			end
@@ -497,13 +502,13 @@ script.on_render_event(Defines.RenderEvents.SHIP_BREACHES, function() end, funct
 			for i = 0, w - 1 do
 				local xOff = x + i * 35
 				Graphics.CSurface.GL_PushMatrix()
-				Graphics.CSurface.GL_Translate(xOff+17, y+17, 0)
+				Graphics.CSurface.GL_Translate(xOff+18, y+18, 0)
 				acidWallAnim:OnRender(opacity, Graphics.GL_Color(1, 1, 1, 1), false)
 				Graphics.CSurface.GL_PopMatrix()
 
 				local yOff = y + (h-1) * 35
 				Graphics.CSurface.GL_PushMatrix()
-				Graphics.CSurface.GL_Translate(xOff+17, yOff+17, 0)
+				Graphics.CSurface.GL_Translate(xOff+18, yOff+18, 0)
 				Graphics.CSurface.GL_Rotate(180, 0, 0, 1)
 				acidWallAnim:OnRender(opacity, Graphics.GL_Color(1, 1, 1, 1), false)
 				Graphics.CSurface.GL_PopMatrix()
@@ -513,14 +518,14 @@ script.on_render_event(Defines.RenderEvents.SHIP_BREACHES, function() end, funct
 			for i = 0, h - 1 do
 				local yOff = y + i * 35
 				Graphics.CSurface.GL_PushMatrix()
-				Graphics.CSurface.GL_Translate(x+17, yOff+17, 0)
+				Graphics.CSurface.GL_Translate(x+18, yOff+18, 0)
 				Graphics.CSurface.GL_Rotate(270, 0, 0, 1)
 				acidWallAnim:OnRender(opacity, Graphics.GL_Color(1, 1, 1, 1), false)
 				Graphics.CSurface.GL_PopMatrix()
 
 				local xOff = x + (w-1) * 35
 				Graphics.CSurface.GL_PushMatrix()
-				Graphics.CSurface.GL_Translate(xOff+17, yOff+17, 0)
+				Graphics.CSurface.GL_Translate(xOff+18, yOff+18, 0)
 				Graphics.CSurface.GL_Rotate(90, 0, 0, 1)
 				acidWallAnim:OnRender(opacity, Graphics.GL_Color(1, 1, 1, 1), false)
 				Graphics.CSurface.GL_PopMatrix()
@@ -534,7 +539,7 @@ mods.aea.acidCrewPower = {}
 local acidCrewPower = mods.aea.acidCrewPower
 acidCrewPower["aea_acid_worker"] = true
 acidCrewPower["aea_acid_soldier"] = true
-acidCrewPower["aea_acid_bill"] = true
+--acidCrewPower["aea_acid_bill"] = true
 
 script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, shipManager)
 	local crewmem = power.crew

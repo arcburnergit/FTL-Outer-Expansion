@@ -1,6 +1,3 @@
--- this lua was done by Arc!! thank you Arc!!
--- some of it was tweaked by Silly as well!! thank you Silly!!
-
 local function get_room_at_location(shipManager, location, includeWalls)
 	return Hyperspace.ShipGraph.GetShipInfo(shipManager.iShipId):GetSelectedRoom(location.x, location.y, includeWalls)
 end

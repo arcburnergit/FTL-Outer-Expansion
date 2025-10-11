@@ -303,11 +303,11 @@
 <event name="AEA_CULT_CULTIST_FIRE">
 	<text>You arrive at the beacon to discover a cultist ship aflame near the beacon. Theres no distress beacon but they can't be doing too well over there.</text>
 	<ship load="SHIP_AEA_CULT_GENERIC" hostile="false"/>
-	<choice req="BLUELIST_CREW_NOFIRE">
+	<choice hidden="true" req="BLUELIST_CREW_NOFIRE">
 		<text>(Fireproof Crew) Dock with the ship and send your fireproof crew over.</text>
 		<event load="AEA_CULT_CULTIST_FIRE_SUCCEED_LIST" />
 	</choice>
-	<choice req="BLUELIST_DRONES_REPAIR_CREW">
+	<choice hidden="true" req="BLUELIST_DRONES_REPAIR_CREW">
 		<text>(Repair Drone) Dock with the ship and send a repair drone into the fire.</text>
 		<event load="AEA_CULT_CULTIST_FIRE_SUCCEED_LIST" />
 	</choice>

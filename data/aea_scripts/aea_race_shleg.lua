@@ -233,49 +233,37 @@ gasWeapons["ARTILLERY_SHLEG_1"] = 20
 gasWeapons["AEA_BEAM_SHLEG_BOSS"] = 30
 gasWeapons["AEA_BEAM_SHLEG_BOSS_CHAOS"] = 30
 
+function mods.aea.createGasInRoom(shipManager, projectile, location, damage, duration)
+	local roomAtLoc = get_room_at_location(shipManager, location, true)
+	if projectile.destinationSpace == 0 and projectile.ownerId == 0 then
+		if not playerRoomsSlugPlayer[roomAtLoc] or playerRoomsSlugPlayer[roomAtLoc] < duration then
+			playerRoomsSlugPlayer[roomAtLoc] = duration
+		end
+	elseif projectile.destinationSpace == 0 and projectile.ownerId == 1 then
+		if not playerRoomsSlugEnemy[roomAtLoc] or playerRoomsSlugEnemy[roomAtLoc] < duration then
+			playerRoomsSlugEnemy[roomAtLoc] = duration
+		end
+	elseif projectile.destinationSpace == 1 and projectile.ownerId == 0 then
+		if not enemyRoomsSlugPlayer[roomAtLoc] or enemyRoomsSlugPlayer[roomAtLoc] < duration then
+			enemyRoomsSlugPlayer[roomAtLoc] = duration
+		end
+	elseif projectile.destinationSpace == 1 and projectile.ownerId == 1 then
+		if not enemyRoomsSlugEnemy[roomAtLoc] or enemyRoomsSlugEnemy[roomAtLoc] < duration then
+			enemyRoomsSlugEnemy[roomAtLoc] = duration
+		end
+	end
+end
+local createGasInRoom = mods.aea.createGasInRoom
+
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
 	if projectile and gasWeapons[projectile.extend.name] then
-		local roomAtLoc = get_room_at_location(shipManager, location, true)
-		if projectile.destinationSpace == 0 and projectile.ownerId == 0 then
-			if not playerRoomsSlugPlayer[roomAtLoc] or playerRoomsSlugPlayer[roomAtLoc] < gasWeapons[projectile.extend.name] then
-				playerRoomsSlugPlayer[roomAtLoc] = gasWeapons[projectile.extend.name]
-			end
-		elseif projectile.destinationSpace == 0 and projectile.ownerId == 1 then
-			if not playerRoomsSlugEnemy[roomAtLoc] or playerRoomsSlugEnemy[roomAtLoc] < gasWeapons[projectile.extend.name] then
-				playerRoomsSlugEnemy[roomAtLoc] = gasWeapons[projectile.extend.name]
-			end
-		elseif projectile.destinationSpace == 1 and projectile.ownerId == 0 then
-			if not enemyRoomsSlugPlayer[roomAtLoc] or enemyRoomsSlugPlayer[roomAtLoc] < gasWeapons[projectile.extend.name] then
-				enemyRoomsSlugPlayer[roomAtLoc] = gasWeapons[projectile.extend.name]
-			end
-		elseif projectile.destinationSpace == 1 and projectile.ownerId == 1 then
-			if not enemyRoomsSlugEnemy[roomAtLoc] or enemyRoomsSlugEnemy[roomAtLoc] < gasWeapons[projectile.extend.name] then
-				enemyRoomsSlugEnemy[roomAtLoc] = gasWeapons[projectile.extend.name]
-			end
-		end
+		createGasInRoom(shipManager, projectile, location, damage, gasWeapons[projectile.extend.name])
 	end
 end)
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
 	if projectile and gasWeapons[projectile.extend.name] and beamHitType == Defines.BeamHit.NEW_ROOM then
-		local roomAtLoc = get_room_at_location(shipManager, location, true)
-		if projectile.destinationSpace == 0 and projectile.ownerId == 0 then
-			if not playerRoomsSlugPlayer[roomAtLoc] or playerRoomsSlugPlayer[roomAtLoc] < gasWeapons[projectile.extend.name] then
-				playerRoomsSlugPlayer[roomAtLoc] = gasWeapons[projectile.extend.name]
-			end
-		elseif projectile.destinationSpace == 0 and projectile.ownerId == 1 then
-			if not playerRoomsSlugEnemy[roomAtLoc] or playerRoomsSlugEnemy[roomAtLoc] < gasWeapons[projectile.extend.name] then
-				playerRoomsSlugEnemy[roomAtLoc] = gasWeapons[projectile.extend.name]
-			end
-		elseif projectile.destinationSpace == 1 and projectile.ownerId == 0 then
-			if not enemyRoomsSlugPlayer[roomAtLoc] or enemyRoomsSlugPlayer[roomAtLoc] < gasWeapons[projectile.extend.name] then
-				enemyRoomsSlugPlayer[roomAtLoc] = gasWeapons[projectile.extend.name]
-			end
-		elseif projectile.destinationSpace == 1 and projectile.ownerId == 1 then
-			if not enemyRoomsSlugEnemy[roomAtLoc] or enemyRoomsSlugEnemy[roomAtLoc] < gasWeapons[projectile.extend.name] then
-				enemyRoomsSlugEnemy[roomAtLoc] = gasWeapons[projectile.extend.name]
-			end
-		end
+		createGasInRoom(shipManager, projectile, location, damage, gasWeapons[projectile.extend.name])
 	end
 	return Defines.Chain.CONTINUE, beamHitType
 end)

@@ -48,9 +48,17 @@
 		<text>Proceed to the Shard-Forged Palace.</text>
 		<event load="AEA_SHARD_UNIQUE_WARP" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_1" blue="false">
+		<text>Proceed to ???</text>
+		<event load="AEA_OLD_1_WARP" />
+	</mod-append:choice>
 	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_2" blue="false">
 		<text>Proceed to the Lylmik Core.</text>
 		<event load="AEA_OLD_2_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_3" blue="false">
+		<text>Proceed to the Staging Ground.</text>
+		<event load="AEA_OLD_3_WARP" />
 	</mod-append:choice>
 </mod:findName>
 
@@ -103,9 +111,17 @@
 		<text>Proceed to the Shard-Forged Palace.</text>
 		<event load="AEA_SHARD_UNIQUE_WARP" />
 	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_1" blue="false">
+		<text>Proceed to ???</text>
+		<event load="AEA_OLD_1_WARP" />
+	</mod-append:choice>
 	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_2" blue="false">
 		<text>Proceed to the Lylmik Core.</text>
 		<event load="AEA_OLD_2_WARP" />
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="SEC SECRET_AEA_OLD_3" blue="false">
+		<text>Proceed to the Staging Ground.</text>
+		<event load="AEA_OLD_3_WARP" />
 	</mod-append:choice>
 </mod:findName>
 
@@ -704,11 +720,11 @@ The Shard-Forged, although known as pirates, are rather well liked by the Federa
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->	
 <event name="ENTER_AEA_OLD_1">
-	<text>You've been pulled into hyperspeed by the mysterious vessel, you're unable to pickup the vessel anymore.</text>
+	<text load="TEXT_LIGHTSPEED" />
 	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
 	<choice hidden="true">
-		<text>Proceed to ???.</text>
-		<event load="AEA_OLD_1_WARP" />
+		<text>Continue...</text>
+		<event load="LOAD_ATLAS_MARKER" />
 	</choice>
 </event>
 <event name="AEA_OLD_1_WARP">
@@ -765,7 +781,7 @@ The Shard-Forged, although known as pirates, are rather well liked by the Federa
 	<img back="BACKGROUND_LIGHTSPEED" planet="NONE" />
 	<choice hidden="true">
 		<text>Continue...</text>
-		<event load="AEA_OLD_3_WARP" />
+		<event load="LOAD_ATLAS_MARKER" />
 	</choice>
 </event>
 <event name="AEA_OLD_3_WARP">
@@ -778,6 +794,10 @@ The Shard-Forged, although known as pirates, are rather well liked by the Federa
 	<choice hidden="true">
 		<text>Exit hyperspeed.</text>
 		<event load="START_BEACON_AEA_OLD_3" />
+	</choice>
+	<choice hidden="true" req="loc_task_accepted" blue="false">
+		<text>Your connection with C.U.R.A. is currently unavailable.</text>
+		<event load="OPTION_INVALID" />
 	</choice>
 	<choice hidden="true" req="COORDS" blue="false">
 		<text>You cannot reroute during this jump.</text>

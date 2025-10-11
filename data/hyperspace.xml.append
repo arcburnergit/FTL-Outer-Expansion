@@ -22,12 +22,14 @@
   <mod-append:script>data/aea_scripts/aea_super_shields.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_freeze.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_grease.lua</mod-append:script>
   <!--Crew functionality scripts-->
   <mod-append:script>data/aea_scripts/aea_dark_justicier.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_gods_communicate.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_roamers.lua</mod-append:script>
 
   <mod-append:script>data/aea_scripts/mvtest_custom_weapon_animations.lua</mod-append:script>
+  <!--mod-append:script>data/aea_scripts/mvtest_toggle_weapon_buttons.lua</mod-append:script-->
   <mod-append:script>data/aea_scripts/better_jukebox.lua</mod-append:script>
 </mod:findLike>
 <shieldWithoutSystem enabled="true"/>
@@ -36,17 +38,101 @@
     <mod-append:customSystem id="aea_super_shields"/>
     <mod-append:customSystem id="aea_clone_crime"/>
     <mod-append:customSystem id="aea_freeze"/>
+    <mod-append:customSystem id="aea_grease" subSystem="true"/>
 	<mod:findWithChildLike type="exclusivityGroup" child-type="cloaking">
         <mod-append:aea_super_shields/>
 	</mod:findWithChildLike>
 	<mod:findWithChildLike type="exclusivityGroup" child-type="mind">
         <mod-append:aea_freeze/>
 	</mod:findWithChildLike>
-	<mod:findWithChildLike type="exclusivityGroup" child-type="medbay">
+	<mod:findWithChildLike type="exclusivityGroup" child-type="clonebay">
         <mod-append:aea_clone_crime/>
 	</mod:findWithChildLike>
+	<mod:findWithChildLike type="exclusivityGroup" child-type="battery">
+        <mod-append:aea_grease/>
+	</mod:findWithChildLike>
+
+	<mod:findLike type="systemPositions">
+		<mod-append:aea_super_shields position="6"/>
+		<mod-append:aea_freeze position="8"/>
+		<mod-append:aea_clone_crime position="3"/>
+		<mod-append:aea_grease staticOffset="123"/>
+	</mod:findLike>
+
+	<mod-append:systemPositions subSystemOffset="1015"> 
+        <shields position="0"/>
+        <engines position="1"/>
+        <medbay position="2"/>
+        <clonebay position="3"/>
+        <aea_clone_crime position="3"/>
+        <oxygen position="4"/>
+        <teleporter position="5"/>
+        <cloaking position="6"/>
+		<aea_super_shields position="6"/>
+        <artillery position="7"/>
+        <mind position="8"/>
+        <aea_freeze position="8"/>
+        <hacking position="9"/>
+        <temporal position="10"/>
+        <weapons position="2147483646"/>
+        <drones position="2147483647"/>
+
+        <pilot staticOffset="0"/>
+        <sensors staticOffset="36"/>
+        <doors staticOffset="72"/>
+        <battery staticOffset="123"/>
+		<aea_grease staticOffset="123"/>
+    </mod-append:systemPositions>
+
+	<mod:findLike type="systemPositions" start="1">
+		<mod:removeTag />
+	</mod:findLike>
 </mod:findLike>
 <mod:findLike type="ships" limit="1">
+	<mod:findLike type="customShip">
+		<mod:findLike type="exclusivityOverride">
+			<mod:findWithChildLike type="exclusivityGroup" child-type="cloaking">
+				<mod-append:aea_super_shields/>
+			</mod:findWithChildLike>
+			<mod:findWithChildLike type="exclusivityGroup" child-type="mind">
+				<mod-append:aea_freeze/>
+			</mod:findWithChildLike>
+			<mod:findWithChildLike type="exclusivityGroup" child-type="clonebay">
+				<mod-append:aea_clone_crime/>
+			</mod:findWithChildLike>
+			<mod:findWithChildLike type="exclusivityGroup" child-type="battery">
+				<mod-append:aea_grease/>
+			</mod:findWithChildLike>
+			<mod-append:exclusivityGroup>
+				<cloaking/>
+				<aea_super_shields/>
+			</mod-append:exclusivityGroup>
+			<mod-append:exclusivityGroup>
+				<mind/>
+				<aea_freeze/>
+			</mod-append:exclusivityGroup>
+			<mod-append:exclusivityGroup>
+				<clonebay/>
+				<aea_clone_crime/>
+			</mod-append:exclusivityGroup>
+			<mod-append:exclusivityGroup>
+				<battery/>
+				<aea_grease/>
+			</mod-append:exclusivityGroup>
+			<mod:findWithChildLike type="exclusivityGroup" child-type="cloaking" start="1">
+				<mod:removeTag />
+			</mod:findWithChildLike>
+			<mod:findWithChildLike type="exclusivityGroup" child-type="mind" start="1">
+				<mod:removeTag />
+			</mod:findWithChildLike>
+			<mod:findWithChildLike type="exclusivityGroup" child-type="clonebay" start="1">
+				<mod:removeTag />
+			</mod:findWithChildLike>
+			<mod:findWithChildLike type="exclusivityGroup" child-type="battery" start="1">
+				<mod:removeTag />
+			</mod:findWithChildLike>
+		</mod:findLike>
+	</mod:findLike>
 	<mod:findLike type="shipIcons">
 		<mod-append:shipIcon>
             <name>icon_aea_acidic_filter</name>
@@ -5135,7 +5221,7 @@ Release Acidic Gas into the current room, which lasts 10 seconds.
 			<deathSound>sysExplosion</deathSound>
 		</deathSounds>
 		<powerEffect>
-			<cooldown>10</cooldown>
+			<cooldown>20</cooldown>
 			<jumpCooldown>full</jumpCooldown>
 			<powerSounds>
 				<powerSound>cultivatorSpore</powerSound>
@@ -5149,13 +5235,70 @@ Release Acidic Gas into the current room, which lasts 10 seconds.
 				</extraConditions>
 			</req>
 			<buttonText>GAS</buttonText>
-			<tooltip>[COOLDOWN:10s]
-Release Acidic Gas into the current room, which lasts 10 seconds.
-- Gas causes a hull breach every 5 seconds.
-- Gas Damages connected doors, causing them to break open temporarily.
+			<tooltip>[COOLDOWN:20s]
+Release a unique form of Acidic Gas into the current room, which lasts 10 seconds.
+- Gas heals all allies for 4.8hp/s.
+- Gas increases combat damage and repair speed of all allies by 1.5x.
 			</tooltip>
 			<cooldownColor r="50" g="166" b="31"/>
 			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<roomStatBoosts>
+				<statBoost name="healAmount">
+					<boostType>FLAT</boostType>
+					<amount>4.8</amount>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ALLIES</crewTarget>
+					<affectsSelf>true</affectsSelf>
+					<droneTarget>CREW</droneTarget>
+                    <duration>10</duration>
+					<jumpClear>true</jumpClear>
+					<maxStacks>1</maxStacks>
+					<priority>10000</priority>
+					<blackList>
+						<human_technician_drone/>
+						<zoltan_osmian_hologram/>
+						<repair/> <!--TRC-->
+					</blackList>
+					<roomAnim renderLayer="2">                                                    
+						<anim animType="default" animBorder="2">aea_invisible</anim>                                                 
+							<tileAnim>aea_acid_bill_tile_anim</tileAnim>  
+					</roomAnim>
+				</statBoost>
+				<statBoost name="damageMultiplier">
+					<boostType>MULT</boostType>
+					<amount>1.5</amount>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ALLIES</crewTarget>
+					<affectsSelf>true</affectsSelf>
+					<droneTarget>CREW</droneTarget>
+                    <duration>10</duration>
+					<jumpClear>true</jumpClear>
+					<maxStacks>1</maxStacks>
+					<priority>10000</priority>
+					<blackList>
+						<human_technician_drone/>
+						<zoltan_osmian_hologram/>
+						<repair/>
+					</blackList>
+				</statBoost>
+				<statBoost name="repairSpeed">
+					<boostType>MULT</boostType>
+					<amount>1.5</amount>
+					<shipTarget>ALL</shipTarget>
+					<crewTarget>ALLIES</crewTarget>
+					<affectsSelf>true</affectsSelf>
+					<droneTarget>CREW</droneTarget>
+                    <duration>10</duration>
+					<jumpClear>true</jumpClear>
+					<maxStacks>1</maxStacks>
+					<priority>10000</priority>
+					<blackList>
+						<human_technician_drone/>
+						<zoltan_osmian_hologram/>
+						<repair/>
+					</blackList>
+				</statBoost>
+			</roomStatBoosts>
 		</powerEffect>
 	</mod-append:race>
 
@@ -7906,15 +8049,6 @@ Right click to attempt the ritual or cancel.
 				<priority>99999</priority>
 				<whiteList load="LIST_CREW_AEA_ACID" />
 			</statBoost>
-			<statBoost name="stunMultiplier">
-				<boostType>MULT</boostType>
-				<amount>0</amount>
-				<shipTarget>ALL</shipTarget>
-				<crewTarget>ALLIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<priority>99999</priority>
-				<whiteList load="LIST_CREW_AEA_ACID" />
-			</statBoost>
 		</statBoosts>
 	</aug>
 	<aug name="BOON_CREW_AEA_CULT">
@@ -8783,22 +8917,6 @@ Right click to attempt the ritual or cancel.
 					<fourPwr>2</fourPwr>
 				</systemPowerScaling>
 			</statBoost>
-			<statBoost name="maxHealth">
-				<boostType>MULT</boostType>
-				<shipTarget>ORIGINAL_SHIP</shipTarget>
-				<crewTarget>ALLIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<amount>0.6</amount>
-				<priority>0</priority>
-			</statBoost>
-			<statBoost name="repairSpeed">
-				<boostType>MULT</boostType>
-				<shipTarget>ORIGINAL_SHIP</shipTarget>
-				<crewTarget>ALLIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<amount>0.6</amount>
-				<priority>0</priority>
-			</statBoost>
 		</statBoosts>
     	<function name="FIRE_EXTINGUISHERS" value="2" useForReqs="true" />
     </aug>
@@ -8822,22 +8940,6 @@ Right click to attempt the ritual or cancel.
 					<threePwr>1.8</threePwr>
 					<fourPwr>2</fourPwr>
 				</systemPowerScaling>
-			</statBoost>
-			<statBoost name="maxHealth">
-				<boostType>MULT</boostType>
-				<shipTarget>ORIGINAL_SHIP</shipTarget>
-				<crewTarget>ALLIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<amount>0.6</amount>
-				<priority>0</priority>
-			</statBoost>
-			<statBoost name="repairSpeed">
-				<boostType>MULT</boostType>
-				<shipTarget>ORIGINAL_SHIP</shipTarget>
-				<crewTarget>ALLIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<amount>0.6</amount>
-				<priority>0</priority>
 			</statBoost>
 		</statBoosts>
     </aug>
@@ -9311,6 +9413,125 @@ Right click to attempt the ritual or cancel.
 		</req>
 	</req>
 
+	<req name="AEA_GREASE_REQ_EFFECT_SHOCK" type="any">
+		<name>aea_old_1</name>
+		<name>aea_old_unique_1</name>
+		<name>aea_old_unique_2</name>
+		<name>aea_old_unique_3</name>
+		<name>aea_old_unique_4</name>
+		<name>aea_old_unique_5</name>
+		
+		<name>AEA_COMPONENT_OLD</name>
+
+		<name>AEA_LASER_OLD_1</name>
+		<name>AEA_LASER_OLD_2</name>
+		<name>AEA_LASER_OLD_3</name>
+
+		<name>AEA_LASER_OLDP_1</name>
+		<name>AEA_LASER_OLDP_2</name>
+		<name>AEA_LASER_OLDP_3</name>
+		<name>AEA_LASER_OLDP_3_LOOT</name>
+
+		<name>AEA_FOCUS_OLD_1</name>
+		<name>AEA_FOCUS_OLD_2</name>
+		<name>AEA_FOCUS_OLD_3</name>
+
+		<name>AEA_MISSILE_OLD_1</name>
+		<name>AEA_MISSILE_OLD_2</name>
+		<name>AEA_MISSILE_OLD_3</name>
+	</req>
+	<req name="AEA_GREASE_REQ_EFFECT_SHATTER" type="any">
+		<name>aea_shard_breaker</name>
+		<name>aea_shard_smasher</name>
+		<name>aea_shard_dawn</name>
+
+		<name>AEA_CRYSTAL_SHARD_BOSS</name>
+		<name>AEA_CRYSTAL_SHARD_BOSS_CHAOS</name>
+	</req>
+	<req name="AEA_GREASE_REQ_EFFECT_ACID" type="any">
+		<name>aea_acid_worker</name>
+		<name>aea_acid_soldier</name>
+		<name>aea_acid_bill</name>
+
+		<name>AEA_LASER_ACID_1</name>
+		<name>AEA_LASER_ACID_2</name>
+		<name>AEA_LASER_ACID_3</name>
+		<name>AEA_LASER_ACID_SUPER</name>
+		<name>AEA_BEAM_ACID_1</name>
+		<name>AEA_ION_ACID_1</name>
+
+		<name>AEA_LASER_ACID_1_ELITE</name>
+		<name>AEA_LASER_ACID_2_ELITE</name>
+		<name>AEA_LASER_ACID_3_ELITE</name>
+		<name>AEA_BEAM_ACID_1_ELITE</name>
+		<name>AEA_ION_ACID_1_ELITE</name>
+		<name>AEA_ION_ACID_1_ELITE</name>
+
+		<name>AEA_LASER_ACID_BOSS</name>
+		<name>AEA_LASER_ACID_BOSS_CHAOS</name>
+	</req>
+	<req name="AEA_GREASE_REQ_EFFECT_SHLEG" type="any">
+		<name>aea_shleg_slug</name>
+		<name>aea_shleg_shell</name>
+		<name>aea_shleg_sorrow</name>
+		<name>aea_shleg_sickle</name>
+		
+		<name>AEA_SHLEG_BOMB</name>
+		<name>AEA_SHLEG_MISSILES</name>
+		<name>AEA_SHLEG_MISSILES_LOOT</name>
+	</req>
+	<req name="AEA_GREASE_REQ_EFFECT_BIRD" type="any">
+		<name>aea_bird_avali</name>
+		<name>aea_bird_illuminant</name>
+		<name>aea_bird_unique</name>
+
+		<name>AEA_COMBAT_BIRD_BURST_1</name>
+		<name>AEA_COMBAT_BIRD_BURST_2</name>
+		<name>AEA_COMBAT_BIRD_BURST_3</name>
+
+		<name>AEA_COMBAT_BIRD_BIO_1</name>
+		<name>AEA_COMBAT_BIRD_BIO_2</name>
+		<name>AEA_COMBAT_BIRD_BIO_3</name>
+
+		<name>AEA_COMBAT_BIRD_MULTI_1_LASER</name>
+		<name>AEA_COMBAT_BIRD_MULTI_1_BEAM</name>
+		<name>AEA_COMBAT_BIRD_MULTI_2_LASER</name>
+		<name>AEA_COMBAT_BIRD_MULTI_2_BEAM</name>
+
+		<name>AEA_COMBAT_BIRD_SMART_1</name>
+		<name>AEA_COMBAT_BIRD_SMART_2</name>
+
+		<name>AEA_COMBAT_BIRD_BOSS</name>
+		<name>AEA_COMBAT_BIRD_BOSS_CHAOS</name>
+	</req>
+	<req name="AEA_GREASE_REQ_EFFECT_NECRO" type="any">
+		<name>aea_necro_engi</name>
+		<name>aea_necro_lich</name>
+		<name>aea_necro_king</name>
+		
+		<name>AEA_LASER_NECRO_1</name>
+		<name>AEA_LASER_NECRO_2</name>
+		<name>AEA_LASER_NECRO_3</name>
+		<name>AEA_LASER_NECRO_2_LOOT</name>
+		<name>AEA_LASER_NECRO_CHARGE</name>
+		
+		<name>AEA_DEFENSE_NECRO_1_DRONE</name>
+		<name>AEA_DEFENSE_NECRO_1_MISSILE</name>
+		<name>AEA_DEFENSE_NECRO_2_DRONE</name>
+		<name>AEA_DEFENSE_NECRO_2_MISSILE</name>
+		<name>AEA_DEFENSE_NECRO_1</name>
+		<name>AEA_DEFENSE_NECRO_2</name>
+		<name>AEA_COMBAT_NECRO_1_LASER</name>
+		<name>AEA_COMBAT_NECRO_1_BEAM</name>
+		<name>AEA_COMBAT_NECRO_2_LASER</name>
+		<name>AEA_COMBAT_NECRO_2_BEAM</name>
+
+		<name>AEA_COMBAT_NECRO_BOSS</name>
+		<name>AEA_COMBAT_NECRO_BOSS_CHAOS</name>
+	</req>
+	<req name="AEA_GREASE_REQ_EFFECT_CASCADE" type="any">
+	</req>
+
 	<eventFile>special_aea_justicier</eventFile>
 
   	<eventFile>special_aea_acid</eventFile>
@@ -9624,6 +9845,27 @@ Right click to attempt the ritual or cancel.
 </mod:findLike>
 
 <mod:findLike type="store">
+	<mod:findWithChildLike type="customStore" child-type="category">
+		<mod:selector type="SYSTEMS"/>
+		<mod:setAttributes aea="extra"/>
+	</mod:findWithChildLike>
+	<mod:findLike type="customStore">
+		<mod:selector aea="extra" />
+		<mod-append:category type="SYSTEMS">
+			<customTitle>TERTIARY SYSTEMS</customTitle>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<chance>65</chance>
+		</mod-append:category>
+		<mod:removeAttributes aea="" />
+	</mod:findLike>
 	<mod:findLike type="customStore"><mod:selector id="STORE_STANDARD" />
 		<mod-append:category type="WEAPONS">
             <customTitle>SPELLS</customTitle>
@@ -9956,6 +10198,19 @@ Right click to attempt the ritual or cancel.
             </item>
 			<chance>65</chance>
         </category>
+		<category type="SYSTEMS">
+			<customTitle>TERTIARY SYSTEMS</customTitle>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<chance>65</chance>
+		</category>
 	</customStore>
 	<customStore id="STORE_AEA_ACID_CACHE">
         <itemPurchaseLimit>1</itemPurchaseLimit>
@@ -10100,6 +10355,19 @@ Right click to attempt the ritual or cancel.
             </item>
 			<chance>100</chance>
         </category>
+		<category type="SYSTEMS">
+			<customTitle>TERTIARY SYSTEMS</customTitle>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<chance>100</chance>
+		</category>
     </customStore>
 
 	<customStore id="STORE_AEA_CULT">
@@ -10240,6 +10508,19 @@ Right click to attempt the ritual or cancel.
             </item>
 			<chance>65</chance>
         </category>
+		<category type="SYSTEMS">
+			<customTitle>TERTIARY SYSTEMS</customTitle>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<chance>65</chance>
+		</category>
     </customStore>
 
 	<customStore id="STORE_AEA_GODS_RUIN_CREW">
@@ -10391,6 +10672,19 @@ Right click to attempt the ritual or cancel.
             </item>
 			<chance>100</chance>
         </category>
+		<category type="SYSTEMS">
+			<customTitle>???</customTitle>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<chance>100</chance>
+		</category>
     </customStore>
 	<customStore id="STORE_AEA_GODS_RUIN_SCRAP">
 		<hullRepair>

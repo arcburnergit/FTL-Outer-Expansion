@@ -73,6 +73,7 @@ systemsToAppend["aea_freeze"] = {attributes = {power = 1, start = "false"}, mann
         {room_image = "room_aea_freeze_12", w = 1, h = 2, top = "0", bottom = "0", left="10", right="10"}
     }
 }
+systemsToAppend["aea_grease"] = {attributes = {power = 1, start = "false"}, manning = false, replace_sys = "battery"}
 
 local function noDoorOverlap(rT, rB, rL, rR, iT, iB, iL, iR, shipName)
     local room = table.concat({rT,rB,rL,rR},"")

@@ -24,6 +24,7 @@
 - Fixed Lylmik Gate showing up too much in Sector 8 under some circumstances.
 - Fixed Cultist store showing globally.
 - Fixed Heretic Boon not being obtainable.
+- Fixed Computer Synchronisation Internal upgrade for auxilliary shields.
 
 # Misc Changes
 - Integrated Better Jukebox Addon.
@@ -31,6 +32,7 @@
 - Implemented new Lylmik Flagship with 3 stages.
 - Implemented #######.
 - Implemented Medusa's Gaze System.
+- Implemented Weapons Amplifier System.
 - Added progression tracker to the book of death, Achievement for completing the book added.
 - Added the book of death as a hanger item unlocked after a certain amount of progression.
 - Implemented Unique Crew achievements.

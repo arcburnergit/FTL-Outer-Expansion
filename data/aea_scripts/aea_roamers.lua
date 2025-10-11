@@ -288,7 +288,7 @@ local function dijkstra(map, source, finish)
 			cur.unVisited = false
 		end
 	until not cur
-	print("failed")
+	--print("failed")
 	return nil
 end
 
@@ -527,7 +527,7 @@ script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, funct
 						end
 					end
 
-					if roamer.jumping == 0 and roamer.next then
+					if roamer.jumping == 0 and roamer.next and roamer.beacon then
 						roamer.angle = roamer.angle + Hyperspace.FPS.SpeedFactor/16 * 15
 						local distance = get_distance(roamer.beacon, roamer.next)
 						if roamer.angle > 30 then roamer.angle = roamer.angle - 30 end
@@ -548,7 +548,7 @@ script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, funct
 						Graphics.CSurface.GL_RenderPrimitiveWithAlpha(roamer.image, fade)
 						Graphics.CSurface.GL_PopMatrix()
 
-					else
+					elseif roamer.beacon then
 						roamer.angle = roamer.angle + Hyperspace.FPS.SpeedFactor/16 * 18
 						if roamer.angle > 360 then roamer.angle = roamer.angle - 360 end
 						Graphics.CSurface.GL_PushMatrix()

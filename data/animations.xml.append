@@ -105,6 +105,12 @@
 	<desc length="4" x="0" y="0" />
 	<time>1</time>
 </anim>
+<animSheet name="aea_acid_bill_tile_anim" w="140" h="35" fw="35" fh="35">effects/aea_acid_bill_tile_anim.png</animSheet>
+<anim name="aea_acid_bill_tile_anim">
+	<sheet>aea_acid_bill_tile_anim</sheet>
+	<desc length="4" x="0" y="0" />
+	<time>1</time>
+</anim>
 
 <animSheet name="ase_proj_acid_laser" w="200" h="20" fw="50" fh="20">projectiles/ase_proj_acid_laser.png</animSheet>
 

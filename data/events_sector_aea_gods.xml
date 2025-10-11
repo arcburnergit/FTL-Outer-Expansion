@@ -3,22 +3,20 @@
 <event name="AEA_INSTALL_FREEZE">
 	<text>You can replace your Mind Control system with a Medusa's Gaze System.
 	[Effects: Freeze's a system in it's current state, preventing it from taking damage and from any effects of the system starting or ending, takes up the same room as mind control if it is present.]</text>
-	<choice hidden="true">
-		<text>Replace your mind control system. [Cost: 55~]</text>
-		<event>
-			<text>You tear out the existing mind control system to make way for the new system.</text>
+	<choice req="BLUELIST_PRECURSOR_TECH" hidden="true">
+		<text>Replace your mind control system. [Cost: Lylmik Weapon 25~]</text>
+		<event name="AEA_INSTALL_FREEZE_CHOICE_1">
+			<text>You tear out the existing mind control system to make way for the new system.
+Choose a weapon to consume in the construction of the system.</text>
 			<item_modify>
-				<item type="scrap" min="-55" max="-55" />
+				<item type="scrap" min="-25" max="-25" />
 			</item_modify>
 			<removeSystem player="true">mind</removeSystem>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>The new system is installed.</text>
-					<system name="aea_freeze" />
-				</event>
-			</choice>
 		</event>
+	</choice>
+	<choice req="BLUELIST_PRECURSOR_TECH" lvl="0" max_lvl="0" hidden="true">
+		<text>Replace your mind control system. [Cost: Lylmik Weapon 25~]</text>
+		<event load="OPTION_INVALID"/>
 	</choice>
     <choice>
         <text>Nevermind.</text>
@@ -28,20 +26,28 @@
 <event name="AEA_INSTALL_FREEZE_NOMIND">
 	<text>You can install a Medusa's Gaze System.
 	[Effects: Freeze's a system in it's current state, preventing it from taking damage and from any effects of the system starting or ending, takes up the same room as mind control if it is present.]</text>
-	<choice hidden="true">
-		<text>Install the system. [Cost: 55~]</text>
-		<event>
-			<text>The new system is installed.</text>
+	<choice req="BLUELIST_PRECURSOR_TECH" hidden="true">
+		<text>Install the system. [Cost: Lylmik Weapon 45~]</text>
+		<event name="AEA_INSTALL_FREEZE_CHOICE_2">
+			<text>Choose a weapon to consume in the construction of the system.</text>
 			<item_modify>
-				<item type="scrap" min="-55" max="-55" />
+				<item type="scrap" min="-45" max="-45" />
 			</item_modify>
-			<system name="aea_freeze" />
 		</event>
+	</choice>
+	<choice req="BLUELIST_PRECURSOR_TECH" lvl="0" max_lvl="0" hidden="true">
+		<text>Replace your mind control system. [Cost: Lylmik Weapon 45~]</text>
+		<event load="OPTION_INVALID"/>
 	</choice>
     <choice>
         <text>Nevermind.</text>
         <event load="STORAGE_CHECK" />
     </choice>
+</event>
+
+<event name="AEA_INSTALL_FREEZE_SYS">
+	<text>The new system is installed.</text>
+	<system name="aea_freeze" />
 </event>
 
 

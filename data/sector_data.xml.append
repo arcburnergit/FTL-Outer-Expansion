@@ -1721,7 +1721,7 @@ ROYAL OBELISK SECTOR
 
 <sectorDescription name="SECRET_AEA_OLD_3" unique="true">   
 	<nameList>
-		<name>Gate Passage</name>
+		<name>Staging Ground</name>
 	</nameList>
 	<trackList>
 		<track>aea_lylmik_boss</track>

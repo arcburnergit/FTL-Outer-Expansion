@@ -200,7 +200,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 		local maxLayers = 2 + math.ceil(aea_super_shields_system:GetEffectivePower()/2)
         local multiplier =  0.75 + aea_super_shields_system:GetEffectivePower() / 4 + aea_super_shields_system.iActiveManned * 0.1
 
-        if shipManager:HasAugmentation("UPG_AEA_SUPER_SHIELD_LINKER") > 0 or shipManager:HasAugmentation("EX_AEA_SUPER_SHIELD_LINKER") > 0 then 
+        if shipManager:HasSystem(0) and (shipManager:HasAugmentation("UPG_AEA_SUPER_SHIELD_LINKER") > 0 or shipManager:HasAugmentation("EX_AEA_SUPER_SHIELD_LINKER") > 0) then 
             multiplier = multiplier + 0.05 * shipManager:GetSystem(0).iActiveManned 
         end
         if shipManager.iShipId == 1 then multiplier = multiplier * 0.7 end
