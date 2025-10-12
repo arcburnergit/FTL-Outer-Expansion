@@ -9732,8 +9732,8 @@ Right click to attempt the ritual or cancel.
 	<bossShip yOffset="180">AEA_ACID_BOSS</bossShip>
 	<bossShip yOffset="180">AEA_ACID_ASSAULT</bossShip>
 	<bossShip yOffset="180">AEA_ACID_ASSAULT_ELITE</bossShip>
-	<bossShip>AEA_ACID_STATION</bossShip>
-	<bossShip>AEA_ACID_STATION_ELITE</bossShip>
+	<bossShip yOffset="80">AEA_ACID_STATION</bossShip>
+	<bossShip yOffset="80">AEA_ACID_STATION_ELITE</bossShip>
 	<bossShip yOffset="100">AEA_OLD_GUARD_BOSS</bossShip>
 	<bossShip yOffset="180">AEA_OLD_LEECH_BATTLESHIP_ELITE</bossShip>
 	

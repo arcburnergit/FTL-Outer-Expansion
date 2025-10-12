@@ -1286,8 +1286,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 <weaponBlueprint name="AEA_ION_ACID_1">
 	<type>LASER</type>
 	<flavorType>Acidic Ion</flavorType>
-	<title>Elite Acidic Barrage</title>
-	<short>€ Acidic B.</short>
+	<title>Acidic Barrage</title>
+	<short>Acidic B.</short>
 	<tip>tip_ion</tip>
 	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact.</desc>
 	<tooltip>Fires a single blast that does 1 ion damage and recharges very quickly. Can hit and disable shields as well as systems.</tooltip>
@@ -1300,7 +1300,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<fireChance>0</fireChance>
 	<breachChance>0</breachChance>
 	<stunChance>0</stunChance>
-	<cooldown>8</cooldown>
+	<cooldown>11.5</cooldown>
 	<power>2</power>
 	<cost>80</cost>
 	<bp>6</bp>
@@ -1331,10 +1331,10 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 <weaponBlueprint name="AEA_ION_ACID_1_ELITE">
 	<type>LASER</type>
 	<flavorType>Acidic Ion</flavorType>
-	<title>Acidic Barrage</title>
-	<short>Acidic B.</short>
+	<title>Elite Acidic Barrage</title>
+	<short>€ Acidic B.</short>
 	<tip>tip_ion</tip>
-	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact. Powerful Elite version does erosion damage instead of system damage.</desc>
+	<desc>Designed by the acidic growth, this weapon continues to degrade the enemy ship after impact. Powerful Elite version does erosion damage instead of ion damage.</desc>
 	<tooltip>Fires a single blast that does 1 ion damage and recharges very quickly. Can hit and disable shields as well as systems.</tooltip>
 	<damage>0</damage>
 	<spin>720</spin>
@@ -1358,7 +1358,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<wallAnim>aea_acid_wall</wallAnim>  
 		</roomAnim>
 	</erosion>
-	<cooldown>7</cooldown>
+	<cooldown>11.5</cooldown>
 	<power>2</power>
 	<cost>80</cost>
 	<bp>6</bp>
