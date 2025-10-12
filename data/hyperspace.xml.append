@@ -10056,6 +10056,92 @@ Right click to attempt the ritual or cancel.
 </mod:findLike>
 
 <store>
+	<customStore id="STORE_AEA_ACID">
+		<hullRepair>
+			<price>3</price>
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="4" max="9" />
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="3" max="7" />
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="3" max="7" />
+		</resource>	
+		<category type="WEAPONS">
+            <item />
+            <item />
+            <item />
+			<chance>100</chance>
+		</category>
+		<category type="WEAPONS">
+			<customTitle>ACIDIC WEAPONRY</customTitle>
+			<item>
+                <modifier flat="false">1.3</modifier> 
+                <price>-1</price>
+				<blueprint>GIFTLIST_WEAPONS_ACIDIC_ELITE</blueprint>
+            </item> 
+			<item>
+                <modifier flat="false">1</modifier> 
+                <price>-1</price>
+				<blueprint>GIFTLIST_WEAPONS_ACIDIC</blueprint>
+            </item>
+			<item>
+                <modifier flat="false">1</modifier> 
+                <price>-1</price>
+				<blueprint>GIFTLIST_WEAPONS_ACIDIC</blueprint>
+            </item>
+			<chance>100</chance>
+		</category>	
+		<category type="SYSTEMS">
+            <customTitle>ESSENTIAL SYSTEMS</customTitle>
+			<guaranteedSystems>
+                <weapons />
+				<shields />
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>AUXILIARY SYSTEMS</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>65</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>TERTIARY SYSTEMS</customTitle>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<item>
+				<blueprint>AEA_SHOP_ITEM_SYSTEMS_EXTRA</blueprint>
+			</item>
+			<chance>65</chance>
+		</category>
+	</customStore>
+
 	<customStore id="STORE_AEA_BIRD">
 		<hullRepair>
 			<price min="2" max="4" />
