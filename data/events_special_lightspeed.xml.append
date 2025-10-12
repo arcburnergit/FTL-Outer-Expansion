@@ -157,11 +157,11 @@
 		<event load="LIGHTSPEED_SECTOR_WARP_AEA_BIRD_HAT" />
 	</mod-append:choice>
 	<mod-append:choice hidden="true" blue="false">
-		<text>Proceed to the Anarchist Central Nebula.</text>
+		<text>Go to the Anarchist Central Nebula.</text>
 		<event load="LIGHTSPEED_SECTOR_WARP_AEA_SHLEG_HAT" />
 	</mod-append:choice>
 	<mod-append:choice hidden="true" blue="false">
-		<text>Proceed to the Shard-Forged Palace.</text>
+		<text>Go to the Shard-Forged Palace.</text>
 		<event load="LIGHTSPEED_SECTOR_WARP_AEA_SHARD_HAT" />
 	</mod-append:choice>
 </mod:findName>

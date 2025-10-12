@@ -68,7 +68,7 @@ Health drain effect on room hit</text>
 <text name="tip_aea_old_unknown">Tip: A strange weapon? You wonder if it's related to that strange gate in Node 17...</text>
 <text name="tip_laser_old">Tip: Each laser shot will be blocked by two shield bubbles, regardless of the laser's damage.</text>
 <text name="tip_laser_oldp">Tip: Each laser shot will be blocked by a single shield bubble, despite having 0 hull damage.</text>
-<text name="tip_aea_spellspore">Tip: Each spell equiped to the weapon can only be shot at the enemy ship. Spells cannot miss and Spellspore weapons fire each spell twice per charge.</text>
+<text name="tip_aea_spellspore">Tip: Each spell equipped to the weapon can only be shot at the enemy ship. Spells cannot miss and Spellspore weapons fire each spell twice per charge.</text>
 <text name="tip_aea_shleg">Tip: Inculcation Gas's mind control effect builds up at 5hp/s. Once the status effect reaches the enemy crew's current HP it then drains at 8hp/s and mind controls the enemy.</text>
 
 <text name="atlas_aea_acid">Name: Acidic Origins
@@ -207,10 +207,13 @@ The Shard-Forged, although known as pirates, are rather well liked by the federa
 
 <text name="tip_aea_burst_pin">Tip: Burst Pinpoints are able to fire multiple times in quick succession.</text>
 <text name="tip_aea_rail_cannon">Tip: Rail Cannons don't consume any ammo to fire, but do require fuel to be powered on the first time, fuel lasts until next jump.</text>
+<text name="tip_crystal_aea_shard">Tip: Shatter Crystal weaponry apply a weak lockdown that enhances the next (Non Shatter Crystal) hit to the room, multiplying the damage by 2.</text>
 
 <text name="aea_super_shields">Auxiliary Shields</text>
 <text name="aea_super_shields_installed">Auxiliary Shields System installed</text>
 <text name="aea_freeze">Medusa's Gaze</text>
 <text name="aea_freeze_installed">Medusa's Gaze System installed</text>
 <text name="aea_clone_crime_installed">Modified Clone Bay installed</text>
+<text name="aea_grease">Weapons Amplifier</text>
+<text name="aea_grease_installed">Weapons Amplifier System installed</text>
 </FTL>

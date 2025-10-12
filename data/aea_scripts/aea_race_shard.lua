@@ -187,3 +187,82 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
 		end
 	end
 end)
+
+local shatterWeapons = {}
+shatterWeapons["AEA_CRYSTAL_BURST_1_SHARD"] = true
+shatterWeapons["AEA_CRYSTAL_BURST_1_SHARD_ENEMY"] = true
+shatterWeapons["AEA_CRYSTAL_BURST_2_SHARD"] = true
+shatterWeapons["AEA_CRYSTAL_BURST_2_SHARD_ENEMY"] = true
+shatterWeapons["AEA_CRYSTAL_HEAVY_1_SHARD"] = true
+shatterWeapons["AEA_CRYSTAL_HEAVY_2_SHARD"] = true
+shatterWeapons["AEA_CRYSTAL_HEAVY_2_SHARD_ENEMY"] = true
+shatterWeapons["AEA_CRYSTAL_SHOTGUN_SHARD"] = true
+shatterWeapons["AEA_CRYSTAL_CHARGEGUN_SHARD"] = true
+shatterWeapons["AEA_CRYSTAL_CHARGEGUN_SHARD_ENEMY"] = true
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA, function(shipManager, projectile, location, damage, forceHit, shipFriendlyFire)
+	local room = get_room_at_location(shipManager, location, true)
+	if projectile and shatterWeapons[projectile.extend.name] then return Defines.Chain.CONTINUE, forceHit, shipFriendlyFire end
+	for shard in vter(shipManager.ship:GetShards()) do
+		--print("shard room:"..tostring(shard.lockingRoom).." anim:"..tostring(shard.extend.anim))
+		if shard.lockingRoom == room and shard.bArrived and (shard.extend.anim == "aea_shatter_shard_1" or shard.extend.anim == "aea_shatter_shard_2") then
+			if damage.iDamage > 0 or damage.iSystemDamage > 0 or damage.iIonDamage > 0 or damage.iPersDamage > 0 then
+				damage.iDamage = damage.iDamage * 2
+				damage.iSystemDamage = damage.iSystemDamage * 2
+				damage.iIonDamage = damage.iIonDamage * 2
+				damage.iPersDamage = damage.iPersDamage * 2
+				return Defines.Chain.CONTINUE, forceHit, shipFriendlyFire
+			end
+		end
+	end
+	return Defines.Chain.CONTINUE, forceHit, shipFriendlyFire
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+	local room = get_room_at_location(shipManager, location, true)
+	if projectile and shatterWeapons[projectile.extend.name] then return Defines.Chain.CONTINUE end
+	for shard in vter(shipManager.ship:GetShards()) do
+		--print("shard room:"..tostring(shard.lockingRoom).." anim:"..tostring(shard.extend.anim))
+		if shard.lockingRoom == room and shard.bArrived and (shard.extend.anim == "aea_shatter_shard_1" or shard.extend.anim == "aea_shatter_shard_2") then
+			if damage.iDamage > 0 or damage.iSystemDamage > 0 or damage.iIonDamage > 0 or damage.iPersDamage > 0 then
+				for shard in vter(shipManager.ship:GetShards()) do
+					if shard.lockingRoom == room and (shard.extend.anim == "aea_shatter_shard_1" or shard.extend.anim == "aea_shatter_shard_2") then
+						shard.lifeTime = 0
+						shard.shard.tracker:SetProgress(shard.shard.tracker.time)
+						shard.shard.tracker.done = true
+						shard:Update()
+					end
+				end
+				return Defines.Chain.CONTINUE
+			end
+		end
+	end
+	return Defines.Chain.CONTINUE
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
+	if beamHitType ~= Defines.BeamHit.NEW_ROOM then return Defines.Chain.CONTINUE, beamHitType end
+	if projectile and shatterWeapons[projectile.extend.name] then return Defines.Chain.CONTINUE, beamHitType end
+	local room = get_room_at_location(shipManager, location, true)
+	for shard in vter(shipManager.ship:GetShards()) do
+		if shard.lockingRoom == room and (shard.extend.anim == "aea_shatter_shard_1" or shard.extend.anim == "aea_shatter_shard_2") then
+			if damage.iDamage > 0 or damage.iSystemDamage > 0 or damage.iIonDamage > 0 or damage.iPersDamage > 0 then
+				damage.iDamage = damage.iDamage * 2
+				damage.iSystemDamage = damage.iSystemDamage * 2
+				damage.iIonDamage = damage.iIonDamage * 2
+				damage.iPersDamage = damage.iPersDamage * 2
+
+				for shard in vter(shipManager.ship:GetShards()) do
+					if shard.lockingRoom == room and (shard.extend.anim == "aea_shatter_shard_1" or shard.extend.anim == "aea_shatter_shard_2") then
+						shard.lifeTime = 0
+						shard.shard.tracker:SetProgress(shard.shard.tracker.time)
+						shard.shard.tracker.done = true
+						shard:Update()
+					end
+				end
+				return Defines.Chain.CONTINUE, beamHitType
+			end
+		end
+	end
+	return Defines.Chain.CONTINUE, beamHitType
+end)

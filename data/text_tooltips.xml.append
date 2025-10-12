@@ -6,5 +6,7 @@
 <text name="tooltip_aea_freeze_enemy">Medusa's Gaze: Freezes the target room, preventing it from functioning or taking damage.</text>
 <text name="tooltip_aea_clone_crime">Modified Clone Bay: Generates pseudo clones on jump, prevents clones and other crew with death timers from dying from them.</text>
 <text name="tooltip_aea_clone_crime_enemy">Modified Clone Bay: Generates pseudo clones on jump, prevents clones and other crew with death timers from dying from them.</text>
+<text name="tooltip_aea_grease">Weapons Amplifier:  Enhances the weapons you fire, can be modified to provide different effects.</text>
+<text name="tooltip_aea_grease_enemy">Weapons Amplifier: Enhances the weapons the enemy fires, depending on the enemy the system will enhance their weapons in different ways.</text>
 
 <text name="tooltip_aea_acidic_nebula">You're inside an Acidic nebula. Your sensors will not function and your empty rooms will be slowly breached at random by the Acidic clouds.</text>

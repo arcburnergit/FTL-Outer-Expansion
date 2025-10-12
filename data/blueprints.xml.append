@@ -166,6 +166,8 @@
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="16" start="false" img="room_aea_freeze_3"/>
+		<aea_grease power="1" room="13" max="2" start="false" img="room_aea_grease_16" />
 		<battery power="1" room="13" max="2" start="false" img="room_battery_16" />
 		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="4" start="false">
@@ -250,6 +252,8 @@
 				<number>2</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="8" start="false" img="room_aea_freeze_9" />
+		<aea_grease power="1" room="14" max="2" start="false" img="room_aea_grease_16" />
 		<artillery power="1" max="3" room="1" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" img="room_artillery_4" />
 		<artillery power="1" max="3" room="0" start="true" weapon="AEA_ARTILLERY_BEAM_ACID_1" img="room_artillery_7" />
 		<battery power="1" room="14" max="2" start="false" img="room_battery_16" />
@@ -336,6 +340,8 @@
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="2" start="false" img="room_aea_freeze_9" />
+		<aea_grease power="1" room="15" max="2" start="false" img="room_aea_grease_9" />
 		<battery power="1" room="15" max="2" start="false" img="room_battery_9" />
 		<cloaking power="1" room="13" start="false" img="room_cloaking_13" />
 		<clonebay power="1" room="17" start="false">
@@ -424,6 +430,8 @@
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="7" start="false" img="room_aea_freeze_1" />
+		<aea_grease max="2" power="1" room="10" start="false" img="room_aea_grease_13" />
 		<battery max="2" power="1" room="10" start="false" img="room_battery_13" />
 		<cloaking power="1" room="8" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="11" start="false">
@@ -509,6 +517,8 @@
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="10" start="false" img="room_aea_freeze_6" />
+		<aea_grease max="2" power="1" room="2" start="false" img="room_aea_grease_13" />
 		<battery max="2" power="1" room="2" start="false" img="room_battery_13" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="9" start="true">
@@ -593,6 +603,8 @@
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="7" start="false" img="room_aea_freeze_1" />
+		<aea_grease max="2" power="1" room="13" start="false" img="room_aea_grease_2" />
 		<battery max="2" power="1" room="13" start="false" img="room_battery_2" />
 		<cloaking power="2" room="8" start="true" img="room_cloaking_3" />
 		<clonebay power="1" room="11" start="false">
@@ -679,6 +691,8 @@
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="11" start="false" img="room_aea_freeze_9" />
+		<aea_grease max="2" power="1" room="13" start="false" img="room_aea_grease_2" />
 		<battery max="2" power="1" room="13" start="false" img="room_battery_2" />
 		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="6" start="false">
@@ -1769,6 +1783,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="10" start="false" img="room_aea_freeze_11" />
+		<aea_grease power="1" max="2" room="14" start="false" img="room_aea_grease_9" />
 		<battery power="1" max="2" room="14" start="false" img="room_battery_9" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="13" start="false">
@@ -1842,7 +1858,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 <shipBlueprint name="PLAYER_SHIP_AEA_NECRO_ENGI_2" layout="aeap_necro_engi_2" img="aeap_necro_engi_2">
 	<class>Heresy Cruiser</class>
 	<name>The Hegemonic</name>
-	<desc>It appears some of the Engi Heretic's enemies have gotten their hands on this vessel. However the vessel is still equiped with the technology to turn Engis into Engi heretics.</desc>
+	<desc>It appears some of the Engi Heretic's enemies have gotten their hands on this vessel. However the vessel is still equipped with the technology to turn Engis into Engi heretics.</desc>
 	<unlock id="ship_PLAYER_SHIP_AEA_NECRO_ENGI_2_unlock" />
 	<systemList>
 		<aea_clone_crime max="3" power="1" room="10" start="false">
@@ -1856,6 +1872,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="6" start="false" img="room_aea_freeze_7" />
+		<aea_grease max="2" power="1" room="4" start="false" img="room_aea_grease_15" />
 		<battery max="2" power="1" room="4" start="true" img="room_battery_15" />
 		<cloaking power="1" room="13" start="false" img="room_cloaking_4" />
 		<clonebay power="1" room="10" start="false">
@@ -1944,6 +1962,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="7" start="false" img="room_aea_freeze_4" />
+		<aea_grease max="2" power="1" room="4" start="false" img="room_aea_grease_14" />
 		<battery max="2" power="1" room="4" start="false" img="room_battery_14" />
 		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="5" start="true">
@@ -2031,6 +2051,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="2" start="false" img="room_aea_freeze_9" />
+		<aea_grease power="1" max="2" room="1" start="false" img="room_aea_grease_3" />
 		<battery power="1" max="2" room="1" start="false" img="room_battery_3" />
 		<cloaking power="1" room="13" start="false" img="room_cloaking_13" />
 		<clonebay power="1" room="6" start="true">
@@ -2119,6 +2141,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="8" start="false" img="room_aea_freeze_4" />
+		<aea_grease max="2" power="1" room="12" start="false" img="room_aea_grease_2" />
 		<battery max="2" power="1" room="12" start="false" img="room_battery_2" />
 		<cloaking power="1" room="7" start="false" img="room_cloaking_6" />
 		<clonebay power="1" room="13" start="false">
@@ -2207,6 +2231,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="9" start="false" img="room_aea_freeze_1" />
+		<aea_grease max="2" power="1" room="13" start="false" img="room_aea_grease_14" />
 		<battery max="2" power="1" room="13" start="false" img="room_battery_14" />
 		<cloaking power="1" room="6" start="true" img="room_cloaking" />
 		<clonebay power="1" room="8" start="false">
@@ -2296,6 +2322,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="9" start="false" img="room_aea_freeze_7" />
+		<aea_grease max="2" power="1" room="4" start="false" img="room_aea_grease_2" />
 		<battery max="2" power="1" room="4" start="false" img="room_battery_2" />
 		<cloaking power="1" room="10" start="false" img="room_cloaking_13" />
 		<clonebay power="1" room="1" start="true">
@@ -3051,6 +3079,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="10" start="false" img="room_aea_freeze" />
+		<aea_grease max="2" power="1" room="29" start="false" img="room_aea_grease_6" />
 		<battery max="2" power="1" room="29" start="false" img="room_battery_6" />
 		<cloaking power="1" room="14" start="false" img="room_cloaking" />
 		<clonebay power="1" room="15" start="false">
@@ -3138,6 +3168,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="18" start="false" img="room_aea_freeze_3" />
+		<aea_grease max="2" power="1" room="17" start="false" img="room_aea_grease_6" />
 		<artillery power="1" room="5" start="true" weapon="AEA_ANCIENT_DREAD_INVIS" img="room_artillery" />
 		<battery max="2" power="1" room="17" start="false" img="room_battery_6" />
 		<cloaking power="1" room="10" start="false" img="room_cloaking_2" />
@@ -3260,6 +3292,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="13" start="false" img="room_aea_freeze_6" />
+		<aea_grease max="2" power="1" room="15" start="false" img="room_aea_grease_5" />
 		<battery max="2" power="1" room="15" start="false" img="room_battery_5" />
 		<cloaking power="1" room="9" start="true" img="room_cloaking_2" />
 		<clonebay power="1" room="10" start="true">
@@ -3344,6 +3378,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="18" start="false" img="room_aea_freeze_6" />
+		<aea_grease max="2" power="1" room="21" start="false" img="room_aea_grease_14" />
 		<battery max="2" power="1" room="21" start="false" img="room_battery_14" />
 		<cloaking power="1" room="7" start="true" img="room_cloaking_2" />
 		<clonebay power="1" room="22" start="false">
@@ -3432,6 +3468,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="19" start="false" img="room_aea_freeze_5" />
+		<aea_grease max="2" power="1" room="10" start="false" img="room_aea_grease_6" />
 		<battery max="2" power="1" room="10" start="false" img="room_battery_6" />
 		<cloaking power="1" room="24" start="false" img="room_cloaking" />
 		<clonebay power="1" room="7" start="false">
@@ -3520,6 +3558,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="12" start="false" img="room_aea_freeze_3" />
+		<aea_grease max="2" power="1" room="9" start="false" img="room_aea_grease_10" />
 		<battery max="2" power="1" room="9" start="false" img="room_battery_10" />
 		<cloaking power="1" room="17" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="18" start="false">
@@ -3608,6 +3648,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="8" start="false" img="room_aea_freeze_7" />
+		<aea_grease max="2" power="1" room="9" start="false" img="room_aea_grease_8" />
 		<battery max="2" power="1" room="9" start="false" img="room_battery_8" />
 		<cloaking power="1" room="18" start="false" img="room_cloaking_5" />
 		<clonebay power="1" room="7" start="false">
@@ -3692,6 +3734,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="12" start="false" img="room_aea_freeze_4" />
+		<aea_grease max="2" power="1" room="7" start="false" img="room_aea_grease" />
 		<battery max="2" power="1" room="7" start="false" img="room_battery" />
 		<cloaking power="1" room="16" start="true" img="room_cloaking_3" />
 		<clonebay power="1" room="11" start="true">
@@ -3777,6 +3821,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="4" start="false" img="room_aea_freeze_2" />
+		<aea_grease max="2" power="1" room="14" start="false" img="room_aea_grease_5" />
 		<battery max="2" power="1" room="14" start="false" img="room_battery_5" />
 		<cloaking power="1" room="16" start="false" img="room_cloaking_7" />
 		<clonebay power="1" room="1" start="false">
@@ -3859,6 +3905,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="10" start="false" img="room_aea_freeze_5" />
+		<aea_grease max="2" power="1" room="24" start="false" img="room_aea_grease_6" />
 		<battery max="2" power="1" room="24" start="false" img="room_battery_6" />
 		<cloaking power="1" room="14" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="1" start="false">
@@ -3947,6 +3995,8 @@ Fragments do 15 crew damage, have a 10% breach chance, and inflict a 20% damage 
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="5" start="false" img="room_aea_freeze_7" />
+		<aea_grease max="2" power="1" room="9" start="false" img="room_aea_grease_6" />
 		<battery max="2" power="1" room="9" start="false" img="room_battery_6" />
 		<cloaking power="1" room="13" start="false" img="room_cloaking_10" />
 		<clonebay power="1" room="1" start="false">
@@ -5385,6 +5435,8 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="6" start="false" img="room_aea_freeze_2" />
+		<aea_grease max="2" power="1" room="8" start="false" img="room_aea_grease_6" />
 		<battery max="2" power="1" room="8" start="false" img="room_battery_6" />
 		<cloaking power="1" room="11" start="false" img="room_cloaking_10" />
 		<clonebay power="1" room="15" start="false">
@@ -5474,6 +5526,8 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="1" start="false" img="room_aea_freeze_1" />
+		<aea_grease max="2" power="1" room="16" start="false" img="room_aea_grease_2" />
 		<battery max="2" power="1" room="16" start="false" img="room_battery_2" />
 		<cloaking power="1" room="15" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="9" start="false">
@@ -5564,6 +5618,8 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 				<number>2</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="17" start="false" img="room_aea_freeze_9" />
+		<aea_grease max="2" power="1" room="8" start="false" img="room_aea_grease_2" />
 		<battery max="2" power="1" room="8" start="false" img="room_battery_2" />
 		<cloaking power="1" room="2" start="false" img="room_cloaking_11" />
 		<clonebay power="1" room="14" start="true">
@@ -5653,6 +5709,8 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="14" start="false" img="room_aea_freeze_5" />
+		<aea_grease max="2" power="1" room="18" start="false" img="room_aea_grease_2" />
 		<battery max="2" power="1" room="18" start="false" img="room_battery_2" />
 		<cloaking power="1" room="11" start="true" img="room_cloaking_2" />
 		<clonebay power="1" room="3" start="false">
@@ -5742,6 +5800,8 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="15" start="false" img="room_aea_freeze_7" />
+		<aea_grease max="2" power="1" room="18" start="false" img="room_aea_grease_3" />
 		<battery max="2" power="1" room="18" start="false" img="room_battery_3" />
 		<cloaking power="1" room="13" start="true" img="room_cloaking_3" />
 		<clonebay power="1" room="10" start="true">
@@ -5832,6 +5892,8 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="9" start="false" img="room_aea_freeze_5" />
+		<aea_grease max="2" power="1" room="19" start="false" img="room_aea_grease_2" />
 		<battery max="2" power="1" room="19" start="false" img="room_battery_2" />
 		<cloaking power="1" room="12" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="2" start="false">
@@ -5921,6 +5983,8 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 				<number>2</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="18" start="false" img="room_aea_freeze_7" />
+		<aea_grease max="2" power="1" room="19" start="false" img="room_aea_grease_13" />
 		<battery max="2" power="1" room="19" start="false" img="room_battery_13" />
 		<cloaking power="2" room="8" start="true" img="room_cloaking_11" />
 		<clonebay power="1" room="1" start="false">
@@ -6373,7 +6437,7 @@ This drone fires 4 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Eagle Drone</title>
 	<short>Eagle</short>
-	<desc>A drone equiped with a small fabricated that creates motionless drones that fire long duration beams across the enemy ship.</desc>
+	<desc>A drone equipped with a small fabricated that creates motionless drones that fire long duration beams across the enemy ship.</desc>
 	<power>3</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
@@ -6391,7 +6455,7 @@ This drone fires 4 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Eagle Drone</title>
 	<short>Eagle</short>
-	<desc>A drone equiped with a small fabricated that creates motionless drones that fire long duration beams across the enemy ship.</desc>
+	<desc>A drone equipped with a small fabricated that creates motionless drones that fire long duration beams across the enemy ship.</desc>
 	<power>1</power>
 	<cooldown>1000</cooldown>
 	<dodge>0</dodge>
@@ -6780,7 +6844,7 @@ This drone fires 4 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Intel Drone Mk. I</title>
 	<short>Intel I</short>
-	<desc>A combat drone equiped with a pair of lasers. This specialist drone has a targetting computer onboard that enables the drone to only target enemy systems, and is weighted towards the more important systems.</desc>
+	<desc>A combat drone equipped with a pair of lasers. This specialist drone has a targetting computer onboard that enables the drone to only target enemy systems, and is weighted towards the more important systems.</desc>
 	<power>3</power>
 	<cooldown>1000</cooldown>
 	<dodge>5</dodge>
@@ -6797,7 +6861,7 @@ This drone fires 4 shots.
 	<tip>tip_toggle_combat</tip>
 	<title>Intel Drone Mk. II</title>
 	<short>Intel II</short>
-	<desc>A combat drone equiped with a pair of lasers. This specialist drone has a targetting computer onboard that enables the drone to only target enemy systems, and is weighted towards the more important systems.</desc>
+	<desc>A combat drone equipped with a pair of lasers. This specialist drone has a targetting computer onboard that enables the drone to only target enemy systems, and is weighted towards the more important systems.</desc>
 	<power>4</power>
 	<cooldown>1000</cooldown>
 	<dodge>5</dodge>
@@ -9690,7 +9754,7 @@ Inherited Orchid stats: slightly reduced suffocation damage, takes 75% more dama
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Bolt]</title>
 		<short>[Bolt]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
+		<desc>!!Must be equipped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all normal shields at a target room dealing 1 damage.
 	Cast Delay: 8 seconds
 	Charge Time: 20 seconds
@@ -9714,7 +9778,7 @@ Cast a spell that pierces all normal shields at a target room dealing 1 damage.
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Bolt Burst]</title>
 		<short>[Bolt Burst]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
+		<desc>!!Must be equipped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast 3 spells that pierces all normal shields at a target room dealing 1 damage.
 	Cast Delay: 20 seconds
 	Charge Time: 20 seconds
@@ -9738,7 +9802,7 @@ Cast 3 spells that pierces all normal shields at a target room dealing 1 damage.
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Hull Bolt]</title>
 		<short>[Hull Bolt]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
+		<desc>!!Must be equipped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all normal shields at a target room dealing 3 hull damage but no system or crew damage.
 	Cast Delay: 10 seconds
 	Charge Time: 20 seconds
@@ -9762,7 +9826,7 @@ Cast a spell that pierces all normal shields at a target room dealing 3 hull dam
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Warp]</title>
 		<short>[Warp]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
+		<desc>!!Must be equipped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell in the current room that warps all crew in the current room to a random room on the opposite ship.
 	Cast Delay: 6 seconds
 	Charge Time: 20 seconds
@@ -9785,7 +9849,7 @@ Cast a spell in the current room that warps all crew in the current room to a ra
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Warp Bolt]</title>
 		<short>[Warp Bolt]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
+		<desc>!!Must be equipped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all shields at a target room that warps all crew in the room to a random room on the opposite ship.
 	Cast Delay: 8 seconds
 	Charge Time: 20 seconds
@@ -9808,7 +9872,7 @@ Cast a spell that pierces all shields at a target room that warps all crew in th
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Heal Bolt]</title>
 		<short>[Heal Bolt]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
+		<desc>!!Must be equipped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all shields at a target room that heals all friendly crew for 75hp.
 	Cast Delay: 2 seconds
 	Charge Time: 20 seconds
@@ -9832,7 +9896,7 @@ Cast a spell that pierces all shields at a target room that heals all friendly c
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Heal Aura]</title>
 		<short>[Heal Aura]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
+		<desc>!!Must be equipped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell in the current room that heals all friendly crew in the room for 45 hp.
 	Cast Delay: 5 seconds
 	Charge Time: 20 seconds
@@ -9855,7 +9919,7 @@ Cast a spell in the current room that heals all friendly crew in the room for 45
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Drone]</title>
 		<short>[Drone]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
+		<desc>!!Must be equipped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Spawn a conservative combat drone around the enemy ship.
 	Cast Delay: 10 seconds
 	Charge Time: 20 seconds
@@ -9879,7 +9943,7 @@ Spawn a conservative combat drone around the enemy ship.
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Barrier]</title>
 		<short>[Barrier]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
+		<desc>!!Must be equipped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all normal shields at a target room that spawns a barrier capable of blocking 2 projectiles. Cannot have more than 8 barrier active at once
 	Cast Delay: 2 second
 	Charge Time: 20 seconds
@@ -9903,7 +9967,7 @@ Cast a spell that pierces all normal shields at a target room that spawns a barr
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Lockdown]</title>
 		<short>[Lockdown]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
+		<desc>!!Must be equipped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all normal shields at a target room that applies a lockdown effect.
 	Cast Delay: 4 second
 	Charge Time: 20 seconds
@@ -9927,7 +9991,7 @@ Cast a spell that pierces all normal shields at a target room that applies a loc
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Ally]</title>
 		<short>[Ally]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
+		<desc>!!Must be equipped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all normal shields at a target room that spawns a random ally.
 	Cast Delay: 7 second
 	Charge Time: 20 seconds
@@ -9951,7 +10015,7 @@ Cast a spell that pierces all normal shields at a target room that spawns a rand
 		<flavorType>Spell</flavorType>
 		<title>Spell: [Mind Bolt]</title>
 		<short>[Mind Bolt]</short>
-		<desc>!!Must be equiped to a Vampweed Cultist Crew or Spellspore Weapon!!
+		<desc>!!Must be equipped to a Vampweed Cultist Crew or Spellspore Weapon!!
 Cast a spell that pierces all normal shields at a target room that mind controls the enemy for 20 seconds.
 	Cast Delay: 8 second
 	Charge Time: 20 seconds
@@ -9990,7 +10054,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
-		<battery max="2" power="1" room="14" start="false" img="room_battery_3" />
+		<aea_freeze power="1" room="17" start="false" img="room_aea_freeze_5" />
+		<aea_grease max="2" power="1" room="14" start="false" img="room_aea_grease_3" />
 		<cloaking power="1" room="12" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="7" start="false">
 			<slot>
@@ -10096,6 +10161,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="17" start="false" img="room_aea_freeze_9" />
+		<aea_grease max="2" power="1" room="10" start="false" img="room_aea_grease_3" />
 		<battery max="2" power="1" room="10" start="false" img="room_battery_3" />
 		<cloaking power="1" room="4" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="14" start="true">
@@ -10183,6 +10250,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="12" start="false" img="room_aea_freeze_6" />
+		<aea_grease max="2" power="1" room="16" start="false" img="room_aea_grease_2" />
 		<battery max="2" power="1" room="16" start="false" img="room_battery_2" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking" />
 		<clonebay power="1" room="2" start="false">
@@ -10271,6 +10340,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				<number>2</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="29" start="false" img="room_aea_freeze_5" />
+		<aea_grease max="2" power="1" room="21" start="false" img="room_aea_grease" />
 		<artillery max="4" power="1" room="11" start="true" weapon="AEA_LASER_SPELL_ARTILLERY" img="room_artillery" />
 		<battery max="2" power="1" room="21" start="false" img="room_battery" />
 		<cloaking power="1" room="25" start="false" img="room_cloaking_11" />
@@ -10357,6 +10428,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="16" start="false" img="room_aea_freeze_5" />
+		<aea_grease max="2" power="1" room="17" start="false" img="room_aea_grease_9" />
 		<battery max="2" power="1" room="17" start="false" img="room_battery_9" />
 		<cloaking power="1" room="28" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="27" start="false">
@@ -10454,6 +10527,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="21" start="false" img="room_aea_freeze_5" />
+		<aea_grease max="2" power="1" room="6" start="false" img="room_aea_grease_6" />
 		<battery max="2" power="1" room="6" start="false" img="room_battery_6" />
 		<cloaking power="1" room="20" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="2" start="false">
@@ -10541,6 +10616,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="5" start="false" img="room_aea_freeze" />
+		<aea_grease max="2" power="1" room="11" start="false" img="room_aea_grease_7" />
 		<battery max="2" power="1" room="11" start="false" img="room_battery_7" />
 		<cloaking power="1" room="10" start="false" img="room_cloaking_6" />
 		<clonebay power="1" room="17" start="false">
@@ -10639,6 +10716,8 @@ Cast a spell that pierces all normal shields at a target room that mind controls
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="13" start="false" img="room_aea_freeze_5" />
+		<aea_grease max="2" power="1" room="15" start="false" img="room_aea_grease_15" />
 		<battery max="2" power="1" room="15" start="false" img="room_battery_15" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="4" start="false">
@@ -11606,6 +11685,8 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="9" start="false" img="room_aea_freeze_5" />
+		<aea_grease max="2" power="1" room="4" start="false" img="room_aea_grease_13" />
 		<artillery power="2" room="14" start="true" weapon="ARTILLERY_SHLEG_1" img="room_artillery" />
 		<battery max="2" power="1" room="4" start="false" img="room_battery_13" />
 		<cloaking power="1" room="3" start="true" img="room_cloaking_2" />
@@ -11694,6 +11775,8 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="9" start="false" img="room_aea_freeze_5" />
+		<aea_grease power="1" room="12" start="false" img="room_aea_grease_2" />
 		<battery power="1" room="12" start="false" img="room_battery_2" />
 		<cloaking power="1" room="11" start="false" img="room_cloaking_13" />
 		<clonebay power="1" room="16" start="true">
@@ -11781,6 +11864,9 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="11" start="false" img="room_aea_freeze_3" />
+		<aea_grease power="1" room="16" start="false" img="room_aea_grease_8" />
+		<battery power="1" room="16" start="false" img="room_battery_8" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="4" start="true">
 			<slot>
@@ -11868,6 +11954,8 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="16" start="false" img="room_aea_freeze_3" />
+		<aea_grease max="2" power="1" room="10" start="false" img="room_aea_grease_15" />
 		<battery max="2" power="1" room="10" start="false" img="room_battery_15" />
 		<cloaking power="1" room="9" start="false" img="room_cloaking_7" />
 		<clonebay power="1" room="17" start="false">
@@ -11956,6 +12044,8 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="5" start="false" img="room_aea_freeze_4" />
+		<aea_grease power="1" max="2" room="15" start="false" img="room_aea_grease_18" />
 		<battery power="1" max="2" room="15" start="false" img="room_battery_18" />
 		<cloaking power="1" room="4" start="false" img="room_cloaking_10" />
 		<clonebay power="1" room="1" start="true">
@@ -12044,6 +12134,8 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="15" start="false" img="room_aea_freeze_6" />
+		<aea_grease power="1" max="2" room="2" start="false" img="room_aea_grease_15" />
 		<battery power="1" max="2" room="2" start="false" img="room_battery_15" />
 		<cloaking power="1" room="16" start="false" img="room_cloaking_9" />
 		<clonebay power="1" room="6" start="false">
@@ -12135,6 +12227,8 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="10" start="false" img="room_aea_freeze_3" />
+		<aea_grease power="1" room="11" start="false" img="room_aea_grease_15" />
 		<battery power="1" room="11" start="false" img="room_battery_15" />
 		<cloaking power="1" room="1" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="3" start="false">
@@ -12357,7 +12451,7 @@ Shells, Vampweeds, Lanius, Ghosts.</desc>
 		<sound>miss</sound>
 	</missSounds>
 	<explosion>explosion_crystal_2</explosion>
-	<weaponArt>crystal_burst_2_aea_loot</weaponArt>
+	<weaponArt>aea_crystal_burst_2_loot</weaponArt>
 	<iconImage>crystal</iconImage>
 </weaponBlueprint>
 <crewBlueprint name="aea_shard_breaker">
@@ -12617,6 +12711,8 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="15" start="false" img="room_aea_freeze_3" />
+		<aea_grease max="2" power="1" room="17" start="false" img="room_aea_grease_6" />
 		<battery max="2" power="1" room="17" start="false" img="room_battery_6" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="2" start="false">
@@ -12674,7 +12770,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	<weaponSlots>3</weaponSlots>
 	<droneSlots>3</droneSlots>
 	<weaponList missiles="0" count="3">
-		<weapon name="BOMB_LOCK" />
+		<weapon name="AEA_CRYSTAL_BURST_1_SHARD" />
 		<weapon name="LASER_BURST_2" />
 	</weaponList>
 	<droneList drones="0" count="3" />
@@ -12706,6 +12802,8 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="7" start="false" img="room_aea_freeze_5" />
+		<aea_grease power="1" max="2" room="6" start="false" img="room_aea_grease_13" />
 		<battery power="1" max="2" room="6" start="false" img="room_battery_13" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
 		<clonebay max="2" power="1" room="2" start="true">
@@ -12793,6 +12891,8 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="20" start="false" img="room_aea_freeze_9" />
+		<aea_grease power="1" max="2" room="13" start="false" img="room_aea_grease_15" />
 		<battery power="1" max="2" room="13" start="false" img="room_battery_15" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="10" start="true">
@@ -12873,6 +12973,8 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>1</number>
 			</slot>
 		</aea_clone_crime>
+		<aea_freeze power="1" room="6" start="false" img="room_aea_freeze_7" />
+		<aea_grease power="1" max="2" room="12" start="false" img="room_aea_grease_14" />
 		<battery power="1" max="2" room="12" start="true" img="room_battery_14" />
 		<cloaking power="1" room="14" start="false" img="room_cloaking_9" />
 		<clonebay power="1" room="13" start="false">
@@ -12936,7 +13038,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	<weaponSlots>2</weaponSlots>
 	<droneSlots>3</droneSlots>
 	<weaponList missiles="0" count="2" >
-		<weapon name="CRYSTAL_BURST_2" />
+		<weapon name="AEA_CRYSTAL_BURST_2_SHARD" />
 	</weaponList>
 	<droneList drones="0" count="3" />
 	<health amount="30" />
@@ -12966,7 +13068,10 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="7" start="false" img="room_aea_freeze_3" />
+		<aea_grease power="1" room="11" start="true" img="room_aea_grease_3" />
 		<artillery power="1" max="4" room="0" start="true" weapon="ARTILLERY_SHARD_AUTO" img="room_artillery" />
+		<battery power="1" room="11" start="false" img="room_battery_3" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="12" start="false">
 			<slot>
@@ -13051,6 +13156,8 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>2</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="17" start="false" img="room_aea_freeze_3" />
+		<aea_grease power="1" room="2" start="false" img="room_aea_grease_6" />
 		<battery power="1" room="2" start="false" img="room_battery_6" />
 		<cloaking power="2" room="5" start="true" img="room_cloaking_12" />
 		<clonebay power="1" room="11" start="false">
@@ -13108,7 +13215,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="5" count="4">
-		<weapon name="CRYSTAL_BURST_1_RED" />
+		<weapon name="AEA_CRYSTAL_BURST_1_SHARD" />
 		<weapon name="CRYSTAL_HEAVY_1" />
 	</weaponList>
 	<droneList drones="3" count="2" />
@@ -13136,6 +13243,8 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="11" start="false" img="room_aea_freeze_4" />
+		<aea_grease power="1" room="3" start="false" img="room_aea_grease_6" />
 		<battery power="1" room="3" start="false" img="room_battery_6" />
 		<cloaking power="1" room="15" start="false" img="room_cloaking_10" />
 		<clonebay power="1" room="2" start="false">
@@ -13183,7 +13292,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 			</slot>
 		</shields>
 		<teleporter power="1" room="1" start="true" />
-		<weapons power="1" max="8" room="18" start="true" img="room_weapons">
+		<weapons power="2" max="8" room="18" start="true" img="room_weapons">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -13193,7 +13302,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	<weaponSlots>3</weaponSlots>
 	<droneSlots>3</droneSlots>
 	<weaponList missiles="2" count="3">
-		<weapon name="CRYSTAL_STUN" />
+		<weapon name="AEA_CRYSTAL_SHOTGUN_SHARD" />
 	</weaponList>
 	<droneList drones="9" count="3">
 		<drone name="GUARDIAN_1_DRONE" />
@@ -13225,6 +13334,8 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>1</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="19" start="false" img="room_aea_freeze_7" />
+		<aea_grease power="1" max="2" room="22" start="false" img="room_aea_grease_6" />
 		<battery power="1" max="2" room="22" start="false" img="room_battery_6" />
 		<cloaking power="1" room="2" start="false" img="room_cloaking_11" />
 		<clonebay power="1" room="8" start="true">
@@ -13282,7 +13393,7 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="0" count="4">
-		<weapon name="CRYSTAL_BURST_2_RED" />
+		<weapon name="AEA_CRYSTAL_BURST_2_SHARD" />
 	</weaponList>
 	<droneList drones="0" count="2" />
 	<health amount="30" />
@@ -13291,6 +13402,533 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 	<shieldImage>mup_disk</shieldImage>
 	<mv-mapImage>map_icon_aeap_shard_battle</mv-mapImage>
 </shipBlueprint>
+</FTL>
+
+<FTL>
+<weaponBlueprint name="AEA_CRYSTAL_BURST_1_SHARD">
+	<type>MISSILES</type>
+	<flavorType>Crystalline Tech</flavorType>
+	<title>Shatter Crystal Burst MK I</title>
+	<short>‡ Crystal I</short>
+	<tip>tip_crystal_aea_shard</tip>
+	<desc>Modified projectile weapon that fires 2 shield piercing crystals. Shatter variant that always applies a weak lockdown that enhances the next hit.</desc>
+	<tooltip>Pierces 1 shield; fires 2 crystals that deal 1 damage each.</tooltip>
+	<damage>1</damage>
+	<shots>2</shots>
+	<sp>1</sp>
+	<lockdown>1</lockdown>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<stunChance>4</stunChance>
+	<cooldown>12</cooldown>
+	<power>1</power>
+	<speed>50</speed>
+	<cost>65</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>aea_crystal_shard2_shard</image>
+	<lockdown>true</lockdown>
+	<customLockdown>
+		<health>2</health>
+		<duration>12.0</duration>
+		<color r="255" g="255" b="255" a="1"/>
+		<anims>
+			<anim>aea_shatter_shard_1</anim>
+			<anim>aea_shatter_shard_2</anim>
+		</anims>
+		<canDilate>true</canDilate>
+	</customLockdown>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>crystalExplosion_small</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<explosion>explosion_crystal_2</explosion>
+	<weaponArt>aea_crystal_burst_1_shard</weaponArt>
+	<iconImage>crystal</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_CRYSTAL_BURST_1_SHARD_ENEMY">
+	<type>MISSILES</type>
+	<flavorType>Crystalline Tech</flavorType>
+	<title>Shatter Crystal Burst MK I</title>
+	<short>‡ Cry. BI</short>
+	<tip>tip_crystal_aea_shard</tip>
+	<desc>YOU SHOULD NEVER SEE THIS.</desc>
+	<tooltip>Pierces 1 shield; fires 2 crystals that deal 1 damage each.</tooltip>
+	<damage>1</damage>
+	<shots>2</shots>
+	<sp>1</sp>
+	<lockdown>1</lockdown>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<stunChance>4</stunChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<speed>50</speed>
+	<cost>65</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>aea_crystal_shard2_shard</image>
+	<customLockdown>
+		<health>2</health>
+		<duration>12.0</duration>
+		<color r="255" g="255" b="255" a="1"/>
+		<anims>
+			<anim>aea_shatter_shard_1</anim>
+			<anim>aea_shatter_shard_2</anim>
+		</anims>
+		<canDilate>true</canDilate>
+	</customLockdown>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>crystalExplosion_small</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<explosion>explosion_crystal_2</explosion>
+	<weaponArt>aea_crystal_burst_1_shard</weaponArt>
+	<iconImage>crystal</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_CRYSTAL_BURST_2_SHARD">
+	<type>MISSILES</type>
+	<flavorType>Crystalline Tech</flavorType>
+	<title>Shatter Crystal Burst MK II</title>
+	<short>‡ Crystal II</short>
+	<desc>Modified projectile weapon that fires 3 shield piercing crystals. Shatter variant that always applies a weak lockdown that enhances the next hit.</desc>
+	<tooltip>Pierces 1 shield; fires 3 crystals that deal 1 damage each.</tooltip>
+	<tip>tip_crystal_aea_shard</tip>
+	<damage>1</damage>
+	<shots>3</shots>
+	<sp>1</sp>
+	<lockdown>1</lockdown>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<stunChance>3</stunChance>
+	<cooldown>16</cooldown>
+	<power>2</power>
+	<speed>50</speed>
+	<cost>85</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>aea_crystal_shard2_shard</image>
+	<customLockdown>
+		<health>2</health>
+		<duration>12.0</duration>
+		<color r="255" g="255" b="255" a="1"/>
+		<anims>
+			<anim>aea_shatter_shard_1</anim>
+			<anim>aea_shatter_shard_2</anim>
+		</anims>
+		<canDilate>true</canDilate>
+	</customLockdown>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>crystalExplosion_small</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<explosion>explosion_crystal_2</explosion>
+	<weaponArt>aea_crystal_burst_2_shard</weaponArt>
+	<iconImage>crystal</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_CRYSTAL_BURST_2_SHARD_ENEMY">
+	<type>MISSILES</type>
+	<flavorType>Crystalline Tech</flavorType>
+	<title>Shatter Crystal Burst MK II</title>
+	<short>‡ Cry. BII</short>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<tooltip>Pierces 1 shield; fires 3 crystals that deal 1 damage each.</tooltip>
+	<tip>tip_crystal_aea_shard</tip>
+	<damage>1</damage>
+	<shots>3</shots>
+	<sp>1</sp>
+	<lockdown>1</lockdown>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<stunChance>3</stunChance>
+	<cooldown>16</cooldown>
+	<power>3</power>
+	<speed>50</speed>
+	<cost>85</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>aea_crystal_shard2_shard</image>
+	<customLockdown>
+		<health>2</health>
+		<duration>12.0</duration>
+		<color r="255" g="255" b="255" a="1"/>
+		<anims>
+			<anim>aea_shatter_shard_1</anim>
+			<anim>aea_shatter_shard_2</anim>
+		</anims>
+		<canDilate>true</canDilate>
+	</customLockdown>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>crystalExplosion_small</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<explosion>explosion_crystal_2</explosion>
+	<weaponArt>aea_crystal_burst_2_shard</weaponArt>
+	<iconImage>crystal</iconImage>
+</weaponBlueprint>
+
+<!-- 
+**********************************************************************************************************************
+                                                 HEAVY CRYSTALS 
+**********************************************************************************************************************
+-->
+<weaponBlueprint name="AEA_CRYSTAL_HEAVY_1_SHARD">
+	<type>MISSILES</type>
+	<flavorType>Crystalline Tech</flavorType>
+	<tip>tip_crystal_aea_shard</tip>
+	<title>Shatter Crystal Heavy MK I</title>
+	<short>‡ Crystal Heavy I</short>
+	<desc>Modified projectile weapon that fires a shield piercing large crystal. Shatter variant that always applies a weak lockdown that enhances the next hit.</desc>
+	<tooltip>Pierces 1 shield; fires 1 crystal that deals 2 damage.</tooltip>
+	<damage>2</damage>
+	<shots>1</shots>
+	<sp>1</sp>
+	<lockdown>1</lockdown>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<stunChance>6</stunChance>
+	<cooldown>10</cooldown>
+	<power>1</power>
+	<speed>50</speed>
+	<cost>65</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>aea_crystal_shard_shard</image>
+	<customLockdown>
+		<health>2</health>
+		<duration>12.0</duration>
+		<color r="255" g="255" b="255" a="1"/>
+		<anims>
+			<anim>aea_shatter_shard_1</anim>
+			<anim>aea_shatter_shard_2</anim>
+		</anims>
+		<canDilate>true</canDilate>
+	</customLockdown>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>crystalExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<explosion>explosion_crystal</explosion>
+	<weaponArt>aea_crystal_heavy_1_shard</weaponArt>
+	<iconImage>crystalH</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_CRYSTAL_HEAVY_2_SHARD">
+	<type>MISSILES</type>
+	<flavorType>Crystalline Tech</flavorType>
+	<tip>tip_crystal_aea_shard</tip>
+	<title>Shatter Crystal Heavy MK II</title>
+	<short>‡ Crystal Heavy II</short>
+	<desc>Modified projectile weapon that fires a shield piercing large crystal. Shatter variant that always applies a weak lockdown that enhances the next hit.</desc>
+	<tooltip>Pierces 1 shield; fires 1 crystal that deals 4 damage and causes a hull breach.</tooltip>
+	<damage>4</damage>
+	<shots>1</shots>
+	<sp>1</sp>
+	<lockdown>1</lockdown>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>8</stunChance>
+	<cooldown>17</cooldown>
+	<power>2</power>
+	<speed>50</speed>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>aea_crystal_shard_shard</image>
+	<customLockdown>
+		<health>2</health>
+		<duration>12.0</duration>
+		<color r="255" g="255" b="255" a="1"/>
+		<anims>
+			<anim>aea_shatter_shard_1</anim>
+			<anim>aea_shatter_shard_2</anim>
+		</anims>
+		<canDilate>true</canDilate>
+	</customLockdown>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>crystalExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<explosion>explosion_crystal</explosion>
+	<weaponArt>aea_crystal_heavy_2_shard</weaponArt>
+	<iconImage>crystalH</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_CRYSTAL_HEAVY_2_SHARD_ENEMY">
+	<type>MISSILES</type>
+	<flavorType>Crystalline Tech</flavorType>
+	<tip>tip_crystal_aea_shard</tip>
+	<title>Heavy Crystal MK II</title>
+	<short>Crystal H. II</short>
+	<desc>YOU SHOULD NEVER SEE THIS.</desc>
+	<tooltip>Pierces 1 shield; fires 1 crystal that deals 4 damage and causes a hull breach.</tooltip>
+	<damage>4</damage>
+	<shots>1</shots>
+	<sp>1</sp>
+	<lockdown>1</lockdown>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>8</stunChance>
+	<cooldown>17</cooldown>
+	<power>3</power>
+	<speed>50</speed>
+	<cost>80</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>aea_crystal_shard_shard</image>
+	<customLockdown>
+		<health>2</health>
+		<duration>12.0</duration>
+		<color r="255" g="255" b="255" a="1"/>
+		<anims>
+			<anim>aea_shatter_shard_1</anim>
+			<anim>aea_shatter_shard_2</anim>
+		</anims>
+		<canDilate>true</canDilate>
+	</customLockdown>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>crystalExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<explosion>explosion_crystal</explosion>
+	<weaponArt>aea_crystal_heavy_2_shard</weaponArt>
+	<iconImage>crystalH</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_CRYSTAL_SHOTGUN_SHARD">
+	<type>BURST</type>
+	<flavorType>Crystalline Tech</flavorType>
+	<drone_targetable>1</drone_targetable>
+	<title>Shatter Crystal Scatter</title>
+	<short>‡ Crystal Scatter</short>
+	<tip>tip_crystal_aea_shard</tip>
+	<desc>Fires a cluster of 4 crystalline projectiles. Shatter variant that always applies a weak lockdown that enhances the next hit.</desc>
+	<tooltip>Fires a blast of debris across a random area doing up to 3 damage.</tooltip>
+	<radius>50</radius>
+	<damage>1</damage>
+	<shots>1</shots>
+	<sp>1</sp>
+	<lockdown>1</lockdown>
+	<fireChance>0</fireChance>
+	<breachChance>4</breachChance>
+	<stunChance>4</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>95</cost>
+	<bp>10</bp>
+	<speed>50</speed>
+	<rarity>0</rarity>
+	<projectiles>
+		<projectile count="4" fake="false">aea_crystal_burst_shard</projectile>
+	</projectiles>
+	<customLockdown>
+		<health>2</health>
+		<duration>12.0</duration>
+		<color r="255" g="255" b="255" a="1"/>
+		<anims>
+			<anim>aea_shatter_shard_1</anim>
+			<anim>aea_shatter_shard_2</anim>
+		</anims>
+		<canDilate>true</canDilate>
+	</customLockdown>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>crystalExplosion_small</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>aea_crystal_flak_shard</weaponArt> 
+	<iconImage>flak</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_CRYSTAL_CHARGEGUN_SHARD">
+	<type>MISSILES</type>
+	<flavorType>Crystalline Tech</flavorType>
+	<title>Shatter Crystal Charger</title>
+	<short>‡ Crystal C.</short>
+	<tip>tip_crystal_aea_shard</tip>
+	<desc>Modified projectile weapon that fires up to 2 shield piercing crystals. Shatter variant that always applies a weak lockdown that enhances the next hit.</desc>
+	<tooltip>Pierces 1 shield; fires up to 2 crystals that deal 2 damage each.</tooltip>
+	<damage>1</damage>
+	<shots>1</shots>
+	<sp>1</sp>
+	<lockdown>1</lockdown>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<cooldown>6.5</cooldown>
+	<power>1</power>
+	<cost>65</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>aea_crystal_shard2_shard</image>
+	<chargeLevels>2</chargeLevels>
+	<customLockdown>
+		<health>2</health>
+		<duration>12.0</duration>
+		<color r="255" g="255" b="255" a="1"/>
+		<anims>
+			<anim>aea_shatter_shard_1</anim>
+			<anim>aea_shatter_shard_2</anim>
+		</anims>
+		<canDilate>true</canDilate>
+	</customLockdown>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>crystalExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<explosion>explosion_crystal_2</explosion>
+	<weaponArt>aea_crystal_charge_shard</weaponArt>
+	<iconImage>crystalH</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_CRYSTAL_CHARGEGUN_SHARD_ENEMY">
+	<type>MISSILES</type>
+	<flavorType>Crystalline Tech</flavorType>
+	<title>Shatter Crystal Charger</title>
+	<short>‡ Crys. Ch.</short>
+	<tip>tip_crystal_aea_shard</tip>
+	<desc>YOU SHOULD NEVER SEE THIS.</desc>
+	<tooltip>Pierces 1 shield; fires up to 2 crystals that deal 2 damage each.</tooltip>
+	<damage>1</damage>
+	<shots>1</shots>
+	<sp>1</sp>
+	<lockdown>1</lockdown>
+	<fireChance>0</fireChance>
+	<breachChance>1</breachChance>
+	<cooldown>7</cooldown>
+	<power>2</power>
+	<cost>65</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>aea_crystal_shard2_shard</image>
+	<chargeLevels>2</chargeLevels>
+	<customLockdown>
+		<health>2</health>
+		<duration>12.0</duration>
+		<color r="255" g="255" b="255" a="1"/>
+		<anims>
+			<anim>aea_shatter_shard_1</anim>
+			<anim>aea_shatter_shard_2</anim>
+		</anims>
+		<canDilate>true</canDilate>
+	</customLockdown>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>crystalExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<explosion>explosion_crystal_2</explosion>
+	<weaponArt>aea_crystal_charge_shard</weaponArt>
+	<iconImage>crystalH</iconImage>
+</weaponBlueprint>
 </FTL>
 
 <FTL>
@@ -13312,6 +13950,8 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="16" start="false" img="room_aea_freeze_12" />
+		<aea_grease power="1" room="11" start="false" img="room_aea_grease_2" />
 		<!--artillery power="2" room="2" start="false" weapon="ARTILLERY_REBEL_BEAM" img="room_artillery_3" />
 		<artillery power="2" room="2" start="false" weapon="ARTILLERY_REBEL_MISSILE" img="room_artillery_3" /-->
 		<!--artillery power="2" room="1" start="false" weapon="ARTILLERY_REBEL_BEAM" img="room_artillery_3" />
@@ -13646,6 +14286,8 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="4" start="false" img="room_aea_freeze_10" />
+		<aea_grease power="1" room="7" start="false" img="room_aea_grease_2" />
 		<artillery power="1" max="3" room="0" start="true" weapon="ARTILLERY_MFK_1" img="room_artillery_4" />
 		<artillery power="1" max="3" room="1" start="true" weapon="ARTILLERY_MFK_1" img="room_artillery_4" />
 		<artillery power="1" max="3" room="2" start="true" weapon="ARTILLERY_MFK_1" img="room_artillery_4" />
@@ -13898,6 +14540,8 @@ Can be overclocked to instantly generate shields up to it's maximum at the cost 
 				<number>0</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="14" start="false" img="room_aea_freeze_3" />
+		<aea_grease power="1" room="10" start="false" img="room_aea_grease_20" />
 		<artillery power="1" max="3" room="0" start="true" weapon="LASER_BURST_1" img="room_artillery_4" />
 		<artillery power="1" max="3" room="1" start="true" weapon="LASER_BURST_1" img="room_artillery_4" />
 		<artillery power="1" max="3" room="2" start="true" weapon="LASER_BURST_1" img="room_artillery_4" />
@@ -14048,6 +14692,8 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="21" start="false" img="room_aea_freeze_7" />
+		<aea_grease max="2" power="1" room="14" start="false" img="room_aea_grease" />
 		<battery max="2" power="1" room="14" start="false" img="room_battery" />
 		<cloaking power="1" room="3" start="false" img="room_cloaking_2" />
 		<clonebay power="1" room="8" start="true">
@@ -14211,6 +14857,8 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="19" start="false" img="room_aea_freeze_4" />
+		<aea_grease power="1" room="23" start="false" img="room_aea_grease_6" />
 		<battery power="1" room="23" start="false" img="room_battery_6" />
 		<cloaking power="1" room="8" start="false" img="room_cloaking_2" />
 		<clonebay max="4" power="1" room="7" start="false">
@@ -14294,6 +14942,8 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 				<number>3</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="15" start="false" img="room_aea_freeze_5" />
+		<aea_grease power="1" room="14" start="false" img="room_aea_grease_14" />
 		<battery power="1" room="14" start="false" img="room_battery_14" />
 		<cloaking power="1" room="17" start="false" img="room_cloaking_10" />
 		<clonebay power="1" room="11" start="true">
@@ -14377,6 +15027,8 @@ Breach Chance: 20% (Adjusted: 20%)</tooltipOverride>
 				<number>2</number>
 			</slot>
 		</aea_super_shields>
+		<aea_freeze power="1" room="13" start="false" img="room_aea_freeze_4" />
+		<aea_grease power="1" room="19" start="false" img="room_aea_grease_14" />
 		<battery power="1" room="19" start="false" img="room_battery_14" />
 		<cloaking power="1" room="21" start="false" img="room_cloaking_11" />
 		<clonebay power="1" room="5" start="true">
@@ -15730,6 +16382,8 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<name>Throne of Knives</name>
 	<desc>This ship is completely devoid of any description whatsoever!</desc>
 	<systemList>
+		<aea_freeze power="1" room="5" start="false" img="room_aea_freeze_5" />
+		<aea_grease power="1" room="24" start="false" img="room_aea_grease_6" />
 		<artillery power="2" max="4" room="1" start="true" weapon="ARTILLERY_AEA_JUSTICE_RAILGUN" img="room_artillery_4" />
 		<artillery power="1" max="3" room="3" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER" img="room_artillery" />
 		<artillery power="1" max="3" room="2" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER" img="room_artillery" />
@@ -15805,6 +16459,8 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<name>Throne of Knives</name>
 	<desc>This ship is completely devoid of any description whatsoever!</desc>
 	<systemList>
+		<aea_freeze power="1" room="21" start="false" img="room_aea_freeze_7" />
+		<aea_grease power="1" room="24" start="false" img="room_aea_grease_13" />
 		<artillery power="2" max="4" room="1" start="true" weapon="ARTILLERY_AEA_JUSTICE_BEAM_FED" img="room_artillery_4" />
 		<artillery power="1" max="4" room="3" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER_FED" img="room_artillery_4" />
 		<artillery power="1" max="4" room="2" start="true" weapon="ARTILLERY_AEA_JUSTICE_LASER_FED" img="room_artillery" />
@@ -15954,7 +16610,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 <systemBlueprint name="aea_grease">
 	<type>aea_grease</type>
 	<title>Weapons Amplifier</title>
-	<desc>Builds up charges which enhance your weapons, can be equiped with different enhancements depending on your equipment and crew.</desc>
+	<desc>Builds up charges which enhance your weapons, can be equipped with different enhancements depending on your equipment and crew. Can scan technology to add it to it's library of enhancements.</desc>
 	<startPower>1</startPower>
 	<maxPower>2</maxPower>
 	<rarity>0</rarity>
@@ -16021,6 +16677,600 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<stackable>true</stackable>
 	<value>1</value>
 </augBlueprint>
+<augBlueprint name="AEA_GREASE_EFFECT_DD_SOULPLAGUE">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="AEA_GREASE_EFFECT_DD_DARKNESS">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="AEA_GREASE_EFFECT_DD_SHADOW">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="AEA_GREASE_EFFECT_DD_RADIANT">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+
+<weaponBlueprint name="AEA_GREASE_EFFECT_BOMB_SHATTER">
+	<type>LASER</type>
+	<title>Bomb Launcher</title>
+	<short>Bomb</short>
+	<desc>Self-teleporting explosive that damages systems and crew but not the hull. Can target your own ship.</desc>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>0</persDamage>
+	<accuracyMod>200</accuracyMod>
+	<missiles>0</missiles>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>11</cooldown>
+	<power>1</power>
+	<cost>45</cost>
+	<rarity>1</rarity>
+	<image>aea_invisible</image>
+	<explosion>aea_invisible</explosion>
+	<weaponArt>bomblauncher_small</weaponArt>
+	<iconImage>bomb</iconImage>
+	<lockdown>true</lockdown>
+	<customLockdown>
+		<health>2</health>
+		<duration>12.0</duration>
+		<color r="255" g="255" b="255" a="1"/>
+		<anims>
+			<anim>aea_shatter_shard_1</anim>
+			<anim>aea_shatter_shard_2</anim>
+		</anims>
+		<canDilate>true</canDilate>
+	</customLockdown>
+</weaponBlueprint>
+<weaponBlueprint name="AEA_GREASE_EFFECT_BOMB_DD_SOULPLAGUE">
+	<type>LASER</type>
+	<title>Bomb Launcher</title>
+	<short>Bomb</short>
+	<desc>Self-teleporting explosive that damages systems and crew but not the hull. Can target your own ship.</desc>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>0</persDamage>
+	<accuracyMod>200</accuracyMod>
+	<missiles>0</missiles>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>11</cooldown>
+	<power>1</power>
+	<cost>45</cost>
+	<rarity>1</rarity>
+	<image>aea_invisible</image>
+	<explosion>aea_invisible</explosion>
+	<weaponArt>bomblauncher_small</weaponArt>
+	<iconImage>bomb</iconImage>
+	<roomStatBoosts> <!-- SOULPLAGUE -->
+		<statBoost name="repairSpeed">
+			<boostType>MULT</boostType>
+			<amount>0.5</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddPlagueriddenRepairDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<blackList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_DDNOFEAR"/>
+			<roomAnim renderLayer="3">                                                    
+				<anim animType="default" animBorder="2">ddinvisible_effect</anim>
+					<wallAnim>ddroom_plagueridden_effect</wallAnim>
+			</roomAnim>
+		</statBoost>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-2.3</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddPlagueriddenDOTDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<blackList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_DDNOFEAR"/>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_CRYSTAL"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_CRYSTAL"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_DEEPONE"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_DEEPONES"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_ENGI"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_ENGI"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_GHOST"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_GHOST"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_LANIUS"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_LANIUS"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_LEECH"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_LEECH"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_MANTIS"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_MANTIS"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_OBELISK"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_ANCIENT"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_ORCHID"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_ORCHID"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_ROCKMAN"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_ROCK"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_SHELL"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_SHELL"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_SLUG"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_SLUG"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_ZOLTAN"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_ZOLTAN"/>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="deathEffect">
+			<boostType>ADD</boostType>
+			<deathEffect>
+				<event load="DDSOULPLAGUE_SUMMON_BEAM_HUMAN"/>
+			</deathEffect>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>CREW</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>12</duration>
+			<maxStacks id="ddSoulplagueInfectionDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<blackList>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_CRYSTAL"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_DEEPONES"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_ENGI"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_GHOST"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_LANIUS"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_LEECH"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_MANTIS"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_ANCIENT"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_ORCHID"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_ROCK"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_SHELL"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_SLUG"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_ZOLTAN"/>
+				<blueprintList load="LIST_DDANNOYINGBLUEPRINTSTUFF_CREW_DDNOFEAR"/>
+			</blackList>
+			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
+		</statBoost>
+	</roomStatBoosts>
+	<roomStatBoostChance>1</roomStatBoostChance>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_GREASE_EFFECT_BOMB_DD_SHADOW">
+	<type>LASER</type>
+	<title>Bomb Launcher</title>
+	<short>Bomb</short>
+	<desc>Self-teleporting explosive that damages systems and crew but not the hull. Can target your own ship.</desc>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>0</persDamage>
+	<accuracyMod>200</accuracyMod>
+	<missiles>0</missiles>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>11</cooldown>
+	<power>1</power>
+	<cost>45</cost>
+	<rarity>1</rarity>
+	<image>aea_invisible</image>
+	<explosion>aea_invisible</explosion>
+	<weaponArt>bomblauncher_small</weaponArt>
+	<iconImage>bomb</iconImage>
+	<spawnCrew> <!-- SHADOW-FROST -->
+		<race>darkgodtendrils</race>
+		<name>Hungering Shadow</name>
+		<number>1</number>
+		<noSlot>true</noSlot>
+		<lifetime>21</lifetime>
+		<statBoosts>
+			<statBoost name="noClone">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALL</crewTarget>
+				<priority>999999</priority>
+			</statBoost>
+		</statBoosts>
+	</spawnCrew>
+	<crewSpawnChance>5</crewSpawnChance>
+	<lockdown>true</lockdown>
+	<customLockdown>
+		<health>6</health>
+		<duration>30.0</duration>
+		<color r="255" g="255" b="255" a="0"/>
+		<anims>
+			<anim>dddisparity_lockdown_effect_1</anim>
+			<anim>dddisparity_lockdown_effect_2</anim>
+		</anims>
+		<canDilate>true</canDilate>
+	</customLockdown>
+</weaponBlueprint>
+
+<weaponBlueprint name="AEA_GREASE_EFFECT_BOMB_DD_RADIANT">
+	<type>LASER</type>
+	<title>Bomb Launcher</title>
+	<short>Bomb</short>
+	<desc>Self-teleporting explosive that damages systems and crew but not the hull. Can target your own ship.</desc>
+	<damage>0</damage>
+	<sysDamage>0</sysDamage>
+	<persDamage>0</persDamage>
+	<accuracyMod>200</accuracyMod>
+	<missiles>0</missiles>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>11</cooldown>
+	<power>1</power>
+	<cost>45</cost>
+	<rarity>1</rarity>
+	<image>aea_invisible</image>
+	<explosion>aea_invisible</explosion>
+	<weaponArt>bomblauncher_small</weaponArt>
+	<iconImage>bomb</iconImage>
+	<spawnCrew> <!-- RADIANT -->
+		<race>LIST_CREW_DDLIGHTBORNE</race>
+		<name>Lightborne</name>
+		<number>1</number>
+		<noSlot>true</noSlot>
+		<lifetime>120</lifetime>
+		<statBoosts>
+			<statBoost name="noClone">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALL</crewTarget>
+				<priority>999999</priority>
+			</statBoost>
+		</statBoosts>
+	</spawnCrew>
+	<crewSpawnChance>10</crewSpawnChance>
+	<roomStatBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>4.0</amount>
+			<shipTarget>CURRENT_ROOM</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>ALL</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>25</duration>
+			<maxStacks id="ddRadiantDesecrationHealingBuff">1</maxStacks>
+			<priority>10001</priority>
+			<whiteList>
+				<ddlightborne_slayling/>
+				<ddlightborne_prismling/>
+				<ddlightborne_cinderling/>
+				<ddlightborne_clusterular/>
+				<ddlightborne_cellular/>
+				<ddlightborne_devourlux/>
+				<ddlightborne_spiritling/>
+				<ddlightborne_commandlux/>
+				<ddlightborne_timelux/>
+				<ddlightborne_angelular/>
+				<ddlightborne_warlockular/>
+				<ddlightborne_breakling/>
+				<ddlightborne_tormentular/>
+			</whiteList>
+			<roomAnim renderLayer="3">                                                    
+				<anim animType="default" animBorder="2">ddinvisible_effect</anim>
+					<wallAnim>ddroom_radiantdesecration_effect</wallAnim>
+			</roomAnim>
+		</statBoost>
+		<statBoost name="damageMultiplier">
+			<boostType>MULT</boostType>
+			<amount>4</amount>
+			<shipTarget>CURRENT_ROOM</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>ALL</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>25</duration>
+			<maxStacks id="ddRadiantDesecrationDamageBuff">1</maxStacks>
+			<priority>-99999</priority>
+			<whiteList>
+				<ddlightborne_slayling/>
+				<ddlightborne_prismling/>
+				<ddlightborne_cinderling/>
+				<ddlightborne_clusterular/>
+				<ddlightborne_cellular/>
+				<ddlightborne_devourlux/>
+				<ddlightborne_spiritling/>
+				<ddlightborne_commandlux/>
+				<ddlightborne_timelux/>
+				<ddlightborne_angelular/>
+				<ddlightborne_warlockular/>
+				<ddlightborne_breakling/>
+				<ddlightborne_tormentular/>
+			</whiteList>
+		</statBoost>
+		<statBoost name="sabotageSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>4</amount>
+			<shipTarget>CURRENT_ROOM</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>ALL</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>25</duration>
+			<maxStacks id="ddRadiantDesecrationSabotageBuff">1</maxStacks>
+			<priority>-99999</priority>
+			<whiteList>
+				<ddlightborne_slayling/>
+				<ddlightborne_prismling/>
+				<ddlightborne_cinderling/>
+				<ddlightborne_clusterular/>
+				<ddlightborne_cellular/>
+				<ddlightborne_devourlux/>
+				<ddlightborne_spiritling/>
+				<ddlightborne_commandlux/>
+				<ddlightborne_timelux/>
+				<ddlightborne_angelular/>
+				<ddlightborne_warlockular/>
+				<ddlightborne_breakling/>
+				<ddlightborne_tormentular/>
+			</whiteList>
+		</statBoost>
+		<statBoost name="moveSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>4</amount>
+			<shipTarget>CURRENT_ROOM</shipTarget>
+			<crewTarget>ALLIES</crewTarget>
+			<droneTarget>ALL</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>25</duration>
+			<maxStacks id="ddRadiantDesecrationSpeedBuff">1</maxStacks>
+			<priority>-99999</priority>
+			<whiteList>
+				<ddlightborne_slayling/>
+				<ddlightborne_prismling/>
+				<ddlightborne_cinderling/>
+				<ddlightborne_clusterular/>
+				<ddlightborne_cellular/>
+				<ddlightborne_devourlux/>
+				<ddlightborne_spiritling/>
+				<ddlightborne_commandlux/>
+				<ddlightborne_timelux/>
+				<ddlightborne_angelular/>
+				<ddlightborne_warlockular/>
+				<ddlightborne_breakling/>
+				<ddlightborne_tormentular/>
+			</whiteList>
+		</statBoost>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-1.0</amount>
+			<shipTarget>CURRENT_ROOM</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>ALL</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>25</duration>
+			<maxStacks id="ddRadiantDesecrationDOTDebuff">1</maxStacks>
+			<priority>10001</priority>
+			<boostAnim>ddradiantdesecration_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="damageMultiplier">
+			<boostType>MULT</boostType>
+			<amount>0.8</amount>
+			<shipTarget>CURRENT_ROOM</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>ALL</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>25</duration>
+			<maxStacks id="ddRadiantDesecrationDamageDebuff">1</maxStacks>
+			<priority>10001</priority>
+		</statBoost>
+		<statBoost name="sabotageSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>0.8</amount>
+			<shipTarget>CURRENT_ROOM</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>ALL</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>25</duration>
+			<maxStacks id="ddRadiantDesecrationSabotageDebuff">1</maxStacks>
+			<priority>10001</priority>
+		</statBoost>
+		<statBoost name="moveSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>0.8</amount>
+			<shipTarget>CURRENT_ROOM</shipTarget>
+			<crewTarget>ENEMIES</crewTarget>
+			<droneTarget>ALL</droneTarget>
+			<affectsSelf>false</affectsSelf>
+			<duration>25</duration>
+			<maxStacks id="ddRadiantDesecrationSpeedDebuff">1</maxStacks>
+			<priority>10001</priority>
+		</statBoost>
+	</roomStatBoosts>
+</weaponBlueprint>
 
 <augBlueprint name="UPG_AEA_GREASE_IGNITER">
 	<title>Pre-Ignited Canisters</title>

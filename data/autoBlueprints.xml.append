@@ -5347,12 +5347,11 @@ A CLASS
 </blueprintList>
 
 <blueprintList name="LIST_WEAPONS_AEA_SHARD_ENEMY">  
-	<name>BOMB_LOCK_ENEMY</name> 
-	<name>CRYSTAL_BURST_1_ENEMY</name> 
-	<name>CRYSTAL_BURST_2_ENEMY</name> 
-	<name>CRYSTAL_HEAVY_1</name> 
-	<name>CRYSTAL_HEAVY_2_ENEMY</name> 
-	<name>CRYSTAL_CHARGEGUN_ENEMY</name>
+	<name>AEA_CRYSTAL_BURST_1_SHARD_ENEMY</name> 
+	<name>AEA_CRYSTAL_BURST_2_SHARD_ENEMY</name> 
+	<name>AEA_CRYSTAL_HEAVY_1_SHARD</name> 
+	<name>AEA_CRYSTAL_HEAVY_2_SHARD_ENEMY</name> 
+	<name>AEA_CRYSTAL_CHARGEGUN_SHARD_ENEMY</name>
 	<name>LASER_BURST_1</name>
 	<name>LASER_BURST_2_ENEMY</name>
 	<name>LASER_HEAVY_1</name>

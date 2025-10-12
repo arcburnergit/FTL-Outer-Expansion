@@ -555,12 +555,14 @@ end)
 function acidTrigger()
 	if Hyperspace.ships.player then
 		Hyperspace.Sounds:PlaySoundMix("cultivatorSpore", -1, false)
-		local room = Hyperspace.ships.player:GetRandomRoomCenter()
+		local roomPos = Hyperspace.ships.player:GetRandomRoomCenter()
+		local room = get_room_at_location(Hyperspace.ships.player, roomPos, false)
 		startAcid(0, room, 10)
 	end
 	if Hyperspace.ships.enemy then
 		Hyperspace.Sounds:PlaySoundMix("cultivatorSpore", -1, false)
-		local room = Hyperspace.ships.enemy:GetRandomRoomCenter()
+		local roomPos = Hyperspace.ships.enemy:GetRandomRoomCenter()
+		local room = get_room_at_location(Hyperspace.ships.enemy, roomPos, false)
 		startAcid(1, room, 10)
 	end
 end

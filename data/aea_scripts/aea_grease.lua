@@ -24,16 +24,20 @@ local systemFillingAmount = {[0] = 0, [1] = 0}
 local systemTypeVariable = "aea_grease_type"
 
 local greaseEffects = {
-	{name = "Fire", type = 1, colour = Graphics.GL_Color(253/255, 84/255, 70/255, 1), fill_rate = 0.05, desc = "Causes the last projectile in the volley to start a fire on hit."},
-	{name = "Frost", type = 1, colour = Graphics.GL_Color(171/255, 201/255, 202/255, 1), fill_rate = 0.033, desc = "Causes the last projectile in the volley to create a short lockdown on hit."},
-	{name = "Breach", type = 1, colour = Graphics.GL_Color(138/255, 150/255, 125/255, 1), fill_rate = 0.05, desc = "Causes the last projectile in the volley to open a breach on hit."},
-	{name = "Shock", req="AEA_GREASE_EFFECT_SHOCK", type = 1, colour = Graphics.GL_Color(95/255, 205/255, 228/255, 1), fill_rate = 0.125, desc = "Causes the last projectile in the volley to break and stun all doors in the room."},
-	{name = "Shatter", req="AEA_GREASE_EFFECT_SHATTER", type = 1, colour = Graphics.GL_Color(126/255, 174/255, 173/255, 1), fill_rate = 0.05, desc = "Causes the last projectile in the volley to create an extremely weak lockdown, the next hit to this room while the lockdown is active will do 2x damage."},
-	{name = "Acidic", req="AEA_GREASE_EFFECT_ACID", type = 1, colour = Graphics.GL_Color(111/255, 236/255, 95/255, 1), fill_rate = 0.05, desc = "Causes the last projectile in the volley to create acidic that erodes the system on hit."},
-	{name = "Inculcation", req="AEA_GREASE_EFFECT_SHLEG", type = 1, colour = Graphics.GL_Color(159/255, 228/255, 204/255, 1), fill_rate = 0.025, desc = "Causes the last projectile in the volley to create inculcation gas on hit."},
-	{name = "Marked", req="AEA_GREASE_EFFECT_BIRD", type = 1, colour = Graphics.GL_Color(211/255, 133/255, 255/255, 1), fill_rate = 0.025, desc = "Causes the last projectile in the volley to target all friendly drones on hit."},
-	{name = "Resurrection", req="AEA_GREASE_EFFECT_NECRO", type = 2, colour = Graphics.GL_Color(255/255, 201/255, 63/255, 1), fill_rate = 0.025, desc = "When a projectile kills a crewmember, temporarily resurrect that crewmember on your side."},
+	{name = "Fire", type = 1, colour = Graphics.GL_Color(253/255, 84/255, 70/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to start a fire on hit."},
+	{name = "Frost", type = 1, colour = Graphics.GL_Color(171/255, 201/255, 202/255, 1), fill_rate = 0.05, desc = "Causes the last projectile in the volley to create a short lockdown on hit."},
+	{name = "Breach", type = 1, colour = Graphics.GL_Color(138/255, 150/255, 125/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to open a breach on hit."},
+	{name = "Shock", req="AEA_GREASE_EFFECT_SHOCK", type = 1, colour = Graphics.GL_Color(95/255, 205/255, 228/255, 1), fill_rate = 0.15, desc = "Causes the last projectile in the volley to break and stun all doors in the room."},
+	{name = "Shatter", req="AEA_GREASE_EFFECT_SHATTER", type = 1, colour = Graphics.GL_Color(241/255, 241/255, 241/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to create an extremely weak lockdown, the next hit to this room while the lockdown is active will do 2x damage."},
+	{name = "Acidic", req="AEA_GREASE_EFFECT_ACID", type = 1, colour = Graphics.GL_Color(111/255, 236/255, 95/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to create acidic that erodes the system on hit."},
+	{name = "Inculcation", req="AEA_GREASE_EFFECT_SHLEG", type = 1, colour = Graphics.GL_Color(159/255, 228/255, 204/255, 1), fill_rate = 0.033, desc = "Causes the last projectile in the volley to create inculcation gas on hit."},
+	{name = "Marked", req="AEA_GREASE_EFFECT_BIRD", type = 1, colour = Graphics.GL_Color(211/255, 133/255, 255/255, 1), fill_rate = 0.033, desc = "Causes the last projectile in the volley to target all friendly drones on hit."},
+	{name = "Resurrection", req="AEA_GREASE_EFFECT_NECRO", type = 2, colour = Graphics.GL_Color(255/255, 201/255, 63/255, 1), fill_rate = 0.033, desc = "When a projectile kills a crewmember, temporarily resurrect that crewmember on your side."},
 	{name = "Cascade", req="AEA_GREASE_EFFECT_CASCADE", type = 2, colour = Graphics.GL_Color(182/255, 182/255, 182/255, 1), fill_rate = 0.075, desc = "When a projectile full breaks a system, deal system damage to an adjacent room."},
+	{name = "Soulplagued", req="AEA_GREASE_EFFECT_DD_SOULPLAGUE", type = 1, colour = Graphics.GL_Color(0/255, 0/255, 0/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict the Plagueridden effect."},
+	{name = "Darkness", req="AEA_GREASE_EFFECT_DD_DARKNESS", type = 1, colour = Graphics.GL_Color(0/255, 0/255, 0/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict a chaotic, and potentially dark effect."},
+	{name = "Shadow-Frost", req="AEA_GREASE_EFFECT_DD_SHADOW", type = 1, colour = Graphics.GL_Color(0/255, 0/255, 0/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict a series of Shadow-Crystal lockdowns, and potentially spawn a Hungering Shadow."},
+	{name = "Radiant", req="AEA_GREASE_EFFECT_DD_RADIANT", type = 1, colour = Graphics.GL_Color(0/255, 0/255, 0/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict the Radiant Desecration effect, and spawn a random Lightborne."},
 }
 greaseEffects[0] = {name = "PLACEHOLDER", type = 1, colour = Graphics.GL_Color(255/255, 255/255, 255/255, 1), fill_rate = 0.1, desc = "PLACEHOLDER"}
 
@@ -49,11 +53,19 @@ effectImages["Inculcation"] = Hyperspace.Resources:CreateImagePrimitiveString( "
 effectImages["Marked"] = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_icon_marked.png" , 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 effectImages["Resurrection"] = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_icon_resurrect.png" , 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 effectImages["Cascade"] = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_icon_cascade.png" , 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+effectImages["Soulplagued"] = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_icon_cascade.png" , 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+effectImages["Darkness"] = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_icon_cascade.png" , 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+effectImages["Shadow-Frost"] = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_icon_cascade.png" , 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+effectImages["Radiant"] = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_icon_cascade.png" , 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 
 --Handles tooltips and mousever descriptions per level
 local function get_level_description_grease(systemId, level, tooltip)
 	if systemId == Hyperspace.ShipSystem.NameToSystemId(systemIdName) then
-		return string.format("%i charges", level)
+		if level == 1 then
+			return string.format("%i charge", level)
+		else
+			return string.format("%i charges", level)
+		end
 	end
 end
 
@@ -195,6 +207,7 @@ local function renderGreaseOptions(originPos_x, originPos_y, effectButtonTable)
 		local currentEffect = greaseEffects[i]
 		if (currentEffect.req and Hyperspace.ships.player:HasEquipment(currentEffect.req) > 0) or not currentEffect.req then
 			table.insert(activeEffectButtons, effectButton)
+			effectButton.index = i
 			effectButton.b.bActive = true
 		else
 			effectButton.b.bActive = false
@@ -272,7 +285,7 @@ local function renderGreaseOptions(originPos_x, originPos_y, effectButtonTable)
 			Graphics.CSurface.GL_PushMatrix()
 			Graphics.CSurface.GL_Translate(effectButton.position.x, effectButton.position.y, 0)
 			effectButton.b:OnRender()
-			local effect = greaseEffects[i]
+			local effect = greaseEffects[effectButton.index]
 			local effectImage = effectImages[effect.name]
 			Graphics.CSurface.GL_RenderPrimitive(effectImage)
 			Graphics.CSurface.GL_PopMatrix()
@@ -392,21 +405,24 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	end
 end)
 
-local function spawn_fire(shipManager, projectile, location, damage, shipFriendlyFire)
+function spawn_fire(shipManager, projectile, location, damage, shipFriendlyFire)
 	local room = get_room_at_location(shipManager, location, true)
-	print("start fire")
 	shipManager:StartFire(room)
 end
+local spawn_fire = mods.aea.spawn_fire
 
 local function spawn_lockdown(shipManager, projectile, location, damage, shipFriendlyFire)
 	local room = get_room_at_location(shipManager, location, true)
-	shipManager.ship:LockdownRoom(room, location)
+	local shard = Hyperspace.CustomLockdownDefinition()
+	shard.duration = 6
+	shipManager.ship:LockdownRoom(room, location, shard)
 end
 
-local function spawn_breach(shipManager, projectile, location, damage, shipFriendlyFire)
+function mods.aea.spawn_breach(shipManager, projectile, location, damage, shipFriendlyFire)
 	local room = get_room_at_location(shipManager, location, true)
 	shipManager.ship:BreachRandomHull(room)
 end
+local spawn_breach = mods.aea.spawn_breach
 
 local smashedRooms = mods.aea.smashedRooms
 local function spawn_shock(shipManager, projectile, location, damage, shipFriendlyFire)
@@ -433,9 +449,26 @@ local function spawn_shock(shipManager, projectile, location, damage, shipFriend
 	smashedRooms[shipManager.iShipId][roomId].animations = animationsTable
 end
 
+local shatterName = "AEA_GREASE_EFFECT_BOMB_SHATTER"
+local shatterBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint(shatterName)
 local function spawn_shatter(shipManager, projectile, location, damage, shipFriendlyFire)
-	local room = get_room_at_location(shipManager, location, true)
-	shipManager.ship:LockdownRoom(room, location)
+	--[[local room = get_room_at_location(shipManager, location, true)
+	local shard = Hyperspace.CustomLockdownDefinition()
+	shard.health = 5
+	shard.anims:clear()
+	shard.anims:push_back("aea_shatter_shard_1")
+	shard.anims:push_back("aea_shatter_shard_2")
+	shipManager.ship:LockdownRoom(room, location, shard)
+	print("SHATTER")]]
+	local spaceManager = Hyperspace.App.world.space
+	spaceManager:CreateLaserBlast(
+		shatterBlueprint,
+		location,
+		projectile.currentSpace,
+		projectile.ownerId,
+		location,
+		projectile.destinationSpace,
+		projectile.heading)
 end
 
 local startAcid = mods.aea.startAcid
@@ -495,6 +528,11 @@ local function spawn_lightning(shipManager, projectile, location, damage, shipFr
 	end
 end
 
+local spawn_soulplague = mods.aea.spawn_soulplague
+local spawn_darkness = mods.aea.spawn_darkness
+local spawn_shadow = mods.aea.spawn_shadow
+local spawn_radiant = mods.aea.spawn_radiant
+
 local spawn_effect = {}
 spawn_effect["PLACEHOLDER"] = spawn_fire
 spawn_effect["Fire"] = spawn_fire
@@ -507,6 +545,10 @@ spawn_effect["Inculcation"] = spawn_inculcation
 spawn_effect["Marked"] = spawn_marked
 spawn_effect["Resurrection"] = spawn_resurrection
 spawn_effect["Cascade"] = spawn_lightning
+spawn_effect["Soulplagued"] = spawn_soulplague
+spawn_effect["Darkness"] = spawn_darkness
+spawn_effect["Shadow-Frost"] = spawn_shadow
+spawn_effect["Radiant"] = spawn_radiant
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
 	local shipManager = Hyperspace.ships(weapon.iShipId)
