@@ -18,6 +18,21 @@
 	<time>1</time>
 </anim>
 
+<animSheet fh="19" fw="18" h="19" name="aea_shatter_shard_1" w="108">weapon_shard/aea_shatter_shard_1.png</animSheet>
+<animSheet fh="19" fw="18" h="19" name="aea_shatter_shard_2" w="90">weapon_shard/aea_shatter_shard_2.png</animSheet>
+
+<anim name="aea_shatter_shard_1">
+	<sheet>aea_shatter_shard_1</sheet>
+	<desc length="6" x="0" y="0"/>
+	<time>0.5</time>
+</anim>
+
+<anim name="aea_shatter_shard_2">
+	<sheet>aea_shatter_shard_2</sheet>
+	<desc length="5" x="0" y="0"/>
+	<time>0.5</time>
+</anim>
+
 <animSheet name="aea_invisible" w="35" h="35" fw="35" fh="35">effects/invisible.png</animSheet>
 <anim name="aea_invisible">
 	<sheet>aea_invisible</sheet>
@@ -666,6 +681,106 @@
 </weaponAnim>
 </FTL>
 
+<!--Shard Weapons-->
+<FTL>
+<animSheet name="aea_crystal_burst_shard" w="80" h="32" fw="80" fh="32">projectiles/aea_crystal_burst_shard.png</animSheet>
+<anim name="aea_crystal_burst_shard">
+	<sheet>aea_crystal_burst_shard</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<animSheet name="aea_crystal_shard_shard" w="32" h="80" fw="32" fh="80">projectiles/aea_crystal_shot1_shard.png</animSheet>
+<anim name="aea_crystal_shard_shard">
+	<sheet>aea_crystal_shard_shard</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<animSheet name="aea_crystal_shard2_shard" w="32" h="80" fw="32" fh="80">projectiles/aea_crystal_shot2_shard.png</animSheet>
+<anim name="aea_crystal_shard2_shard">
+	<sheet>aea_crystal_shard2_shard</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="aea_crystal_burst_1_shard" w="168" h="53" fw="24" fh="53">weapon_shard/aea_crystal_burst_1_shard.png</animSheet>
+<weaponAnim name="aea_crystal_burst_1_shard">
+	<sheet>aea_crystal_burst_1_shard</sheet>
+	<desc length="7" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>4</fireFrame>
+	<firePoint  x="15" y="15"/>
+	<mountPoint x="6" y="36"/>
+	<chargeImage>weapons/crystal_burst_1_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="aea_crystal_burst_2_shard" w="245" h="61" fw="35" fh="61">weapon_shard/aea_crystal_burst_2_shard.png</animSheet>
+<weaponAnim name="aea_crystal_burst_2_shard">
+	<sheet>aea_crystal_burst_2_shard</sheet>
+	<desc length="7" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>5</fireFrame>
+	<firePoint  x="19" y="14"/>
+	<mountPoint x="6" y="41"/>
+	<chargeImage>weapons/crystal_burst_2_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="aea_crystal_burst_2_loot" w="245" h="61" fw="35" fh="61">weapon_shard/aea_crystal_burst_2_loot.png</animSheet>
+<weaponAnim name="aea_crystal_burst_2_loot">
+	<sheet>aea_crystal_burst_2_loot</sheet>
+	<desc length="7" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>5</fireFrame>
+	<firePoint  x="19" y="14"/>
+	<mountPoint x="6" y="41"/>
+	<chargeImage>weapons/crystal_burst_2_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="aea_crystal_heavy_1_shard" w="222" h="63" fw="37" fh="63">weapon_shard/aea_crystal_heavy_1_shard.png</animSheet>
+<weaponAnim name="aea_crystal_heavy_1_shard">
+	<sheet>aea_crystal_heavy_1_shard</sheet>
+	<desc length="6" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>4</fireFrame>
+	<firePoint  x="20" y="16"/>
+	<mountPoint x="8" y="45"/>
+	<chargeImage>weapons/crystal_heavy_1_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="aea_crystal_heavy_2_shard" w="282" h="68" fw="47" fh="68">weapon_shard/aea_crystal_heavy_2_shard.png</animSheet>
+<weaponAnim name="aea_crystal_heavy_2_shard">
+	<sheet>aea_crystal_heavy_2_shard</sheet>
+	<desc length="6" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>4</fireFrame>
+	<firePoint  x="21" y="22"/>
+	<mountPoint x="9" y="47"/>
+	<chargeImage>weapons/crystal_heavy_2_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="aea_crystal_charge_shard" w="516" h="59" fw="43" fh="59">weapon_shard/aea_crystal_charge_shard.png</animSheet>
+<weaponAnim name="aea_crystal_charge_shard">
+	<sheet>aea_crystal_charge_shard</sheet>
+	<desc length="12" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>4</fireFrame>
+	<firePoint  x="18" y="20"/>
+	<mountPoint x="6" y="36"/>
+	<boost>crystal_charge_charges</boost>
+	<chargeImage>weapon_crystal/crystal_charge_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="aea_crystal_flak_shard" w="351" h="58" fw="39" fh="58">weapon_shard/aea_crystal_flak_shard.png</animSheet>
+<weaponAnim name="aea_crystal_flak_shard">
+	<sheet>aea_crystal_flak_shard</sheet>
+	<desc length="9" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>5</fireFrame>
+	<firePoint  x="15" y="11"/>
+	<mountPoint x="3" y="33"/>
+	<chargeImage>weapon_crystal/crystal_flak_glow.png</chargeImage>
+</weaponAnim>
+</FTL>
+
 <!--Armour-->
 <FTL>
 
@@ -928,7 +1043,8 @@
 </FTL>
 
 <!--All crew-->
-<FTL><animSheet name="aea_acid_worker" w="490" h="420" fw="35" fh="35">people/aea_acid_worker_base.png</animSheet>
+<FTL>
+<animSheet name="aea_acid_worker" w="490" h="420" fw="35" fh="35">people/aea_acid_worker_base.png</animSheet>
 <anim name="aea_acid_worker_clone">
 	<sheet>aea_acid_worker</sheet>
 	<desc length="5" x="0" y="1" />

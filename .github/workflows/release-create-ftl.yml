@@ -44,7 +44,7 @@ jobs:
     - name: Create Patch Last file and upload
       run: |
         PATCH_DIR="FTL-Outer-Expansion-Patch-Last"
-        PATCH_FILENAME="FTL-Outer-Expansion-PATCH_AFTER_ALL_OTHER_ADDONS.ftl"
+        PATCH_FILENAME="FTL-Outer-Expansion-SYSTEM-PATCHER-LAST.ftl"
 
         # Check if the patch directory exists
         if [ ! -d "$PATCH_DIR" ]; then

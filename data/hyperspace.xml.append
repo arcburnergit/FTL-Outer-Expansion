@@ -693,6 +693,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_ARTY">
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_ACID</hiddenAug>
 		<crew>
 			<aea_acid_worker room="0" name="Acidic Worker" />
 			<orchid room="1"/>
@@ -703,6 +704,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_ARTY_2">
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_ACID</hiddenAug>
 		<crew>
 			<aea_acid_worker room="15" name="Acidic Worker" />
 			<aea_acid_worker room="2" name="Acidic Worker" />
@@ -713,11 +715,13 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_ARTY_3">
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_ACID</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_LONG">
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_ACID</hiddenAug>
 		<crew>
 			<aea_acid_soldier room="0" name="Acidic Soldier" />
 			<orchid_caretaker room="1"/>
@@ -728,6 +732,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_LONG_2">
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_ACID</hiddenAug>
 		<crew>
 			<aea_acid_soldier room="8" name="Acidic Soldier" />
 			<aea_acid_worker room="4" name="Acidic Worker" />
@@ -738,6 +743,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_ACID_LONG_3">
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_ACID</hiddenAug>
 		<crew>
 			<aea_acid_soldier room="0" name="Acidic Soldier" />
 			<aea_acid_soldier room="4" name="Acidic Soldier" />
@@ -749,6 +755,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CREW1">
 		<hiddenAug>SHIP_AEA_ACIDIC</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_ACID</hiddenAug>
 		<crew>
 			<aea_acid_bill room="5" name="Bill" />
 			<orchid_cultivator room="5"/>
@@ -766,37 +773,44 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_ENGI">
 		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_NECRO</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_ENGI_2">
 		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_NECRO</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_ENGI_3">
 		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<hiddenAug>AEA_NECRO_ENGI_SLOT_C</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_NECRO</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_SEPA">
 		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_NECRO</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_SEPA_2">
 		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_NECRO</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_NECRO_SEPA_3">
 		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_NECRO</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CREW2">
 		<hiddenAug>SHIP_AEA_NECRO</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_NECRO</hiddenAug>
 		<crewLimit>11</crewLimit>
 		<crew>
 			<aea_necro_king room="0" name="L-0031" />
@@ -845,32 +859,39 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_BIG">
 		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_BIRD</hiddenAug>
 	</mod-append:customShip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_BIG_2">
 		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_BIRD</hiddenAug>
 	</mod-append:customShip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_BIG_3">
 		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_BIRD</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_TRAN">
 		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_BIRD</hiddenAug>
 	</mod-append:customShip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_TRAN_2">
 		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_BIRD</hiddenAug>
 	</mod-append:customShip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_BIRD_TRAN_3">
 		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_BIRD</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CREW4">
 		<hiddenAug>SHIP_AEA_BIRD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_BIRD</hiddenAug>
 		<crew>
 			<aea_bird_unique room="0" name="Jay" />
 			<aea_bird_avali room="2" />
@@ -881,19 +902,23 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHLEG_GEL">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHLEG</hiddenAug>
 	</mod-append:customShip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHLEG_GEL_2">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHLEG</hiddenAug>
 	</mod-append:customShip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHLEG_GEL_3">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHLEG</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHLEG_GAS">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHLEG</hiddenAug>
 		<rooms>
 			<room id="0">
 				<roomAnim renderLayer="0">
@@ -1020,6 +1045,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHLEG_GAS_2">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHLEG</hiddenAug>
 		<rooms>
 			<room id="0">
 				<roomAnim renderLayer="0">
@@ -1134,6 +1160,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHLEG_GAS_3">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHLEG</hiddenAug>
 		<rooms>
 			<room id="0">
 				<roomAnim renderLayer="0">
@@ -1260,6 +1287,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CREW5">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHLEG</hiddenAug>
 		<rooms>
 			<room id="0">
 				<roomAnim renderLayer="0">
@@ -1379,10 +1407,12 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_BATTLE">
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHATTER</hiddenAug>
 	</mod-append:customShip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_BATTLE_2">
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHATTER</hiddenAug>
 		<exclusivityOverride>
 			<exclusivityGroup>
 				<cloaking/>
@@ -1393,6 +1423,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_BATTLE_3">
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHATTER</hiddenAug>
 	</mod-append:customShip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_CREW6">
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
@@ -1414,11 +1445,13 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_AUTO">
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHATTER</hiddenAug>
 		<systemLimit>9</systemLimit>
 	</mod-append:customShip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_AUTO_2">
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHATTER</hiddenAug>
 		<exclusivityOverride>
 			<exclusivityGroup>
 				<medbay/>
@@ -1433,6 +1466,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_AUTO_3">
 		<hiddenAug>SHIP_PIRATE</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHATTER</hiddenAug>
 		<autoShipForce>true</autoShipForce>
 	</mod-append:customShip>
 
@@ -1623,6 +1657,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_ARMOUR">
 		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHOCK</hiddenAug>
 		<rooms>
 			<room id="2">
 				<roomAnim renderLayer="0">aea_armour_top_1x4</roomAnim>
@@ -1640,6 +1675,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_ARMOUR_2">
 		<hiddenAug>SHIP_ANCIENT</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHOCK</hiddenAug>
 		<rooms>
 			<room id="4">
 				<roomAnim renderLayer="0">aea_armour_1x4</roomAnim>
@@ -1652,6 +1688,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_ARMOUR_3">
 		<hiddenAug>SHIP_SYLVAN</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHOCK</hiddenAug>
 		<crew>
 			<unique_sylvan room="0" name="Sylvan" />  <!--piloting-->
 			<slug_saboteur room="6" />  <!--engines-->
@@ -1662,6 +1699,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_FLAGSHIP">
 		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHOCK</hiddenAug>
 		<exclusivityOverride>
 			<exclusivityGroup>
 				<medbay/>
@@ -1697,6 +1735,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_FLAGSHIP_2">
 		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHOCK</hiddenAug>
 		<rooms>
 			<room id="5">
 				<roomAnim renderLayer="0">aea_armour_up_1x2</roomAnim>
@@ -1719,6 +1758,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_FLAGSHIP_3">
 		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHOCK</hiddenAug>
 		<exclusivityOverride>
 			<exclusivityGroup>
 				<cloaking/>
@@ -1745,6 +1785,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_HAMMER">
 		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHOCK</hiddenAug>
 		<rooms>
 			<room id="1">
 				<roomAnim renderLayer="0">aea_armour_top_1x3</roomAnim>
@@ -1762,6 +1803,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_HAMMER_2">
 		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHOCK</hiddenAug>
 		<rooms>
 			<room id="1">
 				<roomAnim renderLayer="0">aea_armour_up_2x1</roomAnim>
@@ -1789,6 +1831,7 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 	<mod-append:customShip name="PLAYER_SHIP_AEA_OLD_HAMMER_3">
 		<hiddenAug>SHIP_AEA_OLD</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<hiddenAug>AEA_GREASE_EFFECT_SHOCK</hiddenAug>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="AEA_BIRD_SHUTTLE_DRONE">
@@ -9530,6 +9573,21 @@ Right click to attempt the ritual or cancel.
 		<name>AEA_COMBAT_NECRO_BOSS_CHAOS</name>
 	</req>
 	<req name="AEA_GREASE_REQ_EFFECT_CASCADE" type="any">
+	</req>
+	<req name="AEA_GREASE_REQ_EFFECT_DD_SOULPLAGUE" type="any">
+		<name>JUDGELIST_ROCK_DDSOULPLAGUE_GEAR</name>
+		<name>LIST_DDSOULPLAGUE_ALIGNED</name>
+	</req>
+	<req name="AEA_GREASE_REQ_EFFECT_DD_DARKNESS" type="any">
+		<name>JUDGELIST_ROCK_DEEPONE_GEAR</name>
+		<name>LIST_CREW_DEEPONES</name>
+	</req>
+	<req name="AEA_GREASE_REQ_EFFECT_DD_SHADOW" type="any">
+		<name>JUDGELIST_ROCK_DISPARITY_GEAR</name>
+		<name>LIST_CREW_DISPARITY</name>
+	</req>
+	<req name="AEA_GREASE_REQ_EFFECT_DD_RADIANT" type="any">
+		<name>BLUELIST_DDLIGHTBORNE_EQUIPMENT</name>
 	</req>
 
 	<eventFile>special_aea_justicier</eventFile>

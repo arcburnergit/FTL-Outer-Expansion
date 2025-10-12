@@ -582,6 +582,38 @@
 		<text>Cascade Amplification.</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_CASCADE"/>
 	</choice>
+	<choice req="AEA_GREASE_EFFECT_DD_SOULPLAGUE" lvl="1" max_group="11" blue="false" hidden="true">
+		<text>Soulplague Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_REQ_EFFECT_DD_SOULPLAGUE" lvl="1" max_group="11" blue="true" hidden="true">
+		<text>Soulplague Amplification.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_DD_SOULPLAGUE"/>
+	</choice>
+	<choice req="AEA_GREASE_EFFECT_DD_DARKNESS" lvl="1" max_group="11" blue="false" hidden="true">
+		<text>Darkness Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_REQ_EFFECT_DD_DARKNESS" lvl="1" max_group="11" blue="true" hidden="true">
+		<text>Darkness Amplification.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_DD_DARKNESS"/>
+	</choice>
+	<choice req="AEA_GREASE_EFFECT_DD_SHADOW" lvl="1" max_group="11" blue="false" hidden="true">
+		<text>Shadow-Frost Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_REQ_EFFECT_DD_SHADOW" lvl="1" max_group="11" blue="true" hidden="true">
+		<text>Shadow-Frost Amplification.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_DD_SHADOW"/>
+	</choice>
+	<choice req="AEA_GREASE_EFFECT_DD_RADIANT" lvl="1" max_group="11" blue="false" hidden="true">
+		<text>Radiant Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_REQ_EFFECT_DD_RADIANT" lvl="1" max_group="11" blue="true" hidden="true">
+		<text>Radiant Amplification.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_DD_RADIANT"/>
+	</choice>
     <choice>
         <text>Nevermind.</text>
         <event load="STORAGE_CHECK_SYSTEM_LOAD" />
@@ -723,6 +755,90 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
 			<modifyPursuit amount="1"/>
 			<hiddenAug>AEA_GREASE_EFFECT_CASCADE</hiddenAug>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_DD_SOULPLAGUE">
+	<text>You have tech on your ship which can be scanned by your Weapons Amplifier.
+[Soulplague Enhancement: Causes the last projectile in the volley to inflict the Plagueridden effect.]
+It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
+	<choice hidden="true">
+		<text>Proceed.</text>
+		<event>
+			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
+			<modifyPursuit amount="1"/>
+			<hiddenAug>AEA_GREASE_EFFECT_DD_SOULPLAGUE</hiddenAug>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_DD_DARKNESS">
+	<text>You have tech on your ship which can be scanned by your Weapons Amplifier.
+[Darkness Enhancement: Causes the last projectile in the volley to inflict a chaotic, and potentially dark effect.]
+It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
+	<choice hidden="true">
+		<text>Proceed.</text>
+		<event>
+			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
+			<modifyPursuit amount="1"/>
+			<hiddenAug>AEA_GREASE_EFFECT_DD_DARKNESS</hiddenAug>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_DD_SHADOW">
+	<text>You have tech on your ship which can be scanned by your Weapons Amplifier.
+[Shadow-Frost Enhancement: Causes the last projectile in the volley to inflict a series of Shadow-Crystal lockdowns, and potentially spawn a Hungering Shadow.]
+It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
+	<choice hidden="true">
+		<text>Proceed.</text>
+		<event>
+			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
+			<modifyPursuit amount="1"/>
+			<hiddenAug>AEA_GREASE_EFFECT_DD_SHADOW</hiddenAug>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_DD_RADIANT">
+	<text>You have tech on your ship which can be scanned by your Weapons Amplifier.
+[Radiant Enhancement: Causes the last projectile in the volley to inflict the Radiant Desecration effect, and spawn a random Lightborne.]
+It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
+	<choice hidden="true">
+		<text>Proceed.</text>
+		<event>
+			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
+			<modifyPursuit amount="1"/>
+			<hiddenAug>AEA_GREASE_EFFECT_DD_RADIANT</hiddenAug>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
@@ -1801,7 +1917,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_a01">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_01"/>
 				</event>
@@ -1819,7 +1935,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_a02">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_02"/>
 				</event>
@@ -1837,7 +1953,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_s03">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_03"/>
 				</event>
@@ -1855,7 +1971,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_s04">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_04"/>
 				</event>
@@ -1873,7 +1989,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_s05">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_05"/>
 				</event>
@@ -1891,7 +2007,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_s06">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_06"/>
 				</event>
@@ -1909,7 +2025,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_a07">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_07"/>
 				</event>
@@ -1927,7 +2043,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_s08">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_08"/>
 				</event>
@@ -1945,7 +2061,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_s09">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_09"/>
 				</event>
@@ -1963,7 +2079,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_a10">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_10"/>
 				</event>
@@ -1981,7 +2097,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_a11">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_11"/>
 				</event>
@@ -1999,7 +2115,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_s12">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_12"/>
 				</event>
@@ -2017,7 +2133,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_s13">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_13"/>
 				</event>
@@ -2035,7 +2151,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_s14">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_14"/>
 				</event>
@@ -2053,7 +2169,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_wizard_s15">aea_cult_wizard</transformRace>
 					<weapon name="AEA_SPELL_ITEM_15"/>
 				</event>
@@ -2244,7 +2360,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<text>You reset the weapon, losing any previous spells it had equipped.</text>
 					<remove name="AEA_LASER_CULT_03"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -2275,7 +2391,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<text>You reset the weapon, losing any previous spells it had equipped.</text>
 					<remove name="AEA_LASER_CULT_04"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -2306,7 +2422,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<text>You reset the weapon, losing any previous spells it had equipped.</text>
 					<remove name="AEA_LASER_CULT_05"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -2337,7 +2453,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<text>You reset the weapon, losing any previous spells it had equipped.</text>
 					<remove name="AEA_LASER_CULT_06"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -2368,7 +2484,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<text>You reset the weapon, losing any previous spells it had equipped.</text>
 					<remove name="AEA_LASER_CULT_08"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -2399,7 +2515,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<text>You reset the weapon, losing any previous spells it had equipped.</text>
 					<remove name="AEA_LASER_CULT_09"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -2430,7 +2546,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<text>You reset the weapon, losing any previous spells it had equipped.</text>
 					<remove name="AEA_LASER_CULT_12"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -2461,7 +2577,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<text>You reset the weapon, losing any previous spells it had equipped.</text>
 					<remove name="AEA_LASER_CULT_13"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -2492,7 +2608,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<text>You reset the weapon, losing any previous spells it had equipped.</text>
 					<remove name="AEA_LASER_CULT_14"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -2523,7 +2639,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>You reset the weapon, losing any previous spells it had equiped.</text>
+					<text>You reset the weapon, losing any previous spells it had equipped.</text>
 					<remove name="AEA_LASER_CULT_15"/>
 					<choice hidden="true">
 						<text>Continue...</text>
@@ -2693,7 +2809,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_a01">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_01"/>
 				</event>
@@ -2711,7 +2827,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_a02">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_02"/>
 				</event>
@@ -2729,7 +2845,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_s03">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_03"/>
 				</event>
@@ -2747,7 +2863,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_s04">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_04"/>
 				</event>
@@ -2765,7 +2881,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_s05">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_05"/>
 				</event>
@@ -2783,7 +2899,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_s06">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_06"/>
 				</event>
@@ -2801,7 +2917,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_a07">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_07"/>
 				</event>
@@ -2819,7 +2935,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_s08">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_08"/>
 				</event>
@@ -2837,7 +2953,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_s09">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_09"/>
 				</event>
@@ -2855,7 +2971,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_a10">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_10"/>
 				</event>
@@ -2873,7 +2989,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_a11">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_11"/>
 				</event>
@@ -2891,7 +3007,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_s12">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_12"/>
 				</event>
@@ -2909,7 +3025,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_s13">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_13"/>
 				</event>
@@ -2927,7 +3043,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_s14">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_14"/>
 				</event>
@@ -2945,7 +3061,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<choice>
 				<text>Reset.</text>
 				<event>
-					<text>Your tiny cultist resets their staff, losing any previous spells they had equiped.</text>
+					<text>Your tiny cultist resets their staff, losing any previous spells they had equipped.</text>
 					<transformRace class="aea_cult_tiny_s15">aea_cult_tiny</transformRace>
 					<weapon name="AEA_SPELL_ITEM_15"/>
 				</event>
