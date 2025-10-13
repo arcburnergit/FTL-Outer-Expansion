@@ -709,6 +709,11 @@ local bloodStainList = {[0] = {}, [1] = {}}
 script.on_init(function()
 	bloodStainList = {[0] = {}, [1] = {}}
 end)
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+	if Hyperspace.App.menu.shipBuilder.bOpen then
+		bloodStainList = {[0] = {}, [1] = {}}
+	end
+end)
 script.on_render_event(Defines.RenderEvents.SHIP_FLOOR, function() end, function(shipManager)
 	local list = bloodStainList[shipManager.iShipId]
 	for i, bloodTable in ipairs(list) do
@@ -1542,22 +1547,23 @@ end, function() end)
 
 local statuesThisBeacon = false 
 local statueStats = {
-	min_sacs = 15,
-	min_chance = 5,
-	max_sacs = 50,
-	max_chance = 33,
-	spawn_time_min = 5,
-	spawn_time_max = 20,
-	spawn_max = 10,
+	min_sacs = 15, --Number of sacs to start spawning statues
+	min_chance = 2.5,
+	max_sacs = 50, --Maximum scale
+	max_chance = 25,
+	spawn_time_min = 10,
+	spawn_time_max = 30,
+	spawn_max = 8,
 	hostile_chance = 25,
 	hostile_max = 2,
 }
 local function statue_should_spawn()
+	local shipBuilder = not Hyperspace.App.menu.shipBuilder.bOpen
 	local sacs = Hyperspace.playerVariables.aea_justicier_sacs_this_run > statueStats.min_sacs
 	local book = Hyperspace.playerVariables.aea_dark_book_taken
 	local destroy = Hyperspace.playerVariables.aea_justicier_statue_destroy == 0
 	local active = Hyperspace.playerVariables.aea_justicier_statue_active >= 1
-	return sacs and book and (destroy or active)
+	return shipBuilder and sacs and book and (destroy or active)
 end
 
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(ship) 

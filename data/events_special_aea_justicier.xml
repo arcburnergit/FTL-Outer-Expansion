@@ -218,6 +218,16 @@ Crew sacrificed by a ritual can be cloned but will be weakened for 3 jumps.
 <event name="AEA_JUSTICIER_BOOK_STARE">
     <text>YOU SHOULD NOT BE SEEING THIS, IF YOU ARE CHECK TO MAKE SURE YOUR HYPERSPACE IS UP TO DATE.</text>
 	<variable name="aea_dark_book_taken" op="set" val="1" />
+    <eventButton name="UI_AEA_BOOK_BUTTON">
+        <event load="AEA_JUSTICIER_BOOK_ACTIVATE"/>
+        <image border="12">statusUI/top_aea_book</image>
+        <customLocation x="105" y="200"/>
+        <req lvl="1">aea_dark_book_ready</req>
+        <tooltip>Perform a ritual sacrifice. Cannot target non [style[color:FFC800]]statue[[/style]] mind controlled crew.</tooltip>
+        <inactiveTooltip>Active or on cooldown. (20 seconds)</inactiveTooltip>
+        <jumpClear>false</jumpClear>
+        <noDanger>false</noDanger>
+    </eventButton>
     <choice hidden="true">
         <text>Continue...</text>
         <event load="AEA_JUSTICIER_BOOK_LOAD"/>
@@ -226,7 +236,7 @@ Crew sacrificed by a ritual can be cloned but will be weakened for 3 jumps.
 
 <event name="AEA_JUSTICIER_BOOK_SELECT">
     <text>The [style[color:FF0000]]Book[[/style]] appears to stare at you, compelling you to reach out and take it for yourself.</text>
-    <choice>
+    <choice req="aea_dark_book_taken" lvl="0" max_lvl="0" blue="false">
         <text>Take the [style[color:FF0000]]Book[[/style]]...</text>
         <event>
             <text>As you take the [style[color:FF0000]]Book[[/style]] you feel a tingle down your spine as if being watched or [style[color:FFC800]]hunted[[/style]].</text>
@@ -242,6 +252,10 @@ Crew sacrificed by a ritual can be cloned but will be weakened for 3 jumps.
                 <noDanger>false</noDanger>
             </eventButton>
         </event>
+    </choice>
+    <choice req="aea_dark_book_taken" lvl="1" blue="false">
+        <text>Continue...</text>
+        <event/>
     </choice>
 </event>
 

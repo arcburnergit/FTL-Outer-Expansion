@@ -75,7 +75,7 @@ godEvents["AEA_JUSTICIER_BOOK_UNLOCK"] = {
 	},
 	finish = "AEA_JUSTICIER_BOOK_LOAD_UNLOCK"
 }
-godEvents["AEA_JUSTICIER_BOOK_UNLOCK"] = {
+godEvents["AEA_JUSTICIER_BOOK_STARE"] = {
 	varient = 1,
 	event = {
 		text="You are back. I will grant you my power, do not disappoint me.", 

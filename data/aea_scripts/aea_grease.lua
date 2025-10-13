@@ -38,6 +38,7 @@ local greaseEffects = {
 	{name = "Darkness", req="AEA_GREASE_EFFECT_DD_DARKNESS", type = 1, colour = Graphics.GL_Color(0/255, 0/255, 0/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict a chaotic, and potentially dark effect."},
 	{name = "Shadow-Frost", req="AEA_GREASE_EFFECT_DD_SHADOW", type = 1, colour = Graphics.GL_Color(0/255, 0/255, 0/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict a series of Shadow-Crystal lockdowns, and potentially spawn a Hungering Shadow."},
 	{name = "Radiant", req="AEA_GREASE_EFFECT_DD_RADIANT", type = 1, colour = Graphics.GL_Color(0/255, 0/255, 0/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict the Radiant Desecration effect, and spawn a random Lightborne."},
+	{name = "Chaos", req="AEA_GREASE_EFFECT_CHAOS", type = 1, colour = Graphics.GL_Color(0/255, 0/255, 0/255, 1), fill_rate = 0.1, desc = "Causes the last projectile in the volley to trigger a random effect that you have available."},
 }
 greaseEffects[0] = {name = "PLACEHOLDER", type = 1, colour = Graphics.GL_Color(255/255, 255/255, 255/255, 1), fill_rate = 0.1, desc = "PLACEHOLDER"}
 
@@ -57,6 +58,7 @@ effectImages["Soulplagued"] = Hyperspace.Resources:CreateImagePrimitiveString( "
 effectImages["Darkness"] = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_icon_cascade.png" , 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 effectImages["Shadow-Frost"] = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_icon_cascade.png" , 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 effectImages["Radiant"] = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_icon_cascade.png" , 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+effectImages["Chaos"] = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_icon_chaos.png" , 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 
 --Handles tooltips and mousever descriptions per level
 local function get_level_description_grease(systemId, level, tooltip)
@@ -161,7 +163,11 @@ local function grease_click(systemBox, shift)
 					local new_per_charge = math.floor((1/new_effect.fill_rate)+0.5)
 					local new_seconds = seconds/new_per_charge
 					Hyperspace.playerVariables[systemChargesVariable] = math.floor(new_per_charge)
-					systemFillingAmount[0] = new_per_charge%1
+					if Hyperspace.playerVariables[systemChargesVariable] >= systemBox.pSystem:GetEffectivePower() then
+						Hyperspace.playerVariables[systemChargesVariable] = systemBox.pSystem:GetEffectivePower()
+					else
+						systemFillingAmount[0] = new_per_charge%1
+					end
 				else
 					Hyperspace.playerVariables[systemChargesVariable] = 0
 					systemFillingAmount[0] = 0
@@ -544,6 +550,17 @@ local spawn_darkness = mods.aea.spawn_darkness
 local spawn_shadow = mods.aea.spawn_shadow
 local spawn_radiant = mods.aea.spawn_radiant
 
+local function spawn_chaos(shipManager, projectile, location, damage, shipFriendlyFire)
+	local possibleEffects = {}
+	for i, effect in ipairs(greaseEffects) do
+		if (effect.req and Hyperspace.ships.player:HasEquipment(effect.req) > 0) or not effect.req then
+			table.insert(possibleEffects, effect)
+		end
+	end
+	local random = math.random(#possibleEffects)
+	spawn_effect[possibleEffects[random].name]
+end
+
 local spawn_effect = {}
 spawn_effect["PLACEHOLDER"] = spawn_fire
 spawn_effect["Fire"] = spawn_fire
@@ -560,6 +577,7 @@ spawn_effect["Soulplagued"] = spawn_soulplague
 spawn_effect["Darkness"] = spawn_darkness
 spawn_effect["Shadow-Frost"] = spawn_shadow
 spawn_effect["Radiant"] = spawn_radiant
+spawn_effect["Chaos"] = spawn_chaos
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
 	local shipManager = Hyperspace.ships(weapon.iShipId)
@@ -619,7 +637,7 @@ script.on_render_event(Defines.RenderEvents.SHIP, function(ship) end, function(s
 			projectile.flight_animation:OnRender(1, Graphics.GL_Color(0, 0, 1, 1), false)
 			Graphics.CSurface.GL_PopMatrix()]]
 			Graphics.CSurface.GL_PushMatrix()
-			Graphics.CSurface.GL_Translate(projectile.position.x - 5, projectile.position.y - 15, 0)
+			Graphics.CSurface.GL_Translate(projectile.position.x - 11, projectile.position.y - 11 - 5, 0)
 			local effectImage = effectImages[effect.name]
 			Graphics.CSurface.GL_RenderPrimitive(effectImage)
 			Graphics.CSurface.GL_PopMatrix()

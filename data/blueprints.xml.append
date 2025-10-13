@@ -5255,7 +5255,7 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 		<count>1</count>
 		<countSuper>1</countSuper>
 	</mv-pop>
-	<fireChance>10</fireChance>
+	<fireChance>5</fireChance>
 	<breachChance>0</breachChance>
 	<cooldown>12</cooldown>
 	<power>1</power>
@@ -5299,7 +5299,7 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 		<count>1</count>
 		<countSuper>1</countSuper>
 	</mv-pop>
-	<fireChance>10</fireChance>
+	<fireChance>5</fireChance>
 	<breachChance>0</breachChance>
 	<cooldown>16</cooldown>
 	<power>2</power>
@@ -5343,7 +5343,7 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 		<count>1</count>
 		<countSuper>1</countSuper>
 	</mv-pop>
-	<fireChance>10</fireChance>
+	<fireChance>5</fireChance>
 	<breachChance>0</breachChance>
 	<cooldown>19</cooldown>
 	<power>3</power>
@@ -5388,7 +5388,7 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 		<countSuper>1</countSuper>
 	</mv-pop>
 	<fireChance>0</fireChance>
-	<breachChance>10</breachChance>
+	<breachChance>5</breachChance>
 	<cooldown>19</cooldown>
 	<power>3</power>
 	<cost>70</cost>
@@ -16702,6 +16702,14 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<value>1</value>
 </augBlueprint>
 <augBlueprint name="AEA_GREASE_EFFECT_DD_RADIANT">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="AEA_GREASE_EFFECT_CHAOS">
 	<title>Weapons Amplifier Enhancement</title>
 	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<cost>0</cost>

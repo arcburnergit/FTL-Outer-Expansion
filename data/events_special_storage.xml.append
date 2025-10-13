@@ -582,35 +582,43 @@
 		<text>Cascade Amplification.</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_CASCADE"/>
 	</choice>
-	<choice req="AEA_GREASE_EFFECT_DD_SOULPLAGUE" lvl="1" max_group="11" blue="false" hidden="true">
+	<choice req="AEA_GREASE_EFFECT_CHAOS" lvl="1" max_group="12" blue="false" hidden="true">
+		<text>Chaos Amplification. [ALREADY AVAILABLE]</text>
+		<event load="OPTION_INVALID"/>
+	</choice>
+	<choice req="AEA_GREASE_REQ_EFFECT_CHAOS" lvl="1" max_group="12" blue="true" hidden="true">
+		<text>Chaos Amplification.</text>
+		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_CHAOS"/>
+	</choice>
+	<choice req="AEA_GREASE_EFFECT_DD_SOULPLAGUE" lvl="1" max_group="13" blue="false" hidden="true">
 		<text>Soulplague Amplification. [ALREADY AVAILABLE]</text>
 		<event load="OPTION_INVALID"/>
 	</choice>
-	<choice req="AEA_GREASE_REQ_EFFECT_DD_SOULPLAGUE" lvl="1" max_group="11" blue="true" hidden="true">
+	<choice req="AEA_GREASE_REQ_EFFECT_DD_SOULPLAGUE" lvl="1" max_group="13" blue="true" hidden="true">
 		<text>Soulplague Amplification.</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_DD_SOULPLAGUE"/>
 	</choice>
-	<choice req="AEA_GREASE_EFFECT_DD_DARKNESS" lvl="1" max_group="11" blue="false" hidden="true">
+	<choice req="AEA_GREASE_EFFECT_DD_DARKNESS" lvl="1" max_group="14" blue="false" hidden="true">
 		<text>Darkness Amplification. [ALREADY AVAILABLE]</text>
 		<event load="OPTION_INVALID"/>
 	</choice>
-	<choice req="AEA_GREASE_REQ_EFFECT_DD_DARKNESS" lvl="1" max_group="11" blue="true" hidden="true">
+	<choice req="AEA_GREASE_REQ_EFFECT_DD_DARKNESS" lvl="1" max_group="14" blue="true" hidden="true">
 		<text>Darkness Amplification.</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_DD_DARKNESS"/>
 	</choice>
-	<choice req="AEA_GREASE_EFFECT_DD_SHADOW" lvl="1" max_group="11" blue="false" hidden="true">
+	<choice req="AEA_GREASE_EFFECT_DD_SHADOW" lvl="1" max_group="15" blue="false" hidden="true">
 		<text>Shadow-Frost Amplification. [ALREADY AVAILABLE]</text>
 		<event load="OPTION_INVALID"/>
 	</choice>
-	<choice req="AEA_GREASE_REQ_EFFECT_DD_SHADOW" lvl="1" max_group="11" blue="true" hidden="true">
+	<choice req="AEA_GREASE_REQ_EFFECT_DD_SHADOW" lvl="1" max_group="15" blue="true" hidden="true">
 		<text>Shadow-Frost Amplification.</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_DD_SHADOW"/>
 	</choice>
-	<choice req="AEA_GREASE_EFFECT_DD_RADIANT" lvl="1" max_group="11" blue="false" hidden="true">
+	<choice req="AEA_GREASE_EFFECT_DD_RADIANT" lvl="1" max_group="16" blue="false" hidden="true">
 		<text>Radiant Amplification. [ALREADY AVAILABLE]</text>
 		<event load="OPTION_INVALID"/>
 	</choice>
-	<choice req="AEA_GREASE_REQ_EFFECT_DD_RADIANT" lvl="1" max_group="11" blue="true" hidden="true">
+	<choice req="AEA_GREASE_REQ_EFFECT_DD_RADIANT" lvl="1" max_group="16" blue="true" hidden="true">
 		<text>Radiant Amplification.</text>
 		<event load="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_DD_RADIANT"/>
 	</choice>
@@ -755,6 +763,27 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
 			<modifyPursuit amount="1"/>
 			<hiddenAug>AEA_GREASE_EFFECT_CASCADE</hiddenAug>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Nevermind</text>
+		<event load="STORAGE_CHECK_SYSTEM_LOAD" />
+	</choice>
+</event>
+<event name="STORAGE_CHECK_SYSTEM_AEA_GREASE_EFFECT_CHAOS">
+	<text>You have tech on your ship which can be scanned by your Weapons Amplifier.
+[Chaos Enhancement: Causes the last projectile in the volley to trigger a random effect that you have available.]
+It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
+	<choice hidden="true">
+		<text>Proceed.</text>
+		<event>
+			<text>Your system scans the technology, adding the enhancement to the system's library.</text>
+			<modifyPursuit amount="1"/>
+			<hiddenAug>AEA_GREASE_EFFECT_CHAOS</hiddenAug>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="STORAGE_CHECK_SYSTEM_LOAD"/>

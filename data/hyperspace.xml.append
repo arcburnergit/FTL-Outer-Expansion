@@ -9609,6 +9609,45 @@ Right click to attempt the ritual or cancel.
 	</req>
 	<req name="AEA_GREASE_REQ_EFFECT_CASCADE" type="any">
 	</req>
+	<req name="AEA_GREASE_REQ_EFFECT_CHAOS" type="any">
+		<name>JUDGELIST_ROCK_MADNESS</name>
+		<name>LIST_SYMBIONT_CHAOS</name>
+		<name>LIST_SYMBIONT_CHAOS_DRONES</name>
+		<name>LIST_SURGEON_DRONES_CHAOS</name>
+		<name>BLUELIST_HOLODRONE_CHAOS</name>
+		<name>HEKTAR_MODULAR_CHARGE_CHAOS</name>
+		<name>BEAM_BATTERY_CHAOS</name>
+		<name>BEAM_QUICK_CHAOS</name>
+		<name>BEAM_ADAPT_3_CHAOS</name>
+		<name>BIG_ION_CHAOS</name>
+		<name>BOMB_CONSERVRECYCLER_CHAOS</name>
+		<name>BOMB_DRAIN_CHAOS</name>
+		<name>FROST_CHARGEGUN_CHAOS</name>
+		<name>ION_CHAIN_CHARGEGUN_CHAOS</name>
+		<name>MISSILES_OBSIDIAN_CHAOS</name>
+		<name>SHOTGUN_STEEL_CHAOS</name>
+		<name>SHOTGUN_TOGGLE_CHAOS</name>
+		<name>SHELL_LAUNCHER_CHAOS</name>
+		<name>SLOTGUN_CHAOS</name>
+		<name>SNIPER_CHAOS</name>
+		<name>UNSPOOLER_CHAOS</name>
+		<name>MINELAUNCHER_GIANT_CHAOS</name>
+		<name>LASER_LIGHT_CHARGEGUN_CHAOS</name>
+		<name>CRYSTAL_BURST_FIRE_CHAOS</name>
+		<name>STRAWBERRY_CHAOS</name>
+		<name>BOMB_ELITE_CHAOS</name>
+		<name>GASTER_BLASTER_CHAOS</name>
+		<name>DEFENSE_TRINITY_CHAOS</name>
+		<name>YINYANG_BATTLE_CHAOS</name>
+		<name>YINYANG_BOARDER_CHAOS</name>
+		<name>SURGEON_BATTLE_CHAOS</name>
+		<name>SURGEON_BOARDER_CHAOS</name>
+		<name>FOREMAN_BATTLE_CHAOS</name>
+		<name>FOREMAN_BOARDER_CHAOS</name>
+		<name>HOLODRONE_BATTLE_CHAOS</name>
+		<name>HOLODRONE_BOARDER_CHAOS</name>
+		<name>SALT_MINER_CHAOS</name>
+	</req>
 	<req name="AEA_GREASE_REQ_EFFECT_DD_SOULPLAGUE" type="any">
 		<name>JUDGELIST_ROCK_DDSOULPLAGUE_GEAR</name>
 		<name>LIST_DDSOULPLAGUE_ALIGNED</name>
