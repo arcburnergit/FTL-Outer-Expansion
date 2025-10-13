@@ -1418,6 +1418,14 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 				<cloaking/>
 				<aea_super_shields/>
 			</exclusivityGroup>
+			<exclusivityGroup>
+				<mind/>
+				<aea_clone_crime/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<battery/>
+				<aea_grease/>
+			</exclusivityGroup>
 		</exclusivityOverride>
 	</mod-append:customShip>
 	<mod-append:customShip name="PLAYER_SHIP_AEA_SHARD_BATTLE_3">
@@ -1458,8 +1466,19 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 				<clonebay/>
 			</exclusivityGroup>
 			<exclusivityGroup>
+				<cloaking/>
+			</exclusivityGroup>
+			<exclusivityGroup>
 				<shields/>
 				<aea_super_shields/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<mind/>
+				<aea_clone_crime/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<battery/>
+				<aea_grease/>
 			</exclusivityGroup>
 		</exclusivityOverride>
 	</mod-append:customShip>
@@ -1707,6 +1726,14 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			<exclusivityGroup>
 				<clonebay/>
 			</exclusivityGroup>
+			<exclusivityGroup>
+				<mind/>
+				<aea_clone_crime/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<battery/>
+				<aea_grease/>
+			</exclusivityGroup>
 		</exclusivityOverride>
 		<rooms>
 			<room id="5">
@@ -1765,6 +1792,14 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 			</exclusivityGroup>
 			<exclusivityGroup>
 				<aea_super_shields/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<mind/>
+				<aea_clone_crime/>
+			</exclusivityGroup>
+			<exclusivityGroup>
+				<battery/>
+				<aea_grease/>
 			</exclusivityGroup>
 		</exclusivityOverride>
 		<rooms>
