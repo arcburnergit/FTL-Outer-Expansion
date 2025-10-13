@@ -153,10 +153,21 @@ local function grease_click(systemBox, shift)
 		local effectButtonTable = systemBox.table.effectButtonTable
 		for i, effectButton in ipairs(effectButtonTable) do
 			if effectButton.b.bHover and effectButton.b.bActive then
-				print("set type:"..i)
+				if Hyperspace.ships.player:HasAugmentation("UPG_AEA_GREASE_SWITCH") > 0 then
+					local prev_effect = greaseEffects[Hyperspace.playerVariables[systemTypeVariable]]
+					local seconds_per_charge = math.floor((1/prev_effect.fill_rate)+0.5)
+					local seconds = (Hyperspace.playerVariables[systemChargesVariable] + systemFillingAmount[0]) * seconds_per_charge
+					local new_effect = greaseEffects[i]
+					local new_per_charge = math.floor((1/new_effect.fill_rate)+0.5)
+					local new_seconds = seconds/new_per_charge
+					Hyperspace.playerVariables[systemChargesVariable] = math.floor(new_per_charge)
+					systemFillingAmount[0] = new_per_charge%1
+				else
+					Hyperspace.playerVariables[systemChargesVariable] = 0
+					systemFillingAmount[0] = 0
+				end
+
 				Hyperspace.playerVariables[systemTypeVariable] = i
-				Hyperspace.playerVariables[systemChargesVariable] = 0
-				systemFillingAmount[0] = 0
 			end
 		end
 	end
@@ -290,7 +301,7 @@ local function renderGreaseOptions(originPos_x, originPos_y, effectButtonTable)
 			Graphics.CSurface.GL_RenderPrimitive(effectImage)
 			Graphics.CSurface.GL_PopMatrix()
 			if effectButton.b.bHover then
-				Hyperspace.Mouse.tooltip = effect.name.." ("..math.floor(1/effect.fill_rate).."s): "..effect.desc
+				Hyperspace.Mouse.tooltip = effect.name.." ("..math.floor((1/effect.fill_rate)+0.5).."s): "..effect.desc
 			end
 		end
 	end
@@ -474,7 +485,7 @@ end
 local startAcid = mods.aea.startAcid
 local function spawn_acid(shipManager, projectile, location, damage, shipFriendlyFire)
 	local room = get_room_at_location(shipManager, location, true)
-	startAcid(shipManager.iShipId, room, acidWeapons[projectile.extend.name])
+	startAcid(shipManager.iShipId, room, 5)
 end
 
 local createGasInRoom = mods.aea.createGasInRoom
@@ -594,19 +605,34 @@ script.on_render_event(Defines.RenderEvents.SHIP, function(ship) end, function(s
 		greaseTable = userdata_table(projectile, "mods.aea.aea_grease")
 		if projectile.currentSpace == ship.iShipId and greaseTable.greased then
 			local effect = greaseEffects[greaseTable.greased]
-			Graphics.CSurface.GL_PushStencilMode()
-			Graphics.CSurface.GL_SetStencilMode(1,1,1)
-			projectile.flight_animation:OnRender(1, Graphics.GL_Color(1, 1, 1, 1), false)
-			Graphics.CSurface.GL_SetStencilMode(2,1,1)
-			Graphics.CSurface.GL_DrawRect(
+			--[[--Graphics.CSurface.GL_PushStencilMode()
+			--Graphics.CSurface.GL_SetStencilMode(1,1,1)
+			Graphics.CSurface.GL_PushMatrix()
+			Graphics.CSurface.GL_Translate(projectile.position.x, projectile.position.y, 0)
+			--print(tostring(projectile.heading * 360).." angle to target:"..tostring(alpha))
+			if projectile.currentSpace == projectile.destinationSpace then
+				local alpha = math.atan((projectile.position.y-projectile.target.y), (projectile.position.x-projectile.target.x))
+				Graphics.CSurface.GL_Rotate(alpha*360, 0, 0, 1)
+			else
+				Graphics.CSurface.GL_Rotate(projectile.heading*360, 0, 0, 1)
+			end
+			projectile.flight_animation:OnRender(1, Graphics.GL_Color(0, 0, 1, 1), false)
+			Graphics.CSurface.GL_PopMatrix()]]
+			Graphics.CSurface.GL_PushMatrix()
+			Graphics.CSurface.GL_Translate(projectile.position.x - 5, projectile.position.y - 15, 0)
+			local effectImage = effectImages[effect.name]
+			Graphics.CSurface.GL_RenderPrimitive(effectImage)
+			Graphics.CSurface.GL_PopMatrix()
+			--Graphics.CSurface.GL_SetStencilMode(2,1,1)
+			--[[Graphics.CSurface.GL_DrawRect(
 				projectile.position.x - 25, 
 				projectile.position.y - 25, 
 				50, 
 				50, 
 				effect.colour
-			)
-			Graphics.CSurface.GL_SetStencilMode(0,1,1)
-			Graphics.CSurface.GL_PopStencilMode()
+			)]]
+			--Graphics.CSurface.GL_SetStencilMode(0,1,1)
+			--Graphics.CSurface.GL_PopStencilMode()
 
 			
 		end
@@ -620,9 +646,15 @@ local function get_time_dilation(room)
 end
 
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
-	if shipManager.iShipId == 0 and shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId(systemIdName)) then
-		Hyperspace.playerVariables[systemChargesVariable] = 0
-		systemFillingAmount[0] = 0
+	if shipManager.iShipId == 0 then
+		if (shipManager:HasAugmentation("UPG_AEA_GREASE_IGNITER") > 0 or shipManager:HasAugmentation("EX_AEA_GREASE_IGNITER") > 0) and shipManager:HasSystem(Hyperspace.ShipSystem:NameToSystemId(systemIdName)) then
+			local sys = shipManager:GetSystem(Hyperspace.ShipSystem:NameToSystemId(systemIdName))
+			Hyperspace.playerVariables[systemChargesVariable] = sys:GetEffectivePower()
+			systemFillingAmount[0] = 0
+		else
+			Hyperspace.playerVariables[systemChargesVariable] = 0
+			systemFillingAmount[0] = 0
+		end
 
 		Hyperspace.playerVariables[systemChargesVariable.."_enemy"] = 0
 		systemFillingAmount[1] = 0

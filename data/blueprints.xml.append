@@ -160,7 +160,7 @@
 				<number>1</number>
 			</slot>
 		</aea_clone_crime>
-		<aea_super_shields power="1" room="13" start="false" img="room_shields_aea_cloak_3">
+		<aea_super_shields power="1" room="2" start="false" img="room_shields_aea_cloak_3">
 			<slot>
 				<direction>left</direction>
 				<number>0</number>
