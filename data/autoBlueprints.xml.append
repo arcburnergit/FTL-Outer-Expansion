@@ -934,6 +934,14 @@
     <name>AEA_ION_ACID_1</name>
 </blueprintList>
 
+<blueprintList name="GIFTLIST_WEAPONS_ACIDIC_ELITE">
+    <name>AEA_LASER_ACID_1_ELITE</name>
+    <name>AEA_LASER_ACID_2_ELITE</name>
+    <name>AEA_LASER_ACID_3_ELITE</name>
+    <name>AEA_BEAM_ACID_1_ELITE</name>
+    <name>AEA_ION_ACID_1_ELITE</name>
+</blueprintList>
+
 <blueprintList name="GIFTLIST_WEAPONS_NECRO">
     <name>AEA_LASER_NECRO_1</name>
     <name>AEA_LASER_NECRO_2</name>

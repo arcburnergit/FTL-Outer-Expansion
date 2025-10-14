@@ -524,6 +524,9 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->	
 <eventList name="STORELIST_AEA_ACID">
+	<event load="STOREEVENT_AEA_ACID_ORCHID" />
+	<event load="STOREEVENT_AEA_ACID_ORCHID" />
+
 	<event load="STOREEVENT_OUTPOST" />
 	<event load="STOREEVENT_DAMAGED" />
 	
@@ -550,6 +553,67 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	
 	<event load="NEBULA_STOREEVENT_LEECH_SCAVENGER" />
 </eventList>
+
+<event name="STOREEVENT_AEA_ACID_ORCHID" unique="true">
+	<beaconType id="map_icon_aea_store_acidic" global="false">
+		<color r="255" g="245" b="175" a="1"/>
+	</beaconType>
+	<ship load="SHIP_AEA_ACID_STATION_STORE" hostile="false"/>
+	<text>This beacon is busy with Acidic and Gathering traffic, all centering around a Growth station. Orchids are your allies, so it won't be hard to gain access and ability to trade.</text>
+	<choice hidden="true">
+		<text>Request access.</text>
+		<event>
+			<text>You're welcomed by a dapper Orchid who explains this is not only a trade hub, but also a diplomatic point. If you have good personal standing with either of the factions, you can request support.</text>
+			<choice req="rep_comb_orchid" lvl="-9999" max_lvl="-1">
+				<text>(Positive Orchid Reputation) Ask for a discounted Kernel weapon.</text>
+				<event>
+					<text>After payment, a group of Orchids brings out your new weapon. You move on to the store.</text>
+					<weapon name="GIFTLIST_KERNEL"/>
+					<item_modify>
+						<item type="scrap" min="-30" max="-20" />
+					</item_modify>
+					<store>STORE_AEA_ACID</store>
+				</event>
+			</choice>
+			<choice req="rep_comb_orchid" lvl="-9999" max_lvl="-3">
+				<text>(Great Positive Orchid Reputation) Ask for a trained Orchid soldier contract.</text>
+				<event>
+					<text>After you pay and sign the contract, an Orchid Praetor comes aboard to join your crew. You move on to the store.</text>
+					<crewMember amount="1" class="orchid_praetor" />
+					<item_modify>
+						<item type="scrap" min="-40" max="-30" />
+					</item_modify>
+					<store>STORE_AEA_ACID</store>				
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Just move on to the store.</text>
+					<event>
+						<text>You don't need any extra services. You move on to the store.</text>
+						<store>STORE_AEA_ACID</store>
+					</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Pass.</text>
+		<event>
+			<text>You decide to use this moment of reprieve to do something else.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>	
+</event>
+
+<ship name="SHIP_AEA_ACID_STATION_STORE" auto_blueprint="AEA_ACID_STATION">
+
+</ship>
 
 <ship name="SHIP_AEA_ACID_TRANSPORT_LOOT" auto_blueprint="AEA_ACID_TRANSPORT">
 	<escape timer="40" min="999" max="999">
@@ -937,7 +1001,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		<text>Continue...</text>
 		<event>
 			<text>It seems the cargo of the Elite Acidic ship survived the fight. Inside is a functional weapon, which you bring back on board.</text>
-			<weapon name="GIFTLIST_WEAPONS_ACIDIC" />
+			<weapon name="GIFTLIST_WEAPONS_ACIDIC_ELITE" />
 		</event>
 	</choice>
 </event>

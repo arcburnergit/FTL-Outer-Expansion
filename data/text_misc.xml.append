@@ -37,6 +37,8 @@
 <text name="map_icon_aea_old_uni_4_i">Trend [!]</text>
 <text name="map_icon_aea_old_uni_5_i">Concordance [!]</text>
 
+<text name="map_icon_aea_store_acidic">STORE [ACIDIC]</text>
+
 
 <text name="loot_aea_acid_1">ACIDIC LOOT
 -1 ion damage
