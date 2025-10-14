@@ -22,6 +22,7 @@
   <mod-append:script>data/aea_scripts/aea_super_shields.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_freeze.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_grease_dd.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_grease.lua</mod-append:script>
   <!--Crew functionality scripts-->
   <mod-append:script>data/aea_scripts/aea_dark_justicier.lua</mod-append:script>

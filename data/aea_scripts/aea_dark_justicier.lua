@@ -1559,11 +1559,12 @@ local statueStats = {
 }
 local function statue_should_spawn()
 	local shipBuilder = not Hyperspace.App.menu.shipBuilder.bOpen
+	local hostile = Hyperspace.ships.enemy and Hyperspace.ships.enemy._targetable.hostile
 	local sacs = Hyperspace.playerVariables.aea_justicier_sacs_this_run > statueStats.min_sacs
 	local book = Hyperspace.playerVariables.aea_dark_book_taken
 	local destroy = Hyperspace.playerVariables.aea_justicier_statue_destroy == 0
 	local active = Hyperspace.playerVariables.aea_justicier_statue_active >= 1
-	return shipBuilder and sacs and book and (destroy or active)
+	return shipBuilder and hostile and sacs and book and (destroy or active)
 end
 
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(ship) 
