@@ -47,6 +47,8 @@ function mods.aea.spawn_darkness(shipManager, projectile, location, damage, ship
 		local intruder = not (shipManager.iShipId == projectile.ownerId)
 		local room = get_room_at_location(shipManager, location, true)
 		local crew = shipManager:AddCrewMemberFromString("Voidborn", crewId, intruder, room, true, true)
+		crew.extend.deathTimer = Hyperspace.TimerHelper(false)
+    	crew.extend.deathTimer:Start(15)
 	end
 end
 local spawn_darkness = mods.aea.spawn_darkness
