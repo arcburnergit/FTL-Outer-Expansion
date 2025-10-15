@@ -79,6 +79,12 @@ local function is_grease(systemBox)
 	return systemName == systemIdName and systemBox.bPlayerUI
 end
 
+local function is_weapons(systemBox)
+	local systemName = Hyperspace.ShipSystem.SystemIdToName(systemBox.pSystem.iSystemType)
+	return systemName == "weapons" and systemBox.bPlayerUI
+end
+
+
 --Utility function to check if the SystemBox instance is for our customs system
 local function is_grease_enemy(systemBox)
 	local systemName = Hyperspace.ShipSystem.SystemIdToName(systemBox.pSystem.iSystemType)
@@ -88,6 +94,20 @@ end
 --Offsets of the button
 local greaseButtonOffset_x = 37
 local greaseButtonOffset_y = -50
+
+local enable_button = {
+	off = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_weapon_off.png", -10, -10, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false),
+	select_off = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_weapon_select_off.png" , -10, -10, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false),
+	on = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_weapon_on.png", -10, -10, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false),
+	select_on = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_weapon_select_on.png" , -10, -10, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+}
+
+local enable_size = {
+	w = 19,
+	h = 11,
+	x_off = 24,
+	y_off = -46,
+}
 
 --Handles initialization of custom system box
 local function grease_construct_system_box(systemBox)
@@ -134,6 +154,24 @@ local function grease_mouse_move(systemBox, x, y)
 			effectButton.b:MouseMove(x - effectButton.position.x, y - effectButton.position.y, false)
 		end
 	end
+	if is_weapons(systemBox) and Hyperspace.ships.player:HasSystem(Hyperspace.ShipSystem.NameToSystemId(systemIdName)) then
+		local w_x = enable_size.x_off
+		local w_y = enable_size.y_off
+		for weapon in vter(Hyperspace.ships.player.weaponSystem.weapons) do
+			w_x = w_x + 97
+			--Graphics.CSurface.GL_DrawCircle(w_x, w_y, 5, Graphics.GL_Color(1, 0, 0, 0.5))
+			if x >= w_x and x <= w_x + enable_size.w and y >= w_y and y <= w_y + enable_size.h then
+				if userdata_table(weapon, "mods.aea.grease").disabled then
+					Hyperspace.Mouse.tooltip = "Enable consumption of Weapon Amplification charges for this weapon."
+				else
+					Hyperspace.Mouse.tooltip = "Disable consumption of Weapon Amplification charges for this weapon."
+				end
+				userdata_table(weapon, "mods.aea.grease").weaponHover = true
+			else
+				userdata_table(weapon, "mods.aea.grease").weaponHover = false
+			end
+		end
+	end
 	return Defines.Chain.CONTINUE
 end
 script.on_internal_event(Defines.InternalEvents.SYSTEM_BOX_MOUSE_MOVE, grease_mouse_move)
@@ -159,14 +197,16 @@ local function grease_click(systemBox, shift)
 					local prev_effect = greaseEffects[Hyperspace.playerVariables[systemTypeVariable]]
 					local seconds_per_charge = math.floor((1/prev_effect.fill_rate)+0.5)
 					local seconds = (Hyperspace.playerVariables[systemChargesVariable] + systemFillingAmount[0]) * seconds_per_charge
+					--print("charges:"..tostring(Hyperspace.playerVariables[systemChargesVariable] + systemFillingAmount[0]).." seconds:"..tostring(seconds))
 					local new_effect = greaseEffects[i]
 					local new_per_charge = math.floor((1/new_effect.fill_rate)+0.5)
 					local new_seconds = seconds/new_per_charge
-					Hyperspace.playerVariables[systemChargesVariable] = math.floor(new_per_charge)
+					--print("new charges:"..tostring(new_seconds).." fill:"..tostring(new_seconds%1))
+					Hyperspace.playerVariables[systemChargesVariable] = math.floor(new_seconds)
 					if Hyperspace.playerVariables[systemChargesVariable] >= systemBox.pSystem:GetEffectivePower() then
 						Hyperspace.playerVariables[systemChargesVariable] = systemBox.pSystem:GetEffectivePower()
 					else
-						systemFillingAmount[0] = new_per_charge%1
+						systemFillingAmount[0] = new_seconds%1
 					end
 				else
 					Hyperspace.playerVariables[systemChargesVariable] = 0
@@ -174,6 +214,15 @@ local function grease_click(systemBox, shift)
 				end
 
 				Hyperspace.playerVariables[systemTypeVariable] = i
+			end
+		end
+	end
+	if is_weapons(systemBox) and Hyperspace.ships.player:HasSystem(Hyperspace.ShipSystem.NameToSystemId(systemIdName)) then
+		for weapon in vter(Hyperspace.ships.player.weaponSystem.weapons) do
+			if userdata_table(weapon, "mods.aea.grease").weaponHover and userdata_table(weapon, "mods.aea.grease").disabled then
+				userdata_table(weapon, "mods.aea.grease").disabled = nil
+			elseif userdata_table(weapon, "mods.aea.grease").weaponHover then
+				userdata_table(weapon, "mods.aea.grease").disabled = true
 			end
 		end
 	end
@@ -382,6 +431,28 @@ local function grease_render(systemBox, ignoreStatus)
 			renderGreaseOptions(greaseButtonOffset_x + 20, greaseButtonOffset_y + 7 + (2 - maxPower) * yOffset, effectButtonTable)
 		end
 	end
+	if is_weapons(systemBox) and Hyperspace.ships.player:HasSystem(Hyperspace.ShipSystem.NameToSystemId(systemIdName)) then
+		--print("WEAPONS ACTIVE")
+		local w_x = enable_size.x_off
+		local w_y = enable_size.y_off
+		for weapon in vter(Hyperspace.ships.player.weaponSystem.weapons) do
+			w_x = w_x + 97
+
+			--Graphics.CSurface.GL_DrawCircle(w_x, w_y, 5, Graphics.GL_Color(1, 0, 0, 0.5))
+			Graphics.CSurface.GL_PushMatrix()
+			Graphics.CSurface.GL_Translate(w_x, w_y, 0)
+			if userdata_table(weapon, "mods.aea.grease").disabled and userdata_table(weapon, "mods.aea.grease").weaponHover then
+				Graphics.CSurface.GL_RenderPrimitive(enable_button.select_off)
+			elseif userdata_table(weapon, "mods.aea.grease").disabled then
+				Graphics.CSurface.GL_RenderPrimitive(enable_button.off)
+			elseif userdata_table(weapon, "mods.aea.grease").weaponHover then
+				Graphics.CSurface.GL_RenderPrimitive(enable_button.select_on)
+			else
+				Graphics.CSurface.GL_RenderPrimitive(enable_button.on)
+			end
+			Graphics.CSurface.GL_PopMatrix()
+		end
+	end
 end
 script.on_render_event(Defines.RenderEvents.SYSTEM_BOX, 
 function(systemBox, ignoreStatus) 
@@ -422,7 +493,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	end
 end)
 
-function spawn_fire(shipManager, projectile, location, damage, shipFriendlyFire)
+function mods.aea.spawn_fire(shipManager, projectile, location, damage, shipFriendlyFire)
 	local room = get_room_at_location(shipManager, location, true)
 	shipManager:StartFire(room)
 end
@@ -582,7 +653,7 @@ spawn_effect["Chaos"] = spawn_chaos
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
 	local shipManager = Hyperspace.ships(weapon.iShipId)
-	if shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId(systemIdName)) then
+	if shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId(systemIdName)) and not userdata_table(weapon, "mods.aea.grease").disabled then
 		local chargeVar = (shipManager.iShipId == 0 and systemChargesVariable) or (systemChargesVariable.."_enemy")
 		local typeVar = (shipManager.iShipId == 0 and systemTypeVariable) or (systemTypeVariable.."_enemy")
 
@@ -642,7 +713,7 @@ script.on_render_event(Defines.RenderEvents.SHIP, function(ship) end, function(s
 			projectile.flight_animation:OnRender(1, Graphics.GL_Color(0, 0, 1, 1), false)
 			Graphics.CSurface.GL_PopMatrix()]]
 			Graphics.CSurface.GL_PushMatrix()
-			Graphics.CSurface.GL_Translate(projectile.position.x - 11, projectile.position.y - 11 - 5, 0)
+			Graphics.CSurface.GL_Translate(projectile.position.x - 11, projectile.position.y - 11, 0)
 			local effectImage = effectImages[effect.name]
 			Graphics.CSurface.GL_RenderPrimitive(effectImage)
 			Graphics.CSurface.GL_PopMatrix()
@@ -670,8 +741,8 @@ end
 
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
 	if shipManager.iShipId == 0 then
-		if (shipManager:HasAugmentation("UPG_AEA_GREASE_IGNITER") > 0 or shipManager:HasAugmentation("EX_AEA_GREASE_IGNITER") > 0) and shipManager:HasSystem(Hyperspace.ShipSystem:NameToSystemId(systemIdName)) then
-			local sys = shipManager:GetSystem(Hyperspace.ShipSystem:NameToSystemId(systemIdName))
+		if (shipManager:HasAugmentation("UPG_AEA_GREASE_IGNITER") > 0 or shipManager:HasAugmentation("EX_AEA_GREASE_IGNITER") > 0) and shipManager:HasSystem(Hyperspace.ShipSystem.NameToSystemId(systemIdName)) then
+			local sys = shipManager:GetSystem(Hyperspace.ShipSystem.NameToSystemId(systemIdName))
 			Hyperspace.playerVariables[systemChargesVariable] = sys:GetEffectivePower()
 			systemFillingAmount[0] = 0
 		else
