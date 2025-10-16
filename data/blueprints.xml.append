@@ -17029,7 +17029,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 			<boostAnim>ddsoulplague_infected_debuff</boostAnim>
 		</statBoost>
 	</roomStatBoosts>
-	<roomStatBoostChance>1</roomStatBoostChance>
+	<roomStatBoostChance>10</roomStatBoostChance>
 </weaponBlueprint>
 
 <weaponBlueprint name="AEA_GREASE_EFFECT_BOMB_DD_SHADOW">
@@ -17075,7 +17075,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<customLockdown>
 		<health>6</health>
 		<duration>30.0</duration>
-		<color r="255" g="255" b="255" a="0"/>
+		<color r="255" g="255" b="255" a="1"/>
 		<anims>
 			<anim>dddisparity_lockdown_effect_1</anim>
 			<anim>dddisparity_lockdown_effect_2</anim>

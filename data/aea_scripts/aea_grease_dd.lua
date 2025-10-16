@@ -48,7 +48,7 @@ function mods.aea.spawn_darkness(shipManager, projectile, location, damage, ship
 		local room = get_room_at_location(shipManager, location, true)
 		local crew = shipManager:AddCrewMemberFromString("Voidborn", crewId, intruder, room, true, true)
 		crew.extend.deathTimer = Hyperspace.TimerHelper(false)
-    	crew.extend.deathTimer:Start(15)
+    	crew.extend.deathTimer:Start(30)
 	end
 end
 local spawn_darkness = mods.aea.spawn_darkness
@@ -70,14 +70,14 @@ function mods.aea.spawn_shadow(shipManager, projectile, location, damage, shipFr
 end
 local spawn_shadow = mods.aea.spawn_shadow
 
-local radiantName = "AEA_GREASE_EFFECT_BOMB_DD_SHADOW"
-local radiantBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint(shadowName)
+local radiantName = "AEA_GREASE_EFFECT_BOMB_DD_RADIANT"
+local radiantBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint(radiantName)
 
 function mods.aea.spawn_radiant(shipManager, projectile, location, damage, shipFriendlyFire)
 	--print("spawn_radiant")
 	local spaceManager = Hyperspace.App.world.space
 	spaceManager:CreateLaserBlast(
-		shadowBlueprint,
+		radiantBlueprint,
 		location,
 		projectile.currentSpace,
 		projectile.ownerId,

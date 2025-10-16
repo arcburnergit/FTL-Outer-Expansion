@@ -35,7 +35,7 @@ local greaseEffects = {
 	{name = "Resurrection", req="AEA_GREASE_EFFECT_NECRO", type = 2, colour = Graphics.GL_Color(255/255, 201/255, 63/255, 1), fill_rate = 0.033, desc = "When a projectile kills a crewmember, temporarily resurrect that crewmember on your side."},
 	{name = "Cascade", req="AEA_GREASE_EFFECT_CASCADE", type = 2, colour = Graphics.GL_Color(182/255, 182/255, 182/255, 1), fill_rate = 0.075, desc = "When a projectile full breaks a system, deal system damage to an adjacent room."},
 	{name = "Soulplagued", req="AEA_GREASE_EFFECT_DD_SOULPLAGUE", type = 1, colour = Graphics.GL_Color(109/255, 75/255, 187/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict the Plagueridden effect."},
-	{name = "Darkness", req="AEA_GREASE_EFFECT_DD_DARKNESS", type = 1, colour = Graphics.GL_Color(194/255, 51/255, 51/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict a chaotic, and potentially dark effect."},
+	{name = "Darkness", req="AEA_GREASE_EFFECT_DD_DARKNESS", type = 1, colour = Graphics.GL_Color(194/255, 51/255, 51/255, 1), fill_rate = 0.033, desc = "Causes the last projectile in the volley to inflict a chaotic, and potentially dark effect."},
 	{name = "Shadow-Frost", req="AEA_GREASE_EFFECT_DD_SHADOW", type = 1, colour = Graphics.GL_Color(255/255, 129/255, 249/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict a series of Shadow-Crystal lockdowns, and potentially spawn a Hungering Shadow."},
 	{name = "Radiant", req="AEA_GREASE_EFFECT_DD_RADIANT", type = 1, colour = Graphics.GL_Color(255/255, 255/255, 255/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict the Radiant Desecration effect, and spawn a random Lightborne."},
 	{name = "Chaos", req="AEA_GREASE_EFFECT_CHAOS", type = 1, colour = Graphics.GL_Color(100/255, 50/255, 50/255, 1), fill_rate = 0.1, desc = "Causes the last projectile in the volley to trigger a random effect that you have available."},
@@ -105,7 +105,7 @@ local enable_button = {
 local enable_size = {
 	w = 19,
 	h = 11,
-	x_off = 24,
+	x_off = 27,
 	y_off = -46,
 }
 
