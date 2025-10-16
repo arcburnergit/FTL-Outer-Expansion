@@ -28,7 +28,7 @@ local greaseEffects = {
 	{name = "Frost", type = 1, colour = Graphics.GL_Color(171/255, 201/255, 202/255, 1), fill_rate = 0.05, desc = "Causes the last projectile in the volley to create a short lockdown on hit."},
 	{name = "Breach", type = 1, colour = Graphics.GL_Color(138/255, 150/255, 125/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to open a breach on hit."},
 	{name = "Shock", req="AEA_GREASE_EFFECT_SHOCK", type = 1, colour = Graphics.GL_Color(95/255, 205/255, 228/255, 1), fill_rate = 0.15, desc = "Causes the last projectile in the volley to break and stun all doors in the room."},
-	{name = "Shatter", req="AEA_GREASE_EFFECT_SHATTER", type = 1, colour = Graphics.GL_Color(241/255, 241/255, 241/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to create an extremely weak lockdown, the next hit to this room while the lockdown is active will do 2x damage."},
+	{name = "Shatter", req="AEA_GREASE_EFFECT_SHATTER", type = 1, colour = Graphics.GL_Color(241/255, 241/255, 241/255, 1), fill_rate = 0.05, desc = "Causes the last projectile in the volley to create an extremely weak lockdown, the next hit to this room while the lockdown is active will do 2x damage."},
 	{name = "Acidic", req="AEA_GREASE_EFFECT_ACID", type = 1, colour = Graphics.GL_Color(111/255, 236/255, 95/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to create acidic that erodes the system on hit."},
 	{name = "Inculcation", req="AEA_GREASE_EFFECT_SHLEG", type = 1, colour = Graphics.GL_Color(159/255, 228/255, 204/255, 1), fill_rate = 0.033, desc = "Causes the last projectile in the volley to create inculcation gas on hit."},
 	{name = "Marked", req="AEA_GREASE_EFFECT_BIRD", type = 1, colour = Graphics.GL_Color(211/255, 133/255, 255/255, 1), fill_rate = 0.033, desc = "Causes the last projectile in the volley to target all friendly drones on hit."},
@@ -756,3 +756,82 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
 end)
 
 mods.multiverse.systemIcons[Hyperspace.ShipSystem.NameToSystemId(systemIdName)] = mods.multiverse.register_system_icon(systemIdName)
+
+local node_child_iter = mods.multiverse.node_child_iter
+local layoutRooms = {}
+do
+	local doc = RapidXML.xml_document("data/autoBlueprints.xml")
+	for node in node_child_iter(doc:first_node("FTL") or doc) do
+		if node:name() == "aea_layout" then
+			local layout = node:first_attribute("name"):value()
+			local rooms = {}
+			local s = layout.." rooms:"
+			for roomNode in node_child_iter(node) do
+				s = s.." "..roomNode:value()
+				table.insert(rooms, tonumber(roomNode:value()) )
+			end
+			layoutRooms[layout] = rooms
+			--print(s)
+		end
+	end
+	doc:clear()
+end
+
+local function findEmptyRoom(layout, bp)
+	if layoutRooms[layout] then
+		for _, id in ipairs(layoutRooms[layout]) do
+			local hasSystem = false
+			for systemId in vter(bp.systemInfo:keys()) do
+				local loc = bp.systemInfo[systemId].location[0]
+				--print(Hyperspace.ShipSystem.SystemIdToName(systemId).." loc:"..loc)
+				if loc == id then
+					hasSystem = true
+				end
+			end
+			if not hasSystem then
+				--print(layout.." found room:"..id)
+				return id
+			end
+		end
+	end
+	return nil
+end
+
+local tempBlueprint = Hyperspace.Blueprints:GetShipBlueprint("AEA_GREASE_TEMP_SHIP", 1)
+local tempSystemTemplate = tempBlueprint.systemInfo[Hyperspace.ShipSystem.NameToSystemId(systemIdName)]
+
+local shipPrefix = {}
+shipPrefix["AEA_OLD"] = 5
+shipPrefix["AEA_SHARD"] = 5
+shipPrefix["AEA_ACID"] = 6
+shipPrefix["AEA_SHLEG"] = 7
+shipPrefix["AEA_BIRD"] = 8
+shipPrefix["AEA_NECRO"] = 9
+
+script.on_internal_event(Defines.InternalEvents.GENERATOR_CREATE_SHIP, function(name, sector, event, bp, shipManager)
+	local r = math.random()
+	--print(name)
+	Hyperspace.playerVariables[systemTypeVariable.."_enemy"] = math.random(3)
+	local isPrefix = false
+	for prefix, number in pairs(shipPrefix) do
+		local prefix_start, prefix_end = string.find(name, prefix)
+		if prefix_start then
+			Hyperspace.playerVariables[systemTypeVariable.."_enemy"] = number
+			isPrefix = true
+		end
+	end
+	--print(r)
+	if r > 0.4 or ((not isPrefix) and r > 0.05) then return Defines.Chain.CONTINUE, sector, event, bp, ret end
+	local empty = findEmptyRoom(bp.layoutFile, bp)
+	if empty then
+		local newSys = tempSystemTemplate
+		newSys.systemId = Hyperspace.ShipSystem.NameToSystemId(systemIdName)
+		newSys.location:clear()
+		newSys.location:push_back(empty)
+		newSys.powerLevel = 1
+		newSys.maxPower = 1
+		bp.systemInfo[Hyperspace.ShipSystem.NameToSystemId(systemIdName)] = newSys
+		bp.systems:push_back(Hyperspace.ShipSystem.NameToSystemId(systemIdName))
+	end
+	return Defines.Chain.CONTINUE, sector, event, bp, ret
+end)

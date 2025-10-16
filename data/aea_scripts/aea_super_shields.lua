@@ -74,8 +74,8 @@ local function aea_super_shields_mouse_move(systemBox, x, y)
 end
 script.on_internal_event(Defines.InternalEvents.SYSTEM_BOX_MOUSE_MOVE, aea_super_shields_mouse_move)
 
-local cooldownValue = 4
-local cooldownString = "20"
+local cooldownValue = 2
+local cooldownString = "10"
 
 local function aea_super_shields_click(systemBox, shift)
     if is_aea_super_shields(systemBox) then
