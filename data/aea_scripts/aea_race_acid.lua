@@ -2,6 +2,12 @@
 -- UTILITY FUNCTIONS --
 -----------------------
 
+mods.multiverse.repCombos.rep_comb_all.rep_aea_acid = {buffed = 0}
+mods.multiverse.repCombos.rep_comb_acid_orchid = {
+	rep_aea_acid = {buffer = 0},
+	rep_orchid = {buffer = 0},
+}
+
 local log_events = false
 function AEAlogEvents()
 	log_events = not log_events

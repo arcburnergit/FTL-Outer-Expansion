@@ -1,0 +1,38 @@
+<FTL>
+<event name="MORALITY_UPDATE_AEA_ACID">
+	<text>[NOTORIETY INCREASED - ACIDIC]
+	Your actions here, justifiable or not, will not reflect well in the eyes of the Acidic Growth. Continuously perform actions like this and you might start to see negative reactions from the Union and its allies.</text>
+	<variable name="rep_aea_acid" op="add" val="1"/>
+</event>
+<event name="MORALITY_UPDATE_AEA_ACID_DOUBLE">
+	<text>[NOTORIETY INCREASED X2 - ACIDIC]
+	Your actions here, justifiable or not, will not reflect well in the eyes of the Acidic Growth. Continuously perform actions like this and you might start to see negative reactions from the Union and its allies.
+	For your extra egregious actions, your notoriety was increased twice.</text>
+	<variable name="rep_aea_acid" op="add" val="2"/>
+</event>
+<event name="MORALITY_UPDATE_AEA_ACID_FIGHT">
+	<text>[NOTORIETY INCREASED - ACIDIC]
+	Your actions here, justifiable or not, will not reflect well in the eyes of the Acidic Growth. Continuously perform actions like this and you might start to see negative reactions from the Union and its allies.</text>
+	<variable name="rep_aea_acid" op="add" val="1"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+
+<event name="MORALITY_REMOVE_AEA_ACID">
+	<text>[NOTORIETY DECREASED - ACIDIC]
+	You have done a good deed here in the eyes of the Acidic Growth. If you've gained notoriety from other actions in the past, you're more likely to be forgiven for them.</text>
+	<variable name="rep_aea_acid" op="add" val="-1"/>
+</event>
+<event name="MORALITY_REMOVE_AEA_ACID_FIGHT">
+	<text>[NOTORIETY DECREASED - ACIDIC]
+	You have done a good deed here in the eyes of the Acidic Growth. If you've gained notoriety from other actions in the past, you're more likely to be forgiven for them.</text>
+	<variable name="rep_aea_acid" op="add" val="-1"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+
+</FTL>

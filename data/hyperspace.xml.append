@@ -9148,12 +9148,22 @@ Right click to attempt the ritual or cancel.
 			<mod-append:name>coords_aea_bill</mod-append:name>
 		</mod:findLike>
 	</mod:findName>
+	<mod:findName name="REPUTATION_ABSOLUTE_COMB">
+		<mod-append:name>rep_aea_acid</mod-append:name>
+	</mod:findName>
+	<mod:findName name="REPUTATION_IS_TOTALLY_FINE">
+		<mod-append:req lvl="-9999" max_lvl="0">
+			<name>rep_aea_acid</name>
+		</mod-append:req>
+	</mod:findName>
 </mod:findLike>
 
 <events>
 	<metaVariable name="better_juke_enabled" op="set" val="0" />
 	<metaVariable name="aea_warning_message" op="set" val="0" />
 	<variable name="aea_test_variable" op="set" val="0"/>
+	<variable name="rep_aea_acid" op="set" val="0"/>
+	<variable name="rep_comb_acid_orchid" op="set" val="0"/>
 
 	<variable name="freeze_targetRoom" op="set" val="-1"/>
 	<variable name="freeze_targetShip" op="set" val="-1"/>

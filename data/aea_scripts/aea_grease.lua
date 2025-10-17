@@ -38,7 +38,7 @@ local greaseEffects = {
 	{name = "Darkness", req="AEA_GREASE_EFFECT_DD_DARKNESS", type = 1, colour = Graphics.GL_Color(194/255, 51/255, 51/255, 1), fill_rate = 0.033, desc = "Causes the last projectile in the volley to inflict a chaotic, and potentially dark effect."},
 	{name = "Shadow-Frost", req="AEA_GREASE_EFFECT_DD_SHADOW", type = 1, colour = Graphics.GL_Color(255/255, 129/255, 249/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict a series of Shadow-Crystal lockdowns, and potentially spawn a Hungering Shadow."},
 	{name = "Radiant", req="AEA_GREASE_EFFECT_DD_RADIANT", type = 1, colour = Graphics.GL_Color(255/255, 255/255, 255/255, 1), fill_rate = 0.075, desc = "Causes the last projectile in the volley to inflict the Radiant Desecration effect, and spawn a random Lightborne."},
-	{name = "Chaos", req="AEA_GREASE_EFFECT_CHAOS", type = 1, colour = Graphics.GL_Color(100/255, 50/255, 50/255, 1), fill_rate = 0.1, desc = "Causes the last projectile in the volley to trigger a random effect that you have available."},
+	{name = "Chaos", req="AEA_GREASE_EFFECT_CHAOS", type = 1, colour = Graphics.GL_Color(100/255, 50/255, 50/255, 1), fill_rate = 0.15, desc = "Causes the last projectile in the volley to trigger a random effect that you have available."},
 }
 greaseEffects[0] = {name = "PLACEHOLDER", type = 1, colour = Graphics.GL_Color(255/255, 255/255, 255/255, 1), fill_rate = 0.1, desc = "PLACEHOLDER"}
 
