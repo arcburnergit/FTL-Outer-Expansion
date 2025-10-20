@@ -70,25 +70,26 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
     <modifyPursuit amount="-1" />
 	<changeBackground>BACK_SECTOR_AEA_ACID</changeBackground>
 	<playSound>lightspeed</playSound>
-	<ship load="SHIP_GUARD_AEA_ACID" hostile="false" />
 	<customFleet right="false" firing="true" autoDarkening="true">CUSTOM_FLEET_AEA_ACID</customFleet>
-	<choice hidden="true">
+	<choice hidden="true" blue="false" req="rep_comb_acid_orchid" lvl="-9999" max_lvl="1">
 		<text>Continue...</text>
 		<event load="GUARD_AEA_ACID" />
+	</choice>
+	<choice hidden="true" blue="false" req="rep_comb_acid_orchid" lvl="2" max_lvl="9999">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_ACID_PRAETOR" />
 	</choice>
 </event>
 
 <event name="GUARD_AEA_ACID">
+	<ship load="SHIP_GUARD_AEA_ACID" hostile="false" />
 	<text>You're hailed by an Acidic vessel. "You, outsider. Your intentions, we do not know. Potential threat to Acidic Growth. Proof, you're not? Otherwise, extermination."</text>
 	<choice hidden="true">
 		<text>Fight your way through!</text>
 		<event>
 			<text>You mute the ship and prepare for combat.</text>
 			<ship hostile="true" />
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event load="COMBAT_CHECK" />
-			</choice>
+			<queueEvent>MORALITY_UPDATE_AEA_ACID_FIGHT</queueEvent>
 		</event>
 	</choice>
 	<choice>
@@ -96,11 +97,11 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		<event>
 			<text>The Acidic Growth recognises your donation and lets you pass.</text>
 			<item_modify>
-				<item type="scrap" min="-35" max="-25" />
+				<item type="scrap" min="-30" max="-20" />
 			</item_modify>
 		</event>
 	</choice>
-	<choice req="rep_comb_acid_orchid" lvl="-9999" max_lvl="-1">
+	<choice hidden="true" req="rep_comb_acid_orchid" lvl="-9999" max_lvl="-1">
 		<text>(Positive Growth-Gathering reputation) Request entry.</text>
 		<event>
 			<text>The Acidic Growth recognizes you as an ally. You're free to enter.</text>
@@ -196,6 +197,84 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="GUARD_AEA_ACID_FOLLOWUP" />
+	</choice>
+</event>
+
+<event name="GUARD_AEA_ACID_PRAETOR">
+	<ship load="SHIP_GUARD_AEA_ACID_PRAETOR" hostile="false" />
+	<text>The sight is truly unexpected: an Orchid Praetor ship is guarding this sector, not an Acidic one. You heard that Gathering and Growth were allies, but didn't know the former's protection went this far. It hails you.</text>
+	<choice hidden="true">
+		<text>Accept the hail.</text>
+		<event>
+			<text>A gruff bluish Orchid appears on the screen. "Renegade. We've been notified of your... reputation, among these parts. As per Gathering-Growth Alliance, protection is in order; and you, of course, would be the perpetrator. I, however, have a proposition: we can reroute you to the nearby empty nebula sector, and avoid the surely unnecessary fight. I believe I made myself clear. Respond."</text>
+				<choice hidden="true">
+					<text>Fight your way through!</text>
+					<event>
+						<text>The Orchid vessel doesn't take time to start charging weapons. To battle stations!</text>
+						<ship hostile="true" />
+						<queueEvent>MORALITY_UPDATE_ORCHID_FIGHT</queueEvent>
+					</event>
+				</choice>
+				<choice hidden="true">
+					<text>Accept the reroute.</text>
+					<event>
+						<text>"I'm glad you see reason." You prepare to jump.</text>
+						<choice hidden="true">
+							<text>Continue...</text>
+							<event>
+								<variable name="loc_sector_count" op="add" val="-1"/>
+								<secretSector>SECTOR_UNEXPLORED_GENERIC</secretSector>
+							</event>
+						</choice>					
+					</event>
+				</choice>
+		</event>
+	</choice>
+</event>
+
+<ship name="SHIP_GUARD_AEA_ACID_PRAETOR" auto_blueprint="MU_ORCHID_GUARD_ELITE">
+	<surrender min="6" max="7" load="GUARD_SIGNAL" />
+	<destroyed load="GUARD_AEA_ACID_PRAETOR_DESTROY" />
+	<deadCrew load="GUARD_AEA_ACID_PRAETOR_DEADCREW" />
+</ship>
+
+<event name="GUARD_AEA_ACID_PRAETOR_DESTROY">
+	<text>You have defeated the Praetor vessel. Whatever might have been in its cargo has for certain been destroyed, but you can at least salvage some supplies from the ship.</text>
+	<autoReward level="MED">standard</autoReward>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_ACID_PRAETOR_FOLLOWUP" />
+	</choice>
+</event>
+<event name="GUARD_AEA_ACID_PRAETOR_DEADCREW">
+	<text>You have defeated the Praetor vessel. Without any of the Orchids on board to stop you, you can investigate their cargo. You find a weapon to bring back to the ship, and move on to scrap their hull.</text>
+	<autoReward level="MED">standard_no_item</autoReward>
+	<weapon name="GIFTLIST_KERNEL" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_ACID_PRAETOR_FOLLOWUP" />
+	</choice>
+</event>
+
+<event name="GUARD_AEA_ACID_PRAETOR_FOLLOWUP">
+	<noQuestText />
+	<removeHazards />
+	<clearCustomFleet />
+	<text>By killing the Praetor standing guard, you have no doubt caused the Acidic Growth to dispatch reinforcements to track you down. Watch your step as you explore the sector.</text>
+	<quest event="REINFORCEMENTS_AEA_ACID">
+		<nebulaBeacon>true</nebulaBeacon>
+		<nextSector>false</nextSector>
+		<nebulaEvent>NEBULA_LIGHT_REINFORCEMENTS_AEA_ACID</nebulaEvent>
+		<createNebula>false</createNebula>
+		<aggressive>2</aggressive>
+	</quest>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event />
 	</choice>
 </event>
 
