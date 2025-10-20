@@ -3816,7 +3816,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 </FTL>
 
 <FTL>
-<mod:findName name="STORAGE_CHECK_STATUS_NOTERIETY" type="event">
+<mod:findName name="STORAGE_CHECK_STATUS_NOTORIETY" type="event">
 	
 	<mod-append:choice hidden="true" req="rep_aea_acid" lvl="-999" max_lvl="-5">
 		<text>Acidic Reputation [4++]</text>
