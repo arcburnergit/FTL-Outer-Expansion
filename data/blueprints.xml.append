@@ -16722,7 +16722,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<type>LASER</type>
 	<title>Bomb Launcher</title>
 	<short>Bomb</short>
-	<desc>Self-teleporting explosive that damages systems and crew but not the hull. Can target your own ship.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<damage>0</damage>
 	<sysDamage>0</sysDamage>
 	<persDamage>0</persDamage>
@@ -16735,7 +16735,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<cooldown>11</cooldown>
 	<power>1</power>
 	<cost>45</cost>
-	<rarity>1</rarity>
+	<rarity>0</rarity>
 	<image>aea_invisible</image>
 	<explosion>aea_invisible</explosion>
 	<weaponArt>bomblauncher_small</weaponArt>
@@ -16756,7 +16756,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<type>LASER</type>
 	<title>Bomb Launcher</title>
 	<short>Bomb</short>
-	<desc>Self-teleporting explosive that damages systems and crew but not the hull. Can target your own ship.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<damage>0</damage>
 	<sysDamage>0</sysDamage>
 	<persDamage>0</persDamage>
@@ -16769,7 +16769,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<cooldown>11</cooldown>
 	<power>1</power>
 	<cost>45</cost>
-	<rarity>1</rarity>
+	<rarity>0</rarity>
 	<image>aea_invisible</image>
 	<explosion>aea_invisible</explosion>
 	<weaponArt>bomblauncher_small</weaponArt>
@@ -17036,7 +17036,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<type>LASER</type>
 	<title>Bomb Launcher</title>
 	<short>Bomb</short>
-	<desc>Self-teleporting explosive that damages systems and crew but not the hull. Can target your own ship.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<damage>0</damage>
 	<sysDamage>0</sysDamage>
 	<persDamage>0</persDamage>
@@ -17049,7 +17049,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<cooldown>11</cooldown>
 	<power>1</power>
 	<cost>45</cost>
-	<rarity>1</rarity>
+	<rarity>0</rarity>
 	<image>aea_invisible</image>
 	<explosion>aea_invisible</explosion>
 	<weaponArt>bomblauncher_small</weaponArt>
@@ -17088,7 +17088,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<type>LASER</type>
 	<title>Bomb Launcher</title>
 	<short>Bomb</short>
-	<desc>Self-teleporting explosive that damages systems and crew but not the hull. Can target your own ship.</desc>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
 	<damage>0</damage>
 	<sysDamage>0</sysDamage>
 	<persDamage>0</persDamage>
@@ -17101,7 +17101,7 @@ Chaotic variant builds up status effect twice as fast and does twice as much dam
 	<cooldown>11</cooldown>
 	<power>1</power>
 	<cost>45</cost>
-	<rarity>1</rarity>
+	<rarity>0</rarity>
 	<image>aea_invisible</image>
 	<explosion>aea_invisible</explosion>
 	<weaponArt>bomblauncher_small</weaponArt>
