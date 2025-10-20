@@ -2355,7 +2355,8 @@ You are now, finally, left alone... well, better than that, even: you've been le
 		<event>
 			<text>If the Acidic Growth are grateful, they don't show it. While carrying over the changes, one of the Workers decides to stick with you, seeing your system functions perfectly. When the Growth is done, you receive your promised reward, too.</text>
 			<crewMember amount="1" class="aea_acid_worker" >Acidic Worker</crewMember>
-			<autoReward level="MED">standard_no_item</autoReward>			
+			<autoReward level="MED">standard_no_item</autoReward>	
+			<queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>	
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_AEA_ACID">
@@ -2363,6 +2364,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
 		<event>
 			<text>Your crewmember, being of Acidic Growth origin themselves, is familiar with this tech, and reconfigures it swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 			<autoReward level="MED">standard_no_item</autoReward>
+			<queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>	
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_ENGI">
@@ -2370,6 +2372,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
 		<event>
 			<text>Your Engi knows just about everything there is to know about technology like this, and reconfigures it swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 			<autoReward level="MED">standard_no_item</autoReward>
+			<queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>	
 		</event>
 	</choice>
 	<choice hidden="true" req="human_engineer">
@@ -2377,6 +2380,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
 		<event>
 			<text>Your Engineer studied all forms of life support technology, and so reconfigures it swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 			<autoReward level="MED">standard_no_item</autoReward>
+			<queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>	
 		</event>
 	</choice>
 	<choice hidden="true" req="human_technician">
@@ -2384,6 +2388,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
 		<event>
 			<text>There's next to nothing a WI Technician can't fix when it comes to systems, and so they reconfigure it swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 			<autoReward level="MED">standard_no_item</autoReward>
+			<queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>	
 		</event>
 	</choice>
 	<choice hidden="true" req="shell_mechanic">
@@ -2391,6 +2396,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
 		<event>
 			<text>While Shell Mechanics are more known for their nanites, it doesn't mean they don't have a bunch of general knowledge. They reconfigure the life support swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 			<autoReward level="MED">standard_no_item</autoReward>
+			<queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>	
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_AEA_BIRD">
@@ -2398,6 +2404,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
 		<event>
 			<text>Gi know about all sorts of technology, not just drones. They reconfigure the life support swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 			<autoReward level="MED">standard_no_item</autoReward>
+			<queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>	
 		</event>
 	</choice>
 	<choice hidden="true">
@@ -2424,6 +2431,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
 <event name="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_SUCCESS">
 	<text>You and your crew mess with life support for a bit and somehow manage to make it work! If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 	<autoReward level="MED">standard_no_item</autoReward>
+	<queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>	
 </event>
 
 <event name="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_FAIL">

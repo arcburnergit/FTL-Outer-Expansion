@@ -1703,7 +1703,7 @@
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
 
-<shipBlueprint name="AEA_ACID_ASSAULT_ELITE" layout="aea_acid_assault" img="aea_acid_assault">
+<shipBlueprint name="AEA_ACID_ASSAULT_ELITE" layout="aea_acid_assault" img="aea_acid_assault_elite">
 	<class>Elite Acidic Assault</class>
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
