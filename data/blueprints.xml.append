@@ -963,7 +963,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<breachChance>0</breachChance>
 	<cooldown>13</cooldown>
 	<power>1</power>
-	<cost>40</cost>
+	<cost>50</cost>
 	<bp>7</bp>
 	<rarity>5</rarity>
 	<image>ase_proj_acid_laser</image>
@@ -1017,7 +1017,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	</erosion>
 	<cooldown>12</cooldown>
 	<power>1</power>
-	<cost>55</cost>
+	<cost>50</cost>
 	<bp>7</bp>
 	<rarity>0</rarity>
 	<image>ase_proj_acid_laser</image>
@@ -1058,7 +1058,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<breachChance>0</breachChance>
 	<cooldown>14</cooldown>
 	<power>2</power>
-	<cost>52</cost>
+	<cost>70</cost>
 	<bp>7</bp>
 	<rarity>5</rarity>
 	<image>ase_proj_acid_laser</image>
@@ -1112,7 +1112,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	</erosion>
 	<cooldown>13</cooldown>
 	<power>2</power>
-	<cost>67</cost>
+	<cost>70</cost>
 	<bp>7</bp>
 	<rarity>0</rarity>
 	<image>ase_proj_acid_laser</image>
@@ -1153,7 +1153,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<breachChance>0</breachChance>
 	<cooldown>16</cooldown>
 	<power>3</power>
-	<cost>70</cost>
+	<cost>90</cost>
 	<bp>7</bp>
 	<rarity>5</rarity>
 	<image>ase_proj_acid_laser</image>
@@ -1207,7 +1207,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	</erosion>
 	<cooldown>15</cooldown>
 	<power>3</power>
-	<cost>85</cost>
+	<cost>90</cost>
 	<bp>7</bp>
 	<rarity>0</rarity>
 	<image>ase_proj_acid_laser</image>
@@ -1246,7 +1246,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<breachChance>0</breachChance>
 	<cooldown>17</cooldown>
 	<power>2</power>
-	<cost>68</cost>
+	<cost>70</cost>
 	<bp>7</bp>
 	<rarity>0</rarity>
 	<length>50</length>
@@ -1285,7 +1285,7 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	</erosion>
 	<cooldown>17</cooldown>
 	<power>2</power>
-	<cost>68</cost>
+	<cost>70</cost>
 	<bp>7</bp>
 	<rarity>0</rarity>
 	<length>50</length>

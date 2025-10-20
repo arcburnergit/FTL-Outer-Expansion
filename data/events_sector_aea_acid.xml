@@ -55,6 +55,7 @@
 	<event load="ENCOUNTER_AEA_ACID_PIRATE_CLEARING" />
 	<event load="ENCOUNTER_AEA_ACID_REBEL_CLEARING" />
 	<event load="ENCOUNTER_AEA_ACID_ORCHID_CLEARING" />
+	<event load="ENCOUNTER_AEA_ACID_COALITION_CLEARING" />
 </eventList>
 
 <event name="ENCOUNTER_AEA_ACID_CLEARING" unique="true">
@@ -106,6 +107,20 @@
 		<event load="COMBAT_CHECK" />
 	</choice>
 </event> 
+
+<event name="ENCOUNTER_AEA_ACID_COALITION_CLEARING">
+	<text load="TEXT_AEA_ACID_COALITION_CLEARING" />
+	<ship load="LIST_SHIPS_COALITION_FIGHT" hostile="true" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+<textList name="TEXT_AEA_ACID_COALITION_CLEARING">
+	<text>Knowing Acidic Growth are hidden away in nebulae, Coalition unsurprisingly took interest in their sectors. This ship seems to be scouting territory, but when it notices you it attacks.</text>
+	<text>"You Fed dumb! Thought to moving outside acid? We waiting! Our space!" It's not theirs, but arguing with Coalition would be like talking to a brick wall. </text>
+	<text>Coalition is the enemy of many, including Acidic Growth and Orchids occupying this sector... But now, it seems, it chose to be an enemy to specifically you.</text>
+</textList>
 
 <eventList name="DISTRESS_AEA_ACID">
 	<event load="DISTRESS_REFUGEE_AEA_ACID_MV" />
@@ -204,10 +219,7 @@
 		<event>
 			<text>The Acidic ship is confused, but not unprepared. It seems like they're trying to retreat back into the nebula!</text>
 			<ship hostile="true"/>
-			<choice>
-				<text>Continue...</text>
-				<event load="COMBAT_CHECK" />
-			</choice>
+			<queueEvent>MORALITY_UPDATE_AEA_ACID_FIGHT</queueEvent>
 		</event>
 	</choice>
 	<choice hidden="true" req="sensors" lvl="3">
@@ -236,10 +248,7 @@
 <event name="AEA_ACID_SCOUT_CLEARING_REWARD">
 	<text>The Acidic vessel thanks you for the data and transports over some scrap as thanks.</text>
 	<autoReward level="MED">scrap_only</autoReward>
-    <choice hidden="true">
-        <text>Continue...</text>
-    	<event/>
-    </choice>
+	<queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>
 </event>
 
 <eventList name="CLEARING_AEA_ACID_UNIQUE">
@@ -279,7 +288,7 @@
 	<choice>
 		<text>Accept the offer.</text>
 		<event>
-			<text>You send over your scrap, and shortly thereafter a strange battle drone arrives at your ship. It appears the Acidic Growth has appropriated the technology for its own transportation.</text>
+			<text>You send over your scrap, and shortly thereafter a strange drone with a glass dome teleports onto your ship. It appears that's how Acidic Growth transports itself.</text>
             <item_modify>
                 <item type="scrap" min="-60" max="-60"/>
             </item_modify>
@@ -290,10 +299,10 @@
 			</choice>
 		</event>
 	</choice>
-	<choice req="aea_acid_friendly" lvl="1">
-		<text>(Friendly) Accept the discounted offer.</text>
+	<choice req="rep_aea_acid" lvl="-9999" max_lvl="-1">
+		<text>(Positive Acidic Reputation) Accept the discounted offer.</text>
 		<event>
-			<text>You send over your scrap, and shortly thereafter a strange battle drone arrives at your ship. It appears the Acidic Growth has appropriated the technology for its own transportation.</text>
+			<text>You send over your scrap, and shortly thereafter a strange drone with a glass dome teleports onto your ship. It appears that's how Acidic Growth transports itself.</text>
 			<item_modify>
 				<item type="scrap" min="-40" max="-40" />
 			</item_modify>
@@ -309,10 +318,7 @@
 		<event>
 			<text>Instead of replying, you power your weapons and engage the ship.</text>
             <ship hostile="true"/>
-			<choice>
-				<text>Continue...</text>
-				<event load="COMBAT_CHECK" />
-			</choice>
+			<queueEvent>MORALITY_UPDATE_AEA_ACID_FIGHT</queueEvent>
 		</event>
 	</choice>
 	<choice hidden="true">
@@ -330,6 +336,10 @@
 		</event>
 	</choice>
 </event>
+
+<!-- 
+Remake this event
+-->
 <event name="NEBULA_AEA_ACID_MYSTERIOUS_TECH" unique="true">   
 	<text>You're hailed by a Hektar ship hiding deep in this nebula. "Hello captain, that issss one fine vesssel. However, we have sssome tech that we asssure you will make your ssship even better!"</text>
 	<ship load="SHIP_HEKTAR_GENERIC" hostile="false" />
@@ -1211,7 +1221,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<choice hidden="true">
 		<text>Investigate the ship.</text>
 		<event>
-			<text>The Slugs welcome you onboard, giving you a tour of their ship. It's actually rather nice, and you don't see any illegal contraband either. They offer you a glass of juice from some alien fruit, have a toast for your new friendship, and then return back to your ship.</text>
+			<text>You step aboard the vessel. It really is empty, but you continue searching.</text>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event load="NEBULA_AEA_ACID_EMPTY_WRECK_INVEST" />
@@ -1371,12 +1381,9 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 												<choice hidden="true" req="sensors" lvl="3">
 													<text>(Advanced Sensors) Catch the signal.</text>
 													<event>
-														<text>With your sensors at maximum power, you quickly find the correct channel and share your findings with orchid. "Thank you, this will be enough."</text>
+														<text>With your sensors at maximum power, you quickly find the correct channel and share your findings with the Orchid. "Thank you, this will be enough."</text>
 														<autoReward level="HIGH">standard</autoReward>
-														<choice hidden="true">
-															<text>Continue...</text>
-															<event />
-														</choice>
+														<queueEvent>MORALITY_REMOVE_ORCHID</queueEvent>
 													</event>
 												</choice>
 												<choice hidden="true">
@@ -1401,10 +1408,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 													<event>
 														<text>Your crew sends over the databanks and explains how to use them. "Thank you, this will be enough."</text>
 														<autoReward level="HIGH">standard</autoReward>
-														<choice hidden="true">
-															<text>Continue...</text>
-															<event />
-														</choice>	
+														<queueEvent>MORALITY_REMOVE_ORCHID</queueEvent>
 													</event>
 												</choice>
 												<choice hidden="true">
@@ -1459,10 +1463,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 		<event>
 			<text>You couldn't care less about their business. All you care about is scrap, and you regard senseless murder to be a valid way to get it.</text>
 			<ship hostile="true" />
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event load="MORALITY_UPDATE_ORCHID_FIGHT" />
-			</choice>
+			<queueEvent>MORALITY_UPDATE_ORCHID_FIGHT</queueEvent>
 		</event>
 	</choice>
 	<choice hidden="true">
@@ -1778,7 +1779,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 		<crewMember amount="1" class="orchid" />
 	</event>
 	<event>
-		<text>To your surprise, your Orchid's message seems to touch the pirates. Or maybe not... seems they're just annoyed. "Jeez, okay! I get it, you're people too, bla bla bla. I know the gist. If I'm rude you'll just kill me. I've met Renegades before. Just take this damn robot and leave me alone." The slavers deliver one of the Acidic soldier to your.</text>
+		<text>To your surprise, your Orchid's message seems to touch the pirates. Or maybe not... seems they're just annoyed. "Jeez, okay! I get it, you're people too, bla bla bla. I know the gist. If I'm rude you'll just kill me. I've met Renegades before. Just take this damn robot and leave me alone." The slavers deliver one of the Acidic Workers to your.</text>
 		<crewMember amount="1" class="aea_acid_worker" />
 	</event>
 </eventList>
@@ -1942,8 +1943,9 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 											<choice hidden="true">
 												<text>Continue...</text>
 												<event>
-													<text>While the Orchid station transports all the tanks of Growth back to the Acidic ship, the latter contacts you again. "Outsider, gratitude. Orchids - allies. You - ally. Future negotiation, with allies, possible. Accept this." Acidic Soldiers carry over a large amount of scrap.</text>
+													<text>While the Orchid station transports all the tanks of Growth back to the Acidic ship, the latter contacts you again. "Outsider, gratitude. Orchids - allies. You - ally. Future negotiation, with allies, possible. Accept this." Acidic Workers carry over a large amount of scrap.</text>
 													<autoReward level="HIGH">standard</autoReward>
+													<queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>
 												</event>
 											</choice>
 										</event>
@@ -1971,10 +1973,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 				<event>
 					<text>You don't really know why Orchids would do something like this, but it must be justified. You decide to help them by getting rid of Acidic Growth pestering them.</text>
 					<ship load="SHIP_AEA_ACID_ORCHID_RESEARCH_ACIDIC" hostile="true"/>
-					<choice hidden="true">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK" />
-					</choice>
+					<queueEvent>MORALITY_UPDATE_AEA_ACID_FIGHT</queueEvent>
 				</event>
 			</choice>
 			<choice hidden="true">
@@ -2030,7 +2029,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 				<event>
 					<text>The Federation captain doesn't take long to respond. "Oh, sorry... didn't notice you were here. We've been tracking these Smugglers for a while, but had failed to really apprehend them until just now. According to this Orchid, though, there's some problem with us doing our jobs in Acidic space. My question is... why does it matter WHERE we catch these guys? Is the Growth in the business of harboring criminals?"
 
-He looks over at another screen for any semblance of an explanation from the Growth ship, but the Acidic soldier present doesn't so much as shift. With a roll of his eyes, the captain looks back at you, "Honestly, I'm not even sure that this stuff is sentient."</text>
+He looks over at another screen for any semblance of an explanation from the Growth ship, but the Acidic Worker present doesn't so much as shift. With a roll of his eyes, the captain looks back at you, "Honestly, I'm not even sure that this stuff is sentient."</text>
 					<choice hidden="true">
 						<text>Continue...</text>
 						<event>
@@ -2110,7 +2109,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
 		<choice hidden="true">
 			<text>You don't know? What was that whole show about then?</text>
 			<event>
-				<text>"Orchids, allies. Didn't ask. Kept insisting. We didn't know what to say." The Soldier on screen keeps standing still. You should probably come up with the pirates' fate, because waiting for Growth will only make the Rebel fleet closer.</text>
+				<text>"Orchids, allies. Didn't ask. Kept insisting. We didn't know what to say." The Worker on screen keeps standing still. You should probably come up with the pirates' fate, because waiting for Growth will only make the Rebel fleet closer.</text>
 				<choice hidden="true">
 					<text>Arrest them.</text>
 					<event>
@@ -2200,8 +2199,8 @@ You are now, finally, left alone... well, better than that, even: you've been le
 	<text>You find an Acidic vessel broadcasting the distress signal and contact them. "Outsider. This is our space. Protect, we must." Apparently the Acidic Growth has unexpectedly setup a trap for trespassers here.</text>
 	<ship load="SHIP_AEA_ACID_GENERIC" hostile="true" />
 	<environment type="nebula" />
-    <choice hidden="true" req="aea_acid_friendly" lvl="1">
-        <text>(Friendly) Explain that you're friendly with the Acidic Growth.</text>
+    <choice hidden="true" req="rep_aea_acid" lvl="-9999" max_lvl="-1">
+        <text>(Positive Acidic Reputation) Explain that you're friendly with the Acidic Growth.</text>
         <event>
             <ship hostile="false"/>
             <text>"We didn't realize. Outsiders, not usually friends. Compensation, will be given."</text>
@@ -2209,7 +2208,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
         </event>
     </choice>
     <choice hidden="true">
-        <text>Prepare for Combat!</text>
+        <text>Prepare for combat!</text>
         <event load="COMBAT_CHECK"/>
     </choice>
 </event>
@@ -2354,8 +2353,8 @@ You are now, finally, left alone... well, better than that, even: you've been le
 	<choice hidden="true" req="LIST_AUG_AEA_ACID_FILTER">
 		<text>(Acidic Filtering System) Suggest they copy yours.</text>
 		<event>
-			<text>If the Acidic Growth are grateful, they don't show it. While carrying over the changes, one of the Soldiers decides to stick with you, seeing your system functions perfectly. When the Growth is done, you receive your promised reward, too.</text>
-			<crewMember amount="1" class="aea_acid_soldier" >Acidic Soldier</crewMember>
+			<text>If the Acidic Growth are grateful, they don't show it. While carrying over the changes, one of the Workers decides to stick with you, seeing your system functions perfectly. When the Growth is done, you receive your promised reward, too.</text>
+			<crewMember amount="1" class="aea_acid_worker" >Acidic Worker</crewMember>
 			<autoReward level="MED">standard_no_item</autoReward>			
 		</event>
 	</choice>
@@ -2968,10 +2967,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
 		<event>
 			<ship hostile="true" />
 			<text>You prepare to secure the strange vessel.</text>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event load="COMBAT_CHECK" />
-			</choice>			
+			<queueEvent>MORALITY_UPDATE_AEA_ACID_FIGHT</queueEvent>	
 		</event>
 	</choice>
 	<choice hidden="true">
@@ -3049,11 +3045,45 @@ You are now, finally, left alone... well, better than that, even: you've been le
 	<status type="limit" target="player" system="sensors" amount="0" />
     <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
-	<text>This beacon is embed deeply within the Acidic Growth, and as such it's unsuprising when an Acidic vessel appears from the mist to Attack.</text>
+	<text>This beacon is embed deeply within the Acidic Growth, and as such it's unsuprising when an Acidic vessel appears from the mist to attack.</text>
 	<ship load="SHIP_AEA_ACID_FIGHT" hostile="true" />
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="COMBAT_CHECK" />
+	</choice>
+</event>
+
+<event name="NEBULA_ACIDIC_AEA_ACID_CHECKPOINT_ELITE">
+	<beaconType id="map_icon_aea_acid_nebula" global="false">
+		<color r="138" g="237" b="31" a="1"/>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
+	<status type="limit" target="player" system="sensors" amount="0" />
+    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
+
+	<text>It appears the Acidic Growth put a checkpoint at this beacon, to repair their own ships and do quite the opposite to other ones. It noticed you, and you'll likely have to fight through to leave.</text>
+	<ship load="SHIP_AEA_ACID_ELITE_CHECKPOINT" hostile="true" />
+	<choice hidden="true">
+		<text>Prepare to defend yourself.</text>
+		<event load="COMBAT_CHECK" />
+	</choice>
+	<choice hidden="true" req="rep_aea_acid" lvl="-2" max_lvl="-1">
+		<text>(Positive Acidic Reputation) Try to appease them by pointing out your good relations.</text>
+		<event>
+			<text>Your pleas seem to work, and the station turns off its weapons. It seems like you'll get no more out of this, but at least you're alive.</text>
+			<ship hostile="false" />
+		</event>
+	</choice>
+	<choice hidden="true" req="rep_aea_acid" lvl="-9999" max_lvl="-3">
+		<text>(Great Positive Acidic Reputation) Try to appease them by pointing out your good relations.</text>
+		<event>
+			<text>Your pleas seem to work, and the station turns off its weapons. It seems like they recognized you, finally, and share some scrap as an apology.</text>
+			<ship hostile="false" />
+			<autoReward level="HIGH">scrap_only</autoReward>
+		</event>
 	</choice>
 </event>
 
@@ -3231,6 +3261,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
 	<event load="NEBULA_ENCOUNTER_AEA_ACID" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_FIGHT" />
 
+	<event load="NEBULA_ACIDIC_AEA_ACID_CHECKPOINT_ELITE" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_HIDEANDSEEK" />
 </eventList>
 
@@ -3817,7 +3848,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
                 </event>
             </choice>
             <choice hidden="true" req="aea_acid_soldier">
-                <text>(Acidic Soldier) Have your Acidic Worker pose as captain.</text>
+                <text>(Acidic Soldier) Have your Acidic Soldier pose as captain.</text>
                 <event>
                     <text>The orchid seems a bit suspicious but doesn't push it, you're able to continue moving through the shipyard.</text>
                     <choice hidden="true">
@@ -3867,7 +3898,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
     <choice hidden="true" req="aea_acid_lab_visited" blue="false" lvl="0" max_lvl="0">
         <text>Head to the laboratories.</text>
         <event>
-            <text>You enter the laboratories, luckily they appear to be mostly abandoned, you're able to avoid contact with any Acidic soldiers. Eventually you find something of interest, A massive weapon appears to be underconstruction here, it appears almost finished, it's only missing a barrel.</text>
+            <text>You enter the laboratories, luckily they appear to be mostly abandoned, you're able to avoid contact with any Acidic Soldiers. Eventually you find something of interest, A massive weapon appears to be underconstruction here, it appears almost finished, it's only missing a barrel.</text>
             <variable name="aea_acid_lab_visited" op="set" val="1" />
             <choice>
                 <text>Take the weapon and search for a barrel.</text>

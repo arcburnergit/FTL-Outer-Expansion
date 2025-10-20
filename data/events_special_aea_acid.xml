@@ -564,28 +564,52 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		<text>Request access.</text>
 		<event>
 			<text>You're welcomed by a dapper Orchid who explains this is not only a trade hub, but also a diplomatic point. If you have good personal standing with either of the factions, you can request support.</text>
-			<choice req="rep_comb_orchid" lvl="-9999" max_lvl="-1">
+			<choice req="rep_orchid" lvl="-9999" max_lvl="-1">
 				<text>(Positive Orchid Reputation) Ask for a discounted Kernel weapon.</text>
 				<event>
 					<text>After payment, a group of Orchids brings out your new weapon. You move on to the store.</text>
 					<weapon name="GIFTLIST_KERNEL"/>
 					<item_modify>
-						<item type="scrap" min="-30" max="-20" />
+						<item type="scrap" min="-35" max="-30" />
 					</item_modify>
 					<store>STORE_AEA_ACID</store>
 				</event>
 			</choice>
-			<choice req="rep_comb_orchid" lvl="-9999" max_lvl="-3">
+			<choice req="rep_orchid" lvl="-9999" max_lvl="-3">
 				<text>(Great Positive Orchid Reputation) Ask for a trained Orchid soldier contract.</text>
 				<event>
 					<text>After you pay and sign the contract, an Orchid Praetor comes aboard to join your crew. You move on to the store.</text>
 					<crewMember amount="1" class="orchid_praetor" />
 					<item_modify>
-						<item type="scrap" min="-40" max="-30" />
+						<item type="scrap" min="-45" max="-40" />
 					</item_modify>
 					<store>STORE_AEA_ACID</store>				
 				</event>
 			</choice>
+
+			<choice req="rep_aea_acid" lvl="-9999" max_lvl="-1">
+				<text>(Positive Acidic Reputation) Ask for a discounted Acidic weapon.</text>
+				<event>
+					<text>After payment, a group of Acidic Workers brings out your new weapon. You move on to the store.</text>
+					<weapon name="GIFTLIST_WEAPONS_ACIDIC"/>
+					<item_modify>
+						<item type="scrap" min="-35" max="-30" />
+					</item_modify>
+					<store>STORE_AEA_ACID</store>
+				</event>
+			</choice>
+			<choice req="rep_aea_acid" lvl="-9999" max_lvl="-3">
+				<text>(Great Positive Acidic Reputation) Ask for a military-built Acidic construct contract.</text>
+				<event>
+					<text>After you pay and sign the contract, an Acidic Soldier comes aboard to join your crew. You move on to the store.</text>
+					<crewMember amount="1" class="aea_acid_soldier" />
+					<item_modify>
+						<item type="scrap" min="-45" max="-40" />
+					</item_modify>
+					<store>STORE_AEA_ACID</store>
+				</event>
+			</choice>
+
 			<choice hidden="true">
 				<text>Just move on to the store.</text>
 					<event>
@@ -711,7 +735,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<text>You wonder if the Acidic Growth will know of the slaughter you've committed here. Either way, this wreck is still full of scrap.</text>
 	<text>Now that Acidic Growth's crew are but fragments diffused about the ship, you get to scrapping.</text>
 	<text>You thought you would become numb to the guilt after enough murders, but you have yet to experience this.</text>
-	<text>The Acidic ship has been rid of crew. The moral part of you hopes that killing an Acidic soldier doesn't count as murder.</text>
+	<text>The Acidic ship has been rid of crew. The moral part of you hopes that killing an Acidic Growth mech doesn't count as murder.</text>
 	<text>You reassure yourself that the crew of this ship can feel neither pain nor fear as you strip their vessel of anything useful.</text>
 </textList>
 <event name="DEAD_CREW_AEA_ACID_ACIDGUN">
@@ -838,7 +862,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<destroyed load="DESTROYED_AEA_ACID" />
 	<deadCrew load="DEAD_CREW_AEA_ACID" />
 	<crew>
-		<crewMember type="aea_acid_soldier" prop="1"/>
+		<crewMember type="aea_acid_worker" prop="1"/>
 		<crewMember type="orchid" prop="0"/>
 	</crew>	
 </ship>
@@ -854,8 +878,9 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 				<choice hidden="true">
 					<text>Continue...</text>
 					<event>
-						<text>While the Orchid station transports all the tanks of Growth back to the Acidic ship, the latter contacts you again. "Outsider, gratitude. Orchids - allies. You - ally. Future negotiation, with allies, possible. Accept this." Acidic Soldiers carry over a large amount of scrap.</text>
+						<text>While the Orchid station transports all the tanks of Growth back to the Acidic ship, the latter contacts you again. "Outsider, gratitude. Orchids - allies. You - ally. Future negotiation, with allies, possible. Accept this." Acidic Workers carry over a large amount of scrap.</text>
 						<autoReward level="HIGH">standard</autoReward>
+						<queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>
 					</event>
 				</choice>
 			</event>
@@ -877,6 +902,8 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 			<event>
 				<text>The Growth doesn't seem pleased - if not by tone, at least by words. "Outsider. Orchids, allies, gone? You, not an ally." They cut comms. At least you can salvage the station's wreck.</text>
 				<autoReward level="MED">standard</autoReward>
+				<queueEvent>MORALITY_UPDATE_ORCHID</queueEvent>
+				<queueEvent>MORALITY_UPDATE_AEA_ACID</queueEvent>
 			</event>
 		</choice>
 	</destroyed>
@@ -887,6 +914,8 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 			<text>Contact the Acidic Growth.</text>
 			<event>
 				<text>The Growth doesn't seem pleased - if not by tone, at least by words. "Outsider. Orchids, allies, gone? You, not an ally." They cut comms. Nothing to do but move on.</text>
+				<queueEvent>MORALITY_UPDATE_ORCHID</queueEvent>
+				<queueEvent>MORALITY_UPDATE_AEA_ACID</queueEvent>				
 			</event>			
 		</choice>
 	</deadCrew>
@@ -995,7 +1024,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 </ship>
 
 <event name="DEFEAT_AEA_ACID_ELITE">
-	<text>You're still not sure if killing Acidic Workers counts as murder. Either way, losing an elite vessel like that has to hurt the Acidic Growth.</text>
+	<text>You're still not sure if killing Acidic mechs counts as murder. Either way, losing an elite vessel like that has to hurt the Acidic Growth.</text>
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -1005,6 +1034,11 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		</event>
 	</choice>
 </event>
+
+<ship name="SHIP_AEA_ACID_ELITE_CHECKPOINT" auto_blueprint="AEA_ACID_STATION_ELITE">
+	<destroyed load="DEFEAT_AEA_ACID_ELITE" />
+	<deadCrew load="DEFEAT_AEA_ACID_ELITE" />
+</ship>
 
 <ship name="SHIP_AEA_ACID_ELITE_ALL" auto_blueprint="LIST_SHIPS_AEA_ACID_ELITE_ALL">
 	<surrender chance="0.1" min="2" max="3" load="SURRENDER_AEA_ACID" />
