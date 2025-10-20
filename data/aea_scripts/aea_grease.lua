@@ -84,6 +84,10 @@ local function is_weapons(systemBox)
 	return systemName == "weapons" and systemBox.bPlayerUI
 end
 
+local function is_artillery(systemBox)
+	local systemName = Hyperspace.ShipSystem.SystemIdToName(systemBox.pSystem.iSystemType)
+	return systemName == "artillery" and systemBox.bPlayerUI
+end
 
 --Utility function to check if the SystemBox instance is for our customs system
 local function is_grease_enemy(systemBox)
@@ -101,12 +105,22 @@ local enable_button = {
 	on = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_weapon_on.png", -10, -10, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false),
 	select_on = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_weapon_select_on.png" , -10, -10, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
 }
+local enable_button_artillery = {
+	off = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_artillery_off.png", -10, -10, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false),
+	select_off = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_artillery_select_off.png" , -10, -10, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false),
+	on = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_artillery_on.png", -10, -10, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false),
+	select_on = Hyperspace.Resources:CreateImagePrimitiveString( "systemUI/aea_grease_artillery_select_on.png" , -10, -10, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+}
 
 local enable_size = {
 	w = 19,
 	h = 11,
 	x_off = 27,
 	y_off = -46,
+	arty_x_off = 21,
+	arty_y_off = -5,
+	arty_y_off_power = 8,
+	arty_y_off_targeting = 19,
 }
 
 --Handles initialization of custom system box
@@ -172,6 +186,25 @@ local function grease_mouse_move(systemBox, x, y)
 			end
 		end
 	end
+	if is_artillery(systemBox) and Hyperspace.ships.player:HasSystem(Hyperspace.ShipSystem.NameToSystemId(systemIdName)) then
+		local w_x = enable_size.arty_x_off
+		local w_y = enable_size.arty_y_off - enable_size.arty_y_off_power * (systemBox.pSystem:GetMaxPower() - 1)
+		if Hyperspace.ships.player:HasAugmentation("ARTILLERY_ORDER") > 0 then w_y = w_y - enable_size.arty_y_off_targeting end
+		local weapon = systemBox.pSystem
+		if not weapon then 
+			return Defines.Chain.CONTINUE 
+		end
+		if x >= w_x and x <= w_x + enable_size.w and y >= w_y and y <= w_y + enable_size.h then
+			if userdata_table(weapon, "mods.aea.grease").disabled then
+				Hyperspace.Mouse.tooltip = "Enable consumption of Weapon Amplification charges for this weapon."
+			else
+				Hyperspace.Mouse.tooltip = "Disable consumption of Weapon Amplification charges for this weapon."
+			end
+			userdata_table(weapon, "mods.aea.grease").weaponHover = true
+		else
+			userdata_table(weapon, "mods.aea.grease").weaponHover = false
+		end
+	end
 	return Defines.Chain.CONTINUE
 end
 script.on_internal_event(Defines.InternalEvents.SYSTEM_BOX_MOUSE_MOVE, grease_mouse_move)
@@ -224,6 +257,15 @@ local function grease_click(systemBox, shift)
 			elseif userdata_table(weapon, "mods.aea.grease").weaponHover then
 				userdata_table(weapon, "mods.aea.grease").disabled = true
 			end
+		end
+	end
+	if is_artillery(systemBox) and Hyperspace.ships.player:HasSystem(Hyperspace.ShipSystem.NameToSystemId(systemIdName)) then
+		local weapon = systemBox.pSystem
+		if not weapon then return Defines.Chain.CONTINUE end
+		if userdata_table(weapon, "mods.aea.grease").weaponHover and userdata_table(weapon, "mods.aea.grease").disabled then
+			userdata_table(weapon, "mods.aea.grease").disabled = nil
+		elseif userdata_table(weapon, "mods.aea.grease").weaponHover then
+			userdata_table(weapon, "mods.aea.grease").disabled = true
 		end
 	end
 	return Defines.Chain.CONTINUE
@@ -453,6 +495,27 @@ local function grease_render(systemBox, ignoreStatus)
 			Graphics.CSurface.GL_PopMatrix()
 		end
 	end
+	if is_artillery(systemBox) and Hyperspace.ships.player:HasSystem(Hyperspace.ShipSystem.NameToSystemId(systemIdName)) then
+		local w_x = enable_size.arty_x_off
+		local w_y = enable_size.arty_y_off - enable_size.arty_y_off_power * (systemBox.pSystem:GetMaxPower() - 1)
+		if Hyperspace.ships.player:HasAugmentation("ARTILLERY_ORDER") > 0 then w_y = w_y - enable_size.arty_y_off_targeting end
+		local weapon = systemBox.pSystem
+
+		if not weapon then return Defines.Chain.CONTINUE end
+		--Graphics.CSurface.GL_DrawCircle(w_x, w_y, 25, Graphics.GL_Color(1, 0, 0, 0.5))
+		Graphics.CSurface.GL_PushMatrix()
+		Graphics.CSurface.GL_Translate(w_x, w_y, 0)
+		if userdata_table(weapon, "mods.aea.grease").disabled and userdata_table(weapon, "mods.aea.grease").weaponHover then
+			Graphics.CSurface.GL_RenderPrimitive(enable_button_artillery.select_off)
+		elseif userdata_table(weapon, "mods.aea.grease").disabled then
+			Graphics.CSurface.GL_RenderPrimitive(enable_button_artillery.off)
+		elseif userdata_table(weapon, "mods.aea.grease").weaponHover then
+			Graphics.CSurface.GL_RenderPrimitive(enable_button_artillery.select_on)
+		else
+			Graphics.CSurface.GL_RenderPrimitive(enable_button_artillery.on)
+		end
+		Graphics.CSurface.GL_PopMatrix()
+	end
 end
 script.on_render_event(Defines.RenderEvents.SYSTEM_BOX, 
 function(systemBox, ignoreStatus) 
@@ -650,6 +713,19 @@ local function spawn_chaos(shipManager, projectile, location, damage, shipFriend
 	spawn_effect[possibleEffects[random].name](shipManager, projectile, location, damage, shipFriendlyFire)
 end
 spawn_effect["Chaos"] = spawn_chaos
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+	if shipManager:HasSystem(11) then
+		for artillery in vter(shipManager.artillerySystems) do
+			local weapon = artillery.projectileFactory
+			if userdata_table(artillery, "mods.aea.grease").disabled then
+				userdata_table(weapon, "mods.aea.grease").disabled = true
+			else
+				userdata_table(weapon, "mods.aea.grease").disabled = nil
+			end
+		end
+	end
+end)
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
 	local shipManager = Hyperspace.ships(weapon.iShipId)
