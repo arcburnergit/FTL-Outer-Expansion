@@ -1361,8 +1361,8 @@ In extinguisher mode the system will provide 1.8 hp/sec which will scale up to 3
 	<stunChance>0</stunChance>
 	<erosionChance>10</erosionChance>
 	<erosion>
-		<speed>2</speed>
-		<maxSpeed>2</maxSpeed>
+		<speed>1.5</speed>
+		<maxSpeed>1.5</maxSpeed>
 		<time>5.0</time>
 		<maxTime>60.0</maxTime>
 		<systemRepairMultiplier>1</systemRepairMultiplier>

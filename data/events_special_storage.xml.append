@@ -3816,7 +3816,7 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 </FTL>
 
 <FTL>
-<mod:findName name="STORAGE_CHECK_STATUS_NOTERIETY" type="event">
+<mod:findName name="STORAGE_CHECK_STATUS_NOTORIETY" type="event">
 	
 	<mod-append:choice hidden="true" req="rep_aea_acid" lvl="-999" max_lvl="-5">
 		<text>Acidic Reputation [4++]</text>
@@ -3858,5 +3858,47 @@ It will take a while to scan, giving the fleet time to catch up. Proceed?</text>
 		<text>Acidic Reputation [--4]</text>
 		<event load="OPTION_INVALID"/>
 	</mod-append:choice>
+
+	<mod-append:choice hidden="true" req="rep_comb_acid_orchid" lvl="-999" max_lvl="-5">
+		<text>Combined Acidic-Orchid Reputation [4++]</text>
+		<event load="OPTION_INVALID"/>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="rep_comb_acid_orchid" lvl="-4" max_lvl="-4">
+		<text>Combined Acidic-Orchid Reputation [4]</text>
+		<event load="OPTION_INVALID"/>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="rep_comb_acid_orchid" lvl="-3" max_lvl="-3">
+		<text>Combined Acidic-Orchid Reputation [3]</text>
+		<event load="OPTION_INVALID"/>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="rep_comb_acid_orchid" lvl="-2" max_lvl="-2">
+		<text>Combined Acidic-Orchid Reputation [2]</text>
+		<event load="OPTION_INVALID"/>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="rep_comb_acid_orchid" lvl="-1" max_lvl="-1">
+		<text>Combined Acidic-Orchid Reputation [1]</text>
+		<event load="OPTION_INVALID"/>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="rep_comb_acid_orchid" lvl="1" max_lvl="1">
+		<text>Combined Acidic-Orchid Reputation [-1]</text>
+		<event load="OPTION_INVALID"/>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="rep_comb_acid_orchid" lvl="2" max_lvl="2">
+		<text>Combined Acidic-Orchid Reputation [-2]</text>
+		<event load="OPTION_INVALID"/>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="rep_comb_acid_orchid" lvl="3" max_lvl="3">
+		<text>Combined Acidic-Orchid Reputation [-3]</text>
+		<event load="OPTION_INVALID"/>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="rep_comb_acid_orchid" lvl="4" max_lvl="4">
+		<text>Combined Acidic-Orchid Reputation [-4]</text>
+		<event load="OPTION_INVALID"/>
+	</mod-append:choice>
+	<mod-append:choice hidden="true" req="rep_comb_acid_orchid" lvl="5" max_lvl="999">
+		<text>Combined Acidic-Orchid Reputation [--4]</text>
+		<event load="OPTION_INVALID"/>
+	</mod-append:choice>
+
 </mod:findName>
 </FTL>
