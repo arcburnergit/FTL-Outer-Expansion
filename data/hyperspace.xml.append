@@ -35,6 +35,7 @@
 </mod:findLike>
 <shieldWithoutSystem enabled="true"/>
 <dualMedical enabled="true"/>
+<multiShipFix enabled="true"/>
 <mod:findLike type="customSystems">
     <mod-append:customSystem id="aea_super_shields"/>
     <mod-append:customSystem id="aea_clone_crime"/>

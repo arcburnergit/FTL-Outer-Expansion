@@ -138,7 +138,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
         <text>(Praetor Crew) Request passage.</text>
         <event>
             <text>Your Praetor hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. Reason, diplomacy? Please accept donation." You are free to enter.</text>
-            <variable name="aea_acid_friendly" op="set" val="1" />
+            <queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>
 			<autoReward level="MED">standard</autoReward>
         </event>
     </choice>
@@ -343,7 +343,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<beaconType id="map_icon_start" global="false">
 		<color r="138" g="237" b="31" a="1" />
 	</beaconType>
-	<text>It's risky to venture this deep into acidic territory, The acidic growth originated from this sector, and it's very defensive of it.</text>
+	<text>It's risky to venture this deep into Acidic territory. The Acidic Growth originated from this sector, and it's very defensive of it. The methods to get in that'd work on its newer territories won't work here.</text>
 	<variable name="loc_unique_sectors" op="add" val="1" />
 	<changeBackground>BACK_SECTOR_AEA_ACID</changeBackground>
 	<playSound>lightspeed</playSound>
@@ -356,28 +356,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 </event>
 
 <event name="GUARD_AEA_ACIDHOME">
-	<text>The Elite guard here sends you a brief, to-the-point message. "Outsider. Space here, is ours. State your intentions."</text>
-	<choice hidden="true" req="aea_acid_friendly" lvl="1">
-		<text>(Friendly) Make your identity known.</text>
-		<event>
-			<text>Once the Acidic Growth realizes who you are the guard welcomes you in, The Acidic Growth is even kind enough to spare you some supplies.</text>
-			<autoReward level="HIGH">stuff</autoReward>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Try your hand at negotiating.</text>
-		<event load="GUARD_AEA_ACIDHOME_NEGOTIATE" />
-	</choice>
-	<choice>
-		<text>Convince it you only have good intentions.</text>
-		<event>
-			<text>The Acidic Growth recognises your donation and lets you pass.</text>
-            <variable name="aea_acid_friendly" op="set" val="1" />
-			<item_modify>
-				<item type="scrap" min="-80" max="-80" />
-			</item_modify>
-		</event>
-	</choice>
+	<text>The Elite guard here sends you a brief, to-the-point message. "Outsider. This space, is ours. State your intentions."</text>
 	<choice hidden="true">
 		<text>Fight your way through.</text>
 		<event>
@@ -389,53 +368,82 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 			</choice>
 		</event>
 	</choice>
-	<choice hidden="true" req="aea_acid_worker">
-		<text>(Acidic Worker) Enter Freely.</text>
+	<choice>
+		<text>Suggest a monetary bribe.</text>
 		<event>
-			<text>The Acidic Growth is welcoming of itself. You're free to enter.</text>
-            <variable name="aea_acid_friendly" op="set" val="1" />
+			<text>"Security, is absolute. Extermination, required." It seems like you can't sweeten those guys.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="rep_comb_acid_orchid" lvl="-9999" max_lvl="-2">
+		<text>(Positive Gathering-Growth reputation) Request entry.</text>
+		<event>
+			<text>You've made quite a name among Acidic Growth... even if it's not exactly clear if it's different consciousnesses or all just one, united whole. It lets you in.</text>
+		</event>
+	</choice>
+	<choice hidden="true" req="aea_acid_worker">
+		<text>(Acidic Worker) Request entry.</text>
+		<event>
+			<text>It takes a bit for the guard to answer. "Us, on unknown ship? Can't trust. Hostage, possibility. Extermination, required. Us, collected after." Right, those guys can survive in outer space. You can't, so you better start fighting back.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
 		</event>
 	</choice>
 	<choice hidden="true" req="aea_acid_soldier">
-		<text>(Acidic Soldier) Enter Freely.</text>
+		<text>(Acidic Soldier) Request entry.</text>
 		<event>
-			<text>The Acidic Growth is welcoming of itself. You're free to enter.</text>
-            <variable name="aea_acid_friendly" op="set" val="1" />
+			<text>It takes a bit for the guard to answer. "Us, on unknown ship? High rank. Hostage, possibility, minimal. Excuse us." You're free to enter, and the Growth notes you as a known ally.</text>
+            <queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>
 		</event>
 	</choice>
     <choice hidden="true" req="orchid">
         <text>(Orchid Crew) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
-            <variable name="aea_acid_friendly" op="set" val="1" />
+            <text>It takes a bit for the guard to answer. "Ally, Orchid? Unknown ship. Ally, maybe not. Pirate operation, possible. Extermination, required." You prepare to defend yourself.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>
         </event>
     </choice>
     <choice hidden="true" req="orchid_caretaker">
         <text>(Caretaker Crew) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
-            <variable name="aea_acid_friendly" op="set" val="1" />
+            <text>It takes a bit for the guard to answer. "Ally, Orchid? Uknown ship, but... under Grand Gardener, means ally. Excuse us." You're free to enter.</text>
         </event>
     </choice>
     <choice hidden="true" req="orchid_praetor">
         <text>(Praetor Crew) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
-            <variable name="aea_acid_friendly" op="set" val="1" />
+            <text>It takes a bit for the guard to answer. "Ally, Orchid? High rank. Diplomatic mission? Excuse us." You're free to enter, and the Growth notes you as a known ally to provide safer travel.</text>
+            <queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>
         </event>
     </choice>
     <choice hidden="true" req="unique_mayeb">
         <text>(Mayeb) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
-            <variable name="aea_acid_friendly" op="set" val="1" />
+            <text>Mayeb goes on comms, "Our intentions are peaceful. We just want to pass through the sector. I hope you recognize me; I'd like to avoid confrontation."
+
+"Grand Gardener? Welcome, ally. Excuse us. Please accept donation." You're free to enter.
+			</text>
+            <queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>
+			<autoReward level="HIGH">standard</autoReward>
         </event>
     </choice>
     <choice hidden="true" req="unique_tyerel">
         <text>(Ty E'rel) Request passage.</text>
         <event>
-            <text>Your Orchid hails the Acidic vessel, however before they can say anything they receive a response. "One of the trusted, on board. We  welcome you. Fly through our space, you can."</text>
-            <variable name="aea_acid_friendly" op="set" val="1" />
+            <text>Ty goes on comms, "My name is Ty E'rel. I suggest that you do not attack this vessel, or the Gathering-Growth Alliance might face... difficulties. We are just passing through." The Growth apologizes and sends some supplies over.</text>
+            <queueEvent>MORALITY_REMOVE_AEA_ACID</queueEvent>
+			<autoReward level="MED">standard</autoReward>
         </event>
     </choice>
 	<choice hidden="true" req="mind">
@@ -456,6 +464,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	</choice>
 </event>
 
+<!--
 <eventList name="GUARD_AEA_ACIDHOME_NEGOTIATE">
 	<event>
 		<text>"Your offer is unacceptable."</text>
@@ -517,6 +526,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		</event>
 	</choice>
 </event>
+-->
 
 <ship name="SHIP_GUARD_AEA_ACID_ELITE" auto_blueprint="AEA_ACID_GUARD_ELITE">
 	<surrender min="999" max="999" load="GUARD_SIGNAL" />
@@ -526,31 +536,38 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 
 <event name="GUARD_AEA_ACIDHOME_DESTROY">
 	<text>You have defeated the Acidic guard. Whatever might have been in their cargo has for certain been destroyed, but you can at least salvage some supplies from the ship.</text>
-	<autoReward level="HIGH">standard</autoReward>
+	<autoReward level="LOW">standard</autoReward>
 	<choice hidden="true">
 		<text>Continue...</text>
-		<event load="GUARD_AEA_ACIDHOME_FOLLOWUP" />
+		<event load="GUARD_AEA_ACIDHOME_PRAETOR" />
 	</choice>
 </event>
 <event name="GUARD_AEA_ACIDHOME_DEADCREW">
 	<text>You have defeated the Acidic guard. Without the Acidic Growth on board to stop you, you can investigate their cargo. You find a weapon to bring back to the ship, and move on to scrap their hull.</text>
-	<autoReward level="HIGH">standard</autoReward>
+	<autoReward level="LOW">standard</autoReward>
 	<weapon name="GIFTLIST_WEAPONS_ACIDIC" />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="GUARD_AEA_ACIDHOME_PRAETOR" />
+	</choice>
+</event>
+
+<ship name="SHIP_GUARD_AEA_ACIDHOME_PRAETOR" auto_blueprint="MU_ORCHID_GUARD_ELITE">
+	<destroyed load="GUARD_AEA_ACIDHOME_PRAETOR_DESTROY" />
+	<deadCrew load="GUARD_AEA_ACIDHOME_PRAETOR_DESTROY" />
+</ship>
+
+<event name="GUARD_AEA_ACIDHOME_PRAETOR_DESTROY">
+	<text>You have defeated the Praetor vessel. You can now salvage both ships.</text>
+	<autoReward level="HIGH">standard</autoReward>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="GUARD_AEA_ACIDHOME_FOLLOWUP" />
 	</choice>
 </event>
 
-<ship name="SHIP_AEA_ACIDHOME_REINFORCEMENTS" auto_blueprint="LIST_SHIPS_AEA_ACID_ELITE_FIGHT">
-	<destroyed load="DESTROYED_REINFORCEMENTS" />
-	<deadCrew load="DEADCREW_REINFORCEMENTS" />
-</ship>
-<event name="GUARD_AEA_ACIDHOME_FOLLOWUP">
+<event name="GUARD_AEA_ACIDHOME_PRAETOR">
 	<noQuestText />
-	<removeHazards />
-	<clearCustomFleet />
-	<text>By killing the Acidic guard, you have no doubt caused them to dispatch reinforcements to track you down. Watch your step as you explore the sector.</text>
 	<quest event="REINFORCEMENTS_AEA_ACIDHOME">
 		<nebulaBeacon>true</nebulaBeacon>
 		<nextSector>false</nextSector>
@@ -558,6 +575,71 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		<createNebula>false</createNebula>
 		<aggressive>2</aggressive>
 	</quest>
+	<ship load="SHIP_GUARD_AEA_ACIDHOME_PRAETOR" hostile="false" />
+	<text>Before you can even finish salvaging, a Praetor ship jumps in. Uh oh.</text>
+	<choice hidden="true" blue="false" req="rep_comb_acid_orchid" lvl="-9999" max_lvl="1">
+		<text>Continue...</text>
+		<event>
+			<text>The Orchid vessel hails you. "Federation? Could you kindly explain what happened here? We got a distress call coming from the guard, and now we find the guard neutralized and you scrapping the wreck. You understand how this looks, right?"</text>
+			<choice hidden="true">
+				<text>We got attacked first.</text>
+				<event load="GUARD_AEA_ACIDHOME_PRAETOR_LIST" />
+			</choice>
+			<choice>
+				<text>You don't need to know what happened.</text>
+				<event>
+					<text>"With this... we could look the other way, yes. Just this once. Get out of my sight, before I change my mind." You end up having to abandon the Acidic wreck.</text>
+					<item_modify>
+						<item type="scrap" min="-30" max="-30" />
+					</item_modify>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="GUARD_AEA_ACIDHOME_FOLLOWUP" />
+					</choice>					
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>We killed them, and you're next.</text>
+				<event>
+					<text>"I... I don't know if it's more reprehensible or edgy." The Praetor vessel moves in to attack.</text>
+					<ship hostile="true" />
+					<queueEvent>MORALITY_UPDATE_ORCHID_FIGHT</queueEvent>					
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<eventList name="GUARD_AEA_ACIDHOME_PRAETOR_LIST">
+	<event>
+		<text>The Orchid hesitates. "I... I guess I believe you. What business do you even have here?"</text>
+		<choice hidden="true">
+			<text>Explain your mission.</text>
+			<event>
+				<text>"So you're just passing through? It's unfortunate this encounter had to happen. We'll let you go." They also give you some supplies for the road ahead.</text>
+				<autoReward level="MED">standard</autoReward>
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event load="GUARD_AEA_ACIDHOME_FOLLOWUP" />
+				</choice>			
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>"Likely story. We'll have you detained now. Do not resist." You don't have time for this.</text>
+		<ship hostile="true" />
+		<queueEvent>MORALITY_UPDATE_ORCHID_FIGHT</queueEvent>
+	</event>
+</eventList>
+
+<ship name="SHIP_AEA_ACIDHOME_REINFORCEMENTS" auto_blueprint="LIST_SHIPS_AEA_ACID_ELITE_FIGHT">
+	<destroyed load="DESTROYED_REINFORCEMENTS" />
+	<deadCrew load="DEADCREW_REINFORCEMENTS" />
+</ship>
+<event name="GUARD_AEA_ACIDHOME_FOLLOWUP">
+	<removeHazards />
+	<clearCustomFleet />
+	<text>By killing the Acidic guard, you have no doubt caused them to dispatch reinforcements to track you down. Watch your step as you explore the sector.</text>
 	<choice>
 		<text>Do something onboard the ship.</text>
 		<event load="STORAGE_CHECK" />
