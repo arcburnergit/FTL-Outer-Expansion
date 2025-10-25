@@ -356,7 +356,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 </event>
 
 <event name="GUARD_AEA_ACIDHOME">
-	<text>The Elite guard here sends you a brief, to-the-point message. "Outsider. This space, is ours. State your intentions."</text>
+	<text>The Elite guard here sends you a brief, to-the-point message. "Outsider. This space, is ours. Turn back."</text>
 	<choice hidden="true">
 		<text>Fight your way through.</text>
 		<event>
@@ -606,6 +606,17 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 					<queueEvent>MORALITY_UPDATE_ORCHID_FIGHT</queueEvent>					
 				</event>
 			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" blue="false" req="rep_comb_acid_orchid" lvl="2" max_lvl="9999">
+		<text>Continue...</text>
+		<event>
+			<text>It seems like your past crimes caught up with you. The Orchid vessel doesn't bother hailing you, and moves in to attack.</text>
+			<ship hostile="true" />
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK" />
+			</choice>			
 		</event>
 	</choice>
 </event>
