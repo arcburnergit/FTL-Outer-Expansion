@@ -718,14 +718,14 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 </eventList>
 
 <eventList name="NEBULA_STORELIST_AEA_ACID">
+	<event load="NEBULA_STOREEVENT_AEA_ACID_NO2" />
+	<event load="NEBULA_STOREEVENT_AEA_ACID_NO2" />
+
 	<event load="NEBULA_STOREEVENT_DAMAGED" />
 	<event load="NEBULA_STOREEVENT_DAMAGED" />
 	
 	<event load="NEBULA_STOREEVENT_FED_OUTPOSTDAMAGE" />
 	<event load="NEBULA_STOREEVENT_FED_OUTPOSTDAMAGE" />
-	
-	<event load="NEBULA_STOREEVENT_COALITION_MYSTERYRACE" />
-	<event load="NEBULA_STOREEVENT_COALITION_RACES" />
 	
 	<event load="NEBULA_STOREEVENT_PIRATE_ODDSHOP" />
 	<event load="NEBULA_STOREEVENT_PIRATE_AWKWARD" />
@@ -739,7 +739,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	</beaconType>
 	<ship load="SHIP_AEA_ACID_STATION_STORE" hostile="false"/>
 	<text>This beacon is busy with Acidic and Gathering traffic, all centering around a Growth station. Orchids are your allies, so it won't be hard to gain access and ability to trade.</text>
-	<choice hidden="true">
+	<choice hidden="true" blue="false" req="rep_comb_acid_orchid" lvl="-9999" max_lvl="2">
 		<text>Request access.</text>
 		<event>
 			<text>You're welcomed by a dapper Orchid who explains this is not only a trade hub, but also a diplomatic point. If you have good personal standing with either of the factions, you can request support.</text>
@@ -798,6 +798,20 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 			</choice>
 		</event>
 	</choice>
+	<choice hidden="true" blue="false" req="rep_comb_acid_orchid" lvl="3" max_lvl="9999">
+		<text>Request access.</text>
+		<event>
+			<text>The station refuses all hails; it seems like they got a tip about your reputation. You're severely outnumbered, so your only choice is to move on.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
 	<choice hidden="true">
 		<text>Pass.</text>
 		<event>
@@ -812,6 +826,111 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 			</choice>
 		</event>
 	</choice>	
+</event>
+
+<event name="NEBULA_STOREEVENT_AEA_ACID_NO2">
+	<beaconType id="map_icon_aea_store_acidic" global="false">
+		<color r="255" g="245" b="175" a="1"/>
+	</beaconType>
+	<ship load="SHIP_AEA_ACID_STATION_STORE" hostile="false"/>
+	<environment type="nebula"/>
+	<text>It seems like Acidic Growth set up a store here.</text>
+	<choice hidden="true" blue="false" req="rep_comb_acid_orchid" lvl="-9999" max_lvl="2">
+		<text>Hail.</text>
+		<event>
+			<text>An Acidic Soldier allows you to dock. The station is teeming with Workers, and you bump into several while searching for an open kiosk. The local engineers suggest, for a price, to either upgrade or dismantle your Life Support system.</text>
+			<choice req="oxygen" blue="false" lvl="1">
+				<text>Dismantle the Life Support system.</text>
+				<event>
+					<text>While your system is being dismantled, you have time to shop. Maybe grab some breathing masks, just to be safe.</text>
+					<removeSystem player="true">oxygen</removeSystem>
+					<item_modify>
+						<item type="scrap" min="-15" max="-15"/>
+					</item_modify>
+					<store>STORE_AEA_ACID</store>
+				</event>
+			</choice>
+			<choice req="oxygen" blue="false" lvl="1" max_lvl="1">
+				<text>Upgrade the Life Support system.</text>
+				<event>
+					<text>While the system is being upgraded, you have time to shop.</text>
+					<upgrade amount="1" system="oxygen"/>
+					<item_modify>
+						<item type="scrap" min="-15" max="-15"/>
+					</item_modify>
+					<store>STORE_AEA_ACID</store>
+				</event>
+			</choice>
+			<choice req="oxygen" blue="false" lvl="2" max_lvl="2">
+				<text>Upgrade the Life Support system.</text>
+				<event>
+					<text>While the system is being upgraded, you have time to shop.</text>
+					<upgrade amount="1" system="oxygen"/>
+					<item_modify>
+						<item type="scrap" min="-25" max="-25"/>
+					</item_modify>
+					<store>STORE_AEA_ACID</store>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Just shop.</text>
+					<event>
+						<text>You don't need anything extra. You move on to the store.</text>
+						<store>STORE_AEA_ACID</store>
+					</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" blue="false" req="rep_comb_acid_orchid" lvl="3" max_lvl="9999">
+		<text>Hail.</text>
+		<event>
+			<text>The station refuses all hails. It seems the Growth isn't pleased with you.</text>
+			<choice hidden="true">
+				<text>Attack!</text>
+				<event>
+					<text>You decide to turn them into scrap instead.</text>
+					<ship hostile="true" />
+					<queueEvent>MORALITY_UPDATE_AEA_ACID_FIGHT</queueEvent>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Move on.</text>
+				<event>
+					<text>You proceed to move on, disappointed.</text>
+					<choice>
+						<text>Do something onboard the ship.</text>
+						<event load="STORAGE_CHECK" />
+					</choice>
+					<choice>
+						<text>Do nothing.</text>
+						<event />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Attack!</text>
+		<event>
+			<text>The Acidic Growth was really aggressively, uh, flying there and doing nothing?.. Yeah, it isn't really justified. Nevertheless, you give orders to attack.</text>
+			<ship hostile="true" />
+			<queueEvent>MORALITY_UPDATE_AEA_ACID_FIGHT</queueEvent>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Move on.</text>
+		<event>
+			<text>You don't need to shop right now.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK" />
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event />
+			</choice>
+		</event>
+	</choice>
 </event>
 
 <ship name="SHIP_AEA_ACID_STATION_STORE" auto_blueprint="AEA_ACID_STATION">

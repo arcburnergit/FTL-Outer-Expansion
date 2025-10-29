@@ -101,6 +101,7 @@
 
 <event name="ENCOUNTER_AEA_ACID_ORCHID_CLEARING" unique="true">
 	<text>It appears the orchids are taking their duty as the Acidic Growth's only ally seriously. They move in to take you out.</text>
+	<text>From what you remember, Gathering-Growth Alliance formed from initiative of Caretakers after Acidic Growth was discovered. Orchids you meet at this beacon, however, are not as peaceful as those, and decide to remove you for trespassing.</text>
 	<ship load="SHIP_ORCHID_FIGHT" hostile="true" />
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -125,6 +126,8 @@
 <eventList name="DISTRESS_AEA_ACID">
 	<event load="DISTRESS_REFUGEE_AEA_ACID_MV" />
 	<event load="DISTRESS_AEA_ACID_MANTIS_MV" />
+
+	<event load="AEA_ACID_DISTRESS_VAMPWEED" />
 </eventList>
 
 <event name="DISTRESS_REFUGEE_AEA_ACID_MV" unique="true">
@@ -261,11 +264,14 @@
 	<event load="ENCOUNTER_AEA_ACID_PIRATE_CLEARING" />
 	<event load="ENCOUNTER_AEA_ACID_REBEL_CLEARING" />
 	<event load="ENCOUNTER_AEA_ACID_ORCHID_CLEARING" />
+	<event load="ENCOUNTER_AEA_ACID_COALITION_CLEARING" />
 </eventList>
 
 <eventList name="DISTRESS_AEA_ACID_UNIQUE_CLEARING">
 	<event load="DISTRESS_REFUGEE_AEA_ACID_MV" />
 	<event load="DISTRESS_SLUG_MANTIS_MV" />
+
+	<event load="AEA_ACID_DISTRESS_VAMPWEED" />
 </eventList>
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -2147,8 +2153,8 @@ You are now, finally, left alone... well, better than that, even: you've been le
 	<event load="NEBULA_AEA_ACID_DISTRESS_ROCK" />
 	<event load="NEBULA_AEA_ACID_DISTRESS_TRICK" />
 	<event load="NEBULA_AEA_ACID_DISTRESS_QUESTION" />
+
 	<event load="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2" />
-	<event load="AEA_ACID_DISTRESS_VAMPWEED" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_ORCHID_DISTRESS_PRESSURE" />
 </eventList>
 
