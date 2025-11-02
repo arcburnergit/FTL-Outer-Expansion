@@ -734,6 +734,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 </eventList>
 
 <event name="STOREEVENT_AEA_ACID_ORCHID" unique="true">
+	<preventQuest/>
 	<beaconType id="map_icon_aea_store_acidic" global="false">
 		<color r="255" g="245" b="175" a="1"/>
 	</beaconType>
@@ -751,7 +752,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 					<item_modify>
 						<item type="scrap" min="-35" max="-30" />
 					</item_modify>
-					<store>STORE_AEA_ACID</store>
+					<queueEvent>STORE_LOAD_AEA_ACID</queueEvent>
 				</event>
 			</choice>
 			<choice req="rep_orchid" lvl="-9999" max_lvl="-3">
@@ -762,7 +763,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 					<item_modify>
 						<item type="scrap" min="-45" max="-40" />
 					</item_modify>
-					<store>STORE_AEA_ACID</store>				
+					<queueEvent>STORE_LOAD_AEA_ACID</queueEvent>			
 				</event>
 			</choice>
 
@@ -772,9 +773,9 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 					<text>After payment, a group of Acidic Workers brings out your new weapon. You move on to the store.</text>
 					<weapon name="GIFTLIST_WEAPONS_ACIDIC"/>
 					<item_modify>
-						<item type="scrap" min="-35" max="-30" />
+						<item type="scrap" min="-40" max="-35" />
 					</item_modify>
-					<store>STORE_AEA_ACID</store>
+					<queueEvent>STORE_LOAD_AEA_ACID</queueEvent>
 				</event>
 			</choice>
 			<choice req="rep_aea_acid" lvl="-9999" max_lvl="-3">
@@ -785,16 +786,13 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 					<item_modify>
 						<item type="scrap" min="-45" max="-40" />
 					</item_modify>
-					<store>STORE_AEA_ACID</store>
+					<queueEvent>STORE_LOAD_AEA_ACID</queueEvent>
 				</event>
 			</choice>
 
 			<choice hidden="true">
 				<text>Just move on to the store.</text>
-					<event>
-						<text>You don't need any extra services. You move on to the store.</text>
-						<store>STORE_AEA_ACID</store>
-					</event>
+				<event load="STORE_LOAD_AEA_ACID" />
 			</choice>
 		</event>
 	</choice>
@@ -828,7 +826,8 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	</choice>	
 </event>
 
-<event name="NEBULA_STOREEVENT_AEA_ACID_NO2">
+<event name="NEBULA_STOREEVENT_AEA_ACID_NO2" unique="true">
+	<preventQuest/>
 	<beaconType id="map_icon_aea_store_acidic" global="false">
 		<color r="255" g="245" b="175" a="1"/>
 	</beaconType>
@@ -839,17 +838,6 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		<text>Hail.</text>
 		<event>
 			<text>An Acidic Soldier allows you to dock. The station is teeming with Workers, and you bump into several while searching for an open kiosk. The local engineers suggest, for a price, to either upgrade or dismantle your Life Support system.</text>
-			<choice req="oxygen" blue="false" lvl="1">
-				<text>Dismantle the Life Support system.</text>
-				<event>
-					<text>While your system is being dismantled, you have time to shop. Maybe grab some breathing masks, just to be safe.</text>
-					<removeSystem player="true">oxygen</removeSystem>
-					<item_modify>
-						<item type="scrap" min="-15" max="-15"/>
-					</item_modify>
-					<store>STORE_AEA_ACID</store>
-				</event>
-			</choice>
 			<choice req="oxygen" blue="false" lvl="1" max_lvl="1">
 				<text>Upgrade the Life Support system.</text>
 				<event>
@@ -858,7 +846,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 					<item_modify>
 						<item type="scrap" min="-15" max="-15"/>
 					</item_modify>
-					<store>STORE_AEA_ACID</store>
+					<queueEvent>STORE_LOAD_AEA_ACID</queueEvent>
 				</event>
 			</choice>
 			<choice req="oxygen" blue="false" lvl="2" max_lvl="2">
@@ -869,15 +857,23 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 					<item_modify>
 						<item type="scrap" min="-25" max="-25"/>
 					</item_modify>
-					<store>STORE_AEA_ACID</store>
+					<queueEvent>STORE_LOAD_AEA_ACID</queueEvent>
+				</event>
+			</choice>
+			<choice req="oxygen" blue="false" lvl="1">
+				<text>Dismantle the Life Support system.</text>
+				<event>
+					<text>While your system is being dismantled, you have time to shop. Maybe grab some breathing masks, just to be safe.</text>
+					<removeSystem player="true">oxygen</removeSystem>
+					<item_modify>
+						<item type="scrap" min="-15" max="-15"/>
+					</item_modify>
+					<queueEvent>STORE_LOAD_AEA_ACID</queueEvent>
 				</event>
 			</choice>
 			<choice hidden="true">
 				<text>Just shop.</text>
-					<event>
-						<text>You don't need anything extra. You move on to the store.</text>
-						<store>STORE_AEA_ACID</store>
-					</event>
+				<event load="STORE_LOAD_AEA_ACID" />
 			</choice>
 		</event>
 	</choice>

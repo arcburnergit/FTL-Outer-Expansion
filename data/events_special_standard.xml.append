@@ -14,6 +14,8 @@
 
 <mod:findName type="eventList" name="STORELIST_UNION">
   <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+
+  <mod-append:event load="STOREEVENT_AEA_ORCHID_FROM_ACID" />
 </mod:findName>
 
 <mod:findName type="eventList" name="STORELIST_MILITIA">
@@ -30,6 +32,8 @@
 
 <mod:findName type="eventList" name="STORELIST_ORCHID">
   <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+
+  <mod-append:event load="STOREEVENT_AEA_ORCHID_FROM_ACID" />
 </mod:findName>
 
 <mod:findName type="eventList" name="STORELIST_VAMPWEED">
@@ -54,6 +58,8 @@
 
 <mod:findName type="eventList" name="STORELIST_FEDERATION">
   <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
+
+  <mod-append:event load="STOREEVENT_AEA_ORCHID_FROM_ACID" />
 </mod:findName>
 
 <mod:findName type="eventList" name="STORELIST_MANTIS">
@@ -67,4 +73,53 @@
 <mod:findName type="eventList" name="STORELIST_SLUG">
   <mod-append:event load="STOREEVENT_AEA_CULT_SPELLS" />
 </mod:findName>
+
+<event name="STORE_LOAD_AEA_ACID">
+	<store>STORE_AEA_ACID</store>
+	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK"/>
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event/>
+	</choice>
+</event>
+
+<event name="STOREEVENT_AEA_ORCHID_FROM_ACID" unique="true">
+  <preventQuest/>
+	<beaconType id="map_icon_store_orchid" global="false">
+		<color r="215" g="255" b="200" a="1"/>
+	</beaconType>
+  <ship load="SHIP_ORCHID_GENERIC" hostile="false"/>
+  <text>"Hello, hello!" An Orchid welcomes you at this beacon, "I've recently returned from Acidic Growth space and would love to share their tech! For a small donation, of course."</text>
+  <choice>
+    <text>Buy an Acidic Laser.</text>
+    <event>
+      <text>With your new weapon being installed, you move on to the store.</text>
+      <weapon name="AEA_LASER_ACID_2"/>
+			<item_modify>
+				<item type="scrap" min="-70" max="-60" />
+			</item_modify>
+			<queueEvent>STORE_LOAD_ORCHID</queueEvent>
+    </event>
+  </choice>
+  <choice>
+    <text>Buy an Acidic Beam.</text>
+    <event>
+      <text>With your new weapon being installed, you move on to the store.</text>
+      <weapon name="AEA_BEAM_ACID_1"/>
+			<item_modify>
+				<item type="scrap" min="-70" max="-60" />
+			</item_modify>
+			<queueEvent>STORE_LOAD_ORCHID</queueEvent>
+    </event>
+  </choice>
+  <choice>
+    <text>Just shop.</text>
+    <event load="STORE_LOAD_ORCHID"/>
+  </choice>
+</event>
+
 </FTL>
