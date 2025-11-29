@@ -3805,6 +3805,8 @@ You are now, finally, left alone... well, better than that, even: you've been le
     </choice>
 </event>
 
+
+<!--
 <event name="NEBULA_ACIDIC_AEA_ACID_SHIPYARD" unique="true">
     <beaconType id="map_icon_aea_acid_nebula_shipyard" global="true">
 		<color r="138" g="237" b="31" a="1"/>
@@ -3814,7 +3816,6 @@ You are now, finally, left alone... well, better than that, even: you've been le
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="PLANET_AEA_ACID_STATION" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
     <text>You've arrived at the beacon, one of the few marked locations in Acidic space. This shipyard was where the first Acidic vessels were constructed and today it serves as the main diplomatic quarters between the Acidic Growth and the Orchids.</text>
     <choice hidden="true">
@@ -4014,7 +4015,6 @@ You are now, finally, left alone... well, better than that, even: you've been le
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
 	<text>This beacon hosts an Acidic transport. It's safe to bet the ship is most likely carrying the special tech for the project in the lab. If you can kill the acidic growth onboard, the cargo will be yours.</text>
 	<ship load="SHIP_AEA_ACID_TRANSPORT_BARREL" hostile="false" />
@@ -4043,6 +4043,110 @@ You are now, finally, left alone... well, better than that, even: you've been le
 			</choice>
         </event>
     </choice>
+</event>
+-->
+
+
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ ACIDIC SHIPYARD REWRITE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+
+<event name="NEBULA_ACIDIC_AEA_ACID_SHIPYARD" unique="true">
+    <beaconType id="map_icon_aea_acid_nebula_shipyard" global="true">
+		<color r="138" g="237" b="31" a="1"/>
+		<unvisitedTooltip>An unvisited location. This beacon is located within the Acidic Growth, which may be detrimental to the health of your ship.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_ACIDICNEBULA" planet="PLANET_AEA_ACID_STATION" />
+	<status type="limit" target="player" system="sensors" amount="0" />
+	<customFleet right="false" firing="false" autoDarkening="true">CUSTOM_FLEET_AEA_ACID</customFleet>
+    <text>You've arrived at the beacon, one of the few marked locations in Acidic space. This shipyard was where the first Acidic vessels were constructed and today it serves as the main diplomatic quarters between the Acidic Growth and the Orchids. The Acidic fleet is here, and ships seem to move frantically; something's wrong.</text>
+	<choice hidden="true" blue="false" req="rep_comb_acid_orchid" lvl="-9999" max_lvl="1">
+		<text>Continue...</text>
+		<event>
+			<text>You get contacted. "Federation captain? I am Praetor Mn'Akei. Matter's serious, we could use your help."</text>
+			<choice hidden="true">
+				<text>Hear them out.</text>
+				<event load="AEA_ACID_SHIPYARD_MAIN" />
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" blue="false" req="rep_comb_acid_orchid" lvl="2" max_lvl="9999">
+		<text>Continue...</text>
+		<event>
+			<text>You get contacted. "Federation captain? I am Praetor Mn'Akei. Matter's serious, and while I heard reports about your crimes, right now we can use any help we can get."</text>
+			<choice hidden="true">
+				<text>Hear them out.</text>
+				<event load="AEA_ACID_SHIPYARD_MAIN" />
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_ACID_SHIPYARD_MAIN">
+	<text>"You listening? Good. Our intelligence gathered that Coalition is about to attack the Shipyard with full force. I'll let, uh, Growth speak." An Acidic Soldier appears on screen, "Outsider. Coalition, goal, Shipyard capture. Fleet, but more. Prototype vessel. Low knowledge, high threat. Ally, continue?" Acidic Soldier looks off screen, and soon the Orchid returns, "Yes, that's the report. The mentioned Coalition prototype will be your target. Now, decide, and as fast as you can, if you will help or not. We will supply you with missiles and drones before the battle."</text>
+	<choice hidden="true">
+		<text>Agree to help.</text>
+		<event>
+			<text>"Great, great. But I'll hold my gratitude for after the battle, captain." You receive some supplies. Now's nothing else to do but wait.</text>
+			<item_modify>
+				<item type="missiles" min="5" max="5"/>
+				<item type="drones" min="3" max="3"/>
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>The Coalition fleet arrives, and chaos immediately breaks out. It doesn't take long for you to spot your target: a large, intimidating ship that seems to be leading the assault. The Acidic fleet retaliates, keeping other Coalition vessels busy.</text>
+					<ship load="SHIP_AEA_ACID_SHIPYARD" hostile="false" />
+					<customFleet right="false" firing="false" autoDarkening="true">CUSTOM_FLEET_AEA_ACID</customFleet>
+					<customFleet right="true" firing="false" autoDarkening="true">CUSTOM_FLEET_COALITION</customFleet>
+					<choice hidden="true">
+						<text>Move in to attack your target.</text>
+						<event>
+							<text>The Prototype notices you. This is going to be quite a fight.</text>
+							<ship hostile="true" />
+							<queueEvent>COMBAT_CHECK</queueEvent>
+						</event>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" blue="false" req="rep_comb_acid_orchid" lvl="-9999" max_lvl="1">
+		<text>Decline.</text>
+		<event load="AEA_ACID_SHIPYARD_DECLINE_GOOD" />
+	</choice>
+	<choice hidden="true" blue="false" req="rep_comb_acid_orchid" lvl="2" max_lvl="9999">
+		<text>Decline.</text>
+		<event load="AEA_ACID_SHIPYARD_DECLINE_BAD" />
+	</choice>
+</event>
+
+<event name="AEA_ACID_SHIPYARD_DECLINE_GOOD">
+	<text>"I see. Well, I hope we'll manage it on our own. Good luck, captain."</text>
+</event>
+
+<event name="AEA_ACID_SHIPYARD_DECLINE_BAD">
+	<text>"I see. Get out of my sight, then, before you get swept up in the fight. With allies like this, I'm not sure we need enemies."</text>
+</event>
+
+<event name="AEA_ACID_SHIPYARD_WIN">
+	<text>As things calm down, Mn'Akei contacts you again. "Captain, we offer you our gratitude. My personally, too. It's not the last we'll see of Coalition, but it'll give us time to regroup, and for the Growth to build more ships. It's a shame we don't know how exactly that Prototype ship was made... but we have our spies." He looks off in the distance. "Excuse me. Your reward, now. Growth?" 
+	
+An Acidic Soldier you saw before appears on the screen. "Ally. We have, prototype of our own. Weapon. Accept gratitude."</text>
+	<weapon name="AEA_LASER_ACID_SUPER"/>
+	<clearCustomFleet />
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>"And, ally. Before you depart. Your help, our vessels, freed up. We, propose support. Take the vessel. Federation, good luck."</text>
+			<unlockCustomShip silent="false">PLAYER_SHIP_AEA_ACID_LONG</unlockCustomShip>
+			<queueEvent>MORALITY_REMOVE_AEA_ACID_DOUBLE</queueEvent>
+		</event>
+	</choice>
 </event>
 
 </FTL>

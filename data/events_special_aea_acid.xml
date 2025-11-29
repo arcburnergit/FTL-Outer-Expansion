@@ -102,7 +102,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 		</event>
 	</choice>
 	<choice hidden="true" req="rep_comb_acid_orchid" lvl="-9999" max_lvl="-1">
-		<text>(Positive Growth-Gathering reputation) Request entry.</text>
+		<text>(Positive Gathering-Growth reputation) Request entry.</text>
 		<event>
 			<text>The Acidic Growth recognizes you as an ally. You're free to enter.</text>
 		</event>
@@ -1761,6 +1761,22 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 			<text>You have no use for the barrel.</text>
 			<event/>
 		</choice>
+	</deadCrew>
+</ship>
+
+<ship name="SHIP_AEA_ACID_SHIPYARD" auto_blueprint="LIST_SHIPS_COALITION_ELITE_FIGHT">
+	<surrender min="4" max="4">
+		<text>The hostile vessel buckles. Continue assault!</text>
+	</surrender>
+	<destroyed>
+		<text>You emerge victorious! The Prototype destroyed, the Coalition forces take one final hit required for them to retreat. You scrap the ship.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<queueEvent>AEA_ACID_SHIPYARD_WIN</queueEvent>
+	</destroyed>
+	<deadCrew>
+		<text>You emerge victorious! The Prototype emptied of crew, the Coalition forces take one final hit required for them to retreat. You scrap the ship.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<queueEvent>AEA_ACID_SHIPYARD_WIN</queueEvent>
 	</deadCrew>
 </ship>
 
