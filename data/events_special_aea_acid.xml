@@ -1314,6 +1314,19 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
     </deadCrew>
 </ship>
 
+<ship name="SHIP_AEA_ACID_DIGITAL_PIRACY" auto_blueprint="AEA_ACID_FIGHTER_PIRATE">
+	<destroyed>
+		<text>The pirate ship hails you one last time before it goes up in flames. "No... Our illegally downloaded media collection..."</text>
+		<autoReward level="MED">standard</autoReward>
+	</destroyed>
+	<deadCrew>
+		<text>With the Acidic crew of the pirate vessel dead, you manage to gain access to its digital storage, where you discover a hundred petabytes worth of pirated media, including movies, tv shows, radio dramas, music albums, live concert recordings, textbooks, proprietary applications, and one copy of "A Very Slimy Christmas" - a slug rendition of "A Christmas Carol" where Scrooge finds out that capital was, in fact, the only thing to live for and he, actually, never did anything particularly wrong.
+
+Deciding that piracy is evil in any form it might be presented, you decide to erase the contents of the drive, saving theoretical shareholders some theoretical value.</text>
+		<autoReward level="MED">standard</autoReward>
+	</deadCrew>
+</ship>
+
 <event name="DEFEAT_AEA_ACID_ELITE">
 	<text>You're still not sure if killing Acidic mechs counts as murder. Either way, losing an elite vessel like that has to hurt the Acidic Growth.</text>
 	<autoReward level="HIGH">standard_no_item</autoReward>

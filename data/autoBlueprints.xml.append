@@ -1410,6 +1410,29 @@
 	<aug name="AEA_ACID_O2SYS_ENEMY" />
 </shipBlueprint>
 
+<shipBlueprint name="AEA_ACID_FIGHTER_PIRATE" layout="aea_acid_fighter" img="aea_acid_fighter_pirate">
+    <class>Acidic Fighter</class>
+    <minSector>1</minSector>
+    <maxSector>8</maxSector>
+    <systemList>
+        <doors power="2" max="2" room="4" start="true" />
+        <engines power="1" max="3" room="5" start="true" />
+        <mind power="1" max="2" room="7" start="false" />
+        <oxygen power="1" max="2" room="3" start="true" />
+        <pilot power="1" max="2" room="2" start="true" />
+        <shields power="2" max="8" room="0" start="true" />
+        <weapons power="2" max="10" room="1" start="true" />
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>0</droneSlots>
+    <weaponList missiles="8" count="4" load="LIST_WEAPONS_ACIDIC" />
+    <droneList drones="8" count="0" />
+    <health amount="11" />
+    <maxPower amount="6" />
+    <boardingAI>sabotage</boardingAI>
+    <aug name="AEA_ACID_O2SYS_ENEMY" />
+</shipBlueprint>
+
 <shipBlueprint name="AEA_ACID_INSTIGATOR" layout="aea_acid_instigator" img="aea_acid_instigator">
 	<class>Acidic Instigator</class>
 	<minSector>3</minSector>

@@ -1217,6 +1217,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event load="NEBULA_ACIDIC_AEA_ACID_PRAETOR_DIPLOMATIC" />
 	<event load="NEBULA_AEA_ACID_ORCHID_RESEARCH" />
 	<event load="NEBULA_AEA_ACID_WARNING" />
+	<event load="NEBULA_AEA_ACID_DIGITAL_PIRACY" />
 
 	<event load="NEBULA_AEA_ACID_ARREST" />
 </eventList>
@@ -1796,8 +1797,8 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event load="NEBULA_AEA_ACID_WEAPONCACHE" />
 	
 	<event load="NEBULA_AEA_ACID_EMPTY_WRECK" />
-	<event load="NEBULA_REFUGEE_AEA_ACID" />
 <!--
+	<event load="NEBULA_REFUGEE_AEA_ACID" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_BADORCHID" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_CHOOSE_DEATH" />
 -->
@@ -1805,6 +1806,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event load="NEBULA_ACIDIC_AEA_ACID_PRAETOR_DIPLOMATIC" />
 	<event load="NEBULA_AEA_ACID_ORCHID_RESEARCH" />
 	<event load="NEBULA_AEA_ACID_WARNING" />
+	<event load="NEBULA_AEA_ACID_DIGITAL_PIRACY" />
 </eventList>
 
 <event name="NEBULA_AEA_ACID_IMPORTANT_PRISONER" unique="true">
@@ -1866,7 +1868,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
     <choice>
         <text>Leave them be.</text>
         <event>
-            <text>You fly away, leaving the Acidic vessel to fend for itself. The Acidic growth can't really die anyway, right?</text>
+            <text>You fly away, leaving the Acidic vessel to fend for itself. The Acidic Growth can't really die anyway, right?</text>
             <choice hidden="true">
 				<text>Do something onboard the ship.</text>
 				<event load="STORAGE_CHECK" />
@@ -2009,6 +2011,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 		<event>
 			<text>Who do they think they are? Yes, maybe it's "their" space, but they can't order you like that! You prepare to deal with them.</text>
 			<ship hostile="true" />
+			<queueEvent>MORALITY_UPDATE_AEA_ACID_FIGHT</queueEvent>
 		</event>
 	</choice>
 	<choice hidden="true">
@@ -2140,6 +2143,114 @@ You are now, finally, left alone... well, better than that, even: you've been le
 				</choice>
 			</event>
 		</choice>
+</event>
+
+<event name="NEBULA_AEA_ACID_DIGITAL_PIRACY" unique="true">
+	<environment type="nebula" />
+	<text>You arrive at the beacon just as a large Acidic vessel is preparing to leave. After noticing you, they quickly stop charging their drive and approach.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>As the ship gets closer, a curious detail pops up - crudely applied pirate markings indicating their allegiance to the "Fleet of the Piracy". The vessel hails you.</text>
+			<ship load="SHIP_AEA_ACID_DIGITAL_PIRACY" hostile="false" />
+			<choice hidden="true">
+				<text>Hear them out.</text>
+				<event>
+					<text>"Captain and/or autonomous piloting system. Your treasure, set to be surrendered." The ship powers weapons. "Commence, boarding preparations. Otherwise, no mercy."</text>
+					<choice hidden="true">
+						<text>Prepare to be boarded.</text>
+						<event>
+							<text>You open the airlocks and allow the Acidic shuttle to dock. From it, a small Acidic soldier enters your ship and, completely ignoring you, rushes for the piloting. You give chase.</text>
+							<choice hidden="true">
+								<text>Continue...</text>
+								<event>
+									<text>Running into the cockpit, you watch as the Acidic soldier awkwardly jumps up and inserts a universal parallel transmission connector into the universal serial transmission port on your control panel and stares at it in confusion.</text>
+									<choice hidden="true">
+										<text>W... what are you doing?</text>
+										<event load="AEA_ACID_DIGITAL_PIRACY_END" />
+									</choice>
+									<choice hidden="true">
+										<text>Wrong port, buddy.</text>
+										<event>
+											<text>The Acidic soldier turns to you, back to the failed connection, and back to you again. 
+
+"Tremble. Piracy victim. No treasure safe." 
+
+You ask the soldier whether or not it understands what it's trying to do.</text>
+											<choice hidden="true">
+												<text>Continue...</text>
+												<event load="AEA_ACID_DIGITAL_PIRACY_END" />
+											</choice>
+										</event>
+									</choice>
+								</event>
+							</choice>
+						</event>
+					</choice>
+					<choice hidden="true">
+						<text>Fight back.</text>
+						<event>
+							<text>There's no way you're allowing that.</text>
+							<ship hostile="true" />
+							<choice hidden="true">
+								<text>Continue...</text>
+								<event load="COMBAT_CHECK" />
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>No mercy for the pirate folk, attack!</text>
+				<event>
+					<text>The Acidic ship responds in kind.</text>
+					<ship hostile="true" />
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK" />
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="AEA_ACID_DIGITAL_PIRACY_END">
+	<text>"The vessel. Proud, piracy ship. Stealing treasure," It readjusts the connector. "Greatest treasure. Proprietary systems." The soldier takes a few steps towards you.
+
+"Slug. Not long before. Software acquisition proposition. Software found freely available. Was informed that is piracy." The lifeless suit looks almost sad. "My existence now. Pirating software."</text>
+	<choice hidden="true">
+		<text>Inform the Growth about the misunderstanding.</text>
+		<event>
+			<text>You spend a good two hours passionately explaining to the Growth the difference between different kinds of piracy, why software as a subscription service is evil, and why using an adblocker on slug networks is less of a crime and more of a necessity.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>"Information acknowledged." The Growth thinks for a moment. "Will now engage in murder and plundering instead. No one shall be spared. You, exception." 
+
+Before you manage to explain that that's not what you meant, the Soldier rushes off your ship towards its new, more lethal life, but not before leaving a small gift in the form of a thumb drive containing cracked copies of multiple applications known for their extreme anti-piracy protection. Such a find can be worth some good money.</text>
+					<autoReward level="MED">scrap_only</autoReward>
+				</event>
+			</choice>	
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Surrender your software and wish the Growth best of luck.</text>
+		<event>
+			<text>The soldier fixes its port mistake and copies some of the applications installed on your ship's consoles. You tell the Growth that it's doing a tremendous job being a pirate, absolutely tremendous, and wish it the best of luck cracking the applications. 
+
+It returns back to its ship.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>"Piracy, complete. Lack of resistance appreciated. Accept payment." 
+
+The Growth transfers over some resources as payment for your data, and while that defeats the entire purpose of being a pirate, you know better than to reject a gift.</text>
+					<autoReward level="LOW">stuff</autoReward>
+				</event>
+			</choice>
+		</event>
+	</choice>
 </event>
 
 <!--
@@ -2351,7 +2462,7 @@ You are now, finally, left alone... well, better than that, even: you've been le
 </event>
 
 <event name="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_CHOICE">
-	<text>Turns out, there was no risk involved: the ship is full of oxygen. You are confused, but that's when you remember Acidic Growth usually outfits its ships with life support system that spreads the growth throughout the ship instead of breathable air. Feeling stupid, you consider your options.</text>
+	<text>Turns out, there was no risk involved: the ship is full of oxygen. You are confused, but that's when you remember Acidic Growth usually outfits its ships with life support system that spreads the Growth throughout the ship instead of breathable air. Feeling stupid, you consider your options.</text>
 	<choice hidden="true">
 		<text>Try reconfiguring it.</text>
 		<event load="NEBULA_AEA_ACID_DISTRESS_BROKEN_O2_CHANCE" />

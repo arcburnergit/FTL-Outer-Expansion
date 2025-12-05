@@ -3971,6 +3971,18 @@ This enemy possesses an immortal energy shield that is kept alive by the beacons
 		</crew>
 	</mod-append:customShip>
 
+	<mod-append:customShip name="AEA_ACID_FIGHTER_PIRATE">
+		<shipIcons>
+			<shipIcon>icon_aea_acidic_filter</shipIcon>
+        </shipIcons>
+		<crew>
+			<aea_acid_soldier room="0" name="Acidic Soldier" />
+			<aea_acid_worker room="2" name="Acidic Worker" />
+			<aea_acid_worker room="2" name="Acidic Worker" />
+			<aea_acid_worker room="0" name="Acidic Worker" />
+		</crew>
+	</mod-append:customShip>
+
 	<mod-append:customShip name="AEA_ACID_INSTIGATOR">
 		<shipIcons>
 			<shipIcon>icon_aea_acidic_filter</shipIcon>
