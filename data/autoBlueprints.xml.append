@@ -1411,7 +1411,7 @@
 </shipBlueprint>
 
 <shipBlueprint name="AEA_ACID_FIGHTER_PIRATE" layout="aea_acid_fighter" img="aea_acid_fighter_pirate">
-    <class>Acidic Fighter</class>
+    <class>Piracy Fighter</class>
     <minSector>1</minSector>
     <maxSector>8</maxSector>
     <systemList>

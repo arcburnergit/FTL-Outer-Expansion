@@ -1606,7 +1606,7 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	</choice>
 </event>
 			
-<event name="NEBULA_AEA_ACID_REPAIR_YARD">
+<event name="NEBULA_AEA_ACID_REPAIR_YARD" unique="true">
 	<text>You arrive to find a small automatic Acidic repair yard. You could probably try to sneak in and hope it repairs you for free. It also appears like you could pay for some repairs.</text>
 	<environment type="nebula" />
     <choice hidden="true">
@@ -3665,15 +3665,15 @@ The Growth transfers over some resources as payment for your data, and while tha
 
 <event name="DISTRESS_AEA_ACID_INVESTIGATE" unique="true">
 	<variable name="loc_found_aea_acid_factory" op="set" val="1" />
-	<text>You pilot closer to the planet. As you get closer you manage to make out the crater on the surface, however instead of a crashed star ship you find a strange factory. It appears however that something crashed into the factory, causing the distress beacon.</text>
+	<text>You pilot closer to the planet. As you get closer you manage to make out the crater on the surface, however instead of a crashed star ship you find a strange factory. It appears that something has crashed into the factory, causing the distress beacon.</text>
 	<choice>
 		<text>Land and explore the factory.</text>
 		<event>
-			<text>You wander through the factory, it appears that a battle of some kind once took place here, the walls of the facility are scored by projectile fire. Eventually you find your passage blocked by rubble, there's a passage around, however it's locked behind a security system of some kind.</text>
+			<text>You wander through the factory. It appears that a battle of some kind once took place here, the walls of the facility are scored by projectile fire. Eventually you find your passage blocked by rubble. There's a passage around, however it's locked behind a security system of some kind.</text>
 			<choice>
 				<text>Use explosives to blast your way through.</text>
 				<event>
-					<text>Continuing on past the rubble, you notice the signs of battle are missing from this part of the factory, perhaps theres something still alive out here.</text>
+					<text>Continuing on past the rubble, you notice the signs of battle are missing from this part of the factory. Perhaps theres something still alive out here.</text>
 					<item_modify>
 						<item type="missiles" min="-10" max="-10" />
 					</item_modify>
@@ -3686,7 +3686,7 @@ The Growth transfers over some resources as payment for your data, and while tha
 			<choice>
                 <text>Use drone parts to activate some nearby haulage bots to remove the rubble.</text>
 				<event>
-                    <text>Continuing on past the rubble, you notice the signs of battle are missing from this part of the factory, perhaps theres something still alive out here.</text>
+                    <text>Continuing on past the rubble, you notice the signs of battle are missing from this part of the factory. Perhaps theres something still alive out here.</text>
 					<item_modify>
 						<item type="drones" min="-6" max="-6" />
 					</item_modify>
@@ -3699,7 +3699,7 @@ The Growth transfers over some resources as payment for your data, and while tha
 			<choice req="hacking">
 				<text>(Hacking System) Use the drone to hack into the security system and open the passage around.</text>
 				<event>
-					<text>Continuing on past the rubble, you notice the signs of battle are missing from this part of the factory, perhaps theres something still alive out here.</text>
+					<text>Continuing on past the rubble, you notice the signs of battle are missing from this part of the factory. Perhaps theres something still alive out here.</text>
 					<item_modify>
 						<item type="drones" min="-1" max="-1" />
 					</item_modify>
@@ -3720,31 +3720,30 @@ The Growth transfers over some resources as payment for your data, and while tha
 	</choice>
 </event>
 <event name="AEA_ACIDIC_LEADER_FIND">
-	<text>Eventually you arrive in a control room of sorts, and in the middle of it you find a single surviving Acidic Worker, however there's something off about this soldier, the normally green acidic growth has turned purple, you're not sure what this means but you go over to make contact.</text>
+	<text>Eventually you arrive in a control room of sorts, and in the middle of it you find a single surviving Acidic Soldier. There's something off about it; the normally green Acidic Growth has turned purple. You're not sure what this means, but you go over to make contact anyway.</text>
 	<choice hidden="true">
-		<text>Hello?.</text>
+		<text>Hello?</text>
 		<event>
-			<text>"Oh jeez, I hope you're not here to kill me, I swear im not like the others, I'm not here to kill any more miners." It appears there's something wrong with this Acidic Worker, if you had to guess you'd think it wasn't part of the Acidic Growth.</text>
+			<text>"Hello. Have you come to: kill us? Gratitude, if not- please spare. Please." Your guess has been proved correct: something is off about this Soldier. Is it even a part of the same species?</text>
 			<choice hidden="true">
-				<text>"What are you?"</text>
+				<text>What are you?</text>
 				<event>
-					<text>"I'm not entirely sure... I'm quite confident I was the Acidic Growth at some point, but everything is weird now, there's no more of me out there, its just me, in this robot, alone..." The Acidic Worker trails off for a moment. "Hang on, do you guys think you can help me, if you guys can spare me a bit of scrap I can repair one of the ships and head back to try and recombine with myself."</text>
+					<text>"We're not entirely sure. We were a: part of the Growth. Now we- they, they tried to kill us, our own, they tried- what are we- excuse us." The Acidic Soldier trails off for a moment. "Could you assist? If you can spare us a bit of scrap, we can: repair one of the ships. We'll head to the Core. It must have answers for us. It must."</text>
 					<choice hidden="false">
-                        <text>"Sure, What should we call you anyway?"</text>
+                        <text>Sure. What should we call you?</text>
                         <event>
-                            <text>"Hmmm, I don't think I'm quite the Acidic Growth anymore, I suppose you can call me Bill, I've always liked the name Bill. By the way, if you ever want to visit here's the coordinates to my Acidic Nebula, maybe I'll see you around there."</text>
+                            <text>"Name? Name. This factory was abandoned when we: crashed. We found someone's business card... A name we liked: Bill. Please, call us that. Gratitude: coordinates to Acidic Growth's home- our, our home, is it ours still- see you there."</text>
                             <item_modify>
                                 <item type="scrap" min="-20" max="-20" />
                             </item_modify>
                             <variable name="coords_aea_bill" op="set" val="1" />
-                            <variable name="aea_acid_friendly" op="set" val="1" />
                             <variable name="aea_acid_bill" op="set" val="1" />
                         </event>
                     </choice>
                     <choice hidden="false">
                         <text>Explain that you can't spare that much scrap.</text>
                         <event>
-                            <text>"Oh, thats ok, I'll just wait for the next visitors to come by, it shouldn't be too long, I hope." You return to your ship, collecting a small amount of supplies as you leave.</text>
+                            <text>"Oh. Oh, that's- that's fine, fine, we'll wait- sorry. You can go. We will wait." You return to your ship, collecting a small amount of supplies as you leave.</text>
                             <autoReward level="LOW">stuff</autoReward>
                         </event>
                     </choice>
@@ -3790,7 +3789,7 @@ The Growth transfers over some resources as payment for your data, and while tha
     <choice hidden="true">
         <text>Contact the ship.</text>
         <event>
-            <text>Just as you're about to make contact, an Acidic vessel comes flying out of the nebula to immediately eviscerate the strange ship. The acidic vessel then turns it's murderous intent on you, prepare for combat.</text>
+            <text>Just as you're about to make contact, an Acidic vessel comes flying out of the nebula to immediately eviscerate the strange ship. The acidic vessel then turns it's murderous intent on you. Prepare for combat.</text>
             <ship load="SHIP_AEA_ACID_BILL_MEET" hostile="true" />
 			<choice hidden="true">
 				<text>Continue...</text>
@@ -3815,15 +3814,15 @@ The Growth transfers over some resources as payment for your data, and while tha
 </event>
 
 <event name="NEBULA_AEA_ACID_BILL_JOIN1">
-    <text>You move in the scoop up the Acidic Worker, as you're doing so you notice that the normally green Acidic Growth is a shade of purple.</text>
+    <text>You move in to scoop up the Acidic Soldier. As you're doing so you notice that the normally green Acidic Growth is a shade of purple.</text>
     <choice hidden="true" req="aea_acid_bill" lvl="1" blue="false">
-        <text>You recognise the Acidic Worker as Bill.</text>
+        <text>Bill, is this you?</text>
         <event name="NEBULA_AEA_ACID_BILL_HELP">
-            <text>"Well I'm trying to get to the Acidic core, Hopefully I'll be able to reintergrate with the Acidic Growth once im there. The only problem is that I don't have a ship anymore, do you think you can take me there?"</text>
+            <text>"Hello. Yes. This is: us. We were trying to reach the Core on our own. Ship, blown up: help, required."</text>
             <choice hidden="true">
-                <text>Sure we can.</text>
+                <text>Offer to transport them.</text>
                 <event>
-                    <text>"Thanks! I'll upload the coordinates to your computer."</text>
+                    <text>"Gratitude. Coordinates: here."</text>
                     <quest event="NEBULA_ACIDIC_AEA_ACID_BILL_CORE">
                         <nebulaBeacon>true</nebulaBeacon>
                         <nebulaEvent>NEBULA_ACIDIC_AEA_ACID_BILL_CORE</nebulaEvent>
@@ -3840,14 +3839,33 @@ The Growth transfers over some resources as payment for your data, and while tha
     <choice hidden="true" req="aea_acid_bill" lvl="0" max_lvl="0" blue="false">
         <text>Continue...</text>
         <event>
-            <text>Strangely the Acidic Worker begins to tell you it's story, apparently it's become seperated from the Acidic Growth somehow and has been trying to rejoin it.</text>
+            <text>Strangely, the Acidic Soldier begins to tell you its story. Apparently it has become seperated from the Acidic Growth somehow and has been trying to rejoin it.</text>
             <choice hidden="true">
-                <text>"What should we call you then?"</text>
+                <text>What's your name?</text>
                 <event>
-                    <text>"Hmmm, I don't think I'm quite the Acidic Growth anymore, I suppose you can call me Bill, I've always liked the name Bill."</text>
+                    <text>"Name? Name. Call us: Bill. That's... that's probably all we are now."</text>
                     <choice hidden="true">
-                        <text>"What can we do to help?"</text>
-                        <event load="NEBULA_AEA_ACID_BILL_HELP"/>
+                        <text>What can we do to help?</text>
+                        <event>
+							<text>"Travel to the Core. Demand answers. Ship: destroyed. Could we: use yours?"</text>
+							<choice hidden="true">
+								<text>Sure.</text>
+								<event>
+									<text>"Gratitude. Coordinates: here."</text>
+									<quest event="NEBULA_ACIDIC_AEA_ACID_BILL_CORE">
+										<nebulaBeacon>true</nebulaBeacon>
+										<nebulaEvent>NEBULA_ACIDIC_AEA_ACID_BILL_CORE</nebulaEvent>
+										<createNebula>false</createNebula>
+									</quest>
+								</event>
+							</choice>
+							<choice hidden="true">
+								<text>No.</text>
+								<event>
+									<text>Before Bill can realize, they're already outside the airlock. Who knows what exactly turned them purple.</text>
+								</event>
+							</choice>							
+						</event>
                     </choice>
                 </event>
             </choice>
@@ -3855,6 +3873,7 @@ The Growth transfers over some resources as payment for your data, and while tha
     </choice>
 </event>
 
+<!--
 <event name="NEBULA_ACIDIC_AEA_ACID_BILL_CORE">
     <beaconType id="map_icon_aea_acid_nebula_core" global="true">
 		<color r="138" g="237" b="31" a="1"/>
@@ -3864,7 +3883,6 @@ The Growth transfers over some resources as payment for your data, and while tha
 	</beaconType>
 	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
 	<status type="limit" target="player" system="sensors" amount="0" />
-    <!--triggeredEvent event="AEA_ACIDIC_NEBULA_TIMER" seeded="false" loops="999999999" minTime="4.0" maxTime="7.0" clearOnJump="true" /-->
 
     <text>You've arrived at the Acidic Core, an extremely dense Acidic Nebula, the location where the Acidic Growth originally formed. It's so dense that it's hard for the Acidic Growth to guard it, they do try however.</text>
     <choice hidden="true">
@@ -3915,7 +3933,100 @@ The Growth transfers over some resources as payment for your data, and while tha
         </event>
     </choice>
 </event>
+-->
 
+<event name="NEBULA_ACIDIC_AEA_ACID_BILL_CORE">
+    <beaconType id="map_icon_aea_acid_nebula_core" global="true">
+		<color r="138" g="237" b="31" a="1"/>
+		<unvisitedTooltip>The Core of the Acidic Growth, this is the original location where the Acidic Growth formed, and as such has the highest concentration of Acidic Growth in the sector.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>The Core of the Acidic Growth, this is the original location where the Acidic Growth formed, and as such has the highest concentration of Acidic Growth in the sector.</undiscoveredTooltip>
+	</beaconType>
+	<img back="BACK_EVENT_ACIDICNEBULA" planet="NONE" />
+	<status type="limit" target="player" system="sensors" amount="0" />
+
+    <text>You've arrived at the Acidic Core, an extremely dense Acidic Nebula where the Acidic Growth originally formed. It's so dense that it's hard for the Acidic Growth to guard it, they do try however.</text>
+	<choice hidden="true">
+		<text>Ask Bill how to contact it.</text>
+		<event>
+			<text>"Let me access the comms." Bill messes with the console, while you and your crew nervously wait. It almost feels like the Core observes you...</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>"Done." Bill steps back. The console immediately explodes with hails, consisting of questions, warnings and orders. The Core doesn't like an outsider being near it.</text>
+					<choice hidden="true">
+						<text>Respond.</text>
+						<event name="NEBULA_AEA_ACID_BILL_RELEASE">
+							<text>The Core sees your response. A loud, mechanical voice speaks, "OUTSIDER. STATE YOUR INTENTION." Bill asks to let them talk to it on their own. You allow, but have a sneaking suspicion it's not going to go well.</text>
+							<choice hidden="true">
+								<text>Continue...</text>
+								<event>
+									<text>"Core: we are a part of the Acidic Growth. Turned purple. Being hunted. Why?"
+
+It all goes silent for a moment. The tension is thick. And then,
+									</text>
+									<choice hidden="true">
+										<text>And then?</text>
+										<event name="NEBULA_AEA_ACID_BILL_BOSS">
+											<text>"WARNING: MUTATED STRAIN. WARNING: DANGER TO GROWTH. ORDER: EXTERMINATION."
+
+An acidic shot narrowly misses your ship, and you see a massive Acidic vessel barreling towards you. You have to defend yourself.
+											</text>
+											<ship load="SHIP_AEA_ACID_BILL_BOSS" hostile="true"/>
+                                            <choice hidden="true">
+                                                <text>Continue...</text>
+                                                <event load="COMBAT_CHECK" />
+                                            </choice>											
+										</event>
+									</choice>
+								</event>
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>We better leave.</text>
+		<event>
+			<text>Despite Bill's request, you decide to leave as fast as possible. They ask to be dropped off on the closest, preferably non-growth controlled, station.</text>
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_AEA_ACID_BILL_WIN">
+	<text>Bill, thankfully not harmed during the fight, dashes toward the console as soon as the battle quiets down. They type, and type, and type. "It's- it's refusing hails. The Core. We need to talk. We need to know." The carcass of a soldier turns to you, and you really wonder what's actually piloting it - because that's the most emotion you ever saw the Growth express.
+
+"Captain. It said... mutated strain. It said... danger to the Growth. What are we?"
+	</text>
+	<choice hidden="true">
+		<text>You are Bill.</text>
+		<event>
+			<text>The soldier steps back, as if in shock. "Yes, it is... the name we chose. We know. But... you don't understand- what are we? We must have a greater purpose. We must be connected to something greater. We can't just- be... something so insignificant..."</text>
+			<choice hidden="true">
+				<text>No life is insignificant. You have a name. That's enough.</text>
+				<event>
+					<text>"This is... just a name of some foreman, isn't it. But, you: saying those things. Makes us feel that, maybe: this is okay." Bill looks at the console. "We should move. They might send more guards after us." Their finger touches the screen, closing the communication channel, "We should... think more about this. Meanwhile, do you need: more crew?"</text>
+					<choice>
+						<text>Accept.</text>
+						<event>
+							<text>"Gratitude. Captain." Bill walks away from the bridge. As they said, you probably should run from this beacon before you get jumped by an Acidic ship again.</text>
+							<crewMember amount="1" all_skills="1" class="aea_acid_bill">Bill</crewMember>
+							<achievement silent="false">ACH_AEA_CREW_BILL</achievement>
+						</event>
+					</choice>
+					<choice>
+						<text>Decline.</text>
+						<event>
+							<text>Bill seems upset, but doesn't protest. You promise to drop them off on the closest station not under Growth's control.</text>
+						</event>
+					</choice>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
 
 <!--
 <event name="NEBULA_ACIDIC_AEA_ACID_SHIPYARD" unique="true">

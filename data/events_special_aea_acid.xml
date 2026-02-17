@@ -417,7 +417,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
     <choice hidden="true" req="orchid_caretaker">
         <text>(Caretaker Crew) Request passage.</text>
         <event>
-            <text>It takes a bit for the guard to answer. "Ally, Orchid? Uknown ship, but... under Grand Gardener, means ally. Excuse us." You're free to enter.</text>
+            <text>It takes a bit for the guard to answer. "Ally, Orchid? Unknown ship, but... under Grand Gardener, means ally. Excuse us." You're free to enter.</text>
         </event>
     </choice>
     <choice hidden="true" req="orchid_praetor">
@@ -1695,7 +1695,7 @@ Deciding that piracy is evil in any form it might be presented, you decide to er
 
 <ship name="SHIP_AEA_ACID_BILL_MEET" auto_blueprint="AEA_ACID_ASSAULT">
 	<destroyed>
-		<text>You've destroyed the Acidic ship, As you're looting the remains of both the Acidic vessel and the Strange ship destroyed at the start of the fight, you discover an Acidic Worker alive in the wreck.</text>
+		<text>You've destroyed the Acidic ship. As you're looting the remains of both the Acidic vessel and the strange ship destroyed at the start of the fight, you discover an Acidic Soldier alive in the wreck.</text>
 		<autoReward level="MED">standard</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -1703,7 +1703,7 @@ Deciding that piracy is evil in any form it might be presented, you decide to er
 		</choice>
 	</destroyed>
 	<deadCrew>
-		<text>You've neutralized the Acidic ship and emptied it of all crew. As you're looting the remains of both the Acidic vessel and the Strange ship destroyed at the start of the fight, you discover an Acidic Worker alive in the wreck.</text>
+		<text>You've neutralized the Acidic ship and emptied it of all crew. As you're looting the remains of both the Acidic vessel and the strange ship destroyed at the start of the fight, you discover an Acidic Soldier alive in the wreck.</text>
 		<autoReward level="HIGH">standard</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -1714,22 +1714,22 @@ Deciding that piracy is evil in any form it might be presented, you decide to er
 
 <ship name="SHIP_AEA_ACID_BILL_BOSS" auto_blueprint="AEA_ACID_BOSS">
 	<destroyed>
-		<text>You've destroyed the hulking Acidic vessel, as you're searching through the huge wreck created by it's defeat you find an intact databank, and on it the schematics for a ship.</text>
+		<text>You've destroyed the hulking Acidic vessel. As you're searching through the huge wreck created by its defeat you find an intact databank, and on it the schematics for a ship.</text>
 		<autoReward level="HIGH">standard</autoReward>
 		<unlockCustomShip silent="false">PLAYER_SHIP_AEA_ACID_ARTY</unlockCustomShip>
 		<choice hidden="true">
 			<text>Continue...</text>
-			<event/>
+			<event load="NEBULA_AEA_ACID_BILL_WIN" />
 		</choice>
 	</destroyed>
 	<deadCrew>
-		<text>You've cleared the hulking Acidic vessel of it's crew, as you're searching through the huge carcass created by it's defeat you find an intact databank, and on it the schematics for a ship.</text>
+		<text>You've cleared the hulking Acidic vessel of it's crew. As you're searching through the huge carcass created by its defeat you find an intact databank, and on it the schematics for a ship.</text>
 		<autoReward level="HIGH">standard_no_item</autoReward>
 		<weapon name="GIFTLIST_WEAPONS_ACIDIC"/>
 		<unlockCustomShip silent="false">PLAYER_SHIP_AEA_ACID_ARTY</unlockCustomShip>
 		<choice hidden="true">
 			<text>Continue...</text>
-			<event/>
+			<event load="NEBULA_AEA_ACID_BILL_WIN" />
 		</choice>
 	</deadCrew>
 </ship>
