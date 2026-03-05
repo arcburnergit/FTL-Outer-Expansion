@@ -286,6 +286,8 @@
 	<event load="NEBULA_AEA_ACID_MYSTERIOUS_TECH" />
 	<event load="NEBULA_AEA_ACID_WRECK" />
 	<event load="NEBULA_AEA_ACID_GUN_UPGRADE" />
+
+	<event load="NEBULA_AEA_ACID_ARREST" />
 </eventList>
 <event name="NEBULA_AEA_ACID_HIGH_PRICE" unique="true">   
 	<text>A large Acidic vessel is sitting dormant. After a moment, it hails you, offering the services of one of them in return for scrap.</text>
@@ -1216,10 +1218,8 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 -->
 	<event load="NEBULA_ACIDIC_AEA_ACID_PRAETOR_DIPLOMATIC" />
 	<event load="NEBULA_AEA_ACID_ORCHID_RESEARCH" />
-	<event load="NEBULA_AEA_ACID_WARNING" />
 	<event load="NEBULA_AEA_ACID_DIGITAL_PIRACY" />
-
-	<event load="NEBULA_AEA_ACID_ARREST" />
+	<event load="NEBULA_LIGHT_AEA_ACID_TWIN_PULSARS" />
 </eventList>
 
 <event name="NEBULA_AEA_ACID_EMPTY_WRECK" unique="true">
@@ -1348,6 +1348,103 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 				<text>Continue...</text>
 				<event load="COMBAT_CHECK" />
 			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="NEBULA_LIGHT_AEA_ACID_TWIN_PULSARS">
+	<revisitEvent>NEBULA_LIGHT_STARGROVE_PULSAR_REVISIT</revisitEvent>
+	<environment type="pulsar"/>
+	<status type="loss" target="player" system="sensors" amount="1"/>
+
+	<text>An Acidic Growth vessel is slowly orbiting around a pair of accretion-powered pulsars.</text>
+	<choice hidden="true">
+		<text>Hail the ship.</text>
+		<event>
+			<text>You hail the ship, and the Growth answers. "Outsider. Contemplating. Binary pulsar, unstable. Lacking prior experience. Possible outcome research, necessary. Assistance required."</text>
+			<choice hidden="true">
+				<text>Approach one of the pulsars for a scan.</text>
+				<event>
+					<text>"Inadvisable. Extreme X-Ray radiation levels. Unpredictable lighthouse timing. Cause: binary nature."</text>
+					<choice hidden="true">
+						<text>Go for it anyway.</text>
+						<event>
+							<text>As you try to approach the pulsar, the other quickly shifts its position and lightly grazes your ship with its beam. You decide to retreat immediately.</text>
+							<damage amount="3" effect="breach" system="room"/>
+							<choice hidden="true">
+								<text>Continue...</text>
+								<event>
+									<text>"Issued warning. Outsider, did not follow. Attempt to help appreciated. Scrap for repairs given."</text>
+									<autoReward level="LOW">scrap_only</autoReward>
+								</event>
+							</choice>
+						</event>
+					</choice>
+					<choice hidden="true">
+						<text>Bad idea, sorry.</text>
+						<event>
+							<text>"Recognized attempt to help. Thought appreciated."</text>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="LIST_CREW_HUMAN">
+				<text>(Human crew) Have you tried blowing one up?</text>
+				<event>
+					<text>"Suggestion unusual. No prior experience. Attempting firing weapons." The vessel launches a barrage of missiles into one of the pulsars, but nothing happens. "Star too big."</text>
+					<choice hidden="true">
+						<text>Well, we did our best.</text>
+						<event>
+							<text>"Recognized attempt to help. Thought appreciated."</text>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="LIST_CREW_AEA_BIRD">
+				<text>(Gi crew) Send in a suicide drone to collect data.</text>
+				<event>
+					<text>The drone returns enough information to plot future radiation bursts before burning down in the scorching heat of the pulsar.</text>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event>
+							<text>The data shows that a couple bursts might graze the current habitats of Acidic Growth, but not to an irreparable degree. The Growth thanks you for this knowledge. "Acknowledged. Low concern. Contemplating relocation. Reward imminent." The Growth grants you a small gift for your troubles.</text>
+							<autoReward level="MED">standard</autoReward>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="LIST_CREW_ENGI">
+				<text>(Engi crew) Analyze rotation patterns.</text>
+				<event>
+					<text>Scans seem to show a possible collision between the two pulsars, resulting in a massive gamma ray burst capable of wiping out all life in the twelve closest star systems, including any Acidic Growth.</text>
+					<choice hidden="true">
+						<text>Inform the growth.</text>
+						<event>
+							<text>"Acknowledged. Concerning development. Contemplating. Reward imminent." The growth grants you a small gift for your troubles.</text>
+							<autoReward level="MED">standard</autoReward>
+						</event>
+					</choice>
+					<choice hidden="true">
+						<text>Withhold the information.</text>
+						<event>
+							<text>"Acknowledged. System poses no threat. Reward imminent." The growth grants you a small gift for your troubles.</text>
+							<autoReward level="MED">standard</autoReward>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Sorry, no can do.</text>
+				<event>
+					<text>"Lack of thought recognized. No attempt at help. Goodbye."</text>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the, undoubtedly, interesting system.</text>
+		<event>
+			<text>You better spend your time elsewhere.</text>
 		</event>
 	</choice>
 </event>
@@ -1805,7 +1902,6 @@ The wreck is relatively intact. However, it appears to have been riddled with ho
 	<event load="NEBULA_AEA_ACID_REPAIR_YARD" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_PRAETOR_DIPLOMATIC" />
 	<event load="NEBULA_AEA_ACID_ORCHID_RESEARCH" />
-	<event load="NEBULA_AEA_ACID_WARNING" />
 	<event load="NEBULA_AEA_ACID_DIGITAL_PIRACY" />
 </eventList>
 
@@ -2477,7 +2573,7 @@ The Growth transfers over some resources as payment for your data, and while tha
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_AEA_ACID">
-		<text>(Acidic Growth) Send over your Acidic crew to reconfigure it.</text>
+		<text>(Acidic Growth Crew) Send over your Acidic crew to reconfigure it.</text>
 		<event>
 			<text>Your crewmember, being of Acidic Growth origin themselves, is familiar with this tech, and reconfigures it swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 			<autoReward level="MED">standard_no_item</autoReward>
@@ -2485,7 +2581,7 @@ The Growth transfers over some resources as payment for your data, and while tha
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_ENGI">
-		<text>(Engi) Send your Engi to reconfigure it.</text>
+		<text>(Engi Crew) Send your Engi to reconfigure it.</text>
 		<event>
 			<text>Your Engi knows just about everything there is to know about technology like this, and reconfigures it swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 			<autoReward level="MED">standard_no_item</autoReward>
@@ -2493,7 +2589,7 @@ The Growth transfers over some resources as payment for your data, and while tha
 		</event>
 	</choice>
 	<choice hidden="true" req="human_engineer">
-		<text>(Engineer) Send your Engineer to reconfigure it.</text>
+		<text>(Engineer Crew) Send your Engineer to reconfigure it.</text>
 		<event>
 			<text>Your Engineer studied all forms of life support technology, and so reconfigures it swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 			<autoReward level="MED">standard_no_item</autoReward>
@@ -2501,7 +2597,7 @@ The Growth transfers over some resources as payment for your data, and while tha
 		</event>
 	</choice>
 	<choice hidden="true" req="human_technician">
-		<text>(Technician) Send your Technician to reconfigure it.</text>
+		<text>(Technician Crew) Send your Technician to reconfigure it.</text>
 		<event>
 			<text>There's next to nothing a WI Technician can't fix when it comes to systems, and so they reconfigure it swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 			<autoReward level="MED">standard_no_item</autoReward>
@@ -2509,7 +2605,7 @@ The Growth transfers over some resources as payment for your data, and while tha
 		</event>
 	</choice>
 	<choice hidden="true" req="shell_mechanic">
-		<text>(Shell Mechanic) Send your Shell Mechanic to reconfigure it.</text>
+		<text>(Shell Mechanic Crew) Send your Shell Mechanic to reconfigure it.</text>
 		<event>
 			<text>While Shell Mechanics are more known for their nanites, it doesn't mean they don't have a bunch of general knowledge. They reconfigure the life support swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 			<autoReward level="MED">standard_no_item</autoReward>
@@ -2517,7 +2613,7 @@ The Growth transfers over some resources as payment for your data, and while tha
 		</event>
 	</choice>
 	<choice hidden="true" req="LIST_CREW_AEA_BIRD">
-		<text>(Gi) Send your Gi to reconfigure it.</text>
+		<text>(Gi Crew) Send your Gi to reconfigure it.</text>
 		<event>
 			<text>Gi know about all sorts of technology, not just drones. They reconfigure the life support swiftly. If the Acidic Growth are grateful, they don't show it; you receive your promised reward and they silently fly away.</text>
 			<autoReward level="MED">standard_no_item</autoReward>
@@ -3117,6 +3213,7 @@ The Growth transfers over some resources as payment for your data, and while tha
 -->
 <eventList name="NEBULA_HOSTILE_AEA_ACID">
 	<event load="NEBULA_ENCOUNTER_AEA_ACID" />
+	<event load="NEBULA_ENCOUNTER_AEA_ACID" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_FIGHT" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_PIRATE" />
 </eventList>
@@ -3124,6 +3221,8 @@ The Growth transfers over some resources as payment for your data, and while tha
 <event name="NEBULA_ENCOUNTER_AEA_ACID">
 	<loadEventList first="false" generate="true">
 		<event name="NEBULA_ENCOUNTER_AEA_ACID_REGULAR" />
+		<event name="NEBULA_ENCOUNTER_AEA_ACID_REGULAR" />
+		<event load="NEBULA_AEA_ACID_WARNING" />
 		<event name="NEBULA_ENCOUNTER_AEA_ACID_STORM" />
 	</loadEventList>
 </event>
@@ -3381,8 +3480,9 @@ The Growth transfers over some resources as payment for your data, and while tha
 -->
 
 <eventList name="NEBULA_HOSTILE_AEA_ACID_UNIQUE">
+	<!--
 	<event load="NEBULA_ENCOUNTER_AEA_ACID_HACKER" />
-	
+	-->
 	<event load="NEBULA_ENCOUNTER_AEA_ACID" />
 	<event load="NEBULA_ACIDIC_AEA_ACID_FIGHT" />
 

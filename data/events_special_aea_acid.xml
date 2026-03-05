@@ -705,7 +705,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 <eventList name="STORELIST_AEA_ACID">
 	<event load="STOREEVENT_AEA_ACID_ORCHID" />
 	<event load="STOREEVENT_AEA_ACID_ORCHID" />
-
+<!--
 	<event load="STOREEVENT_OUTPOST" />
 	<event load="STOREEVENT_DAMAGED" />
 	
@@ -715,12 +715,16 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<event load="STOREEVENT_ORCHID_KERNELS" />
     
 	<event load="STOREEVENT_VAMPWEED_SPORES" />
+-->
 </eventList>
 
 <eventList name="NEBULA_STORELIST_AEA_ACID">
 	<event load="NEBULA_STOREEVENT_AEA_ACID_NO2" />
 	<event load="NEBULA_STOREEVENT_AEA_ACID_NO2" />
 
+	<event load="NEBULA_STOREEVENT_AEA_ACID_CIVILIAN" />
+	<event load="NEBULA_STOREEVENT_AEA_ACID_CIVILIAN" />
+<!--
 	<event load="NEBULA_STOREEVENT_DAMAGED" />
 	<event load="NEBULA_STOREEVENT_DAMAGED" />
 	
@@ -731,6 +735,7 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 	<event load="NEBULA_STOREEVENT_PIRATE_AWKWARD" />
 	
 	<event load="NEBULA_STOREEVENT_LEECH_SCAVENGER" />
+-->
 </eventList>
 
 <event name="STOREEVENT_AEA_ACID_ORCHID" unique="true">
@@ -932,6 +937,35 @@ To enable Galaxy On Fire, go to the Multiverse Forums and visit the addon sectio
 <ship name="SHIP_AEA_ACID_STATION_STORE" auto_blueprint="AEA_ACID_STATION">
 
 </ship>
+
+<event name="NEBULA_STOREEVENT_AEA_ACID_CIVILIAN" unique="true">
+	<preventQuest/>
+	<beaconType id="map_icon_store_generic" global="false">
+		<color r="215" g="255" b="200" a="1"/>
+	</beaconType>
+	<environment type="nebula"/>
+
+	<text>This beacon is blasted with advertisements of an emergency sale at a nearby store. The ads seem enticing, but desperate.</text>
+	<choice hidden="true">
+		<text>Approach the store.</text>
+		<event>
+			<text>You hail the store, and a young male human in questionable attire comes on screen. "Heeey, buddy! Welcome to my store! I got everything for your acid needs - acid injectors, acid extractors, acid tubes, and even acid breakers! Everything at half off, of course, just as advertised." He smiles weakly.</text>
+			<choice hidden="true">
+				<text>Do you have anything... more useful?</text>
+				<event>
+					<text>"Ah, shucks." He lowers his head. "I hoped you wouldn't be one of those battle-freaks." The man is silent for a moment. "But yes, yes, I do. Not a lot, though - sold most stuff to buy the acid equipment the moment I found out there's an acid nebula here." He scratches his head and his voice grows in pitch. "I miiight have misunderstood the kind of 'acid' this nebula was made of, so I'm just trying to get the equipment sold as quickly as possible. Still, I do have the usual wares. Here, take a look."</text>
+					<queueEvent>STORE_LOAD_GENERIC</queueEvent>
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the store.</text>
+		<event>
+			<text>You decide that dubious sales aren't for you.</text>
+		</event>
+	</choice>
+</event>
 
 <ship name="SHIP_AEA_ACID_TRANSPORT_LOOT" auto_blueprint="AEA_ACID_TRANSPORT">
 	<escape timer="40" min="999" max="999">
