@@ -641,6 +641,9 @@ end)
 script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, shipManager)
 	local crewmem = power.crew
 	if crewmem.type == "aea_dark_justicier" then
+		if mods.fishing and mods.fishing.fishListener then
+			mods.fishing.fishListener.castAimForTheBigOne()
+		end
 		startAnimStarted = false
 		activateCursor = true
         Hyperspace.Mouse.validPointer = cursorValid
