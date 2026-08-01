@@ -1,3 +1,5 @@
+local crewListener = mods.aea.crewListener.internal
+
 local function vter(cvec)
 	local i = -1
 	local n = cvec:size()
@@ -641,6 +643,7 @@ end)
 script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, shipManager)
 	local crewmem = power.crew
 	if crewmem.type == "aea_dark_justicier" then
+		crewListener.onDarkJusticierPower(crewmem)
 		startAnimStarted = false
 		activateCursor = true
         Hyperspace.Mouse.validPointer = cursorValid

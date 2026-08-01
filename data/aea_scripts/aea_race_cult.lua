@@ -1,3 +1,5 @@
+local crewListener = mods.aea.crewListener.internal
+
 -----------------------
 -- UTILITY FUNCTIONS --
 -----------------------
@@ -713,6 +715,7 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 				end
 			end
 			target_power = true
+			crewListener.onTargetedCultistPower(crewmem)
 			target_crew = crewmem.extend.selfId
 		end
 		--userdata_table(crewmem, "mods.aea.cultmagic").active = power.temporaryPowerActive
@@ -756,6 +759,7 @@ script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER, function(power, 
 				end
 			end
 			target_power = true
+			crewListener.onTargetedCultistPower(crewmem)
 			target_crew = crewmem.extend.selfId
 		end
 	end
@@ -809,10 +813,11 @@ script.on_internal_event(Defines.InternalEvents.ON_MOUSE_L_BUTTON_DOWN, function
 				end
 			end
 		end
-		if roomAtMouse >= 0 then 
+		if roomAtMouse >= 0 then
 			--print("SET ROOM AT"..tostring(roomAtMouse))
 			userdata_table(crewmem, "mods.aea.cultmagic").room = roomAtMouse
 			userdata_table(crewmem, "mods.aea.cultmagic").ship = shipAtMouse
+			crewListener.onCultistTargetSelected(crewmem)
 			target_power = false
 			target_crew = nil
 			roomAtMouse = -1
