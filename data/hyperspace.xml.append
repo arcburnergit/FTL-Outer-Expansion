@@ -4,6 +4,7 @@
 <customTextStyle enabled="true" />
 <mod:findLike type="scripts">
   <mod-append:script>data/aea_scripts/aea_functions.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_listener.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aeaIcon.lua</mod-append:script>
   <!--Race functionality scripts-->
   <mod-append:script>data/aea_scripts/aea_race_acid.lua</mod-append:script>
