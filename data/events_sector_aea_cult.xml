@@ -188,7 +188,7 @@
 	<choice hidden="true">
 		<text>Follow the voice and investigate further.</text>
 		<event>
-			<text>You follow the faint whispers and eventually arrive at a small, hidden moon, covered with glowing flowers. Theres a large structure on the surface, it appears to be a massive garden. As you enter the heart of their garden the voices go stronger, they ask what you seek...</text>
+			<text>You follow the faint whispers and eventually arrive at a small, hidden moon, covered with glowing flowers. Theres a large structure on the surface, it appears to be a massive garden. As you enter the heart of their garden the voices grow stronger, they ask what you seek...</text>
 			<choice hidden="true">
 				<text>Supplies.</text>
 				<event>

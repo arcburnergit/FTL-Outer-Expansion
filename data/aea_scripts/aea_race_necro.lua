@@ -246,7 +246,7 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_COLLISION, function(t
 		if pType == "BURST" and returnShip then
 			createLaserBlast(thisProjectile, blueprint, (1 - thisProjectile.ownerId))
 		elseif pType == "BURST" and returnShip then
-			createLaserBurst	(thisProjectile, blueprint, (1 - thisProjectile.ownerId))
+			createLaserBurst(thisProjectile, blueprint, (1 - thisProjectile.ownerId))
 		elseif pType == "MISSILES" and returnShip then 
 			createMissile(thisProjectile, blueprint, (1 - thisProjectile.ownerId))
 		end
@@ -257,7 +257,7 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_COLLISION, function(t
 		if pType == "BURST" and returnShip then
 			createLaserBlast(projectile, blueprint, (1 - projectile.ownerId))
 		elseif pType == "BURST" and returnShip then
-			createLaserBurst	(projectile, blueprint, (1 - projectile.ownerId))
+			createLaserBurst(projectile, blueprint, (1 - projectile.ownerId))
 		elseif pType == "MISSILES" and returnShip then 
 			createMissile(projectile, blueprint, (1 - projectile.ownerId))
 		end
@@ -430,7 +430,7 @@ end)
 
 local tempDrones = {}
 script.on_internal_event(Defines.InternalEvents.DRONE_FIRE, function(projectile, drone)
-	if projectile.extend.name == "AEA_LASER_NECRO_COMBAT_BOSS" or projectile.extend.name == "AEA_LASER_NECRO_COMBAT_BOSS_CHAOS" and #tempDrones[drone.selfId] <= 3 then
+	if projectile.extend.name == "AEA_LASER_NECRO_COMBAT_BOSS" or projectile.extend.name == "AEA_LASER_NECRO_COMBAT_BOSS_CHAOS" and ((not tempDrones[drone.selfId]) or #tempDrones[drone.selfId] <= 3) then
 		local droneBlueprint = Hyperspace.Blueprints:GetDroneBlueprint("AEA_COMBAT_NECRO_BOSS_LASER_TEMP")
 		local ship = Hyperspace.ships(1- projectile.currentSpace)
 		local otherShip = Hyperspace.ships(projectile.currentSpace)

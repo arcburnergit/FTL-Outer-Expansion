@@ -431,7 +431,7 @@ end)
 
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 	if Hyperspace.ships.player and needSetArty and shipManager:HasAugmentation("SHIP_AEA_BROADSIDE") > 0 and Hyperspace.playerVariables.aea_broadside_slot1 > 0 then
-		needSetArty = flase
+		needSetArty = false
 		if Hyperspace.playerVariables.aea_broadside_slot1 == 1 then
 			setArtySlot("ARTILLERY_BROADSIDE_PIERCE", 0)
 		elseif Hyperspace.playerVariables.aea_broadside_slot1 == 2 then
@@ -461,7 +461,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 		end
 	elseif Hyperspace.ships.player and needSetArty and shipManager:HasAugmentation("SHIP_AEA_BROADSIDE2") > 0 and Hyperspace.playerVariables.aea_broadside_slot1 > 0 then
 		--print("SET slot1:"..Hyperspace.playerVariables.aea_broadside_slot1.. " slot2:"..Hyperspace.playerVariables.aea_broadside_slot2.." slot3:"..Hyperspace.playerVariables.aea_broadside_slot3)
-		needSetArty = flase
+		needSetArty = false
 		if Hyperspace.playerVariables.aea_broadside_slot1 == 1 then
 			setArtySlot("ARTILLERY_BROADSIDE2_LASER", 0)
 		elseif Hyperspace.playerVariables.aea_broadside_slot1 == 2 then

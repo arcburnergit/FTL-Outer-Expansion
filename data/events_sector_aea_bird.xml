@@ -1354,7 +1354,7 @@ Somehow you didn't notice that the federation ship was full of rebels.</text>
 </event>
 
 <event name="AEA_BIRD_REBEL_TRANS_DEADCREW">
-	<text>You've killed off all of the Rebel crew on the stoeln transport, you board and take all the rebel's scrap and supplies but leave the transport unharmed.</text>
+	<text>You've killed off all of the Rebel crew on the stolen transport, you board and take all the rebel's scrap and supplies but leave the transport unharmed.</text>
 	<autoReward level="HIGH">standard_no_item</autoReward>
 	<choice>
 		<text>Continue...</text>

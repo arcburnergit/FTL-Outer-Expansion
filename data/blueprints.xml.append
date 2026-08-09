@@ -4437,8 +4437,8 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<fireChance>0</fireChance>
 	<breachChance>10</breachChance>
 	<stunChance>10</stunChance>
-	<cooldown>6</cooldown>
-	<power>2</power>
+	<cooldown>12</cooldown>
+	<power>1</power>
 	<cost>75</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
@@ -4478,8 +4478,8 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<fireChance>0</fireChance>
 	<breachChance>10</breachChance>
 	<stunChance>10</stunChance>
-	<cooldown>9</cooldown>
-	<power>3</power>
+	<cooldown>15</cooldown>
+	<power>2</power>
 	<cost>75</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
@@ -4519,8 +4519,8 @@ Unfortunately it makes shields repair at 50% speed.</desc>
 	<fireChance>0</fireChance>
 	<breachChance>10</breachChance>
 	<stunChance>10</stunChance>
-	<cooldown>12</cooldown>
-	<power>4</power>
+	<cooldown>19</cooldown>
+	<power>3</power>
 	<cost>75</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
@@ -4638,6 +4638,7 @@ Stats:
 Required Power: 1
 Required Fuel to Power: 1
 Charge Time: 12 seconds
+Missile Consumption: 1
 Accuracy Bonus: +30%
 
 Shots Per Charge: 1
@@ -4674,7 +4675,7 @@ Breach Chance: 50%</tooltipOverride>
 	<accuracyMod>30</accuracyMod>
 	<damage>0</damage>
 	<shots>1</shots>
-	<missiles>0</missiles>
+	<missiles>1</missiles>
 	<sp>10</sp>
 	<fireChance>0</fireChance>
 	<breachChance>5</breachChance>
@@ -4715,6 +4716,7 @@ Stats:
 Required Power: 2
 Required Fuel to Power: 1
 Charge Time: 14 seconds
+Missile Consumption: 1
 Accuracy Bonus: +30%
 
 Shots Per Charge: 1
@@ -4753,7 +4755,7 @@ Breach Chance: 100%</tooltipOverride>
 	<accuracyMod>30</accuracyMod>
 	<damage>0</damage>
 	<shots>1</shots>
-	<missiles>0</missiles>
+	<missiles>1</missiles>
 	<sp>10</sp>
 	<fireChance>0</fireChance>
 	<breachChance>10</breachChance>
@@ -4794,6 +4796,7 @@ Stats:
 Required Power: 3
 Required Fuel to Power: 1
 Charge Time: 16 seconds
+Missile Consumption: 1
 Accuracy Bonus: +30%
 
 Shots Per Charge: 1
@@ -4832,7 +4835,7 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 	<fireTime>1.8</fireTime>
 	<accuracyMod>30</accuracyMod>
 	<damage>0</damage>
-	<missiles>0</missiles>
+	<missiles>1</missiles>
 	<shots>1</shots>
 	<sp>10</sp>
 	<fireChance>0</fireChance>
@@ -5249,7 +5252,7 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 	<tooltip> </tooltip>
 	<damage>0</damage>
 	<sysDamage>1</sysDamage>
-	<shots>3</shots>
+	<shots>4</shots>
 	<sp>0</sp>
 	<mv-pop>
 		<count>1</count>
@@ -5257,8 +5260,8 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 	</mv-pop>
 	<fireChance>5</fireChance>
 	<breachChance>0</breachChance>
-	<cooldown>12</cooldown>
-	<power>1</power>
+	<cooldown>14</cooldown>
+	<power>2</power>
 	<cost>70</cost>
 	<bp>7</bp>
 	<rarity>0</rarity>
@@ -5293,7 +5296,7 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 	<tooltip> </tooltip>
 	<damage>0</damage>
 	<sysDamage>1</sysDamage>
-	<shots>4</shots>
+	<shots>5</shots>
 	<sp>0</sp>
 	<mv-pop>
 		<count>1</count>
@@ -5301,8 +5304,8 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 	</mv-pop>
 	<fireChance>5</fireChance>
 	<breachChance>0</breachChance>
-	<cooldown>16</cooldown>
-	<power>2</power>
+	<cooldown>17</cooldown>
+	<power>3</power>
 	<cost>70</cost>
 	<bp>7</bp>
 	<rarity>0</rarity>
@@ -5337,7 +5340,7 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 	<tooltip> </tooltip>
 	<damage>0</damage>
 	<sysDamage>1</sysDamage>
-	<shots>6</shots>
+	<shots>7</shots>
 	<sp>0</sp>
 	<mv-pop>
 		<count>1</count>
@@ -5345,8 +5348,8 @@ Stun Chance: 100% (3 seconds long)</tooltipOverride>
 	</mv-pop>
 	<fireChance>5</fireChance>
 	<breachChance>0</breachChance>
-	<cooldown>19</cooldown>
-	<power>3</power>
+	<cooldown>20</cooldown>
+	<power>4</power>
 	<cost>70</cost>
 	<bp>7</bp>
 	<rarity>0</rarity>

@@ -18,6 +18,7 @@
   <mod-append:script>data/aea_scripts/arc_modathon_aea.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_minelauncher.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_main_menu.lua</mod-append:script>
+  <mod-append:script>data/aea_scripts/aea_supernova.lua</mod-append:script>
   <!--System functionality scripts-->
   <mod-append:script>data/aea_scripts/aea_super_shields.lua</mod-append:script>
   <mod-append:script>data/aea_scripts/aea_clone_crime.lua</mod-append:script>
@@ -11138,7 +11139,7 @@ Right click to attempt the ritual or cancel.
 	<customStore id="STORE_SYLVAN_AEA_LOOT">
         <itemPurchaseLimit>1</itemPurchaseLimit>
 		<category type="WEAPONS">
-			<customTitle>LYLMIK</customTitle>
+			<customTitle>OE LOOT</customTitle>
             <item>
                 <blueprint>LIST_WEAPONS_AEA_LOOT</blueprint>
                 <modifier flat="false" max="1.1" min="0.8"/>
@@ -11156,7 +11157,7 @@ Right click to attempt the ritual or cancel.
             </item>    
         </category>
 		<category type="DRONES">
-			<customTitle>LYLMIK</customTitle>
+			<customTitle>OE LOOT</customTitle>
             <item>
                 <blueprint>LIST_DRONES_AEA_LOOT</blueprint>
                 <modifier flat="false" max="1.1" min="0.8"/>

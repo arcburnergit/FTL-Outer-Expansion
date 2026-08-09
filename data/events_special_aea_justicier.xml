@@ -179,6 +179,9 @@ Crew sacrificed by a ritual can be cloned but will be weakened for 3 jumps.
   </choice>
 </event>
 
+<event name="AEA_EVENT_EMPTY_EXIT">
+</event>
+
 <event name="AEA_STATUE_TEST">
     <boarders min="2" max="2" class="aea_statue_hostile_inactive" />
 </event>

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <FTL>
+<event name="ADDON_OG_DISABLED">
+	<hover-text>The Old Guard 
+	Click to see more info.</hover-text>
+<text>FTL: The Old Guard
+Developed by: Arc
+Currently Disabled.
+        
+An addon focused around the turret control system, this adds a new equipment type, 2 new factions, 2 new sectors, and a host of playable ships with the new system.
+        
+To enable The Old Guard, go to the Multiverse Forums and visit the addon section!.</text>
+</event>
 <event name="ADDON_AEA">
 	<hover-text>The Outer Expansion 
 	Click to see more info.</hover-text>

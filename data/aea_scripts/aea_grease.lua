@@ -663,7 +663,7 @@ local function spawn_lightning(shipManager, projectile, location, damage, shipFr
 	local charges = Hyperspace.playerVariables[chargeVar]
 
 	if sys and sys.healthState.first == 0 and charges > 0 then
-		print("LIGHTNING!!")
+		--print("LIGHTNING!!")
 		local adjacentSystems = {}
 		for roomId, roomPos in pairs(get_adjacent_rooms(shipManager.iShipId, get_room_at_location(shipManager, location, false), false)) do
 			if shipManager:GetSystemInRoom(roomId) then
@@ -897,7 +897,7 @@ script.on_internal_event(Defines.InternalEvents.GENERATOR_CREATE_SHIP, function(
 		end
 	end
 	--print(r)
-	if r > 0.4 or ((not isPrefix) and r > 0.05) then return Defines.Chain.CONTINUE, sector, event, bp, ret end
+	if r > 0.4 or ((not isPrefix) and r > 0) then return Defines.Chain.CONTINUE, sector, event, bp, ret end
 	local empty = findEmptyRoom(bp.layoutFile, bp)
 	if empty then
 		local newSys = tempSystemTemplate

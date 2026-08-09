@@ -1289,12 +1289,15 @@ end)
 script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
 	local eventManager = Hyperspace.Event
 	if event.eventName == "AEA_INSTALL_FREEZE_CHOICE_1" or event.eventName == "AEA_INSTALL_FREEZE_CHOICE_2" then
-		for weapon in vter(shipManager.weaponSystem.weapons) do
-			if precursorList[weapon.blueprint.name] then
-				local installEvent = eventManager:CreateEvent("AEA_INSTALL_FREEZE_SYS", 0, false)
-				installEvent.stuff.removeItem = weapon.blueprint.name
-				installEvent.stuff.weapon = weapon.blueprint
-				event:AddChoice(weaponEvent, "Use this:", emptyReq, false)
+		local shipManager = Hyperspace.ships.player
+		if shipManager:HasSystem(3) then
+			for weapon in vter(shipManager.weaponSystem.weapons) do
+				if precursorList[weapon.blueprint.name] then
+					local installEvent = eventManager:CreateEvent("AEA_INSTALL_FREEZE_SYS", 0, false)
+					installEvent.stuff.removeItem = weapon.blueprint.name
+					installEvent.stuff.weapon = weapon.blueprint
+					event:AddChoice(installEvent, "Use this:", emptyReq, false)
+				end
 			end
 		end
 
@@ -1302,9 +1305,9 @@ script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(e
 			if precursorList[item] then
 				local installEvent = eventManager:CreateEvent("AEA_INSTALL_FREEZE_SYS", 0, false)
 				installEvent.stuff.removeItem = item
-				local blueprint = Hyperspace.Blueprints:GetAugmentBlueprint(item)
+				local blueprint = Hyperspace.Blueprints:GetWeaponBlueprint(item)
 				installEvent.stuff.weapon = blueprint
-				event:AddChoice(weaponEvent, "Use this:", emptyReq, false)
+				event:AddChoice(installEvent, "Use this:", emptyReq, false)
 			end
 		end
 	elseif event.eventName == "AEA_INSTALL_FREEZE_SYS" then

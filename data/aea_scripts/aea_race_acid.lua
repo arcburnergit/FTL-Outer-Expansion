@@ -308,6 +308,19 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
 	Hyperspace.playerVariables[playerVar] = 0
 end)
 
+local function createCloud(x, y)
+	local cloudTemp = {x = 0, y = 0, scale = 1.5, timerScale = 0, opacity = 1, revOp = 0, fade = 0, exists = 1}
+	cloudTemp.x = x
+	cloudTemp.y = y
+
+	cloudTemp.scale = (math.random() * (maxScaleRandom - minScale)) + minScale
+	cloudTemp.timerScale = 0
+
+	cloudTemp.opacity = 0.05
+	cloudTemp.revOp = math.random(0,1)
+	return cloudTemp
+end
+
 script.on_render_event(Defines.RenderEvents.LAYER_FOREGROUND, function() 
 	if Hyperspace.Global.GetInstance():GetCApp().world.bStartedGame and Hyperspace.playerVariables[playerVar] == 1 and Hyperspace.Settings.lowend == false then
 		for k, cloud in ipairs(nebulaClouds) do
@@ -379,18 +392,7 @@ end, function() end)
 	end
 end, function() end)]]
 
-function createCloud(x, y)
-	local cloudTemp = {x = 0, y = 0, scale = 1.5, timerScale = 0, opacity = 1, revOp = 0, fade = 0, exists = 1}
-	cloudTemp.x = x
-	cloudTemp.y = y
 
-	cloudTemp.scale = (math.random() * (maxScaleRandom - minScale)) + minScale
-	cloudTemp.timerScale = 0
-
-	cloudTemp.opacity = 0.05
-	cloudTemp.revOp = math.random(0,1)
-	return cloudTemp
-end
 
 script.on_internal_event(Defines.InternalEvents.ACTIVATE_POWER,  function(power, shipManager)
 	local crewmem = power.crew
